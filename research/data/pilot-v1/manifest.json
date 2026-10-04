@@ -1,0 +1,37 @@
+{
+  "schema": "fly-pilot-manifest-v1",
+  "encoding": "white-fen-1280-v1",
+  "criteria": [
+    "white_material_balance_div16",
+    "side_to_move_best_capture_after_recapture_white_signed_div9"
+  ],
+  "files": {
+    "train": {
+      "pairs": 72,
+      "positions": 144,
+      "sha256": "a9abba4fb0153f3ad77f68c46622b0a10b0299e3e103eaf40e1687fa8537c74e"
+    },
+    "validation": {
+      "pairs": 24,
+      "positions": 48,
+      "sha256": "fd52f0c0ec39e26c0059a3886240fca823d2d2fc91e60d7bdeb3e57a4c088318"
+    },
+    "test": {
+      "pairs": 24,
+      "positions": 48,
+      "sha256": "a5388a8ffdc96b4e817063c9aadf943c83f9c758e5f7f872f977f37cf0487b95"
+    }
+  },
+  "source": "Locally generated seeded random legal games using chess.js 1.4.0; no human games, pretrained weights or engine.",
+  "familySplit": "40 whole-game families: 0-23 training, 24-31 validation, 32-39 final test; duplicate parent/child position keys rejected across all splits.",
+  "purpose": "Small engineering/development pilot for position assessment and changed-position supervision. Not representative strategic chess evaluation.",
+  "generatorSeedFormula": "41731 + family * 7919",
+  "generatedAt": "2026-09-29T07:36:39.249Z",
+  "limitations": [
+    "Random-play distribution",
+    "Two simple rule-generated labels",
+    "Only recaptures onto the destination square considered",
+    "No final test evaluation authorized by the pilot script",
+    "One source game per group is necessary but does not rule out shared motifs"
+  ]
+}

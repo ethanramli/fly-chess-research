@@ -1,0 +1,232 @@
+{
+  "timestamp": "2026-09-29T08:31:17.436Z",
+  "runs": [
+    {
+      "directory": "runs/adam-paced-001",
+      "config": {
+        "steps": 8,
+        "inputDim": 1280,
+        "outputs": 2,
+        "seed": 47,
+        "precision": "float32",
+        "saturation": 10,
+        "recurrentScale": 0.9,
+        "normalization": "global"
+      },
+      "algorithm": {
+        "mode": "exact",
+        "optimizer": "adam-v1"
+      },
+      "learningRate": 0.001,
+      "cpuDuty": 0.5,
+      "processCPUSeconds": null,
+      "startUpdates": 0,
+      "endUpdates": 72,
+      "processedPairs": 72,
+      "initialValidation": {
+        "time": "2026-09-29T08:17:20.783Z",
+        "event": "validation",
+        "updates": 0,
+        "pairs": 24,
+        "loss": 0.07612874832499254,
+        "absolute": 0.04984405801728136,
+        "difference": 0.02628469030771119,
+        "criteria": [
+          "white_material_balance_div16",
+          "side_to_move_best_capture_after_recapture_white_signed_div9"
+        ],
+        "trainMean": [
+          0.058159722222222224,
+          -0.12731481481481477
+        ],
+        "mse": [
+          0.028433268604366162,
+          0.17094296346475932
+        ],
+        "deltaMSE": [
+          0.028473497897436473,
+          0.07666526333340824
+        ],
+        "constantMSE": [
+          0.032891921055169755,
+          0.1719982424554184
+        ],
+        "constantDeltaMSE": [
+          0.028645833333333332,
+          0.07664609053497944
+        ],
+        "rssMiB": 110.13671875,
+        "peakResidentMiB": 110.140625
+      },
+      "finalValidation": {
+        "time": "2026-09-29T08:19:59.627Z",
+        "event": "validation",
+        "updates": 72,
+        "pairs": 24,
+        "loss": 0.07470888743722869,
+        "absolute": 0.049094256141976655,
+        "difference": 0.025614631295252013,
+        "criteria": [
+          "white_material_balance_div16",
+          "side_to_move_best_capture_after_recapture_white_signed_div9"
+        ],
+        "trainMean": [
+          0.058159722222222224,
+          -0.12731481481481477
+        ],
+        "mse": [
+          0.02745811846364625,
+          0.1689189061042604
+        ],
+        "deltaMSE": [
+          0.027948148157005453,
+          0.07451037702400258
+        ],
+        "constantMSE": [
+          0.032891921055169755,
+          0.1719982424554184
+        ],
+        "constantDeltaMSE": [
+          0.028645833333333332,
+          0.07664609053497944
+        ],
+        "rssMiB": 169.2734375,
+        "peakResidentMiB": 172.921875
+      },
+      "wallSeconds": 179.849,
+      "trainingAndFinalValidationSeconds": 158.8428363,
+      "peakResidentMiB": 172.921875,
+      "circuitBursts": 0,
+      "acceptedBursts": 0,
+      "burstsWithRelativeGainBelowOneTenThousandth": 0,
+      "circuitSeconds": 0,
+      "distinctBlocksVisited": 0,
+      "plannedBlocks": 0,
+      "plannedCoverageNeurons": 0,
+      "identity": {
+        "graph": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+        "train": "a9abba4fb0153f3ad77f68c46622b0a10b0299e3e103eaf40e1687fa8537c74e",
+        "validation": "fd52f0c0ec39e26c0059a3886240fca823d2d2fc91e60d7bdeb3e57a4c088318"
+      }
+    },
+    {
+      "directory": "runs/adam-shuffled-001",
+      "config": {
+        "steps": 8,
+        "inputDim": 1280,
+        "outputs": 2,
+        "seed": 47,
+        "precision": "float32",
+        "saturation": 10,
+        "recurrentScale": 0.9,
+        "normalization": "global"
+      },
+      "algorithm": {
+        "mode": "exact",
+        "optimizer": "adam-v1",
+        "shuffle": "bounded-v1",
+        "shuffleBuffer": 24
+      },
+      "learningRate": 0.001,
+      "cpuDuty": 0.5,
+      "processCPUSeconds": 89.01599999999999,
+      "startUpdates": 0,
+      "endUpdates": 72,
+      "processedPairs": 72,
+      "initialValidation": {
+        "time": "2026-09-29T08:28:06.063Z",
+        "event": "validation",
+        "updates": 0,
+        "pairs": 24,
+        "loss": 0.07612874832499254,
+        "absolute": 0.04984405801728136,
+        "difference": 0.02628469030771119,
+        "criteria": [
+          "white_material_balance_div16",
+          "side_to_move_best_capture_after_recapture_white_signed_div9"
+        ],
+        "trainMean": [
+          0.058159722222222224,
+          -0.12731481481481477
+        ],
+        "mse": [
+          0.028433268604366162,
+          0.17094296346475932
+        ],
+        "deltaMSE": [
+          0.028473497897436473,
+          0.07666526333340824
+        ],
+        "constantMSE": [
+          0.032891921055169755,
+          0.1719982424554184
+        ],
+        "constantDeltaMSE": [
+          0.028645833333333332,
+          0.07664609053497944
+        ],
+        "rssMiB": 110.45703125,
+        "cpuSeconds": 12.343,
+        "peakResidentMiB": 110.4609375
+      },
+      "finalValidation": {
+        "time": "2026-09-29T08:30:44.221Z",
+        "event": "validation",
+        "updates": 72,
+        "pairs": 24,
+        "loss": 0.0687398704526287,
+        "absolute": 0.043070667721946176,
+        "difference": 0.02566920273068254,
+        "criteria": [
+          "white_material_balance_div16",
+          "side_to_move_best_capture_after_recapture_white_signed_div9"
+        ],
+        "trainMean": [
+          0.058159722222222224,
+          -0.12731481481481477
+        ],
+        "mse": [
+          0.06276501066298305,
+          0.10951766022480162
+        ],
+        "deltaMSE": [
+          0.028991201304364642,
+          0.07368560961836552
+        ],
+        "constantMSE": [
+          0.032891921055169755,
+          0.1719982424554184
+        ],
+        "constantDeltaMSE": [
+          0.028645833333333332,
+          0.07664609053497944
+        ],
+        "rssMiB": 168.453125,
+        "cpuSeconds": 89.921,
+        "peakResidentMiB": 172.81640625
+      },
+      "wallSeconds": 182.077,
+      "trainingAndFinalValidationSeconds": 158.159055,
+      "peakResidentMiB": 172.81640625,
+      "circuitBursts": 0,
+      "acceptedBursts": 0,
+      "burstsWithRelativeGainBelowOneTenThousandth": 0,
+      "circuitSeconds": 0,
+      "distinctBlocksVisited": 0,
+      "plannedBlocks": 0,
+      "plannedCoverageNeurons": 0,
+      "identity": {
+        "graph": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+        "train": "a9abba4fb0153f3ad77f68c46622b0a10b0299e3e103eaf40e1687fa8537c74e",
+        "validation": "fd52f0c0ec39e26c0059a3886240fca823d2d2fc91e60d7bdeb3e57a4c088318"
+      }
+    }
+  ],
+  "limitations": [
+    "One seed and small development dataset with two rule-generated labels",
+    "Endpoint losses and different elapsed times do not establish time-to-quality superiority",
+    "Tiny local gains are measured on the active training pair, not held-out data",
+    "RSS observations are process-specific soft measurements, not an OS hard cap",
+    "Final test data remain untouched"
+  ]
+}

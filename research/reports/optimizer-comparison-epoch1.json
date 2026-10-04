@@ -1,0 +1,396 @@
+{
+  "timestamp": "2026-09-29T08:20:47.521Z",
+  "runs": [
+    {
+      "directory": "runs/paired-baseline-001",
+      "config": {
+        "steps": 8,
+        "inputDim": 1280,
+        "outputs": 2,
+        "seed": 47,
+        "precision": "float32",
+        "saturation": 10,
+        "recurrentScale": 0.9,
+        "normalization": "global"
+      },
+      "algorithm": {
+        "mode": "exact"
+      },
+      "learningRate": 0.02,
+      "cpuDuty": 1,
+      "processCPUSeconds": null,
+      "startUpdates": 0,
+      "endUpdates": 8,
+      "processedPairs": 8,
+      "initialValidation": {
+        "time": "2026-09-29T08:03:01.736Z",
+        "event": "validation",
+        "updates": 0,
+        "pairs": 24,
+        "loss": 0.07612874832499254,
+        "absolute": 0.04984405801728136,
+        "difference": 0.02628469030771119,
+        "rssMiB": 107.71875,
+        "peakResidentMiB": 107.72265625
+      },
+      "finalValidation": {
+        "time": "2026-09-29T08:03:19.156Z",
+        "event": "validation",
+        "updates": 8,
+        "pairs": 24,
+        "loss": 0.07588943220680411,
+        "absolute": 0.049600519810972236,
+        "difference": 0.026288912395831896,
+        "rssMiB": 129.34375,
+        "peakResidentMiB": 129.34765625
+      },
+      "wallSeconds": 26.815,
+      "trainingAndFinalValidationSeconds": 17.4132848,
+      "peakResidentMiB": 129.34765625,
+      "circuitBursts": 0,
+      "acceptedBursts": 0,
+      "burstsWithRelativeGainBelowOneTenThousandth": 0,
+      "circuitSeconds": 0,
+      "distinctBlocksVisited": 0,
+      "plannedBlocks": 0,
+      "plannedCoverageNeurons": 0,
+      "identity": {
+        "graph": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+        "train": "a9abba4fb0153f3ad77f68c46622b0a10b0299e3e103eaf40e1687fa8537c74e",
+        "validation": "fd52f0c0ec39e26c0059a3886240fca823d2d2fc91e60d7bdeb3e57a4c088318"
+      }
+    },
+    {
+      "directory": "runs/paired-baseline-002",
+      "config": {
+        "steps": 8,
+        "inputDim": 1280,
+        "outputs": 2,
+        "seed": 47,
+        "precision": "float32",
+        "saturation": 10,
+        "recurrentScale": 0.9,
+        "normalization": "global"
+      },
+      "algorithm": {
+        "mode": "exact"
+      },
+      "learningRate": 0.02,
+      "cpuDuty": 1,
+      "processCPUSeconds": null,
+      "startUpdates": 8,
+      "endUpdates": 72,
+      "processedPairs": 64,
+      "initialValidation": {
+        "time": "2026-09-29T08:04:11.220Z",
+        "event": "validation",
+        "updates": 8,
+        "pairs": 24,
+        "loss": 0.07588943220680411,
+        "absolute": 0.049600519810972236,
+        "difference": 0.026288912395831896,
+        "criteria": [
+          "white_material_balance_div16",
+          "side_to_move_best_capture_after_recapture_white_signed_div9"
+        ],
+        "trainMean": [
+          0.058159722222222224,
+          -0.12731481481481477
+        ],
+        "mse": [
+          0.028068002981720363,
+          0.17033407626216857
+        ],
+        "deltaMSE": [
+          0.028513823048516258,
+          0.07664182653481132
+        ],
+        "constantMSE": [
+          0.032891921055169755,
+          0.1719982424554184
+        ],
+        "constantDeltaMSE": [
+          0.028645833333333332,
+          0.07664609053497944
+        ],
+        "rssMiB": 128.421875,
+        "peakResidentMiB": 128.42578125
+      },
+      "finalValidation": {
+        "time": "2026-09-29T08:05:17.391Z",
+        "event": "validation",
+        "updates": 72,
+        "pairs": 24,
+        "loss": 0.07488591054948353,
+        "absolute": 0.04856443482146813,
+        "difference": 0.026321475728015395,
+        "criteria": [
+          "white_material_balance_div16",
+          "side_to_move_best_capture_after_recapture_white_signed_div9"
+        ],
+        "trainMean": [
+          0.058159722222222224,
+          -0.12731481481481477
+        ],
+        "mse": [
+          0.03112624085841474,
+          0.1631314984274578
+        ],
+        "deltaMSE": [
+          0.028865219896551806,
+          0.07642068301550976
+        ],
+        "constantMSE": [
+          0.032891921055169755,
+          0.1719982424554184
+        ],
+        "constantDeltaMSE": [
+          0.028645833333333332,
+          0.07664609053497944
+        ],
+        "rssMiB": 129.421875,
+        "peakResidentMiB": 130.34375
+      },
+      "wallSeconds": 75.599,
+      "trainingAndFinalValidationSeconds": 66.1680849,
+      "peakResidentMiB": 130.34375,
+      "circuitBursts": 0,
+      "acceptedBursts": 0,
+      "burstsWithRelativeGainBelowOneTenThousandth": 0,
+      "circuitSeconds": 0,
+      "distinctBlocksVisited": 0,
+      "plannedBlocks": 0,
+      "plannedCoverageNeurons": 0,
+      "identity": {
+        "graph": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+        "train": "a9abba4fb0153f3ad77f68c46622b0a10b0299e3e103eaf40e1687fa8537c74e",
+        "validation": "fd52f0c0ec39e26c0059a3886240fca823d2d2fc91e60d7bdeb3e57a4c088318"
+      }
+    },
+    {
+      "directory": "runs/cached-hybrid-001",
+      "config": {
+        "steps": 8,
+        "inputDim": 1280,
+        "outputs": 2,
+        "seed": 47,
+        "precision": "float32",
+        "saturation": 10,
+        "recurrentScale": 0.9,
+        "normalization": "global"
+      },
+      "algorithm": {
+        "mode": "cached-hybrid",
+        "localSteps": 12,
+        "partition": "incoming-degree-v1",
+        "blockSize": 4096
+      },
+      "learningRate": 0.02,
+      "cpuDuty": 1,
+      "processCPUSeconds": null,
+      "startUpdates": 0,
+      "endUpdates": 72,
+      "processedPairs": 72,
+      "initialValidation": {
+        "time": "2026-09-29T08:09:50.057Z",
+        "event": "validation",
+        "updates": 0,
+        "pairs": 24,
+        "loss": 0.07612874832499254,
+        "absolute": 0.04984405801728136,
+        "difference": 0.02628469030771119,
+        "criteria": [
+          "white_material_balance_div16",
+          "side_to_move_best_capture_after_recapture_white_signed_div9"
+        ],
+        "trainMean": [
+          0.058159722222222224,
+          -0.12731481481481477
+        ],
+        "mse": [
+          0.028433268604366162,
+          0.17094296346475932
+        ],
+        "deltaMSE": [
+          0.028473497897436473,
+          0.07666526333340824
+        ],
+        "constantMSE": [
+          0.032891921055169755,
+          0.1719982424554184
+        ],
+        "constantDeltaMSE": [
+          0.028645833333333332,
+          0.07664609053497944
+        ],
+        "rssMiB": 113.27734375,
+        "peakResidentMiB": 113.78125
+      },
+      "finalValidation": {
+        "time": "2026-09-29T08:14:38.006Z",
+        "event": "validation",
+        "updates": 72,
+        "pairs": 24,
+        "loss": 0.07457975097954549,
+        "absolute": 0.048263983422157326,
+        "difference": 0.026315767557388157,
+        "criteria": [
+          "white_material_balance_div16",
+          "side_to_move_best_capture_after_recapture_white_signed_div9"
+        ],
+        "trainMean": [
+          0.058159722222222224,
+          -0.12731481481481477
+        ],
+        "mse": [
+          0.03138510168377137,
+          0.16167083200485793
+        ],
+        "deltaMSE": [
+          0.02890871881394906,
+          0.07635435141560358
+        ],
+        "constantMSE": [
+          0.032891921055169755,
+          0.1719982424554184
+        ],
+        "constantDeltaMSE": [
+          0.028645833333333332,
+          0.07664609053497944
+        ],
+        "rssMiB": 198.35546875,
+        "peakResidentMiB": 264.51953125
+      },
+      "wallSeconds": 296.811,
+      "trainingAndFinalValidationSeconds": 287.94436410000003,
+      "peakResidentMiB": 264.51953125,
+      "circuitBursts": 72,
+      "acceptedBursts": 72,
+      "burstsWithRelativeGainBelowOneTenThousandth": 22,
+      "circuitSeconds": 212.36874510000013,
+      "distinctBlocksVisited": 33,
+      "plannedBlocks": 33,
+      "plannedCoverageNeurons": 134209,
+      "identity": {
+        "graph": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+        "train": "a9abba4fb0153f3ad77f68c46622b0a10b0299e3e103eaf40e1687fa8537c74e",
+        "validation": "fd52f0c0ec39e26c0059a3886240fca823d2d2fc91e60d7bdeb3e57a4c088318"
+      }
+    },
+    {
+      "directory": "runs/adam-paced-001",
+      "config": {
+        "steps": 8,
+        "inputDim": 1280,
+        "outputs": 2,
+        "seed": 47,
+        "precision": "float32",
+        "saturation": 10,
+        "recurrentScale": 0.9,
+        "normalization": "global"
+      },
+      "algorithm": {
+        "mode": "exact",
+        "optimizer": "adam-v1"
+      },
+      "learningRate": 0.001,
+      "cpuDuty": 0.5,
+      "processCPUSeconds": null,
+      "startUpdates": 0,
+      "endUpdates": 72,
+      "processedPairs": 72,
+      "initialValidation": {
+        "time": "2026-09-29T08:17:20.783Z",
+        "event": "validation",
+        "updates": 0,
+        "pairs": 24,
+        "loss": 0.07612874832499254,
+        "absolute": 0.04984405801728136,
+        "difference": 0.02628469030771119,
+        "criteria": [
+          "white_material_balance_div16",
+          "side_to_move_best_capture_after_recapture_white_signed_div9"
+        ],
+        "trainMean": [
+          0.058159722222222224,
+          -0.12731481481481477
+        ],
+        "mse": [
+          0.028433268604366162,
+          0.17094296346475932
+        ],
+        "deltaMSE": [
+          0.028473497897436473,
+          0.07666526333340824
+        ],
+        "constantMSE": [
+          0.032891921055169755,
+          0.1719982424554184
+        ],
+        "constantDeltaMSE": [
+          0.028645833333333332,
+          0.07664609053497944
+        ],
+        "rssMiB": 110.13671875,
+        "peakResidentMiB": 110.140625
+      },
+      "finalValidation": {
+        "time": "2026-09-29T08:19:59.627Z",
+        "event": "validation",
+        "updates": 72,
+        "pairs": 24,
+        "loss": 0.07470888743722869,
+        "absolute": 0.049094256141976655,
+        "difference": 0.025614631295252013,
+        "criteria": [
+          "white_material_balance_div16",
+          "side_to_move_best_capture_after_recapture_white_signed_div9"
+        ],
+        "trainMean": [
+          0.058159722222222224,
+          -0.12731481481481477
+        ],
+        "mse": [
+          0.02745811846364625,
+          0.1689189061042604
+        ],
+        "deltaMSE": [
+          0.027948148157005453,
+          0.07451037702400258
+        ],
+        "constantMSE": [
+          0.032891921055169755,
+          0.1719982424554184
+        ],
+        "constantDeltaMSE": [
+          0.028645833333333332,
+          0.07664609053497944
+        ],
+        "rssMiB": 169.2734375,
+        "peakResidentMiB": 172.921875
+      },
+      "wallSeconds": 179.849,
+      "trainingAndFinalValidationSeconds": 158.8428363,
+      "peakResidentMiB": 172.921875,
+      "circuitBursts": 0,
+      "acceptedBursts": 0,
+      "burstsWithRelativeGainBelowOneTenThousandth": 0,
+      "circuitSeconds": 0,
+      "distinctBlocksVisited": 0,
+      "plannedBlocks": 0,
+      "plannedCoverageNeurons": 0,
+      "identity": {
+        "graph": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+        "train": "a9abba4fb0153f3ad77f68c46622b0a10b0299e3e103eaf40e1687fa8537c74e",
+        "validation": "fd52f0c0ec39e26c0059a3886240fca823d2d2fc91e60d7bdeb3e57a4c088318"
+      }
+    }
+  ],
+  "limitations": [
+    "One seed and small development dataset with two rule-generated labels",
+    "Endpoint losses and different elapsed times do not establish time-to-quality superiority",
+    "Tiny local gains are measured on the active training pair, not held-out data",
+    "RSS observations are process-specific soft measurements, not an OS hard cap",
+    "Final test data remain untouched"
+  ]
+}

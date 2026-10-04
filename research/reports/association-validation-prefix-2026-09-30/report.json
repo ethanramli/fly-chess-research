@@ -1,0 +1,245 @@
+{
+  "complete": false,
+  "identity": {
+    "schema": "gamma4-choice-state-v1",
+    "inputs": {
+      "graph": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+      "annotations": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+      "protocol": "5e459819b8570e37e8902caf0b5a316ca672634055e628e6a0dae1442aa70bf4"
+    },
+    "sources": {
+      ".codebase/scripts/validate-learning.mjs": "1e0637a30947edd3e897aae8fc2045e700362dc783c4ba73acc3fa254f667c59",
+      ".codebase/src/lowram/association-validation.mjs": "16267bf942541fe92422404bbe772607e0dc24b72eec1bc91e9d7fab5caac6df",
+      ".codebase/src/lowram/mushroom-body.mjs": "b8e0e598930cfda3855d7617377e9bfb88e150a741d5975626454efcceccb41e",
+      ".codebase/src/lowram/trainer.mjs": "ffefd16ad1fd2e438dba89c45072ea2229091832a46349958b8668aa7517b7f9",
+      ".codebase/src/lowram/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595"
+    },
+    "mappingHash": "0ba490d793c6de2d2b0f996d727090c6ce243bd991147b101d6ff0701c7388b0",
+    "model": {
+      "steps": 8,
+      "inputDim": 1,
+      "outputs": 1,
+      "seed": 47,
+      "precision": "float32",
+      "saturation": 10,
+      "recurrentScale": 0.9,
+      "normalization": "row"
+    },
+    "memory": {
+      "eta": 0.25,
+      "tau": 1,
+      "minGain": 0.2,
+      "maxGain": 1.8
+    },
+    "duty": 0.5,
+    "invariant": "c091fb973999c84e0be4c3a64a4254c0a50eb5efef1cd6acdd10e3ecdd2842e0",
+    "jobs": [
+      {
+        "seed": 1,
+        "condition": "contingent",
+        "initialTarget": "A",
+        "reversedTarget": "B"
+      },
+      {
+        "seed": 1,
+        "condition": "no-feedback",
+        "initialTarget": "A",
+        "reversedTarget": "B"
+      },
+      {
+        "seed": 1,
+        "condition": "shuffled-feedback",
+        "initialTarget": "A",
+        "reversedTarget": "B"
+      },
+      {
+        "seed": 1,
+        "condition": "plasticity-disabled",
+        "initialTarget": "A",
+        "reversedTarget": "B"
+      },
+      {
+        "seed": 17,
+        "condition": "contingent",
+        "initialTarget": "B",
+        "reversedTarget": "A"
+      },
+      {
+        "seed": 17,
+        "condition": "no-feedback",
+        "initialTarget": "B",
+        "reversedTarget": "A"
+      },
+      {
+        "seed": 17,
+        "condition": "shuffled-feedback",
+        "initialTarget": "B",
+        "reversedTarget": "A"
+      },
+      {
+        "seed": 17,
+        "condition": "plasticity-disabled",
+        "initialTarget": "B",
+        "reversedTarget": "A"
+      },
+      {
+        "seed": 47,
+        "condition": "contingent",
+        "initialTarget": "A",
+        "reversedTarget": "B"
+      },
+      {
+        "seed": 47,
+        "condition": "no-feedback",
+        "initialTarget": "A",
+        "reversedTarget": "B"
+      },
+      {
+        "seed": 47,
+        "condition": "shuffled-feedback",
+        "initialTarget": "A",
+        "reversedTarget": "B"
+      },
+      {
+        "seed": 47,
+        "condition": "plasticity-disabled",
+        "initialTarget": "A",
+        "reversedTarget": "B"
+      },
+      {
+        "seed": 89,
+        "condition": "contingent",
+        "initialTarget": "B",
+        "reversedTarget": "A"
+      },
+      {
+        "seed": 89,
+        "condition": "no-feedback",
+        "initialTarget": "B",
+        "reversedTarget": "A"
+      },
+      {
+        "seed": 89,
+        "condition": "shuffled-feedback",
+        "initialTarget": "B",
+        "reversedTarget": "A"
+      },
+      {
+        "seed": 89,
+        "condition": "plasticity-disabled",
+        "initialTarget": "B",
+        "reversedTarget": "A"
+      },
+      {
+        "seed": 131,
+        "condition": "contingent",
+        "initialTarget": "A",
+        "reversedTarget": "B"
+      },
+      {
+        "seed": 131,
+        "condition": "no-feedback",
+        "initialTarget": "A",
+        "reversedTarget": "B"
+      },
+      {
+        "seed": 131,
+        "condition": "shuffled-feedback",
+        "initialTarget": "A",
+        "reversedTarget": "B"
+      },
+      {
+        "seed": 131,
+        "condition": "plasticity-disabled",
+        "initialTarget": "A",
+        "reversedTarget": "B"
+      },
+      {
+        "seed": 211,
+        "condition": "contingent",
+        "initialTarget": "B",
+        "reversedTarget": "A"
+      },
+      {
+        "seed": 211,
+        "condition": "no-feedback",
+        "initialTarget": "B",
+        "reversedTarget": "A"
+      },
+      {
+        "seed": 211,
+        "condition": "shuffled-feedback",
+        "initialTarget": "B",
+        "reversedTarget": "A"
+      },
+      {
+        "seed": 211,
+        "condition": "plasticity-disabled",
+        "initialTarget": "B",
+        "reversedTarget": "A"
+      }
+    ]
+  },
+  "protocol": {
+    "schema": "gamma4-choice-validation-v1",
+    "seeds": [
+      1,
+      17,
+      47,
+      89,
+      131,
+      211
+    ],
+    "conditions": [
+      "contingent",
+      "no-feedback",
+      "shuffled-feedback",
+      "plasticity-disabled"
+    ],
+    "acquisitionTrials": 4,
+    "reversalTrials": 12,
+    "exploration": 0.5,
+    "cueFraction": 0.05,
+    "current": 1.5,
+    "feedbackDelay": 0.5,
+    "interTrial": 10,
+    "retentionInterval": 60,
+    "marginTolerance": 0.00001,
+    "alpha": 0.05,
+    "claim": "Feedback-dependent adaptation of an engineered two-cue choice policy through persistent mapped gamma4 efficacy state",
+    "exclusions": [
+      "natural reward circuitry",
+      "biological memory lifetime",
+      "chess learning",
+      "held-out chess transfer"
+    ],
+    "frozenBeforeRun": true
+  },
+  "completedJobs": 0,
+  "totalJobs": 24,
+  "summary": null,
+  "results": [],
+  "evaluationsThisInvocation": 2,
+  "exactCacheHitsThisInvocation": 2,
+  "command": {
+    "executable": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe",
+    "options": [
+      "--max-old-space-size=256"
+    ],
+    "argv": [
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\validate-learning.mjs",
+      "--out",
+      "research/reports/association-validation-prefix-2026-09-30",
+      "--cpu-duty",
+      "0.5",
+      "--max-trials",
+      "1"
+    ],
+    "node": "v22.23.2"
+  },
+  "resources": {
+    "peakResidentMiB": 141.98828125,
+    "elapsedSeconds": 6.5185941000000005,
+    "cpuSeconds": 4.218
+  }
+}

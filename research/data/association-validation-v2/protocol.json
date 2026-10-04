@@ -1,0 +1,20 @@
+{
+  "schema": "gamma4-choice-validation-v1",
+  "seeds": [503, 947, 1601, 2357, 3511, 5003],
+  "conditions": ["contingent", "no-feedback", "shuffled-feedback", "plasticity-disabled"],
+  "acquisitionTrials": 4,
+  "reversalTrials": 12,
+  "exploration": 0.5,
+  "balancedSampling": true,
+  "cueFraction": 0.05,
+  "current": 1.5,
+  "feedbackDelay": 0.5,
+  "interTrial": 10,
+  "retentionInterval": 60,
+  "marginTolerance": 0.00001,
+  "alpha": 0.05,
+  "claim": "Feedback-dependent adaptation of an engineered two-cue choice policy through persistent mapped gamma4 efficacy state, given balanced initial sampling",
+  "exclusions": ["natural reward circuitry", "biological memory lifetime", "chess learning", "held-out chess transfer"],
+  "frozenBeforeRun": true,
+  "followUpReason": "V1 gave zero acquisition rewards to three seeds. Sample each cue once at the start of each phase without consulting the rewarded target; evaluate on six new seeds with unchanged neural dynamics and acceptance thresholds. Preserve V1 as a failed overall acceptance test."
+}

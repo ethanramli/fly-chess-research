@@ -1,0 +1,283 @@
+{
+  "timestamp": "2026-09-29T09:57:25.499Z",
+  "run": "runs/coverage-adam-001",
+  "updates": 169,
+  "familyCount": 8,
+  "turnBaseline": {
+    "definition": "Training-label mean separately for white and black to move; no board features",
+    "counts": [
+      57,
+      281
+    ],
+    "means": [
+      [
+        -0.0021929824561403508,
+        0.1033138401559454
+      ],
+      [
+        0.07473309608540925,
+        -0.2866745749308031
+      ]
+    ]
+  },
+  "criteria": [
+    {
+      "name": "white_material_balance_div16",
+      "familiesBeatingConstantMSE": 4,
+      "familiesBeatingConstantDeltaMSE": 8,
+      "aggregateMSE": 0.06892307874397192,
+      "aggregateConstantMSE": 0.07411342713332549,
+      "aggregateDeltaMSE": 0.05568854444197514,
+      "aggregateConstantDeltaMSE": 0.05852399553571429,
+      "aggregateTurnMSE": 0.07281479905683438,
+      "aggregateTurnDeltaMSE": 0.06032041636636199,
+      "familiesBeatingTurnMSE": 4,
+      "familiesBeatingTurnDeltaMSE": 8
+    },
+    {
+      "name": "side_to_move_best_capture_after_recapture_white_signed_div9",
+      "familiesBeatingConstantMSE": 7,
+      "familiesBeatingConstantDeltaMSE": 5,
+      "aggregateMSE": 0.08303693284439549,
+      "aggregateConstantMSE": 0.10257235403267875,
+      "aggregateDeltaMSE": 0.09055498214039345,
+      "aggregateConstantDeltaMSE": 0.09656084656084656,
+      "aggregateTurnMSE": 0.09145238564584053,
+      "aggregateTurnDeltaMSE": 0.1133274293062638,
+      "familiesBeatingTurnMSE": 6,
+      "familiesBeatingTurnDeltaMSE": 7
+    }
+  ],
+  "families": [
+    {
+      "group": "coverage-game-24",
+      "pairs": 7,
+      "mse": [
+        0.06873943830939824,
+        0.1459958250866555
+      ],
+      "deltaMSE": [
+        0.1305536889134438,
+        0.11688235101053777
+      ],
+      "constantMSE": [
+        0.09064007581517255,
+        0.17416137754477917
+      ],
+      "constantDeltaMSE": [
+        0.13616071428571427,
+        0.1252204585537919
+      ],
+      "turnMSE": [
+        0.08748412489936096,
+        0.14106806522872534
+      ],
+      "turnDeltaMSE": [
+        0.13869683781133454,
+        0.14087996180230955
+      ]
+    },
+    {
+      "group": "coverage-game-25",
+      "pairs": 7,
+      "mse": [
+        0.0406155022809115,
+        0.09152573747847058
+      ],
+      "deltaMSE": [
+        0.015222952043866034,
+        0.004206111076969579
+      ],
+      "constantMSE": [
+        0.030367265692602802,
+        0.12706934327325772
+      ],
+      "constantDeltaMSE": [
+        0.016183035714285716,
+        0.003527336860670194
+      ],
+      "turnMSE": [
+        0.030529988362536065,
+        0.11683051097712815
+      ],
+      "turnDeltaMSE": [
+        0.0178737847313659,
+        0.03460131336956283
+      ]
+    },
+    {
+      "group": "coverage-game-26",
+      "pairs": 7,
+      "mse": [
+        0.03679051771813161,
+        0.06498382457756674
+      ],
+      "deltaMSE": [
+        0.08298154644855786,
+        0.12107385873485518
+      ],
+      "constantMSE": [
+        0.04112843961483442,
+        0.07481153460519263
+      ],
+      "constantDeltaMSE": [
+        0.09207589285714286,
+        0.1252204585537919
+      ],
+      "turnMSE": [
+        0.040571809162311304,
+        0.07605587767580455
+      ],
+      "turnDeltaMSE": [
+        0.09376664187422304,
+        0.16867501966861306
+      ]
+    },
+    {
+      "group": "coverage-game-27",
+      "pairs": 7,
+      "mse": [
+        0.23890753605054615,
+        0.16256246676254466
+      ],
+      "deltaMSE": [
+        0.054371829182880006,
+        0.207824583776842
+      ],
+      "constantMSE": [
+        0.29826073040097134,
+        0.15471928117960584
+      ],
+      "constantDeltaMSE": [
+        0.056361607142857144,
+        0.24162257495590828
+      ],
+      "turnMSE": [
+        0.28868576899516746,
+        0.12882157338337435
+      ],
+      "turnDeltaMSE": [
+        0.05805235615993733,
+        0.17365187461737272
+      ]
+    },
+    {
+      "group": "coverage-game-28",
+      "pairs": 7,
+      "mse": [
+        0.062756498319318,
+        0.037467178008266606
+      ],
+      "deltaMSE": [
+        0.09928218949186436,
+        0.052608692109619444
+      ],
+      "constantMSE": [
+        0.05049617524458927,
+        0.05352228254670981
+      ],
+      "constantDeltaMSE": [
+        0.10100446428571429,
+        0.05114638447971781
+      ],
+      "turnMSE": [
+        0.049963929643674854,
+        0.05483988351439824
+      ],
+      "turnDeltaMSE": [
+        0.10269521330279448,
+        0.08222036098861045
+      ]
+    },
+    {
+      "group": "coverage-game-29",
+      "pairs": 7,
+      "mse": [
+        0.07371616510102812,
+        0.042832262127891575
+      ],
+      "deltaMSE": [
+        0.0058876926425677645,
+        0.06288862310508418
+      ],
+      "constantMSE": [
+        0.053646270341799765,
+        0.0731730970693192
+      ],
+      "constantDeltaMSE": [
+        0.007254464285714286,
+        0.0652557319223986
+      ],
+      "turnMSE": [
+        0.05658886609512376,
+        0.06196359763692604
+      ],
+      "turnDeltaMSE": [
+        0.008945213302794474,
+        0.09632970843129122
+      ]
+    },
+    {
+      "group": "coverage-game-30",
+      "pairs": 7,
+      "mse": [
+        0.01115884145563108,
+        0.09205960551586904
+      ],
+      "deltaMSE": [
+        0.007129597844464895,
+        0.1251430729036273
+      ],
+      "constantMSE": [
+        0.006890141854902039,
+        0.11915370715249336
+      ],
+      "constantDeltaMSE": [
+        0.007254464285714286,
+        0.1322751322751323
+      ],
+      "turnMSE": [
+        0.007747832795682988,
+        0.1078709498230237
+      ],
+      "turnDeltaMSE": [
+        0.008945213302794474,
+        0.1385879395721679
+      ]
+    },
+    {
+      "group": "coverage-game-31",
+      "pairs": 7,
+      "mse": [
+        0.018700130716810558,
+        0.026868563197899063
+      ],
+      "deltaMSE": [
+        0.05007885896815633,
+        0.03381256440561236
+      ],
+      "constantMSE": [
+        0.021478318101732136,
+        0.043968208890072046
+      ],
+      "constantDeltaMSE": [
+        0.05189732142857143,
+        0.028218694885361554
+      ],
+      "turnMSE": [
+        0.02094607250081771,
+        0.044168626927343815
+      ],
+      "turnDeltaMSE": [
+        0.053588070445651614,
+        0.07167325600018272
+      ]
+    }
+  ],
+  "limitations": [
+    "Descriptive family counts, not confidence intervals or a significance test",
+    "Training-mean comparator uses no validation labels",
+    "Related positions within a family are not independent observations",
+    "Development data only; no final test predictions used"
+  ]
+}

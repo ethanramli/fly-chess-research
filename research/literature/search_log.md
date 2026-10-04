@@ -1,0 +1,19 @@
+# Literature search log
+
+Record searches so they can be repeated and refined. Search scholarly databases and library catalogs relevant to the field; Google Scholar is one discovery tool, not a quality filter.
+
+| Date | Database / source | Exact query and filters | Results screened | Useful items / notes | Next search |
+|---|---|---|---:|---|---|
+| | | | | | |
+| 2026-09-29 | Upstream primary source and arXiv | `memory efficient forward gradient zeroth order training MeZO reservoir computing connectome Drosophila chess`; read pinned fly-chess model, sparse kernel and defaults | Targeted selection, not systematic | Sparse backward already exists upstream; batch/worker overhead and CPU pass budget are distinct constraints. Checkpointing and zeroth-order methods are established. | Compare sample efficiency of from-scratch criterion supervision under equal CPU budgets. |
+| 2026-09-29 | Primary publications / arXiv | `site.pnas.org acquisition chess knowledge AlphaZero concept 2022`; `site.arxiv.org chess counterfactual concept training position evaluation generalization` | Targeted selection, not systematic | McGrath et al. concept/behavior study informs evaluation. Search does not establish novelty of changed-position training. | Search controlled-intervention training and chess concept generalization systematically before claiming novelty. |
+
+## Screening notes
+
+2026-09-30 choice-validation follow-up: checked [Handler et al. 2019, PMID 31230716](https://pubmed.ncbi.nlm.nih.gov/31230716/) against the existing mechanism justification. PubMed confirms timing-sensitive associations and opposing receptor pathways; it does not validate the engineered choice decoder or ordinary contingency-reversal budget used here. PMC access returned a browser challenge, so no new full-text claim was inferred from that response. No new biological mechanism or rates were added; the [controlled experiment note](../../documentation/design/association_validation.md) records the tested assumptions and failed gates.
+
+2026-09-30: Exa-assisted focused search across two workstreams: compartment-specific dopamine/KC plasticity and FlyWire cell-type identity mapping. Queries covered Hige/Aso, Cohn gamma4 potentiation, Handler timing-dependent receptor pathways, FlyWire 783 annotations, and PAM08/MBON05 aliases (six five-result searches; result slots are not unique reviewed studies). Read primary material from Handler 2019, Cohn 2015 and Li 2020 and the pinned FlyWire annotation repository. A later eLife reviewed preprint was inspected but was not used as the mechanism's principal evidence. Direct GitHub/FlyBase ontology inspection resolved the contralateral MBON mapping. This is targeted implementation research, not a systematic review. Evidence, exact mapping provenance, rejected same-side mapping, mathematical assumptions and remaining biological gaps are recorded in [the mechanism note](../../documentation/design/mushroom_body_learning.md).
+
+2026-09-29 follow-up: Exa queries across historical GNN embeddings, local recurrent learning and cached block optimization requested 18 results; a nearest-predecessor LMC query requested five more. Read primary pages for LMC, GNNAutoScale, REST, e-prop and SparseProp. The [candidate comparison](../design/cached_circuit_training.md) records applicability limits. LMC is prior art for compensating omitted forward/backward messages; no fly-chess speedup or novelty claim is established by this search.
+
+Write down the practical inclusion/exclusion rules you used (topic, population, dates, language, study type, etc.) and any changes to them. For a formal systematic review, use a dedicated protocol and the relevant review standards; this log alone is not a systematic-review method.

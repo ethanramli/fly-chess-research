@@ -1,0 +1,299 @@
+{
+    "scope":  "One pass over 72 training pairs on the full released graph; two simple criteria; one seed; not strategic generalization evidence",
+    "firstRun":  [
+                     {
+                         "time":  "2026-09-29T08:02:52.341Z",
+                         "event":  "start",
+                         "state":  {
+                                       "identity":  {
+                                                        "graph":  "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+                                                        "train":  "a9abba4fb0153f3ad77f68c46622b0a10b0299e3e103eaf40e1687fa8537c74e",
+                                                        "validation":  "fd52f0c0ec39e26c0059a3886240fca823d2d2fc91e60d7bdeb3e57a4c088318"
+                                                    },
+                                       "learningRate":  0.02,
+                                       "epoch":  0,
+                                       "nextPair":  0,
+                                       "updates":  0
+                                   },
+                         "config":  {
+                                        "steps":  8,
+                                        "inputDim":  1280,
+                                        "outputs":  2,
+                                        "seed":  47,
+                                        "precision":  "float32",
+                                        "saturation":  10,
+                                        "recurrentScale":  0.9,
+                                        "normalization":  "global"
+                                    },
+                         "allocatedArrayMiB":  86.3589563369751,
+                         "scope":  "Two-criterion development pilot; fixed file order; all parameters trainable; final test untouched",
+                         "memoryLimit":  "768 MiB RSS soft checks between positions; no OS hard cap",
+                         "rssMiB":  105.8828125,
+                         "peakResidentMiB":  105.890625
+                     },
+                     {
+                         "time":  "2026-09-29T08:03:01.736Z",
+                         "event":  "validation",
+                         "updates":  0,
+                         "pairs":  24,
+                         "loss":  0.07612874832499254,
+                         "absolute":  0.04984405801728136,
+                         "difference":  0.02628469030771119,
+                         "rssMiB":  107.71875,
+                         "peakResidentMiB":  107.72265625
+                     },
+                     {
+                         "time":  "2026-09-29T08:03:09.425Z",
+                         "event":  "train",
+                         "updates":  8,
+                         "epoch":  0,
+                         "nextPair":  8,
+                         "loss":  0.2379539395364589,
+                         "changedEdges":  1166902,
+                         "rssMiB":  129.21484375,
+                         "peakResidentMiB":  129.21875
+                     },
+                     {
+                         "time":  "2026-09-29T08:03:19.156Z",
+                         "event":  "validation",
+                         "updates":  8,
+                         "pairs":  24,
+                         "loss":  0.07588943220680411,
+                         "absolute":  0.049600519810972236,
+                         "difference":  0.026288912395831896,
+                         "rssMiB":  129.34375,
+                         "peakResidentMiB":  129.34765625
+                     },
+                     {
+                         "time":  "2026-09-29T08:03:19.156Z",
+                         "event":  "finish",
+                         "state":  {
+                                       "identity":  {
+                                                        "graph":  "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+                                                        "train":  "a9abba4fb0153f3ad77f68c46622b0a10b0299e3e103eaf40e1687fa8537c74e",
+                                                        "validation":  "fd52f0c0ec39e26c0059a3886240fca823d2d2fc91e60d7bdeb3e57a4c088318"
+                                                    },
+                                       "learningRate":  0.02,
+                                       "epoch":  0,
+                                       "nextPair":  8,
+                                       "updates":  8
+                                   },
+                         "interrupted":  false,
+                         "processedPairs":  8,
+                         "trainingAndFinalValidationSeconds":  17.4132848,
+                         "rssMiB":  129.34375,
+                         "peakResidentMiB":  129.34765625
+                     }
+                 ],
+    "resumedRun":  [
+                       {
+                           "time":  "2026-09-29T08:04:01.793Z",
+                           "event":  "start",
+                           "state":  {
+                                         "identity":  {
+                                                          "graph":  "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+                                                          "train":  "a9abba4fb0153f3ad77f68c46622b0a10b0299e3e103eaf40e1687fa8537c74e",
+                                                          "validation":  "fd52f0c0ec39e26c0059a3886240fca823d2d2fc91e60d7bdeb3e57a4c088318"
+                                                      },
+                                         "learningRate":  0.02,
+                                         "epoch":  0,
+                                         "nextPair":  8,
+                                         "updates":  8
+                                     },
+                           "config":  {
+                                          "steps":  8,
+                                          "inputDim":  1280,
+                                          "outputs":  2,
+                                          "seed":  47,
+                                          "precision":  "float32",
+                                          "saturation":  10,
+                                          "recurrentScale":  0.9,
+                                          "normalization":  "global"
+                                      },
+                           "allocatedArrayMiB":  86.3589563369751,
+                           "scope":  "Two-criterion development pilot; fixed file order; all parameters trainable; final test untouched",
+                           "memoryLimit":  "768 MiB RSS soft checks between positions; no OS hard cap",
+                           "rssMiB":  126.64453125,
+                           "peakResidentMiB":  126.65234375
+                       },
+                       {
+                           "time":  "2026-09-29T08:04:11.220Z",
+                           "event":  "validation",
+                           "updates":  8,
+                           "pairs":  24,
+                           "loss":  0.07588943220680411,
+                           "absolute":  0.049600519810972236,
+                           "difference":  0.026288912395831896,
+                           "criteria":  [
+                                            "white_material_balance_div16",
+                                            "side_to_move_best_capture_after_recapture_white_signed_div9"
+                                        ],
+                           "trainMean":  [
+                                             0.058159722222222224,
+                                             -0.12731481481481477
+                                         ],
+                           "mse":  [
+                                       0.028068002981720363,
+                                       0.17033407626216857
+                                   ],
+                           "deltaMSE":  [
+                                            0.028513823048516258,
+                                            0.07664182653481132
+                                        ],
+                           "constantMSE":  [
+                                               0.032891921055169755,
+                                               0.1719982424554184
+                                           ],
+                           "constantDeltaMSE":  [
+                                                    0.028645833333333332,
+                                                    0.07664609053497944
+                                                ],
+                           "rssMiB":  128.421875,
+                           "peakResidentMiB":  128.42578125
+                       },
+                       {
+                           "time":  "2026-09-29T08:04:18.606Z",
+                           "event":  "train",
+                           "updates":  16,
+                           "epoch":  0,
+                           "nextPair":  16,
+                           "loss":  0.06725965137934643,
+                           "changedEdges":  1111387,
+                           "rssMiB":  129.62109375,
+                           "peakResidentMiB":  129.625
+                       },
+                       {
+                           "time":  "2026-09-29T08:04:25.697Z",
+                           "event":  "train",
+                           "updates":  24,
+                           "epoch":  0,
+                           "nextPair":  24,
+                           "loss":  0.015722525036571677,
+                           "changedEdges":  841761,
+                           "rssMiB":  127.96875,
+                           "peakResidentMiB":  129.73046875
+                       },
+                       {
+                           "time":  "2026-09-29T08:04:32.614Z",
+                           "event":  "train",
+                           "updates":  32,
+                           "epoch":  0,
+                           "nextPair":  32,
+                           "loss":  0.2483487816586128,
+                           "changedEdges":  1090517,
+                           "rssMiB":  128.41796875,
+                           "peakResidentMiB":  129.73046875
+                       },
+                       {
+                           "time":  "2026-09-29T08:04:39.996Z",
+                           "event":  "train",
+                           "updates":  40,
+                           "epoch":  0,
+                           "nextPair":  40,
+                           "loss":  0.06174419254607666,
+                           "changedEdges":  1017586,
+                           "rssMiB":  127.94140625,
+                           "peakResidentMiB":  129.73046875
+                       },
+                       {
+                           "time":  "2026-09-29T08:04:46.874Z",
+                           "event":  "train",
+                           "updates":  48,
+                           "epoch":  0,
+                           "nextPair":  48,
+                           "loss":  0.2956787254930609,
+                           "changedEdges":  1389130,
+                           "rssMiB":  128,
+                           "peakResidentMiB":  129.73046875
+                       },
+                       {
+                           "time":  "2026-09-29T08:04:53.706Z",
+                           "event":  "train",
+                           "updates":  56,
+                           "epoch":  0,
+                           "nextPair":  56,
+                           "loss":  0.3058954214406191,
+                           "changedEdges":  1230673,
+                           "rssMiB":  128.05078125,
+                           "peakResidentMiB":  129.73046875
+                       },
+                       {
+                           "time":  "2026-09-29T08:05:00.522Z",
+                           "event":  "train",
+                           "updates":  64,
+                           "epoch":  0,
+                           "nextPair":  64,
+                           "loss":  0.005854054150539214,
+                           "changedEdges":  443568,
+                           "rssMiB":  128.55078125,
+                           "peakResidentMiB":  130.34375
+                       },
+                       {
+                           "time":  "2026-09-29T08:05:07.591Z",
+                           "event":  "train",
+                           "updates":  72,
+                           "epoch":  0,
+                           "nextPair":  72,
+                           "loss":  0.11133469514558933,
+                           "changedEdges":  1089300,
+                           "rssMiB":  128.58203125,
+                           "peakResidentMiB":  130.34375
+                       },
+                       {
+                           "time":  "2026-09-29T08:05:17.391Z",
+                           "event":  "validation",
+                           "updates":  72,
+                           "pairs":  24,
+                           "loss":  0.07488591054948353,
+                           "absolute":  0.04856443482146813,
+                           "difference":  0.026321475728015395,
+                           "criteria":  [
+                                            "white_material_balance_div16",
+                                            "side_to_move_best_capture_after_recapture_white_signed_div9"
+                                        ],
+                           "trainMean":  [
+                                             0.058159722222222224,
+                                             -0.12731481481481477
+                                         ],
+                           "mse":  [
+                                       0.03112624085841474,
+                                       0.1631314984274578
+                                   ],
+                           "deltaMSE":  [
+                                            0.028865219896551806,
+                                            0.07642068301550976
+                                        ],
+                           "constantMSE":  [
+                                               0.032891921055169755,
+                                               0.1719982424554184
+                                           ],
+                           "constantDeltaMSE":  [
+                                                    0.028645833333333332,
+                                                    0.07664609053497944
+                                                ],
+                           "rssMiB":  129.421875,
+                           "peakResidentMiB":  130.34375
+                       },
+                       {
+                           "time":  "2026-09-29T08:05:17.392Z",
+                           "event":  "finish",
+                           "state":  {
+                                         "identity":  {
+                                                          "graph":  "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+                                                          "train":  "a9abba4fb0153f3ad77f68c46622b0a10b0299e3e103eaf40e1687fa8537c74e",
+                                                          "validation":  "fd52f0c0ec39e26c0059a3886240fca823d2d2fc91e60d7bdeb3e57a4c088318"
+                                                      },
+                                         "learningRate":  0.02,
+                                         "epoch":  1,
+                                         "nextPair":  0,
+                                         "updates":  72
+                                     },
+                           "interrupted":  false,
+                           "processedPairs":  64,
+                           "trainingAndFinalValidationSeconds":  66.1680849,
+                           "rssMiB":  129.421875,
+                           "peakResidentMiB":  130.34375
+                       }
+                   ],
+    "limitation":  "Per-criterion MSE uses normalized label units. Constant comparator is fitted only on training labels. Final test is untouched. RSS checks are soft."
+}

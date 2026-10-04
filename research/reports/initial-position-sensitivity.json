@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-09-29T08:15:22.487Z",
+  "graphHash": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+  "config": {
+    "steps": 8,
+    "inputDim": 1280,
+    "outputs": 2,
+    "seed": 47,
+    "precision": "float32",
+    "saturation": 10,
+    "recurrentScale": 0.9,
+    "normalization": "global"
+  },
+  "pairs": 16,
+  "scope": "First 16 training pairs at scratch initialization; normalized RMS sensitivity, not reasoning evidence",
+  "inputDeltaRMS": 0.08303049138277031,
+  "outputNeuronDeltaRMS": 0.00421607017068554,
+  "predictionDeltaRMS": 0.0018545568428508584,
+  "stages": [
+    {
+      "timestep": 0,
+      "deltaRMS": 0,
+      "activityRMS": 0,
+      "positiveFraction": 0
+    },
+    {
+      "timestep": 1,
+      "deltaRMS": 0.0020397192113599284,
+      "activityRMS": 0.011466384841517144,
+      "positiveFraction": 0.9926257739793903
+    },
+    {
+      "timestep": 2,
+      "deltaRMS": 0.0030818397567602784,
+      "activityRMS": 0.018373323166702003,
+      "positiveFraction": 0.9926914364908463
+    },
+    {
+      "timestep": 3,
+      "deltaRMS": 0.003593808843591594,
+      "activityRMS": 0.022668414283026257,
+      "positiveFraction": 0.9927128583030944
+    },
+    {
+      "timestep": 4,
+      "deltaRMS": 0.003822852647284102,
+      "activityRMS": 0.02422748982571779,
+      "positiveFraction": 0.9927219392887213
+    },
+    {
+      "timestep": 5,
+      "deltaRMS": 0.003928536507545681,
+      "activityRMS": 0.025012286065782097,
+      "positiveFraction": 0.992727061895998
+    },
+    {
+      "timestep": 6,
+      "deltaRMS": 0.003992727833895892,
+      "activityRMS": 0.027297624297946358,
+      "positiveFraction": 0.992733115886416
+    },
+    {
+      "timestep": 7,
+      "deltaRMS": 0.004065870949774173,
+      "activityRMS": 0.03607300087327592,
+      "positiveFraction": 0.9927550033902346
+    },
+    {
+      "timestep": 8,
+      "deltaRMS": 0.004242834281112739,
+      "activityRMS": 0.061917322668676646,
+      "positiveFraction": 0.992798778397872
+    }
+  ],
+  "peakResidentMiB": 103.8046875,
+  "limitation": "RMS values use different feature populations; ratios alone do not identify a cause of poor learning"
+}

@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-09-29T08:45:29.747Z",
+  "dataset": "data/coverage-pilot-v2",
+  "totalPairs": 280,
+  "passed": true,
+  "splits": {
+    "train": {
+      "pairs": 169,
+      "families": 24,
+      "early": 49,
+      "quietParent": 32,
+      "captureParent": 137,
+      "materialLabelsChecked": 338
+    },
+    "validation": {
+      "pairs": 56,
+      "families": 8,
+      "early": 16,
+      "quietParent": 8,
+      "captureParent": 48,
+      "materialLabelsChecked": 112
+    },
+    "test": {
+      "pairs": 55,
+      "families": 8,
+      "early": 16,
+      "quietParent": 11,
+      "captureParent": 44,
+      "materialLabelsChecked": 110
+    }
+  },
+  "checks": [
+    "Actual file checksums and row counts",
+    "No game families or parent/child position keys cross splits",
+    "Valid target shapes",
+    "FENs accepted by chess.js and legal one-move relationships",
+    "Independent material labels from FEN text"
+  ],
+  "limitations": [
+    "Capture labels are not independently verified here",
+    "Does not prove parents reachable from the starting position; generator provenance supplies legal-game histories",
+    "Shared chess motifs may exist across splits",
+    "Test data were inspected for integrity only; no model predictions or checkpoint selection used them"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "fly-coverage-pilot-v2",
+  "encoding": "white-fen-1280-v1",
+  "criteria": [
+    "white_material_balance_div16",
+    "side_to_move_best_capture_after_recapture_white_signed_div9"
+  ],
+  "files": {
+    "train": {
+      "pairs": 169,
+      "positions": 338,
+      "sha256": "02c70ef2a3ec16857d8b0bfe64fb986d5050cb3a09c96306555ecf2456c41da3"
+    },
+    "validation": {
+      "pairs": 56,
+      "positions": 112,
+      "sha256": "06ed4d681f415c56dfd1cbb46aa2585b932ccfca4824d1127f0a687d2cc8c8fb"
+    },
+    "test": {
+      "pairs": 55,
+      "positions": 110,
+      "sha256": "b522cfb0b2232eb300f5f84382abb5f1096d3c82e2e6ba31009d0e58d8626e58"
+    }
+  },
+  "coverage": {
+    "train": {
+      "early": 49,
+      "quietParent": 32,
+      "captureParent": 137,
+      "families": 24
+    },
+    "validation": {
+      "early": 16,
+      "quietParent": 8,
+      "captureParent": 48,
+      "families": 8
+    },
+    "test": {
+      "early": 16,
+      "quietParent": 11,
+      "captureParent": 44,
+      "families": 8
+    }
+  },
+  "source": "Seeded random legal games generated with chess.js 1.4.0; no pretrained weights, human games or engine",
+  "schedule": [
+    0,
+    4,
+    8,
+    12,
+    20,
+    32,
+    48,
+    64
+  ],
+  "seedFormula": "82391 + family * 104729",
+  "familySplit": "Whole games 0-23 train, 24-31 validation, 32-39 test; parent and child position keys deduplicated across all splits",
+  "targetDefinitions": {
+    "white_material_balance_div16": "White minus black material with P=1 N=B=3 R=5 Q=9 K=0, divided by 16",
+    "side_to_move_best_capture_after_recapture_white_signed_div9": "Best nonnegative immediate capture material gain after worst legal immediate recapture onto the destination square, signed to white perspective and divided by 9"
+  },
+  "limitations": [
+    "Random-play distribution, not representative skilled chess",
+    "Two rule-generated criteria only",
+    "No mate search or full tactical evaluation",
+    "Within-pair positions are related and must not be treated as independent observations",
+    "The starting position occurs only in training after global deduplication",
+    "New split results are not directly comparable with pilot-v1 losses"
+  ],
+  "generatedAt": "2026-09-29T08:45:05.151Z"
+}

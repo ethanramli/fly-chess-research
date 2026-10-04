@@ -1,0 +1,215 @@
+{
+  "timestamp": "2026-09-29T07:41:48.116Z",
+  "graphSHA256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+  "neurons": 134209,
+  "edges": 2700513,
+  "method": "Exact backward dependency sets from final output neurons, including leak self-dependencies; h0 fixed zero. Counts only, no timing or training result.",
+  "limitations": [
+    "Final-timestep readout only",
+    "Input injection and bias may make every dependency nonzero",
+    "Does not justify pruning topology or changing the number of recurrent steps"
+  ],
+  "results": [
+    {
+      "steps": 4,
+      "layers": [
+        {
+          "timestep": 1,
+          "nodes": 120733,
+          "incomingEdges": 2656198,
+          "recurrentProductsNeeded": 0
+        },
+        {
+          "timestep": 2,
+          "nodes": 85321,
+          "incomingEdges": 2229669,
+          "recurrentProductsNeeded": 2229669
+        },
+        {
+          "timestep": 3,
+          "nodes": 17604,
+          "incomingEdges": 854646,
+          "recurrentProductsNeeded": 854646
+        },
+        {
+          "timestep": 4,
+          "nodes": 1415,
+          "incomingEdges": 101161,
+          "recurrentProductsNeeded": 101161
+        }
+      ],
+      "usefulEdgeVisits": 3185476,
+      "usefulNeuronVisits": 225073,
+      "denseScheduleEdgeVisits": 10802052,
+      "fullSparseEdgeVisitSavingFactor": 3.3910322978418295,
+      "usefulEdgeVisitFraction": 0.2948954513457258,
+      "usefulNeuronVisitFraction": 0.41925839548763494
+    },
+    {
+      "steps": 8,
+      "layers": [
+        {
+          "timestep": 1,
+          "nodes": 128206,
+          "incomingEdges": 2681700,
+          "recurrentProductsNeeded": 0
+        },
+        {
+          "timestep": 2,
+          "nodes": 128206,
+          "incomingEdges": 2681700,
+          "recurrentProductsNeeded": 2681700
+        },
+        {
+          "timestep": 3,
+          "nodes": 128200,
+          "incomingEdges": 2681684,
+          "recurrentProductsNeeded": 2681684
+        },
+        {
+          "timestep": 4,
+          "nodes": 127952,
+          "incomingEdges": 2681096,
+          "recurrentProductsNeeded": 2681096
+        },
+        {
+          "timestep": 5,
+          "nodes": 120733,
+          "incomingEdges": 2656198,
+          "recurrentProductsNeeded": 2656198
+        },
+        {
+          "timestep": 6,
+          "nodes": 85321,
+          "incomingEdges": 2229669,
+          "recurrentProductsNeeded": 2229669
+        },
+        {
+          "timestep": 7,
+          "nodes": 17604,
+          "incomingEdges": 854646,
+          "recurrentProductsNeeded": 854646
+        },
+        {
+          "timestep": 8,
+          "nodes": 1415,
+          "incomingEdges": 101161,
+          "recurrentProductsNeeded": 101161
+        }
+      ],
+      "usefulEdgeVisits": 13886154,
+      "usefulNeuronVisits": 737637,
+      "denseScheduleEdgeVisits": 21604104,
+      "fullSparseEdgeVisitSavingFactor": 1.5558018440527162,
+      "usefulEdgeVisitFraction": 0.6427553764784691,
+      "usefulNeuronVisitFraction": 0.6870226661401247
+    },
+    {
+      "steps": 16,
+      "layers": [
+        {
+          "timestep": 1,
+          "nodes": 128206,
+          "incomingEdges": 2681700,
+          "recurrentProductsNeeded": 0
+        },
+        {
+          "timestep": 2,
+          "nodes": 128206,
+          "incomingEdges": 2681700,
+          "recurrentProductsNeeded": 2681700
+        },
+        {
+          "timestep": 3,
+          "nodes": 128206,
+          "incomingEdges": 2681700,
+          "recurrentProductsNeeded": 2681700
+        },
+        {
+          "timestep": 4,
+          "nodes": 128206,
+          "incomingEdges": 2681700,
+          "recurrentProductsNeeded": 2681700
+        },
+        {
+          "timestep": 5,
+          "nodes": 128206,
+          "incomingEdges": 2681700,
+          "recurrentProductsNeeded": 2681700
+        },
+        {
+          "timestep": 6,
+          "nodes": 128206,
+          "incomingEdges": 2681700,
+          "recurrentProductsNeeded": 2681700
+        },
+        {
+          "timestep": 7,
+          "nodes": 128206,
+          "incomingEdges": 2681700,
+          "recurrentProductsNeeded": 2681700
+        },
+        {
+          "timestep": 8,
+          "nodes": 128206,
+          "incomingEdges": 2681700,
+          "recurrentProductsNeeded": 2681700
+        },
+        {
+          "timestep": 9,
+          "nodes": 128206,
+          "incomingEdges": 2681700,
+          "recurrentProductsNeeded": 2681700
+        },
+        {
+          "timestep": 10,
+          "nodes": 128206,
+          "incomingEdges": 2681700,
+          "recurrentProductsNeeded": 2681700
+        },
+        {
+          "timestep": 11,
+          "nodes": 128200,
+          "incomingEdges": 2681684,
+          "recurrentProductsNeeded": 2681684
+        },
+        {
+          "timestep": 12,
+          "nodes": 127952,
+          "incomingEdges": 2681096,
+          "recurrentProductsNeeded": 2681096
+        },
+        {
+          "timestep": 13,
+          "nodes": 120733,
+          "incomingEdges": 2656198,
+          "recurrentProductsNeeded": 2656198
+        },
+        {
+          "timestep": 14,
+          "nodes": 85321,
+          "incomingEdges": 2229669,
+          "recurrentProductsNeeded": 2229669
+        },
+        {
+          "timestep": 15,
+          "nodes": 17604,
+          "incomingEdges": 854646,
+          "recurrentProductsNeeded": 854646
+        },
+        {
+          "timestep": 16,
+          "nodes": 1415,
+          "incomingEdges": 101161,
+          "recurrentProductsNeeded": 101161
+        }
+      ],
+      "usefulEdgeVisits": 35339754,
+      "usefulNeuronVisits": 1763285,
+      "denseScheduleEdgeVisits": 43208208,
+      "fullSparseEdgeVisitSavingFactor": 1.2226516347567105,
+      "usefulEdgeVisitFraction": 0.8178944611634901,
+      "usefulNeuronVisitFraction": 0.8211469610830868
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-09-29T08:08:17.296Z",
+  "graphHash": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+  "scope": "Same-block paired-objective microbenchmark from scratch; two training families; no held-out evaluation or circuit rotation",
+  "limitations": [
+    "Both methods fix the head and all outside-block parameters",
+    "Timings include cache setup and true-loss verification; exclude common graph/model setup and gradient diagnostic",
+    "Fixed method order, single seed, process-lifetime peak RSS; soft memory guard",
+    "Does not establish whole-model time-to-quality or novelty"
+  ],
+  "results": [
+    {
+      "pair": "game-0-pair-0",
+      "group": "game-0",
+      "steps": 12,
+      "learningRate": 0.02,
+      "blockNeurons": 4096,
+      "activeEdges": 289037,
+      "relativeAnchorGradientError": 1.6804836535965826e-7,
+      "cached": {
+        "accepted": true,
+        "anchorLoss": 0.0022701827335040925,
+        "trueLoss": 0.002243551794079343,
+        "rolledBack": false
+      },
+      "exact": {
+        "accepted": true,
+        "anchorLoss": 0.0022701827335040925,
+        "trueLoss": 0.00224370001040749,
+        "rolledBack": false
+      },
+      "cachedSeconds": 4.7706746,
+      "exactSeconds": 9.4572514,
+      "sameBlockSpeedRatio": 1.9823719270226479,
+      "peakResidentMiB": 188.98046875
+    },
+    {
+      "pair": "game-1-pair-0",
+      "group": "game-1",
+      "steps": 12,
+      "learningRate": 0.02,
+      "blockNeurons": 4096,
+      "activeEdges": 289037,
+      "relativeAnchorGradientError": 9.47987635222987e-8,
+      "cached": {
+        "accepted": true,
+        "anchorLoss": 0.026256887647689443,
+        "trueLoss": 0.025309181089213262,
+        "rolledBack": false
+      },
+      "exact": {
+        "accepted": true,
+        "anchorLoss": 0.026256887647689443,
+        "trueLoss": 0.02533595127650728,
+        "rolledBack": false
+      },
+      "cachedSeconds": 4.6922961999999995,
+      "exactSeconds": 10.325263599999998,
+      "sameBlockSpeedRatio": 2.200471402466025,
+      "peakResidentMiB": 278.1640625
+    }
+  ]
+}
