@@ -1,0 +1,807 @@
+﻿{
+  "scope": "Saved-receipt arithmetic, not independent neural/certificate replay; no training",
+  "caveat": "After event zero, informative and control start from different memories; differences are trajectory contrasts, not isolated pulse interventions. Eligibility includes repeated KC entries for different edges.",
+  "inputs": {
+    "research/data/mate-conjoined-input-v1/protocol.json": "b0f18fc94190acb669eef2b697981d0b4726a5a9eecf7a7ba3bdd4de3b99863d",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/result.json": "fb2e9ece60d2282e176aaf13d8b4b29f3811c3b97133664a7a9103f3eccff201",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-0-0.json": "1b9cede82ca930e9629d3739777822d7a29fa1b194d6350ccc9fb8c9d7d7a275",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-0-1.json": "6ef90d74b575e35e91590b3aa732c0d62a07819a521478b70222a703609e7e86",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-0-2.json": "65502afa475368cbcd7eca61a96ca53e099865f566d3452112109d4a44a231b4",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-0-3.json": "dfcc0a2ed42b622f7716ebbeb1e45f4bd16823b04e93096678d8ebf5cddf8b90",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-1-0.json": "2794195918fc89667965d691dea1a5c7322559f1d71e111274a803ad5a1b41fe",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-1-1.json": "ad8385f4bb67a3155fed8227ee6fbbd4494afdcb4bb2dfd4b1388bbbb963c0f3",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-1-2.json": "1c184746da66eeea4af3590f4a2fd745eb7bd6f0fefc946b6a646eb6472b83fe",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-1-3.json": "f2498c2f9ab47401963e2fad44ad9d53046fffcd8ece69b199c9eadcada10e01",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-2-0.json": "42594335d62777f725fdf1466ee52fd4c932beb10bc9601bad6159d460b36b8a",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-2-1.json": "ef6823716e891d49b1c7ccfa431e935763ffc6f91ee75a8e944ceaf75632ed94",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-2-2.json": "bfdf4bfdb87a8d43eadad7b3a5cb3266b8555524ac08b14e880b9b7f1d186390",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-2-3.json": "12dcde074f8144eb0d234696524df49bb9b9b029b73766ddd1f5108fd2a20a2a",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-3-0.json": "603d40e1ecf82645bead3feb722738ca8fa7948faabf18ce9b5f0f1ad212f6a3",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-3-1.json": "a7480febdbc5b39975fe82769afc0d455727b69071c369e5b881cb2bf38d0f8c",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-3-2.json": "603d40e1ecf82645bead3feb722738ca8fa7948faabf18ce9b5f0f1ad212f6a3",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-3-3.json": "a7480febdbc5b39975fe82769afc0d455727b69071c369e5b881cb2bf38d0f8c",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-4-0.json": "ea59accbdeb9a1dd251274b82381e374d7efa3c192da87811835e36e91752e7c",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-4-1.json": "31fa18ab34478e7227028ff6298887472fbef9cbeefaaaaceb4162528040b44e",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-4-2.json": "47e413175095721e3f4dbd7c37575b19acaa9fd591dc699b66ac914fd6f23ebd",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-4-3.json": "6a351969d4954988ec5844557ebf9bec406a049d89ba61fcbc19baaa09285825",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-5-0.json": "3404861c9d231bb45c917a5ac8fffff4541dd8cc7abe1a1cf38b0a40cb78087d",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-5-1.json": "333328399a7941df8772c7c3558ab3a59774d28de57545548c13de19d43af6c9",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-5-2.json": "fd3e8f32c650b728d163584f19c2036c191484e459fa43fa54e7bebf77ac3319",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-5-3.json": "db971fa2aeed981188a072cf2dc6cd0ea2d7fbe6061029e6dfb041f1b984e5d9",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-6-0.json": "3b3764d6f6e172a05f8912c623d55b99e5cfd678345783ed707b6fa62fc336e4",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-6-1.json": "28182ead5199f112d7f2635d844c0e0dc7cc9bd755f871e2ae39f7996b431ecc",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-6-2.json": "1070910af2859840bf16cccc787b05ac3964ce2f05a112d1ce15e4babf229697",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-6-3.json": "eed83e8893d24112ed6563360cf7cd98b48d9f0ce7ac68de87a7aa83f76b6931",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-7-0.json": "276e4c45c97647a6c971174129064ecd1185ce2c32f2a03f81ec0677bf7ce334",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-7-1.json": "f8c46ce25a2d09450697f288a0ff6587537166b8ded47570ffb2a298ad1aa75e",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-7-2.json": "276e4c45c97647a6c971174129064ecd1185ce2c32f2a03f81ec0677bf7ce334",
+    "research/reports/mate-conjoined-input-v1-2026-10-08/receipt-7-3.json": "f8c46ce25a2d09450697f288a0ff6587537166b8ded47570ffb2a298ad1aa75e",
+    "research/reports/adaptive-mate-error-v1-2026-10-08/result.json": "b00c8686763c10f9bfe41f307b019599448ebe98ce644f8e56f16a4296a4557e",
+    "research/data/adaptive-mate-error-v1/protocol.json": "bd4d3c527dc8912f5bf6a3def5a141c544f110d590d1571043a7c52e05c1dd1d",
+    "research/reports/adaptive-mate-error-v1-2026-10-08/receipt-2-0.json": "3cc7235e2c20f70381e67a165acc9f4a61495449441e53d7d99af87fa02e1678",
+    "research/reports/adaptive-mate-error-v1-2026-10-08/receipt-2-1.json": "f66df5ed3662a77351ffc0a03b14589a4b3a69fa0ecf89e9690ec37c4914511b",
+    "research/reports/adaptive-mate-error-v1-2026-10-08/receipt-2-2.json": "de76f2f21f286008a284f38e1d1d50fb240394f358e4151d06a4912899458cbc",
+    "research/reports/adaptive-mate-error-v1-2026-10-08/receipt-2-3.json": "9b0e6bc10672bf092041bb68dcac4bcc1d3c27ea1c9596255c427cc6220dd314",
+    "research/reports/adaptive-mate-error-v1-2026-10-08/receipt-2-4.json": "6107d7bf9bfa7b5aa287b27f429a0c9586b0a3bf9af248d230579e149deb39dd",
+    "research/reports/adaptive-mate-error-v1-2026-10-08/receipt-2-5.json": "ca9f71143a9ff742d575e5194f52174720aecde0d54587e05d115b0c116214df",
+    "research/reports/adaptive-mate-error-v1-2026-10-08/receipt-2-6.json": "af4cf7f3172510aa7fb3f82779ce10356c8b078309e8af236d3240864361d38e",
+    "research/reports/adaptive-mate-error-v1-2026-10-08/receipt-2-7.json": "6d584d7862514c17de213307939835cbf8f486ea1b49f297a36f13af04c28d02"
+  },
+  "arms": [
+    {
+      "arm": 0,
+      "encoder": "baseline",
+      "condition": "informative",
+      "baselineChoice": "f7e6",
+      "finalChoice": "g6h6",
+      "finalCorrect": false,
+      "finalMargin": -0.000332825118675828,
+      "firstPairEligibilityCosine": 0.8435873475997417,
+      "firstPairSharedPositiveEntries": 26,
+      "events": [
+        {
+          "event": 0,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": "PPL103",
+          "mateDelta": -0.0020980732515454292,
+          "errorDelta": -0.0027459310367703438,
+          "pairMarginDelta": 0.0006478577852249146,
+          "mateRelativeToOtherMedian": 2.828892320394516e-8,
+          "changedEdges": 44,
+          "recoveredEdges": 0,
+          "rates": [
+            0.9995692732433478,
+            0.0014963686052295894,
+            0.9947123924891154,
+            0.00020883056438631483
+          ]
+        },
+        {
+          "event": 1,
+          "move": "f7h7",
+          "status": "success",
+          "channel": "PAM02",
+          "mateDelta": 0.0001925756223499775,
+          "errorDelta": 0.0001954399049282074,
+          "pairMarginDelta": -0.000002864282578229904,
+          "mateRelativeToOtherMedian": -0.0000017043203115463257,
+          "changedEdges": 59,
+          "recoveredEdges": 18,
+          "rates": [
+            0.003022922823826472,
+            0.9884391930536366,
+            0.0035644459227720895,
+            0.9882273150918385
+          ]
+        },
+        {
+          "event": 2,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": "PPL103",
+          "mateDelta": -0.0012710541486740112,
+          "errorDelta": -0.0016661612316966057,
+          "pairMarginDelta": 0.00039510708302259445,
+          "mateRelativeToOtherMedian": 6.888294592499733e-7,
+          "changedEdges": 59,
+          "recoveredEdges": 15,
+          "rates": [
+            0.9995614849030972,
+            0.0014977544132206177,
+            0.9947004715601603,
+            0.00020894046045011945
+          ]
+        },
+        {
+          "event": 3,
+          "move": "f7h7",
+          "status": "success",
+          "channel": "PAM02",
+          "mateDelta": 0.00011675618588924408,
+          "errorDelta": 0.00012031104415655136,
+          "pairMarginDelta": -0.0000035548582673072815,
+          "mateRelativeToOtherMedian": -0.0000017022248357534409,
+          "changedEdges": 59,
+          "recoveredEdges": 18,
+          "rates": [
+            0.003018117199341456,
+            0.9884437362521162,
+            0.0035570760567982993,
+            0.9882289707764156
+          ]
+        }
+      ]
+    },
+    {
+      "arm": 1,
+      "encoder": "baseline",
+      "condition": "no-channel",
+      "baselineChoice": "f7e6",
+      "finalChoice": "f7e6",
+      "finalCorrect": false,
+      "finalMargin": -0.0011640400625765324,
+      "firstPairEligibilityCosine": 0.8435873420477531,
+      "firstPairSharedPositiveEntries": 26,
+      "events": [
+        {
+          "event": 0,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": null,
+          "mateDelta": -0.0000069229863584041595,
+          "errorDelta": -0.000006922055035829544,
+          "pairMarginDelta": -9.313225746154785e-10,
+          "mateRelativeToOtherMedian": -9.313225746154785e-10,
+          "changedEdges": 32,
+          "recoveredEdges": 0,
+          "rates": [
+            0.0037512282530466714,
+            0.00016357863528860942,
+            0,
+            0.0000651591560906834
+          ]
+        },
+        {
+          "event": 1,
+          "move": "f7h7",
+          "status": "success",
+          "channel": null,
+          "mateDelta": -0.000010381918400526047,
+          "errorDelta": -0.000008638482540845871,
+          "pairMarginDelta": -0.0000017434358596801758,
+          "mateRelativeToOtherMedian": -0.000001742970198392868,
+          "changedEdges": 53,
+          "recoveredEdges": 12,
+          "rates": [
+            0.003089290112257004,
+            0.00011370465573337342,
+            0.003637656569480896,
+            0.00010241423216130998
+          ]
+        },
+        {
+          "event": 2,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": null,
+          "mateDelta": -0.000006897374987602234,
+          "errorDelta": -0.000006897840648889542,
+          "pairMarginDelta": 4.656612873077393e-10,
+          "mateRelativeToOtherMedian": 9.313225746154785e-10,
+          "changedEdges": 46,
+          "recoveredEdges": 14,
+          "rates": [
+            0.0037511723736921945,
+            0.00016358111881547503,
+            0,
+            0.00006515988045268589
+          ]
+        },
+        {
+          "event": 3,
+          "move": "f7h7",
+          "status": "success",
+          "channel": null,
+          "mateDelta": -0.000010353513062000275,
+          "errorDelta": -0.000008614733815193176,
+          "pairMarginDelta": -0.0000017387792468070984,
+          "mateRelativeToOtherMedian": -0.000001739594154059887,
+          "changedEdges": 53,
+          "recoveredEdges": 12,
+          "rates": [
+            0.003089234232902527,
+            0.000113707035779953,
+            0.0036375646789868674,
+            0.00010241474956274033
+          ]
+        }
+      ]
+    },
+    {
+      "arm": 2,
+      "encoder": "baseline",
+      "condition": "shuffled",
+      "baselineChoice": "f7e6",
+      "finalChoice": "f7e6",
+      "finalCorrect": false,
+      "finalMargin": -0.0014461339451372623,
+      "firstPairEligibilityCosine": 0.8435873400860135,
+      "firstPairSharedPositiveEntries": 26,
+      "events": [
+        {
+          "event": 0,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": "PAM02",
+          "mateDelta": 0.0001927381381392479,
+          "errorDelta": 0.00019273953512310982,
+          "pairMarginDelta": -1.3969838619232178e-9,
+          "mateRelativeToOtherMedian": 1.979060471057892e-9,
+          "changedEdges": 32,
+          "recoveredEdges": 0,
+          "rates": [
+            0.0036921662588914237,
+            0.9884846250384322,
+            0,
+            0.988213155677335
+          ]
+        },
+        {
+          "event": 1,
+          "move": "f7h7",
+          "status": "success",
+          "channel": "PPL103",
+          "mateDelta": -0.002471229061484337,
+          "errorDelta": -0.0020944676361978054,
+          "pairMarginDelta": -0.00037676142528653145,
+          "mateRelativeToOtherMedian": -0.0003767430316656828,
+          "changedEdges": 53,
+          "recoveredEdges": 12,
+          "rates": [
+            0.9989220462739468,
+            0.00146563992732101,
+            0.9983153740564982,
+            0.0002460810873243544
+          ]
+        },
+        {
+          "event": 2,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": "PAM02",
+          "mateDelta": 0.000117527786642313,
+          "errorDelta": 0.00011752918362617493,
+          "pairMarginDelta": -1.3969838619232178e-9,
+          "mateRelativeToOtherMedian": 2.561137080192566e-9,
+          "changedEdges": 46,
+          "recoveredEdges": 18,
+          "rates": [
+            0.003684254984060923,
+            0.9884920557508141,
+            0,
+            0.9882158312636117
+          ]
+        },
+        {
+          "event": 3,
+          "move": "f7h7",
+          "status": "success",
+          "channel": "PPL103",
+          "mateDelta": -0.001498231664299965,
+          "errorDelta": -0.001269523985683918,
+          "pairMarginDelta": -0.0002287076786160469,
+          "mateRelativeToOtherMedian": -0.0002286955714225769,
+          "changedEdges": 53,
+          "recoveredEdges": 12,
+          "rates": [
+            0.9989142579336961,
+            0.0014670199404160182,
+            0.9983034531275431,
+            0.0002461844641301367
+          ]
+        }
+      ]
+    },
+    {
+      "arm": 3,
+      "encoder": "baseline",
+      "condition": "disabled",
+      "baselineChoice": "f7e6",
+      "finalChoice": "f7e6",
+      "finalCorrect": false,
+      "finalMargin": -0.0011605573818087578,
+      "firstPairEligibilityCosine": 0.843587342056263,
+      "firstPairSharedPositiveEntries": 26,
+      "events": [
+        {
+          "event": 0,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": "PPL103",
+          "mateDelta": 0,
+          "errorDelta": 0,
+          "pairMarginDelta": 0,
+          "mateRelativeToOtherMedian": 0,
+          "changedEdges": 0,
+          "recoveredEdges": 0,
+          "rates": []
+        },
+        {
+          "event": 1,
+          "move": "f7h7",
+          "status": "success",
+          "channel": "PAM02",
+          "mateDelta": 0,
+          "errorDelta": 0,
+          "pairMarginDelta": 0,
+          "mateRelativeToOtherMedian": 0,
+          "changedEdges": 0,
+          "recoveredEdges": 0,
+          "rates": []
+        },
+        {
+          "event": 2,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": "PPL103",
+          "mateDelta": 0,
+          "errorDelta": 0,
+          "pairMarginDelta": 0,
+          "mateRelativeToOtherMedian": 0,
+          "changedEdges": 0,
+          "recoveredEdges": 0,
+          "rates": []
+        },
+        {
+          "event": 3,
+          "move": "f7h7",
+          "status": "success",
+          "channel": "PAM02",
+          "mateDelta": 0,
+          "errorDelta": 0,
+          "pairMarginDelta": 0,
+          "mateRelativeToOtherMedian": 0,
+          "changedEdges": 0,
+          "recoveredEdges": 0,
+          "rates": []
+        }
+      ]
+    },
+    {
+      "arm": 4,
+      "encoder": "conjoined",
+      "condition": "informative",
+      "baselineChoice": "g6f6",
+      "finalChoice": "g6f6",
+      "finalCorrect": false,
+      "finalMargin": -0.004214662592858076,
+      "firstPairEligibilityCosine": 0.00001997012583064997,
+      "firstPairSharedPositiveEntries": 38,
+      "events": [
+        {
+          "event": 0,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": "PPL103",
+          "mateDelta": -0.000017900019884109497,
+          "errorDelta": -0.0028439448215067387,
+          "pairMarginDelta": 0.002826044801622629,
+          "mateRelativeToOtherMedian": -1.778826117515564e-7,
+          "changedEdges": 52,
+          "recoveredEdges": 0,
+          "rates": [
+            0.9981967769563198,
+            0.011672358959913254,
+            0.9946734507878622,
+            0.0001288028433918953
+          ]
+        },
+        {
+          "event": 1,
+          "move": "f7h7",
+          "status": "success",
+          "channel": "PAM02",
+          "mateDelta": 0.00043374625965952873,
+          "errorDelta": 0.000010913005098700523,
+          "pairMarginDelta": 0.0004228332545608282,
+          "mateRelativeToOtherMedian": 0.00043135322630405426,
+          "changedEdges": 85,
+          "recoveredEdges": 18,
+          "rates": [
+            0.008347461620966593,
+            0.98828351896696,
+            0.006112416585286458,
+            0.9881990095083085
+          ]
+        },
+        {
+          "event": 2,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": "PPL103",
+          "mateDelta": -0.0000053942203521728516,
+          "errorDelta": -0.001729357521981001,
+          "pairMarginDelta": 0.001723963301628828,
+          "mateRelativeToOtherMedian": 0.000005330657586455345,
+          "changedEdges": 85,
+          "recoveredEdges": 33,
+          "rates": [
+            0.9981846176087856,
+            0.011667747567925187,
+            0.9946569204330444,
+            0.00012909672740432952
+          ]
+        },
+        {
+          "event": 3,
+          "move": "f7h7",
+          "status": "success",
+          "channel": "PAM02",
+          "mateDelta": 0.0002576718106865883,
+          "errorDelta": 0.000015094876289367676,
+          "pairMarginDelta": 0.0002425769343972206,
+          "mateRelativeToOtherMedian": 0.00025621685199439526,
+          "changedEdges": 85,
+          "recoveredEdges": 19,
+          "rates": [
+            0.008347298949956894,
+            0.9882837441400625,
+            0.006112250188986461,
+            0.9881990095083085
+          ]
+        }
+      ]
+    },
+    {
+      "arm": 5,
+      "encoder": "conjoined",
+      "condition": "no-channel",
+      "baselineChoice": "g6f6",
+      "finalChoice": "g6f6",
+      "finalCorrect": false,
+      "finalMargin": -0.004482293501496315,
+      "firstPairEligibilityCosine": 0.00001997046515818233,
+      "firstPairSharedPositiveEntries": 38,
+      "events": [
+        {
+          "event": 0,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": null,
+          "mateDelta": -1.0710209608078003e-8,
+          "errorDelta": -5.641486495733261e-7,
+          "pairMarginDelta": 5.534384399652481e-7,
+          "mateRelativeToOtherMedian": -9.313225746154785e-10,
+          "changedEdges": 44,
+          "recoveredEdges": 0,
+          "rates": [
+            0.002345955620209376,
+            0.01026702020317316,
+            0,
+            0.000006246794429090288
+          ]
+        },
+        {
+          "event": 1,
+          "move": "f7h7",
+          "status": "success",
+          "channel": null,
+          "mateDelta": -0.000020819250494241714,
+          "errorDelta": -1.394655555486679e-7,
+          "pairMarginDelta": -0.000020679784938693047,
+          "mateRelativeToOtherMedian": -0.000020653242245316505,
+          "changedEdges": 81,
+          "recoveredEdges": 10,
+          "rates": [
+            0.008406560868024826,
+            0.0001742152704132928,
+            0.00617365042368571,
+            0.00006486816952625911
+          ]
+        },
+        {
+          "event": 2,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": null,
+          "mateDelta": -3.725290298461914e-9,
+          "errorDelta": -5.830079317092896e-7,
+          "pairMarginDelta": 5.792826414108276e-7,
+          "mateRelativeToOtherMedian": 5.820766091346741e-9,
+          "changedEdges": 68,
+          "recoveredEdges": 24,
+          "rates": [
+            0.0023459233343601227,
+            0.010267013787395423,
+            0,
+            0.000006246794429090288
+          ]
+        },
+        {
+          "event": 3,
+          "move": "f7h7",
+          "status": "success",
+          "channel": null,
+          "mateDelta": -0.000020749401301145554,
+          "errorDelta": -1.1827796697616577e-7,
+          "pairMarginDelta": -0.000020631123334169388,
+          "mateRelativeToOtherMedian": -0.000020583625882864,
+          "changedEdges": 81,
+          "recoveredEdges": 10,
+          "rates": [
+            0.008406508713960648,
+            0.00017421568433443704,
+            0.0061735933025678,
+            0.00006469928969939549
+          ]
+        }
+      ]
+    },
+    {
+      "arm": 6,
+      "encoder": "conjoined",
+      "condition": "shuffled",
+      "baselineChoice": "g6f6",
+      "finalChoice": "g6f6",
+      "finalCorrect": false,
+      "finalMargin": -0.0044822790659964085,
+      "firstPairEligibilityCosine": 0.00001997046334453574,
+      "firstPairSharedPositiveEntries": 38,
+      "events": [
+        {
+          "event": 0,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": "PAM02",
+          "mateDelta": 0.000002576969563961029,
+          "errorDelta": 0.0003955147694796324,
+          "pairMarginDelta": -0.00039293779991567135,
+          "mateRelativeToOtherMedian": 4.470348358154297e-8,
+          "changedEdges": 44,
+          "recoveredEdges": 0,
+          "rates": [
+            0.0022864975035190582,
+            0.9984030233657298,
+            0,
+            0.9881726510098411
+          ]
+        },
+        {
+          "event": 1,
+          "move": "f7h7",
+          "status": "success",
+          "channel": "PPL103",
+          "mateDelta": -0.002474546432495117,
+          "errorDelta": -0.000017795013263821602,
+          "pairMarginDelta": -0.0024567514192312956,
+          "mateRelativeToOtherMedian": -0.0024547476787120104,
+          "changedEdges": 81,
+          "recoveredEdges": 10,
+          "rates": [
+            1.0041101140280564,
+            0.0015572117020686467,
+            1.0007939736048381,
+            0.0002085439239939054
+          ]
+        },
+        {
+          "event": 2,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": "PAM02",
+          "mateDelta": 0.000001821666955947876,
+          "errorDelta": 0.00023799482733011246,
+          "pairMarginDelta": -0.00023617316037416458,
+          "mateRelativeToOtherMedian": 3.022141754627228e-7,
+          "changedEdges": 68,
+          "recoveredEdges": 24,
+          "rates": [
+            0.002286213139692942,
+            0.9984034207300283,
+            0,
+            0.9881724390822151
+          ]
+        },
+        {
+          "event": 3,
+          "move": "f7h7",
+          "status": "success",
+          "channel": "PPL103",
+          "mateDelta": -0.0014996104873716831,
+          "errorDelta": -0.000008871778845787048,
+          "pairMarginDelta": -0.001490738708525896,
+          "mateRelativeToOtherMedian": -0.0014876273926347494,
+          "changedEdges": 81,
+          "recoveredEdges": 10,
+          "rates": [
+            1.0041036767264206,
+            0.0015578183035055797,
+            1.000786821047465,
+            0.0001869620755314827
+          ]
+        }
+      ]
+    },
+    {
+      "arm": 7,
+      "encoder": "conjoined",
+      "condition": "disabled",
+      "baselineChoice": "g6f6",
+      "finalChoice": "g6f6",
+      "finalCorrect": false,
+      "finalMargin": -0.00448229443281889,
+      "firstPairEligibilityCosine": 0.0000199704651581772,
+      "firstPairSharedPositiveEntries": 38,
+      "events": [
+        {
+          "event": 0,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": "PPL103",
+          "mateDelta": 0,
+          "errorDelta": 0,
+          "pairMarginDelta": 0,
+          "mateRelativeToOtherMedian": 0,
+          "changedEdges": 0,
+          "recoveredEdges": 0,
+          "rates": []
+        },
+        {
+          "event": 1,
+          "move": "f7h7",
+          "status": "success",
+          "channel": "PAM02",
+          "mateDelta": 0,
+          "errorDelta": 0,
+          "pairMarginDelta": 0,
+          "mateRelativeToOtherMedian": 0,
+          "changedEdges": 0,
+          "recoveredEdges": 0,
+          "rates": []
+        },
+        {
+          "event": 2,
+          "move": "f7e6",
+          "status": "failure",
+          "channel": "PPL103",
+          "mateDelta": 0,
+          "errorDelta": 0,
+          "pairMarginDelta": 0,
+          "mateRelativeToOtherMedian": 0,
+          "changedEdges": 0,
+          "recoveredEdges": 0,
+          "rates": []
+        },
+        {
+          "event": 3,
+          "move": "f7h7",
+          "status": "success",
+          "channel": "PAM02",
+          "mateDelta": 0,
+          "errorDelta": 0,
+          "pairMarginDelta": 0,
+          "mateRelativeToOtherMedian": 0,
+          "changedEdges": 0,
+          "recoveredEdges": 0,
+          "rates": []
+        }
+      ]
+    }
+  ],
+  "contrasts": [
+    {
+      "encoder": "baseline",
+      "events": [
+        {
+          "event": 0,
+          "move": "f7e6",
+          "pairMarginDeltaBeyondNoChannel": 0.0006478587165474892,
+          "mateRelativeLiftBeyondNoChannel": 2.922024577856064e-8
+        },
+        {
+          "event": 1,
+          "move": "f7h7",
+          "pairMarginDeltaBeyondNoChannel": -0.0000011208467185497284,
+          "mateRelativeLiftBeyondNoChannel": 3.864988684654236e-8
+        },
+        {
+          "event": 2,
+          "move": "f7e6",
+          "pairMarginDeltaBeyondNoChannel": 0.00039510661736130714,
+          "mateRelativeLiftBeyondNoChannel": 6.878981366753578e-7
+        },
+        {
+          "event": 3,
+          "move": "f7h7",
+          "pairMarginDeltaBeyondNoChannel": -0.000001816079020500183,
+          "mateRelativeLiftBeyondNoChannel": 3.7369318306446075e-8
+        }
+      ]
+    },
+    {
+      "encoder": "conjoined",
+      "events": [
+        {
+          "event": 0,
+          "move": "f7e6",
+          "pairMarginDeltaBeyondNoChannel": 0.002825491363182664,
+          "mateRelativeLiftBeyondNoChannel": -1.7695128917694092e-7
+        },
+        {
+          "event": 1,
+          "move": "f7h7",
+          "pairMarginDeltaBeyondNoChannel": 0.00044351303949952126,
+          "mateRelativeLiftBeyondNoChannel": 0.00045200646854937077
+        },
+        {
+          "event": 2,
+          "move": "f7e6",
+          "pairMarginDeltaBeyondNoChannel": 0.0017233840189874172,
+          "mateRelativeLiftBeyondNoChannel": 0.000005324836820363998
+        },
+        {
+          "event": 3,
+          "move": "f7h7",
+          "pairMarginDeltaBeyondNoChannel": 0.00026320805773139,
+          "mateRelativeLiftBeyondNoChannel": 0.00027680047787725925
+        }
+      ]
+    }
+  ],
+  "historicalControl": {
+    "rows": [
+      {
+        "move": "f7e6",
+        "expected": "PPL103",
+        "delivered": "PPL103",
+        "aligned": true
+      },
+      {
+        "move": "f7h7",
+        "expected": "PAM02",
+        "delivered": "PPL103",
+        "aligned": false
+      },
+      {
+        "move": "f7e6",
+        "expected": "PPL103",
+        "delivered": "PAM02",
+        "aligned": false
+      },
+      {
+        "move": "f7h7",
+        "expected": "PAM02",
+        "delivered": "PAM02",
+        "aligned": true
+      },
+      {
+        "move": "g6h6",
+        "expected": "PPL103",
+        "delivered": "PPL103",
+        "aligned": true
+      },
+      {
+        "move": "f7h7",
+        "expected": "PAM02",
+        "delivered": "PAM02",
+        "aligned": true
+      },
+      {
+        "move": "f7e6",
+        "expected": "PPL103",
+        "delivered": "PPL103",
+        "aligned": true
+      },
+      {
+        "move": "f7h7",
+        "expected": "PAM02",
+        "delivered": "PAM02",
+        "aligned": true
+      }
+    ],
+    "aligned": 6,
+    "total": 8,
+    "correction": "6/8 aligned, not the 4/8 stated in historical narrative"
+  }
+}

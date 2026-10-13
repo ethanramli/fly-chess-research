@@ -1,0 +1,463 @@
+﻿{
+    "complete":  true,
+    "variants":  [
+                     {
+                         "variant":  "original",
+                         "run":  "research/reports/compartment-puzzle-original-2026-10-06",
+                         "reportSha256":  "1836c41cb560912dec70ba56271597ed15fb0263cf821354141e6cd2ab4786ea",
+                         "gates":  {
+                                       "usefulChoices":  false,
+                                       "repairAboveAbsentDisabled":  false,
+                                       "persistenceAndCausalReset":  true,
+                                       "fixedState":  true
+                                   },
+                         "accepted":  false,
+                         "certificatesChecked":  80,
+                         "updatesChecked":  32,
+                         "prefixExact":  true,
+                         "resources":  {
+                                           "peakRssMiB":  114.7265625,
+                                           "elapsedSeconds":  888.0846887,
+                                           "cpuSeconds":  446.328,
+                                           "cpuDuty":  0.5,
+                                           "presentationsThisInvocation":  1692
+                                       },
+                         "choices":  [
+                                         {
+                                             "condition":  "informative",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7f5",
+                                             "beforeStatus":  "failure",
+                                             "after":  "f7b3",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "informative",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1b1",
+                                             "beforeStatus":  "success",
+                                             "after":  "a1b1",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "punishment-only",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7f5",
+                                             "beforeStatus":  "failure",
+                                             "after":  "f7b3",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "punishment-only",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1b1",
+                                             "beforeStatus":  "success",
+                                             "after":  "a1b1",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "absent",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7f5",
+                                             "beforeStatus":  "failure",
+                                             "after":  "f7f5",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "absent",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1b1",
+                                             "beforeStatus":  "success",
+                                             "after":  "a1b1",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "shuffled",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7f5",
+                                             "beforeStatus":  "failure",
+                                             "after":  "f7f5",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "failure"
+                                         },
+                                         {
+                                             "condition":  "shuffled",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1d1",
+                                             "beforeStatus":  "success",
+                                             "after":  "f7e8",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "failure"
+                                         },
+                                         {
+                                             "condition":  "disabled",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7f5",
+                                             "beforeStatus":  "failure",
+                                             "after":  "f7f5",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "disabled",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1b1",
+                                             "beforeStatus":  "success",
+                                             "after":  "a1b1",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         }
+                                     ]
+                     },
+                     {
+                         "variant":  "conjoined",
+                         "run":  "research/reports/compartment-puzzle-conjoined-2026-10-06",
+                         "reportSha256":  "80edb5c26338188d34d3545e8ce618f9366e00f1329b4e63ada384d1d60b63e8",
+                         "gates":  {
+                                       "usefulChoices":  false,
+                                       "repairAboveAbsentDisabled":  false,
+                                       "persistenceAndCausalReset":  true,
+                                       "fixedState":  true
+                                   },
+                         "accepted":  false,
+                         "certificatesChecked":  80,
+                         "updatesChecked":  32,
+                         "prefixExact":  true,
+                         "resources":  {
+                                           "peakRssMiB":  113.5546875,
+                                           "elapsedSeconds":  674.1882594,
+                                           "cpuSeconds":  344.219,
+                                           "cpuDuty":  0.5,
+                                           "presentationsThisInvocation":  1840
+                                       },
+                         "choices":  [
+                                         {
+                                             "condition":  "informative",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7f8",
+                                             "beforeStatus":  "success",
+                                             "after":  "f7f8",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "informative",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1a7",
+                                             "beforeStatus":  "failure",
+                                             "after":  "a1a7",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "failure"
+                                         },
+                                         {
+                                             "condition":  "punishment-only",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7f8",
+                                             "beforeStatus":  "success",
+                                             "after":  "f7f8",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "punishment-only",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1a7",
+                                             "beforeStatus":  "failure",
+                                             "after":  "a1a7",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "failure"
+                                         },
+                                         {
+                                             "condition":  "absent",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7f8",
+                                             "beforeStatus":  "success",
+                                             "after":  "f7f8",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "absent",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1a7",
+                                             "beforeStatus":  "failure",
+                                             "after":  "a1a7",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "failure"
+                                         },
+                                         {
+                                             "condition":  "shuffled",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7f8",
+                                             "beforeStatus":  "success",
+                                             "after":  "f7f8",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "shuffled",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1a7",
+                                             "beforeStatus":  "failure",
+                                             "after":  "a1a7",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "failure"
+                                         },
+                                         {
+                                             "condition":  "disabled",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7f8",
+                                             "beforeStatus":  "success",
+                                             "after":  "f7f8",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "disabled",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1a7",
+                                             "beforeStatus":  "failure",
+                                             "after":  "a1a7",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "failure"
+                                         }
+                                     ]
+                     },
+                     {
+                         "variant":  "balanced",
+                         "run":  "research/reports/compartment-puzzle-balanced-2026-10-06",
+                         "reportSha256":  "d8b021b0927a45c77680181890dab95da29052d2154eb1c5785907c3728199b6",
+                         "gates":  {
+                                       "usefulChoices":  true,
+                                       "repairAboveAbsentDisabled":  false,
+                                       "persistenceAndCausalReset":  true,
+                                       "fixedState":  true
+                                   },
+                         "accepted":  false,
+                         "certificatesChecked":  80,
+                         "updatesChecked":  32,
+                         "prefixExact":  true,
+                         "resources":  {
+                                           "peakRssMiB":  112.4609375,
+                                           "elapsedSeconds":  619.798662,
+                                           "cpuSeconds":  318.015,
+                                           "cpuDuty":  0.5,
+                                           "presentationsThisInvocation":  1691
+                                       },
+                         "choices":  [
+                                         {
+                                             "condition":  "informative",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7e8",
+                                             "beforeStatus":  "success",
+                                             "after":  "f7e8",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "informative",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1f1",
+                                             "beforeStatus":  "success",
+                                             "after":  "a1g1",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "punishment-only",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7e8",
+                                             "beforeStatus":  "success",
+                                             "after":  "f7e8",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "punishment-only",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1f1",
+                                             "beforeStatus":  "success",
+                                             "after":  "a1g1",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "absent",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7e8",
+                                             "beforeStatus":  "success",
+                                             "after":  "f7e8",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "absent",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1g1",
+                                             "beforeStatus":  "success",
+                                             "after":  "a1g1",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "shuffled",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7e8",
+                                             "beforeStatus":  "success",
+                                             "after":  "f7f1",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "shuffled",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1g1",
+                                             "beforeStatus":  "success",
+                                             "after":  "a1g1",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "disabled",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "f7e8",
+                                             "beforeStatus":  "success",
+                                             "after":  "f7e8",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "disabled",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1g1",
+                                             "beforeStatus":  "success",
+                                             "after":  "a1g1",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         }
+                                     ]
+                     },
+                     {
+                         "variant":  "conjoined-balanced",
+                         "run":  "research/reports/compartment-puzzle-conjoined-balanced-2026-10-06",
+                         "reportSha256":  "7b843a70e45d7b1519fd5c2b8a7ad38af8696e6cc8fcbb57612c649532e1dcf1",
+                         "gates":  {
+                                       "usefulChoices":  false,
+                                       "repairAboveAbsentDisabled":  false,
+                                       "persistenceAndCausalReset":  true,
+                                       "fixedState":  true
+                                   },
+                         "accepted":  false,
+                         "certificatesChecked":  80,
+                         "updatesChecked":  32,
+                         "prefixExact":  true,
+                         "resources":  {
+                                           "peakRssMiB":  114.5,
+                                           "elapsedSeconds":  634.1718719,
+                                           "cpuSeconds":  324.594,
+                                           "cpuDuty":  0.5,
+                                           "presentationsThisInvocation":  1720
+                                       },
+                         "choices":  [
+                                         {
+                                             "condition":  "informative",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "g6f5",
+                                             "beforeStatus":  "failure",
+                                             "after":  "f7d7",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "informative",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1a7",
+                                             "beforeStatus":  "failure",
+                                             "after":  "a1f1",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "punishment-only",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "g6f5",
+                                             "beforeStatus":  "failure",
+                                             "after":  "f7d7",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "failure"
+                                         },
+                                         {
+                                             "condition":  "punishment-only",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1f1",
+                                             "beforeStatus":  "success",
+                                             "after":  "a1f1",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "absent",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "g6f5",
+                                             "beforeStatus":  "failure",
+                                             "after":  "g6f5",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "failure"
+                                         },
+                                         {
+                                             "condition":  "absent",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1f1",
+                                             "beforeStatus":  "success",
+                                             "after":  "a1f1",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "shuffled",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "g6f5",
+                                             "beforeStatus":  "failure",
+                                             "after":  "f7f3",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "failure"
+                                         },
+                                         {
+                                             "condition":  "shuffled",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1a7",
+                                             "beforeStatus":  "failure",
+                                             "after":  "f7f8",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "success"
+                                         },
+                                         {
+                                             "condition":  "disabled",
+                                             "fixture":  "pipeline-kqk-fixture",
+                                             "before":  "g6f5",
+                                             "beforeStatus":  "failure",
+                                             "after":  "g6f5",
+                                             "afterStatus":  "failure",
+                                             "searchedStatus":  "failure"
+                                         },
+                                         {
+                                             "condition":  "disabled",
+                                             "fixture":  "pipeline-krk-fixture",
+                                             "before":  "a1f1",
+                                             "beforeStatus":  "success",
+                                             "after":  "a1f1",
+                                             "afterStatus":  "success",
+                                             "searchedStatus":  "success"
+                                         }
+                                     ]
+                     }
+                 ],
+    "acceptedVariants":  0,
+    "scope":  "Four exploratory single-seed familiar-fixture conditions with identical archived teaching experiences. Per-variant gates do not establish between-input significance, biological validity or transfer."
+}

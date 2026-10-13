@@ -1,0 +1,42 @@
+{
+  "scope": "Deliberate invalid use: same constant one-unit KC/DAN rate block treated as sample-count events. Counterexample to a naive rate adapter, not a graph run or biological prediction.",
+  "config": {
+    "tauKC": 1,
+    "tauDAN": 1,
+    "eta": 0.5,
+    "minGain": 0.2,
+    "maxGain": 1.8
+  },
+  "rows": [
+    {
+      "initialGain": 0.3,
+      "samples": 1,
+      "finalGain": 0.26065306597126336
+    },
+    {
+      "initialGain": 0.3,
+      "samples": 10,
+      "finalGain": 0.9599008531800011
+    },
+    {
+      "initialGain": 0.3,
+      "samples": 100,
+      "finalGain": 0.996000033333
+    },
+    {
+      "initialGain": 1,
+      "samples": 1,
+      "finalGain": 0.6852245277701068
+    },
+    {
+      "initialGain": 1,
+      "samples": 10,
+      "finalGain": 0.9599812574458713
+    },
+    {
+      "initialGain": 1,
+      "samples": 100,
+      "finalGain": 0.996000033333
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "smothered-recovery-intervention-v1",
+  "source": "research/reports/smothered-acquisition-v1-2026-10-07/event-adaptive-1.json",
+  "sourceSha256": "87764c42e328e6a3cf52bd03b9d2649b2063009ed0b755e30939174b67045bf6",
+  "trainingFen": "5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1",
+  "task": {
+    "objective": "forced-mate",
+    "plies": 3
+  },
+  "conditions": [
+    "before",
+    "after",
+    "recoveryOnly",
+    "depressionOnly"
+  ],
+  "maxPresentations": 160,
+  "runOnlyAfter": "smothered-acquisition-v1 terminal and audits reviewed",
+  "measurement": "Same frozen graph/encoder/readout; all32 legal scores plus exact restored full-state repetition. Compare c4b4 rebound between before/after and artificial component interventions.",
+  "scope": "Artificial read-only causal engineering intervention; hybrid states are not training checkpoints, a physiological rule, biological necessity or reasoning evidence."
+}

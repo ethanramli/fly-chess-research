@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import { sha256 } from '../runtime/fetch-graph.mjs';
+const dir='research/data/stability-dose-recovery-v1';assert.ok(!fs.existsSync(dir));
+const checkpoint='research/reports/stability-feedback-dose-v2-2026-10-07/checkpoint-00002/state.json',read=f=>JSON.parse(fs.readFileSync(f));
+const state=read(checkpoint);assert.ok(state.state.active.pending);assert.equal(state.state.active.index,0);
+const manifest=checkpoint.replace('state.json','checkpoint.json');assert.equal(await sha256(checkpoint),read(manifest).stateSha256);
+const pp='research/data/stability-feedback-dose-v2/protocol.json',p=read(pp);assert.equal(state.identity.protocolSha256,await sha256(pp));
+const inputs={};for(const f of [checkpoint,manifest,pp,...Object.keys(p.inputs)])inputs[f]=await sha256(f);
+const sources={...p.sources};for(const f of ['.codebase/scripts/puzzle-learning/audit-dose-recovery.mjs','.codebase/scripts/puzzle-learning/freeze-dose-recovery.mjs'])sources[f]=await sha256(f);
+const command='node --max-old-space-size=256 .codebase/scripts/puzzle-learning/train-stability-feedback-dose-v2.mjs --out research/reports/stability-dose-recovery-v1-2026-10-07 --resume '+checkpoint+' --cpu-duty 0.5 --max-events 1';
+fs.mkdirSync(dir);fs.writeFileSync(`${dir}/protocol.json`,JSON.stringify({schema:'stability-dose-recovery-v1',inputs,sources,checkpoint,command,runAfter:'Primary process terminal and full audit passed; serial only',requirements:{noDuplicateUpdate:true,exactReceipt:true,unchangedMemory:true,freshPresentations:0}},null,2)+'\n');console.log(JSON.stringify({protocolSha256:await sha256(`${dir}/protocol.json`)}));

@@ -1,0 +1,15 @@
+{
+ "schema":"adaptive-review-v1","frozen":"2026-10-06 before adaptive-review-v1 learning",
+ "prerequisite":"research/reports/mbon-choice-v1-2026-10-06","fixedRun":"research/reports/puzzle-neural-v1-2026-10-06",
+ "puzzles":"research/data/puzzle-round-fixture/puzzles.jsonl","encoderSeed":13007,
+ "conditions":["adaptive","fixed","absent","shuffled","disabled"],
+ "modelSeed":47,"steps":8,"eta":0.5,"minGain":0.2,"maxGain":1.8,"activityScale":1.5,"current":1.5,
+ "encoder":{"maxCells":64,"totalCurrent":24,"maxCellCurrent":1.5,"maxHistoryPlies":512},
+ "feedbackBudget":8,"maxBrainCalls":1024,"maxLegalMoves":64,
+ "schedule":"Adaptive selects the current highest-V move from the complete legal set, verifies it and supplies the existing coincident experimental feedback. Measure every legal candidate after every attempt. Keep all legal moves; never blacklist mistakes. Continue the fixed budget even after success to measure whether preference survives informative/no-pulse experiences. Unknown attempts produce no neural teaching event and consume the bounded attempt slot.",
+ "fixed":"Replay the prior frozen informative schedule of eight reviewed experiences from naive gains, with a full-root sweep after each event. Same teaching budget, different sampling policy; not an exposure-matched control for the adaptive policy.",
+ "controls":"Absent, shuffled and disabled replay EXACTLY the adaptive candidate/proof sequence, not their own preferred choices. Absent omits external pulses; shuffled phase-wide permutes known-event pulse flags with seed 13007, preserving count; disabled has informative pulses but no plasticity. If all flags coincide, shuffled is uninformative and must be reported as such, never as evidence of feedback specificity.",
+ "measurement":"All-legal before/after-each-attempt score trajectories, verified preferred-move outcomes, correction/revival patterns, full-root repeat/reset/restoration, and final independent choice verification. Report fixed vs adaptive at equal attempts and actual known-event counts. No statistical generalization claim from one fixture.",
+ "acceptance":"Fixture repair requires final adaptive unaided success, exact repeat/restoration and return to initial failure on reset. Descriptive informative specificity additionally requires nondegenerate shuffled flags, adaptive success and failure of all three sequence-matched controls. Keep failed gates. Broader biological/transfer/whole-model gates remain outside this fixture.",
+ "limitations":"Same-position repair experiment with an engineered MBON readout, direct KC/PPL103 stimulation, coarse masks and unfitted local efficacy. No natural pathway, delayed credit through calculation, unfamiliar-family transfer or completed reasoning learner."
+}

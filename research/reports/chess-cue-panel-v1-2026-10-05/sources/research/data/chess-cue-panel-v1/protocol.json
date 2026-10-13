@@ -1,0 +1,17 @@
+{
+  "schema": "chess-cue-panel-v1",
+  "frozen": "2026-10-05 before neural chess-cue measurements",
+  "encoder": {"seed":9613,"maxCells":64,"totalCurrent":24,"maxCellCurrent":1.5,"maxHistoryPlies":512},
+  "model": {"steps":8,"inputDim":1,"outputs":1,"seed":47},
+  "calibration": {"minRange":0.0000001},
+  "positions": [
+    {"id":"white-fixture-input","fen":"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1","moves":[]},
+    {"id":"black-fixture-input","fen":"8/8/8/8/8/6k1/5q2/7K b - - 0 1","moves":[]},
+    {"id":"initial-input","fen":"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1","moves":[]},
+    {"id":"repetition-context-input","fen":"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1","moves":["Nf3","Nf6","Ng1","Ng8"]}
+  ],
+  "taskContext": {"objective":"forced-mate","plies":1},
+  "schedule": "Every legal candidate in chess.js order; repeat the first candidate after the sweep for each position. No search, proof, feedback, contingency or learning occurs. Initial-board controls are input probes, not claimed solvable mate tasks.",
+  "normalization": "Per GF, min/max of naive board/action panel responses. Freeze the calibration before any future conditioning. The prior resting-reference clipping failure is preserved; this is a new engineered input-domain comparison.",
+  "interpretation": "Panel distinguishes only numerical action signals and input/history sensitivity. It cannot establish learned danger, biology, reasoning, transfer, complete GF gate or authorize puzzle learning. Independent seeds, choices, controls and biological predictions remain required."
+}

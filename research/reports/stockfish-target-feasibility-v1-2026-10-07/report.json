@@ -1,0 +1,536 @@
+{
+  "schema": "stockfish-target-feasibility-v1",
+  "complete": true,
+  "identity": {
+    "protocolSha256": "4b6b3860801908ff9e25ad092d7574be9e0c1b9387517654ac41fbb5795b3e91",
+    "pins": {
+      "package.json": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+      ".codebase/src/search-and-feedback/stockfish-target.mjs": "1931d16a1883e76615be32cf13fb359286c06fd8a95d3c88812171f48c13158f",
+      "research/reports/smothered-training-variations-v1-2026-10-07/puzzles.jsonl": "489bdb5bf825e154fcc215cc1555ff0937bb811cf991ed8f42034b1e3b596f61",
+      "node_modules/chess.js/dist/cjs/chess.js": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f",
+      "research/data/smothered-acquisition-v1/puzzles.jsonl": "3b40d90e82e215c77ab15fa41705a66da08fa574efc7f3f3ee3a56cd7af89fd5",
+      "research/reports/shared-memory-multi-context-coverage-v1-2026-10-07/audit.json": "db65fbb56703dcb5918965cdf0e6f22514f69c2b9c34e894783b23408dae4863",
+      ".codebase/src/search-and-feedback/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+      ".codebase/src/search-and-feedback/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+      ".codebase/vendor/stockfish/sf-19/release.json": "ad2d183b980b0c119909398581ce59abb059174d022320687b3b05001ae24f2e",
+      "package-lock.json": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214",
+      ".codebase/scripts/puzzle-learning/probe-stockfish-targets.mjs": "c2412daa42db592d43b25a9fdbf0534153cc773fde396d18623e27c7754b646f",
+      ".codebase/vendor/stockfish/sf-19/extracted/stockfish/Copying.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      ".codebase/vendor/stockfish/sf-19/extracted/stockfish/stockfish-windows-x86-64-universal.exe": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+      ".codebase/scripts/puzzle-learning/audit-stockfish-targets.mjs": "1b0d1d31c470880b029c8701af610e1bfb00698bcc6ffa24ecba3e28c01601b8",
+      ".codebase/src/search-and-feedback/mate-certificate.mjs": "b7bdab76a3faa78c203971991c3b2e00cdfd359cfca08b6e1f7b1ae8d430b700",
+      "research/reports/shared-memory-multi-context-coverage-v1-2026-10-07/report.json": "8ab9f3a95ecd8db2e9a11166963743b23ffe018bddf06827c59be8c4582d38b5"
+    }
+  },
+  "records": [
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-h6f7.json",
+      "sha256": "6e75db7b35ca9aa202e42d27dc4341bf7bc68c198dbca6df52d029d1954cfc13"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-h6g8.json",
+      "sha256": "83f85d1cc3d00e7916505b17610ac0970aed89827f36d1420adb1646bf9eff8c"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-h6g4.json",
+      "sha256": "831f28e730a79a5462452beaf08f2b269e5f8b3a36e4aec6a205cc38bdece982"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-h6f5.json",
+      "sha256": "1b5349c4138dbf69ed641eac332b89cc4fddbe125e72bcee421f6e1e1b0eb2c6"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4b5.json",
+      "sha256": "f7155b9068b2f2a5da1db1c6ac873bcdcc49abc301ada5001ef59694f1b3293f"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4a6.json",
+      "sha256": "d72a6a4d556da75803225e52a127b7130dc840cddbe8cbb31fe146ab4ef15914"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4c5.json",
+      "sha256": "dc51685cb306e4c9ea31b041e663273c1296a7b3d4dfe20c112a721427b93387"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4c6.json",
+      "sha256": "1712e092e50bfca2c22c651bd9d858fb71b588f6279d676ba7949c743b1554dc"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4c7.json",
+      "sha256": "e47799ec61287d0f8d463eaeca92561fd8fdc6f965c9d148a0e91a2c427ece2e"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4c8.json",
+      "sha256": "caf2d1dc0ec923de00c3b91b4208f29d03016697838ed8ecbdf91fed8bedd9dc"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4d5.json",
+      "sha256": "fb2e609e65d404c9b10cd19cdd98fcfaf7367dbd92beb6ff28fca953e9896337"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4e6.json",
+      "sha256": "1a4b7acafbd0bbdaf5f0376c7c1b922b197db0cf9ef7710520f542ba6fb771b8"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4f7.json",
+      "sha256": "7ea89fea2d128938f3ad503fc49c9a4ac7501529957651149e885ef6dab12a9d"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4g8.json",
+      "sha256": "ab3a9154887f5be819e99111bb86519923104ec2e2d652af380fc00e7a449d84"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4d4.json",
+      "sha256": "3c5e250f791fb3ea85610dee1104c08b6be6b3c656bd1ca08035213b616a7aa3"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4e4.json",
+      "sha256": "ea43737d877d374061bf0b2697348d46d5e159b1e44296c1a2a56be56c4488df"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4f4.json",
+      "sha256": "66c25f834fd706a65d52fd3b42e16899fb98859c3825233c0499f4e21ce4dda1"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4g4.json",
+      "sha256": "1f993bbd803250624d592e9dd13c210d76ef261bccf728cc34a250e7283d1cd4"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4h4.json",
+      "sha256": "c9d37f2a21cd1d6aff6b053d661889ff8e3d822e395493a0c519c1e2260c594d"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4d3.json",
+      "sha256": "7f7644c5e831d8e7fb0eab062594f8fc7533b0a1be482308bae62996af058017"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4e2.json",
+      "sha256": "78d880881c463b962f67e637545b54f6b4e6287b00c84a1c35ff0e97afa1ade9"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4f1.json",
+      "sha256": "090f26ee23912bd4595538bf2e6824bade18d6621de70060819107262b9047b9"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4c3.json",
+      "sha256": "e15d00607b143112ab2fb6f8d8fbd976e502fad690570b60eb81cb40d8d962e5"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4c2.json",
+      "sha256": "9ce76a02ca1c10d9811428fcec2c8dfd1821da84e9caf09133395d64fe1c18ce"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4c1.json",
+      "sha256": "96b1b12287f14fb98988ceef192e98ef5aeab9b39bd805202fcc46d68af7115a"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4b3.json",
+      "sha256": "68ec0e8b3708f9a8db27591c01a05c9e817a4ff315d5f8f40d183d20c1f78813"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4a2.json",
+      "sha256": "c1cdc7687b33451a2519d0a21efefe049d53a5b8c52c0972df2029967efcb196"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4b4.json",
+      "sha256": "df149d20c768837e596b03a0f68323fa193138090b3be44fbdf4be0818e7d4bf"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-c4a4.json",
+      "sha256": "67185f79a1ef25fdd49aed3573c4bd9151a8d3fa5820691b67bd1beebf37af59"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-a1a2.json",
+      "sha256": "25246f4f78f2807c2370d58dd0794bbaf576548667b1dbad07cbeb67d403200c"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-a1b2.json",
+      "sha256": "0d873840bc633c95b57d9a6409f5ead6923c8d986b8a894edf1447aaa53ef6a9"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-10000-a1b1.json",
+      "sha256": "8aec2439a7a50839c9dfc3a8a1daf13efc0266a284af2930fc415738671d693e"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-h6f7.json",
+      "sha256": "9dfa8850fc049e60136943d4446c94738890b7778226750d2ec1cc3472b904ac"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-h6g8.json",
+      "sha256": "b46a9b2be62e6689ac1fc3581234fddac4e8859dafc30bdad1e1d14ca14f8b58"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-h6g4.json",
+      "sha256": "b1c99a403d3370de3a108a87b4b50a600447c9ea1bbeb7582433e9cb09226456"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-h6f5.json",
+      "sha256": "4142a7d9df0e816c73dcc1c638f0930fc0611007f02ccc87b595d61866f62952"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4b5.json",
+      "sha256": "882e2a19f55537c4fcee8397aadab48c0fc660105554b9b0c952655b5f2f18d0"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4a6.json",
+      "sha256": "8a84ab3ea7796603a724007371001d2c24db56468878de90e9a088de59882e00"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4c5.json",
+      "sha256": "80fd66e149c2d9599331aff9e17b2f60c935809a2d3a3dbdd1525bd93dc7bc0b"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4c6.json",
+      "sha256": "35d990b8774b8b673a553a2b8d19a8d053a3ec6360d71664000f98c35e6684a5"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4c7.json",
+      "sha256": "90aa0833ee24ab0c7c1249672e8e1e824a57a7afeb62418e7de87b462966c5c6"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4c8.json",
+      "sha256": "07adc5e975024fdb5670458afceb5c6b0d19bb11e133d9266ac4b83d42e61a43"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4d5.json",
+      "sha256": "0e6ea7dc20bcd6c1e32178b49f1df69685177e0e0b525ea26849d19fd669c138"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4e6.json",
+      "sha256": "f91678c40ce9d23ed5682057af445ff1809bef4d561505a6afc81a2769e261ef"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4f7.json",
+      "sha256": "41641fb4e0f2a436be592b21a3c83c8c317d9ef502a8ac0be7bda4ad0a8d8536"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4g8.json",
+      "sha256": "f44402cc2aa8a4d6b4a25302fd2addf8cceb978ba5e8cdd854ffc06cb288e4d0"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4d4.json",
+      "sha256": "83d5a3de5d0cdb7bd891ab6d651d877303330489c25fc0197760c3af5633f405"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4e4.json",
+      "sha256": "ee83d82fe9b7ff0d2ded9948af9e6bd552f7f512699232073b2ff54927a6cd02"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4f4.json",
+      "sha256": "73c8d3373dc0d0297248843219f4e1782c51af36f4fbc8bd91ac296a92e67336"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4g4.json",
+      "sha256": "89b222d068dfde42003d2411e082c92615464642ff50bbc78e3bd27eb0f1911e"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4h4.json",
+      "sha256": "d2e1297e4b8aa417c3b5fdb20a19f5f8105a11f07913f5e389c131abbbfb209e"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4d3.json",
+      "sha256": "bfd1a08f08ebc824a0d19ec7ba7540f9324d958cb8c34012b23a46dcda7a3141"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4e2.json",
+      "sha256": "f43cf5c03056069beca320307d0ff617d4a2a10a5f2046d3a90e1aa83ae0b459"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4f1.json",
+      "sha256": "0f3d84c2da1e9bb4e60d9a98079a55fcee654396f75e7c72e90c930698810b68"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4c3.json",
+      "sha256": "59e5b043870923428ef77d9d4e38a8e128f66fc51ceb56f5dca01f2d18ae5646"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4c2.json",
+      "sha256": "b4f1f1eb66c1c83a1e345c7ad59953862956c61906449b691016da17320951b4"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4c1.json",
+      "sha256": "e7e7e64494e477a61333119b26b3bbdb80e9a0ae79d3b89144c86e8da233ffaa"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4b3.json",
+      "sha256": "322bb3c9618a427f3d7c987e453bcf2805d2772746cf8aec0961bd9bb137a11d"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4a2.json",
+      "sha256": "35da930cbcc7e9a048b23d68a7d7b917487cbd0f107652a47b14d830a8cd9168"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4b4.json",
+      "sha256": "62211ef11169449fde0ac2087e7b6dc9102ee546e84abf57dc16e229d50d7ddb"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-c4a4.json",
+      "sha256": "c4cb3be028793199a86f19b98c6dd29abb6d5278e6acc4c824457c576c7ee440"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-a1a2.json",
+      "sha256": "ca2fcbbe2a5fe5697c56fb457a3329b0bcea5ffc42411130caa4015080c6564b"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-a1b2.json",
+      "sha256": "ffce1a2f15c28176178a0e6ad4d1cb06964b3dffafedf4ee52788835b7da2afc"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\0-50000-a1b1.json",
+      "sha256": "9755767dac6c15e73bdb9c3c67018097a56426de54bb98d672d495835c6a6380"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-h6f7.json",
+      "sha256": "8098d7c28ed3fd4cfd46e91d6d45d1a185739862c0e689656e2e97bcfbfb8635"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-h6g8.json",
+      "sha256": "9ee3eecf7de2c445d13758ee415e54ecc88d59c9f0eb0108ab18ef89ec1e20f7"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-h6g4.json",
+      "sha256": "2392083c273c4cb2509a10e408b595bfa2cf49115d5a939507aa805b499f6ead"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-h6f5.json",
+      "sha256": "c751765ceb296492d0095e13674e346cf9493d54ac7f5884ba2987ea0b10026b"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3a4.json",
+      "sha256": "1ca9b099c4d7510aebd0cedb4781ee3a15be93e2ff42b78a2183bcd8e48d79c6"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3b4.json",
+      "sha256": "94090224c1f2bd0ed9d64ac3d3c725bff34e227a0f94b444d5208bd277f50024"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3b5.json",
+      "sha256": "2b1aacd953bbcb04d46646046e3bcb37a694b1bb19b430cd12e70bca50c257bb"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3b6.json",
+      "sha256": "0e456485905228fc505eaec032076b1dfe3dbe52372847c7169965660558eb8a"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3b7.json",
+      "sha256": "f91e3f4acaeb4c4d0f48b5a21d866241bcff7e205727f94836c3686b3a0b4441"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3b8.json",
+      "sha256": "01b782c11feca151118389406d32df5985f7e22668a19ec89e1b83ad48f6400f"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3c4.json",
+      "sha256": "d7cd4adacc945689c772907f79714b09190e31fec86c999271e18910233694eb"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3d5.json",
+      "sha256": "5030cf3279df665f75a1e6c76c4dc5475aad866067fd1810582f8eeb9dc950a8"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3e6.json",
+      "sha256": "f5c02351f95c558e39159b3ea96b3687e71e8cf45a443e36847f21f7e3ffd872"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3f7.json",
+      "sha256": "66e5d37509045b0b0601f6f692fa7c4d46972fbb597bdde3e85d2da1682f0169"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3g8.json",
+      "sha256": "d18933f7e02641c3e15541ccd1adb92e8350612af3b2c98258e3aaa9592eac0b"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3c3.json",
+      "sha256": "abd5c60c2ff627bc70516e4700173217136000305371349a2d3a0b98ba69cff5"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3d3.json",
+      "sha256": "24334e1bc092b78023fd23d836fb085d4d3a630a1f792abcbb4565a2380b2b57"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3e3.json",
+      "sha256": "eebac8e44b3270f0a5fbb8006d56e087b21c9c65f9c55b44be26254a8747aa8f"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3f3.json",
+      "sha256": "57b7dc43fe5d090a041e4f2511641bf122375c9c16ea3b48563b139eccb7f806"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3g3.json",
+      "sha256": "439f21adeb95ad844fd4876505d40360d77c12ffeed99612dacaf911529c7791"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3h3.json",
+      "sha256": "095cfe93080e2c90c074d7098858c078217927e15c2e6e1dd146ef0cbdbcfbe1"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3c2.json",
+      "sha256": "4d0f9b2e935608dc69a24b356723dc3813abf733bd480596235238063dda287a"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3d1.json",
+      "sha256": "523a5fd6459018591650ed517b329824f5742cdf560b3576f6f630572896af50"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3b2.json",
+      "sha256": "8efa5bcf74113fc227763157583c2926196bb6dd3a74d308b38212bcfeb82fa7"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3b1.json",
+      "sha256": "22d607def19e992ebabee99f0a410720cbdcdca31f2820692e38d6c610d52b8c"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3a2.json",
+      "sha256": "c5cba49c10159007ad52892397950e1edb56cd427fdd29fd33480caa5c4c86c1"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-b3a3.json",
+      "sha256": "d4ca721ab8f11414655cd921f82968aaea350858d8250a62f65c730acd1376ab"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-a1a2.json",
+      "sha256": "066e5b061ac05cfd0a2da0b1cac2b0fc8c930cef9433db9f527a771680eaf1ca"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-a1b2.json",
+      "sha256": "0c84464591bfa5787bce03a5612cc8ab76d673c4c7996f9a7b13d00bfac80a44"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-10000-a1b1.json",
+      "sha256": "ad2b40260ced3a722ce25e493f7f90ce749c2144e332e0e534e53e07755bcb66"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-h6f7.json",
+      "sha256": "1cb1276635da38a0429c50cde42c07c47380f10b2ac576db47937ae03daa5205"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-h6g8.json",
+      "sha256": "135a4de51b2371eed62076b43b5ff7d3cf1bfc42c0830f46963fc0b0918e16ed"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-h6g4.json",
+      "sha256": "e5d48a9d8ee6bb4b61893dafaa8a12da1dc0d6a915d4a4a5386a64e7466e6b21"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-h6f5.json",
+      "sha256": "2664aafef02947f5743f8f393ec2b4fbf95c49a13a88d29f9f1d5e2aff028e9c"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3a4.json",
+      "sha256": "ddbd0ec7be53f3990f7ca8e20a779f7c2ee66f25b2be959e0296b49e32030e81"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3b4.json",
+      "sha256": "3d4e6b627aebdcfe9a96ff1e143dd091c9ae1fc50491d6aab373bfc4a17fc113"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3b5.json",
+      "sha256": "12501ecaa32801b1cf887ed461001233e9486adfa0d3f220463127bf2baba6f5"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3b6.json",
+      "sha256": "168296f79a5f53de39076c07fd69e22931fa603893369a21be316fa6bd021922"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3b7.json",
+      "sha256": "36424a651b5b51186a3b9c6d902187be81a8e2b8fee7e8ae3d8905c13db3a6ca"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3b8.json",
+      "sha256": "1a983ee07acbe30816c9d248019ec93f105e497567e874fad8e3d1c4e66b7210"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3c4.json",
+      "sha256": "2b5fe0b35023fddfc2bd2845fa7341cd33284ebae537c9c344f8a643bd34704b"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3d5.json",
+      "sha256": "09241f77c41744e7daebf6dbf47894898fc9b0f9561822c959afc3c06c06d064"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3e6.json",
+      "sha256": "72adc21e7079ca9f87b00089c4dd1ad688412ea37798f9623213cb7e886a320e"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3f7.json",
+      "sha256": "2c261e82048953beb203322f146d3c4a123e5125892cc0a1c264e0a66b44cd1f"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3g8.json",
+      "sha256": "ea16c4d148d43529ee02b5022f30ee54ee2f0078ff07bbfe0d9d670d04ec80ee"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3c3.json",
+      "sha256": "99cfca44a232d36ba7672489c987f4b91286b14ae4471fd60e13ce18f985e600"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3d3.json",
+      "sha256": "e653c4d532921dd19741fd6680b55bb4196f2a3d815aac246f489f9abea0f025"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3e3.json",
+      "sha256": "b92c4759adea4bed0824370adb0713685ad22a9903829cab7b2c0b61cc72d674"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3f3.json",
+      "sha256": "ae259034d24bd50c8dce31d11a6ce635ab4ae3bffbddfc116d37be8675864964"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3g3.json",
+      "sha256": "ac3012c3cf6cf2505d4beaeba863e690e9f240c94453f7cb2b8aaa41db688af9"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3h3.json",
+      "sha256": "56585a7347f82e02ae4614d8a1a7bc33f7ae060b74c7b87651dbdaccbc1d41ef"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3c2.json",
+      "sha256": "4d44f8b47bbe72a0ba1359ccad1e59ec00855a37526fab680bbc1eb1e2fe703f"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3d1.json",
+      "sha256": "7af31bc5af30fcbb82bab63c54764547e29ebb26bae5cabd522d3a5e31995fbc"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3b2.json",
+      "sha256": "e7ebb1abe52cea8596a13362b8822f2823236a28c7abc894356f5acd2476fc99"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3b1.json",
+      "sha256": "360e43d59cb4f67a228e0d1f0d4e04ba51d240d4a1e8eb2027d3a4a9fd9c5b37"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3a2.json",
+      "sha256": "1af7d4a562c619cae08c8e048c0aa31e0b42cfe8ef97c89704243846864fdd43"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-b3a3.json",
+      "sha256": "4f69822646c8434021cb960466ca61b8f0bb17ca1d0ac77392b31490a1dd820b"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-a1a2.json",
+      "sha256": "3e13735f5d55905759f0974acf7b9f88c84b0d337f6310ab8a443c426798096e"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-a1b2.json",
+      "sha256": "72b3eb99a0a23a03f017d1427596f7b51d2fd27ef0da14f3370c117a55548e09"
+    },
+    {
+      "path": "research\\reports\\stockfish-target-feasibility-v1-2026-10-07\\1-50000-a1b1.json",
+      "sha256": "aade481f5abffc1a4b766a43ab08989981f311b0fe1afe8c8114161fd5c996aa"
+    }
+  ],
+  "resources": {
+    "elapsedSeconds": 159.84098500000002,
+    "peakCombinedRssMiB": 311.87109375,
+    "rssMeasurement": "Parent + engine WorkingSet64 samples before/after search and setup; not continuous peak",
+    "cpuDuty": 0.5
+  },
+  "stages": {
+    "engineSearch": true,
+    "recordedTargets": true,
+    "neuralFeedback": false,
+    "persistentLearning": false,
+    "transfer": false
+  }
+}

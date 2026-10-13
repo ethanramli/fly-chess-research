@@ -1,0 +1,45 @@
+{
+  "allChecksPassed": true,
+  "run": "research/reports/gf-memory-probe-v1-2026-10-05",
+  "reportSha256": "8f01e5d40c6ed45b225774cd2f5fd6deb4597970644c7a36539e511281752951",
+  "checkedJobs": 24,
+  "checks": [
+    "Input and executable source hashes",
+    "Pinned original audit, seed/condition coverage and calibration arithmetic",
+    "All GF normalization/choice/effect calculations, saved memory identities, original MBON consistency, reset/restoration and disabled responses",
+    "Summary recomputed from raw records",
+    "Resumed prefix scientific records match exactly"
+  ],
+  "applicationComparison": {
+    "informative": {
+      "acquisitionCorrect": 3,
+      "reversalCorrect": 3,
+      "tiedProbes": 18
+    },
+    "absent": {
+      "acquisitionCorrect": 3,
+      "reversalCorrect": 3,
+      "tiedProbes": 18
+    },
+    "shuffled": {
+      "acquisitionCorrect": 3,
+      "reversalCorrect": 3,
+      "tiedProbes": 18
+    },
+    "disabled": {
+      "acquisitionCorrect": 3,
+      "reversalCorrect": 3,
+      "tiedProbes": 18
+    }
+  },
+  "signalRange": {
+    "min": -0.0000016761795688568343,
+    "max": -1.4001460564772858e-7,
+    "allBelowRest": true
+  },
+  "sourceSha256": "3640f358dd9e45c49f8f24575cf0f79c67a2674e317f000ff9d58d6dc814d359",
+  "limitations": [
+    "Consistency audit does not independently re-simulate the full graph. Runtime probes separately check fixed-state hashes and original MBON numerical equality.",
+    "Reused synthetic cues, experimental direct stimulation and diagnostic GF decoder do not validate biological learning, independent Gate B acceptance or chess transfer."
+  ]
+}

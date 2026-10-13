@@ -1,0 +1,84 @@
+{
+  "timestamp": "2026-10-10T10:59:12.205Z",
+  "node": "v22.23.2",
+  "passed": true,
+  "coverage": "Independent recomputation from recorded samples, legal-move coverage, source hashes and resource report; full-buffer equivalence was asserted during the comparison",
+  "reportSHA256": "43f85a1ceef7fdf72a29992c20d9af45197df4108d6e1e4f40923c6079030586",
+  "samplesSHA256": "558502ede2de2e5bc5a686243ba6ba19df3c888ab1537dc95ee6c12e40fabcc7",
+  "samples": 32,
+  "audited": [
+    {
+      "fixture": "white-start",
+      "oracle": {
+        "count": 4,
+        "medianMs": 7207.236499999999,
+        "p95Ms": 12245.082300000002,
+        "maxMs": 12245.082300000002
+      },
+      "candidate": {
+        "count": 4,
+        "medianMs": 6396.080300000001,
+        "p95Ms": 7220.305699999997,
+        "maxMs": 7220.305699999997
+      },
+      "medianReductionPercent": 11.254746531489534
+    },
+    {
+      "fixture": "black-after-e4",
+      "oracle": {
+        "count": 4,
+        "medianMs": 7633.916100000002,
+        "p95Ms": 12840.275300000008,
+        "maxMs": 12840.275300000008
+      },
+      "candidate": {
+        "count": 4,
+        "medianMs": 5864.402999999991,
+        "p95Ms": 6619.228999999992,
+        "maxMs": 6619.228999999992
+      },
+      "medianReductionPercent": 23.179624675204526
+    },
+    {
+      "fixture": "opening-six-plies",
+      "oracle": {
+        "count": 4,
+        "medianMs": 17423.67439999996,
+        "p95Ms": 21476.19279999996,
+        "maxMs": 21476.19279999996
+      },
+      "candidate": {
+        "count": 4,
+        "medianMs": 13686.140399999975,
+        "p95Ms": 17857.7684,
+        "maxMs": 17857.7684
+      },
+      "medianReductionPercent": 21.45089442213173
+    },
+    {
+      "fixture": "rook-endgame",
+      "oracle": {
+        "count": 4,
+        "medianMs": 6218.267099999997,
+        "p95Ms": 12220.955699999991,
+        "maxMs": 12220.955699999991
+      },
+      "candidate": {
+        "count": 4,
+        "medianMs": 5190.847700000042,
+        "p95Ms": 9865.17359999998,
+        "maxMs": 9865.17359999998
+      },
+      "medianReductionPercent": 16.522600002176745
+    }
+  ],
+  "resources": {
+    "peakRssMiB": 135.390625,
+    "freeMiBAtEnd": 991.86328125,
+    "elapsedSeconds": 465.3922843,
+    "cpuSeconds": 222.344,
+    "cpuDuty": 0.5,
+    "cpu": "Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz",
+    "hostname": "DESKTOP-6738PAD"
+  }
+}

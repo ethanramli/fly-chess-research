@@ -1,0 +1,1375 @@
+{
+  "timestamp": "2026-10-10T11:51:44.337Z",
+  "runs": [
+    {
+      "kind": "wasm",
+      "reportSHA256": "43f85a1ceef7fdf72a29992c20d9af45197df4108d6e1e4f40923c6079030586",
+      "samplesSHA256": "558502ede2de2e5bc5a686243ba6ba19df3c888ab1537dc95ee6c12e40fabcc7",
+      "fixtures": [
+        {
+          "id": "white-start",
+          "candidates": 20,
+          "metrics": {
+            "oracle": {
+              "elapsedMs": {
+                "values": [
+                  10938.788600000007,
+                  6881.399099999995,
+                  12245.082300000002,
+                  7207.236499999999
+                ],
+                "conventionalMedian": 9073.012550000003,
+                "nearestRankP50": 7207.236499999999,
+                "sampledP95": 12245.082300000002,
+                "min": 6881.399099999995,
+                "max": 12245.082300000002
+              },
+              "cpuMs": {
+                "values": [
+                  5171,
+                  3359,
+                  5437,
+                  3485
+                ],
+                "conventionalMedian": 4328,
+                "nearestRankP50": 3485,
+                "sampledP95": 5437,
+                "min": 3359,
+                "max": 5437
+              },
+              "forwardMs": {
+                "values": [
+                  5361.010200000019,
+                  3370.2662999999957,
+                  5999.031399999993,
+                  3519.389699999956
+                ],
+                "conventionalMedian": 4440.199949999987,
+                "nearestRankP50": 3519.389699999956,
+                "sampledP95": 5999.031399999993,
+                "min": 3370.2662999999957,
+                "max": 5999.031399999993
+              },
+              "restMs": {
+                "values": [
+                  5554.44850000002,
+                  3493.492299999991,
+                  6227.481499999958,
+                  3671.6435000000347
+                ],
+                "conventionalMedian": 4613.046000000028,
+                "nearestRankP50": 3671.6435000000347,
+                "sampledP95": 6227.481499999958,
+                "min": 3493.492299999991,
+                "max": 6227.481499999958
+              }
+            },
+            "candidate": {
+              "elapsedMs": {
+                "values": [
+                  5489.617599999998,
+                  6396.080300000001,
+                  7220.305699999997,
+                  7002.6322999999975
+                ],
+                "conventionalMedian": 6699.3562999999995,
+                "nearestRankP50": 6396.080300000001,
+                "sampledP95": 7220.305699999997,
+                "min": 5489.617599999998,
+                "max": 7220.305699999997
+              },
+              "cpuMs": {
+                "values": [
+                  2719,
+                  3000,
+                  3516,
+                  3249
+                ],
+                "conventionalMedian": 3124.5,
+                "nearestRankP50": 3000,
+                "sampledP95": 3516,
+                "min": 2719,
+                "max": 3516
+              },
+              "forwardMs": {
+                "values": [
+                  2654.3634000000093,
+                  3124.9968000000154,
+                  3505.7960999999923,
+                  3385.0619000000297
+                ],
+                "conventionalMedian": 3255.0293500000225,
+                "nearestRankP50": 3124.9968000000154,
+                "sampledP95": 3505.7960999999923,
+                "min": 2654.3634000000093,
+                "max": 3505.7960999999923
+              },
+              "restMs": {
+                "values": [
+                  2814.47879999999,
+                  3254.7220999999845,
+                  3696.129499999981,
+                  3597.5424999999814
+                ],
+                "conventionalMedian": 3426.132299999983,
+                "nearestRankP50": 3254.7220999999845,
+                "sampledP95": 3696.129499999981,
+                "min": 2814.47879999999,
+                "max": 3696.129499999981
+              }
+            }
+          },
+          "pairs": [
+            {
+              "pair": 0,
+              "reductionPercent": 49.815123038395726,
+              "candidateFaster": true
+            },
+            {
+              "pair": 1,
+              "reductionPercent": 7.052618122381449,
+              "candidateFaster": true
+            },
+            {
+              "pair": 2,
+              "reductionPercent": 41.035057804388984,
+              "candidateFaster": true
+            },
+            {
+              "pair": 3,
+              "reductionPercent": 2.8388717367607064,
+              "candidateFaster": true
+            }
+          ],
+          "conventionalMedianReductionPercent": 26.161721224556256,
+          "nearestRankReductionPercent": 11.254746531489534
+        },
+        {
+          "id": "black-after-e4",
+          "candidates": 20,
+          "metrics": {
+            "oracle": {
+              "elapsedMs": {
+                "values": [
+                  7026.020799999998,
+                  7633.916100000002,
+                  12250.791300000012,
+                  12840.275300000008
+                ],
+                "conventionalMedian": 9942.353700000007,
+                "nearestRankP50": 7633.916100000002,
+                "sampledP95": 12840.275300000008,
+                "min": 7026.020799999998,
+                "max": 12840.275300000008
+              },
+              "cpuMs": {
+                "values": [
+                  3391,
+                  3672,
+                  5656,
+                  5719
+                ],
+                "conventionalMedian": 4664,
+                "nearestRankP50": 3672,
+                "sampledP95": 5719,
+                "min": 3391,
+                "max": 5719
+              },
+              "forwardMs": {
+                "values": [
+                  3421.5314999999246,
+                  3738.6875999999465,
+                  6020.413900000043,
+                  6282.407499999943
+                ],
+                "conventionalMedian": 4879.550749999995,
+                "nearestRankP50": 3738.6875999999465,
+                "sampledP95": 6282.407499999943,
+                "min": 3421.5314999999246,
+                "max": 6282.407499999943
+              },
+              "restMs": {
+                "values": [
+                  3586.847000000009,
+                  3879.4058999999834,
+                  6213.092100000009,
+                  6539.651200000051
+                ],
+                "conventionalMedian": 5046.248999999996,
+                "nearestRankP50": 3879.4058999999834,
+                "sampledP95": 6539.651200000051,
+                "min": 3586.847000000009,
+                "max": 6539.651200000051
+              }
+            },
+            "candidate": {
+              "elapsedMs": {
+                "values": [
+                  6619.228999999992,
+                  6030.876000000018,
+                  5840.723799999978,
+                  5864.402999999991
+                ],
+                "conventionalMedian": 5947.639500000005,
+                "nearestRankP50": 5864.402999999991,
+                "sampledP95": 6619.228999999992,
+                "min": 5840.723799999978,
+                "max": 6619.228999999992
+              },
+              "cpuMs": {
+                "values": [
+                  3156,
+                  2922,
+                  2859,
+                  2812
+                ],
+                "conventionalMedian": 2890.5,
+                "nearestRankP50": 2859,
+                "sampledP95": 3156,
+                "min": 2812,
+                "max": 3156
+              },
+              "forwardMs": {
+                "values": [
+                  3234.728899999929,
+                  2919.343899999949,
+                  2825.933800000028,
+                  2837.499399999884
+                ],
+                "conventionalMedian": 2878.4216499999166,
+                "nearestRankP50": 2837.499399999884,
+                "sampledP95": 3234.728899999929,
+                "min": 2825.933800000028,
+                "max": 3234.728899999929
+              },
+              "restMs": {
+                "values": [
+                  3369.24410000004,
+                  3093.351800000004,
+                  2999.9692000000505,
+                  3010.580200000055
+                ],
+                "conventionalMedian": 3051.9660000000295,
+                "nearestRankP50": 3010.580200000055,
+                "sampledP95": 3369.24410000004,
+                "min": 2999.9692000000505,
+                "max": 3369.24410000004
+              }
+            }
+          },
+          "pairs": [
+            {
+              "pair": 0,
+              "reductionPercent": 5.789789292966607,
+              "candidateFaster": true
+            },
+            {
+              "pair": 1,
+              "reductionPercent": 20.998922165256484,
+              "candidateFaster": true
+            },
+            {
+              "pair": 2,
+              "reductionPercent": 52.32370173508733,
+              "candidateFaster": true
+            },
+            {
+              "pair": 3,
+              "reductionPercent": 54.32805868266713,
+              "candidateFaster": true
+            }
+          ],
+          "conventionalMedianReductionPercent": 40.17875767183779,
+          "nearestRankReductionPercent": 23.179624675204526
+        },
+        {
+          "id": "opening-six-plies",
+          "candidates": 33,
+          "metrics": {
+            "oracle": {
+              "elapsedMs": {
+                "values": [
+                  16718.4387,
+                  20911.403099999996,
+                  17423.67439999996,
+                  21476.19279999996
+                ],
+                "conventionalMedian": 19167.538749999978,
+                "nearestRankP50": 17423.67439999996,
+                "sampledP95": 21476.19279999996,
+                "min": 16718.4387,
+                "max": 21476.19279999996
+              },
+              "cpuMs": {
+                "values": [
+                  7390,
+                  9313,
+                  7999,
+                  9484
+                ],
+                "conventionalMedian": 8656,
+                "nearestRankP50": 7999,
+                "sampledP95": 9484,
+                "min": 7390,
+                "max": 9484
+              },
+              "forwardMs": {
+                "values": [
+                  8193.682199999981,
+                  10277.592099999893,
+                  8542.089300000342,
+                  10575.018099999987
+                ],
+                "conventionalMedian": 9409.840700000117,
+                "nearestRankP50": 8542.089300000342,
+                "sampledP95": 10575.018099999987,
+                "min": 8193.682199999981,
+                "max": 10575.018099999987
+              },
+              "restMs": {
+                "values": [
+                  8489.184500000003,
+                  10589.396800000046,
+                  8837.525100000028,
+                  10855.520400000154
+                ],
+                "conventionalMedian": 9713.460950000037,
+                "nearestRankP50": 8837.525100000028,
+                "sampledP95": 10855.520400000154,
+                "min": 8489.184500000003,
+                "max": 10855.520400000154
+              }
+            },
+            "candidate": {
+              "elapsedMs": {
+                "values": [
+                  13686.140399999975,
+                  15720.037899999996,
+                  13073.272199999948,
+                  17857.7684
+                ],
+                "conventionalMedian": 14703.089149999985,
+                "nearestRankP50": 13686.140399999975,
+                "sampledP95": 17857.7684,
+                "min": 13073.272199999948,
+                "max": 17857.7684
+              },
+              "cpuMs": {
+                "values": [
+                  6298,
+                  6984,
+                  5797,
+                  8391
+                ],
+                "conventionalMedian": 6641,
+                "nearestRankP50": 6298,
+                "sampledP95": 8391,
+                "min": 5797,
+                "max": 8391
+              },
+              "forwardMs": {
+                "values": [
+                  6645.421800000098,
+                  7690.703900000022,
+                  6365.414700000081,
+                  8729.598399999843
+                ],
+                "conventionalMedian": 7168.06285000006,
+                "nearestRankP50": 6645.421800000098,
+                "sampledP95": 8729.598399999843,
+                "min": 6365.414700000081,
+                "max": 8729.598399999843
+              },
+              "restMs": {
+                "values": [
+                  6991.2635999999475,
+                  7985.640300000145,
+                  6672.688999999897,
+                  9068.636099999945
+                ],
+                "conventionalMedian": 7488.451950000046,
+                "nearestRankP50": 6991.2635999999475,
+                "sampledP95": 9068.636099999945,
+                "min": 6672.688999999897,
+                "max": 9068.636099999945
+              }
+            }
+          },
+          "pairs": [
+            {
+              "pair": 0,
+              "reductionPercent": 18.13744904301395,
+              "candidateFaster": true
+            },
+            {
+              "pair": 1,
+              "reductionPercent": 24.825523065929524,
+              "candidateFaster": true
+            },
+            {
+              "pair": 2,
+              "reductionPercent": 24.968339628752602,
+              "candidateFaster": true
+            },
+            {
+              "pair": 3,
+              "reductionPercent": 16.848537511732374,
+              "candidateFaster": true
+            }
+          ],
+          "conventionalMedianReductionPercent": 23.291720748445066,
+          "nearestRankReductionPercent": 21.45089442213173
+        },
+        {
+          "id": "rook-endgame",
+          "candidates": 19,
+          "metrics": {
+            "oracle": {
+              "elapsedMs": {
+                "values": [
+                  6167.797599999991,
+                  7468.15909999999,
+                  6218.267099999997,
+                  12220.955699999991
+                ],
+                "conventionalMedian": 6843.213099999994,
+                "nearestRankP50": 6218.267099999997,
+                "sampledP95": 12220.955699999991,
+                "min": 6167.797599999991,
+                "max": 12220.955699999991
+              },
+              "cpuMs": {
+                "values": [
+                  3016,
+                  3531,
+                  3031,
+                  5250
+                ],
+                "conventionalMedian": 3281,
+                "nearestRankP50": 3031,
+                "sampledP95": 5250,
+                "min": 3016,
+                "max": 5250
+              },
+              "forwardMs": {
+                "values": [
+                  2981.897500000079,
+                  3650.1678000002285,
+                  3033.016799999983,
+                  6017.090400000161
+                ],
+                "conventionalMedian": 3341.5923000001058,
+                "nearestRankP50": 3033.016799999983,
+                "sampledP95": 6017.090400000161,
+                "min": 2981.897500000079,
+                "max": 6017.090400000161
+              },
+              "restMs": {
+                "values": [
+                  3160.1302999999025,
+                  3790.999600000039,
+                  3162.1013000000967,
+                  6174.108699999924
+                ],
+                "conventionalMedian": 3476.550450000068,
+                "nearestRankP50": 3162.1013000000967,
+                "sampledP95": 6174.108699999924,
+                "min": 3160.1302999999025,
+                "max": 6174.108699999924
+              }
+            },
+            "candidate": {
+              "elapsedMs": {
+                "values": [
+                  9865.17359999998,
+                  5877.464199999988,
+                  5155.405899999954,
+                  5190.847700000042
+                ],
+                "conventionalMedian": 5534.155950000015,
+                "nearestRankP50": 5190.847700000042,
+                "sampledP95": 9865.17359999998,
+                "min": 5155.405899999954,
+                "max": 9865.17359999998
+              },
+              "cpuMs": {
+                "values": [
+                  4391,
+                  2718,
+                  2484,
+                  2531
+                ],
+                "conventionalMedian": 2624.5,
+                "nearestRankP50": 2531,
+                "sampledP95": 4391,
+                "min": 2484,
+                "max": 4391
+              },
+              "forwardMs": {
+                "values": [
+                  4847.033099999942,
+                  2837.9959000001545,
+                  2478.8154000000795,
+                  2513.268699999957
+                ],
+                "conventionalMedian": 2675.6323000000557,
+                "nearestRankP50": 2513.268699999957,
+                "sampledP95": 4847.033099999942,
+                "min": 2478.8154000000795,
+                "max": 4847.033099999942
+              },
+              "restMs": {
+                "values": [
+                  4989.917100000021,
+                  3015.5325000000303,
+                  2653.226800000004,
+                  2653.080799999938
+                ],
+                "conventionalMedian": 2834.379650000017,
+                "nearestRankP50": 2653.226800000004,
+                "sampledP95": 4989.917100000021,
+                "min": 2653.080799999938,
+                "max": 4989.917100000021
+              }
+            }
+          },
+          "pairs": [
+            {
+              "pair": 0,
+              "reductionPercent": -59.946454792874434,
+              "candidateFaster": false
+            },
+            {
+              "pair": 1,
+              "reductionPercent": 21.2996921825086,
+              "candidateFaster": true
+            },
+            {
+              "pair": 2,
+              "reductionPercent": 17.092562653026654,
+              "candidateFaster": true
+            },
+            {
+              "pair": 3,
+              "reductionPercent": 57.52502645926418,
+              "candidateFaster": true
+            }
+          ],
+          "conventionalMedianReductionPercent": 19.129276421334595,
+          "nearestRankReductionPercent": 16.522600002176745
+        }
+      ],
+      "sources": [
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\move-latency-wasm-2026-10-10\\oracle-trainer.mjs",
+          "expected": "719b91738b6a8db38f4d0f240defc5598830bb5225b6f1ed45b540f8b0c4325e",
+          "current": "719b91738b6a8db38f4d0f240defc5598830bb5225b6f1ed45b540f8b0c4325e",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\move-latency-wasm-2026-10-10\\candidate-trainer.mjs",
+          "expected": "67b1732d80db430b58624f76d4260c8a8655a94ea3f5d82cf2049640975880f0",
+          "current": "67b1732d80db430b58624f76d4260c8a8655a94ea3f5d82cf2049640975880f0",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\move-latency-wasm-2026-10-10\\benchmark.mjs",
+          "expected": "2e81a4a7478f8421d72d79a4bfde72c0efc7f3719edb111e646ab54e7820e689",
+          "current": "2e81a4a7478f8421d72d79a4bfde72c0efc7f3719edb111e646ab54e7820e689",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\move-latency-wasm-2026-10-10\\protocol.json",
+          "expected": "6bd2b96e0f7825bd26e0cc9a4fbcf6be494128c4a3346935caee96c5c1c2ef91",
+          "current": "6bd2b96e0f7825bd26e0cc9a4fbcf6be494128c4a3346935caee96c5c1c2ef91",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\move-latency-wasm-2026-10-10\\source-manifest.json",
+          "expected": "f59b43c779723abd1f2240f0214023df0ecbe9a63b15ab110555a7a8d06a7b2e",
+          "current": "f59b43c779723abd1f2240f0214023df0ecbe9a63b15ab110555a7a8d06a7b2e",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\src\\supervised-baselines\\trainer.mjs",
+          "expected": "719b91738b6a8db38f4d0f240defc5598830bb5225b6f1ed45b540f8b0c4325e",
+          "current": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+          "matches": false
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\src\\evaluation-and-performance\\fly-policy.mjs",
+          "expected": "18f4509be716ee4f64d22020a519a9f6a34a612dce49b7703aa8234340dfa14f",
+          "current": "18f4509be716ee4f64d22020a519a9f6a34a612dce49b7703aa8234340dfa14f",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\src\\supervised-baselines\\positions.mjs",
+          "expected": "b08f07ba4775132bfe78f979799621c916e4b061a213af35ed9a8afb8b7800d4",
+          "current": "b08f07ba4775132bfe78f979799621c916e4b061a213af35ed9a8afb8b7800d4",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\src\\runtime\\graph.mjs",
+          "expected": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+          "current": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\runtime\\fetch-graph.mjs",
+          "expected": "5e48960ed947379ba31fc5cb10b791d6e5891913ed073a4443e6e9c875fab52a",
+          "current": "5e48960ed947379ba31fc5cb10b791d6e5891913ed073a4443e6e9c875fab52a",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\package.json",
+          "expected": "7605c507b0762b1c7b2886860a5ef5227671fdc55227ee15af681de26a6b3802",
+          "current": "7605c507b0762b1c7b2886860a5ef5227671fdc55227ee15af681de26a6b3802",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\package-lock.json",
+          "expected": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+          "current": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\src\\runtime\\sparse-accumulator.mjs",
+          "expected": "7a578b92a215aabf612d0c74899e9bff92054fe5d7d5b8e8f35f57ba0fd2ade9",
+          "current": "7a578b92a215aabf612d0c74899e9bff92054fe5d7d5b8e8f35f57ba0fd2ade9",
+          "matches": true
+        }
+      ],
+      "declaredGate": true,
+      "conventionalPerFixtureGate": true,
+      "resources": {
+        "peakRssMiB": 135.390625,
+        "freeMiBAtEnd": 991.86328125,
+        "elapsedSeconds": 465.3922843,
+        "cpuSeconds": 222.344,
+        "cpuDuty": 0.5,
+        "cpu": "Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz",
+        "hostname": "DESKTOP-6738PAD"
+      },
+      "coldStart": {
+        "hashMs": 196.47239999999988,
+        "loadMs": 92.4326000000001,
+        "modelMs": 421.9825000000001
+      },
+      "command": {
+        "executable": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe",
+        "execArgv": [
+          "--max-old-space-size=256"
+        ],
+        "argv": [
+          "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\move-latency-wasm-2026-10-10\\benchmark.mjs",
+          "--out",
+          "runs/move-latency-wasm-v1",
+          "--cpu-duty",
+          "0.5"
+        ],
+        "node": "v22.23.2"
+      },
+      "measuredCpuMs": {
+        "oracle": 84904,
+        "candidate": 63827
+      }
+    },
+    {
+      "kind": "zero-reset",
+      "reportSHA256": "f7f60d04d3daac102a419f4054c4b72bb87e1d0bcfc1a30ddba52c7912d13daa",
+      "samplesSHA256": "ccb569fe93237bdbffaf877ea93cb31754d45ce2ea3d4c5b455174821eba94b1",
+      "fixtures": [
+        {
+          "id": "white-start",
+          "candidates": 20,
+          "metrics": {
+            "oracle": {
+              "elapsedMs": {
+                "values": [
+                  8650.430800000002,
+                  8137.899399999995,
+                  8106.946200000006,
+                  7221.104400000011
+                ],
+                "conventionalMedian": 8122.4228,
+                "nearestRankP50": 8106.946200000006,
+                "sampledP95": 8650.430800000002,
+                "min": 7221.104400000011,
+                "max": 8650.430800000002
+              },
+              "cpuMs": {
+                "values": [
+                  3938,
+                  3547,
+                  3625,
+                  3218
+                ],
+                "conventionalMedian": 3586,
+                "nearestRankP50": 3547,
+                "sampledP95": 3938,
+                "min": 3218,
+                "max": 3938
+              },
+              "forwardMs": {
+                "values": [
+                  4242.5109999999695,
+                  3940.2069999999803,
+                  3955.1938999999984,
+                  3508.233199999988
+                ],
+                "conventionalMedian": 3947.7004499999894,
+                "nearestRankP50": 3940.2069999999803,
+                "sampledP95": 4242.5109999999695,
+                "min": 3508.233199999988,
+                "max": 4242.5109999999695
+              },
+              "restMs": {
+                "values": [
+                  4392.460699999996,
+                  4164.533199999991,
+                  4131.580599999972,
+                  3692.0136000000057
+                ],
+                "conventionalMedian": 4148.056899999981,
+                "nearestRankP50": 4131.580599999972,
+                "sampledP95": 4392.460699999996,
+                "min": 3692.0136000000057,
+                "max": 4392.460699999996
+              }
+            },
+            "candidate": {
+              "elapsedMs": {
+                "values": [
+                  7267.194499999998,
+                  7004.891000000003,
+                  8205.212499999994,
+                  7327.928800000009
+                ],
+                "conventionalMedian": 7297.561650000003,
+                "nearestRankP50": 7267.194499999998,
+                "sampledP95": 8205.212499999994,
+                "min": 7004.891000000003,
+                "max": 8205.212499999994
+              },
+              "cpuMs": {
+                "values": [
+                  3375,
+                  3141,
+                  3796,
+                  3344
+                ],
+                "conventionalMedian": 3359.5,
+                "nearestRankP50": 3344,
+                "sampledP95": 3796,
+                "min": 3141,
+                "max": 3796
+              },
+              "forwardMs": {
+                "values": [
+                  3535.5783000000156,
+                  3417.5912999999855,
+                  4003.3833000000013,
+                  3568.309599999964
+                ],
+                "conventionalMedian": 3551.94394999999,
+                "nearestRankP50": 3535.5783000000156,
+                "sampledP95": 4003.3833000000013,
+                "min": 3417.5912999999855,
+                "max": 4003.3833000000013
+              },
+              "restMs": {
+                "values": [
+                  3708.527399999999,
+                  3570.3068000000494,
+                  4180.753799999991,
+                  3740.3217000000586
+                ],
+                "conventionalMedian": 3724.424550000029,
+                "nearestRankP50": 3708.527399999999,
+                "sampledP95": 4180.753799999991,
+                "min": 3570.3068000000494,
+                "max": 4180.753799999991
+              }
+            }
+          },
+          "pairs": [
+            {
+              "pair": 0,
+              "reductionPercent": 15.990374722146827,
+              "candidateFaster": true
+            },
+            {
+              "pair": 1,
+              "reductionPercent": 13.92261496867352,
+              "candidateFaster": true
+            },
+            {
+              "pair": 2,
+              "reductionPercent": -1.212124733231712,
+              "candidateFaster": false
+            },
+            {
+              "pair": 3,
+              "reductionPercent": -1.4793360417278745,
+              "candidateFaster": false
+            }
+          ],
+          "conventionalMedianReductionPercent": 10.155358447974372,
+          "nearestRankReductionPercent": 10.35842201592515
+        },
+        {
+          "id": "black-after-e4",
+          "candidates": 20,
+          "metrics": {
+            "oracle": {
+              "elapsedMs": {
+                "values": [
+                  7678.883499999996,
+                  8006.499099999986,
+                  7920.042199999996,
+                  8413.315100000007
+                ],
+                "conventionalMedian": 7963.270649999991,
+                "nearestRankP50": 7920.042199999996,
+                "sampledP95": 8413.315100000007,
+                "min": 7678.883499999996,
+                "max": 8413.315100000007
+              },
+              "cpuMs": {
+                "values": [
+                  3469,
+                  3672,
+                  3657,
+                  3766
+                ],
+                "conventionalMedian": 3664.5,
+                "nearestRankP50": 3657,
+                "sampledP95": 3766,
+                "min": 3469,
+                "max": 3766
+              },
+              "forwardMs": {
+                "values": [
+                  3741.7313999999315,
+                  3907.1658000000753,
+                  3856.3221000000194,
+                  4105.243399999861
+                ],
+                "conventionalMedian": 3881.7439500000473,
+                "nearestRankP50": 3856.3221000000194,
+                "sampledP95": 4105.243399999861,
+                "min": 3741.7313999999315,
+                "max": 4105.243399999861
+              },
+              "restMs": {
+                "values": [
+                  3918.6773000000394,
+                  4076.4000000001106,
+                  4046.2986999999557,
+                  4289.27429999999
+                ],
+                "conventionalMedian": 4061.349350000033,
+                "nearestRankP50": 4046.2986999999557,
+                "sampledP95": 4289.27429999999,
+                "min": 3918.6773000000394,
+                "max": 4289.27429999999
+              }
+            },
+            "candidate": {
+              "elapsedMs": {
+                "values": [
+                  7959.939400000003,
+                  9071.500100000005,
+                  7279.631000000023,
+                  9818.331999999995
+                ],
+                "conventionalMedian": 8515.719750000004,
+                "nearestRankP50": 7959.939400000003,
+                "sampledP95": 9818.331999999995,
+                "min": 7279.631000000023,
+                "max": 9818.331999999995
+              },
+              "cpuMs": {
+                "values": [
+                  3609,
+                  4093,
+                  3391,
+                  4437
+                ],
+                "conventionalMedian": 3851,
+                "nearestRankP50": 3609,
+                "sampledP95": 4437,
+                "min": 3391,
+                "max": 4437
+              },
+              "forwardMs": {
+                "values": [
+                  3875.1777,
+                  4450.305399999983,
+                  3544.0286000000197,
+                  4825.240300000005
+                ],
+                "conventionalMedian": 4162.741549999992,
+                "nearestRankP50": 3875.1777,
+                "sampledP95": 4825.240300000005,
+                "min": 3544.0286000000197,
+                "max": 4825.240300000005
+              },
+              "restMs": {
+                "values": [
+                  4064.900600000081,
+                  4602.889700000029,
+                  3721.6807999999437,
+                  4978.871600000013
+                ],
+                "conventionalMedian": 4333.895150000055,
+                "nearestRankP50": 4064.900600000081,
+                "sampledP95": 4978.871600000013,
+                "min": 3721.6807999999437,
+                "max": 4978.871600000013
+              }
+            }
+          },
+          "pairs": [
+            {
+              "pair": 0,
+              "reductionPercent": -3.66011412987326,
+              "candidateFaster": false
+            },
+            {
+              "pair": 1,
+              "reductionPercent": -13.301706360024701,
+              "candidateFaster": false
+            },
+            {
+              "pair": 2,
+              "reductionPercent": 8.085956915734283,
+              "candidateFaster": true
+            },
+            {
+              "pair": 3,
+              "reductionPercent": -16.699920106403553,
+              "candidateFaster": false
+            }
+          ],
+          "conventionalMedianReductionPercent": -6.937464821693751,
+          "nearestRankReductionPercent": -0.5037498411309738
+        },
+        {
+          "id": "opening-six-plies",
+          "candidates": 33,
+          "metrics": {
+            "oracle": {
+              "elapsedMs": {
+                "values": [
+                  16912.901599999983,
+                  15462.54879999999,
+                  14627.094600000011,
+                  11277.509099999967
+                ],
+                "conventionalMedian": 15044.8217,
+                "nearestRankP50": 14627.094600000011,
+                "sampledP95": 16912.901599999983,
+                "min": 11277.509099999967,
+                "max": 16912.901599999983
+              },
+              "cpuMs": {
+                "values": [
+                  7390,
+                  7094,
+                  6531,
+                  5437
+                ],
+                "conventionalMedian": 6812.5,
+                "nearestRankP50": 6531,
+                "sampledP95": 7390,
+                "min": 5437,
+                "max": 7390
+              },
+              "forwardMs": {
+                "values": [
+                  8307.11999999982,
+                  7568.439999999944,
+                  7130.0928999999305,
+                  5495.125300000014
+                ],
+                "conventionalMedian": 7349.266449999937,
+                "nearestRankP50": 7130.0928999999305,
+                "sampledP95": 8307.11999999982,
+                "min": 5495.125300000014,
+                "max": 8307.11999999982
+              },
+              "restMs": {
+                "values": [
+                  8570.047799999884,
+                  7853.250800000096,
+                  7460.333899999969,
+                  5748.635300000082
+                ],
+                "conventionalMedian": 7656.7923500000325,
+                "nearestRankP50": 7460.333899999969,
+                "sampledP95": 8570.047799999884,
+                "min": 5748.635300000082,
+                "max": 8570.047799999884
+              }
+            },
+            "candidate": {
+              "elapsedMs": {
+                "values": [
+                  13683.667799999996,
+                  14827.683900000004,
+                  14870.128800000006,
+                  10639.906399999978
+                ],
+                "conventionalMedian": 14255.67585,
+                "nearestRankP50": 13683.667799999996,
+                "sampledP95": 14870.128800000006,
+                "min": 10639.906399999978,
+                "max": 14870.128800000006
+              },
+              "cpuMs": {
+                "values": [
+                  6407,
+                  6828,
+                  6657,
+                  5093
+                ],
+                "conventionalMedian": 6532,
+                "nearestRankP50": 6407,
+                "sampledP95": 6828,
+                "min": 5093,
+                "max": 6828
+              },
+              "forwardMs": {
+                "values": [
+                  6657.119999999646,
+                  7206.335000000079,
+                  7275.077200000174,
+                  5156.156500000216
+                ],
+                "conventionalMedian": 6931.727499999863,
+                "nearestRankP50": 6657.119999999646,
+                "sampledP95": 7275.077200000174,
+                "min": 5156.156500000216,
+                "max": 7275.077200000174
+              },
+              "restMs": {
+                "values": [
+                  6984.005000000063,
+                  7558.445099999779,
+                  7558.276099999843,
+                  5441.07369999995
+                ],
+                "conventionalMedian": 7271.140549999953,
+                "nearestRankP50": 6984.005000000063,
+                "sampledP95": 7558.445099999779,
+                "min": 5441.07369999995,
+                "max": 7558.445099999779
+              }
+            }
+          },
+          "pairs": [
+            {
+              "pair": 0,
+              "reductionPercent": 19.093316311850305,
+              "candidateFaster": true
+            },
+            {
+              "pair": 1,
+              "reductionPercent": 4.105823096900984,
+              "candidateFaster": true
+            },
+            {
+              "pair": 2,
+              "reductionPercent": -1.6615343418917572,
+              "candidateFaster": false
+            },
+            {
+              "pair": 3,
+              "reductionPercent": 5.653754693046453,
+              "candidateFaster": true
+            }
+          ],
+          "conventionalMedianReductionPercent": 5.2452987860933,
+          "nearestRankReductionPercent": 6.449857786521839
+        },
+        {
+          "id": "rook-endgame",
+          "candidates": 19,
+          "metrics": {
+            "oracle": {
+              "elapsedMs": {
+                "values": [
+                  6050.872900000017,
+                  6706.65419999999,
+                  7550.41750000004,
+                  9505.703099999984
+                ],
+                "conventionalMedian": 7128.535850000015,
+                "nearestRankP50": 6706.65419999999,
+                "sampledP95": 9505.703099999984,
+                "min": 6050.872900000017,
+                "max": 9505.703099999984
+              },
+              "cpuMs": {
+                "values": [
+                  3000,
+                  3219,
+                  3453,
+                  4296
+                ],
+                "conventionalMedian": 3336,
+                "nearestRankP50": 3219,
+                "sampledP95": 4296,
+                "min": 3000,
+                "max": 4296
+              },
+              "forwardMs": {
+                "values": [
+                  2925.087500000198,
+                  3247.4098000001395,
+                  3660.310000000056,
+                  4660.859300000069
+                ],
+                "conventionalMedian": 3453.8599000000977,
+                "nearestRankP50": 3247.4098000001395,
+                "sampledP95": 4660.859300000069,
+                "min": 2925.087500000198,
+                "max": 4660.859300000069
+              },
+              "restMs": {
+                "values": [
+                  3095.315300000075,
+                  3430.638300000108,
+                  3856.6253000001307,
+                  4817.893899999966
+                ],
+                "conventionalMedian": 3643.6318000001193,
+                "nearestRankP50": 3430.638300000108,
+                "sampledP95": 4817.893899999966,
+                "min": 3095.315300000075,
+                "max": 4817.893899999966
+              }
+            },
+            "candidate": {
+              "elapsedMs": {
+                "values": [
+                  5658.68809999997,
+                  5886.276400000032,
+                  8505.984400000016,
+                  7115.906999999948
+                ],
+                "conventionalMedian": 6501.09169999999,
+                "nearestRankP50": 5886.276400000032,
+                "sampledP95": 8505.984400000016,
+                "min": 5658.68809999997,
+                "max": 8505.984400000016
+              },
+              "cpuMs": {
+                "values": [
+                  2703,
+                  2875,
+                  3907,
+                  3422
+                ],
+                "conventionalMedian": 3148.5,
+                "nearestRankP50": 2875,
+                "sampledP95": 3907,
+                "min": 2703,
+                "max": 3907
+              },
+              "forwardMs": {
+                "values": [
+                  2730.865000000049,
+                  2844.938500000164,
+                  4157.646500000032,
+                  3430.5888000002014
+                ],
+                "conventionalMedian": 3137.7636500001827,
+                "nearestRankP50": 2844.938500000164,
+                "sampledP95": 4157.646500000032,
+                "min": 2730.865000000049,
+                "max": 4157.646500000032
+              },
+              "restMs": {
+                "values": [
+                  2897.5194000000483,
+                  3009.3188000000664,
+                  4321.0076999999,
+                  3653.6365999997943
+                ],
+                "conventionalMedian": 3331.4776999999303,
+                "nearestRankP50": 3009.3188000000664,
+                "sampledP95": 4321.0076999999,
+                "min": 2897.5194000000483,
+                "max": 4321.0076999999
+              }
+            }
+          },
+          "pairs": [
+            {
+              "pair": 0,
+              "reductionPercent": 6.481458237208148,
+              "candidateFaster": true
+            },
+            {
+              "pair": 1,
+              "reductionPercent": 12.23229609780626,
+              "candidateFaster": true
+            },
+            {
+              "pair": 2,
+              "reductionPercent": -12.655815390340619,
+              "candidateFaster": false
+            },
+            {
+              "pair": 3,
+              "reductionPercent": 25.140655823765833,
+              "candidateFaster": true
+            }
+          ],
+          "conventionalMedianReductionPercent": 8.801865673440123,
+          "nearestRankReductionPercent": 12.23229609780626
+        }
+      ],
+      "sources": [
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\move-latency-zero-reset-2026-10-10\\oracle-trainer.mjs",
+          "expected": "719b91738b6a8db38f4d0f240defc5598830bb5225b6f1ed45b540f8b0c4325e",
+          "current": "719b91738b6a8db38f4d0f240defc5598830bb5225b6f1ed45b540f8b0c4325e",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\move-latency-zero-reset-2026-10-10\\candidate-trainer.mjs",
+          "expected": "8c5b3f0d061193d78033d1be837141097686edeb4e20bf5a793968838857acaf",
+          "current": "8c5b3f0d061193d78033d1be837141097686edeb4e20bf5a793968838857acaf",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\move-latency-zero-reset-2026-10-10\\benchmark.mjs",
+          "expected": "1d9ad64a673ce738fe3861397618d9fe7713a45cce121b7e0df9ca4daf465e86",
+          "current": "1d9ad64a673ce738fe3861397618d9fe7713a45cce121b7e0df9ca4daf465e86",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\move-latency-zero-reset-2026-10-10\\protocol.json",
+          "expected": "a8c93edcca81f6544a49808877db7b24c41439c4e068741a6c08e937293c0690",
+          "current": "a8c93edcca81f6544a49808877db7b24c41439c4e068741a6c08e937293c0690",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\move-latency-zero-reset-2026-10-10\\source-manifest.json",
+          "expected": "72005e9d48ebea613b01b96b20cfa7cdafa9169d5183b7097132e33b41fd4149",
+          "current": "72005e9d48ebea613b01b96b20cfa7cdafa9169d5183b7097132e33b41fd4149",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\src\\supervised-baselines\\trainer.mjs",
+          "expected": "719b91738b6a8db38f4d0f240defc5598830bb5225b6f1ed45b540f8b0c4325e",
+          "current": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+          "matches": false
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\src\\evaluation-and-performance\\fly-policy.mjs",
+          "expected": "18f4509be716ee4f64d22020a519a9f6a34a612dce49b7703aa8234340dfa14f",
+          "current": "18f4509be716ee4f64d22020a519a9f6a34a612dce49b7703aa8234340dfa14f",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\src\\supervised-baselines\\positions.mjs",
+          "expected": "b08f07ba4775132bfe78f979799621c916e4b061a213af35ed9a8afb8b7800d4",
+          "current": "b08f07ba4775132bfe78f979799621c916e4b061a213af35ed9a8afb8b7800d4",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\src\\runtime\\graph.mjs",
+          "expected": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+          "current": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\runtime\\fetch-graph.mjs",
+          "expected": "5e48960ed947379ba31fc5cb10b791d6e5891913ed073a4443e6e9c875fab52a",
+          "current": "5e48960ed947379ba31fc5cb10b791d6e5891913ed073a4443e6e9c875fab52a",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\package.json",
+          "expected": "c956f19998099b4f89f99dad89f42ad321ffc2b4501d126495343be496163960",
+          "current": "7605c507b0762b1c7b2886860a5ef5227671fdc55227ee15af681de26a6b3802",
+          "matches": false
+        },
+        {
+          "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\package-lock.json",
+          "expected": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214",
+          "current": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+          "matches": false
+        }
+      ],
+      "declaredGate": false,
+      "conventionalPerFixtureGate": false,
+      "resources": {
+        "peakRssMiB": 112.671875,
+        "freeMiBAtEnd": 1147.81640625,
+        "elapsedSeconds": 481.3777038,
+        "cpuSeconds": 222.109,
+        "cpuDuty": 0.5,
+        "cpu": "Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz",
+        "hostname": "DESKTOP-6738PAD"
+      },
+      "coldStart": {
+        "hashMs": 225.8336999999999,
+        "loadMs": 75.02340000000004,
+        "modelMs": 498.1732999999999
+      },
+      "command": {
+        "executable": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe",
+        "execArgv": [
+          "--max-old-space-size=256"
+        ],
+        "argv": [
+          "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\move-latency-zero-reset-2026-10-10\\benchmark.mjs",
+          "--out",
+          "runs/move-latency-zero-reset-v1",
+          "--cpu-duty",
+          "0.5"
+        ],
+        "node": "v22.23.2"
+      },
+      "measuredCpuMs": {
+        "oracle": 69312,
+        "candidate": 67078
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "path": "result-audit.json",
+      "matches": true
+    },
+    {
+      "path": "http-verification.json",
+      "matches": true
+    },
+    {
+      "path": "staged-http-verification.json",
+      "matches": true
+    },
+    {
+      "path": "production-full-regression.txt",
+      "matches": true
+    },
+    {
+      "path": "production-source-manifest.json",
+      "matches": true
+    },
+    {
+      "path": "production-server-identity.json",
+      "matches": true
+    }
+  ],
+  "productionImportOnlyIdentity": true,
+  "productionSHA256": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+  "accumulatorSHA256": "7a578b92a215aabf612d0c74899e9bff92054fe5d7d5b8e8f35f57ba0fd2ade9",
+  "historical221TapConfirmed": true
+}

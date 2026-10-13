@@ -1,0 +1,87 @@
+{
+  "schema": "bound-ray-pending-recovery-audit-v1",
+  "passed": true,
+  "fixture": {
+    "schema": "bound-ray-pending-recovery-fixture-v1",
+    "origin": "research/reports/bound-ray-feedback-development-v1-2026-10-08/bound-ray-informative",
+    "originReportSha256": "e4dcdbff917f32a557a69a07010a614f3a474d7c1a0397694aac44d212f43e1f",
+    "selectedCheckpoint": "checkpoint-00015",
+    "statePath": "research/reports/bound-ray-feedback-development-completion-2026-10-08/recovery-input/checkpoint-00015/state.json",
+    "stateSha256": "a3672718771b902e12a283fd9b3e180063350e059736cebba4a874808a7bf281",
+    "pendingEventIndex": 0,
+    "presentationsAtInterruption": 27,
+    "lineage": [
+      {
+        "name": "checkpoint-00001",
+        "stateSha256": "2d1934bd4c0dc88490cbe41f46ad8736943ff19b142a3c257db03bfa8f9dffff"
+      },
+      {
+        "name": "checkpoint-00002",
+        "stateSha256": "f7ad3111b548b052a77d738af7d3c54212967d6efa7c49febe16e7c599216e6d"
+      },
+      {
+        "name": "checkpoint-00003",
+        "stateSha256": "b05e2e5d0f1741d8b1b3ac6a27d99d043d6d82d2b1f2bdbdb1a93f10c7aeb5c7"
+      },
+      {
+        "name": "checkpoint-00004",
+        "stateSha256": "0458175367bc16134a4186cf3fa43fb2a8e42c6ba4daf0ca0fe0b3f1ead37f5b"
+      },
+      {
+        "name": "checkpoint-00005",
+        "stateSha256": "2c466bd2b330be496cc3bf168b4143e92f4fc1657cd32937a8e7daf79b2f6585"
+      },
+      {
+        "name": "checkpoint-00006",
+        "stateSha256": "82f77127577f74e1b54a9e6f12bf2a7f92b07c0f5036c686d52773f2e044affc"
+      },
+      {
+        "name": "checkpoint-00007",
+        "stateSha256": "795e8069802dc6159ad3137cbc922353c2a20219b3a756bf4b02a8fa0af5fe29"
+      },
+      {
+        "name": "checkpoint-00008",
+        "stateSha256": "ce8fc8d1aacfcdbfbf70d97581f1940e3d755bb227f2e5c1e83c932ba6094715"
+      },
+      {
+        "name": "checkpoint-00009",
+        "stateSha256": "a07b89d206e885b9d1fa6974e3c1f6a8c294384c414596562b32bf7a0f699a5c"
+      },
+      {
+        "name": "checkpoint-00010",
+        "stateSha256": "f45254e69a8b15365cebf42ca89e46f627cbf0af7a576743809e2a235fe6f9ad"
+      },
+      {
+        "name": "checkpoint-00011",
+        "stateSha256": "465cfd307e54b7a75b101125324ad5d5dd11364637d6cbf300b9d78e68365a55"
+      },
+      {
+        "name": "checkpoint-00012",
+        "stateSha256": "54cd4d1bb94ac87d1f2783b0513463f84459cf96a03493e14d1e70f08731e1ab"
+      },
+      {
+        "name": "checkpoint-00013",
+        "stateSha256": "728bca7ec2743623eb872b11a9d905ff26400f148356fcdafa6883d733552e02"
+      },
+      {
+        "name": "checkpoint-00014",
+        "stateSha256": "521969ec0dec76a7826789d302f140fbb9817c0a69702fd2bae755f24994c8e5"
+      },
+      {
+        "name": "checkpoint-00015",
+        "stateSha256": "a3672718771b902e12a283fd9b3e180063350e059736cebba4a874808a7bf281"
+      }
+    ],
+    "protocolSha256": "a865684916952b5e7199c6cc8671c5d5b5b4b1146d49c667ee9eee242e10af86",
+    "scope": "Simulated interruption at a published updated-memory/pending-receipt prefix; the copied prefix has this as its latest publication. Original complete lineage is preserved unchanged."
+  },
+  "originalReportSha256": "e4dcdbff917f32a557a69a07010a614f3a474d7c1a0397694aac44d212f43e1f",
+  "recoveredReportSha256": "0cab13d31779d367825d38f06fc1376ed24507619825c368ba7217eaa09b4797",
+  "freshReplayAuditSha256": "33ac989437d7a87cf8c8b4937946fbce3fa9e4864f0d161b73dd4e16e5596eec",
+  "pendingUpdateDuplicated": false,
+  "newPresentationsBeforePendingAcknowledgment": 0,
+  "finalMemoryExact": true,
+  "allRankingsExact": true,
+  "all16ReceiptHashesExact": true,
+  "scope": "Simulated interruption at first published pending receipt; exact continuation and independent full neural replay. Not a historical crash, learning success or whole-run speed comparison."
+}

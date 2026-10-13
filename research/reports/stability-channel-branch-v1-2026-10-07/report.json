@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "inputs": {
+    "research/reports/multi-context-stability-v1-2026-10-07/event-informative-2.json": "074a454796448eede052247ddf50a186425bb1432b8956997db9afacc50d8a05",
+    "research/reports/multi-context-stability-v1-2026-10-07/event-shuffled-2.json": "595313c4969823a7ab33637ee3b090512d0d882f127843f9ac03baec12900dc8",
+    "research/reports/multi-context-stability-v1-2026-10-07/ranking-informative-2.json": "f73bfb34a0d78a5fa2afb359fc6f8775fc4801b394e3dc494edddcf1eaa29327",
+    "research/reports/multi-context-stability-v1-2026-10-07/ranking-shuffled-2.json": "578586f34e485b02621ba7ab55f23a1a174943a9d28b47236ff4a2c724e67251"
+  },
+  "auditorSha256": "6fd9fd4310ab3c56a20d99e74cbb81eff79268d22d7e4e036527aa416f560c30",
+  "sameInitialMemory": true,
+  "sameExperience": true,
+  "sameCue": true,
+  "channels": [
+    "PPL103",
+    "PAM02"
+  ],
+  "outcomes": {
+    "informative": [
+      "success",
+      "success"
+    ],
+    "shuffled": [
+      "failure",
+      "failure"
+    ]
+  },
+  "scope": "Saved branch equality and recorded chosen outcomes only; not independent neural replay, final control acceptance or unfamiliar transfer."
+}

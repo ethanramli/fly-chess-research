@@ -1,0 +1,309 @@
+{
+  "schema": "adaptive-public-cue-overlap-v1",
+  "scope": "Static encoder input-cell projection; no graph forward pass, plasticity eligibility or neuron-firing claim",
+  "protocolSha256": "bd4d3c527dc8912f5bf6a3def5a141c544f110d590d1571043a7c52e05c1dd1d",
+  "encoderIdentity": "4c00544472d29b0b4c928dda6bf92a0ff5fce6ee2a62c232f08b36b66baee6b3",
+  "inputs": [
+    {
+      "path": "research/data/adaptive-mate-error-v1/protocol.json",
+      "sha256": "bd4d3c527dc8912f5bf6a3def5a141c544f110d590d1571043a7c52e05c1dd1d"
+    },
+    {
+      "path": "research/reports/adaptive-mate-error-v1-2026-10-08/result.json",
+      "sha256": "b00c8686763c10f9bfe41f307b019599448ebe98ce644f8e56f16a4296a4557e"
+    },
+    {
+      "path": "research/reports/delayed-mate-choice-v1-2026-10-08/feature-coverage.json",
+      "sha256": "721a5c44d180b07b7ac6f7f7a5cf48a4e17313594a117ef8208631405758de10"
+    }
+  ],
+  "lessons": [
+    {
+      "move": "f7e6",
+      "status": "failure",
+      "instructedChannel": "PPL103",
+      "frames": [
+        {
+          "kind": "chosen-action",
+          "action": "f7e6",
+          "tokens": [
+            "action:f7e6",
+            "castle:-",
+            "ep:-",
+            "fullmove:1",
+            "halfmove:0",
+            "piece:b:k:h8",
+            "piece:w:k:g6",
+            "piece:w:q:f7",
+            "task:forced-mate:1",
+            "turn:w"
+          ],
+          "selectedCells": [
+            18263,
+            18380,
+            70921,
+            78274,
+            84768,
+            100077,
+            100371,
+            104636,
+            108493,
+            116600
+          ],
+          "stimulatedCount": 10,
+          "actualTotalCurrent": 15,
+          "pplCells": 9,
+          "pamCells": 2,
+          "sharedCells": 1
+        },
+        {
+          "kind": "endpoint",
+          "action": null,
+          "tokens": [
+            "action:none",
+            "castle:-",
+            "ep:-",
+            "fullmove:1",
+            "halfmove:1",
+            "history:0:w:f7e6",
+            "piece:b:k:h8",
+            "piece:w:k:g6",
+            "piece:w:q:e6",
+            "task:forced-mate:1",
+            "turn:b"
+          ],
+          "selectedCells": [
+            9048,
+            18263,
+            18380,
+            23361,
+            70921,
+            78274,
+            79078,
+            84768,
+            89354,
+            104636,
+            128378
+          ],
+          "stimulatedCount": 11,
+          "actualTotalCurrent": 16.5,
+          "pplCells": 10,
+          "pamCells": 1,
+          "sharedCells": 0
+        }
+      ]
+    },
+    {
+      "move": "f7h7",
+      "status": "success",
+      "instructedChannel": "PAM02",
+      "frames": [
+        {
+          "kind": "chosen-action",
+          "action": "f7h7",
+          "tokens": [
+            "action:f7h7",
+            "castle:-",
+            "ep:-",
+            "fullmove:1",
+            "halfmove:0",
+            "piece:b:k:h8",
+            "piece:w:k:g6",
+            "piece:w:q:f7",
+            "task:forced-mate:1",
+            "turn:w"
+          ],
+          "selectedCells": [
+            18263,
+            18380,
+            28182,
+            70921,
+            78274,
+            84768,
+            100077,
+            104636,
+            108493,
+            116600
+          ],
+          "stimulatedCount": 10,
+          "actualTotalCurrent": 15,
+          "pplCells": 9,
+          "pamCells": 2,
+          "sharedCells": 1
+        },
+        {
+          "kind": "endpoint",
+          "action": null,
+          "tokens": [
+            "action:none",
+            "castle:-",
+            "ep:-",
+            "fullmove:1",
+            "halfmove:1",
+            "history:0:w:f7h7",
+            "piece:b:k:h8",
+            "piece:w:k:g6",
+            "piece:w:q:h7",
+            "task:forced-mate:1",
+            "turn:b"
+          ],
+          "selectedCells": [
+            18263,
+            18380,
+            70921,
+            78274,
+            79078,
+            84768,
+            89354,
+            104636,
+            110419,
+            112744,
+            128378
+          ],
+          "stimulatedCount": 11,
+          "actualTotalCurrent": 16.5,
+          "pplCells": 9,
+          "pamCells": 2,
+          "sharedCells": 0
+        }
+      ]
+    },
+    {
+      "move": "g6h6",
+      "status": "failure",
+      "instructedChannel": "PPL103",
+      "frames": [
+        {
+          "kind": "chosen-action",
+          "action": "g6h6",
+          "tokens": [
+            "action:g6h6",
+            "castle:-",
+            "ep:-",
+            "fullmove:1",
+            "halfmove:0",
+            "piece:b:k:h8",
+            "piece:w:k:g6",
+            "piece:w:q:f7",
+            "task:forced-mate:1",
+            "turn:w"
+          ],
+          "selectedCells": [
+            18263,
+            18380,
+            41757,
+            70921,
+            78274,
+            84768,
+            100077,
+            104636,
+            108493,
+            116600
+          ],
+          "stimulatedCount": 10,
+          "actualTotalCurrent": 15,
+          "pplCells": 9,
+          "pamCells": 2,
+          "sharedCells": 1
+        },
+        {
+          "kind": "endpoint",
+          "action": null,
+          "tokens": [
+            "action:none",
+            "castle:-",
+            "ep:-",
+            "fullmove:1",
+            "halfmove:1",
+            "history:0:w:g6h6",
+            "piece:b:k:h8",
+            "piece:w:k:h6",
+            "piece:w:q:f7",
+            "task:forced-mate:1",
+            "turn:b"
+          ],
+          "selectedCells": [
+            18263,
+            18380,
+            34167,
+            70921,
+            78274,
+            79078,
+            89354,
+            104636,
+            116600,
+            122096,
+            128378
+          ],
+          "stimulatedCount": 11,
+          "actualTotalCurrent": 16.5,
+          "pplCells": 11,
+          "pamCells": 1,
+          "sharedCells": 1
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "actionA": "f7e6",
+      "actionB": "f7h7",
+      "frame": "chosen-action",
+      "cellsA": 10,
+      "cellsB": 10,
+      "shared": 9,
+      "union": 11,
+      "jaccard": 0.8181818181818182
+    },
+    {
+      "actionA": "f7e6",
+      "actionB": "f7h7",
+      "frame": "endpoint",
+      "cellsA": 11,
+      "cellsB": 11,
+      "shared": 9,
+      "union": 13,
+      "jaccard": 0.6923076923076923
+    },
+    {
+      "actionA": "f7e6",
+      "actionB": "g6h6",
+      "frame": "chosen-action",
+      "cellsA": 10,
+      "cellsB": 10,
+      "shared": 9,
+      "union": 11,
+      "jaccard": 0.8181818181818182
+    },
+    {
+      "actionA": "f7e6",
+      "actionB": "g6h6",
+      "frame": "endpoint",
+      "cellsA": 11,
+      "cellsB": 11,
+      "shared": 8,
+      "union": 14,
+      "jaccard": 0.5714285714285714
+    },
+    {
+      "actionA": "f7h7",
+      "actionB": "g6h6",
+      "frame": "chosen-action",
+      "cellsA": 10,
+      "cellsB": 10,
+      "shared": 9,
+      "union": 11,
+      "jaccard": 0.8181818181818182
+    },
+    {
+      "actionA": "f7h7",
+      "actionB": "g6h6",
+      "frame": "endpoint",
+      "cellsA": 11,
+      "cellsB": 11,
+      "shared": 8,
+      "union": 14,
+      "jaccard": 0.5714285714285714
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "partial": true,
+  "sources": {
+    "naive-0.json": "22b44a9d962e7ab7f235f5c8b45479acbfd45830760088016c2cb97941f29cc2",
+    "ranking-adaptive-0.json": "936bfb26df28d8fd0595ce35a9c8f94352bf88e1ecdf7d1ee03d33298af1beb7",
+    "ranking-adaptive-1.json": "106170b7d7f572a2b79e93340d4c1c13c3b39d06748aa544d4492929e1921c6f",
+    "ranking-adaptive-2.json": "e281129320f8ac32df9ec148bb301336db9b52b6ee2e9211e56ac728f8ec6759"
+  },
+  "rows": [
+    {
+      "file": "naive-0.json",
+      "choice": "c4b4",
+      "status": "failure",
+      "sacrificeRank": 14,
+      "scores": {
+        "c4b4": 0.020617309026420116,
+        "c4h4": 0.0193220479413867,
+        "a1b2": 0.015645830892026424,
+        "c4g8": 0.01322081359103322
+      }
+    },
+    {
+      "file": "ranking-adaptive-0.json",
+      "choice": "c4h4",
+      "status": "failure",
+      "sacrificeRank": 17,
+      "scores": {
+        "c4b4": 0.008703915402293205,
+        "c4h4": 0.017666033934801817,
+        "a1b2": 0.014354373328387737,
+        "c4g8": 0.01048561092466116
+      }
+    },
+    {
+      "file": "ranking-adaptive-1.json",
+      "choice": "a1b2",
+      "status": "failure",
+      "sacrificeRank": 14,
+      "scores": {
+        "c4b4": 0.013035244308412075,
+        "c4h4": 0.006052267272025347,
+        "a1b2": 0.013712185434997082,
+        "c4g8": 0.010000200942158699
+      }
+    },
+    {
+      "file": "ranking-adaptive-2.json",
+      "choice": "c4b4",
+      "status": "failure",
+      "sacrificeRank": 13,
+      "scores": {
+        "c4b4": 0.01575216557830572,
+        "c4h4": 0.01160927303135395,
+        "a1b2": 0.0036503244191408157,
+        "c4g8": 0.010542003903537989
+      }
+    }
+  ],
+  "interpretation": "Reviewed c4b4 preference decreases after its own failure feedback and rebounds during subsequent distinct reviews. Observed ranking interference/recovery; no isolated circuit cause or final acquisition conclusion.",
+  "scope": "Training evidence only; remaining protocol unchanged."
+}

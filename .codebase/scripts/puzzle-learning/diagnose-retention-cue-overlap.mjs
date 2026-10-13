@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+import { Chess } from 'chess.js';
+import { createCompartmentChessCueEncoder } from '../../src/chess-input/compartment-chess-cue.mjs';
+import { sha256 } from '../runtime/fetch-graph.mjs';
+const pp='research/data/punishment-component-probe-v1/protocol.json',p=JSON.parse(fs.readFileSync(pp));
+const mapping=JSON.parse(fs.readFileSync(p.mappingPath)).mapping;
+const encoder=createCompartmentChessCueEncoder(mapping,{...p.encoder,...p.variant});
+const fixtures=[{name:'oldSolution',fen:p.positions[0].fen,move:'c4g8'},{name:'newPunishedChoice',fen:'5r1k/6pp/7N/3Q4/8/8/8/K7 w - - 0 1',move:'a1b2'}];
+const cues=fixtures.map(f=>{const board=new Chess(f.fen);const move=board.moves({verbose:true}).find(m=>m.from+m.to+(m.promotion??'')===f.move);if(!move)throw Error('Illegal cue');return encoder.encode(board,move,{objective:'forced-mate',plies:3});});
+const cells=cues.map(c=>c.stimulation.map(x=>x.index));
+const shared=cells[0].filter(i=>cells[1].includes(i));
+const sources={};for(const file of [import.meta.filename,p.mappingPath,pp,'.codebase/src/chess-input/compartment-chess-cue.mjs','.codebase/src/chess-input/relational-chess-cue-v2.mjs'])sources[file]=await sha256(file);
+const report={scope:'Offline input-projection overlap, not measured neural activity or causal memory interference.',sources,encoderIdentity:encoder.identity,fixtures,cells,sharedCells:shared,sharedCount:shared.length};
+const out='research/reports/retention-cue-overlap-v1-2026-10-07';if(fs.existsSync(out))throw Error('Output exists');fs.mkdirSync(out);
+fs.writeFileSync(`${out}/report.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

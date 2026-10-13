@@ -1,0 +1,5 @@
+﻿First audit attempt (preserved failure)
+Date: 2026-10-09
+Command: node --max-old-space-size=256 research/reports/plasticity-timing-candidate-2026-10-09/audit-adaptive-target.mjs runs/gamma2-relative-readout-seed48
+Exit: 1
+Reason: the pinned auditor's JSON helper does not strip a UTF-8 BOM. PowerShell Set-Content wrote a BOM-prefixed protocol.json; runner accepted it, but the auditor failed while parsing it before any receipt checks. No audit.json was published. The raw training result and receipts remain unchanged.

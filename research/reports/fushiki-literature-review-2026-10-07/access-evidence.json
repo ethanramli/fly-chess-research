@@ -1,0 +1,29 @@
+{
+  "accessDate": "2026-10-07",
+  "timezone": "Asia/Jakarta",
+  "provider": "Exa fetch",
+  "sources": [
+    "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009205",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4987137/",
+    "https://princetonuniversity.github.io/NEU-PSY-502/_static/pdf/Class%208/Dabney2020.pdf",
+    "http://lk.zuckermaninstitute.columbia.edu/pdf/litwin-kumar_constraining_2019.pdf"
+  ],
+  "coverage": {
+    "jiang": "Publisher main text, methods and figure captions. HTML extraction omits equation notation; no equation implementation claimed. Supplemental figure captions read; separate supplemental files not inspected.",
+    "aso": "PMC full main text, methods, figures and figure-supplement captions. Videos, raw confocal stacks and apparatus PDF not inspected.",
+    "dabney": "Nature abstract/extended-data captions plus university-hosted published PDF extraction, including main results and Methods. Separate Supplementary Information and raw OSF data/code not inspected; PDF layout introduces equation/column artifacts.",
+    "review": "Author-hosted published PDF extraction, main text/table and figure caption; cross-checked publisher snippets. PDF column extraction is imperfect."
+  },
+  "email": {
+    "messageId": "1a1127ee4d66de84",
+    "threadId": "1a1075987751d7a0",
+    "sender": "akira.fushiki@alleninstitute.org",
+    "receivedUTC": "2026-10-06T18:34:22Z"
+  },
+  "activeRun": {
+    "checked": "2026-10-07",
+    "processId": 4688,
+    "command": "node --max-old-space-size=256 .codebase/scripts/train-smothered-acquisition.mjs --out research/reports/smothered-acquisition-v1-2026-10-07 --variant original --cpu-duty 0.5 --max-events 40",
+    "scope": "Observed active process, not terminal outcome. No graph experiment or code change made by this review."
+  }
+}

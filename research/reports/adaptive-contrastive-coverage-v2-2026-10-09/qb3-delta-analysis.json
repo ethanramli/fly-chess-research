@@ -1,0 +1,130 @@
+{
+  "schema": "adaptive-contrastive-coverage-v2-qb3-delta-analysis-v1",
+  "planPath": "research/data/adaptive-contrastive-coverage-v2/qb3-analysis-plan.json",
+  "planSha256": "55dd3be612adc7bbddeb3acea68899e438513bbcec39ee06c65b26fe8c084a6e",
+  "protocolSha256": "23465c26bcb808ddbc0fa8e21773868648535b5602d258802b1b60e0564cab7b",
+  "auditSha256": "d1238878fce3cc7dd471523f579dc95c57b8e67d200bb3e0148ed095edf36c2d",
+  "trainingReportSha256": "66678af7317083571d51e0a6a6ffdeecb0be02968535167ae6f23a6f7b376437",
+  "cap14ReportSha256": "3703c4614871ea76a2ea96951a9c3649dd1afc6c351be4d436c60b8bc1bec1da",
+  "cap14AuditSha256": "f9d11124fb77030b4f627bd65fe0362d0b4cdcb340863c0514d626575c21ee16",
+  "cap14DeltaSha256": "34b87182d13ffb1a63f9496b9f50cfa0f7fa227cdd8f666c5f991fa01aac7ea3",
+  "sourceSha256": "75116f75e0e93cbabfed151a0511a901c2d2a2ea055d6295fbe4dfe70c2dbfe7",
+  "config": {
+    "encoder": {
+      "seed": 14009,
+      "maxCells": 28,
+      "totalCurrent": 21,
+      "maxCellCurrent": 0.75,
+      "maxHistoryPlies": 512,
+      "conjoin": false,
+      "stratify": true
+    },
+    "model": {
+      "steps": 8,
+      "inputDim": 1,
+      "outputs": 1,
+      "seed": 47,
+      "precision": "float32",
+      "saturation": 10,
+      "recurrentScale": 0.9,
+      "normalization": "row"
+    },
+    "memory": {
+      "eta": 0.5,
+      "minGain": 0.2,
+      "maxGain": 1.8,
+      "activityScale": 1.5
+    }
+  },
+  "summary": {
+    "passed": true,
+    "criterion": "For each legal move, score-change is the condition's final absolute MBON score minus the absent-control absolute score on the same board/action under the same encoder cap. Rank descending with lexical UCI tie-break. For informative memory, both success moves must rank strictly better (smaller rank) than their recorded cap-14 rank for the cap-increase hypothesis to pass. Shuffled-minus-absent and disabled-minus-absent ranks are reported as controls, not substituted for the informative criterion.",
+    "comparisons": [
+      {
+        "position": "smothered-queen-b3-rook-e8",
+        "successMove": "b3g8",
+        "legalMoves": 30,
+        "cap14SuccessRank": 5,
+        "cap28SuccessRank": 1,
+        "cap28TopDeltaMove": "b3g8",
+        "cap28TopDelta": 0.0004262588918209076,
+        "successDelta": 0.0004262588918209076,
+        "absoluteChoices": {
+          "informative": "b3c4",
+          "absent": "b3c4",
+          "shuffled": "b3c4",
+          "disabled": "b3c4"
+        },
+        "controls": {
+          "shuffled": {
+            "successRank": 28,
+            "topMove": "b3b4",
+            "topDelta": -0.0006512077525258064
+          },
+          "disabled": {
+            "successRank": 12,
+            "topMove": "b3f7",
+            "topDelta": 0.00023465696722269058
+          }
+        },
+        "improved": true
+      },
+      {
+        "position": "smothered-queen-b3-rook-f8",
+        "successMove": "b3g8",
+        "legalMoves": 30,
+        "cap14SuccessRank": 4,
+        "cap28SuccessRank": 1,
+        "cap28TopDeltaMove": "b3g8",
+        "cap28TopDelta": 0.0006242133677005768,
+        "successDelta": 0.0006242133677005768,
+        "absoluteChoices": {
+          "informative": "b3d1",
+          "absent": "b3d1",
+          "shuffled": "b3g3",
+          "disabled": "b3d1"
+        },
+        "controls": {
+          "shuffled": {
+            "successRank": 29,
+            "topMove": "b3d3",
+            "topDelta": -0.0006995564326643944
+          },
+          "disabled": {
+            "successRank": 5,
+            "topMove": "b3f7",
+            "topDelta": 0.00023181363940238953
+          }
+        },
+        "improved": true
+      }
+    ],
+    "cap14RanksVerifiedFromAuditedRawPanels": [
+      {
+        "position": "smothered-queen-b3-rook-e8",
+        "successMove": "b3g8",
+        "rank": 5,
+        "topMove": "b3f7",
+        "topConsequence": "failure",
+        "delta": -0.0004222034476697445
+      },
+      {
+        "position": "smothered-queen-b3-rook-f8",
+        "successMove": "b3g8",
+        "rank": 4,
+        "topMove": "b3a3",
+        "topConsequence": "failure",
+        "delta": 0.00023419316858053207
+      }
+    ],
+    "interpretation": "This compares informative-minus-absent score-change ranks on two already inspected development probes. It is not independent transfer, a biological plasticity test, or a solution to the all-legal choice failure."
+  },
+  "resources": {
+    "elapsedSeconds": 75.7691472,
+    "cpuSeconds": 39.203,
+    "peakRssMiB": 108.875,
+    "cpuDuty": 0.5,
+    "presentations": 240
+  },
+  "coverage": "Complete all-legal action assessment; no training, feedback events, or memory updates."
+}

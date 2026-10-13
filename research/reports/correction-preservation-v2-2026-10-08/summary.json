@@ -1,0 +1,3429 @@
+{
+  "schema": "correction-preservation-v2-summary-v1",
+  "protocolSha256": "331d2803c6982a9bbcb21a1256b438a5b90294995ff061492b2ef00787988cc1",
+  "registrationSha256": "0ef2c0eaf85d82aad780352b94c57430aa7d93f058da2bdbd0f83035cb5effce",
+  "analyzerSha256": "82282e0eb0fdc73afe721e63b2876db8f664ba7e9098a94f796c6765a4a099db",
+  "allEightArmsIndependentlyAudited": true,
+  "scratchBaselinesIdentical": true,
+  "acceptance": {
+    "baselineTargetWrong": true,
+    "baselineSentinelCorrect": true,
+    "informativeTargetCorrect": false,
+    "informativeSentinelCorrect": true,
+    "zeroNewRegressions": true,
+    "targetMarginGainPositive": false,
+    "targetMarginGainGreaterThanEachMatchedControl": false,
+    "exactIndependentReplay": true,
+    "exactPendingRecovery": true
+  },
+  "selectedScreenPass": false,
+  "arms": [
+    {
+      "schedule": "selected",
+      "condition": "informative",
+      "reportSha256": "b45d4925282cd755e65d5f2cd367f51dd6f9ca64221ff91c16c19d15b2cba535",
+      "auditSha256": "21dc1c01928c0bc49a41e0d6f20e9e158ae9b8000a4bf9fecc78cbcf0e76f903",
+      "trainingCorrectBefore": 4,
+      "trainingCorrectAfter": 4,
+      "validationCorrectBefore": 2,
+      "validationCorrectAfter": 2,
+      "repairs": [],
+      "regressions": [],
+      "panels": [
+        {
+          "panelId": "tr-01",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005600447300821543,
+          "afterMargin": 0.00763409398496151,
+          "marginGain": 0.002033646684139967,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.01197821693494916,
+              "afterScore": 0.006141680292785168,
+              "scoreGain": -0.005836536642163992
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": -0.001492413692176342,
+              "scoreGain": -0.007870183326303959
+            }
+          ]
+        },
+        {
+          "panelId": "tr-02",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005236566998064518,
+          "afterMargin": 0.007246558088809252,
+          "marginGain": 0.002009991090744734,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.011614336632192135,
+              "afterScore": 0.00575414439663291,
+              "scoreGain": -0.005860192235559225
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": -0.001492413692176342,
+              "scoreGain": -0.007870183326303959
+            }
+          ]
+        },
+        {
+          "panelId": "tr-03",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.0009541739709675312,
+          "afterMargin": 0.005119085777550936,
+          "marginGain": 0.0041649118065834045,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.008144597057253122,
+              "afterScore": 0.003060794435441494,
+              "scoreGain": -0.005083802621811628
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007190423086285591,
+              "afterScore": -0.0020582913421094418,
+              "scoreGain": -0.009248714428395033
+            }
+          ]
+        },
+        {
+          "panelId": "tr-04",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.00496794143691659,
+          "afterMargin": 0.00721908500418067,
+          "marginGain": 0.00225114356726408,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.006634268909692764,
+              "scoreGain": -0.005853975657373667
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007520303130149841,
+              "afterScore": -0.0005848160944879055,
+              "scoreGain": -0.008105119224637747
+            }
+          ]
+        },
+        {
+          "panelId": "tr-05",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0015791459009051323,
+          "afterMargin": -0.00384799437597394,
+          "marginGain": -0.0022688484750688076,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.004687330219894648,
+              "scoreGain": -0.005837494041770697
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.008945678360760212,
+              "afterScore": 0.0008393358439207077,
+              "scoreGain": -0.008106342516839504
+            }
+          ]
+        },
+        {
+          "panelId": "tr-06",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0028380490839481354,
+          "afterMargin": -0.004834569059312344,
+          "marginGain": -0.0019965199753642082,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.009341292083263397,
+              "afterScore": 0.003189179114997387,
+              "scoreGain": -0.00615211296826601
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.006503242999315262,
+              "afterScore": -0.0016453899443149567,
+              "scoreGain": -0.008148632943630219
+            }
+          ]
+        },
+        {
+          "panelId": "tr-07",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0013234792277216911,
+          "afterMargin": -0.0029474347829818726,
+          "marginGain": -0.0016239555552601814,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.004687330219894648,
+              "scoreGain": -0.005837494041770697
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009201345033943653,
+              "afterScore": 0.001739895436912775,
+              "scoreGain": -0.007461449597030878
+            }
+          ]
+        },
+        {
+          "panelId": "tr-08",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0023002251982688904,
+          "afterMargin": -0.0038055279292166233,
+          "marginGain": -0.001505302730947733,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.003681847359985113,
+              "scoreGain": -0.005995616782456636
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007377238944172859,
+              "afterScore": -0.00012368056923151016,
+              "scoreGain": -0.007500919513404369
+            }
+          ]
+        },
+        {
+          "panelId": "va-01",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.00005729636177420616,
+          "afterMargin": 0.003866378217935562,
+          "marginGain": 0.003809081856161356,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.007098077330738306,
+              "afterScore": 0.0025179856456816196,
+              "scoreGain": -0.004580091685056686
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.0070407809689641,
+              "afterScore": -0.0013483925722539425,
+              "scoreGain": -0.008389173541218042
+            }
+          ]
+        },
+        {
+          "panelId": "va-02",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.0040939971804618835,
+          "afterMargin": 0.005697418935596943,
+          "marginGain": 0.0016034217551350594,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.006634268909692764,
+              "scoreGain": -0.005853975657373667
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.008394247386604548,
+              "afterScore": 0.0009368499740958214,
+              "scoreGain": -0.007457397412508726
+            }
+          ]
+        },
+        {
+          "panelId": "va-03",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0023174318484961987,
+          "afterMargin": -0.003923016134649515,
+          "marginGain": -0.0016055842861533165,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.01153835654258728,
+              "afterScore": 0.005682343151420355,
+              "scoreGain": -0.005856013391166925
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009220924694091082,
+              "afterScore": 0.0017593270167708397,
+              "scoreGain": -0.007461597677320242
+            }
+          ]
+        },
+        {
+          "panelId": "va-04",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.002126086503267288,
+          "afterMargin": -0.0029261880554258823,
+          "marginGain": -0.0008001015521585941,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.003681847359985113,
+              "scoreGain": -0.005995616782456636
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007551377639174461,
+              "afterScore": 0.0007556593045592308,
+              "scoreGain": -0.0067957183346152306
+            }
+          ]
+        }
+      ],
+      "presentations": 84,
+      "metrics": {
+        "wallSeconds": 30.4187332,
+        "cpuSeconds": 16.313,
+        "peakRssBytes": 114540544,
+        "stageWallMs": {
+          "setup": 1308.7477000000001,
+          "baselineAssessment": 7729.261400000003,
+          "eventAssessment": 2498.9552999999996,
+          "postAssessment": 15426.028600000005,
+          "certificateVerification": 91.68930000000182,
+          "neuralFeedback": 1139.9107999999997,
+          "checkpointPublication": 1313.9167999999997
+        },
+        "measurementScope": "Current invocation after module imports; resumed invocation timing is not whole-lineage timing. Stage wall times include pacing; publication includes checkpoints only.",
+        "currentFreeBytes": 1582350336,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "auditMetrics": {
+        "wallSeconds": 29.9373571,
+        "cpuSeconds": 15.781,
+        "scope": "Current auditor invocation after module imports; includes fresh neural replay and duty pacing."
+      },
+      "auditPeakRssBytes": 113238016
+    },
+    {
+      "schedule": "selected",
+      "condition": "no-channel",
+      "reportSha256": "d79599e4904b35bb9147455163e0da0848f9607c0e8bb4905ce189ae027a0e11",
+      "auditSha256": "7187a9701caff6775d5dce0397341916ce0ff3fb34d485c4f800f0038eac1924",
+      "trainingCorrectBefore": 4,
+      "trainingCorrectAfter": 4,
+      "validationCorrectBefore": 2,
+      "validationCorrectAfter": 2,
+      "repairs": [],
+      "regressions": [],
+      "panels": [
+        {
+          "panelId": "tr-01",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005600447300821543,
+          "afterMargin": 0.005610000807791948,
+          "marginGain": 0.000009553506970405579,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.01197821693494916,
+              "afterScore": 0.011807815171778202,
+              "scoreGain": -0.00017040176317095757
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": 0.006197814363986254,
+              "scoreGain": -0.00017995527014136314
+            }
+          ]
+        },
+        {
+          "panelId": "tr-02",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005236566998064518,
+          "afterMargin": 0.005254832562059164,
+          "marginGain": 0.000018265563994646072,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.011614336632192135,
+              "afterScore": 0.011452646926045418,
+              "scoreGain": -0.00016168970614671707
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": 0.006197814363986254,
+              "scoreGain": -0.00017995527014136314
+            }
+          ]
+        },
+        {
+          "panelId": "tr-03",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.0009541739709675312,
+          "afterMargin": 0.0009593102149665356,
+          "marginGain": 0.000005136243999004364,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.008144597057253122,
+              "afterScore": 0.007963229436427355,
+              "scoreGain": -0.00018136762082576752
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007190423086285591,
+              "afterScore": 0.007003919221460819,
+              "scoreGain": -0.00018650386482477188
+            }
+          ]
+        },
+        {
+          "panelId": "tr-04",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.00496794143691659,
+          "afterMargin": 0.00498519092798233,
+          "marginGain": 0.000017249491065740585,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.012333221733570099,
+              "scoreGain": -0.00015502283349633217
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007520303130149841,
+              "afterScore": 0.0073480308055877686,
+              "scoreGain": -0.00017227232456207275
+            }
+          ]
+        },
+        {
+          "panelId": "tr-05",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0015791459009051323,
+          "afterMargin": -0.0015759756788611412,
+          "marginGain": 0.000003170222043991089,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.01035441504791379,
+              "scoreGain": -0.0001704092137515545
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.008945678360760212,
+              "afterScore": 0.008778439369052649,
+              "scoreGain": -0.0001672389917075634
+            }
+          ]
+        },
+        {
+          "panelId": "tr-06",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0028380490839481354,
+          "afterMargin": -0.0028381189331412315,
+          "marginGain": -6.984919309616089e-8,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.009341292083263397,
+              "afterScore": 0.00916620483621955,
+              "scoreGain": -0.00017508724704384804
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.006503242999315262,
+              "afterScore": 0.006328085903078318,
+              "scoreGain": -0.0001751570962369442
+            }
+          ]
+        },
+        {
+          "panelId": "tr-07",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0013234792277216911,
+          "afterMargin": -0.0013099182397127151,
+          "marginGain": 0.000013560988008975983,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.01035441504791379,
+              "scoreGain": -0.0001704092137515545
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009201345033943653,
+              "afterScore": 0.009044496808201075,
+              "scoreGain": -0.0001568482257425785
+            }
+          ]
+        },
+        {
+          "panelId": "tr-08",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0023002251982688904,
+          "afterMargin": -0.002292366698384285,
+          "marginGain": 0.000007858499884605408,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.009510066360235214,
+              "scoreGain": -0.00016739778220653534
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007377238944172859,
+              "afterScore": 0.007217699661850929,
+              "scoreGain": -0.00015953928232192993
+            }
+          ]
+        },
+        {
+          "panelId": "va-01",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.00005729636177420616,
+          "afterMargin": 0.00007804902270436287,
+          "marginGain": 0.000020752660930156708,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.007098077330738306,
+              "afterScore": 0.006938094738870859,
+              "scoreGain": -0.0001599825918674469
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.0070407809689641,
+              "afterScore": 0.006860045716166496,
+              "scoreGain": -0.0001807352527976036
+            }
+          ]
+        },
+        {
+          "panelId": "va-02",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.0040939971804618835,
+          "afterMargin": 0.004095626063644886,
+          "marginGain": 0.000001628883183002472,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.012333221733570099,
+              "scoreGain": -0.00015502283349633217
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.008394247386604548,
+              "afterScore": 0.008237595669925213,
+              "scoreGain": -0.00015665171667933464
+            }
+          ]
+        },
+        {
+          "panelId": "va-03",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0023174318484961987,
+          "afterMargin": -0.002319246530532837,
+          "marginGain": -0.0000018146820366382599,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.01153835654258728,
+              "afterScore": 0.01138332486152649,
+              "scoreGain": -0.00015503168106079102
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009220924694091082,
+              "afterScore": 0.009064078330993652,
+              "scoreGain": -0.00015684636309742928
+            }
+          ]
+        },
+        {
+          "panelId": "va-04",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.002126086503267288,
+          "afterMargin": -0.0021088672801852226,
+          "marginGain": 0.000017219223082065582,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.009510066360235214,
+              "scoreGain": -0.00016739778220653534
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007551377639174461,
+              "afterScore": 0.007401199080049992,
+              "scoreGain": -0.00015017855912446976
+            }
+          ]
+        }
+      ],
+      "presentations": 84,
+      "metrics": {
+        "wallSeconds": 34.2629898,
+        "cpuSeconds": 18.235,
+        "peakRssBytes": 114860032,
+        "stageWallMs": {
+          "setup": 1262.8063,
+          "baselineAssessment": 8195.6142,
+          "eventAssessment": 2774.554100000001,
+          "postAssessment": 18558.211000000014,
+          "certificateVerification": 85.31620000000112,
+          "neuralFeedback": 1186.084899999998,
+          "checkpointPublication": 1286.223599999991
+        },
+        "measurementScope": "Current invocation after module imports; resumed invocation timing is not whole-lineage timing. Stage wall times include pacing; publication includes checkpoints only.",
+        "currentFreeBytes": 1194041344,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "auditMetrics": {
+        "wallSeconds": 30.6298183,
+        "cpuSeconds": 16.015,
+        "scope": "Current auditor invocation after module imports; includes fresh neural replay and duty pacing."
+      },
+      "auditPeakRssBytes": 113537024
+    },
+    {
+      "schedule": "selected",
+      "condition": "shuffled",
+      "reportSha256": "e8b672af2737d740ab1633392f01b71efba171fe1e8af4d086e2a1cb6e2b42c2",
+      "auditSha256": "b5cb27b4c9f188bc79f4a6fe0d96249d57ceb53585c841d73711ae26bc5830e3",
+      "trainingCorrectBefore": 4,
+      "trainingCorrectAfter": 5,
+      "validationCorrectBefore": 2,
+      "validationCorrectAfter": 2,
+      "repairs": [
+        "tr-05",
+        "tr-07",
+        "va-04"
+      ],
+      "regressions": [
+        "tr-03",
+        "va-01"
+      ],
+      "panels": [
+        {
+          "panelId": "tr-01",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005600447300821543,
+          "afterMargin": 0.004100596532225609,
+          "marginGain": -0.001499850768595934,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.01197821693494916,
+              "afterScore": 0.004952019080519676,
+              "scoreGain": -0.007026197854429483
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": 0.0008514225482940674,
+              "scoreGain": -0.0055263470858335495
+            }
+          ]
+        },
+        {
+          "panelId": "tr-02",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005236566998064518,
+          "afterMargin": 0.0037359604611992836,
+          "marginGain": -0.0015006065368652344,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.011614336632192135,
+              "afterScore": 0.004587383009493351,
+              "scoreGain": -0.007026953622698784
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": 0.0008514225482940674,
+              "scoreGain": -0.0055263470858335495
+            }
+          ]
+        },
+        {
+          "panelId": "tr-03",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "e1e5",
+          "beforeCorrect": true,
+          "afterCorrect": false,
+          "beforeMargin": 0.0009541739709675312,
+          "afterMargin": -0.0024974974803626537,
+          "marginGain": -0.003451671451330185,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.008144597057253122,
+              "afterScore": -0.0005269222892820835,
+              "scoreGain": -0.008671519346535206
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007190423086285591,
+              "afterScore": 0.0019705751910805702,
+              "scoreGain": -0.005219847895205021
+            }
+          ]
+        },
+        {
+          "panelId": "tr-04",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.00496794143691659,
+          "afterMargin": 0.0039037466049194336,
+          "marginGain": -0.0010641948319971561,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.006104577332735062,
+              "scoreGain": -0.006383667234331369
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007520303130149841,
+              "afterScore": 0.002200830727815628,
+              "scoreGain": -0.005319472402334213
+            }
+          ]
+        },
+        {
+          "panelId": "tr-05",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "e1e5",
+          "beforeCorrect": false,
+          "afterCorrect": true,
+          "beforeMargin": -0.0015791459009051323,
+          "afterMargin": 0.0005161277949810028,
+          "marginGain": 0.002095273695886135,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.0034975260496139526,
+              "scoreGain": -0.007027298212051392
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.008945678360760212,
+              "afterScore": 0.0040136538445949554,
+              "scoreGain": -0.0049320245161652565
+            }
+          ]
+        },
+        {
+          "panelId": "tr-06",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0028380490839481354,
+          "afterMargin": -0.0013871951960027218,
+          "marginGain": 0.0014508538879454136,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.009341292083263397,
+              "afterScore": 0.002314060926437378,
+              "scoreGain": -0.007027231156826019
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.006503242999315262,
+              "afterScore": 0.0009268657304346561,
+              "scoreGain": -0.005576377268880606
+            }
+          ]
+        },
+        {
+          "panelId": "tr-07",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "e1e5",
+          "beforeCorrect": false,
+          "afterCorrect": true,
+          "beforeMargin": -0.0013234792277216911,
+          "afterMargin": 0.0010966798290610313,
+          "marginGain": 0.0024201590567827225,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.0034975260496139526,
+              "scoreGain": -0.007027298212051392
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009201345033943653,
+              "afterScore": 0.004594205878674984,
+              "scoreGain": -0.004607139155268669
+            }
+          ]
+        },
+        {
+          "panelId": "tr-08",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0023002251982688904,
+          "afterMargin": -0.0005069677717983723,
+          "marginGain": 0.0017932574264705181,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.0030250167474150658,
+              "scoreGain": -0.006652447395026684
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007377238944172859,
+              "afterScore": 0.0025180489756166935,
+              "scoreGain": -0.004859189968556166
+            }
+          ]
+        },
+        {
+          "panelId": "va-01",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "e1e5",
+          "beforeCorrect": true,
+          "afterCorrect": false,
+          "beforeMargin": 0.00005729636177420616,
+          "afterMargin": -0.0026777456514537334,
+          "marginGain": -0.0027350420132279396,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.007098077330738306,
+              "afterScore": -0.0008511696942150593,
+              "scoreGain": -0.007949247024953365
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.0070407809689641,
+              "afterScore": 0.0018265759572386742,
+              "scoreGain": -0.005214205011725426
+            }
+          ]
+        },
+        {
+          "panelId": "va-02",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.0040939971804618835,
+          "afterMargin": 0.0023126075975596905,
+          "marginGain": -0.001781389582902193,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.006104577332735062,
+              "scoreGain": -0.006383667234331369
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.008394247386604548,
+              "afterScore": 0.003791969735175371,
+              "scoreGain": -0.004602277651429176
+            }
+          ]
+        },
+        {
+          "panelId": "va-03",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0023174318484961987,
+          "afterMargin": -0.0005387840792536736,
+          "marginGain": 0.001778647769242525,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.01153835654258728,
+              "afterScore": 0.005152376834303141,
+              "scoreGain": -0.00638597970828414
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009220924694091082,
+              "afterScore": 0.004613592755049467,
+              "scoreGain": -0.0046073319390416145
+            }
+          ]
+        },
+        {
+          "panelId": "va-04",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "e1e5",
+          "beforeCorrect": false,
+          "afterCorrect": true,
+          "beforeMargin": -0.002126086503267288,
+          "afterMargin": 0.000020378269255161285,
+          "marginGain": 0.0021464647725224495,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.0030250167474150658,
+              "scoreGain": -0.006652447395026684
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007551377639174461,
+              "afterScore": 0.003045395016670227,
+              "scoreGain": -0.004505982622504234
+            }
+          ]
+        }
+      ],
+      "presentations": 84,
+      "metrics": {
+        "wallSeconds": 30.248453500000004,
+        "cpuSeconds": 16.25,
+        "peakRssBytes": 114806784,
+        "stageWallMs": {
+          "setup": 1336.619,
+          "baselineAssessment": 7924.334499999998,
+          "eventAssessment": 2566.1492000000017,
+          "postAssessment": 14948.992100000016,
+          "certificateVerification": 62.56370000000061,
+          "neuralFeedback": 1228.5756999999976,
+          "checkpointPublication": 1292.981300000004
+        },
+        "measurementScope": "Current invocation after module imports; resumed invocation timing is not whole-lineage timing. Stage wall times include pacing; publication includes checkpoints only.",
+        "currentFreeBytes": 1338802176,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "auditMetrics": {
+        "wallSeconds": 29.954751899999998,
+        "cpuSeconds": 16.031,
+        "scope": "Current auditor invocation after module imports; includes fresh neural replay and duty pacing."
+      },
+      "auditPeakRssBytes": 113340416
+    },
+    {
+      "schedule": "selected",
+      "condition": "disabled",
+      "reportSha256": "9185e3dc62e46b184ef1fbe2a7bb43ccaf968a221322d1d5d6b08d22a77df60d",
+      "auditSha256": "f40a52d5a8b80a7e46e14473699ad6a4dfaacc183797ebf2c91b22ecc71bb9c2",
+      "trainingCorrectBefore": 4,
+      "trainingCorrectAfter": 4,
+      "validationCorrectBefore": 2,
+      "validationCorrectAfter": 2,
+      "repairs": [],
+      "regressions": [],
+      "panels": [
+        {
+          "panelId": "tr-01",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005600447300821543,
+          "afterMargin": 0.005600447300821543,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.01197821693494916,
+              "afterScore": 0.01197821693494916,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": 0.006377769634127617,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "tr-02",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005236566998064518,
+          "afterMargin": 0.005236566998064518,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.011614336632192135,
+              "afterScore": 0.011614336632192135,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": 0.006377769634127617,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "tr-03",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.0009541739709675312,
+          "afterMargin": 0.0009541739709675312,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.008144597057253122,
+              "afterScore": 0.008144597057253122,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007190423086285591,
+              "afterScore": 0.007190423086285591,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "tr-04",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.00496794143691659,
+          "afterMargin": 0.00496794143691659,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.012488244567066431,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007520303130149841,
+              "afterScore": 0.007520303130149841,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "tr-05",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0015791459009051323,
+          "afterMargin": -0.0015791459009051323,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.010524824261665344,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.008945678360760212,
+              "afterScore": 0.008945678360760212,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "tr-06",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0028380490839481354,
+          "afterMargin": -0.0028380490839481354,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.009341292083263397,
+              "afterScore": 0.009341292083263397,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.006503242999315262,
+              "afterScore": 0.006503242999315262,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "tr-07",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0013234792277216911,
+          "afterMargin": -0.0013234792277216911,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.010524824261665344,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009201345033943653,
+              "afterScore": 0.009201345033943653,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "tr-08",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0023002251982688904,
+          "afterMargin": -0.0023002251982688904,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.00967746414244175,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007377238944172859,
+              "afterScore": 0.007377238944172859,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "va-01",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.00005729636177420616,
+          "afterMargin": 0.00005729636177420616,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.007098077330738306,
+              "afterScore": 0.007098077330738306,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.0070407809689641,
+              "afterScore": 0.0070407809689641,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "va-02",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.0040939971804618835,
+          "afterMargin": 0.0040939971804618835,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.012488244567066431,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.008394247386604548,
+              "afterScore": 0.008394247386604548,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "va-03",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0023174318484961987,
+          "afterMargin": -0.0023174318484961987,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.01153835654258728,
+              "afterScore": 0.01153835654258728,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009220924694091082,
+              "afterScore": 0.009220924694091082,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "va-04",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.002126086503267288,
+          "afterMargin": -0.002126086503267288,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.00967746414244175,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007551377639174461,
+              "afterScore": 0.007551377639174461,
+              "scoreGain": 0
+            }
+          ]
+        }
+      ],
+      "presentations": 84,
+      "metrics": {
+        "wallSeconds": 30.5905431,
+        "cpuSeconds": 16.39,
+        "peakRssBytes": 115052544,
+        "stageWallMs": {
+          "setup": 1252.8749,
+          "baselineAssessment": 6209.1783,
+          "eventAssessment": 2747.1336,
+          "postAssessment": 16799.528600000005,
+          "certificateVerification": 60.78240000000187,
+          "neuralFeedback": 1186.175800000001,
+          "checkpointPublication": 1278.4067999999975
+        },
+        "measurementScope": "Current invocation after module imports; resumed invocation timing is not whole-lineage timing. Stage wall times include pacing; publication includes checkpoints only.",
+        "currentFreeBytes": 1392766976,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "auditMetrics": {
+        "wallSeconds": 32.0377084,
+        "cpuSeconds": 16.547,
+        "scope": "Current auditor invocation after module imports; includes fresh neural replay and duty pacing."
+      },
+      "auditPeakRssBytes": 113180672
+    },
+    {
+      "schedule": "uniform",
+      "condition": "informative",
+      "reportSha256": "c6bc78dad804168c5575179e267b8e6db2a4122121c70744d78419f23bbc5836",
+      "auditSha256": "829f0ed944297ef027f445e0b11cfb1d8d751e468e9887943280ef2106f4b7b9",
+      "trainingCorrectBefore": 4,
+      "trainingCorrectAfter": 4,
+      "validationCorrectBefore": 2,
+      "validationCorrectAfter": 2,
+      "repairs": [],
+      "regressions": [],
+      "panels": [
+        {
+          "panelId": "tr-01",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005600447300821543,
+          "afterMargin": 0.00842993799597025,
+          "marginGain": 0.0028294906951487064,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.01197821693494916,
+              "afterScore": 0.005242804531008005,
+              "scoreGain": -0.0067354124039411545
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": -0.003187133464962244,
+              "scoreGain": -0.009564903099089861
+            }
+          ]
+        },
+        {
+          "panelId": "tr-02",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005236566998064518,
+          "afterMargin": 0.008928552269935608,
+          "marginGain": 0.00369198527187109,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.011614336632192135,
+              "afterScore": 0.005741418804973364,
+              "scoreGain": -0.005872917827218771
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": -0.003187133464962244,
+              "scoreGain": -0.009564903099089861
+            }
+          ]
+        },
+        {
+          "panelId": "tr-03",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.0009541739709675312,
+          "afterMargin": 0.0033830911852419376,
+          "marginGain": 0.0024289172142744064,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.008144597057253122,
+              "afterScore": 0.0024586962535977364,
+              "scoreGain": -0.005685900803655386
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007190423086285591,
+              "afterScore": -0.0009243949316442013,
+              "scoreGain": -0.008114818017929792
+            }
+          ]
+        },
+        {
+          "panelId": "tr-04",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.00496794143691659,
+          "afterMargin": 0.008013533893972635,
+          "marginGain": 0.0030455924570560455,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.006625814363360405,
+              "scoreGain": -0.005862430203706026
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007520303130149841,
+              "afterScore": -0.0013877195306122303,
+              "scoreGain": -0.008908022660762072
+            }
+          ]
+        },
+        {
+          "panelId": "tr-05",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0015791459009051323,
+          "afterMargin": -0.002595190890133381,
+          "marginGain": -0.0010160449892282486,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.003408384509384632,
+              "scoreGain": -0.007116439752280712
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.008945678360760212,
+              "afterScore": 0.0008131936192512512,
+              "scoreGain": -0.00813248474150896
+            }
+          ]
+        },
+        {
+          "panelId": "tr-06",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0028380490839481354,
+          "afterMargin": -0.005052896216511726,
+          "marginGain": -0.002214847132563591,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.009341292083263397,
+              "afterScore": 0.0026059458032250404,
+              "scoreGain": -0.006735346280038357
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.006503242999315262,
+              "afterScore": -0.002446950413286686,
+              "scoreGain": -0.008950193412601948
+            }
+          ]
+        },
+        {
+          "panelId": "tr-07",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0013234792277216911,
+          "afterMargin": -0.0016922317445278168,
+          "marginGain": -0.00036875251680612564,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.003408384509384632,
+              "scoreGain": -0.007116439752280712
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009201345033943653,
+              "afterScore": 0.0017161527648568153,
+              "scoreGain": -0.007485192269086838
+            }
+          ]
+        },
+        {
+          "panelId": "tr-08",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0023002251982688904,
+          "afterMargin": -0.003229558002203703,
+          "marginGain": -0.0009293328039348125,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.003097197972238064,
+              "scoreGain": -0.006580266170203686
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007377238944172859,
+              "afterScore": -0.00013236002996563911,
+              "scoreGain": -0.007509598974138498
+            }
+          ]
+        },
+        {
+          "panelId": "va-01",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.00005729636177420616,
+          "afterMargin": 0.002699752803891897,
+          "marginGain": 0.002642456442117691,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.007098077330738306,
+              "afterScore": 0.001625698059797287,
+              "scoreGain": -0.005472379270941019
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.0070407809689641,
+              "afterScore": -0.0010740547440946102,
+              "scoreGain": -0.00811483571305871
+            }
+          ]
+        },
+        {
+          "panelId": "va-02",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.0040939971804618835,
+          "afterMargin": 0.005698987282812595,
+          "marginGain": 0.0016049901023507118,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.006625814363360405,
+              "scoreGain": -0.005862430203706026
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.008394247386604548,
+              "afterScore": 0.0009268270805478096,
+              "scoreGain": -0.007467420306056738
+            }
+          ]
+        },
+        {
+          "panelId": "va-03",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0023174318484961987,
+          "afterMargin": -0.003558429889380932,
+          "marginGain": -0.0012409980408847332,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.01153835654258728,
+              "afterScore": 0.005293907597661018,
+              "scoreGain": -0.006244448944926262
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009220924694091082,
+              "afterScore": 0.0017354777082800865,
+              "scoreGain": -0.007485446985810995
+            }
+          ]
+        },
+        {
+          "panelId": "va-04",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.002126086503267288,
+          "afterMargin": -0.002347974106669426,
+          "marginGain": -0.00022188760340213776,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.003097197972238064,
+              "scoreGain": -0.006580266170203686
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007551377639174461,
+              "afterScore": 0.0007492238655686378,
+              "scoreGain": -0.0068021537736058235
+            }
+          ]
+        }
+      ],
+      "presentations": 84,
+      "metrics": {
+        "wallSeconds": 30.549136999999998,
+        "cpuSeconds": 16.327,
+        "peakRssBytes": 115097600,
+        "stageWallMs": {
+          "setup": 1321.2289,
+          "baselineAssessment": 7622.9243000000015,
+          "eventAssessment": 2528.245499999999,
+          "postAssessment": 15381.039300000004,
+          "certificateVerification": 69.96820000000116,
+          "neuralFeedback": 1378.0613000000012,
+          "checkpointPublication": 1333.8550999999768
+        },
+        "measurementScope": "Current invocation after module imports; resumed invocation timing is not whole-lineage timing. Stage wall times include pacing; publication includes checkpoints only.",
+        "currentFreeBytes": 1080913920,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "auditMetrics": {
+        "wallSeconds": 30.6360125,
+        "cpuSeconds": 16.422,
+        "scope": "Current auditor invocation after module imports; includes fresh neural replay and duty pacing."
+      },
+      "auditPeakRssBytes": 113901568
+    },
+    {
+      "schedule": "uniform",
+      "condition": "no-channel",
+      "reportSha256": "ed9ab305ce6715e4cf4a82368291815b6b8da62fc6499d4a29347d031944efb4",
+      "auditSha256": "a9f978bb647c3cece57db764c331abd3b6c6dccd91b8aa7f8cef0c28802ba021",
+      "trainingCorrectBefore": 4,
+      "trainingCorrectAfter": 4,
+      "validationCorrectBefore": 2,
+      "validationCorrectAfter": 2,
+      "repairs": [],
+      "regressions": [],
+      "panels": [
+        {
+          "panelId": "tr-01",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005600447300821543,
+          "afterMargin": 0.005609172862023115,
+          "marginGain": 0.000008725561201572418,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.01197821693494916,
+              "afterScore": 0.011801086366176605,
+              "scoreGain": -0.0001771305687725544
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": 0.00619191350415349,
+              "scoreGain": -0.00018585612997412682
+            }
+          ]
+        },
+        {
+          "panelId": "tr-02",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005236566998064518,
+          "afterMargin": 0.00524238171055913,
+          "marginGain": 0.00000581471249461174,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.011614336632192135,
+              "afterScore": 0.01143429521471262,
+              "scoreGain": -0.00018004141747951508
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": 0.00619191350415349,
+              "scoreGain": -0.00018585612997412682
+            }
+          ]
+        },
+        {
+          "panelId": "tr-03",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.0009541739709675312,
+          "afterMargin": 0.0009726723656058311,
+          "marginGain": 0.000018498394638299942,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.008144597057253122,
+              "afterScore": 0.007993509992957115,
+              "scoreGain": -0.00015108706429600716
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007190423086285591,
+              "afterScore": 0.007020837627351284,
+              "scoreGain": -0.0001695854589343071
+            }
+          ]
+        },
+        {
+          "panelId": "tr-04",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.00496794143691659,
+          "afterMargin": 0.004980977158993483,
+          "marginGain": 0.000013035722076892853,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.012323782779276371,
+              "scoreGain": -0.00016446178779006004
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007520303130149841,
+              "afterScore": 0.007342805620282888,
+              "scoreGain": -0.0001774975098669529
+            }
+          ]
+        },
+        {
+          "panelId": "tr-05",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0015791459009051323,
+          "afterMargin": -0.0015774816274642944,
+          "marginGain": 0.0000016642734408378601,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.010339918546378613,
+              "scoreGain": -0.00018490571528673172
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.008945678360760212,
+              "afterScore": 0.008762436918914318,
+              "scoreGain": -0.00018324144184589386
+            }
+          ]
+        },
+        {
+          "panelId": "tr-06",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0028380490839481354,
+          "afterMargin": -0.0028384122997522354,
+          "marginGain": -3.632158041000366e-7,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.009341292083263397,
+              "afterScore": 0.009164158254861832,
+              "scoreGain": -0.00017713382840156555
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.006503242999315262,
+              "afterScore": 0.006325745955109596,
+              "scoreGain": -0.0001774970442056656
+            }
+          ]
+        },
+        {
+          "panelId": "tr-07",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0013234792277216911,
+          "afterMargin": -0.0013116132467985153,
+          "marginGain": 0.000011865980923175812,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.010339918546378613,
+              "scoreGain": -0.00018490571528673172
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009201345033943653,
+              "afterScore": 0.009028305299580097,
+              "scoreGain": -0.0001730397343635559
+            }
+          ]
+        },
+        {
+          "panelId": "tr-08",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0023002251982688904,
+          "afterMargin": -0.0022867778316140175,
+          "marginGain": 0.000013447366654872894,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.009504635818302631,
+              "scoreGain": -0.0001728283241391182
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007377238944172859,
+              "afterScore": 0.007217857986688614,
+              "scoreGain": -0.0001593809574842453
+            }
+          ]
+        },
+        {
+          "panelId": "va-01",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.00005729636177420616,
+          "afterMargin": 0.00007515633478760719,
+          "marginGain": 0.00001785997301340103,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.007098077330738306,
+              "afterScore": 0.006946355104446411,
+              "scoreGain": -0.0001517222262918949
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.0070407809689641,
+              "afterScore": 0.006871198769658804,
+              "scoreGain": -0.00016958219930529594
+            }
+          ]
+        },
+        {
+          "panelId": "va-02",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.0040939971804618835,
+          "afterMargin": 0.0040889158844947815,
+          "marginGain": -0.000005081295967102051,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.012323782779276371,
+              "scoreGain": -0.00016446178779006004
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.008394247386604548,
+              "afterScore": 0.00823486689478159,
+              "scoreGain": -0.000159380491822958
+            }
+          ]
+        },
+        {
+          "panelId": "va-03",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0023174318484961987,
+          "afterMargin": -0.0023182369768619537,
+          "marginGain": -8.051283657550812e-7,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.01153835654258728,
+              "afterScore": 0.011366121005266905,
+              "scoreGain": -0.00017223553732037544
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009220924694091082,
+              "afterScore": 0.009047884028404951,
+              "scoreGain": -0.00017304066568613052
+            }
+          ]
+        },
+        {
+          "panelId": "va-04",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.002126086503267288,
+          "afterMargin": -0.0021009515039622784,
+          "marginGain": 0.000025134999305009842,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.009504635818302631,
+              "scoreGain": -0.0001728283241391182
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007551377639174461,
+              "afterScore": 0.007403684314340353,
+              "scoreGain": -0.00014769332483410835
+            }
+          ]
+        }
+      ],
+      "presentations": 84,
+      "metrics": {
+        "wallSeconds": 34.9536579,
+        "cpuSeconds": 18.062,
+        "peakRssBytes": 114454528,
+        "stageWallMs": {
+          "setup": 1272.9898,
+          "baselineAssessment": 7816.450700000001,
+          "eventAssessment": 2394.2289999999994,
+          "postAssessment": 19829.298400000007,
+          "certificateVerification": 74.60369999999966,
+          "neuralFeedback": 1151.9386999999988,
+          "checkpointPublication": 1454.9986000000067
+        },
+        "measurementScope": "Current invocation after module imports; resumed invocation timing is not whole-lineage timing. Stage wall times include pacing; publication includes checkpoints only.",
+        "currentFreeBytes": 910671872,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "auditMetrics": {
+        "wallSeconds": 33.6979392,
+        "cpuSeconds": 17.345,
+        "scope": "Current auditor invocation after module imports; includes fresh neural replay and duty pacing."
+      },
+      "auditPeakRssBytes": 113324032
+    },
+    {
+      "schedule": "uniform",
+      "condition": "shuffled",
+      "reportSha256": "9d4e8fdd2d8a43a25e242be52fa54d9399819d80bc270bc77a0e31ddd53c5540",
+      "auditSha256": "f44bf9b77fd84ad3d6400f611f0b3710376b9e3bdc53ecc9df38659d0e485c60",
+      "trainingCorrectBefore": 4,
+      "trainingCorrectAfter": 4,
+      "validationCorrectBefore": 2,
+      "validationCorrectAfter": 3,
+      "repairs": [
+        "tr-07",
+        "tr-08",
+        "va-03",
+        "va-04"
+      ],
+      "regressions": [
+        "tr-02",
+        "tr-03",
+        "va-01"
+      ],
+      "panels": [
+        {
+          "panelId": "tr-01",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005600447300821543,
+          "afterMargin": 0.0023573217913508415,
+          "marginGain": -0.0032431255094707012,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.01197821693494916,
+              "afterScore": 0.0044680698774755,
+              "scoreGain": -0.0075101470574736595
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": 0.0021107480861246586,
+              "scoreGain": -0.004267021548002958
+            }
+          ]
+        },
+        {
+          "panelId": "tr-02",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "e1e5",
+          "beforeCorrect": true,
+          "afterCorrect": false,
+          "beforeMargin": 0.005236566998064518,
+          "afterMargin": -0.0007773442193865776,
+          "marginGain": -0.006013911217451096,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.011614336632192135,
+              "afterScore": 0.001333403866738081,
+              "scoreGain": -0.010280932765454054
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": 0.0021107480861246586,
+              "scoreGain": -0.004267021548002958
+            }
+          ]
+        },
+        {
+          "panelId": "tr-03",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "e1e5",
+          "beforeCorrect": true,
+          "afterCorrect": false,
+          "beforeMargin": 0.0009541739709675312,
+          "afterMargin": -0.00030212150886654854,
+          "marginGain": -0.0012562954798340797,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.008144597057253122,
+              "afterScore": 0.0019511114805936813,
+              "scoreGain": -0.006193485576659441
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007190423086285591,
+              "afterScore": 0.00225323298946023,
+              "scoreGain": -0.004937190096825361
+            }
+          ]
+        },
+        {
+          "panelId": "tr-04",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.00496794143691659,
+          "afterMargin": 0.0017267130315303802,
+          "marginGain": -0.0032412284053862095,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.004302125424146652,
+              "scoreGain": -0.008186119142919779
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007520303130149841,
+              "afterScore": 0.002575412392616272,
+              "scoreGain": -0.004944890737533569
+            }
+          ]
+        },
+        {
+          "panelId": "tr-05",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0015791459009051323,
+          "afterMargin": -1.7508864402770996e-7,
+          "marginGain": 0.0015789708122611046,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.003011662047356367,
+              "scoreGain": -0.007513162214308977
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.008945678360760212,
+              "afterScore": 0.0030114869587123394,
+              "scoreGain": -0.0059341914020478725
+            }
+          ]
+        },
+        {
+          "panelId": "tr-06",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0028380490839481354,
+          "afterMargin": -0.0003147441893815994,
+          "marginGain": 0.002523304894566536,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.009341292083263397,
+              "afterScore": 0.0018312488682568073,
+              "scoreGain": -0.00751004321500659
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.006503242999315262,
+              "afterScore": 0.001516504678875208,
+              "scoreGain": -0.004986738320440054
+            }
+          ]
+        },
+        {
+          "panelId": "tr-07",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "e1e5",
+          "beforeCorrect": false,
+          "afterCorrect": true,
+          "beforeMargin": -0.0013234792277216911,
+          "afterMargin": 0.0005804714746773243,
+          "marginGain": 0.0019039507023990154,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.003011662047356367,
+              "scoreGain": -0.007513162214308977
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009201345033943653,
+              "afterScore": 0.0035921335220336914,
+              "scoreGain": -0.005609211511909962
+            }
+          ]
+        },
+        {
+          "panelId": "tr-08",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "e1e5",
+          "beforeCorrect": false,
+          "afterCorrect": true,
+          "beforeMargin": -0.0023002251982688904,
+          "afterMargin": 0.000614694319665432,
+          "marginGain": 0.0029149195179343224,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.002108677290380001,
+              "scoreGain": -0.0075687868520617485
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007377238944172859,
+              "afterScore": 0.002723371610045433,
+              "scoreGain": -0.004653867334127426
+            }
+          ]
+        },
+        {
+          "panelId": "va-01",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "e1e5",
+          "beforeCorrect": true,
+          "afterCorrect": false,
+          "beforeMargin": 0.00005729636177420616,
+          "afterMargin": -0.0019116448238492012,
+          "marginGain": -0.0019689411856234074,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.007098077330738306,
+              "afterScore": 0.00019193021580576897,
+              "scoreGain": -0.006906147114932537
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.0070407809689641,
+              "afterScore": 0.00210357503965497,
+              "scoreGain": -0.00493720592930913
+            }
+          ]
+        },
+        {
+          "panelId": "va-02",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.0040939971804618835,
+          "afterMargin": 0.0005198940634727478,
+          "marginGain": -0.0035741031169891357,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.004302125424146652,
+              "scoreGain": -0.008186119142919779
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.008394247386604548,
+              "afterScore": 0.0037822313606739044,
+              "scoreGain": -0.004612016025930643
+            }
+          ]
+        },
+        {
+          "panelId": "va-03",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "e1e5",
+          "beforeCorrect": false,
+          "afterCorrect": true,
+          "beforeMargin": -0.0023174318484961987,
+          "afterMargin": 0.00026342784985899925,
+          "marginGain": 0.002580859698355198,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.01153835654258728,
+              "afterScore": 0.003348070662468672,
+              "scoreGain": -0.008190285880118608
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009220924694091082,
+              "afterScore": 0.003611498512327671,
+              "scoreGain": -0.005609426181763411
+            }
+          ]
+        },
+        {
+          "panelId": "va-04",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "e1e5",
+          "beforeCorrect": false,
+          "afterCorrect": true,
+          "beforeMargin": -0.002126086503267288,
+          "afterMargin": 0.0011449274607002735,
+          "marginGain": 0.0032710139639675617,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.002108677290380001,
+              "scoreGain": -0.0075687868520617485
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007551377639174461,
+              "afterScore": 0.0032536047510802746,
+              "scoreGain": -0.004297772888094187
+            }
+          ]
+        }
+      ],
+      "presentations": 84,
+      "metrics": {
+        "wallSeconds": 31.821009099999998,
+        "cpuSeconds": 16.938,
+        "peakRssBytes": 114548736,
+        "stageWallMs": {
+          "setup": 1321.3104,
+          "baselineAssessment": 7681.556400000002,
+          "eventAssessment": 2623.3193999999985,
+          "postAssessment": 16641.325000000008,
+          "certificateVerification": 67.12910000000193,
+          "neuralFeedback": 1159.3142000000007,
+          "checkpointPublication": 1411.5702999999867
+        },
+        "measurementScope": "Current invocation after module imports; resumed invocation timing is not whole-lineage timing. Stage wall times include pacing; publication includes checkpoints only.",
+        "currentFreeBytes": 1075609600,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "auditMetrics": {
+        "wallSeconds": 29.0844266,
+        "cpuSeconds": 15.437,
+        "scope": "Current auditor invocation after module imports; includes fresh neural replay and duty pacing."
+      },
+      "auditPeakRssBytes": 113655808
+    },
+    {
+      "schedule": "uniform",
+      "condition": "disabled",
+      "reportSha256": "46eaf48ca764aaeb59847c6fb2083bb9187e6048a2e584bb87c00ae4224df628",
+      "auditSha256": "8dd4c006e372f639775ce627e719f87dc0ea56fc1d8ada69cdcc43ac1a9a2934",
+      "trainingCorrectBefore": 4,
+      "trainingCorrectAfter": 4,
+      "validationCorrectBefore": 2,
+      "validationCorrectAfter": 2,
+      "repairs": [],
+      "regressions": [],
+      "panels": [
+        {
+          "panelId": "tr-01",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005600447300821543,
+          "afterMargin": 0.005600447300821543,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.01197821693494916,
+              "afterScore": 0.01197821693494916,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": 0.006377769634127617,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "tr-02",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.005236566998064518,
+          "afterMargin": 0.005236566998064518,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.011614336632192135,
+              "afterScore": 0.011614336632192135,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.006377769634127617,
+              "afterScore": 0.006377769634127617,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "tr-03",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.0009541739709675312,
+          "afterMargin": 0.0009541739709675312,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.008144597057253122,
+              "afterScore": 0.008144597057253122,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007190423086285591,
+              "afterScore": 0.007190423086285591,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "tr-04",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.00496794143691659,
+          "afterMargin": 0.00496794143691659,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.012488244567066431,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.007520303130149841,
+              "afterScore": 0.007520303130149841,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "tr-05",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0015791459009051323,
+          "afterMargin": -0.0015791459009051323,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.010524824261665344,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.008945678360760212,
+              "afterScore": 0.008945678360760212,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "tr-06",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0028380490839481354,
+          "afterMargin": -0.0028380490839481354,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.009341292083263397,
+              "afterScore": 0.009341292083263397,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.006503242999315262,
+              "afterScore": 0.006503242999315262,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "tr-07",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0013234792277216911,
+          "afterMargin": -0.0013234792277216911,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.010524824261665344,
+              "afterScore": 0.010524824261665344,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009201345033943653,
+              "afterScore": 0.009201345033943653,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "tr-08",
+          "split": "train",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0023002251982688904,
+          "afterMargin": -0.0023002251982688904,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.00967746414244175,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007377238944172859,
+              "afterScore": 0.007377238944172859,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "va-01",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.00005729636177420616,
+          "afterMargin": 0.00005729636177420616,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.007098077330738306,
+              "afterScore": 0.007098077330738306,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.0070407809689641,
+              "afterScore": 0.0070407809689641,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "va-02",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": true,
+          "afterCorrect": true,
+          "beforeMargin": 0.0040939971804618835,
+          "afterMargin": 0.0040939971804618835,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "success",
+              "beforeScore": 0.012488244567066431,
+              "afterScore": 0.012488244567066431,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "failure",
+              "beforeScore": 0.008394247386604548,
+              "afterScore": 0.008394247386604548,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "va-03",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.0023174318484961987,
+          "afterMargin": -0.0023174318484961987,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.01153835654258728,
+              "afterScore": 0.01153835654258728,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.009220924694091082,
+              "afterScore": 0.009220924694091082,
+              "scoreGain": 0
+            }
+          ]
+        },
+        {
+          "panelId": "va-04",
+          "split": "validation",
+          "beforeChoice": "a1a4",
+          "afterChoice": "a1a4",
+          "beforeCorrect": false,
+          "afterCorrect": false,
+          "beforeMargin": -0.002126086503267288,
+          "afterMargin": -0.002126086503267288,
+          "marginGain": 0,
+          "candidateChanges": [
+            {
+              "move": "a1a4",
+              "consequence": "failure",
+              "beforeScore": 0.00967746414244175,
+              "afterScore": 0.00967746414244175,
+              "scoreGain": 0
+            },
+            {
+              "move": "e1e5",
+              "consequence": "success",
+              "beforeScore": 0.007551377639174461,
+              "afterScore": 0.007551377639174461,
+              "scoreGain": 0
+            }
+          ]
+        }
+      ],
+      "presentations": 84,
+      "metrics": {
+        "wallSeconds": 35.6278458,
+        "cpuSeconds": 18.422,
+        "peakRssBytes": 114348032,
+        "stageWallMs": {
+          "setup": 1239.0638,
+          "baselineAssessment": 9625.905,
+          "eventAssessment": 3598.8187999999973,
+          "postAssessment": 16911.8336,
+          "certificateVerification": 84.81319999999869,
+          "neuralFeedback": 1570.5891999999985,
+          "checkpointPublication": 1534.4194000000048
+        },
+        "measurementScope": "Current invocation after module imports; resumed invocation timing is not whole-lineage timing. Stage wall times include pacing; publication includes checkpoints only.",
+        "currentFreeBytes": 1027559424,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "auditMetrics": {
+        "wallSeconds": 31.328800299999997,
+        "cpuSeconds": 16.313,
+        "scope": "Current auditor invocation after module imports; includes fresh neural replay and duty pacing."
+      },
+      "auditPeakRssBytes": 113512448
+    }
+  ],
+  "comparisons": [
+    {
+      "schedule": "selected",
+      "target": {
+        "panelId": "tr-06",
+        "split": "train",
+        "beforeChoice": "a1a4",
+        "afterChoice": "a1a4",
+        "beforeCorrect": false,
+        "afterCorrect": false,
+        "beforeMargin": -0.0028380490839481354,
+        "afterMargin": -0.004834569059312344,
+        "marginGain": -0.0019965199753642082,
+        "candidateChanges": [
+          {
+            "move": "a1a4",
+            "consequence": "failure",
+            "beforeScore": 0.009341292083263397,
+            "afterScore": 0.003189179114997387,
+            "scoreGain": -0.00615211296826601
+          },
+          {
+            "move": "e1e5",
+            "consequence": "success",
+            "beforeScore": 0.006503242999315262,
+            "afterScore": -0.0016453899443149567,
+            "scoreGain": -0.008148632943630219
+          }
+        ]
+      },
+      "sentinel": {
+        "panelId": "tr-03",
+        "split": "train",
+        "beforeChoice": "a1a4",
+        "afterChoice": "a1a4",
+        "beforeCorrect": true,
+        "afterCorrect": true,
+        "beforeMargin": 0.0009541739709675312,
+        "afterMargin": 0.005119085777550936,
+        "marginGain": 0.0041649118065834045,
+        "candidateChanges": [
+          {
+            "move": "a1a4",
+            "consequence": "success",
+            "beforeScore": 0.008144597057253122,
+            "afterScore": 0.003060794435441494,
+            "scoreGain": -0.005083802621811628
+          },
+          {
+            "move": "e1e5",
+            "consequence": "failure",
+            "beforeScore": 0.007190423086285591,
+            "afterScore": -0.0020582913421094418,
+            "scoreGain": -0.009248714428395033
+          }
+        ]
+      },
+      "contrasts": [
+        {
+          "condition": "no-channel",
+          "panels": [
+            {
+              "panelId": "tr-01",
+              "informativeMinusControlMarginGain": 0.0020240931771695614
+            },
+            {
+              "panelId": "tr-02",
+              "informativeMinusControlMarginGain": 0.0019917255267500877
+            },
+            {
+              "panelId": "tr-03",
+              "informativeMinusControlMarginGain": 0.0041597755625844
+            },
+            {
+              "panelId": "tr-04",
+              "informativeMinusControlMarginGain": 0.0022338940761983395
+            },
+            {
+              "panelId": "tr-05",
+              "informativeMinusControlMarginGain": -0.0022720186971127987
+            },
+            {
+              "panelId": "tr-06",
+              "informativeMinusControlMarginGain": -0.001996450126171112
+            },
+            {
+              "panelId": "tr-07",
+              "informativeMinusControlMarginGain": -0.0016375165432691574
+            },
+            {
+              "panelId": "tr-08",
+              "informativeMinusControlMarginGain": -0.0015131612308323383
+            },
+            {
+              "panelId": "va-01",
+              "informativeMinusControlMarginGain": 0.0037883291952311993
+            },
+            {
+              "panelId": "va-02",
+              "informativeMinusControlMarginGain": 0.0016017928719520569
+            },
+            {
+              "panelId": "va-03",
+              "informativeMinusControlMarginGain": -0.0016037696041166782
+            },
+            {
+              "panelId": "va-04",
+              "informativeMinusControlMarginGain": -0.0008173207752406597
+            }
+          ]
+        },
+        {
+          "condition": "shuffled",
+          "panels": [
+            {
+              "panelId": "tr-01",
+              "informativeMinusControlMarginGain": 0.003533497452735901
+            },
+            {
+              "panelId": "tr-02",
+              "informativeMinusControlMarginGain": 0.003510597627609968
+            },
+            {
+              "panelId": "tr-03",
+              "informativeMinusControlMarginGain": 0.0076165832579135895
+            },
+            {
+              "panelId": "tr-04",
+              "informativeMinusControlMarginGain": 0.003315338399261236
+            },
+            {
+              "panelId": "tr-05",
+              "informativeMinusControlMarginGain": -0.004364122170954943
+            },
+            {
+              "panelId": "tr-06",
+              "informativeMinusControlMarginGain": -0.003447373863309622
+            },
+            {
+              "panelId": "tr-07",
+              "informativeMinusControlMarginGain": -0.004044114612042904
+            },
+            {
+              "panelId": "tr-08",
+              "informativeMinusControlMarginGain": -0.003298560157418251
+            },
+            {
+              "panelId": "va-01",
+              "informativeMinusControlMarginGain": 0.006544123869389296
+            },
+            {
+              "panelId": "va-02",
+              "informativeMinusControlMarginGain": 0.0033848113380372524
+            },
+            {
+              "panelId": "va-03",
+              "informativeMinusControlMarginGain": -0.0033842320553958416
+            },
+            {
+              "panelId": "va-04",
+              "informativeMinusControlMarginGain": -0.0029465663246810436
+            }
+          ]
+        },
+        {
+          "condition": "disabled",
+          "panels": [
+            {
+              "panelId": "tr-01",
+              "informativeMinusControlMarginGain": 0.002033646684139967
+            },
+            {
+              "panelId": "tr-02",
+              "informativeMinusControlMarginGain": 0.002009991090744734
+            },
+            {
+              "panelId": "tr-03",
+              "informativeMinusControlMarginGain": 0.0041649118065834045
+            },
+            {
+              "panelId": "tr-04",
+              "informativeMinusControlMarginGain": 0.00225114356726408
+            },
+            {
+              "panelId": "tr-05",
+              "informativeMinusControlMarginGain": -0.0022688484750688076
+            },
+            {
+              "panelId": "tr-06",
+              "informativeMinusControlMarginGain": -0.0019965199753642082
+            },
+            {
+              "panelId": "tr-07",
+              "informativeMinusControlMarginGain": -0.0016239555552601814
+            },
+            {
+              "panelId": "tr-08",
+              "informativeMinusControlMarginGain": -0.001505302730947733
+            },
+            {
+              "panelId": "va-01",
+              "informativeMinusControlMarginGain": 0.003809081856161356
+            },
+            {
+              "panelId": "va-02",
+              "informativeMinusControlMarginGain": 0.0016034217551350594
+            },
+            {
+              "panelId": "va-03",
+              "informativeMinusControlMarginGain": -0.0016055842861533165
+            },
+            {
+              "panelId": "va-04",
+              "informativeMinusControlMarginGain": -0.0008001015521585941
+            }
+          ]
+        }
+      ],
+      "checks": {
+        "baselineTargetWrong": true,
+        "baselineSentinelCorrect": true,
+        "informativeTargetCorrect": false,
+        "informativeSentinelCorrect": true,
+        "zeroNewRegressions": true,
+        "targetMarginGainPositive": false,
+        "targetMarginGainGreaterThanEachMatchedControl": false
+      }
+    },
+    {
+      "schedule": "uniform",
+      "target": {
+        "panelId": "tr-06",
+        "split": "train",
+        "beforeChoice": "a1a4",
+        "afterChoice": "a1a4",
+        "beforeCorrect": false,
+        "afterCorrect": false,
+        "beforeMargin": -0.0028380490839481354,
+        "afterMargin": -0.005052896216511726,
+        "marginGain": -0.002214847132563591,
+        "candidateChanges": [
+          {
+            "move": "a1a4",
+            "consequence": "failure",
+            "beforeScore": 0.009341292083263397,
+            "afterScore": 0.0026059458032250404,
+            "scoreGain": -0.006735346280038357
+          },
+          {
+            "move": "e1e5",
+            "consequence": "success",
+            "beforeScore": 0.006503242999315262,
+            "afterScore": -0.002446950413286686,
+            "scoreGain": -0.008950193412601948
+          }
+        ]
+      },
+      "sentinel": {
+        "panelId": "tr-03",
+        "split": "train",
+        "beforeChoice": "a1a4",
+        "afterChoice": "a1a4",
+        "beforeCorrect": true,
+        "afterCorrect": true,
+        "beforeMargin": 0.0009541739709675312,
+        "afterMargin": 0.0033830911852419376,
+        "marginGain": 0.0024289172142744064,
+        "candidateChanges": [
+          {
+            "move": "a1a4",
+            "consequence": "success",
+            "beforeScore": 0.008144597057253122,
+            "afterScore": 0.0024586962535977364,
+            "scoreGain": -0.005685900803655386
+          },
+          {
+            "move": "e1e5",
+            "consequence": "failure",
+            "beforeScore": 0.007190423086285591,
+            "afterScore": -0.0009243949316442013,
+            "scoreGain": -0.008114818017929792
+          }
+        ]
+      },
+      "contrasts": [
+        {
+          "condition": "no-channel",
+          "panels": [
+            {
+              "panelId": "tr-01",
+              "informativeMinusControlMarginGain": 0.002820765133947134
+            },
+            {
+              "panelId": "tr-02",
+              "informativeMinusControlMarginGain": 0.003686170559376478
+            },
+            {
+              "panelId": "tr-03",
+              "informativeMinusControlMarginGain": 0.0024104188196361065
+            },
+            {
+              "panelId": "tr-04",
+              "informativeMinusControlMarginGain": 0.0030325567349791527
+            },
+            {
+              "panelId": "tr-05",
+              "informativeMinusControlMarginGain": -0.0010177092626690865
+            },
+            {
+              "panelId": "tr-06",
+              "informativeMinusControlMarginGain": -0.002214483916759491
+            },
+            {
+              "panelId": "tr-07",
+              "informativeMinusControlMarginGain": -0.00038061849772930145
+            },
+            {
+              "panelId": "tr-08",
+              "informativeMinusControlMarginGain": -0.0009427801705896854
+            },
+            {
+              "panelId": "va-01",
+              "informativeMinusControlMarginGain": 0.00262459646910429
+            },
+            {
+              "panelId": "va-02",
+              "informativeMinusControlMarginGain": 0.0016100713983178139
+            },
+            {
+              "panelId": "va-03",
+              "informativeMinusControlMarginGain": -0.0012401929125189781
+            },
+            {
+              "panelId": "va-04",
+              "informativeMinusControlMarginGain": -0.0002470226027071476
+            }
+          ]
+        },
+        {
+          "condition": "shuffled",
+          "panels": [
+            {
+              "panelId": "tr-01",
+              "informativeMinusControlMarginGain": 0.006072616204619408
+            },
+            {
+              "panelId": "tr-02",
+              "informativeMinusControlMarginGain": 0.009705896489322186
+            },
+            {
+              "panelId": "tr-03",
+              "informativeMinusControlMarginGain": 0.003685212694108486
+            },
+            {
+              "panelId": "tr-04",
+              "informativeMinusControlMarginGain": 0.006286820862442255
+            },
+            {
+              "panelId": "tr-05",
+              "informativeMinusControlMarginGain": -0.002595015801489353
+            },
+            {
+              "panelId": "tr-06",
+              "informativeMinusControlMarginGain": -0.004738152027130127
+            },
+            {
+              "panelId": "tr-07",
+              "informativeMinusControlMarginGain": -0.002272703219205141
+            },
+            {
+              "panelId": "tr-08",
+              "informativeMinusControlMarginGain": -0.003844252321869135
+            },
+            {
+              "panelId": "va-01",
+              "informativeMinusControlMarginGain": 0.004611397627741098
+            },
+            {
+              "panelId": "va-02",
+              "informativeMinusControlMarginGain": 0.0051790932193398476
+            },
+            {
+              "panelId": "va-03",
+              "informativeMinusControlMarginGain": -0.003821857739239931
+            },
+            {
+              "panelId": "va-04",
+              "informativeMinusControlMarginGain": -0.0034929015673696995
+            }
+          ]
+        },
+        {
+          "condition": "disabled",
+          "panels": [
+            {
+              "panelId": "tr-01",
+              "informativeMinusControlMarginGain": 0.0028294906951487064
+            },
+            {
+              "panelId": "tr-02",
+              "informativeMinusControlMarginGain": 0.00369198527187109
+            },
+            {
+              "panelId": "tr-03",
+              "informativeMinusControlMarginGain": 0.0024289172142744064
+            },
+            {
+              "panelId": "tr-04",
+              "informativeMinusControlMarginGain": 0.0030455924570560455
+            },
+            {
+              "panelId": "tr-05",
+              "informativeMinusControlMarginGain": -0.0010160449892282486
+            },
+            {
+              "panelId": "tr-06",
+              "informativeMinusControlMarginGain": -0.002214847132563591
+            },
+            {
+              "panelId": "tr-07",
+              "informativeMinusControlMarginGain": -0.00036875251680612564
+            },
+            {
+              "panelId": "tr-08",
+              "informativeMinusControlMarginGain": -0.0009293328039348125
+            },
+            {
+              "panelId": "va-01",
+              "informativeMinusControlMarginGain": 0.002642456442117691
+            },
+            {
+              "panelId": "va-02",
+              "informativeMinusControlMarginGain": 0.0016049901023507118
+            },
+            {
+              "panelId": "va-03",
+              "informativeMinusControlMarginGain": -0.0012409980408847332
+            },
+            {
+              "panelId": "va-04",
+              "informativeMinusControlMarginGain": -0.00022188760340213776
+            }
+          ]
+        }
+      ],
+      "checks": {
+        "baselineTargetWrong": true,
+        "baselineSentinelCorrect": true,
+        "informativeTargetCorrect": false,
+        "informativeSentinelCorrect": true,
+        "zeroNewRegressions": true,
+        "targetMarginGainPositive": false,
+        "targetMarginGainGreaterThanEachMatchedControl": false
+      }
+    }
+  ],
+  "recoveryAuditSha256": "af3662c04d8c8805ba85601de289f60df4e1da7bd6e1195545a19b1797b9cbac",
+  "resources": {
+    "totalMainTrainingWallSeconds": 258.4723694,
+    "totalMainTrainingCpuSeconds": 136.937,
+    "totalMainAuditWallSeconds": 247.30681429999998,
+    "totalMainAuditCpuSeconds": 129.891,
+    "maxMainTrainingRssBytes": 115097600,
+    "maxMainAuditRssBytes": 113901568,
+    "recoveryInvocation": {
+      "wallSeconds": 24.4731436,
+      "cpuSeconds": 12.548,
+      "peakRssBytes": 114696192,
+      "stageWallMs": {
+        "setup": 1316.1199000000001,
+        "baselineAssessment": 0,
+        "eventAssessment": 1867.5084000000006,
+        "postAssessment": 18243.480600000006,
+        "certificateVerification": 58.002899999999954,
+        "neuralFeedback": 884.5722999999998,
+        "checkpointPublication": 950.535700000002
+      },
+      "measurementScope": "Current invocation after module imports; resumed invocation timing is not whole-lineage timing. Stage wall times include pacing; publication includes checkpoints only.",
+      "currentFreeBytes": 651530240,
+      "node": "v22.23.2",
+      "cpuDuty": 0.5
+    },
+    "scope": "Measured Node invocation times exclude module import startup and small fixture/analysis overhead; no matched time-to-quality comparison."
+  },
+  "finalFamilyFilesRead": false,
+  "graphInference": false,
+  "scope": "One-seed one-ply candidate pairs. Uniform comparison is descriptive. No delayed biological retention, all-legal usefulness or transferable reasoning established."
+}

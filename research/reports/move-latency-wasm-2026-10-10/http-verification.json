@@ -1,0 +1,289 @@
+{
+  "timestamp": "2026-10-10T11:02:36.780Z",
+  "command": [
+    "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\move-latency-wasm-2026-10-10\\http-verification.mjs",
+    "http://127.0.0.1:4174"
+  ],
+  "node": "v22.23.2",
+  "mode": "production",
+  "coverage": "Existing server HTTP move selection, application, history and PGN replay; no visual browser inspection",
+  "trainerSHA256": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+  "accumulatorSHA256": "7a578b92a215aabf612d0c74899e9bff92054fe5d7d5b8e8f35f57ba0fd2ade9",
+  "serverSHA256": "898d61649e7f2d2432f824a0ff74697c5e735d6ae0c1d75346791399daffd0dd",
+  "checks": [
+    {
+      "fixture": "black-after-e4",
+      "elapsedMs": 7208.5016,
+      "expected": {
+        "from": "a7",
+        "to": "a5",
+        "score": -0.06349215656518936
+      },
+      "snapshot": {
+        "id": "46b093bc-02a2-4f0d-9634-ea62280967db",
+        "humanColor": "w",
+        "fen": "rnbqkbnr/1ppppppp/8/p7/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "turn": "w",
+        "history": [
+          {
+            "san": "e4",
+            "from": "e2",
+            "to": "e4",
+            "after": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1"
+          },
+          {
+            "san": "a5",
+            "from": "a7",
+            "to": "a5",
+            "after": "rnbqkbnr/1ppppppp/8/p7/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+          }
+        ],
+        "legal": [
+          {
+            "from": "e4",
+            "to": "e5"
+          },
+          {
+            "from": "a2",
+            "to": "a3"
+          },
+          {
+            "from": "a2",
+            "to": "a4"
+          },
+          {
+            "from": "b2",
+            "to": "b3"
+          },
+          {
+            "from": "b2",
+            "to": "b4"
+          },
+          {
+            "from": "c2",
+            "to": "c3"
+          },
+          {
+            "from": "c2",
+            "to": "c4"
+          },
+          {
+            "from": "d2",
+            "to": "d3"
+          },
+          {
+            "from": "d2",
+            "to": "d4"
+          },
+          {
+            "from": "f2",
+            "to": "f3"
+          },
+          {
+            "from": "f2",
+            "to": "f4"
+          },
+          {
+            "from": "g2",
+            "to": "g3"
+          },
+          {
+            "from": "g2",
+            "to": "g4"
+          },
+          {
+            "from": "h2",
+            "to": "h3"
+          },
+          {
+            "from": "h2",
+            "to": "h4"
+          },
+          {
+            "from": "b1",
+            "to": "a3"
+          },
+          {
+            "from": "b1",
+            "to": "c3"
+          },
+          {
+            "from": "d1",
+            "to": "e2"
+          },
+          {
+            "from": "d1",
+            "to": "f3"
+          },
+          {
+            "from": "d1",
+            "to": "g4"
+          },
+          {
+            "from": "d1",
+            "to": "h5"
+          },
+          {
+            "from": "e1",
+            "to": "e2"
+          },
+          {
+            "from": "f1",
+            "to": "e2"
+          },
+          {
+            "from": "f1",
+            "to": "d3"
+          },
+          {
+            "from": "f1",
+            "to": "c4"
+          },
+          {
+            "from": "f1",
+            "to": "b5"
+          },
+          {
+            "from": "f1",
+            "to": "a6"
+          },
+          {
+            "from": "g1",
+            "to": "e2"
+          },
+          {
+            "from": "g1",
+            "to": "f3"
+          },
+          {
+            "from": "g1",
+            "to": "h3"
+          }
+        ],
+        "gameOver": false,
+        "reason": null,
+        "check": false,
+        "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"You\"]\n[Black \"Untrained fly\"]\n[Result \"*\"]\n\n1. e4 a5 *",
+        "flyScore": -0.06349215656518936,
+        "peakResidentMiB": 141.94921875
+      },
+      "wrongTurnRejected": true,
+      "pgnReplayPassed": true
+    },
+    {
+      "fixture": "white-start",
+      "elapsedMs": 10007.001100000001,
+      "expected": {
+        "from": "c2",
+        "to": "c4",
+        "score": -0.054068587720394135
+      },
+      "snapshot": {
+        "id": "498417ad-8511-4143-b54a-b3c4aaefacc3",
+        "humanColor": "b",
+        "fen": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1",
+        "turn": "b",
+        "history": [
+          {
+            "san": "c4",
+            "from": "c2",
+            "to": "c4",
+            "after": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1"
+          }
+        ],
+        "legal": [
+          {
+            "from": "b8",
+            "to": "c6"
+          },
+          {
+            "from": "b8",
+            "to": "a6"
+          },
+          {
+            "from": "g8",
+            "to": "h6"
+          },
+          {
+            "from": "g8",
+            "to": "f6"
+          },
+          {
+            "from": "a7",
+            "to": "a6"
+          },
+          {
+            "from": "a7",
+            "to": "a5"
+          },
+          {
+            "from": "b7",
+            "to": "b6"
+          },
+          {
+            "from": "b7",
+            "to": "b5"
+          },
+          {
+            "from": "c7",
+            "to": "c6"
+          },
+          {
+            "from": "c7",
+            "to": "c5"
+          },
+          {
+            "from": "d7",
+            "to": "d6"
+          },
+          {
+            "from": "d7",
+            "to": "d5"
+          },
+          {
+            "from": "e7",
+            "to": "e6"
+          },
+          {
+            "from": "e7",
+            "to": "e5"
+          },
+          {
+            "from": "f7",
+            "to": "f6"
+          },
+          {
+            "from": "f7",
+            "to": "f5"
+          },
+          {
+            "from": "g7",
+            "to": "g6"
+          },
+          {
+            "from": "g7",
+            "to": "g5"
+          },
+          {
+            "from": "h7",
+            "to": "h6"
+          },
+          {
+            "from": "h7",
+            "to": "h5"
+          }
+        ],
+        "gameOver": false,
+        "reason": null,
+        "check": false,
+        "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"Untrained fly\"]\n[Black \"You\"]\n[Result \"*\"]\n\n1. c4 *",
+        "flyScore": -0.054068587720394135,
+        "peakResidentMiB": 142.24609375
+      },
+      "wrongTurnRejected": true,
+      "pgnReplayPassed": true
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stockfish + FlyChess Math — Explained Simply</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=NTR&display=swap');
+
+      :root {
+        --paper: #f8f7f4;
+        --ink: #111111;
+        --panel: #ffffff;
+        --line: #d8d4cd;
+        --muted: #4a4a4a;
+        --note: #f2f0eb;
+        --accent: #1a6b4a;
+        --accent-bg: #e6f2ec;
+        --warn-bg: #fff4d6;
+        --blue-bg: #e8effc;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "NTR", "Times New Roman", serif;
+        line-height: 1.7;
+        letter-spacing: 0.01em;
+      }
+      .container { max-width: 900px; margin: 0 auto; padding: 40px 22px 90px; }
+      h1 { font-size: 2.4rem; margin: 0 0 10px; line-height: 1.2; font-weight: 400; }
+      h2 { font-size: 1.7rem; margin-top: 12px; margin-bottom: 8px; line-height: 1.3; font-weight: 400; }
+      h3 { font-size: 1.25rem; margin-top: 20px; margin-bottom: 6px; }
+      .lead { color: var(--muted); font-size: 1.15rem; margin-bottom: 20px; }
+      .section {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        padding: 20px 22px;
+        margin-top: 18px;
+      }
+      .tag {
+        display: inline-block; background: #fff; border: 1px solid var(--ink);
+        padding: 4px 10px; font-size: 0.8rem; margin-bottom: 12px;
+        letter-spacing: 0.08em; text-transform: uppercase;
+      }
+      /* Plain-language boxes */
+      .plain {
+        background: var(--accent-bg);
+        border-left: 4px solid var(--accent);
+        padding: 12px 14px;
+        margin: 14px 0;
+      }
+      .plain strong { color: var(--accent); }
+      .where {
+        background: var(--blue-bg);
+        border-left: 4px solid #2b4acb;
+        padding: 12px 14px;
+        margin: 14px 0;
+      }
+      .example {
+        background: var(--warn-bg);
+        border-left: 4px solid #9a7400;
+        padding: 12px 14px;
+        margin: 14px 0;
+      }
+      .formula {
+        background: #fff; border: 1px solid var(--line);
+        padding: 12px 16px; overflow-x: auto; margin: 14px 0;
+        text-align: center;
+      }
+      .says { font-size: 0.98rem; color: var(--muted); text-align: left; margin-top: 8px; }
+      .says b { color: var(--ink); }
+      .note { border-left: 3px solid var(--ink); background: var(--note); padding: 12px 14px; margin: 18px 0; }
+      .small { font-size: 0.94rem; color: var(--muted); }
+      p, li { color: var(--ink); }
+      ul, ol { padding-left: 26px; }
+
+      /* Variable cards */
+      .var-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+      @media (max-width: 640px) { .var-grid { grid-template-columns: 1fr; } }
+      .var-card {
+        border: 1px solid var(--line); padding: 10px 12px; background: #fff;
+      }
+      .var-card .sym { font-size: 1.3rem; }
+      .var-card .nick {
+        display: inline-block; font-size: 0.78rem; text-transform: uppercase;
+        letter-spacing: 0.06em; background: var(--note); border: 1px solid var(--line);
+        padding: 1px 8px; margin-left: 8px; vertical-align: middle;
+      }
+      .var-card p { margin: 6px 0 0; font-size: 0.97rem; }
+
+      /* Graphs */
+      .graph-box {
+        border: 1px dashed var(--ink); background: #fff;
+        padding: 14px 16px; margin: 16px 0;
+      }
+      .graph-box h4 { margin: 0 0 6px; font-weight: 400; font-size: 1.1rem; }
+      .graph-box .caption { font-size: 0.93rem; color: var(--muted); margin-top: 8px; }
+      .chess-row { display: flex; gap: 4px; flex-wrap: wrap; margin: 10px 0; }
+      .cell {
+        width: 34px; height: 34px; border: 1px solid var(--ink);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 0.85rem; background: #fff;
+      }
+      .cell.on { background: var(--ink); color: #fff; }
+      input[type="range"] { width: 100%; }
+      .meter {
+        height: 22px; background: #eee; border: 1px solid var(--line);
+        position: relative; margin: 8px 0;
+      }
+      .meter-fill { height: 100%; background: var(--accent); width: 50%; transition: width 0.1s; }
+      .big-num { font-size: 1.5rem; }
+      .flow { display: flex; flex-direction: column; gap: 0; margin: 12px 0; }
+      .flow-step {
+        border: 2px solid var(--ink); background: #fff; padding: 10px 14px; text-align: center;
+      }
+      .flow-arrow { text-align: center; font-size: 1.5rem; line-height: 1.2; }
+      a { color: var(--ink); }
+      .toc { background: #fff; border: 1px solid var(--line); padding: 14px 18px; margin: 16px 0; }
+      .toc li { margin: 2px 0; }
+    </style>
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+        svg: { fontCache: 'global' }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="tag">Beginner-friendly version</div>
+      <h1>How a computer learns chess: Stockfish, search, and the fly brain</h1>
+      <p class="lead">
+        No math background needed. Each section has three parts:
+        <b>plain words</b> (what's happening), <b>the formula</b> (the precise version),
+        and <b>"this says"</b> (the formula translated back to English).
+        Play with the graphs — they do the same math the formulas do.
+      </p>
+
+      <div class="toc">
+        <b>Map of the page</b>
+        <ol>
+          <li><a href="#howtoread">How to read any formula here</a></li>
+          <li><a href="#cast">Meet the characters (every variable)</a></li>
+          <li><a href="#sparse">Turning a board into numbers</a></li>
+          <li><a href="#accum">Why the computer doesn't start over every move</a></li>
+          <li><a href="#network">The mini-brain: numbers in, one score out</a></li>
+          <li><a href="#wdl">Squishing big scores into 0-to-1</a> ★ graph</li>
+          <li><a href="#blend">Mixing "looks good" with "actually won"</a> ★ graph</li>
+          <li><a href="#loss">Learning from mistakes</a> ★ graph</li>
+          <li><a href="#search">Looking ahead: search is not the same as judging</a> ★ diagram</li>
+          <li><a href="#fly">The fly student and the Stockfish teacher</a> ★ graph</li>
+          <li><a href="#bounded">Keeping the teacher's voice at a safe volume</a></li>
+          <li><a href="#loop">The whole loop, start to finish</a></li>
+        </ol>
+      </div>
+
+      <!-- 0 -->
+      <div class="section" id="howtoread">
+        <h2>0. How to read any formula here</h2>
+        <div class="plain">
+          <strong>In plain words:</strong> A formula is just a recipe sentence with shorthand.
+          "$s$" is not scary — it's just a nickname for "the chess situation right now."
+          Whenever you see a new letter, ask three questions: <b>what is it in real life?</b>,
+          <b>when does it show up?</b>, and <b>can you give me one example?</b> This page answers all three every time.
+        </div>
+        <ul>
+          <li><b>Letters = nicknames.</b> $s$ = situation, $a$ = action (a move), $x$ = numbers describing the board.</li>
+          <li><b>Subscripts = labels.</b> $x_i$ means "entry number $i$ in the list $x$." $h_j$ means "hidden unit number $j$."</li>
+          <li><b>Greek letters = knobs.</b> $\lambda$ (lambda) = blending knob, $\eta$ (eta) = step-size knob, $\tau$ (tau) = volume knob, $\delta$ (delta) = "the difference / the mistake."</li>
+          <li><b>Arrows like $\leftarrow$</b> mean "update" — throw away the old value, store the new one.</li>
+        </ul>
+        <div class="example"><b>Example sentence:</b> "$\delta = Q_{SF} - Q_{fly}$" just means "mistake = teacher's score minus student's score." Positive = student was too gloomy. Negative = student was too optimistic.</div>
+      </div>
+
+      <!-- 1 -->
+      <div class="section" id="cast">
+        <h2>1. Meet the characters (every variable, with a real example)</h2>
+        <div class="plain"><strong>In plain words:</strong> Think of a chess lesson. There is a <b>position</b>, a <b>student</b> (the fly brain guessing), a <b>teacher</b> (Stockfish answering), and a <b>report card</b> (numbers recording who was right). Every letter below is one of those roles.</div>
+
+        <div class="var-grid">
+          <div class="var-card"><span class="sym">$s$</span><span class="nick">the Situation</span>
+            <p><b>Real meaning:</b> the full board + whose turn it is + castling rights + history.<br><b>When it appears:</b> at the very start, before anyone moves.<br><b>Example:</b> "White to move, king on e1, rook on h1, Black just played …Nf6."</p></div>
+          <div class="var-card"><span class="sym">$a$</span><span class="nick">the Action</span>
+            <p><b>Real meaning:</b> one legal move.<br><b>When:</b> when we list choices.<br><b>Example:</b> $a$ = "play Nf3". $A(s)$ = the whole list: {Nf3, e4, d4, …}.</p></div>
+          <div class="var-card"><span class="sym">$x$, $x_i$, $F(s)$</span><span class="nick">the Number List</span>
+            <p><b>Real meaning:</b> the board translated into 1s and 0s so a network can eat it. $x_i$ = slot $i$. $F(s)$ = "which slots are switched on."<br><b>Example:</b> slot 712 = "white knight on f3" → 1 if present, else 0.</p></div>
+          <div class="var-card"><span class="sym">$d$</span><span class="nick">how Long the list is</span>
+            <p><b>Real meaning:</b> total number of slots (e.g. tens of thousands).<br><b>When:</b> when we build the translator. Only ~30 slots are "on" at once — that's why it's fast.</p></div>
+          <div class="var-card"><span class="sym">$W, b, h$</span><span class="nick">brain Wiring</span>
+            <p><b>Real meaning:</b> $W$ = connection strengths, $b$ = starting nudges (biases), $h$ = middle-layer activity.<br><b>When:</b> $W,b$ exist from birth and change with learning; $h$ is recomputed every position.</p></div>
+          <div class="var-card"><span class="sym">$v(s)$, $c$</span><span class="nick">the Score</span>
+            <p><b>Real meaning:</b> "how good is this position?" in pawn units. +100 = up about one pawn.<br><b>Example:</b> $c = +150$ means White looks ~1.5 pawns better.</p></div>
+          <div class="var-card"><span class="sym">$q$, $\hat{q}$</span><span class="nick">squished Score</span>
+            <p><b>Real meaning:</b> the same score squished into 0–1 so huge numbers don't break training. 0 = losing, 0.5 = even, 1 = winning. $\hat{q}$ = "what the network <i>currently predicts</i>".</p></div>
+          <div class="var-card"><span class="sym">$r$, $z$</span><span class="nick">reality + Target</span>
+            <p><b>Real meaning:</b> $r$ = what actually happened (1 win / 0.5 draw / 0 loss). $z$ = the lesson target mixing squished score $q$ and reality $r$.<br><b>Example:</b> engine said 0.7 but game was drawn (0.5) → target is somewhere between.</p></div>
+          <div class="var-card"><span class="sym">$\lambda$</span><span class="nick">blending Knob</span>
+            <p><b>Real meaning:</b> how much to trust the engine's opinion vs. the final result. $\lambda=1$ = only engine, $\lambda=0$ = only result.<br><b>When:</b> chosen once before training.</p></div>
+          <div class="var-card"><span class="sym">$\eta$</span><span class="nick">step Size</span>
+            <p><b>Real meaning:</b> how big a correction to make after each mistake. Tiny = careful, huge = unstable.<br><b>Example:</b> $\eta = 0.01$ means "move 1% of the way toward the fix."</p></div>
+          <div class="var-card"><span class="sym">$Q_{fly}, Q_{SF}, \delta$</span><span class="nick">student, Teacher, Mistake</span>
+            <p><b>Real meaning:</b> student's guess, teacher's answer, and the gap between them.<br><b>Example:</b> fly says 0.4, Stockfish says 0.6 → $\delta = +0.2$ (fly was too gloomy).</p></div>
+          <div class="var-card"><span class="sym">$T$, $\tau$, $e_i$</span><span class="nick">safe Signal</span>
+            <p><b>Real meaning:</b> $T$ = teacher's voice with the volume capped at ±1 so it never shouts. $\tau$ = the volume knob. $e_i$ = "which connections were recently used and deserve the credit/blame" (eligibility trace).</p></div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="section" id="sparse">
+        <h2>2. Turning a board into numbers</h2>
+        <div class="plain"><strong>In plain words:</strong> Networks can't see pictures — they read lists of numbers. So we give every possible detail ("white knight on f3", "black can still castle", …) its own light switch: 1 = present, 0 = absent. In any real position almost all switches are off. That's the whole speed trick.</div>
+        <div class="where"><b>Where does $x$ come from?</b> Right after the position $s$ arrives, a fixed translator (the encoder) converts $s$ → $x$. Nothing has been learned yet — this is just translation.</div>
+        <div class="formula">
+          $$x_i = \begin{cases} 1, & \text{if detail } i \text{ is present} \\ 0, & \text{otherwise} \end{cases}\qquad F(s) = \{ i \mid x_i = 1 \}$$
+          <div class="says"><b>This says:</b> "switch $i$ is ON if that detail is on the board." $F(s)$ is just the short list of switches that are ON.</div>
+        </div>
+        <div class="graph-box">
+          <h4>📊 Picture: a sparse list (only 3 of 20 switches ON)</h4>
+          <div class="chess-row" id="sparse-demo"></div>
+          <div class="caption">Each box is one slot $x_i$. Dark = 1 (detail present). Here $F(s) = \{3, 7, 15\}$ — only those three weights need adding (see next section). In real Stockfish there are ~10,000s of boxes but still only ~30 dark ones.</div>
+        </div>
+        <div class="formula">
+          $$h^{(1)} = W^{(1)} x + b^{(1)}\qquad h_j^{(1)} = b_j^{(1)} + \sum_{i \in F(s)} W_{ji}^{(1)}$$
+          <div class="says"><b>This says:</b> "first impression = starting nudge ($b$) + add up the strengths ($W$) of only the switches that are ON." Skipping the thousands of OFF switches gives the same answer, much faster.</div>
+        </div>
+        <div class="example"><b>Chess example:</b> White plays Nf3. Only a few details change ("knight left g1", "knight arrived f3"). So $F(s)$ changes by ~4 entries out of 10,000+. Everything else stays.</div>
+      </div>
+
+      <!-- 3 -->
+      <div class="section" id="accum">
+        <h2>3. Why the computer doesn't start over every move</h2>
+        <div class="plain"><strong>In plain words:</strong> If only 4 light switches flipped, why recount all 10,000? Just subtract the ones that turned off and add the ones that turned on. That running total is called the <b>accumulator</b> — the reason NNUE is "efficiently updatable."</div>
+        <div class="where"><b>Where do $R$ and $A$ come from?</b> The moment a move $s \to s'$ is made. Compare old ON-list $F(s)$ with new ON-list $F(s')$: $R$ = removed, $A$ = added.</div>
+        <div class="formula">
+          $$h_j'^{(1)} = h_j^{(1)} + \sum_{i \in A} W_{ji}^{(1)} - \sum_{i \in R} W_{ji}^{(1)}$$
+          <div class="says"><b>This says:</b> "new impression = old impression + weights of newcomers − weights of leavers." A handful of additions instead of thousands.</div>
+        </div>
+        <div class="graph-box">
+          <h4>📊 Picture: incremental update</h4>
+          <svg viewBox="0 0 560 150" width="100%" height="150" role="img" aria-label="accumulator update diagram">
+            <rect x="10" y="20" width="150" height="60" fill="#fff" stroke="#111" stroke-width="2" rx="4"/>
+            <text x="85" y="45" text-anchor="middle" font-size="14">old total</text>
+            <text x="85" y="65" text-anchor="middle" font-size="14" font-weight="bold">h = 1.20</text>
+            <text x="175" y="58" font-size="22">−</text>
+            <rect x="200" y="20" width="90" height="60" fill="#f2f0eb" stroke="#111" stroke-width="2" rx="4"/>
+            <text x="245" y="45" text-anchor="middle" font-size="13">leavers R</text>
+            <text x="245" y="65" text-anchor="middle" font-size="14" font-weight="bold">0.30</text>
+            <text x="305" y="58" font-size="22">+</text>
+            <rect x="330" y="20" width="90" height="60" fill="#e6f2ec" stroke="#111" stroke-width="2" rx="4"/>
+            <text x="375" y="45" text-anchor="middle" font-size="13">newcomers A</text>
+            <text x="375" y="65" text-anchor="middle" font-size="14" font-weight="bold">0.55</text>
+            <text x="435" y="58" font-size="22">=</text>
+            <rect x="460" y="20" width="90" height="60" fill="#111" rx="4"/>
+            <text x="505" y="45" text-anchor="middle" font-size="13" fill="#fff">new total</text>
+            <text x="505" y="65" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">1.45</text>
+            <text x="10" y="115" font-size="13" fill="#4a4a4a">Example: knight left g1 (−0.30), arrived f3 (+0.55). 1.20 − 0.30 + 0.55 = 1.45.</text>
+          </svg>
+          <div class="caption">You never recompute from scratch — you adjust. That's the entire NNUE speed idea.</div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="section" id="network">
+        <h2>4. The mini-brain: numbers in, one score out</h2>
+        <div class="plain"><strong>In plain words:</strong> Stack a few layers: mix numbers → keep only positives (ReLU = "ignore bad vibes, keep good ones") → mix again → one final number: "how good is this position?" Call all the knobs together $\theta$ (theta = the whole bag of $W$s and $b$s).</div>
+        <div class="formula">
+          $$h^{(1)} = W^{(1)}x + b^{(1)}\qquad h^{(2)} = \mathrm{ReLU}(W^{(2)}h^{(1)} + b^{(2)})\qquad v(s) = W^{(3)}h^{(2)} + b^{(3)}$$
+          <div class="says"><b>This says:</b> line 1 mixes the board numbers; line 2 mixes again and zeroes out negatives; line 3 squeezes everything into a single score $v(s)$. Shorthand: $v(s) = f_\theta(s)$ = "the brain with settings $\theta$ scores position $s$."</div>
+        </div>
+        <div class="example"><b>Chess example:</b> $x$ = "knight on f3, pawn on e4, …" → hidden layer notices "kingside development + center control" → output $v(s) = +60$ ("White slightly better").</div>
+      </div>
+
+      <!-- 5 -->
+      <div class="section" id="wdl">
+        <h2>5. Squishing big scores into 0-to-1 (WDL space)</h2>
+        <div class="plain"><strong>In plain words:</strong> Being up 10 pawns vs. 5 pawns barely matters — both are "totally winning." But +0.2 vs. +1.0 matters a lot. So we <b>squish</b> pawn scores through an S-curve (sigmoid): near-zero scores spread out, huge scores pile up near 0 or 1. The knob $k$ (≈410) sets how fast it squishes.</div>
+        <div class="where"><b>Where do $c$, $k$, $q$ come from?</b> After the network outputs $v(s)$, we rename it $c$ ("centipawn score") and push it through the squisher to get $q$. This happens in Stockfish's training kitchen, before any learning.</div>
+        <div class="formula">
+          $$q = \sigma\left(\frac{c}{k}\right) = \frac{1}{1 + e^{-c/k}}$$
+          <div class="says"><b>This says:</b> "divide the score by $k$, then S-squish into 0–1." $c=+410, k=410$ → $q ≈ 0.73$. $c=0$ → $q=0.5$ (dead even).</div>
+        </div>
+        <div class="graph-box">
+          <h4>📊 Try it: drag the pawn score, watch the squished value</h4>
+          <label>Pawn score $c$ (centipawns): <span class="big-num" id="c-val">+150</span></label>
+          <input type="range" id="c-slider" min="-1000" max="1000" value="150" step="10" />
+          <div class="meter"><div class="meter-fill" id="q-meter"></div></div>
+          <div>Squished $q$ = <span class="big-num" id="q-val">0.59</span> <span class="small">(0 = lost, 0.5 = even, 1 = won)</span></div>
+          <svg viewBox="0 0 560 160" width="100%" height="160" role="img" aria-label="sigmoid curve">
+            <line x1="40" y1="130" x2="540" y2="130" stroke="#111" />
+            <line x1="40" y1="10" x2="40" y2="130" stroke="#111" />
+            <text x="545" y="134" font-size="12">c</text>
+            <text x="8" y="20" font-size="12">1</text>
+            <text x="8" y="75" font-size="12">0.5</text>
+            <text x="8" y="130" font-size="12">0</text>
+            <line x1="40" y1="70" x2="540" y2="70" stroke="#d8d4cd" stroke-dasharray="4 4"/>
+            <path id="sig-curve" d="" fill="none" stroke="#1a6b4a" stroke-width="3"/>
+            <circle id="sig-dot" r="7" fill="#111" cx="0" cy="0"/>
+          </svg>
+          <div class="caption">Notice: the curve is steep near 0 (small differences matter) and flat at the ends (mate vs. big material — both ≈ 1). That's deliberate: don't waste learning on "how winning is already-won."</div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="section" id="blend">
+        <h2>6. Mixing "looks good" with "actually won"</h2>
+        <div class="plain"><strong>In plain words:</strong> The engine's opinion ($q$) can be wrong. The final result ($r$) is truth but crude (one number for a whole game). So the target $z$ blends both. The knob $\lambda$ is the recipe: "70% engine opinion, 30% reality."</div>
+        <div class="where"><b>Where do $r$ and $z$ come from?</b> After the game ends we know $r$ (1 / 0.5 / 0). Training pairs each position's engine opinion $q$ with the eventual $r$ to build the lesson target $z$.</div>
+        <div class="formula">
+          $$z = \lambda q + (1-\lambda) r \qquad \hat{q} = \sigma\left(\frac{f_\theta(s)}{k}\right) \qquad e = \hat{q} - z$$
+          <div class="says"><b>This says:</b> "target = weighted average of opinion and reality. Prediction $\hat{q}$ = what the network says <i>right now</i>. Error $e$ = prediction minus target." If $e = +0.2$, the network is 0.2 too optimistic.</div>
+        </div>
+        <div class="graph-box">
+          <h4>📊 Try it: the blending knob $\lambda$</h4>
+          <label>Engine opinion $q$: <span id="bq-val">0.70</span></label>
+          <input type="range" id="bq-slider" min="0" max="100" value="70" />
+          <label>Game result $r$:
+            <select id="r-select"><option value="1">1 — win</option><option value="0.5" selected>0.5 — draw</option><option value="0">0 — loss</option></select>
+          </label>
+          <label>Blend $\lambda$: <span id="lam-val">0.7</span></label>
+          <input type="range" id="lam-slider" min="0" max="100" value="70" />
+          <div>Target $z$ = <span class="big-num" id="z-val">0.64</span></div>
+          <div class="caption">$\lambda=1$ → target is pure engine opinion. $\lambda=0$ → target is pure result. Real training sits in between (often ~0.7).</div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="section" id="loss">
+        <h2>7. Learning from mistakes (the only calculus idea you need)</h2>
+        <div class="plain"><strong>In plain words:</strong> Mistake = prediction − target. Punishment = mistake² (squaring makes big mistakes hurt a lot more than small ones and ignores sign). Learning = nudge each knob a little against the mistake: "if being too optimistic, turn down whatever caused optimism." The nudge size = step-size $\eta$ × mistake × "how much this knob contributed" (the input $x$).</div>
+        <div class="formula">
+          $$L_n = (\hat{q}_n - z_n)^2 \qquad w \leftarrow w + \eta\,\delta\,x,\;\;\; \delta = z - \hat{q}$$
+          <div class="says"><b>This says:</b> "punishment = squared gap. Fix = step-size × (target − prediction) × input." Target bigger than prediction ($\delta > 0$) → push weights up along $x$. That's it — this one line is the ancestor of every update on this page, including the fly's.</div>
+        </div>
+        <div class="graph-box">
+          <h4>📊 Picture: punishment grows quadratically</h4>
+          <svg viewBox="0 0 560 170" width="100%" height="170" role="img" aria-label="squared error parabola">
+            <line x1="40" y1="140" x2="540" y2="140" stroke="#111"/>
+            <line x1="290" y1="10" x2="290" y2="140" stroke="#111"/>
+            <text x="545" y="144" font-size="12">error e</text>
+            <text x="296" y="16" font-size="12">punishment L</text>
+            <text x="285" y="155" font-size="12">0 (perfect)</text>
+            <path d="M 60 130 Q 290 -60 520 130" fill="none" stroke="#1a6b4a" stroke-width="3"/>
+            <text x="70" y="60" font-size="13" fill="#4a4a4a">small miss → tiny pain</text>
+            <text x="380" y="60" font-size="13" fill="#4a4a4a">big miss → huge pain</text>
+          </svg>
+          <div class="caption">Being off by 0.4 hurts 16× more than being off by 0.1 (0.16 vs. 0.01). So learning focuses on big blunders first — sensible.</div>
+        </div>
+        <div class="note">The page's longer chain-rule steps ($\partial L / \partial \hat{q}$, sigmoid derivative $\hat{q}(1-\hat{q})$, dividing by $k$) just carry this same "mistake × contribution" idea through the squisher. Same moral, more bookkeeping.</div>
+      </div>
+
+      <!-- 8 -->
+      <div class="section" id="search">
+        <h2>8. Looking ahead: judging is not searching</h2>
+        <div class="plain"><strong>In plain words:</strong> The network is a <b>judge</b> ("this position looks +0.5"). Search is the <b>imagination</b> ("if I go there, they go there, then…"). Search calls the judge at the leaves of an imaginary tree and assumes both sides pick the best line for themselves. Alpha-beta pruning just skips branches that can't matter: "they already have something better, so stop reading this line."</div>
+        <div class="where"><b>Where does search happen?</b> At play time, <i>after</i> training. Training built the judge; search uses it. Don't confuse the two layers.</div>
+        <div class="graph-box">
+          <h4>📊 Picture: a tiny minimax tree (White picks max, Black picks min)</h4>
+          <svg viewBox="0 0 560 230" width="100%" height="230" role="img" aria-label="minimax tree">
+            <circle cx="280" cy="25" r="20" fill="#111"/><text x="280" y="31" text-anchor="middle" fill="#fff" font-size="13">?</text>
+            <text x="280" y="10" text-anchor="middle" font-size="12">you (max)</text>
+            <line x1="270" y1="43" x2="170" y2="95" stroke="#111" stroke-width="2"/>
+            <line x1="290" y1="43" x2="390" y2="95" stroke="#111" stroke-width="2"/>
+            <text x="205" y="75" font-size="12">Nf3</text><text x="345" y="75" font-size="12">e4</text>
+            <circle cx="150" cy="115" r="20" fill="#fff" stroke="#111" stroke-width="2"/><text x="150" y="121" text-anchor="middle" font-size="13">?</text>
+            <circle cx="410" cy="115" r="20" fill="#fff" stroke="#111" stroke-width="2"/><text x="410" y="121" text-anchor="middle" font-size="13">?</text>
+            <text x="150" y="100" text-anchor="middle" font-size="12">foe (min)</text>
+            <text x="410" y="100" text-anchor="middle" font-size="12">foe (min)</text>
+            <line x1="140" y1="133" x2="90" y2="178" stroke="#111"/><line x1="160" y1="133" x2="190" y2="178" stroke="#111"/>
+            <line x1="400" y1="133" x2="370" y2="178" stroke="#111"/><line x1="420" y1="133" x2="460" y2="178" stroke="#111"/>
+            <rect x="60" y="178" width="60" height="26" fill="#e6f2ec" stroke="#111"/><text x="90" y="196" text-anchor="middle" font-size="13">+0.3</text>
+            <rect x="160" y="178" width="60" height="26" fill="#e6f2ec" stroke="#111"/><text x="190" y="196" text-anchor="middle" font-size="13">+0.8</text>
+            <rect x="340" y="178" width="60" height="26" fill="#fff4d6" stroke="#111"/><text x="370" y="196" text-anchor="middle" font-size="13">−0.2</text>
+            <rect x="430" y="178" width="60" height="26" fill="#e6f2ec" stroke="#111"/><text x="460" y="196" text-anchor="middle" font-size="13">+0.5</text>
+            <text x="150" y="222" text-anchor="middle" font-size="12">foe picks min → +0.3 ✂ rest pruned if α allows</text>
+            <text x="410" y="222" text-anchor="middle" font-size="12">foe picks min → −0.2</text>
+          </svg>
+          <div class="caption">Leaves are judge scores. Each foe picks the <i>worst-for-you</i> reply; you then pick the better branch (here Nf3 → +0.3 beats e4 → −0.2). Pruning (α/β) skips proving what can't change the pick.</div>
+        </div>
+        <div class="formula">
+          $$V(s) = \max_{a \in A(s)} \min_{b} V(s'_{a,b})\qquad \text{prune if } v \ge \beta \text{ or } v \le \alpha$$
+          <div class="says"><b>This says:</b> "value of a position = your best move assuming the foe answers best. Stop exploring a branch once it's provably too good (≥ β) or too bad (≤ α) to be chosen."</div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="section" id="fly">
+        <h2>9. The fly student and the Stockfish teacher</h2>
+        <div class="plain"><strong>In plain words:</strong> Now swap students. The fly brain guesses a value $Q_{fly}$ for a move. Frozen Stockfish (fixed version, fixed depth, fixed settings — like a sealed answer key) gives $Q_{SF}$. The mistake $\delta$ = teacher − student. The fly then nudges its wiring a little along the features it just used ($\phi$). Crucially: Stockfish never reaches into the brain — it only supplies the answer key through a declared teaching wire.</div>
+        <div class="where"><b>Where do $Q_{fly}$, $Q_{SF}$, $\phi$ come from?</b> $\phi(s,a)$ = the board-after-your-move, encoded like $x$ but from the mover's perspective. $Q_{fly} = f_\theta(\phi)$ = the fly's current guess. $Q_{SF}$ = Stockfish's frozen answer for the same $\phi$. $\delta$ is born the instant both answers exist.</div>
+        <div class="formula">
+          $$Q_{fly}(s,a) = f_\theta(\phi(s,a)) \qquad Q_{SF}(s,a) = g_{SF}(\phi(s,a)) \qquad \delta(s,a) = Q_{SF} - Q_{fly}$$
+          <div class="says"><b>This says:</b> "student guess, teacher answer, gap." Same pattern as section 7 — only the teacher changed (pinned engine instead of game result).</div>
+        </div>
+        <div class="graph-box">
+          <h4>📊 Try it: be the teacher — set both scores, see the lesson</h4>
+          <label>Fly guess $Q_{fly}$: <span id="fly-val">0.40</span></label>
+          <input type="range" id="fly-slider" min="0" max="100" value="40" />
+          <label>Teacher $Q_{SF}$: <span id="sf-val">0.60</span></label>
+          <input type="range" id="sf-slider" min="0" max="100" value="60" />
+          <div>Mistake $\delta$ = <span class="big-num" id="delta-val">+0.20</span> <span id="delta-word">fly was too gloomy → nudge up ↑</span></div>
+          <div class="meter"><div class="meter-fill" id="delta-meter"></div></div>
+          <div class="caption">Positive $\delta$ = "cheer up" (strengthen what was active). Negative = "calm down" (weaken it). Size of nudge = $\eta \times \delta \times$ features used.</div>
+        </div>
+        <div class="example"><b>Pinned answer-key =</b> fixed Stockfish version + binary hash + options + depth/time + side-to-move perspective + mate handling + score→target transform. Change any of these and the "teacher" is a different person — so freeze them before training and log them.</div>
+      </div>
+
+      <!-- 10 -->
+      <div class="section" id="bounded">
+        <h2>10. Keeping the teacher's voice at a safe volume</h2>
+        <div class="plain"><strong>In plain words:</strong> Raw mistakes can be enormous ("off by 800 centipawns!"). Shouting that into a tiny biological wire would swamp everything. So we cap the signal at ±1 — a whisper-to-firm range. The knob $\tau$ sets what counts as "loud": small $\tau$ = even small mistakes sound loud.</div>
+        <div class="formula">
+          $$T(s,a) = \mathrm{clip}\left(\frac{\delta}{\tau}, -1, 1\right) \qquad\text{or}\qquad T = \tanh\left(\frac{\delta}{\tau}\right)$$
+          <div class="says"><b>This says:</b> "divide the mistake by $\tau$, then clamp into [−1, +1]." Sign = direction (under- vs. over-estimate); size ≤ 1 = volume-capped. Tanh does the same smoothly instead of with a hard cut.</div>
+        </div>
+        <div class="graph-box">
+          <h4>📊 Picture: clipping — loud mistakes get capped</h4>
+          <svg viewBox="0 0 560 170" width="100%" height="170" role="img" aria-label="clip graph">
+            <line x1="40" y1="140" x2="540" y2="140" stroke="#111"/>
+            <line x1="290" y1="10" x2="290" y2="150" stroke="#111"/>
+            <text x="545" y="144" font-size="12">δ (mistake)</text>
+            <text x="296" y="16" font-size="12">T (signal)</text>
+            <text x="250" y="155" font-size="12">0</text>
+            <line x1="40" y1="45" x2="540" y2="45" stroke="#d8d4cd" stroke-dasharray="4 4"/>
+            <line x1="40" y1="100" x2="540" y2="100" stroke="#d8d4cd" stroke-dasharray="4 4"/>
+            <text x="8" y="48" font-size="12">+1</text><text x="8" y="103" font-size="12">−1</text>
+            <polyline points="60,100 230,100 350,45 540,45" fill="none" stroke="#1a6b4a" stroke-width="3"/>
+            <text x="90" y="90" font-size="12">capped quiet</text>
+            <text x="240" y="80" font-size="12">proportional zone</text>
+            <text x="400" y="35" font-size="12">capped loud</text>
+          </svg>
+          <div class="caption">Middle zone: signal grows with the mistake. Outer zones: capped at ±1 no matter how huge the blunder. Biology-safe by construction.</div>
+        </div>
+        <div class="note">Project rule: the capped signal must travel through an <b>identified pathway</b> to an <b>eligibility trace</b> $e_i(t)$ ("who was active recently"), not be vaguely called "dopamine." Arbitrary scalars ≠ identified reward circuits. The trace $e_i$ in the simplest case just equals the features used: $\Delta w_i = \eta\,T\,\phi_i$.</div>
+      </div>
+
+      <!-- 11 -->
+      <div class="section" id="loop">
+        <h2>11. The whole loop, start to finish (8 steps)</h2>
+        <div class="plain"><strong>In plain words:</strong> This is the entire proposal as a bedtime story: sit at the board → imagine a move → student guesses → teacher answers → compute the gap → lower the volume → blame the right connections → save the nudge. Repeat thousands of times. Nothing here is search, and the teacher never edits the brain directly.</div>
+        <div class="flow">
+          <div class="flow-step">1. Sit at position $s$, pick a candidate move $a$</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">2. Encode the after-move board $\phi(s,a)$</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">3. Fly guesses $Q_{fly} = f_\theta(\phi)$</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">4. Frozen Stockfish answers $Q_{SF}$</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">5. Mistake $\delta = Q_{SF} - Q_{fly}$</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">6. Safe signal $T = \mathrm{clip}(\delta/\tau)$</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">7. Nudge $\Delta w_i = \eta\,T\,e_i$ (only recently-active wires)</div><div class="flow-arrow">↓</div>
+          <div class="flow-step">8. Save: $w_{new} = w_{old} + \Delta w$</div>
+        </div>
+        <div class="formula">
+          $$\Delta w_i = \eta\,T(s,a)\,e_i(t) \qquad w_{new} = w_{old} + \Delta w$$
+          <div class="says"><b>This says:</b> "each wire's change = step-size × safe teacher signal × how eligible that wire is. Then commit the changes." Simple case: $e_i = \phi_i$ (the features you just used).</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>12. Why this is still "proposal," not "proof"</h2>
+        <div class="plain"><strong>In plain words:</strong> The algebra above is correct the way arithmetic is correct — but a correct recipe isn't a finished cake. Before any learning claim, the project must freeze and test: <i>what</i> the fly predicts, <i>which</i> encoding, <i>which</i> Stockfish answer, <i>which</i> squish-and-cap, <i>which</i> wire it travels, <i>which</i> trace takes blame — plus boring-but-essential controls (no feedback? shuffled answers? plasticity off? result-only?). Until then $\delta = Q_{SF} - Q_{fly}$ is a plan, not a discovery.</div>
+        <ul>
+          <li>what exactly the fly predicts</li>
+          <li>which board-action representation is used</li>
+          <li>which Stockfish score is the target (version/hash/options/depth locked)</li>
+          <li>which transform makes the teaching signal (bounded, signed, declared)</li>
+          <li>how the signal reaches the identified pathway + eligibility trace</li>
+          <li>controls: no-feedback, shuffled-target, disabled-plasticity, outcome-only</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>13. One-paragraph summary</h2>
+        <p>Board → number list $x$ (mostly zeros) → fast running total (accumulator) → mini-brain → score $v(s)$ → squish to $q$ → blend with reality into target $z$ → learn by shrinking squared mistakes. <b>Search</b> is a separate layer that imagines moves and asks the judge for leaf scores. <b>FlyChess teaching</b> reuses the same "target minus prediction" lesson, but the teacher is frozen Stockfish, the signal is volume-capped at ±1, and credit goes only to recently-active wires. Freeze every interface and beat the controls before claiming the fly learned chess.</p>
+        <p class="small">Original full-derivation content preserved in git history. This rewrite adds plain-language layers, variable context, and interactive graphs without changing the math.</p>
+      </div>
+    </div>
+
+    <script>
+      // Sparse demo: 20 boxes, 3 on
+      (function () {
+        var el = document.getElementById('sparse-demo');
+        if (!el) return;
+        var on = { 3: true, 7: true, 15: true };
+        for (var i = 0; i < 20; i++) {
+          var d = document.createElement('div');
+          d.className = 'cell' + (on[i] ? ' on' : '');
+          d.textContent = on[i] ? '1' : '0';
+          d.title = 'x_' + i + (on[i] ? ' = 1 (ON)' : ' = 0 (off)');
+          el.appendChild(d);
+        }
+      })();
+
+      // Sigmoid explorer
+      (function () {
+        var slider = document.getElementById('c-slider');
+        if (!slider) return;
+        var k = 410;
+        var cVal = document.getElementById('c-val');
+        var qVal = document.getElementById('q-val');
+        var qMeter = document.getElementById('q-meter');
+        var dot = document.getElementById('sig-dot');
+        var curve = document.getElementById('sig-curve');
+        // draw static curve: x: c in [-1000,1000] -> [60,520], y: q in [0,1] -> [130,10]
+        var d = '';
+        for (var px = 60; px <= 520; px += 4) {
+          var c = (px - 60) / 460 * 2000 - 1000;
+          var q = 1 / (1 + Math.exp(-c / k));
+          var y = 130 - q * 120;
+          d += (px === 60 ? 'M ' : 'L ') + px + ' ' + y.toFixed(1) + ' ';
+        }
+        curve.setAttribute('d', d);
+        function update() {
+          var c = parseFloat(slider.value);
+          var q = 1 / (1 + Math.exp(-c / k));
+          cVal.textContent = (c >= 0 ? '+' : '') + c;
+          qVal.textContent = q.toFixed(2);
+          qMeter.style.width = (q * 100).toFixed(1) + '%';
+          var px = 60 + (c + 1000) / 2000 * 460;
+          var py = 130 - q * 120;
+          dot.setAttribute('cx', px.toFixed(1));
+          dot.setAttribute('cy', py.toFixed(1));
+        }
+        slider.addEventListener('input', update);
+        update();
+      })();
+
+      // Blend explorer
+      (function () {
+        var qS = document.getElementById('bq-slider');
+        if (!qS) return;
+        var lamS = document.getElementById('lam-slider');
+        var rSel = document.getElementById('r-select');
+        var bqVal = document.getElementById('bq-val');
+        var lamVal = document.getElementById('lam-val');
+        var zVal = document.getElementById('z-val');
+        function update() {
+          var q = parseFloat(qS.value) / 100;
+          var lam = parseFloat(lamS.value) / 100;
+          var r = parseFloat(rSel.value);
+          bqVal.textContent = q.toFixed(2);
+          lamVal.textContent = lam.toFixed(2);
+          zVal.textContent = (lam * q + (1 - lam) * r).toFixed(2);
+        }
+        qS.addEventListener('input', update);
+        lamS.addEventListener('input', update);
+        rSel.addEventListener('change', update);
+        update();
+      })();
+
+      // Fly vs teacher explorer
+      (function () {
+        var fS = document.getElementById('fly-slider');
+        if (!fS) return;
+        var sS = document.getElementById('sf-slider');
+        var fV = document.getElementById('fly-val');
+        var sV = document.getElementById('sf-val');
+        var dV = document.getElementById('delta-val');
+        var dW = document.getElementById('delta-word');
+        var dM = document.getElementById('delta-meter');
+        function update() {
+          var f = parseFloat(fS.value) / 100;
+          var s = parseFloat(sS.value) / 100;
+          var delta = s - f;
+          fV.textContent = f.toFixed(2);
+          sV.textContent = s.toFixed(2);
+          dV.textContent = (delta >= 0 ? '+' : '') + delta.toFixed(2);
+          dW.textContent = delta > 0.01 ? 'fly was too gloomy → nudge up ↑'
+            : delta < -0.01 ? 'fly was too optimistic → nudge down ↓'
+            : 'spot on — almost no update ✓';
+          dM.style.width = (Math.abs(delta) * 100).toFixed(1) + '%';
+          dM.style.background = delta >= 0 ? '#1a6b4a' : '#9a2b00';
+        }
+        fS.addEventListener('input', update);
+        sS.addEventListener('input', update);
+        update();
+      })();
+    </script>
+  </body>
+</html>

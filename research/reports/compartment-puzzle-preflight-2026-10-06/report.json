@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "inputs": {
+    "research/reports/positive-puzzle-pipeline-v1-2026-10-06/report.json": "01a7ab038b03474283580e0dd5f8cb821512dbac4f6833eb45192925dbe5445b",
+    "research/data/compartment-input-association-v1/protocol.json": "51be61bd9cc3ba872d0634b373d614088e51a198f9c222acd3afe47e823b8a96",
+    "research/reports/reversal-candidate-2026-10-05/mapping.json": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+    "research/reports/positive-puzzle-pipeline-v1-2026-10-06/audit-prefix.json": "656bb1b9093b51381822164824f83a858cc801127f49707635aaee45904acd6f",
+    "research\\reports\\positive-puzzle-pipeline-v1-2026-10-06\\plan-0.json": "e7d427029079a8611aba764c34f9ed090de5a3de4b8f35bb3f621b8bc2b54d27",
+    "research\\reports\\positive-puzzle-pipeline-v1-2026-10-06\\plan-1.json": "a941be728a633f615d794cfe35ae979870b468b647c4b182a54920b09a84d87d",
+    "research\\reports\\compartment-input-original-2026-10-06\\report.json": "9647b9c1cd0311a237c7ddd38691a88b07754de19331c4a5240388f3d2e5fdd8",
+    "research\\reports\\compartment-input-original-2026-10-06\\audit-prefix.json": "49506844f62237b9b9bb39a4019c55daa57bc1c40d349ed2311f8cb41e5ff73d",
+    "research\\reports\\compartment-input-conjoined-2026-10-06\\report.json": "ae32b40ae6388c31fcee5f845d49f2344aed321a13967f499f3807f2a47852a9",
+    "research\\reports\\compartment-input-conjoined-2026-10-06\\audit-prefix.json": "6257e867dd34570a37e3d354b0af35ae5323c6e18e227359f0c8337ca0e731b3",
+    "research\\reports\\compartment-input-balanced-2026-10-06\\report.json": "599af4ca2cb3087fac4a2a0608e10aa2dafe4ed3d5202bdaa909ced969fb01da",
+    "research\\reports\\compartment-input-balanced-2026-10-06\\audit-prefix.json": "30da25bfc21ee808f3319117c7e9fcc06b5fdd53b514267a30cf9e9ab8abbec9",
+    "research\\reports\\compartment-input-conjoined-balanced-2026-10-06\\report.json": "f50104a5d41598989c6bc387a8cd78d6d8a3e434dd15d90e541fb96615f68a5e",
+    "research\\reports\\compartment-input-conjoined-balanced-2026-10-06\\audit-prefix.json": "e781385e8bf16cf927ea913b4b1e9c6bf295f428d40f00935c62eb7616d391f3"
+  },
+  "sources": {
+    ".codebase/scripts/preflight-compartment-puzzles.mjs": "40403ab1d608620706cc39ce81b25e4bfdcbad48e6a0d61bdaead027a8bffe87",
+    ".codebase/src/lowram/compartment-chess-cue.mjs": "c7a095625518fab166b09a796d452c8a78779b9016cb04b982eb81e4f13440c3",
+    ".codebase/src/lowram/relational-chess-cue-v2.mjs": "7998c336dba340d8bdb4e60c6de1b559411cf2a9b80af782b54d45f9e1c4bc3c"
+  },
+  "encoder": {
+    "seed": 14009,
+    "maxCells": 14,
+    "totalCurrent": 21,
+    "maxCellCurrent": 1.5,
+    "maxHistoryPlies": 512
+  },
+  "boards": 6,
+  "records": 200,
+  "recordsSha256": "49f10c4da7c19e5208145a9a83cf18ba239d86f88a5fa40d8815c24f4463de0c",
+  "summaries": [
+    {
+      "variant": "original",
+      "encoderIdentity": "c8725115fe89340a88f6c1aa4af764ffd41551289c19a24094f544ddd91ace38",
+      "legal": 50,
+      "errors": 0,
+      "offDose": 0,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "variant": "conjoined",
+      "encoderIdentity": "7c2784e7da2159fd84c02266043dab428b12b2b68ecab1c6dd27e158a2509751",
+      "legal": 50,
+      "errors": 0,
+      "offDose": 0,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "variant": "balanced",
+      "encoderIdentity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+      "legal": 50,
+      "errors": 0,
+      "offDose": 0,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "variant": "conjoined-balanced",
+      "encoderIdentity": "59bb6751a0025bba562c8c83157fb1f7eceeedbbb83df86d2ce14d4e148793e2",
+      "legal": 50,
+      "errors": 0,
+      "offDose": 0,
+      "passed": true,
+      "examples": []
+    }
+  ],
+  "scope": "Input construction and declared physical-dose viability on saved training investigation states only. No full graph, neural adaptation, transfer or guarantee for unseen future search states."
+}

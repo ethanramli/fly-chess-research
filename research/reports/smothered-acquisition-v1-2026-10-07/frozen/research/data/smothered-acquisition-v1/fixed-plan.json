@@ -1,0 +1,1232 @@
+{
+  "schema": "fixed-certified-experience-schedule-v1",
+  "experiences": [
+    {
+      "move": "c4g8",
+      "actor": "w",
+      "status": "success",
+      "experimentalPulse": false,
+      "learningAllowed": true,
+      "certificateSha256": "1d53209bf1a82312fb75426183a8c0522befeb7559ee92bd3a9b44c44fdd8e92",
+      "meaning": "Experimental PPL103 stimulus for failure of this bounded mate objective; not full-game loss or natural reward reconstruction",
+      "proof": {
+        "status": "success",
+        "reward": 1,
+        "nodes": 3,
+        "attacker": "w",
+        "criterion": "force_mate_within_2_remaining_plies",
+        "certificate": {
+          "schema": "bounded-mate-certificate-v1",
+          "rootFen": "5rQk/6pp/7N/8/8/8/8/K7 b - - 1 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1\"]\n\n1. Qg8+ *",
+          "attacker": "w",
+          "plies": 2,
+          "tree": {
+            "status": "success",
+            "children": [
+              {
+                "move": "f8g8",
+                "node": {
+                  "status": "success",
+                  "children": [
+                    {
+                      "move": "h6f7",
+                      "node": {
+                        "status": "success",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "certificateCheck": {
+          "verified": true,
+          "status": "success",
+          "nodes": 3,
+          "elapsedMs": 3.7775000000001455
+        },
+        "bounds": {
+          "maxNodes": 4096,
+          "millisecondsPerStage": 2000,
+          "constructionStop": null,
+          "checkingNodes": 3,
+          "elapsedMs": 6.746000000000095
+        },
+        "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+      },
+      "context": {
+        "fen": "5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1",
+        "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1\"]\n *",
+        "task": {
+          "objective": "forced-mate",
+          "plies": 3
+        }
+      },
+      "role": "committed-choice",
+      "explanation": {
+        "schema": "verified-line-explanation-v1",
+        "status": "success",
+        "teachingAllowed": true,
+        "actor": "w",
+        "candidate": "c4g8",
+        "criterion": "force_mate_within_2_remaining_plies",
+        "certificateSha256": "1d53209bf1a82312fb75426183a8c0522befeb7559ee92bd3a9b44c44fdd8e92",
+        "materialRubric": {
+          "units": {
+            "p": 1,
+            "n": 3,
+            "b": 3,
+            "r": 5,
+            "q": 9,
+            "k": 0
+          },
+          "initialBalance": 5,
+          "finalBalance": -4,
+          "scope": "Conventional fixed material accounting for teacher explanation; not a complete position assessment"
+        },
+        "sequence": [
+          {
+            "ply": 1,
+            "move": "c4g8",
+            "san": "Qg8+",
+            "playedBy": "w",
+            "captured": null,
+            "promotion": null,
+            "materialBefore": 5,
+            "materialAfter": 5,
+            "change": 0,
+            "legalRepliesAtThisNode": null,
+            "certifiedDefensiveBranches": null,
+            "onlyLegalReply": false,
+            "successorFen": "5rQk/6pp/7N/8/8/8/8/K7 b - - 1 1"
+          },
+          {
+            "ply": 2,
+            "move": "f8g8",
+            "san": "Rxg8",
+            "playedBy": "b",
+            "captured": "q",
+            "promotion": null,
+            "materialBefore": 5,
+            "materialAfter": -4,
+            "change": -9,
+            "legalRepliesAtThisNode": 1,
+            "certifiedDefensiveBranches": 1,
+            "onlyLegalReply": true,
+            "successorFen": "6rk/6pp/7N/8/8/8/8/K7 w - - 0 2"
+          },
+          {
+            "ply": 3,
+            "move": "h6f7",
+            "san": "Nf7#",
+            "playedBy": "w",
+            "captured": null,
+            "promotion": null,
+            "materialBefore": -4,
+            "materialAfter": -4,
+            "change": 0,
+            "legalRepliesAtThisNode": null,
+            "certifiedDefensiveBranches": null,
+            "onlyLegalReply": false,
+            "successorFen": "6rk/5Npp/8/8/8/8/8/K7 b - - 1 2"
+          }
+        ],
+        "actorLosses": [
+          {
+            "ply": 2,
+            "captured": "q",
+            "units": 9
+          }
+        ],
+        "materialConcessionObserved": true,
+        "mateDespiteMaterialConcession": true,
+        "earlierAttackingChoices": [
+          {
+            "ply": 1,
+            "move": "c4g8"
+          },
+          {
+            "ply": 3,
+            "move": "h6f7"
+          }
+        ],
+        "outcome": "Forced mate under the stated horizon and covered defenses",
+        "limitations": [
+          "One illustrative branch of the independently checked strategy/counterstrategy.",
+          "A material concession does not establish necessity, best full-game play, or that the model rejected the move for material reasons.",
+          "This explanation is teacher evidence, not a neural evaluation, arbitrary parameter update or validated delayed credit."
+        ]
+      },
+      "delivery": "Immediate checked board/action replay; no delayed eligibility or natural reward reconstruction"
+    },
+    {
+      "move": "h6f7",
+      "actor": "w",
+      "status": "failure",
+      "experimentalPulse": true,
+      "learningAllowed": true,
+      "certificateSha256": "3bbb2676d6a549c737f006be08f6fc6f07921c762cf4c82cfd62b8951cef574d",
+      "meaning": "Experimental PPL103 stimulus for failure of this bounded mate objective; not full-game loss or natural reward reconstruction",
+      "proof": {
+        "status": "failure",
+        "reward": -1,
+        "nodes": 29,
+        "attacker": "w",
+        "criterion": "force_mate_within_2_remaining_plies",
+        "certificate": {
+          "schema": "bounded-mate-certificate-v1",
+          "rootFen": "5r1k/5Npp/8/8/2Q5/8/8/K7 b - - 1 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1\"]\n\n1. Nf7+ *",
+          "attacker": "w",
+          "plies": 2,
+          "tree": {
+            "status": "failure",
+            "children": [
+              {
+                "move": "f8f7",
+                "node": {
+                  "status": "failure",
+                  "children": [
+                    {
+                      "move": "c4b5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4a6",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c6",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c7",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c8",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4d5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4e6",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4f7",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4d4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4e4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4f4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4g4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4h4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4d3",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4e2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4f1",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c3",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c1",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4b3",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4a2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4b4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4a4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "a1a2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "a1b2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "a1b1",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "certificateCheck": {
+          "verified": true,
+          "status": "failure",
+          "nodes": 29,
+          "elapsedMs": 26.68089999999998
+        },
+        "bounds": {
+          "maxNodes": 4096,
+          "millisecondsPerStage": 2000,
+          "constructionStop": null,
+          "checkingNodes": 29,
+          "elapsedMs": 81.9982
+        },
+        "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+      },
+      "context": {
+        "fen": "5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1",
+        "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1\"]\n *",
+        "task": {
+          "objective": "forced-mate",
+          "plies": 3
+        }
+      },
+      "role": "committed-choice",
+      "explanation": {
+        "schema": "verified-line-explanation-v1",
+        "status": "failure",
+        "teachingAllowed": true,
+        "actor": "w",
+        "candidate": "h6f7",
+        "criterion": "force_mate_within_2_remaining_plies",
+        "certificateSha256": "3bbb2676d6a549c737f006be08f6fc6f07921c762cf4c82cfd62b8951cef574d",
+        "materialRubric": {
+          "units": {
+            "p": 1,
+            "n": 3,
+            "b": 3,
+            "r": 5,
+            "q": 9,
+            "k": 0
+          },
+          "initialBalance": 5,
+          "finalBalance": 2,
+          "scope": "Conventional fixed material accounting for teacher explanation; not a complete position assessment"
+        },
+        "sequence": [
+          {
+            "ply": 1,
+            "move": "h6f7",
+            "san": "Nf7+",
+            "playedBy": "w",
+            "captured": null,
+            "promotion": null,
+            "materialBefore": 5,
+            "materialAfter": 5,
+            "change": 0,
+            "legalRepliesAtThisNode": null,
+            "certifiedDefensiveBranches": null,
+            "onlyLegalReply": false,
+            "successorFen": "5r1k/5Npp/8/8/2Q5/8/8/K7 b - - 1 1"
+          },
+          {
+            "ply": 2,
+            "move": "f8f7",
+            "san": "Rxf7",
+            "playedBy": "b",
+            "captured": "n",
+            "promotion": null,
+            "materialBefore": 5,
+            "materialAfter": 2,
+            "change": -3,
+            "legalRepliesAtThisNode": 2,
+            "certifiedDefensiveBranches": 1,
+            "onlyLegalReply": false,
+            "successorFen": "7k/5rpp/8/8/2Q5/8/8/K7 w - - 0 2"
+          },
+          {
+            "ply": 3,
+            "move": "a1a2",
+            "san": "Ka2",
+            "playedBy": "w",
+            "captured": null,
+            "promotion": null,
+            "materialBefore": 2,
+            "materialAfter": 2,
+            "change": 0,
+            "legalRepliesAtThisNode": null,
+            "certifiedDefensiveBranches": null,
+            "onlyLegalReply": false,
+            "successorFen": "7k/5rpp/8/8/2Q5/8/K7/8 b - - 1 2"
+          }
+        ],
+        "actorLosses": [
+          {
+            "ply": 2,
+            "captured": "n",
+            "units": 3
+          }
+        ],
+        "materialConcessionObserved": true,
+        "mateDespiteMaterialConcession": false,
+        "earlierAttackingChoices": [
+          {
+            "ply": 1,
+            "move": "h6f7"
+          },
+          {
+            "ply": 3,
+            "move": "a1a2"
+          }
+        ],
+        "outcome": "Forced mate is unavailable under this horizon; full-game outcome unknown",
+        "limitations": [
+          "One illustrative branch of the independently checked strategy/counterstrategy.",
+          "A material concession does not establish necessity, best full-game play, or that the model rejected the move for material reasons.",
+          "This explanation is teacher evidence, not a neural evaluation, arbitrary parameter update or validated delayed credit."
+        ]
+      },
+      "delivery": "Immediate checked board/action replay; no delayed eligibility or natural reward reconstruction"
+    },
+    {
+      "move": "h6g8",
+      "actor": "w",
+      "status": "failure",
+      "experimentalPulse": true,
+      "learningAllowed": true,
+      "certificateSha256": "5602700b8ddc46444c0cf57d4a7c7325ed097c86a492bd62729549c8211488ab",
+      "meaning": "Experimental PPL103 stimulus for failure of this bounded mate objective; not full-game loss or natural reward reconstruction",
+      "proof": {
+        "status": "failure",
+        "reward": -1,
+        "nodes": 30,
+        "attacker": "w",
+        "criterion": "force_mate_within_2_remaining_plies",
+        "certificate": {
+          "schema": "bounded-mate-certificate-v1",
+          "rootFen": "5rNk/6pp/8/8/2Q5/8/8/K7 b - - 1 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1\"]\n\n1. Ng8 *",
+          "attacker": "w",
+          "plies": 2,
+          "tree": {
+            "status": "failure",
+            "children": [
+              {
+                "move": "f8g8",
+                "node": {
+                  "status": "failure",
+                  "children": [
+                    {
+                      "move": "c4b5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4a6",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c6",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c7",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c8",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4d5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4e6",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4f7",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4g8",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4d4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4e4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4f4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4g4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4h4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4d3",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4e2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4f1",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c3",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c1",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4b3",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4a2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4b4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4a4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "a1a2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "a1b2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "a1b1",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "certificateCheck": {
+          "verified": true,
+          "status": "failure",
+          "nodes": 30,
+          "elapsedMs": 55.80079999999998
+        },
+        "bounds": {
+          "maxNodes": 4096,
+          "millisecondsPerStage": 2000,
+          "constructionStop": null,
+          "checkingNodes": 30,
+          "elapsedMs": 114.0859999999999
+        },
+        "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+      },
+      "context": {
+        "fen": "5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1",
+        "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1\"]\n *",
+        "task": {
+          "objective": "forced-mate",
+          "plies": 3
+        }
+      },
+      "role": "committed-choice",
+      "explanation": {
+        "schema": "verified-line-explanation-v1",
+        "status": "failure",
+        "teachingAllowed": true,
+        "actor": "w",
+        "candidate": "h6g8",
+        "criterion": "force_mate_within_2_remaining_plies",
+        "certificateSha256": "5602700b8ddc46444c0cf57d4a7c7325ed097c86a492bd62729549c8211488ab",
+        "materialRubric": {
+          "units": {
+            "p": 1,
+            "n": 3,
+            "b": 3,
+            "r": 5,
+            "q": 9,
+            "k": 0
+          },
+          "initialBalance": 5,
+          "finalBalance": 2,
+          "scope": "Conventional fixed material accounting for teacher explanation; not a complete position assessment"
+        },
+        "sequence": [
+          {
+            "ply": 1,
+            "move": "h6g8",
+            "san": "Ng8",
+            "playedBy": "w",
+            "captured": null,
+            "promotion": null,
+            "materialBefore": 5,
+            "materialAfter": 5,
+            "change": 0,
+            "legalRepliesAtThisNode": null,
+            "certifiedDefensiveBranches": null,
+            "onlyLegalReply": false,
+            "successorFen": "5rNk/6pp/8/8/2Q5/8/8/K7 b - - 1 1"
+          },
+          {
+            "ply": 2,
+            "move": "f8g8",
+            "san": "Rxg8",
+            "playedBy": "b",
+            "captured": "n",
+            "promotion": null,
+            "materialBefore": 5,
+            "materialAfter": 2,
+            "change": -3,
+            "legalRepliesAtThisNode": 17,
+            "certifiedDefensiveBranches": 1,
+            "onlyLegalReply": false,
+            "successorFen": "6rk/6pp/8/8/2Q5/8/8/K7 w - - 0 2"
+          },
+          {
+            "ply": 3,
+            "move": "a1a2",
+            "san": "Ka2",
+            "playedBy": "w",
+            "captured": null,
+            "promotion": null,
+            "materialBefore": 2,
+            "materialAfter": 2,
+            "change": 0,
+            "legalRepliesAtThisNode": null,
+            "certifiedDefensiveBranches": null,
+            "onlyLegalReply": false,
+            "successorFen": "6rk/6pp/8/8/2Q5/8/K7/8 b - - 1 2"
+          }
+        ],
+        "actorLosses": [
+          {
+            "ply": 2,
+            "captured": "n",
+            "units": 3
+          }
+        ],
+        "materialConcessionObserved": true,
+        "mateDespiteMaterialConcession": false,
+        "earlierAttackingChoices": [
+          {
+            "ply": 1,
+            "move": "h6g8"
+          },
+          {
+            "ply": 3,
+            "move": "a1a2"
+          }
+        ],
+        "outcome": "Forced mate is unavailable under this horizon; full-game outcome unknown",
+        "limitations": [
+          "One illustrative branch of the independently checked strategy/counterstrategy.",
+          "A material concession does not establish necessity, best full-game play, or that the model rejected the move for material reasons.",
+          "This explanation is teacher evidence, not a neural evaluation, arbitrary parameter update or validated delayed credit."
+        ]
+      },
+      "delivery": "Immediate checked board/action replay; no delayed eligibility or natural reward reconstruction"
+    },
+    {
+      "move": "h6g4",
+      "actor": "w",
+      "status": "failure",
+      "experimentalPulse": true,
+      "learningAllowed": true,
+      "certificateSha256": "077dccce3cab9f3fc6f0be9b124a73ee03c2d682209a1578120078f460298187",
+      "meaning": "Experimental PPL103 stimulus for failure of this bounded mate objective; not full-game loss or natural reward reconstruction",
+      "proof": {
+        "status": "failure",
+        "reward": -1,
+        "nodes": 34,
+        "attacker": "w",
+        "criterion": "force_mate_within_2_remaining_plies",
+        "certificate": {
+          "schema": "bounded-mate-certificate-v1",
+          "rootFen": "5r1k/6pp/8/8/2Q3N1/8/8/K7 b - - 1 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1\"]\n\n1. Ng4 *",
+          "attacker": "w",
+          "plies": 2,
+          "tree": {
+            "status": "failure",
+            "children": [
+              {
+                "move": "f8g8",
+                "node": {
+                  "status": "failure",
+                  "children": [
+                    {
+                      "move": "c4b5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4a6",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c6",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c7",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c8",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4d5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4e6",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4f7",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4g8",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4d4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4e4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4f4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4d3",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4e2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4f1",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c3",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4c1",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4b3",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4a2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4b4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "c4a4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "g4e5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "g4f6",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "g4h6",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "g4h2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "g4f2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "g4e3",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "a1a2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "a1b2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "a1b1",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "certificateCheck": {
+          "verified": true,
+          "status": "failure",
+          "nodes": 34,
+          "elapsedMs": 84.5299
+        },
+        "bounds": {
+          "maxNodes": 4096,
+          "millisecondsPerStage": 2000,
+          "constructionStop": null,
+          "checkingNodes": 34,
+          "elapsedMs": 155.49869999999987
+        },
+        "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+      },
+      "context": {
+        "fen": "5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1",
+        "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1\"]\n *",
+        "task": {
+          "objective": "forced-mate",
+          "plies": 3
+        }
+      },
+      "role": "committed-choice",
+      "explanation": {
+        "schema": "verified-line-explanation-v1",
+        "status": "failure",
+        "teachingAllowed": true,
+        "actor": "w",
+        "candidate": "h6g4",
+        "criterion": "force_mate_within_2_remaining_plies",
+        "certificateSha256": "077dccce3cab9f3fc6f0be9b124a73ee03c2d682209a1578120078f460298187",
+        "materialRubric": {
+          "units": {
+            "p": 1,
+            "n": 3,
+            "b": 3,
+            "r": 5,
+            "q": 9,
+            "k": 0
+          },
+          "initialBalance": 5,
+          "finalBalance": 5,
+          "scope": "Conventional fixed material accounting for teacher explanation; not a complete position assessment"
+        },
+        "sequence": [
+          {
+            "ply": 1,
+            "move": "h6g4",
+            "san": "Ng4",
+            "playedBy": "w",
+            "captured": null,
+            "promotion": null,
+            "materialBefore": 5,
+            "materialAfter": 5,
+            "change": 0,
+            "legalRepliesAtThisNode": null,
+            "certifiedDefensiveBranches": null,
+            "onlyLegalReply": false,
+            "successorFen": "5r1k/6pp/8/8/2Q3N1/8/8/K7 b - - 1 1"
+          },
+          {
+            "ply": 2,
+            "move": "f8g8",
+            "san": "Rg8",
+            "playedBy": "b",
+            "captured": null,
+            "promotion": null,
+            "materialBefore": 5,
+            "materialAfter": 5,
+            "change": 0,
+            "legalRepliesAtThisNode": 17,
+            "certifiedDefensiveBranches": 1,
+            "onlyLegalReply": false,
+            "successorFen": "6rk/6pp/8/8/2Q3N1/8/8/K7 w - - 2 2"
+          },
+          {
+            "ply": 3,
+            "move": "a1a2",
+            "san": "Ka2",
+            "playedBy": "w",
+            "captured": null,
+            "promotion": null,
+            "materialBefore": 5,
+            "materialAfter": 5,
+            "change": 0,
+            "legalRepliesAtThisNode": null,
+            "certifiedDefensiveBranches": null,
+            "onlyLegalReply": false,
+            "successorFen": "6rk/6pp/8/8/2Q3N1/8/K7/8 b - - 3 2"
+          }
+        ],
+        "actorLosses": [],
+        "materialConcessionObserved": false,
+        "mateDespiteMaterialConcession": false,
+        "earlierAttackingChoices": [
+          {
+            "ply": 1,
+            "move": "h6g4"
+          },
+          {
+            "ply": 3,
+            "move": "a1a2"
+          }
+        ],
+        "outcome": "Forced mate is unavailable under this horizon; full-game outcome unknown",
+        "limitations": [
+          "One illustrative branch of the independently checked strategy/counterstrategy.",
+          "A material concession does not establish necessity, best full-game play, or that the model rejected the move for material reasons.",
+          "This explanation is teacher evidence, not a neural evaluation, arbitrary parameter update or validated delayed credit."
+        ]
+      },
+      "delivery": "Immediate checked board/action replay; no delayed eligibility or natural reward reconstruction"
+    }
+  ],
+  "scope": "Teacher diagnostic schedule; not a neural Monte Carlo trace or learned solution."
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "correction-preservation-schedules-v1",
+  "schedulesPath": "research\\data\\correction-preservation-schedules-v1\\schedules.json",
+  "schedulesSha256": "5c8f41ef5920a1465632a826e802142c5c7b54eb93ee100c85d4d78b80069a81",
+  "preparationScript": ".codebase/scripts/diagnostics/prepare-correction-preservation-schedules.mjs",
+  "preparationScriptSha256": "435dd8914eafcc826bea3c31c3c0922a7760632ef84c957a628a774c3752072b",
+  "source": {
+    "frozenProtocol": "research/data/bound-ray-feedback-development-v1/protocol.json",
+    "frozenProtocolSha256": "a865684916952b5e7199c6cc8671c5d5b5b4b1146d49c667ee9eee242e10af86",
+    "trainingPath": "research/data/capture-retention-transfer-v2/train.jsonl",
+    "trainingSha256": "a9959dfe502e8d45db5991e63143dc5767b10ffed8e74e3701e6ebd9e2d10079",
+    "scratchReport": "research/reports/bound-ray-feedback-development-v1-2026-10-08/bound-ray-informative/report.json",
+    "scratchReportSha256": "e4dcdbff917f32a557a69a07010a614f3a474d7c1a0397694aac44d212f43e1f",
+    "scratchAudit": "research/reports/bound-ray-feedback-development-v1-2026-10-08/bound-ray-informative/audit.json",
+    "scratchAuditSha256": "99b1cf132da97a9199a128ccd4893e4bb5b1414fc62f22cd8580f347280d949e",
+    "scratchAuditCompleteSha256": "0067dda13be290292d319f6b2fe1dc323c662b26c79d48f476cbd6718adf71d7",
+    "baselineMemoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064"
+  },
+  "selected": [
+    {
+      "panelId": "tr-06",
+      "move": "a1a4",
+      "role": "target-failure",
+      "status": "failure"
+    },
+    {
+      "panelId": "tr-06",
+      "move": "e1e5",
+      "role": "target-success",
+      "status": "success"
+    },
+    {
+      "panelId": "tr-03",
+      "move": "a1a4",
+      "role": "preserve-success",
+      "status": "success"
+    },
+    {
+      "panelId": "tr-03",
+      "move": "e1e5",
+      "role": "preserve-failure",
+      "status": "failure"
+    }
+  ],
+  "uniform": [
+    {
+      "panelId": "tr-04",
+      "move": "e1e5",
+      "role": "uniform-sample",
+      "status": "failure"
+    },
+    {
+      "panelId": "tr-03",
+      "move": "a1a4",
+      "role": "uniform-sample",
+      "status": "success"
+    },
+    {
+      "panelId": "tr-02",
+      "move": "a1a4",
+      "role": "uniform-sample",
+      "status": "success"
+    },
+    {
+      "panelId": "tr-08",
+      "move": "a1a4",
+      "role": "uniform-sample",
+      "status": "failure"
+    }
+  ],
+  "graphInference": false,
+  "finalFamilyRead": false
+}

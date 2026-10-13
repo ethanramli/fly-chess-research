@@ -1,0 +1,69 @@
+{
+  "schema": "plasticity-signal-anatomy-v1",
+  "gate": "blocked",
+  "identities": {
+    "graph": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    "annotations": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    "mapping": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+    "upstream": "0113fedc0f15eb8c1f5c0f94a4bd566e1723a0aac34e4ab2ca8538363187f0a7"
+  },
+  "annotationRowsRead": 139255,
+  "mappedDANAnnotationJoins": 14,
+  "mappedEdgeTotals": {
+    "PPL103": 786,
+    "PAM02": 84
+  },
+  "compartments": [
+    {
+      "side": "left",
+      "mbonType": "MBON12",
+      "danType": "PPL103",
+      "mappedDANCells": 1,
+      "annotationIdentityMatches": 1,
+      "permittedExistingEdges": 452,
+      "signConvention": "preserved by existing graph mapping; this report does not rederive edge signs",
+      "localSignal": "not established: no pinned unrectified baseline-relative per-cell dynamic trace",
+      "targetCompartment": "not established: coarse subtype/hemisphere group has no receptor or synapse-coordinate identity"
+    },
+    {
+      "side": "left",
+      "mbonType": "MBON01",
+      "danType": "PAM02",
+      "mappedDANCells": 6,
+      "annotationIdentityMatches": 6,
+      "permittedExistingEdges": 76,
+      "signConvention": "preserved by existing graph mapping; this report does not rederive edge signs",
+      "localSignal": "not established: no pinned unrectified baseline-relative per-cell dynamic trace",
+      "targetCompartment": "not established: coarse subtype/hemisphere group has no receptor or synapse-coordinate identity"
+    },
+    {
+      "side": "right",
+      "mbonType": "MBON12",
+      "danType": "PPL103",
+      "mappedDANCells": 1,
+      "annotationIdentityMatches": 1,
+      "permittedExistingEdges": 334,
+      "signConvention": "preserved by existing graph mapping; this report does not rederive edge signs",
+      "localSignal": "not established: no pinned unrectified baseline-relative per-cell dynamic trace",
+      "targetCompartment": "not established: coarse subtype/hemisphere group has no receptor or synapse-coordinate identity"
+    },
+    {
+      "side": "right",
+      "mbonType": "MBON01",
+      "danType": "PAM02",
+      "mappedDANCells": 6,
+      "annotationIdentityMatches": 6,
+      "permittedExistingEdges": 8,
+      "signConvention": "preserved by existing graph mapping; this report does not rederive edge signs",
+      "localSignal": "not established: no pinned unrectified baseline-relative per-cell dynamic trace",
+      "targetCompartment": "not established: coarse subtype/hemisphere group has no receptor or synapse-coordinate identity"
+    }
+  ],
+  "blockers": [
+    "Upstream equation accepts signed D, but current mapped learner derives rectified above-rest DAN excess only; source sign does not establish current local bidirectional signal",
+    "No measured or model-derived unrectified local DAN rate trace with a justified tonic baseline is pinned for this exact graph/mapping",
+    "The current plastic-edge map lacks defensible receptor and anatomical compartment coordinates for assigning distinct potentiation/depression drives",
+    "No source-backed finite-timescale stabilization state is mapped to these exact target compartments"
+  ],
+  "scope": "Pinned static identity and coarse-map audit; no signed activity trace, graph load, inference, training, or biological validation"
+}

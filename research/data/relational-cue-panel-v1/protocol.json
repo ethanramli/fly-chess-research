@@ -1,0 +1,15 @@
+{
+ "schema":"relational-cue-panel-v1","frozen":"2026-10-06 before full-graph panel",
+ "sourceRun":"research/reports/adaptive-review-resumed-2026-10-06",
+ "encoder":{"seed":14009,"maxCells":64,"totalCurrent":24,"maxCellCurrent":1.5,"maxHistoryPlies":512},
+ "positions":[
+  {"id":"original","fen":"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1","checkedMove":"f7g7"},
+  {"id":"file-reflected","fen":"k7/2Q5/1K6/8/8/8/8/8 w - - 0 1","checkedMove":"c7b7"},
+  {"id":"colour-rank-exchanged","fen":"8/8/8/8/8/6k1/5q2/7K b - - 0 1","checkedMove":"f2g2"},
+  {"id":"king-support-counterfactual","fen":"7k/5Q2/4K3/8/8/8/8/8 w - - 0 1","checkedMove":"f7g7"}
+ ],
+ "encoders":["absolute","relational"],"maxEvaluations":256,
+ "task":{"objective":"forced-mate","plies":1},
+ "measurement":"All legal candidates and one exact repeat per position/encoder, full naive MBON responses, token/cell overlap, collisions/drop/current counts. Same seed and current caps, not automatically equal cell counts or stimulation doses. Neural invariance must follow exact cue invariance for every transformed legal candidate. Independent checked-move certificates establish the counterfactual outcome contrast after input evaluation, never supply encoder features.",
+ "scope":"Four explicit engineering fixtures, no training, memory update, fitted readout or held-out transfer claim. Symmetry invariance is built into the encoder and cannot count as learned reasoning. Original input remains unchanged. No representation is chosen using final-test evidence."
+}

@@ -1,0 +1,374 @@
+{
+  "verifiedAt": "2026-10-09T01:36:07.755Z",
+  "scope": "Static hashes/certificates plus recorded fixture results; no learner execution",
+  "fullSuite": {
+    "passed": 195,
+    "failed": 0,
+    "log": "npm-test-final.txt"
+  },
+  "protocol": "4692c4eb6ab1bf7b56534fac69ef380dd0ff23ed1dc8daaf3ceac8481733450e",
+  "preflight": {
+    "passed": false,
+    "protocol": {
+      "passed": false,
+      "errors": [
+        "identity contains unresolved values",
+        "Missing pinned model hash",
+        "Identity has no pinned source artifact: model",
+        "Identity has no pinned source artifact: encoder",
+        "Identity has no pinned source artifact: readout",
+        "Identity has no pinned source artifact: policy",
+        "Algorithm has no pinned source artifact: assayAdapter",
+        "two-direction certified reversal schedule missing"
+      ]
+    },
+    "mapping": {
+      "passed": true,
+      "sha256": null,
+      "totals": {
+        "PPL103": 786,
+        "PAM02": 84
+      },
+      "identities": [
+        "left:PAM02:MBON01",
+        "left:PPL103:MBON12",
+        "right:PAM02:MBON01",
+        "right:PPL103:MBON12"
+      ]
+    },
+    "evidence": [
+      {
+        "id": "cr-dev-01-success",
+        "status": "success",
+        "learningAllowed": true,
+        "move": "a1a4",
+        "certificateSha256": "47ac34cc475fdb41ad6909c13bd99247a19eeb2c4f699d94399917853365f553",
+        "meaning": "One-reply immediate recapturability only; not strategic move quality",
+        "verifiedScope": "One-reply immediate recapturability only; not strategic move quality",
+        "legalMoves": [
+          "b4b5",
+          "a1a2",
+          "a1a3",
+          "a1a4",
+          "b1a2",
+          "b1b2",
+          "b1c2",
+          "b1c1",
+          "e1e2",
+          "e1e3",
+          "e1e4",
+          "e1e5",
+          "e1f1",
+          "e1g1",
+          "e1h1",
+          "e1d1",
+          "e1c1"
+        ]
+      },
+      {
+        "id": "cr-dev-01-failure",
+        "status": "failure",
+        "learningAllowed": true,
+        "move": "e1e5",
+        "certificateSha256": "2450f4f7d07da4b4a2c580eaa190312335e9456961e80646ad195b7859e754bf",
+        "meaning": "One-reply immediate recapturability only; not strategic move quality",
+        "verifiedScope": "One-reply immediate recapturability only; not strategic move quality",
+        "legalMoves": [
+          "b4b5",
+          "a1a2",
+          "a1a3",
+          "a1a4",
+          "b1a2",
+          "b1b2",
+          "b1c2",
+          "b1c1",
+          "e1e2",
+          "e1e3",
+          "e1e4",
+          "e1e5",
+          "e1f1",
+          "e1g1",
+          "e1h1",
+          "e1d1",
+          "e1c1"
+        ]
+      },
+      {
+        "id": "cr-dev-01-unknown",
+        "status": "unknown",
+        "learningAllowed": false,
+        "move": "a1a4",
+        "certificateSha256": null,
+        "meaning": null,
+        "verifiedScope": null,
+        "legalMoves": [
+          "b4b5",
+          "a1a2",
+          "a1a3",
+          "a1a4",
+          "b1a2",
+          "b1b2",
+          "b1c2",
+          "b1c1",
+          "e1e2",
+          "e1e3",
+          "e1e4",
+          "e1e5",
+          "e1f1",
+          "e1g1",
+          "e1h1",
+          "e1d1",
+          "e1c1"
+        ]
+      }
+    ],
+    "pinnedFiles": [
+      {
+        "path": ".cache/full.npz",
+        "expected": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+        "actual": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+        "matches": true
+      },
+      {
+        "path": ".cache/flywire-annotations-v2.1.0.tsv",
+        "expected": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+        "actual": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+        "matches": true
+      },
+      {
+        "path": "research/reports/reversal-candidate-2026-10-05/mapping.json",
+        "expected": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+        "actual": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+        "matches": true
+      },
+      {
+        "path": "research/data/capture-retention-transfer-v2/train.jsonl",
+        "expected": "a9959dfe502e8d45db5991e63143dc5767b10ffed8e74e3701e6ebd9e2d10079",
+        "actual": "a9959dfe502e8d45db5991e63143dc5767b10ffed8e74e3701e6ebd9e2d10079",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/verified-feedback.mjs",
+        "expected": "33a420b7f0ef9bda52a73ff37f199bc090ee1ab9a2bae5b2f22f166e3e0edf7a",
+        "actual": "33a420b7f0ef9bda52a73ff37f199bc090ee1ab9a2bae5b2f22f166e3e0edf7a",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs",
+        "expected": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+        "actual": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/neural-learning/delayed-reversal-memory.mjs",
+        "expected": "03225a0cb34a85fb4d5b583378ed05530d67056a2fc0ff6149e8111cd7abac6f",
+        "actual": "03225a0cb34a85fb4d5b583378ed05530d67056a2fc0ff6149e8111cd7abac6f",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/delayed-lesson-brain.mjs",
+        "expected": "0f3a7fc0d1c03ec1b467a8d9eb3f761371a123d465b88943fe7bb8ca40f995db",
+        "actual": "0f3a7fc0d1c03ec1b467a8d9eb3f761371a123d465b88943fe7bb8ca40f995db",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/neural-learning/neural-episode.mjs",
+        "expected": "8ebe1d5bf26e9648cd7b60137868ca5fd7ea3b838373f15d22c6b3415f20752e",
+        "actual": "8ebe1d5bf26e9648cd7b60137868ca5fd7ea3b838373f15d22c6b3415f20752e",
+        "matches": true
+      },
+      {
+        "path": ".cache/incentive-circuit-1610c800/models_base.py",
+        "expected": "0113fedc0f15eb8c1f5c0f94a4bd566e1723a0aac34e4ab2ca8538363187f0a7",
+        "actual": "0113fedc0f15eb8c1f5c0f94a4bd566e1723a0aac34e4ab2ca8538363187f0a7",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs",
+        "expected": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+        "actual": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+        "matches": true
+      },
+      {
+        "path": ".codebase/scripts/puzzle-learning/train-bidirectional-plasticity-assay.mjs",
+        "expected": "3d2b9b1b23f395fb9ac39495be87873b3f4c00cc864d2fc7654f71d98760eb39",
+        "actual": "3d2b9b1b23f395fb9ac39495be87873b3f4c00cc864d2fc7654f71d98760eb39",
+        "matches": true
+      },
+      {
+        "path": ".codebase/scripts/diagnostics/audit-plasticity-signal-anatomy.mjs",
+        "expected": "5b6c3d7ea198eef539c28525d3dc6e20e14078eccf09f4412bdcbf27e22aa323",
+        "actual": "5b6c3d7ea198eef539c28525d3dc6e20e14078eccf09f4412bdcbf27e22aa323",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/neural-learning/bidirectional-plasticity-kernel.mjs",
+        "expected": "ac4e7d84895a13394b4a3f43ad25381b0d6492f187dc5c28184d31d4db976c6f",
+        "actual": "ac4e7d84895a13394b4a3f43ad25381b0d6492f187dc5c28184d31d4db976c6f",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/runtime/storage.mjs",
+        "expected": "608abbe7bd20d58ca571bc3a4ef5fa38a905b7a41fca12fc1f793f2d0729b4b3",
+        "actual": "608abbe7bd20d58ca571bc3a4ef5fa38a905b7a41fca12fc1f793f2d0729b4b3",
+        "matches": true
+      },
+      {
+        "path": "package.json",
+        "expected": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+        "actual": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+        "matches": true
+      },
+      {
+        "path": "package-lock.json",
+        "expected": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214",
+        "actual": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214",
+        "matches": true
+      },
+      {
+        "path": "node_modules/chess.js/dist/cjs/chess.js",
+        "expected": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f",
+        "actual": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f",
+        "matches": true
+      },
+      {
+        "path": "node_modules/chess.js/package.json",
+        "expected": "36a258fdfb5e76d0816bf2b63dab3c917a0a8652f943da0e6be7e9b543765dfd",
+        "actual": "36a258fdfb5e76d0816bf2b63dab3c917a0a8652f943da0e6be7e9b543765dfd",
+        "matches": true
+      },
+      {
+        "path": "research/reports/plasticity-signal-anatomy-preflight-v2-2026-10-08.json",
+        "expected": "0f527ce5856fd702e98cddcc722d1c2a13d3772d9db003ddd3681a288e1bd400",
+        "actual": "0f527ce5856fd702e98cddcc722d1c2a13d3772d9db003ddd3681a288e1bd400",
+        "matches": true
+      },
+      {
+        "path": ".codebase/scripts/puzzle-learning/audit-bidirectional-plasticity-assay.mjs",
+        "expected": "4c234e03aa1bdda715e751da92597c5a41243465de15a34d9b0e5ccd897f4e2e",
+        "actual": "4c234e03aa1bdda715e751da92597c5a41243465de15a34d9b0e5ccd897f4e2e",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/neural-learning/association-validation.mjs",
+        "expected": "b62d6f6bf4ab51f0ed993877026ac1cde0914c582fb479ea27fdc028a7dc2c91",
+        "actual": "b62d6f6bf4ab51f0ed993877026ac1cde0914c582fb479ea27fdc028a7dc2c91",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/neural-learning/mushroom-body.mjs",
+        "expected": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5",
+        "actual": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/supervised-baselines/trainer.mjs",
+        "expected": "719b91738b6a8db38f4d0f240defc5598830bb5225b6f1ed45b540f8b0c4325e",
+        "actual": "719b91738b6a8db38f4d0f240defc5598830bb5225b6f1ed45b540f8b0c4325e",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/supervised-baselines/adam.mjs",
+        "expected": "5635efabf0723c50d4322ca9e744081e7e44b04a35691c46b9aef171abc54c34",
+        "actual": "5635efabf0723c50d4322ca9e744081e7e44b04a35691c46b9aef171abc54c34",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/puzzle-search.mjs",
+        "expected": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+        "actual": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/mate-certificate-check.mjs",
+        "expected": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+        "actual": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/runtime/graph.mjs",
+        "expected": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+        "actual": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/dual-valence-puzzle-brain.mjs",
+        "expected": "9a91a188d6ef40de5a21402ccd90f9a0192b46d664b26c414b86e0650d503c81",
+        "actual": "9a91a188d6ef40de5a21402ccd90f9a0192b46d664b26c414b86e0650d503c81",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/verified-lesson-frames.mjs",
+        "expected": "9158f2f0d164e3f39931aeb6526c04ad8db8a7031f69d20fa2c1d67590a83e46",
+        "actual": "9158f2f0d164e3f39931aeb6526c04ad8db8a7031f69d20fa2c1d67590a83e46",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/feedback-quality.mjs",
+        "expected": "ed2e4176e8ff38e03678c99c203e1a287f01d7253f17ddc3a15d3eb19fce31f0",
+        "actual": "ed2e4176e8ff38e03678c99c203e1a287f01d7253f17ddc3a15d3eb19fce31f0",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/mapped-puzzle-brain.mjs",
+        "expected": "38af4c1eaec066f12d87f86c3994eec6a77cdbb016a6a455bc3bc0b519572cc2",
+        "actual": "38af4c1eaec066f12d87f86c3994eec6a77cdbb016a6a455bc3bc0b519572cc2",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/neural-learning/dual-valence-interface.mjs",
+        "expected": "206fa1d12050463d15bc5b0a31ad30491cdf0507877182a134ff0af796873397",
+        "actual": "206fa1d12050463d15bc5b0a31ad30491cdf0507877182a134ff0af796873397",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/neural-learning/mbon-readout.mjs",
+        "expected": "bf639c8e0f2ed96d2dc31939abf560d1194fccb1beed486ea6ffccbb74601923",
+        "actual": "bf639c8e0f2ed96d2dc31939abf560d1194fccb1beed486ea6ffccbb74601923",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/experimental-puzzle-search.mjs",
+        "expected": "dc7ac5e894879ae75a1b0bd5931b1e72466c14b707d2ff987ee6ee1f6d259ebb",
+        "actual": "dc7ac5e894879ae75a1b0bd5931b1e72466c14b707d2ff987ee6ee1f6d259ebb",
+        "matches": true
+      },
+      {
+        "path": ".codebase/src/neural-learning/reversal-memory.mjs",
+        "expected": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+        "actual": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+        "matches": true
+      }
+    ],
+    "resume": null,
+    "feasibilityGate": "blocked",
+    "feasibilityHashMatches": true,
+    "scope": "Protocol, fixture certificate, resource and identity checks only; no neural simulation"
+  },
+  "preservedV3": [
+    {
+      "source": ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs",
+      "archivedSha256": "19158597dea46054c061105e9e59287ef06d7e18eff00fb094e85810e4c1d650"
+    },
+    {
+      "source": ".codebase/scripts/puzzle-learning/train-bidirectional-plasticity-assay.mjs",
+      "archivedSha256": "591276466d2269b866fa6b8606d72614a3f271bf811ce9cc0bbad5fd9e2b8139"
+    },
+    {
+      "source": ".codebase/scripts/puzzle-learning/audit-bidirectional-plasticity-assay.mjs",
+      "archivedSha256": "275ca655b32d9e3b4c236a589e1c6b1128c3e348faae80ee92f67d54e2f13579"
+    },
+    {
+      "source": ".codebase/tests/puzzle-learning/plasticity-mechanism-assay.test.mjs",
+      "archivedSha256": "6d58cd4689a0715b6db238fc5778868657133bb7a54104deaeb294270769e8f2"
+    },
+    {
+      "source": "research/data/bidirectional-plasticity-assay-v3/protocol.json",
+      "archivedSha256": "a790482ea546845f32e2aeca7f516d6e9f626a723b9923f296b21bd2cb3bdd9f"
+    },
+    {
+      "source": "research/data/bidirectional-plasticity-assay-v3/README.md",
+      "archivedSha256": "bf80a0d789e3c92d05172c1b073e0b12fc6f91cf38f71d945ff70e39d59fb189"
+    }
+  ]
+}

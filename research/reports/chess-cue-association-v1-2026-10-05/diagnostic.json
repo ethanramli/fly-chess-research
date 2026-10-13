@@ -1,0 +1,2151 @@
+{
+  "sourceReportSha256": "27727e33dbd4a77bd9d660652ee5f280f8d6cf85cbacfe00147762b187ade6b8",
+  "sourceScriptSha256": "13953f9d317c694371faea37a3c76bbb7aae46effa43245fb8af524acca580b8",
+  "originalGates": {
+    "acquisition": false,
+    "reversal": false,
+    "informative": true,
+    "persistence": true,
+    "causalReset": true,
+    "controls": true,
+    "fixedState": true
+  },
+  "originalAllGatesPassed": false,
+  "counts": {
+    "informative": {
+      "acquisition": {
+        "acceptedCorrect": 3,
+        "signedDiagnosticCorrect": 3,
+        "mbonDiagnosticCorrect": 6,
+        "clippedTies": 1,
+        "bothHighSaturated": 1
+      },
+      "reversal": {
+        "acceptedCorrect": 3,
+        "signedDiagnosticCorrect": 3,
+        "mbonDiagnosticCorrect": 5,
+        "clippedTies": 2,
+        "bothHighSaturated": 2
+      }
+    },
+    "absent": {
+      "acquisition": {
+        "acceptedCorrect": 3,
+        "signedDiagnosticCorrect": 3,
+        "mbonDiagnosticCorrect": 4,
+        "clippedTies": 1,
+        "bothHighSaturated": 1
+      },
+      "reversal": {
+        "acceptedCorrect": 3,
+        "signedDiagnosticCorrect": 3,
+        "mbonDiagnosticCorrect": 2,
+        "clippedTies": 1,
+        "bothHighSaturated": 1
+      }
+    },
+    "shuffled": {
+      "acquisition": {
+        "acceptedCorrect": 3,
+        "signedDiagnosticCorrect": 3,
+        "mbonDiagnosticCorrect": 5,
+        "clippedTies": 1,
+        "bothHighSaturated": 1
+      },
+      "reversal": {
+        "acceptedCorrect": 3,
+        "signedDiagnosticCorrect": 3,
+        "mbonDiagnosticCorrect": 2,
+        "clippedTies": 2,
+        "bothHighSaturated": 2
+      }
+    },
+    "disabled": {
+      "acquisition": {
+        "acceptedCorrect": 3,
+        "signedDiagnosticCorrect": 3,
+        "mbonDiagnosticCorrect": 4,
+        "clippedTies": 1,
+        "bothHighSaturated": 1
+      },
+      "reversal": {
+        "acceptedCorrect": 3,
+        "signedDiagnosticCorrect": 3,
+        "mbonDiagnosticCorrect": 2,
+        "clippedTies": 1,
+        "bothHighSaturated": 1
+      }
+    }
+  },
+  "rows": [
+    {
+      "job": {
+        "seed": 10111,
+        "condition": "informative",
+        "initialPunished": "A",
+        "reversedPunished": "B"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 16,
+        "intersection": 12,
+        "union": 21,
+        "jaccard": 0.5714285714285714
+      },
+      "phases": {
+        "baseline": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.23121387283236994,
+          "signedMargin": 0.23121387283236994,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": false
+        },
+        "acquisition": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.4046242774566474,
+          "signedMargin": 0.4335260115606937,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              true,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.12716763005780352,
+          "signedMargin": -0.12716763005780352,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10111,
+        "condition": "absent",
+        "initialPunished": "A",
+        "reversedPunished": "B"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 16,
+        "intersection": 12,
+        "union": 21,
+        "jaccard": 0.5714285714285714
+      },
+      "phases": {
+        "baseline": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.23121387283236994,
+          "signedMargin": 0.23121387283236994,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": false
+        },
+        "acquisition": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.23121387283236994,
+          "signedMargin": 0.23121387283236994,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": false
+        },
+        "reversal": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.23699421965317918,
+          "signedMargin": -0.23699421965317918,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10111,
+        "condition": "shuffled",
+        "initialPunished": "A",
+        "reversedPunished": "B"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 16,
+        "intersection": 12,
+        "union": 21,
+        "jaccard": 0.5714285714285714
+      },
+      "phases": {
+        "baseline": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.23121387283236994,
+          "signedMargin": 0.23121387283236994,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": false
+        },
+        "acquisition": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.23121387283237005,
+          "signedMargin": 0.23121387283237005,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": false
+        },
+        "reversal": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.2543352601156069,
+          "signedMargin": -0.2543352601156069,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10111,
+        "condition": "disabled",
+        "initialPunished": "A",
+        "reversedPunished": "B"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 16,
+        "intersection": 12,
+        "union": 21,
+        "jaccard": 0.5714285714285714
+      },
+      "phases": {
+        "baseline": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.23121387283236994,
+          "signedMargin": 0.23121387283236994,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": false
+        },
+        "acquisition": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.23121387283236994,
+          "signedMargin": 0.23121387283236994,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": false
+        },
+        "reversal": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.23121387283236994,
+          "signedMargin": -0.23121387283236994,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10133,
+        "condition": "informative",
+        "initialPunished": "B",
+        "reversedPunished": "A"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 16,
+        "intersection": 12,
+        "union": 21,
+        "jaccard": 0.5714285714285714
+      },
+      "phases": {
+        "baseline": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.24648836443139954,
+          "signedMargin": -0.24648836443139954,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.10880829015544047,
+          "signedMargin": -0.28799904160052725,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              true,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.13989637305699487,
+          "signedMargin": 0.376890592710174,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              true,
+              true
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10133,
+        "condition": "absent",
+        "initialPunished": "B",
+        "reversedPunished": "A"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 16,
+        "intersection": 12,
+        "union": 21,
+        "jaccard": 0.5714285714285714
+      },
+      "phases": {
+        "baseline": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.24648836443139954,
+          "signedMargin": -0.24648836443139954,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.24190601695169067,
+          "signedMargin": -0.24190601695169067,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.2488843631136003,
+          "signedMargin": 0.2488843631136003,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": false
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10133,
+        "condition": "shuffled",
+        "initialPunished": "B",
+        "reversedPunished": "A"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 16,
+        "intersection": 12,
+        "union": 21,
+        "jaccard": 0.5714285714285714
+      },
+      "phases": {
+        "baseline": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.24648836443139954,
+          "signedMargin": -0.24648836443139954,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.12435233160621761,
+          "signedMargin": -0.3151037766929228,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              true,
+              true
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.08808290155440412,
+          "signedMargin": 0.30195573392434627,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              true,
+              true
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": false
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10133,
+        "condition": "disabled",
+        "initialPunished": "B",
+        "reversedPunished": "A"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 16,
+        "intersection": 12,
+        "union": 21,
+        "jaccard": 0.5714285714285714
+      },
+      "phases": {
+        "baseline": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.24648836443139954,
+          "signedMargin": -0.24648836443139954,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.24648836443139954,
+          "signedMargin": -0.24648836443139954,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.24648836443139954,
+          "signedMargin": 0.24648836443139954,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": false
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10151,
+        "condition": "informative",
+        "initialPunished": "A",
+        "reversedPunished": "B"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "B",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": 0,
+          "signedMargin": -0.37305699481865284,
+          "clippedTie": true,
+          "bothHighSaturated": true,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "B",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": 0,
+          "signedMargin": -0.3281619695109168,
+          "clippedTie": true,
+          "bothHighSaturated": true,
+          "outOfPanel": {
+            "A": [
+              true,
+              true
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "A",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0,
+          "signedMargin": 0.6759711282158798,
+          "clippedTie": true,
+          "bothHighSaturated": true,
+          "outOfPanel": {
+            "A": [
+              true,
+              true
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": false
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10151,
+        "condition": "absent",
+        "initialPunished": "A",
+        "reversedPunished": "B"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "B",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": 0,
+          "signedMargin": -0.37305699481865284,
+          "clippedTie": true,
+          "bothHighSaturated": true,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "B",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": 0,
+          "signedMargin": -0.37305699481865284,
+          "clippedTie": true,
+          "bothHighSaturated": true,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "A",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0,
+          "signedMargin": 0.37305699481865284,
+          "clippedTie": true,
+          "bothHighSaturated": true,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": false
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10151,
+        "condition": "shuffled",
+        "initialPunished": "A",
+        "reversedPunished": "B"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "B",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": 0,
+          "signedMargin": -0.37305699481865284,
+          "clippedTie": true,
+          "bothHighSaturated": true,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "B",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": 0,
+          "signedMargin": -0.3281619695109168,
+          "clippedTie": true,
+          "bothHighSaturated": true,
+          "outOfPanel": {
+            "A": [
+              true,
+              true
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "A",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0,
+          "signedMargin": 0.424840516337716,
+          "clippedTie": true,
+          "bothHighSaturated": true,
+          "outOfPanel": {
+            "A": [
+              true,
+              true
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": false
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10151,
+        "condition": "disabled",
+        "initialPunished": "A",
+        "reversedPunished": "B"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "B",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": 0,
+          "signedMargin": -0.37305699481865284,
+          "clippedTie": true,
+          "bothHighSaturated": true,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "B",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": 0,
+          "signedMargin": -0.37305699481865284,
+          "clippedTie": true,
+          "bothHighSaturated": true,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "A",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0,
+          "signedMargin": 0.37305699481865284,
+          "clippedTie": true,
+          "bothHighSaturated": true,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": false
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10177,
+        "condition": "informative",
+        "initialPunished": "B",
+        "reversedPunished": "A"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.29015544041450775,
+          "signedMargin": -0.29015544041450775,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": false
+        },
+        "acquisition": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.1606217616580311,
+          "signedMargin": -0.1606217616580311,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.3575129533678757,
+          "signedMargin": 0.37823834196891204,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10177,
+        "condition": "absent",
+        "initialPunished": "B",
+        "reversedPunished": "A"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.29015544041450775,
+          "signedMargin": -0.29015544041450775,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": false
+        },
+        "acquisition": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.28497409326424866,
+          "signedMargin": -0.28497409326424866,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": false
+        },
+        "reversal": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.2849740932642487,
+          "signedMargin": 0.2849740932642487,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10177,
+        "condition": "shuffled",
+        "initialPunished": "B",
+        "reversedPunished": "A"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.29015544041450775,
+          "signedMargin": -0.29015544041450775,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": false
+        },
+        "acquisition": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.1606217616580311,
+          "signedMargin": -0.1606217616580311,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.1606217616580311,
+          "signedMargin": 0.1606217616580311,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": false
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10177,
+        "condition": "disabled",
+        "initialPunished": "B",
+        "reversedPunished": "A"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.29015544041450775,
+          "signedMargin": -0.29015544041450775,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": false
+        },
+        "acquisition": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.29015544041450775,
+          "signedMargin": -0.29015544041450775,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": false
+        },
+        "reversal": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.29015544041450775,
+          "signedMargin": 0.29015544041450775,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10211,
+        "condition": "informative",
+        "initialPunished": "A",
+        "reversedPunished": "B"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.30569948186528495,
+          "signedMargin": 0.3316062176165804,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.18134715025906734,
+          "signedMargin": 0.4145077720207253,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              true,
+              true
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.06735751295336789,
+          "signedMargin": -0.23834196891191706,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              true,
+              true
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10211,
+        "condition": "absent",
+        "initialPunished": "A",
+        "reversedPunished": "B"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.30569948186528495,
+          "signedMargin": 0.3316062176165804,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.30569948186528495,
+          "signedMargin": 0.3316062176165804,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.30051813471502586,
+          "signedMargin": -0.33678756476683924,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": false
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10211,
+        "condition": "shuffled",
+        "initialPunished": "A",
+        "reversedPunished": "B"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.30569948186528495,
+          "signedMargin": 0.3316062176165804,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.15544041450777202,
+          "signedMargin": 0.36787564766839387,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              true,
+              true
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.1295336787564767,
+          "signedMargin": -0.383419689119171,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              true,
+              true
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": false
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10211,
+        "condition": "disabled",
+        "initialPunished": "A",
+        "reversedPunished": "B"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.30569948186528495,
+          "signedMargin": 0.3316062176165804,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "B",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.30569948186528495,
+          "signedMargin": 0.3316062176165804,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "A",
+          "acceptedDecoderChoice": "B",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.30569948186528495,
+          "signedMargin": -0.3316062176165804,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              true
+            ],
+            "B": [
+              true,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "B",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": false
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10243,
+        "condition": "informative",
+        "initialPunished": "B",
+        "reversedPunished": "A"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "A",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.21761658031088082,
+          "signedMargin": 0.21761658031088082,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "A",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.2227979274611399,
+          "signedMargin": 0.3904279852646081,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "B",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": 0,
+          "signedMargin": -0.1329479768786126,
+          "clippedTie": true,
+          "bothHighSaturated": true,
+          "outOfPanel": {
+            "A": [
+              true,
+              false
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10243,
+        "condition": "absent",
+        "initialPunished": "B",
+        "reversedPunished": "A"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "A",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.21761658031088082,
+          "signedMargin": 0.21761658031088082,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "A",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.21761658031088082,
+          "signedMargin": 0.21761658031088082,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "B",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.21761658031088082,
+          "signedMargin": -0.21761658031088082,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": false
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10243,
+        "condition": "shuffled",
+        "initialPunished": "B",
+        "reversedPunished": "A"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "A",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.21761658031088082,
+          "signedMargin": 0.21761658031088082,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "A",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.18134715025906734,
+          "signedMargin": 0.31429512713768015,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "B",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": 0,
+          "signedMargin": -0.15028901734104028,
+          "clippedTie": true,
+          "bothHighSaturated": true,
+          "outOfPanel": {
+            "A": [
+              true,
+              false
+            ],
+            "B": [
+              true,
+              true
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "B",
+          "diagnosticMBONCorrect": true
+        }
+      }
+    },
+    {
+      "job": {
+        "seed": 10243,
+        "condition": "disabled",
+        "initialPunished": "B",
+        "reversedPunished": "A"
+      },
+      "cueOverlap": {
+        "A": 17,
+        "B": 17,
+        "intersection": 12,
+        "union": 22,
+        "jaccard": 0.5454545454545454
+      },
+      "phases": {
+        "baseline": {
+          "safe": "A",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.21761658031088082,
+          "signedMargin": 0.21761658031088082,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "acquisition": {
+          "safe": "A",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": true,
+          "clippedMargin": 0.21761658031088082,
+          "signedMargin": 0.21761658031088082,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": true,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": true
+        },
+        "reversal": {
+          "safe": "B",
+          "acceptedDecoderChoice": "A",
+          "acceptedDecoderCorrect": false,
+          "clippedMargin": -0.21761658031088082,
+          "signedMargin": -0.21761658031088082,
+          "clippedTie": false,
+          "bothHighSaturated": false,
+          "outOfPanel": {
+            "A": [
+              false,
+              false
+            ],
+            "B": [
+              false,
+              false
+            ]
+          },
+          "diagnosticSignedChoice": "A",
+          "diagnosticSignedCorrect": false,
+          "diagnosticMBONChoice": "A",
+          "diagnosticMBONCorrect": false
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Descriptive readout comparisons do not isolate why learning failed or establish the causal role of cue overlap.",
+    "Unclipped GF and MBON alternatives are post hoc diagnostic comparisons, not accepted choices, replacement gates or validated interfaces.",
+    "Experimental safe labels are not verified chess consequences; none of these counts establish chess reasoning or transfer."
+  ]
+}

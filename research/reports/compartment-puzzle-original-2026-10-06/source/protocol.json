@@ -1,0 +1,90 @@
+{
+  "schema": "compartment-puzzle-pipeline-v1",
+  "puzzles": "research/data/puzzle-pipeline-v1/puzzles.jsonl",
+  "seed": 14009,
+  "conditions": [
+    "informative",
+    "punishment-only",
+    "absent",
+    "shuffled",
+    "disabled"
+  ],
+  "maxPuzzles": 2,
+  "maxExperiences": 40,
+  "maxPresentationsPerCondition": 1600,
+  "encoder": {
+    "seed": 14009,
+    "maxCells": 14,
+    "totalCurrent": 21,
+    "maxCellCurrent": 1.5,
+    "maxHistoryPlies": 512
+  },
+  "memory": {
+    "eta": 0.5,
+    "minGain": 0.2,
+    "maxGain": 1.8,
+    "activityScale": 1.5
+  },
+  "current": 1.5,
+  "priorScale": 4,
+  "search": {
+    "simulations": 32,
+    "maxEvaluations": 3,
+    "maxDepth": 3,
+    "maxNodes": 1024,
+    "milliseconds": 60000,
+    "randomFraction": 0.25
+  },
+  "review": {
+    "maxCandidates": 4,
+    "maxProofNodes": 4096,
+    "nodesPerCandidate": 1024,
+    "proofMilliseconds": 2000
+  },
+  "schedule": "Four serial input variants with fixed seed/dose/model/dynamics/readout/local rule and identical archived verified teaching experiences across variants and controls. Own before/after Monte Carlo investigation is measured separately; it does not change the common teaching schedule. Same pilot gates as preserved positive-puzzle V1. No outcome-derived cue features.",
+  "scope": "Exploratory single-seed familiar-fixture input-factor comparison. Per-variant passes are not between-variant significance, unfamiliar transfer, reasoning or biological validation. A selected repair requires frozen independent confirmation. All prior failures preserved.",
+  "acceptance": "Pilot useful-choice gate: both informative fixtures end with independently verified successful unaided choices; at least one formerly failing fixture improves, while its absent and disabled matched controls remain failing. Require exact causal reset/restoration and independently audited persistence/unknown handling, channel counts, local recurrence, fixed wiring and after-update recovery. Report shuffled and punishment-only results explicitly; this single-seed pilot does not establish statistical specificity or transfer.",
+  "teacherReport": "research/reports/positive-puzzle-pipeline-v1-2026-10-06/report.json",
+  "teacherReportSha256": "01a7ab038b03474283580e0dd5f8cb821512dbac4f6833eb45192925dbe5445b",
+  "commonPlans": [
+    {
+      "path": "research\\reports\\positive-puzzle-pipeline-v1-2026-10-06\\plan-0.json",
+      "sha256": "e7d427029079a8611aba764c34f9ed090de5a3de4b8f35bb3f621b8bc2b54d27"
+    },
+    {
+      "path": "research\\reports\\positive-puzzle-pipeline-v1-2026-10-06\\plan-1.json",
+      "sha256": "a941be728a633f615d794cfe35ae979870b468b647c4b182a54920b09a84d87d"
+    }
+  ],
+  "preflight": "research/reports/compartment-puzzle-preflight-2026-10-06/report.json",
+  "variants": [
+    {
+      "id": "original",
+      "conjoin": false,
+      "stratify": false,
+      "prerequisite": "research/reports/compartment-input-original-2026-10-06",
+      "reportSha256": "9647b9c1cd0311a237c7ddd38691a88b07754de19331c4a5240388f3d2e5fdd8"
+    },
+    {
+      "id": "conjoined",
+      "conjoin": true,
+      "stratify": false,
+      "prerequisite": "research/reports/compartment-input-conjoined-2026-10-06",
+      "reportSha256": "ae32b40ae6388c31fcee5f845d49f2344aed321a13967f499f3807f2a47852a9"
+    },
+    {
+      "id": "balanced",
+      "conjoin": false,
+      "stratify": true,
+      "prerequisite": "research/reports/compartment-input-balanced-2026-10-06",
+      "reportSha256": "599af4ca2cb3087fac4a2a0608e10aa2dafe4ed3d5202bdaa909ced969fb01da"
+    },
+    {
+      "id": "conjoined-balanced",
+      "conjoin": true,
+      "stratify": true,
+      "prerequisite": "research/reports/compartment-input-conjoined-balanced-2026-10-06",
+      "reportSha256": "f50104a5d41598989c6bc387a8cd78d6d8a3e434dd15d90e541fb96615f68a5e"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "fly-puzzle-round-state-v3",
+  "inputs": {
+    "graph": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    "puzzles": "7855f3cdbbb440b1f302c633b38f13c08a623f4455b64b01bc46b6d6286dd3dc"
+  },
+  "sources": {
+    ".codebase/scripts/puzzle-round.mjs": "53f701bd55a18eef5e71854cb3fbb0662a903300f888f0d9adc358b6557ecd97",
+    ".codebase/src/lowram/puzzle-round.mjs": "c5683ef59699ac6929a429a990e50e43cb040874759df705489a87ca79b2fdf7",
+    ".codebase/src/lowram/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+    ".codebase/src/lowram/experience-feedback.mjs": "93e04050ded850049b347ade9bba57d7a092824f0274f40f9915f57a9efac0e1",
+    ".codebase/src/lowram/mate-certificate.mjs": "b7bdab76a3faa78c203971991c3b2e00cdfd359cfca08b6e1f7b1ae8d430b700",
+    ".codebase/src/lowram/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+    ".codebase/src/lowram/trainer.mjs": "ffefd16ad1fd2e438dba89c45072ea2229091832a46349958b8668aa7517b7f9",
+    ".codebase/src/lowram/positions.mjs": "b08f07ba4775132bfe78f979799621c916e4b061a213af35ed9a8afb8b7800d4",
+    ".codebase/src/lowram/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+    ".codebase/src/lowram/storage.mjs": "9b1388699dbf65e3e1848b262d73e01902b20ddfa982608d39bf43f2733cac7c"
+  },
+  "config": {
+    "steps": 8,
+    "inputDim": 1280,
+    "outputs": 133,
+    "seed": 47,
+    "precision": "float32",
+    "saturation": 10,
+    "recurrentScale": 0.9,
+    "normalization": "global"
+  },
+  "modelIdentity": {
+    "graphArrays": "3f37688d14e94d3ccec44b6a75aaa8b66c41bd08c57fe1c011dd23326218448e",
+    "parameters": "6800f58ac48319d8a304542a9c898f47cbcf2db674d46fceb4e9bfe510c5698a"
+  },
+  "options": {
+    "search": {
+      "simulations": 32,
+      "maxEvaluations": 8,
+      "maxDepth": 6,
+      "maxNodes": 4096,
+      "milliseconds": 10000
+    },
+    "proofNodes": 4096,
+    "proofMilliseconds": 2000,
+    "cpuDuty": 0.5,
+    "review": {
+      "maxCandidates": 4,
+      "maxProofNodes": 4096,
+      "nodesPerCandidate": 1024,
+      "proofMilliseconds": 2000
+    }
+  },
+  "nextRow": 1,
+  "receipts": 1,
+  "learningBackend": "record-only-v1"
+}

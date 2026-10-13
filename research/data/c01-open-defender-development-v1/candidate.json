@@ -1,0 +1,3889 @@
+{
+  "schema": "c01-open-defender-development-candidate-v1",
+  "status": "exploratory-training-only; outcomes inspected",
+  "stratum": "open-defender",
+  "exclusions": [
+    "never use as validation or final data",
+    "not a frozen curriculum family",
+    "not learner evidence"
+  ],
+  "probeMovesByFamily": {
+    "e-file-open": [
+      "e4e6",
+      "e4a4"
+    ],
+    "d-file-mirror": [
+      "d4d6",
+      "d4h4"
+    ]
+  },
+  "positions": [
+    {
+      "familyId": "e-file-open",
+      "member": "defender-a",
+      "fen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+      "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+      "task": {
+        "objective": "capture-retention",
+        "plies": 1
+      },
+      "probeMoves": [
+        "e4e6",
+        "e4a4"
+      ],
+      "probes": [
+        {
+          "move": "e4e6",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4e6",
+              "target": "e6",
+              "replies": [
+                "a4a3",
+                "e8a8",
+                "e8b8",
+                "e8c8",
+                "e8d8",
+                "e8e6",
+                "e8e7",
+                "e8f8",
+                "e8g8",
+                "h8g7",
+                "h8h7"
+              ],
+              "recaptures": [
+                "e8e6"
+              ]
+            },
+            "certificateSha256": "55b06e9c6b629d7e3aedcac90fc0f46cac26bae01e4d6d4d1f1e47e0468cd14d"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4e6",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "55b06e9c6b629d7e3aedcac90fc0f46cac26bae01e4d6d4d1f1e47e0468cd14d",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        },
+        {
+          "move": "e4a4",
+          "proof": {
+            "status": "success",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4a4",
+              "target": "a4",
+              "replies": [
+                "e6e5",
+                "e8a8",
+                "e8b8",
+                "e8c8",
+                "e8d8",
+                "e8e7",
+                "e8f8",
+                "e8g8",
+                "h8g7",
+                "h8g8",
+                "h8h7"
+              ],
+              "recaptures": []
+            },
+            "certificateSha256": "00179fbbd1071fcd9f81e1eb865fb1bca1739e7d017a5b43e3bf721c59742e33"
+          },
+          "checked": {
+            "verified": true,
+            "status": "success",
+            "actor": "w",
+            "move": "e4a4",
+            "learningAllowed": true,
+            "experimentalPulse": false,
+            "certificateSha256": "00179fbbd1071fcd9f81e1eb865fb1bca1739e7d017a5b43e3bf721c59742e33",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        }
+      ],
+      "allLegalCount": 29,
+      "allLegalEvidence": [
+        {
+          "move": "e4d5",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4d5",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "5a9decd1714e4b5710ba051ba592be5d5712471415e949351c5aa064b0ecdfda"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4d5",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "5a9decd1714e4b5710ba051ba592be5d5712471415e949351c5aa064b0ecdfda",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4c6",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4c6",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "636ccd75d0fe7804ccad46d5d71bf47acee7dc2eed601965af10a10f8e096abe"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4c6",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "636ccd75d0fe7804ccad46d5d71bf47acee7dc2eed601965af10a10f8e096abe",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4b7",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4b7",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "99e9b64ccb83d664955b07d5fc572b30ea44286b658e974e93b5c407b049c4d2"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4b7",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "99e9b64ccb83d664955b07d5fc572b30ea44286b658e974e93b5c407b049c4d2",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4a8",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4a8",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "38075d460ad3cca30a66b49d16c1e26ca019922cac16c36a69debdc0b2562635"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4a8",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "38075d460ad3cca30a66b49d16c1e26ca019922cac16c36a69debdc0b2562635",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4e5",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4e5",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "9e7b0daab5f8772fa6b438ff62b5a872ab6d14f86ba749bfafd8d2bbd65df204"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4e5",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "9e7b0daab5f8772fa6b438ff62b5a872ab6d14f86ba749bfafd8d2bbd65df204",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4e6",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4e6",
+              "target": "e6",
+              "replies": [
+                "a4a3",
+                "e8a8",
+                "e8b8",
+                "e8c8",
+                "e8d8",
+                "e8e6",
+                "e8e7",
+                "e8f8",
+                "e8g8",
+                "h8g7",
+                "h8h7"
+              ],
+              "recaptures": [
+                "e8e6"
+              ]
+            },
+            "certificateSha256": "55b06e9c6b629d7e3aedcac90fc0f46cac26bae01e4d6d4d1f1e47e0468cd14d"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4e6",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "55b06e9c6b629d7e3aedcac90fc0f46cac26bae01e4d6d4d1f1e47e0468cd14d",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        },
+        {
+          "move": "e4f5",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4f5",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "0dc3a0070c7e5407120dd2f78a3d58cc04a55d972b3400b8412bf6401d6f8e61"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4f5",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "0dc3a0070c7e5407120dd2f78a3d58cc04a55d972b3400b8412bf6401d6f8e61",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4g6",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4g6",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "df40ec86aaee4cf1dfbd61cb05c800dd3ff0900db8d2971f42c128746d581bb4"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4g6",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "df40ec86aaee4cf1dfbd61cb05c800dd3ff0900db8d2971f42c128746d581bb4",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4h7",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4h7",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "2f7f4a3faeee015dd019192edd853fb0aa7d0a242bfcc014c3180573c889135b"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4h7",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "2f7f4a3faeee015dd019192edd853fb0aa7d0a242bfcc014c3180573c889135b",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4f4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4f4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "0abc04b8930f380e9a703d73a7f6a0fcb0a4759c9f5467c256e10cd24532e095"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4f4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "0abc04b8930f380e9a703d73a7f6a0fcb0a4759c9f5467c256e10cd24532e095",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4g4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4g4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "72c19f28d3a1e0caa6a293fbeddf5f2a49bc0f5ac52ddafee21417837a863858"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4g4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "72c19f28d3a1e0caa6a293fbeddf5f2a49bc0f5ac52ddafee21417837a863858",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4h4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4h4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "071a26dafdf2725eb4599f79d98151ed70ddb69db219ca8f7d95f156722c21b7"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4h4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "071a26dafdf2725eb4599f79d98151ed70ddb69db219ca8f7d95f156722c21b7",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4f3",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4f3",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "26e298f86100f8c3e6ad073bedad9f47d5d58bfb6b9f2811be3238f71fea7df1"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4f3",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "26e298f86100f8c3e6ad073bedad9f47d5d58bfb6b9f2811be3238f71fea7df1",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4g2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4g2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "10972725eb1b5c44b0ddc38107f8ba570f43ada71ffe186a2c969b18e7641779"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4g2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "10972725eb1b5c44b0ddc38107f8ba570f43ada71ffe186a2c969b18e7641779",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4h1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4h1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "578c6de6517301bbea6b056163a349c6e0fdc20f079de944e84088514fa8a6ed"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4h1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "578c6de6517301bbea6b056163a349c6e0fdc20f079de944e84088514fa8a6ed",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4e3",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4e3",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "78839c17f5a28cd0a98be66e900650b0e0135a9d9bd1ee81b51d36ee1744eed1"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4e3",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "78839c17f5a28cd0a98be66e900650b0e0135a9d9bd1ee81b51d36ee1744eed1",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4e2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4e2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "cb0a754e3d632ab8f0c05381da0ab3da32bb45a55484454b75583844ac1fc1f5"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4e2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "cb0a754e3d632ab8f0c05381da0ab3da32bb45a55484454b75583844ac1fc1f5",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4e1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4e1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "e280724f3faf399ca6f65b9218a35bfae808a7bdd3cfc5fb10c8bf7d8424239b"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4e1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "e280724f3faf399ca6f65b9218a35bfae808a7bdd3cfc5fb10c8bf7d8424239b",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4d3",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4d3",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "c53da3c1d058e3237b935527c518a5b9a617f98b06954ca8c7c42ca4eab5fe22"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4d3",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "c53da3c1d058e3237b935527c518a5b9a617f98b06954ca8c7c42ca4eab5fe22",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4c2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4c2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "e365555bad2aa8efb6f9a58d14d88c53248fd34ebaa11338ca4d7d029816ef51"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4c2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "e365555bad2aa8efb6f9a58d14d88c53248fd34ebaa11338ca4d7d029816ef51",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4d4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4d4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "8a3f7ded543b1ede8530eccc8af7d1dd535ddaa178b54ee046f667cf86530a6c"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4d4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "8a3f7ded543b1ede8530eccc8af7d1dd535ddaa178b54ee046f667cf86530a6c",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4c4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4c4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "a1ce266db8d31f1626109d07abb9e8e408250411b95caca76b59c70ee5ef7313"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4c4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "a1ce266db8d31f1626109d07abb9e8e408250411b95caca76b59c70ee5ef7313",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4b4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4b4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "def3744668ea9940eeed897787e26e681474294c5b493697c98222e7e7ca97a4"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4b4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "def3744668ea9940eeed897787e26e681474294c5b493697c98222e7e7ca97a4",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4a4",
+          "proof": {
+            "status": "success",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4a4",
+              "target": "a4",
+              "replies": [
+                "e6e5",
+                "e8a8",
+                "e8b8",
+                "e8c8",
+                "e8d8",
+                "e8e7",
+                "e8f8",
+                "e8g8",
+                "h8g7",
+                "h8g8",
+                "h8h7"
+              ],
+              "recaptures": []
+            },
+            "certificateSha256": "00179fbbd1071fcd9f81e1eb865fb1bca1739e7d017a5b43e3bf721c59742e33"
+          },
+          "checked": {
+            "verified": true,
+            "status": "success",
+            "actor": "w",
+            "move": "e4a4",
+            "learningAllowed": true,
+            "experimentalPulse": false,
+            "certificateSha256": "00179fbbd1071fcd9f81e1eb865fb1bca1739e7d017a5b43e3bf721c59742e33",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        },
+        {
+          "move": "b1a2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "b1a2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "61bd81b0ccdadc8a15d675385c89c48515e04b5595c480fa0738bc76dc085e45"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "b1a2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "61bd81b0ccdadc8a15d675385c89c48515e04b5595c480fa0738bc76dc085e45",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "b1b2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "b1b2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "9597252bfe95b4cf94886bc98d71775256a29d21493e9aad92e4fe354891d7fa"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "b1b2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "9597252bfe95b4cf94886bc98d71775256a29d21493e9aad92e4fe354891d7fa",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "b1c2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "b1c2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "5d20217ceb2bc32041aadb0dde9fb39b5c90923086406b0447ba052c102c3d3a"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "b1c2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "5d20217ceb2bc32041aadb0dde9fb39b5c90923086406b0447ba052c102c3d3a",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "b1c1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "b1c1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "932c40b124b653b8b3b59b4413ac50c83184367ff870187f472376d55260ce0a"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "b1c1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "932c40b124b653b8b3b59b4413ac50c83184367ff870187f472376d55260ce0a",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "b1a1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "b1a1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "c068fb00430e83adf802ce4158502cd20fcda36b2944d352b7d16fa518e1823f"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "b1a1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "c068fb00430e83adf802ce4158502cd20fcda36b2944d352b7d16fa518e1823f",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        }
+      ]
+    },
+    {
+      "familyId": "e-file-open",
+      "member": "defender-b",
+      "fen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+      "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+      "task": {
+        "objective": "capture-retention",
+        "plies": 1
+      },
+      "probeMoves": [
+        "e4e6",
+        "e4a4"
+      ],
+      "probes": [
+        {
+          "move": "e4e6",
+          "proof": {
+            "status": "success",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4e6",
+              "target": "e6",
+              "replies": [
+                "a4a3",
+                "a8a5",
+                "a8a6",
+                "a8a7",
+                "a8b8",
+                "a8c8",
+                "a8d8",
+                "a8e8",
+                "a8f8",
+                "a8g8",
+                "h8g7",
+                "h8h7"
+              ],
+              "recaptures": []
+            },
+            "certificateSha256": "5346d0c8b93cf33d06e9cbc113cd9d7ba5e00f6b4990e205aa4b231b41c8f722"
+          },
+          "checked": {
+            "verified": true,
+            "status": "success",
+            "actor": "w",
+            "move": "e4e6",
+            "learningAllowed": true,
+            "experimentalPulse": false,
+            "certificateSha256": "5346d0c8b93cf33d06e9cbc113cd9d7ba5e00f6b4990e205aa4b231b41c8f722",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        },
+        {
+          "move": "e4a4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4a4",
+              "target": "a4",
+              "replies": [
+                "a8a4",
+                "a8a5",
+                "a8a6",
+                "a8a7",
+                "a8b8",
+                "a8c8",
+                "a8d8",
+                "a8e8",
+                "a8f8",
+                "a8g8",
+                "e6e5",
+                "h8g7",
+                "h8g8",
+                "h8h7"
+              ],
+              "recaptures": [
+                "a8a4"
+              ]
+            },
+            "certificateSha256": "604c35ba757cbea5705162789cae8f1979ee59ae287a137281a2ee2fb8958991"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4a4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "604c35ba757cbea5705162789cae8f1979ee59ae287a137281a2ee2fb8958991",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        }
+      ],
+      "allLegalCount": 29,
+      "allLegalEvidence": [
+        {
+          "move": "e4d5",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4d5",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "6f5bab8b0b8346724d5ec29aa30e2561b1487eed2531abaa4ebd87979a4ae03c"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4d5",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "6f5bab8b0b8346724d5ec29aa30e2561b1487eed2531abaa4ebd87979a4ae03c",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4c6",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4c6",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "e7c0b26a2db7bda92c8cbd1ca8a5e1d6fa49edd78d815a26dc2cd99d905eb2bd"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4c6",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "e7c0b26a2db7bda92c8cbd1ca8a5e1d6fa49edd78d815a26dc2cd99d905eb2bd",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4b7",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4b7",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "99a9f3a8ded2da691a4d2baa84463a189d6cde67b899a8286d299609b8b6f309"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4b7",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "99a9f3a8ded2da691a4d2baa84463a189d6cde67b899a8286d299609b8b6f309",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4a8",
+          "proof": {
+            "status": "success",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4a8",
+              "target": "a8",
+              "replies": [
+                "h8g7",
+                "h8h7"
+              ],
+              "recaptures": []
+            },
+            "certificateSha256": "b4eca21cd42c3d84d0de37e22aef3caa81663682be54deaaa7a715790474c3b6"
+          },
+          "checked": {
+            "verified": true,
+            "status": "success",
+            "actor": "w",
+            "move": "e4a8",
+            "learningAllowed": true,
+            "experimentalPulse": false,
+            "certificateSha256": "b4eca21cd42c3d84d0de37e22aef3caa81663682be54deaaa7a715790474c3b6",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        },
+        {
+          "move": "e4e5",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4e5",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "68378dcff8ed6dbf618b596156074a6ff9fe4578ed36f73d15d89cc45d513f67"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4e5",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "68378dcff8ed6dbf618b596156074a6ff9fe4578ed36f73d15d89cc45d513f67",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4e6",
+          "proof": {
+            "status": "success",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4e6",
+              "target": "e6",
+              "replies": [
+                "a4a3",
+                "a8a5",
+                "a8a6",
+                "a8a7",
+                "a8b8",
+                "a8c8",
+                "a8d8",
+                "a8e8",
+                "a8f8",
+                "a8g8",
+                "h8g7",
+                "h8h7"
+              ],
+              "recaptures": []
+            },
+            "certificateSha256": "5346d0c8b93cf33d06e9cbc113cd9d7ba5e00f6b4990e205aa4b231b41c8f722"
+          },
+          "checked": {
+            "verified": true,
+            "status": "success",
+            "actor": "w",
+            "move": "e4e6",
+            "learningAllowed": true,
+            "experimentalPulse": false,
+            "certificateSha256": "5346d0c8b93cf33d06e9cbc113cd9d7ba5e00f6b4990e205aa4b231b41c8f722",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        },
+        {
+          "move": "e4f5",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4f5",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "9406649267fdb9fa5395ebda40d24353f49b37882466e84609e92e4b24f90f13"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4f5",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "9406649267fdb9fa5395ebda40d24353f49b37882466e84609e92e4b24f90f13",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4g6",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4g6",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "b7a920cfb8cb764d997c160d4ce5318fea305043b04b8c78cf575959ba174cc3"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4g6",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "b7a920cfb8cb764d997c160d4ce5318fea305043b04b8c78cf575959ba174cc3",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4h7",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4h7",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "a1b4acf91eb105dfa097405049329b414228fe3ae46e7f5ac94601f50a2aeb7d"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4h7",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "a1b4acf91eb105dfa097405049329b414228fe3ae46e7f5ac94601f50a2aeb7d",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4f4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4f4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "98738550fd851fa6bcb2fef972638adeb68bba289b349595941faf0c5e11c929"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4f4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "98738550fd851fa6bcb2fef972638adeb68bba289b349595941faf0c5e11c929",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4g4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4g4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "8d893af15743511ef0f9c5a9427ccf7d22fea0aa1269531c4f2bdb077cbfc620"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4g4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "8d893af15743511ef0f9c5a9427ccf7d22fea0aa1269531c4f2bdb077cbfc620",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4h4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4h4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "8434875132452f43e895d9e86d68ebf18d3123122988fc16462cb7d34e201fb1"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4h4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "8434875132452f43e895d9e86d68ebf18d3123122988fc16462cb7d34e201fb1",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4f3",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4f3",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "49052007f891a95bfa388d526a94c35fb823c4fc8003950dd66e8b919de9945a"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4f3",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "49052007f891a95bfa388d526a94c35fb823c4fc8003950dd66e8b919de9945a",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4g2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4g2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "5659f4ac1428d7de94441f282103cb4abdd35004f7a29033e0b2058e900db853"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4g2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "5659f4ac1428d7de94441f282103cb4abdd35004f7a29033e0b2058e900db853",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4h1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4h1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "2363b118ff04853d410ce684946c6a611fa646ec031f60d7be64c180ebce561a"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4h1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "2363b118ff04853d410ce684946c6a611fa646ec031f60d7be64c180ebce561a",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4e3",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4e3",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "10cdb773490b276f3a7401d707b4b0e704f51ea9a0c46e04205951f2d3002991"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4e3",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "10cdb773490b276f3a7401d707b4b0e704f51ea9a0c46e04205951f2d3002991",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4e2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4e2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "5975ea351324406a464641707d8a8c9f31cf3c3fbf4e04528d9b94f112bc8960"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4e2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "5975ea351324406a464641707d8a8c9f31cf3c3fbf4e04528d9b94f112bc8960",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4e1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4e1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "24d90ead04cd85e4ce707bb3eabd12aabf78747f399e15dff9a77cd8f66e6787"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4e1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "24d90ead04cd85e4ce707bb3eabd12aabf78747f399e15dff9a77cd8f66e6787",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4d3",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4d3",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "8c8423066f0022b8adea376c1dca2e577d584f4ba77d77a2a01b2ee58578677a"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4d3",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "8c8423066f0022b8adea376c1dca2e577d584f4ba77d77a2a01b2ee58578677a",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4c2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4c2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "bd320fc1640d62a3a5fbc9f66a7ff94989e9f59fd7ad3bbb9ad9f714d314bdc0"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4c2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "bd320fc1640d62a3a5fbc9f66a7ff94989e9f59fd7ad3bbb9ad9f714d314bdc0",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4d4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4d4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "2dc15424d8aa50f95831db3b07dab6543b5634b33cac37da84680b359f38fdce"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4d4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "2dc15424d8aa50f95831db3b07dab6543b5634b33cac37da84680b359f38fdce",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4c4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4c4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "90587d082e9d5a8abeeacb7b74bef83049b43947685c369d59b22c3b595629dc"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4c4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "90587d082e9d5a8abeeacb7b74bef83049b43947685c369d59b22c3b595629dc",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4b4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4b4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "d19ec766d47ec2df4de19627478a8a7b61401d452824cf143cfe5cfb83f1ecae"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4b4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "d19ec766d47ec2df4de19627478a8a7b61401d452824cf143cfe5cfb83f1ecae",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "e4a4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e4a4",
+              "target": "a4",
+              "replies": [
+                "a8a4",
+                "a8a5",
+                "a8a6",
+                "a8a7",
+                "a8b8",
+                "a8c8",
+                "a8d8",
+                "a8e8",
+                "a8f8",
+                "a8g8",
+                "e6e5",
+                "h8g7",
+                "h8g8",
+                "h8h7"
+              ],
+              "recaptures": [
+                "a8a4"
+              ]
+            },
+            "certificateSha256": "604c35ba757cbea5705162789cae8f1979ee59ae287a137281a2ee2fb8958991"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "e4a4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "604c35ba757cbea5705162789cae8f1979ee59ae287a137281a2ee2fb8958991",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        },
+        {
+          "move": "b1a2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "b1a2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "0f076c67c8e9c2f2f0040262b976d1f08f228c9fa30a2f382044d3e754a50e8d"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "b1a2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "0f076c67c8e9c2f2f0040262b976d1f08f228c9fa30a2f382044d3e754a50e8d",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "b1b2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "b1b2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "8d7c96f292065e9bcf50e429c1644ad7104a3fbb4844fa9f140a7c62f72ccb2d"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "b1b2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "8d7c96f292065e9bcf50e429c1644ad7104a3fbb4844fa9f140a7c62f72ccb2d",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "b1c2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "b1c2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "ff62d08eb5939b284eb9e1fc9ffe6e43b3a01773d0a83e60d596d3943a0e7ea1"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "b1c2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "ff62d08eb5939b284eb9e1fc9ffe6e43b3a01773d0a83e60d596d3943a0e7ea1",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "b1c1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "b1c1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "6e9e06cfbaf677901e61a6e1b3be977dbe1c33be72f5153161f528258a8678ba"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "b1c1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "6e9e06cfbaf677901e61a6e1b3be977dbe1c33be72f5153161f528258a8678ba",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "b1a1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/4p3/8/p3Q3/8/8/1K6 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "b1a1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "3330809b63be4d0b2791c73b8d67709bfdbc73b2396e7eba2afc81edc567ba9c"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "b1a1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "3330809b63be4d0b2791c73b8d67709bfdbc73b2396e7eba2afc81edc567ba9c",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        }
+      ]
+    },
+    {
+      "familyId": "d-file-mirror",
+      "member": "defender-a",
+      "fen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+      "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+      "task": {
+        "objective": "capture-retention",
+        "plies": 1
+      },
+      "probeMoves": [
+        "d4d6",
+        "d4h4"
+      ],
+      "probes": [
+        {
+          "move": "d4d6",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4d6",
+              "target": "d6",
+              "replies": [
+                "a8a7",
+                "a8b7",
+                "d8b8",
+                "d8c8",
+                "d8d6",
+                "d8d7",
+                "d8e8",
+                "d8f8",
+                "d8g8",
+                "d8h8",
+                "h4h3"
+              ],
+              "recaptures": [
+                "d8d6"
+              ]
+            },
+            "certificateSha256": "250b2401fd6ec3206cc5b9d62479638d2cc21c3baaa638e1bf84c6fe52ea958f"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4d6",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "250b2401fd6ec3206cc5b9d62479638d2cc21c3baaa638e1bf84c6fe52ea958f",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        },
+        {
+          "move": "d4h4",
+          "proof": {
+            "status": "success",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4h4",
+              "target": "h4",
+              "replies": [
+                "a8a7",
+                "a8b7",
+                "a8b8",
+                "d6d5",
+                "d8b8",
+                "d8c8",
+                "d8d7",
+                "d8e8",
+                "d8f8",
+                "d8g8",
+                "d8h8"
+              ],
+              "recaptures": []
+            },
+            "certificateSha256": "c55a63e1f25fad30d14909e797ab7a7d3510f32487fe1f1ab7636793c5dbec51"
+          },
+          "checked": {
+            "verified": true,
+            "status": "success",
+            "actor": "w",
+            "move": "d4h4",
+            "learningAllowed": true,
+            "experimentalPulse": false,
+            "certificateSha256": "c55a63e1f25fad30d14909e797ab7a7d3510f32487fe1f1ab7636793c5dbec51",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        }
+      ],
+      "allLegalCount": 29,
+      "allLegalEvidence": [
+        {
+          "move": "d4c5",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4c5",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "aa298eb068baffb0dc02567c90f68f0279f95cbe91ffa2d7b57df697b71fb94d"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4c5",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "aa298eb068baffb0dc02567c90f68f0279f95cbe91ffa2d7b57df697b71fb94d",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4b6",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4b6",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "aa819ab85cb2683cabd6fae19f622278c8365dcddd4eefa23cc4890449eb0fe3"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4b6",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "aa819ab85cb2683cabd6fae19f622278c8365dcddd4eefa23cc4890449eb0fe3",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4a7",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4a7",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "66ab77bfd578a8ececdc1a0be2ca8e1d6f01da7b31d533cd693e57cade89b319"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4a7",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "66ab77bfd578a8ececdc1a0be2ca8e1d6f01da7b31d533cd693e57cade89b319",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4d5",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4d5",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "5d2e95cb1fcbf6925fb1cfe304193759f63ff9fc2a44e55ea2b6efaa021f706d"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4d5",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "5d2e95cb1fcbf6925fb1cfe304193759f63ff9fc2a44e55ea2b6efaa021f706d",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4d6",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4d6",
+              "target": "d6",
+              "replies": [
+                "a8a7",
+                "a8b7",
+                "d8b8",
+                "d8c8",
+                "d8d6",
+                "d8d7",
+                "d8e8",
+                "d8f8",
+                "d8g8",
+                "d8h8",
+                "h4h3"
+              ],
+              "recaptures": [
+                "d8d6"
+              ]
+            },
+            "certificateSha256": "250b2401fd6ec3206cc5b9d62479638d2cc21c3baaa638e1bf84c6fe52ea958f"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4d6",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "250b2401fd6ec3206cc5b9d62479638d2cc21c3baaa638e1bf84c6fe52ea958f",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        },
+        {
+          "move": "d4e5",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4e5",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "92c147fe83b2077e02719f85c429bfb06004480a64f52087b8fe051139e779ce"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4e5",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "92c147fe83b2077e02719f85c429bfb06004480a64f52087b8fe051139e779ce",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4f6",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4f6",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "672a384e8359b13d598f6ec99b402e4bee11a9bd3d58bce283f495839184b826"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4f6",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "672a384e8359b13d598f6ec99b402e4bee11a9bd3d58bce283f495839184b826",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4g7",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4g7",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "40b5b6078233cc88445ec4dfebd1ba8ab9cc73c35988fd0eee3a72ebb9587093"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4g7",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "40b5b6078233cc88445ec4dfebd1ba8ab9cc73c35988fd0eee3a72ebb9587093",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4h8",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4h8",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "637fe18960d04cb0ff102d980933eca43485c81147f3c234039fff3f20b554e5"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4h8",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "637fe18960d04cb0ff102d980933eca43485c81147f3c234039fff3f20b554e5",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4e4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4e4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "dcf7738c9ff2ac38fb874639c7db15cec1ec366257ca8b7daea86144e36f451f"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4e4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "dcf7738c9ff2ac38fb874639c7db15cec1ec366257ca8b7daea86144e36f451f",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4f4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4f4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "9a977848ba13d5629f389a74f0015c99f5562230fc5ed8cf6a7da83852553144"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4f4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "9a977848ba13d5629f389a74f0015c99f5562230fc5ed8cf6a7da83852553144",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4g4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4g4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "456980b6598502435618fd9b5c0c1158302f4a96964b5f9b34e44ca154f4f81a"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4g4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "456980b6598502435618fd9b5c0c1158302f4a96964b5f9b34e44ca154f4f81a",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4h4",
+          "proof": {
+            "status": "success",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4h4",
+              "target": "h4",
+              "replies": [
+                "a8a7",
+                "a8b7",
+                "a8b8",
+                "d6d5",
+                "d8b8",
+                "d8c8",
+                "d8d7",
+                "d8e8",
+                "d8f8",
+                "d8g8",
+                "d8h8"
+              ],
+              "recaptures": []
+            },
+            "certificateSha256": "c55a63e1f25fad30d14909e797ab7a7d3510f32487fe1f1ab7636793c5dbec51"
+          },
+          "checked": {
+            "verified": true,
+            "status": "success",
+            "actor": "w",
+            "move": "d4h4",
+            "learningAllowed": true,
+            "experimentalPulse": false,
+            "certificateSha256": "c55a63e1f25fad30d14909e797ab7a7d3510f32487fe1f1ab7636793c5dbec51",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        },
+        {
+          "move": "d4e3",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4e3",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "6c41930fb0ce8a5070e99cbd7a90204d23c0d53296d505fd601db5ec7baf0753"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4e3",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "6c41930fb0ce8a5070e99cbd7a90204d23c0d53296d505fd601db5ec7baf0753",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4f2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4f2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "b7e6bc1e359e72fa6f5501bfb100ca2dabdc7264cd587044a33c0bdbb1c34d89"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4f2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "b7e6bc1e359e72fa6f5501bfb100ca2dabdc7264cd587044a33c0bdbb1c34d89",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4d3",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4d3",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "50a8e4894e7f8f81451d2eaa9b9337587464e5e0986f1e050a353697eff2b25d"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4d3",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "50a8e4894e7f8f81451d2eaa9b9337587464e5e0986f1e050a353697eff2b25d",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4d2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4d2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "f657a080bab3e1e9936a0a4eb4327d2f7a7fdaee83f8de320db32f646d807051"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4d2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "f657a080bab3e1e9936a0a4eb4327d2f7a7fdaee83f8de320db32f646d807051",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4d1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4d1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "8ccded357dd7411007ca54ecf32e64ff8178c8aee2874027cd47ef72f3c858c3"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4d1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "8ccded357dd7411007ca54ecf32e64ff8178c8aee2874027cd47ef72f3c858c3",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4c3",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4c3",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "5f0318f8641e20ebe153051f86a23962660dbfad8f7cb7b0ba55d2c03d7b1fdf"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4c3",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "5f0318f8641e20ebe153051f86a23962660dbfad8f7cb7b0ba55d2c03d7b1fdf",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4b2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4b2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "9bc5bb77c11c69768b6cbfbe3b2a1d604d554adedc4e04f0d6d67d695b9d3a44"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4b2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "9bc5bb77c11c69768b6cbfbe3b2a1d604d554adedc4e04f0d6d67d695b9d3a44",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4a1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4a1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "48f4aa3240766b481bfbb525fa59bffb8507576a5cc029d5bfbeb85cf3690411"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4a1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "48f4aa3240766b481bfbb525fa59bffb8507576a5cc029d5bfbeb85cf3690411",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4c4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4c4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "7f2a7baa3cb161dc4fd9e6ca8f41f9466bbb710edc46ba8760778866518ece41"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4c4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "7f2a7baa3cb161dc4fd9e6ca8f41f9466bbb710edc46ba8760778866518ece41",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4b4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4b4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "1300588c1dffb4daca6c5d3076c75d720c9f227c790dd8676d034114f040310f"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4b4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "1300588c1dffb4daca6c5d3076c75d720c9f227c790dd8676d034114f040310f",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4a4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4a4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "7c0bd6cbb6f062c364b16c96a7a492172eadd53a7eaa7dadb61a99badfa65ac4"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4a4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "7c0bd6cbb6f062c364b16c96a7a492172eadd53a7eaa7dadb61a99badfa65ac4",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "g1f2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "g1f2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "9553fc51ba7715a59084558b251b02bf36c99ac622a1d69328a59d182ca4a715"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "g1f2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "9553fc51ba7715a59084558b251b02bf36c99ac622a1d69328a59d182ca4a715",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "g1g2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "g1g2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "8b0c82dffdb0c7f018e4f2131ec0cb7b1bd8a5baf992b233b028a6fc0d9c7a1c"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "g1g2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "8b0c82dffdb0c7f018e4f2131ec0cb7b1bd8a5baf992b233b028a6fc0d9c7a1c",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "g1h2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "g1h2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "aa0dc626ed87892565122352ef12b74d1d83237ec5764a99823b1a963cc9453c"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "g1h2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "aa0dc626ed87892565122352ef12b74d1d83237ec5764a99823b1a963cc9453c",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "g1h1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "g1h1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "622c193a1da3d3c8cd1d7cec61a1908e8389b947c1bf64325e82bd920d3ae3b1"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "g1h1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "622c193a1da3d3c8cd1d7cec61a1908e8389b947c1bf64325e82bd920d3ae3b1",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "g1f1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k2r4/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "g1f1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "0f2620a3ada389c6443c1569bc88ffdda5e322a7294e8142057e3f4a861b1b48"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "g1f1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "0f2620a3ada389c6443c1569bc88ffdda5e322a7294e8142057e3f4a861b1b48",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        }
+      ]
+    },
+    {
+      "familyId": "d-file-mirror",
+      "member": "defender-b",
+      "fen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+      "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+      "task": {
+        "objective": "capture-retention",
+        "plies": 1
+      },
+      "probeMoves": [
+        "d4d6",
+        "d4h4"
+      ],
+      "probes": [
+        {
+          "move": "d4d6",
+          "proof": {
+            "status": "success",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4d6",
+              "target": "d6",
+              "replies": [
+                "a8a7",
+                "a8b7",
+                "h4h3",
+                "h8b8",
+                "h8c8",
+                "h8d8",
+                "h8e8",
+                "h8f8",
+                "h8g8",
+                "h8h5",
+                "h8h6",
+                "h8h7"
+              ],
+              "recaptures": []
+            },
+            "certificateSha256": "74ff1293e4d7134ef876dd77f30c5db15218adb2c3b3e85849730ad98d3f75a8"
+          },
+          "checked": {
+            "verified": true,
+            "status": "success",
+            "actor": "w",
+            "move": "d4d6",
+            "learningAllowed": true,
+            "experimentalPulse": false,
+            "certificateSha256": "74ff1293e4d7134ef876dd77f30c5db15218adb2c3b3e85849730ad98d3f75a8",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        },
+        {
+          "move": "d4h4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4h4",
+              "target": "h4",
+              "replies": [
+                "a8a7",
+                "a8b7",
+                "a8b8",
+                "d6d5",
+                "h8b8",
+                "h8c8",
+                "h8d8",
+                "h8e8",
+                "h8f8",
+                "h8g8",
+                "h8h4",
+                "h8h5",
+                "h8h6",
+                "h8h7"
+              ],
+              "recaptures": [
+                "h8h4"
+              ]
+            },
+            "certificateSha256": "7d233016261d8209b4ecbf5743fda0f435bc576200617950f6eac5ae4cc59589"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4h4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "7d233016261d8209b4ecbf5743fda0f435bc576200617950f6eac5ae4cc59589",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        }
+      ],
+      "allLegalCount": 29,
+      "allLegalEvidence": [
+        {
+          "move": "d4c5",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4c5",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "18a5c2320725f580b220610efe41eec62545799b978cb04013f37b3c82f24f60"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4c5",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "18a5c2320725f580b220610efe41eec62545799b978cb04013f37b3c82f24f60",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4b6",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4b6",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "d63579a34d94c6d57752e192f21e5f0eefc74dd989731d26824906fd7c96294a"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4b6",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "d63579a34d94c6d57752e192f21e5f0eefc74dd989731d26824906fd7c96294a",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4a7",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4a7",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "93a6e187e6fc1bac7ddd6302ff3154adc2c4f375dd5bffb3757fe0a2e116bafd"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4a7",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "93a6e187e6fc1bac7ddd6302ff3154adc2c4f375dd5bffb3757fe0a2e116bafd",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4d5",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4d5",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "62b0565f3b64937dc6d5db24540dc2941934453532649ee4a3ca98a3c447063a"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4d5",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "62b0565f3b64937dc6d5db24540dc2941934453532649ee4a3ca98a3c447063a",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4d6",
+          "proof": {
+            "status": "success",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4d6",
+              "target": "d6",
+              "replies": [
+                "a8a7",
+                "a8b7",
+                "h4h3",
+                "h8b8",
+                "h8c8",
+                "h8d8",
+                "h8e8",
+                "h8f8",
+                "h8g8",
+                "h8h5",
+                "h8h6",
+                "h8h7"
+              ],
+              "recaptures": []
+            },
+            "certificateSha256": "74ff1293e4d7134ef876dd77f30c5db15218adb2c3b3e85849730ad98d3f75a8"
+          },
+          "checked": {
+            "verified": true,
+            "status": "success",
+            "actor": "w",
+            "move": "d4d6",
+            "learningAllowed": true,
+            "experimentalPulse": false,
+            "certificateSha256": "74ff1293e4d7134ef876dd77f30c5db15218adb2c3b3e85849730ad98d3f75a8",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        },
+        {
+          "move": "d4e5",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4e5",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "310baad19dac60e0c1f934ff527f6b9fd8c80478fe5b6fd920890fbd26800faf"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4e5",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "310baad19dac60e0c1f934ff527f6b9fd8c80478fe5b6fd920890fbd26800faf",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4f6",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4f6",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "5b103750df01c1d62dd53ca0794d602bf078d4fd838ac6afd9155cf2b2e64a1d"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4f6",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "5b103750df01c1d62dd53ca0794d602bf078d4fd838ac6afd9155cf2b2e64a1d",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4g7",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4g7",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "2cac5fd52368dd3c5e831bca07b667a80018637afb034d7ea320775a04117266"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4g7",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "2cac5fd52368dd3c5e831bca07b667a80018637afb034d7ea320775a04117266",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4h8",
+          "proof": {
+            "status": "success",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4h8",
+              "target": "h8",
+              "replies": [
+                "a8a7",
+                "a8b7"
+              ],
+              "recaptures": []
+            },
+            "certificateSha256": "807d2625c3b9fe4ee1198657fb34dc138d214ac30fff8008fbd2ae4c7ffa050c"
+          },
+          "checked": {
+            "verified": true,
+            "status": "success",
+            "actor": "w",
+            "move": "d4h8",
+            "learningAllowed": true,
+            "experimentalPulse": false,
+            "certificateSha256": "807d2625c3b9fe4ee1198657fb34dc138d214ac30fff8008fbd2ae4c7ffa050c",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        },
+        {
+          "move": "d4e4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4e4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "5d6eb43b8bcf81161f5ce642d214bb84bc521d065cfc4cea10b04045b62deb7f"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4e4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "5d6eb43b8bcf81161f5ce642d214bb84bc521d065cfc4cea10b04045b62deb7f",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4f4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4f4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "fe00d3e74c5739a6603cf1d4a71e09a9018cb98958de6345c69dc081115e4ca3"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4f4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "fe00d3e74c5739a6603cf1d4a71e09a9018cb98958de6345c69dc081115e4ca3",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4g4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4g4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "c1f7b92797f5a78ebfa4f7dcaa675c9f3d69af1f9ed6a566d808e237d23a65b3"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4g4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "c1f7b92797f5a78ebfa4f7dcaa675c9f3d69af1f9ed6a566d808e237d23a65b3",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4h4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4h4",
+              "target": "h4",
+              "replies": [
+                "a8a7",
+                "a8b7",
+                "a8b8",
+                "d6d5",
+                "h8b8",
+                "h8c8",
+                "h8d8",
+                "h8e8",
+                "h8f8",
+                "h8g8",
+                "h8h4",
+                "h8h5",
+                "h8h6",
+                "h8h7"
+              ],
+              "recaptures": [
+                "h8h4"
+              ]
+            },
+            "certificateSha256": "7d233016261d8209b4ecbf5743fda0f435bc576200617950f6eac5ae4cc59589"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4h4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "7d233016261d8209b4ecbf5743fda0f435bc576200617950f6eac5ae4cc59589",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality"
+          }
+        },
+        {
+          "move": "d4e3",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4e3",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "4ed679295c663b711867fe82dcaccd89a32a87c8f31e910b20415d823e54c3b2"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4e3",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "4ed679295c663b711867fe82dcaccd89a32a87c8f31e910b20415d823e54c3b2",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4f2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4f2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "525f725290aa96d43363a3259a6bfb248e2c9ece3c490db28e6c7db8452d7e52"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4f2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "525f725290aa96d43363a3259a6bfb248e2c9ece3c490db28e6c7db8452d7e52",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4d3",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4d3",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "6e62fe07ec7acb04820c1e3d6ac2c986a832ede638bf3bd17618af0fe3b1e314"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4d3",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "6e62fe07ec7acb04820c1e3d6ac2c986a832ede638bf3bd17618af0fe3b1e314",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4d2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4d2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "a3b64289cd5c1d463f1d67fab224367593c7401aa726407b0793a14eb9d98f92"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4d2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "a3b64289cd5c1d463f1d67fab224367593c7401aa726407b0793a14eb9d98f92",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4d1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4d1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "fed815ef537fa427013e0efae119145ef5b0db6093449ac396f5134fe3c34988"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4d1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "fed815ef537fa427013e0efae119145ef5b0db6093449ac396f5134fe3c34988",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4c3",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4c3",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "44870e609f875720f6a6724deefd028a370f357a8041e1ed6e61f4e9b1a10dd7"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4c3",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "44870e609f875720f6a6724deefd028a370f357a8041e1ed6e61f4e9b1a10dd7",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4b2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4b2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "30ffa7abf8af474fef4194e9b0aed26fc1b8d6fdd972ce228ee25c7bd9c5d9d4"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4b2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "30ffa7abf8af474fef4194e9b0aed26fc1b8d6fdd972ce228ee25c7bd9c5d9d4",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4a1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4a1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "dacc31e2396b17d498813b2464064e4846f2555c9cfe3f1c88dec7bd069ca1c9"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4a1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "dacc31e2396b17d498813b2464064e4846f2555c9cfe3f1c88dec7bd069ca1c9",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4c4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4c4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "dc5c046a3650b1a5c0dc79b3fae889673d5618727db74270c6a1f90a5a2857d1"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4c4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "dc5c046a3650b1a5c0dc79b3fae889673d5618727db74270c6a1f90a5a2857d1",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4b4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4b4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "4392e84916c21a2d9d723e48722bb1940bd6255ce1850e481daffa4b4a45e9a7"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4b4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "4392e84916c21a2d9d723e48722bb1940bd6255ce1850e481daffa4b4a45e9a7",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "d4a4",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "d4a4",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "23f192303e1ad1011faa85ff0ed337dfc5ef206e1a7544ad9f3430bed39088a8"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "d4a4",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "23f192303e1ad1011faa85ff0ed337dfc5ef206e1a7544ad9f3430bed39088a8",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "g1f2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "g1f2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "236548ad88f77ef01f49029203108039c381b822930b3432f8c5b961606f6fd3"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "g1f2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "236548ad88f77ef01f49029203108039c381b822930b3432f8c5b961606f6fd3",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "g1g2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "g1g2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "33705e40c2b1ebd61b50f25bc57f98c0a3961c3bdd1c44b05a755679ea669c85"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "g1g2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "33705e40c2b1ebd61b50f25bc57f98c0a3961c3bdd1c44b05a755679ea669c85",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "g1h2",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "g1h2",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "2365308ddfe6c39b3a21a72bd262eb6df3187761ecbe33f0e0facf7d298948fa"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "g1h2",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "2365308ddfe6c39b3a21a72bd262eb6df3187761ecbe33f0e0facf7d298948fa",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "g1h1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "g1h1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "b68fd879b39ef21aee67ab9393668d35e9ca70a6a078177b799601941f76d057"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "g1h1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "b68fd879b39ef21aee67ab9393668d35e9ca70a6a078177b799601941f76d057",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        },
+        {
+          "move": "g1f1",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-noncapture-certificate-v1",
+              "rootFen": "k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"k6r/8/3p4/8/3Q3p/8/8/6K1 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "g1f1",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              },
+              "consequence": "does-not-perform-capture-task"
+            },
+            "certificateSha256": "22c46042dc1ace5aef828d8cf8e7fa58dabe6319a33543a7d2eae1370074b43e"
+          },
+          "checked": {
+            "verified": true,
+            "status": "failure",
+            "actor": "w",
+            "move": "g1f1",
+            "learningAllowed": true,
+            "experimentalPulse": true,
+            "certificateSha256": "22c46042dc1ace5aef828d8cf8e7fa58dabe6319a33543a7d2eae1370074b43e",
+            "meaning": "This legal action does not perform the declared capture-retention task; no overall move-quality claim"
+          }
+        }
+      ]
+    }
+  ],
+  "interpretation": "Two file-reflected six-piece families each contain a pair whose only counterfactual change is moving an open-line black rook defender; both capture outcomes reverse."
+}

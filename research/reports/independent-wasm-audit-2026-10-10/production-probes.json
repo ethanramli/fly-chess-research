@@ -1,0 +1,103 @@
+{
+  "timestamp": "2026-10-10T11:53:57.096Z",
+  "checks": [
+    {
+      "name": "actual-production numerical, gradients, SGD, Adam, local-memory restore",
+      "cases": 36,
+      "passed": true,
+      "scope": "constructed 3-neuron signed graph, both precisions, null/nonzero state; synthetic mapping is not biological evidence"
+    },
+    {
+      "name": "checkpoint stale-derived-weight defect",
+      "stale": [
+        {
+          "name": "production",
+          "actual": [
+            0.0018844943260774016,
+            -0.0028370192740112543
+          ],
+          "expected": [
+            0.002562297973781824,
+            -0.0038574214559048414
+          ],
+          "refreshed": [
+            0.002562297973781824,
+            -0.0038574214559048414
+          ],
+          "oldSigned": [
+            0.5518324971199036,
+            -0.3481675386428833,
+            0.3481675386428833,
+            -0.5518324971199036
+          ],
+          "persisted": [
+            0.05000000074505806,
+            0.07999999821186066,
+            0.10999999940395355,
+            0.14000000059604645
+          ],
+          "reproduced": true
+        },
+        {
+          "name": "archived-oracle",
+          "actual": [
+            0.0018844943260774016,
+            -0.0028370192740112543
+          ],
+          "expected": [
+            0.002562297973781824,
+            -0.0038574214559048414
+          ],
+          "refreshed": [
+            0.002562297973781824,
+            -0.0038574214559048414
+          ],
+          "oldSigned": [
+            0.5518324971199036,
+            -0.3481675386428833,
+            0.3481675386428833,
+            -0.5518324971199036
+          ],
+          "persisted": [
+            0.05000000074505806,
+            0.07999999821186066,
+            0.10999999940395355,
+            0.14000000059604645
+          ],
+          "reproduced": true
+        }
+      ]
+    },
+    {
+      "name": "serial cancellation/signed-zero/refreshed graph/state/fixed memory/logical bounds",
+      "passed": true
+    },
+    {
+      "name": "real policy both-colour perspective, tie order, history, thrown/nonfinite failure restoration",
+      "passed": true
+    },
+    {
+      "name": "actual generated binary captured from production generator",
+      "bytes": 437,
+      "sha256": "55399ce373f7746625e7cd97f07617d590833ed281b8d67c3443d5a4a962fa26",
+      "imports": [
+        {
+          "module": "env",
+          "name": "memory",
+          "kind": "memory"
+        }
+      ],
+      "exports": [
+        {
+          "name": "sum32",
+          "kind": "function"
+        },
+        {
+          "name": "sum64",
+          "kind": "function"
+        }
+      ],
+      "valid": true
+    }
+  ]
+}

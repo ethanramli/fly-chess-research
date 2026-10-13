@@ -1,0 +1,1428 @@
+{
+  "schema": "bound-ray-feedback-development-synthesis-v1",
+  "protocolPath": "research/data/bound-ray-feedback-development-v1/protocol.json",
+  "protocolSha256": "a865684916952b5e7199c6cc8671c5d5b5b4b1146d49c667ee9eee242e10af86",
+  "complete": true,
+  "arms": [
+    {
+      "encoder": "relational-v3",
+      "condition": "informative",
+      "complete": true,
+      "reportPath": "research/reports/bound-ray-feedback-development-v1-2026-10-08/relational-v3-informative/report.json",
+      "reportSha256": "88727e64b2fe5528217c5cb8df691164ee6ef48d5163be8cd0f15524e5f18a51",
+      "auditPath": "research/reports/bound-ray-feedback-development-v1-2026-10-08/relational-v3-informative/audit.json",
+      "auditSha256": "cd176f3c08503d9ec0a33b8018199ffe5d57e710a90346394bc77395da54ca8b",
+      "train": {
+        "before": 4,
+        "after": 4,
+        "meanMarginChange": 0.0001408628886565566
+      },
+      "validation": {
+        "before": 3,
+        "after": 2,
+        "meanMarginChange": 0.00008027884177863598,
+        "regressions": [
+          "va-01"
+        ],
+        "repairs": []
+      },
+      "isolatedEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.001758079044520855,
+          "badDelta": 0.000003268476575613022,
+          "marginChange": 0.001754810567945242,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-02",
+          "eventIndex": 2,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": -0.0010321163572371006,
+          "badDelta": -0.005143548361957073,
+          "marginChange": 0.004111432004719973,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.0005336618050932884,
+          "badDelta": 0.00043939845636487007,
+          "marginChange": 0.00009426334872841835,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-04",
+          "eventIndex": 6,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": -0.000004460569471120834,
+          "badDelta": -0.0016846368089318275,
+          "marginChange": 0.0016801762394607067,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-05",
+          "eventIndex": 8,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0.004251926206052303,
+          "badDelta": -0.006133065093308687,
+          "marginChange": 0.01038499129936099,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": -0.000033649150282144547,
+          "badDelta": -0.0005526388995349407,
+          "marginChange": 0.0005189897492527962,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-07",
+          "eventIndex": 12,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0.0013380502350628376,
+          "badDelta": -0.002465883269906044,
+          "marginChange": 0.0038039335049688816,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": -0.00004369020462036133,
+          "badDelta": -0.00012203631922602654,
+          "marginChange": 0.00007834611460566521,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "positiveEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.001758079044520855,
+          "badDelta": 0.000003268476575613022,
+          "marginChange": 0.001754810567945242,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.0005336618050932884,
+          "badDelta": 0.00043939845636487007,
+          "marginChange": 0.00009426334872841835,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": -0.000033649150282144547,
+          "badDelta": -0.0005526388995349407,
+          "marginChange": 0.0005189897492527962,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": -0.00004369020462036133,
+          "badDelta": -0.00012203631922602654,
+          "marginChange": 0.00007834611460566521,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "metrics": {
+        "wallSeconds": 64.6946677,
+        "cpuSeconds": 34.297,
+        "peakRssBytes": 115707904,
+        "currentFreeBytes": 2720276480,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "teachingEvents": 16,
+      "presentations": 120
+    },
+    {
+      "encoder": "relational-v3",
+      "condition": "no-channel",
+      "complete": true,
+      "reportPath": "research/reports/bound-ray-feedback-development-v1-2026-10-08/relational-v3-no-channel/report.json",
+      "reportSha256": "5c4ff689d07e97e497cf753560aaf345a2ba4d49cb3fece86544dbfdf992d8e8",
+      "auditPath": "research/reports/bound-ray-feedback-development-v1-2026-10-08/relational-v3-no-channel/audit.json",
+      "auditSha256": "7ade1fe6bf376c06d6e58e4fa88e5c6f1cf1f5aced00c8c9a17e6302023ba32d",
+      "train": {
+        "before": 4,
+        "after": 4,
+        "meanMarginChange": -0.000019537343177944422
+      },
+      "validation": {
+        "before": 3,
+        "after": 3,
+        "meanMarginChange": -0.000008320552296936512,
+        "regressions": [],
+        "repairs": []
+      },
+      "isolatedEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.00004313932731747627,
+          "badDelta": -0.000008100643754005432,
+          "marginChange": -0.00003503868356347084,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-02",
+          "eventIndex": 2,
+          "status": "failure",
+          "channel": null,
+          "goodDelta": -0.00001073768362402916,
+          "badDelta": -0.000053344760090112686,
+          "marginChange": 0.000042607076466083527,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.00007462641224265099,
+          "badDelta": -0.00001640431582927704,
+          "marginChange": -0.00005822209641337395,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-04",
+          "eventIndex": 6,
+          "status": "failure",
+          "channel": null,
+          "goodDelta": -0.00001145247370004654,
+          "badDelta": -0.00006877444684505463,
+          "marginChange": 0.00005732197314500809,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-05",
+          "eventIndex": 8,
+          "status": "failure",
+          "channel": null,
+          "goodDelta": -0.000018756836652755737,
+          "badDelta": -0.0000534537248313427,
+          "marginChange": 0.00003469688817858696,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.000056043267250061035,
+          "badDelta": -0.00001008249819278717,
+          "marginChange": -0.000045960769057273865,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-07",
+          "eventIndex": 12,
+          "status": "failure",
+          "channel": null,
+          "goodDelta": -0.000007031019777059555,
+          "badDelta": -0.00004541734233498573,
+          "marginChange": 0.00003838632255792618,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.00005765259265899658,
+          "badDelta": -0.000009830575436353683,
+          "marginChange": -0.0000478220172226429,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "positiveEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.00004313932731747627,
+          "badDelta": -0.000008100643754005432,
+          "marginChange": -0.00003503868356347084,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.00007462641224265099,
+          "badDelta": -0.00001640431582927704,
+          "marginChange": -0.00005822209641337395,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.000056043267250061035,
+          "badDelta": -0.00001008249819278717,
+          "marginChange": -0.000045960769057273865,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.00005765259265899658,
+          "badDelta": -0.000009830575436353683,
+          "marginChange": -0.0000478220172226429,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "metrics": {
+        "wallSeconds": 61.477107600000004,
+        "cpuSeconds": 33.281,
+        "peakRssBytes": 115265536,
+        "currentFreeBytes": 2771234816,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "teachingEvents": 16,
+      "presentations": 120
+    },
+    {
+      "encoder": "relational-v3",
+      "condition": "shuffled",
+      "complete": true,
+      "reportPath": "research/reports/bound-ray-feedback-development-v1-2026-10-08/relational-v3-shuffled/report.json",
+      "reportSha256": "a23f8cf73d9e95cd31a512fcc9d152577a41f1b5b37e55321bb11af1b634b47d",
+      "auditPath": "research/reports/bound-ray-feedback-development-v1-2026-10-08/relational-v3-shuffled/audit.json",
+      "auditSha256": "c1a84cfd4c97711ef7d2c45082a29b5d7f3aeeb8b0263e4725be2b3f76d15af6",
+      "train": {
+        "before": 4,
+        "after": 4,
+        "meanMarginChange": -0.0003721368848346174
+      },
+      "validation": {
+        "before": 3,
+        "after": 2,
+        "meanMarginChange": -0.00014946958981454372,
+        "regressions": [
+          "va-04"
+        ],
+        "repairs": []
+      },
+      "isolatedEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.001758079044520855,
+          "badDelta": 0.000003268476575613022,
+          "marginChange": 0.001754810567945242,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-02",
+          "eventIndex": 2,
+          "status": "failure",
+          "channel": "PAM02",
+          "goodDelta": -0.000357581302523613,
+          "badDelta": -0.000055561307817697525,
+          "marginChange": -0.00030201999470591545,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": "PPL103",
+          "goodDelta": -0.008960523176938295,
+          "badDelta": -0.002624691464006901,
+          "marginChange": -0.006335831712931395,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-04",
+          "eventIndex": 6,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0.001366306096315384,
+          "badDelta": -0.008514871820807457,
+          "marginChange": 0.009881177917122841,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-05",
+          "eventIndex": 8,
+          "status": "failure",
+          "channel": "PAM02",
+          "goodDelta": 0.000016625504940748215,
+          "badDelta": 0.0013863998465240002,
+          "marginChange": -0.001369774341583252,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": "PPL103",
+          "goodDelta": -0.0033174953423440456,
+          "badDelta": 0.002350219991058111,
+          "marginChange": -0.005667715333402157,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-07",
+          "eventIndex": 12,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0.002718531060963869,
+          "badDelta": -0.0038989856839179993,
+          "marginChange": 0.006617516744881868,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": -0.00002990569919347763,
+          "badDelta": -0.0008700727485120296,
+          "marginChange": 0.000840167049318552,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "positiveEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.001758079044520855,
+          "badDelta": 0.000003268476575613022,
+          "marginChange": 0.001754810567945242,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": "PPL103",
+          "goodDelta": -0.008960523176938295,
+          "badDelta": -0.002624691464006901,
+          "marginChange": -0.006335831712931395,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": "PPL103",
+          "goodDelta": -0.0033174953423440456,
+          "badDelta": 0.002350219991058111,
+          "marginChange": -0.005667715333402157,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": -0.00002990569919347763,
+          "badDelta": -0.0008700727485120296,
+          "marginChange": 0.000840167049318552,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "metrics": {
+        "wallSeconds": 58.18883279999999,
+        "cpuSeconds": 31.796,
+        "peakRssBytes": 115687424,
+        "currentFreeBytes": 2761830400,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "teachingEvents": 16,
+      "presentations": 120
+    },
+    {
+      "encoder": "relational-v3",
+      "condition": "disabled",
+      "complete": true,
+      "reportPath": "research/reports/bound-ray-feedback-development-v1-2026-10-08/relational-v3-disabled/report.json",
+      "reportSha256": "7a3132835c3bd8c22a9d38b8a2108d3de5404c4e50847ed1f00e89888d251b56",
+      "auditPath": "research/reports/bound-ray-feedback-development-v1-2026-10-08/relational-v3-disabled/audit.json",
+      "auditSha256": "04abe9748c5bbb4433feab270671b84d99f84bf3398c177cc7d180e97ee8d45b",
+      "train": {
+        "before": 4,
+        "after": 4,
+        "meanMarginChange": 0
+      },
+      "validation": {
+        "before": 3,
+        "after": 3,
+        "meanMarginChange": 0,
+        "regressions": [],
+        "repairs": []
+      },
+      "isolatedEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-02",
+          "eventIndex": 2,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-04",
+          "eventIndex": 6,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-05",
+          "eventIndex": 8,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-07",
+          "eventIndex": 12,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "positiveEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "metrics": {
+        "wallSeconds": 61.8006716,
+        "cpuSeconds": 33.844,
+        "peakRssBytes": 115933184,
+        "currentFreeBytes": 2907234304,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "teachingEvents": 16,
+      "presentations": 120
+    },
+    {
+      "encoder": "bound-ray",
+      "condition": "informative",
+      "complete": true,
+      "reportPath": "research/reports/bound-ray-feedback-development-v1-2026-10-08/bound-ray-informative/report.json",
+      "reportSha256": "e4dcdbff917f32a557a69a07010a614f3a474d7c1a0397694aac44d212f43e1f",
+      "auditPath": "research/reports/bound-ray-feedback-development-v1-2026-10-08/bound-ray-informative/audit.json",
+      "auditSha256": "99b1cf132da97a9199a128ccd4893e4bb5b1414fc62f22cd8580f347280d949e",
+      "train": {
+        "before": 4,
+        "after": 4,
+        "meanMarginChange": 0.0011835568293463439
+      },
+      "validation": {
+        "before": 2,
+        "after": 2,
+        "meanMarginChange": 0.0012636709143407643,
+        "regressions": [
+          "va-01",
+          "va-02"
+        ],
+        "repairs": [
+          "va-03",
+          "va-04"
+        ]
+      },
+      "isolatedEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.0007914206944406033,
+          "badDelta": 0.0008538598194718361,
+          "marginChange": -0.00006243912503123283,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-02",
+          "eventIndex": 2,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": -0.0013636895455420017,
+          "badDelta": -0.004556593485176563,
+          "marginChange": 0.0031929039396345615,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.0007538576610386372,
+          "badDelta": 0.0005035731010138988,
+          "marginChange": 0.0002502845600247383,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-04",
+          "eventIndex": 6,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": -0.000014642952010035515,
+          "badDelta": -0.0010098428465425968,
+          "marginChange": 0.0009951998945325613,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-05",
+          "eventIndex": 8,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0.004345354158431292,
+          "badDelta": -0.006251093931496143,
+          "marginChange": 0.010596448089927435,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.0004560188390314579,
+          "badDelta": -0.00004986021667718887,
+          "marginChange": 0.0005058790557086468,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-07",
+          "eventIndex": 12,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0.000971977598965168,
+          "badDelta": -0.0009531313553452492,
+          "marginChange": 0.0019251089543104172,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": -0.000026848632842302322,
+          "badDelta": 0.0000020316801965236664,
+          "marginChange": -0.00002888031303882599,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "positiveEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.0007914206944406033,
+          "badDelta": 0.0008538598194718361,
+          "marginChange": -0.00006243912503123283,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.0007538576610386372,
+          "badDelta": 0.0005035731010138988,
+          "marginChange": 0.0002502845600247383,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.0004560188390314579,
+          "badDelta": -0.00004986021667718887,
+          "marginChange": 0.0005058790557086468,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": -0.000026848632842302322,
+          "badDelta": 0.0000020316801965236664,
+          "marginChange": -0.00002888031303882599,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "metrics": {
+        "wallSeconds": 58.365871,
+        "cpuSeconds": 30.798,
+        "peakRssBytes": 115818496,
+        "currentFreeBytes": 1954402304,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "teachingEvents": 16,
+      "presentations": 120
+    },
+    {
+      "encoder": "bound-ray",
+      "condition": "no-channel",
+      "complete": true,
+      "reportPath": "research/reports/bound-ray-feedback-development-v1-2026-10-08/bound-ray-no-channel/report.json",
+      "reportSha256": "6f04fffc774a2650e59d3632d150f0453c0a4ee7d89330f08f297bf3f65d1e80",
+      "auditPath": "research/reports/bound-ray-feedback-development-v1-2026-10-08/bound-ray-no-channel/audit-json-zero.json",
+      "auditSha256": "477cb94598acb522504588010de125a04c8de465e52c6f3a907a66612176587b",
+      "train": {
+        "before": 4,
+        "after": 4,
+        "meanMarginChange": 0.00003774312790483236
+      },
+      "validation": {
+        "before": 2,
+        "after": 2,
+        "meanMarginChange": 0.00004307914059609175,
+        "regressions": [],
+        "repairs": []
+      },
+      "isolatedEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.0000864984467625618,
+          "badDelta": -0.00002599833533167839,
+          "marginChange": -0.00006050011143088341,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-02",
+          "eventIndex": 2,
+          "status": "failure",
+          "channel": null,
+          "goodDelta": -0.00002360483631491661,
+          "badDelta": -0.00008572358638048172,
+          "marginChange": 0.00006211875006556511,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.00008663535118103027,
+          "badDelta": -0.00003191782161593437,
+          "marginChange": -0.0000547175295650959,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-04",
+          "eventIndex": 6,
+          "status": "failure",
+          "channel": null,
+          "goodDelta": -0.000019667670130729675,
+          "badDelta": -0.00006972718983888626,
+          "marginChange": 0.000050059519708156586,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-05",
+          "eventIndex": 8,
+          "status": "failure",
+          "channel": null,
+          "goodDelta": -0.000023617874830961227,
+          "badDelta": -0.0000877678394317627,
+          "marginChange": 0.00006414996460080147,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.00005905330181121826,
+          "badDelta": -0.000015189871191978455,
+          "marginChange": -0.00004386343061923981,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-07",
+          "eventIndex": 12,
+          "status": "failure",
+          "channel": null,
+          "goodDelta": -0.000022924505174160004,
+          "badDelta": -0.00008679740130901337,
+          "marginChange": 0.00006387289613485336,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.000041385646909475327,
+          "badDelta": -0.00001192418858408928,
+          "marginChange": -0.000029461458325386047,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "positiveEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.0000864984467625618,
+          "badDelta": -0.00002599833533167839,
+          "marginChange": -0.00006050011143088341,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.00008663535118103027,
+          "badDelta": -0.00003191782161593437,
+          "marginChange": -0.0000547175295650959,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.00005905330181121826,
+          "badDelta": -0.000015189871191978455,
+          "marginChange": -0.00004386343061923981,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": null,
+          "goodDelta": -0.000041385646909475327,
+          "badDelta": -0.00001192418858408928,
+          "marginChange": -0.000029461458325386047,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "metrics": {
+        "wallSeconds": 53.9923937,
+        "cpuSeconds": 29.843,
+        "peakRssBytes": 115712000,
+        "currentFreeBytes": 1815973888,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "teachingEvents": 16,
+      "presentations": 120
+    },
+    {
+      "encoder": "bound-ray",
+      "condition": "shuffled",
+      "complete": true,
+      "reportPath": "research/reports/bound-ray-feedback-development-completion-2026-10-08/bound-ray-shuffled/report.json",
+      "reportSha256": "cf0dedac689098d09171cf8af4022c34205ad4b025035baeaa2c9f0a339a4256",
+      "auditPath": "research/reports/bound-ray-feedback-development-completion-2026-10-08/bound-ray-shuffled/audit-json-zero.json",
+      "auditSha256": "99916b8556c11cfd70ddd86cd4763c8fe75b8453c74146039fd4407a073ad11f",
+      "train": {
+        "before": 4,
+        "after": 4,
+        "meanMarginChange": -0.0003564299549907446
+      },
+      "validation": {
+        "before": 2,
+        "after": 2,
+        "meanMarginChange": 0.0001935830805450678,
+        "regressions": [],
+        "repairs": []
+      },
+      "isolatedEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.0007914206944406033,
+          "badDelta": 0.0008538598194718361,
+          "marginChange": -0.00006243912503123283,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-02",
+          "eventIndex": 2,
+          "status": "failure",
+          "channel": "PAM02",
+          "goodDelta": 0.00003605801612138748,
+          "badDelta": 0.0005182274617254734,
+          "marginChange": -0.0004821694456040859,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": "PPL103",
+          "goodDelta": -0.008555867709219456,
+          "badDelta": -0.003146830014884472,
+          "marginChange": -0.005409037694334984,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-04",
+          "eventIndex": 6,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0.0001018960028886795,
+          "badDelta": -0.007859963923692703,
+          "marginChange": 0.007961859926581383,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-05",
+          "eventIndex": 8,
+          "status": "failure",
+          "channel": "PAM02",
+          "goodDelta": -0.0006413981318473816,
+          "badDelta": 0.00032497476786375046,
+          "marginChange": -0.000966372899711132,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": "PPL103",
+          "goodDelta": -0.0030854614451527596,
+          "badDelta": 0.0013945805840194225,
+          "marginChange": -0.004480042029172182,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-07",
+          "eventIndex": 12,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0.0021719997748732567,
+          "badDelta": -0.002799582201987505,
+          "marginChange": 0.004971581976860762,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.0006073932163417339,
+          "badDelta": -0.0002590026706457138,
+          "marginChange": 0.0008663958869874477,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "positiveEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.0007914206944406033,
+          "badDelta": 0.0008538598194718361,
+          "marginChange": -0.00006243912503123283,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": "PPL103",
+          "goodDelta": -0.008555867709219456,
+          "badDelta": -0.003146830014884472,
+          "marginChange": -0.005409037694334984,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": "PPL103",
+          "goodDelta": -0.0030854614451527596,
+          "badDelta": 0.0013945805840194225,
+          "marginChange": -0.004480042029172182,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0.0006073932163417339,
+          "badDelta": -0.0002590026706457138,
+          "marginChange": 0.0008663958869874477,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "metrics": {
+        "wallSeconds": 81.1728154,
+        "cpuSeconds": 43.719,
+        "peakRssBytes": 117288960,
+        "currentFreeBytes": 1870045184,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "teachingEvents": 16,
+      "presentations": 120
+    },
+    {
+      "encoder": "bound-ray",
+      "condition": "disabled",
+      "complete": true,
+      "reportPath": "research/reports/bound-ray-feedback-development-completion-2026-10-08/bound-ray-disabled/report.json",
+      "reportSha256": "6a020d8ba3f603c54e0b43b4a4f0aca365c7b839aa9b0fd13c7ec71dacdfc6b7",
+      "auditPath": "research/reports/bound-ray-feedback-development-completion-2026-10-08/bound-ray-disabled/audit-json-zero.json",
+      "auditSha256": "19ec038727c5f49f2be276f592a9f5e12480732205697c4b8ef1783cebabec50",
+      "train": {
+        "before": 4,
+        "after": 4,
+        "meanMarginChange": 0
+      },
+      "validation": {
+        "before": 2,
+        "after": 2,
+        "meanMarginChange": 0,
+        "regressions": [],
+        "repairs": []
+      },
+      "isolatedEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-02",
+          "eventIndex": 2,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-04",
+          "eventIndex": 6,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-05",
+          "eventIndex": 8,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-07",
+          "eventIndex": 12,
+          "status": "failure",
+          "channel": "PPL103",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "positiveEvents": [
+        {
+          "panelId": "tr-01",
+          "eventIndex": 0,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-03",
+          "eventIndex": 4,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-06",
+          "eventIndex": 10,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        },
+        {
+          "panelId": "tr-08",
+          "eventIndex": 14,
+          "status": "success",
+          "channel": "PAM02",
+          "goodDelta": 0,
+          "badDelta": 0,
+          "marginChange": 0,
+          "scope": "Isolated immediate effect of the first scheduled replay in this panel, measured before the following event; channel follows the declared condition."
+        }
+      ],
+      "metrics": {
+        "wallSeconds": 62.915590200000004,
+        "cpuSeconds": 34.687,
+        "peakRssBytes": 116654080,
+        "currentFreeBytes": 1957683200,
+        "node": "v22.23.2",
+        "cpuDuty": 0.5
+      },
+      "teachingEvents": 16,
+      "presentations": 120
+    }
+  ],
+  "comparisons": [
+    {
+      "encoder": "relational-v3",
+      "complete": true,
+      "controls": [
+        {
+          "condition": "no-channel",
+          "trainMarginDifference": 0.00016040023183450103,
+          "validationMarginDifference": 0.00008859939407557249,
+          "validationCorrectDifference": -1,
+          "positiveEvents": [
+            {
+              "panelId": "tr-01",
+              "marginChangeDifference": 0.0017898492515087128
+            },
+            {
+              "panelId": "tr-03",
+              "marginChangeDifference": 0.0001524854451417923
+            },
+            {
+              "panelId": "tr-06",
+              "marginChangeDifference": 0.00056495051831007
+            },
+            {
+              "panelId": "tr-08",
+              "marginChangeDifference": 0.0001261681318283081
+            }
+          ]
+        },
+        {
+          "condition": "shuffled",
+          "trainMarginDifference": 0.000512999773491174,
+          "validationMarginDifference": 0.0002297484315931797,
+          "validationCorrectDifference": 0,
+          "positiveEvents": [
+            {
+              "panelId": "tr-01",
+              "marginChangeDifference": 0
+            },
+            {
+              "panelId": "tr-03",
+              "marginChangeDifference": 0.006430095061659813
+            },
+            {
+              "panelId": "tr-06",
+              "marginChangeDifference": 0.006186705082654953
+            },
+            {
+              "panelId": "tr-08",
+              "marginChangeDifference": -0.0007618209347128868
+            }
+          ]
+        },
+        {
+          "condition": "disabled",
+          "trainMarginDifference": 0.0001408628886565566,
+          "validationMarginDifference": 0.00008027884177863598,
+          "validationCorrectDifference": -1,
+          "positiveEvents": [
+            {
+              "panelId": "tr-01",
+              "marginChangeDifference": 0.001754810567945242
+            },
+            {
+              "panelId": "tr-03",
+              "marginChangeDifference": 0.00009426334872841835
+            },
+            {
+              "panelId": "tr-06",
+              "marginChangeDifference": 0.0005189897492527962
+            },
+            {
+              "panelId": "tr-08",
+              "marginChangeDifference": 0.00007834611460566521
+            }
+          ]
+        }
+      ],
+      "informativeValidationRegressed": true,
+      "informativeValidationRepairs": 0,
+      "exceedsAllControlsOnValidationMargin": true,
+      "scope": "Descriptive development comparison only; not a new acceptance gate, final test or independent neural replication."
+    },
+    {
+      "encoder": "bound-ray",
+      "complete": true,
+      "controls": [
+        {
+          "condition": "no-channel",
+          "trainMarginDifference": 0.0011458137014415115,
+          "validationMarginDifference": 0.0012205917737446725,
+          "validationCorrectDifference": 0,
+          "positiveEvents": [
+            {
+              "panelId": "tr-01",
+              "marginChangeDifference": -0.0000019390136003494263
+            },
+            {
+              "panelId": "tr-03",
+              "marginChangeDifference": 0.0003050020895898342
+            },
+            {
+              "panelId": "tr-06",
+              "marginChangeDifference": 0.0005497424863278866
+            },
+            {
+              "panelId": "tr-08",
+              "marginChangeDifference": 5.811452865600586e-7
+            }
+          ]
+        },
+        {
+          "condition": "shuffled",
+          "trainMarginDifference": 0.0015399867843370885,
+          "validationMarginDifference": 0.0010700878337956965,
+          "validationCorrectDifference": 0,
+          "positiveEvents": [
+            {
+              "panelId": "tr-01",
+              "marginChangeDifference": 0
+            },
+            {
+              "panelId": "tr-03",
+              "marginChangeDifference": 0.005659322254359722
+            },
+            {
+              "panelId": "tr-06",
+              "marginChangeDifference": 0.004985921084880829
+            },
+            {
+              "panelId": "tr-08",
+              "marginChangeDifference": -0.0008952762000262737
+            }
+          ]
+        },
+        {
+          "condition": "disabled",
+          "trainMarginDifference": 0.0011835568293463439,
+          "validationMarginDifference": 0.0012636709143407643,
+          "validationCorrectDifference": 0,
+          "positiveEvents": [
+            {
+              "panelId": "tr-01",
+              "marginChangeDifference": -0.00006243912503123283
+            },
+            {
+              "panelId": "tr-03",
+              "marginChangeDifference": 0.0002502845600247383
+            },
+            {
+              "panelId": "tr-06",
+              "marginChangeDifference": 0.0005058790557086468
+            },
+            {
+              "panelId": "tr-08",
+              "marginChangeDifference": -0.00002888031303882599
+            }
+          ]
+        }
+      ],
+      "informativeValidationRegressed": true,
+      "informativeValidationRepairs": 2,
+      "exceedsAllControlsOnValidationMargin": true,
+      "scope": "Descriptive development comparison only; not a new acceptance gate, final test or independent neural replication."
+    }
+  ],
+  "finalFamiliesRead": false,
+  "allLegalChoiceEvaluated": false,
+  "transferEstablished": false,
+  "scope": "Complete frozen development feedback comparison when all eight report/audit pairs exist. Training runtime sums exclude auditing and setup outside reported intervals; no time-to-quality improvement claim."
+}

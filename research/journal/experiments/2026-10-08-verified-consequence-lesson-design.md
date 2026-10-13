@@ -1,0 +1,7 @@
+# Concrete feedback design after retention discussion
+
+2026-10-08. User requested an actionable high-quality feedback design while the training goal is paused. Delivered [verified consequence lessons](../../../documentation/design/puzzle-learning/verified-consequence-lessons.md); no graph or training code was run or modified for this request.
+
+The design corrects the earlier two-slot proposal: extra pulses alone do not fix incompatible teaching objectives, selective credit or retention. It defines criterion-specific predictions, verified refutation/alternative/counterfactual board experiences, an explicit sequence receiver and local eligibility requirement, bounded training rehearsal, and per-criterion candidate-checkpoint promotion. The proposed exponential depression branch is an engineering candidate motivated by input-specific plasticity; mapping, timing, recovery/potentiation, acquisition and reversal remain prerequisites. Preserve failed gamma4 models and recovery-removal interventions. No universal harmful-frequency conclusion or effective-learning claim is made.
+
+A further control-design correction is recorded: reversing every error is anti-correlated feedback, not a count/magnitude-preserving shuffle. The current adapter's schedule-hash field alone does not verify a permutation. The new experiment must independently check the complete event schedule before use. The existing adapter remains unfrozen and unsuitable for the proposed experiment without this correction.

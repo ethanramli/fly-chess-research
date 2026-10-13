@@ -1,0 +1,423 @@
+{
+  "identity": {
+    "protocolSha256": "a865684916952b5e7199c6cc8671c5d5b5b4b1146d49c667ee9eee242e10af86",
+    "runnerSha256": "38baffa0eea7421b34eedb8507d9bdeda0e213b4ceeed07b241e1a1f0fa2b3e9",
+    "graphSha256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    "annotationSha256": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    "mappingHash": "b2d7bf351dbe9889aa6a17216cca6cb7671f4f99d9661e604609a7ff51686fff",
+    "panelId": "tr-01",
+    "move": "a1a4",
+    "model": {
+      "steps": 8,
+      "inputDim": 1,
+      "outputs": 1,
+      "seed": 47,
+      "precision": "float32",
+      "saturation": 10,
+      "recurrentScale": 0.9,
+      "normalization": "row"
+    },
+    "memory": {
+      "eta": 0.5,
+      "minGain": 0.2,
+      "maxGain": 1.8,
+      "activityScale": 1.5
+    },
+    "encoder": {
+      "id": "bound-ray",
+      "identity": "4248d2bc93854a6aac3033cc6a49b2b09c1b9d1adb3b20a2f9d01577a41f4c64",
+      "config": {
+        "seed": 14009,
+        "maxCells": 14,
+        "totalCurrent": 21,
+        "maxCellCurrent": 1.5,
+        "maxRelationCells": 4,
+        "maxHistoryPlies": 512
+      }
+    },
+    "conditions": [
+      "informative",
+      "no-channel",
+      "shuffled",
+      "disabled"
+    ],
+    "cpuDuty": 0.5,
+    "scope": "One first training candidate, fresh memory per arm; shuffled is an opposite-valence single-event control and cannot be count-balanced. No transfer or learning acceptance gate."
+  },
+  "results": [
+    {
+      "condition": "informative",
+      "before": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.03460282972082496,
+            "MBON01": 0.022624612785875797,
+            "score": 0.01197821693494916,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.03410928416997194,
+            "MBON01": 0.027731514535844326,
+            "score": 0.006377769634127617,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "a1a4",
+        "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064"
+      },
+      "after": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.03451682347804308,
+            "MBON01": 0.021747185848653316,
+            "score": 0.012769637629389763,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.0340833542868495,
+            "MBON01": 0.026851724833250046,
+            "score": 0.007231629453599453,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "a1a4",
+        "memoryHash": "02b421b34d3ce657216c1888600963bbde994566040f686f6acd053cfe05609a"
+      },
+      "reset": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.03460282972082496,
+            "MBON01": 0.022624612785875797,
+            "score": 0.01197821693494916,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.03410928416997194,
+            "MBON01": 0.027731514535844326,
+            "score": 0.006377769634127617,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "a1a4",
+        "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064"
+      },
+      "restored": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.03451682347804308,
+            "MBON01": 0.021747185848653316,
+            "score": 0.012769637629389763,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.0340833542868495,
+            "MBON01": 0.026851724833250046,
+            "score": 0.007231629453599453,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "a1a4",
+        "memoryHash": "02b421b34d3ce657216c1888600963bbde994566040f686f6acd053cfe05609a"
+      },
+      "channel": "PAM02",
+      "feedbackSeconds": 0.6213933999999999,
+      "wallSeconds": 4.3832372,
+      "cpuSeconds": 2.218,
+      "presentations": 9,
+      "changedEdges": 76,
+      "initialMemoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+      "finalMemoryHash": "02b421b34d3ce657216c1888600963bbde994566040f686f6acd053cfe05609a",
+      "recurrenceChecks": 870
+    },
+    {
+      "condition": "no-channel",
+      "before": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.03460282972082496,
+            "MBON01": 0.022624612785875797,
+            "score": 0.01197821693494916,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.03410928416997194,
+            "MBON01": 0.027731514535844326,
+            "score": 0.006377769634127617,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "a1a4",
+        "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064"
+      },
+      "after": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.03451628563925624,
+            "MBON01": 0.02262456715106964,
+            "score": 0.011891718488186598,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.03408322902396321,
+            "MBON01": 0.027731457725167274,
+            "score": 0.0063517712987959385,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "a1a4",
+        "memoryHash": "f70058e29f40a63a9d7f4cee274393e02980b4512e7e5d4b8031d098c02ea667"
+      },
+      "reset": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.03460282972082496,
+            "MBON01": 0.022624612785875797,
+            "score": 0.01197821693494916,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.03410928416997194,
+            "MBON01": 0.027731514535844326,
+            "score": 0.006377769634127617,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "a1a4",
+        "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064"
+      },
+      "restored": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.03451628563925624,
+            "MBON01": 0.02262456715106964,
+            "score": 0.011891718488186598,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.03408322902396321,
+            "MBON01": 0.027731457725167274,
+            "score": 0.0063517712987959385,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "a1a4",
+        "memoryHash": "f70058e29f40a63a9d7f4cee274393e02980b4512e7e5d4b8031d098c02ea667"
+      },
+      "channel": null,
+      "feedbackSeconds": 0.6741530999999995,
+      "wallSeconds": 6.8346982999999994,
+      "cpuSeconds": 3.25,
+      "presentations": 9,
+      "changedEdges": 77,
+      "initialMemoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+      "finalMemoryHash": "f70058e29f40a63a9d7f4cee274393e02980b4512e7e5d4b8031d098c02ea667",
+      "recurrenceChecks": 870
+    },
+    {
+      "condition": "shuffled",
+      "before": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.03460282972082496,
+            "MBON01": 0.022624612785875797,
+            "score": 0.01197821693494916,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.03410928416997194,
+            "MBON01": 0.027731514535844326,
+            "score": 0.006377769634127617,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "a1a4",
+        "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064"
+      },
+      "after": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.024773155339062214,
+            "MBON01": 0.022625019773840904,
+            "score": 0.0021481355652213097,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.031122264452278614,
+            "MBON01": 0.027730630710721016,
+            "score": 0.003391633741557598,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "e1e5",
+        "memoryHash": "2d6cfb8e63f0fa2c6a5212bb983ea66eb4c02126e26461bb5ee528bb4c075c65"
+      },
+      "reset": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.03460282972082496,
+            "MBON01": 0.022624612785875797,
+            "score": 0.01197821693494916,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.03410928416997194,
+            "MBON01": 0.027731514535844326,
+            "score": 0.006377769634127617,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "a1a4",
+        "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064"
+      },
+      "restored": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.024773155339062214,
+            "MBON01": 0.022625019773840904,
+            "score": 0.0021481355652213097,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.031122264452278614,
+            "MBON01": 0.027730630710721016,
+            "score": 0.003391633741557598,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "e1e5",
+        "memoryHash": "2d6cfb8e63f0fa2c6a5212bb983ea66eb4c02126e26461bb5ee528bb4c075c65"
+      },
+      "channel": "PPL103",
+      "feedbackSeconds": 0.6501398000000008,
+      "wallSeconds": 7.1524895,
+      "cpuSeconds": 3.499,
+      "presentations": 9,
+      "changedEdges": 95,
+      "initialMemoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+      "finalMemoryHash": "2d6cfb8e63f0fa2c6a5212bb983ea66eb4c02126e26461bb5ee528bb4c075c65",
+      "recurrenceChecks": 870
+    },
+    {
+      "condition": "disabled",
+      "before": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.03460282972082496,
+            "MBON01": 0.022624612785875797,
+            "score": 0.01197821693494916,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.03410928416997194,
+            "MBON01": 0.027731514535844326,
+            "score": 0.006377769634127617,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "a1a4",
+        "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064"
+      },
+      "after": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.03460282972082496,
+            "MBON01": 0.022624612785875797,
+            "score": 0.01197821693494916,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.03410928416997194,
+            "MBON01": 0.027731514535844326,
+            "score": 0.006377769634127617,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "a1a4",
+        "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064"
+      },
+      "reset": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.03460282972082496,
+            "MBON01": 0.022624612785875797,
+            "score": 0.01197821693494916,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.03410928416997194,
+            "MBON01": 0.027731514535844326,
+            "score": 0.006377769634127617,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "a1a4",
+        "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064"
+      },
+      "restored": {
+        "rows": [
+          {
+            "move": "a1a4",
+            "MBON12": 0.03460282972082496,
+            "MBON01": 0.022624612785875797,
+            "score": 0.01197821693494916,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          {
+            "move": "e1e5",
+            "MBON12": 0.03410928416997194,
+            "MBON01": 0.027731514535844326,
+            "score": 0.006377769634127617,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          }
+        ],
+        "choice": "a1a4",
+        "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064"
+      },
+      "channel": "PAM02",
+      "feedbackSeconds": 0.43816899999999803,
+      "wallSeconds": 6.4526119,
+      "cpuSeconds": 3.204,
+      "presentations": 9,
+      "changedEdges": 0,
+      "initialMemoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+      "finalMemoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+      "recurrenceChecks": 870
+    }
+  ],
+  "metrics": {
+    "wallSeconds": 26.3300654,
+    "cpuSeconds": 13.656,
+    "peakRssBytes": 111697920
+  },
+  "validation": "Certificates rechecked by receiver, local recurrences checked, fixed state preserved, reset/restoration exact. No independent fresh-graph replay audit."
+}

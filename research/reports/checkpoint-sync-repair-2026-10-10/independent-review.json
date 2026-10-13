@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-10-10T12:38:31.555Z",
+  "passed": true,
+  "scope": "Read-only review of source difference, test coverage, raw TAP, hash provenance and direct statistical recomputation; no tests or graph runs repeated",
+  "actionableFindingsClosed": true,
+  "loaderChange": "Existing shared refresh helper called after successful validation",
+  "coverage": "Changed magnitudes; float32/float64; SGD/Adam; used restoration target; trajectories, gradients, optimizer state and next update",
+  "rawRegression": {
+    "tests": 222,
+    "passed": 222,
+    "failed": 0
+  },
+  "rows": [
+    {
+      "kind": "wasm",
+      "fixture": "white-start",
+      "oracle": 9073.012550000003,
+      "candidate": 6699.3562999999995,
+      "reductionPercent": 26.161721224556256
+    },
+    {
+      "kind": "wasm",
+      "fixture": "black-after-e4",
+      "oracle": 9942.353700000007,
+      "candidate": 5947.639500000005,
+      "reductionPercent": 40.17875767183779
+    },
+    {
+      "kind": "wasm",
+      "fixture": "opening-six-plies",
+      "oracle": 19167.538749999978,
+      "candidate": 14703.089149999985,
+      "reductionPercent": 23.291720748445066
+    },
+    {
+      "kind": "wasm",
+      "fixture": "rook-endgame",
+      "oracle": 6843.213099999994,
+      "candidate": 5534.155950000015,
+      "reductionPercent": 19.129276421334595
+    },
+    {
+      "kind": "zero-reset",
+      "fixture": "white-start",
+      "oracle": 8122.4228,
+      "candidate": 7297.561650000003,
+      "reductionPercent": 10.155358447974372
+    },
+    {
+      "kind": "zero-reset",
+      "fixture": "black-after-e4",
+      "oracle": 7963.270649999991,
+      "candidate": 8515.719750000004,
+      "reductionPercent": -6.937464821693751
+    },
+    {
+      "kind": "zero-reset",
+      "fixture": "opening-six-plies",
+      "oracle": 15044.8217,
+      "candidate": 14255.67585,
+      "reductionPercent": 5.2452987860933
+    },
+    {
+      "kind": "zero-reset",
+      "fixture": "rook-endgame",
+      "oracle": 7128.535850000015,
+      "candidate": 6501.09169999999,
+      "reductionPercent": 8.801865673440123
+    }
+  ],
+  "auditorProseCorrection": "Original zero-reset prose 8.098/8.660 s was a transcription error; raw medians are 7.963/8.516 s. Percentage and rejection unchanged.",
+  "remainingLimits": "General failure-mode correctness, historical checkpoint impact, dependable tail/cold speed, biology, transfer/reasoning and Elo remain unverified"
+}

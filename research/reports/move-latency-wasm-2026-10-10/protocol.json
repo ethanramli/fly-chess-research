@@ -1,0 +1,59 @@
+{
+  "format": "flychess-wasm-latency-v1",
+  "scope": "Engineering equivalence and move latency with a serial exact WASM sparse accumulator; no new learning or pretrained chess policy",
+  "seed": 47,
+  "model": {
+    "steps": 8,
+    "inputDim": 1280,
+    "outputs": 2,
+    "normalization": "global"
+  },
+  "cpuDuty": 0.5,
+  "maxRssMiB": 768,
+  "minFreeMiB": 256,
+  "warmupPairsPerFixture": 1,
+  "measuredPairsPerFixture": 4,
+  "order": "Alternate oracle/candidate and candidate/oracle within each fixture",
+  "fixtures": [
+    {
+      "id": "white-start",
+      "moves": []
+    },
+    {
+      "id": "black-after-e4",
+      "moves": [
+        "e4"
+      ]
+    },
+    {
+      "id": "opening-six-plies",
+      "moves": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bc4",
+        "Nf6"
+      ]
+    },
+    {
+      "id": "rook-endgame",
+      "fen": "8/8/8/3k4/8/3K4/8/7R w - - 0 1"
+    }
+  ],
+  "acceptance": {
+    "exactAllCandidateBuffersAndOutputs": true,
+    "exactAllCandidateMeasuredScoresAndChoices": true,
+    "fixedGraphAndParametersAndHistory": true,
+    "sameLegalCandidateCountAndPacing": true,
+    "aggregateCandidateMedianMoveMsBelowOracle": true,
+    "candidateMedianMoveMsBelowOracleEveryFixture": true,
+    "candidateP95MoveMsNoWorseThanOracleEveryFixture": true,
+    "resourceGuards": true
+  },
+  "adoption": "Only after the live 50-game invocation is terminal, exact equivalence and matched timing pass, full npm test passes, and browser HTTP move application is verified. Otherwise preserve failed evidence and do not adopt.",
+  "limits": "Four pairs per fixture on one host; report raw samples, median/p95/max, CPU and elapsed time. No larger-workload or time-to-useful-learning claim. Fixtures are historical development engineering positions, never final transfer families. Cold load and comparison overhead are separate from timed moves.",
+  "backend": "WebAssembly 1.0 opcodes, f32/f64 loads and separate f64 mul/add; no SIMD, threads, fast-math or new dependency",
+  "scratchMaxMiB": 128,
+  "predecessor": "runs/move-latency-zero-reset-v1/report.json"
+}

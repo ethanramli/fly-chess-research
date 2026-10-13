@@ -1,0 +1,332 @@
+{
+  "identity": {
+    "protocolSha256": "4b6b3860801908ff9e25ad092d7574be9e0c1b9387517654ac41fbb5795b3e91",
+    "pins": {
+      "package.json": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+      ".codebase/src/search-and-feedback/stockfish-target.mjs": "1931d16a1883e76615be32cf13fb359286c06fd8a95d3c88812171f48c13158f",
+      "research/reports/smothered-training-variations-v1-2026-10-07/puzzles.jsonl": "489bdb5bf825e154fcc215cc1555ff0937bb811cf991ed8f42034b1e3b596f61",
+      "node_modules/chess.js/dist/cjs/chess.js": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f",
+      "research/data/smothered-acquisition-v1/puzzles.jsonl": "3b40d90e82e215c77ab15fa41705a66da08fa574efc7f3f3ee3a56cd7af89fd5",
+      "research/reports/shared-memory-multi-context-coverage-v1-2026-10-07/audit.json": "db65fbb56703dcb5918965cdf0e6f22514f69c2b9c34e894783b23408dae4863",
+      ".codebase/src/search-and-feedback/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+      ".codebase/src/search-and-feedback/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+      ".codebase/vendor/stockfish/sf-19/release.json": "ad2d183b980b0c119909398581ce59abb059174d022320687b3b05001ae24f2e",
+      "package-lock.json": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214",
+      ".codebase/scripts/puzzle-learning/probe-stockfish-targets.mjs": "c2412daa42db592d43b25a9fdbf0534153cc773fde396d18623e27c7754b646f",
+      ".codebase/vendor/stockfish/sf-19/extracted/stockfish/Copying.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      ".codebase/vendor/stockfish/sf-19/extracted/stockfish/stockfish-windows-x86-64-universal.exe": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+      ".codebase/scripts/puzzle-learning/audit-stockfish-targets.mjs": "1b0d1d31c470880b029c8701af610e1bfb00698bcc6ffa24ecba3e28c01601b8",
+      ".codebase/src/search-and-feedback/mate-certificate.mjs": "b7bdab76a3faa78c203971991c3b2e00cdfd359cfca08b6e1f7b1ae8d430b700",
+      "research/reports/shared-memory-multi-context-coverage-v1-2026-10-07/report.json": "8ab9f3a95ecd8db2e9a11166963743b23ffe018bddf06827c59be8c4582d38b5"
+    }
+  },
+  "rowId": "queen-concession-development",
+  "rootFen": "5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1",
+  "childFen": "5r1k/6pp/7N/8/2Q5/8/K7/8 b - - 1 1",
+  "move": "a1a2",
+  "nodeBudget": 50000,
+  "raw": [
+    "info string Available processors: 0-7",
+    "info string Using 1 thread",
+    "info string NNUE evaluation using nn-1a298aa575a0.nnue (109MiB, (86896, 1024, 32, 32, 1))",
+    "info string Network replica 1: Shared memory.",
+    "info depth 1 seldepth 6 multipv 1 score cp 609 wdl 1000 0 0 nodes 28 nps 28000 hashfull 0 tbhits 0 time 1 pv f8a8 c4a4 a8a4 a2b1",
+    "info depth 2 seldepth 6 multipv 1 score cp 6 wdl 6 991 3 nodes 111 nps 111000 hashfull 0 tbhits 0 time 1 pv g7h6 c4d4 h8g8",
+    "info depth 3 seldepth 6 multipv 1 score cp -17 wdl 2 988 10 nodes 310 nps 310000 hashfull 0 tbhits 0 time 1 pv g7h6 c4c3 h8g8 c3g3 g8h8",
+    "info depth 4 seldepth 6 multipv 1 score cp -41 wdl 0 962 38 nodes 707 nps 707000 hashfull 0 tbhits 0 time 1 pv g7h6 c4g4 f8a8 a2b3",
+    "info depth 5 seldepth 9 multipv 1 score cp -41 wdl 0 962 38 nodes 915 nps 457500 hashfull 0 tbhits 0 time 2 pv g7h6 c4c3 h8g8 c3g3 g8h8",
+    "info depth 6 seldepth 7 multipv 1 score cp -45 wdl 0 953 47 nodes 1058 nps 529000 hashfull 0 tbhits 0 time 2 pv g7h6 c4c3 h8g8 c3g3 g8h8 a2a3",
+    "info depth 7 seldepth 10 multipv 1 score cp -190 wdl 0 7 993 nodes 1850 nps 925000 hashfull 0 tbhits 0 time 2 pv f8a8 a2b3 a8b8 b3c2 g7h6 c4d4 h8g8",
+    "info depth 8 seldepth 10 multipv 1 score cp -65 wdl 0 873 127 nodes 3697 nps 924250 hashfull 0 tbhits 0 time 4 pv g7h6 c4d4 h8g8",
+    "info depth 9 seldepth 15 multipv 1 score cp -64 wdl 0 882 118 nodes 14557 nps 1119769 hashfull 2 tbhits 0 time 13 pv g7h6 c4c3 h8g8 c3g3 g8h8",
+    "info depth 10 seldepth 12 multipv 1 score cp -41 wdl 0 963 37 nodes 19914 nps 1171411 hashfull 3 tbhits 0 time 17 pv g7h6 c4d4 h8g8 d4g1 g8h8 g1e3 h8g7 e3g3 g7h8",
+    "info depth 11 seldepth 20 multipv 1 score cp -43 wdl 0 957 43 nodes 34179 nps 1178586 hashfull 3 tbhits 0 time 29 pv g7h6 c4d4 h8g8 d4b6 g8g7 b6g1 g7h8 g1e3 h8g7 e3e5 g7g8 e5e6 g8g7",
+    "info depth 12 seldepth 21 multipv 1 score cp -50 upperbound wdl 0 940 60 nodes 50016 nps 1020734 hashfull 7 tbhits 0 time 49 pv g7h6 c4c3",
+    "bestmove g7h6 ponder c4c3"
+  ],
+  "target": {
+    "available": false,
+    "teachingAllowed": false,
+    "reason": "Incomplete or bounded engine estimate"
+  },
+  "proof": {
+    "status": "failure",
+    "reward": -1,
+    "nodes": 36,
+    "attacker": "w",
+    "criterion": "force_mate_within_2_remaining_plies",
+    "certificate": {
+      "schema": "bounded-mate-certificate-v1",
+      "rootFen": "5r1k/6pp/7N/8/2Q5/8/K7/8 b - - 1 1",
+      "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1\"]\n\n1. Ka2 *",
+      "attacker": "w",
+      "plies": 2,
+      "tree": {
+        "status": "failure",
+        "children": [
+          {
+            "move": "f8f7",
+            "node": {
+              "status": "failure",
+              "children": [
+                {
+                  "move": "h6f7",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "h6g8",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "h6g4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "h6f5",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4b5",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4a6",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4c5",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4c6",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4c7",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4c8",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4d5",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4e6",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4f7",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4d4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4e4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4f4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4g4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4h4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4d3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4e2",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4f1",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4c3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4c2",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4c1",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4b3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4b4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "c4a4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "a2a3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "a2b3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "a2b2",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "a2b1",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "a2a1",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "certificateCheck": {
+      "verified": true,
+      "status": "failure",
+      "nodes": 34,
+      "elapsedMs": 28.54869999999937
+    },
+    "bounds": {
+      "maxNodes": 4096,
+      "millisecondsPerStage": 2000,
+      "constructionStop": null,
+      "checkingNodes": 34,
+      "elapsedMs": 63.52360000000044
+    },
+    "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+  },
+  "predictions": {
+    "baseline": 0.004070236222173193,
+    "informative": 0.0013196269772073397,
+    "absent": 0.003906727450571699,
+    "shuffled": 0.0028576931425256026,
+    "disabled": 0.004070236222173193
+  },
+  "elapsedMs": 49.74460000000545,
+  "stages": {
+    "engineSearch": true,
+    "recordedTargets": true,
+    "neuralFeedback": false,
+    "persistentLearning": false,
+    "transfer": false
+  }
+}

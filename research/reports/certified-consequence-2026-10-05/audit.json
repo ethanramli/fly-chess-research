@@ -1,0 +1,21 @@
+{
+  "schema": "consequence-certificate-audit-v1",
+  "result": "research/reports/certified-consequence-2026-10-05/round-000001/result.json",
+  "resultSha256": "d55f4b2a777f1c8796fe4eb37b6790047745dccc292b18f7bbd1c54a7bd3659b",
+  "compare": "research/reports/certified-consequence-replay-2026-10-05/round-000001/result.json",
+  "checkedCertificates": 6,
+  "unknownConsequences": 0,
+  "passed": true,
+  "checks": [
+    "Recorded executable sources match current files",
+    "Record-only receipt and fixed graph/parameter identity",
+    "All known consequences replay correctly; teaching events reference checked certificates",
+    "Exact checkpoint and scientific feedback replay, excluding elapsed measurements; search trajectory is not audited here"
+  ],
+  "checkerSha256": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+  "auditSha256": "6175dc18ae17af2454d0a373eb5fe28d6e8556771a85cc08ca00a498732adbd6",
+  "limitations": [
+    "Checks certificate consistency using the same chess rules library, not an independently implemented chess engine.",
+    "Does not validate neural learning, biological interfaces, delayed credit or held-out transfer."
+  ]
+}

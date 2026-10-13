@@ -1,0 +1,9 @@
+# Joint-stability sibling assessment
+
+Terminal correction: session1463 exited0; all16 panels completed. [Independent audit](run/audit.json) passes500 candidate certificate uses, exact legal coverage, score arithmetic and unchanged memory. All conditions achieve0/4 correct choices. Informative ranks26,28,15,20; disabled24,27,16,17; shuffled30,30,34,29. Against disabled, informative worsens two ranks, improves one and leaves one unchanged. Useful sibling transfer fails. [Raw report](run/report.json). Resources140.3356078s wall,70.28s CPU,120.65234375MiB peak RSS,500 presentations. Earlier active/pending statements below are historical.
+
+[Frozen protocol](../../data/multi-context-stability-transfer-v1/README.md). Active serial session1463/PID5796; terminal report/audit pending. All four final learned/control snapshots use the same warm-start rest reference. No feedback occurs.
+
+Published informative prefix fails all four inspected development siblings. Successful-move ranks are26,28,15,20 for b3/e8, b3/f8, d5/e8 and e6/f8. Absent-feedback ranks are24,28,16,17, also all failures. Thus successful joint repair of two trained positions has not produced useful sibling choices in this prefix; rank shifts are mixed. Remaining controls and independent full certificate/score/memory audit must finish before terminal interpretation.
+
+These positions were inspected previously and cannot serve as untouched disjoint-family final tests. This result neither proves reasoning nor establishes universal inability to learn. The existing relational encoder already supplies candidate-relative symbolic features; the historical representation-learning comparison also failed. Merely adding the same relational encoder again is not a new solution. Preserve fixed sources and complete this evaluation before choosing a separately frozen intervention.

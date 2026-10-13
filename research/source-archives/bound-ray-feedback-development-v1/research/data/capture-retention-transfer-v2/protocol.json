@@ -1,0 +1,74 @@
+{
+  "schema": "capture-retention-transfer-protocol-v2",
+  "date": "2026-10-07",
+  "task": {
+    "objective": "capture-retention",
+    "plies": 1
+  },
+  "cue": {
+    "schema": "relational-chess-cue-v3",
+    "identity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+    "mappingPath": "research/reports/reversal-candidate-2026-10-05/mapping.json",
+    "mappingSha256": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+    "config": {
+      "seed": 14009,
+      "maxCells": 14,
+      "totalCurrent": 21,
+      "maxCellCurrent": 1.5
+    }
+  },
+  "inputHashes": {
+    "research/reports/reversal-candidate-2026-10-05/mapping.json": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+    ".codebase/src/chess-input/relational-chess-cue-v3.mjs": "a19b3e65fda0300b5a361d028c706fcd1b5d1278f2496a11234ccd06690ce47f",
+    ".codebase/src/search-and-feedback/capture-retention-certificate.mjs": "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+    ".codebase/scripts/search-and-feedback/build-capture-retention-families-v2.mjs": "6161ebf3b299e48c6da8afe4bc917e73e96bab283b79f1aca0c8dc78ce839e53",
+    "package.json": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+    "package-lock.json": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214"
+  },
+  "dependencies": {
+    "chess.js": "1.4.0"
+  },
+  "splits": {
+    "train": {
+      "panels": 8,
+      "candidateExperiences": 16,
+      "consequenceCounts": {
+        "success": 8,
+        "failure": 8
+      },
+      "uniqueCuePatterns": 16
+    },
+    "validation": {
+      "panels": 4,
+      "candidateExperiences": 8,
+      "consequenceCounts": {
+        "success": 4,
+        "failure": 4
+      },
+      "uniqueCuePatterns": 8
+    },
+    "final": {
+      "panels": 8,
+      "candidateExperiences": 16,
+      "consequenceCounts": {
+        "success": 8,
+        "failure": 8
+      },
+      "uniqueCuePatterns": 16
+    }
+  },
+  "files": {
+    "train.jsonl": "a9959dfe502e8d45db5991e63143dc5767b10ffed8e74e3701e6ebd9e2d10079",
+    "validation.jsonl": "278355ece0033fa3a6405bd5daf00b08aa728f75bf402d494569c58c766174e8",
+    "final.jsonl": "a57689649bf9318b537f943de1ebb77ef11851784ef2d65e706f62c429c19fdb"
+  },
+  "design": {
+    "training": "one replay of both candidates per panel; one success and one failure per panel",
+    "validation": "disjoint panel family for per-criterion checkpoint selection only",
+    "final": "position family uses shifted candidate squares and an unseen diagonal attacker relation; do not read outcomes for training or selection",
+    "controls": "same experiences/cue order from common initial memory: absent feedback, matched shuffled binary consequences, disabled plasticity",
+    "choices": "two-candidate diagnostic only; later all-legal choices and Monte Carlo investigation remain required",
+    "status": "data preparation only; no graph run or claim of transferable reasoning"
+  }
+}

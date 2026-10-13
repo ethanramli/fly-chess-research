@@ -1,0 +1,95 @@
+{
+  "schema": "adaptive-two-valence-v1",
+  "puzzles": "research/data/smothered-acquisition-v1/puzzles.jsonl",
+  "seed": 14009,
+  "conditions": [
+    "adaptive",
+    "fixed",
+    "absent",
+    "shuffled",
+    "disabled"
+  ],
+  "maxPuzzles": 1,
+  "maxExperiences": 40,
+  "maxPresentationsPerCondition": 4096,
+  "encoder": {
+    "seed": 14009,
+    "maxCells": 14,
+    "totalCurrent": 21,
+    "maxCellCurrent": 1.5,
+    "maxHistoryPlies": 512
+  },
+  "memory": {
+    "eta": 0.5,
+    "minGain": 0.2,
+    "maxGain": 1.8,
+    "activityScale": 1.5
+  },
+  "current": 1.5,
+  "priorScale": 4,
+  "search": {
+    "simulations": 32,
+    "maxEvaluations": 3,
+    "maxDepth": 3,
+    "maxNodes": 1024,
+    "milliseconds": 60000,
+    "randomFraction": 0.25
+  },
+  "review": {
+    "maxCandidates": 4,
+    "maxProofNodes": 4096,
+    "nodesPerCandidate": 1024,
+    "proofMilliseconds": 2000
+  },
+  "schedule": "Eight adaptive current-choice reviews; fixed certified four-event schedule twice; exact adaptive experience replay in absent, shuffled and disabled controls.",
+  "scope": "Single development fixture acquisition with explicit immediate root replay of verified delayed consequences; no validated eligibility or transfer.",
+  "acceptance": "Both final adaptive choices successful; at least one naive failure repaired while absent and disabled remain failing. Nondegenerate shuffle and repair above shuffled required. Exact reset/repeat/restoration and independent audits mandatory. Single-seed training-fixture diagnostic, not reasoning or transfer.",
+  "commonPlans": [
+    {
+      "path": "research/data/smothered-acquisition-v1/fixed-plan.json",
+      "sha256": "3a0de13cebd44e54d775494f04d8f51e6cf063d68c9c212cf573d5e9328b224b"
+    }
+  ],
+  "variants": [
+    {
+      "id": "original",
+      "conjoin": false,
+      "stratify": false,
+      "prerequisite": "research/reports/compartment-input-original-2026-10-06",
+      "reportSha256": "9647b9c1cd0311a237c7ddd38691a88b07754de19331c4a5240388f3d2e5fdd8"
+    },
+    {
+      "id": "conjoined",
+      "conjoin": true,
+      "stratify": false,
+      "prerequisite": "research/reports/compartment-input-conjoined-2026-10-06",
+      "reportSha256": "ae32b40ae6388c31fcee5f845d49f2344aed321a13967f499f3807f2a47852a9"
+    },
+    {
+      "id": "balanced",
+      "conjoin": false,
+      "stratify": true,
+      "prerequisite": "research/reports/compartment-input-balanced-2026-10-06",
+      "reportSha256": "599af4ca2cb3087fac4a2a0608e10aa2dafe4ed3d5202bdaa909ced969fb01da"
+    },
+    {
+      "id": "conjoined-balanced",
+      "conjoin": true,
+      "stratify": true,
+      "prerequisite": "research/reports/compartment-input-conjoined-balanced-2026-10-06",
+      "reportSha256": "f50104a5d41598989c6bc387a8cd78d6d8a3e434dd15d90e541fb96615f68a5e"
+    }
+  ],
+  "attemptsPerPuzzle": 8,
+  "verification": {
+    "maxNodes": 4096,
+    "milliseconds": 2000
+  },
+  "fixedPlans": [
+    {
+      "path": "research/data/smothered-acquisition-v1/fixed-plan.json",
+      "sha256": "3a0de13cebd44e54d775494f04d8f51e6cf063d68c9c212cf573d5e9328b224b"
+    }
+  ],
+  "experimentId": "smothered-acquisition-v1"
+}

@@ -1,0 +1,118 @@
+{
+  "scope": "Post-hoc diagnostic; no learning gate",
+  "rows": [
+    {
+      "condition": "initial",
+      "memoryHash": "cfe8a7cbd71b309c4326fa5c305a408e8d6f5cfef7e0063e4a6820e698c81a89",
+      "responses": [
+        {
+          "status": "failure",
+          "MBON12": 0.033200612757354975,
+          "MBON01": 0.019577911123633385,
+          "score": 0.01362270163372159,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+        },
+        {
+          "status": "success",
+          "MBON12": 0.03443303378298879,
+          "MBON01": 0.019578604958951473,
+          "score": 0.014854428824037313,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+        }
+      ],
+      "contrast": 0.0012317271903157234
+    },
+    {
+      "condition": "informative",
+      "memoryHash": "1725d9f418363164ec61dcd6294faa95fb97918227a65cbc1728db0261426ad3",
+      "responses": [
+        {
+          "status": "failure",
+          "MBON12": 0.02799332980066538,
+          "MBON01": 0.01957867480814457,
+          "score": 0.00841465499252081,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+        },
+        {
+          "status": "success",
+          "MBON12": 0.029762114863842726,
+          "MBON01": 0.019579174928367138,
+          "score": 0.010182939935475588,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+        }
+      ],
+      "contrast": 0.0017682849429547787
+    },
+    {
+      "condition": "no-channel",
+      "memoryHash": "b24cf822a93d9a5d537f696e29461cdfaea50e2a84d6eb3748ab4cdd22ce6736",
+      "responses": [
+        {
+          "status": "failure",
+          "MBON12": 0.03310662508010864,
+          "MBON01": 0.01957791857421398,
+          "score": 0.013528706505894661,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+        },
+        {
+          "status": "success",
+          "MBON12": 0.03433172730728984,
+          "MBON01": 0.019578617066144943,
+          "score": 0.014753110241144896,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+        }
+      ],
+      "contrast": 0.0012244037352502346
+    },
+    {
+      "condition": "shuffled",
+      "memoryHash": "32a1419ed0a482e6fb8ed8d5b788dbb8fcd7d2ced59ed4ea4832cf2b39fb3423",
+      "responses": [
+        {
+          "status": "failure",
+          "MBON12": 0.028330248780548573,
+          "MBON01": 0.01957855187356472,
+          "score": 0.008751696906983852,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+        },
+        {
+          "status": "success",
+          "MBON12": 0.02919929288327694,
+          "MBON01": 0.01957937330007553,
+          "score": 0.009619919583201408,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+        }
+      ],
+      "contrast": 0.000868222676217556
+    },
+    {
+      "condition": "disabled",
+      "memoryHash": "cfe8a7cbd71b309c4326fa5c305a408e8d6f5cfef7e0063e4a6820e698c81a89",
+      "responses": [
+        {
+          "status": "failure",
+          "MBON12": 0.033200612757354975,
+          "MBON01": 0.019577911123633385,
+          "score": 0.01362270163372159,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+        },
+        {
+          "status": "success",
+          "MBON12": 0.03443303378298879,
+          "MBON01": 0.019578604958951473,
+          "score": 0.014854428824037313,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+        }
+      ],
+      "contrast": 0.0012317271903157234
+    }
+  ],
+  "presentations": 10,
+  "peakRssMiB": 101.0078125,
+  "diagnosticRuntimeSeconds": 5.599899799999999,
+  "cpu": {
+    "user": 3750000,
+    "system": 78000
+  },
+  "limits": "Training contexts, one action each, no criterion calibration or all-legal success assessment"
+}

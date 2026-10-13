@@ -1,5 +1,7 @@
 # Cognitive-science framing
 
+> **Historical proposal, superseded 2026-10-10.** This 2026-09-28 draft proposed explicit position-assessment supervision as its primary research question. The researcher later clarified the overarching question as whether a simple organism can achieve reasoning, using chess to test transferable generality in a fly-connectome-constrained computational model that learns from experience and verified consequences. Preserve the draft and its methods as historical/supervised-comparison material; do not use its question as current primary direction. See [current scientific contribution](../../documentation/design/research-goals/scientific-contribution.md).
+
 **Date:** 2026-09-28  
 **Status:** Conceptual reframing; hypotheses and methods require further specification
 

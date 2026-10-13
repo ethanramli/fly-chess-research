@@ -1,0 +1,25 @@
+﻿node : node:internal/modules/run_main:123
+At line:2 char:69
++ ... 026-10-10'; node --max-old-space-size=256 "$reportDir/benchmark.mjs"  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (node:internal/modules/run_main:123:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Live graph/experiment process: 5044
+
+1 !== 0
+
+    at file:///C:/Users/ethan/Documents/fly-chess-research/research/reports/move-latency-zero-reset-2026-10-10/benchmar
+k.mjs:33:8 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2

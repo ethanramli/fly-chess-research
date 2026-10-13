@@ -1,0 +1,254 @@
+{
+  "timestamp": "2026-10-10T13:56:35.241Z",
+  "certificates": [
+    {
+      "position": "supported-queen-near",
+      "move": "f7g8",
+      "status": "failure",
+      "context": {
+        "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+        "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n *",
+        "task": {
+          "objective": "forced-mate",
+          "plies": 1
+        }
+      },
+      "proof": {
+        "status": "failure",
+        "reward": -1,
+        "nodes": 1,
+        "attacker": "w",
+        "criterion": "force_mate_within_0_remaining_plies",
+        "certificate": {
+          "schema": "bounded-mate-certificate-v1",
+          "rootFen": "6Qk/8/6K1/8/8/8/8/8 b - - 1 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qg8+ *",
+          "attacker": "w",
+          "plies": 0,
+          "tree": {
+            "status": "failure",
+            "children": []
+          }
+        },
+        "certificateCheck": {
+          "verified": true,
+          "status": "failure",
+          "nodes": 1,
+          "elapsedMs": 5.538799999999981
+        },
+        "bounds": {
+          "maxNodes": 4096,
+          "millisecondsPerStage": 2000,
+          "constructionStop": null,
+          "checkingNodes": 1,
+          "elapsedMs": 7.602399999999989
+        },
+        "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+      },
+      "verified": {
+        "move": "f7g8",
+        "actor": "w",
+        "status": "failure",
+        "experimentalPulse": true,
+        "learningAllowed": true,
+        "certificateSha256": "1ccb05de4f8f17d2bf97baf0dfd3e4ef822586d41c8b7782f5057d4637dbdc37",
+        "meaning": "Experimental PPL103 stimulus for failure of this bounded mate objective; not full-game loss or natural reward reconstruction"
+      }
+    },
+    {
+      "position": "supported-queen-near",
+      "move": "f7h7",
+      "status": "success",
+      "context": {
+        "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+        "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n *",
+        "task": {
+          "objective": "forced-mate",
+          "plies": 1
+        }
+      },
+      "proof": {
+        "status": "success",
+        "reward": 1,
+        "nodes": 1,
+        "attacker": "w",
+        "criterion": "force_mate_within_0_remaining_plies",
+        "certificate": {
+          "schema": "bounded-mate-certificate-v1",
+          "rootFen": "7k/7Q/6K1/8/8/8/8/8 b - - 1 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qh7# *",
+          "attacker": "w",
+          "plies": 0,
+          "tree": {
+            "status": "success",
+            "children": []
+          }
+        },
+        "certificateCheck": {
+          "verified": true,
+          "status": "success",
+          "nodes": 1,
+          "elapsedMs": 3.8494999999999777
+        },
+        "bounds": {
+          "maxNodes": 4096,
+          "millisecondsPerStage": 2000,
+          "constructionStop": null,
+          "checkingNodes": 1,
+          "elapsedMs": 4.5230999999999995
+        },
+        "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+      },
+      "verified": {
+        "move": "f7h7",
+        "actor": "w",
+        "status": "success",
+        "experimentalPulse": false,
+        "learningAllowed": true,
+        "certificateSha256": "027fa33c2383743fd3971707a2771b932362400aa78d4a2d172f0021ae8866a6",
+        "meaning": "Experimental PPL103 stimulus for failure of this bounded mate objective; not full-game loss or natural reward reconstruction"
+      }
+    },
+    {
+      "position": "supported-queen-far",
+      "move": "f5e6",
+      "status": "failure",
+      "context": {
+        "fen": "7k/8/6K1/5Q2/8/8/8/8 w - - 0 1",
+        "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/8/6K1/5Q2/8/8/8/8 w - - 0 1\"]\n *",
+        "task": {
+          "objective": "forced-mate",
+          "plies": 1
+        }
+      },
+      "proof": {
+        "status": "failure",
+        "reward": -1,
+        "nodes": 1,
+        "attacker": "w",
+        "criterion": "force_mate_within_0_remaining_plies",
+        "certificate": {
+          "schema": "bounded-mate-certificate-v1",
+          "rootFen": "7k/8/4Q1K1/8/8/8/8/8 b - - 1 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/8/6K1/5Q2/8/8/8/8 w - - 0 1\"]\n\n1. Qe6 *",
+          "attacker": "w",
+          "plies": 0,
+          "tree": {
+            "status": "failure",
+            "children": []
+          }
+        },
+        "certificateCheck": {
+          "verified": true,
+          "status": "failure",
+          "nodes": 1,
+          "elapsedMs": 3.5136999999999716
+        },
+        "bounds": {
+          "maxNodes": 4096,
+          "millisecondsPerStage": 2000,
+          "constructionStop": null,
+          "checkingNodes": 1,
+          "elapsedMs": 4.557999999999993
+        },
+        "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+      },
+      "verified": {
+        "move": "f5e6",
+        "actor": "w",
+        "status": "failure",
+        "experimentalPulse": true,
+        "learningAllowed": true,
+        "certificateSha256": "188973326bd87643dd336832ce6ccb2b790b28151a69f2911666211ad8210de2",
+        "meaning": "Experimental PPL103 stimulus for failure of this bounded mate objective; not full-game loss or natural reward reconstruction"
+      }
+    },
+    {
+      "position": "supported-queen-far",
+      "move": "f5f8",
+      "status": "success",
+      "context": {
+        "fen": "7k/8/6K1/5Q2/8/8/8/8 w - - 0 1",
+        "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/8/6K1/5Q2/8/8/8/8 w - - 0 1\"]\n *",
+        "task": {
+          "objective": "forced-mate",
+          "plies": 1
+        }
+      },
+      "proof": {
+        "status": "success",
+        "reward": 1,
+        "nodes": 1,
+        "attacker": "w",
+        "criterion": "force_mate_within_0_remaining_plies",
+        "certificate": {
+          "schema": "bounded-mate-certificate-v1",
+          "rootFen": "5Q1k/8/6K1/8/8/8/8/8 b - - 1 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/8/6K1/5Q2/8/8/8/8 w - - 0 1\"]\n\n1. Qf8# *",
+          "attacker": "w",
+          "plies": 0,
+          "tree": {
+            "status": "success",
+            "children": []
+          }
+        },
+        "certificateCheck": {
+          "verified": true,
+          "status": "success",
+          "nodes": 1,
+          "elapsedMs": 4.255499999999984
+        },
+        "bounds": {
+          "maxNodes": 4096,
+          "millisecondsPerStage": 2000,
+          "constructionStop": null,
+          "checkingNodes": 1,
+          "elapsedMs": 4.827100000000087
+        },
+        "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+      },
+      "verified": {
+        "move": "f5f8",
+        "actor": "w",
+        "status": "success",
+        "experimentalPulse": false,
+        "learningAllowed": true,
+        "certificateSha256": "38834869b1928c4bb23376da58aab3b4d975f7ec36d31cba6b4335506f2af490",
+        "meaning": "Experimental PPL103 stimulus for failure of this bounded mate objective; not full-game loss or natural reward reconstruction"
+      }
+    }
+  ],
+  "counterfactual": {
+    "status": "failure",
+    "reward": -1,
+    "nodes": 1,
+    "attacker": "w",
+    "criterion": "force_mate_within_0_remaining_plies",
+    "certificate": {
+      "schema": "bounded-mate-certificate-v1",
+      "rootFen": "7k/7Q/8/6K1/8/8/8/8 b - - 1 1",
+      "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/8/6K1/8/8/8/8 w - - 0 1\"]\n\n1. Qh7+ *",
+      "attacker": "w",
+      "plies": 0,
+      "tree": {
+        "status": "failure",
+        "children": []
+      }
+    },
+    "certificateCheck": {
+      "verified": true,
+      "status": "failure",
+      "nodes": 1,
+      "elapsedMs": 1.1743999999999915
+    },
+    "bounds": {
+      "maxNodes": 4096,
+      "millisecondsPerStage": 2000,
+      "constructionStop": null,
+      "checkingNodes": 1,
+      "elapsedMs": 1.5299999999999727
+    },
+    "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+  },
+  "scope": "Independent chess-rule certificate checks only; no model, graph or learning"
+}

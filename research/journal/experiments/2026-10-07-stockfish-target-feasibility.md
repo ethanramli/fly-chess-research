@@ -1,0 +1,7 @@
+# 2026-10-07 Stockfish target feasibility
+
+Researcher authorized testing Stockfish calibration, then clarified comparing fly moves against Stockfish reference moves and concern about training latency. Implemented separate record-only target collector and fixed unfitted monotonic MBON value interface; preserved all prior graph experiments/sources. Registered official sf_19 executable/license/source provenance before execution.
+
+Two inspected training-only boards, all 62 legal candidates at 10k/50k nodes: 124 records, 82 usable exact targets, 42 unavailable. Independent audit passes 124 mate certificates, coverage, perspectives and monotonic readout. Registered WDL discrimination gate fails: 8/10 and 11/11 deadline failures tie with success at full-game utility 1. No new neural feedback, memory update or transfer. [Report](../../reports/stockfish-target-feasibility-v1-2026-10-07/README.md), [protocol](../../data/stockfish-target-feasibility-v1/README.md).
+
+Actual collection 159.84s wall, sampled combined RSS311.87MiB. Search requests total4.198s/median22.04ms; guard/collection overhead is distinct from fly latency. All116 npm tests pass. Preserve initial BOM preparation failure and original independent auditor JSON signed-zero failure; separate corrected auditor/source hash produces hash-bound completion. Next comparison must respect task criteria and WDL saturation; profile a single neural puzzle round and cache pinned teacher targets rather than infer optimization from unrelated workloads.

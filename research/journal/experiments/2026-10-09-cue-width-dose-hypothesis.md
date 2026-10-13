@@ -1,0 +1,41 @@
+﻿# 2026-10-09: Cue width at matched total current
+
+## Hypothesis and frozen test
+
+The static cap sweep suggested that increasing balanced candidate cues from 14 to 28 cells at fixed total current 21 may improve two difficult, previously inspected Qb3 action distinctions, despite halving per-cell current from 1.5 to 0.75. Cap 42 could not meet the no-padding pool quota. This is a feature-projection hypothesis, not a plasticity mechanism claim. The feedback-enabled assay keeps the existing graph, memory rule, teacher sequence rule and four matched conditions (informative, absent, fully scheduled shuffled, disabled). It asks whether informative feedback improves the predeclared success-versus-initial-top-error score-change rank on both Qb3 probes relative to the already audited cap-14 outcome. Five same-motif panels are already inspected and therefore descriptive only. There is no untouched confirmation or final-test claim.
+
+The protocol fixes 28 active cells, total current 21, max cell current 0.75, the same graph/model/memory and timing, and required independent certificate/receipt audit. The experiment uses engineering `ReversalMemory`, not a validated biological plasticity rule. Absolute all-legal choice is a separate reported outcome. See [protocol and scope](../../data/adaptive-contrastive-coverage-v2/protocol.json) and [report index](../../reports/adaptive-contrastive-coverage-v2-2026-10-09/README.md).
+
+## Preparation mistakes and corrections
+
+A draft mistakenly treated the five retrospective development panels as a prospective confirmation threshold. Because those panels had been inspected while analyzing cap 14, the threshold was removed and the test narrowed to the two specified Qb3 development probes; no final or transfer inference is permitted. A second setup mistake wrote the JSON protocol with a UTF-8 BOM, causing Node's JSON parser to fail before any assay; it was rewritten BOM-free. Preflight then showed three stale inherited hashes after repository reorganization. Inspection confirmed the current file differences are added imports for capture-retention support; the tested fixtures are forced-mate, and the frozen runner path does not invoke capture-retention training. Only those three source identities were updated in this new v2 protocol; v1 and its source pins remain unchanged. Verify the current source pins and run the full preflight before launch.
+
+## Static evidence and limits
+
+The static cap sweep uses no graph inference or feedback. At cap 14, success-vs-top-wrong cue overlap gaps on the Qb3/E8 and Qb3/F8 probes were -3 and +2 cells. At cap 28, they were -1 and +7. This gives a specific reason to test, but one probe remains slightly aliased and per-cell drive is halved. Static overlap does not predict the recurrent graph response or learning outcome. The sweep was exploratory on known development positions.
+
+## Outcome
+
+No graph run has started as of registration. Next step is source/hash and resource preflight; any failed or unknown preflight blocks training and is documented here before repair.
+
+## Interruption correction, 2026-10-09
+
+The first cap-28 graph invocation passed source/input/cue preflight, then ran without final publication. The first attempted output path was correctly rejected because the preregistration directory was nonempty; the run was relaunched into `reports/adaptive-contrastive-coverage-v2-2026-10-09/run`. It published atomic checkpoints through checkpoint 54. After checkpoint 54, the process made no further checkpoint for about 24 minutes; sampled user CPU time changed by less than one second, RSS stayed about 116 MiB, and free memory remained above 1.4 GiB. The 60-second search timeout is soft and checked between assessments; an already running assessment is not interruptible. Given the prolonged lack of progress and no resource failure, the run was interrupted. No report or audit exists, and no hypothesis outcome can be inferred. The checkpoint 54 manifest and state hashes are preserved in the run directory; resume may proceed only after identifying and fixing the long in-flight assessment behavior under a separately recorded correction. Do not treat 54 checkpoints as complete dose or use partial metrics as an efficacy result.
+
+The first launch failure and the long unbounded assessment demonstrate that static preflight and resource guards do not prove bounded wall-clock execution. The next step is read-only diagnosis of the exact pending stage using checkpoint 54, followed by a minimal runner fix and fresh preflight. Any resumed run must preserve the original protocol identity, use its atomic resume contract, and report invocation-only metrics separately.
+
+## Correction and audited outcome, 2026-10-09
+
+The first cap-28 invocation was interrupted at checkpoint 54 after extended no-progress observation. It was then resumed from that exact hash-verified checkpoint into a fresh directory; the resumed run advanced and completed without code or setting changes. Thus the observed stall was not reproduced, and its cause remains unresolved. The separate auditor passed (96 certificates, 58 panels, six searches, 24 recurrence checks; matched feedback experiences true). Informative, absent, shuffled and disabled all failed the training-puzzle all-legal choice gate; the run does not show acquisition repair.
+
+The preregistered narrow cue-width prediction was tested on the two named Qb3 development probes using the same informative-minus-absent score-change metric as cap 14. The operational plan was pinned after training and before the cap-28 Qb3 assessments; cap-14 ranks were verified from the earlier audited raw panels. Success-move ranks improved from 5 to 1 and 4 to 1. Shuffled ranks were 28 and 29; disabled ranks were 12 and 5. The positive result is limited to feedback-specific relative ranking on these already inspected positions. Absolute top choices remained failures on both. This cue-width/ReversalMemory test neither validates biology nor solves the plasticity objective.
+
+An earlier setup note said no graph run had started; that statement was true at registration only and is superseded by the appended execution records. A summary called the ranking stall an unbounded assessment blocker before the exact saved phase was inspected. Checkpoint 54 located it after absent event 4; the successful resume shows the cause was not established. Preserve that uncertainty. The first attempt to inspect several JSON files used a malformed inline command and produced no result; the corrected PowerShell/Node checks are the evidence used here.
+
+Artifacts: [protocol](../../data/adaptive-contrastive-coverage-v2/protocol.json), [operational Qb3 analysis plan](../../data/adaptive-contrastive-coverage-v2/qb3-analysis-plan.json), [run and independent audit](../../reports/adaptive-contrastive-coverage-v2-2026-10-09/README.md), and [read-only score analysis](../../reports/adaptive-contrastive-coverage-v2-2026-10-09/qb3-delta-analysis.json).
+
+## Raw-row audit correction
+
+The first post-run Qb3 analysis omitted per-move score arrays, preventing independent rank recomputation. It remains preserved but is superseded by [raw-complete v2](../../reports/adaptive-contrastive-coverage-v2-2026-10-09/qb3-delta-analysis-v2.json). The separate [arithmetic/provenance auditor](../../../.codebase/scripts/puzzle-learning/audit-cue-width-delta-analysis.mjs) passed, reconstructing the cap-14 and cap-28 ranks from audited raw rows. Correct success rank is 5→1 for rook-e8 and 4→1 for rook-f8. This confirms only the development-set score-change prediction; absolute choices remain wrong. This reporting mistake and correction were added before relying on v2 as the evidence artifact.
+
+Correction: a copy command briefly put a second copy of the analysis JSON at the audit-receipt path. It was preserved as qb3-delta-analysis-audit-copy-error.json; the audit script now writes the actual recomputed audit receipt to qb3-delta-analysis-audit.json. No training or analysis scores changed.

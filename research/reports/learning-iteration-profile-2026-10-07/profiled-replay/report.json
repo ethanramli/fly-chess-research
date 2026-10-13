@@ -1,0 +1,330 @@
+{
+  "complete": true,
+  "scope": "One exact first adaptive all-legal choice-review-feedback-ranking cycle, plus its two frozen naive baselines. Same current policy, graph, cues, proof and local rule. No Monte Carlo search is included in this adaptive runner. This is a timing diagnostic, not a new learning result or optimization.",
+  "timestamp": "2026-10-07T02:28:53.676Z",
+  "identity": {
+    "schema": "learning-iteration-profile-v1",
+    "variant": "original",
+    "duty": 0.5,
+    "inputs": {
+      "research/data/adaptive-two-valence-v1/protocol.json": "862fa96e8792d80c70eb080316c2f993270840a692cf1461920dc09ee2561e05",
+      "research/reports/positive-puzzle-pipeline-v1-2026-10-06/report.json": "01a7ab038b03474283580e0dd5f8cb821512dbac4f6833eb45192925dbe5445b",
+      "research/reports/compartment-puzzle-preflight-2026-10-06/report.json": "40c3ec6a1af6c56518b4df9f1441f199609f0dbcf8197ef3cf1eaa777acbff87",
+      "research\\reports\\positive-puzzle-pipeline-v1-2026-10-06\\plan-0.json": "e7d427029079a8611aba764c34f9ed090de5a3de4b8f35bb3f621b8bc2b54d27",
+      "research\\reports\\positive-puzzle-pipeline-v1-2026-10-06\\plan-1.json": "a941be728a633f615d794cfe35ae979870b468b647c4b182a54920b09a84d87d",
+      "research/reports/reversal-candidate-2026-10-05/mapping.json": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+      "research\\reports\\compartment-input-original-2026-10-06\\report.json": "9647b9c1cd0311a237c7ddd38691a88b07754de19331c4a5240388f3d2e5fdd8",
+      "research\\reports\\compartment-input-original-2026-10-06\\audit.json": "8e167c0a89236aff2806b06dc13b0fb0cf1e38a7a156468fe77f1f880c8bbfee",
+      "research\\reports\\compartment-input-original-2026-10-06\\audit-prefix.json": "49506844f62237b9b9bb39a4019c55daa57bc1c40d349ed2311f8cb41e5ff73d",
+      ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+      ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+      "research/data/puzzle-pipeline-v1/puzzles.jsonl": "c00c261dcaa1fdbad9b040106d0ad4887d9f349538298d40ee19e1188462d18a",
+      "research\\reports\\adaptive-two-valence-original-v2-2026-10-06\\report.json": "db86e70153328af10c9bc2826784390dd3e80d2c351c2d73672abf21139fdb16",
+      "research\\reports\\adaptive-two-valence-original-v2-2026-10-06\\audit.json": "e1856b587bb09432cf5f61ba66cbdddb5a080238d86a3756e59bb2405e06b4a2",
+      "research\\reports\\adaptive-two-valence-original-v2-2026-10-06\\event-adaptive-0.json": "c2319db21a226dd48ff2a70e68e1e45c76ff8ba68c2d5d57be31fcc079445994",
+      "research\\reports\\adaptive-two-valence-original-v2-2026-10-06\\selection-0.json": "8903e15d5eeff6b7e85b53143e09cc16573dde50239d34beaf0601f39c9580d2",
+      "research\\reports\\adaptive-two-valence-original-v2-2026-10-06\\naive-0.json": "efbbcb25dc53a61ad2ff5bf8cc226e5790ba866dfa8404ba18c3c2cc08b7dd67",
+      "research\\reports\\adaptive-two-valence-original-v2-2026-10-06\\ranking-adaptive-0.json": "582f6fd15272d02c38e3a19477ffadf5ab2a70bc85f5bd06e4aac65073214164"
+    },
+    "sources": {
+      ".codebase/scripts/evaluation-and-performance/profile-learning-iteration.mjs": "e7a843a494642379f640a57f9a40b078a37141642486a59014924c5ad4c62115",
+      ".codebase/scripts/runtime/fetch-graph.mjs": "5e48960ed947379ba31fc5cb10b791d6e5891913ed073a4443e6e9c875fab52a",
+      ".codebase/src/puzzle-learning/adaptive-coverage-experiment.mjs": "b09985f49cc5dadc5bf1d30c1a1ba32f6740bb230bba822ff13a65e22c63d10f",
+      ".codebase/src/puzzle-learning/puzzle-experience-plan.mjs": "764a9989e597e345f954c8d94ea189b29df2332dbf1a645b77c097f68bebb2c9",
+      ".codebase/src/puzzle-learning/dual-valence-puzzle-brain.mjs": "9a91a188d6ef40de5a21402ccd90f9a0192b46d664b26c414b86e0650d503c81",
+      ".codebase/src/puzzle-learning/mapped-puzzle-brain.mjs": "cca4ed8e2d79ff1c6786eb866141007d9d8f0dc36c1eb3776e11f549a9151c1b",
+      ".codebase/src/search-and-feedback/adaptive-choice-review.mjs": "b6fba8851dad7ec974e82e3c63c0351e6c38efcfb654f81091789de47275472a",
+      ".codebase/src/search-and-feedback/verified-feedback.mjs": "e8141c3171fd49cb720cee73283c4cd8a9b572a7a973a47636c25ce6f87f4a78",
+      ".codebase/src/search-and-feedback/verified-line-explanation.mjs": "0a177c408b0a7583a02f69929779f779b68290bf5716e1b2035c39ce190d4e33",
+      ".codebase/src/search-and-feedback/mate-certificate.mjs": "b7bdab76a3faa78c203971991c3b2e00cdfd359cfca08b6e1f7b1ae8d430b700",
+      ".codebase/src/search-and-feedback/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+      ".codebase/src/search-and-feedback/experimental-puzzle-search.mjs": "dc7ac5e894879ae75a1b0bd5931b1e72466c14b707d2ff987ee6ee1f6d259ebb",
+      ".codebase/src/search-and-feedback/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+      ".codebase/src/neural-learning/reversal-memory.mjs": "cfafc1e208026a2687826f1f8b35ff279b64845355e070e9d1f6bd995b175a35",
+      ".codebase/src/neural-learning/dual-valence-interface.mjs": "206fa1d12050463d15bc5b0a31ad30491cdf0507877182a134ff0af796873397",
+      ".codebase/src/neural-learning/association-validation.mjs": "b62d6f6bf4ab51f0ed993877026ac1cde0914c582fb479ea27fdc028a7dc2c91",
+      ".codebase/src/neural-learning/mushroom-body.mjs": "b8e0e598930cfda3855d7617377e9bfb88e150a741d5975626454efcceccb41e",
+      ".codebase/src/neural-learning/mbon-readout.mjs": "bf639c8e0f2ed96d2dc31939abf560d1194fccb1beed486ea6ffccbb74601923",
+      ".codebase/src/chess-input/compartment-chess-cue.mjs": "c7a095625518fab166b09a796d452c8a78779b9016cb04b982eb81e4f13440c3",
+      ".codebase/src/chess-input/relational-chess-cue-v2.mjs": "7998c336dba340d8bdb4e60c6de1b559411cf2a9b80af782b54d45f9e1c4bc3c",
+      ".codebase/src/supervised-baselines/trainer.mjs": "ffefd16ad1fd2e438dba89c45072ea2229091832a46349958b8668aa7517b7f9",
+      ".codebase/src/runtime/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+      "package.json": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+      "package-lock.json": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214"
+    },
+    "dependencyIdentity": {
+      "node": "v22.23.2",
+      "chessJs": "1.4.0"
+    },
+    "graphHash": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    "model": {
+      "steps": 8,
+      "inputDim": 1,
+      "outputs": 1,
+      "seed": 47,
+      "precision": "float32",
+      "saturation": 10,
+      "recurrentScale": 0.9,
+      "normalization": "row"
+    },
+    "memory": {
+      "eta": 0.5,
+      "minGain": 0.2,
+      "maxGain": 1.8,
+      "activityScale": 1.5
+    },
+    "mappingHash": "b2d7bf351dbe9889aa6a17216cca6cb7671f4f99d9661e604609a7ff51686fff",
+    "encoderIdentity": "c8725115fe89340a88f6c1aa4af764ffd41551289c19a24094f544ddd91ace38",
+    "readouts": {
+      "MBON12": [
+        {
+          "index": 56337,
+          "rootId": "720575940623001480",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "right",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.8942156867525906,
+          "ontologyIds": "FBbt_00111009"
+        },
+        {
+          "index": 49989,
+          "rootId": "720575940621828443",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "left",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.8760643793124306,
+          "ontologyIds": "FBbt_00111009"
+        },
+        {
+          "index": 61287,
+          "rootId": "720575940623905719",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "right",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.9010706195122313,
+          "ontologyIds": "FBbt_00111009"
+        },
+        {
+          "index": 93832,
+          "rootId": "720575940630075703",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "left",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.886691032764705,
+          "ontologyIds": "FBbt_00111009"
+        }
+      ],
+      "MBON01": [
+        {
+          "index": 62498,
+          "rootId": "720575940624117245",
+          "kind": "MBON",
+          "type": "MBON01",
+          "hemibrainType": "MBON01",
+          "side": "right",
+          "knownTransmitter": "glutamate, sparkly, proctolin, Nplp1",
+          "predictedTransmitter": "glutamate",
+          "predictedConfidence": 0.7386130312879104,
+          "ontologyIds": "FBbt_00100234"
+        },
+        {
+          "index": 128004,
+          "rootId": "720575940643309197",
+          "kind": "MBON",
+          "type": "MBON01",
+          "hemibrainType": "MBON01",
+          "side": "left",
+          "knownTransmitter": "glutamate, sparkly, proctolin, Nplp1",
+          "predictedTransmitter": "glutamate",
+          "predictedConfidence": 0.803689515262566,
+          "ontologyIds": "FBbt_00100234"
+        }
+      ]
+    },
+    "baselineMemoryIdentity": "a08330bdd620cc9a692925487619b504a8be6f4627f95bf5953da63ccbc4320f",
+    "fixedParameterHash": "0459bedc2e0a4f7626584df89809271fc927f72652b7e71fc3ce0dae51a847d5"
+  },
+  "fixture": {
+    "id": "pipeline-kqk-fixture",
+    "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+    "objective": "forced-mate",
+    "plies": 1,
+    "legalMoves": 26,
+    "selectedMove": "f7f5",
+    "verifiedStatus": "failure",
+    "changedEdges": 89,
+    "presentations": 53
+  },
+  "equivalence": {
+    "naiveAssessmentExact": true,
+    "selectedMoveAndCertificateMatch": true,
+    "postUpdateMemoryExact": true,
+    "postUpdateAllLegalRankingExact": true,
+    "fixedParametersPreserved": true,
+    "expectedArtifacts": {
+      "event": "research\\reports\\adaptive-two-valence-original-v2-2026-10-06\\event-adaptive-0.json",
+      "selection": "research\\reports\\adaptive-two-valence-original-v2-2026-10-06\\selection-0.json",
+      "baseline": "research\\reports\\adaptive-two-valence-original-v2-2026-10-06\\naive-0.json",
+      "ranking": "research\\reports\\adaptive-two-valence-original-v2-2026-10-06\\ranking-adaptive-0.json"
+    }
+  },
+  "timing": {
+    "setupMs": 1568.7873,
+    "endToEndCycleMs": 137738.6377,
+    "endToEndCycleCpuMs": 71781,
+    "presentationCount": 53,
+    "assessments": [
+      {
+        "index": 0,
+        "elapsedMs": 35051.394199999995
+      },
+      {
+        "index": 1,
+        "elapsedMs": 27567.867999999995
+      },
+      {
+        "index": 2,
+        "elapsedMs": 37610.6526
+      },
+      {
+        "index": 3,
+        "elapsedMs": 35210.575400000016
+      }
+    ],
+    "phases": {
+      "forwardMs": {
+        "count": 99,
+        "totalMs": 67073.34350000005,
+        "meanMs": 677.5085202020207,
+        "medianMs": 698.0959000000003,
+        "p95Ms": 911.2722999999996,
+        "maxMs": 1015.1584000000003
+      },
+      "evokeMs": {
+        "count": 99,
+        "totalMs": 134437.74219999995,
+        "meanMs": 1357.9569919191915,
+        "medianMs": 1397.727899999998,
+        "p95Ms": 1830.8113999999996,
+        "maxMs": 2034.449499999988
+      },
+      "encodeMs": {
+        "count": 99,
+        "totalMs": 2445.2287999999935,
+        "meanMs": 24.699280808080744,
+        "medianMs": 21.90009999999893,
+        "p95Ms": 40.816899999999805,
+        "maxMs": 46.61439999999857
+      },
+      "observeMs": {
+        "count": 1,
+        "totalMs": 2.2479000000021188,
+        "meanMs": 2.2479000000021188,
+        "medianMs": 2.2479000000021188,
+        "p95Ms": 2.2479000000021188,
+        "maxMs": 2.2479000000021188
+      },
+      "replayMs": {
+        "count": 1,
+        "totalMs": 1485.3130999999994,
+        "meanMs": 1485.3130999999994,
+        "medianMs": 1485.3130999999994,
+        "p95Ms": 1485.3130999999994,
+        "maxMs": 1485.3130999999994
+      },
+      "reviewMs": {
+        "count": 1,
+        "totalMs": 89.70080000000598,
+        "meanMs": 89.70080000000598,
+        "medianMs": 89.70080000000598,
+        "p95Ms": 89.70080000000598,
+        "maxMs": 89.70080000000598
+      },
+      "snapshotMs": {
+        "count": 29,
+        "totalMs": 4.437200000008488,
+        "meanMs": 0.15300689655201682,
+        "medianMs": 0.10570000000006985,
+        "p95Ms": 0.3230000000039581,
+        "maxMs": 0.7143999999971129
+      },
+      "paceMs": {
+        "count": 99,
+        "totalMs": 67339.54549999988,
+        "meanMs": 680.1974292929281,
+        "medianMs": 699.2305000000015,
+        "p95Ms": 917.5972999999994,
+        "maxMs": 1019.107799999998
+      },
+      "saveMs": {
+        "count": 7,
+        "totalMs": 39.82169999998587,
+        "meanMs": 5.688814285712267,
+        "medianMs": 5.420899999997346,
+        "p95Ms": 7.285600000002887,
+        "maxMs": 7.285600000002887
+      },
+      "publishMs": {
+        "count": 5,
+        "totalMs": 139.44880000000558,
+        "meanMs": 27.889760000001115,
+        "medianMs": 26.999300000010408,
+        "p95Ms": 35.94519999999466,
+        "maxMs": 35.94519999999466
+      }
+    },
+    "paceRequestedMs": {
+      "count": 99,
+      "totalMs": 67083.55849999991,
+      "meanMs": 677.6117020202012,
+      "medianMs": 698.1994000000122,
+      "p95Ms": 912.5288000000005,
+      "maxMs": 1015.2158999999956
+    },
+    "interpretation": "Nested phase times overlap; do not add them. End-to-end includes all-legal assessments, proof/explanation, local update, callbacks, checkpoint writes and pacing. Setup is reported separately. Search is absent by protocol."
+  },
+  "resources": {
+    "peakRssMiB": 106.79296875,
+    "elapsedSeconds": 140.6254697,
+    "cpuSeconds": 74.907,
+    "freeMemoryMiBAtEnd": 1687.26953125,
+    "cpu": "Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz",
+    "duty": 0.5
+  },
+  "artifacts": {
+    "checkpointCount": 7,
+    "publicationNames": [
+      "naive-0.json",
+      "naive-1.json",
+      "selection-0.json",
+      "event-adaptive-0.json",
+      "ranking-adaptive-0.json"
+    ]
+  },
+  "command": {
+    "executable": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe",
+    "options": [
+      "--max-old-space-size=256",
+      "--cpu-prof",
+      "--cpu-prof-dir=research/reports/learning-iteration-profile-2026-10-07/cpu-profile"
+    ],
+    "argv": [
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\evaluation-and-performance\\profile-learning-iteration.mjs",
+      "--out",
+      "research/reports/learning-iteration-profile-2026-10-07/profiled-replay"
+    ],
+    "node": "v22.23.2"
+  }
+}

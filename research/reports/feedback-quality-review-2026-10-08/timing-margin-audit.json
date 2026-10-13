@@ -1,0 +1,78 @@
+{
+  "schema": "retrospective-feedback-quality-audit-v1",
+  "date": "2026-10-08",
+  "reportPath": "research/reports/one-feedback-round-timing-v2-2026-10-08/report.json",
+  "reportSha256": "0a17afb895efe8f6d67b6f8c3b9477e6a2af289bcc9d79994a1212019ab203bb",
+  "rows": [
+    {
+      "condition": "informative",
+      "receiptPath": "research/reports/one-feedback-round-timing-v2-2026-10-08/informative-receipt.json",
+      "receiptSha256": "243ccce2d0fefedbda0433bbc483cb080196f42f8aab3dde3ed2c8286a883e50",
+      "beforeMargin": 0.005600447300821543,
+      "afterMargin": 0.00553800817579031,
+      "marginDelta": -0.00006243912503123283,
+      "goodDelta": 0.0007914206944406033,
+      "badDelta": 0.0008538598194718361,
+      "commonOffset": 0.0008226402569562197,
+      "changedEdges": 76,
+      "choiceBefore": "a1a4",
+      "choiceAfter": "a1a4",
+      "feedbackSeconds": 0.6213933999999999
+    },
+    {
+      "condition": "no-channel",
+      "receiptPath": "research/reports/one-feedback-round-timing-v2-2026-10-08/no-channel-receipt.json",
+      "receiptSha256": "ea374f858384ebc675769d3b73cbda6fe37bf414a6a7bbdb8b3f56012255710b",
+      "beforeMargin": 0.005600447300821543,
+      "afterMargin": 0.005539947189390659,
+      "marginDelta": -0.00006050011143088341,
+      "goodDelta": -0.0000864984467625618,
+      "badDelta": -0.00002599833533167839,
+      "commonOffset": -0.000056248391047120094,
+      "changedEdges": 77,
+      "choiceBefore": "a1a4",
+      "choiceAfter": "a1a4",
+      "feedbackSeconds": 0.6741530999999995
+    },
+    {
+      "condition": "shuffled",
+      "receiptPath": "research/reports/one-feedback-round-timing-v2-2026-10-08/shuffled-receipt.json",
+      "receiptSha256": "44c3c99a38fc87adaa400f4a8763256ec5d186c82fe9a9784c7df1f383fe6b77",
+      "beforeMargin": 0.005600447300821543,
+      "afterMargin": -0.0012434981763362885,
+      "marginDelta": -0.006843945477157831,
+      "goodDelta": -0.00983008136972785,
+      "badDelta": -0.0029861358925700188,
+      "commonOffset": -0.006408108631148934,
+      "changedEdges": 95,
+      "choiceBefore": "a1a4",
+      "choiceAfter": "e1e5",
+      "feedbackSeconds": 0.6501398000000008
+    },
+    {
+      "condition": "disabled",
+      "receiptPath": "research/reports/one-feedback-round-timing-v2-2026-10-08/disabled-receipt.json",
+      "receiptSha256": "d3482d3b3554fe1f7d7cf00872853948ae97e897b4fc2b5955678a2f01ab71ea",
+      "beforeMargin": 0.005600447300821543,
+      "afterMargin": 0.005600447300821543,
+      "marginDelta": 0,
+      "goodDelta": 0,
+      "badDelta": 0,
+      "commonOffset": 0,
+      "changedEdges": 0,
+      "choiceBefore": "a1a4",
+      "choiceAfter": "a1a4",
+      "feedbackSeconds": 0.43816899999999803
+    }
+  ],
+  "informativeMinusAbsentMarginChange": -0.0000019390136003494263,
+  "findings": {
+    "positiveReplayImprovesPairMargin": false,
+    "positiveReplayExceedsAbsentMarginChange": false,
+    "rewardedMoveWasAlreadyPreferred": true,
+    "informativeChoiceChanged": false,
+    "fullLegalCoverage": false,
+    "independentGraphReplay": false
+  },
+  "scope": "Single inspected development fixture; descriptive common-offset decomposition, not causal edge attribution, biological validation, general incapacity or transfer."
+}

@@ -1,0 +1,209 @@
+{
+  "schema": "capture-retention-projection-seed-audit-v1",
+  "scope": "Static cue projection comparison on training and validation only. The final split is deliberately not opened. No graph inference, neural activity, plasticity, or outcome-based seed selection.",
+  "protocolSha256": "abb80b8c33e7e0204b8bb141fcfa3f23f81dcce6a546622bdebca054fdf2f279",
+  "mappingSha256": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+  "auditScriptSha256": "0584b96f0828e8a51acfeac3da63710c04e3d5e58b30f84420bb303b97fc94e1",
+  "encoderSourceSha256": "a19b3e65fda0300b5a361d028c706fcd1b5d1278f2496a11234ccd06690ce47f",
+  "projectionSeeds": [
+    14009,
+    47,
+    53,
+    59,
+    61,
+    67,
+    101,
+    2026
+  ],
+  "cueDose": {
+    "seed": 14009,
+    "maxCells": 14,
+    "totalCurrent": 21,
+    "maxCellCurrent": 1.5
+  },
+  "splits": {
+    "train": {
+      "path": "research/data/capture-retention-transfer-v2/train.jsonl",
+      "sha256": "a9959dfe502e8d45db5991e63143dc5767b10ffed8e74e3701e6ebd9e2d10079",
+      "panels": 8,
+      "candidateOutcomes": {
+        "success": 8,
+        "failure": 8
+      },
+      "projections": [
+        {
+          "seed": 14009,
+          "cueIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+          "candidateCues": 16,
+          "uniqueStimulationPatterns": 16,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 3.25,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 24
+        },
+        {
+          "seed": 47,
+          "cueIdentity": "22a49de7d0827be2f1018d4b7407ce7ef7e7924ea9fb2faf4333d18066e36561",
+          "candidateCues": 16,
+          "uniqueStimulationPatterns": 13,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 2.625,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 23
+        },
+        {
+          "seed": 53,
+          "cueIdentity": "b5fa11bd52eec27587ad0fada40c60699efde481f54f6c902127f2412128ebeb",
+          "candidateCues": 16,
+          "uniqueStimulationPatterns": 13,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 2,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 25
+        },
+        {
+          "seed": 59,
+          "cueIdentity": "9a372e3b8c047f8ea0bddae53e440d5d5e2c10d31d38d325e87fc06a1e8c8693",
+          "candidateCues": 16,
+          "uniqueStimulationPatterns": 12,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 2.25,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 24
+        },
+        {
+          "seed": 61,
+          "cueIdentity": "e0a6d9b88475f6651cbbe833be6a8511b9c557d30d48565b5b01ea7d62e05aae",
+          "candidateCues": 16,
+          "uniqueStimulationPatterns": 14,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 2,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 24
+        },
+        {
+          "seed": 67,
+          "cueIdentity": "489b483c2c663a4d258004860e0c6443bfbe12ea49fdcf4da794c656d9863853",
+          "candidateCues": 16,
+          "uniqueStimulationPatterns": 15,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 5,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 22
+        },
+        {
+          "seed": 101,
+          "cueIdentity": "1a944caabb7399c55002c38f539794121a6168387f2773f3e76275811ff2e898",
+          "candidateCues": 16,
+          "uniqueStimulationPatterns": 15,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 3.125,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 23
+        },
+        {
+          "seed": 2026,
+          "cueIdentity": "7997f6c76cb635a69278df52ae3d028f6f88652035de6dd30021743e68d11480",
+          "candidateCues": 16,
+          "uniqueStimulationPatterns": 16,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 3.625,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 21
+        }
+      ]
+    },
+    "validation": {
+      "path": "research/data/capture-retention-transfer-v2/validation.jsonl",
+      "sha256": "278355ece0033fa3a6405bd5daf00b08aa728f75bf402d494569c58c766174e8",
+      "panels": 4,
+      "candidateOutcomes": {
+        "success": 4,
+        "failure": 4
+      },
+      "projections": [
+        {
+          "seed": 14009,
+          "cueIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+          "candidateCues": 8,
+          "uniqueStimulationPatterns": 8,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 3,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 24
+        },
+        {
+          "seed": 47,
+          "cueIdentity": "22a49de7d0827be2f1018d4b7407ce7ef7e7924ea9fb2faf4333d18066e36561",
+          "candidateCues": 8,
+          "uniqueStimulationPatterns": 7,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 2.25,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 24
+        },
+        {
+          "seed": 53,
+          "cueIdentity": "b5fa11bd52eec27587ad0fada40c60699efde481f54f6c902127f2412128ebeb",
+          "candidateCues": 8,
+          "uniqueStimulationPatterns": 8,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 1.5,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 24
+        },
+        {
+          "seed": 59,
+          "cueIdentity": "9a372e3b8c047f8ea0bddae53e440d5d5e2c10d31d38d325e87fc06a1e8c8693",
+          "candidateCues": 8,
+          "uniqueStimulationPatterns": 8,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 1.75,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 24
+        },
+        {
+          "seed": 61,
+          "cueIdentity": "e0a6d9b88475f6651cbbe833be6a8511b9c557d30d48565b5b01ea7d62e05aae",
+          "candidateCues": 8,
+          "uniqueStimulationPatterns": 8,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 2,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 27
+        },
+        {
+          "seed": 67,
+          "cueIdentity": "489b483c2c663a4d258004860e0c6443bfbe12ea49fdcf4da794c656d9863853",
+          "candidateCues": 8,
+          "uniqueStimulationPatterns": 8,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 4.75,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 23
+        },
+        {
+          "seed": 101,
+          "cueIdentity": "1a944caabb7399c55002c38f539794121a6168387f2773f3e76275811ff2e898",
+          "candidateCues": 8,
+          "uniqueStimulationPatterns": 8,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 2.75,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 25
+        },
+        {
+          "seed": 2026,
+          "cueIdentity": "7997f6c76cb635a69278df52ae3d028f6f88652035de6dd30021743e68d11480",
+          "candidateCues": 8,
+          "uniqueStimulationPatterns": 8,
+          "exactSamePatternPanels": 0,
+          "meanWithinPanelSharedCells": 3.5,
+          "cellsUsedPerCue": 14,
+          "mixedOutcomeCellsAcrossSplit": 24
+        }
+      ]
+    }
+  },
+  "interpretation": "Changing the cue projection seed changes the deterministic KC assignment and may create distinct input projections. These are not independent neural initializations or evidence of learning. Overlap/collision counts are static input diagnostics; do not select the lowest-overlap seed from this report. Any future assay must declare projection seeds as a factor, use fresh final families, and test learned rankings against matched controls."
+}

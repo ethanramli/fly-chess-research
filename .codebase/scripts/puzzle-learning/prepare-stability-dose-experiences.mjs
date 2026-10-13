@@ -1,0 +1,31 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import { Chess } from 'chess.js';
+import { checkMateCertificate } from '../../src/search-and-feedback/mate-certificate-check.mjs';
+import { shuffledFeedback } from '../../src/neural-learning/association-validation.mjs';
+import { digest } from '../../src/neural-learning/mushroom-body.mjs';
+import { sha256 } from '../runtime/fetch-graph.mjs';
+const read=f=>JSON.parse(fs.readFileSync(f));
+const root='research/reports/multi-context-stability-v1-2026-10-07';
+const r=read(`${root}/report.json`),a=read(`${root}/audit.json`);
+assert.ok(r.complete && a.passed);assert.equal(a.reportSha256,await sha256(`${root}/report.json`));
+assert.equal(r.summary.allContextAcquisition,true);
+const paths=[2,3,0,1].map(i=>`${root}/event-informative-${i}.json`);
+const block=paths.map(f=>{const e=read(f),c=e.experience.proof.certificate,b=new Chess();b.loadPgn(c.rootPgn);const checked=checkMateCertificate(c,b,{attacker:c.attacker,plies:c.plies,maxNodes:100000});assert.ok(checked.verified);assert.equal(checked.status,e.experience.status);return {rowId:e.rowId,experience:e.experience,source:f};});
+assert.deepEqual(block.map(e=>e.experience.status),['failure','success','failure','success']);
+const experiences=Array.from({length:32},(_,index)=>({index,...block[index%4]}));
+const labels=experiences.map(e=>e.experience.status==='success'?'PAM02':'PPL103');
+const shuffleSeed=14031;
+const shuffled=[...shuffledFeedback(labels.slice(0,8),shuffleSeed),...shuffledFeedback(labels.slice(8),shuffleSeed+1)];
+for(const end of [8,32]){
+ assert.ok(shuffled.slice(0,end).some((v,i)=>v!==labels[i]),'Do not retry seeds to obtain a desired shuffle');
+ assert.deepEqual([...shuffled.slice(0,end)].sort(),[...labels.slice(0,end)].sort());
+}
+const dir='research/data/stability-feedback-dose-experiences-v1';assert.ok(!fs.existsSync(dir));fs.mkdirSync(dir,{recursive:true});
+const memory=read(`${root}/condition-informative.json`).learned;
+fs.writeFileSync(`${dir}/initial-memory.json`,JSON.stringify({memory},null,2)+'\n');
+fs.writeFileSync(`${dir}/experiences.jsonl`,experiences.map(x=>JSON.stringify(x)).join('\n')+'\n');
+const inputs={};for(const f of [...paths,`${root}/report.json`,`${root}/audit.json`,`${root}/condition-informative.json`,`${dir}/initial-memory.json`,`${dir}/experiences.jsonl`])inputs[f]=await sha256(f);
+const sources={};for(const f of ['.codebase/scripts/puzzle-learning/prepare-stability-dose-experiences.mjs','.codebase/src/search-and-feedback/mate-certificate-check.mjs','.codebase/src/neural-learning/association-validation.mjs'])sources[f]=await sha256(f);
+const schedule={schema:'stability-feedback-dose-experiences-v1',scope:'Fixed verified training experiences only. Not an executable learner protocol or transfer success.',doseEvents:[8,32],block: block.map(x=>({rowId:x.rowId,move:x.experience.move,status:x.experience.status})),initialMemoryHash:digest(memory),inputs,sources,shuffleSeed,informativeChannels:labels,shuffledChannels:shuffled,conditions:['informative','absent','shuffled','disabled'],requirements:{sameStart:true,sameExperiences:true,noSiblingTeaching:true,noSkipCorrectExperience:true,unknownNoEvent:true,atomicPendingReceipt:true}};
+fs.writeFileSync(`${dir}/schedule.json`,JSON.stringify(schedule,null,2)+'\n');console.log(JSON.stringify({passed:true,certificates:4,events:32,doses:schedule.doseEvents,initialMemoryHash:schedule.initialMemoryHash,scheduleSha256:await sha256(`${dir}/schedule.json`)}));

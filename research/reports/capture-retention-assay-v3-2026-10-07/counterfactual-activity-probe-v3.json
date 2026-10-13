@@ -1,0 +1,5453 @@
+{
+  "schema": "capture-retention-counterfactual-activity-probe-v1",
+  "protocolSha256": "abb80b8c33e7e0204b8bb141fcfa3f23f81dcce6a546622bdebca054fdf2f279",
+  "frozenRun": "research/reports/capture-retention-assay-v3-2026-10-07/seed-47-informative",
+  "runReportSha256": "4b5fbf3acb049a2239f745de4008218e26506b05a8f3893c372edc99dfeecf8a",
+  "checkpoint": "checkpoint-00072",
+  "checkpointStateSha256": "017736a83d13b00182831aed307c396df80e3ae69f94a326a5361f89f188cf19",
+  "scriptPath": "C:/Users/ethan/Documents/fly-chess-research/.codebase/scripts/puzzle-learning/probe-capture-retention-counterfactual-activity.mjs",
+  "scriptSha256": "22ec55d44d71e4d7d80c109f15c3ce4ee5d7c6e826ed0318b7818dcdbd87cb87",
+  "graphSha256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+  "annotationSha256": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+  "mappingHash": "b2d7bf351dbe9889aa6a17216cca6cb7671f4f99d9661e604609a7ff51686fff",
+  "cueIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+  "seed": 47,
+  "scope": "Read-only re-presentation of the frozen counterfactual candidates at scratch and trained memory; no feedback, plastic update, new learning, or Monte Carlo search.",
+  "exactReplayMatchesFrozenScores": true,
+  "memoryUnchangedDuringAssessment": true,
+  "interpretation": "Compare selected/active KC rates, relation-token projection and group DAN activity with the MBON score gap. The same report scores are reproduced exactly; this localizes signal transmission but does not repair or prove transfer.",
+  "results": [
+    {
+      "state": "scratch",
+      "panelId": "te-01",
+      "chosenMove": "a2a4",
+      "correctMove": "a2a4",
+      "a2a4MinusE2e6": 0.008875297382473946,
+      "candidates": [
+        {
+          "move": "a2a4",
+          "consequence": "success",
+          "cueIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+          "tokenCount": 29,
+          "selectedKCCount": 14,
+          "selectedActiveKCs": 14,
+          "uniqueActiveKCCount": 36,
+          "selectedKCExcessRateSum": 20.73789769409632,
+          "response": {
+            "MBON12": 0.03769017569720745,
+            "MBON01": 0.019669808447360992,
+            "score": 0.01802036724984646,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          "tokenRows": [
+            {
+              "token": "action:r:0,2:-",
+              "index": 77125,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 486,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:b:-2,6",
+              "index": 42294,
+              "selected": true,
+              "excessRate": 1.4825056102126837,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 59,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:k:-6,6",
+              "index": 51510,
+              "selected": true,
+              "excessRate": 1.48146016523242,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 584,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:p:-4,4",
+              "index": 40773,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 726,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:p:0,2",
+              "index": 9874,
+              "selected": true,
+              "excessRate": 1.4818050311878324,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 678,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:r:-7,2",
+              "index": 95238,
+              "selected": true,
+              "excessRate": 1.4820308601483703,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 802,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:k:-1,-1",
+              "index": 42294,
+              "selected": true,
+              "excessRate": 1.4825056102126837,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 59,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:p:-1,2",
+              "index": 104736,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 820,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:p:-2,0",
+              "index": 12867,
+              "selected": true,
+              "excessRate": 1.482119387947023,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 13,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:r:-4,0",
+              "index": 85755,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 786,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:r:0,0",
+              "index": 72691,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 96,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:b:-2,4",
+              "index": 32718,
+              "selected": true,
+              "excessRate": 1.4819307764992118,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 706,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:k:-6,4",
+              "index": 58368,
+              "selected": true,
+              "excessRate": 1.4815676044672728,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 593,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:-4,2",
+              "index": 43240,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 732,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:0,0",
+              "index": 3491,
+              "selected": true,
+              "excessRate": 1.4722730815265095,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 534,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:r:-7,0",
+              "index": 24188,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 696,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:k:-1,-3",
+              "index": 37936,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 3,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 45,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 255,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 472,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-1,0",
+              "index": 49350,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 283,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-2,-2",
+              "index": 31551,
+              "selected": true,
+              "excessRate": 1.4815331939607859,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 555,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 701,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:-4,-2",
+              "index": 103828,
+              "selected": true,
+              "excessRate": 1.481877788901329,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 819,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:0,-2",
+              "index": 72963,
+              "selected": true,
+              "excessRate": 1.482632353901863,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 98,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 327,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "capture:p",
+              "index": 121147,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 430,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 519,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "castle:-",
+              "index": 78274,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 338,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "ep:-",
+              "index": 18263,
+              "selected": true,
+              "excessRate": 1.481753345578909,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 687,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "halfmove:0",
+              "index": 100077,
+              "selected": true,
+              "excessRate": 1.4824454672634602,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 379,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "origin-walls:7,0,1,6",
+              "index": 71467,
+              "selected": true,
+              "excessRate": 1.4819630272686481,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 324,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "repetition:1",
+              "index": 22716,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 219,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 466,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "target-walls:7,0,3,4",
+              "index": 92897,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 121,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "task:capture-retention:1",
+              "index": 31634,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 237,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            }
+          ],
+          "mbonGroups": [
+            {
+              "side": "left",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0.00470069982111454,
+              "activeEligibleKCs": 22,
+              "changedGainEdgesForCue": 0
+            },
+            {
+              "side": "left",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.021752414914468925,
+              "activeEligibleKCs": 2,
+              "changedGainEdgesForCue": 0
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0.000042479485273361206,
+              "activeEligibleKCs": 14,
+              "changedGainEdgesForCue": 0
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.00016432814300060272,
+              "activeEligibleKCs": 0,
+              "changedGainEdgesForCue": 0
+            }
+          ]
+        },
+        {
+          "move": "e2e6",
+          "consequence": "failure",
+          "cueIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+          "tokenCount": 29,
+          "selectedKCCount": 14,
+          "selectedActiveKCs": 14,
+          "uniqueActiveKCCount": 31,
+          "selectedKCExcessRateSum": 20.73944502368977,
+          "response": {
+            "MBON12": 0.03350137174129486,
+            "MBON01": 0.024356301873922348,
+            "score": 0.009145069867372513,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          "tokenRows": [
+            {
+              "token": "action:r:0,4:-",
+              "index": 95653,
+              "selected": true,
+              "excessRate": 1.4818495623767376,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 806,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:b:-2,6",
+              "index": 111135,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 507,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:k:2,6",
+              "index": 48890,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 742,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:p:-4,2",
+              "index": 66687,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 316,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:p:0,4",
+              "index": 46881,
+              "selected": true,
+              "excessRate": 1.4823699984699488,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 575,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:r:3,2",
+              "index": 132233,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 858,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:k:-3,-1",
+              "index": 22716,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 219,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 466,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:p:-2,0",
+              "index": 25020,
+              "selected": true,
+              "excessRate": 1.4807749553583562,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 468,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:p:-3,2",
+              "index": 82684,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 345,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:r:-4,0",
+              "index": 124260,
+              "selected": true,
+              "excessRate": 1.4825567957013845,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 438,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:r:0,0",
+              "index": 87736,
+              "selected": true,
+              "excessRate": 1.4809464626014233,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 354,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:b:-2,2",
+              "index": 19314,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 546,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 690,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:k:2,2",
+              "index": 48441,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 281,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:-4,-2",
+              "index": 27796,
+              "selected": true,
+              "excessRate": 1.4825668148696423,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 227,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:0,0",
+              "index": 3491,
+              "selected": true,
+              "excessRate": 1.4735080897662556,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 534,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:r:3,-2",
+              "index": 105611,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 822,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:k:-3,-5",
+              "index": 14641,
+              "selected": true,
+              "excessRate": 1.481784226372838,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 3,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 15,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 207,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 460,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-2,-4",
+              "index": 30308,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 233,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-3,-2",
+              "index": 79099,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 342,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:-4,-4",
+              "index": 17758,
+              "selected": true,
+              "excessRate": 1.482107361778617,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 686,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:0,-4",
+              "index": 85134,
+              "selected": true,
+              "excessRate": 1.4818179979920387,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 109,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 346,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "capture:p",
+              "index": 121147,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 430,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 519,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "castle:-",
+              "index": 78274,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 338,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "ep:-",
+              "index": 18263,
+              "selected": true,
+              "excessRate": 1.4821443520486355,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 687,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "halfmove:0",
+              "index": 100077,
+              "selected": true,
+              "excessRate": 1.4823144562542439,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 379,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "origin-walls:4,3,1,6",
+              "index": 3695,
+              "selected": true,
+              "excessRate": 1.482320323586464,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 3,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "repetition:1",
+              "index": 22716,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 219,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 466,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "target-walls:4,3,5,2",
+              "index": 91014,
+              "selected": true,
+              "excessRate": 1.4823836265131831,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 796,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "task:capture-retention:1",
+              "index": 31634,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 237,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            }
+          ],
+          "mbonGroups": [
+            {
+              "side": "left",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0.004912367090582848,
+              "activeEligibleKCs": 18,
+              "changedGainEdgesForCue": 0
+            },
+            {
+              "side": "left",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.0000982436661918958,
+              "activeEligibleKCs": 2,
+              "changedGainEdgesForCue": 0
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0.00414409302175045,
+              "activeEligibleKCs": 12,
+              "changedGainEdgesForCue": 0
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.0000649159774184227,
+              "activeEligibleKCs": 0,
+              "changedGainEdgesForCue": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "state": "scratch",
+      "panelId": "te-05",
+      "chosenMove": "a2a4",
+      "correctMove": "e2e6",
+      "a2a4MinusE2e6": 0.0077486480586230755,
+      "candidates": [
+        {
+          "move": "a2a4",
+          "consequence": "failure",
+          "cueIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+          "tokenCount": 29,
+          "selectedKCCount": 14,
+          "selectedActiveKCs": 14,
+          "uniqueActiveKCCount": 43,
+          "selectedKCExcessRateSum": 20.735924408756546,
+          "response": {
+            "MBON12": 0.036650876980274916,
+            "MBON01": 0.01961866393685341,
+            "score": 0.017032213043421507,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          "tokenRows": [
+            {
+              "token": "action:r:0,2:-",
+              "index": 77125,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 486,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:b:-2,6",
+              "index": 42294,
+              "selected": true,
+              "excessRate": 1.4825336243957281,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 59,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:k:-6,6",
+              "index": 51510,
+              "selected": true,
+              "excessRate": 1.4812932722270489,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 584,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:p:-4,4",
+              "index": 40773,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 726,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:p:0,2",
+              "index": 9874,
+              "selected": true,
+              "excessRate": 1.481691305525601,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 678,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:r:-7,2",
+              "index": 95238,
+              "selected": true,
+              "excessRate": 1.4819511091336608,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 802,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:k:-1,-1",
+              "index": 42294,
+              "selected": true,
+              "excessRate": 1.4825336243957281,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 59,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:p:-2,0",
+              "index": 12867,
+              "selected": true,
+              "excessRate": 1.4822190469130874,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 13,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:p:-3,5",
+              "index": 89239,
+              "selected": true,
+              "excessRate": 1.4825905626639724,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 358,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:r:-4,0",
+              "index": 85755,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 786,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:r:0,0",
+              "index": 72691,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 96,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:b:-2,4",
+              "index": 32718,
+              "selected": true,
+              "excessRate": 1.4818346938118339,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 706,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:k:-6,4",
+              "index": 58368,
+              "selected": true,
+              "excessRate": 1.4814194273203611,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 593,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:-4,2",
+              "index": 43240,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 732,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:0,0",
+              "index": 3491,
+              "selected": true,
+              "excessRate": 1.4718897044513142,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 534,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:r:-7,0",
+              "index": 24188,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 696,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:k:-1,-3",
+              "index": 37936,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 3,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 45,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 255,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 472,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-2,-2",
+              "index": 31551,
+              "selected": true,
+              "excessRate": 1.4813783410936594,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 555,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 701,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-3,3",
+              "index": 54918,
+              "selected": true,
+              "excessRate": 1.4812288712710142,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 747,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:-4,-2",
+              "index": 103828,
+              "selected": true,
+              "excessRate": 1.481774315237999,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 819,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:0,-2",
+              "index": 72963,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 98,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 327,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "capture:p",
+              "index": 121147,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 430,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 519,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "castle:-",
+              "index": 78274,
+              "selected": false,
+              "excessRate": 0.000009884126484394073,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 338,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "ep:-",
+              "index": 18263,
+              "selected": true,
+              "excessRate": 1.4816319905221462,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 687,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "halfmove:0",
+              "index": 100077,
+              "selected": true,
+              "excessRate": 1.4824881441891193,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 379,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "origin-walls:7,0,1,6",
+              "index": 71467,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 324,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "repetition:1",
+              "index": 22716,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 219,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 466,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "target-walls:7,0,3,4",
+              "index": 92897,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 121,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "task:capture-retention:1",
+              "index": 31634,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 237,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            }
+          ],
+          "mbonGroups": [
+            {
+              "side": "left",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0.004688635468482971,
+              "activeEligibleKCs": 28,
+              "changedGainEdgesForCue": 0
+            },
+            {
+              "side": "left",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.037494082314272724,
+              "activeEligibleKCs": 1,
+              "changedGainEdgesForCue": 0
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0.000026572495698928833,
+              "activeEligibleKCs": 15,
+              "changedGainEdgesForCue": 0
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.00015521018455425897,
+              "activeEligibleKCs": 0,
+              "changedGainEdgesForCue": 0
+            }
+          ]
+        },
+        {
+          "move": "e2e6",
+          "consequence": "success",
+          "cueIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+          "tokenCount": 29,
+          "selectedKCCount": 14,
+          "selectedActiveKCs": 14,
+          "uniqueActiveKCCount": 26,
+          "selectedKCExcessRateSum": 20.739668803740642,
+          "response": {
+            "MBON12": 0.03363341651856899,
+            "MBON01": 0.02434985153377056,
+            "score": 0.009283564984798431,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          "tokenRows": [
+            {
+              "token": "action:r:0,4:-",
+              "index": 95653,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 806,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:b:-2,6",
+              "index": 111135,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 507,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:k:2,6",
+              "index": 48890,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 742,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:p:-4,2",
+              "index": 66687,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 316,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:p:0,4",
+              "index": 46881,
+              "selected": true,
+              "excessRate": 1.4823636803776026,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 575,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:r:3,2",
+              "index": 132233,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 858,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:k:-3,-1",
+              "index": 22716,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 219,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 466,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:p:-1,5",
+              "index": 124,
+              "selected": true,
+              "excessRate": 1.4821462985128164,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 529,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:p:-2,0",
+              "index": 25020,
+              "selected": true,
+              "excessRate": 1.4807778163813055,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 468,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:r:-4,0",
+              "index": 124260,
+              "selected": true,
+              "excessRate": 1.4825572725385427,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 438,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:r:0,0",
+              "index": 87736,
+              "selected": true,
+              "excessRate": 1.4809474162757397,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 354,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:b:-2,2",
+              "index": 19314,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 546,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 690,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:k:2,2",
+              "index": 48441,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 281,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:-4,-2",
+              "index": 27796,
+              "selected": true,
+              "excessRate": 1.4825662188231945,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 227,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:0,0",
+              "index": 3491,
+              "selected": true,
+              "excessRate": 1.4734669625613606,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 534,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:r:3,-2",
+              "index": 105611,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 822,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:k:-3,-5",
+              "index": 14641,
+              "selected": true,
+              "excessRate": 1.4817854184657335,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 3,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 15,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 207,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 460,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-1,1",
+              "index": 104736,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 820,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-2,-4",
+              "index": 30308,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 233,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:-4,-4",
+              "index": 17758,
+              "selected": true,
+              "excessRate": 1.4820937719196081,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 686,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:0,-4",
+              "index": 85134,
+              "selected": true,
+              "excessRate": 1.4818191900849342,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 109,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 346,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "capture:p",
+              "index": 121147,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 430,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 519,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "castle:-",
+              "index": 78274,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 338,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "ep:-",
+              "index": 18263,
+              "selected": true,
+              "excessRate": 1.482131239026785,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 687,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "halfmove:0",
+              "index": 100077,
+              "selected": true,
+              "excessRate": 1.4823152907192707,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 379,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "origin-walls:4,3,1,6",
+              "index": 3695,
+              "selected": true,
+              "excessRate": 1.4823211580514908,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 3,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "repetition:1",
+              "index": 22716,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 219,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 466,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "target-walls:4,3,5,2",
+              "index": 91014,
+              "selected": true,
+              "excessRate": 1.4823770700022578,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 796,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "task:capture-retention:1",
+              "index": 31634,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 237,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            }
+          ],
+          "mbonGroups": [
+            {
+              "side": "left",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0.0048937369138002396,
+              "activeEligibleKCs": 14,
+              "changedGainEdgesForCue": 0
+            },
+            {
+              "side": "left",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.00009593429664770763,
+              "activeEligibleKCs": 2,
+              "changedGainEdgesForCue": 0
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0,
+              "activeEligibleKCs": 11,
+              "changedGainEdgesForCue": 0
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.00011962869515021642,
+              "activeEligibleKCs": 0,
+              "changedGainEdgesForCue": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "state": "informative-trained",
+      "panelId": "te-01",
+      "chosenMove": "a2a4",
+      "correctMove": "a2a4",
+      "a2a4MinusE2e6": 0.007582544814795256,
+      "candidates": [
+        {
+          "move": "a2a4",
+          "consequence": "success",
+          "cueIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+          "tokenCount": 29,
+          "selectedKCCount": 14,
+          "selectedActiveKCs": 14,
+          "uniqueActiveKCCount": 36,
+          "selectedKCExcessRateSum": 20.73790007828211,
+          "response": {
+            "MBON12": 0.03203947143629193,
+            "MBON01": 0.01967020519077778,
+            "score": 0.012369266245514154,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          "tokenRows": [
+            {
+              "token": "action:r:0,2:-",
+              "index": 77125,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 486,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:b:-2,6",
+              "index": 42294,
+              "selected": true,
+              "excessRate": 1.4825054910033941,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 59,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:k:-6,6",
+              "index": 51510,
+              "selected": true,
+              "excessRate": 1.4814606420695782,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 584,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:p:-4,4",
+              "index": 40773,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 726,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:p:0,2",
+              "index": 9874,
+              "selected": true,
+              "excessRate": 1.4818052696064115,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 678,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:r:-7,2",
+              "index": 95238,
+              "selected": true,
+              "excessRate": 1.4820309793576598,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 802,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:k:-1,-1",
+              "index": 42294,
+              "selected": true,
+              "excessRate": 1.4825054910033941,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 59,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:p:-1,2",
+              "index": 104736,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 820,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:p:-2,0",
+              "index": 12867,
+              "selected": true,
+              "excessRate": 1.4821195071563125,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 13,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:r:-4,0",
+              "index": 85755,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 786,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:r:0,0",
+              "index": 72691,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 96,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:b:-2,4",
+              "index": 32718,
+              "selected": true,
+              "excessRate": 1.4819307764992118,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 706,
+                  "gain": 0.8767891319101284,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:k:-6,4",
+              "index": 58368,
+              "selected": true,
+              "excessRate": 1.4815677236765623,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 593,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:-4,2",
+              "index": 43240,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 732,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:0,0",
+              "index": 3491,
+              "selected": true,
+              "excessRate": 1.472274035200826,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 534,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:r:-7,0",
+              "index": 24188,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 696,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:k:-1,-3",
+              "index": 37936,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 3,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 45,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 255,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 472,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-1,0",
+              "index": 49350,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 283,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-2,-2",
+              "index": 31551,
+              "selected": true,
+              "excessRate": 1.481533670797944,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 2,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 555,
+                  "gain": 0.7544602563765953,
+                  "changedFromScratch": true
+                },
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 701,
+                  "gain": 0.7544602563765953,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:-4,-2",
+              "index": 103828,
+              "selected": true,
+              "excessRate": 1.481877788901329,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 819,
+                  "gain": 0.9999761951824598,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:0,-2",
+              "index": 72963,
+              "selected": true,
+              "excessRate": 1.4826322346925735,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 98,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 327,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "capture:p",
+              "index": 121147,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 2,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 430,
+                  "gain": 0.9999999750524862,
+                  "changedFromScratch": true
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 519,
+                  "gain": 0.9999923242191242,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "castle:-",
+              "index": 78274,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 338,
+                  "gain": 0.850795648187137,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "ep:-",
+              "index": 18263,
+              "selected": true,
+              "excessRate": 1.481753583997488,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 687,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "halfmove:0",
+              "index": 100077,
+              "selected": true,
+              "excessRate": 1.4824453480541706,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 379,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "origin-walls:7,0,1,6",
+              "index": 71467,
+              "selected": true,
+              "excessRate": 1.4819630272686481,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 324,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "repetition:1",
+              "index": 22716,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 219,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 466,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "target-walls:7,0,3,4",
+              "index": 92897,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 121,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "task:capture-retention:1",
+              "index": 31634,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 237,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            }
+          ],
+          "mbonGroups": [
+            {
+              "side": "left",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0.004636460915207863,
+              "activeEligibleKCs": 22,
+              "changedGainEdgesForCue": 1
+            },
+            {
+              "side": "left",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.021747135557234287,
+              "activeEligibleKCs": 2,
+              "changedGainEdgesForCue": 0
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0,
+              "activeEligibleKCs": 14,
+              "changedGainEdgesForCue": 7
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.00005140931655963262,
+              "activeEligibleKCs": 0,
+              "changedGainEdgesForCue": 0
+            }
+          ]
+        },
+        {
+          "move": "e2e6",
+          "consequence": "failure",
+          "cueIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+          "tokenCount": 29,
+          "selectedKCCount": 14,
+          "selectedActiveKCs": 14,
+          "uniqueActiveKCCount": 31,
+          "selectedKCExcessRateSum": 20.73944705024769,
+          "response": {
+            "MBON12": 0.02914237044751644,
+            "MBON01": 0.024355649016797543,
+            "score": 0.004786721430718899,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          "tokenRows": [
+            {
+              "token": "action:r:0,4:-",
+              "index": 95653,
+              "selected": true,
+              "excessRate": 1.4818495623767376,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 806,
+                  "gain": 0.9468325648221858,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:b:-2,6",
+              "index": 111135,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 507,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:k:2,6",
+              "index": 48890,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 742,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:p:-4,2",
+              "index": 66687,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 316,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:p:0,4",
+              "index": 46881,
+              "selected": true,
+              "excessRate": 1.4823701176792383,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 575,
+                  "gain": 0.9468305887643917,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:r:3,2",
+              "index": 132233,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 858,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:k:-3,-1",
+              "index": 22716,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 219,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 466,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:p:-2,0",
+              "index": 25020,
+              "selected": true,
+              "excessRate": 1.4807760282419622,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 468,
+                  "gain": 0.9997634865494484,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:p:-3,2",
+              "index": 82684,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 345,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:r:-4,0",
+              "index": 124260,
+              "selected": true,
+              "excessRate": 1.482556676492095,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 438,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:r:0,0",
+              "index": 87736,
+              "selected": true,
+              "excessRate": 1.4809464626014233,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 354,
+                  "gain": 0.9479520340895206,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:b:-2,2",
+              "index": 19314,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 546,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 690,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:k:2,2",
+              "index": 48441,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 281,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:-4,-2",
+              "index": 27796,
+              "selected": true,
+              "excessRate": 1.4825624041259289,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 227,
+                  "gain": 0.8843814858497482,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:0,0",
+              "index": 3491,
+              "selected": true,
+              "excessRate": 1.4735083281848347,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 534,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:r:3,-2",
+              "index": 105611,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 822,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:k:-3,-5",
+              "index": 14641,
+              "selected": true,
+              "excessRate": 1.4817844647914171,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 3,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 15,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 207,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 460,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-2,-4",
+              "index": 30308,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 233,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-3,-2",
+              "index": 79099,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 342,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:-4,-4",
+              "index": 17758,
+              "selected": true,
+              "excessRate": 1.4821118917316198,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 686,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:0,-4",
+              "index": 85134,
+              "selected": true,
+              "excessRate": 1.4818182364106178,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 2,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 109,
+                  "gain": 0.9479503016046692,
+                  "changedFromScratch": true
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 346,
+                  "gain": 0.9479503016046692,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "capture:p",
+              "index": 121147,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 2,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 430,
+                  "gain": 0.9999999750524862,
+                  "changedFromScratch": true
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 519,
+                  "gain": 0.9999923242191242,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "castle:-",
+              "index": 78274,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 338,
+                  "gain": 0.850795648187137,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "ep:-",
+              "index": 18263,
+              "selected": true,
+              "excessRate": 1.4821443520486355,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 687,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "halfmove:0",
+              "index": 100077,
+              "selected": true,
+              "excessRate": 1.4823145754635334,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 379,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "origin-walls:4,3,1,6",
+              "index": 3695,
+              "selected": true,
+              "excessRate": 1.482320323586464,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 3,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "repetition:1",
+              "index": 22716,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 219,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 466,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "target-walls:4,3,5,2",
+              "index": 91014,
+              "selected": true,
+              "excessRate": 1.4823836265131831,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 796,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "task:capture-retention:1",
+              "index": 31634,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 237,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            }
+          ],
+          "mbonGroups": [
+            {
+              "side": "left",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0.00486149825155735,
+              "activeEligibleKCs": 18,
+              "changedGainEdgesForCue": 6
+            },
+            {
+              "side": "left",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.00009521593650182088,
+              "activeEligibleKCs": 2,
+              "changedGainEdgesForCue": 1
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0.004088796675205231,
+              "activeEligibleKCs": 12,
+              "changedGainEdgesForCue": 4
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.00001733703538775444,
+              "activeEligibleKCs": 0,
+              "changedGainEdgesForCue": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "state": "informative-trained",
+      "panelId": "te-05",
+      "chosenMove": "a2a4",
+      "correctMove": "e2e6",
+      "a2a4MinusE2e6": 0.006380845792591572,
+      "candidates": [
+        {
+          "move": "a2a4",
+          "consequence": "failure",
+          "cueIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+          "tokenCount": 29,
+          "selectedKCCount": 14,
+          "selectedActiveKCs": 14,
+          "uniqueActiveKCCount": 43,
+          "selectedKCExcessRateSum": 20.735937640987686,
+          "response": {
+            "MBON12": 0.030999918933957815,
+            "MBON01": 0.01961904764175415,
+            "score": 0.011380871292203665,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          "tokenRows": [
+            {
+              "token": "action:r:0,2:-",
+              "index": 77125,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 486,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:b:-2,6",
+              "index": 42294,
+              "selected": true,
+              "excessRate": 1.4825336243957281,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 59,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:k:-6,6",
+              "index": 51510,
+              "selected": true,
+              "excessRate": 1.481293749064207,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 584,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:p:-4,4",
+              "index": 40773,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 726,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:p:0,2",
+              "index": 9874,
+              "selected": true,
+              "excessRate": 1.4816914247348905,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 678,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:opponent:r:-7,2",
+              "index": 95238,
+              "selected": true,
+              "excessRate": 1.4819511091336608,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 802,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:k:-1,-1",
+              "index": 42294,
+              "selected": true,
+              "excessRate": 1.4825336243957281,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 59,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:p:-2,0",
+              "index": 12867,
+              "selected": true,
+              "excessRate": 1.482219166122377,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 13,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:p:-3,5",
+              "index": 89239,
+              "selected": true,
+              "excessRate": 1.4825905626639724,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 358,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:r:-4,0",
+              "index": 85755,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 786,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,2:-:self:r:0,0",
+              "index": 72691,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 96,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:b:-2,4",
+              "index": 32718,
+              "selected": true,
+              "excessRate": 1.4818348130211234,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 706,
+                  "gain": 0.8767891319101284,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:k:-6,4",
+              "index": 58368,
+              "selected": true,
+              "excessRate": 1.4814196657389402,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 593,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:-4,2",
+              "index": 43240,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 732,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:0,0",
+              "index": 3491,
+              "selected": true,
+              "excessRate": 1.4718906581256306,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 534,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:r:-7,0",
+              "index": 24188,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 696,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:k:-1,-3",
+              "index": 37936,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 3,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 45,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 255,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 472,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-2,-2",
+              "index": 31551,
+              "selected": true,
+              "excessRate": 1.4813789371401072,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 2,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 555,
+                  "gain": 0.7544602563765953,
+                  "changedFromScratch": true
+                },
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 701,
+                  "gain": 0.7544602563765953,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-3,3",
+              "index": 54918,
+              "selected": true,
+              "excessRate": 1.481239004060626,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 747,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:-4,-2",
+              "index": 103828,
+              "selected": true,
+              "excessRate": 1.481774315237999,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 819,
+                  "gain": 0.9999761951824598,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:0,-2",
+              "index": 72963,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 98,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 327,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "capture:p",
+              "index": 121147,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 2,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 430,
+                  "gain": 0.9999999750524862,
+                  "changedFromScratch": true
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 519,
+                  "gain": 0.9999923242191242,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "castle:-",
+              "index": 78274,
+              "selected": false,
+              "excessRate": 0.000002168118953704834,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 338,
+                  "gain": 0.850795648187137,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "ep:-",
+              "index": 18263,
+              "selected": true,
+              "excessRate": 1.4816323481500149,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 687,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "halfmove:0",
+              "index": 100077,
+              "selected": true,
+              "excessRate": 1.482488263398409,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 379,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "origin-walls:7,0,1,6",
+              "index": 71467,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 324,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "repetition:1",
+              "index": 22716,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 219,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 466,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "target-walls:7,0,3,4",
+              "index": 92897,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 121,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "task:capture-retention:1",
+              "index": 31634,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 237,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            }
+          ],
+          "mbonGroups": [
+            {
+              "side": "left",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0.004624394699931145,
+              "activeEligibleKCs": 28,
+              "changedGainEdgesForCue": 1
+            },
+            {
+              "side": "left",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.03748879705866178,
+              "activeEligibleKCs": 1,
+              "changedGainEdgesForCue": 0
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0,
+              "activeEligibleKCs": 15,
+              "changedGainEdgesForCue": 7
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.00004230036089817683,
+              "activeEligibleKCs": 0,
+              "changedGainEdgesForCue": 0
+            }
+          ]
+        },
+        {
+          "move": "e2e6",
+          "consequence": "success",
+          "cueIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+          "tokenCount": 29,
+          "selectedKCCount": 14,
+          "selectedActiveKCs": 14,
+          "uniqueActiveKCCount": 26,
+          "selectedKCExcessRateSum": 20.739670830298564,
+          "response": {
+            "MBON12": 0.029349199030548334,
+            "MBON01": 0.02434917353093624,
+            "score": 0.005000025499612093,
+            "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+          },
+          "tokenRows": [
+            {
+              "token": "action:r:0,4:-",
+              "index": 95653,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 806,
+                  "gain": 0.9468325648221858,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:b:-2,6",
+              "index": 111135,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 507,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:k:2,6",
+              "index": 48890,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 742,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:p:-4,2",
+              "index": 66687,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 316,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:p:0,4",
+              "index": 46881,
+              "selected": true,
+              "excessRate": 1.4823637995868921,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 575,
+                  "gain": 0.9468305887643917,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:opponent:r:3,2",
+              "index": 132233,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 858,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:k:-3,-1",
+              "index": 22716,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 219,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 466,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:p:-1,5",
+              "index": 124,
+              "selected": true,
+              "excessRate": 1.482146417722106,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 529,
+                  "gain": 0.9986641283272931,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:p:-2,0",
+              "index": 25020,
+              "selected": true,
+              "excessRate": 1.4807787700556219,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 468,
+                  "gain": 0.9997634865494484,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:r:-4,0",
+              "index": 124260,
+              "selected": true,
+              "excessRate": 1.4825571533292532,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 438,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-origin:r:0,4:-:self:r:0,0",
+              "index": 87736,
+              "selected": true,
+              "excessRate": 1.4809474162757397,
+              "relation": "around-origin",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 354,
+                  "gain": 0.9479520340895206,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:b:-2,2",
+              "index": 19314,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 546,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 690,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:k:2,2",
+              "index": 48441,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 281,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:-4,-2",
+              "index": 27796,
+              "selected": true,
+              "excessRate": 1.4825616888701916,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 227,
+                  "gain": 0.8843814858497482,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:p:0,0",
+              "index": 3491,
+              "selected": true,
+              "excessRate": 1.4734672009799397,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 534,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:opponent:r:3,-2",
+              "index": 105611,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 822,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:k:-3,-5",
+              "index": 14641,
+              "selected": true,
+              "excessRate": 1.481785537675023,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 3,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 15,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 207,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 460,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-1,1",
+              "index": 104736,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 820,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:p:-2,-4",
+              "index": 30308,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 233,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:-4,-4",
+              "index": 17758,
+              "selected": true,
+              "excessRate": 1.482098301872611,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 686,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "around-target:r:self:r:0,-4",
+              "index": 85134,
+              "selected": true,
+              "excessRate": 1.4818194285035133,
+              "relation": "around-target",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 2,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 109,
+                  "gain": 0.9479503016046692,
+                  "changedFromScratch": true
+                },
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 346,
+                  "gain": 0.9479503016046692,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "capture:p",
+              "index": 121147,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 2,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 430,
+                  "gain": 0.9999999750524862,
+                  "changedFromScratch": true
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 519,
+                  "gain": 0.9999923242191242,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "castle:-",
+              "index": 78274,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 338,
+                  "gain": 0.850795648187137,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "ep:-",
+              "index": 18263,
+              "selected": true,
+              "excessRate": 1.482131477445364,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 687,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "halfmove:0",
+              "index": 100077,
+              "selected": true,
+              "excessRate": 1.4823152907192707,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 1,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 379,
+                  "gain": 0.2,
+                  "changedFromScratch": true
+                }
+              ]
+            },
+            {
+              "token": "origin-walls:4,3,1,6",
+              "index": 3695,
+              "selected": true,
+              "excessRate": 1.4823211580514908,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 3,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "repetition:1",
+              "index": 22716,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 2,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left",
+                "MBON01-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 219,
+                  "gain": 1,
+                  "changedFromScratch": false
+                },
+                {
+                  "group": "MBON01-left",
+                  "gainOffset": 466,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "target-walls:4,3,5,2",
+              "index": 91014,
+              "selected": true,
+              "excessRate": 1.4823771892115474,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-right"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-right",
+                  "gainOffset": 796,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            },
+            {
+              "token": "task:capture-retention:1",
+              "index": 31634,
+              "selected": false,
+              "excessRate": 0,
+              "relation": "other",
+              "eligiblePlasticEdges": 1,
+              "changedEligibleEdges": 0,
+              "plasticEdgeGroups": [
+                "MBON12-left"
+              ],
+              "plasticEdges": [
+                {
+                  "group": "MBON12-left",
+                  "gainOffset": 237,
+                  "gain": 1,
+                  "changedFromScratch": false
+                }
+              ]
+            }
+          ],
+          "mbonGroups": [
+            {
+              "side": "left",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0.004843773320317268,
+              "activeEligibleKCs": 14,
+              "changedGainEdgesForCue": 6
+            },
+            {
+              "side": "left",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.00009474344551563263,
+              "activeEligibleKCs": 2,
+              "changedGainEdgesForCue": 1
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON12",
+              "danType": "PPL103",
+              "meanDanExcess": 0,
+              "activeEligibleKCs": 11,
+              "changedGainEdgesForCue": 4
+            },
+            {
+              "side": "right",
+              "mbonType": "MBON01",
+              "danType": "PAM02",
+              "meanDanExcess": 0.00007194808373848598,
+              "activeEligibleKCs": 0,
+              "changedGainEdgesForCue": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

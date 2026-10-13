@@ -1,0 +1,22 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { sha256 } from '../runtime/fetch-graph.mjs';
+const dir='research/data/original-puzzle-retention-v1';
+if(fs.existsSync(dir)) throw Error('Frozen protocol already exists');
+const p=JSON.parse(fs.readFileSync('research/data/adaptive-near-transfer-repair-transfer-v1/protocol.json','utf8'));
+const certDir='research/reports/original-puzzle-retention-certificates-v1-2026-10-07';
+const r=JSON.parse(fs.readFileSync(`${certDir}/report.json`,'utf8'));
+if(!r.complete || r.counts.unknown || r.legalMoves!==32 || await sha256(`${certDir}/certificates.jsonl`)!==r.certificatesSha256) throw Error('Incomplete certificate prerequisite');
+p.purpose='Read-only first-puzzle retention after second-puzzle teaching.';
+p.scope='Development retention on the original trained position, not unfamiliar transfer or biological retention. All legal moves available; no feedback.';
+p.output='research/reports/original-puzzle-retention-v1-2026-10-07/run';
+p.positions=[r.row];p.certificatePath=`${certDir}/certificates.jsonl`;
+for(const name of ['certificates.jsonl','report.json','plan.json']) p.inputs[`${certDir}/${name}`]=await sha256(`${certDir}/${name}`);
+p.sources['.codebase/scripts/puzzle-learning/freeze-original-puzzle-retention.mjs']=await sha256(import.meta.filename);
+for(const [file,hash] of Object.entries({...p.inputs,...p.sources})) if(await sha256(file)!==hash) throw Error(`Identity mismatch ${file}`);
+fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(`${dir}/protocol.json`,JSON.stringify(p,null,2)+'\n',{flag:'wx'});
+const archive='research/source-archives/original-puzzle-retention-v1-frozen';fs.mkdirSync(archive,{recursive:true});
+for(const file of Object.keys(p.sources)){const target=path.join(archive,file);fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(file,target,fs.constants.COPYFILE_EXCL);}
+fs.copyFileSync(`${dir}/protocol.json`,`${archive}/protocol.json`,fs.constants.COPYFILE_EXCL);
+fs.writeFileSync(`${archive}/manifest.json`,JSON.stringify({protocolSha256:await sha256(`${dir}/protocol.json`),sources:p.sources,inputs:p.inputs},null,2));
+console.log(JSON.stringify({protocol:`${dir}/protocol.json`,sha256:await sha256(`${dir}/protocol.json`),positions:p.positions}));

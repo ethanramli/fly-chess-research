@@ -1,0 +1,18 @@
+{
+  "schema": "puzzle-pipeline-v1",
+  "prerequisite": "research/reports/mbon-choice-v1-2026-10-06",
+  "puzzles": "research/data/puzzle-pipeline-v1/puzzles.jsonl",
+  "seed": 14009,
+  "conditions": ["informative", "absent", "shuffled", "disabled"],
+  "maxPuzzles": 2,
+  "maxExperiences": 32,
+  "maxPresentationsPerCondition": 1600,
+  "encoder": {"seed": 14009, "maxCells": 14, "totalCurrent": 21, "maxCellCurrent": 1.5, "maxHistoryPlies": 512},
+  "memory": {"eta": 0.5, "minGain": 0.2, "maxGain": 1.8, "activityScale": 1.5},
+  "current": 1.5,
+  "priorScale": 4,
+  "search": {"simulations": 32, "maxEvaluations": 3, "maxDepth": 3, "maxNodes": 1024, "milliseconds": 60000, "randomFraction": 0.25},
+  "review": {"maxCandidates": 4, "maxProofNodes": 4096, "nodesPerCandidate": 1024, "proofMilliseconds": 2000},
+  "schedule": "Stream two engineering fixtures. Informative condition commits, receives independently verified consequence replay, and persists memory across fixtures. Other conditions replay the identical informative board/action experiences with absent, globally count-matched seeded shuffled, or disabled-plasticity feedback. Unknown receives no presentation/update. One replay per known reviewed candidate. All root choices and seeded equal-bound searches are measured before/after; repeat/reset/restoration per fixture. No convenient checkpoint selection or new gate fitted to results.",
+  "scope": "Full-graph orchestration pilot, not unfamiliar-family transfer or completed reasoning. Candidate priors are neural; leaf value remains neutral. Explicit cue/reinforcement replay is not delayed eligibility, natural sensory/reward reconstruction or biological validation. Two fixtures do not constitute a validated curriculum or a capacity test. Earlier failed experiments remain unchanged."
+}

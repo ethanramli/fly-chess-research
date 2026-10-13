@@ -1,0 +1,355 @@
+{
+  "schema": "smothered-positive-eligibility-v1",
+  "complete": true,
+  "identity": {
+    "protocolPath": "research/data/smothered-positive-eligibility-v1/protocol.json",
+    "protocolSha256": "d1e070c3a57f43ed84573e8fedea1279d1560140ae0e6882a9734c6a65bf8093",
+    "inputs": {
+      ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+      ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+      "package-lock.json": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214",
+      "package.json": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+      "research/data/smothered-acquisition-v1/fixed-plan.json": "3a0de13cebd44e54d775494f04d8f51e6cf063d68c9c212cf573d5e9328b224b",
+      "research/data/smothered-acquisition-v1/protocol.json": "a64484f93d517d049f7d964518ac5b35db318a4b8e50f455a2205acb8c95f84c",
+      "research/reports/compartment-input-balanced-2026-10-06/audit-prefix.json": "30da25bfc21ee808f3319117c7e9fcc06b5fdd53b514267a30cf9e9ab8abbec9",
+      "research/reports/compartment-input-balanced-2026-10-06/report.json": "599af4ca2cb3087fac4a2a0608e10aa2dafe4ed3d5202bdaa909ced969fb01da",
+      "research/reports/compartment-input-conjoined-2026-10-06/audit-prefix.json": "6257e867dd34570a37e3d354b0af35ae5323c6e18e227359f0c8337ca0e731b3",
+      "research/reports/compartment-input-conjoined-2026-10-06/report.json": "ae32b40ae6388c31fcee5f845d49f2344aed321a13967f499f3807f2a47852a9",
+      "research/reports/compartment-input-conjoined-balanced-2026-10-06/audit-prefix.json": "e781385e8bf16cf927ea913b4b1e9c6bf295f428d40f00935c62eb7616d391f3",
+      "research/reports/compartment-input-conjoined-balanced-2026-10-06/report.json": "f50104a5d41598989c6bc387a8cd78d6d8a3e434dd15d90e541fb96615f68a5e",
+      "research/reports/compartment-input-original-2026-10-06/audit-prefix.json": "49506844f62237b9b9bb39a4019c55daa57bc1c40d349ed2311f8cb41e5ff73d",
+      "research/reports/compartment-input-original-2026-10-06/report.json": "9647b9c1cd0311a237c7ddd38691a88b07754de19331c4a5240388f3d2e5fdd8",
+      "research/reports/reversal-candidate-2026-10-05/mapping.json": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+      "research/reports/smothered-acquisition-v1-2026-10-07/positive-projection-preflight.json": "2f8a832172127cae543130078fc54d9f0f36659f125cef86a0376700b777b81b",
+      "research/reports/smothered-acquisition-v1-resumed-2026-10-07/audit.json": "17605398c6aaa571cd040d09c507e831ceefe6fa5a4e44fc0c8d40b240116b9d",
+      "research/reports/smothered-acquisition-v1-resumed-2026-10-07/report.json": "f17f4d40a10352487bbcae8dbefe0dd73c1cbfd9203ad05626234d22af8f6b4d",
+      "research/data/smothered-positive-eligibility-v1/protocol.json": "d1e070c3a57f43ed84573e8fedea1279d1560140ae0e6882a9734c6a65bf8093"
+    },
+    "sources": {
+      ".codebase/scripts/diagnostics/audit-smothered-positive-eligibility.mjs": "73cc4356ef629e8745ca2459826a6279ed822bcbb38045e9fba9aeed00a39923",
+      ".codebase/scripts/diagnostics/probe-smothered-positive-eligibility.mjs": "a0a0a26df29bc664a9b0bceb05f000a184daf487ef2ffae47da513de93485ef1",
+      ".codebase/scripts/runtime/fetch-graph.mjs": "5e48960ed947379ba31fc5cb10b791d6e5891913ed073a4443e6e9c875fab52a",
+      ".codebase/src/chess-input/compartment-chess-cue.mjs": "c7a095625518fab166b09a796d452c8a78779b9016cb04b982eb81e4f13440c3",
+      ".codebase/src/chess-input/relational-chess-cue-v2.mjs": "7998c336dba340d8bdb4e60c6de1b559411cf2a9b80af782b54d45f9e1c4bc3c",
+      ".codebase/src/neural-learning/association-validation.mjs": "b62d6f6bf4ab51f0ed993877026ac1cde0914c582fb479ea27fdc028a7dc2c91",
+      ".codebase/src/neural-learning/dual-valence-interface.mjs": "206fa1d12050463d15bc5b0a31ad30491cdf0507877182a134ff0af796873397",
+      ".codebase/src/neural-learning/mbon-readout.mjs": "bf639c8e0f2ed96d2dc31939abf560d1194fccb1beed486ea6ffccbb74601923",
+      ".codebase/src/neural-learning/mushroom-body.mjs": "b8e0e598930cfda3855d7617377e9bfb88e150a741d5975626454efcceccb41e",
+      ".codebase/src/neural-learning/reversal-memory.mjs": "cfafc1e208026a2687826f1f8b35ff279b64845355e070e9d1f6bd995b175a35",
+      ".codebase/src/puzzle-learning/dual-valence-puzzle-brain.mjs": "9a91a188d6ef40de5a21402ccd90f9a0192b46d664b26c414b86e0650d503c81",
+      ".codebase/src/puzzle-learning/mapped-puzzle-brain.mjs": "cca4ed8e2d79ff1c6786eb866141007d9d8f0dc36c1eb3776e11f549a9151c1b",
+      ".codebase/src/runtime/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+      ".codebase/src/search-and-feedback/experimental-puzzle-search.mjs": "dc7ac5e894879ae75a1b0bd5931b1e72466c14b707d2ff987ee6ee1f6d259ebb",
+      ".codebase/src/search-and-feedback/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+      ".codebase/src/search-and-feedback/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+      ".codebase/src/search-and-feedback/verified-feedback.mjs": "e8141c3171fd49cb720cee73283c4cd8a9b572a7a973a47636c25ce6f87f4a78",
+      ".codebase/src/supervised-baselines/trainer.mjs": "ffefd16ad1fd2e438dba89c45072ea2229091832a46349958b8668aa7517b7f9"
+    },
+    "runtime": {
+      "nodeVersion": "v22.23.2",
+      "execArgv": [
+        "--max-old-space-size=256"
+      ],
+      "heapMiB": 256,
+      "chessPackage": {
+        "path": "node_modules/chess.js/package.json",
+        "version": "1.4.0"
+      },
+      "packageJsonSha256": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+      "packageLockSha256": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214"
+    },
+    "model": {
+      "steps": 8,
+      "inputDim": 1,
+      "outputs": 1,
+      "seed": 47,
+      "precision": "float32",
+      "saturation": 10,
+      "recurrentScale": 0.9,
+      "normalization": "row"
+    },
+    "memory": {
+      "eta": 0.5,
+      "minGain": 0.2,
+      "maxGain": 1.8,
+      "activityScale": 1.5
+    },
+    "memoryIdentity": "a08330bdd620cc9a692925487619b504a8be6f4627f95bf5953da63ccbc4320f",
+    "readouts": {
+      "MBON12": [
+        {
+          "index": 56337,
+          "rootId": "720575940623001480",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "right",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.8942156867525906,
+          "ontologyIds": "FBbt_00111009"
+        },
+        {
+          "index": 49989,
+          "rootId": "720575940621828443",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "left",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.8760643793124306,
+          "ontologyIds": "FBbt_00111009"
+        },
+        {
+          "index": 61287,
+          "rootId": "720575940623905719",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "right",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.9010706195122313,
+          "ontologyIds": "FBbt_00111009"
+        },
+        {
+          "index": 93832,
+          "rootId": "720575940630075703",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "left",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.886691032764705,
+          "ontologyIds": "FBbt_00111009"
+        }
+      ],
+      "MBON01": [
+        {
+          "index": 62498,
+          "rootId": "720575940624117245",
+          "kind": "MBON",
+          "type": "MBON01",
+          "hemibrainType": "MBON01",
+          "side": "right",
+          "knownTransmitter": "glutamate, sparkly, proctolin, Nplp1",
+          "predictedTransmitter": "glutamate",
+          "predictedConfidence": 0.7386130312879104,
+          "ontologyIds": "FBbt_00100234"
+        },
+        {
+          "index": 128004,
+          "rootId": "720575940643309197",
+          "kind": "MBON",
+          "type": "MBON01",
+          "hemibrainType": "MBON01",
+          "side": "left",
+          "knownTransmitter": "glutamate, sparkly, proctolin, Nplp1",
+          "predictedTransmitter": "glutamate",
+          "predictedConfidence": 0.803689515262566,
+          "ontologyIds": "FBbt_00100234"
+        }
+      ]
+    },
+    "invariant": "0459bedc2e0a4f7626584df89809271fc927f72652b7e71fc3ce0dae51a847d5",
+    "mappingHash": "b2d7bf351dbe9889aa6a17216cca6cb7671f4f99d9661e604609a7ff51686fff"
+  },
+  "receiptRefs": [
+    {
+      "variant": "original",
+      "path": "research/reports/smothered-positive-eligibility-v1-2026-10-07/original.json",
+      "sha256": "34d67e003098baf648a5db57c88c3b33950d238d07f2c105e196d6a9491cc9e5"
+    },
+    {
+      "variant": "conjoined",
+      "path": "research/reports/smothered-positive-eligibility-v1-2026-10-07/conjoined.json",
+      "sha256": "8fd2d9169356586ce3f7d3876908a8adfde3a48c6087e1227954198f51c92944"
+    },
+    {
+      "variant": "balanced",
+      "path": "research/reports/smothered-positive-eligibility-v1-2026-10-07/balanced.json",
+      "sha256": "9e5abef291f9bfaf75bc16626caa1ab0c2b66277aaa13d5f281428c5ccc41cbe"
+    },
+    {
+      "variant": "conjoined-balanced",
+      "path": "research/reports/smothered-positive-eligibility-v1-2026-10-07/conjoined-balanced.json",
+      "sha256": "dc5f46b9c0ece8beae58a0ff27db31c346886a70c80153d016a6db95d0c05c85"
+    }
+  ],
+  "records": [
+    {
+      "variant": "original",
+      "encoderIdentity": "c8725115fe89340a88f6c1aa4af764ffd41551289c19a24094f544ddd91ace38",
+      "groups": [
+        {
+          "danType": "PPL103",
+          "side": "left",
+          "edgeCount": 452,
+          "activeEdgeAssociatedKCEntries": 30,
+          "activeUniqueKCCells": 23,
+          "changedEdges": 30
+        },
+        {
+          "danType": "PAM02",
+          "side": "left",
+          "edgeCount": 76,
+          "activeEdgeAssociatedKCEntries": 0,
+          "activeUniqueKCCells": 0,
+          "changedEdges": 0
+        },
+        {
+          "danType": "PPL103",
+          "side": "right",
+          "edgeCount": 334,
+          "activeEdgeAssociatedKCEntries": 9,
+          "activeUniqueKCCells": 8,
+          "changedEdges": 9
+        },
+        {
+          "danType": "PAM02",
+          "side": "right",
+          "edgeCount": 8,
+          "activeEdgeAssociatedKCEntries": 0,
+          "activeUniqueKCCells": 0,
+          "changedEdges": 0
+        }
+      ]
+    },
+    {
+      "variant": "conjoined",
+      "encoderIdentity": "7c2784e7da2159fd84c02266043dab428b12b2b68ecab1c6dd27e158a2509751",
+      "groups": [
+        {
+          "danType": "PPL103",
+          "side": "left",
+          "edgeCount": 452,
+          "activeEdgeAssociatedKCEntries": 44,
+          "activeUniqueKCCells": 36,
+          "changedEdges": 44
+        },
+        {
+          "danType": "PAM02",
+          "side": "left",
+          "edgeCount": 76,
+          "activeEdgeAssociatedKCEntries": 2,
+          "activeUniqueKCCells": 2,
+          "changedEdges": 2
+        },
+        {
+          "danType": "PPL103",
+          "side": "right",
+          "edgeCount": 334,
+          "activeEdgeAssociatedKCEntries": 9,
+          "activeUniqueKCCells": 9,
+          "changedEdges": 9
+        },
+        {
+          "danType": "PAM02",
+          "side": "right",
+          "edgeCount": 8,
+          "activeEdgeAssociatedKCEntries": 0,
+          "activeUniqueKCCells": 0,
+          "changedEdges": 0
+        }
+      ]
+    },
+    {
+      "variant": "balanced",
+      "encoderIdentity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+      "groups": [
+        {
+          "danType": "PPL103",
+          "side": "left",
+          "edgeCount": 452,
+          "activeEdgeAssociatedKCEntries": 61,
+          "activeUniqueKCCells": 50,
+          "changedEdges": 61
+        },
+        {
+          "danType": "PAM02",
+          "side": "left",
+          "edgeCount": 76,
+          "activeEdgeAssociatedKCEntries": 8,
+          "activeUniqueKCCells": 8,
+          "changedEdges": 8
+        },
+        {
+          "danType": "PPL103",
+          "side": "right",
+          "edgeCount": 334,
+          "activeEdgeAssociatedKCEntries": 14,
+          "activeUniqueKCCells": 14,
+          "changedEdges": 14
+        },
+        {
+          "danType": "PAM02",
+          "side": "right",
+          "edgeCount": 8,
+          "activeEdgeAssociatedKCEntries": 2,
+          "activeUniqueKCCells": 2,
+          "changedEdges": 2
+        }
+      ]
+    },
+    {
+      "variant": "conjoined-balanced",
+      "encoderIdentity": "59bb6751a0025bba562c8c83157fb1f7eceeedbbb83df86d2ce14d4e148793e2",
+      "groups": [
+        {
+          "danType": "PPL103",
+          "side": "left",
+          "edgeCount": 452,
+          "activeEdgeAssociatedKCEntries": 65,
+          "activeUniqueKCCells": 54,
+          "changedEdges": 65
+        },
+        {
+          "danType": "PAM02",
+          "side": "left",
+          "edgeCount": 76,
+          "activeEdgeAssociatedKCEntries": 11,
+          "activeUniqueKCCells": 11,
+          "changedEdges": 11
+        },
+        {
+          "danType": "PPL103",
+          "side": "right",
+          "edgeCount": 334,
+          "activeEdgeAssociatedKCEntries": 15,
+          "activeUniqueKCCells": 13,
+          "changedEdges": 15
+        },
+        {
+          "danType": "PAM02",
+          "side": "right",
+          "edgeCount": 8,
+          "activeEdgeAssociatedKCEntries": 1,
+          "activeUniqueKCCells": 1,
+          "changedEdges": 1
+        }
+      ]
+    }
+  ],
+  "command": {
+    "argv": [
+      "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\diagnostics\\probe-smothered-positive-eligibility.mjs",
+      "--out",
+      "research/reports/smothered-positive-eligibility-v1-2026-10-07",
+      "--cpu-duty",
+      "0.5"
+    ],
+    "execArgv": [
+      "--max-old-space-size=256"
+    ],
+    "cwd": "C:\\Users\\ethan\\Documents\\fly-chess-research"
+  },
+  "resources": {
+    "elapsedSeconds": 5.439595000000001,
+    "peakRssMiB": 103.46484375,
+    "duty": 0.5
+  },
+  "scope": "One fresh-state independently verified PAM02 reward per four input variants. Eligibility/update diagnostic only; no candidate-choice acquisition, controls, retention, reversal, or transfer."
+}

@@ -1,0 +1,11 @@
+{
+  "schema":"chess-memory-envelope-v1",
+  "frozen":"2026-10-05 before efficacy-envelope probing",
+  "sourceRun":"research/reports/chess-cue-association-v1-2026-10-05",
+  "phases":["reversal"],
+  "interventions":["naive","A-unique-floor","B-unique-floor","A-MBON12-floor","B-MBON12-floor","A-MBON01-floor","B-MBON01-floor"],
+  "mask":"Select existing permitted plastic edges whose KC is directly stimulated by the named cue but not its competitor, optionally restricted to MBON12 or MBON01. No outcome enters mask selection.",
+  "intervention":"Start from naive gains, set the selected gains to the candidate's original minimum 0.2, and leave all others at 1. Event count stays zero. Preserve released wiring/signs and all nonplastic parameters. These arrays are artificial interventions, never trained checkpoints.",
+  "readout":"Keep original frozen clipped GF decoder and calibration; retain raw/signed GF and MBON diagnostics. Naive probes must match original baseline exactly.",
+  "interpretation":"Tests only these extreme numerical gain profiles. The bound is an unfitted engineering constraint, not a measured physiological limit. A choice flip shows numerical control under that profile, not a trainable biological route or successful acquisition. No flip does not prove that no permitted gain configuration or other justified mechanism could work. Original failed acceptance is retained."
+}

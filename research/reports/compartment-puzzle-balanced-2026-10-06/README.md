@@ -1,0 +1,9 @@
+﻿# Balanced-input puzzle condition: no acquired repair
+
+The terminal informative condition finishes both fixtures with independently verified successful unaided choices, so usefulChoices passes. However both choices were already successful before feedback, and absent/disabled controls also succeed. The acquired-repair gate fails; overall pilot acceptance remains failed. KRK changes from successful Rf1 to successful Rg1 under informative and punishment-only feedback. Shuffled feedback damages KQK (Qe8# to failed Qf1) but preserves KRK. Damage under shuffled feedback does not establish acquired improvement under informative feedback.
+
+Independent record/prefix audits pass 80 certificate uses and 32 enabled local updates. Pending-receipt recovery is exact with zero new neural presentations. Trace audit checks nine trajectories, eight explanations and two defense diagnostics. Recorded-assessment persistence/reset/restoration and fixed-state gates pass. These audits do not establish biological validation or unfamiliar/counterfactual reasoning. Unaided and fixed-search-budget outcomes remain separate fields in the raw report.
+
+Report SHA-256: `d8b021b0927a45c77680181890dab95da29052d2154eb1c5785907c3728199b6`. Full invocation: 112.4609375 MiB peak RSS, 619.798662 seconds elapsed, 318.015 seconds CPU, 1,691 neural presentations, 40 replay events. Recovery invocation: 97.67578125 MiB RSS, 1.5797175 seconds elapsed, 1.203 seconds CPU and zero new presentations. These workload measurements are not a comparative performance improvement or physiological timing claim.
+
+Sources/protocol/auditors are archived in source/, and exact commands/identities are in report.json. Preserve report.json, audit.json, audit-prefix.json and audit-traces.json. The final combined-input variant started serially only after these audits/recovery finished. Its results are pending; no input repair is selected or validated by this experiment so far.

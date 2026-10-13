@@ -1,0 +1,112 @@
+{
+  "schema": "stockfish-mate-deadline-diagnostic-v1",
+  "complete": true,
+  "question": "Do exact mate-distance outputs add a task-deadline cue beyond full-game WDL on the saved panels?",
+  "scope": "Retrospective analysis only; two inspected development boards, four board/budget panels; no teaching or neural update.",
+  "source": {
+    "reportSha256": "19cc8e79b8ec496f4b98e8100134b76822291124f42d354ff31315081adda051",
+    "auditSha256": "e53a772935020eda5271851e4c04d1c2e62aacd2742091e291732941fcb82f2c",
+    "completeSha256": "b4d7865671abc9e1affb3dfcd97b9119ea8ceb51ff15432ff2f65840cac6ccf7",
+    "records": 124
+  },
+  "counts": {
+    "candidates": 124,
+    "exactTargets": 82,
+    "unavailable": 42,
+    "exactMateSuccessTargets": 4,
+    "exactMateFailureTargets": 4,
+    "exactCentipawnFailures": 74
+  },
+  "panels": [
+    {
+      "board": "queen-concession-development",
+      "nodeBudget": 10000,
+      "legalCandidates": 32,
+      "targetAvailable": 20,
+      "verifiedSuccesses": 1,
+      "successMateTargets": [
+        {
+          "move": "c4g8",
+          "actorScore": 1
+        }
+      ],
+      "failureMateTargets": [
+        {
+          "move": "h6f7",
+          "actorScore": 3
+        }
+      ],
+      "failureCentipawnTargets": 18,
+      "unavailable": 12
+    },
+    {
+      "board": "queen-concession-development",
+      "nodeBudget": 50000,
+      "legalCandidates": 32,
+      "targetAvailable": 23,
+      "verifiedSuccesses": 1,
+      "successMateTargets": [
+        {
+          "move": "c4g8",
+          "actorScore": 1
+        }
+      ],
+      "failureMateTargets": [
+        {
+          "move": "h6f7",
+          "actorScore": 3
+        }
+      ],
+      "failureCentipawnTargets": 21,
+      "unavailable": 9
+    },
+    {
+      "board": "smothered-queen-b3-rook-e8",
+      "nodeBudget": 10000,
+      "legalCandidates": 30,
+      "targetAvailable": 18,
+      "verifiedSuccesses": 1,
+      "successMateTargets": [
+        {
+          "move": "b3g8",
+          "actorScore": 1
+        }
+      ],
+      "failureMateTargets": [
+        {
+          "move": "h6f7",
+          "actorScore": 3
+        }
+      ],
+      "failureCentipawnTargets": 16,
+      "unavailable": 12
+    },
+    {
+      "board": "smothered-queen-b3-rook-e8",
+      "nodeBudget": 50000,
+      "legalCandidates": 30,
+      "targetAvailable": 21,
+      "verifiedSuccesses": 1,
+      "successMateTargets": [
+        {
+          "move": "b3g8",
+          "actorScore": 1
+        }
+      ],
+      "failureMateTargets": [
+        {
+          "move": "h6f7",
+          "actorScore": 3
+        }
+      ],
+      "failureCentipawnTargets": 19,
+      "unavailable": 9
+    }
+  ],
+  "interpretation": {
+    "result": "In all four panels, the sole certified success has exact actor-relative mate score +1; the one exact mate-scored failure has +3. This adds a narrow deadline-relevant distinction where WDL tied them.",
+    "limit": "Most failure candidates have centipawn targets rather than forced-mate scores; this does not establish a calibrated total ranking across all legal moves, a valid fly value output, neural feedback, faster learning, or transfer.",
+    "nextGate": "Freeze a task-aware Stockfish target transform and existing-pathway teaching rule, then compare Stockfish feedback against verified-consequence, absent, shuffled, and disabled-plasticity conditions on training-only puzzles before disjoint transfer."
+  },
+  "analysisScriptSha256": "b108c062f0e36ff88036c2da5dd8892b07cb4c7ea11db966a06e9adbf8cfb268"
+}

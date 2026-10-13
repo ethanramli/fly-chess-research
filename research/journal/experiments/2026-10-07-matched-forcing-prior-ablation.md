@@ -1,0 +1,7 @@
+# 2026-10-07: matched forcing-prior ablation
+
+The same inspected smothered-mate position, task horizon, seed, forcing candidate set, search budget and pinned implementation were run with neural-only priors and with the opt-in fixed forcing prior. Neural-only root priors were nearly uniform and selected `c4b4`, a verified failure. The mixed prior selected `c4g8`, a verified success. Both stopped at the four-evaluation limit before reaching a terminal leaf; the independent teacher check supplies the consequence label.
+
+This is a one-position search-policy improvement from an engineered structural bias. It produced 26 versus 49 candidate presentations in these deterministic trajectories, but that count and the wall-time difference are workload-dependent and need repetition before any speed claim. Neither condition delivered feedback or changed neural memory. The more consequential unresolved question is whether verified action-specific consequences can change persistent neural rankings and whether the changed ranking follows consequences on unfamiliar positions.
+
+See [the matched ablation](../../reports/matched-forcing-prior-ablation-2026-10-07/README.md) and [raw reports](../../reports/forcing-prior-task3-v1-2026-10-07/report.json), [neural-only control](../../reports/neural-prior-smothered-task3-v1-2026-10-07/report.json).

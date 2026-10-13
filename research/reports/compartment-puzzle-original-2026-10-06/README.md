@@ -1,0 +1,9 @@
+﻿# Original-input puzzle baseline: useful acquisition failed
+
+The terminal baseline reproduces the preserved positive-feedback pilot. Informative and punishment-only KQK change from Qf5 to incorrect Qb3; KRK already chooses correct Rb1 and remains correct. Absent and disabled preserve initial choices. Shuffled feedback leaves KQK wrong and damages KRK. Useful-choice and repair-above-absent/disabled gates fail; persistence/causal reset and fixed-state gates pass.
+
+Record and prefix audits independently check 80 certificate uses and 32 enabled local updates. Pending-receipt replay matches exactly with zero new neural presentations. Trace audit checks nine trajectories, eight explanations and two defense diagnostics. All 40 teaching receipts reproduce the prior pilot's stimulation, responses, local activity and memory/update fields exactly; full-receipt-comparison.json preserves hashes and comparison scope. This verifies the new wrapper's baseline computation, not useful learning or unfamiliar reasoning.
+
+Report SHA-256: `1836c41cb560912dec70ba56271597ed15fb0263cf821354141e6cd2ab4786ea`. Complete invocation: 114.7265625 MiB peak RSS, 888.0846887 seconds elapsed, 446.328 seconds CPU, 1,692 neural presentations, 40 replay events. The recovery invocation has 98.00390625 MiB RSS, 1.5443007 seconds elapsed, 1.344 seconds CPU and zero new neural presentations. These are separate invocation measurements, not a resource-improvement comparison or biological timing.
+
+Sources/protocol and auditors are archived in source/. The report records exact command and graph/model/memory/encoder/readout/protocol identities. Raw report, audit.json, audit-prefix.json and audit-traces.json remain authoritative. The three modified input variants still need completion and auditing; do not select a repair or claim transfer from this failed baseline.

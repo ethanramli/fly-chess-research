@@ -1,0 +1,6 @@
+2026-10-06: Initial prefix-audit attempt failed before writing audit-prefix.json.
+Command: node --max-old-space-size=256 .codebase/scripts/audit-mbon-choice.mjs --run research/reports/mbon-choice-v1-2026-10-06 --prefix research/reports/mbon-choice-prefix-replay-2026-10-06 --out research/reports/mbon-choice-v1-2026-10-06/audit-prefix.json
+Failure: FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory.
+Cause: prefix comparison retained every growing main-run checkpoint object in an array. The full experiment, ordinary recurrence audit and two-trial resumed experiment had already completed successfully.
+Preserved source: audit-before-streaming-fix.mjs; its hash matches the sourceSHA256 in audit.json.
+Repair: stream main checkpoints and retain only prefix target hashes. No changes to experiment driver, neural dynamics, learning rule, protocol, raw checkpoint state or acceptance gates.

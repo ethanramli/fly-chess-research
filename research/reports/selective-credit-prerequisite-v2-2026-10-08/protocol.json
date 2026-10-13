@@ -1,0 +1,28 @@
+{
+  "schema": "selective-credit-prerequisite-v1",
+  "scope": "synthetic local equation; NOT anatomical or chess-learning evidence",
+  "eta": 0.5,
+  "tau": 1,
+  "dt": 1,
+  "delay": 1,
+  "minimumGain": 0.2,
+  "cycles": 32,
+  "pulsesPerPhase": 8,
+  "reversalMargin": 0.05,
+  "recoveryGate": "gain must increase after reward omission on the previously depressed edge",
+  "controls": [
+    "informative",
+    "no-channel",
+    "matched-shuffled",
+    "disabled-plasticity"
+  ],
+  "shuffle": "fixed four-event permutation [1,3,0,2] per acquisition/reversal pair; preserves channel counts and magnitudes; anti-correlated degenerate two-cue schedule, not a general shuffle assay",
+  "designSha256": "c4c223a7daf68ca77005e9751256ee0bbfce68547c471ead00fa563e97249fda",
+  "sourceSha256": "78e832246ea70a457a6ce8c9af4e64dbc0eee5671f77d8982d05b5cc0d7ee9ef",
+  "limitations": [
+    "synthetic rates, not measured graph activity",
+    "no sequence receiver",
+    "no biological timing",
+    "no transfer test"
+  ]
+}

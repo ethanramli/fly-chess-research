@@ -1,0 +1,24 @@
+{
+  "schema": "correction-preservation-v2-preregistration-v1",
+  "registeredAt": "2026-10-08T04:18:36.768Z",
+  "protocolPath": "research/data/correction-preservation-v2/protocol.json",
+  "protocolSha256": "331d2803c6982a9bbcb21a1256b438a5b90294995ff061492b2ef00787988cc1",
+  "specificationPath": "documentation/design/puzzle-learning/correction-preservation-v2-protocol.md",
+  "specificationSha256": "8145cdd60c24887e04d5793a376b537f857151f126643398fff62b350b33e122",
+  "target": "tr-06",
+  "sentinel": "tr-03",
+  "acceptance": {
+    "baselineTargetWrong": true,
+    "baselineSentinelCorrect": true,
+    "informativeTargetCorrect": true,
+    "informativeSentinelCorrect": true,
+    "newRegressionsAcross12Panels": 0,
+    "targetMarginGainPositive": true,
+    "targetMarginGainGreaterThanEachMatchedControl": true,
+    "exactIndependentReplay": true,
+    "exactPendingRecovery": true
+  },
+  "policyComparison": "descriptive only; no policy superiority gate",
+  "interpretation": "one-seed one-ply candidate-pair screen; biological retention and reasoning untested",
+  "recoverySequence": "freeze tools before initial informative/control runs; validate full neural continuation from completed informative run before interpretation"
+}

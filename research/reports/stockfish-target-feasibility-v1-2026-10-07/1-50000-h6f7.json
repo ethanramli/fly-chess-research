@@ -1,0 +1,436 @@
+{
+  "identity": {
+    "protocolSha256": "4b6b3860801908ff9e25ad092d7574be9e0c1b9387517654ac41fbb5795b3e91",
+    "pins": {
+      "package.json": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+      ".codebase/src/search-and-feedback/stockfish-target.mjs": "1931d16a1883e76615be32cf13fb359286c06fd8a95d3c88812171f48c13158f",
+      "research/reports/smothered-training-variations-v1-2026-10-07/puzzles.jsonl": "489bdb5bf825e154fcc215cc1555ff0937bb811cf991ed8f42034b1e3b596f61",
+      "node_modules/chess.js/dist/cjs/chess.js": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f",
+      "research/data/smothered-acquisition-v1/puzzles.jsonl": "3b40d90e82e215c77ab15fa41705a66da08fa574efc7f3f3ee3a56cd7af89fd5",
+      "research/reports/shared-memory-multi-context-coverage-v1-2026-10-07/audit.json": "db65fbb56703dcb5918965cdf0e6f22514f69c2b9c34e894783b23408dae4863",
+      ".codebase/src/search-and-feedback/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+      ".codebase/src/search-and-feedback/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+      ".codebase/vendor/stockfish/sf-19/release.json": "ad2d183b980b0c119909398581ce59abb059174d022320687b3b05001ae24f2e",
+      "package-lock.json": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214",
+      ".codebase/scripts/puzzle-learning/probe-stockfish-targets.mjs": "c2412daa42db592d43b25a9fdbf0534153cc773fde396d18623e27c7754b646f",
+      ".codebase/vendor/stockfish/sf-19/extracted/stockfish/Copying.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      ".codebase/vendor/stockfish/sf-19/extracted/stockfish/stockfish-windows-x86-64-universal.exe": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+      ".codebase/scripts/puzzle-learning/audit-stockfish-targets.mjs": "1b0d1d31c470880b029c8701af610e1bfb00698bcc6ffa24ecba3e28c01601b8",
+      ".codebase/src/search-and-feedback/mate-certificate.mjs": "b7bdab76a3faa78c203971991c3b2e00cdfd359cfca08b6e1f7b1ae8d430b700",
+      "research/reports/shared-memory-multi-context-coverage-v1-2026-10-07/report.json": "8ab9f3a95ecd8db2e9a11166963743b23ffe018bddf06827c59be8c4582d38b5"
+    }
+  },
+  "rowId": "smothered-queen-b3-rook-e8",
+  "rootFen": "4r2k/6pp/7N/8/8/1Q6/8/K7 w - - 0 1",
+  "childFen": "4r2k/5Npp/8/8/8/1Q6/8/K7 b - - 1 1",
+  "move": "h6f7",
+  "nodeBudget": 50000,
+  "raw": [
+    "info string Available processors: 0-7",
+    "info string Using 1 thread",
+    "info string NNUE evaluation using nn-1a298aa575a0.nnue (109MiB, (86896, 1024, 32, 32, 1))",
+    "info string Network replica 1: Shared memory.",
+    "info depth 1 seldepth 2 multipv 1 score cp -540 wdl 0 0 1000 nodes 1 nps 1000 hashfull 0 tbhits 0 time 1 pv h8g8",
+    "info depth 2 seldepth 7 multipv 1 score cp -745 wdl 0 0 1000 nodes 27 nps 27000 hashfull 0 tbhits 0 time 1 pv h8g8 f7g5 e8e6",
+    "info depth 3 seldepth 6 multipv 1 score cp -556 wdl 0 0 1000 nodes 55 nps 55000 hashfull 0 tbhits 0 time 1 pv h8g8 f7d6 g8h8 d6e8",
+    "info depth 4 seldepth 6 multipv 1 score cp -578 wdl 0 0 1000 nodes 80 nps 80000 hashfull 0 tbhits 0 time 1 pv h8g8 f7d6 g8h8 d6e8 g7g6",
+    "info depth 5 seldepth 6 multipv 1 score cp -578 wdl 0 0 1000 nodes 93 nps 93000 hashfull 0 tbhits 0 time 1 pv h8g8 f7d6 g8h8 d6e8 g7g6",
+    "info depth 6 seldepth 8 multipv 1 score cp -558 wdl 0 0 1000 nodes 122 nps 122000 hashfull 0 tbhits 0 time 1 pv h8g8 f7d6 g8f8",
+    "info depth 7 seldepth 9 multipv 1 score cp -569 wdl 0 0 1000 nodes 229 nps 114500 hashfull 0 tbhits 0 time 2 pv h8g8 f7d6 g8f8 b3f3 f8e7 f3e4",
+    "info depth 8 seldepth 10 multipv 1 score cp -606 wdl 0 0 1000 nodes 463 nps 231500 hashfull 0 tbhits 0 time 2 pv h8g8 f7d6 g8h8 d6e8 g7g6",
+    "info depth 9 seldepth 19 multipv 1 score cp -825 wdl 0 0 1000 nodes 4515 nps 752500 hashfull 1 tbhits 0 time 6 pv h8g8 f7d6 g8h8 d6e8 h7h6 b3a3 h8h7 a3d6 g7g5 d6e7 h7g6",
+    "info depth 10 seldepth 12 multipv 1 score cp -825 wdl 0 0 1000 nodes 4638 nps 662571 hashfull 1 tbhits 0 time 7 pv h8g8 f7d6 g8h8 d6e8 h7h6 b3a3 h8h7 a3d6 g7g5 d6e7 h7g6",
+    "info depth 11 seldepth 17 multipv 1 score cp -823 wdl 0 0 1000 nodes 4817 nps 688142 hashfull 1 tbhits 0 time 7 pv h8g8 f7d6 g8h8 d6e8 h7h6 b3a3 h8h7 a3d6 g7g5 d6c7",
+    "info depth 12 seldepth 16 multipv 1 score cp -823 wdl 0 0 1000 nodes 5042 nps 720285 hashfull 1 tbhits 0 time 7 pv h8g8 f7d6 g8h8 d6e8 h7h6 b3a3 h8h7 a3d6 g7g5 d6f8 h7g6 f8g7 g6f5",
+    "info depth 13 seldepth 18 multipv 1 score mate -3 wdl 0 0 1000 nodes 5489 nps 784142 hashfull 1 tbhits 0 time 7 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 14 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 5740 nps 820000 hashfull 1 tbhits 0 time 7 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 15 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 5951 nps 743875 hashfull 1 tbhits 0 time 8 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 16 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 6227 nps 778375 hashfull 1 tbhits 0 time 8 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 17 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 6445 nps 805625 hashfull 1 tbhits 0 time 8 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 18 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 6645 nps 830625 hashfull 1 tbhits 0 time 8 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 19 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 6889 nps 861125 hashfull 1 tbhits 0 time 8 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 20 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 7126 nps 890750 hashfull 1 tbhits 0 time 8 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 21 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 7421 nps 927625 hashfull 1 tbhits 0 time 8 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 22 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 7714 nps 857111 hashfull 1 tbhits 0 time 9 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 23 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 7977 nps 886333 hashfull 1 tbhits 0 time 9 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 24 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 8239 nps 915444 hashfull 1 tbhits 0 time 9 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 25 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 8531 nps 947888 hashfull 2 tbhits 0 time 9 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 26 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 8798 nps 977555 hashfull 2 tbhits 0 time 9 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 27 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 9151 nps 1016777 hashfull 2 tbhits 0 time 9 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 28 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 9579 nps 957900 hashfull 2 tbhits 0 time 10 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 29 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 9985 nps 998500 hashfull 2 tbhits 0 time 10 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 30 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 10310 nps 1031000 hashfull 2 tbhits 0 time 10 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 31 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 10727 nps 1072700 hashfull 2 tbhits 0 time 10 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 32 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 11049 nps 1104900 hashfull 2 tbhits 0 time 10 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 33 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 11508 nps 1150800 hashfull 2 tbhits 0 time 10 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 34 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 12028 nps 1093454 hashfull 2 tbhits 0 time 11 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 35 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 12584 nps 1144000 hashfull 2 tbhits 0 time 11 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 36 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 13235 nps 1203181 hashfull 2 tbhits 0 time 11 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 37 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 13871 nps 1261000 hashfull 2 tbhits 0 time 11 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 38 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 14373 nps 1306636 hashfull 2 tbhits 0 time 11 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 39 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 14907 nps 1242250 hashfull 2 tbhits 0 time 12 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 40 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 15416 nps 1284666 hashfull 2 tbhits 0 time 12 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 41 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 16051 nps 1337583 hashfull 2 tbhits 0 time 12 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 42 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 16518 nps 1376500 hashfull 2 tbhits 0 time 12 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 43 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 17044 nps 1420333 hashfull 2 tbhits 0 time 12 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 44 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 17640 nps 1470000 hashfull 2 tbhits 0 time 12 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 45 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 18115 nps 1393461 hashfull 2 tbhits 0 time 13 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 46 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 18623 nps 1432538 hashfull 2 tbhits 0 time 13 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 47 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 19232 nps 1479384 hashfull 2 tbhits 0 time 13 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 48 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 19714 nps 1516461 hashfull 2 tbhits 0 time 13 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 49 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 20246 nps 1557384 hashfull 2 tbhits 0 time 13 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 50 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 20759 nps 1596846 hashfull 2 tbhits 0 time 13 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 51 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 21258 nps 1518428 hashfull 2 tbhits 0 time 14 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 52 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 21861 nps 1561500 hashfull 2 tbhits 0 time 14 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 53 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 22478 nps 1605571 hashfull 2 tbhits 0 time 14 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 54 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 23032 nps 1645142 hashfull 2 tbhits 0 time 14 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 55 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 23600 nps 1685714 hashfull 2 tbhits 0 time 14 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 56 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 24133 nps 1723785 hashfull 2 tbhits 0 time 14 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 57 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 24653 nps 1643533 hashfull 2 tbhits 0 time 15 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 58 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 25168 nps 1677866 hashfull 2 tbhits 0 time 15 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 59 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 25642 nps 1709466 hashfull 2 tbhits 0 time 15 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 60 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 26123 nps 1741533 hashfull 2 tbhits 0 time 15 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 61 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 26631 nps 1775400 hashfull 2 tbhits 0 time 15 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 62 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 27184 nps 1812266 hashfull 2 tbhits 0 time 15 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 63 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 27821 nps 1738812 hashfull 2 tbhits 0 time 16 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 64 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 28424 nps 1776500 hashfull 2 tbhits 0 time 16 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 65 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 28883 nps 1805187 hashfull 2 tbhits 0 time 16 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 66 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 29318 nps 1832375 hashfull 2 tbhits 0 time 16 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 67 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 29961 nps 1872562 hashfull 2 tbhits 0 time 16 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 68 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 30583 nps 1911437 hashfull 2 tbhits 0 time 16 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 69 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 31160 nps 1832941 hashfull 2 tbhits 0 time 17 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 70 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 31669 nps 1862882 hashfull 2 tbhits 0 time 17 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 71 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 32189 nps 1893470 hashfull 2 tbhits 0 time 17 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 72 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 32731 nps 1925352 hashfull 2 tbhits 0 time 17 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 73 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 33253 nps 1956058 hashfull 2 tbhits 0 time 17 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 74 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 33882 nps 1882333 hashfull 2 tbhits 0 time 18 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 75 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 34428 nps 1912666 hashfull 2 tbhits 0 time 18 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 76 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 35001 nps 1944500 hashfull 2 tbhits 0 time 18 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 77 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 35468 nps 1970444 hashfull 2 tbhits 0 time 18 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 78 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 35927 nps 1995944 hashfull 2 tbhits 0 time 18 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 79 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 36415 nps 2023055 hashfull 2 tbhits 0 time 18 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 80 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 37038 nps 1949368 hashfull 2 tbhits 0 time 19 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 81 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 37613 nps 1979631 hashfull 2 tbhits 0 time 19 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 82 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 38296 nps 2015578 hashfull 2 tbhits 0 time 19 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 83 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 38791 nps 2041631 hashfull 2 tbhits 0 time 19 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 84 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 39296 nps 2068210 hashfull 2 tbhits 0 time 19 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 85 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 39766 nps 2092947 hashfull 2 tbhits 0 time 19 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 86 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 40286 nps 2014300 hashfull 2 tbhits 0 time 20 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 87 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 40698 nps 2034900 hashfull 2 tbhits 0 time 20 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 88 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 41329 nps 2066450 hashfull 2 tbhits 0 time 20 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 89 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 41741 nps 2087050 hashfull 2 tbhits 0 time 20 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 90 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 42257 nps 2112850 hashfull 2 tbhits 0 time 20 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 91 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 42832 nps 2141600 hashfull 2 tbhits 0 time 20 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 92 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 43422 nps 2067714 hashfull 2 tbhits 0 time 21 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 93 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 43890 nps 2090000 hashfull 2 tbhits 0 time 21 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 94 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 44457 nps 2117000 hashfull 2 tbhits 0 time 21 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 95 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 45034 nps 2144476 hashfull 2 tbhits 0 time 21 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 96 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 45521 nps 2167666 hashfull 2 tbhits 0 time 21 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 97 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 46044 nps 2092909 hashfull 2 tbhits 0 time 22 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 98 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 46554 nps 2116090 hashfull 2 tbhits 0 time 22 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 99 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 46892 nps 2131454 hashfull 2 tbhits 0 time 22 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 100 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 47378 nps 2153545 hashfull 2 tbhits 0 time 22 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 101 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 47850 nps 2080434 hashfull 2 tbhits 0 time 23 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 102 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 48346 nps 2102000 hashfull 2 tbhits 0 time 23 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 103 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 48977 nps 2129434 hashfull 2 tbhits 0 time 23 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 104 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 49592 nps 2156173 hashfull 2 tbhits 0 time 23 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "info depth 105 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 50035 nps 2175434 hashfull 2 tbhits 0 time 23 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7",
+    "bestmove h8g8 ponder f7h6"
+  ],
+  "target": {
+    "available": true,
+    "teachingAllowed": true,
+    "utility": 1,
+    "actor": "w",
+    "sideToMove": "b",
+    "actorScore": 3,
+    "info": {
+      "kind": "mate",
+      "score": -3,
+      "wdl": [
+        0,
+        0,
+        1000
+      ],
+      "depth": 105,
+      "nodes": 50035,
+      "pv": [
+        "h8g8",
+        "f7h6",
+        "g8h8",
+        "b3g8",
+        "e8g8",
+        "h6f7"
+      ],
+      "bounded": false,
+      "line": "info depth 105 seldepth 7 multipv 1 score mate -3 wdl 0 0 1000 nodes 50035 nps 2175434 hashfull 2 tbhits 0 time 23 pv h8g8 f7h6 g8h8 b3g8 e8g8 h6f7"
+    },
+    "meaning": "Searched engine target; WDL model utility, not certified truth or fly win probability"
+  },
+  "proof": {
+    "status": "failure",
+    "reward": -1,
+    "nodes": 32,
+    "attacker": "w",
+    "criterion": "force_mate_within_2_remaining_plies",
+    "certificate": {
+      "schema": "bounded-mate-certificate-v1",
+      "rootFen": "4r2k/5Npp/8/8/8/1Q6/8/K7 b - - 1 1",
+      "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/6pp/7N/8/8/1Q6/8/K7 w - - 0 1\"]\n\n1. Nf7+ *",
+      "attacker": "w",
+      "plies": 2,
+      "tree": {
+        "status": "failure",
+        "children": [
+          {
+            "move": "h8g8",
+            "node": {
+              "status": "failure",
+              "children": [
+                {
+                  "move": "f7d8",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f7h8",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f7h6",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f7g5",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f7e5",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f7d6",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3a4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3b4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3b5",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3b6",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3b7",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3b8",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3c4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3d5",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3e6",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3c3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3d3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3e3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3f3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3g3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3h3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3c2",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3d1",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3b2",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3b1",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3a2",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "b3a3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "a1a2",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "a1b2",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "a1b1",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "certificateCheck": {
+      "verified": true,
+      "status": "failure",
+      "nodes": 32,
+      "elapsedMs": 12.333399999988615
+    },
+    "bounds": {
+      "maxNodes": 4096,
+      "millisecondsPerStage": 2000,
+      "constructionStop": null,
+      "checkingNodes": 32,
+      "elapsedMs": 23.873600000006263
+    },
+    "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+  },
+  "predictions": {
+    "baseline": 0.002175479489320664,
+    "informative": 0.001209909902955118,
+    "absent": 0.002081237056670213,
+    "shuffled": 0.0010347425504310156,
+    "disabled": 0.002175479489320664
+  },
+  "elapsedMs": 23.587699999989127,
+  "stages": {
+    "engineSearch": true,
+    "recordedTargets": true,
+    "neuralFeedback": false,
+    "persistentLearning": false,
+    "transfer": false
+  }
+}

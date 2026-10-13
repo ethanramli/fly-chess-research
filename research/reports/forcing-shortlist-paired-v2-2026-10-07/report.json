@@ -1,0 +1,676 @@
+{
+  "schema": "forcing-shortlist-paired-profile-v1",
+  "complete": true,
+  "timestamp": "2026-10-07T02:48:39.709Z",
+  "scope": "One read-only full-graph paired neural ranking on a development puzzle. The updated forcing shortlist is compared with all legal candidates under identical frozen memory; both committed choices are independently verified. No feedback, neural learning, Monte Carlo expansion or transfer ran.",
+  "identity": {
+    "sources": {
+      ".codebase/scripts/evaluation-and-performance/profile-forcing-shortlist.mjs": "48895dc1ca34bd9e3089fff30c81371a40b880df232f6e4279ed83feeb17df4b",
+      ".codebase/scripts/runtime/fetch-graph.mjs": "5e48960ed947379ba31fc5cb10b791d6e5891913ed073a4443e6e9c875fab52a",
+      ".codebase/src/puzzle-learning/dual-valence-puzzle-brain.mjs": "9a91a188d6ef40de5a21402ccd90f9a0192b46d664b26c414b86e0650d503c81",
+      ".codebase/src/puzzle-learning/mapped-puzzle-brain.mjs": "cca4ed8e2d79ff1c6786eb866141007d9d8f0dc36c1eb3776e11f549a9151c1b",
+      ".codebase/src/chess-input/compartment-chess-cue.mjs": "c7a095625518fab166b09a796d452c8a78779b9016cb04b982eb81e4f13440c3",
+      ".codebase/src/chess-input/relational-chess-cue-v2.mjs": "7998c336dba340d8bdb4e60c6de1b559411cf2a9b80af782b54d45f9e1c4bc3c",
+      ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+      ".codebase/src/neural-learning/dual-valence-interface.mjs": "206fa1d12050463d15bc5b0a31ad30491cdf0507877182a134ff0af796873397",
+      ".codebase/src/neural-learning/association-validation.mjs": "b62d6f6bf4ab51f0ed993877026ac1cde0914c582fb479ea27fdc028a7dc2c91",
+      ".codebase/src/neural-learning/mushroom-body.mjs": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5",
+      ".codebase/src/neural-learning/mbon-readout.mjs": "bf639c8e0f2ed96d2dc31939abf560d1194fccb1beed486ea6ffccbb74601923",
+      ".codebase/src/runtime/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+      ".codebase/src/supervised-baselines/trainer.mjs": "54b5175481460593dde0c8761c90142d31ad52df6f29a17e873651bf53934b31",
+      ".codebase/src/search-and-feedback/delta-forcing-candidates.mjs": "82c8479b0e2192ba0f40b67e0dc314e6abc5e676faa274635e70b063ae2f4c8d",
+      ".codebase/src/search-and-feedback/adaptive-choice-review.mjs": "b6fba8851dad7ec974e82e3c63c0351e6c38efcfb654f81091789de47275472a",
+      ".codebase/src/search-and-feedback/experimental-puzzle-search.mjs": "dc7ac5e894879ae75a1b0bd5931b1e72466c14b707d2ff987ee6ee1f6d259ebb",
+      ".codebase/src/search-and-feedback/mate-certificate.mjs": "b7bdab76a3faa78c203971991c3b2e00cdfd359cfca08b6e1f7b1ae8d430b700",
+      ".codebase/src/search-and-feedback/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+      ".codebase/src/search-and-feedback/verified-feedback.mjs": "e8141c3171fd49cb720cee73283c4cd8a9b572a7a973a47636c25ce6f87f4a78",
+      ".codebase/src/search-and-feedback/verified-line-explanation.mjs": "0a177c408b0a7583a02f69929779f779b68290bf5716e1b2035c39ce190d4e33",
+      "package.json": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+      "package-lock.json": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214"
+    },
+    "inputs": {
+      "research/data/smothered-acquisition-v1/protocol.json": "a64484f93d517d049f7d964518ac5b35db318a4b8e50f455a2205acb8c95f84c",
+      "research/data/smothered-acquisition-v1/puzzles.jsonl": "3b40d90e82e215c77ab15fa41705a66da08fa574efc7f3f3ee3a56cd7af89fd5",
+      "research/reports/reversal-candidate-2026-10-05/mapping.json": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+      "research\\reports\\compartment-input-original-2026-10-06\\report.json": "9647b9c1cd0311a237c7ddd38691a88b07754de19331c4a5240388f3d2e5fdd8",
+      "research\\reports\\compartment-input-original-2026-10-06\\audit-prefix.json": "49506844f62237b9b9bb39a4019c55daa57bc1c40d349ed2311f8cb41e5ff73d",
+      "research\\reports\\smothered-mate-preparation-2026-10-07\\report.json": "1bf11e3cbec0f32115732610472cde49c72d3af4ff965829fba8861a50681003",
+      "research\\reports\\smothered-mate-preparation-2026-10-07\\audit.json": "2790661de32fb197373494d4fb465f2ac7797034c8cec329439ad4b34396b453",
+      "research\\reports\\smothered-mate-preparation-2026-10-07\\certificates.jsonl": "892547e405acd09dbeea862f60557f79a7b78e42ecef413e0cf94f9daa57f81c",
+      ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+      ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6"
+    },
+    "dependencyIdentity": {
+      "node": "v22.23.2",
+      "chessJs": "1.4.0",
+      "packageLockSha256": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214"
+    },
+    "graphHash": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    "annotationHash": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    "model": {
+      "steps": 8,
+      "inputDim": 1,
+      "outputs": 1,
+      "seed": 47,
+      "precision": "float32",
+      "saturation": 10,
+      "recurrentScale": 0.9,
+      "normalization": "row"
+    },
+    "memory": {
+      "eta": 0.5,
+      "minGain": 0.2,
+      "maxGain": 1.8,
+      "activityScale": 1.5
+    },
+    "mappingHash": "b2d7bf351dbe9889aa6a17216cca6cb7671f4f99d9661e604609a7ff51686fff",
+    "encoderIdentity": "c8725115fe89340a88f6c1aa4af764ffd41551289c19a24094f544ddd91ace38",
+    "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+    "fixedStateHash": "0459bedc2e0a4f7626584df89809271fc927f72652b7e71fc3ce0dae51a847d5"
+  },
+  "protocol": {
+    "duty": 0.5,
+    "maxCandidates": 16,
+    "quietReserve": 4,
+    "deltaSource": "empty: puzzle input provides no predecessor board",
+    "sameMemoryForAllAssessments": true,
+    "repetitionsPerCondition": 2,
+    "timingOrder": [
+      "all-legal",
+      "shortlist",
+      "shortlist",
+      "all-legal"
+    ],
+    "searchExpansion": false
+  },
+  "position": {
+    "id": "queen-concession-development",
+    "split": "train",
+    "fen": "5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1",
+    "task": {
+      "objective": "forced-mate",
+      "plies": 3
+    },
+    "legalCount": 32,
+    "successfulMoves": [
+      "c4g8"
+    ]
+  },
+  "results": {
+    "allLegalChoice": "c4b4",
+    "shortlistChoice": "c4b4",
+    "choicesAgree": true,
+    "allLegalStatus": "failure",
+    "shortlistStatus": "failure",
+    "allLegalCertificateSha256": "4aa8f94cb1510cdb90936d26be5e51c6c6d58505c1e9380fa4221a49376f7b6a",
+    "shortlistCertificateSha256": "4aa8f94cb1510cdb90936d26be5e51c6c6d58505c1e9380fa4221a49376f7b6a",
+    "successfulCoverage": [
+      {
+        "move": "c4g8",
+        "included": false
+      }
+    ],
+    "selectedCount": 16,
+    "omittedCount": 16,
+    "omittedMoves": [
+      "a1a2",
+      "a1b1",
+      "a1b2",
+      "c4a2",
+      "c4a4",
+      "c4b3",
+      "c4c1",
+      "c4c2",
+      "c4c3",
+      "c4c6",
+      "c4d3",
+      "c4d5",
+      "c4e2",
+      "c4e6",
+      "c4g4",
+      "c4h4"
+    ],
+    "candidates": [
+      {
+        "uci": "c4g8",
+        "tags": [
+          "attack-pawn",
+          "attack-rook",
+          "check",
+          "double-attack",
+          "new-attack"
+        ],
+        "priority": 10400,
+        "verifiedStatus": "success"
+      },
+      {
+        "uci": "h6f7",
+        "tags": [
+          "check"
+        ],
+        "priority": 10000,
+        "verifiedStatus": "failure"
+      },
+      {
+        "uci": "c4f7",
+        "tags": [
+          "attack-pawn",
+          "attack-rook",
+          "double-attack",
+          "new-attack"
+        ],
+        "priority": 400,
+        "verifiedStatus": "failure"
+      },
+      {
+        "uci": "c4c5",
+        "tags": [
+          "attack-rook",
+          "new-attack"
+        ],
+        "priority": 150,
+        "verifiedStatus": "failure"
+      },
+      {
+        "uci": "c4c8",
+        "tags": [
+          "attack-rook",
+          "new-attack"
+        ],
+        "priority": 150,
+        "verifiedStatus": "failure"
+      },
+      {
+        "uci": "c4f4",
+        "tags": [
+          "attack-rook",
+          "new-attack"
+        ],
+        "priority": 150,
+        "verifiedStatus": "failure"
+      },
+      {
+        "uci": "c4f1",
+        "tags": [
+          "attack-rook",
+          "new-attack"
+        ],
+        "priority": 150,
+        "verifiedStatus": "failure"
+      },
+      {
+        "uci": "c4b4",
+        "tags": [
+          "attack-rook",
+          "new-attack"
+        ],
+        "priority": 150,
+        "verifiedStatus": "failure"
+      },
+      {
+        "uci": "h6f5",
+        "tags": [
+          "attack-pawn",
+          "new-attack"
+        ],
+        "priority": 110,
+        "verifiedStatus": "failure"
+      },
+      {
+        "uci": "c4c7",
+        "tags": [
+          "attack-pawn",
+          "new-attack"
+        ],
+        "priority": 110,
+        "verifiedStatus": "failure"
+      },
+      {
+        "uci": "c4d4",
+        "tags": [
+          "attack-pawn",
+          "new-attack"
+        ],
+        "priority": 110,
+        "verifiedStatus": "failure"
+      },
+      {
+        "uci": "c4e4",
+        "tags": [
+          "attack-pawn",
+          "new-attack"
+        ],
+        "priority": 110,
+        "verifiedStatus": "failure"
+      },
+      {
+        "uci": "h6g8",
+        "tags": [],
+        "priority": 0,
+        "verifiedStatus": "failure"
+      },
+      {
+        "uci": "h6g4",
+        "tags": [],
+        "priority": 0,
+        "verifiedStatus": "failure"
+      },
+      {
+        "uci": "c4b5",
+        "tags": [],
+        "priority": 0,
+        "verifiedStatus": "failure"
+      },
+      {
+        "uci": "c4a6",
+        "tags": [],
+        "priority": 0,
+        "verifiedStatus": "failure"
+      }
+    ],
+    "allLegalRows": [
+      {
+        "move": "h6f7",
+        "MBON12": 0.034556989558041096,
+        "MBON01": 0.021319497376680374,
+        "score": 0.013237492181360722,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "h6g8",
+        "MBON12": 0.03797421092167497,
+        "MBON01": 0.023515776731073856,
+        "score": 0.01445843419060111,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "h6g4",
+        "MBON12": 0.03380660992115736,
+        "MBON01": 0.021444713696837425,
+        "score": 0.012361896224319935,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "h6f5",
+        "MBON12": 0.03328873077407479,
+        "MBON01": 0.02516230195760727,
+        "score": 0.008126428816467524,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4b5",
+        "MBON12": 0.03140641842037439,
+        "MBON01": 0.023643486201763153,
+        "score": 0.00776293221861124,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4a6",
+        "MBON12": 0.03603226598352194,
+        "MBON01": 0.02237520646303892,
+        "score": 0.013657059520483017,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4c5",
+        "MBON12": 0.03181554866023362,
+        "MBON01": 0.022247380577027798,
+        "score": 0.009568168083205819,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4c6",
+        "MBON12": 0.03328114282339811,
+        "MBON01": 0.02542121708393097,
+        "score": 0.007859925739467144,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4c7",
+        "MBON12": 0.036302137188613415,
+        "MBON01": 0.021286018192768097,
+        "score": 0.015016118995845318,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4c8",
+        "MBON12": 0.03669865243136883,
+        "MBON01": 0.021233221516013145,
+        "score": 0.015465430915355682,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4d5",
+        "MBON12": 0.036701723001897335,
+        "MBON01": 0.021431787870824337,
+        "score": 0.015269935131072998,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4e6",
+        "MBON12": 0.03480085125193,
+        "MBON01": 0.021598191000521183,
+        "score": 0.013202660251408815,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4f7",
+        "MBON12": 0.038020855747163296,
+        "MBON01": 0.020420502871274948,
+        "score": 0.017600352875888348,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4g8",
+        "MBON12": 0.03809926612302661,
+        "MBON01": 0.02487845253199339,
+        "score": 0.01322081359103322,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4d4",
+        "MBON12": 0.034472307190299034,
+        "MBON01": 0.021372098475694656,
+        "score": 0.013100208714604378,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4e4",
+        "MBON12": 0.03226093575358391,
+        "MBON01": 0.0204631881788373,
+        "score": 0.011797747574746609,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4f4",
+        "MBON12": 0.033413751516491175,
+        "MBON01": 0.027055532671511173,
+        "score": 0.0063582188449800014,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4g4",
+        "MBON12": 0.03600713098421693,
+        "MBON01": 0.02323099784553051,
+        "score": 0.012776133138686419,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4h4",
+        "MBON12": 0.04068578127771616,
+        "MBON01": 0.02136373333632946,
+        "score": 0.0193220479413867,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4d3",
+        "MBON12": 0.03539406741037965,
+        "MBON01": 0.022392917424440384,
+        "score": 0.013001149985939264,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4e2",
+        "MBON12": 0.03423843393102288,
+        "MBON01": 0.02129729837179184,
+        "score": 0.012941135559231043,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4f1",
+        "MBON12": 0.03340778732672334,
+        "MBON01": 0.022123470902442932,
+        "score": 0.011284316424280405,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4c3",
+        "MBON12": 0.033038780093193054,
+        "MBON01": 0.025695746764540672,
+        "score": 0.007343033328652382,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4c2",
+        "MBON12": 0.03511360054835677,
+        "MBON01": 0.024212791584432125,
+        "score": 0.010900808963924646,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4c1",
+        "MBON12": 0.03674053214490414,
+        "MBON01": 0.020417887717485428,
+        "score": 0.01632264442741871,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4b3",
+        "MBON12": 0.03212469071149826,
+        "MBON01": 0.021657787263393402,
+        "score": 0.010466903448104858,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4a2",
+        "MBON12": 0.03325821878388524,
+        "MBON01": 0.02487784530967474,
+        "score": 0.0083803734742105,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4b4",
+        "MBON12": 0.0400812104344368,
+        "MBON01": 0.01946390140801668,
+        "score": 0.020617309026420116,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4a4",
+        "MBON12": 0.03354198066517711,
+        "MBON01": 0.02346799708902836,
+        "score": 0.010073983576148748,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "a1a2",
+        "MBON12": 0.03921762574464083,
+        "MBON01": 0.0236849132925272,
+        "score": 0.015532712452113628,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "a1b2",
+        "MBON12": 0.03804144915193319,
+        "MBON01": 0.02239561825990677,
+        "score": 0.015645830892026424,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "a1b1",
+        "MBON12": 0.037407499738037586,
+        "MBON01": 0.019579293206334114,
+        "score": 0.017828206531703472,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      }
+    ],
+    "shortlistRows": [
+      {
+        "move": "c4g8",
+        "MBON12": 0.03809926612302661,
+        "MBON01": 0.02487845253199339,
+        "score": 0.01322081359103322,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "h6f7",
+        "MBON12": 0.034556989558041096,
+        "MBON01": 0.021319497376680374,
+        "score": 0.013237492181360722,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4f7",
+        "MBON12": 0.038020855747163296,
+        "MBON01": 0.020420502871274948,
+        "score": 0.017600352875888348,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4c5",
+        "MBON12": 0.03181554866023362,
+        "MBON01": 0.022247380577027798,
+        "score": 0.009568168083205819,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4c8",
+        "MBON12": 0.03669865243136883,
+        "MBON01": 0.021233221516013145,
+        "score": 0.015465430915355682,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4f4",
+        "MBON12": 0.033413751516491175,
+        "MBON01": 0.027055532671511173,
+        "score": 0.0063582188449800014,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4f1",
+        "MBON12": 0.03340778732672334,
+        "MBON01": 0.022123470902442932,
+        "score": 0.011284316424280405,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4b4",
+        "MBON12": 0.0400812104344368,
+        "MBON01": 0.01946390140801668,
+        "score": 0.020617309026420116,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "h6f5",
+        "MBON12": 0.03328873077407479,
+        "MBON01": 0.02516230195760727,
+        "score": 0.008126428816467524,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4c7",
+        "MBON12": 0.036302137188613415,
+        "MBON01": 0.021286018192768097,
+        "score": 0.015016118995845318,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4d4",
+        "MBON12": 0.034472307190299034,
+        "MBON01": 0.021372098475694656,
+        "score": 0.013100208714604378,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4e4",
+        "MBON12": 0.03226093575358391,
+        "MBON01": 0.0204631881788373,
+        "score": 0.011797747574746609,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "h6g8",
+        "MBON12": 0.03797421092167497,
+        "MBON01": 0.023515776731073856,
+        "score": 0.01445843419060111,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "h6g4",
+        "MBON12": 0.03380660992115736,
+        "MBON01": 0.021444713696837425,
+        "score": 0.012361896224319935,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4b5",
+        "MBON12": 0.03140641842037439,
+        "MBON01": 0.023643486201763153,
+        "score": 0.00776293221861124,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      },
+      {
+        "move": "c4a6",
+        "MBON12": 0.03603226598352194,
+        "MBON01": 0.02237520646303892,
+        "score": 0.013657059520483017,
+        "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout"
+      }
+    ],
+    "repeatChoices": {
+      "allLegal": "c4b4",
+      "shortlist": "c4b4"
+    }
+  },
+  "work": {
+    "neuralPresentations": 96,
+    "candidateGenerationMs": 22.419399999999996,
+    "assessments": [
+      {
+        "kind": "all-legal",
+        "elapsedMs": 18084.299,
+        "presentations": 32,
+        "choice": "c4b4"
+      },
+      {
+        "kind": "shortlist",
+        "elapsedMs": 12184.4188,
+        "presentations": 16,
+        "choice": "c4b4"
+      },
+      {
+        "kind": "shortlist",
+        "elapsedMs": 12279.744200000001,
+        "presentations": 16,
+        "choice": "c4b4"
+      },
+      {
+        "kind": "all-legal",
+        "elapsedMs": 23794.775600000008,
+        "presentations": 32,
+        "choice": "c4b4"
+      }
+    ],
+    "timingByKind": {
+      "all-legal": {
+        "repetitions": 2,
+        "meanElapsedMs": 20939.537300000004,
+        "rawElapsedMs": [
+          18084.299,
+          23794.775600000008
+        ],
+        "presentationsPerAssessment": 32
+      },
+      "shortlist": {
+        "repetitions": 2,
+        "meanElapsedMs": 12232.0815,
+        "rawElapsedMs": [
+          12184.4188,
+          12279.744200000001
+        ],
+        "presentationsPerAssessment": 16
+      }
+    },
+    "timeReductionPercent": 41.583802331678086,
+    "assessmentElapsedMs": 66343.23760000001,
+    "meanMsPerPresentation": 691.0753916666667
+  },
+  "resources": {
+    "peakRssMiB": 109.65625,
+    "elapsedSeconds": 68.39567910000001,
+    "cpuSeconds": 35.64,
+    "freeMemoryMiBAtEnd": 1695.85546875,
+    "cpuDuty": 0.5
+  }
+}

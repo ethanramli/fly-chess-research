@@ -1,0 +1,46 @@
+{
+  "format": "fly-lowram-checkpoint-v1",
+  "config": {
+    "steps": 8,
+    "inputDim": 3,
+    "outputs": 2,
+    "seed": 53,
+    "precision": "float32",
+    "saturation": 10,
+    "recurrentScale": 0.9,
+    "normalization": "row"
+  },
+  "arrays": {
+    "magnitude": {
+      "bytes": 16,
+      "sha256": "13137785a0b983e6fc2e5a9fa2eeb4ef27eca33fefaf629044f64ad35e96c468"
+    },
+    "bias": {
+      "bytes": 12,
+      "sha256": "32196bec8b51bf276b99ba702152b0eb0454aa71aa57fb304c03f1cb8831323c"
+    },
+    "leak": {
+      "bytes": 12,
+      "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+    },
+    "input": {
+      "bytes": 12,
+      "sha256": "fd8cba5363b0df1e6b451a2248e8ccf93f7941fcd2467ad172a4398ec43116cf"
+    },
+    "inputBias": {
+      "bytes": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    "head": {
+      "bytes": 16,
+      "sha256": "5adb8551ebee5510bbda0b6b3abded31f1ea5f88f98be319b64e185cec866cc1"
+    },
+    "headBias": {
+      "bytes": 8,
+      "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+    }
+  },
+  "state": {
+    "scope": "synthetic-audit"
+  }
+}

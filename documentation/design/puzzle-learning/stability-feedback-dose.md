@@ -1,0 +1,30 @@
+# Feedback dose after joint stability
+
+Researcher-aligned engineering hypothesis, 2026-10-07. [Audited sibling failure](../../../research/reports/multi-context-stability-transfer-v1-2026-10-07/README.md) and [offline diagnostic](../../../research/reports/stability-transfer-diagnostic-v1-2026-10-07/README.md) show four negative but improved success margins. This motivates testing additional verified experience, without assuming volume is a cure. No external solution or new biological equation is proposed.
+
+Start each condition at the predetermined terminal informative joint-stability memory. Keep graph, signs, encoder, readout, stimulation current and local rule fixed. Use the two existing training contexts only. Predefine cumulative budgets of8 and32 additional positive experiences, alternating their independently certified successful board/action cues. Correct experiences receive the existing PAM02 interface; unknown verification supplies no event. Unlike adaptive repair, correct choices must not silently skip the declared dose. This is explicit positive rehearsal, not punishment of correct choices or exposure to sibling solutions.
+
+Absent, matched nondegenerate shuffled and disabled-plasticity controls must replay identical experiences from identical starting memory. Because a positive-only sequence makes ordinary valence shuffle degenerate, do not label its unchanged permutation an informative specificity control. Either include a separately predefined verified negative experience in each alternating training block, with its own negative control and budget accounting, or explicitly limit the positive-only pilot to absent/disabled comparison. Freeze that choice before execution; never manufacture a negative outcome.
+
+Before running, define and hash exact experiences, dose checkpoints, controls, certificates and the stopping schedule. Record all legal trained-context scores at each dose and retain intermediate failures. Evaluate the same four inspected siblings without feedback at each predefined dose, without selecting a checkpoint from their results. These are development diagnostics. Declare which local responses and gain changes occurred; compare success margins and useful choices rather than event counts alone. Require fixed-parameter identity, repeat/reset/restoration and pending-receipt recovery checks.
+
+Proceed serially under heap256/duty0.5/RSS768MiB/free256MiB guards with streamed records and atomic receipt/checkpoints. A dose that damages trained choices or increases sibling error is a preserved failure, not a reason to retune the frozen schedule. Useful dose-dependent development improvement would motivate an untouched disjoint/counterfactual protocol; it would not itself establish reasoning. If margins plateau or deteriorate, use measured eligibility/response diagnostics to decide whether representation or kinetics deserves a separate intervention. No linear extrapolation of the four observed score shifts is justified.
+
+Status: specification only. Protocol, implementation and experiment remain pending.
+
+2026-10-07 preparation: the mixed positive/negative option is selected before execution. [Frozen experience schedule](../../../research/data/stability-feedback-dose-experiences-v1/README.md) provides32 events with predefined cumulative8/32 checkpoints, exact certified block and balanced nondegenerate shuffle at each dose. This measures total mixed teaching dose, not positive-only rehearsal. Common terminal memory is pinned. Separate fixed-replay module now exists with pending-receipt persistence and dose snapshot publications; syntax check passes. Runner, meaningful resume/control tests and full experiment protocol remain pending. No graph run launched.
+
+2026-10-07 dose implementation: three synthetic orchestration tests pass exact pending resume, matched controls/common starts, unknown no-update and budget checkpoint continuation. Full npm test126/126 passes (7.52s). Separate guarded runner written/syntax checked, with independent verification of scheduled experiences and common original warm-start rest reference retained to avoid changing the score baseline. Full protocol freeze, source archive, artifact auditor and graph run remain pending.
+
+
+2026-10-07 dose V1 frozen preparation SHA256db747a5e0ddb573028706d3cd55b180266b8460573460eff92f585722e17867f,39 sources archived; preflight verifies all32 consequences. Receipt auditor syntax passes. Static contract review prevents launch: dose runner lacks required repeat/reset/restoration and inherited output contract needs dose-specific replacement. Preserve V1; separate complete version required. No graph started.
+
+
+2026-10-07 dose V2: persistence helper/tests added;128 tests pass and43-source frozen preflight succeeds. Protocol SHA256349e32a1e837f76e4ec5fc422fa73607482348fafad8462458d5562a0ca29210. Serial graph launched session8797/PID3628, heap256/duty0.5/max-events128. No outcome yet; terminal audit/recovery/separate sibling assessment remain pending. V1 untouched.
+
+
+2026-10-07 dose informative8 prefix: after/repeat/restored c4e4 failure and d5g8 success; reset restores c4g8/d5g8 success/success. Thus additional mixed rehearsal damages original trained choice at dose8; terminal controls/full audit pending. Dose32 also published, controls still measuring in live session8797/PID3628. Separate dose-transfer evaluator/auditor syntax passes, designed to assess every8/32 snapshot including damaged checkpoints; no protocol frozen or transfer graph launched.
+
+
+2026-10-07 dose controls prefix: absent dose8 success/success but dose32 failure/success, while informative both doses failure/success. Absence of external channel does not disable endogenous local adaptation; do not attribute dose32 loss uniquely to informative feedback. Shuffled/disabled and terminal audit remain pending, same live session8797/PID3628. All-dose sibling publisher prepared/syntax passes, gated on full and recovery audits;32 cases with all8 snapshots, no favorable selection. No sibling graph launched.
+

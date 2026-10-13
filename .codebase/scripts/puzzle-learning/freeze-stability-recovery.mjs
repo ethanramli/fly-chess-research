@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import { sha256 } from '../runtime/fetch-graph.mjs';
+const dir='research/data/multi-context-stability-recovery-v1';assert.ok(!fs.existsSync(dir));
+const checkpoint='research/reports/multi-context-stability-v1-2026-10-07/checkpoint-00006/state.json';
+const manifest=checkpoint.replace('state.json','checkpoint.json'),read=f=>JSON.parse(fs.readFileSync(f));
+const state=read(checkpoint);assert.equal(await sha256(checkpoint),read(manifest).stateSha256);
+assert.equal(state.state.active.phase,'receipt');assert.ok(state.state.active.pending);assert.equal(state.state.active.eventIndex,0);
+const pp='research/data/multi-context-stability-v1/protocol.json',p=read(pp);
+assert.equal(state.identity.protocolSha256,await sha256(pp));
+const inputs={};for(const f of [checkpoint,manifest,pp,...Object.keys(p.inputs)])inputs[f]=await sha256(f);
+const sources={...p.sources};
+for(const f of ['.codebase/scripts/puzzle-learning/audit-multi-context-stability-recovery.mjs','.codebase/scripts/puzzle-learning/freeze-stability-recovery.mjs'])sources[f]=await sha256(f);
+const protocol={schema:'multi-context-stability-recovery-v1',scope:'One pending-receipt replay after primary terminal completion; not an independent seed or trained checkpoint.',checkpoint,output:'research/reports/multi-context-stability-recovery-v1-2026-10-07',inputs,sources,runAfter:'Authoritative primary process terminal and report/audits checked; serial graph only.',command:'node --max-old-space-size=256 .codebase/scripts/puzzle-learning/train-multi-context-stability.mjs --out research/reports/multi-context-stability-recovery-v1-2026-10-07 --resume '+checkpoint+' --cpu-duty 0.5 --max-events 1',requirements:{noDuplicateUpdate:true,exactReceipt:true,allContextRankings:true,freshPresentations:66,unchangedMemory:true}};
+fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(`${dir}/protocol.json`,JSON.stringify(protocol,null,2)+'\n');console.log(JSON.stringify({sha256:await sha256(`${dir}/protocol.json`),checkpoint}));

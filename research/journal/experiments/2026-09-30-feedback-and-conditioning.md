@@ -1,0 +1,113 @@
+# 2026-09-30: From playable chess to a feedback-driven learning experiment
+
+Source: project discussion with the researcher and the code/report inspections performed during that discussion. This is a narrative summary, not a transcript. No new learning experiment was run while writing this entry.
+
+## How the research direction developed
+
+The discussion began with the question of what follows having a fly model that can play chess. Inspection distinguished the working browser interface from a learned evaluator: the current player uses untrained scores, and earlier supervised pilot results do not establish useful strategic evaluation. The initial recommendation was to freeze a rubric, splits and experiment gates.
+
+The researcher then asked how an English rubric could become fly inputs. The assistant described numerical board encodings and criterion targets, but the researcher clarified that the criterion is feedback for experience-driven learning. Directly teaching a vector of assessment scores was not the intended learning process.
+
+The researcher questioned whether externally optimizing connections is comparable to a fly learning, using the analogy of a teacher changing a student's brain chemistry. The design intent was clarified: keep the released wiring and have a teacher supply puzzles and feedback, with any persistent adaptation arising inside an explicitly modeled learning mechanism. Learning still requires persistent state, but the choice of biological state and its dynamics remains unresolved.
+
+Feedback quality became the next concern. The researcher discussed learning by trying actions and receiving consequences, with lightweight Monte Carlo simulation as the source of experience. The discussion separated definite terminal outcomes from proxy rubric rewards and search estimates. Named coding-model comparisons were analogies, not a verified comparison of those training systems.
+
+The researcher reported high latency during browser play and proposed a second board where the fly could calculate. Code inspection found serial full-connectome evaluation of every successor plus approximately equal-duration rest, with only one-ply choice. This explains likely sources of delay without measuring the original play session. No browser latency fix was made.
+
+The researcher emphasized that calculation must discover ideas across distance: sacrifices, deflections, forks and intermediate moves can form one combination. Discussion of grandmaster expertise shifted the design toward relationships, candidate ideas, defensive refutations and adaptive search allocation. These are research motivations; none has been demonstrated as an internal representation in this fly model.
+
+## Implementation correction
+
+The assistant started a generic reward-modulated weight-update prototype. After the researcher reiterated the biological-learning intent, that unfinished file was removed before integration. No training run or player integration used it. This correction matters because moving an arbitrary update rule into a class named "brain" would not establish endogenous biological learning.
+
+The surviving implementation is deliberately a task-flow experiment. It preserves model parameters and records the point where biological feedback integration is still needed.
+
+## What was actually completed
+
+The researcher proposed one puzzle-plus-feedback round first, followed by latency optimization and scaling. A single composed mate-in-one fixture now runs through a sparse full-graph model, bounded PUCT on a separate board, one committed root move, independent outcome verification and a feedback recorder. The teacher's answer and proof line do not enter the model's search.
+
+The selected move was `Qh7#`, and the recorded reward was `+1`. The original run used 101.77 MiB peak process RSS and 2.703 CPU seconds over 3.514 elapsed seconds from measurement start through report preparation. Search alone took 2.160 seconds and used three model evaluations across 32 simulations. The configured duty was 0.5; this is a compute/rest schedule, not an OS CPU cap. Checkpoint writes after the resource measurement are excluded.
+
+All graph and parameter hashes matched before and after. The receipt says `appliedToNeurons: false` and `learningApplied: false`. Therefore this result demonstrates a puzzle/search/feedback-recording round, not a successful learning round or generalization. Terminal chess rules and external search can solve this fixture even with an untrained evaluator.
+
+The 17-test suite passed after correcting a test example that unexpectedly produced stalemate. Tests cover feedback semantics, both colors' search-value perspective, search limits, repetition/history preservation, parameter immutability and feedback cursors. Replaying from the initial state reproduced the chosen move, feedback and final state hash; execution times differed.
+
+Evidence:
+
+- [Original full-graph report](../../reports/puzzle-round-2026-09-30/round-000001/result.json).
+- [Replay report](../../reports/puzzle-round-replay-2026-09-30/round-000001/result.json).
+- [Implementation and reproducible command](../../../documentation/design/puzzle-learning/record-only-round.md).
+- [Single engineering fixture](../../data/puzzle-round-fixture/README.md).
+
+## Where the discussion stopped
+
+The researcher asked whether the learning step is the next problem to figure out. Yes: the existing record-only receiver needs an evidence-based reward-neuron mapping, a plasticity mechanism and persistent memory inside the simulation. These have not been implemented or validated.
+
+The proposed first test is deliberately simpler than chess: distinguish two inputs, reward a choice, measure acquisition, remove feedback to measure retention, and reverse the reward to test adaptation. Compare with a matched control without informative feedback. This is a proposed validation plan, not a result or a selected biological mechanism.
+
+Only then reconnect puzzle feedback and test later choices, separating unaided behavior, fixed-budget search, immediate retries and held-out transfer. The researcher's intended sequence remains: working learning round, latency optimization, scaling.
+
+The latest request was to document this discussion before undertaking the learning investigation. No biological learning implementation, new training run or latency optimization is authorized by this documentation entry itself.
+
+Current design summary: [feedback-driven learning direction](../../../documentation/design/research-goals/feedback-learning.md). Current decisions: [decision log](../../project/decision_log.md).
+
+## Later implementation: mapped gamma4 conditioning
+
+The researcher subsequently asked to implement the next step. This authorized the learning-mechanism investigation and bounded prototype, superseding the earlier documentation-only stopping point above.
+
+Primary-source review selected gamma4 timing-dependent KC-to-MBON plasticity as a candidate. Handler et al. 2019 supports opposite effects for different KC/DAN activation orders; Cohn et al. 2015 supports compartment-specific modulation. These findings motivate a reduced mechanism, not an arbitrary whole-brain update. The exact implemented equation, rate constants, bounds and time units are new unfitted modeling assumptions, not a claim to reproduce receptor biochemistry.
+
+The pinned FlyWire annotation table maps 22 right-side PAM08 neurons and 1,056 right gamma KCs with existing positive connections to one MBON05. An initial same-soma-hemisphere mapping had zero qualifying edges and failed closed. FlyBase's definition established that MBON05 dendrites are contralateral, so the correct receiving cell has its soma on the left (root 720575940621164720). The corrected selection uses existing graph edges; none were added or assigned invented neuron IDs. Curated and predicted transmitter labels can disagree and are both retained in the mapping report; the graph's original sign conventions are unchanged.
+
+Implemented `Gamma4Memory`, exact 64-bit root-ID loading, sparse experimental current injection, a bounded runner, atomic per-event state checkpoints and seven new tests. Persistent state is an efficacy gain on eligible KC-to-MBON edges plus eligibility/modulatory traces. There is no backward/Adam call. Nonplastic parameter and full graph hashes are checked after every protocol event. Synthetic disjoint KC cues are paired with experimentally injected PAM activation, then tested after a model-time interval and with the temporal order reversed. No-feedback and plasticity-disabled conditions start from the same naive state.
+
+The first completed full-graph protocol, seed 47, passed its implementation gates. Paired MBON response contrast B minus A changed from -0.000174 to +0.043819, stayed +0.043819 after the retention interval, and became -0.021059 after reversed pairing. Both controls stayed at -0.000174. All fixed-state hashes held. The run used 145.21 MiB peak RSS, 113.11 elapsed seconds and 67.47 CPU seconds. These are workload measurements, not a latency improvement. No protocol-rate tuning was done after inspecting this result.
+
+Resuming from event 3 (after the first cue but before its PAM pulse) completed with byte-identical final `state.json`, including traces, gains, observations and event history. The replay used 146.21 MiB peak RSS, 110.37 elapsed seconds and 65.45 CPU seconds. Final state SHA-256 for both runs: `add9f154ae6421ca8b56763882941b941d3f139ab118a9bd2e91ca7b68b0a07f`. The test suite passed 24/24, including all earlier puzzle and derivative checks. `git diff --check` reported no whitespace errors; Git emitted its existing Windows line-ending normalization notices.
+
+Important limitations: direct experimental stimulation is not a natural sensory reward pathway. Only externally evoked PAM signals gate this reduced plasticity model; endogenous dopamine release is not reconstructed. Pulses use restarted eight-step rate dynamics. Probes do not alter memory. Gains have no forgetting process, so retention is a software persistence test, not a biological lifetime result. Temporal-pairing reversal is not action/reward-contingency reversal. The neural-response contrast is not an actual choice or chess ability. Only one synthetic cue seed has been evaluated. These results support an implemented candidate mechanism, not biological validation.
+
+The puzzle receiver remains record-only; the browser is unchanged. Before reconnecting chess, the board/action encoding, reward interface, action readout and credit assignment still require justification, along with broader controls and independent biological predictions. The requested puzzle-learning → latency → scale sequence remains intact.
+
+Evidence: [mechanism and sources](../../../documentation/design/neural-learning/gamma4-plasticity.md), [original report](../../reports/gamma4-conditioning-2026-09-30/report.json), [mapping](../../reports/gamma4-conditioning-2026-09-30/mapping.json), [checkpoint replay report](../../reports/gamma4-resume-2026-09-30/report.json).
+
+## Later addition: first human-vs-fly baseline game (researcher Black wins)
+
+The researcher downloaded the first browser PGN after beating the untrained
+fly as Black: `21. f5 Qf4#`, correctly `0-1` (exporter leaves `Result "*"`).
+An earlier assistant reply misread this as a White win; move-pair order shows
+White played `21. f5` and Black replied `21... Qf4#`. Correction preserved
+here rather than rewriting the earlier discussion.
+
+Archived byte-for-byte in [game-001.pgn](../../data/human-vs-fly/game-001.pgn)
+(SHA-256 `D3B0082801A53708BC463D0F155481A54FD398DB3B24F4AFFBCB560AA73BEFC4`)
+with provenance and limits in [human-vs-fly README](../../data/human-vs-fly/README.md).
+This is one informal game against the untrained one-ply browser policy: not
+training data, not evidence of learning or transfer, and not to be used for
+checkpoint selection or tuning.
+
+## Later validation: does feedback cause learning?
+
+The researcher asked to establish that the fly is learning. Implemented a bounded two-cue choice experiment with a fixed response-based software decoder, genuine committed-choice feedback, ordinary contingency reversal (timing fixed), no-feedback and disabled-plasticity controls, and a pulse-count-matched shuffled-feedback control. No chess data, search, optimizer, altered wiring or new plasticity rates were used. Direct PAM stimulation and the engineered decoder retain the existing reduced model's biological limitations.
+
+Each protocol was frozen before its own run, with a specific seed panel, trial budget, margins, sign-test thresholds and all-gates acceptance rule. V1 used six cue seeds, four acquisition and twelve reversal trials. It failed overall: three seeds never sampled their rewarded cue in acquisition and therefore received no acquisition reward. Acquisition ended correct in 3/6 versus 1/6 in nonlearning controls. Positive reversal effects and the remaining gates passed, but that did not override the acquisition failure. Raw results and exact source bytes were preserved.
+
+A separately specified V2 used six new seeds and target-blind sampling of each option once at the start of each phase, followed by the same free-choice/exploration rule. Neural dynamics, counts and thresholds were unchanged. This tested learning with opportunity to encounter feedback; it did not rescue V1 or validate autonomous exploration. V2 strengthened the rewarded preference in 6/6 seeds and ended acquisition correct in 6/6, compared with 4/6 initially and 4/6 in nonlearning controls. Thus two runs changed an initially wrong choice and four strengthened an existing preference. Acquisition effect signs were positive in all six (p=0.015625 under the specified synthetic-seed sign test).
+
+V2's response changes moved toward the reversed target in all six and exceeded matched shuffled effects in all six. Yet only 3/6 actually selected the new target. The full acceptance gate failed. Correct choices cannot be inferred from a positive response margin change alone. The old cue remained near its acquired response in failed seeds 1601, 3511 and 5003. Those seeds received three original-target rewards versus three, two and two new-target rewards. Missing omission-sensitive dynamics, innate cue bias, cross-activation and limited new experience remain candidate explanations; no generic negative update or post-result budget tuning was introduced.
+
+Memory erasure recovered naive responses, and restoring learned JSON state recovered the changed responses exactly in every condition. No-feedback and disabled-plasticity conditions retained their initial gains and responses. Fixed graph and nonplastic parameter hashes held. Independent audits, importing none of the learning/choice/acceptance implementation, verified raw choice decoding, teacher labels, seeded exploration, actual mapped-neuron stimulation, matched reward counts, probe outputs and memory ablations. A two-trial interrupted prefix matched the uninterrupted scientific state exactly apart from the publication counter, proving no duplicated feedback on resume.
+
+Software verification: 29/29 tests passed. V1's final resumed invocation used 139.90 MiB peak RSS, 325.68 elapsed seconds and 171.84 CPU seconds (two prefix trials excluded from that invocation's timings). V2 used 138.45 MiB peak RSS, 239.51 elapsed seconds and 136.03 CPU seconds. Each processed the full 134,209-neuron sparse graph serially at duty 0.5; differences do not establish a speed improvement. All 768 trials across 48 completed conditions, both failed acceptance results, checkpoints, hashes and executable-source archives are preserved.
+
+Supported scope: basic feedback-dependent association and causal stored-state effects within this explicitly specified simulation. Reliability of adaptation, independently predicted biological behavior and held-out chess transfer are not established. Synthetic-seed p-values are descriptive checks of the frozen computational protocol, not population estimates across flies. The puzzle receiver and browser policy remain unchanged. The next research issue is incomplete reversal and a justified account of reward omission, alongside the still-missing sensory/motor interfaces.
+
+Evidence: [frozen protocols, result tables and interpretation](../../../documentation/design/neural-learning/gamma4-association-tests.md), [V1 report](../../reports/association-validation-v1-2026-09-30/report.json), [V1 audit](../../reports/association-validation-v1-2026-09-30/audit.json), [V2 report](../../reports/association-validation-v2-2026-09-30/report.json), [V2 audit](../../reports/association-validation-v2-2026-09-30/audit.json). Latest primary-source check: [Handler 2019 PubMed](https://pubmed.ncbi.nlm.nih.gov/31230716/); its timing/receptor evidence does not specify or validate the new software choice decoder.
+
+## Discussion takeaway and documentation request
+
+The researcher asked to document the latest conclusion. Basic association now has causal evidence within the simplified model: rewarded preference strengthened in all six balanced V2 runs; resetting memory removed the learned response changes and restoring it recovered them; nonlearning controls stayed unchanged. Of the six correct final acquisition choices, four were already correct before training and two changed from incorrect to correct.
+
+The full acceptance test remains failed: only three of six runs selected the new target when reward switched. The next research checkpoint is to understand incomplete revision of an outdated association and test a biologically justified explanation. Reward-omission dynamics are a candidate question, not a selected fix; experience coverage, cue bias and cross-activation also remain possible explanations. This request records the result and next question without starting another experiment or changing the learning mechanism. Chess learning and transfer remain untested.
+
+The detailed protocols, controls, failed cases and raw evidence remain in [the learning-validation note](../../../documentation/design/neural-learning/gamma4-association-tests.md). The decision log and `AGENTS.md` already reflect this status.

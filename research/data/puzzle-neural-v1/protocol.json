@@ -1,0 +1,19 @@
+{
+  "schema":"puzzle-neural-v1",
+  "frozen":"2026-10-06 before verified puzzle-neural-v1 feedback",
+  "prerequisite":"research/reports/mbon-choice-v1-2026-10-06",
+  "puzzles":"research/data/puzzle-round-fixture/puzzles.jsonl",
+  "encoderSeed":13007,
+  "conditions":["informative","absent","shuffled","disabled"],
+  "modelSeed":47,"steps":8,
+  "eta":0.5,"minGain":0.2,"maxGain":1.8,"activityScale":1.5,"current":1.5,
+  "encoder":{"maxCells":64,"totalCurrent":24,"maxCellCurrent":1.5,"maxHistoryPlies":512},
+  "search":{"simulations":64,"maxEvaluations":2,"maxDepth":1,"maxNodes":4096,"milliseconds":60000},
+  "review":{"maxCandidates":4,"maxProofNodes":4096,"nodesPerCandidate":1024,"proofMilliseconds":2000},
+  "feedbackCycles":2,"maxBrainCalls":256,"maxLegalMoves":64,"priorScale":4,
+  "schedule":"After commitment and independent review, replay known reviewed candidates twice in fixed review order. Unknowns produce no event. Per event cue and optional identified PPL103 stimulus are simultaneous for eight numerical updates, followed by one dt=1 local observation. No eligibility through the prior search is claimed.",
+  "meaning":"Failure of the bounded mate objective triggers a fixed experimental aversive stimulus, not a claimed natural pathway or full-game loss. Success has no external pulse; any local update arises from measured endogenous activity.",
+  "control":"Absent omits external pulses; shuffled permutes the known-event pulse sequence with seed 13007 at matched count; disabled supplies informative pulses without plasticity. Each condition restarts from naive gains.",
+  "measurement":"All legal root candidates before learning, after learning, repeat, reset and restoration. Report full-root unaided choice, reviewed good-vs-bad margin, search choice before learning, and checked bounded consequences. No acceptance threshold fitted to results; this is one engineering fixture, not a transfer gate.",
+  "limitations":"Direct sensory/reinforcement stimulation, coarse masks, unfitted kinetics and engineered MBON readout. No natural reward pathway, delayed credit, whole-model adaptation, unfamiliar-family transfer, measured retention or completed reasoning learner."
+}

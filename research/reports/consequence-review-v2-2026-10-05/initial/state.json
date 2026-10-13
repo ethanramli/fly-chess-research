@@ -1,0 +1,50 @@
+{
+  "schema": "fly-puzzle-round-state-v2",
+  "inputs": {
+    "graph": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    "puzzles": "7855f3cdbbb440b1f302c633b38f13c08a623f4455b64b01bc46b6d6286dd3dc"
+  },
+  "sources": {
+    ".codebase/scripts/puzzle-round.mjs": "9d3a2866970e38020ee32f7f4a4fb76ec217edde98bf09e3a65ec436a86ee3fb",
+    ".codebase/src/lowram/puzzle-round.mjs": "df15de9eaa8bba29eb76e775d2f709b13e125373bcc0ff035fcaa3588bb291ff",
+    ".codebase/src/lowram/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+    ".codebase/src/lowram/experience-feedback.mjs": "aa8aea03687d7e198c4311df806a97d6312701564d2420cf42fbf0d594e26bc5",
+    ".codebase/src/lowram/trainer.mjs": "ffefd16ad1fd2e438dba89c45072ea2229091832a46349958b8668aa7517b7f9",
+    ".codebase/src/lowram/positions.mjs": "b08f07ba4775132bfe78f979799621c916e4b061a213af35ed9a8afb8b7800d4",
+    ".codebase/src/lowram/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+    ".codebase/src/lowram/storage.mjs": "9b1388699dbf65e3e1848b262d73e01902b20ddfa982608d39bf43f2733cac7c"
+  },
+  "config": {
+    "steps": 8,
+    "inputDim": 1280,
+    "outputs": 133,
+    "seed": 47,
+    "precision": "float32",
+    "saturation": 10,
+    "recurrentScale": 0.9,
+    "normalization": "global"
+  },
+  "modelIdentity": {
+    "graphArrays": "3f37688d14e94d3ccec44b6a75aaa8b66c41bd08c57fe1c011dd23326218448e",
+    "parameters": "6800f58ac48319d8a304542a9c898f47cbcf2db674d46fceb4e9bfe510c5698a"
+  },
+  "options": {
+    "search": {
+      "simulations": 32,
+      "maxEvaluations": 8,
+      "maxDepth": 6,
+      "maxNodes": 4096,
+      "milliseconds": 10000
+    },
+    "proofNodes": 4096,
+    "cpuDuty": 0.5,
+    "review": {
+      "maxCandidates": 4,
+      "maxProofNodes": 4096,
+      "nodesPerCandidate": 1024
+    }
+  },
+  "nextRow": 0,
+  "receipts": 0,
+  "learningBackend": "record-only-v1"
+}

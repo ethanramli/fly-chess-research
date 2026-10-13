@@ -1,0 +1,3 @@
+# 2026-10-09 gamma2 adaptive cue-capacity test
+
+Preregistered comparison of maximum cue capacity 8 versus 10 at fixed total current 12, with adaptive verified current-error feedback, timing memory and matched controls. See the [pre-run report](../../reports/gamma2-adaptive-cue10-2026-10-09/README.md), [protocol](../../data/gamma2-adaptive-target-cue10-v1/protocol.json), and [decision log](../../project/decision_log.md).

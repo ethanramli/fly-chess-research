@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { sha256 } from '../runtime/fetch-graph.mjs';
+const root='research/reports/multi-context-stability-v1-2026-10-07';
+const files=['event-informative-2.json','event-shuffled-2.json','ranking-informative-2.json','ranking-shuffled-2.json'];
+const values=files.map(f=>JSON.parse(fs.readFileSync(`${root}/${f}`)));
+const [a,b,ar,br]=values;assert.deepEqual(a.before,b.before);assert.deepEqual(a.experience,b.experience);
+assert.equal(a.channel,'PPL103');assert.equal(b.channel,'PAM02');assert.deepEqual(a.receipt.cue,b.receipt.cue);
+const inputs={};for(const f of files)inputs[`${root}/${f}`]=await sha256(`${root}/${f}`);
+const out='research/reports/stability-channel-branch-v1-2026-10-07';assert.ok(!fs.existsSync(out));fs.mkdirSync(out);
+const result={passed:true,inputs,auditorSha256:await sha256(import.meta.filename),sameInitialMemory:true,sameExperience:true,sameCue:true,channels:[a.channel,b.channel],outcomes:{informative:ar.map(p=>p.review.status),shuffled:br.map(p=>p.review.status)},scope:'Saved branch equality and recorded chosen outcomes only; not independent neural replay, final control acceptance or unfamiliar transfer.'};
+fs.writeFileSync(`${out}/report.json`,JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));

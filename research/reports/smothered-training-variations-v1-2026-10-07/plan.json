@@ -1,0 +1,73 @@
+{
+  "candidates": [
+    {
+      "id": "smothered-queen-b3-rook-e8",
+      "group": "smothered-mate-development",
+      "split": "train",
+      "finalTestEligible": false,
+      "fen": "4r2k/6pp/7N/8/8/1Q6/8/K7 w - - 0 1",
+      "objective": "forced-mate",
+      "plies": 3
+    },
+    {
+      "id": "smothered-queen-b3-rook-f8",
+      "group": "smothered-mate-development",
+      "split": "train",
+      "finalTestEligible": false,
+      "fen": "5r1k/6pp/7N/8/8/1Q6/8/K7 w - - 0 1",
+      "objective": "forced-mate",
+      "plies": 3
+    },
+    {
+      "id": "smothered-queen-d5-rook-e8",
+      "group": "smothered-mate-development",
+      "split": "train",
+      "finalTestEligible": false,
+      "fen": "4r2k/6pp/7N/3Q4/8/8/8/K7 w - - 0 1",
+      "objective": "forced-mate",
+      "plies": 3
+    },
+    {
+      "id": "smothered-queen-d5-rook-f8",
+      "group": "smothered-mate-development",
+      "split": "train",
+      "finalTestEligible": false,
+      "fen": "5r1k/6pp/7N/3Q4/8/8/8/K7 w - - 0 1",
+      "objective": "forced-mate",
+      "plies": 3
+    },
+    {
+      "id": "smothered-queen-e6-rook-e8",
+      "group": "smothered-mate-development",
+      "split": "train",
+      "finalTestEligible": false,
+      "fen": "4r2k/6pp/4Q2N/8/8/8/8/K7 w - - 0 1",
+      "objective": "forced-mate",
+      "plies": 3
+    },
+    {
+      "id": "smothered-queen-e6-rook-f8",
+      "group": "smothered-mate-development",
+      "split": "train",
+      "finalTestEligible": false,
+      "fen": "5r1k/6pp/4Q2N/8/8/8/8/K7 w - - 0 1",
+      "objective": "forced-mate",
+      "plies": 3
+    }
+  ],
+  "scope": "Training-only motif variations; not independent transfer families.",
+  "generatorSha256": "87c3eefefe3292e67b6444d73c404a7c4bf5ab6a6a30f906c5c9ce26ad40f588",
+  "baseDatasetSha256": "3b40d90e82e215c77ab15fa41705a66da08fa574efc7f3f3ee3a56cd7af89fd5",
+  "verification": {
+    "maxNodes": 4096,
+    "milliseconds": 2000
+  },
+  "command": [
+    "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\puzzle-learning\\prepare-smothered-training-variations.mjs",
+    "--out",
+    "research/reports/smothered-training-variations-v1-2026-10-07",
+    "--cpu-duty",
+    "0.5"
+  ]
+}

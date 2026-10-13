@@ -1,0 +1,172 @@
+{
+  "timestamp": "2026-10-10T12:13:37.130Z",
+  "method": "Conventional sample median: average middle pair for even count",
+  "noNewTimingMeasurements": true,
+  "originalArtifactsUnchanged": true,
+  "independentAuditAgreement": true,
+  "runs": [
+    {
+      "kind": "wasm",
+      "reportSHA256": "43f85a1ceef7fdf72a29992c20d9af45197df4108d6e1e4f40923c6079030586",
+      "samplesSHA256": "558502ede2de2e5bc5a686243ba6ba19df3c888ab1537dc95ee6c12e40fabcc7",
+      "fixtures": [
+        {
+          "fixture": "white-start",
+          "oracle": {
+            "count": 4,
+            "conventionalMedianMs": 9073.012550000003,
+            "historicalNearestRankP50Ms": 7207.236499999999,
+            "sampleMaximumMs": 12245.082300000002
+          },
+          "candidate": {
+            "count": 4,
+            "conventionalMedianMs": 6699.3562999999995,
+            "historicalNearestRankP50Ms": 6396.080300000001,
+            "sampleMaximumMs": 7220.305699999997
+          },
+          "conventionalMedianReductionPercent": 26.161721224556256,
+          "correctedInequalitiesPass": true
+        },
+        {
+          "fixture": "black-after-e4",
+          "oracle": {
+            "count": 4,
+            "conventionalMedianMs": 9942.353700000007,
+            "historicalNearestRankP50Ms": 7633.916100000002,
+            "sampleMaximumMs": 12840.275300000008
+          },
+          "candidate": {
+            "count": 4,
+            "conventionalMedianMs": 5947.639500000005,
+            "historicalNearestRankP50Ms": 5864.402999999991,
+            "sampleMaximumMs": 6619.228999999992
+          },
+          "conventionalMedianReductionPercent": 40.17875767183779,
+          "correctedInequalitiesPass": true
+        },
+        {
+          "fixture": "opening-six-plies",
+          "oracle": {
+            "count": 4,
+            "conventionalMedianMs": 19167.538749999978,
+            "historicalNearestRankP50Ms": 17423.67439999996,
+            "sampleMaximumMs": 21476.19279999996
+          },
+          "candidate": {
+            "count": 4,
+            "conventionalMedianMs": 14703.089149999985,
+            "historicalNearestRankP50Ms": 13686.140399999975,
+            "sampleMaximumMs": 17857.7684
+          },
+          "conventionalMedianReductionPercent": 23.291720748445066,
+          "correctedInequalitiesPass": true
+        },
+        {
+          "fixture": "rook-endgame",
+          "oracle": {
+            "count": 4,
+            "conventionalMedianMs": 6843.213099999994,
+            "historicalNearestRankP50Ms": 6218.267099999997,
+            "sampleMaximumMs": 12220.955699999991
+          },
+          "candidate": {
+            "count": 4,
+            "conventionalMedianMs": 5534.155950000015,
+            "historicalNearestRankP50Ms": 5190.847700000042,
+            "sampleMaximumMs": 9865.17359999998
+          },
+          "conventionalMedianReductionPercent": 19.129276421334595,
+          "correctedInequalitiesPass": true
+        }
+      ],
+      "aggregateConventionalMedianMs": {
+        "oracle": 11579.87215,
+        "candidate": 6507.654649999997
+      },
+      "historicalOutcome": true,
+      "correctedOutcome": true
+    },
+    {
+      "kind": "zero-reset",
+      "reportSHA256": "f7f60d04d3daac102a419f4054c4b72bb87e1d0bcfc1a30ddba52c7912d13daa",
+      "samplesSHA256": "ccb569fe93237bdbffaf877ea93cb31754d45ce2ea3d4c5b455174821eba94b1",
+      "fixtures": [
+        {
+          "fixture": "white-start",
+          "oracle": {
+            "count": 4,
+            "conventionalMedianMs": 8122.4228,
+            "historicalNearestRankP50Ms": 8106.946200000006,
+            "sampleMaximumMs": 8650.430800000002
+          },
+          "candidate": {
+            "count": 4,
+            "conventionalMedianMs": 7297.561650000003,
+            "historicalNearestRankP50Ms": 7267.194499999998,
+            "sampleMaximumMs": 8205.212499999994
+          },
+          "conventionalMedianReductionPercent": 10.155358447974372,
+          "correctedInequalitiesPass": true
+        },
+        {
+          "fixture": "black-after-e4",
+          "oracle": {
+            "count": 4,
+            "conventionalMedianMs": 7963.270649999991,
+            "historicalNearestRankP50Ms": 7920.042199999996,
+            "sampleMaximumMs": 8413.315100000007
+          },
+          "candidate": {
+            "count": 4,
+            "conventionalMedianMs": 8515.719750000004,
+            "historicalNearestRankP50Ms": 7959.939400000003,
+            "sampleMaximumMs": 9818.331999999995
+          },
+          "conventionalMedianReductionPercent": -6.937464821693751,
+          "correctedInequalitiesPass": false
+        },
+        {
+          "fixture": "opening-six-plies",
+          "oracle": {
+            "count": 4,
+            "conventionalMedianMs": 15044.8217,
+            "historicalNearestRankP50Ms": 14627.094600000011,
+            "sampleMaximumMs": 16912.901599999983
+          },
+          "candidate": {
+            "count": 4,
+            "conventionalMedianMs": 14255.67585,
+            "historicalNearestRankP50Ms": 13683.667799999996,
+            "sampleMaximumMs": 14870.128800000006
+          },
+          "conventionalMedianReductionPercent": 5.2452987860933,
+          "correctedInequalitiesPass": true
+        },
+        {
+          "fixture": "rook-endgame",
+          "oracle": {
+            "count": 4,
+            "conventionalMedianMs": 7128.535850000015,
+            "historicalNearestRankP50Ms": 6706.65419999999,
+            "sampleMaximumMs": 9505.703099999984
+          },
+          "candidate": {
+            "count": 4,
+            "conventionalMedianMs": 6501.09169999999,
+            "historicalNearestRankP50Ms": 5886.276400000032,
+            "sampleMaximumMs": 8505.984400000016
+          },
+          "conventionalMedianReductionPercent": 8.801865673440123,
+          "correctedInequalitiesPass": true
+        }
+      ],
+      "aggregateConventionalMedianMs": {
+        "oracle": 8122.4228,
+        "candidate": 8082.575949999999
+      },
+      "historicalOutcome": false,
+      "correctedOutcome": false
+    }
+  ],
+  "limits": "Four paired warmed observations per fixture on one host; maximum is not a dependable tail estimate. No matched cold-server baseline, biological learning, reasoning or Elo claim."
+}

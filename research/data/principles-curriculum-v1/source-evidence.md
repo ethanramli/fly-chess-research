@@ -1,0 +1,16 @@
+# Curriculum source evidence and adaptations
+
+Access: 2026-10-11. The teaching order, sample sizes, dose ceilings and pass thresholds are prospective engineering choices. Sources support principles/constraints, not this exact curriculum or successful fly learning.
+
+| Primary source | Coverage and short raw excerpt | Supported use and boundary |
+|---|---|---|
+| [Capablanca, Chess Fundamentals](https://www.gutenberg.org/cache/epub/33870/pg33870-images.html), sections1,6,21-24,31-33 | Retrieved HTML text. Section1: "The combined action of King and Rook is needed". | Elementary piece power, development, cooperation, restraint and weaknesses motivate lesson content. No measured account of grandmaster cognition or exact capture-first syllabus. |
+| [GM Bryan Smith, Forcing Moves, Part1](https://www.chess.com/article/view/forcing-moves-part-1) | Retrieved article text: "a forcing move is either a check, a capture, or a threat". | Investigation priorities and overlooked defenses motivate both-player candidate coverage; forcing is not synonymous with good. |
+| [Hige et al.,2015](https://pubmed.ncbi.nlm.nih.gov/26637800/) | Primary abstract/search text: "odor-specific synaptic depression". Direct PMC full text returned a browser challenge. | Input specificity, timing and compartment constraints motivate local memory/identity gates. No validation of the project's gamma2 chess mapping, arbitrary symbolic input or gain equation. |
+| [Handler et al.,2019](https://pubmed.ncbi.nlm.nih.gov/31230716/) | Primary search/abstract text: "temporal ordering of an odor stimulus and a reinforcement". Direct PubMed open failed; full-text search coverage is recorded as partial. | Temporal/receptor dependence motivates waveform and credit prerequisites. Does not validate frame-to-biological-time conversion or the proposed graded error signal. |
+| [Gkanias et al.,2022](https://elifesciences.org/articles/75611) | Existing registered source-rule review and code comments were inspected; direct page returned a challenge. [Primary PDF](https://elifesciences.org/articles/75611.pdf) search excerpts were available; no new full-text reading claimed. | Motivation for modeled response dynamics/local learning, with engineering gain/trace approximations separated. No new biological equation is imported by this curriculum. |
+| [Lake and Baroni,2023](https://www.nature.com/articles/s41586-023-06668-3) | Primary abstract/search text on novel combinations of familiar components. | Motivates holding out relational combinations. The curriculum does not transplant their meta-learning optimizer or claim fly compositionality. |
+
+Existing [source register](../../literature/source-solution-register.md) and [2026-10-08 Capablanca/feedback review](../../literature/feedback-quality-deep-review-2026-10-08/review.md) remain intact. Stockfish target derivation/settings are adapted from the already registered [value-teaching contract](../../../documentation/design/puzzle-learning/stockfish-value-learning.md); the new graded temporal receiver is explicitly unvalidated.
+
+Teacher-quality examples in this package are known illustrative fixtures, excluded from train/validation/final quotas. Their independently checked consequences demonstrate record construction only. Neither source evidence nor a valid fixture proves a neural signal was delivered or learned.

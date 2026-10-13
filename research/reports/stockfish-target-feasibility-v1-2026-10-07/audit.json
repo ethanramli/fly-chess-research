@@ -1,0 +1,194 @@
+{
+  "passed": true,
+  "auditorPath": ".codebase/scripts/puzzle-learning/audit-stockfish-targets-json-zero.mjs",
+  "auditorSha256": "7a39638055c236377dd9254f7f78bf9d75a85670a3d539fcb84f274f289d684c",
+  "reportSha256": "19cc8e79b8ec496f4b98e8100134b76822291124f42d354ff31315081adda051",
+  "protocolSha256": "4b6b3860801908ff9e25ad092d7574be9e0c1b9387517654ac41fbb5795b3e91",
+  "certificates": 124,
+  "available": 82,
+  "panels": [
+    {
+      "rowId": "queen-concession-development",
+      "nodeBudget": 10000,
+      "legal": 32,
+      "available": 20,
+      "distinctUtilityTargets": 10,
+      "success": [
+        {
+          "move": "c4g8",
+          "utility": 1,
+          "kind": "mate",
+          "actorScore": 1
+        }
+      ],
+      "topUtility": 1,
+      "topMoves": [
+        "h6f7",
+        "h6g4",
+        "h6f5",
+        "c4a6",
+        "c4c6",
+        "c4g8",
+        "c4c3",
+        "c4c1",
+        "c4b4"
+      ],
+      "failedMovesTiedAtTop": 8,
+      "failuresAtLeastAsHighAsSuccess": 8,
+      "failurePositiveErrorAtBaseline": 14,
+      "mse": {
+        "baseline": 0.6641629762616177,
+        "informative": 0.6648661229851924,
+        "absent": 0.6642265432642591,
+        "shuffled": 0.6659081184868955,
+        "disabled": 0.6641629762616177
+      },
+      "interpretation": "MSE uses an arbitrary fixed, unfitted scale; retrospective outcome-feedback comparison, not Stockfish-training efficacy"
+    },
+    {
+      "rowId": "queen-concession-development",
+      "nodeBudget": 50000,
+      "legal": 32,
+      "available": 23,
+      "distinctUtilityTargets": 11,
+      "success": [
+        {
+          "move": "c4g8",
+          "utility": 1,
+          "kind": "mate",
+          "actorScore": 1
+        }
+      ],
+      "topUtility": 1,
+      "topMoves": [
+        "h6f7",
+        "h6f5",
+        "c4a6",
+        "c4c6",
+        "c4e6",
+        "c4g8",
+        "c4d4",
+        "c4h4",
+        "c4c3",
+        "c4c1",
+        "c4b4"
+      ],
+      "failedMovesTiedAtTop": 10,
+      "failuresAtLeastAsHighAsSuccess": 10,
+      "failurePositiveErrorAtBaseline": 16,
+      "mse": {
+        "baseline": 0.6126602641079545,
+        "informative": 0.61372375524481,
+        "absent": 0.6127343089097534,
+        "shuffled": 0.6145793086668457,
+        "disabled": 0.6126602641079545
+      },
+      "interpretation": "MSE uses an arbitrary fixed, unfitted scale; retrospective outcome-feedback comparison, not Stockfish-training efficacy"
+    },
+    {
+      "rowId": "smothered-queen-b3-rook-e8",
+      "nodeBudget": 10000,
+      "legal": 30,
+      "available": 18,
+      "distinctUtilityTargets": 5,
+      "success": [
+        {
+          "move": "b3g8",
+          "utility": 1,
+          "kind": "mate",
+          "actorScore": 1
+        }
+      ],
+      "topUtility": 1,
+      "topMoves": [
+        "h6f7",
+        "h6g4",
+        "h6f5",
+        "b3a4",
+        "b3b5",
+        "b3b6",
+        "b3g8",
+        "b3c3",
+        "b3f3",
+        "b3h3",
+        "b3b2",
+        "a1a2"
+      ],
+      "failedMovesTiedAtTop": 11,
+      "failuresAtLeastAsHighAsSuccess": 11,
+      "failurePositiveErrorAtBaseline": 13,
+      "mse": {
+        "baseline": 0.938465402038834,
+        "informative": 0.9427491485983297,
+        "absent": 0.9386560261146462,
+        "shuffled": 0.9401474678122419,
+        "disabled": 0.938465402038834
+      },
+      "interpretation": "MSE uses an arbitrary fixed, unfitted scale; retrospective outcome-feedback comparison, not Stockfish-training efficacy"
+    },
+    {
+      "rowId": "smothered-queen-b3-rook-e8",
+      "nodeBudget": 50000,
+      "legal": 30,
+      "available": 21,
+      "distinctUtilityTargets": 6,
+      "success": [
+        {
+          "move": "b3g8",
+          "utility": 1,
+          "kind": "mate",
+          "actorScore": 1
+        }
+      ],
+      "topUtility": 1,
+      "topMoves": [
+        "h6f7",
+        "h6g4",
+        "h6f5",
+        "b3a4",
+        "b3b5",
+        "b3b6",
+        "b3b7",
+        "b3g8",
+        "b3c3",
+        "b3h3",
+        "b3d1",
+        "a1b1"
+      ],
+      "failedMovesTiedAtTop": 11,
+      "failuresAtLeastAsHighAsSuccess": 11,
+      "failurePositiveErrorAtBaseline": 14,
+      "mse": {
+        "baseline": 0.8525190620639423,
+        "informative": 0.8551464260484407,
+        "absent": 0.8526691369025465,
+        "shuffled": 0.8536370067411826,
+        "disabled": 0.8525190620639423
+      },
+      "interpretation": "MSE uses an arbitrary fixed, unfitted scale; retrospective outcome-feedback comparison, not Stockfish-training efficacy"
+    }
+  ],
+  "sensitivity": [
+    {
+      "rowId": "queen-concession-development",
+      "availablePairs": 17,
+      "unavailablePairs": 15,
+      "maximumUtilityChange": 0.16400000000000003
+    },
+    {
+      "rowId": "smothered-queen-b3-rook-e8",
+      "availablePairs": 13,
+      "unavailablePairs": 17,
+      "maximumUtilityChange": 0
+    }
+  ],
+  "gates": {
+    "allLegalCoverage": true,
+    "perspective": true,
+    "certificates": true,
+    "monotonicReadout": true,
+    "utilitySeparatesMateDeadline": false,
+    "stockfishTeachingImprovesLearning": null,
+    "transfer": null
+  }
+}

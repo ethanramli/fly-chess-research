@@ -1,0 +1,15 @@
+{
+  "schema": "adaptive-contrastive-coverage-v2-qb3-delta-analysis-v1",
+  "purpose": "Evaluate the preregistered cap-28 cue-width hypothesis on its two named, previously inspected Qb3 development probes using the same informative-minus-absent score contrast as the audited cap-14 comparison.",
+  "scope": "Read-only all-legal neural assessment after the completed and audited cap-28 training run. These probes are development data, not independent transfer or final-test evidence. No training or memory updates occur.",
+  "conditions": ["informative", "absent", "shuffled", "disabled"],
+  "positions": [
+    { "id": "smothered-queen-b3-rook-e8", "successMove": "b3g8", "cap14SuccessDeltaRank": 5 },
+    { "id": "smothered-queen-b3-rook-f8", "successMove": "b3g8", "cap14SuccessDeltaRank": 4 }
+  ],
+  "metric": "For each legal move, score-change is the condition's final absolute MBON score minus the absent-control absolute score on the same board/action under the same encoder cap. Rank descending with lexical UCI tie-break. For informative memory, both success moves must rank strictly better (smaller rank) than their recorded cap-14 rank for the cap-increase hypothesis to pass. Shuffled-minus-absent and disabled-minus-absent ranks are reported as controls, not substituted for the informative criterion.",
+  "falsification": "The cap-increase prediction fails if either informative success-move rank is not strictly better than its cap-14 rank, if matched control exposure/audit fails, if exact total cue current is not 21 with 28 active cells at 0.75 each, or if required certificate/provenance checks fail.",
+  "cap14Comparison": "research/reports/gamma2-relative-readout-2026-10-09/adaptive-near-transfer-v4-delta-exploration.json",
+  "cap14RawPanels": "research/reports/adaptive-near-transfer-v4-2026-10-07/report.json",
+  "cap28Run": "research/reports/adaptive-contrastive-coverage-v2-2026-10-09/resume"
+}

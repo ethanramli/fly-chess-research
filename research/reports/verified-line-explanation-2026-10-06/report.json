@@ -1,0 +1,444 @@
+{
+  "sources": {
+    ".codebase/scripts/probe-verified-lines.mjs": "86a4709f7ddd43c10e1fcefcd7ef258bae624497ad8fe29da174636b7f86786b",
+    ".codebase/src/lowram/verified-line-explanation.mjs": "0a177c408b0a7583a02f69929779f779b68290bf5716e1b2035c39ce190d4e33",
+    ".codebase/src/lowram/verified-feedback.mjs": "e8141c3171fd49cb720cee73283c4cd8a9b572a7a973a47636c25ce6f87f4a78",
+    ".codebase/src/lowram/mate-certificate.mjs": "b7bdab76a3faa78c203971991c3b2e00cdfd359cfca08b6e1f7b1ae8d430b700",
+    ".codebase/src/lowram/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+    ".codebase/src/lowram/experimental-puzzle-search.mjs": "dc7ac5e894879ae75a1b0bd5931b1e72466c14b707d2ff987ee6ee1f6d259ebb"
+  },
+  "results": [
+    {
+      "fixture": {
+        "id": "rook-concession-supported",
+        "fen": "4r2k/6pr/6K1/7Q/8/8/8/5R2 w - - 0 1"
+      },
+      "candidate": "f1f8",
+      "proof": {
+        "status": "success",
+        "reward": 1,
+        "nodes": 5,
+        "attacker": "w",
+        "criterion": "force_mate_within_2_remaining_plies",
+        "certificate": {
+          "schema": "bounded-mate-certificate-v1",
+          "rootFen": "4rR1k/6pr/6K1/7Q/8/8/8/8 b - - 1 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/6pr/6K1/7Q/8/8/8/5R2 w - - 0 1\"]\n\n1. Rf8+ *",
+          "attacker": "w",
+          "plies": 2,
+          "tree": {
+            "status": "success",
+            "children": [
+              {
+                "move": "e8f8",
+                "node": {
+                  "status": "success",
+                  "children": [
+                    {
+                      "move": "h5h7",
+                      "node": {
+                        "status": "success",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "certificateCheck": {
+          "verified": true,
+          "status": "success",
+          "nodes": 3,
+          "elapsedMs": 14.188700000000011
+        },
+        "bounds": {
+          "maxNodes": 4096,
+          "millisecondsPerStage": 2000,
+          "constructionStop": null,
+          "checkingNodes": 3,
+          "elapsedMs": 27.238699999999994
+        },
+        "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+      },
+      "explanation": {
+        "schema": "verified-line-explanation-v1",
+        "status": "success",
+        "teachingAllowed": true,
+        "actor": "w",
+        "candidate": "f1f8",
+        "criterion": "force_mate_within_2_remaining_plies",
+        "certificateSha256": "db2182cb293184062ee7a9b2d6ce7780091d3232051a97f99152c48fccf2ee95",
+        "materialRubric": {
+          "units": {
+            "p": 1,
+            "n": 3,
+            "b": 3,
+            "r": 5,
+            "q": 9,
+            "k": 0
+          },
+          "initialBalance": 3,
+          "finalBalance": 3,
+          "scope": "Conventional fixed material accounting for teacher explanation; not a complete position assessment"
+        },
+        "sequence": [
+          {
+            "ply": 1,
+            "move": "f1f8",
+            "san": "Rf8+",
+            "playedBy": "w",
+            "captured": null,
+            "promotion": null,
+            "materialBefore": 3,
+            "materialAfter": 3,
+            "change": 0,
+            "legalRepliesAtThisNode": null,
+            "certifiedDefensiveBranches": null,
+            "onlyLegalReply": false,
+            "successorFen": "4rR1k/6pr/6K1/7Q/8/8/8/8 b - - 1 1"
+          },
+          {
+            "ply": 2,
+            "move": "e8f8",
+            "san": "Rxf8",
+            "playedBy": "b",
+            "captured": "r",
+            "promotion": null,
+            "materialBefore": 3,
+            "materialAfter": -2,
+            "change": -5,
+            "legalRepliesAtThisNode": 1,
+            "certifiedDefensiveBranches": 1,
+            "onlyLegalReply": true,
+            "successorFen": "5r1k/6pr/6K1/7Q/8/8/8/8 w - - 0 2"
+          },
+          {
+            "ply": 3,
+            "move": "h5h7",
+            "san": "Qxh7#",
+            "playedBy": "w",
+            "captured": "r",
+            "promotion": null,
+            "materialBefore": -2,
+            "materialAfter": 3,
+            "change": 5,
+            "legalRepliesAtThisNode": null,
+            "certifiedDefensiveBranches": null,
+            "onlyLegalReply": false,
+            "successorFen": "5r1k/6pQ/6K1/8/8/8/8/8 b - - 0 2"
+          }
+        ],
+        "actorLosses": [
+          {
+            "ply": 2,
+            "captured": "r",
+            "units": 5
+          }
+        ],
+        "materialConcessionObserved": true,
+        "mateDespiteMaterialConcession": true,
+        "earlierAttackingChoices": [
+          {
+            "ply": 1,
+            "move": "f1f8"
+          },
+          {
+            "ply": 3,
+            "move": "h5h7"
+          }
+        ],
+        "outcome": "Forced mate under the stated horizon and covered defenses",
+        "limitations": [
+          "One illustrative branch of the independently checked strategy/counterstrategy.",
+          "A material concession does not establish necessity, best full-game play, or that the model rejected the move for material reasons.",
+          "This explanation is teacher evidence, not a neural evaluation, arbitrary parameter update or validated delayed credit."
+        ]
+      }
+    },
+    {
+      "fixture": {
+        "id": "rook-concession-changed-support",
+        "fen": "4r2k/6pr/8/7Q/6K1/8/8/5R2 w - - 0 1"
+      },
+      "candidate": "f1f8",
+      "proof": {
+        "status": "failure",
+        "reward": -1,
+        "nodes": 22,
+        "attacker": "w",
+        "criterion": "force_mate_within_2_remaining_plies",
+        "certificate": {
+          "schema": "bounded-mate-certificate-v1",
+          "rootFen": "4rR1k/6pr/8/7Q/6K1/8/8/8 b - - 1 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/6pr/8/7Q/6K1/8/8/5R2 w - - 0 1\"]\n\n1. Rf8+ *",
+          "attacker": "w",
+          "plies": 2,
+          "tree": {
+            "status": "failure",
+            "children": [
+              {
+                "move": "e8f8",
+                "node": {
+                  "status": "failure",
+                  "children": [
+                    {
+                      "move": "h5g6",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5f7",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5e8",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5h6",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5h7",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5h4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5h3",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5h2",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5h1",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5g5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5f5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5e5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5d5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5c5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5b5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "h5a5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "g4g5",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "g4h4",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "g4h3",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    },
+                    {
+                      "move": "g4g3",
+                      "node": {
+                        "status": "failure",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "certificateCheck": {
+          "verified": true,
+          "status": "failure",
+          "nodes": 22,
+          "elapsedMs": 20.728700000000003
+        },
+        "bounds": {
+          "maxNodes": 4096,
+          "millisecondsPerStage": 2000,
+          "constructionStop": null,
+          "checkingNodes": 22,
+          "elapsedMs": 41.218500000000006
+        },
+        "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+      },
+      "explanation": {
+        "schema": "verified-line-explanation-v1",
+        "status": "failure",
+        "teachingAllowed": true,
+        "actor": "w",
+        "candidate": "f1f8",
+        "criterion": "force_mate_within_2_remaining_plies",
+        "certificateSha256": "7f9d0b42799162340b9d72b7598c9bf11d11ce8339f9e273c68bb2b4a9d1b7b3",
+        "materialRubric": {
+          "units": {
+            "p": 1,
+            "n": 3,
+            "b": 3,
+            "r": 5,
+            "q": 9,
+            "k": 0
+          },
+          "initialBalance": 3,
+          "finalBalance": -2,
+          "scope": "Conventional fixed material accounting for teacher explanation; not a complete position assessment"
+        },
+        "sequence": [
+          {
+            "ply": 1,
+            "move": "f1f8",
+            "san": "Rf8+",
+            "playedBy": "w",
+            "captured": null,
+            "promotion": null,
+            "materialBefore": 3,
+            "materialAfter": 3,
+            "change": 0,
+            "legalRepliesAtThisNode": null,
+            "certifiedDefensiveBranches": null,
+            "onlyLegalReply": false,
+            "successorFen": "4rR1k/6pr/8/7Q/6K1/8/8/8 b - - 1 1"
+          },
+          {
+            "ply": 2,
+            "move": "e8f8",
+            "san": "Rxf8",
+            "playedBy": "b",
+            "captured": "r",
+            "promotion": null,
+            "materialBefore": 3,
+            "materialAfter": -2,
+            "change": -5,
+            "legalRepliesAtThisNode": 1,
+            "certifiedDefensiveBranches": 1,
+            "onlyLegalReply": true,
+            "successorFen": "5r1k/6pr/8/7Q/6K1/8/8/8 w - - 0 2"
+          },
+          {
+            "ply": 3,
+            "move": "g4g3",
+            "san": "Kg3",
+            "playedBy": "w",
+            "captured": null,
+            "promotion": null,
+            "materialBefore": -2,
+            "materialAfter": -2,
+            "change": 0,
+            "legalRepliesAtThisNode": null,
+            "certifiedDefensiveBranches": null,
+            "onlyLegalReply": false,
+            "successorFen": "5r1k/6pr/8/7Q/8/6K1/8/8 b - - 1 2"
+          }
+        ],
+        "actorLosses": [
+          {
+            "ply": 2,
+            "captured": "r",
+            "units": 5
+          }
+        ],
+        "materialConcessionObserved": true,
+        "mateDespiteMaterialConcession": false,
+        "earlierAttackingChoices": [
+          {
+            "ply": 1,
+            "move": "f1f8"
+          },
+          {
+            "ply": 3,
+            "move": "g4g3"
+          }
+        ],
+        "outcome": "Forced mate is unavailable under this horizon; full-game outcome unknown",
+        "limitations": [
+          "One illustrative branch of the independently checked strategy/counterstrategy.",
+          "A material concession does not establish necessity, best full-game play, or that the model rejected the move for material reasons.",
+          "This explanation is teacher evidence, not a neural evaluation, arbitrary parameter update or validated delayed credit."
+        ]
+      }
+    }
+  ],
+  "scope": "Teacher-only composed examples with independently replay-checked certificates; no fly inference, neural feedback, learning or transfer ran. No necessity or unique-best-move claim."
+}

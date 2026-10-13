@@ -1,0 +1,72 @@
+{
+  "schema": "gamma2-adaptive-cue-capacity-comparison-audit-v1",
+  "scope": "Read-only cross-run comparison after each run passed its independent receipt/certificate/update auditor. One position and seed; not transfer or biological validation.",
+  "protocolSha256": "f76954961c678b004a12818f85c60eb74a01239cdcde92a86b213424d1589b39",
+  "cap8": {
+    "resultSha256": "96cc546485e5afddb36733e9fdbcbfc1883c128d5fe58b1a8cc3872a736fc65c",
+    "auditSha256": "cac5637b1de5063da8ae97fd374c30c27aee78513394ee8fbf8fec117d3487d6",
+    "encoderMaxCells": 8,
+    "allLegalChoices": [
+      {
+        "condition": "informative",
+        "choice": "f7g8",
+        "status": "failure"
+      },
+      {
+        "condition": "swapped",
+        "choice": "f7g8",
+        "status": "failure"
+      },
+      {
+        "condition": "absent",
+        "choice": "f7g8",
+        "status": "failure"
+      },
+      {
+        "condition": "disabled",
+        "choice": "f7g8",
+        "status": "failure"
+      }
+    ],
+    "informativeMarginChange": 0.00032014166936278343,
+    "finalQh7MinusTargetError": -0.004559495951980352
+  },
+  "cap10": {
+    "resultSha256": "0ae180df3c09741f29882baac1d2e7e1e84a026c1865a630b9f689f6c2a996d7",
+    "auditSha256": "665d590bfd34f6535287276ef4536e738218b819820879c62c5e464e4eeaba45",
+    "encoderMaxCells": 10,
+    "allLegalChoices": [
+      {
+        "condition": "informative",
+        "choice": "f7d7",
+        "status": "failure"
+      },
+      {
+        "condition": "swapped",
+        "choice": "f7g8",
+        "status": "failure"
+      },
+      {
+        "condition": "absent",
+        "choice": "f7g8",
+        "status": "failure"
+      },
+      {
+        "condition": "disabled",
+        "choice": "f7g8",
+        "status": "failure"
+      }
+    ],
+    "informativeMarginChange": 0.00029703881591558456,
+    "finalQh7MinusTargetError": -0.004786808975040913
+  },
+  "predictions": {
+    "informativeUniqueCorrectChoice": "FAIL",
+    "withinCap10InformativeSpecificity": true,
+    "direction": true,
+    "cap10MarginExceedsCap8": false,
+    "allLegalChoiceChangedFromCap8": true,
+    "changedChoiceIsCorrect": false
+  },
+  "auditorSha256": "50e32086275b0bf4751762c3a6daa9f2f6bf06b96730160a7999bd5a87111a4e"
+}

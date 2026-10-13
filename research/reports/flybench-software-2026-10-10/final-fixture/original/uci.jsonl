@@ -1,0 +1,86 @@
+{"direction":"in","line":"uci"}
+{"direction":"out","line":"Stockfish 19 by the Stockfish developers (see AUTHORS file)"}
+{"direction":"out","line":"id name Stockfish 19"}
+{"direction":"out","line":"id author the Stockfish developers (see AUTHORS file)"}
+{"direction":"out","line":""}
+{"direction":"out","line":"option name Debug Log File type string default <empty>"}
+{"direction":"out","line":"option name NumaPolicy type string default auto"}
+{"direction":"out","line":"option name Threads type spin default 1 min 1 max 1024"}
+{"direction":"out","line":"option name Hash type spin default 16 min 1 max 33554432"}
+{"direction":"out","line":"option name Clear Hash type button"}
+{"direction":"out","line":"option name Ponder type check default false"}
+{"direction":"out","line":"option name MultiPV type spin default 1 min 1 max 256"}
+{"direction":"out","line":"option name Skill Level type spin default 20 min 0 max 20"}
+{"direction":"out","line":"option name Move Overhead type spin default 10 min 0 max 5000"}
+{"direction":"out","line":"option name nodestime type spin default 0 min 0 max 10000"}
+{"direction":"out","line":"option name UCI_Chess960 type check default false"}
+{"direction":"out","line":"option name UCI_LimitStrength type check default false"}
+{"direction":"out","line":"option name UCI_Elo type spin default 1320 min 1320 max 3190"}
+{"direction":"out","line":"option name UCI_ShowWDL type check default false"}
+{"direction":"out","line":"option name SyzygyPath type string default <empty>"}
+{"direction":"out","line":"option name SyzygyProbeDepth type spin default 1 min 1 max 100"}
+{"direction":"out","line":"option name Syzygy50MoveRule type check default true"}
+{"direction":"out","line":"option name SyzygyProbeLimit type spin default 7 min 0 max 7"}
+{"direction":"out","line":"option name EvalFile type string default nn-1a298aa575a0.nnue"}
+{"direction":"out","line":"uciok"}
+{"direction":"in","line":"setoption name Threads value 1"}
+{"direction":"in","line":"setoption name Hash value 32"}
+{"direction":"in","line":"setoption name Ponder value false"}
+{"direction":"in","line":"setoption name UCI_LimitStrength value true"}
+{"direction":"in","line":"isready"}
+{"direction":"out","line":"info string Using 1 thread"}
+{"direction":"out","line":"readyok"}
+{"direction":"in","line":"setoption name UCI_Elo value 3190"}
+{"direction":"in","line":"ucinewgame"}
+{"direction":"in","line":"setoption name Clear Hash"}
+{"direction":"in","line":"isready"}
+{"direction":"out","line":"readyok"}
+{"direction":"in","line":"position startpos moves f2f3 e7e5 g2g4"}
+{"direction":"in","line":"go movetime 50"}
+{"direction":"out","line":"info string Available processors: 0-7"}
+{"direction":"out","line":"info string Using 1 thread"}
+{"direction":"out","line":"info string NNUE evaluation using nn-1a298aa575a0.nnue (109MiB, (86896, 1024, 32, 32, 1))"}
+{"direction":"out","line":"info string Network replica 1: Shared memory."}
+{"direction":"out","line":"info depth 1 seldepth 3 multipv 1 score mate 1 nodes 266 nps 133000 hashfull 0 tbhits 0 time 2 pv d8h4"}
+{"direction":"out","line":"info depth 2 seldepth 2 multipv 1 score mate 1 nodes 697 nps 87125 hashfull 0 tbhits 0 time 8 pv d8h4"}
+{"direction":"out","line":"info depth 3 seldepth 2 multipv 1 score mate 1 nodes 1010 nps 84166 hashfull 0 tbhits 0 time 12 pv d8h4"}
+{"direction":"out","line":"info depth 4 seldepth 2 multipv 1 score mate 1 nodes 1310 nps 93571 hashfull 0 tbhits 0 time 14 pv d8h4"}
+{"direction":"out","line":"info depth 5 seldepth 2 multipv 1 score mate 1 nodes 1680 nps 112000 hashfull 0 tbhits 0 time 15 pv d8h4"}
+{"direction":"out","line":"info depth 6 seldepth 2 multipv 1 score mate 1 nodes 1884 nps 117750 hashfull 0 tbhits 0 time 16 pv d8h4"}
+{"direction":"out","line":"info depth 7 seldepth 2 multipv 1 score mate 1 nodes 2262 nps 133058 hashfull 0 tbhits 0 time 17 pv d8h4"}
+{"direction":"out","line":"info depth 8 seldepth 2 multipv 1 score mate 1 nodes 2858 nps 142900 hashfull 0 tbhits 0 time 20 pv d8h4"}
+{"direction":"out","line":"info depth 9 seldepth 2 multipv 1 score mate 1 nodes 4044 nps 139448 hashfull 0 tbhits 0 time 29 pv d8h4"}
+{"direction":"out","line":"info depth 10 seldepth 2 multipv 1 score mate 1 nodes 6513 nps 108550 hashfull 1 tbhits 0 time 60 pv d8h4"}
+{"direction":"out","line":"bestmove d8h4"}
+{"direction":"in","line":"setoption name UCI_Elo value 3190"}
+{"direction":"in","line":"ucinewgame"}
+{"direction":"in","line":"setoption name Clear Hash"}
+{"direction":"in","line":"isready"}
+{"direction":"out","line":"readyok"}
+{"direction":"in","line":"setoption name UCI_Elo value 3190"}
+{"direction":"in","line":"ucinewgame"}
+{"direction":"in","line":"setoption name Clear Hash"}
+{"direction":"in","line":"isready"}
+{"direction":"out","line":"readyok"}
+{"direction":"in","line":"position startpos moves f2f3 e7e5 g2g4"}
+{"direction":"in","line":"go movetime 50"}
+{"direction":"out","line":"info string Available processors: 0-7"}
+{"direction":"out","line":"info string Using 1 thread"}
+{"direction":"out","line":"info string NNUE evaluation using nn-1a298aa575a0.nnue (109MiB, (86896, 1024, 32, 32, 1))"}
+{"direction":"out","line":"info string Network replica 1: Shared memory."}
+{"direction":"out","line":"info depth 1 seldepth 3 multipv 1 score mate 1 nodes 266 nps 266000 hashfull 0 tbhits 0 time 1 pv d8h4"}
+{"direction":"out","line":"info depth 2 seldepth 2 multipv 1 score mate 1 nodes 697 nps 29041 hashfull 0 tbhits 0 time 24 pv d8h4"}
+{"direction":"out","line":"info depth 3 seldepth 2 multipv 1 score mate 1 nodes 1010 nps 38846 hashfull 0 tbhits 0 time 26 pv d8h4"}
+{"direction":"out","line":"info depth 4 seldepth 2 multipv 1 score mate 1 nodes 1310 nps 48518 hashfull 0 tbhits 0 time 27 pv d8h4"}
+{"direction":"out","line":"info depth 5 seldepth 2 multipv 1 score mate 1 nodes 1680 nps 57931 hashfull 0 tbhits 0 time 29 pv d8h4"}
+{"direction":"out","line":"info depth 6 seldepth 2 multipv 1 score mate 1 nodes 1884 nps 60774 hashfull 0 tbhits 0 time 31 pv d8h4"}
+{"direction":"out","line":"info depth 7 seldepth 2 multipv 1 score mate 1 nodes 2262 nps 68545 hashfull 0 tbhits 0 time 33 pv d8h4"}
+{"direction":"out","line":"info depth 8 seldepth 2 multipv 1 score mate 1 nodes 2858 nps 81657 hashfull 0 tbhits 0 time 35 pv d8h4"}
+{"direction":"out","line":"info depth 9 seldepth 2 multipv 1 score mate 1 nodes 4044 nps 96285 hashfull 0 tbhits 0 time 42 pv d8h4"}
+{"direction":"out","line":"info depth 10 seldepth 2 multipv 1 score mate 1 nodes 5781 nps 105109 hashfull 0 tbhits 0 time 55 pv d8h4"}
+{"direction":"out","line":"bestmove d8h4"}
+{"direction":"in","line":"setoption name UCI_Elo value 3190"}
+{"direction":"in","line":"ucinewgame"}
+{"direction":"in","line":"setoption name Clear Hash"}
+{"direction":"in","line":"isready"}
+{"direction":"out","line":"readyok"}

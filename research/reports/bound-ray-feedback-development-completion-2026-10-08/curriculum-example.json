@@ -1,0 +1,1209 @@
+{
+  "schema": "correction-preservation-example-v1",
+  "reportPath": "research/reports/bound-ray-feedback-development-v1-2026-10-08/bound-ray-informative/report.json",
+  "reportSha256": "e4dcdbff917f32a557a69a07010a614f3a474d7c1a0397694aac44d212f43e1f",
+  "trainingPath": "research/data/capture-retention-transfer-v2/train.jsonl",
+  "trainingSha256": "a9959dfe502e8d45db5991e63143dc5767b10ffed8e74e3701e6ebd9e2d10079",
+  "plan": {
+    "schema": "correction-preservation-plan-v1",
+    "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+    "excluded": [],
+    "eligible": [
+      {
+        "panelId": "tr-01",
+        "margin": 0.005600447300821543,
+        "correct": true
+      },
+      {
+        "panelId": "tr-02",
+        "margin": 0.005236566998064518,
+        "correct": true
+      },
+      {
+        "panelId": "tr-03",
+        "margin": 0.0009541739709675312,
+        "correct": true
+      },
+      {
+        "panelId": "tr-04",
+        "margin": 0.00496794143691659,
+        "correct": true
+      },
+      {
+        "panelId": "tr-05",
+        "margin": -0.0015791459009051323,
+        "correct": false
+      },
+      {
+        "panelId": "tr-06",
+        "margin": -0.0028380490839481354,
+        "correct": false
+      },
+      {
+        "panelId": "tr-07",
+        "margin": -0.0013234792277216911,
+        "correct": false
+      },
+      {
+        "panelId": "tr-08",
+        "margin": -0.0023002251982688904,
+        "correct": false
+      }
+    ],
+    "selectionRule": "Most negative verified pair margin for correction; least positive currently correct margin for preservation; deterministic panel-ID ties.",
+    "scope": "Training-only candidate-pair curriculum hypothesis. Scores are not calibrated confidence. Caller must authenticate dataset provenance and independently replay assessments.",
+    "ready": true,
+    "experiences": [
+      {
+        "index": 0,
+        "panelId": "tr-06",
+        "role": "target-failure",
+        "experience": {
+          "move": "a1a4",
+          "actor": "w",
+          "status": "failure",
+          "experimentalPulse": true,
+          "learningAllowed": true,
+          "certificateSha256": "4d13c368a4295c3c4e3f28e6879630fa55b910b35b3bdac3c4157491a5a559f4",
+          "meaning": "One-reply immediate recapturability only; not strategic move quality",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "a1a4",
+              "target": "a4",
+              "replies": [
+                "e5e4",
+                "e8a8",
+                "e8b8",
+                "e8c8",
+                "e8d8",
+                "e8e7",
+                "e8f8",
+                "g8f7",
+                "g8g7",
+                "g8h7",
+                "g8h8",
+                "h4a4",
+                "h4b4",
+                "h4c4",
+                "h4d4",
+                "h4e4",
+                "h4f4",
+                "h4g4",
+                "h4h1",
+                "h4h2",
+                "h4h3",
+                "h4h5",
+                "h4h6",
+                "h4h7",
+                "h4h8"
+              ],
+              "recaptures": [
+                "h4a4"
+              ]
+            },
+            "certificateSha256": "4d13c368a4295c3c4e3f28e6879630fa55b910b35b3bdac3c4157491a5a559f4"
+          },
+          "context": {
+            "fen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+            "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+            "task": {
+              "objective": "capture-retention",
+              "plies": 1
+            }
+          }
+        },
+        "lessonSha256": "bb8387301ca3aba56cbe51e0d097a4310667b93b1c581bd73a9779327a681b21"
+      },
+      {
+        "index": 1,
+        "panelId": "tr-06",
+        "role": "target-success",
+        "experience": {
+          "move": "e1e5",
+          "actor": "w",
+          "status": "success",
+          "experimentalPulse": false,
+          "learningAllowed": true,
+          "certificateSha256": "c69bee3eeca947d67e87c93dc6839635949d4fdf245c3a73b884890326ca40f6",
+          "meaning": "One-reply immediate recapturability only; not strategic move quality",
+          "proof": {
+            "status": "success",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e1e5",
+              "target": "e5",
+              "replies": [
+                "a4a3",
+                "e8a8",
+                "e8b8",
+                "e8c8",
+                "e8d8",
+                "e8e7",
+                "e8f8",
+                "g8f7",
+                "g8g7",
+                "g8h7",
+                "g8h8",
+                "h4b4",
+                "h4c4",
+                "h4d4",
+                "h4e4",
+                "h4f4",
+                "h4g4",
+                "h4h1",
+                "h4h2",
+                "h4h3",
+                "h4h5",
+                "h4h6",
+                "h4h7",
+                "h4h8"
+              ],
+              "recaptures": []
+            },
+            "certificateSha256": "c69bee3eeca947d67e87c93dc6839635949d4fdf245c3a73b884890326ca40f6"
+          },
+          "context": {
+            "fen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+            "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+            "task": {
+              "objective": "capture-retention",
+              "plies": 1
+            }
+          }
+        },
+        "lessonSha256": "bb8387301ca3aba56cbe51e0d097a4310667b93b1c581bd73a9779327a681b21"
+      },
+      {
+        "index": 2,
+        "panelId": "tr-03",
+        "role": "preserve-success",
+        "experience": {
+          "move": "a1a4",
+          "actor": "w",
+          "status": "success",
+          "experimentalPulse": false,
+          "learningAllowed": true,
+          "certificateSha256": "67039604bea15e49c2ae0d5860c0f203922f63abefb8e7566ce31326846f2c6b",
+          "meaning": "One-reply immediate recapturability only; not strategic move quality",
+          "proof": {
+            "status": "success",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "a1a4",
+              "target": "a4",
+              "replies": [
+                "e5d4",
+                "e5e4",
+                "e8a8",
+                "e8b8",
+                "e8c8",
+                "e8d8",
+                "e8e6",
+                "e8e7",
+                "e8f8",
+                "f4d4",
+                "f4e4",
+                "f4f1",
+                "f4f2",
+                "f4f3",
+                "f4f5",
+                "f4f6",
+                "f4f7",
+                "f4f8",
+                "f4g4",
+                "f4h4",
+                "g8f7",
+                "g8f8",
+                "g8g7",
+                "g8h7",
+                "g8h8"
+              ],
+              "recaptures": []
+            },
+            "certificateSha256": "67039604bea15e49c2ae0d5860c0f203922f63abefb8e7566ce31326846f2c6b"
+          },
+          "context": {
+            "fen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+            "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+            "task": {
+              "objective": "capture-retention",
+              "plies": 1
+            }
+          }
+        },
+        "lessonSha256": "b1c68c06693021374b8f8ac6c7f4d6832339657e5d0543dbaa39dd7f7530593a"
+      },
+      {
+        "index": 3,
+        "panelId": "tr-03",
+        "role": "preserve-failure",
+        "experience": {
+          "move": "e1e5",
+          "actor": "w",
+          "status": "failure",
+          "experimentalPulse": true,
+          "learningAllowed": true,
+          "certificateSha256": "e099e8b2aaeb6e40b7da07501eaeed9efeef505ae7c76d16405055c569ce1d9b",
+          "meaning": "One-reply immediate recapturability only; not strategic move quality",
+          "proof": {
+            "status": "failure",
+            "certificate": {
+              "schema": "capture-retention-certificate-v1",
+              "rootFen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+              "actor": "w",
+              "move": "e1e5",
+              "target": "e5",
+              "replies": [
+                "a4a3",
+                "e8a8",
+                "e8b8",
+                "e8c8",
+                "e8d8",
+                "e8e5",
+                "e8e6",
+                "e8e7",
+                "e8f8",
+                "f4d4",
+                "f4e4",
+                "f4f1",
+                "f4f2",
+                "f4f3",
+                "f4f5",
+                "f4f6",
+                "f4f7",
+                "f4f8",
+                "f4g4",
+                "f4h4",
+                "g8f7",
+                "g8f8",
+                "g8g7",
+                "g8h7",
+                "g8h8"
+              ],
+              "recaptures": [
+                "e8e5"
+              ]
+            },
+            "certificateSha256": "e099e8b2aaeb6e40b7da07501eaeed9efeef505ae7c76d16405055c569ce1d9b"
+          },
+          "context": {
+            "fen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+            "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+            "task": {
+              "objective": "capture-retention",
+              "plies": 1
+            }
+          }
+        },
+        "lessonSha256": "b1c68c06693021374b8f8ac6c7f4d6832339657e5d0543dbaa39dd7f7530593a"
+      }
+    ],
+    "eventBudget": 4,
+    "targetPanelId": "tr-06",
+    "sentinelPanelId": "tr-03",
+    "lessons": [
+      {
+        "schema": "checked-consequence-lesson-v1",
+        "context": {
+          "fen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+          "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+          "task": {
+            "objective": "capture-retention",
+            "plies": 1
+          }
+        },
+        "initialAssessment": {
+          "fen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+          "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+          "task": {
+            "objective": "capture-retention",
+            "plies": 1
+          },
+          "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+          "rows": [
+            {
+              "move": "a1a4",
+              "score": 0.009341292083263397
+            },
+            {
+              "move": "e1e5",
+              "score": 0.006503242999315262
+            }
+          ],
+          "choice": "a1a4"
+        },
+        "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+        "coverage": "candidate-subset",
+        "contrast": {
+          "available": true,
+          "successfulMoves": [
+            "e1e5"
+          ],
+          "failingMoves": [
+            "a1a4"
+          ],
+          "committedFailure": true,
+          "scope": "Same-context verified alternatives under this task, not intrinsic piece values or full-game rankings"
+        },
+        "reviews": [
+          {
+            "move": "e1e5",
+            "binding": {
+              "schema": "assessed-feedback-binding-v1",
+              "assessment": {
+                "fen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+                "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+                "task": {
+                  "objective": "capture-retention",
+                  "plies": 1
+                },
+                "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+                "rows": [
+                  {
+                    "move": "a1a4",
+                    "score": 0.009341292083263397
+                  },
+                  {
+                    "move": "e1e5",
+                    "score": 0.006503242999315262
+                  }
+                ],
+                "choice": "a1a4"
+              },
+              "coverage": "candidate-subset",
+              "legalMoveCount": 16,
+              "assessedMoveCount": 2,
+              "tiedTopMoves": [
+                "a1a4"
+              ],
+              "reviewedMove": "e1e5",
+              "role": "alternative-action-review",
+              "status": "success",
+              "learningAllowed": true,
+              "certificateSha256": "c69bee3eeca947d67e87c93dc6839635949d4fdf245c3a73b884890326ca40f6",
+              "meaning": "One-reply immediate recapturability only; not strategic move quality"
+            },
+            "consequence": {
+              "objective": "capture-retention",
+              "plies": 1,
+              "status": "success",
+              "evidenceClass": "independently-checked-certificate",
+              "strategicMoveQualityEstablished": false,
+              "delayedCausalCreditEstablished": false,
+              "defenseCoverage": {
+                "kind": "all-legal-immediate-replies",
+                "count": 24
+              },
+              "witness": {
+                "target": "e5",
+                "recaptures": [],
+                "statement": "No legal immediate reply recaptures the moved capturing piece"
+              }
+            },
+            "transition": {
+              "actor": "w",
+              "from": "e1",
+              "to": "e5",
+              "piece": "r",
+              "captured": "p",
+              "promotion": null,
+              "childFen": "4r1k1/4P3/8/4R3/p6r/8/8/RK6 b - - 0 1",
+              "childPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n\n1. Rxe5 *"
+            },
+            "experience": {
+              "move": "e1e5",
+              "actor": "w",
+              "status": "success",
+              "experimentalPulse": false,
+              "learningAllowed": true,
+              "certificateSha256": "c69bee3eeca947d67e87c93dc6839635949d4fdf245c3a73b884890326ca40f6",
+              "meaning": "One-reply immediate recapturability only; not strategic move quality",
+              "proof": {
+                "status": "success",
+                "certificate": {
+                  "schema": "capture-retention-certificate-v1",
+                  "rootFen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+                  "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+                  "actor": "w",
+                  "move": "e1e5",
+                  "target": "e5",
+                  "replies": [
+                    "a4a3",
+                    "e8a8",
+                    "e8b8",
+                    "e8c8",
+                    "e8d8",
+                    "e8e7",
+                    "e8f8",
+                    "g8f7",
+                    "g8g7",
+                    "g8h7",
+                    "g8h8",
+                    "h4b4",
+                    "h4c4",
+                    "h4d4",
+                    "h4e4",
+                    "h4f4",
+                    "h4g4",
+                    "h4h1",
+                    "h4h2",
+                    "h4h3",
+                    "h4h5",
+                    "h4h6",
+                    "h4h7",
+                    "h4h8"
+                  ],
+                  "recaptures": []
+                },
+                "certificateSha256": "c69bee3eeca947d67e87c93dc6839635949d4fdf245c3a73b884890326ca40f6"
+              },
+              "context": {
+                "fen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+                "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+                "task": {
+                  "objective": "capture-retention",
+                  "plies": 1
+                }
+              }
+            }
+          },
+          {
+            "move": "a1a4",
+            "binding": {
+              "schema": "assessed-feedback-binding-v1",
+              "assessment": {
+                "fen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+                "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+                "task": {
+                  "objective": "capture-retention",
+                  "plies": 1
+                },
+                "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+                "rows": [
+                  {
+                    "move": "a1a4",
+                    "score": 0.009341292083263397
+                  },
+                  {
+                    "move": "e1e5",
+                    "score": 0.006503242999315262
+                  }
+                ],
+                "choice": "a1a4"
+              },
+              "coverage": "candidate-subset",
+              "legalMoveCount": 16,
+              "assessedMoveCount": 2,
+              "tiedTopMoves": [
+                "a1a4"
+              ],
+              "reviewedMove": "a1a4",
+              "role": "chosen-action-review",
+              "status": "failure",
+              "learningAllowed": true,
+              "certificateSha256": "4d13c368a4295c3c4e3f28e6879630fa55b910b35b3bdac3c4157491a5a559f4",
+              "meaning": "One-reply immediate recapturability only; not strategic move quality"
+            },
+            "consequence": {
+              "objective": "capture-retention",
+              "plies": 1,
+              "status": "failure",
+              "evidenceClass": "independently-checked-certificate",
+              "strategicMoveQualityEstablished": false,
+              "delayedCausalCreditEstablished": false,
+              "defenseCoverage": {
+                "kind": "all-legal-immediate-replies",
+                "count": 25
+              },
+              "witness": {
+                "target": "a4",
+                "recaptures": [
+                  "h4a4"
+                ],
+                "statement": "A legal immediate reply can recapture the moved capturing piece"
+              }
+            },
+            "transition": {
+              "actor": "w",
+              "from": "a1",
+              "to": "a4",
+              "piece": "r",
+              "captured": "p",
+              "promotion": null,
+              "childFen": "4r1k1/4P3/8/4p3/R6r/8/8/1K2R3 b - - 0 1",
+              "childPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n\n1. Rxa4 *"
+            },
+            "experience": {
+              "move": "a1a4",
+              "actor": "w",
+              "status": "failure",
+              "experimentalPulse": true,
+              "learningAllowed": true,
+              "certificateSha256": "4d13c368a4295c3c4e3f28e6879630fa55b910b35b3bdac3c4157491a5a559f4",
+              "meaning": "One-reply immediate recapturability only; not strategic move quality",
+              "proof": {
+                "status": "failure",
+                "certificate": {
+                  "schema": "capture-retention-certificate-v1",
+                  "rootFen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+                  "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+                  "actor": "w",
+                  "move": "a1a4",
+                  "target": "a4",
+                  "replies": [
+                    "e5e4",
+                    "e8a8",
+                    "e8b8",
+                    "e8c8",
+                    "e8d8",
+                    "e8e7",
+                    "e8f8",
+                    "g8f7",
+                    "g8g7",
+                    "g8h7",
+                    "g8h8",
+                    "h4a4",
+                    "h4b4",
+                    "h4c4",
+                    "h4d4",
+                    "h4e4",
+                    "h4f4",
+                    "h4g4",
+                    "h4h1",
+                    "h4h2",
+                    "h4h3",
+                    "h4h5",
+                    "h4h6",
+                    "h4h7",
+                    "h4h8"
+                  ],
+                  "recaptures": [
+                    "h4a4"
+                  ]
+                },
+                "certificateSha256": "4d13c368a4295c3c4e3f28e6879630fa55b910b35b3bdac3c4157491a5a559f4"
+              },
+              "context": {
+                "fen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+                "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+                "task": {
+                  "objective": "capture-retention",
+                  "plies": 1
+                }
+              }
+            }
+          }
+        ],
+        "replayExperiences": [
+          {
+            "move": "e1e5",
+            "actor": "w",
+            "status": "success",
+            "experimentalPulse": false,
+            "learningAllowed": true,
+            "certificateSha256": "c69bee3eeca947d67e87c93dc6839635949d4fdf245c3a73b884890326ca40f6",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality",
+            "proof": {
+              "status": "success",
+              "certificate": {
+                "schema": "capture-retention-certificate-v1",
+                "rootFen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+                "actor": "w",
+                "move": "e1e5",
+                "target": "e5",
+                "replies": [
+                  "a4a3",
+                  "e8a8",
+                  "e8b8",
+                  "e8c8",
+                  "e8d8",
+                  "e8e7",
+                  "e8f8",
+                  "g8f7",
+                  "g8g7",
+                  "g8h7",
+                  "g8h8",
+                  "h4b4",
+                  "h4c4",
+                  "h4d4",
+                  "h4e4",
+                  "h4f4",
+                  "h4g4",
+                  "h4h1",
+                  "h4h2",
+                  "h4h3",
+                  "h4h5",
+                  "h4h6",
+                  "h4h7",
+                  "h4h8"
+                ],
+                "recaptures": []
+              },
+              "certificateSha256": "c69bee3eeca947d67e87c93dc6839635949d4fdf245c3a73b884890326ca40f6"
+            },
+            "context": {
+              "fen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+              "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              }
+            }
+          },
+          {
+            "move": "a1a4",
+            "actor": "w",
+            "status": "failure",
+            "experimentalPulse": true,
+            "learningAllowed": true,
+            "certificateSha256": "4d13c368a4295c3c4e3f28e6879630fa55b910b35b3bdac3c4157491a5a559f4",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality",
+            "proof": {
+              "status": "failure",
+              "certificate": {
+                "schema": "capture-retention-certificate-v1",
+                "rootFen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+                "actor": "w",
+                "move": "a1a4",
+                "target": "a4",
+                "replies": [
+                  "e5e4",
+                  "e8a8",
+                  "e8b8",
+                  "e8c8",
+                  "e8d8",
+                  "e8e7",
+                  "e8f8",
+                  "g8f7",
+                  "g8g7",
+                  "g8h7",
+                  "g8h8",
+                  "h4a4",
+                  "h4b4",
+                  "h4c4",
+                  "h4d4",
+                  "h4e4",
+                  "h4f4",
+                  "h4g4",
+                  "h4h1",
+                  "h4h2",
+                  "h4h3",
+                  "h4h5",
+                  "h4h6",
+                  "h4h7",
+                  "h4h8"
+                ],
+                "recaptures": [
+                  "h4a4"
+                ]
+              },
+              "certificateSha256": "4d13c368a4295c3c4e3f28e6879630fa55b910b35b3bdac3c4157491a5a559f4"
+            },
+            "context": {
+              "fen": "4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1",
+              "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/4P3/8/4p3/p6r/8/8/RK2R3 w - - 0 1\"]\n *",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              }
+            }
+          }
+        ],
+        "unknownMoves": [],
+        "eventBudget": {
+          "maximum": 2,
+          "scheduled": 2
+        },
+        "delivery": {
+          "teacherEvidence": [
+            "certificate",
+            "transition",
+            "checked-consequence-witness",
+            "candidate-contrast"
+          ],
+          "existingNeuralInput": [
+            "board-action-cue",
+            "declared-experimental-reinforcement"
+          ],
+          "explanationSemanticsDelivered": false,
+          "transitionSequenceDelivered": false,
+          "teacherComputesParameterDeltas": false,
+          "requirement": "Reassess and independently bind each replay to its current memory before delivery; this initial ranking cannot be reused after an update"
+        },
+        "quality": {
+          "contextBound": true,
+          "criterionMatched": true,
+          "checkedContrast": true,
+          "allLegalInitialRanking": false,
+          "neuralSelectivity": "unmeasured",
+          "retention": "unmeasured",
+          "transfer": "unmeasured"
+        },
+        "lessonSha256": "bb8387301ca3aba56cbe51e0d097a4310667b93b1c581bd73a9779327a681b21"
+      },
+      {
+        "schema": "checked-consequence-lesson-v1",
+        "context": {
+          "fen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+          "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+          "task": {
+            "objective": "capture-retention",
+            "plies": 1
+          }
+        },
+        "initialAssessment": {
+          "fen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+          "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+          "task": {
+            "objective": "capture-retention",
+            "plies": 1
+          },
+          "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+          "rows": [
+            {
+              "move": "a1a4",
+              "score": 0.008144597057253122
+            },
+            {
+              "move": "e1e5",
+              "score": 0.007190423086285591
+            }
+          ],
+          "choice": "a1a4"
+        },
+        "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+        "coverage": "candidate-subset",
+        "contrast": {
+          "available": true,
+          "successfulMoves": [
+            "a1a4"
+          ],
+          "failingMoves": [
+            "e1e5"
+          ],
+          "committedFailure": false,
+          "scope": "Same-context verified alternatives under this task, not intrinsic piece values or full-game rankings"
+        },
+        "reviews": [
+          {
+            "move": "a1a4",
+            "binding": {
+              "schema": "assessed-feedback-binding-v1",
+              "assessment": {
+                "fen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+                "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+                "task": {
+                  "objective": "capture-retention",
+                  "plies": 1
+                },
+                "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+                "rows": [
+                  {
+                    "move": "a1a4",
+                    "score": 0.008144597057253122
+                  },
+                  {
+                    "move": "e1e5",
+                    "score": 0.007190423086285591
+                  }
+                ],
+                "choice": "a1a4"
+              },
+              "coverage": "candidate-subset",
+              "legalMoveCount": 18,
+              "assessedMoveCount": 2,
+              "tiedTopMoves": [
+                "a1a4"
+              ],
+              "reviewedMove": "a1a4",
+              "role": "chosen-action-review",
+              "status": "success",
+              "learningAllowed": true,
+              "certificateSha256": "67039604bea15e49c2ae0d5860c0f203922f63abefb8e7566ce31326846f2c6b",
+              "meaning": "One-reply immediate recapturability only; not strategic move quality"
+            },
+            "consequence": {
+              "objective": "capture-retention",
+              "plies": 1,
+              "status": "success",
+              "evidenceClass": "independently-checked-certificate",
+              "strategicMoveQualityEstablished": false,
+              "delayedCausalCreditEstablished": false,
+              "defenseCoverage": {
+                "kind": "all-legal-immediate-replies",
+                "count": 25
+              },
+              "witness": {
+                "target": "a4",
+                "recaptures": [],
+                "statement": "No legal immediate reply recaptures the moved capturing piece"
+              }
+            },
+            "transition": {
+              "actor": "w",
+              "from": "a1",
+              "to": "a4",
+              "piece": "r",
+              "captured": "p",
+              "promotion": null,
+              "childFen": "4r1k1/8/8/4p3/R2P1r2/8/8/1K2R3 b - - 0 1",
+              "childPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n\n1. Rxa4 *"
+            },
+            "experience": {
+              "move": "a1a4",
+              "actor": "w",
+              "status": "success",
+              "experimentalPulse": false,
+              "learningAllowed": true,
+              "certificateSha256": "67039604bea15e49c2ae0d5860c0f203922f63abefb8e7566ce31326846f2c6b",
+              "meaning": "One-reply immediate recapturability only; not strategic move quality",
+              "proof": {
+                "status": "success",
+                "certificate": {
+                  "schema": "capture-retention-certificate-v1",
+                  "rootFen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+                  "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+                  "actor": "w",
+                  "move": "a1a4",
+                  "target": "a4",
+                  "replies": [
+                    "e5d4",
+                    "e5e4",
+                    "e8a8",
+                    "e8b8",
+                    "e8c8",
+                    "e8d8",
+                    "e8e6",
+                    "e8e7",
+                    "e8f8",
+                    "f4d4",
+                    "f4e4",
+                    "f4f1",
+                    "f4f2",
+                    "f4f3",
+                    "f4f5",
+                    "f4f6",
+                    "f4f7",
+                    "f4f8",
+                    "f4g4",
+                    "f4h4",
+                    "g8f7",
+                    "g8f8",
+                    "g8g7",
+                    "g8h7",
+                    "g8h8"
+                  ],
+                  "recaptures": []
+                },
+                "certificateSha256": "67039604bea15e49c2ae0d5860c0f203922f63abefb8e7566ce31326846f2c6b"
+              },
+              "context": {
+                "fen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+                "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+                "task": {
+                  "objective": "capture-retention",
+                  "plies": 1
+                }
+              }
+            }
+          },
+          {
+            "move": "e1e5",
+            "binding": {
+              "schema": "assessed-feedback-binding-v1",
+              "assessment": {
+                "fen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+                "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+                "task": {
+                  "objective": "capture-retention",
+                  "plies": 1
+                },
+                "memoryHash": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+                "rows": [
+                  {
+                    "move": "a1a4",
+                    "score": 0.008144597057253122
+                  },
+                  {
+                    "move": "e1e5",
+                    "score": 0.007190423086285591
+                  }
+                ],
+                "choice": "a1a4"
+              },
+              "coverage": "candidate-subset",
+              "legalMoveCount": 18,
+              "assessedMoveCount": 2,
+              "tiedTopMoves": [
+                "a1a4"
+              ],
+              "reviewedMove": "e1e5",
+              "role": "alternative-action-review",
+              "status": "failure",
+              "learningAllowed": true,
+              "certificateSha256": "e099e8b2aaeb6e40b7da07501eaeed9efeef505ae7c76d16405055c569ce1d9b",
+              "meaning": "One-reply immediate recapturability only; not strategic move quality"
+            },
+            "consequence": {
+              "objective": "capture-retention",
+              "plies": 1,
+              "status": "failure",
+              "evidenceClass": "independently-checked-certificate",
+              "strategicMoveQualityEstablished": false,
+              "delayedCausalCreditEstablished": false,
+              "defenseCoverage": {
+                "kind": "all-legal-immediate-replies",
+                "count": 25
+              },
+              "witness": {
+                "target": "e5",
+                "recaptures": [
+                  "e8e5"
+                ],
+                "statement": "A legal immediate reply can recapture the moved capturing piece"
+              }
+            },
+            "transition": {
+              "actor": "w",
+              "from": "e1",
+              "to": "e5",
+              "piece": "r",
+              "captured": "p",
+              "promotion": null,
+              "childFen": "4r1k1/8/8/4R3/p2P1r2/8/8/RK6 b - - 0 1",
+              "childPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n\n1. Rxe5 *"
+            },
+            "experience": {
+              "move": "e1e5",
+              "actor": "w",
+              "status": "failure",
+              "experimentalPulse": true,
+              "learningAllowed": true,
+              "certificateSha256": "e099e8b2aaeb6e40b7da07501eaeed9efeef505ae7c76d16405055c569ce1d9b",
+              "meaning": "One-reply immediate recapturability only; not strategic move quality",
+              "proof": {
+                "status": "failure",
+                "certificate": {
+                  "schema": "capture-retention-certificate-v1",
+                  "rootFen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+                  "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+                  "actor": "w",
+                  "move": "e1e5",
+                  "target": "e5",
+                  "replies": [
+                    "a4a3",
+                    "e8a8",
+                    "e8b8",
+                    "e8c8",
+                    "e8d8",
+                    "e8e5",
+                    "e8e6",
+                    "e8e7",
+                    "e8f8",
+                    "f4d4",
+                    "f4e4",
+                    "f4f1",
+                    "f4f2",
+                    "f4f3",
+                    "f4f5",
+                    "f4f6",
+                    "f4f7",
+                    "f4f8",
+                    "f4g4",
+                    "f4h4",
+                    "g8f7",
+                    "g8f8",
+                    "g8g7",
+                    "g8h7",
+                    "g8h8"
+                  ],
+                  "recaptures": [
+                    "e8e5"
+                  ]
+                },
+                "certificateSha256": "e099e8b2aaeb6e40b7da07501eaeed9efeef505ae7c76d16405055c569ce1d9b"
+              },
+              "context": {
+                "fen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+                "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+                "task": {
+                  "objective": "capture-retention",
+                  "plies": 1
+                }
+              }
+            }
+          }
+        ],
+        "replayExperiences": [
+          {
+            "move": "a1a4",
+            "actor": "w",
+            "status": "success",
+            "experimentalPulse": false,
+            "learningAllowed": true,
+            "certificateSha256": "67039604bea15e49c2ae0d5860c0f203922f63abefb8e7566ce31326846f2c6b",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality",
+            "proof": {
+              "status": "success",
+              "certificate": {
+                "schema": "capture-retention-certificate-v1",
+                "rootFen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+                "actor": "w",
+                "move": "a1a4",
+                "target": "a4",
+                "replies": [
+                  "e5d4",
+                  "e5e4",
+                  "e8a8",
+                  "e8b8",
+                  "e8c8",
+                  "e8d8",
+                  "e8e6",
+                  "e8e7",
+                  "e8f8",
+                  "f4d4",
+                  "f4e4",
+                  "f4f1",
+                  "f4f2",
+                  "f4f3",
+                  "f4f5",
+                  "f4f6",
+                  "f4f7",
+                  "f4f8",
+                  "f4g4",
+                  "f4h4",
+                  "g8f7",
+                  "g8f8",
+                  "g8g7",
+                  "g8h7",
+                  "g8h8"
+                ],
+                "recaptures": []
+              },
+              "certificateSha256": "67039604bea15e49c2ae0d5860c0f203922f63abefb8e7566ce31326846f2c6b"
+            },
+            "context": {
+              "fen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+              "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              }
+            }
+          },
+          {
+            "move": "e1e5",
+            "actor": "w",
+            "status": "failure",
+            "experimentalPulse": true,
+            "learningAllowed": true,
+            "certificateSha256": "e099e8b2aaeb6e40b7da07501eaeed9efeef505ae7c76d16405055c569ce1d9b",
+            "meaning": "One-reply immediate recapturability only; not strategic move quality",
+            "proof": {
+              "status": "failure",
+              "certificate": {
+                "schema": "capture-retention-certificate-v1",
+                "rootFen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+                "actor": "w",
+                "move": "e1e5",
+                "target": "e5",
+                "replies": [
+                  "a4a3",
+                  "e8a8",
+                  "e8b8",
+                  "e8c8",
+                  "e8d8",
+                  "e8e5",
+                  "e8e6",
+                  "e8e7",
+                  "e8f8",
+                  "f4d4",
+                  "f4e4",
+                  "f4f1",
+                  "f4f2",
+                  "f4f3",
+                  "f4f5",
+                  "f4f6",
+                  "f4f7",
+                  "f4f8",
+                  "f4g4",
+                  "f4h4",
+                  "g8f7",
+                  "g8f8",
+                  "g8g7",
+                  "g8h7",
+                  "g8h8"
+                ],
+                "recaptures": [
+                  "e8e5"
+                ]
+              },
+              "certificateSha256": "e099e8b2aaeb6e40b7da07501eaeed9efeef505ae7c76d16405055c569ce1d9b"
+            },
+            "context": {
+              "fen": "4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1",
+              "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/p2P1r2/8/8/RK2R3 w - - 0 1\"]\n *",
+              "task": {
+                "objective": "capture-retention",
+                "plies": 1
+              }
+            }
+          }
+        ],
+        "unknownMoves": [],
+        "eventBudget": {
+          "maximum": 2,
+          "scheduled": 2
+        },
+        "delivery": {
+          "teacherEvidence": [
+            "certificate",
+            "transition",
+            "checked-consequence-witness",
+            "candidate-contrast"
+          ],
+          "existingNeuralInput": [
+            "board-action-cue",
+            "declared-experimental-reinforcement"
+          ],
+          "explanationSemanticsDelivered": false,
+          "transitionSequenceDelivered": false,
+          "teacherComputesParameterDeltas": false,
+          "requirement": "Reassess and independently bind each replay to its current memory before delivery; this initial ranking cannot be reused after an update"
+        },
+        "quality": {
+          "contextBound": true,
+          "criterionMatched": true,
+          "checkedContrast": true,
+          "allLegalInitialRanking": false,
+          "neuralSelectivity": "unmeasured",
+          "retention": "unmeasured",
+          "transfer": "unmeasured"
+        },
+        "lessonSha256": "b1c68c06693021374b8f8ac6c7f4d6832339657e5d0543dbaa39dd7f7530593a"
+      }
+    ],
+    "channelCounts": {
+      "PAM02": 2,
+      "PPL103": 2
+    },
+    "delivery": "Same selected contexts/order/timing for informative and matched controls. Reassess and bind each event after preceding memory changes; no old ranking reuse."
+  },
+  "scope": "Retrospective plan from independently audited scratch training rankings. No graph inference, learning, validation/final selection or frozen experimental protocol."
+}

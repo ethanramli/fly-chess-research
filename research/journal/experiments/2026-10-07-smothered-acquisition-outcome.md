@@ -1,0 +1,7 @@
+# Smothered acquisition recovery and audited outcome
+
+2026-10-07. The original five-condition run failed when Windows returned `EPERM` publishing checkpoint 167. Preserve `checkpoint-00167.partial`; it is not acknowledged. I confirmed the process had exited, verified all eight pinned input and 27 source hashes, and resumed the last published checkpoint 166 with the exact pre-relocation source archive into a new output directory. The resumed run completed and its independent audit passed 114 certificate and 32 recurrence checks.
+
+Across 40 repeated condition-level experiences on one development puzzle, 2 receipts are successes and 38 failures, with no unknowns. Both successes are repeated fixed-schedule `c4g8` experiences. All eight adaptive choices fail; every final unaided choice and each fixed-search choice fail. Useful-choice, repair-above-controls and shuffle-specificity gates fail; reset/persistence and fixed-state gates pass. Because adaptive outcomes are all failures, shuffled feedback is not valence-identifiable. This is not useful puzzle learning or transfer evidence.
+
+See [the resumed report and recovery record](../../reports/smothered-acquisition-v1-resumed-2026-10-07/README.md), its [raw report](../../reports/smothered-acquisition-v1-resumed-2026-10-07/report.json) and [independent audit](../../reports/smothered-acquisition-v1-resumed-2026-10-07/audit.json).

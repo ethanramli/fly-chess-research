@@ -1,0 +1,761 @@
+{
+  "schema": "fly-puzzle-round-v1",
+  "puzzle": {
+    "id": "composed-mate-one-001",
+    "group": "composed-kqk-corner-family",
+    "split": "fixture",
+    "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+    "objective": "forced-mate",
+    "plies": 1
+  },
+  "startingFen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+  "endingFen": "7k/7Q/6K1/8/8/8/8/8 b - - 1 1",
+  "chosenMove": {
+    "uci": "f7h7",
+    "san": "Qh7#"
+  },
+  "taskProof": {
+    "status": "success",
+    "reward": 1,
+    "nodes": 2,
+    "criterion": "force_mate_within_1_remaining_plies",
+    "attacker": "w",
+    "meaning": "Failure means this bounded mate objective was not met, not that the move loses a full game"
+  },
+  "feedback": {
+    "status": "success",
+    "reward": 1,
+    "nodes": 1,
+    "criterion": "force_mate_within_0_remaining_plies",
+    "attacker": "w",
+    "meaning": "Failure means this bounded mate objective was not met, not that the move loses a full game"
+  },
+  "receipt": {
+    "sequence": 1,
+    "receiver": "record-only-v1",
+    "event": {
+      "puzzleId": "composed-mate-one-001",
+      "move": "f7h7",
+      "status": "success",
+      "reward": 1,
+      "criterion": "force_mate_within_0_remaining_plies"
+    },
+    "appliedToNeurons": false,
+    "learningApplied": false,
+    "blocker": "A justified reward-neuron mapping and endogenous plasticity mechanism are not implemented"
+  },
+  "calculation": {
+    "move": {
+      "color": "w",
+      "from": "f7",
+      "to": "h7",
+      "piece": "q",
+      "flags": "n",
+      "san": "Qh7#",
+      "lan": "f7h7",
+      "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+      "after": "7k/7Q/6K1/8/8/8/8/8 b - - 1 1"
+    },
+    "candidates": [
+      {
+        "uci": "f7e8",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "e8",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qe8#",
+          "lan": "f7e8",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "4Q2k/8/6K1/8/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.039137737798679954,
+        "value": null
+      },
+      {
+        "uci": "f7f8",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "f8",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qf8#",
+          "lan": "f7f8",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "5Q1k/8/6K1/8/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.03835955983302718,
+        "value": null
+      },
+      {
+        "uci": "f7g8",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "g8",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qg8+",
+          "lan": "f7g8",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "6Qk/8/6K1/8/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.03868428374147022,
+        "value": null
+      },
+      {
+        "uci": "f7g7",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "g7",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qg7#",
+          "lan": "f7g7",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/6Q1/6K1/8/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.038830284031289915,
+        "value": null
+      },
+      {
+        "uci": "f7h7",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "h7",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qh7#",
+          "lan": "f7h7",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/7Q/6K1/8/8/8/8/8 b - - 1 1"
+        },
+        "visits": 29,
+        "prior": 0.039211783964675166,
+        "value": 1
+      },
+      {
+        "uci": "f7f6",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "f6",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qf6+",
+          "lan": "f7f6",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/8/5QK1/8/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.037877153573757115,
+        "value": null
+      },
+      {
+        "uci": "f7f5",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "f5",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qf5",
+          "lan": "f7f5",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/8/6K1/5Q2/8/8/8/8 b - - 1 1"
+        },
+        "visits": 1,
+        "prior": 0.03932217756606112,
+        "value": 0.01586483289495648
+      },
+      {
+        "uci": "f7f4",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "f4",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qf4",
+          "lan": "f7f4",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/8/6K1/8/5Q2/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.03813184209868399,
+        "value": null
+      },
+      {
+        "uci": "f7f3",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "f3",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qf3",
+          "lan": "f7f3",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/8/6K1/8/8/5Q2/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.039077379070138966,
+        "value": null
+      },
+      {
+        "uci": "f7f2",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "f2",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qf2",
+          "lan": "f7f2",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/8/6K1/8/8/8/5Q2/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.03849723772323783,
+        "value": null
+      },
+      {
+        "uci": "f7f1",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "f1",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qf1",
+          "lan": "f7f1",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/8/6K1/8/8/8/8/5Q2 b - - 1 1"
+        },
+        "visits": 1,
+        "prior": 0.039238711876565656,
+        "value": 0.014233300310647441
+      },
+      {
+        "uci": "f7e6",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "e6",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qe6",
+          "lan": "f7e6",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/8/4Q1K1/8/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.038875720952059566,
+        "value": null
+      },
+      {
+        "uci": "f7d5",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "d5",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qd5",
+          "lan": "f7d5",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/8/6K1/3Q4/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.038263821786307176,
+        "value": null
+      },
+      {
+        "uci": "f7c4",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "c4",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qc4",
+          "lan": "f7c4",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/8/6K1/8/2Q5/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.03854734888899333,
+        "value": null
+      },
+      {
+        "uci": "f7b3",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "b3",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qb3",
+          "lan": "f7b3",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/8/6K1/8/8/1Q6/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.03899391646934884,
+        "value": null
+      },
+      {
+        "uci": "f7a2",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "a2",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qa2",
+          "lan": "f7a2",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/8/6K1/8/8/8/Q7/8 b - - 1 1"
+        },
+        "visits": 1,
+        "prior": 0.039352283357362655,
+        "value": 0
+      },
+      {
+        "uci": "f7e7",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "e7",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qe7",
+          "lan": "f7e7",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/4Q3/6K1/8/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.038477724243213905,
+        "value": null
+      },
+      {
+        "uci": "f7d7",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "d7",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qd7",
+          "lan": "f7d7",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/3Q4/6K1/8/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.038335583085058,
+        "value": null
+      },
+      {
+        "uci": "f7c7",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "c7",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qc7",
+          "lan": "f7c7",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/2Q5/6K1/8/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.037869887828052284,
+        "value": null
+      },
+      {
+        "uci": "f7b7",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "b7",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qb7",
+          "lan": "f7b7",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/1Q6/6K1/8/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.03797381520165543,
+        "value": null
+      },
+      {
+        "uci": "f7a7",
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "a7",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qa7",
+          "lan": "f7a7",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/Q7/6K1/8/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.03902766212953941,
+        "value": null
+      },
+      {
+        "uci": "g6h6",
+        "move": {
+          "color": "w",
+          "from": "g6",
+          "to": "h6",
+          "piece": "k",
+          "flags": "n",
+          "san": "Kh6",
+          "lan": "g6h6",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/5Q2/7K/8/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.03786730078649511,
+        "value": null
+      },
+      {
+        "uci": "g6h5",
+        "move": {
+          "color": "w",
+          "from": "g6",
+          "to": "h5",
+          "piece": "k",
+          "flags": "n",
+          "san": "Kh5",
+          "lan": "g6h5",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/5Q2/8/7K/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.037036900248029955,
+        "value": null
+      },
+      {
+        "uci": "g6g5",
+        "move": {
+          "color": "w",
+          "from": "g6",
+          "to": "g5",
+          "piece": "k",
+          "flags": "n",
+          "san": "Kg5",
+          "lan": "g6g5",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/5Q2/8/6K1/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.036902487227757554,
+        "value": null
+      },
+      {
+        "uci": "g6f5",
+        "move": {
+          "color": "w",
+          "from": "g6",
+          "to": "f5",
+          "piece": "k",
+          "flags": "n",
+          "san": "Kf5",
+          "lan": "g6f5",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/5Q2/8/5K2/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.03876419494298871,
+        "value": null
+      },
+      {
+        "uci": "g6f6",
+        "move": {
+          "color": "w",
+          "from": "g6",
+          "to": "f6",
+          "piece": "k",
+          "flags": "n",
+          "san": "Kf6",
+          "lan": "g6f6",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "7k/5Q2/5K2/8/8/8/8/8 b - - 1 1"
+        },
+        "visits": 0,
+        "prior": 0.037343201575550856,
+        "value": null
+      }
+    ],
+    "evaluations": 3,
+    "simulations": 32,
+    "nodes": 29,
+    "terminalLeaves": 30,
+    "unknownCutoffs": 0,
+    "elapsedMs": 1274.4415999999999,
+    "scope": "Search estimates; visits and cutoff values are not verified puzzle feedback"
+  },
+  "experience": {
+    "schema": "consequence-review-v1",
+    "objective": "forced-mate",
+    "plies": 1,
+    "task": {
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+      "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n *",
+      "actor": "w"
+    },
+    "chosen": "f7h7",
+    "initialPreference": "f7a2",
+    "evidence": [
+      {
+        "move": "f7h7",
+        "actor": "w",
+        "startingFen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+        "successorFen": "7k/7Q/6K1/8/8/8/8/8 b - - 1 1",
+        "generated": true,
+        "visits": 29,
+        "prior": 0.039211783964675166,
+        "searchEstimate": 1,
+        "verifier": {
+          "method": "exhaustive-bounded-AND-OR-mate-v1",
+          "budget": 1024,
+          "horizon": 0
+        },
+        "proof": {
+          "status": "success",
+          "reward": 1,
+          "nodes": 1,
+          "criterion": "force_mate_within_0_remaining_plies",
+          "attacker": "w",
+          "meaning": "Failure means this bounded mate objective was not met, not that the move loses a full game"
+        }
+      },
+      {
+        "move": "f7a2",
+        "actor": "w",
+        "startingFen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+        "successorFen": "7k/8/6K1/8/8/8/Q7/8 b - - 1 1",
+        "generated": true,
+        "visits": 1,
+        "prior": 0.039352283357362655,
+        "searchEstimate": 0,
+        "verifier": {
+          "method": "exhaustive-bounded-AND-OR-mate-v1",
+          "budget": 1024,
+          "horizon": 0
+        },
+        "proof": {
+          "status": "failure",
+          "reward": -1,
+          "nodes": 1,
+          "criterion": "force_mate_within_0_remaining_plies",
+          "attacker": "w",
+          "meaning": "Failure means this bounded mate objective was not met, not that the move loses a full game"
+        }
+      },
+      {
+        "move": "f7f5",
+        "actor": "w",
+        "startingFen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+        "successorFen": "7k/8/6K1/5Q2/8/8/8/8 b - - 1 1",
+        "generated": true,
+        "visits": 1,
+        "prior": 0.03932217756606112,
+        "searchEstimate": 0.01586483289495648,
+        "verifier": {
+          "method": "exhaustive-bounded-AND-OR-mate-v1",
+          "budget": 1024,
+          "horizon": 0
+        },
+        "proof": {
+          "status": "failure",
+          "reward": -1,
+          "nodes": 1,
+          "criterion": "force_mate_within_0_remaining_plies",
+          "attacker": "w",
+          "meaning": "Failure means this bounded mate objective was not met, not that the move loses a full game"
+        }
+      },
+      {
+        "move": "f7f1",
+        "actor": "w",
+        "startingFen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+        "successorFen": "7k/8/6K1/8/8/8/8/5Q2 b - - 1 1",
+        "generated": true,
+        "visits": 1,
+        "prior": 0.039238711876565656,
+        "searchEstimate": 0.014233300310647441,
+        "verifier": {
+          "method": "exhaustive-bounded-AND-OR-mate-v1",
+          "budget": 1024,
+          "horizon": 0
+        },
+        "proof": {
+          "status": "failure",
+          "reward": -1,
+          "nodes": 1,
+          "criterion": "force_mate_within_0_remaining_plies",
+          "attacker": "w",
+          "meaning": "Failure means this bounded mate objective was not met, not that the move loses a full game"
+        }
+      }
+    ],
+    "diagnostics": [
+      {
+        "kind": "search-rescued-initial-preference",
+        "initialMove": "f7a2",
+        "chosenMove": "f7h7",
+        "evidence": "Initial highest-prior move fails the bounded objective; committed searched move satisfies it. This identifies a preference weakness, not its neural cause."
+      }
+    ],
+    "teachingExperiences": [
+      {
+        "move": "f7h7",
+        "actor": "w",
+        "outcome": "success",
+        "criterion": "force_mate_within_0_remaining_plies",
+        "role": "committed-choice",
+        "neuralDelivery": "not-implemented"
+      },
+      {
+        "move": "f7a2",
+        "actor": "w",
+        "outcome": "failure",
+        "criterion": "force_mate_within_0_remaining_plies",
+        "role": "teacher-counterfactual",
+        "neuralDelivery": "not-implemented"
+      },
+      {
+        "move": "f7f5",
+        "actor": "w",
+        "outcome": "failure",
+        "criterion": "force_mate_within_0_remaining_plies",
+        "role": "teacher-counterfactual",
+        "neuralDelivery": "not-implemented"
+      },
+      {
+        "move": "f7f1",
+        "actor": "w",
+        "outcome": "failure",
+        "criterion": "force_mate_within_0_remaining_plies",
+        "role": "teacher-counterfactual",
+        "neuralDelivery": "not-implemented"
+      }
+    ],
+    "outcome": {
+      "status": "success",
+      "avoidableMiss": false,
+      "fullGameConsequence": "unknown",
+      "rootCause": "undetermined"
+    },
+    "coverage": {
+      "legalMoves": 26,
+      "generatedCandidates": 26,
+      "reviewedCandidates": 4,
+      "allAlternativesReviewed": false,
+      "nodes": 4,
+      "maxProofNodes": 4096,
+      "nodesPerCandidate": 1024,
+      "maxCandidates": 4
+    },
+    "limitations": [
+      "Only bounded forced-mate consequences are checked; exchange/compensation feedback is not implemented.",
+      "Aggregate root statistics cannot establish a missed defensive reply, an evaluation error, or the cause of a rejected sacrifice.",
+      "Review success is an exhaustive AND/OR verifier result; no replayable proof certificate is emitted yet.",
+      "Teacher counterfactuals are additional experiences and must be counted; unknowns supply no training event.",
+      "Structured evidence is not neural learning or held-out transfer."
+    ]
+  },
+  "identity": {
+    "before": {
+      "graphArrays": "3f37688d14e94d3ccec44b6a75aaa8b66c41bd08c57fe1c011dd23326218448e",
+      "parameters": "6800f58ac48319d8a304542a9c898f47cbcf2db674d46fceb4e9bfe510c5698a"
+    },
+    "after": {
+      "graphArrays": "3f37688d14e94d3ccec44b6a75aaa8b66c41bd08c57fe1c011dd23326218448e",
+      "parameters": "6800f58ac48319d8a304542a9c898f47cbcf2db674d46fceb4e9bfe510c5698a"
+    },
+    "graphAndParametersUnchanged": true
+  },
+  "timings": {
+    "taskProofMs": 14.008399999999938,
+    "assessmentMs": 1.6518000000000939,
+    "reviewMs": 11.774799999999686,
+    "roundElapsedMs": 1460.8366999999998
+  },
+  "scope": "One root-move trial plus independently verified feedback; record-only receiver; no biological learning or generalization claim",
+  "inputs": {
+    "graph": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    "puzzles": "7855f3cdbbb440b1f302c633b38f13c08a623f4455b64b01bc46b6d6286dd3dc"
+  },
+  "sources": {
+    ".codebase/scripts/puzzle-round.mjs": "9d3a2866970e38020ee32f7f4a4fb76ec217edde98bf09e3a65ec436a86ee3fb",
+    ".codebase/src/lowram/puzzle-round.mjs": "df15de9eaa8bba29eb76e775d2f709b13e125373bcc0ff035fcaa3588bb291ff",
+    ".codebase/src/lowram/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+    ".codebase/src/lowram/experience-feedback.mjs": "aa8aea03687d7e198c4311df806a97d6312701564d2420cf42fbf0d594e26bc5",
+    ".codebase/src/lowram/trainer.mjs": "ffefd16ad1fd2e438dba89c45072ea2229091832a46349958b8668aa7517b7f9",
+    ".codebase/src/lowram/positions.mjs": "b08f07ba4775132bfe78f979799621c916e4b061a213af35ed9a8afb8b7800d4",
+    ".codebase/src/lowram/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+    ".codebase/src/lowram/storage.mjs": "9b1388699dbf65e3e1848b262d73e01902b20ddfa982608d39bf43f2733cac7c"
+  },
+  "command": {
+    "executable": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe",
+    "nodeOptions": [
+      "--max-old-space-size=256"
+    ],
+    "arguments": [
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\puzzle-round.mjs",
+      "--out",
+      "research/reports/consequence-review-v2-2026-10-05",
+      "--cpu-duty",
+      "0.5"
+    ],
+    "node": "v22.23.2"
+  },
+  "config": {
+    "steps": 8,
+    "inputDim": 1280,
+    "outputs": 133,
+    "seed": 47,
+    "precision": "float32",
+    "saturation": 10,
+    "recurrentScale": 0.9,
+    "normalization": "global"
+  },
+  "options": {
+    "search": {
+      "simulations": 32,
+      "maxEvaluations": 8,
+      "maxDepth": 6,
+      "maxNodes": 4096,
+      "milliseconds": 10000
+    },
+    "proofNodes": 4096,
+    "cpuDuty": 0.5,
+    "review": {
+      "maxCandidates": 4,
+      "maxProofNodes": 4096,
+      "nodesPerCandidate": 1024
+    }
+  },
+  "resources": {
+    "peakResidentMiB": 102.10546875,
+    "currentResidentMiB": 99.1484375,
+    "allocatedArrayMiB": 79.07124423980713,
+    "elapsedSecondsSinceStart": 2.2353229000000003,
+    "cpuSecondsSinceStart": 1.813
+  }
+}

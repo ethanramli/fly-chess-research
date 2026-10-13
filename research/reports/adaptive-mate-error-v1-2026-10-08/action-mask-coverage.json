@@ -1,0 +1,101 @@
+{
+  "schema": "adaptive-mate-action-mask-coverage-v1",
+  "scope": "Static public action-token-to-input-mask projection only; no activity replay, edge attribution or causality",
+  "protocolSha256": "bd4d3c527dc8912f5bf6a3def5a141c544f110d590d1571043a7c52e05c1dd1d",
+  "encoderIdentity": "4c00544472d29b0b4c928dda6bf92a0ff5fce6ee2a62c232f08b36b66baee6b3",
+  "inputs": [
+    {
+      "path": "research/reports/adaptive-mate-error-v1-2026-10-08/result.json",
+      "sha256": "b00c8686763c10f9bfe41f307b019599448ebe98ce644f8e56f16a4296a4557e"
+    },
+    {
+      "path": "research/reports/delayed-mate-choice-v1-2026-10-08/feature-coverage.json",
+      "sha256": "721a5c44d180b07b7ac6f7f7a5cf48a4e17313594a117ef8208631405758de10"
+    }
+  ],
+  "schedule": [
+    {
+      "move": "f7e6",
+      "status": "failure",
+      "instructedChannel": "PPL103"
+    },
+    {
+      "move": "f7h7",
+      "status": "success",
+      "instructedChannel": "PAM02"
+    },
+    {
+      "move": "f7e6",
+      "status": "failure",
+      "instructedChannel": "PPL103"
+    },
+    {
+      "move": "f7h7",
+      "status": "success",
+      "instructedChannel": "PAM02"
+    },
+    {
+      "move": "g6h6",
+      "status": "failure",
+      "instructedChannel": "PPL103"
+    },
+    {
+      "move": "f7h7",
+      "status": "success",
+      "instructedChannel": "PAM02"
+    },
+    {
+      "move": "f7e6",
+      "status": "failure",
+      "instructedChannel": "PPL103"
+    },
+    {
+      "move": "f7h7",
+      "status": "success",
+      "instructedChannel": "PAM02"
+    }
+  ],
+  "uniqueActions": [
+    {
+      "move": "f7e6",
+      "status": "failure",
+      "inputKcIndex": 100371,
+      "plasticityGroups": [
+        "right:PPL103"
+      ],
+      "projectsPPL": true,
+      "projectsPAM": false,
+      "occurrences": 3
+    },
+    {
+      "move": "f7h7",
+      "status": "success",
+      "inputKcIndex": 28182,
+      "plasticityGroups": [
+        "right:PPL103"
+      ],
+      "projectsPPL": true,
+      "projectsPAM": false,
+      "occurrences": 4
+    },
+    {
+      "move": "g6h6",
+      "status": "failure",
+      "inputKcIndex": 41757,
+      "plasticityGroups": [
+        "left:PPL103"
+      ],
+      "projectsPPL": true,
+      "projectsPAM": false,
+      "occurrences": 1
+    }
+  ],
+  "summary": {
+    "uniqueActions": 3,
+    "actionTokensPPLonly": 3,
+    "actionTokensPAMonly": 0,
+    "actionTokensBoth": 0,
+    "successActionsPAMprojected": 0,
+    "successActionsPPLonly": 1
+  }
+}

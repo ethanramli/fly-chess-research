@@ -1,0 +1,1 @@
+Initial independent audit rejected a serialized draw: JSON stores both +0 and -0 as 0, while Node strict assertion distinguishes their signs. Corrected only the audit's expected terminal draw to canonical zero. Search, review, raw report and traces were unchanged. Initial error: AssertionError actual 0 expected -0 at audit-monte-carlo-review.mjs:35.

@@ -1,0 +1,371 @@
+{
+  "date": "2026-10-10",
+  "scope": "Artifact integrity, saved-score arithmetic and static certified encoder illustration only. No new graph replay, training, final-family read or biological validation.",
+  "verifiedExistingArtifacts": 42,
+  "auditReportHashBindings": 16,
+  "protocolHash": "51c6c714d68eac6a8ea544e5448dddf99781b9c6e5a4f3f01a76ad8729960b1f",
+  "sourcePinsChecked": 92,
+  "graphSha256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+  "annotationSha256": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+  "mappedEdges": 122,
+  "distinctCueKCs": 120,
+  "gainRange": [
+    0.9531738717589573,
+    1.0402828212744903
+  ],
+  "strongestCompetitorMargin": {
+    "before": -0.005083847790956497,
+    "after": -0.004301739390939474,
+    "fractionGapClosed": 0.1538418206399279
+  },
+  "trajectory": [
+    {
+      "choice": "f7g8",
+      "scores": {
+        "f7g8": 0.0045881979167461395,
+        "f7d7": 0.0044655632227659225,
+        "f7h7": -0.0004956498742103577
+      }
+    },
+    {
+      "choice": "f7d7",
+      "scores": {
+        "f7g8": 0.0043886275961995125,
+        "f7d7": 0.0044602761045098305,
+        "f7h7": -0.00039818137884140015
+      }
+    },
+    {
+      "choice": "f7g8",
+      "scores": {
+        "f7g8": 0.004385548643767834,
+        "f7d7": 0.00429164688102901,
+        "f7h7": -0.0003019939176738262
+      }
+    },
+    {
+      "choice": "f7d7",
+      "scores": {
+        "f7g8": 0.004191340878605843,
+        "f7d7": 0.004286530427634716,
+        "f7h7": -0.0002070581540465355
+      }
+    },
+    {
+      "choice": "f7g8",
+      "scores": {
+        "f7g8": 0.004188362043350935,
+        "f7d7": 0.004122123122215271,
+        "f7h7": -0.00011337734758853912
+      }
+    }
+  ],
+  "coordinateConjunctionIllustration": {
+    "cases": [
+      {
+        "frame": {
+          "schema": "public-lesson-frame-v1",
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n *",
+          "task": {
+            "objective": "forced-mate",
+            "plies": 1
+          },
+          "action": "f7h7"
+        },
+        "proof": {
+          "status": "success",
+          "reward": 1,
+          "nodes": 1,
+          "attacker": "w",
+          "criterion": "force_mate_within_0_remaining_plies",
+          "certificate": {
+            "schema": "bounded-mate-certificate-v1",
+            "rootFen": "7k/7Q/6K1/8/8/8/8/8 b - - 1 1",
+            "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qh7# *",
+            "attacker": "w",
+            "plies": 0,
+            "tree": {
+              "status": "success",
+              "children": []
+            }
+          },
+          "certificateCheck": {
+            "verified": true,
+            "status": "success",
+            "nodes": 1,
+            "elapsedMs": 5.460900000000038
+          },
+          "bounds": {
+            "maxNodes": 4096,
+            "millisecondsPerStage": 2000,
+            "constructionStop": null,
+            "checkingNodes": 1,
+            "elapsedMs": 9.09310000000005
+          },
+          "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+        },
+        "status": "success",
+        "cue": {
+          "schema": "conjoined-public-mate-frame-cue-v1",
+          "identity": "eef42ad662193cfa42eb5e9eade251a3dfceafade1e15455506b3c2e2276ae30",
+          "frameIdentity": "44038297d56cb87e541c06b44adfa7dff19b1ee5b0c7b6f67866a36ea58f26f3",
+          "tokens": [
+            "joint:[\"f7h7\",\"action:f7h7\"]",
+            "joint:[\"f7h7\",\"castle:-\"]",
+            "joint:[\"f7h7\",\"ep:-\"]",
+            "joint:[\"f7h7\",\"fullmove:1\"]",
+            "joint:[\"f7h7\",\"halfmove:0\"]",
+            "joint:[\"f7h7\",\"piece:b:k:h8\"]",
+            "joint:[\"f7h7\",\"piece:w:k:g6\"]",
+            "joint:[\"f7h7\",\"piece:w:q:f7\"]",
+            "joint:[\"f7h7\",\"task:forced-mate:1\"]",
+            "joint:[\"f7h7\",\"turn:w\"]"
+          ],
+          "assignments": [
+            {
+              "token": "joint:[\"f7h7\",\"action:f7h7\"]",
+              "index": 40316
+            },
+            {
+              "token": "joint:[\"f7h7\",\"castle:-\"]",
+              "index": 121175
+            },
+            {
+              "token": "joint:[\"f7h7\",\"ep:-\"]",
+              "index": 118626
+            },
+            {
+              "token": "joint:[\"f7h7\",\"fullmove:1\"]",
+              "index": 118626
+            },
+            {
+              "token": "joint:[\"f7h7\",\"halfmove:0\"]",
+              "index": 117490
+            },
+            {
+              "token": "joint:[\"f7h7\",\"piece:b:k:h8\"]",
+              "index": 90490
+            },
+            {
+              "token": "joint:[\"f7h7\",\"piece:w:k:g6\"]",
+              "index": 87736
+            },
+            {
+              "token": "joint:[\"f7h7\",\"piece:w:q:f7\"]",
+              "index": 52541
+            },
+            {
+              "token": "joint:[\"f7h7\",\"task:forced-mate:1\"]",
+              "index": 118626
+            },
+            {
+              "token": "joint:[\"f7h7\",\"turn:w\"]",
+              "index": 21952
+            }
+          ],
+          "stimulation": [
+            {
+              "index": 21952,
+              "current": 1.5
+            },
+            {
+              "index": 40316,
+              "current": 1.5
+            },
+            {
+              "index": 52541,
+              "current": 1.5
+            },
+            {
+              "index": 87736,
+              "current": 1.5
+            },
+            {
+              "index": 90490,
+              "current": 1.5
+            },
+            {
+              "index": 117490,
+              "current": 1.5
+            },
+            {
+              "index": 118626,
+              "current": 1.5
+            },
+            {
+              "index": 121175,
+              "current": 1.5
+            }
+          ],
+          "accounting": {
+            "collisions": 2,
+            "droppedCells": 0,
+            "droppedFeatures": 0,
+            "poolCells": 120
+          },
+          "scope": "Public action-context conjunction; endpoint binds public last move; no natural sensing or transfer claim"
+        }
+      },
+      {
+        "frame": {
+          "schema": "public-lesson-frame-v1",
+          "fen": "6k1/4Q3/5K2/8/8/8/8/8 w - - 0 1",
+          "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"6k1/4Q3/5K2/8/8/8/8/8 w - - 0 1\"]\n *",
+          "task": {
+            "objective": "forced-mate",
+            "plies": 1
+          },
+          "action": "e7g7"
+        },
+        "proof": {
+          "status": "success",
+          "reward": 1,
+          "nodes": 1,
+          "attacker": "w",
+          "criterion": "force_mate_within_0_remaining_plies",
+          "certificate": {
+            "schema": "bounded-mate-certificate-v1",
+            "rootFen": "6k1/6Q1/5K2/8/8/8/8/8 b - - 1 1",
+            "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"6k1/4Q3/5K2/8/8/8/8/8 w - - 0 1\"]\n\n1. Qg7# *",
+            "attacker": "w",
+            "plies": 0,
+            "tree": {
+              "status": "success",
+              "children": []
+            }
+          },
+          "certificateCheck": {
+            "verified": true,
+            "status": "success",
+            "nodes": 1,
+            "elapsedMs": 5.712700000000041
+          },
+          "bounds": {
+            "maxNodes": 4096,
+            "millisecondsPerStage": 2000,
+            "constructionStop": null,
+            "checkingNodes": 1,
+            "elapsedMs": 6.251100000000065
+          },
+          "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+        },
+        "status": "success",
+        "cue": {
+          "schema": "conjoined-public-mate-frame-cue-v1",
+          "identity": "eef42ad662193cfa42eb5e9eade251a3dfceafade1e15455506b3c2e2276ae30",
+          "frameIdentity": "06c03cdd5a4536842ce346cb74f5a5cbd413c1f755f0e8b79d81a57581244531",
+          "tokens": [
+            "joint:[\"e7g7\",\"action:e7g7\"]",
+            "joint:[\"e7g7\",\"castle:-\"]",
+            "joint:[\"e7g7\",\"ep:-\"]",
+            "joint:[\"e7g7\",\"fullmove:1\"]",
+            "joint:[\"e7g7\",\"halfmove:0\"]",
+            "joint:[\"e7g7\",\"piece:b:k:g8\"]",
+            "joint:[\"e7g7\",\"piece:w:k:f6\"]",
+            "joint:[\"e7g7\",\"piece:w:q:e7\"]",
+            "joint:[\"e7g7\",\"task:forced-mate:1\"]",
+            "joint:[\"e7g7\",\"turn:w\"]"
+          ],
+          "assignments": [
+            {
+              "token": "joint:[\"e7g7\",\"action:e7g7\"]",
+              "index": 37557
+            },
+            {
+              "token": "joint:[\"e7g7\",\"castle:-\"]",
+              "index": 121175
+            },
+            {
+              "token": "joint:[\"e7g7\",\"ep:-\"]",
+              "index": 43269
+            },
+            {
+              "token": "joint:[\"e7g7\",\"fullmove:1\"]",
+              "index": 118626
+            },
+            {
+              "token": "joint:[\"e7g7\",\"halfmove:0\"]",
+              "index": 115842
+            },
+            {
+              "token": "joint:[\"e7g7\",\"piece:b:k:g8\"]",
+              "index": 63547
+            },
+            {
+              "token": "joint:[\"e7g7\",\"piece:w:k:f6\"]",
+              "index": 87523
+            },
+            {
+              "token": "joint:[\"e7g7\",\"piece:w:q:e7\"]",
+              "index": 102209
+            },
+            {
+              "token": "joint:[\"e7g7\",\"task:forced-mate:1\"]",
+              "index": 55106
+            },
+            {
+              "token": "joint:[\"e7g7\",\"turn:w\"]",
+              "index": 121914
+            }
+          ],
+          "stimulation": [
+            {
+              "index": 37557,
+              "current": 1.2
+            },
+            {
+              "index": 43269,
+              "current": 1.2
+            },
+            {
+              "index": 55106,
+              "current": 1.2
+            },
+            {
+              "index": 63547,
+              "current": 1.2
+            },
+            {
+              "index": 87523,
+              "current": 1.2
+            },
+            {
+              "index": 102209,
+              "current": 1.2
+            },
+            {
+              "index": 115842,
+              "current": 1.2
+            },
+            {
+              "index": 118626,
+              "current": 1.2
+            },
+            {
+              "index": 121175,
+              "current": 1.2
+            },
+            {
+              "index": 121914,
+              "current": 1.2
+            }
+          ],
+          "accounting": {
+            "collisions": 0,
+            "droppedCells": 0,
+            "droppedFeatures": 0,
+            "poolCells": 120
+          },
+          "scope": "Public action-context conjunction; endpoint binds public last move; no natural sensing or transfer claim"
+        }
+      }
+    ],
+    "sharedTokens": [],
+    "sharedCells": [
+      118626,
+      121175
+    ],
+    "interpretation": "Both moves verify mate in one after a one-file translation. No shared exact encoded token remains because every token includes a different absolute action. Shared KC identities are possible through hashing; downstream dynamics/generalization not tested."
+  }
+}

@@ -1,0 +1,7 @@
+# Correction-preservation schedule v2
+
+2026-10-08. Re-audited the prepared v1 targeted-versus-uniform comparison before graph use. V1 matched positive/negative totals but not move exposure: the selected arm has two a1a4 and two e1e5 experiences, while the comparison has three a1a4 and one e1e5. That confound could make any difference reflect action frequency rather than context targeting. V1 remains preserved and is not suitable for the planned comparison.
+
+Prepared a separate v2 artifact with the original selected target/sentinel schedule (tr-06 then tr-03) and a seeded score-blind comparator (tr-05 then tr-02). Both schedules have four events in the same order: a1a4 failure, e1e5 success, a1a4 success, e1e5 failure. Thus each move receives one verified success and one verified failure, across two distinct contexts. The comparator selection reads verified outcome strata and panel IDs, not score, margin or choice. Source report, audit, completion marker, frozen protocol, training data, v1 artifact, script and v2 schedules are hash-pinned.
+
+Artifacts: research/data/correction-preservation-schedules-v2/schedules.json and manifest.json. No graph inference, final-family read, neural update or retention measurement occurred. The shuffle control is specified to preserve the verified truth separately from the deliberately reassigned teaching channel. A protocol archive, runner, independent fresh-graph audit and recovery validation remain required before the graph experiment.

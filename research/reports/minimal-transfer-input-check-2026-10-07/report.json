@@ -1,0 +1,4169 @@
+{
+  "scope": "Six developer-created legality/encoding pairs only. No neural inference/training. Forced-mate task token held constant solely because existing encoder rejects new task names; no mate labels used.",
+  "inputs": {
+    "research/data/stability-feedback-dose-v2/protocol.json": "349e32a1e837f76e4ec5fc422fa73607482348fafad8462458d5562a0ca29210",
+    "research/reports/reversal-candidate-2026-10-05/mapping.json": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+    ".codebase/src/chess-input/relational-chess-cue-v2.mjs": "7998c336dba340d8bdb4e60c6de1b559411cf2a9b80af782b54d45f9e1c4bc3c",
+    ".codebase/src/chess-input/compartment-chess-cue.mjs": "c7a095625518fab166b09a796d452c8a78779b9016cb04b982eb81e4f13440c3"
+  },
+  "encoderIdentity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+  "pairs": [
+    {
+      "file": "b",
+      "identicalInput": false,
+      "changedTokens": [
+        "around-origin:r:0,3:-:self:p:-1,2",
+        "around-target:r:self:p:-1,-1",
+        "around-origin:r:0,3:-:self:p:-1,3",
+        "around-target:r:self:p:-1,0"
+      ],
+      "changedTokensRetained": [
+        [
+          "around-target:r:self:p:-1,-1"
+        ],
+        []
+      ],
+      "cases": [
+        {
+          "fen": "6k1/8/8/8/p6r/1P6/8/RK6 w - - 0 1",
+          "blocker": "b3",
+          "recapture": true,
+          "cue": {
+            "schema": "compartment-chess-cue-v1",
+            "identity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+            "move": "a1a4",
+            "actor": "w",
+            "fen": "6k1/8/8/8/p6r/1P6/8/RK6 w - - 0 1",
+            "historyPlies": 0,
+            "repetitions": 1,
+            "tokens": [
+              "action:r:0,3:-",
+              "around-origin:r:0,3:-:opponent:k:-6,7",
+              "around-origin:r:0,3:-:opponent:p:0,3",
+              "around-origin:r:0,3:-:opponent:r:-7,3",
+              "around-origin:r:0,3:-:self:k:-1,0",
+              "around-origin:r:0,3:-:self:p:-1,2",
+              "around-origin:r:0,3:-:self:r:0,0",
+              "around-target:r:opponent:k:-6,4",
+              "around-target:r:opponent:p:0,0",
+              "around-target:r:opponent:r:-7,0",
+              "around-target:r:self:k:-1,-3",
+              "around-target:r:self:p:-1,-1",
+              "around-target:r:self:r:0,-3",
+              "capture:p",
+              "castle:-",
+              "ep:-",
+              "halfmove:0",
+              "origin-walls:7,0,0,7",
+              "repetition:1",
+              "target-walls:7,0,3,4",
+              "task:forced-mate:3"
+            ],
+            "assignments": [
+              {
+                "token": "action:r:0,3:-",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PAM02",
+                "index": 10607
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PAM02",
+                "index": 106227
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PAM02",
+                "index": 111135
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-1,2",
+                "group": "PAM02",
+                "index": 66528
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PAM02",
+                "index": 90824
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PAM02",
+                "index": 41522
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PAM02",
+                "index": 84768
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-target:r:self:p:-1,-1",
+                "group": "PAM02",
+                "index": 130001
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PAM02",
+                "index": 42227
+              },
+              {
+                "token": "capture:p",
+                "group": "PAM02",
+                "index": 113942
+              },
+              {
+                "token": "castle:-",
+                "group": "PAM02",
+                "index": 116202
+              },
+              {
+                "token": "ep:-",
+                "group": "PAM02",
+                "index": 31754
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PAM02",
+                "index": 80177
+              },
+              {
+                "token": "repetition:1",
+                "group": "PAM02",
+                "index": 14641
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PAM02",
+                "index": 128104
+              },
+              {
+                "token": "action:r:0,3:-",
+                "group": "PPL103",
+                "index": 15597
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PPL103",
+                "index": 103169
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PPL103",
+                "index": 92454
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PPL103",
+                "index": 34946
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PPL103",
+                "index": 3785
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-1,2",
+                "group": "PPL103",
+                "index": 117001
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PPL103",
+                "index": 58598
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PPL103",
+                "index": 44214
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PPL103",
+                "index": 74237
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PPL103",
+                "index": 20051
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PPL103",
+                "index": 104602
+              },
+              {
+                "token": "around-target:r:self:p:-1,-1",
+                "group": "PPL103",
+                "index": 51510
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PPL103",
+                "index": 15072
+              },
+              {
+                "token": "capture:p",
+                "group": "PPL103",
+                "index": 41856
+              },
+              {
+                "token": "castle:-",
+                "group": "PPL103",
+                "index": 42008
+              },
+              {
+                "token": "ep:-",
+                "group": "PPL103",
+                "index": 121343
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PPL103",
+                "index": 45965
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PPL103",
+                "index": 128058
+              },
+              {
+                "token": "repetition:1",
+                "group": "PPL103",
+                "index": 77784
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PPL103",
+                "index": 32958
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PPL103",
+                "index": 48213
+              }
+            ],
+            "stimulation": [
+              {
+                "index": 14641,
+                "current": 1.5
+              },
+              {
+                "index": 32958,
+                "current": 1.5
+              },
+              {
+                "index": 34946,
+                "current": 1.5
+              },
+              {
+                "index": 41522,
+                "current": 1.5
+              },
+              {
+                "index": 44214,
+                "current": 1.5
+              },
+              {
+                "index": 61395,
+                "current": 1.5
+              },
+              {
+                "index": 74237,
+                "current": 1.5
+              },
+              {
+                "index": 76431,
+                "current": 1.5
+              },
+              {
+                "index": 77784,
+                "current": 1.5
+              },
+              {
+                "index": 106227,
+                "current": 1.5
+              },
+              {
+                "index": 113942,
+                "current": 1.5
+              },
+              {
+                "index": 121343,
+                "current": 1.5
+              },
+              {
+                "index": 128058,
+                "current": 1.5
+              },
+              {
+                "index": 130001,
+                "current": 1.5
+              }
+            ],
+            "accounting": {
+              "featureCount": 21,
+              "assignments": 42,
+              "stimulatedCells": 14,
+              "collisions": 3,
+              "droppedFeatures": 26,
+              "totalCurrent": 21,
+              "currentPerCell": 1.5,
+              "poolCells": 693
+            },
+            "interface": "Unfitted candidate-conjunction/eligible-pool projection comparison; no outcomes, whole-position IDs or natural vision",
+            "baseIdentity": "c5a2ed5abc5a521b6513d7114ac8be5d41ac38101d6fea2c05a95504563d1b42",
+            "projection": {
+              "conjoin": false,
+              "stratify": true,
+              "quota": 7,
+              "coverage": {
+                "PAM02": 8,
+                "PPL103": 12
+              },
+              "selectionOrder": [
+                "PAM02",
+                "PPL103"
+              ],
+              "pools": {
+                "PAM02": 84,
+                "PPL103": 664
+              },
+              "meaning": "Eligible pools may overlap; quotas designate selection origin, not independent anatomical compartments"
+            }
+          }
+        },
+        {
+          "fen": "6k1/8/8/8/pP5r/8/8/RK6 w - - 0 1",
+          "blocker": "b4",
+          "recapture": false,
+          "cue": {
+            "schema": "compartment-chess-cue-v1",
+            "identity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+            "move": "a1a4",
+            "actor": "w",
+            "fen": "6k1/8/8/8/pP5r/8/8/RK6 w - - 0 1",
+            "historyPlies": 0,
+            "repetitions": 1,
+            "tokens": [
+              "action:r:0,3:-",
+              "around-origin:r:0,3:-:opponent:k:-6,7",
+              "around-origin:r:0,3:-:opponent:p:0,3",
+              "around-origin:r:0,3:-:opponent:r:-7,3",
+              "around-origin:r:0,3:-:self:k:-1,0",
+              "around-origin:r:0,3:-:self:p:-1,3",
+              "around-origin:r:0,3:-:self:r:0,0",
+              "around-target:r:opponent:k:-6,4",
+              "around-target:r:opponent:p:0,0",
+              "around-target:r:opponent:r:-7,0",
+              "around-target:r:self:k:-1,-3",
+              "around-target:r:self:p:-1,0",
+              "around-target:r:self:r:0,-3",
+              "capture:p",
+              "castle:-",
+              "ep:-",
+              "halfmove:0",
+              "origin-walls:7,0,0,7",
+              "repetition:1",
+              "target-walls:7,0,3,4",
+              "task:forced-mate:3"
+            ],
+            "assignments": [
+              {
+                "token": "action:r:0,3:-",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PAM02",
+                "index": 10607
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PAM02",
+                "index": 106227
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PAM02",
+                "index": 111135
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-1,3",
+                "group": "PAM02",
+                "index": 43106
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PAM02",
+                "index": 90824
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PAM02",
+                "index": 41522
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PAM02",
+                "index": 84768
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-target:r:self:p:-1,0",
+                "group": "PAM02",
+                "index": 120353
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PAM02",
+                "index": 42227
+              },
+              {
+                "token": "capture:p",
+                "group": "PAM02",
+                "index": 113942
+              },
+              {
+                "token": "castle:-",
+                "group": "PAM02",
+                "index": 116202
+              },
+              {
+                "token": "ep:-",
+                "group": "PAM02",
+                "index": 31754
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PAM02",
+                "index": 80177
+              },
+              {
+                "token": "repetition:1",
+                "group": "PAM02",
+                "index": 14641
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PAM02",
+                "index": 128104
+              },
+              {
+                "token": "action:r:0,3:-",
+                "group": "PPL103",
+                "index": 15597
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PPL103",
+                "index": 103169
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PPL103",
+                "index": 92454
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PPL103",
+                "index": 34946
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PPL103",
+                "index": 3785
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-1,3",
+                "group": "PPL103",
+                "index": 112842
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PPL103",
+                "index": 58598
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PPL103",
+                "index": 44214
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PPL103",
+                "index": 74237
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PPL103",
+                "index": 20051
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PPL103",
+                "index": 104602
+              },
+              {
+                "token": "around-target:r:self:p:-1,0",
+                "group": "PPL103",
+                "index": 133751
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PPL103",
+                "index": 15072
+              },
+              {
+                "token": "capture:p",
+                "group": "PPL103",
+                "index": 41856
+              },
+              {
+                "token": "castle:-",
+                "group": "PPL103",
+                "index": 42008
+              },
+              {
+                "token": "ep:-",
+                "group": "PPL103",
+                "index": 121343
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PPL103",
+                "index": 45965
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PPL103",
+                "index": 128058
+              },
+              {
+                "token": "repetition:1",
+                "group": "PPL103",
+                "index": 77784
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PPL103",
+                "index": 32958
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PPL103",
+                "index": 48213
+              }
+            ],
+            "stimulation": [
+              {
+                "index": 14641,
+                "current": 1.5
+              },
+              {
+                "index": 31754,
+                "current": 1.5
+              },
+              {
+                "index": 32958,
+                "current": 1.5
+              },
+              {
+                "index": 34946,
+                "current": 1.5
+              },
+              {
+                "index": 41522,
+                "current": 1.5
+              },
+              {
+                "index": 44214,
+                "current": 1.5
+              },
+              {
+                "index": 61395,
+                "current": 1.5
+              },
+              {
+                "index": 74237,
+                "current": 1.5
+              },
+              {
+                "index": 76431,
+                "current": 1.5
+              },
+              {
+                "index": 77784,
+                "current": 1.5
+              },
+              {
+                "index": 106227,
+                "current": 1.5
+              },
+              {
+                "index": 113942,
+                "current": 1.5
+              },
+              {
+                "index": 121343,
+                "current": 1.5
+              },
+              {
+                "index": 128058,
+                "current": 1.5
+              }
+            ],
+            "accounting": {
+              "featureCount": 21,
+              "assignments": 42,
+              "stimulatedCells": 14,
+              "collisions": 3,
+              "droppedFeatures": 26,
+              "totalCurrent": 21,
+              "currentPerCell": 1.5,
+              "poolCells": 693
+            },
+            "interface": "Unfitted candidate-conjunction/eligible-pool projection comparison; no outcomes, whole-position IDs or natural vision",
+            "baseIdentity": "c5a2ed5abc5a521b6513d7114ac8be5d41ac38101d6fea2c05a95504563d1b42",
+            "projection": {
+              "conjoin": false,
+              "stratify": true,
+              "quota": 7,
+              "coverage": {
+                "PAM02": 8,
+                "PPL103": 12
+              },
+              "selectionOrder": [
+                "PAM02",
+                "PPL103"
+              ],
+              "pools": {
+                "PAM02": 84,
+                "PPL103": 664
+              },
+              "meaning": "Eligible pools may overlap; quotas designate selection origin, not independent anatomical compartments"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "file": "c",
+      "identicalInput": false,
+      "changedTokens": [
+        "around-origin:r:0,3:-:self:p:-2,2",
+        "around-target:r:self:p:-2,-1",
+        "around-origin:r:0,3:-:self:p:-2,3",
+        "around-target:r:self:p:-2,0"
+      ],
+      "changedTokensRetained": [
+        [],
+        [
+          "around-origin:r:0,3:-:self:p:-2,3"
+        ]
+      ],
+      "cases": [
+        {
+          "fen": "6k1/8/8/8/p6r/2P5/8/RK6 w - - 0 1",
+          "blocker": "c3",
+          "recapture": true,
+          "cue": {
+            "schema": "compartment-chess-cue-v1",
+            "identity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+            "move": "a1a4",
+            "actor": "w",
+            "fen": "6k1/8/8/8/p6r/2P5/8/RK6 w - - 0 1",
+            "historyPlies": 0,
+            "repetitions": 1,
+            "tokens": [
+              "action:r:0,3:-",
+              "around-origin:r:0,3:-:opponent:k:-6,7",
+              "around-origin:r:0,3:-:opponent:p:0,3",
+              "around-origin:r:0,3:-:opponent:r:-7,3",
+              "around-origin:r:0,3:-:self:k:-1,0",
+              "around-origin:r:0,3:-:self:p:-2,2",
+              "around-origin:r:0,3:-:self:r:0,0",
+              "around-target:r:opponent:k:-6,4",
+              "around-target:r:opponent:p:0,0",
+              "around-target:r:opponent:r:-7,0",
+              "around-target:r:self:k:-1,-3",
+              "around-target:r:self:p:-2,-1",
+              "around-target:r:self:r:0,-3",
+              "capture:p",
+              "castle:-",
+              "ep:-",
+              "halfmove:0",
+              "origin-walls:7,0,0,7",
+              "repetition:1",
+              "target-walls:7,0,3,4",
+              "task:forced-mate:3"
+            ],
+            "assignments": [
+              {
+                "token": "action:r:0,3:-",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PAM02",
+                "index": 10607
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PAM02",
+                "index": 106227
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PAM02",
+                "index": 111135
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-2,2",
+                "group": "PAM02",
+                "index": 77125
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PAM02",
+                "index": 90824
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PAM02",
+                "index": 41522
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PAM02",
+                "index": 84768
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-target:r:self:p:-2,-1",
+                "group": "PAM02",
+                "index": 77125
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PAM02",
+                "index": 42227
+              },
+              {
+                "token": "capture:p",
+                "group": "PAM02",
+                "index": 113942
+              },
+              {
+                "token": "castle:-",
+                "group": "PAM02",
+                "index": 116202
+              },
+              {
+                "token": "ep:-",
+                "group": "PAM02",
+                "index": 31754
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PAM02",
+                "index": 80177
+              },
+              {
+                "token": "repetition:1",
+                "group": "PAM02",
+                "index": 14641
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PAM02",
+                "index": 128104
+              },
+              {
+                "token": "action:r:0,3:-",
+                "group": "PPL103",
+                "index": 15597
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PPL103",
+                "index": 103169
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PPL103",
+                "index": 92454
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PPL103",
+                "index": 34946
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PPL103",
+                "index": 3785
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-2,2",
+                "group": "PPL103",
+                "index": 76176
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PPL103",
+                "index": 58598
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PPL103",
+                "index": 44214
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PPL103",
+                "index": 74237
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PPL103",
+                "index": 20051
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PPL103",
+                "index": 104602
+              },
+              {
+                "token": "around-target:r:self:p:-2,-1",
+                "group": "PPL103",
+                "index": 120353
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PPL103",
+                "index": 15072
+              },
+              {
+                "token": "capture:p",
+                "group": "PPL103",
+                "index": 41856
+              },
+              {
+                "token": "castle:-",
+                "group": "PPL103",
+                "index": 42008
+              },
+              {
+                "token": "ep:-",
+                "group": "PPL103",
+                "index": 121343
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PPL103",
+                "index": 45965
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PPL103",
+                "index": 128058
+              },
+              {
+                "token": "repetition:1",
+                "group": "PPL103",
+                "index": 77784
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PPL103",
+                "index": 32958
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PPL103",
+                "index": 48213
+              }
+            ],
+            "stimulation": [
+              {
+                "index": 14641,
+                "current": 1.5
+              },
+              {
+                "index": 31754,
+                "current": 1.5
+              },
+              {
+                "index": 32958,
+                "current": 1.5
+              },
+              {
+                "index": 34946,
+                "current": 1.5
+              },
+              {
+                "index": 41522,
+                "current": 1.5
+              },
+              {
+                "index": 44214,
+                "current": 1.5
+              },
+              {
+                "index": 61395,
+                "current": 1.5
+              },
+              {
+                "index": 74237,
+                "current": 1.5
+              },
+              {
+                "index": 76431,
+                "current": 1.5
+              },
+              {
+                "index": 77784,
+                "current": 1.5
+              },
+              {
+                "index": 106227,
+                "current": 1.5
+              },
+              {
+                "index": 113942,
+                "current": 1.5
+              },
+              {
+                "index": 121343,
+                "current": 1.5
+              },
+              {
+                "index": 128058,
+                "current": 1.5
+              }
+            ],
+            "accounting": {
+              "featureCount": 21,
+              "assignments": 42,
+              "stimulatedCells": 14,
+              "collisions": 4,
+              "droppedFeatures": 26,
+              "totalCurrent": 21,
+              "currentPerCell": 1.5,
+              "poolCells": 693
+            },
+            "interface": "Unfitted candidate-conjunction/eligible-pool projection comparison; no outcomes, whole-position IDs or natural vision",
+            "baseIdentity": "c5a2ed5abc5a521b6513d7114ac8be5d41ac38101d6fea2c05a95504563d1b42",
+            "projection": {
+              "conjoin": false,
+              "stratify": true,
+              "quota": 7,
+              "coverage": {
+                "PAM02": 8,
+                "PPL103": 12
+              },
+              "selectionOrder": [
+                "PAM02",
+                "PPL103"
+              ],
+              "pools": {
+                "PAM02": 84,
+                "PPL103": 664
+              },
+              "meaning": "Eligible pools may overlap; quotas designate selection origin, not independent anatomical compartments"
+            }
+          }
+        },
+        {
+          "fen": "6k1/8/8/8/p1P4r/8/8/RK6 w - - 0 1",
+          "blocker": "c4",
+          "recapture": false,
+          "cue": {
+            "schema": "compartment-chess-cue-v1",
+            "identity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+            "move": "a1a4",
+            "actor": "w",
+            "fen": "6k1/8/8/8/p1P4r/8/8/RK6 w - - 0 1",
+            "historyPlies": 0,
+            "repetitions": 1,
+            "tokens": [
+              "action:r:0,3:-",
+              "around-origin:r:0,3:-:opponent:k:-6,7",
+              "around-origin:r:0,3:-:opponent:p:0,3",
+              "around-origin:r:0,3:-:opponent:r:-7,3",
+              "around-origin:r:0,3:-:self:k:-1,0",
+              "around-origin:r:0,3:-:self:p:-2,3",
+              "around-origin:r:0,3:-:self:r:0,0",
+              "around-target:r:opponent:k:-6,4",
+              "around-target:r:opponent:p:0,0",
+              "around-target:r:opponent:r:-7,0",
+              "around-target:r:self:k:-1,-3",
+              "around-target:r:self:p:-2,0",
+              "around-target:r:self:r:0,-3",
+              "capture:p",
+              "castle:-",
+              "ep:-",
+              "halfmove:0",
+              "origin-walls:7,0,0,7",
+              "repetition:1",
+              "target-walls:7,0,3,4",
+              "task:forced-mate:3"
+            ],
+            "assignments": [
+              {
+                "token": "action:r:0,3:-",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PAM02",
+                "index": 10607
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PAM02",
+                "index": 106227
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PAM02",
+                "index": 111135
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-2,3",
+                "group": "PAM02",
+                "index": 103207
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PAM02",
+                "index": 90824
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PAM02",
+                "index": 41522
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PAM02",
+                "index": 84768
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-target:r:self:p:-2,0",
+                "group": "PAM02",
+                "index": 111135
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PAM02",
+                "index": 42227
+              },
+              {
+                "token": "capture:p",
+                "group": "PAM02",
+                "index": 113942
+              },
+              {
+                "token": "castle:-",
+                "group": "PAM02",
+                "index": 116202
+              },
+              {
+                "token": "ep:-",
+                "group": "PAM02",
+                "index": 31754
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PAM02",
+                "index": 80177
+              },
+              {
+                "token": "repetition:1",
+                "group": "PAM02",
+                "index": 14641
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PAM02",
+                "index": 128104
+              },
+              {
+                "token": "action:r:0,3:-",
+                "group": "PPL103",
+                "index": 15597
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PPL103",
+                "index": 103169
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PPL103",
+                "index": 92454
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PPL103",
+                "index": 34946
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PPL103",
+                "index": 3785
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-2,3",
+                "group": "PPL103",
+                "index": 84792
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PPL103",
+                "index": 58598
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PPL103",
+                "index": 44214
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PPL103",
+                "index": 74237
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PPL103",
+                "index": 20051
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PPL103",
+                "index": 104602
+              },
+              {
+                "token": "around-target:r:self:p:-2,0",
+                "group": "PPL103",
+                "index": 103599
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PPL103",
+                "index": 15072
+              },
+              {
+                "token": "capture:p",
+                "group": "PPL103",
+                "index": 41856
+              },
+              {
+                "token": "castle:-",
+                "group": "PPL103",
+                "index": 42008
+              },
+              {
+                "token": "ep:-",
+                "group": "PPL103",
+                "index": 121343
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PPL103",
+                "index": 45965
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PPL103",
+                "index": 128058
+              },
+              {
+                "token": "repetition:1",
+                "group": "PPL103",
+                "index": 77784
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PPL103",
+                "index": 32958
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PPL103",
+                "index": 48213
+              }
+            ],
+            "stimulation": [
+              {
+                "index": 14641,
+                "current": 1.5
+              },
+              {
+                "index": 31754,
+                "current": 1.5
+              },
+              {
+                "index": 34946,
+                "current": 1.5
+              },
+              {
+                "index": 41522,
+                "current": 1.5
+              },
+              {
+                "index": 44214,
+                "current": 1.5
+              },
+              {
+                "index": 61395,
+                "current": 1.5
+              },
+              {
+                "index": 74237,
+                "current": 1.5
+              },
+              {
+                "index": 76431,
+                "current": 1.5
+              },
+              {
+                "index": 77784,
+                "current": 1.5
+              },
+              {
+                "index": 84792,
+                "current": 1.5
+              },
+              {
+                "index": 106227,
+                "current": 1.5
+              },
+              {
+                "index": 113942,
+                "current": 1.5
+              },
+              {
+                "index": 121343,
+                "current": 1.5
+              },
+              {
+                "index": 128058,
+                "current": 1.5
+              }
+            ],
+            "accounting": {
+              "featureCount": 21,
+              "assignments": 42,
+              "stimulatedCells": 14,
+              "collisions": 4,
+              "droppedFeatures": 26,
+              "totalCurrent": 21,
+              "currentPerCell": 1.5,
+              "poolCells": 693
+            },
+            "interface": "Unfitted candidate-conjunction/eligible-pool projection comparison; no outcomes, whole-position IDs or natural vision",
+            "baseIdentity": "c5a2ed5abc5a521b6513d7114ac8be5d41ac38101d6fea2c05a95504563d1b42",
+            "projection": {
+              "conjoin": false,
+              "stratify": true,
+              "quota": 7,
+              "coverage": {
+                "PAM02": 8,
+                "PPL103": 12
+              },
+              "selectionOrder": [
+                "PAM02",
+                "PPL103"
+              ],
+              "pools": {
+                "PAM02": 84,
+                "PPL103": 664
+              },
+              "meaning": "Eligible pools may overlap; quotas designate selection origin, not independent anatomical compartments"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "file": "d",
+      "identicalInput": false,
+      "changedTokens": [
+        "around-origin:r:0,3:-:self:p:-3,2",
+        "around-target:r:self:p:-3,-1",
+        "around-origin:r:0,3:-:self:p:-3,3",
+        "around-target:r:self:p:-3,0"
+      ],
+      "changedTokensRetained": [
+        [
+          "around-origin:r:0,3:-:self:p:-3,2"
+        ],
+        []
+      ],
+      "cases": [
+        {
+          "fen": "6k1/8/8/8/p6r/3P4/8/RK6 w - - 0 1",
+          "blocker": "d3",
+          "recapture": true,
+          "cue": {
+            "schema": "compartment-chess-cue-v1",
+            "identity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+            "move": "a1a4",
+            "actor": "w",
+            "fen": "6k1/8/8/8/p6r/3P4/8/RK6 w - - 0 1",
+            "historyPlies": 0,
+            "repetitions": 1,
+            "tokens": [
+              "action:r:0,3:-",
+              "around-origin:r:0,3:-:opponent:k:-6,7",
+              "around-origin:r:0,3:-:opponent:p:0,3",
+              "around-origin:r:0,3:-:opponent:r:-7,3",
+              "around-origin:r:0,3:-:self:k:-1,0",
+              "around-origin:r:0,3:-:self:p:-3,2",
+              "around-origin:r:0,3:-:self:r:0,0",
+              "around-target:r:opponent:k:-6,4",
+              "around-target:r:opponent:p:0,0",
+              "around-target:r:opponent:r:-7,0",
+              "around-target:r:self:k:-1,-3",
+              "around-target:r:self:p:-3,-1",
+              "around-target:r:self:r:0,-3",
+              "capture:p",
+              "castle:-",
+              "ep:-",
+              "halfmove:0",
+              "origin-walls:7,0,0,7",
+              "repetition:1",
+              "target-walls:7,0,3,4",
+              "task:forced-mate:3"
+            ],
+            "assignments": [
+              {
+                "token": "action:r:0,3:-",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PAM02",
+                "index": 10607
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PAM02",
+                "index": 106227
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PAM02",
+                "index": 111135
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-3,2",
+                "group": "PAM02",
+                "index": 130001
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PAM02",
+                "index": 90824
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PAM02",
+                "index": 41522
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PAM02",
+                "index": 84768
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-target:r:self:p:-3,-1",
+                "group": "PAM02",
+                "index": 10607
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PAM02",
+                "index": 42227
+              },
+              {
+                "token": "capture:p",
+                "group": "PAM02",
+                "index": 113942
+              },
+              {
+                "token": "castle:-",
+                "group": "PAM02",
+                "index": 116202
+              },
+              {
+                "token": "ep:-",
+                "group": "PAM02",
+                "index": 31754
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PAM02",
+                "index": 80177
+              },
+              {
+                "token": "repetition:1",
+                "group": "PAM02",
+                "index": 14641
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PAM02",
+                "index": 128104
+              },
+              {
+                "token": "action:r:0,3:-",
+                "group": "PPL103",
+                "index": 15597
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PPL103",
+                "index": 103169
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PPL103",
+                "index": 92454
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PPL103",
+                "index": 34946
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PPL103",
+                "index": 3785
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-3,2",
+                "group": "PPL103",
+                "index": 31551
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PPL103",
+                "index": 58598
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PPL103",
+                "index": 44214
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PPL103",
+                "index": 74237
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PPL103",
+                "index": 20051
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PPL103",
+                "index": 104602
+              },
+              {
+                "token": "around-target:r:self:p:-3,-1",
+                "group": "PPL103",
+                "index": 19307
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PPL103",
+                "index": 15072
+              },
+              {
+                "token": "capture:p",
+                "group": "PPL103",
+                "index": 41856
+              },
+              {
+                "token": "castle:-",
+                "group": "PPL103",
+                "index": 42008
+              },
+              {
+                "token": "ep:-",
+                "group": "PPL103",
+                "index": 121343
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PPL103",
+                "index": 45965
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PPL103",
+                "index": 128058
+              },
+              {
+                "token": "repetition:1",
+                "group": "PPL103",
+                "index": 77784
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PPL103",
+                "index": 32958
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PPL103",
+                "index": 48213
+              }
+            ],
+            "stimulation": [
+              {
+                "index": 14641,
+                "current": 1.5
+              },
+              {
+                "index": 32958,
+                "current": 1.5
+              },
+              {
+                "index": 34946,
+                "current": 1.5
+              },
+              {
+                "index": 41522,
+                "current": 1.5
+              },
+              {
+                "index": 44214,
+                "current": 1.5
+              },
+              {
+                "index": 61395,
+                "current": 1.5
+              },
+              {
+                "index": 74237,
+                "current": 1.5
+              },
+              {
+                "index": 76431,
+                "current": 1.5
+              },
+              {
+                "index": 77784,
+                "current": 1.5
+              },
+              {
+                "index": 106227,
+                "current": 1.5
+              },
+              {
+                "index": 113942,
+                "current": 1.5
+              },
+              {
+                "index": 121343,
+                "current": 1.5
+              },
+              {
+                "index": 128058,
+                "current": 1.5
+              },
+              {
+                "index": 130001,
+                "current": 1.5
+              }
+            ],
+            "accounting": {
+              "featureCount": 21,
+              "assignments": 42,
+              "stimulatedCells": 14,
+              "collisions": 4,
+              "droppedFeatures": 26,
+              "totalCurrent": 21,
+              "currentPerCell": 1.5,
+              "poolCells": 693
+            },
+            "interface": "Unfitted candidate-conjunction/eligible-pool projection comparison; no outcomes, whole-position IDs or natural vision",
+            "baseIdentity": "c5a2ed5abc5a521b6513d7114ac8be5d41ac38101d6fea2c05a95504563d1b42",
+            "projection": {
+              "conjoin": false,
+              "stratify": true,
+              "quota": 7,
+              "coverage": {
+                "PAM02": 8,
+                "PPL103": 12
+              },
+              "selectionOrder": [
+                "PAM02",
+                "PPL103"
+              ],
+              "pools": {
+                "PAM02": 84,
+                "PPL103": 664
+              },
+              "meaning": "Eligible pools may overlap; quotas designate selection origin, not independent anatomical compartments"
+            }
+          }
+        },
+        {
+          "fen": "6k1/8/8/8/p2P3r/8/8/RK6 w - - 0 1",
+          "blocker": "d4",
+          "recapture": false,
+          "cue": {
+            "schema": "compartment-chess-cue-v1",
+            "identity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+            "move": "a1a4",
+            "actor": "w",
+            "fen": "6k1/8/8/8/p2P3r/8/8/RK6 w - - 0 1",
+            "historyPlies": 0,
+            "repetitions": 1,
+            "tokens": [
+              "action:r:0,3:-",
+              "around-origin:r:0,3:-:opponent:k:-6,7",
+              "around-origin:r:0,3:-:opponent:p:0,3",
+              "around-origin:r:0,3:-:opponent:r:-7,3",
+              "around-origin:r:0,3:-:self:k:-1,0",
+              "around-origin:r:0,3:-:self:p:-3,3",
+              "around-origin:r:0,3:-:self:r:0,0",
+              "around-target:r:opponent:k:-6,4",
+              "around-target:r:opponent:p:0,0",
+              "around-target:r:opponent:r:-7,0",
+              "around-target:r:self:k:-1,-3",
+              "around-target:r:self:p:-3,0",
+              "around-target:r:self:r:0,-3",
+              "capture:p",
+              "castle:-",
+              "ep:-",
+              "halfmove:0",
+              "origin-walls:7,0,0,7",
+              "repetition:1",
+              "target-walls:7,0,3,4",
+              "task:forced-mate:3"
+            ],
+            "assignments": [
+              {
+                "token": "action:r:0,3:-",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PAM02",
+                "index": 10607
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PAM02",
+                "index": 106227
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PAM02",
+                "index": 111135
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-3,3",
+                "group": "PAM02",
+                "index": 37906
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PAM02",
+                "index": 90824
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PAM02",
+                "index": 41522
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PAM02",
+                "index": 84768
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-target:r:self:p:-3,0",
+                "group": "PAM02",
+                "index": 80666
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PAM02",
+                "index": 42227
+              },
+              {
+                "token": "capture:p",
+                "group": "PAM02",
+                "index": 113942
+              },
+              {
+                "token": "castle:-",
+                "group": "PAM02",
+                "index": 116202
+              },
+              {
+                "token": "ep:-",
+                "group": "PAM02",
+                "index": 31754
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PAM02",
+                "index": 80177
+              },
+              {
+                "token": "repetition:1",
+                "group": "PAM02",
+                "index": 14641
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PAM02",
+                "index": 128104
+              },
+              {
+                "token": "action:r:0,3:-",
+                "group": "PPL103",
+                "index": 15597
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PPL103",
+                "index": 103169
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PPL103",
+                "index": 92454
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PPL103",
+                "index": 34946
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PPL103",
+                "index": 3785
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-3,3",
+                "group": "PPL103",
+                "index": 133784
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PPL103",
+                "index": 58598
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PPL103",
+                "index": 44214
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PPL103",
+                "index": 74237
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PPL103",
+                "index": 20051
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PPL103",
+                "index": 104602
+              },
+              {
+                "token": "around-target:r:self:p:-3,0",
+                "group": "PPL103",
+                "index": 129867
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PPL103",
+                "index": 15072
+              },
+              {
+                "token": "capture:p",
+                "group": "PPL103",
+                "index": 41856
+              },
+              {
+                "token": "castle:-",
+                "group": "PPL103",
+                "index": 42008
+              },
+              {
+                "token": "ep:-",
+                "group": "PPL103",
+                "index": 121343
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PPL103",
+                "index": 45965
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PPL103",
+                "index": 128058
+              },
+              {
+                "token": "repetition:1",
+                "group": "PPL103",
+                "index": 77784
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PPL103",
+                "index": 32958
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PPL103",
+                "index": 48213
+              }
+            ],
+            "stimulation": [
+              {
+                "index": 14641,
+                "current": 1.5
+              },
+              {
+                "index": 31754,
+                "current": 1.5
+              },
+              {
+                "index": 32958,
+                "current": 1.5
+              },
+              {
+                "index": 34946,
+                "current": 1.5
+              },
+              {
+                "index": 41522,
+                "current": 1.5
+              },
+              {
+                "index": 44214,
+                "current": 1.5
+              },
+              {
+                "index": 61395,
+                "current": 1.5
+              },
+              {
+                "index": 74237,
+                "current": 1.5
+              },
+              {
+                "index": 76431,
+                "current": 1.5
+              },
+              {
+                "index": 77784,
+                "current": 1.5
+              },
+              {
+                "index": 106227,
+                "current": 1.5
+              },
+              {
+                "index": 113942,
+                "current": 1.5
+              },
+              {
+                "index": 121343,
+                "current": 1.5
+              },
+              {
+                "index": 128058,
+                "current": 1.5
+              }
+            ],
+            "accounting": {
+              "featureCount": 21,
+              "assignments": 42,
+              "stimulatedCells": 14,
+              "collisions": 3,
+              "droppedFeatures": 26,
+              "totalCurrent": 21,
+              "currentPerCell": 1.5,
+              "poolCells": 693
+            },
+            "interface": "Unfitted candidate-conjunction/eligible-pool projection comparison; no outcomes, whole-position IDs or natural vision",
+            "baseIdentity": "c5a2ed5abc5a521b6513d7114ac8be5d41ac38101d6fea2c05a95504563d1b42",
+            "projection": {
+              "conjoin": false,
+              "stratify": true,
+              "quota": 7,
+              "coverage": {
+                "PAM02": 8,
+                "PPL103": 12
+              },
+              "selectionOrder": [
+                "PAM02",
+                "PPL103"
+              ],
+              "pools": {
+                "PAM02": 84,
+                "PPL103": 664
+              },
+              "meaning": "Eligible pools may overlap; quotas designate selection origin, not independent anatomical compartments"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "file": "e",
+      "identicalInput": false,
+      "changedTokens": [
+        "around-origin:r:0,3:-:self:p:-4,2",
+        "around-target:r:self:p:-4,-1",
+        "around-origin:r:0,3:-:self:p:-4,3",
+        "around-target:r:self:p:-4,0"
+      ],
+      "changedTokensRetained": [
+        [],
+        [
+          "around-origin:r:0,3:-:self:p:-4,3",
+          "around-target:r:self:p:-4,0"
+        ]
+      ],
+      "cases": [
+        {
+          "fen": "6k1/8/8/8/p6r/4P3/8/RK6 w - - 0 1",
+          "blocker": "e3",
+          "recapture": true,
+          "cue": {
+            "schema": "compartment-chess-cue-v1",
+            "identity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+            "move": "a1a4",
+            "actor": "w",
+            "fen": "6k1/8/8/8/p6r/4P3/8/RK6 w - - 0 1",
+            "historyPlies": 0,
+            "repetitions": 1,
+            "tokens": [
+              "action:r:0,3:-",
+              "around-origin:r:0,3:-:opponent:k:-6,7",
+              "around-origin:r:0,3:-:opponent:p:0,3",
+              "around-origin:r:0,3:-:opponent:r:-7,3",
+              "around-origin:r:0,3:-:self:k:-1,0",
+              "around-origin:r:0,3:-:self:p:-4,2",
+              "around-origin:r:0,3:-:self:r:0,0",
+              "around-target:r:opponent:k:-6,4",
+              "around-target:r:opponent:p:0,0",
+              "around-target:r:opponent:r:-7,0",
+              "around-target:r:self:k:-1,-3",
+              "around-target:r:self:p:-4,-1",
+              "around-target:r:self:r:0,-3",
+              "capture:p",
+              "castle:-",
+              "ep:-",
+              "halfmove:0",
+              "origin-walls:7,0,0,7",
+              "repetition:1",
+              "target-walls:7,0,3,4",
+              "task:forced-mate:3"
+            ],
+            "assignments": [
+              {
+                "token": "action:r:0,3:-",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PAM02",
+                "index": 10607
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PAM02",
+                "index": 106227
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PAM02",
+                "index": 111135
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-4,2",
+                "group": "PAM02",
+                "index": 103207
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PAM02",
+                "index": 90824
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PAM02",
+                "index": 41522
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PAM02",
+                "index": 84768
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-target:r:self:p:-4,-1",
+                "group": "PAM02",
+                "index": 17866
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PAM02",
+                "index": 42227
+              },
+              {
+                "token": "capture:p",
+                "group": "PAM02",
+                "index": 113942
+              },
+              {
+                "token": "castle:-",
+                "group": "PAM02",
+                "index": 116202
+              },
+              {
+                "token": "ep:-",
+                "group": "PAM02",
+                "index": 31754
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PAM02",
+                "index": 80177
+              },
+              {
+                "token": "repetition:1",
+                "group": "PAM02",
+                "index": 14641
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PAM02",
+                "index": 128104
+              },
+              {
+                "token": "action:r:0,3:-",
+                "group": "PPL103",
+                "index": 15597
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PPL103",
+                "index": 103169
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PPL103",
+                "index": 92454
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PPL103",
+                "index": 34946
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PPL103",
+                "index": 3785
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-4,2",
+                "group": "PPL103",
+                "index": 95409
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PPL103",
+                "index": 58598
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PPL103",
+                "index": 44214
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PPL103",
+                "index": 74237
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PPL103",
+                "index": 20051
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PPL103",
+                "index": 104602
+              },
+              {
+                "token": "around-target:r:self:p:-4,-1",
+                "group": "PPL103",
+                "index": 21952
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PPL103",
+                "index": 15072
+              },
+              {
+                "token": "capture:p",
+                "group": "PPL103",
+                "index": 41856
+              },
+              {
+                "token": "castle:-",
+                "group": "PPL103",
+                "index": 42008
+              },
+              {
+                "token": "ep:-",
+                "group": "PPL103",
+                "index": 121343
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PPL103",
+                "index": 45965
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PPL103",
+                "index": 128058
+              },
+              {
+                "token": "repetition:1",
+                "group": "PPL103",
+                "index": 77784
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PPL103",
+                "index": 32958
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PPL103",
+                "index": 48213
+              }
+            ],
+            "stimulation": [
+              {
+                "index": 14641,
+                "current": 1.5
+              },
+              {
+                "index": 31754,
+                "current": 1.5
+              },
+              {
+                "index": 32958,
+                "current": 1.5
+              },
+              {
+                "index": 34946,
+                "current": 1.5
+              },
+              {
+                "index": 41522,
+                "current": 1.5
+              },
+              {
+                "index": 44214,
+                "current": 1.5
+              },
+              {
+                "index": 61395,
+                "current": 1.5
+              },
+              {
+                "index": 74237,
+                "current": 1.5
+              },
+              {
+                "index": 76431,
+                "current": 1.5
+              },
+              {
+                "index": 77784,
+                "current": 1.5
+              },
+              {
+                "index": 106227,
+                "current": 1.5
+              },
+              {
+                "index": 113942,
+                "current": 1.5
+              },
+              {
+                "index": 121343,
+                "current": 1.5
+              },
+              {
+                "index": 128058,
+                "current": 1.5
+              }
+            ],
+            "accounting": {
+              "featureCount": 21,
+              "assignments": 42,
+              "stimulatedCells": 14,
+              "collisions": 3,
+              "droppedFeatures": 26,
+              "totalCurrent": 21,
+              "currentPerCell": 1.5,
+              "poolCells": 693
+            },
+            "interface": "Unfitted candidate-conjunction/eligible-pool projection comparison; no outcomes, whole-position IDs or natural vision",
+            "baseIdentity": "c5a2ed5abc5a521b6513d7114ac8be5d41ac38101d6fea2c05a95504563d1b42",
+            "projection": {
+              "conjoin": false,
+              "stratify": true,
+              "quota": 7,
+              "coverage": {
+                "PAM02": 8,
+                "PPL103": 12
+              },
+              "selectionOrder": [
+                "PAM02",
+                "PPL103"
+              ],
+              "pools": {
+                "PAM02": 84,
+                "PPL103": 664
+              },
+              "meaning": "Eligible pools may overlap; quotas designate selection origin, not independent anatomical compartments"
+            }
+          }
+        },
+        {
+          "fen": "6k1/8/8/8/p3P2r/8/8/RK6 w - - 0 1",
+          "blocker": "e4",
+          "recapture": false,
+          "cue": {
+            "schema": "compartment-chess-cue-v1",
+            "identity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+            "move": "a1a4",
+            "actor": "w",
+            "fen": "6k1/8/8/8/p3P2r/8/8/RK6 w - - 0 1",
+            "historyPlies": 0,
+            "repetitions": 1,
+            "tokens": [
+              "action:r:0,3:-",
+              "around-origin:r:0,3:-:opponent:k:-6,7",
+              "around-origin:r:0,3:-:opponent:p:0,3",
+              "around-origin:r:0,3:-:opponent:r:-7,3",
+              "around-origin:r:0,3:-:self:k:-1,0",
+              "around-origin:r:0,3:-:self:p:-4,3",
+              "around-origin:r:0,3:-:self:r:0,0",
+              "around-target:r:opponent:k:-6,4",
+              "around-target:r:opponent:p:0,0",
+              "around-target:r:opponent:r:-7,0",
+              "around-target:r:self:k:-1,-3",
+              "around-target:r:self:p:-4,0",
+              "around-target:r:self:r:0,-3",
+              "capture:p",
+              "castle:-",
+              "ep:-",
+              "halfmove:0",
+              "origin-walls:7,0,0,7",
+              "repetition:1",
+              "target-walls:7,0,3,4",
+              "task:forced-mate:3"
+            ],
+            "assignments": [
+              {
+                "token": "action:r:0,3:-",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PAM02",
+                "index": 10607
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PAM02",
+                "index": 106227
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PAM02",
+                "index": 111135
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-4,3",
+                "group": "PAM02",
+                "index": 44927
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PAM02",
+                "index": 90824
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PAM02",
+                "index": 41522
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PAM02",
+                "index": 84768
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-target:r:self:p:-4,0",
+                "group": "PAM02",
+                "index": 130512
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PAM02",
+                "index": 42227
+              },
+              {
+                "token": "capture:p",
+                "group": "PAM02",
+                "index": 113942
+              },
+              {
+                "token": "castle:-",
+                "group": "PAM02",
+                "index": 116202
+              },
+              {
+                "token": "ep:-",
+                "group": "PAM02",
+                "index": 31754
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PAM02",
+                "index": 80177
+              },
+              {
+                "token": "repetition:1",
+                "group": "PAM02",
+                "index": 14641
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PAM02",
+                "index": 128104
+              },
+              {
+                "token": "action:r:0,3:-",
+                "group": "PPL103",
+                "index": 15597
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PPL103",
+                "index": 103169
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PPL103",
+                "index": 92454
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PPL103",
+                "index": 34946
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PPL103",
+                "index": 3785
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-4,3",
+                "group": "PPL103",
+                "index": 49292
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PPL103",
+                "index": 58598
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PPL103",
+                "index": 44214
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PPL103",
+                "index": 74237
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PPL103",
+                "index": 20051
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PPL103",
+                "index": 104602
+              },
+              {
+                "token": "around-target:r:self:p:-4,0",
+                "group": "PPL103",
+                "index": 124006
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PPL103",
+                "index": 15072
+              },
+              {
+                "token": "capture:p",
+                "group": "PPL103",
+                "index": 41856
+              },
+              {
+                "token": "castle:-",
+                "group": "PPL103",
+                "index": 42008
+              },
+              {
+                "token": "ep:-",
+                "group": "PPL103",
+                "index": 121343
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PPL103",
+                "index": 45965
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PPL103",
+                "index": 128058
+              },
+              {
+                "token": "repetition:1",
+                "group": "PPL103",
+                "index": 77784
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PPL103",
+                "index": 32958
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PPL103",
+                "index": 48213
+              }
+            ],
+            "stimulation": [
+              {
+                "index": 14641,
+                "current": 1.5
+              },
+              {
+                "index": 32958,
+                "current": 1.5
+              },
+              {
+                "index": 34946,
+                "current": 1.5
+              },
+              {
+                "index": 44214,
+                "current": 1.5
+              },
+              {
+                "index": 44927,
+                "current": 1.5
+              },
+              {
+                "index": 61395,
+                "current": 1.5
+              },
+              {
+                "index": 74237,
+                "current": 1.5
+              },
+              {
+                "index": 76431,
+                "current": 1.5
+              },
+              {
+                "index": 77784,
+                "current": 1.5
+              },
+              {
+                "index": 106227,
+                "current": 1.5
+              },
+              {
+                "index": 113942,
+                "current": 1.5
+              },
+              {
+                "index": 121343,
+                "current": 1.5
+              },
+              {
+                "index": 128058,
+                "current": 1.5
+              },
+              {
+                "index": 130512,
+                "current": 1.5
+              }
+            ],
+            "accounting": {
+              "featureCount": 21,
+              "assignments": 42,
+              "stimulatedCells": 14,
+              "collisions": 3,
+              "droppedFeatures": 26,
+              "totalCurrent": 21,
+              "currentPerCell": 1.5,
+              "poolCells": 693
+            },
+            "interface": "Unfitted candidate-conjunction/eligible-pool projection comparison; no outcomes, whole-position IDs or natural vision",
+            "baseIdentity": "c5a2ed5abc5a521b6513d7114ac8be5d41ac38101d6fea2c05a95504563d1b42",
+            "projection": {
+              "conjoin": false,
+              "stratify": true,
+              "quota": 7,
+              "coverage": {
+                "PAM02": 8,
+                "PPL103": 12
+              },
+              "selectionOrder": [
+                "PAM02",
+                "PPL103"
+              ],
+              "pools": {
+                "PAM02": 84,
+                "PPL103": 664
+              },
+              "meaning": "Eligible pools may overlap; quotas designate selection origin, not independent anatomical compartments"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "file": "f",
+      "identicalInput": false,
+      "changedTokens": [
+        "around-origin:r:0,3:-:self:p:-5,2",
+        "around-target:r:self:p:-5,-1",
+        "around-origin:r:0,3:-:self:p:-5,3",
+        "around-target:r:self:p:-5,0"
+      ],
+      "changedTokensRetained": [
+        [
+          "around-target:r:self:p:-5,-1"
+        ],
+        [
+          "around-origin:r:0,3:-:self:p:-5,3",
+          "around-origin:r:0,3:-:self:p:-5,3"
+        ]
+      ],
+      "cases": [
+        {
+          "fen": "6k1/8/8/8/p6r/5P2/8/RK6 w - - 0 1",
+          "blocker": "f3",
+          "recapture": true,
+          "cue": {
+            "schema": "compartment-chess-cue-v1",
+            "identity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+            "move": "a1a4",
+            "actor": "w",
+            "fen": "6k1/8/8/8/p6r/5P2/8/RK6 w - - 0 1",
+            "historyPlies": 0,
+            "repetitions": 1,
+            "tokens": [
+              "action:r:0,3:-",
+              "around-origin:r:0,3:-:opponent:k:-6,7",
+              "around-origin:r:0,3:-:opponent:p:0,3",
+              "around-origin:r:0,3:-:opponent:r:-7,3",
+              "around-origin:r:0,3:-:self:k:-1,0",
+              "around-origin:r:0,3:-:self:p:-5,2",
+              "around-origin:r:0,3:-:self:r:0,0",
+              "around-target:r:opponent:k:-6,4",
+              "around-target:r:opponent:p:0,0",
+              "around-target:r:opponent:r:-7,0",
+              "around-target:r:self:k:-1,-3",
+              "around-target:r:self:p:-5,-1",
+              "around-target:r:self:r:0,-3",
+              "capture:p",
+              "castle:-",
+              "ep:-",
+              "halfmove:0",
+              "origin-walls:7,0,0,7",
+              "repetition:1",
+              "target-walls:7,0,3,4",
+              "task:forced-mate:3"
+            ],
+            "assignments": [
+              {
+                "token": "action:r:0,3:-",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PAM02",
+                "index": 10607
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PAM02",
+                "index": 106227
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PAM02",
+                "index": 111135
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-5,2",
+                "group": "PAM02",
+                "index": 112744
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PAM02",
+                "index": 90824
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PAM02",
+                "index": 41522
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PAM02",
+                "index": 84768
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-target:r:self:p:-5,-1",
+                "group": "PAM02",
+                "index": 129108
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PAM02",
+                "index": 42227
+              },
+              {
+                "token": "capture:p",
+                "group": "PAM02",
+                "index": 113942
+              },
+              {
+                "token": "castle:-",
+                "group": "PAM02",
+                "index": 116202
+              },
+              {
+                "token": "ep:-",
+                "group": "PAM02",
+                "index": 31754
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PAM02",
+                "index": 80177
+              },
+              {
+                "token": "repetition:1",
+                "group": "PAM02",
+                "index": 14641
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PAM02",
+                "index": 128104
+              },
+              {
+                "token": "action:r:0,3:-",
+                "group": "PPL103",
+                "index": 15597
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PPL103",
+                "index": 103169
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PPL103",
+                "index": 92454
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PPL103",
+                "index": 34946
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PPL103",
+                "index": 3785
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-5,2",
+                "group": "PPL103",
+                "index": 62949
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PPL103",
+                "index": 58598
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PPL103",
+                "index": 44214
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PPL103",
+                "index": 74237
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PPL103",
+                "index": 20051
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PPL103",
+                "index": 104602
+              },
+              {
+                "token": "around-target:r:self:p:-5,-1",
+                "group": "PPL103",
+                "index": 24234
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PPL103",
+                "index": 15072
+              },
+              {
+                "token": "capture:p",
+                "group": "PPL103",
+                "index": 41856
+              },
+              {
+                "token": "castle:-",
+                "group": "PPL103",
+                "index": 42008
+              },
+              {
+                "token": "ep:-",
+                "group": "PPL103",
+                "index": 121343
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PPL103",
+                "index": 45965
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PPL103",
+                "index": 128058
+              },
+              {
+                "token": "repetition:1",
+                "group": "PPL103",
+                "index": 77784
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PPL103",
+                "index": 32958
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PPL103",
+                "index": 48213
+              }
+            ],
+            "stimulation": [
+              {
+                "index": 14641,
+                "current": 1.5
+              },
+              {
+                "index": 24234,
+                "current": 1.5
+              },
+              {
+                "index": 31754,
+                "current": 1.5
+              },
+              {
+                "index": 34946,
+                "current": 1.5
+              },
+              {
+                "index": 41522,
+                "current": 1.5
+              },
+              {
+                "index": 44214,
+                "current": 1.5
+              },
+              {
+                "index": 61395,
+                "current": 1.5
+              },
+              {
+                "index": 74237,
+                "current": 1.5
+              },
+              {
+                "index": 76431,
+                "current": 1.5
+              },
+              {
+                "index": 77784,
+                "current": 1.5
+              },
+              {
+                "index": 106227,
+                "current": 1.5
+              },
+              {
+                "index": 113942,
+                "current": 1.5
+              },
+              {
+                "index": 121343,
+                "current": 1.5
+              },
+              {
+                "index": 128058,
+                "current": 1.5
+              }
+            ],
+            "accounting": {
+              "featureCount": 21,
+              "assignments": 42,
+              "stimulatedCells": 14,
+              "collisions": 3,
+              "droppedFeatures": 26,
+              "totalCurrent": 21,
+              "currentPerCell": 1.5,
+              "poolCells": 693
+            },
+            "interface": "Unfitted candidate-conjunction/eligible-pool projection comparison; no outcomes, whole-position IDs or natural vision",
+            "baseIdentity": "c5a2ed5abc5a521b6513d7114ac8be5d41ac38101d6fea2c05a95504563d1b42",
+            "projection": {
+              "conjoin": false,
+              "stratify": true,
+              "quota": 7,
+              "coverage": {
+                "PAM02": 8,
+                "PPL103": 12
+              },
+              "selectionOrder": [
+                "PAM02",
+                "PPL103"
+              ],
+              "pools": {
+                "PAM02": 84,
+                "PPL103": 664
+              },
+              "meaning": "Eligible pools may overlap; quotas designate selection origin, not independent anatomical compartments"
+            }
+          }
+        },
+        {
+          "fen": "6k1/8/8/8/p4P1r/8/8/RK6 w - - 0 1",
+          "blocker": "f4",
+          "recapture": false,
+          "cue": {
+            "schema": "compartment-chess-cue-v1",
+            "identity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+            "move": "a1a4",
+            "actor": "w",
+            "fen": "6k1/8/8/8/p4P1r/8/8/RK6 w - - 0 1",
+            "historyPlies": 0,
+            "repetitions": 1,
+            "tokens": [
+              "action:r:0,3:-",
+              "around-origin:r:0,3:-:opponent:k:-6,7",
+              "around-origin:r:0,3:-:opponent:p:0,3",
+              "around-origin:r:0,3:-:opponent:r:-7,3",
+              "around-origin:r:0,3:-:self:k:-1,0",
+              "around-origin:r:0,3:-:self:p:-5,3",
+              "around-origin:r:0,3:-:self:r:0,0",
+              "around-target:r:opponent:k:-6,4",
+              "around-target:r:opponent:p:0,0",
+              "around-target:r:opponent:r:-7,0",
+              "around-target:r:self:k:-1,-3",
+              "around-target:r:self:p:-5,0",
+              "around-target:r:self:r:0,-3",
+              "capture:p",
+              "castle:-",
+              "ep:-",
+              "halfmove:0",
+              "origin-walls:7,0,0,7",
+              "repetition:1",
+              "target-walls:7,0,3,4",
+              "task:forced-mate:3"
+            ],
+            "assignments": [
+              {
+                "token": "action:r:0,3:-",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PAM02",
+                "index": 10607
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PAM02",
+                "index": 106227
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PAM02",
+                "index": 111135
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-5,3",
+                "group": "PAM02",
+                "index": 114030
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PAM02",
+                "index": 90824
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PAM02",
+                "index": 41522
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PAM02",
+                "index": 84768
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-target:r:self:p:-5,0",
+                "group": "PAM02",
+                "index": 73066
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PAM02",
+                "index": 42227
+              },
+              {
+                "token": "capture:p",
+                "group": "PAM02",
+                "index": 113942
+              },
+              {
+                "token": "castle:-",
+                "group": "PAM02",
+                "index": 116202
+              },
+              {
+                "token": "ep:-",
+                "group": "PAM02",
+                "index": 31754
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PAM02",
+                "index": 80177
+              },
+              {
+                "token": "repetition:1",
+                "group": "PAM02",
+                "index": 14641
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PAM02",
+                "index": 128104
+              },
+              {
+                "token": "action:r:0,3:-",
+                "group": "PPL103",
+                "index": 15597
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PPL103",
+                "index": 103169
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PPL103",
+                "index": 92454
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PPL103",
+                "index": 34946
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PPL103",
+                "index": 3785
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-5,3",
+                "group": "PPL103",
+                "index": 42837
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PPL103",
+                "index": 58598
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PPL103",
+                "index": 44214
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PPL103",
+                "index": 74237
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PPL103",
+                "index": 20051
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PPL103",
+                "index": 104602
+              },
+              {
+                "token": "around-target:r:self:p:-5,0",
+                "group": "PPL103",
+                "index": 70276
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PPL103",
+                "index": 15072
+              },
+              {
+                "token": "capture:p",
+                "group": "PPL103",
+                "index": 41856
+              },
+              {
+                "token": "castle:-",
+                "group": "PPL103",
+                "index": 42008
+              },
+              {
+                "token": "ep:-",
+                "group": "PPL103",
+                "index": 121343
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PPL103",
+                "index": 45965
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PPL103",
+                "index": 128058
+              },
+              {
+                "token": "repetition:1",
+                "group": "PPL103",
+                "index": 77784
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PPL103",
+                "index": 32958
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PPL103",
+                "index": 48213
+              }
+            ],
+            "stimulation": [
+              {
+                "index": 14641,
+                "current": 1.5
+              },
+              {
+                "index": 34946,
+                "current": 1.5
+              },
+              {
+                "index": 41522,
+                "current": 1.5
+              },
+              {
+                "index": 42837,
+                "current": 1.5
+              },
+              {
+                "index": 44214,
+                "current": 1.5
+              },
+              {
+                "index": 61395,
+                "current": 1.5
+              },
+              {
+                "index": 74237,
+                "current": 1.5
+              },
+              {
+                "index": 76431,
+                "current": 1.5
+              },
+              {
+                "index": 77784,
+                "current": 1.5
+              },
+              {
+                "index": 106227,
+                "current": 1.5
+              },
+              {
+                "index": 113942,
+                "current": 1.5
+              },
+              {
+                "index": 114030,
+                "current": 1.5
+              },
+              {
+                "index": 121343,
+                "current": 1.5
+              },
+              {
+                "index": 128058,
+                "current": 1.5
+              }
+            ],
+            "accounting": {
+              "featureCount": 21,
+              "assignments": 42,
+              "stimulatedCells": 14,
+              "collisions": 3,
+              "droppedFeatures": 26,
+              "totalCurrent": 21,
+              "currentPerCell": 1.5,
+              "poolCells": 693
+            },
+            "interface": "Unfitted candidate-conjunction/eligible-pool projection comparison; no outcomes, whole-position IDs or natural vision",
+            "baseIdentity": "c5a2ed5abc5a521b6513d7114ac8be5d41ac38101d6fea2c05a95504563d1b42",
+            "projection": {
+              "conjoin": false,
+              "stratify": true,
+              "quota": 7,
+              "coverage": {
+                "PAM02": 8,
+                "PPL103": 12
+              },
+              "selectionOrder": [
+                "PAM02",
+                "PPL103"
+              ],
+              "pools": {
+                "PAM02": 84,
+                "PPL103": 664
+              },
+              "meaning": "Eligible pools may overlap; quotas designate selection origin, not independent anatomical compartments"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "file": "g",
+      "identicalInput": false,
+      "changedTokens": [
+        "around-origin:r:0,3:-:self:p:-6,2",
+        "around-target:r:self:p:-6,-1",
+        "around-origin:r:0,3:-:self:p:-6,3",
+        "around-target:r:self:p:-6,0"
+      ],
+      "changedTokensRetained": [
+        [],
+        [
+          "around-origin:r:0,3:-:self:p:-6,3",
+          "around-target:r:self:p:-6,0"
+        ]
+      ],
+      "cases": [
+        {
+          "fen": "6k1/8/8/8/p6r/6P1/8/RK6 w - - 0 1",
+          "blocker": "g3",
+          "recapture": true,
+          "cue": {
+            "schema": "compartment-chess-cue-v1",
+            "identity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+            "move": "a1a4",
+            "actor": "w",
+            "fen": "6k1/8/8/8/p6r/6P1/8/RK6 w - - 0 1",
+            "historyPlies": 0,
+            "repetitions": 1,
+            "tokens": [
+              "action:r:0,3:-",
+              "around-origin:r:0,3:-:opponent:k:-6,7",
+              "around-origin:r:0,3:-:opponent:p:0,3",
+              "around-origin:r:0,3:-:opponent:r:-7,3",
+              "around-origin:r:0,3:-:self:k:-1,0",
+              "around-origin:r:0,3:-:self:p:-6,2",
+              "around-origin:r:0,3:-:self:r:0,0",
+              "around-target:r:opponent:k:-6,4",
+              "around-target:r:opponent:p:0,0",
+              "around-target:r:opponent:r:-7,0",
+              "around-target:r:self:k:-1,-3",
+              "around-target:r:self:p:-6,-1",
+              "around-target:r:self:r:0,-3",
+              "capture:p",
+              "castle:-",
+              "ep:-",
+              "halfmove:0",
+              "origin-walls:7,0,0,7",
+              "repetition:1",
+              "target-walls:7,0,3,4",
+              "task:forced-mate:3"
+            ],
+            "assignments": [
+              {
+                "token": "action:r:0,3:-",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PAM02",
+                "index": 10607
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PAM02",
+                "index": 106227
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PAM02",
+                "index": 111135
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-6,2",
+                "group": "PAM02",
+                "index": 129108
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PAM02",
+                "index": 90824
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PAM02",
+                "index": 41522
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PAM02",
+                "index": 84768
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-target:r:self:p:-6,-1",
+                "group": "PAM02",
+                "index": 80177
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PAM02",
+                "index": 42227
+              },
+              {
+                "token": "capture:p",
+                "group": "PAM02",
+                "index": 113942
+              },
+              {
+                "token": "castle:-",
+                "group": "PAM02",
+                "index": 116202
+              },
+              {
+                "token": "ep:-",
+                "group": "PAM02",
+                "index": 31754
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PAM02",
+                "index": 80177
+              },
+              {
+                "token": "repetition:1",
+                "group": "PAM02",
+                "index": 14641
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PAM02",
+                "index": 128104
+              },
+              {
+                "token": "action:r:0,3:-",
+                "group": "PPL103",
+                "index": 15597
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PPL103",
+                "index": 103169
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PPL103",
+                "index": 92454
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PPL103",
+                "index": 34946
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PPL103",
+                "index": 3785
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-6,2",
+                "group": "PPL103",
+                "index": 130408
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PPL103",
+                "index": 58598
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PPL103",
+                "index": 44214
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PPL103",
+                "index": 74237
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PPL103",
+                "index": 20051
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PPL103",
+                "index": 104602
+              },
+              {
+                "token": "around-target:r:self:p:-6,-1",
+                "group": "PPL103",
+                "index": 132216
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PPL103",
+                "index": 15072
+              },
+              {
+                "token": "capture:p",
+                "group": "PPL103",
+                "index": 41856
+              },
+              {
+                "token": "castle:-",
+                "group": "PPL103",
+                "index": 42008
+              },
+              {
+                "token": "ep:-",
+                "group": "PPL103",
+                "index": 121343
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PPL103",
+                "index": 45965
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PPL103",
+                "index": 128058
+              },
+              {
+                "token": "repetition:1",
+                "group": "PPL103",
+                "index": 77784
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PPL103",
+                "index": 32958
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PPL103",
+                "index": 48213
+              }
+            ],
+            "stimulation": [
+              {
+                "index": 14641,
+                "current": 1.5
+              },
+              {
+                "index": 31754,
+                "current": 1.5
+              },
+              {
+                "index": 32958,
+                "current": 1.5
+              },
+              {
+                "index": 34946,
+                "current": 1.5
+              },
+              {
+                "index": 41522,
+                "current": 1.5
+              },
+              {
+                "index": 44214,
+                "current": 1.5
+              },
+              {
+                "index": 61395,
+                "current": 1.5
+              },
+              {
+                "index": 74237,
+                "current": 1.5
+              },
+              {
+                "index": 76431,
+                "current": 1.5
+              },
+              {
+                "index": 77784,
+                "current": 1.5
+              },
+              {
+                "index": 106227,
+                "current": 1.5
+              },
+              {
+                "index": 113942,
+                "current": 1.5
+              },
+              {
+                "index": 121343,
+                "current": 1.5
+              },
+              {
+                "index": 128058,
+                "current": 1.5
+              }
+            ],
+            "accounting": {
+              "featureCount": 21,
+              "assignments": 42,
+              "stimulatedCells": 14,
+              "collisions": 4,
+              "droppedFeatures": 26,
+              "totalCurrent": 21,
+              "currentPerCell": 1.5,
+              "poolCells": 693
+            },
+            "interface": "Unfitted candidate-conjunction/eligible-pool projection comparison; no outcomes, whole-position IDs or natural vision",
+            "baseIdentity": "c5a2ed5abc5a521b6513d7114ac8be5d41ac38101d6fea2c05a95504563d1b42",
+            "projection": {
+              "conjoin": false,
+              "stratify": true,
+              "quota": 7,
+              "coverage": {
+                "PAM02": 8,
+                "PPL103": 12
+              },
+              "selectionOrder": [
+                "PAM02",
+                "PPL103"
+              ],
+              "pools": {
+                "PAM02": 84,
+                "PPL103": 664
+              },
+              "meaning": "Eligible pools may overlap; quotas designate selection origin, not independent anatomical compartments"
+            }
+          }
+        },
+        {
+          "fen": "6k1/8/8/8/p5Pr/8/8/RK6 w - - 0 1",
+          "blocker": "g4",
+          "recapture": false,
+          "cue": {
+            "schema": "compartment-chess-cue-v1",
+            "identity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+            "move": "a1a4",
+            "actor": "w",
+            "fen": "6k1/8/8/8/p5Pr/8/8/RK6 w - - 0 1",
+            "historyPlies": 0,
+            "repetitions": 1,
+            "tokens": [
+              "action:r:0,3:-",
+              "around-origin:r:0,3:-:opponent:k:-6,7",
+              "around-origin:r:0,3:-:opponent:p:0,3",
+              "around-origin:r:0,3:-:opponent:r:-7,3",
+              "around-origin:r:0,3:-:self:k:-1,0",
+              "around-origin:r:0,3:-:self:p:-6,3",
+              "around-origin:r:0,3:-:self:r:0,0",
+              "around-target:r:opponent:k:-6,4",
+              "around-target:r:opponent:p:0,0",
+              "around-target:r:opponent:r:-7,0",
+              "around-target:r:self:k:-1,-3",
+              "around-target:r:self:p:-6,0",
+              "around-target:r:self:r:0,-3",
+              "capture:p",
+              "castle:-",
+              "ep:-",
+              "halfmove:0",
+              "origin-walls:7,0,0,7",
+              "repetition:1",
+              "target-walls:7,0,3,4",
+              "task:forced-mate:3"
+            ],
+            "assignments": [
+              {
+                "token": "action:r:0,3:-",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PAM02",
+                "index": 10607
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PAM02",
+                "index": 106227
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PAM02",
+                "index": 111135
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-6,3",
+                "group": "PAM02",
+                "index": 103336
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PAM02",
+                "index": 90824
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PAM02",
+                "index": 41522
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PAM02",
+                "index": 84768
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PAM02",
+                "index": 61395
+              },
+              {
+                "token": "around-target:r:self:p:-6,0",
+                "group": "PAM02",
+                "index": 14641
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PAM02",
+                "index": 42227
+              },
+              {
+                "token": "capture:p",
+                "group": "PAM02",
+                "index": 113942
+              },
+              {
+                "token": "castle:-",
+                "group": "PAM02",
+                "index": 116202
+              },
+              {
+                "token": "ep:-",
+                "group": "PAM02",
+                "index": 31754
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PAM02",
+                "index": 76431
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PAM02",
+                "index": 80177
+              },
+              {
+                "token": "repetition:1",
+                "group": "PAM02",
+                "index": 14641
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PAM02",
+                "index": 92900
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PAM02",
+                "index": 128104
+              },
+              {
+                "token": "action:r:0,3:-",
+                "group": "PPL103",
+                "index": 15597
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:k:-6,7",
+                "group": "PPL103",
+                "index": 103169
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:p:0,3",
+                "group": "PPL103",
+                "index": 92454
+              },
+              {
+                "token": "around-origin:r:0,3:-:opponent:r:-7,3",
+                "group": "PPL103",
+                "index": 34946
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:k:-1,0",
+                "group": "PPL103",
+                "index": 3785
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:p:-6,3",
+                "group": "PPL103",
+                "index": 48669
+              },
+              {
+                "token": "around-origin:r:0,3:-:self:r:0,0",
+                "group": "PPL103",
+                "index": 58598
+              },
+              {
+                "token": "around-target:r:opponent:k:-6,4",
+                "group": "PPL103",
+                "index": 44214
+              },
+              {
+                "token": "around-target:r:opponent:p:0,0",
+                "group": "PPL103",
+                "index": 74237
+              },
+              {
+                "token": "around-target:r:opponent:r:-7,0",
+                "group": "PPL103",
+                "index": 20051
+              },
+              {
+                "token": "around-target:r:self:k:-1,-3",
+                "group": "PPL103",
+                "index": 104602
+              },
+              {
+                "token": "around-target:r:self:p:-6,0",
+                "group": "PPL103",
+                "index": 34165
+              },
+              {
+                "token": "around-target:r:self:r:0,-3",
+                "group": "PPL103",
+                "index": 15072
+              },
+              {
+                "token": "capture:p",
+                "group": "PPL103",
+                "index": 41856
+              },
+              {
+                "token": "castle:-",
+                "group": "PPL103",
+                "index": 42008
+              },
+              {
+                "token": "ep:-",
+                "group": "PPL103",
+                "index": 121343
+              },
+              {
+                "token": "halfmove:0",
+                "group": "PPL103",
+                "index": 45965
+              },
+              {
+                "token": "origin-walls:7,0,0,7",
+                "group": "PPL103",
+                "index": 128058
+              },
+              {
+                "token": "repetition:1",
+                "group": "PPL103",
+                "index": 77784
+              },
+              {
+                "token": "target-walls:7,0,3,4",
+                "group": "PPL103",
+                "index": 32958
+              },
+              {
+                "token": "task:forced-mate:3",
+                "group": "PPL103",
+                "index": 48213
+              }
+            ],
+            "stimulation": [
+              {
+                "index": 14641,
+                "current": 1.5
+              },
+              {
+                "index": 32958,
+                "current": 1.5
+              },
+              {
+                "index": 34946,
+                "current": 1.5
+              },
+              {
+                "index": 41522,
+                "current": 1.5
+              },
+              {
+                "index": 44214,
+                "current": 1.5
+              },
+              {
+                "index": 61395,
+                "current": 1.5
+              },
+              {
+                "index": 74237,
+                "current": 1.5
+              },
+              {
+                "index": 76431,
+                "current": 1.5
+              },
+              {
+                "index": 77784,
+                "current": 1.5
+              },
+              {
+                "index": 103336,
+                "current": 1.5
+              },
+              {
+                "index": 106227,
+                "current": 1.5
+              },
+              {
+                "index": 113942,
+                "current": 1.5
+              },
+              {
+                "index": 121343,
+                "current": 1.5
+              },
+              {
+                "index": 128058,
+                "current": 1.5
+              }
+            ],
+            "accounting": {
+              "featureCount": 21,
+              "assignments": 42,
+              "stimulatedCells": 14,
+              "collisions": 4,
+              "droppedFeatures": 25,
+              "totalCurrent": 21,
+              "currentPerCell": 1.5,
+              "poolCells": 693
+            },
+            "interface": "Unfitted candidate-conjunction/eligible-pool projection comparison; no outcomes, whole-position IDs or natural vision",
+            "baseIdentity": "c5a2ed5abc5a521b6513d7114ac8be5d41ac38101d6fea2c05a95504563d1b42",
+            "projection": {
+              "conjoin": false,
+              "stratify": true,
+              "quota": 7,
+              "coverage": {
+                "PAM02": 8,
+                "PPL103": 11
+              },
+              "selectionOrder": [
+                "PAM02",
+                "PPL103"
+              ],
+              "pools": {
+                "PAM02": 84,
+                "PPL103": 664
+              },
+              "meaning": "Eligible pools may overlap; quotas designate selection origin, not independent anatomical compartments"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

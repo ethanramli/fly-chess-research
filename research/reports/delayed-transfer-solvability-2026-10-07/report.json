@@ -1,0 +1,43 @@
+{
+  "input": "research/data/counterfactual-delayed-v1/puzzles.jsonl",
+  "inputSha256": "f7118abc7ef1d0c4f9d3b9285f47c92bc486933a2bfec6e30e0b006c9f243417",
+  "sources": {
+    ".codebase/scripts/audit-delayed-transfer-fixtures.mjs": "9290f6cb7d2c09983e7685721bd4fe04430b5a76c9a2fb3d0eec0b22e0c2814c",
+    ".codebase/src/lowram/adaptive-choice-review.mjs": "b6fba8851dad7ec974e82e3c63c0351e6c38efcfb654f81091789de47275472a",
+    ".codebase/src/lowram/mate-certificate.mjs": "b7bdab76a3faa78c203971991c3b2e00cdfd359cfca08b6e1f7b1ae8d430b700",
+    ".codebase/src/lowram/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+    ".codebase/src/lowram/verified-feedback.mjs": "e8141c3171fd49cb720cee73283c4cd8a9b572a7a973a47636c25ce6f87f4a78"
+  },
+  "summary": [
+    {
+      "id": "delayed-sacrifice-original",
+      "counts": {
+        "success": 2,
+        "failure": 32,
+        "unknown": 0
+      },
+      "successful": [
+        "h5h7",
+        "f1f8"
+      ],
+      "checkedMove": "f1f8"
+    },
+    {
+      "id": "delayed-sacrifice-support-counterfactual",
+      "counts": {
+        "success": 1,
+        "failure": 36,
+        "unknown": 0
+      },
+      "successful": [
+        "h5e8"
+      ],
+      "checkedMove": "f1f8"
+    }
+  ],
+  "resources": {
+    "elapsedSeconds": 17.6588181,
+    "peakRssMiB": 59.671875
+  },
+  "scope": "Teacher solvability audit of existing diagnostic fixtures; no neural learning or transfer evidence."
+}

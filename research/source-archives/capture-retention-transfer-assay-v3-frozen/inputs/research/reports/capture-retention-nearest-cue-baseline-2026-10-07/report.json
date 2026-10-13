@@ -1,0 +1,250 @@
+{
+  "schema": "capture-retention-nearest-cue-baseline-v1",
+  "date": "2026-10-07",
+  "scope": "Fixed one-nearest-training-cue baseline; final outcomes are used only to score this baseline, never to train or tune an encoder/model.",
+  "metric": "Jaccard similarity over selected KC index sets; descending similarity; lexical training event ID breaks ties; a panel is correct only when exactly one candidate is predicted success and it matches the verified success.",
+  "protocolPath": "research/data/capture-retention-transfer-v2/protocol.json",
+  "protocolSha256": "217fe1449fc66aad0ca275f6661afff3da97fbb25dd38cbc17106f46ddfb71b0",
+  "trainPath": "research/data/capture-retention-transfer-v2/train.jsonl",
+  "trainSha256": "a9959dfe502e8d45db5991e63143dc5767b10ffed8e74e3701e6ebd9e2d10079",
+  "finalPath": "research/data/capture-retention-transfer-v2/final.jsonl",
+  "finalSha256": "a57689649bf9318b537f943de1ebb77ef11851784ef2d65e706f62c429c19fdb",
+  "mappingPath": "research/reports/reversal-candidate-2026-10-05/mapping.json",
+  "mappingSha256": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+  "cueSourcePath": ".codebase/src/chess-input/relational-chess-cue-v3.mjs",
+  "cueSourceSha256": "a19b3e65fda0300b5a361d028c706fcd1b5d1278f2496a11234ccd06690ce47f",
+  "scriptPath": "C:/Users/ethan/Documents/fly-chess-research/.codebase/scripts/search-and-feedback/audit-capture-retention-nearest-cue.mjs",
+  "scriptSha256": "500987fa364739b51d167bc4a88f926fe0156ee62014b62562d46ceb5ed618f2",
+  "chessJsVersion": "1.4.0",
+  "result": {
+    "trainExperiences": 16,
+    "finalPanels": 8,
+    "candidateOutcomeAccuracy": 0.75,
+    "pairChoiceAccuracy": 0.5,
+    "counterfactualPairCorrect": false
+  },
+  "counterfactualPair": [
+    {
+      "panelId": "te-01",
+      "candidates": [
+        {
+          "move": "a2a4",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-02/a1a4",
+          "jaccard": 0.2727272727272727,
+          "candidateCorrect": true
+        },
+        {
+          "move": "e2e6",
+          "predictedStatus": "failure",
+          "nearestTrainingExperience": "tr-01/e1e5",
+          "jaccard": 0.3333333333333333,
+          "candidateCorrect": true
+        }
+      ],
+      "correctMove": "a2a4",
+      "chosenMove": "a2a4",
+      "pairCorrect": true
+    },
+    {
+      "panelId": "te-05",
+      "candidates": [
+        {
+          "move": "a2a4",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-02/a1a4",
+          "jaccard": 0.2727272727272727,
+          "candidateCorrect": false
+        },
+        {
+          "move": "e2e6",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-07/e1e5",
+          "jaccard": 0.3333333333333333,
+          "candidateCorrect": true
+        }
+      ],
+      "correctMove": "e2e6",
+      "chosenMove": null,
+      "pairCorrect": false
+    }
+  ],
+  "panels": [
+    {
+      "panelId": "te-01",
+      "candidates": [
+        {
+          "move": "a2a4",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-02/a1a4",
+          "jaccard": 0.2727272727272727,
+          "candidateCorrect": true
+        },
+        {
+          "move": "e2e6",
+          "predictedStatus": "failure",
+          "nearestTrainingExperience": "tr-01/e1e5",
+          "jaccard": 0.3333333333333333,
+          "candidateCorrect": true
+        }
+      ],
+      "correctMove": "a2a4",
+      "chosenMove": "a2a4",
+      "pairCorrect": true
+    },
+    {
+      "panelId": "te-02",
+      "candidates": [
+        {
+          "move": "e2e6",
+          "predictedStatus": "failure",
+          "nearestTrainingExperience": "tr-01/e1e5",
+          "jaccard": 0.3333333333333333,
+          "candidateCorrect": true
+        },
+        {
+          "move": "a2a4",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-02/a1a4",
+          "jaccard": 0.2727272727272727,
+          "candidateCorrect": true
+        }
+      ],
+      "correctMove": "a2a4",
+      "chosenMove": "a2a4",
+      "pairCorrect": true
+    },
+    {
+      "panelId": "te-03",
+      "candidates": [
+        {
+          "move": "a2a4",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-02/a1a4",
+          "jaccard": 0.2727272727272727,
+          "candidateCorrect": true
+        },
+        {
+          "move": "e2e6",
+          "predictedStatus": "failure",
+          "nearestTrainingExperience": "tr-01/e1e5",
+          "jaccard": 0.21739130434782608,
+          "candidateCorrect": true
+        }
+      ],
+      "correctMove": "a2a4",
+      "chosenMove": "a2a4",
+      "pairCorrect": true
+    },
+    {
+      "panelId": "te-04",
+      "candidates": [
+        {
+          "move": "e2e6",
+          "predictedStatus": "failure",
+          "nearestTrainingExperience": "tr-01/e1e5",
+          "jaccard": 0.21739130434782608,
+          "candidateCorrect": true
+        },
+        {
+          "move": "a2a4",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-02/a1a4",
+          "jaccard": 0.2727272727272727,
+          "candidateCorrect": true
+        }
+      ],
+      "correctMove": "a2a4",
+      "chosenMove": "a2a4",
+      "pairCorrect": true
+    },
+    {
+      "panelId": "te-05",
+      "candidates": [
+        {
+          "move": "a2a4",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-02/a1a4",
+          "jaccard": 0.2727272727272727,
+          "candidateCorrect": false
+        },
+        {
+          "move": "e2e6",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-07/e1e5",
+          "jaccard": 0.3333333333333333,
+          "candidateCorrect": true
+        }
+      ],
+      "correctMove": "e2e6",
+      "chosenMove": null,
+      "pairCorrect": false
+    },
+    {
+      "panelId": "te-06",
+      "candidates": [
+        {
+          "move": "e2e5",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-01/a1a4",
+          "jaccard": 0.3333333333333333,
+          "candidateCorrect": true
+        },
+        {
+          "move": "a2a4",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-02/a1a4",
+          "jaccard": 0.21739130434782608,
+          "candidateCorrect": false
+        }
+      ],
+      "correctMove": "e2e5",
+      "chosenMove": null,
+      "pairCorrect": false
+    },
+    {
+      "panelId": "te-07",
+      "candidates": [
+        {
+          "move": "a2a4",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-02/a1a4",
+          "jaccard": 0.21739130434782608,
+          "candidateCorrect": true
+        },
+        {
+          "move": "e2e4",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-02/a1a4",
+          "jaccard": 0.21739130434782608,
+          "candidateCorrect": false
+        }
+      ],
+      "correctMove": "a2a4",
+      "chosenMove": null,
+      "pairCorrect": false
+    },
+    {
+      "panelId": "te-08",
+      "candidates": [
+        {
+          "move": "e2e5",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-01/a1a4",
+          "jaccard": 0.3333333333333333,
+          "candidateCorrect": true
+        },
+        {
+          "move": "a2a4",
+          "predictedStatus": "success",
+          "nearestTrainingExperience": "tr-02/a1a4",
+          "jaccard": 0.21739130434782608,
+          "candidateCorrect": false
+        }
+      ],
+      "correctMove": "e2e5",
+      "chosenMove": null,
+      "pairCorrect": false
+    }
+  ]
+}

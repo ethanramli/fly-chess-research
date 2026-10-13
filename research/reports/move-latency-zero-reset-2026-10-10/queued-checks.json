@@ -1,0 +1,9 @@
+﻿{
+    "monitorPid":  14008,
+    "monitorStartedAt":  "2026-10-10T09:57:32.8522928Z",
+    "targetPid":  5044,
+    "targetStartedAt":  "2026-10-10T09:17:28.0459760Z",
+    "cwd":  "C:\\Users\\ethan\\Documents\\fly-chess-research",
+    "command":  "$ErrorActionPreference = \u0027Stop\u0027\nWait-Process -Id 5044 -ErrorAction Stop\n\u0026 \u0027C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe\u0027 --max-old-space-size=256 research/reports/move-latency-zero-reset-2026-10-10/benchmark.mjs --out runs/move-latency-zero-reset-v1 --cpu-duty 0.5 *\u003e research/reports/move-latency-zero-reset-2026-10-10/benchmark-console.txt\n$benchmarkExitCode = $LASTEXITCODE\n\u0026 npm.cmd test *\u003e research/reports/move-latency-zero-reset-2026-10-10/full-regression-after-live-run.txt\n$regressionExitCode = $LASTEXITCODE\n[pscustomobject]@{ completedAt=(Get-Date).ToUniversalTime().ToString(\u0027o\u0027); benchmarkExitCode=$benchmarkExitCode; regressionExitCode=$regressionExitCode } | ConvertTo-Json | Set-Content -Encoding utf8 research/reports/move-latency-zero-reset-2026-10-10/queued-checks-result.json\nexit ([Math]::Max($benchmarkExitCode, $regressionExitCode))",
+    "adopted":  false
+}

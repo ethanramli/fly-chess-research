@@ -1,0 +1,135 @@
+{
+  "resultSha256": "f74ed4921130b03e764829a37767f39ba3f1174b97b771ea4edbafeab496a63d",
+  "auditSha256": "47f47645a8c9eca713c6fea63aa04d81a808c73e7b2cbaca3aee3e93e2552047",
+  "firstPairMatchesPriorUninterruptedRun": true,
+  "prefixCheckpoint": "runs/adaptive-temporal-loop-v1-prefix/checkpoint-7.json",
+  "prefixCheckpointSha256": "84a699423fc17864b8ab61f8df987557aaeae56193d3310070253154a69c210e",
+  "inheritedResultSha256": "0ae180df3c09741f29882baac1d2e7e1e84a026c1865a630b9f689f6c2a996d7",
+  "tests": {
+    "passed": 215,
+    "failed": 0,
+    "logSha256": "88b5e37ad21f32619419e9296e7bca83f7d977239657054ac46ae1fd8c6c0d16"
+  },
+  "auditDiagnostics": {
+    "directionPass": true,
+    "pairSpecificityAgainstAllOtherArms": false,
+    "note": "The inherited specificityPass includes fixed-target and uses the original error pair; it is not the registered strongest-competitor gate."
+  },
+  "descriptive": {
+    "directOverlaps": [
+      {
+        "a": "f7g8",
+        "b": "f7h7",
+        "shared": 0
+      },
+      {
+        "a": "f7d7",
+        "b": "f7g8",
+        "shared": 0
+      },
+      {
+        "a": "f7d7",
+        "b": "f7h7",
+        "shared": 0
+      }
+    ],
+    "gainRange": [
+      0.9531738717589573,
+      1.0402828212744903
+    ],
+    "trajectory": [
+      {
+        "afterLessons": 0,
+        "choice": "f7g8",
+        "scores": {
+          "f7g8": 0.0045881979167461395,
+          "f7h7": -0.0004956498742103577,
+          "f7d7": 0.0044655632227659225
+        }
+      },
+      {
+        "afterLessons": 1,
+        "choice": "f7d7",
+        "scores": {
+          "f7g8": 0.004388594999909401,
+          "f7h7": -0.0004988657310605049,
+          "f7d7": 0.004461307544261217
+        }
+      },
+      {
+        "afterLessons": 2,
+        "choice": "f7d7",
+        "scores": {
+          "f7g8": 0.0043886275961995125,
+          "f7h7": -0.00039818137884140015,
+          "f7d7": 0.0044602761045098305
+        }
+      },
+      {
+        "afterLessons": 3,
+        "choice": "f7g8",
+        "scores": {
+          "f7g8": 0.004385525360703468,
+          "f7h7": -0.00040138885378837585,
+          "f7d7": 0.004292631288990378
+        }
+      },
+      {
+        "afterLessons": 4,
+        "choice": "f7g8",
+        "scores": {
+          "f7g8": 0.004385548643767834,
+          "f7h7": -0.0003019939176738262,
+          "f7d7": 0.00429164688102901
+        }
+      },
+      {
+        "afterLessons": 5,
+        "choice": "f7d7",
+        "scores": {
+          "f7g8": 0.004191297572106123,
+          "f7h7": -0.00030517764389514923,
+          "f7d7": 0.00428751902654767
+        }
+      },
+      {
+        "afterLessons": 6,
+        "choice": "f7d7",
+        "scores": {
+          "f7g8": 0.004191340878605843,
+          "f7h7": -0.0002070581540465355,
+          "f7d7": 0.004286530427634716
+        }
+      },
+      {
+        "afterLessons": 7,
+        "choice": "f7g8",
+        "scores": {
+          "f7g8": 0.0041883280500769615,
+          "f7h7": -0.0002102409489452839,
+          "f7d7": 0.004123064689338207
+        }
+      },
+      {
+        "afterLessons": 8,
+        "choice": "f7g8",
+        "scores": {
+          "f7g8": 0.004188362043350935,
+          "f7h7": -0.00011337734758853912,
+          "f7d7": 0.004122123122215271
+        }
+      }
+    ],
+    "scope": "Saved intermediate scores; final scores independently graph-replayed. These are not added acceptance gates."
+  },
+  "resources": {
+    "scope": "Resumed invocation only; original prefix metrics were not captured, so no whole-run timing claim",
+    "peakRssMiB": 193.859375,
+    "elapsedSeconds": 1142.9550442000002,
+    "cpu": {
+      "user": 562610000,
+      "system": 30750000
+    },
+    "auditPeakRssMiB": 138.52734375
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "scope": "Receipt arithmetic only; overlap does not prove causal interference",
+  "sources": [
+    {
+      "path": "receipt-0-0.json",
+      "sha256": "953294fda9c869c4492e44fa2b084056fda79ade544f6d363934eabf471259e3"
+    },
+    {
+      "path": "receipt-1-0.json",
+      "sha256": "78a6395a15979ec9448d7e63411668f3af97021218d23f8f23771b6af03dd151"
+    },
+    {
+      "path": "receipt-0-1.json",
+      "sha256": "ec55ee3bc8904b95e6b38398b840813b9d76ecbd1f22e01e2cfba34a9451e419"
+    }
+  ],
+  "firstFailure": {
+    "informativeGainL1": 2.624058536641849,
+    "noChannelGainL1": 0.017215051515225288,
+    "differenceL1": 2.6068434851266233,
+    "informativeRates": [
+      1.0026568733155727,
+      0.011559665410055056,
+      0.9974766174952189,
+      0.00018994520521826215
+    ],
+    "noChannelRates": [
+      0.00690745934844017,
+      0.010178626514971256,
+      0.0027756541967391968,
+      0.00004625310086541705
+    ]
+  },
+  "changedContextOverlap": {
+    "direct": [
+      13,
+      13
+    ],
+    "sharedDirect": 12,
+    "jaccard": 0.8571428571428571,
+    "eligible": [
+      71,
+      73
+    ],
+    "sharedEligible": 70
+  },
+  "unresolved": [
+    "No unique causal edge attribution",
+    "No final post-training choice assessment",
+    "No calibrated neural consequence error pathway"
+  ]
+}

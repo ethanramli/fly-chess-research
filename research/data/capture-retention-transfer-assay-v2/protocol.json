@@ -1,0 +1,211 @@
+{
+  "schema": "capture-retention-transfer-assay-v2",
+  "date": "2026-10-07",
+  "purpose": "One-pass from-scratch neural memory-to-choice test on disjoint capture-retention positions; a prerequisite, not Monte Carlo reasoning evidence.",
+  "task": {
+    "objective": "capture-retention",
+    "plies": 1
+  },
+  "graphPath": ".cache/full.npz",
+  "graphSha256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+  "annotationPath": ".cache/flywire-annotations-v2.1.0.tsv",
+  "annotationSha256": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+  "mappingPath": "research/reports/reversal-candidate-2026-10-05/mapping.json",
+  "mappingHash": "b2d7bf351dbe9889aa6a17216cca6cb7671f4f99d9661e604609a7ff51686fff",
+  "cue": {
+    "identity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+    "config": {
+      "seed": 14009,
+      "maxCells": 14,
+      "totalCurrent": 21,
+      "maxCellCurrent": 1.5
+    }
+  },
+  "families": {
+    "train": "research/data/capture-retention-transfer-v2/train.jsonl",
+    "validation": "research/data/capture-retention-transfer-v2/validation.jsonl",
+    "final": "research/data/capture-retention-transfer-v2/final.jsonl"
+  },
+  "seeds": [
+    47,
+    53,
+    59,
+    61,
+    67
+  ],
+  "conditions": [
+    "informative",
+    "no-channel",
+    "shuffled",
+    "disabled"
+  ],
+  "shuffledChannels": [
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PPL103",
+    "PAM02",
+    "PAM02"
+  ],
+  "model": {
+    "steps": 8,
+    "inputDim": 1,
+    "outputs": 1,
+    "seed": 47,
+    "precision": "float32",
+    "saturation": 10,
+    "recurrentScale": 0.9,
+    "normalization": "row"
+  },
+  "memory": {
+    "eta": 0.5,
+    "minGain": 0.2,
+    "maxGain": 1.8,
+    "activityScale": 1.5
+  },
+  "readouts": {
+    "MBON12": [
+      {
+        "index": 56337,
+        "rootId": "720575940623001480"
+      },
+      {
+        "index": 49989,
+        "rootId": "720575940621828443"
+      },
+      {
+        "index": 61287,
+        "rootId": "720575940623905719"
+      },
+      {
+        "index": 93832,
+        "rootId": "720575940630075703"
+      }
+    ],
+    "MBON01": [
+      {
+        "index": 62498,
+        "rootId": "720575940624117245"
+      },
+      {
+        "index": 128004,
+        "rootId": "720575940643309197"
+      }
+    ]
+  },
+  "current": 1.5,
+  "priorScale": 4,
+  "maxPresentations": 256,
+  "analysis": {
+    "script": ".codebase/scripts/puzzle-learning/analyze-capture-retention-assay.mjs",
+    "bootstrapReplicates": 10000,
+    "bootstrapSeed": 20261008,
+    "seedsWithReplacement": 5,
+    "finalPanelsWithReplacement": 8,
+    "oneSidedPercentile": 0.05
+  },
+  "runtime": {
+    "nodeVersion": "v22.23.2",
+    "heapMiB": 256,
+    "cpuDuty": 0.5,
+    "chessJs": "1.4.0",
+    "chessEntrypoint": "C:/Users/ethan/Documents/fly-chess-research/node_modules/chess.js/dist/cjs/chess.js",
+    "chessEntrypointSha256": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f",
+    "chessPackageJsonSha256": "36a258fdfb5e76d0816bf2b63dab3c917a0a8652f943da0e6be7e9b543765dfd"
+  },
+  "requiredAudits": [
+    {
+      "report": "research/reports/capture-retention-transfer-audit-v1-2026-10-07/audit-v2.json",
+      "reportSha256": "dd37d0d33bc98ec70efd75b4a88f74e2b5f1300ce5c9846e78223673f7dd0cbb",
+      "expected": {
+        "schema": "capture-retention-dataset-audit-v1",
+        "fullSet.distinctPositions": 20,
+        "fullSet.distinctCuePatterns": 40,
+        "fullSet.conflictingCueLabels": 0,
+        "splits.train.candidateExperiences": 16,
+        "splits.validation.candidateExperiences": 8,
+        "splits.final.candidateExperiences": 16
+      }
+    },
+    {
+      "report": "research/reports/capture-retention-role-ablation-preflight-2026-10-07/report-v2.json",
+      "reportSha256": "cd1cb6b5642c9430cfd93452c4d663a0f6a587832a14b795ee4562a57c743735",
+      "expected": {
+        "schema": "capture-retention-role-ablation-preflight-v1",
+        "result.candidateCues": 16,
+        "result.duplicateTokenCues": 0,
+        "result.stimulatedCellCountRange": [
+          14,
+          14
+        ],
+        "result.totalCurrentPerCue": 21,
+        "result.changedStimulatedSets": 16
+      }
+    },
+    {
+      "report": "research/reports/capture-retention-nearest-cue-baseline-2026-10-07/report.json",
+      "reportSha256": "56c2011785797b8f4197e765cf730dc6bd94f033411c149d1af582de3656276e",
+      "expected": {
+        "schema": "capture-retention-nearest-cue-baseline-v1",
+        "result.pairChoiceAccuracy": 0.5,
+        "result.counterfactualPairCorrect": false
+      }
+    }
+  ],
+  "inputHashes": {
+    ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    "package.json": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+    "package-lock.json": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214",
+    "research/data/capture-retention-transfer-v2/protocol.json": "217fe1449fc66aad0ca275f6661afff3da97fbb25dd38cbc17106f46ddfb71b0",
+    "research/data/capture-retention-transfer-v2/train.jsonl": "a9959dfe502e8d45db5991e63143dc5767b10ffed8e74e3701e6ebd9e2d10079",
+    "research/data/capture-retention-transfer-v2/validation.jsonl": "278355ece0033fa3a6405bd5daf00b08aa728f75bf402d494569c58c766174e8",
+    "research/data/capture-retention-transfer-v2/final.jsonl": "a57689649bf9318b537f943de1ebb77ef11851784ef2d65e706f62c429c19fdb",
+    "research/reports/reversal-candidate-2026-10-05/mapping.json": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+    "research/reports/capture-retention-transfer-audit-v1-2026-10-07/audit-v2.json": "dd37d0d33bc98ec70efd75b4a88f74e2b5f1300ce5c9846e78223673f7dd0cbb",
+    "research/reports/capture-retention-role-ablation-preflight-2026-10-07/report-v2.json": "cd1cb6b5642c9430cfd93452c4d663a0f6a587832a14b795ee4562a57c743735",
+    "research/reports/capture-retention-nearest-cue-baseline-2026-10-07/report.json": "56c2011785797b8f4197e765cf730dc6bd94f033411c149d1af582de3656276e",
+    "research/data/multi-context-stability-v1/protocol.json": "9f70ca17796e9f88b6a6f8ac063d55f7b319a5be23883add1e07a921c6550d6d"
+  },
+  "sourceHashes": {
+    ".codebase/scripts/runtime/fetch-graph.mjs": "5e48960ed947379ba31fc5cb10b791d6e5891913ed073a4443e6e9c875fab52a",
+    ".codebase/scripts/puzzle-learning/train-capture-retention-assay.mjs": "bbc996ae85a7fd82b1cab838ba523e140d83433be0edf53f7981697206368fbe",
+    ".codebase/scripts/puzzle-learning/audit-capture-retention-assay.mjs": "585d327a1edbe2f07cb5159ac21cfc366e573df76ea95100eeed8a9f021894a1",
+    ".codebase/scripts/puzzle-learning/analyze-capture-retention-assay.mjs": "f873cf713fa069d4021f303a51d3dc56a7681241180921622704d2d158fc032c",
+    ".codebase/scripts/puzzle-learning/freeze-capture-retention-assay.mjs": "5e2de47a85e94c5cc3d2ee293aee2af634810f5c35f08966a086f647173da72f",
+    ".codebase/scripts/search-and-feedback/audit-capture-retention-dataset.mjs": "6099f8cbd107df7a5f2d527b4423db6c81638c1cdf1f2a27b841c99d2760725e",
+    ".codebase/scripts/search-and-feedback/audit-capture-retention-role-ablation.mjs": "09e3cdffafcad533e0f067351e9ff69ae57198b28725565a871a5b6f617c09e5",
+    ".codebase/scripts/search-and-feedback/audit-capture-retention-nearest-cue.mjs": "500987fa364739b51d167bc4a88f926fe0156ee62014b62562d46ceb5ed618f2",
+    ".codebase/src/runtime/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+    ".codebase/src/supervised-baselines/trainer.mjs": "54b5175481460593dde0c8761c90142d31ad52df6f29a17e873651bf53934b31",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    ".codebase/src/neural-learning/association-validation.mjs": "b62d6f6bf4ab51f0ed993877026ac1cde0914c582fb479ea27fdc028a7dc2c91",
+    ".codebase/src/neural-learning/mushroom-body.mjs": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5",
+    ".codebase/src/neural-learning/dual-valence-interface.mjs": "206fa1d12050463d15bc5b0a31ad30491cdf0507877182a134ff0af796873397",
+    ".codebase/src/neural-learning/mbon-readout.mjs": "bf639c8e0f2ed96d2dc31939abf560d1194fccb1beed486ea6ffccbb74601923",
+    ".codebase/src/puzzle-learning/mapped-puzzle-brain.mjs": "cca4ed8e2d79ff1c6786eb866141007d9d8f0dc36c1eb3776e11f549a9151c1b",
+    ".codebase/src/puzzle-learning/dual-valence-puzzle-brain.mjs": "9a91a188d6ef40de5a21402ccd90f9a0192b46d664b26c414b86e0650d503c81",
+    ".codebase/src/chess-input/relational-chess-cue-v3.mjs": "a19b3e65fda0300b5a361d028c706fcd1b5d1278f2496a11234ccd06690ce47f",
+    ".codebase/src/search-and-feedback/verified-feedback.mjs": "33a420b7f0ef9bda52a73ff37f199bc090ee1ab9a2bae5b2f22f166e3e0edf7a",
+    ".codebase/src/search-and-feedback/capture-retention-certificate.mjs": "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46"
+  },
+  "outcomeContract": {
+    "unknownMeansNoEvent": true,
+    "teacherProvidesVerifiedConsequencesOnly": true,
+    "permittedPersistentState": "ReversalMemory gains only",
+    "fixedReadout": "mean(MBON12)-mean(MBON01)",
+    "noMonteCarlo": true,
+    "noTransferClaimUnlessEveryFrozenGatePasses": true
+  }
+}

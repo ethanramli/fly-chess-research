@@ -1,0 +1,24 @@
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+const path = '.codebase/scripts/audit-adaptive-coverage.mjs';
+if (existsSync(path)) throw Error('Refuse overwrite');
+const old = readFileSync('.codebase/scripts/audit-compartment-puzzle-pipeline.mjs', 'utf8');
+const projection = old.slice(old.indexOf('function projectedCue('), old.indexOf('let certificates ='));
+writeFileSync(path, `import { readFileSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { createHash } from 'node:crypto';
+import { parseArgs } from 'node:util';
+import assert from 'node:assert/strict';
+import { Chess } from 'chess.js';
+import { checkMateCertificate } from '../src/lowram/mate-certificate-check.mjs';
+const {values:args}=parseArgs({options:{run:{type:'string'},out:{type:'string'}}});
+if(!args.run)throw Error('Require --run');
+const hash=value=>createHash('sha256').update(value).digest('hex');
+const bytes=readFileSync(join(args.run,'report.json')),r=JSON.parse(bytes),p=r.protocol,s=r.state;
+assert.equal(r.complete,true); assert.equal(r.identity.schema,'adaptive-two-valence-v1');
+for(const[path,sha]of Object.entries({...r.identity.inputs,...r.identity.sources}))assert.equal(hash(readFileSync(path)),sha);
+const mapping=JSON.parse(readFileSync('research/reports/reversal-candidate-2026-10-05/mapping.json')).mapping;
+const pool=[...new Set(mapping.groups.flatMap(g=>g.kc))].sort((a,b)=>a-b),variant=r.identity.variant;
+assert.deepEqual(variant,p.variants.find(v=>v.id===variant.id));
+const readRef=ref=>{const b=readFileSync(ref.path);assert.equal(hash(b),ref.sha256);return JSON.parse(b);};
+${projection}
+`);

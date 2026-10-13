@@ -1,0 +1,172 @@
+{
+  "schema": "paired-delta-full-graph-v1",
+  "maxStates": 2,
+  "maxCandidates": 24,
+  "quietReserve": 8,
+  "input": "research/data/counterfactual-delayed-v1/puzzles.jsonl",
+  "variant": "original",
+  "measurements": [
+    {
+      "id": "delayed-sacrifice-original",
+      "group": "familiar-delayed-fixture",
+      "legalCount": 34,
+      "selectedCount": 24,
+      "omitted": 10,
+      "choiceAgreement": true,
+      "allChoice": "h5h6",
+      "focusedChoice": "h5h6",
+      "omittedMoves": [
+        "f1f5",
+        "f1f6",
+        "f1f7",
+        "f1g1",
+        "f1h1",
+        "f1e1",
+        "f1d1",
+        "f1c1",
+        "f1b1",
+        "f1a1"
+      ],
+      "focusedStatus": "failure",
+      "focusedCertificate": "02655da3c9cc591c15de4a0765324dd1946e47d5400b9f7fd002ff15cd697bf5",
+      "elapsedMs": 21201.4508
+    },
+    {
+      "id": "delayed-sacrifice-support-counterfactual",
+      "group": "support-shift-counterfactual",
+      "legalCount": 37,
+      "selectedCount": 24,
+      "omitted": 13,
+      "choiceAgreement": true,
+      "allChoice": "h5e8",
+      "focusedChoice": "h5e8",
+      "omittedMoves": [
+        "f1f2",
+        "f1f3",
+        "f1f4",
+        "f1f5",
+        "f1f6",
+        "f1f7",
+        "f1g1",
+        "f1h1",
+        "f1e1",
+        "f1d1",
+        "f1c1",
+        "f1b1",
+        "f1a1"
+      ],
+      "focusedStatus": "success",
+      "focusedCertificate": "7d9605b9d81402aa2c8687a323e2e924519de2cbe16c1bf470af1d94126891ef",
+      "elapsedMs": 15837.087500000001
+    }
+  ],
+  "summary": {
+    "states": 2,
+    "agreement": 2,
+    "meanLegal": 35.5,
+    "meanSelected": 24,
+    "totalOmitted": 23,
+    "scope": "Frozen full-graph readout on held-out public states; no feedback, plasticity, best-move labels or reasoning claim"
+  },
+  "identity": {
+    "model": {
+      "steps": 8,
+      "inputDim": 1,
+      "outputs": 1,
+      "seed": 47,
+      "precision": "float32",
+      "saturation": 10,
+      "recurrentScale": 0.9,
+      "normalization": "row"
+    },
+    "memory": {
+      "eta": 0.5,
+      "minGain": 0.2,
+      "maxGain": 1.8,
+      "activityScale": 1.5
+    },
+    "encoder": "c8725115fe89340a88f6c1aa4af764ffd41551289c19a24094f544ddd91ace38",
+    "readouts": {
+      "MBON12": [
+        {
+          "index": 56337,
+          "rootId": "720575940623001480",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "right",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.8942156867525906,
+          "ontologyIds": "FBbt_00111009"
+        },
+        {
+          "index": 49989,
+          "rootId": "720575940621828443",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "left",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.8760643793124306,
+          "ontologyIds": "FBbt_00111009"
+        },
+        {
+          "index": 61287,
+          "rootId": "720575940623905719",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "right",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.9010706195122313,
+          "ontologyIds": "FBbt_00111009"
+        },
+        {
+          "index": 93832,
+          "rootId": "720575940630075703",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "left",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.886691032764705,
+          "ontologyIds": "FBbt_00111009"
+        }
+      ],
+      "MBON01": [
+        {
+          "index": 62498,
+          "rootId": "720575940624117245",
+          "kind": "MBON",
+          "type": "MBON01",
+          "hemibrainType": "MBON01",
+          "side": "right",
+          "knownTransmitter": "glutamate, sparkly, proctolin, Nplp1",
+          "predictedTransmitter": "glutamate",
+          "predictedConfidence": 0.7386130312879104,
+          "ontologyIds": "FBbt_00100234"
+        },
+        {
+          "index": 128004,
+          "rootId": "720575940643309197",
+          "kind": "MBON",
+          "type": "MBON01",
+          "hemibrainType": "MBON01",
+          "side": "left",
+          "knownTransmitter": "glutamate, sparkly, proctolin, Nplp1",
+          "predictedTransmitter": "glutamate",
+          "predictedConfidence": 0.803689515262566,
+          "ontologyIds": "FBbt_00100234"
+        }
+      ]
+    }
+  },
+  "resources": {
+    "peakRssMiB": 100.1015625,
+    "presentations": 119
+  }
+}

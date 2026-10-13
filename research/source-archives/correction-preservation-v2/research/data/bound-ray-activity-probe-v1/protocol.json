@@ -1,0 +1,151 @@
+{
+  "schema": "bound-ray-readonly-activity-probe-v1",
+  "frozenAt": "2026-10-07",
+  "scope": "Read-only scratch-memory comparison of the existing relational v3 cue and the bound-ray cue on training and validation only. No feedback, plastic update, training, checkpoint selection, search, or access to final-family files.",
+  "graphPath": ".cache/full.npz",
+  "graphSha256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+  "graphHashFromFetchSource": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+  "annotationPath": ".cache/flywire-annotations-v2.1.0.tsv",
+  "annotationSha256": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+  "mappingPath": "research/reports/reversal-candidate-2026-10-05/mapping.json",
+  "mappingSha256": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+  "mappingHash": "b2d7bf351dbe9889aa6a17216cca6cb7671f4f99d9661e604609a7ff51686fff",
+  "data": {
+    "trainPath": "research/data/capture-retention-transfer-v2/train.jsonl",
+    "validationPath": "research/data/capture-retention-transfer-v2/validation.jsonl",
+    "trainPanels": 8,
+    "validationPanels": 4,
+    "candidatesPerPanel": 2,
+    "splits": [
+      "train",
+      "validation"
+    ]
+  },
+  "model": {
+    "steps": 8,
+    "inputDim": 1,
+    "outputs": 1,
+    "seed": 47,
+    "precision": "float32",
+    "saturation": 10,
+    "recurrentScale": 0.9,
+    "normalization": "row"
+  },
+  "task": {
+    "objective": "capture-retention",
+    "plies": 1
+  },
+  "readouts": {
+    "MBON12": [
+      {
+        "index": 56337,
+        "rootId": "720575940623001480"
+      },
+      {
+        "index": 49989,
+        "rootId": "720575940621828443"
+      },
+      {
+        "index": 61287,
+        "rootId": "720575940623905719"
+      },
+      {
+        "index": 93832,
+        "rootId": "720575940630075703"
+      }
+    ],
+    "MBON01": [
+      {
+        "index": 62498,
+        "rootId": "720575940624117245"
+      },
+      {
+        "index": 128004,
+        "rootId": "720575940643309197"
+      }
+    ]
+  },
+  "cueConfigs": {
+    "relationalV3": {
+      "seed": 14009,
+      "maxCells": 14,
+      "totalCurrent": 21,
+      "maxCellCurrent": 1.5
+    },
+    "boundRay": {
+      "seed": 14009,
+      "maxCells": 14,
+      "totalCurrent": 21,
+      "maxCellCurrent": 1.5,
+      "maxRelationCells": 4,
+      "maxHistoryPlies": 512
+    }
+  },
+  "cueIdentityV3": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+  "cueIdentityBoundRay": "4248d2bc93854a6aac3033cc6a49b2b09c1b9d1adb3b20a2f9d01577a41f4c64",
+  "memory": {
+    "eta": 0.5,
+    "minGain": 0.2,
+    "maxGain": 1.8,
+    "activityScale": 1.5
+  },
+  "method": {
+    "pairsPerSplit": {
+      "train": 8,
+      "validation": 4
+    },
+    "comparisons": [
+      "relational-v3",
+      "bound-ray"
+    ],
+    "modelAndMemory": "one common from-scratch graph initialization, fixed parameters, scratch efficacy gains all one",
+    "outcomes": "read only after cue encoding and neural presentations; used only for post-hoc margin summaries",
+    "noFinalFilesRead": true,
+    "noPlasticity": true,
+    "noSearch": true
+  },
+  "runtime": {
+    "nodeMajor": 22,
+    "heapMiB": 256,
+    "dutyPolicy": "CPU work followed by equal-duration sleep; pacing, not an OS CPU cap",
+    "maxRssBytes": 805306368,
+    "minFreeBytes": 268435456
+  },
+  "inputHashes": {
+    ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    "research/reports/reversal-candidate-2026-10-05/mapping.json": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+    "research/data/capture-retention-transfer-v2/protocol.json": "217fe1449fc66aad0ca275f6661afff3da97fbb25dd38cbc17106f46ddfb71b0",
+    "research/data/capture-retention-transfer-v2/train.jsonl": "a9959dfe502e8d45db5991e63143dc5767b10ffed8e74e3701e6ebd9e2d10079",
+    "research/data/capture-retention-transfer-v2/validation.jsonl": "278355ece0033fa3a6405bd5daf00b08aa728f75bf402d494569c58c766174e8",
+    "package.json": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+    "package-lock.json": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\node_modules\\chess.js\\package.json": "36a258fdfb5e76d0816bf2b63dab3c917a0a8652f943da0e6be7e9b543765dfd",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\node_modules\\chess.js\\dist\\cjs\\chess.js": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f"
+  },
+  "sourceHashes": {
+    ".codebase/scripts/runtime/fetch-graph.mjs": "5e48960ed947379ba31fc5cb10b791d6e5891913ed073a4443e6e9c875fab52a",
+    ".codebase/scripts/puzzle-learning/freeze-bound-ray-activity-probe.mjs": "d3567d1035a99288f5a8ff6ff6cb92e66c1ca0db213059a2872ef2316f874bcf",
+    ".codebase/scripts/puzzle-learning/probe-bound-ray-activity.mjs": "ec2cf304bb8593d404a3c3bee44fcb37f8888778680805e71d24d16b836e47f2",
+    ".codebase/scripts/puzzle-learning/audit-bound-ray-activity-probe.mjs": "4703958275fb910014419d0bd9cfe2c7d223f52e3f445ef4f8b844b86ae71617",
+    ".codebase/src/runtime/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+    ".codebase/src/supervised-baselines/trainer.mjs": "54b5175481460593dde0c8761c90142d31ad52df6f29a17e873651bf53934b31",
+    ".codebase/src/neural-learning/association-validation.mjs": "b62d6f6bf4ab51f0ed993877026ac1cde0914c582fb479ea27fdc028a7dc2c91",
+    ".codebase/src/neural-learning/mushroom-body.mjs": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5",
+    ".codebase/src/neural-learning/mbon-readout.mjs": "bf639c8e0f2ed96d2dc31939abf560d1194fccb1beed486ea6ffccbb74601923",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    ".codebase/src/chess-input/relational-chess-cue-v3.mjs": "a19b3e65fda0300b5a361d028c706fcd1b5d1278f2496a11234ccd06690ce47f",
+    ".codebase/src/chess-input/bound-ray-relational-cue.mjs": "b04c70cdba2488a4a4665d73fad52d3faa7089223a13b0187f0cdc629b13c72f"
+  },
+  "dependency": {
+    "name": "chess.js",
+    "version": "1.4.0",
+    "packagePath": "C:\\Users\\ethan\\Documents\\fly-chess-research\\node_modules\\chess.js\\package.json",
+    "packageSha256": "36a258fdfb5e76d0816bf2b63dab3c917a0a8652f943da0e6be7e9b543765dfd",
+    "resolvedEntryPath": "C:\\Users\\ethan\\Documents\\fly-chess-research\\node_modules\\chess.js\\dist\\cjs\\chess.js",
+    "resolvedEntrySha256": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f",
+    "lockResolved": "https://registry.npmjs.org/chess.js/-/chess.js-1.4.0.tgz",
+    "lockIntegrity": "sha512-BBJgrrtKQOzFLonR0l+k64A98NLemPwNsCskwb+29bRwobUa4iTm51E1kwGPbWXAcfdDa18nad6vpPPKPWarqw=="
+  },
+  "reportPath": "research/reports/bound-ray-activity-probe-v1-2026-10-07/report.json"
+}

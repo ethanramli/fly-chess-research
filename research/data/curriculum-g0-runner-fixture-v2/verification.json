@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "scope": "Real process interruption and disk resume on a small synthetic graph; not G0 behavioral evidence",
+  "publishedPendingFrame": 1,
+  "physiologicalEventAtInterruption": 1,
+  "receiptStreamIdenticalToUninterrupted": true,
+  "receiptSha256": "0618c509e229a32837ca063e8393c55554ac36b97cb7731c6756a355514f24a9",
+  "fullReplay": {
+    "passed": true,
+    "fullNeuralReplay": true,
+    "frames": 2432,
+    "lessons": 128,
+    "receipts": 2694,
+    "G0Passed": false,
+    "phaseResults": [
+      {
+        "seed": 20261011,
+        "phase": "acquisition",
+        "informativeCorrect": 3,
+        "controls": [
+          {
+            "condition": "absent",
+            "correct": 0,
+            "meanMargin": -0.0000011175870895339928
+          },
+          {
+            "condition": "shuffled",
+            "correct": 3,
+            "meanMargin": 0.00019148041825202118
+          },
+          {
+            "condition": "disabled",
+            "correct": 0,
+            "meanMargin": 0
+          }
+        ],
+        "gates": {
+          "acquisitionOrRetentionOrReversal": false,
+          "informativeContextAdvantage": false,
+          "directionAndSpecificity": true,
+          "causalStateAndFixedWiring": true
+        },
+        "passed": false
+      }
+    ],
+    "presentations": 2953,
+    "peakRssMiB": 55.8984375,
+    "elapsedSeconds": 50.14958560000001,
+    "cpu": {
+      "user": 4157000,
+      "system": 140000
+    },
+    "scope": "Archived-source certificate, unaided ranking, complete local-neural recurrence and reset/restoration replay. Shared dynamics/integrator; not independent biological validation or chess transfer."
+  },
+  "softwareTests": {
+    "passed": 229,
+    "failed": 0
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema":"chess-memory-ablation-v1",
+  "frozen":"2026-10-05 before causal memory-subset replay",
+  "sourceRun":"research/reports/chess-cue-association-v1-2026-10-05",
+  "phases":["acquisition","reversal"],
+  "interventions":["all","unique-only","shared-only","neither-only","naive"],
+  "classification":"Existing plastic edges are classified by their presynaptic KC's membership in directly stimulated A/B cue sets. Unique means exactly one set; shared means both; neither means neither. This does not classify all recurrently active KCs or identify natural sensory compartments.",
+  "intervention":"Restore a saved phase snapshot, keeping only selected categories of its gain changes and resetting other permitted efficacy gains to 1. Preserve event count and memory identity except naive, which restores the original zero-event state. No new learning, teacher update, sign change or wiring change.",
+  "readout":"Original frozen clipped GF decoder, plus retained raw/signed signals and MBON diagnostics. All and naive replays must match the original exactly. No alternate decoder replaces original acceptance.",
+  "interpretation":"Post hoc causal intervention on the failed model, not a new training condition or biologically measured forgetting. Improved intervention choices cannot pass the failed source experiment or authorize a new plasticity rule. No search, verified chess feedback, transfer or full-model adaptation."
+}

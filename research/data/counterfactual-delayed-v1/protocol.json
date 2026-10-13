@@ -1,0 +1,25 @@
+{
+  "schema": "counterfactual-delayed-v1",
+  "frozen": "2026-10-06",
+  "purpose": "Diagnostic consequence-sensitive choice check with a positive counterfactual alternative",
+  "positions": [
+    {
+      "id": "delayed-sacrifice-original",
+      "fen": "4r2k/6pr/6K1/7Q/8/8/8/5R2 w - - 0 1",
+      "checkedMove": "f1f8",
+      "role": "familiar delayed-sacrifice fixture"
+    },
+    {
+      "id": "delayed-sacrifice-support-counterfactual",
+      "fen": "4r2k/6pr/8/7Q/6K1/8/8/5R2 w - - 0 1",
+      "checkedMove": "f1f8",
+      "positiveAlternative": "h5e8",
+      "role": "support moved; old sacrifice fails, alternative remains verified"
+    }
+  ],
+  "task": { "objective": "forced-mate", "plies": 3 },
+  "memory": "research/reports/adaptive-two-valence-original-v2-2026-10-06/report.json",
+  "candidateInterface": { "maxCandidates": 24, "quietReserve": 8 },
+  "controls": ["all-legal", "delta-shortlist", "independent-certificate"],
+  "scope": "No feedback, plasticity or tuning during evaluation. This is a diagnostic pair; it is not a disjoint final transfer family."
+}

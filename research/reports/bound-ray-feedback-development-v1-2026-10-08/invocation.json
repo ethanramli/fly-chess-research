@@ -1,0 +1,18 @@
+{
+    "serial":  true,
+    "trainingCommand":  "node --max-old-space-size=256 .codebase/scripts/puzzle-learning/train-bound-ray-feedback-development.mjs --out CONDITION_DIRECTORY --encoder ENCODER --condition CONDITION --cpu-duty 0.5",
+    "protocolSha256":  "a865684916952b5e7199c6cc8671c5d5b5b4b1146d49c667ee9eee242e10af86",
+    "auditCommand":  "node --max-old-space-size=256 .codebase/scripts/puzzle-learning/audit-bound-ray-feedback-development.mjs CONDITION_DIRECTORY",
+    "startedAt":  "2026-10-08T08:28:20.4242254+07:00",
+    "encoders":  [
+                     "relational-v3",
+                     "bound-ray"
+                 ],
+    "schema":  "bound-ray-feedback-development-invocation-v1",
+    "conditions":  [
+                       "informative",
+                       "no-channel",
+                       "shuffled",
+                       "disabled"
+                   ]
+}

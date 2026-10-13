@@ -1,0 +1,130 @@
+{
+  "schema": "capture-retention-seed-independence-audit-v1",
+  "scope": "Read-only audit of whether the five declared seeds created distinct functional neural replicas in the completed v3 assay. Does not change or replace the frozen aggregate.",
+  "protocolSha256": "abb80b8c33e7e0204b8bb141fcfa3f23f81dcce6a546622bdebca054fdf2f279",
+  "aggregateSha256": "33c6edf9d8b7ce4c5cd07e5e023fd3d18ab21b9b7706d34e188071142f2de479",
+  "aggregatePassed": false,
+  "sourceHashes": {
+    ".codebase/src/supervised-baselines/trainer.mjs": "54b5175481460593dde0c8761c90142d31ad52df6f29a17e873651bf53934b31",
+    ".codebase/src/puzzle-learning/mapped-puzzle-brain.mjs": "cca4ed8e2d79ff1c6786eb866141007d9d8f0dc36c1eb3776e11f549a9151c1b",
+    ".codebase/src/neural-learning/mbon-readout.mjs": "bf639c8e0f2ed96d2dc31939abf560d1194fccb1beed486ea6ffccbb74601923"
+  },
+  "seeds": [
+    47,
+    53,
+    59,
+    61,
+    67
+  ],
+  "modelSeeds": [
+    47,
+    53,
+    59,
+    61,
+    67
+  ],
+  "cueIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+  "results": [
+    {
+      "condition": "informative",
+      "finalChoicesHash": "484be14c06d81fa4a7dba6d06c04546712fcd04c19fa84cf21a1d2b1c653e347",
+      "roleScrambledHash": "0a826844dd3626adf67e0b03517e5dedad39e20899bef84eaf279cac7ca1e3b3",
+      "baselineHash": "8d9f19c4f8251fa95bcdd2436401b62e7a6cb35e936a4e8dd7cf62bca78d7052",
+      "trainingDynamicsHashes": [
+        "74866e2a4a2d0d3398f66fe3ec245c6139b79e5fa3a361d5ff5e1a08c829c410",
+        "5dc2ae60222bea672a588b0688c1b99f0c536070a4c71e33895fba0b2090c673",
+        "04c676331eb28cea27d50c37d2717699545b3a2809e21b3f74bc1ec6d992b81f",
+        "37c52c9fe07879e3f92f72e211672ae02cac28a2e6c2589f1128a15f977b760d",
+        "21187e8b719978ecdd8945d28894d277e9256fb4df6303177976494a3158deb8",
+        "900f85623ebb30dc8b34d3187bfeacbc1f8f3c585ddf70c76a2868a28f90f590",
+        "950632b22d7bcb6bec88447ce134d0e65be40d933a2564dc0217f6299f20dc13",
+        "7a1ddb43bceb206e054047e0e7f50d56f4118847410907df76f1b6021319fe0f",
+        "fea513e84afb9ba3b78e591e53b784750ac440365c0d8a6621ca15310e337c0e",
+        "4f6f3fcb61f743c73d56f453c4c3052b4847d9792d515753d831d3f4d2390523",
+        "cbe19a2c031820a8712711bb316480057c3998eb20c4818ee6c9e245055cd0db",
+        "48e86f600f04748e073966a97956bf2bccf363cbbcd80c697bd1f5b6ebefcba9",
+        "1e76e0685f3b9b22f6caac91b3ad4e941ed3162e1e98491c1edfbb7a8ad12417",
+        "8477cbe8a9040364f495592fc14d5ad898126c1dbec8356685ac76e29213fcda",
+        "b4ab286572110399d690e6158c0aeff4aeae735157cd54d77a34e8e48a8fb4e8",
+        "eb53a4fcc928224b53edcbb5fcd87e6844dc8ed12c531dc0468842b904c45b77"
+      ]
+    },
+    {
+      "condition": "no-channel",
+      "finalChoicesHash": "ca53a9fa190560e491e7853573174bf17bc10de565c018c1a54a7133353fe832",
+      "roleScrambledHash": "550e878564085d5560c687b7c040c1a2480f0afbbf217033b885dbf6489d83ac",
+      "baselineHash": "8d9f19c4f8251fa95bcdd2436401b62e7a6cb35e936a4e8dd7cf62bca78d7052",
+      "trainingDynamicsHashes": [
+        "604288415b92a56799a8d1bb59bc8cdf8f6b9e0f1d765aca4d55acb881fa2b31",
+        "4449f589d2f6c1c49cfaf2d48896f8768c2c8ed9ddef9dfb472505a360c3acaa",
+        "f69792786a45838bb70f451410df09e6b97f35bb9a5feb4a14983fc764cf5226",
+        "657855b67e4872ddd677e17e199b3e8e029dee6d3e71f67d3f7161472e8fe0c7",
+        "ede2cad26cf49f923481ace3d7aeec53bbbf095cb749c301fdcc4cb44c953da8",
+        "fd746fa1fb69ef651203d246546c4fbec74b65f7c516b50d53b264d756156ece",
+        "99fb8d0ed09a772b5a5d033c49829569538f6edb10ff9a2a34230deb505e936e",
+        "585a844b353273cf8ff3373000d771e35720fdf6831648c4dee9d8f498a1f441",
+        "67adba4d5525ce7fc40d3c014ab8331abef2bb9b524179cf0c5726674998d1e9",
+        "1e7c63a5cff1720a279f0cd6e924d6220c6c1bb8eeb998717a981b70e4e2a660",
+        "b6bbd76aba6c5158a83bc3422665e259c17a62a109c947f16ab629ebaeee4597",
+        "9548a2a948f35f2c3d77005d8d0db0c2de60cb5f39c739e7f8ea74e14cf83299",
+        "c3f2cca40338395ecd25384e3d3ee55cbd2dd181727c5ff94c8646d94d4331a0",
+        "273fb8c01849fbf2e69a6616e0eae8323434838035268ae538b5e151d4f11e71",
+        "e20eaf5b59ee3fae3f9c15a14670ce4bbc208b384c42e6f8970c8441c03daced",
+        "50d96aa34754f2161a6b683a1dacd267c4261037a801653c4ba2d938664ddb13"
+      ]
+    },
+    {
+      "condition": "shuffled",
+      "finalChoicesHash": "ede17f9225c9b28d4dee39e5444b76d9270c645d115ebc4a22eca78449f90b3a",
+      "roleScrambledHash": "5a7ee43be09de2416e462844bc583dcbe5fb69311ab0f0a7ef7eeb28e5236e83",
+      "baselineHash": "8d9f19c4f8251fa95bcdd2436401b62e7a6cb35e936a4e8dd7cf62bca78d7052",
+      "trainingDynamicsHashes": [
+        "e5bdead387a2750e724deb1aa72a1e6b5398a525e3cf609b8fbdce46a2d1405d",
+        "08b1adf093d76f52135e7ed27a831f00731c6d03008b6e9d279e53568d0fa7a3",
+        "e9f57b74e5b7a4d11517aea430f222d86c22f03deb57ad9fa87461d6cf91f71d",
+        "20f3894b6fd990b2b07642e02e48587ad54764ccbc8255753570903d16d5473f",
+        "e817b80c520d420aee394e6e5e64188ddf67acc795a4ec56c56e8f49182d65fb",
+        "9c7309a0093408cde8865c2c405d59ba61d320d94356358505e892713fb3527b",
+        "008fcdcb842f23cf51412e3679355c6448d1e99fd924d22f170413dc07c5c050",
+        "4ad8f15e04696871972384b3c2f76341b0a57c76d5639a160493339e34c74e45",
+        "6d04206a73df3aade6b5ebc90f1d07798a538ca6c295d6a0f4addf9bbcfdc54a",
+        "b7bc0ee0ae6cca21ebb977d06fa6c4dd9c71138a5dc6fe95057af2fee01699cb",
+        "bfdd406139adb271b5b4b9f30ccdde445f4049c4eb023a6dd3c91208a1f03621",
+        "386356058df7dc014eadd1a20116bdd819a113c8591be63db0f15233df270c53",
+        "0cc835884cbca2d61c030f1e89320cc7e7ce8288434bd00d5cb4b3a9b88083ec",
+        "1829fdbccdb9ce4f3fc68dcd22d2d5823fd541e06cb637f3afa6eec6d84d6268",
+        "ea478a66ffa807d7727a20621cbf7baf5b72714c19742dcc376d8547eaf4478a",
+        "eb8d9e62d79b0bba484a7bb0095eb388a52b59bdfa686da81181dcd9963707da"
+      ]
+    },
+    {
+      "condition": "disabled",
+      "finalChoicesHash": "8d9f19c4f8251fa95bcdd2436401b62e7a6cb35e936a4e8dd7cf62bca78d7052",
+      "roleScrambledHash": "73feb81969fe4ebb078d89c38484130be187294168e0fcc89b46d703f263f3b2",
+      "baselineHash": "8d9f19c4f8251fa95bcdd2436401b62e7a6cb35e936a4e8dd7cf62bca78d7052",
+      "trainingDynamicsHashes": [
+        "f7afa9c23316bb4ceb9a01dfc33266b1c3997cd5f84b2fb247d795591dd67a67",
+        "34a334467dfd9d5193c0c95049b35f15ca35fed2c8aa44121ba0c21a56d6e23c",
+        "95659105666d8edb59df2e86f7d3755a9b4cbbff80f72bb6504b268dd5ce9d85",
+        "ead710c0f273845d8ed5e0a20932b2218719fe5cbac63f050c3124ca0d5b4b93",
+        "29cfea91d857615037f083a5aa7300a773fa54d0e4509cad06bcbbfb37d40692",
+        "b42d1c218ad357c32bdaf77178769e2cc724bc93d65289325c677fe36f993acf",
+        "ec8e75e6049b9eea216f58439bb1f991842f77508ea6dd27339bf216f75cdeb3",
+        "cb850b9f63fae0454287ba947fe50d706e212fe67ace4d7fd34c6e1a4afaf85d",
+        "32e38690fab12a1a3afd57e6e369c181ea72ed8d4d30bc8135cc35ac961684d0",
+        "257b233a5ee7409a0078aeded6a145bca21ef80d63a7f383b28fddde4511cdb1",
+        "b834ad2e8a6be5697c6acf47d66f101df1f79f417f1c2aed0c9b85dbbbbfbb6a",
+        "13757cf37ed12ea3e8b4c1779898460d1f78b83ab7cb23056a2759b3e9e51e4b",
+        "efa69299459a795be1b8ea8c1a5d54a28fd1cc58dc4f3a9f63b0ef1367dcb930",
+        "43f7b2f620f1ac3c3e2d6827b57d6fe1ba1222597103549a2481209028488c6c",
+        "a2f57d3ad7c28af74b7e8b36e0bbeeaaec31c70103afb1b3ced0076697552e4c",
+        "0af51b2501d5cef4ce49c2bd2decbd23ae66a54928303861b4cb13f0aac289be"
+      ]
+    }
+  ],
+  "identicalFinalChoicesAndMarginsAcrossSeeds": true,
+  "identicalTrainingActivityAndGainTrajectoriesAcrossSeeds": true,
+  "functionalReplicationCount": 1,
+  "diagnosis": "The declared model seed randomizes input/head arrays, but forward([0], stimulation) supplies no active input features and the fixed MBON readout reads neuron activity rather than the model head. Consequently all five model seeds produce identical training activity, gains and held-out rankings; their bootstrap rows are not independent functional replicas.",
+  "status": "The v3 transfer gate fails; report any cross-seed bootstrap as descriptive only because the nominal seed replicates are functionally identical."
+}

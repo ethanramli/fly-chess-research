@@ -1,0 +1,4011 @@
+{
+  "sourceReportSha256": "a74bf8d7a48ff163d1905b9d0bed3c5285c9e02f377fa1c6d0389dbad2561910",
+  "sourceScriptSha256": "ee55f564b959d2dacbb0c1c757aed995fd06f14fc69efbef7c8ef05856ea9f42",
+  "originalGates": {
+    "acquisition": true,
+    "reversal": true,
+    "informative": true,
+    "persistence": true,
+    "causalReset": true,
+    "controls": true,
+    "fixedState": true
+  },
+  "originalAllGatesPassed": true,
+  "counts": {
+    "acquisition": 6,
+    "reversal": 6,
+    "rankingCrossed": 6,
+    "oldMBON12UniqueRecovery": 6,
+    "oldActionVRose": 6,
+    "GFdiagnosticAcquisition": 4,
+    "GFdiagnosticReversal": 3,
+    "GFdiagnosticChangedAfterAcquisition": 0,
+    "GFdiagnosticChangedAfterReversal": 1
+  },
+  "rows": [
+    {
+      "seed": 12011,
+      "oldPunished": "A",
+      "newPunished": "B",
+      "ranking": {
+        "baseline": {
+          "M": -0.00042301230132579803,
+          "choice": "B",
+          "V_A": 0.010605351068079472,
+          "V_B": 0.01102836336940527
+        },
+        "acquisition": {
+          "M": -0.004812199622392654,
+          "choice": "B",
+          "V_A": -0.0056246062740683556,
+          "V_B": -0.0008124066516757011
+        },
+        "reversal": {
+          "M": 0.004419967997819185,
+          "choice": "A",
+          "V_A": -0.0026512667536735535,
+          "V_B": -0.007071234751492739
+        }
+      },
+      "oldActionVChange": 0.002973339520394802,
+      "newlyPunishedVChange": -0.006258828099817038,
+      "oldActionUniqueRecovery": {
+        "MBON12": {
+          "selectedEdges": 4,
+          "acquiredMean": 0.2653187268029014,
+          "reversedMean": 0.9858545649603421,
+          "delta": 0.7205358381574407,
+          "scope": "Directly stimulated old-action-unique KC inputs, grouped by MBON type"
+        },
+        "MBON01": {
+          "selectedEdges": 0,
+          "acquiredMean": null,
+          "reversedMean": null,
+          "delta": null,
+          "scope": "Directly stimulated old-action-unique KC inputs, grouped by MBON type"
+        }
+      },
+      "strictAcquisition": true,
+      "strictReversal": true,
+      "rankingCrossed": true,
+      "GFdiagnostic": {
+        "baseline": {
+          "choice": "A",
+          "signedChoice": "A",
+          "correct": false,
+          "signedCorrect": false,
+          "scores": {
+            "A": 0.8134715025906736,
+            "B": 0.8208092485549133
+          },
+          "sameAsBaseline": true
+        },
+        "acquisition": {
+          "choice": "A",
+          "signedChoice": "B",
+          "correct": false,
+          "signedCorrect": true,
+          "scores": {
+            "A": 1,
+            "B": 1
+          },
+          "sameAsBaseline": true
+        },
+        "reversal": {
+          "choice": "A",
+          "signedChoice": "A",
+          "correct": true,
+          "signedCorrect": true,
+          "scores": {
+            "A": 1,
+            "B": 1
+          },
+          "sameAsBaseline": true
+        }
+      },
+      "reversalTrajectory": [
+        {
+          "trial": 0,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.021278141997754574,
+            "MBON01": 0.02690274827182293,
+            "V": -0.0056246062740683556
+          },
+          "localFactors": [
+            -0.009631145745515823,
+            -0.00023647128707832761,
+            -0.005751155316829681,
+            -0.015011242487364344
+          ],
+          "changedEdges": 109,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9927277152032681
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.26447448503014315
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.250443257771653
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.9655041118005855
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999968922303296
+            },
+            "MBON01/shared": {
+              "count": 3,
+              "mean": 0.9980050635584033
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9997279521713406
+            }
+          }
+        },
+        {
+          "trial": 1,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.05449771694839001,
+            "MBON01": 0.028325495310127735,
+            "V": 0.026172221638262272
+          },
+          "localFactors": [
+            -1.0041756791373093,
+            -0.001683994506796201,
+            -1.0053720076878865,
+            -0.0001354374819331699
+          ],
+          "changedEdges": 109,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9914115446841594
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.6341031831430403
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.49760702956344716
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999952699311914
+            },
+            "MBON01/shared": {
+              "count": 3,
+              "mean": 0.9972241266627918
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9989531237244996
+            }
+          }
+        },
+        {
+          "trial": 2,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.022391164675354958,
+            "MBON01": 0.02689962461590767,
+            "V": -0.0045084599405527115
+          },
+          "localFactors": [
+            -0.009640071541070938,
+            -0.000236506677336163,
+            -0.005761823306481044,
+            -0.015010421267814107
+          ],
+          "changedEdges": 97,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9914463594179705
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.6320172705130376
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.4998974510345378
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999952696360328
+            },
+            "MBON01/shared": {
+              "count": 3,
+              "mean": 0.9971076416081012
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9989532475211144
+            }
+          }
+        },
+        {
+          "trial": 3,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.05016403924673796,
+            "MBON01": 0.028322281315922737,
+            "V": 0.02184175793081522
+          },
+          "localFactors": [
+            -1.004143413156271,
+            -0.0016688675516181523,
+            -1.0053330659866333,
+            -0.0001334047151936425
+          ],
+          "changedEdges": 97,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9907737564567602
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.8169351237485172
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.2675316794770612
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999936632654858
+            },
+            "MBON01/shared": {
+              "count": 3,
+              "mean": 0.9963344683163461
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9981860248993937
+            }
+          }
+        },
+        {
+          "trial": 4,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.023344863206148148,
+            "MBON01": 0.026896736584603786,
+            "V": -0.003551873378455639
+          },
+          "localFactors": [
+            -0.00964751715461413,
+            -0.00023648473951551647,
+            -0.005770869553089142,
+            -0.015009763961037
+          ],
+          "changedEdges": 97,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9908115398329181
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.8142308430310017
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.27087017374898764
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999936631590962
+            },
+            "MBON01/shared": {
+              "count": 3,
+              "mean": 0.9962180992587225
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9981862393881082
+            }
+          }
+        },
+        {
+          "trial": 5,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.048398615792393684,
+            "MBON01": 0.028319050557911396,
+            "V": 0.02007956523448229
+          },
+          "localFactors": [
+            -1.0041302206615608,
+            -0.00166673937605487,
+            -1.005317250887553,
+            -0.00013343710452318192
+          ],
+          "changedEdges": 97,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9904577521029956
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.9075815398189994
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.19999999999999998
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999920601765471
+            },
+            "MBON01/shared": {
+              "count": 3,
+              "mean": 0.995446653163394
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9974206340152465
+            }
+          }
+        },
+        {
+          "trial": 6,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.02382083749398589,
+            "MBON01": 0.026893974281847477,
+            "V": -0.0030731367878615856
+          },
+          "localFactors": [
+            -0.009651230027278265,
+            -0.00023647356364462109,
+            -0.005775383363167445,
+            -0.015009437791175313
+          ],
+          "changedEdges": 97,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9904970082141946
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.9045701039446146
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.20363845510480233
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999920602590902
+            },
+            "MBON01/shared": {
+              "count": 3,
+              "mean": 0.995330394577583
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9974209389911797
+            }
+          }
+        },
+        {
+          "trial": 7,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04786681290715933,
+            "MBON01": 0.028315825387835503,
+            "V": 0.019550987519323826
+          },
+          "localFactors": [
+            -1.0041263264914353,
+            -0.0016671963449981476,
+            -1.005312482515971,
+            -0.0001334283086988661
+          ],
+          "changedEdges": 97,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9903011705955651
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.9525240828743462
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.19999999999999998
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999904581738545
+            },
+            "MBON01/shared": {
+              "count": 3,
+              "mean": 0.9945594769201715
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9966557616657605
+            }
+          }
+        },
+        {
+          "trial": 8,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.02405845932662487,
+            "MBON01": 0.026891272515058517,
+            "V": -0.002832813188433647
+          },
+          "localFactors": [
+            -0.009653085221846899,
+            -0.0002364677687486013,
+            -0.005777637163798015,
+            -0.015009273878402181
+          ],
+          "changedEdges": 97,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.990341156944997
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.949360219276777
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.20363921952969397
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999904584454997
+            },
+            "MBON01/shared": {
+              "count": 3,
+              "mean": 0.9944433260807574
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9966561570680491
+            }
+          }
+        },
+        {
+          "trial": 9,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04784778784960508,
+            "MBON01": 0.028312580659985542,
+            "V": 0.01953520718961954
+          },
+          "localFactors": [
+            -1.0041262470185757,
+            -0.0016672079347901875,
+            -1.0053123235702515,
+            -0.00013339664373132918
+          ],
+          "changedEdges": 97,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9902235769814582
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.9748067530826384
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.19999999999999998
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999888576843274
+            },
+            "MBON01/shared": {
+              "count": 3,
+              "mean": 0.9936731425280022
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9958916119486181
+            }
+          }
+        },
+        {
+          "trial": 10,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.024176272097975016,
+            "MBON01": 0.026888602413237095,
+            "V": -0.0027123303152620792
+          },
+          "localFactors": [
+            -0.009654004126787186,
+            -0.00023646487130059136,
+            -0.005778754750887553,
+            -0.015009192749857903
+          ],
+          "changedEdges": 97,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9902639252967339
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.9715672854246362
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.20363959823232217
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999888581450481
+            },
+            "MBON01/shared": {
+              "count": 3,
+              "mean": 0.9935570979052625
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.995892097693344
+            }
+          }
+        },
+        {
+          "trial": 11,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.047838359139859676,
+            "MBON01": 0.02830933779478073,
+            "V": 0.019529021345078945
+          },
+          "localFactors": [
+            -1.0041260880728562,
+            -0.0016672143505679238,
+            -1.0053123235702515,
+            -0.00013338101820813285
+          ],
+          "changedEdges": 97,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9901851258119654
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.9858545649603421
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.19999999999999998
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999872587118086
+            },
+            "MBON01/shared": {
+              "count": 3,
+              "mean": 0.99278765015484
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9951281864909055
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 12037,
+      "oldPunished": "B",
+      "newPunished": "A",
+      "ranking": {
+        "baseline": {
+          "M": 0.0016567129641771317,
+          "choice": "A",
+          "V_A": 0.014961429871618748,
+          "V_B": 0.013304716907441616
+        },
+        "acquisition": {
+          "M": 0.00552019290626049,
+          "choice": "A",
+          "V_A": 0.0022243820130825043,
+          "V_B": -0.003295810893177986
+        },
+        "reversal": {
+          "M": -0.0039556631818413734,
+          "choice": "B",
+          "V_A": -0.004976998548954725,
+          "V_B": -0.0010213353671133518
+        }
+      },
+      "oldActionVChange": 0.0022744755260646343,
+      "newlyPunishedVChange": -0.0072013805620372295,
+      "oldActionUniqueRecovery": {
+        "MBON12": {
+          "selectedEdges": 5,
+          "acquiredMean": 0.3016297484906122,
+          "reversedMean": 0.9816339914093577,
+          "delta": 0.6800042429187455,
+          "scope": "Directly stimulated old-action-unique KC inputs, grouped by MBON type"
+        },
+        "MBON01": {
+          "selectedEdges": 1,
+          "acquiredMean": 0.9985102508889594,
+          "reversedMean": 0.9979737618007968,
+          "delta": -0.0005364890881626172,
+          "scope": "Directly stimulated old-action-unique KC inputs, grouped by MBON type"
+        }
+      },
+      "strictAcquisition": true,
+      "strictReversal": true,
+      "rankingCrossed": true,
+      "GFdiagnostic": {
+        "baseline": {
+          "choice": "A",
+          "signedChoice": "A",
+          "correct": true,
+          "signedCorrect": true,
+          "scores": {
+            "A": 0.9132947976878613,
+            "B": 1
+          },
+          "sameAsBaseline": true
+        },
+        "acquisition": {
+          "choice": "A",
+          "signedChoice": "A",
+          "correct": true,
+          "signedCorrect": true,
+          "scores": {
+            "A": 1,
+            "B": 1
+          },
+          "sameAsBaseline": true
+        },
+        "reversal": {
+          "choice": "A",
+          "signedChoice": "B",
+          "correct": false,
+          "signedCorrect": true,
+          "scores": {
+            "A": 1,
+            "B": 1
+          },
+          "sameAsBaseline": true
+        }
+      },
+      "reversalTrajectory": [
+        {
+          "trial": 0,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.05570175312459469,
+            "MBON01": 0.02643980085849762,
+            "V": 0.02926195226609707
+          },
+          "localFactors": [
+            -1.0035720032950242,
+            -0.0015490204095840454,
+            -1.0056931575139363,
+            -0.00016624273525344
+          ],
+          "changedEdges": 110,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 760,
+              "mean": 0.9916211567906943
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.5322393158601479
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.652506277997466
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999955094127431
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9985114047148484
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9938462590869346
+            }
+          }
+        },
+        {
+          "trial": 1,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.022613447159528732,
+            "MBON01": 0.0255607096478343,
+            "V": -0.0029472624883055687
+          },
+          "localFactors": [
+            -0.009875268985827764,
+            -0.00019538112812572054,
+            -0.00814461832245191,
+            -0.010403172423442205
+          ],
+          "changedEdges": 95,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 760,
+              "mean": 0.9916592842518457
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.5343466721384763
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.6499296192753972
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999955092121949
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9984206064436519
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.991406186036319
+            }
+          }
+        },
+        {
+          "trial": 2,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.050655608996748924,
+            "MBON01": 0.026423179544508457,
+            "V": 0.024232429452240467
+          },
+          "localFactors": [
+            -1.003534412632386,
+            -0.0015484680318170125,
+            -1.0056486527125041,
+            -0.0001448311118615998
+          ],
+          "changedEdges": 95,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 760,
+              "mean": 0.9910445321915212
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.30215140240249744
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.8258050372446775
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999940346003239
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9984218292638678
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9910136297411535
+            }
+          }
+        },
+        {
+          "trial": 3,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.0235710428096354,
+            "MBON01": 0.025543132796883583,
+            "V": -0.0019720899872481823
+          },
+          "localFactors": [
+            -0.009882781654596329,
+            -0.0001953266974952486,
+            -0.008152715861797333,
+            -0.01040912295381228
+          ],
+          "changedEdges": 95,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 760,
+              "mean": 0.9910854704327864
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.30529826214044964
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.8224596852179058
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999940345428783
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9983310650361222
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9885848750083006
+            }
+          }
+        },
+        {
+          "trial": 4,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04894590564072132,
+            "MBON01": 0.02640627697110176,
+            "V": 0.02253962866961956
+          },
+          "localFactors": [
+            -1.003521617501974,
+            -0.001549662608239386,
+            -1.0056338707605998,
+            -0.00013627049823602042
+          ],
+          "changedEdges": 95,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 760,
+              "mean": 0.9907587733068216
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.9116544742543577
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999925599420975
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9983323581791768
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9881944786077226
+            }
+          }
+        },
+        {
+          "trial": 5,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.024045893922448158,
+            "MBON01": 0.02552574872970581,
+            "V": -0.0014798548072576523
+          },
+          "localFactors": [
+            -0.00988650694489479,
+            -0.00019529979262087078,
+            -0.00815672924121221,
+            -0.01041206924451722
+          ],
+          "changedEdges": 95,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 760,
+              "mean": 0.9908011061593703
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.20360864723722139
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.9079277955547932
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999925600281707
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9982416151904053
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9857776647754619
+            }
+          }
+        },
+        {
+          "trial": 6,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04818204045295715,
+            "MBON01": 0.02638930268585682,
+            "V": 0.021792737767100334
+          },
+          "localFactors": [
+            -1.0035158954560757,
+            -0.001550194082988633,
+            -1.005627195040385,
+            -0.00013235118240118027
+          ],
+          "changedEdges": 95,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 760,
+              "mean": 0.990617155045925
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.954183601413505
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999910860673547
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9982429781092691
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9853885098875772
+            }
+          }
+        },
+        {
+          "trial": 7,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.024283075239509344,
+            "MBON01": 0.025508509017527103,
+            "V": -0.0012254337780177593
+          },
+          "localFactors": [
+            -0.009888365864753723,
+            -0.00019528613322310976,
+            -0.008158730963865915,
+            -0.010413530386156505
+          ],
+          "changedEdges": 95,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 760,
+              "mean": 0.990660179522174
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.20360941936572394
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.9502678755088236
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.99999108629709
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.998152250194467
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9829839100388078
+            }
+          }
+        },
+        {
+          "trial": 8,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04816724546253681,
+            "MBON01": 0.02637228835374117,
+            "V": 0.021794957108795643
+          },
+          "localFactors": [
+            -1.0035158954560757,
+            -0.001550203189253807,
+            -1.0056270360946655,
+            -0.00013232334620422786
+          ],
+          "changedEdges": 95,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 760,
+              "mean": 0.9905469598932092
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.9752524098473107
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999896134697761
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9981536823882877
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9825952308856057
+            }
+          }
+        },
+        {
+          "trial": 9,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.024400560650974512,
+            "MBON01": 0.0254913792014122,
+            "V": -0.0010908185504376888
+          },
+          "localFactors": [
+            -0.009889287253220877,
+            -0.0001952795104848014,
+            -0.008159719407558441,
+            -0.010414253092474407
+          ],
+          "changedEdges": 95,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 760,
+              "mean": 0.9905903272880247
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.2036098013321559
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.971242995160431
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999896138431671
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9980629662691535
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9802029490470479
+            }
+          }
+        },
+        {
+          "trial": 10,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.048159911297261715,
+            "MBON01": 0.02635535877197981,
+            "V": 0.021804552525281906
+          },
+          "localFactors": [
+            -1.0035157365103562,
+            -0.0015502071215046777,
+            -1.0056270360946655,
+            -0.00013230927288532257
+          ],
+          "changedEdges": 95,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 760,
+              "mean": 0.9905121669097383
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.9856898278166613
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999881421535998
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9980644676708955
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9798147425830418
+            }
+          }
+        },
+        {
+          "trial": 11,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.02445875620469451,
+            "MBON01": 0.025474348105490208,
+            "V": -0.0010155919007956982
+          },
+          "localFactors": [
+            -0.00988974298040072,
+            -0.0001952761991156472,
+            -0.008160203695297241,
+            -0.010414610720343059
+          ],
+          "changedEdges": 95,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 760,
+              "mean": 0.9905557042972847
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.2036099893351396
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.9816339914093577
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999881426705804
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9979737618007968
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9774347967562618
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 12049,
+      "oldPunished": "A",
+      "newPunished": "B",
+      "ranking": {
+        "baseline": {
+          "M": -0.0004571154713630676,
+          "choice": "B",
+          "V_A": 0.019314749166369438,
+          "V_B": 0.019771864637732506
+        },
+        "acquisition": {
+          "M": -0.0039197467267513275,
+          "choice": "B",
+          "V_A": 0.0011600237339735031,
+          "V_B": 0.005079770460724831
+        },
+        "reversal": {
+          "M": 0.0039636557921767235,
+          "choice": "A",
+          "V_A": 0.002429991029202938,
+          "V_B": -0.0015336647629737854
+        }
+      },
+      "oldActionVChange": 0.001269967295229435,
+      "newlyPunishedVChange": -0.006613435223698616,
+      "oldActionUniqueRecovery": {
+        "MBON12": {
+          "selectedEdges": 4,
+          "acquiredMean": 0.25627509748954713,
+          "reversedMean": 0.9186357472594271,
+          "delta": 0.66236064976988,
+          "scope": "Directly stimulated old-action-unique KC inputs, grouped by MBON type"
+        },
+        "MBON01": {
+          "selectedEdges": 0,
+          "acquiredMean": null,
+          "reversedMean": null,
+          "delta": null,
+          "scope": "Directly stimulated old-action-unique KC inputs, grouped by MBON type"
+        }
+      },
+      "strictAcquisition": true,
+      "strictReversal": true,
+      "rankingCrossed": true,
+      "GFdiagnostic": {
+        "baseline": {
+          "choice": "A",
+          "signedChoice": "A",
+          "correct": false,
+          "signedCorrect": false,
+          "scores": {
+            "A": 0.7461139896373057,
+            "B": 0.7979274611398963
+          },
+          "sameAsBaseline": true
+        },
+        "acquisition": {
+          "choice": "A",
+          "signedChoice": "B",
+          "correct": false,
+          "signedCorrect": true,
+          "scores": {
+            "A": 1,
+            "B": 1
+          },
+          "sameAsBaseline": true
+        },
+        "reversal": {
+          "choice": "A",
+          "signedChoice": "A",
+          "correct": true,
+          "signedCorrect": true,
+          "scores": {
+            "A": 1,
+            "B": 1
+          },
+          "sameAsBaseline": true
+        }
+      },
+      "reversalTrajectory": [
+        {
+          "trial": 0,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.022727194242179394,
+            "MBON01": 0.02156717050820589,
+            "V": 0.0011600237339735031
+          },
+          "localFactors": [
+            -0.014038956413666407,
+            -0.00391230494197872,
+            -0.011651645104090372,
+            -0.00002451261712445153
+          ],
+          "changedEdges": 114,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9931988946187115
+            },
+            "MBON12/shared": {
+              "count": 16,
+              "mean": 0.2888868216569733
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.9906556683702386
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.25502853859204466
+            },
+            "MBON01/neither": {
+              "count": 82,
+              "mean": 0.9999844853275217
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9963824450397721
+            },
+            "MBON01/shared": {
+              "count": 1,
+              "mean": 0.9898153535335332
+            }
+          }
+        },
+        {
+          "trial": 1,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.0554179297760129,
+            "MBON01": 0.023457488976418972,
+            "V": 0.031960440799593925
+          },
+          "localFactors": [
+            -1.009667889525493,
+            -0.00522085175746017,
+            -1.0070884625116985,
+            -0.0002297652471396658
+          ],
+          "changedEdges": 114,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9918636214061556
+            },
+            "MBON12/shared": {
+              "count": 16,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.5214771754546268
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.5974929536460318
+            },
+            "MBON01/neither": {
+              "count": 82,
+              "mean": 0.9999761221409957
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9939128373549877
+            },
+            "MBON01/shared": {
+              "count": 1,
+              "mean": 0.9874367168338166
+            }
+          }
+        },
+        {
+          "trial": 2,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.022453470155596733,
+            "MBON01": 0.021563212387263775,
+            "V": 0.0008902577683329582
+          },
+          "localFactors": [
+            -0.014036929855744043,
+            -0.003913886120749844,
+            -0.01164888838926951,
+            -0.00002314336597919464
+          ],
+          "changedEdges": 98,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9919169675016355
+            },
+            "MBON12/shared": {
+              "count": 16,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.5245534680170784
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.5939559663029284
+            },
+            "MBON01/neither": {
+              "count": 82,
+              "mean": 0.9999760225136411
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9939247495856832
+            },
+            "MBON01/shared": {
+              "count": 1,
+              "mean": 0.9856533335125864
+            }
+          }
+        },
+        {
+          "trial": 3,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.05073038022965193,
+            "MBON01": 0.023452013731002808,
+            "V": 0.02727836649864912
+          },
+          "localFactors": [
+            -1.00963419303298,
+            -0.0052154020716746645,
+            -1.0070481697718303,
+            -0.00017691734764311047
+          ],
+          "changedEdges": 98,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.991228788815923
+            },
+            "MBON12/shared": {
+              "count": 16,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.2903902550444456
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.7654252185187818
+            },
+            "MBON01/neither": {
+              "count": 82,
+              "mean": 0.9999676901701714
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9914641280666827
+            },
+            "MBON01/shared": {
+              "count": 1,
+              "mean": 0.9832880317675531
+            }
+          }
+        },
+        {
+          "trial": 4,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.02324519818648696,
+            "MBON01": 0.021559076383709908,
+            "V": 0.001686121802777052
+          },
+          "localFactors": [
+            -0.014042838166157404,
+            -0.003916550324194961,
+            -0.01165587455034256,
+            -0.000029997486207220292
+          ],
+          "changedEdges": 98,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9912865200388891
+            },
+            "MBON12/shared": {
+              "count": 16,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.2949540199322223
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.7607588613646108
+            },
+            "MBON01/neither": {
+              "count": 82,
+              "mean": 0.9999676069833047
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9914808436526765
+            },
+            "MBON01/shared": {
+              "count": 1,
+              "mean": 0.9815115589102036
+            }
+          }
+        },
+        {
+          "trial": 5,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04933297634124756,
+            "MBON01": 0.023446017876267433,
+            "V": 0.025886958464980125
+          },
+          "localFactors": [
+            -1.0096241794526577,
+            -0.00521395065718227,
+            -1.0070362488428752,
+            -0.000158259231183264
+          ],
+          "changedEdges": 98,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9909165378887979
+            },
+            "MBON12/shared": {
+              "count": 16,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.2
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.8480779197077022
+            },
+            "MBON01/neither": {
+              "count": 82,
+              "mean": 0.9999592989126717
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9890272779048814
+            },
+            "MBON01/shared": {
+              "count": 1,
+              "mean": 0.9791577129183816
+            }
+          }
+        },
+        {
+          "trial": 6,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.023635891266167164,
+            "MBON01": 0.02155500091612339,
+            "V": 0.0020808903500437737
+          },
+          "localFactors": [
+            -0.014045753826697668,
+            -0.003917861833340592,
+            -0.01165932168563207,
+            -0.00003339029434654448
+          ],
+          "changedEdges": 98,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9909764272897618
+            },
+            "MBON12/shared": {
+              "count": 16,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.20514101510246596
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.8428553973852877
+            },
+            "MBON01/neither": {
+              "count": 82,
+              "mean": 0.9999592321339646
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9890487727094336
+            },
+            "MBON01/shared": {
+              "count": 1,
+              "mean": 0.9773887363503586
+            }
+          }
+        },
+        {
+          "trial": 7,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.048774899914860725,
+            "MBON01": 0.023439900018274784,
+            "V": 0.02533499989658594
+          },
+          "localFactors": [
+            -1.0096202058096726,
+            -0.005213456642296579,
+            -1.0070316394170125,
+            -0.00015023319671551386
+          ],
+          "changedEdges": 98,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9907629476372618
+            },
+            "MBON12/shared": {
+              "count": 16,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.2
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.8887584067505948
+            },
+            "MBON01/neither": {
+              "count": 82,
+              "mean": 0.9999509466877958
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9866017791819345
+            },
+            "MBON01/shared": {
+              "count": 1,
+              "mean": 0.9750458600463132
+            }
+          }
+        },
+        {
+          "trial": 8,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.023830178193747997,
+            "MBON01": 0.021550960838794708,
+            "V": 0.002279217354953289
+          },
+          "localFactors": [
+            -0.014047204206387201,
+            -0.00391850961993138,
+            -0.011661037802696228,
+            -0.000035097201665242515
+          ],
+          "changedEdges": 98,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9908238989435112
+            },
+            "MBON12/shared": {
+              "count": 16,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.2051416484018167
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.8832620839668716
+            },
+            "MBON01/neither": {
+              "count": 82,
+              "mean": 0.9999508962612563
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9866280297105172
+            },
+            "MBON01/shared": {
+              "count": 1,
+              "mean": 0.9732846471599189
+            }
+          }
+        },
+        {
+          "trial": 9,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04876913595944643,
+            "MBON01": 0.023433692753314972,
+            "V": 0.02533544320613146
+          },
+          "localFactors": [
+            -1.0096202058096726,
+            -0.005213421458999316,
+            -1.0070316394170125,
+            -0.00015020515355798934
+          ],
+          "changedEdges": 98,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9906873920660152
+            },
+            "MBON12/shared": {
+              "count": 16,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.2
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.9087808887655744
+            },
+            "MBON01/neither": {
+              "count": 82,
+              "mean": 0.999942632600303
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9841873628734364
+            },
+            "MBON01/shared": {
+              "count": 1,
+              "mean": 0.97095248484023
+            }
+          }
+        },
+        {
+          "trial": 10,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.023925847839564085,
+            "MBON01": 0.021546952426433563,
+            "V": 0.0023788954131305218
+          },
+          "localFactors": [
+            -0.014047916978597641,
+            -0.003918828546173043,
+            -0.011661882201830545,
+            -0.000035939738154411316
+          ],
+          "changedEdges": 98,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9907488657980456
+            },
+            "MBON12/shared": {
+              "count": 16,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.20514195983608566
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.9031497997612634
+            },
+            "MBON01/neither": {
+              "count": 82,
+              "mean": 0.9999425984599425
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9842183463803174
+            },
+            "MBON01/shared": {
+              "count": 1,
+              "mean": 0.9691991492270874
+            }
+          }
+        },
+        {
+          "trial": 11,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.048766297288239,
+            "MBON01": 0.023427513428032398,
+            "V": 0.025338783860206604
+          },
+          "localFactors": [
+            -1.0096202058096726,
+            -0.005213404902153545,
+            -1.0070315599441528,
+            -0.00015019149416022832
+          ],
+          "changedEdges": 98,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 762,
+              "mean": 0.9906502240206806
+            },
+            "MBON12/shared": {
+              "count": 16,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.2
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.9186357472594271
+            },
+            "MBON01/neither": {
+              "count": 82,
+              "mean": 0.9999343564551247
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9817839686217784
+            },
+            "MBON01/shared": {
+              "count": 1,
+              "mean": 0.9668776439913827
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 12071,
+      "oldPunished": "B",
+      "newPunished": "A",
+      "ranking": {
+        "baseline": {
+          "M": 0.00039570312947034836,
+          "choice": "A",
+          "V_A": 0.01911932695657015,
+          "V_B": 0.0187236238270998
+        },
+        "acquisition": {
+          "M": 0.00515178544446826,
+          "choice": "A",
+          "V_A": 0.005997787229716778,
+          "V_B": 0.000846001785248518
+        },
+        "reversal": {
+          "M": -0.005553557071834803,
+          "choice": "B",
+          "V_A": -0.0018169009126722813,
+          "V_B": 0.0037366561591625214
+        }
+      },
+      "oldActionVChange": 0.0028906543739140034,
+      "newlyPunishedVChange": -0.007814688142389059,
+      "oldActionUniqueRecovery": {
+        "MBON12": {
+          "selectedEdges": 7,
+          "acquiredMean": 0.30125576052074904,
+          "reversedMean": 0.9807776775399856,
+          "delta": 0.6795219170192366,
+          "scope": "Directly stimulated old-action-unique KC inputs, grouped by MBON type"
+        },
+        "MBON01": {
+          "selectedEdges": 0,
+          "acquiredMean": null,
+          "reversedMean": null,
+          "delta": null,
+          "scope": "Directly stimulated old-action-unique KC inputs, grouped by MBON type"
+        }
+      },
+      "strictAcquisition": true,
+      "strictReversal": true,
+      "rankingCrossed": true,
+      "GFdiagnostic": {
+        "baseline": {
+          "choice": "A",
+          "signedChoice": "A",
+          "correct": true,
+          "signedCorrect": true,
+          "scores": {
+            "A": 0.7875647668393783,
+            "B": 0.8601036269430051
+          },
+          "sameAsBaseline": true
+        },
+        "acquisition": {
+          "choice": "A",
+          "signedChoice": "A",
+          "correct": true,
+          "signedCorrect": true,
+          "scores": {
+            "A": 0.9844559585492227,
+            "B": 1
+          },
+          "sameAsBaseline": true
+        },
+        "reversal": {
+          "choice": "A",
+          "signedChoice": "A",
+          "correct": false,
+          "signedCorrect": false,
+          "scores": {
+            "A": 1,
+            "B": 1
+          },
+          "sameAsBaseline": true
+        }
+      },
+      "reversalTrajectory": [
+        {
+          "trial": 0,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.05642201937735081,
+            "MBON01": 0.023250937461853027,
+            "V": 0.03317108191549778
+          },
+          "localFactors": [
+            -1.0058177473644416,
+            -0.0014713820483949452,
+            -1.0026330550511677,
+            -0.00015254711939228905
+          ],
+          "changedEdges": 109,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 758,
+              "mean": 0.9917570494292703
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.6515634293626126
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.48725994032536746
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999957236537642
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9978247010529655
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9992452343011727
+            }
+          }
+        },
+        {
+          "trial": 1,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.023541536647826433,
+            "MBON01": 0.022136641666293144,
+            "V": 0.001404894981533289
+          },
+          "localFactors": [
+            -0.0074502962330977125,
+            -0.00015643114844957987,
+            -0.002361459036668142,
+            -0.000001914850953552458
+          ],
+          "changedEdges": 94,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 758,
+              "mean": 0.99178393408216
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.6493968469902232
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.4884847988391739
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999957236007689
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.997752356726445
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9992452933356053
+            }
+          }
+        },
+        {
+          "trial": 2,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.0506858266890049,
+            "MBON01": 0.023249936290085316,
+            "V": 0.027435890398919582
+          },
+          "localFactors": [
+            -1.0057754678030808,
+            -0.001475236068169276,
+            -1.00258203347524,
+            -0.00012506379021538628
+          ],
+          "changedEdges": 94,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 758,
+              "mean": 0.9911404907149639
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.8246139146585281
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.2608116930572414
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999943360841788
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9970712895822783
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9985599894302748
+            }
+          }
+        },
+        {
+          "trial": 3,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.024741157423704863,
+            "MBON01": 0.022135332226753235,
+            "V": 0.0026058251969516277
+          },
+          "localFactors": [
+            -0.00745930274327596,
+            -0.00015627965331077576,
+            -0.0023730856676896415,
+            -4.130415618419647e-7
+          ],
+          "changedEdges": 94,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 758,
+              "mean": 0.991169322559408
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.8217992960585553
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.26260480026297367
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999943361388928
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9969990742074117
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9985601019524512
+            }
+          }
+        },
+        {
+          "trial": 4,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.048819650895893574,
+            "MBON01": 0.023248180747032166,
+            "V": 0.025571470148861408
+          },
+          "localFactors": [
+            -1.0057619574169319,
+            -0.0014765279160605536,
+            -1.0025651852289836,
+            -0.00011691399332549836
+          ],
+          "changedEdges": 94,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 758,
+              "mean": 0.9908347725317113
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.9103160982861166
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.19999999999999998
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999929484452775
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9963179666642779
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9978747037861809
+            }
+          }
+        },
+        {
+          "trial": 5,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.0253565046004951,
+            "MBON01": 0.022133984602987766,
+            "V": 0.0032225199975073338
+          },
+          "localFactors": [
+            -0.007463910927375157,
+            -0.00015620452662309012,
+            -0.00237901508808136,
+            0
+          ],
+          "changedEdges": 93,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 758,
+              "mean": 0.9908645718922316
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.9071799046561015
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.20193676359983137
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999929486079127
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9962458448502907
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9978748697766254
+            }
+          }
+        },
+        {
+          "trial": 6,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04828117322176695,
+            "MBON01": 0.023246223106980324,
+            "V": 0.025034950114786625
+          },
+          "localFactors": [
+            -1.0057579837739468,
+            -0.0014768869926532109,
+            -1.0025604168574016,
+            -0.00011334361301528082
+          ],
+          "changedEdges": 94,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 758,
+              "mean": 0.990683168938083
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.9527602433215775
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.19999999999999998
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999915616053998
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9955651278273536
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.99718981087504
+            }
+          }
+        },
+        {
+          "trial": 7,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.025663408916443586,
+            "MBON01": 0.022132622078061104,
+            "V": 0.0035307868383824825
+          },
+          "localFactors": [
+            -0.007466208189725876,
+            -0.00015616706675953334,
+            -0.0023819729685783386,
+            0
+          ],
+          "changedEdges": 93,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 758,
+              "mean": 0.990713448280074
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.9494646360986795
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.20193777504290136
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999915618760471
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9954930820965284
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9971900303045363
+            }
+          }
+        },
+        {
+          "trial": 8,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04826325457543135,
+            "MBON01": 0.023244168609380722,
+            "V": 0.025019085966050625
+          },
+          "localFactors": [
+            -1.0057579043010871,
+            -0.0014768952710760965,
+            -1.0025602579116821,
+            -0.00011330304874314203
+          ],
+          "changedEdges": 94,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 758,
+              "mean": 0.9906079817986158
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.9737808697226832
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.19999999999999998
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999901758899697
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.994812917133831
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.996505473281066
+            }
+          }
+        },
+        {
+          "trial": 9,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.025815404020249844,
+            "MBON01": 0.02213125489652157,
+            "V": 0.0036841491237282753
+          },
+          "localFactors": [
+            -0.007467346886793773,
+            -0.0001561486472686132,
+            -0.002383438249429067,
+            0
+          ],
+          "changedEdges": 93,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 758,
+              "mean": 0.9906384991120645
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.9704062758904026
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.20193827622748095
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.999990176268656
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.994740938632052
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.996505746113876
+            }
+          }
+        },
+        {
+          "trial": 10,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04825436230748892,
+            "MBON01": 0.02324211597442627,
+            "V": 0.02501224633306265
+          },
+          "localFactors": [
+            -1.0057578248282273,
+            -0.0014768996172481112,
+            -1.0025601784388225,
+            -0.00011328276660707261
+          ],
+          "changedEdges": 94,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 758,
+              "mean": 0.99057069271238
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.9841913985503592
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.19999999999999998
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999887913017013
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9940613270879788
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9958216923854373
+            }
+          }
+        },
+        {
+          "trial": 11,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.025890679098665714,
+            "MBON01": 0.022129885852336884,
+            "V": 0.0037607932463288307
+          },
+          "localFactors": [
+            -0.007467910647392273,
+            -0.00015613933404286703,
+            -0.0023841634392738342,
+            0
+          ],
+          "changedEdges": 93,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 758,
+              "mean": 0.990601327973647
+            },
+            "MBON12/B-only": {
+              "count": 7,
+              "mean": 0.9807776775399856
+            },
+            "MBON12/shared": {
+              "count": 15,
+              "mean": 0.20000000000000004
+            },
+            "MBON12/A-only": {
+              "count": 6,
+              "mean": 0.20193852431248902
+            },
+            "MBON01/neither": {
+              "count": 81,
+              "mean": 0.9999887917884007
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9939894115556223
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9958220185845215
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 12101,
+      "oldPunished": "A",
+      "newPunished": "B",
+      "ranking": {
+        "baseline": {
+          "M": -0.00147699611261487,
+          "choice": "B",
+          "V_A": 0.008720717392861843,
+          "V_B": 0.010197713505476713
+        },
+        "acquisition": {
+          "M": -0.005207315552979708,
+          "choice": "B",
+          "V_A": -0.003551309462636709,
+          "V_B": 0.0016560060903429985
+        },
+        "reversal": {
+          "M": 0.003606279380619526,
+          "choice": "A",
+          "V_A": -0.0011360854841768742,
+          "V_B": -0.0047423648647964
+        }
+      },
+      "oldActionVChange": 0.002415223978459835,
+      "newlyPunishedVChange": -0.006398370955139399,
+      "oldActionUniqueRecovery": {
+        "MBON12": {
+          "selectedEdges": 5,
+          "acquiredMean": 0.2863230895823629,
+          "reversedMean": 0.9495142429498691,
+          "delta": 0.6631911533675061,
+          "scope": "Directly stimulated old-action-unique KC inputs, grouped by MBON type"
+        },
+        "MBON01": {
+          "selectedEdges": 1,
+          "acquiredMean": 0.9985384746939147,
+          "reversedMean": 0.9980687943616675,
+          "delta": -0.00046968033224714656,
+          "scope": "Directly stimulated old-action-unique KC inputs, grouped by MBON type"
+        }
+      },
+      "strictAcquisition": true,
+      "strictReversal": true,
+      "rankingCrossed": true,
+      "GFdiagnostic": {
+        "baseline": {
+          "choice": "B",
+          "signedChoice": "B",
+          "correct": true,
+          "signedCorrect": true,
+          "scores": {
+            "A": 1,
+            "B": 0.7283236994219653
+          },
+          "sameAsBaseline": true
+        },
+        "acquisition": {
+          "choice": "B",
+          "signedChoice": "B",
+          "correct": true,
+          "signedCorrect": true,
+          "scores": {
+            "A": 1,
+            "B": 0.976878612716763
+          },
+          "sameAsBaseline": true
+        },
+        "reversal": {
+          "choice": "A",
+          "signedChoice": "B",
+          "correct": true,
+          "signedCorrect": false,
+          "scores": {
+            "A": 1,
+            "B": 1
+          },
+          "sameAsBaseline": false
+        }
+      },
+      "reversalTrajectory": [
+        {
+          "trial": 0,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.02028824994340539,
+            "MBON01": 0.0238395594060421,
+            "V": -0.003551309462636709
+          },
+          "localFactors": [
+            -0.00678729514280955,
+            -0.00017170711523956724,
+            -0.005058286090691884,
+            0
+          ],
+          "changedEdges": 98,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9933113162727756
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.9897531951415713
+            },
+            "MBON12/shared": {
+              "count": 11,
+              "mean": 0.28904443014166215
+            },
+            "MBON12/A-only": {
+              "count": 5,
+              "mean": 0.28558677626968254
+            },
+            "MBON01/neither": {
+              "count": 79,
+              "mean": 0.9999969839497178
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9984587070988014
+            },
+            "MBON01/B-only": {
+              "count": 2,
+              "mean": 0.99983927517842
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9982991341002898
+            }
+          }
+        },
+        {
+          "trial": 1,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.0533778527751565,
+            "MBON01": 0.024784506298601627,
+            "V": 0.02859334647655487
+          },
+          "localFactors": [
+            -1.0124968849122524,
+            -0.0015600988020499547,
+            -1.000512957572937,
+            -0.00015119752950138514
+          ],
+          "changedEdges": 99,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.99210976347097
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.5256580413320296
+            },
+            "MBON12/shared": {
+              "count": 11,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/A-only": {
+              "count": 5,
+              "mean": 0.6280286796653961
+            },
+            "MBON01/neither": {
+              "count": 79,
+              "mean": 0.9999954765604934
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9984599093834058
+            },
+            "MBON01/B-only": {
+              "count": 2,
+              "mean": 0.9991143515941465
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9975756157926859
+            }
+          }
+        },
+        {
+          "trial": 2,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.021004607202485204,
+            "MBON01": 0.023838365450501442,
+            "V": -0.002833758248016238
+          },
+          "localFactors": [
+            -0.006792424867550532,
+            -0.00017155644794305167,
+            -0.005065334339936574,
+            0
+          ],
+          "changedEdges": 88,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9921348536130665
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.5271883082915655
+            },
+            "MBON12/shared": {
+              "count": 11,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/A-only": {
+              "count": 5,
+              "mean": 0.6261313044378582
+            },
+            "MBON01/neither": {
+              "count": 79,
+              "mean": 0.9999954768553918
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9983802185140864
+            },
+            "MBON01/B-only": {
+              "count": 2,
+              "mean": 0.9991144275634938
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9974960391829356
+            }
+          }
+        },
+        {
+          "trial": 3,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04912903252989054,
+            "MBON01": 0.024782052263617516,
+            "V": 0.02434698026627302
+          },
+          "localFactors": [
+            -1.012466446806987,
+            -0.0015636425879266525,
+            -1.0004727443059285,
+            -0.00013482612040307786
+          ],
+          "changedEdges": 89,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9915278862392667
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.2967195654600601
+            },
+            "MBON12/shared": {
+              "count": 11,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/A-only": {
+              "count": 5,
+              "mean": 0.7961684940776672
+            },
+            "MBON01/neither": {
+              "count": 79,
+              "mean": 0.9999939672536203
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9983814848937437
+            },
+            "MBON01/B-only": {
+              "count": 2,
+              "mean": 0.9983884239134324
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9967715050527892
+            }
+          }
+        },
+        {
+          "trial": 4,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.021886710543185472,
+            "MBON01": 0.02383698895573616,
+            "V": -0.0019502784125506878
+          },
+          "localFactors": [
+            -0.00679909810423851,
+            -0.00017144241266780428,
+            -0.00507364422082901,
+            0
+          ],
+          "changedEdges": 88,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9915548994088464
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.29898994643947324
+            },
+            "MBON12/shared": {
+              "count": 11,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/A-only": {
+              "count": 5,
+              "mean": 0.7936976545734427
+            },
+            "MBON01/neither": {
+              "count": 79,
+              "mean": 0.9999939676769242
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9983018537183787
+            },
+            "MBON01/B-only": {
+              "count": 2,
+              "mean": 0.9983885620596786
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9966920502677445
+            }
+          }
+        },
+        {
+          "trial": 5,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04755947273224592,
+            "MBON01": 0.024779364466667175,
+            "V": 0.022780108265578747
+          },
+          "localFactors": [
+            -1.0124554795523484,
+            -0.0015649896942906908,
+            -1.000457723935445,
+            -0.00012657977640628815
+          ],
+          "changedEdges": 89,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9912410052541054
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.2
+            },
+            "MBON12/shared": {
+              "count": 11,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/A-only": {
+              "count": 5,
+              "mean": 0.8789064657815855
+            },
+            "MBON01/neither": {
+              "count": 79,
+              "mean": 0.999992457967532
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9983031825090937
+            },
+            "MBON01/B-only": {
+              "count": 2,
+              "mean": 0.9976625008681742
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9959675210244334
+            }
+          }
+        },
+        {
+          "trial": 6,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.022321344818919897,
+            "MBON01": 0.023835590109229088,
+            "V": -0.0015142452903091908
+          },
+          "localFactors": [
+            -0.0068023862938086195,
+            -0.00017138653331332735,
+            -0.00507773831486702,
+            0
+          ],
+          "changedEdges": 88,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9912689675670758
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.20258298267920813
+            },
+            "MBON12/shared": {
+              "count": 11,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/A-only": {
+              "count": 5,
+              "mean": 0.8761530231797074
+            },
+            "MBON01/neither": {
+              "count": 79,
+              "mean": 0.9999924585196512
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9982235839984291
+            },
+            "MBON01/B-only": {
+              "count": 2,
+              "mean": 0.9976627011761106
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9958881610394381
+            }
+          }
+        },
+        {
+          "trial": 7,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04689295683056116,
+            "MBON01": 0.024776622653007507,
+            "V": 0.022116334177553654
+          },
+          "localFactors": [
+            -1.0124508701264858,
+            -0.0015655580080217787,
+            -1.0004512866338093,
+            -0.00012292981975608403
+          ],
+          "changedEdges": 89,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9910995572944059
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.2
+            },
+            "MBON12/shared": {
+              "count": 11,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/A-only": {
+              "count": 5,
+              "mean": 0.9196205265983967
+            },
+            "MBON01/neither": {
+              "count": 79,
+              "mean": 0.9999909494484259
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9982249745395776
+            },
+            "MBON01/B-only": {
+              "count": 2,
+              "mean": 0.9969369444787346
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9951639978633108
+            }
+          }
+        },
+        {
+          "trial": 8,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.02253696136176586,
+            "MBON01": 0.02383418008685112,
+            "V": -0.0012972187250852585
+          },
+          "localFactors": [
+            -0.006804020454486211,
+            -0.00017135880059666105,
+            -0.005079773565133412,
+            0
+          ],
+          "changedEdges": 88,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9911279877884295
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.20258366843064626
+            },
+            "MBON12/shared": {
+              "count": 11,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/A-only": {
+              "count": 5,
+              "mean": 0.9167279127140112
+            },
+            "MBON01/neither": {
+              "count": 79,
+              "mean": 0.9999909501295141
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9981453956098673
+            },
+            "MBON01/B-only": {
+              "count": 2,
+              "mean": 0.9969372069194947
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9950847195652436
+            }
+          }
+        },
+        {
+          "trial": 9,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.046886165626347065,
+            "MBON01": 0.024773839861154556,
+            "V": 0.02211232576519251
+          },
+          "localFactors": [
+            -1.0124507906536262,
+            -0.0015655613193909328,
+            -1.0004512866338093,
+            -0.0001228883241613706
+          ],
+          "changedEdges": 89,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9910298047156716
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.2
+            },
+            "MBON12/shared": {
+              "count": 11,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/A-only": {
+              "count": 5,
+              "mean": 0.9396553732258512
+            },
+            "MBON01/neither": {
+              "count": 79,
+              "mean": 0.9999894422359342
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9981468473583153
+            },
+            "MBON01/B-only": {
+              "count": 2,
+              "mean": 0.9962120165899169
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9943611837758592
+            }
+          }
+        },
+        {
+          "trial": 10,
+          "cue": "A",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.02264305856078863,
+            "MBON01": 0.023832766339182854,
+            "V": -0.0011897077783942223
+          },
+          "localFactors": [
+            -0.006804823875427246,
+            -0.00017134514119890003,
+            -0.005080774426460266,
+            0
+          ],
+          "changedEdges": 88,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9910584660545767
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.20258400559425355
+            },
+            "MBON12/shared": {
+              "count": 11,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/A-only": {
+              "count": 5,
+              "mean": 0.9366942508711855
+            },
+            "MBON01/neither": {
+              "count": 79,
+              "mean": 0.999989443046002
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.998067281465378
+            },
+            "MBON01/B-only": {
+              "count": 2,
+              "mean": 0.9962123411161931
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9942819805763912
+            }
+          }
+        },
+        {
+          "trial": 11,
+          "cue": "B",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.046882799826562405,
+            "MBON01": 0.024771058931946754,
+            "V": 0.02211174089461565
+          },
+          "localFactors": [
+            -1.0124507111807663,
+            -0.0015655629750755096,
+            -1.0004512866338093,
+            -0.00012286752462387085
+          ],
+          "changedEdges": 89,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9909954068881048
+            },
+            "MBON12/B-only": {
+              "count": 5,
+              "mean": 0.2
+            },
+            "MBON12/shared": {
+              "count": 11,
+              "mean": 0.19999999999999998
+            },
+            "MBON12/A-only": {
+              "count": 5,
+              "mean": 0.9495142429498691
+            },
+            "MBON01/neither": {
+              "count": 79,
+              "mean": 0.9999879363305445
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9980687943616675
+            },
+            "MBON01/B-only": {
+              "count": 2,
+              "mean": 0.9954877174312102
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9935590723910397
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 12143,
+      "oldPunished": "B",
+      "newPunished": "A",
+      "ranking": {
+        "baseline": {
+          "M": -0.0011622002348303795,
+          "choice": "B",
+          "V_A": 0.01370277814567089,
+          "V_B": 0.01486497838050127
+        },
+        "acquisition": {
+          "M": 0.0023672697134315968,
+          "choice": "A",
+          "V_A": 0.0018805055879056454,
+          "V_B": -0.0004867641255259514
+        },
+        "reversal": {
+          "M": -0.004431047011166811,
+          "choice": "B",
+          "V_A": -0.0031502903439104557,
+          "V_B": 0.0012807566672563553
+        }
+      },
+      "oldActionVChange": 0.0017675207927823067,
+      "newlyPunishedVChange": -0.005030795931816101,
+      "oldActionUniqueRecovery": {
+        "MBON12": {
+          "selectedEdges": 4,
+          "acquiredMean": 0.30083689561645344,
+          "reversedMean": 0.979460007786809,
+          "delta": 0.6786231121703555,
+          "scope": "Directly stimulated old-action-unique KC inputs, grouped by MBON type"
+        },
+        "MBON01": {
+          "selectedEdges": 1,
+          "acquiredMean": 0.9985912049145232,
+          "reversedMean": 0.9982404274105879,
+          "delta": -0.0003507775039353067,
+          "scope": "Directly stimulated old-action-unique KC inputs, grouped by MBON type"
+        }
+      },
+      "strictAcquisition": true,
+      "strictReversal": true,
+      "rankingCrossed": true,
+      "GFdiagnostic": {
+        "baseline": {
+          "choice": "A",
+          "signedChoice": "A",
+          "correct": true,
+          "signedCorrect": true,
+          "scores": {
+            "A": 0.46632124352331605,
+            "B": 0.8393782383419689
+          },
+          "sameAsBaseline": true
+        },
+        "acquisition": {
+          "choice": "A",
+          "signedChoice": "A",
+          "correct": true,
+          "signedCorrect": true,
+          "scores": {
+            "A": 0.694300518134715,
+            "B": 1
+          },
+          "sameAsBaseline": true
+        },
+        "reversal": {
+          "choice": "A",
+          "signedChoice": "A",
+          "correct": false,
+          "signedCorrect": false,
+          "scores": {
+            "A": 0.8134715025906736,
+            "B": 1
+          },
+          "sameAsBaseline": true
+        }
+      },
+      "reversalTrajectory": [
+        {
+          "trial": 0,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.052509380504488945,
+            "MBON01": 0.023450001142919064,
+            "V": 0.02905937936156988
+          },
+          "localFactors": [
+            -1.0042889279623826,
+            -0.0014811594867044024,
+            -1.0005371967951457,
+            -0.0001343563199043274
+          ],
+          "changedEdges": 98,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9918389037915094
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.6512614758638142
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.5311804837904761
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999890429936883
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9978171043039739
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9985922482396261
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9992227256043082
+            }
+          }
+        },
+        {
+          "trial": 1,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.021936451084911823,
+            "MBON01": 0.022316448390483856,
+            "V": -0.00037999730557203293
+          },
+          "localFactors": [
+            -0.01088020826379458,
+            -0.00012833293941285875,
+            -0.011361867189407349,
+            -0.000006222062640719944
+          ],
+          "changedEdges": 85,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9918832589834898
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.6480273331411106
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.5337589945645435
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999888605313625
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9977575419513657
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9985325911463014
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9992227754792622
+            }
+          }
+        },
+        {
+          "trial": 2,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04875268880277872,
+            "MBON01": 0.023448245599865913,
+            "V": 0.025304443202912807
+          },
+          "localFactors": [
+            -1.0042603972057502,
+            -0.0014841732465558583,
+            -1.0005048513412476,
+            -0.00012644504507382712
+          ],
+          "changedEdges": 85,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9912922423719932
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.8244320311409774
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.30045860172503563
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999853520922212
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9970694487328875
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9985336800907827
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9985336107577382
+            }
+          }
+        },
+        {
+          "trial": 3,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.022806144319474697,
+            "MBON01": 0.022314835339784622,
+            "V": 0.0004913089796900749
+          },
+          "localFactors": [
+            -0.010886734972397486,
+            -0.00012828388975726234,
+            -0.011369715134302774,
+            -0.000012790577279196846
+          ],
+          "changedEdges": 85,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9913396184627495
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.8202322452060352
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.3043085534709276
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999851699357863
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9970099571040159
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9984740495554488
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9985337048147961
+            }
+          }
+        },
+        {
+          "trial": 4,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04770992882549763,
+            "MBON01": 0.02344617061316967,
+            "V": 0.024263758212327957
+          },
+          "localFactors": [
+            -1.0042521320283413,
+            -0.0014850685579909217,
+            -1.0004962682724,
+            -0.0001265049601594607
+          ],
+          "changedEdges": 85,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9910214702643307
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.9103286605601257
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.2
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.999981662128909
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9963220038786267
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9984751826259619
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9978446359616963
+            }
+          }
+        },
+        {
+          "trial": 5,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.023238135036081076,
+            "MBON01": 0.022313300520181656,
+            "V": 0.0009248345158994198
+          },
+          "localFactors": [
+            -0.010889975974957148,
+            -0.00012825967537032234,
+            -0.011373614271481832,
+            -0.000016054345501793756
+          ],
+          "changedEdges": 85,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.991070344089581
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.905649410795213
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.20440435421963532
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999814802432097
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9962625714152378
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9984155670976976
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9978447741848422
+            }
+          }
+        },
+        {
+          "trial": 6,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04725212510675192,
+            "MBON01": 0.023444066755473614,
+            "V": 0.023808058351278305
+          },
+          "localFactors": [
+            -1.0042486352225144,
+            -0.0014854588856299717,
+            -1.0004924535751343,
+            -0.00012652596665753258
+          ],
+          "changedEdges": 85,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.990887348537301
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.9529358531067436
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.2
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.999977974258376
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9955749924771835
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9984167439026643
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9971560359095581
+            }
+          }
+        },
+        {
+          "trial": 7,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.02345438953489065,
+            "MBON01": 0.0223118020221591,
+            "V": 0.0011425875127315521
+          },
+          "localFactors": [
+            -0.010891600201527277,
+            -0.00012824767165713842,
+            -0.01137556384007136,
+            -0.00001767588158448537
+          ],
+          "changedEdges": 85,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9909369646685794
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.9480186456754586
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.2044050364444653
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999777926260371
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9955156134772642
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9983571376959853
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9971562182754445
+            }
+          }
+        },
+        {
+          "trial": 8,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.047237690538167953,
+            "MBON01": 0.023441936820745468,
+            "V": 0.023795753717422485
+          },
+          "localFactors": [
+            -1.0042485557496548,
+            -0.0014854671640528573,
+            -1.0004923741022747,
+            -0.0001265029940340254
+          ],
+          "changedEdges": 85,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9908209074653161
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.9740704091752329
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.2
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999742893605819
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9948285854980958
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9983583579049892
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9964679875754374
+            }
+          }
+        },
+        {
+          "trial": 9,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.023561674170196056,
+            "MBON01": 0.022310325875878334,
+            "V": 0.0012513482943177223
+          },
+          "localFactors": [
+            -0.010892404864231745,
+            -0.0001282414628399743,
+            -0.011376529932022095,
+            -0.000018481786052385967
+          ],
+          "changedEdges": 85,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9908708914094373
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.9690351346169839
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.20440537445247176
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999741079732438
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9947692572330362
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9982987583277609
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9964682140506574
+            }
+          }
+        },
+        {
+          "trial": 10,
+          "cue": "A",
+          "delivered": true,
+          "responseBeforeUpdate": {
+            "MBON12": 0.04723054077476263,
+            "MBON01": 0.023439808748662472,
+            "V": 0.02379073202610016
+          },
+          "localFactors": [
+            -1.0042484762767951,
+            -0.0014854715102248723,
+            -1.0004922946294148,
+            -0.00012649181816313002
+          ],
+          "changedEdges": 85,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9907879938370133
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.9845538569606243
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.2
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999706074342625
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9940827815892336
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.998300021900779
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.995780492342366
+            }
+          }
+        },
+        {
+          "trial": 11,
+          "cue": "B",
+          "delivered": false,
+          "responseBeforeUpdate": {
+            "MBON12": 0.023614898324012756,
+            "MBON01": 0.022308857180178165,
+            "V": 0.001306041143834591
+          },
+          "localFactors": [
+            -0.010892804712057114,
+            -0.00012823856539196437,
+            -0.011377009252707163,
+            -0.000018882254759470623
+          ],
+          "changedEdges": 85,
+          "efficacyAfterUpdate": {
+            "MBON12/neither": {
+              "count": 765,
+              "mean": 0.9908381600176643
+            },
+            "MBON12/shared": {
+              "count": 13,
+              "mean": 0.2
+            },
+            "MBON12/B-only": {
+              "count": 4,
+              "mean": 0.979460007786809
+            },
+            "MBON12/A-only": {
+              "count": 4,
+              "mean": 0.20440554233888789
+            },
+            "MBON01/neither": {
+              "count": 80,
+              "mean": 0.9999704262870701
+            },
+            "MBON01/shared": {
+              "count": 2,
+              "mean": 0.9940235024850301
+            },
+            "MBON01/B-only": {
+              "count": 1,
+              "mean": 0.9982404274105879
+            },
+            "MBON01/A-only": {
+              "count": 1,
+              "mean": 0.9957807628941703
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Descriptive reused experiment, not new validation or a replacement gate.",
+    "Mean gain changes do not establish a biological omission relay, receptor kinetics or causal necessity.",
+    "Trial responses precede their updates and use different cues/stimuli; only phase-end probes measure simultaneous A/B ranking without reinforcement.",
+    "No omission-only trials, relay intervention, new propagation horizon, puzzle consequence feedback or transfer ran."
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schema": "correction-preservation-schedules-v2",
+  "schedulesPath": "research\\data\\correction-preservation-schedules-v2\\schedules.json",
+  "schedulesSha256": "9052300b9e68f462f46de8cd0b1e83a2ba3fa8c2154016bd2d5d403e7b8c23a7",
+  "preparationScript": ".codebase/scripts/diagnostics/prepare-correction-preservation-schedules-v2.mjs",
+  "preparationScriptSha256": "78cbe20f8b997d4503707918b9b4411765f8e4582d9fd2e86a76cf6c16ff8263",
+  "selected": [
+    {
+      "index": 0,
+      "panelId": "tr-06",
+      "move": "a1a4",
+      "role": "target-failure",
+      "status": "failure"
+    },
+    {
+      "index": 1,
+      "panelId": "tr-06",
+      "move": "e1e5",
+      "role": "target-success",
+      "status": "success"
+    },
+    {
+      "index": 2,
+      "panelId": "tr-03",
+      "move": "a1a4",
+      "role": "preserve-success",
+      "status": "success"
+    },
+    {
+      "index": 3,
+      "panelId": "tr-03",
+      "move": "e1e5",
+      "role": "preserve-failure",
+      "status": "failure"
+    }
+  ],
+  "uniform": [
+    {
+      "index": 0,
+      "panelId": "tr-05",
+      "move": "a1a4",
+      "role": "uniform-matched-failure",
+      "status": "failure"
+    },
+    {
+      "index": 1,
+      "panelId": "tr-05",
+      "move": "e1e5",
+      "role": "uniform-matched-success",
+      "status": "success"
+    },
+    {
+      "index": 2,
+      "panelId": "tr-02",
+      "move": "a1a4",
+      "role": "uniform-matched-success",
+      "status": "success"
+    },
+    {
+      "index": 3,
+      "panelId": "tr-02",
+      "move": "e1e5",
+      "role": "uniform-matched-failure",
+      "status": "failure"
+    }
+  ],
+  "graphInference": false,
+  "finalFamilyRead": false
+}

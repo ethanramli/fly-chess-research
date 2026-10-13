@@ -1,0 +1,33 @@
+{
+  "schema": "warmstart-gain-interference-v1",
+  "inputs": [
+    {
+      "path": "research/reports/adaptive-near-transfer-repair-v2-2026-10-07/run/event-informative-0.json",
+      "sha256": "e8200acd126ac7dec20873c170824532973ee93069c4975a8d338dfad315175e"
+    },
+    {
+      "path": "research/reports/adaptive-near-transfer-repair-v2-2026-10-07/run/event-informative-1.json",
+      "sha256": "5af7e625917ddc9755de2055ddbf2d3b136e045e218eb9995fff80a5dbf3c85f"
+    }
+  ],
+  "sources": [
+    {
+      "path": ".codebase/scripts/puzzle-learning/diagnose-warmstart-gain-interference.mjs",
+      "sha256": "8deb23d3ff7d8a52771b0c530a25eed5e67e269898c3f118ab41cfca74305ea0"
+    }
+  ],
+  "channels": [
+    "PPL103",
+    "PAM02"
+  ],
+  "edgeEntries": 870,
+  "l1First": 10.981496605495492,
+  "l1Second": 1.4349615581464799,
+  "opposedEdges": 93,
+  "opposedL1": 0.10556327257665599,
+  "recoveredEdges": 125,
+  "recoveryL1": 0.5235241830555388,
+  "netL1": 12.205331618488671,
+  "opposedFractionOfFirst": 0.009612831143965272,
+  "scope": "Descriptive edge-associated gain arithmetic. Opposed movement is not proof of causal score interference. Recovery counts refer to below-unit gains rising during event 1. No graph work or feedback."
+}

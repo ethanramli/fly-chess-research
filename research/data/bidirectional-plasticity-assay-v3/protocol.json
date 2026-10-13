@@ -1,0 +1,473 @@
+{
+  "schema": "plasticity-mechanism-assay-protocol-v3",
+  "status": "frozen-development-protocol-v3; execution blocked pending feasibility, reviewed receiver, and certified reversal examples",
+  "registeredAt": "2026-10-08",
+  "scope": "Fixture-only infrastructure protocol for narrow one-reply capture-retention associations. It does not validate biology, chess learning, or reasoning.",
+  "conditions": [
+    "informative",
+    "absent",
+    "shuffled",
+    "anti-correlated",
+    "disabled"
+  ],
+  "seed": 20261008,
+  "identity": {
+    "graph": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    "model": "PLACEHOLDER_REQUIRES_MODEL_CONFIG_HASH",
+    "memory": "03225a0cb34a85fb4d5b583378ed05530d67056a2fc0ff6149e8111cd7abac6f",
+    "encoder": "PLACEHOLDER_REQUIRES_FINAL_ENCODER_IDENTITY",
+    "readout": "PLACEHOLDER_REQUIRES_FIXED_READOUT_HASH",
+    "policy": "PLACEHOLDER_REQUIRES_POLICY_HASH",
+    "dataset": "a9959dfe502e8d45db5991e63143dc5767b10ffed8e74e3701e6ebd9e2d10079",
+    "algorithms": {
+      "candidateKernel": "ac4e7d84895a13394b4a3f43ad25381b0d6492f187dc5c28184d31d4db976c6f",
+      "certificate": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+      "assayCoordinator": "19158597dea46054c061105e9e59287ef06d7e18eff00fb094e85810e4c1d650",
+      "assayEntrypoint": "591276466d2269b866fa6b8606d72614a3f271bf811ce9cc0bbad5fd9e2b8139",
+      "anatomyAudit": "5b6c3d7ea198eef539c28525d3dc6e20e14078eccf09f4412bdcbf27e22aa323",
+      "assayAdapter": "PLACEHOLDER_NO_REVIEWED_GRAPH_ADAPTER",
+      "assayAudit": "275ca655b32d9e3b4c236a589e1c6b1128c3e348faae80ee92f67d54e2f13579"
+    },
+    "seeds": [
+      20261008
+    ],
+    "splits": {
+      "train": [
+        "cr-dev-01"
+      ],
+      "validation": [
+        "cr-heldout-v1"
+      ],
+      "final": [
+        "cr-final-v1"
+      ]
+    },
+    "protocol": "83dad7ac692750b20f8b9f12ff4d4d35a8f782ba8f51227f47675d990814ec3a"
+  },
+  "runtime": {
+    "nodeVersion": "v22.23.2",
+    "heapMiB": 256,
+    "cpuDuty": 0.5,
+    "rssMiB": 768,
+    "freeMiB": 256
+  },
+  "search": {
+    "maxNodes": 0,
+    "maxEvaluations": 0,
+    "maxStoredNodes": 0,
+    "deadlineMs": 0
+  },
+  "fixture": {
+    "id": "cr-dev-01",
+    "fen": "4r1k1/8/8/4p3/pP5r/8/8/RK2R3 w - - 0 1",
+    "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/pP5r/8/8/RK2R3 w - - 0 1\"]\n *",
+    "task": {
+      "objective": "capture-retention",
+      "plies": 1
+    }
+  },
+  "experiences": [
+    {
+      "id": "cr-dev-01-success",
+      "sourcePanelId": "tr-01",
+      "fen": "4r1k1/8/8/4p3/pP5r/8/8/RK2R3 w - - 0 1",
+      "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/pP5r/8/8/RK2R3 w - - 0 1\"]\n *",
+      "task": {
+        "objective": "capture-retention",
+        "plies": 1
+      },
+      "action": "a1a4",
+      "status": "success",
+      "expectedChannel": "PAM02",
+      "certificateSha256": "47ac34cc475fdb41ad6909c13bd99247a19eeb2c4f699d94399917853365f553"
+    },
+    {
+      "id": "cr-dev-01-failure",
+      "sourcePanelId": "tr-01",
+      "fen": "4r1k1/8/8/4p3/pP5r/8/8/RK2R3 w - - 0 1",
+      "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/pP5r/8/8/RK2R3 w - - 0 1\"]\n *",
+      "task": {
+        "objective": "capture-retention",
+        "plies": 1
+      },
+      "action": "e1e5",
+      "status": "failure",
+      "expectedChannel": "PPL103",
+      "certificateSha256": "2450f4f7d07da4b4a2c580eaa190312335e9456961e80646ad195b7859e754bf"
+    },
+    {
+      "id": "cr-dev-01-unknown",
+      "fen": "4r1k1/8/8/4p3/pP5r/8/8/RK2R3 w - - 0 1",
+      "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r1k1/8/8/4p3/pP5r/8/8/RK2R3 w - - 0 1\"]\n *",
+      "task": {
+        "objective": "capture-retention",
+        "plies": 1
+      },
+      "action": "a1a4",
+      "status": "unknown",
+      "expectedChannel": null,
+      "certificateSha256": null
+    }
+  ],
+  "schedule": [
+    {
+      "id": "01",
+      "experienceId": "cr-dev-01-success",
+      "phase": "acquisition",
+      "delaySteps": 0,
+      "expectedChannel": "PAM02"
+    },
+    {
+      "id": "02",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "acquisition",
+      "delaySteps": 0,
+      "expectedChannel": "PPL103"
+    },
+    {
+      "id": "03",
+      "experienceId": "cr-dev-01-success",
+      "phase": "coexistence",
+      "delaySteps": 1,
+      "expectedChannel": "PAM02"
+    },
+    {
+      "id": "04",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "coexistence",
+      "delaySteps": 1,
+      "expectedChannel": "PPL103"
+    },
+    {
+      "id": "05",
+      "experienceId": "cr-dev-01-success",
+      "phase": "continued-association",
+      "delaySteps": 2,
+      "expectedChannel": "PAM02"
+    },
+    {
+      "id": "06",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "continued-association",
+      "delaySteps": 2,
+      "expectedChannel": "PPL103"
+    },
+    {
+      "id": "07",
+      "experienceId": "cr-dev-01-success",
+      "phase": "alternating-long",
+      "delaySteps": 0,
+      "expectedChannel": "PAM02"
+    },
+    {
+      "id": "08",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "alternating-long",
+      "delaySteps": 0,
+      "expectedChannel": "PPL103"
+    },
+    {
+      "id": "09",
+      "experienceId": "cr-dev-01-success",
+      "phase": "alternating-long",
+      "delaySteps": 3,
+      "expectedChannel": "PAM02"
+    },
+    {
+      "id": "10",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "alternating-long",
+      "delaySteps": 3,
+      "expectedChannel": "PPL103"
+    },
+    {
+      "id": "11",
+      "experienceId": "cr-dev-01-success",
+      "phase": "extended-association",
+      "delaySteps": 0,
+      "expectedChannel": "PAM02"
+    },
+    {
+      "id": "12",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "extended-association",
+      "delaySteps": 0,
+      "expectedChannel": "PPL103"
+    },
+    {
+      "id": "13",
+      "experienceId": "cr-dev-01-success",
+      "phase": "alternating-long",
+      "delaySteps": 0,
+      "expectedChannel": "PAM02"
+    },
+    {
+      "id": "14",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "alternating-long",
+      "delaySteps": 1,
+      "expectedChannel": "PPL103"
+    },
+    {
+      "id": "15",
+      "experienceId": "cr-dev-01-success",
+      "phase": "alternating-long",
+      "delaySteps": 2,
+      "expectedChannel": "PAM02"
+    },
+    {
+      "id": "16",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "alternating-long",
+      "delaySteps": 3,
+      "expectedChannel": "PPL103"
+    },
+    {
+      "id": "17",
+      "experienceId": "cr-dev-01-success",
+      "phase": "alternating-long",
+      "delaySteps": 0,
+      "expectedChannel": "PAM02"
+    },
+    {
+      "id": "18",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "alternating-long",
+      "delaySteps": 1,
+      "expectedChannel": "PPL103"
+    },
+    {
+      "id": "19",
+      "experienceId": "cr-dev-01-success",
+      "phase": "alternating-long",
+      "delaySteps": 2,
+      "expectedChannel": "PAM02"
+    },
+    {
+      "id": "20",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "alternating-long",
+      "delaySteps": 3,
+      "expectedChannel": "PPL103"
+    },
+    {
+      "id": "21",
+      "experienceId": "cr-dev-01-success",
+      "phase": "alternating-long",
+      "delaySteps": 0,
+      "expectedChannel": "PAM02"
+    },
+    {
+      "id": "22",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "alternating-long",
+      "delaySteps": 1,
+      "expectedChannel": "PPL103"
+    },
+    {
+      "id": "23",
+      "experienceId": "cr-dev-01-success",
+      "phase": "alternating-long",
+      "delaySteps": 2,
+      "expectedChannel": "PAM02"
+    },
+    {
+      "id": "24",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "alternating-long",
+      "delaySteps": 3,
+      "expectedChannel": "PPL103"
+    },
+    {
+      "id": "25",
+      "experienceId": "cr-dev-01-success",
+      "phase": "alternating-long",
+      "delaySteps": 0,
+      "expectedChannel": "PAM02"
+    },
+    {
+      "id": "26",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "alternating-long",
+      "delaySteps": 1,
+      "expectedChannel": "PPL103"
+    },
+    {
+      "id": "27",
+      "experienceId": "cr-dev-01-success",
+      "phase": "alternating-long",
+      "delaySteps": 2,
+      "expectedChannel": "PAM02"
+    },
+    {
+      "id": "28",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "alternating-long",
+      "delaySteps": 3,
+      "expectedChannel": "PPL103"
+    },
+    {
+      "id": "29",
+      "experienceId": "cr-dev-01-success",
+      "phase": "retention-probe",
+      "delaySteps": 0,
+      "expectedChannel": "PAM02",
+      "probe": true
+    },
+    {
+      "id": "30",
+      "experienceId": "cr-dev-01-failure",
+      "phase": "retention-probe",
+      "delaySteps": 0,
+      "expectedChannel": "PPL103",
+      "probe": true
+    }
+  ],
+  "gates": {
+    "selectiveAcquisition": {
+      "criterion": "each verified cue's unaided behavioral margin improves from baseline",
+      "threshold": 0.01
+    },
+    "preservation": {
+      "criterion": "both margins stay above the registered threshold through interleaved coexistence and unaided retention-probe slots",
+      "threshold": 0.01
+    },
+    "finiteReversal": {
+      "criterion": "Not evaluable in this fixture: requires independently certified contradictory consequences for the same measured cue in distinct task contexts, which are not present in the registered dataset",
+      "threshold": 0.01
+    },
+    "saturation": {
+      "criterion": "report bound occupancy by compartment; fail if >5% of gains remain at either bound for two checkpoints",
+      "threshold": 0.05
+    },
+    "controlSeparation": {
+      "criterion": "Per-cue informative final behavioral margin exceeds each matched control by threshold; report each control and criterion separately",
+      "threshold": 0.01
+    },
+    "regression": "No aggregate score can hide a failed cue, criterion, phase or arm. Thresholds are engineering gates, not validated effect sizes.",
+    "reversalStatus": "blocked: no verified bidirectional reversal schedule has been registered",
+    "finiteReversalStatus": "blocked: no independently certified contradictory outcomes for the same measured cue in distinct task contexts"
+  },
+  "budgets": {
+    "maxPresentations": 512,
+    "maxLegalMoves": 64,
+    "maxScheduleEntries": 256,
+    "maxStoredNodes": 0,
+    "maxLogEntries": 1024,
+    "maxEvaluations": 4096,
+    "maxEvaluationsPerAssessment": 64
+  },
+  "checkpointContract": [
+    "physiological",
+    "neuralTransient",
+    "eligibility",
+    "randomization",
+    "pendingReceipt",
+    "identity"
+  ],
+  "limitations": [
+    "No signal/anatomy pass",
+    "No reviewed graph adapter",
+    "Model/readout/policy/dataset hashes are placeholders until a complete run identity is frozen",
+    "This protocol cannot be executed"
+  ],
+  "pinnedFiles": [
+    {
+      "sha256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+      "path": ".cache/full.npz"
+    },
+    {
+      "sha256": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+      "path": ".cache/flywire-annotations-v2.1.0.tsv"
+    },
+    {
+      "sha256": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+      "path": "research/reports/reversal-candidate-2026-10-05/mapping.json"
+    },
+    {
+      "sha256": "a9959dfe502e8d45db5991e63143dc5767b10ffed8e74e3701e6ebd9e2d10079",
+      "path": "research/data/capture-retention-transfer-v2/train.jsonl"
+    },
+    {
+      "sha256": "33a420b7f0ef9bda52a73ff37f199bc090ee1ab9a2bae5b2f22f166e3e0edf7a",
+      "path": ".codebase/src/search-and-feedback/verified-feedback.mjs"
+    },
+    {
+      "sha256": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+      "path": ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs"
+    },
+    {
+      "sha256": "03225a0cb34a85fb4d5b583378ed05530d67056a2fc0ff6149e8111cd7abac6f",
+      "path": ".codebase/src/neural-learning/delayed-reversal-memory.mjs"
+    },
+    {
+      "sha256": "0f3a7fc0d1c03ec1b467a8d9eb3f761371a123d465b88943fe7bb8ca40f995db",
+      "path": ".codebase/src/puzzle-learning/delayed-lesson-brain.mjs"
+    },
+    {
+      "sha256": "8ebe1d5bf26e9648cd7b60137868ca5fd7ea3b838373f15d22c6b3415f20752e",
+      "path": ".codebase/src/neural-learning/neural-episode.mjs"
+    },
+    {
+      "sha256": "0113fedc0f15eb8c1f5c0f94a4bd566e1723a0aac34e4ab2ca8538363187f0a7",
+      "path": ".cache/incentive-circuit-1610c800/models_base.py"
+    },
+    {
+      "sha256": "19158597dea46054c061105e9e59287ef06d7e18eff00fb094e85810e4c1d650",
+      "path": ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs"
+    },
+    {
+      "sha256": "591276466d2269b866fa6b8606d72614a3f271bf811ce9cc0bbad5fd9e2b8139",
+      "path": ".codebase/scripts/puzzle-learning/train-bidirectional-plasticity-assay.mjs"
+    },
+    {
+      "sha256": "5b6c3d7ea198eef539c28525d3dc6e20e14078eccf09f4412bdcbf27e22aa323",
+      "path": ".codebase/scripts/diagnostics/audit-plasticity-signal-anatomy.mjs"
+    },
+    {
+      "sha256": "ac4e7d84895a13394b4a3f43ad25381b0d6492f187dc5c28184d31d4db976c6f",
+      "path": ".codebase/src/neural-learning/bidirectional-plasticity-kernel.mjs"
+    },
+    {
+      "sha256": "608abbe7bd20d58ca571bc3a4ef5fa38a905b7a41fca12fc1f793f2d0729b4b3",
+      "path": ".codebase/src/runtime/storage.mjs"
+    },
+    {
+      "sha256": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+      "path": "package.json"
+    },
+    {
+      "sha256": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214",
+      "path": "package-lock.json"
+    },
+    {
+      "sha256": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f",
+      "path": "node_modules/chess.js/dist/cjs/chess.js"
+    },
+    {
+      "sha256": "36a258fdfb5e76d0816bf2b63dab3c917a0a8652f943da0e6be7e9b543765dfd",
+      "path": "node_modules/chess.js/package.json"
+    },
+    {
+      "sha256": "0f527ce5856fd702e98cddcc722d1c2a13d3772d9db003ddd3681a288e1bd400",
+      "path": "research/reports/plasticity-signal-anatomy-preflight-v2-2026-10-08.json"
+    },
+    {
+      "path": ".codebase/scripts/puzzle-learning/audit-bidirectional-plasticity-assay.mjs",
+      "sha256": "275ca655b32d9e3b4c236a589e1c6b1128c3e348faae80ee92f67d54e2f13579"
+    }
+  ],
+  "feasibilityReport": {
+    "path": "research/reports/plasticity-signal-anatomy-preflight-v2-2026-10-08.json",
+    "sha256": "0f527ce5856fd702e98cddcc722d1c2a13d3772d9db003ddd3681a288e1bd400",
+    "gate": "blocked"
+  },
+  "supersedes": "v1 and v2 remain preserved at their versioned paths",
+  "scheduleContract": {
+    "searchDisabled": true,
+    "unknownExperienceHasNoEvent": true,
+    "assignmentsAreSeeded": true,
+    "sameExperiencesAndTimingAcrossArms": true,
+    "unknownHandling": "unknown fixture is preflight-only; retention probes verify known certificates but deliver no signal; all arms receive the same probes"
+  }
+}

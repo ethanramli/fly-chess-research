@@ -1,0 +1,126 @@
+{
+  "passed": true,
+  "protocolSha256": "e4b711b73da02ed2b7b906017eedd20e0ff0131039a748e2c450a52bb9061280",
+  "datasetSha256": "c00c261dcaa1fdbad9b040106d0ad4887d9f349538298d40ee19e1188462d18a",
+  "rows": [
+    {
+      "row": {
+        "id": "pipeline-kqk-fixture",
+        "group": "composed-kqk-corner-family",
+        "split": "fixture",
+        "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+        "objective": "forced-mate",
+        "plies": 1
+      },
+      "legalCandidates": 26,
+      "proof": {
+        "status": "success",
+        "reward": 1,
+        "nodes": 2,
+        "attacker": "w",
+        "criterion": "force_mate_within_1_remaining_plies",
+        "certificate": {
+          "schema": "bounded-mate-certificate-v1",
+          "rootFen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n *",
+          "attacker": "w",
+          "plies": 1,
+          "tree": {
+            "status": "success",
+            "children": [
+              {
+                "move": "f7e8",
+                "node": {
+                  "status": "success",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        "certificateCheck": {
+          "verified": true,
+          "status": "success",
+          "nodes": 2,
+          "elapsedMs": 9.059799999999996
+        },
+        "bounds": {
+          "maxNodes": 4096,
+          "millisecondsPerStage": 2000,
+          "constructionStop": null,
+          "checkingNodes": 2,
+          "elapsedMs": 20.61420000000001
+        },
+        "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+      }
+    },
+    {
+      "row": {
+        "id": "pipeline-krk-fixture",
+        "group": "composed-krk-corner-family",
+        "split": "fixture",
+        "fen": "7k/5K2/8/8/8/8/8/R7 w - - 0 1",
+        "objective": "forced-mate",
+        "plies": 3
+      },
+      "legalCandidates": 20,
+      "proof": {
+        "status": "success",
+        "reward": 1,
+        "nodes": 55,
+        "attacker": "w",
+        "criterion": "force_mate_within_3_remaining_plies",
+        "certificate": {
+          "schema": "bounded-mate-certificate-v1",
+          "rootFen": "7k/5K2/8/8/8/8/8/R7 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5K2/8/8/8/8/8/R7 w - - 0 1\"]\n *",
+          "attacker": "w",
+          "plies": 3,
+          "tree": {
+            "status": "success",
+            "children": [
+              {
+                "move": "f7g6",
+                "node": {
+                  "status": "success",
+                  "children": [
+                    {
+                      "move": "h8g8",
+                      "node": {
+                        "status": "success",
+                        "children": [
+                          {
+                            "move": "a1a8",
+                            "node": {
+                              "status": "success",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "certificateCheck": {
+          "verified": true,
+          "status": "success",
+          "nodes": 4,
+          "elapsedMs": 8.956500000000005
+        },
+        "bounds": {
+          "maxNodes": 4096,
+          "millisecondsPerStage": 2000,
+          "constructionStop": null,
+          "checkingNodes": 4,
+          "elapsedMs": 52.70770000000002
+        },
+        "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+      }
+    }
+  ],
+  "scope": "Solvability and dataset-contract engineering check only; no graph, learning or transfer ran"
+}

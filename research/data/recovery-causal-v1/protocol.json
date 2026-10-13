@@ -1,0 +1,11 @@
+{
+  "schema":"recovery-causal-v1",
+  "frozen":"2026-10-06 before causal replay",
+  "sourceRun":"research/reports/adaptive-review-resumed-2026-10-06",
+  "attempts":[4,5,6,7,8],
+  "interventions":["recorded","suppress-positive","remove-recovery-term"],
+  "maxLegalMoves":64,"maxEvaluations":512,
+  "hypothesis":"At the five training-observed revivals, positive gain changes and the source-derived recovery term are necessary for the previously rejected move to return to the top. Test all legal moves and independently verify the resulting choice.",
+  "interpretation":"Single-event artificial memory interventions using recorded local activities, not a retrained learner. Recorded replays must reproduce exactly. Suppress-positive clamps each post-event gain at its pre-event value; remove-recovery-term recomputes g'=clip(g+eta*D*k). Neither intervention is a biologically justified replacement. Any rescue isolates a local numerical contribution at these selected training events, not transfer, full trajectory rescue or biological necessity.",
+  "outcomes":"Report choice change, whether the original revived mistake remains preferred, verified mate outcome, full rankings, altered-edge counts and fixed-state invariants. Do not replace previous failed gates or choose interventions using test evidence. Unknown produces no inferred success."
+}

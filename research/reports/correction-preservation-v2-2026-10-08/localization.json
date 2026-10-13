@@ -1,0 +1,1235 @@
+{
+  "schema": "correction-preservation-v2-localization-v1",
+  "protocolSha256": "331d2803c6982a9bbcb21a1256b438a5b90294995ff061492b2ef00787988cc1",
+  "summarySha256": "3844afe92f3d832514799eb4f946c8ec28a3e86ca5e43b6f4e44d11ed7cc3643",
+  "scriptSha256": "0848fcdf7a6b69c68ebe2596140cd586ef43e32838e0bfe388a68bfcc5d11ec9",
+  "target": "tr-06",
+  "sentinel": "tr-03",
+  "findings": {
+    "selectedInformativeTargetUnrepaired": true,
+    "selectedInformativeTargetMarginWorsened": true,
+    "uniformInformativeValidationUnchanged": true,
+    "uniformShuffledValidationChanges": [
+      {
+        "panelId": "va-01",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "e1e5",
+        "correctBefore": true,
+        "correctAfter": false,
+        "marginBefore": 0.00005729636177420616,
+        "marginAfter": -0.0019116448238492012,
+        "marginGain": -0.0019689411856234074
+      },
+      {
+        "panelId": "va-03",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "e1e5",
+        "correctBefore": false,
+        "correctAfter": true,
+        "marginBefore": -0.0023174318484961987,
+        "marginAfter": 0.00026342784985899925,
+        "marginGain": 0.002580859698355198
+      },
+      {
+        "panelId": "va-04",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "e1e5",
+        "correctBefore": false,
+        "correctAfter": true,
+        "marginBefore": -0.002126086503267288,
+        "marginAfter": 0.0011449274607002735,
+        "marginGain": 0.0032710139639675617
+      }
+    ],
+    "interpretation": "Observed cue-cell and endpoint-activity overlap can motivate a causal hypothesis but does not identify causal edges, establish biological representation, or validate a replacement rule."
+  },
+  "arms": [
+    {
+      "schedule": "selected",
+      "condition": "informative",
+      "reportSha256": "b45d4925282cd755e65d5f2cd367f51dd6f9ca64221ff91c16c19d15b2cba535",
+      "target": {
+        "panelId": "tr-06",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "a1a4",
+        "correctBefore": false,
+        "correctAfter": false,
+        "marginBefore": -0.0028380490839481354,
+        "marginAfter": -0.004834569059312344,
+        "marginGain": -0.0019965199753642082
+      },
+      "sentinel": {
+        "panelId": "tr-03",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "a1a4",
+        "correctBefore": true,
+        "correctAfter": true,
+        "marginBefore": 0.0009541739709675312,
+        "marginAfter": 0.005119085777550936,
+        "marginGain": 0.0041649118065834045
+      },
+      "changedPanels": [],
+      "events": [
+        {
+          "eventIndex": 0,
+          "panelId": "tr-06",
+          "move": "a1a4",
+          "certifiedStatus": "failure",
+          "deliveredChannel": "PPL103",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 27,
+          "activeKcCount": 94,
+          "updateFactors": [
+            -1.0031475387513638,
+            -0.0014748140755626892,
+            -1.0047602256139119,
+            -0.00014702209995852577
+          ],
+          "changedEdges": 94
+        },
+        {
+          "eventIndex": 1,
+          "panelId": "tr-06",
+          "move": "e1e5",
+          "certifiedStatus": "success",
+          "deliveredChannel": "PAM02",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 72,
+          "updateFactors": [
+            -0.006636892755826314,
+            -0.9885043740440677,
+            -0.006586162994305293,
+            -0.9882349709773228
+          ],
+          "changedEdges": 106
+        },
+        {
+          "eventIndex": 2,
+          "panelId": "tr-03",
+          "move": "a1a4",
+          "certifiedStatus": "success",
+          "deliveredChannel": "PAM02",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 79,
+          "updateFactors": [
+            -0.010358971854050955,
+            -0.9883537729749353,
+            -0.01016532133022944,
+            -0.9882694886893862
+          ],
+          "changedEdges": 113
+        },
+        {
+          "eventIndex": 3,
+          "panelId": "tr-03",
+          "move": "e1e5",
+          "certifiedStatus": "failure",
+          "deliveredChannel": "PPL103",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 95,
+          "updateFactors": [
+            -1.0052212240795295,
+            -0.0015689705808957417,
+            -1.0012987852096558,
+            -0.00017309033622344336
+          ],
+          "changedEdges": 114
+        }
+      ],
+      "pairOverlaps": [
+        {
+          "leftEvent": 0,
+          "rightEvent": 1,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 60
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 2,
+          "directCueIntersection": 22,
+          "activeKcIntersection": 72
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 3,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 81
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 2,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 58
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 3,
+          "directCueIntersection": 24,
+          "activeKcIntersection": 69
+        },
+        {
+          "leftEvent": 2,
+          "rightEvent": 3,
+          "directCueIntersection": 9,
+          "activeKcIntersection": 66
+        }
+      ]
+    },
+    {
+      "schedule": "selected",
+      "condition": "no-channel",
+      "reportSha256": "d79599e4904b35bb9147455163e0da0848f9607c0e8bb4905ce189ae027a0e11",
+      "target": {
+        "panelId": "tr-06",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "a1a4",
+        "correctBefore": false,
+        "correctAfter": false,
+        "marginBefore": -0.0028380490839481354,
+        "marginAfter": -0.0028381189331412315,
+        "marginGain": -6.984919309616089e-8
+      },
+      "sentinel": {
+        "panelId": "tr-03",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "a1a4",
+        "correctBefore": true,
+        "correctAfter": true,
+        "marginBefore": 0.0009541739709675312,
+        "marginAfter": 0.0009593102149665356,
+        "marginGain": 0.000005136243999004364
+      },
+      "changedPanels": [],
+      "events": [
+        {
+          "eventIndex": 0,
+          "panelId": "tr-06",
+          "move": "a1a4",
+          "certifiedStatus": "failure",
+          "deliveredChannel": null,
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 27,
+          "activeKcCount": 77,
+          "updateFactors": [
+            -0.007435953865448634,
+            -0.0000744749688439899,
+            -0.01024828851222992,
+            -0.0000033724225229687163
+          ],
+          "changedEdges": 77
+        },
+        {
+          "eventIndex": 1,
+          "panelId": "tr-06",
+          "move": "e1e5",
+          "certifiedStatus": "success",
+          "deliveredChannel": null,
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 75,
+          "updateFactors": [
+            -0.006717003881931305,
+            -0.00018588432835208045,
+            -0.006669054428736369,
+            -0.00004467078381114535
+          ],
+          "changedEdges": 89
+        },
+        {
+          "eventIndex": 2,
+          "panelId": "tr-03",
+          "move": "a1a4",
+          "certifiedStatus": "success",
+          "deliveredChannel": null,
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 80,
+          "updateFactors": [
+            -0.010468702763319016,
+            -0.00019828809632195366,
+            -0.010282238324483236,
+            -0.000020987457699245875
+          ],
+          "changedEdges": 96
+        },
+        {
+          "eventIndex": 3,
+          "panelId": "tr-03",
+          "move": "e1e5",
+          "certifiedStatus": "failure",
+          "deliveredChannel": null,
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 80,
+          "updateFactors": [
+            -0.00956762582063675,
+            -0.00021017022016975613,
+            -0.006721331427494685,
+            -0.000048360476891199745
+          ],
+          "changedEdges": 97
+        }
+      ],
+      "pairOverlaps": [
+        {
+          "leftEvent": 0,
+          "rightEvent": 1,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 62
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 2,
+          "directCueIntersection": 22,
+          "activeKcIntersection": 72
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 3,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 63
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 2,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 62
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 3,
+          "directCueIntersection": 24,
+          "activeKcIntersection": 74
+        },
+        {
+          "leftEvent": 2,
+          "rightEvent": 3,
+          "directCueIntersection": 9,
+          "activeKcIntersection": 67
+        }
+      ]
+    },
+    {
+      "schedule": "selected",
+      "condition": "shuffled",
+      "reportSha256": "e8b672af2737d740ab1633392f01b71efba171fe1e8af4d086e2a1cb6e2b42c2",
+      "target": {
+        "panelId": "tr-06",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "a1a4",
+        "correctBefore": false,
+        "correctAfter": false,
+        "marginBefore": -0.0028380490839481354,
+        "marginAfter": -0.0013871951960027218,
+        "marginGain": 0.0014508538879454136
+      },
+      "sentinel": {
+        "panelId": "tr-03",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "e1e5",
+        "correctBefore": true,
+        "correctAfter": false,
+        "marginBefore": 0.0009541739709675312,
+        "marginAfter": -0.0024974974803626537,
+        "marginGain": -0.003451671451330185
+      },
+      "changedPanels": [
+        {
+          "panelId": "tr-03",
+          "choiceBefore": "a1a4",
+          "choiceAfter": "e1e5",
+          "correctBefore": true,
+          "correctAfter": false,
+          "marginBefore": 0.0009541739709675312,
+          "marginAfter": -0.0024974974803626537,
+          "marginGain": -0.003451671451330185
+        },
+        {
+          "panelId": "tr-05",
+          "choiceBefore": "a1a4",
+          "choiceAfter": "e1e5",
+          "correctBefore": false,
+          "correctAfter": true,
+          "marginBefore": -0.0015791459009051323,
+          "marginAfter": 0.0005161277949810028,
+          "marginGain": 0.002095273695886135
+        },
+        {
+          "panelId": "tr-07",
+          "choiceBefore": "a1a4",
+          "choiceAfter": "e1e5",
+          "correctBefore": false,
+          "correctAfter": true,
+          "marginBefore": -0.0013234792277216911,
+          "marginAfter": 0.0010966798290610313,
+          "marginGain": 0.0024201590567827225
+        },
+        {
+          "panelId": "va-01",
+          "choiceBefore": "a1a4",
+          "choiceAfter": "e1e5",
+          "correctBefore": true,
+          "correctAfter": false,
+          "marginBefore": 0.00005729636177420616,
+          "marginAfter": -0.0026777456514537334,
+          "marginGain": -0.0027350420132279396
+        },
+        {
+          "panelId": "va-04",
+          "choiceBefore": "a1a4",
+          "choiceAfter": "e1e5",
+          "correctBefore": false,
+          "correctAfter": true,
+          "marginBefore": -0.002126086503267288,
+          "marginAfter": 0.000020378269255161285,
+          "marginGain": 0.0021464647725224495
+        }
+      ],
+      "events": [
+        {
+          "eventIndex": 0,
+          "panelId": "tr-06",
+          "move": "a1a4",
+          "certifiedStatus": "failure",
+          "deliveredChannel": "PAM02",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 27,
+          "activeKcCount": 75,
+          "updateFactors": [
+            -0.0073757680753866834,
+            -0.9883259442285636,
+            -0.010186838606993357,
+            -0.9882038970891801
+          ],
+          "changedEdges": 75
+        },
+        {
+          "eventIndex": 1,
+          "panelId": "tr-06",
+          "move": "e1e5",
+          "certifiedStatus": "success",
+          "deliveredChannel": "PPL103",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 91,
+          "updateFactors": [
+            -1.00246121113499,
+            -0.0015539218568139607,
+            -1.0012736717859905,
+            -0.0001883221169312795
+          ],
+          "changedEdges": 104
+        },
+        {
+          "eventIndex": 2,
+          "panelId": "tr-03",
+          "move": "a1a4",
+          "certifiedStatus": "success",
+          "deliveredChannel": "PPL103",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 98,
+          "updateFactors": [
+            -1.006095505009095,
+            -0.001583556541138225,
+            -1.0047698418299358,
+            -0.00014548169242011177
+          ],
+          "changedEdges": 111
+        },
+        {
+          "eventIndex": 3,
+          "panelId": "tr-03",
+          "move": "e1e5",
+          "certifiedStatus": "failure",
+          "deliveredChannel": "PAM02",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 77,
+          "updateFactors": [
+            -0.009453311562538147,
+            -0.9885410242778664,
+            -0.006595774243275325,
+            -0.9882392757572234
+          ],
+          "changedEdges": 114
+        }
+      ],
+      "pairOverlaps": [
+        {
+          "leftEvent": 0,
+          "rightEvent": 1,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 62
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 2,
+          "directCueIntersection": 22,
+          "activeKcIntersection": 72
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 3,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 59
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 2,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 81
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 3,
+          "directCueIntersection": 24,
+          "activeKcIntersection": 70
+        },
+        {
+          "leftEvent": 2,
+          "rightEvent": 3,
+          "directCueIntersection": 9,
+          "activeKcIntersection": 65
+        }
+      ]
+    },
+    {
+      "schedule": "selected",
+      "condition": "disabled",
+      "reportSha256": "9185e3dc62e46b184ef1fbe2a7bb43ccaf968a221322d1d5d6b08d22a77df60d",
+      "target": {
+        "panelId": "tr-06",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "a1a4",
+        "correctBefore": false,
+        "correctAfter": false,
+        "marginBefore": -0.0028380490839481354,
+        "marginAfter": -0.0028380490839481354,
+        "marginGain": 0
+      },
+      "sentinel": {
+        "panelId": "tr-03",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "a1a4",
+        "correctBefore": true,
+        "correctAfter": true,
+        "marginBefore": 0.0009541739709675312,
+        "marginAfter": 0.0009541739709675312,
+        "marginGain": 0
+      },
+      "changedPanels": [],
+      "events": [
+        {
+          "eventIndex": 0,
+          "panelId": "tr-06",
+          "move": "a1a4",
+          "certifiedStatus": "failure",
+          "deliveredChannel": "PPL103",
+          "learningApplied": false,
+          "plasticityEnabled": false,
+          "directCueCells": 27,
+          "activeKcCount": 94,
+          "updateFactors": [],
+          "changedEdges": 0
+        },
+        {
+          "eventIndex": 1,
+          "panelId": "tr-06",
+          "move": "e1e5",
+          "certifiedStatus": "success",
+          "deliveredChannel": "PAM02",
+          "learningApplied": false,
+          "plasticityEnabled": false,
+          "directCueCells": 28,
+          "activeKcCount": 72,
+          "updateFactors": [],
+          "changedEdges": 0
+        },
+        {
+          "eventIndex": 2,
+          "panelId": "tr-03",
+          "move": "a1a4",
+          "certifiedStatus": "success",
+          "deliveredChannel": "PAM02",
+          "learningApplied": false,
+          "plasticityEnabled": false,
+          "directCueCells": 28,
+          "activeKcCount": 79,
+          "updateFactors": [],
+          "changedEdges": 0
+        },
+        {
+          "eventIndex": 3,
+          "panelId": "tr-03",
+          "move": "e1e5",
+          "certifiedStatus": "failure",
+          "deliveredChannel": "PPL103",
+          "learningApplied": false,
+          "plasticityEnabled": false,
+          "directCueCells": 28,
+          "activeKcCount": 95,
+          "updateFactors": [],
+          "changedEdges": 0
+        }
+      ],
+      "pairOverlaps": [
+        {
+          "leftEvent": 0,
+          "rightEvent": 1,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 60
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 2,
+          "directCueIntersection": 22,
+          "activeKcIntersection": 72
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 3,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 81
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 2,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 58
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 3,
+          "directCueIntersection": 24,
+          "activeKcIntersection": 69
+        },
+        {
+          "leftEvent": 2,
+          "rightEvent": 3,
+          "directCueIntersection": 9,
+          "activeKcIntersection": 66
+        }
+      ]
+    },
+    {
+      "schedule": "uniform",
+      "condition": "informative",
+      "reportSha256": "c6bc78dad804168c5575179e267b8e6db2a4122121c70744d78419f23bbc5836",
+      "target": {
+        "panelId": "tr-06",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "a1a4",
+        "correctBefore": false,
+        "correctAfter": false,
+        "marginBefore": -0.0028380490839481354,
+        "marginAfter": -0.005052896216511726,
+        "marginGain": -0.002214847132563591
+      },
+      "sentinel": {
+        "panelId": "tr-03",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "a1a4",
+        "correctBefore": true,
+        "correctAfter": true,
+        "marginBefore": 0.0009541739709675312,
+        "marginAfter": 0.0033830911852419376,
+        "marginGain": 0.0024289172142744064
+      },
+      "changedPanels": [],
+      "events": [
+        {
+          "eventIndex": 0,
+          "panelId": "tr-05",
+          "move": "a1a4",
+          "certifiedStatus": "failure",
+          "deliveredChannel": "PPL103",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 27,
+          "activeKcCount": 94,
+          "updateFactors": [
+            -1.0057132405539353,
+            -0.001474375112189187,
+            -1.0047740538914998,
+            -0.00014136762668689093
+          ],
+          "changedEdges": 94
+        },
+        {
+          "eventIndex": 1,
+          "panelId": "tr-05",
+          "move": "e1e5",
+          "certifiedStatus": "success",
+          "deliveredChannel": "PAM02",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 64,
+          "updateFactors": [
+            -0.006663090238968532,
+            -0.9884664125080843,
+            -0.006603372593720754,
+            -0.9882294211226205
+          ],
+          "changedEdges": 105
+        },
+        {
+          "eventIndex": 2,
+          "panelId": "tr-02",
+          "move": "a1a4",
+          "certifiedStatus": "success",
+          "deliveredChannel": "PAM02",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 69,
+          "updateFactors": [
+            -0.007618284473816554,
+            -0.9883420904645592,
+            -0.006808852156003316,
+            -0.9881769822806947
+          ],
+          "changedEdges": 109
+        },
+        {
+          "eventIndex": 3,
+          "panelId": "tr-02",
+          "move": "e1e5",
+          "certifiedStatus": "failure",
+          "deliveredChannel": "PPL103",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 27,
+          "activeKcCount": 97,
+          "updateFactors": [
+            -1.0048573973278205,
+            -0.0015444792807102203,
+            -1.0045156876246135,
+            -0.00016944513966639838
+          ],
+          "changedEdges": 110
+        }
+      ],
+      "pairOverlaps": [
+        {
+          "leftEvent": 0,
+          "rightEvent": 1,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 53
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 2,
+          "directCueIntersection": 25,
+          "activeKcIntersection": 65
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 3,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 87
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 2,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 45
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 3,
+          "directCueIntersection": 25,
+          "activeKcIntersection": 62
+        },
+        {
+          "leftEvent": 2,
+          "rightEvent": 3,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 60
+        }
+      ]
+    },
+    {
+      "schedule": "uniform",
+      "condition": "no-channel",
+      "reportSha256": "ed9ab305ce6715e4cf4a82368291815b6b8da62fc6499d4a29347d031944efb4",
+      "target": {
+        "panelId": "tr-06",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "a1a4",
+        "correctBefore": false,
+        "correctAfter": false,
+        "marginBefore": -0.0028380490839481354,
+        "marginAfter": -0.0028384122997522354,
+        "marginGain": -3.632158041000366e-7
+      },
+      "sentinel": {
+        "panelId": "tr-03",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "a1a4",
+        "correctBefore": true,
+        "correctAfter": true,
+        "marginBefore": 0.0009541739709675312,
+        "marginAfter": 0.0009726723656058311,
+        "marginGain": 0.000018498394638299942
+      },
+      "changedPanels": [],
+      "events": [
+        {
+          "eventIndex": 0,
+          "panelId": "tr-05",
+          "move": "a1a4",
+          "certifiedStatus": "failure",
+          "deliveredChannel": null,
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 27,
+          "activeKcCount": 77,
+          "updateFactors": [
+            -0.01006354515751203,
+            -0.00006955675780773163,
+            -0.010263254245122274,
+            0
+          ],
+          "changedEdges": 76
+        },
+        {
+          "eventIndex": 1,
+          "panelId": "tr-05",
+          "move": "e1e5",
+          "certifiedStatus": "success",
+          "deliveredChannel": null,
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 72,
+          "updateFactors": [
+            -0.006743016342322032,
+            -0.00017039746873908574,
+            -0.006686036785443624,
+            -0.000013938691053125593
+          ],
+          "changedEdges": 89
+        },
+        {
+          "eventIndex": 2,
+          "panelId": "tr-02",
+          "move": "a1a4",
+          "certifiedStatus": "success",
+          "deliveredChannel": null,
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 71,
+          "updateFactors": [
+            -0.007736194878816605,
+            -0.00010329919556776683,
+            -0.006935608883698781,
+            0
+          ],
+          "changedEdges": 93
+        },
+        {
+          "eventIndex": 3,
+          "panelId": "tr-02",
+          "move": "e1e5",
+          "certifiedStatus": "failure",
+          "deliveredChannel": null,
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 27,
+          "activeKcCount": 81,
+          "updateFactors": [
+            -0.009198714047670364,
+            -0.00015700153178638883,
+            -0.01001843810081482,
+            -0.00004471848822302289
+          ],
+          "changedEdges": 94
+        }
+      ],
+      "pairOverlaps": [
+        {
+          "leftEvent": 0,
+          "rightEvent": 1,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 59
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 2,
+          "directCueIntersection": 25,
+          "activeKcIntersection": 66
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 3,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 68
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 2,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 53
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 3,
+          "directCueIntersection": 25,
+          "activeKcIntersection": 71
+        },
+        {
+          "leftEvent": 2,
+          "rightEvent": 3,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 60
+        }
+      ]
+    },
+    {
+      "schedule": "uniform",
+      "condition": "shuffled",
+      "reportSha256": "9d4e8fdd2d8a43a25e242be52fa54d9399819d80bc270bc77a0e31ddd53c5540",
+      "target": {
+        "panelId": "tr-06",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "a1a4",
+        "correctBefore": false,
+        "correctAfter": false,
+        "marginBefore": -0.0028380490839481354,
+        "marginAfter": -0.0003147441893815994,
+        "marginGain": 0.002523304894566536
+      },
+      "sentinel": {
+        "panelId": "tr-03",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "e1e5",
+        "correctBefore": true,
+        "correctAfter": false,
+        "marginBefore": 0.0009541739709675312,
+        "marginAfter": -0.00030212150886654854,
+        "marginGain": -0.0012562954798340797
+      },
+      "changedPanels": [
+        {
+          "panelId": "tr-02",
+          "choiceBefore": "a1a4",
+          "choiceAfter": "e1e5",
+          "correctBefore": true,
+          "correctAfter": false,
+          "marginBefore": 0.005236566998064518,
+          "marginAfter": -0.0007773442193865776,
+          "marginGain": -0.006013911217451096
+        },
+        {
+          "panelId": "tr-03",
+          "choiceBefore": "a1a4",
+          "choiceAfter": "e1e5",
+          "correctBefore": true,
+          "correctAfter": false,
+          "marginBefore": 0.0009541739709675312,
+          "marginAfter": -0.00030212150886654854,
+          "marginGain": -0.0012562954798340797
+        },
+        {
+          "panelId": "tr-07",
+          "choiceBefore": "a1a4",
+          "choiceAfter": "e1e5",
+          "correctBefore": false,
+          "correctAfter": true,
+          "marginBefore": -0.0013234792277216911,
+          "marginAfter": 0.0005804714746773243,
+          "marginGain": 0.0019039507023990154
+        },
+        {
+          "panelId": "tr-08",
+          "choiceBefore": "a1a4",
+          "choiceAfter": "e1e5",
+          "correctBefore": false,
+          "correctAfter": true,
+          "marginBefore": -0.0023002251982688904,
+          "marginAfter": 0.000614694319665432,
+          "marginGain": 0.0029149195179343224
+        },
+        {
+          "panelId": "va-01",
+          "choiceBefore": "a1a4",
+          "choiceAfter": "e1e5",
+          "correctBefore": true,
+          "correctAfter": false,
+          "marginBefore": 0.00005729636177420616,
+          "marginAfter": -0.0019116448238492012,
+          "marginGain": -0.0019689411856234074
+        },
+        {
+          "panelId": "va-03",
+          "choiceBefore": "a1a4",
+          "choiceAfter": "e1e5",
+          "correctBefore": false,
+          "correctAfter": true,
+          "marginBefore": -0.0023174318484961987,
+          "marginAfter": 0.00026342784985899925,
+          "marginGain": 0.002580859698355198
+        },
+        {
+          "panelId": "va-04",
+          "choiceBefore": "a1a4",
+          "choiceAfter": "e1e5",
+          "correctBefore": false,
+          "correctAfter": true,
+          "marginBefore": -0.002126086503267288,
+          "marginAfter": 0.0011449274607002735,
+          "marginGain": 0.0032710139639675617
+        }
+      ],
+      "events": [
+        {
+          "eventIndex": 0,
+          "panelId": "tr-05",
+          "move": "a1a4",
+          "certifiedStatus": "failure",
+          "deliveredChannel": "PAM02",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 27,
+          "activeKcCount": 75,
+          "updateFactors": [
+            -0.010003502170244852,
+            -0.9883214275210371,
+            -0.01020173728466034,
+            -0.9881802009315127
+          ],
+          "changedEdges": 75
+        },
+        {
+          "eventIndex": 1,
+          "panelId": "tr-05",
+          "move": "e1e5",
+          "certifiedStatus": "success",
+          "deliveredChannel": "PPL103",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 95,
+          "updateFactors": [
+            -1.0024867219229538,
+            -0.001566905321346389,
+            -1.0012911558151245,
+            -0.0001575793657037947
+          ],
+          "changedEdges": 104
+        },
+        {
+          "eventIndex": 2,
+          "panelId": "tr-02",
+          "move": "a1a4",
+          "certifiedStatus": "success",
+          "deliveredChannel": "PPL103",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 28,
+          "activeKcCount": 87,
+          "updateFactors": [
+            -1.0034158391257126,
+            -0.001488450707660781,
+            -1.0014976263046265,
+            -0.00012113485071394179
+          ],
+          "changedEdges": 108
+        },
+        {
+          "eventIndex": 3,
+          "panelId": "tr-02",
+          "move": "e1e5",
+          "certifiedStatus": "failure",
+          "deliveredChannel": "PAM02",
+          "learningApplied": true,
+          "plasticityEnabled": true,
+          "directCueCells": 27,
+          "activeKcCount": 82,
+          "updateFactors": [
+            -0.009089048951864243,
+            -0.9884757373236223,
+            -0.009900182485580444,
+            -0.9882307589157588
+          ],
+          "changedEdges": 111
+        }
+      ],
+      "pairOverlaps": [
+        {
+          "leftEvent": 0,
+          "rightEvent": 1,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 66
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 2,
+          "directCueIntersection": 25,
+          "activeKcIntersection": 64
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 3,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 68
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 2,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 78
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 3,
+          "directCueIntersection": 25,
+          "activeKcIntersection": 77
+        },
+        {
+          "leftEvent": 2,
+          "rightEvent": 3,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 61
+        }
+      ]
+    },
+    {
+      "schedule": "uniform",
+      "condition": "disabled",
+      "reportSha256": "46eaf48ca764aaeb59847c6fb2083bb9187e6048a2e584bb87c00ae4224df628",
+      "target": {
+        "panelId": "tr-06",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "a1a4",
+        "correctBefore": false,
+        "correctAfter": false,
+        "marginBefore": -0.0028380490839481354,
+        "marginAfter": -0.0028380490839481354,
+        "marginGain": 0
+      },
+      "sentinel": {
+        "panelId": "tr-03",
+        "choiceBefore": "a1a4",
+        "choiceAfter": "a1a4",
+        "correctBefore": true,
+        "correctAfter": true,
+        "marginBefore": 0.0009541739709675312,
+        "marginAfter": 0.0009541739709675312,
+        "marginGain": 0
+      },
+      "changedPanels": [],
+      "events": [
+        {
+          "eventIndex": 0,
+          "panelId": "tr-05",
+          "move": "a1a4",
+          "certifiedStatus": "failure",
+          "deliveredChannel": "PPL103",
+          "learningApplied": false,
+          "plasticityEnabled": false,
+          "directCueCells": 27,
+          "activeKcCount": 94,
+          "updateFactors": [],
+          "changedEdges": 0
+        },
+        {
+          "eventIndex": 1,
+          "panelId": "tr-05",
+          "move": "e1e5",
+          "certifiedStatus": "success",
+          "deliveredChannel": "PAM02",
+          "learningApplied": false,
+          "plasticityEnabled": false,
+          "directCueCells": 28,
+          "activeKcCount": 64,
+          "updateFactors": [],
+          "changedEdges": 0
+        },
+        {
+          "eventIndex": 2,
+          "panelId": "tr-02",
+          "move": "a1a4",
+          "certifiedStatus": "success",
+          "deliveredChannel": "PAM02",
+          "learningApplied": false,
+          "plasticityEnabled": false,
+          "directCueCells": 28,
+          "activeKcCount": 69,
+          "updateFactors": [],
+          "changedEdges": 0
+        },
+        {
+          "eventIndex": 3,
+          "panelId": "tr-02",
+          "move": "e1e5",
+          "certifiedStatus": "failure",
+          "deliveredChannel": "PPL103",
+          "learningApplied": false,
+          "plasticityEnabled": false,
+          "directCueCells": 27,
+          "activeKcCount": 97,
+          "updateFactors": [],
+          "changedEdges": 0
+        }
+      ],
+      "pairOverlaps": [
+        {
+          "leftEvent": 0,
+          "rightEvent": 1,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 53
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 2,
+          "directCueIntersection": 25,
+          "activeKcIntersection": 65
+        },
+        {
+          "leftEvent": 0,
+          "rightEvent": 3,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 87
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 2,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 45
+        },
+        {
+          "leftEvent": 1,
+          "rightEvent": 3,
+          "directCueIntersection": 25,
+          "activeKcIntersection": 62
+        },
+        {
+          "leftEvent": 2,
+          "rightEvent": 3,
+          "directCueIntersection": 8,
+          "activeKcIntersection": 60
+        }
+      ]
+    }
+  ],
+  "scope": "Read-only development localization from frozen reports and receipts. No graph inference, final-family read, causal intervention, retention claim, or transferable-reasoning claim."
+}

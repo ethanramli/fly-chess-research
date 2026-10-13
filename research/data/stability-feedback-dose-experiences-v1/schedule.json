@@ -1,0 +1,130 @@
+{
+  "schema": "stability-feedback-dose-experiences-v1",
+  "scope": "Fixed verified training experiences only. Not an executable learner protocol or transfer success.",
+  "doseEvents": [
+    8,
+    32
+  ],
+  "block": [
+    {
+      "rowId": "queen-concession-development",
+      "move": "c4b5",
+      "status": "failure"
+    },
+    {
+      "rowId": "queen-concession-development",
+      "move": "c4g8",
+      "status": "success"
+    },
+    {
+      "rowId": "smothered-queen-d5-rook-f8",
+      "move": "a1b2",
+      "status": "failure"
+    },
+    {
+      "rowId": "smothered-queen-d5-rook-f8",
+      "move": "d5g8",
+      "status": "success"
+    }
+  ],
+  "initialMemoryHash": "bb2cf242a859c0d4400e3984205c50cf25d514eb1af5bdaa07f8caaad4883b5d",
+  "inputs": {
+    "research/reports/multi-context-stability-v1-2026-10-07/event-informative-2.json": "074a454796448eede052247ddf50a186425bb1432b8956997db9afacc50d8a05",
+    "research/reports/multi-context-stability-v1-2026-10-07/event-informative-3.json": "2459658e35fee0cfb548f77b5dbb8f2e62eef3e52749fbd047ca698d992c8e8c",
+    "research/reports/multi-context-stability-v1-2026-10-07/event-informative-0.json": "bd691893909036d2694710645bfb46aa2c9c482be3824e0d0cbb682d890db606",
+    "research/reports/multi-context-stability-v1-2026-10-07/event-informative-1.json": "cf9bff4d05068915311e2a7d7d4e3cb61e75188a4ffd04860da7e57c97311cab",
+    "research/reports/multi-context-stability-v1-2026-10-07/report.json": "817cee102992bb82302bd1f699dbdd4c41894ee2964ae67de13de451146f8cb9",
+    "research/reports/multi-context-stability-v1-2026-10-07/audit.json": "8f63e4a853b53c520e23d536d6d578fbd9d2a555fdf427d58a7039ca0d4bf47a",
+    "research/reports/multi-context-stability-v1-2026-10-07/condition-informative.json": "b78fe8af34834b538f203f8636706c58e4623d58e1e49382c0483f76b3c590bb",
+    "research/data/stability-feedback-dose-experiences-v1/initial-memory.json": "182a2819efc8267368b2386706faf08829d2d8787d054881cc7d420f9751df86",
+    "research/data/stability-feedback-dose-experiences-v1/experiences.jsonl": "8c992331e393e45a43981a0029d85fc86b8cfeecf4d5d058666b21835d0424e7"
+  },
+  "sources": {
+    ".codebase/scripts/puzzle-learning/prepare-stability-dose-experiences.mjs": "7eb657e21b6f7ab9a98697d19c268c3dc5fefc5b5546786ad135b40bfe7113c5",
+    ".codebase/src/search-and-feedback/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+    ".codebase/src/neural-learning/association-validation.mjs": "b62d6f6bf4ab51f0ed993877026ac1cde0914c582fb479ea27fdc028a7dc2c91"
+  },
+  "shuffleSeed": 14031,
+  "informativeChannels": [
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02"
+  ],
+  "shuffledChannels": [
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PAM02",
+    "PAM02",
+    "PAM02",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PPL103",
+    "PPL103",
+    "PPL103",
+    "PPL103",
+    "PAM02",
+    "PAM02",
+    "PPL103",
+    "PAM02",
+    "PPL103",
+    "PPL103",
+    "PPL103"
+  ],
+  "conditions": [
+    "informative",
+    "absent",
+    "shuffled",
+    "disabled"
+  ],
+  "requirements": {
+    "sameStart": true,
+    "sameExperiences": true,
+    "noSiblingTeaching": true,
+    "noSkipCorrectExperience": true,
+    "unknownNoEvent": true,
+    "atomicPendingReceipt": true
+  }
+}

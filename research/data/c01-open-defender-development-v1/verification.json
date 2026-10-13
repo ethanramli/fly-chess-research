@@ -1,0 +1,51 @@
+{
+  "schema": "c01-open-defender-development-verification-v1",
+  "sourceHashes": {
+    ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "041fddbfbcd5b85c833ede38f848369793c25033ecbdcbdf0f9cd5b093404c12",
+    ".codebase/src/search-and-feedback/capture-retention-certificate.mjs": "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+    ".codebase/src/chess-input/bound-ray-relational-cue.mjs": "15208f174cbd1bb4b6ef091794c149d081471951e5bc6a8f519df58657215a8f",
+    ".codebase/src/chess-input/relational-chess-cue-v3.mjs": "a19b3e65fda0300b5a361d028c706fcd1b5d1278f2496a11234ccd06690ce47f",
+    "research/reports/reversal-candidate-2026-10-05/mapping.json": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+    "package.json": "7605c507b0762b1c7b2886860a5ef5227671fdc55227ee15af681de26a6b3802",
+    "package-lock.json": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+    "node_modules/chess.js/package.json": "36a258fdfb5e76d0816bf2b63dab3c917a0a8652f943da0e6be7e9b543765dfd",
+    "node_modules/chess.js/dist/esm/chess.js": "76c7c34f0e2e9ab076521a5d6fe786a9cce537bb1b6f29d32a9c9970b5b232d2",
+    "research/data/c01-open-defender-development-v1/generate.mjs": "a88de58f5c64970238654f6c90249c2ccb7b030ed2ce44e7e2dd3055fa2477d3"
+  },
+  "mappingSha256": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+  "families": 2,
+  "positions": 4,
+  "maxPieces": 6,
+  "probesPerBoard": 2,
+  "independentlyCheckedLegalActions": 116,
+  "allLegalCuePresentations": 348,
+  "seeds": [
+    20261011,
+    20261012,
+    20261013
+  ],
+  "cueDose": {
+    "cells": 8,
+    "totalCurrent": 12
+  },
+  "probeOutcomes": {
+    "e-file-open:defender-a": {
+      "e4e6": "failure",
+      "e4a4": "success"
+    },
+    "e-file-open:defender-b": {
+      "e4e6": "success",
+      "e4a4": "failure"
+    },
+    "d-file-mirror:defender-a": {
+      "d4d6": "failure",
+      "d4h4": "success"
+    },
+    "d-file-mirror:defender-b": {
+      "d4d6": "success",
+      "d4h4": "failure"
+    }
+  },
+  "scope": "Static, inspected training-development candidates only. No graph or neural evidence."
+}

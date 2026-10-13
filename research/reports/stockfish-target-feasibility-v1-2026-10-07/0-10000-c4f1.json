@@ -1,0 +1,319 @@
+{
+  "identity": {
+    "protocolSha256": "4b6b3860801908ff9e25ad092d7574be9e0c1b9387517654ac41fbb5795b3e91",
+    "pins": {
+      "package.json": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+      ".codebase/src/search-and-feedback/stockfish-target.mjs": "1931d16a1883e76615be32cf13fb359286c06fd8a95d3c88812171f48c13158f",
+      "research/reports/smothered-training-variations-v1-2026-10-07/puzzles.jsonl": "489bdb5bf825e154fcc215cc1555ff0937bb811cf991ed8f42034b1e3b596f61",
+      "node_modules/chess.js/dist/cjs/chess.js": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f",
+      "research/data/smothered-acquisition-v1/puzzles.jsonl": "3b40d90e82e215c77ab15fa41705a66da08fa574efc7f3f3ee3a56cd7af89fd5",
+      "research/reports/shared-memory-multi-context-coverage-v1-2026-10-07/audit.json": "db65fbb56703dcb5918965cdf0e6f22514f69c2b9c34e894783b23408dae4863",
+      ".codebase/src/search-and-feedback/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+      ".codebase/src/search-and-feedback/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+      ".codebase/vendor/stockfish/sf-19/release.json": "ad2d183b980b0c119909398581ce59abb059174d022320687b3b05001ae24f2e",
+      "package-lock.json": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214",
+      ".codebase/scripts/puzzle-learning/probe-stockfish-targets.mjs": "c2412daa42db592d43b25a9fdbf0534153cc773fde396d18623e27c7754b646f",
+      ".codebase/vendor/stockfish/sf-19/extracted/stockfish/Copying.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      ".codebase/vendor/stockfish/sf-19/extracted/stockfish/stockfish-windows-x86-64-universal.exe": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+      ".codebase/scripts/puzzle-learning/audit-stockfish-targets.mjs": "1b0d1d31c470880b029c8701af610e1bfb00698bcc6ffa24ecba3e28c01601b8",
+      ".codebase/src/search-and-feedback/mate-certificate.mjs": "b7bdab76a3faa78c203971991c3b2e00cdfd359cfca08b6e1f7b1ae8d430b700",
+      "research/reports/shared-memory-multi-context-coverage-v1-2026-10-07/report.json": "8ab9f3a95ecd8db2e9a11166963743b23ffe018bddf06827c59be8c4582d38b5"
+    }
+  },
+  "rowId": "queen-concession-development",
+  "rootFen": "5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1",
+  "childFen": "5r1k/6pp/7N/8/8/8/8/K4Q2 b - - 1 1",
+  "move": "c4f1",
+  "nodeBudget": 10000,
+  "raw": [
+    "info string Available processors: 0-7",
+    "info string Using 1 thread",
+    "info string NNUE evaluation using nn-1a298aa575a0.nnue (109MiB, (86896, 1024, 32, 32, 1))",
+    "info string Network replica 1: Shared memory.",
+    "info depth 1 seldepth 4 multipv 1 score cp 645 wdl 1000 0 0 nodes 25 nps 25000 hashfull 0 tbhits 0 time 1 pv f8f1 a1a2",
+    "info depth 2 seldepth 4 multipv 1 score cp 645 wdl 1000 0 0 nodes 45 nps 45000 hashfull 0 tbhits 0 time 1 pv f8f1 a1a2",
+    "info depth 3 seldepth 6 multipv 1 score cp 655 wdl 1000 0 0 nodes 91 nps 91000 hashfull 0 tbhits 0 time 1 pv f8f1 a1b2 f1f2 b2b1",
+    "info depth 4 seldepth 6 multipv 1 score cp 653 wdl 1000 0 0 nodes 144 nps 144000 hashfull 0 tbhits 0 time 1 pv f8f1 a1b2 g7h6 b2c2",
+    "info depth 5 seldepth 7 multipv 1 score cp 648 wdl 1000 0 0 nodes 189 nps 189000 hashfull 0 tbhits 0 time 1 pv f8f1 a1a2",
+    "info depth 6 seldepth 8 multipv 1 score cp 641 wdl 1000 0 0 nodes 279 nps 279000 hashfull 0 tbhits 0 time 1 pv f8f1 a1a2 f1f2 a2b3 g7h6",
+    "info depth 7 seldepth 9 multipv 1 score cp 670 wdl 1000 0 0 nodes 370 nps 370000 hashfull 0 tbhits 0 time 1 pv f8f1 a1a2 g7h6 a2b2",
+    "info depth 8 seldepth 9 multipv 1 score cp 700 wdl 1000 0 0 nodes 490 nps 490000 hashfull 0 tbhits 0 time 1 pv f8f1 a1a2 g7h6 a2b2 f1f2 b2b1 h6h5 b1a1",
+    "info depth 9 seldepth 11 multipv 1 score cp 711 wdl 1000 0 0 nodes 647 nps 647000 hashfull 0 tbhits 0 time 1 pv f8f1 a1b2 g7h6 b2c2 h6h5 c2d2 f1f2 d2d1",
+    "info depth 10 seldepth 11 multipv 1 score cp 629 wdl 1000 0 0 nodes 1058 nps 529000 hashfull 0 tbhits 0 time 2 pv f8f1 a1b2 g7h6 b2c3 f1f3 c3d2 f3f2 d2e1",
+    "info depth 11 seldepth 13 multipv 1 score cp 607 wdl 1000 0 0 nodes 1642 nps 821000 hashfull 0 tbhits 0 time 2 pv f8f1 a1b2 g7h6 b2c3 f1f3 c3d2 f3f2 d2d3",
+    "info depth 12 seldepth 13 multipv 1 score cp 628 wdl 1000 0 0 nodes 2243 nps 747666 hashfull 0 tbhits 0 time 3 pv f8f1 a1b2 f1f2 b2c3 g7h6 c3d3 h6h5 d3e3 f2a2 e3f3",
+    "info depth 13 seldepth 19 multipv 1 score cp 651 wdl 1000 0 0 nodes 4315 nps 719166 hashfull 0 tbhits 0 time 6 pv f8f1 a1a2 f1f2 a2a1 g7h6 a1b1 h8g7 b1c1",
+    "info depth 14 seldepth 19 multipv 1 score cp 651 wdl 1000 0 0 nodes 10010 nps 715000 hashfull 1 tbhits 0 time 14 pv f8f1 a1a2 f1f2 a2a1 g7h6 a1b1 h8g7 b1c1",
+    "bestmove f8f1 ponder a1a2"
+  ],
+  "target": {
+    "available": true,
+    "teachingAllowed": true,
+    "utility": -1,
+    "actor": "w",
+    "sideToMove": "b",
+    "actorScore": -651,
+    "info": {
+      "kind": "cp",
+      "score": 651,
+      "wdl": [
+        1000,
+        0,
+        0
+      ],
+      "depth": 14,
+      "nodes": 10010,
+      "pv": [
+        "f8f1",
+        "a1a2",
+        "f1f2",
+        "a2a1",
+        "g7h6",
+        "a1b1",
+        "h8g7",
+        "b1c1"
+      ],
+      "bounded": false,
+      "line": "info depth 14 seldepth 19 multipv 1 score cp 651 wdl 1000 0 0 nodes 10010 nps 715000 hashfull 1 tbhits 0 time 14 pv f8f1 a1a2 f1f2 a2a1 g7h6 a1b1 h8g7 b1c1"
+    },
+    "meaning": "Searched engine target; WDL model utility, not certified truth or fly win probability"
+  },
+  "proof": {
+    "status": "failure",
+    "reward": -1,
+    "nodes": 30,
+    "attacker": "w",
+    "criterion": "force_mate_within_2_remaining_plies",
+    "certificate": {
+      "schema": "bounded-mate-certificate-v1",
+      "rootFen": "5r1k/6pp/7N/8/8/8/8/K4Q2 b - - 1 1",
+      "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"5r1k/6pp/7N/8/2Q5/8/8/K7 w - - 0 1\"]\n\n1. Qf1 *",
+      "attacker": "w",
+      "plies": 2,
+      "tree": {
+        "status": "failure",
+        "children": [
+          {
+            "move": "f8f7",
+            "node": {
+              "status": "failure",
+              "children": [
+                {
+                  "move": "h6f7",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "h6g8",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "h6g4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "h6f5",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "a1a2",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "a1b2",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "a1b1",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1e2",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1d3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1c4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1b5",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1a6",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1f2",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1f3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1f4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1f5",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1f6",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1f7",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1g2",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1h3",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1g1",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1h1",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1e1",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1d1",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1c1",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "f1b1",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "certificateCheck": {
+      "verified": true,
+      "status": "failure",
+      "nodes": 28,
+      "elapsedMs": 22.62100000000646
+    },
+    "bounds": {
+      "maxNodes": 4096,
+      "millisecondsPerStage": 2000,
+      "constructionStop": null,
+      "checkingNodes": 28,
+      "elapsedMs": 51.43099999999686
+    },
+    "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+  },
+  "predictions": {
+    "baseline": 0.00220068933939348,
+    "informative": -0.0006186211623874607,
+    "absent": 0.0020181676912500376,
+    "shuffled": 0.0007150055553485674,
+    "disabled": 0.00220068933939348
+  },
+  "elapsedMs": 14.502699999997276,
+  "stages": {
+    "engineSearch": true,
+    "recordedTargets": true,
+    "neuralFeedback": false,
+    "persistentLearning": false,
+    "transfer": false
+  }
+}

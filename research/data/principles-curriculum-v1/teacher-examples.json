@@ -1,0 +1,125 @@
+[
+  {
+    "id": "blocked-defender",
+    "fen": "r6k/8/p7/8/p7/8/R7/7K w - - 0 1",
+    "expected": "success",
+    "action": "a2a4",
+    "task": {
+      "objective": "capture-retention",
+      "plies": 1
+    },
+    "proof": {
+      "status": "success",
+      "certificate": {
+        "schema": "capture-retention-certificate-v1",
+        "rootFen": "r6k/8/p7/8/p7/8/R7/7K w - - 0 1",
+        "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/p7/8/p7/8/R7/7K w - - 0 1\"]\n *",
+        "actor": "w",
+        "move": "a2a4",
+        "target": "a4",
+        "replies": [
+          "a6a5",
+          "a8a7",
+          "a8b8",
+          "a8c8",
+          "a8d8",
+          "a8e8",
+          "a8f8",
+          "a8g8",
+          "h8g7",
+          "h8g8",
+          "h8h7"
+        ],
+        "recaptures": []
+      },
+      "certificateSha256": "b4bd3a445dd46a3da2f9aacbc59b8edf809665ac8c4fbd37f76efbae8e881187"
+    },
+    "checked": {
+      "verified": true,
+      "status": "success",
+      "actor": "w",
+      "move": "a2a4",
+      "learningAllowed": true,
+      "experimentalPulse": false,
+      "certificateSha256": "b4bd3a445dd46a3da2f9aacbc59b8edf809665ac8c4fbd37f76efbae8e881187",
+      "meaning": "One-reply immediate recapturability only; not strategic move quality"
+    },
+    "receipt": {
+      "move": "a2a4",
+      "actor": "w",
+      "status": "success",
+      "experimentalPulse": false,
+      "learningAllowed": true,
+      "certificateSha256": "b4bd3a445dd46a3da2f9aacbc59b8edf809665ac8c4fbd37f76efbae8e881187",
+      "meaning": "One-reply immediate recapturability only; not strategic move quality"
+    },
+    "excludedFromAllDatasetSplits": true,
+    "neuralDeliveryPerformed": false,
+    "rejectedIncompleteProof": true,
+    "exhaustedVerificationTeachesNothing": true
+  },
+  {
+    "id": "open-defender",
+    "fen": "r6k/8/1p6/8/p7/8/R7/7K w - - 0 1",
+    "expected": "failure",
+    "action": "a2a4",
+    "task": {
+      "objective": "capture-retention",
+      "plies": 1
+    },
+    "proof": {
+      "status": "failure",
+      "certificate": {
+        "schema": "capture-retention-certificate-v1",
+        "rootFen": "r6k/8/1p6/8/p7/8/R7/7K w - - 0 1",
+        "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"r6k/8/1p6/8/p7/8/R7/7K w - - 0 1\"]\n *",
+        "actor": "w",
+        "move": "a2a4",
+        "target": "a4",
+        "replies": [
+          "a8a4",
+          "a8a5",
+          "a8a6",
+          "a8a7",
+          "a8b8",
+          "a8c8",
+          "a8d8",
+          "a8e8",
+          "a8f8",
+          "a8g8",
+          "b6b5",
+          "h8g7",
+          "h8g8",
+          "h8h7"
+        ],
+        "recaptures": [
+          "a8a4"
+        ]
+      },
+      "certificateSha256": "fcf1750d09483781422b1859fd0714f6b72e1b6a82808c06c3947b983be41a0d"
+    },
+    "checked": {
+      "verified": true,
+      "status": "failure",
+      "actor": "w",
+      "move": "a2a4",
+      "learningAllowed": true,
+      "experimentalPulse": true,
+      "certificateSha256": "fcf1750d09483781422b1859fd0714f6b72e1b6a82808c06c3947b983be41a0d",
+      "meaning": "One-reply immediate recapturability only; not strategic move quality"
+    },
+    "receipt": {
+      "move": "a2a4",
+      "actor": "w",
+      "status": "failure",
+      "experimentalPulse": true,
+      "learningAllowed": true,
+      "certificateSha256": "fcf1750d09483781422b1859fd0714f6b72e1b6a82808c06c3947b983be41a0d",
+      "meaning": "One-reply immediate recapturability only; not strategic move quality"
+    },
+    "excludedFromAllDatasetSplits": true,
+    "neuralDeliveryPerformed": false,
+    "rejectedIncompleteProof": true,
+    "exhaustedVerificationTeachesNothing": true
+  }
+]

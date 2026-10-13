@@ -1,0 +1,1123 @@
+{
+  "schema": "positive-puzzle-ranking-diagnostic-v1",
+  "inputs": {
+    "state": "research/reports/positive-puzzle-pipeline-v1-2026-10-06/checkpoint-00024/state.json",
+    "stateSha256": "725c11a49355f3f58bb9af7498c5674cf53ba2a9b84663da32fc2b6a688f3737",
+    "source": ".codebase/scripts/diagnose-positive-puzzle-ranking.mjs",
+    "sourceSha256": "393703566c44fef60eb6aff773bc423199e881c9ea95979a8f6aecab08b19518"
+  },
+  "fixtures": [
+    {
+      "id": "pipeline-kqk-fixture",
+      "beforeChoice": "f7f5",
+      "afterChoice": "f7b3",
+      "candidateCount": 26,
+      "reviewedCount": 4,
+      "receiptInputs": [
+        {
+          "path": "research\\reports\\positive-puzzle-pipeline-v1-2026-10-06\\event-informative-0-0.json",
+          "sha256": "6979e943366593019dd638c7e85856ada17e1d82880d9ee0fbb43b3d8ac03249",
+          "move": "f7h7",
+          "status": "success",
+          "deliveredChannel": "PAM02",
+          "changedEdges": 58
+        },
+        {
+          "path": "research\\reports\\positive-puzzle-pipeline-v1-2026-10-06\\event-informative-0-1.json",
+          "sha256": "7177b33877250282c5d5f8cdda41ac75b93ef26d3bd6329aa5e3bff1ba9b5e35",
+          "move": "f7f5",
+          "status": "failure",
+          "deliveredChannel": "PPL103",
+          "changedEdges": 99
+        },
+        {
+          "path": "research\\reports\\positive-puzzle-pipeline-v1-2026-10-06\\event-informative-0-2.json",
+          "sha256": "4e1d1b030dbaf7025fbb25b90f8d0fedf33f4f229b66839c1a155badbf8ec6ef",
+          "move": "f7e6",
+          "status": "failure",
+          "deliveredChannel": "PPL103",
+          "changedEdges": 109
+        },
+        {
+          "path": "research\\reports\\positive-puzzle-pipeline-v1-2026-10-06\\event-informative-0-3.json",
+          "sha256": "585f0aa934879e58e07f2c660c08629ee4d6c48a436beafcd957887a64cbf5a9",
+          "move": "g6h6",
+          "status": "failure",
+          "deliveredChannel": "PPL103",
+          "changedEdges": 121
+        }
+      ],
+      "candidates": [
+        {
+          "move": "f7b3",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.014477267162874341,
+          "after": 0.009736638516187668,
+          "change": -0.004740628646686673,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/8/6K1/8/8/1Q6/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qb3 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 4.637900000000002
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 5.389499999999998
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7f5",
+          "reviewed": true,
+          "taughtStatus": "failure",
+          "status": "failure",
+          "before": 0.01579287275671959,
+          "after": 0.009658681694418192,
+          "change": -0.006134191062301397,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/8/6K1/5Q2/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qf5 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 4.887099999999975
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 6.215899999999976
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7d5",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.013937195762991905,
+          "after": 0.009353906381875277,
+          "change": -0.004583289381116629,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/8/6K1/3Q4/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qd5 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 2.0575000000000045
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 2.6281999999999925
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7h7",
+          "reviewed": true,
+          "taughtStatus": "success",
+          "status": "success",
+          "before": 0.015078552067279816,
+          "after": 0.009233800694346428,
+          "change": -0.005844751372933388,
+          "proof": {
+            "status": "success",
+            "reward": 1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/7Q/6K1/8/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qh7# *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "success",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "success",
+              "nodes": 1,
+              "elapsedMs": 5.830600000000004
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 6.772099999999995
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7a7",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.01380164036527276,
+          "after": 0.00895708566531539,
+          "change": -0.004844554699957371,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/Q7/6K1/8/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qa7 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 5.06110000000001
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 5.475900000000024
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7c4",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.01338330190628767,
+          "after": 0.008793934714049101,
+          "change": -0.004589367192238569,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/8/6K1/8/2Q5/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qc4 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 2.5652999999999793
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 2.9746000000000095
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7f2",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.013326901011168957,
+          "after": 0.008766851387917995,
+          "change": -0.004560049623250961,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/8/6K1/8/8/8/5Q2/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qf2 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 2.8301999999999907
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 3.7542000000000257
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7f6",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.013076941017061472,
+          "after": 0.00865463586524129,
+          "change": -0.004422305151820183,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/8/5QK1/8/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qf6+ *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 2.3573000000000093
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 3.1149999999999807
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7f4",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.013516941107809544,
+          "after": 0.008335071615874767,
+          "change": -0.005181869491934776,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/8/6K1/8/5Q2/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qf4 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 4.4570999999999685
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 6.932199999999966
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7e6",
+          "reviewed": true,
+          "taughtStatus": "failure",
+          "status": "failure",
+          "before": 0.015104070771485567,
+          "after": 0.007220780476927757,
+          "change": -0.00788329029455781,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/8/4Q1K1/8/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qe6 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 3.757499999999993
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 4.984800000000007
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7g7",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "success",
+          "before": 0.01166041474789381,
+          "after": 0.006996707059442997,
+          "change": -0.004663707688450813,
+          "proof": {
+            "status": "success",
+            "reward": 1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/6Q1/6K1/8/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qg7# *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "success",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "success",
+              "nodes": 1,
+              "elapsedMs": 2.3414000000000215
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 2.959000000000003
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7c7",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.01174019742757082,
+          "after": 0.006657255347818136,
+          "change": -0.005082942079752684,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/2Q5/6K1/8/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qc7 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 3.6421000000000276
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 5.9909000000000106
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7f8",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "success",
+          "before": 0.011027427390217781,
+          "after": 0.006604257971048355,
+          "change": -0.004423169419169426,
+          "proof": {
+            "status": "success",
+            "reward": 1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "5Q1k/8/6K1/8/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qf8# *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "success",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "success",
+              "nodes": 1,
+              "elapsedMs": 2.0152999999999963
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 3.499200000000002
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7e8",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "success",
+          "before": 0.011216885410249233,
+          "after": 0.0065334755927324295,
+          "change": -0.004683409817516804,
+          "proof": {
+            "status": "success",
+            "reward": 1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "4Q2k/8/6K1/8/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qe8# *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "success",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "success",
+              "nodes": 1,
+              "elapsedMs": 1.7841999999999985
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 2.6754999999999995
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7f3",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.010834888089448214,
+          "after": 0.006256895139813423,
+          "change": -0.00457799294963479,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/8/6K1/8/8/5Q2/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qf3 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 7.457899999999995
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 9.409600000000012
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7d7",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.0121772107668221,
+          "after": 0.006041368935257196,
+          "change": -0.006135841831564903,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/3Q4/6K1/8/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qd7 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 2.078200000000038
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 2.5744000000000256
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "g6f6",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.013324792496860027,
+          "after": 0.006004151422530413,
+          "change": -0.007320641074329615,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/5Q2/5K2/8/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Kf6 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 0.723700000000008
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 0.9664000000000215
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "g6h5",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.011064177379012108,
+          "after": 0.005997115280479193,
+          "change": -0.005067062098532915,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/5Q2/8/7K/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Kh5 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 5.405100000000061
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 11.84050000000002
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7e7",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.010508159175515175,
+          "after": 0.005537247285246849,
+          "change": -0.004970911890268326,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/4Q3/6K1/8/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qe7 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 3.60390000000001
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 4.2146000000000186
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "g6g5",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.010534134693443775,
+          "after": 0.005244555417448282,
+          "change": -0.005289579275995493,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/5Q2/8/6K1/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Kg5 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 6.429499999999962
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 8.90039999999999
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7a2",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.008104647509753704,
+          "after": 0.0032568611204624176,
+          "change": -0.0048477863892912865,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/8/6K1/8/8/8/Q7/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qa2 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 10.8005
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 11.593899999999962
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "g6h6",
+          "reviewed": true,
+          "taughtStatus": "failure",
+          "status": "failure",
+          "before": 0.01503809355199337,
+          "after": 0.003196929581463337,
+          "change": -0.011841163970530033,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/5Q2/7K/8/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Kh6 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 1.2160000000000082
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 1.617999999999995
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "g6f5",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.007597381714731455,
+          "after": 0.0031536086462438107,
+          "change": -0.004443773068487644,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/5Q2/8/5K2/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Kf5 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 1.7355000000000018
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 3.147299999999973
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7g8",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.007439605891704559,
+          "after": 0.003017283510416746,
+          "change": -0.004422322381287813,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "6Qk/8/6K1/8/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qg8+ *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 3.176799999999986
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 4.6337999999999795
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7b7",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.007235330529510975,
+          "after": 0.0026513095945119858,
+          "change": -0.004584020934998989,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/1Q6/6K1/8/8/8/8/8 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qb7 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 1.5978999999999814
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 1.9622999999999706
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        },
+        {
+          "move": "f7f1",
+          "reviewed": false,
+          "taughtStatus": null,
+          "status": "failure",
+          "before": 0.007055944763123989,
+          "after": 0.0025365445762872696,
+          "change": -0.0045194001868367195,
+          "proof": {
+            "status": "failure",
+            "reward": -1,
+            "nodes": 1,
+            "attacker": "w",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "certificate": {
+              "schema": "bounded-mate-certificate-v1",
+              "rootFen": "7k/8/6K1/8/8/8/8/5Q2 b - - 1 1",
+              "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qf1 *",
+              "attacker": "w",
+              "plies": 0,
+              "tree": {
+                "status": "failure",
+                "children": []
+              }
+            },
+            "certificateCheck": {
+              "verified": true,
+              "status": "failure",
+              "nodes": 1,
+              "elapsedMs": 2.138300000000015
+            },
+            "bounds": {
+              "maxNodes": 4096,
+              "millisecondsPerStage": 2000,
+              "constructionStop": null,
+              "checkingNodes": 1,
+              "elapsedMs": 4.503399999999999
+            },
+            "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+          }
+        }
+      ],
+      "bestVerifiedSuccess": "f7h7",
+      "scope": "Net before/after ranking with independently verified bounded consequences; no attribution to an individual update, capacity claim, or unfamiliar transfer"
+    }
+  ],
+  "scope": "Read-only training-fixture coverage/ranking diagnostic; never a teaching event or gate adjustment"
+}

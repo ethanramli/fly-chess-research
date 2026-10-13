@@ -1,0 +1,150 @@
+{
+  "schema": "paired-delta-full-graph-v1",
+  "maxStates": 2,
+  "maxCandidates": 24,
+  "quietReserve": 8,
+  "input": "research/data/puzzle-pipeline-v1/puzzles.jsonl",
+  "variant": "original",
+  "measurements": [
+    {
+      "id": "pipeline-kqk-fixture",
+      "group": "composed-kqk-corner-family",
+      "legalCount": 26,
+      "selectedCount": 24,
+      "omitted": 2,
+      "choiceAgreement": true,
+      "allChoice": "f7f5",
+      "focusedChoice": "f7f5",
+      "omittedMoves": [
+        "g6f5",
+        "g6f6"
+      ],
+      "focusedStatus": "failure",
+      "focusedCertificate": "1ef923e1493d0bc0254fbcfd8c2fc801882ce192a962a1b37504c9812a7302ab",
+      "elapsedMs": 11475.184099999999
+    },
+    {
+      "id": "pipeline-krk-fixture",
+      "group": "composed-krk-corner-family",
+      "legalCount": 20,
+      "selectedCount": 20,
+      "omitted": 0,
+      "choiceAgreement": true,
+      "allChoice": "a1b1",
+      "focusedChoice": "a1b1",
+      "omittedMoves": [],
+      "focusedStatus": "success",
+      "focusedCertificate": "7b303f2db753f34ae3a9347f9ae00549e81fcab43c5d8835e6bac5bd9df75f43",
+      "elapsedMs": 9615.4725
+    }
+  ],
+  "summary": {
+    "states": 2,
+    "agreement": 2,
+    "meanLegal": 23,
+    "meanSelected": 22,
+    "totalOmitted": 2,
+    "scope": "Frozen full-graph readout on held-out public states; no feedback, plasticity, best-move labels or reasoning claim"
+  },
+  "identity": {
+    "model": {
+      "steps": 8,
+      "inputDim": 1,
+      "outputs": 1,
+      "seed": 47,
+      "precision": "float32",
+      "saturation": 10,
+      "recurrentScale": 0.9,
+      "normalization": "row"
+    },
+    "memory": {
+      "eta": 0.5,
+      "minGain": 0.2,
+      "maxGain": 1.8,
+      "activityScale": 1.5
+    },
+    "encoder": "c8725115fe89340a88f6c1aa4af764ffd41551289c19a24094f544ddd91ace38",
+    "readouts": {
+      "MBON12": [
+        {
+          "index": 56337,
+          "rootId": "720575940623001480",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "right",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.8942156867525906,
+          "ontologyIds": "FBbt_00111009"
+        },
+        {
+          "index": 49989,
+          "rootId": "720575940621828443",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "left",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.8760643793124306,
+          "ontologyIds": "FBbt_00111009"
+        },
+        {
+          "index": 61287,
+          "rootId": "720575940623905719",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "right",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.9010706195122313,
+          "ontologyIds": "FBbt_00111009"
+        },
+        {
+          "index": 93832,
+          "rootId": "720575940630075703",
+          "kind": "MBON",
+          "type": "MBON12",
+          "hemibrainType": "MBON12",
+          "side": "left",
+          "knownTransmitter": "acetylcholine",
+          "predictedTransmitter": "acetylcholine",
+          "predictedConfidence": 0.886691032764705,
+          "ontologyIds": "FBbt_00111009"
+        }
+      ],
+      "MBON01": [
+        {
+          "index": 62498,
+          "rootId": "720575940624117245",
+          "kind": "MBON",
+          "type": "MBON01",
+          "hemibrainType": "MBON01",
+          "side": "right",
+          "knownTransmitter": "glutamate, sparkly, proctolin, Nplp1",
+          "predictedTransmitter": "glutamate",
+          "predictedConfidence": 0.7386130312879104,
+          "ontologyIds": "FBbt_00100234"
+        },
+        {
+          "index": 128004,
+          "rootId": "720575940643309197",
+          "kind": "MBON",
+          "type": "MBON01",
+          "hemibrainType": "MBON01",
+          "side": "left",
+          "knownTransmitter": "glutamate, sparkly, proctolin, Nplp1",
+          "predictedTransmitter": "glutamate",
+          "predictedConfidence": 0.803689515262566,
+          "ontologyIds": "FBbt_00100234"
+        }
+      ]
+    }
+  },
+  "resources": {
+    "peakRssMiB": 98.51171875,
+    "presentations": 90
+  }
+}

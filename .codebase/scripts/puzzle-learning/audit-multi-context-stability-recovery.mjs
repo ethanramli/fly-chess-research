@@ -1,0 +1,28 @@
+// Graph-free audit after a separately scheduled pending-receipt recovery replay.
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { parseArgs } from 'node:util';
+import { sha256 } from '../runtime/fetch-graph.mjs';
+const {values:a}=parseArgs({options:{original:{type:'string'},resumed:{type:'string'},checkpoint:{type:'string'}}});
+assert.ok(a.original&&a.resumed&&a.checkpoint);
+const read=f=>JSON.parse(fs.readFileSync(f,'utf8'));
+const saved=read(a.checkpoint),manifest=read(path.join(path.dirname(a.checkpoint),'checkpoint.json'));
+assert.equal(await sha256(a.checkpoint),manifest.stateSha256);
+const active=saved.state.active;assert.equal(active.phase,'receipt');assert.ok(active.pending);
+const r=read(path.join(a.resumed,'report.json'));assert.equal(r.complete,false);assert.deepEqual(r.identity,saved.identity);
+const stem=`${active.condition}-${active.eventIndex}`;
+const receipt=path.join(a.resumed,`event-${stem}.json`);
+assert.deepEqual(read(receipt),active.pending);assert.deepEqual(read(receipt),read(path.join(a.original,`event-${stem}.json`)));
+const rank=path.join(a.resumed,`ranking-${stem}.json`);
+const stable=panels=>panels.map(panel=>{const c=structuredClone(panel);for(const bounds of [c.review?.proof?.bounds,c.review?.proof?.certificateCheck])if(bounds&&Object.hasOwn(bounds,'elapsedMs')){assert.ok(Number.isFinite(bounds.elapsedMs)&&bounds.elapsedMs>=0);delete bounds.elapsedMs;}return c;});
+assert.deepEqual(stable(read(rank)),stable(read(path.join(a.original,`ranking-${stem}.json`))));
+const presentations=read(rank).reduce((n,p)=>n+p.assessment.rows.length,0);
+assert.equal(r.resources.invocationPresentations,presentations);
+assert.deepEqual(r.state.memory,saved.state.memory);
+assert.equal(r.state.totalEvents,saved.state.totalEvents+1);
+assert.equal(r.state.active.eventIndex,active.eventIndex+1);assert.equal(r.state.active.pending,null);
+assert.equal(r.state.presentations,saved.state.presentations+presentations);
+const output=path.join(a.resumed,'audit-recovery.json');assert.ok(!fs.existsSync(output));
+const result={passed:true,checkpointSha256:await sha256(a.checkpoint),reportSha256:await sha256(path.join(a.resumed,'report.json')),receiptSha256:await sha256(receipt),rankingSha256:await sha256(rank),auditorSha256:await sha256(import.meta.filename),presentations,noDuplicateUpdate:true,scope:'Exact pending-receipt recovery and all-context ranking replay, not an independent training seed.'};
+fs.writeFileSync(output+'.partial',JSON.stringify(result,null,2)+'\n');fs.renameSync(output+'.partial',output);console.log(JSON.stringify(result));

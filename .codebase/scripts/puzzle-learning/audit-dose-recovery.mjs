@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import { parseArgs } from 'node:util';
+import { sha256 } from '../runtime/fetch-graph.mjs';
+const {values:a}=parseArgs({options:{original:{type:'string'},resumed:{type:'string'},checkpoint:{type:'string'}}});assert.ok(a.original&&a.resumed&&a.checkpoint);
+const read=f=>JSON.parse(fs.readFileSync(f));
+const saved=read(a.checkpoint),manifest=read(path.join(path.dirname(a.checkpoint),'checkpoint.json'));
+assert.equal(await sha256(a.checkpoint),manifest.stateSha256);
+const active=saved.state.active;assert.ok(active.pending);assert.equal(active.index,0);
+const r=read(path.join(a.resumed,'report.json'));assert.equal(r.complete,false);assert.deepEqual(r.identity,saved.identity);
+const stem=`event-${active.condition}-${active.index}.json`,receipt=path.join(a.resumed,stem);
+assert.deepEqual(read(receipt),active.pending);assert.deepEqual(read(receipt),read(path.join(a.original,stem)));
+assert.equal(r.resources.invocationPresentations,0);assert.deepEqual(r.state.memory,saved.state.memory);
+assert.equal(r.state.totalEvents,saved.state.totalEvents+1);assert.equal(r.state.active.index,1);assert.equal(r.state.active.pending,null);
+assert.equal(r.state.presentations,saved.state.presentations);
+const result={passed:true,checkpointSha256:await sha256(a.checkpoint),reportSha256:await sha256(path.join(a.resumed,'report.json')),receiptSha256:await sha256(receipt),auditorSha256:await sha256(import.meta.filename),noDuplicateUpdate:true,freshPresentations:0,scope:'Exact pending-receipt publication recovery, not an independent training seed or fresh inference.'};
+const out=path.join(a.resumed,'audit-recovery.json');assert.ok(!fs.existsSync(out));fs.writeFileSync(out+'.partial',JSON.stringify(result,null,2)+'\n');fs.renameSync(out+'.partial',out);console.log(JSON.stringify(result));

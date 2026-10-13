@@ -1,0 +1,13 @@
+# Bound-ray matched-feedback development protocol
+
+Frozen protocol SHA256: `a865684916952b5e7199c6cc8671c5d5b5b4b1146d49c667ee9eee242e10af86`.
+
+Compare the existing relational-v3 and bound-ray encoders with identical graph, fixed readout, local learning rule, physical current and training experience schedule. Each encoder has informative, no-channel, matched-shuffled and disabled-plasticity conditions, initialized from scratch. Sixteen independently checked capture/recapture experiences are replayed per condition; a fresh two-candidate ranking precedes each teaching event. All eight training and four previously inspected validation panels are assessed before/after training, with validation repeat/reset/restoration. Each condition uses 120 presentations, excluding one initial resting-reference forward pass.
+
+These are candidate-subset decisions on a narrow one-opponent-reply criterion. Success means no immediate legal recapture of the moved capturing piece; it does not mean a good strategic move. The two certificate-bound alternatives provide explicit outcomes, but there is no Monte Carlo investigation, learned value calibration, delayed neural trace or final-family evaluation. Validation is development data. This protocol cannot establish transferable reasoning.
+
+The absent-channel condition may still undergo endogenous local adaptation; only disabled plasticity guarantees zero memory updates. The shuffle retains eight positive and eight negative channels with a fixed non-identical order. All conditions receive the identical scheduled candidate contexts and assessment count. Their own before-feedback rankings are recorded without changing their exposure sequence.
+
+Every local update is checkpointed with its pending receipt before acknowledgment. Resumes require the latest fully published checkpoint and a fresh output directory; complete prior checkpoint/receipt lineage is copied and checked. The auditor independently checks certificate scope, context/decision binding, local recurrence and checkpoint publication, then reconstructs all 120 neural presentations and 16 feedback replays from scratch. Pending-receipt interruption/resume still needs a separately executed recovery check.
+
+Use heap256, duty0.5, RSS768MiB and free-memory256MiB guards. Frozen sources and dependency bytes are in [the source archive](../../source-archives/bound-ray-feedback-development-v1/manifest.json); graph and annotations are hash-pinned without duplication. See [feedback quality requirements](../../../documentation/design/puzzle-learning/feedback-quality-gate.md) and [run directory](../../reports/bound-ray-feedback-development-v1-2026-10-08/README.md).

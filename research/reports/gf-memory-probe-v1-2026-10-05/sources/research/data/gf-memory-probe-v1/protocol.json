@@ -1,0 +1,16 @@
+{
+  "schema": "gf-memory-probe-v1",
+  "frozen": "2026-10-05 before GF readout replay",
+  "kind": "Diagnostic replay of stored recovery comparison memories; not new training or independent biological validation",
+  "sourceRun": "research/reports/recovery-comparison-v1-2026-10-05",
+  "anatomy": "research/reports/instinct-design-2026-10-05/anatomy-with-relay.json",
+  "mapping": "research/reports/reversal-candidate-2026-10-05/mapping.json",
+  "calibrationCurrent": 1.5,
+  "calibration": "Simultaneously stimulate existing, annotated LC4 and LPLC2 cells that directly input to either GF. Experimental positive-control input, not natural looming.",
+  "minimumCalibrationRange": 0.0000001,
+  "decoder": "Per cell normalize (cue - resting)/(LC4/LPLC2 panel - resting). Danger is max of the two un-clipped normalized GF responses; prefer lower danger, exact ties choose A. No learned head or outcome enters the decoder.",
+  "choice": "Un-clipped diagnostic signal avoids hiding small effects. This differs from proposed clipped application readout and is not a validated action interface.",
+  "effects": "Acquisition: change in punished-minus-safe danger margin from naive memory. Reversal: change in newly punished-minus-newly safe margin from acquisition. Report all conditions and seeds without fitting gain, polarity or thresholds.",
+  "causality": "Reconstruct naive, saved acquisition and saved reversal memory; re-probe reset and restored memory exactly. No memory.observe, gradients, optimizer, new wiring or plastic updates.",
+  "interpretation": "A positive causal GF effect can motivate a new frozen choice experiment; wrong choices or direction count against this candidate. Reused training seeds and post hoc diagnostic readout cannot establish held-out transfer or pass Gate B."
+}

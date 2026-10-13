@@ -1,0 +1,2938 @@
+{
+  "schema": "monte-carlo-review-software-probe-v1",
+  "sources": {
+    ".codebase/scripts/probe-monte-carlo-review.mjs": "54ac459f0358844a2c7359625ef0467f280eeb655f199e2968797f33aeca81f7",
+    ".codebase/src/lowram/monte-carlo-puzzle-search.mjs": "5936ad45c57cb309647d3662735875fd85f4cb78147c0b307428c1aac751ced3",
+    ".codebase/src/lowram/trace-consequence-review.mjs": "1b4130473785c0cc313d00ae60b0d30a863d0a03a1182c996fd6231f3013103e",
+    ".codebase/src/lowram/experimental-puzzle-search.mjs": "dc7ac5e894879ae75a1b0bd5931b1e72466c14b707d2ff987ee6ee1f6d259ebb",
+    ".codebase/src/lowram/experience-feedback.mjs": "93e04050ded850049b347ade9bba57d7a092824f0274f40f9915f57a9efac0e1",
+    ".codebase/src/lowram/mate-certificate.mjs": "b7bdab76a3faa78c203971991c3b2e00cdfd359cfca08b6e1f7b1ae8d430b700",
+    ".codebase/src/lowram/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c"
+  },
+  "results": [
+    {
+      "fixture": {
+        "name": "white-mate-one",
+        "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+        "plies": 1
+      },
+      "calculation": {
+        "move": {
+          "color": "w",
+          "from": "f7",
+          "to": "e8",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qe8#",
+          "lan": "f7e8",
+          "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "after": "4Q2k/8/6K1/8/8/8/8/8 b - - 1 1"
+        },
+        "candidates": [
+          {
+            "uci": "f7e8",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "e8",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qe8#",
+              "lan": "f7e8",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "4Q2k/8/6K1/8/8/8/8/8 b - - 1 1"
+            },
+            "visits": 8,
+            "valueVisits": 8,
+            "prior": 0.038461538461538464,
+            "value": 1
+          },
+          {
+            "uci": "f7f8",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "f8",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qf8#",
+              "lan": "f7f8",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "5Q1k/8/6K1/8/8/8/8/8 b - - 1 1"
+            },
+            "visits": 8,
+            "valueVisits": 8,
+            "prior": 0.038461538461538464,
+            "value": 1
+          },
+          {
+            "uci": "f7g8",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "g8",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qg8+",
+              "lan": "f7g8",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "6Qk/8/6K1/8/8/8/8/8 b - - 1 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f7g7",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "g7",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qg7#",
+              "lan": "f7g7",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/6Q1/6K1/8/8/8/8/8 b - - 1 1"
+            },
+            "visits": 2,
+            "valueVisits": 2,
+            "prior": 0.038461538461538464,
+            "value": 1
+          },
+          {
+            "uci": "f7h7",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "h7",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qh7#",
+              "lan": "f7h7",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/7Q/6K1/8/8/8/8/8 b - - 1 1"
+            },
+            "visits": 8,
+            "valueVisits": 8,
+            "prior": 0.038461538461538464,
+            "value": 1
+          },
+          {
+            "uci": "f7f6",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "f6",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qf6+",
+              "lan": "f7f6",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/8/5QK1/8/8/8/8/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f7f5",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "f5",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qf5",
+              "lan": "f7f5",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/8/6K1/5Q2/8/8/8/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f7f4",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "f4",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qf4",
+              "lan": "f7f4",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/8/6K1/8/5Q2/8/8/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f7f3",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "f3",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qf3",
+              "lan": "f7f3",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/8/6K1/8/8/5Q2/8/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f7f2",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "f2",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qf2",
+              "lan": "f7f2",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/8/6K1/8/8/8/5Q2/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f7f1",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "f1",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qf1",
+              "lan": "f7f1",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/8/6K1/8/8/8/8/5Q2 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f7e6",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "e6",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qe6",
+              "lan": "f7e6",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/8/4Q1K1/8/8/8/8/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f7d5",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "d5",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qd5",
+              "lan": "f7d5",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/8/6K1/3Q4/8/8/8/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f7c4",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "c4",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qc4",
+              "lan": "f7c4",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/8/6K1/8/2Q5/8/8/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f7b3",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "b3",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qb3",
+              "lan": "f7b3",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/8/6K1/8/8/1Q6/8/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f7a2",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "a2",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qa2",
+              "lan": "f7a2",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/8/6K1/8/8/8/Q7/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f7e7",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "e7",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qe7",
+              "lan": "f7e7",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/4Q3/6K1/8/8/8/8/8 b - - 1 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f7d7",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "d7",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qd7",
+              "lan": "f7d7",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/3Q4/6K1/8/8/8/8/8 b - - 1 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f7c7",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "c7",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qc7",
+              "lan": "f7c7",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/2Q5/6K1/8/8/8/8/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f7b7",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "b7",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qb7",
+              "lan": "f7b7",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/1Q6/6K1/8/8/8/8/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f7a7",
+            "move": {
+              "color": "w",
+              "from": "f7",
+              "to": "a7",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qa7",
+              "lan": "f7a7",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/Q7/6K1/8/8/8/8/8 b - - 1 1"
+            },
+            "visits": 2,
+            "valueVisits": 2,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "g6h6",
+            "move": {
+              "color": "w",
+              "from": "g6",
+              "to": "h6",
+              "piece": "k",
+              "flags": "n",
+              "san": "Kh6",
+              "lan": "g6h6",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/5Q2/7K/8/8/8/8/8 b - - 1 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "g6h5",
+            "move": {
+              "color": "w",
+              "from": "g6",
+              "to": "h5",
+              "piece": "k",
+              "flags": "n",
+              "san": "Kh5",
+              "lan": "g6h5",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/5Q2/8/7K/8/8/8/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "g6g5",
+            "move": {
+              "color": "w",
+              "from": "g6",
+              "to": "g5",
+              "piece": "k",
+              "flags": "n",
+              "san": "Kg5",
+              "lan": "g6g5",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/5Q2/8/6K1/8/8/8/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "g6f5",
+            "move": {
+              "color": "w",
+              "from": "g6",
+              "to": "f5",
+              "piece": "k",
+              "flags": "n",
+              "san": "Kf5",
+              "lan": "g6f5",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/5Q2/8/5K2/8/8/8/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "g6f6",
+            "move": {
+              "color": "w",
+              "from": "g6",
+              "to": "f6",
+              "piece": "k",
+              "flags": "n",
+              "san": "Kf6",
+              "lan": "g6f6",
+              "before": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+              "after": "7k/5Q2/5K2/8/8/8/8/8 b - - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          }
+        ],
+        "seed": 17,
+        "randomState": 465193942,
+        "simulations": 32,
+        "evaluations": 6,
+        "nodes": 57,
+        "terminalLeaves": 27,
+        "cutoffs": {
+          "depth": 0,
+          "capacity": 0,
+          "evaluations": 0,
+          "time": 0
+        },
+        "elapsedMs": 53.208,
+        "stoppedBy": {
+          "simulations": true,
+          "evaluations": false,
+          "time": false,
+          "depth": false,
+          "capacity": false
+        },
+        "scope": "Seeded stochastic PUCT; sampled replies and estimates are not independent outcome verification"
+      },
+      "review": {
+        "schema": "trace-consequence-review-v1",
+        "objective": "forced-mate",
+        "plies": 1,
+        "task": {
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n *",
+          "actor": "w"
+        },
+        "chosen": "f7e8",
+        "initialPreference": "f7e8",
+        "evidence": [
+          {
+            "move": "f7e8",
+            "actor": "w",
+            "startingFen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+            "successorFen": "4Q2k/8/6K1/8/8/8/8/8 b - - 1 1",
+            "generated": true,
+            "visits": 8,
+            "prior": 0.038461538461538464,
+            "searchEstimate": 1,
+            "verifier": {
+              "method": "independently-checked-AND-OR-certificate-v1",
+              "budget": 1024,
+              "horizon": 0,
+              "millisecondsPerStage": 2000
+            },
+            "proof": {
+              "status": "success",
+              "reward": 1,
+              "nodes": 1,
+              "attacker": "w",
+              "criterion": "force_mate_within_0_remaining_plies",
+              "certificate": {
+                "schema": "bounded-mate-certificate-v1",
+                "rootFen": "4Q2k/8/6K1/8/8/8/8/8 b - - 1 1",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qe8# *",
+                "attacker": "w",
+                "plies": 0,
+                "tree": {
+                  "status": "success",
+                  "children": []
+                }
+              },
+              "certificateCheck": {
+                "verified": true,
+                "status": "success",
+                "nodes": 1,
+                "elapsedMs": 0.9798999999999864
+              },
+              "bounds": {
+                "maxNodes": 1024,
+                "millisecondsPerStage": 2000,
+                "constructionStop": null,
+                "checkingNodes": 1,
+                "elapsedMs": 1.501700000000028
+              },
+              "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+            }
+          },
+          {
+            "move": "f7f8",
+            "actor": "w",
+            "startingFen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+            "successorFen": "5Q1k/8/6K1/8/8/8/8/8 b - - 1 1",
+            "generated": true,
+            "visits": 8,
+            "prior": 0.038461538461538464,
+            "searchEstimate": 1,
+            "verifier": {
+              "method": "independently-checked-AND-OR-certificate-v1",
+              "budget": 1024,
+              "horizon": 0,
+              "millisecondsPerStage": 2000
+            },
+            "proof": {
+              "status": "success",
+              "reward": 1,
+              "nodes": 1,
+              "attacker": "w",
+              "criterion": "force_mate_within_0_remaining_plies",
+              "certificate": {
+                "schema": "bounded-mate-certificate-v1",
+                "rootFen": "5Q1k/8/6K1/8/8/8/8/8 b - - 1 1",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qf8# *",
+                "attacker": "w",
+                "plies": 0,
+                "tree": {
+                  "status": "success",
+                  "children": []
+                }
+              },
+              "certificateCheck": {
+                "verified": true,
+                "status": "success",
+                "nodes": 1,
+                "elapsedMs": 0.8353000000000179
+              },
+              "bounds": {
+                "maxNodes": 1024,
+                "millisecondsPerStage": 2000,
+                "constructionStop": null,
+                "checkingNodes": 1,
+                "elapsedMs": 1.0802999999999656
+              },
+              "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+            }
+          },
+          {
+            "move": "f7g8",
+            "actor": "w",
+            "startingFen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+            "successorFen": "6Qk/8/6K1/8/8/8/8/8 b - - 1 1",
+            "generated": true,
+            "visits": 1,
+            "prior": 0.038461538461538464,
+            "searchEstimate": 0,
+            "verifier": {
+              "method": "independently-checked-AND-OR-certificate-v1",
+              "budget": 1024,
+              "horizon": 0,
+              "millisecondsPerStage": 2000
+            },
+            "proof": {
+              "status": "failure",
+              "reward": -1,
+              "nodes": 1,
+              "attacker": "w",
+              "criterion": "force_mate_within_0_remaining_plies",
+              "certificate": {
+                "schema": "bounded-mate-certificate-v1",
+                "rootFen": "6Qk/8/6K1/8/8/8/8/8 b - - 1 1",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qg8+ *",
+                "attacker": "w",
+                "plies": 0,
+                "tree": {
+                  "status": "failure",
+                  "children": []
+                }
+              },
+              "certificateCheck": {
+                "verified": true,
+                "status": "failure",
+                "nodes": 1,
+                "elapsedMs": 1.051300000000026
+              },
+              "bounds": {
+                "maxNodes": 1024,
+                "millisecondsPerStage": 2000,
+                "constructionStop": null,
+                "checkingNodes": 1,
+                "elapsedMs": 1.4489999999999554
+              },
+              "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+            }
+          },
+          {
+            "move": "f7g7",
+            "actor": "w",
+            "startingFen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+            "successorFen": "7k/6Q1/6K1/8/8/8/8/8 b - - 1 1",
+            "generated": true,
+            "visits": 2,
+            "prior": 0.038461538461538464,
+            "searchEstimate": 1,
+            "verifier": {
+              "method": "independently-checked-AND-OR-certificate-v1",
+              "budget": 1024,
+              "horizon": 0,
+              "millisecondsPerStage": 2000
+            },
+            "proof": {
+              "status": "success",
+              "reward": 1,
+              "nodes": 1,
+              "attacker": "w",
+              "criterion": "force_mate_within_0_remaining_plies",
+              "certificate": {
+                "schema": "bounded-mate-certificate-v1",
+                "rootFen": "7k/6Q1/6K1/8/8/8/8/8 b - - 1 1",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/5Q2/6K1/8/8/8/8/8 w - - 0 1\"]\n\n1. Qg7# *",
+                "attacker": "w",
+                "plies": 0,
+                "tree": {
+                  "status": "success",
+                  "children": []
+                }
+              },
+              "certificateCheck": {
+                "verified": true,
+                "status": "success",
+                "nodes": 1,
+                "elapsedMs": 1.120399999999961
+              },
+              "bounds": {
+                "maxNodes": 1024,
+                "millisecondsPerStage": 2000,
+                "constructionStop": null,
+                "checkingNodes": 1,
+                "elapsedMs": 1.3698999999999728
+              },
+              "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+            }
+          }
+        ],
+        "diagnostics": [],
+        "teachingExperiences": [
+          {
+            "move": "f7e8",
+            "actor": "w",
+            "outcome": "success",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "role": "committed-choice",
+            "certificateSha256": "7373079d4903d75d45c2b848a391e2ddda21bc5c28fa2fe1498123e841340853",
+            "neuralDelivery": "not-implemented"
+          },
+          {
+            "move": "f7f8",
+            "actor": "w",
+            "outcome": "success",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "role": "teacher-counterfactual",
+            "certificateSha256": "affbe51cfbfaa4db755dcb29702f4a2403c0691c4a153dc02e0ad3d3b9ac5a5a",
+            "neuralDelivery": "not-implemented"
+          },
+          {
+            "move": "f7g8",
+            "actor": "w",
+            "outcome": "failure",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "role": "teacher-counterfactual",
+            "certificateSha256": "1ccb05de4f8f17d2bf97baf0dfd3e4ef822586d41c8b7782f5057d4637dbdc37",
+            "neuralDelivery": "not-implemented"
+          },
+          {
+            "move": "f7g7",
+            "actor": "w",
+            "outcome": "success",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "role": "teacher-counterfactual",
+            "certificateSha256": "3ecbae61f1d70ac6921cc5303aaa37110665e1a078322d03628209db778dc7d7",
+            "neuralDelivery": "not-implemented"
+          }
+        ],
+        "outcome": {
+          "status": "success",
+          "avoidableMiss": false,
+          "fullGameConsequence": "unknown",
+          "rootCause": "undetermined"
+        },
+        "coverage": {
+          "legalMoves": 26,
+          "generatedCandidates": 26,
+          "reviewedCandidates": 4,
+          "allAlternativesReviewed": false,
+          "nodes": 4,
+          "checkingNodes": 4,
+          "maxProofNodes": 4096,
+          "nodesPerCandidate": 1024,
+          "maxCandidates": 4,
+          "proofMilliseconds": 2000
+        },
+        "limitations": [
+          "Only bounded forced-mate consequences are checked; exchange/compensation feedback is not implemented.",
+          "Aggregate root statistics cannot establish a missed defensive reply, an evaluation error, or the cause of a rejected sacrifice.",
+          "Known consequences require replay-checked certificates bound to the position/history/actor/horizon; incomplete construction or checking remains unknown.",
+          "Teacher counterfactuals are additional experiences and must be counted; unknowns supply no training event.",
+          "Structured evidence is not neural learning or held-out transfer.",
+          "Located cutoffs and verified unsampled defenses do not establish calibrated evaluation error or delayed neural credit.",
+          "Trace records are bounded by the caller and must be streamed for larger training programs."
+        ],
+        "investigation": {
+          "completeTraces": true,
+          "simulations": 32,
+          "cutoffs": [],
+          "defensiveReplyScope": "Independent bounded-mate certificates, not sampled weak-play success"
+        }
+      },
+      "traceFile": "research\\reports\\monte-carlo-review-software-2026-10-06\\white-mate-one.jsonl",
+      "traceSha256": "f07c8dfec9a873d01e7c2c2645f161b8c28eeec73432f654839ff171fdf8ed11",
+      "taskHistoryPreserved": true
+    },
+    {
+      "fixture": {
+        "name": "black-mate-one",
+        "fen": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+        "plies": 1
+      },
+      "calculation": {
+        "move": {
+          "color": "b",
+          "from": "f2",
+          "to": "g2",
+          "piece": "q",
+          "flags": "n",
+          "san": "Qg2#",
+          "lan": "f2g2",
+          "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+          "after": "8/8/8/8/8/6k1/6q1/7K w - - 1 2"
+        },
+        "candidates": [
+          {
+            "uci": "g3f4",
+            "move": {
+              "color": "b",
+              "from": "g3",
+              "to": "f4",
+              "piece": "k",
+              "flags": "n",
+              "san": "Kf4",
+              "lan": "g3f4",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/5k2/8/5q2/7K w - - 1 2"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "g3g4",
+            "move": {
+              "color": "b",
+              "from": "g3",
+              "to": "g4",
+              "piece": "k",
+              "flags": "n",
+              "san": "Kg4",
+              "lan": "g3g4",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/6k1/8/5q2/7K w - - 1 2"
+            },
+            "visits": 2,
+            "valueVisits": 2,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "g3h4",
+            "move": {
+              "color": "b",
+              "from": "g3",
+              "to": "h4",
+              "piece": "k",
+              "flags": "n",
+              "san": "Kh4",
+              "lan": "g3h4",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/7k/8/5q2/7K w - - 1 2"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "g3h3",
+            "move": {
+              "color": "b",
+              "from": "g3",
+              "to": "h3",
+              "piece": "k",
+              "flags": "n",
+              "san": "Kh3",
+              "lan": "g3h3",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/8/7k/5q2/7K w - - 1 2"
+            },
+            "visits": 2,
+            "valueVisits": 2,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "g3f3",
+            "move": {
+              "color": "b",
+              "from": "g3",
+              "to": "f3",
+              "piece": "k",
+              "flags": "n",
+              "san": "Kf3",
+              "lan": "g3f3",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/8/5k2/5q2/7K w - - 1 2"
+            },
+            "visits": 2,
+            "valueVisits": 2,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f2e3",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "e3",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qe3",
+              "lan": "f2e3",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/8/4q1k1/8/7K w - - 1 2"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f2d4",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "d4",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qd4",
+              "lan": "f2d4",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/3q4/6k1/8/7K w - - 1 2"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f2c5",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "c5",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qc5",
+              "lan": "f2c5",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/2q5/8/6k1/8/7K w - - 1 2"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f2b6",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "b6",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qb6",
+              "lan": "f2b6",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/1q6/8/8/6k1/8/7K w - - 1 2"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f2a7",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "a7",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qa7",
+              "lan": "f2a7",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/q7/8/8/8/6k1/8/7K w - - 1 2"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f2f3",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "f3",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qf3+",
+              "lan": "f2f3",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/8/5qk1/8/7K w - - 1 2"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f2f4",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "f4",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qf4",
+              "lan": "f2f4",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/5q2/6k1/8/7K w - - 1 2"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f2f5",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "f5",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qf5",
+              "lan": "f2f5",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/5q2/8/6k1/8/7K w - - 1 2"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f2f6",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "f6",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qf6",
+              "lan": "f2f6",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/5q2/8/8/6k1/8/7K w - - 1 2"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f2f7",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "f7",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qf7",
+              "lan": "f2f7",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/5q2/8/8/8/6k1/8/7K w - - 1 2"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f2f8",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "f8",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qf8",
+              "lan": "f2f8",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "5q2/8/8/8/8/6k1/8/7K w - - 1 2"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f2g2",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "g2",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qg2#",
+              "lan": "f2g2",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/8/6k1/6q1/7K w - - 1 2"
+            },
+            "visits": 6,
+            "valueVisits": 6,
+            "prior": 0.038461538461538464,
+            "value": 1
+          },
+          {
+            "uci": "f2h2",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "h2",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qh2#",
+              "lan": "f2h2",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/8/6k1/7q/7K w - - 1 2"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 1
+          },
+          {
+            "uci": "f2g1",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "g1",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qg1+",
+              "lan": "f2g1",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/8/6k1/8/6qK w - - 1 2"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f2f1",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "f1",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qf1#",
+              "lan": "f2f1",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/8/6k1/8/5q1K w - - 1 2"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f2e1",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "e1",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qe1#",
+              "lan": "f2e1",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/8/6k1/8/4q2K w - - 1 2"
+            },
+            "visits": 6,
+            "valueVisits": 6,
+            "prior": 0.038461538461538464,
+            "value": 1
+          },
+          {
+            "uci": "f2e2",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "e2",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qe2",
+              "lan": "f2e2",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/8/6k1/4q3/7K w - - 1 2"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.038461538461538464,
+            "value": 0
+          },
+          {
+            "uci": "f2d2",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "d2",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qd2",
+              "lan": "f2d2",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/8/6k1/3q4/7K w - - 1 2"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f2c2",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "c2",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qc2",
+              "lan": "f2c2",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/8/6k1/2q5/7K w - - 1 2"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f2b2",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "b2",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qb2",
+              "lan": "f2b2",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/8/6k1/1q6/7K w - - 1 2"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          },
+          {
+            "uci": "f2a2",
+            "move": {
+              "color": "b",
+              "from": "f2",
+              "to": "a2",
+              "piece": "q",
+              "flags": "n",
+              "san": "Qa2",
+              "lan": "f2a2",
+              "before": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+              "after": "8/8/8/8/8/6k1/q7/7K w - - 1 2"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.038461538461538464,
+            "value": null
+          }
+        ],
+        "seed": 17,
+        "randomState": 2910924804,
+        "simulations": 32,
+        "evaluations": 7,
+        "nodes": 33,
+        "terminalLeaves": 26,
+        "cutoffs": {
+          "depth": 0,
+          "capacity": 0,
+          "evaluations": 0,
+          "time": 0
+        },
+        "elapsedMs": 30.397400000000005,
+        "stoppedBy": {
+          "simulations": true,
+          "evaluations": false,
+          "time": false,
+          "depth": false,
+          "capacity": false
+        },
+        "scope": "Seeded stochastic PUCT; sampled replies and estimates are not independent outcome verification"
+      },
+      "review": {
+        "schema": "trace-consequence-review-v1",
+        "objective": "forced-mate",
+        "plies": 1,
+        "task": {
+          "fen": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+          "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"8/8/8/8/8/6k1/5q2/7K b - - 0 1\"]\n *",
+          "actor": "b"
+        },
+        "chosen": "f2g2",
+        "initialPreference": "g3f4",
+        "evidence": [
+          {
+            "move": "f2g2",
+            "actor": "b",
+            "startingFen": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+            "successorFen": "8/8/8/8/8/6k1/6q1/7K w - - 1 2",
+            "generated": true,
+            "visits": 6,
+            "prior": 0.038461538461538464,
+            "searchEstimate": 1,
+            "verifier": {
+              "method": "independently-checked-AND-OR-certificate-v1",
+              "budget": 1024,
+              "horizon": 0,
+              "millisecondsPerStage": 2000
+            },
+            "proof": {
+              "status": "success",
+              "reward": 1,
+              "nodes": 1,
+              "attacker": "b",
+              "criterion": "force_mate_within_0_remaining_plies",
+              "certificate": {
+                "schema": "bounded-mate-certificate-v1",
+                "rootFen": "8/8/8/8/8/6k1/6q1/7K w - - 1 2",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"8/8/8/8/8/6k1/5q2/7K b - - 0 1\"]\n\n1. ... Qg2# *",
+                "attacker": "b",
+                "plies": 0,
+                "tree": {
+                  "status": "success",
+                  "children": []
+                }
+              },
+              "certificateCheck": {
+                "verified": true,
+                "status": "success",
+                "nodes": 1,
+                "elapsedMs": 0.9995999999999867
+              },
+              "bounds": {
+                "maxNodes": 1024,
+                "millisecondsPerStage": 2000,
+                "constructionStop": null,
+                "checkingNodes": 1,
+                "elapsedMs": 1.2454999999999927
+              },
+              "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+            }
+          },
+          {
+            "move": "g3f4",
+            "actor": "b",
+            "startingFen": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+            "successorFen": "8/8/8/8/5k2/8/5q2/7K w - - 1 2",
+            "generated": true,
+            "visits": 1,
+            "prior": 0.038461538461538464,
+            "searchEstimate": 0,
+            "verifier": {
+              "method": "independently-checked-AND-OR-certificate-v1",
+              "budget": 1024,
+              "horizon": 0,
+              "millisecondsPerStage": 2000
+            },
+            "proof": {
+              "status": "failure",
+              "reward": -1,
+              "nodes": 1,
+              "attacker": "b",
+              "criterion": "force_mate_within_0_remaining_plies",
+              "certificate": {
+                "schema": "bounded-mate-certificate-v1",
+                "rootFen": "8/8/8/8/5k2/8/5q2/7K w - - 1 2",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"8/8/8/8/8/6k1/5q2/7K b - - 0 1\"]\n\n1. ... Kf4 *",
+                "attacker": "b",
+                "plies": 0,
+                "tree": {
+                  "status": "failure",
+                  "children": []
+                }
+              },
+              "certificateCheck": {
+                "verified": true,
+                "status": "failure",
+                "nodes": 1,
+                "elapsedMs": 0.9701999999999771
+              },
+              "bounds": {
+                "maxNodes": 1024,
+                "millisecondsPerStage": 2000,
+                "constructionStop": null,
+                "checkingNodes": 1,
+                "elapsedMs": 1.2479000000000724
+              },
+              "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+            }
+          },
+          {
+            "move": "g3g4",
+            "actor": "b",
+            "startingFen": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+            "successorFen": "8/8/8/8/6k1/8/5q2/7K w - - 1 2",
+            "generated": true,
+            "visits": 2,
+            "prior": 0.038461538461538464,
+            "searchEstimate": 0,
+            "verifier": {
+              "method": "independently-checked-AND-OR-certificate-v1",
+              "budget": 1024,
+              "horizon": 0,
+              "millisecondsPerStage": 2000
+            },
+            "proof": {
+              "status": "failure",
+              "reward": -1,
+              "nodes": 1,
+              "attacker": "b",
+              "criterion": "force_mate_within_0_remaining_plies",
+              "certificate": {
+                "schema": "bounded-mate-certificate-v1",
+                "rootFen": "8/8/8/8/6k1/8/5q2/7K w - - 1 2",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"8/8/8/8/8/6k1/5q2/7K b - - 0 1\"]\n\n1. ... Kg4 *",
+                "attacker": "b",
+                "plies": 0,
+                "tree": {
+                  "status": "failure",
+                  "children": []
+                }
+              },
+              "certificateCheck": {
+                "verified": true,
+                "status": "failure",
+                "nodes": 1,
+                "elapsedMs": 0.9590999999999212
+              },
+              "bounds": {
+                "maxNodes": 1024,
+                "millisecondsPerStage": 2000,
+                "constructionStop": null,
+                "checkingNodes": 1,
+                "elapsedMs": 1.1849000000000842
+              },
+              "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+            }
+          },
+          {
+            "move": "g3h4",
+            "actor": "b",
+            "startingFen": "8/8/8/8/8/6k1/5q2/7K b - - 0 1",
+            "successorFen": "8/8/8/8/7k/8/5q2/7K w - - 1 2",
+            "generated": true,
+            "visits": 1,
+            "prior": 0.038461538461538464,
+            "searchEstimate": 0,
+            "verifier": {
+              "method": "independently-checked-AND-OR-certificate-v1",
+              "budget": 1024,
+              "horizon": 0,
+              "millisecondsPerStage": 2000
+            },
+            "proof": {
+              "status": "failure",
+              "reward": -1,
+              "nodes": 1,
+              "attacker": "b",
+              "criterion": "force_mate_within_0_remaining_plies",
+              "certificate": {
+                "schema": "bounded-mate-certificate-v1",
+                "rootFen": "8/8/8/8/7k/8/5q2/7K w - - 1 2",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"8/8/8/8/8/6k1/5q2/7K b - - 0 1\"]\n\n1. ... Kh4 *",
+                "attacker": "b",
+                "plies": 0,
+                "tree": {
+                  "status": "failure",
+                  "children": []
+                }
+              },
+              "certificateCheck": {
+                "verified": true,
+                "status": "failure",
+                "nodes": 1,
+                "elapsedMs": 1.9885000000000446
+              },
+              "bounds": {
+                "maxNodes": 1024,
+                "millisecondsPerStage": 2000,
+                "constructionStop": null,
+                "checkingNodes": 1,
+                "elapsedMs": 2.4327999999999292
+              },
+              "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+            }
+          }
+        ],
+        "diagnostics": [
+          {
+            "kind": "search-rescued-initial-preference",
+            "initialMove": "g3f4",
+            "chosenMove": "f2g2",
+            "evidence": "Initial highest-prior move fails the bounded objective; committed searched move satisfies it. This identifies a preference weakness, not its neural cause."
+          }
+        ],
+        "teachingExperiences": [
+          {
+            "move": "f2g2",
+            "actor": "b",
+            "outcome": "success",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "role": "committed-choice",
+            "certificateSha256": "c3e3df41c5411102e87c5e0a525015fd4355964bbd3b1d312a3b2e5a9cdba55e",
+            "neuralDelivery": "not-implemented"
+          },
+          {
+            "move": "g3f4",
+            "actor": "b",
+            "outcome": "failure",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "role": "teacher-counterfactual",
+            "certificateSha256": "abc078291088b7b0f75a1d112802e1caae1802a7cc8688fc1d9ad955f51ad4ee",
+            "neuralDelivery": "not-implemented"
+          },
+          {
+            "move": "g3g4",
+            "actor": "b",
+            "outcome": "failure",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "role": "teacher-counterfactual",
+            "certificateSha256": "d65cf99a69c28a607f80634d4e463555f19776de90ea9e01204f38629172f7b7",
+            "neuralDelivery": "not-implemented"
+          },
+          {
+            "move": "g3h4",
+            "actor": "b",
+            "outcome": "failure",
+            "criterion": "force_mate_within_0_remaining_plies",
+            "role": "teacher-counterfactual",
+            "certificateSha256": "d736c2ba7df13b2afd9b3c781a04828ad815530be2ce6df8fdc9b579016c7fee",
+            "neuralDelivery": "not-implemented"
+          }
+        ],
+        "outcome": {
+          "status": "success",
+          "avoidableMiss": false,
+          "fullGameConsequence": "unknown",
+          "rootCause": "undetermined"
+        },
+        "coverage": {
+          "legalMoves": 26,
+          "generatedCandidates": 26,
+          "reviewedCandidates": 4,
+          "allAlternativesReviewed": false,
+          "nodes": 4,
+          "checkingNodes": 4,
+          "maxProofNodes": 4096,
+          "nodesPerCandidate": 1024,
+          "maxCandidates": 4,
+          "proofMilliseconds": 2000
+        },
+        "limitations": [
+          "Only bounded forced-mate consequences are checked; exchange/compensation feedback is not implemented.",
+          "Aggregate root statistics cannot establish a missed defensive reply, an evaluation error, or the cause of a rejected sacrifice.",
+          "Known consequences require replay-checked certificates bound to the position/history/actor/horizon; incomplete construction or checking remains unknown.",
+          "Teacher counterfactuals are additional experiences and must be counted; unknowns supply no training event.",
+          "Structured evidence is not neural learning or held-out transfer.",
+          "Located cutoffs and verified unsampled defenses do not establish calibrated evaluation error or delayed neural credit.",
+          "Trace records are bounded by the caller and must be streamed for larger training programs."
+        ],
+        "investigation": {
+          "completeTraces": true,
+          "simulations": 32,
+          "cutoffs": [],
+          "defensiveReplyScope": "Independent bounded-mate certificates, not sampled weak-play success"
+        }
+      },
+      "traceFile": "research\\reports\\monte-carlo-review-software-2026-10-06\\black-mate-one.jsonl",
+      "traceSha256": "9cc8e8c34bd121ec08cf06ea33731b78b321e078129e801801719e8abdf647d1",
+      "taskHistoryPreserved": true
+    },
+    {
+      "fixture": {
+        "name": "bounded-no-mate-opening",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "plies": 3
+      },
+      "calculation": {
+        "move": {
+          "color": "w",
+          "from": "a2",
+          "to": "a4",
+          "piece": "p",
+          "flags": "b",
+          "san": "a4",
+          "lan": "a2a4",
+          "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "after": "rnbqkbnr/pppppppp/8/8/P7/8/1PPPPPPP/RNBQKBNR b KQkq - 0 1"
+        },
+        "candidates": [
+          {
+            "uci": "a2a3",
+            "move": {
+              "color": "w",
+              "from": "a2",
+              "to": "a3",
+              "piece": "p",
+              "flags": "n",
+              "san": "a3",
+              "lan": "a2a3",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/8/P7/1PPPPPPP/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.049999999999999996,
+            "value": 0
+          },
+          {
+            "uci": "a2a4",
+            "move": {
+              "color": "w",
+              "from": "a2",
+              "to": "a4",
+              "piece": "p",
+              "flags": "b",
+              "san": "a4",
+              "lan": "a2a4",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/P7/8/1PPPPPPP/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 2,
+            "valueVisits": 2,
+            "prior": 0.049999999999999996,
+            "value": 0
+          },
+          {
+            "uci": "b2b3",
+            "move": {
+              "color": "w",
+              "from": "b2",
+              "to": "b3",
+              "piece": "p",
+              "flags": "n",
+              "san": "b3",
+              "lan": "b2b3",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.049999999999999996,
+            "value": 0
+          },
+          {
+            "uci": "b2b4",
+            "move": {
+              "color": "w",
+              "from": "b2",
+              "to": "b4",
+              "piece": "p",
+              "flags": "b",
+              "san": "b4",
+              "lan": "b2b4",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/1P6/8/P1PPPPPP/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 2,
+            "valueVisits": 2,
+            "prior": 0.049999999999999996,
+            "value": 0
+          },
+          {
+            "uci": "c2c3",
+            "move": {
+              "color": "w",
+              "from": "c2",
+              "to": "c3",
+              "piece": "p",
+              "flags": "n",
+              "san": "c3",
+              "lan": "c2c3",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/8/2P5/PP1PPPPP/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.049999999999999996,
+            "value": 0
+          },
+          {
+            "uci": "c2c4",
+            "move": {
+              "color": "w",
+              "from": "c2",
+              "to": "c4",
+              "piece": "p",
+              "flags": "b",
+              "san": "c4",
+              "lan": "c2c4",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.049999999999999996,
+            "value": 0
+          },
+          {
+            "uci": "d2d3",
+            "move": {
+              "color": "w",
+              "from": "d2",
+              "to": "d3",
+              "piece": "p",
+              "flags": "n",
+              "san": "d3",
+              "lan": "d2d3",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/8/3P4/PPP1PPPP/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.049999999999999996,
+            "value": 0
+          },
+          {
+            "uci": "d2d4",
+            "move": {
+              "color": "w",
+              "from": "d2",
+              "to": "d4",
+              "piece": "p",
+              "flags": "b",
+              "san": "d4",
+              "lan": "d2d4",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.049999999999999996,
+            "value": 0
+          },
+          {
+            "uci": "e2e3",
+            "move": {
+              "color": "w",
+              "from": "e2",
+              "to": "e3",
+              "piece": "p",
+              "flags": "n",
+              "san": "e3",
+              "lan": "e2e3",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/8/4P3/PPPP1PPP/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.049999999999999996,
+            "value": 0
+          },
+          {
+            "uci": "e2e4",
+            "move": {
+              "color": "w",
+              "from": "e2",
+              "to": "e4",
+              "piece": "p",
+              "flags": "b",
+              "san": "e4",
+              "lan": "e2e4",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.049999999999999996,
+            "value": 0
+          },
+          {
+            "uci": "f2f3",
+            "move": {
+              "color": "w",
+              "from": "f2",
+              "to": "f3",
+              "piece": "p",
+              "flags": "n",
+              "san": "f3",
+              "lan": "f2f3",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/8/5P2/PPPPP1PP/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.049999999999999996,
+            "value": 0
+          },
+          {
+            "uci": "f2f4",
+            "move": {
+              "color": "w",
+              "from": "f2",
+              "to": "f4",
+              "piece": "p",
+              "flags": "b",
+              "san": "f4",
+              "lan": "f2f4",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.049999999999999996,
+            "value": 0
+          },
+          {
+            "uci": "g2g3",
+            "move": {
+              "color": "w",
+              "from": "g2",
+              "to": "g3",
+              "piece": "p",
+              "flags": "n",
+              "san": "g3",
+              "lan": "g2g3",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/8/6P1/PPPPPP1P/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.049999999999999996,
+            "value": null
+          },
+          {
+            "uci": "g2g4",
+            "move": {
+              "color": "w",
+              "from": "g2",
+              "to": "g4",
+              "piece": "p",
+              "flags": "b",
+              "san": "g4",
+              "lan": "g2g4",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/6P1/8/PPPPPP1P/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.049999999999999996,
+            "value": null
+          },
+          {
+            "uci": "h2h3",
+            "move": {
+              "color": "w",
+              "from": "h2",
+              "to": "h3",
+              "piece": "p",
+              "flags": "n",
+              "san": "h3",
+              "lan": "h2h3",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/8/7P/PPPPPPP1/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.049999999999999996,
+            "value": null
+          },
+          {
+            "uci": "h2h4",
+            "move": {
+              "color": "w",
+              "from": "h2",
+              "to": "h4",
+              "piece": "p",
+              "flags": "b",
+              "san": "h4",
+              "lan": "h2h4",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/7P/8/PPPPPPP1/RNBQKBNR b KQkq - 0 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.049999999999999996,
+            "value": null
+          },
+          {
+            "uci": "b1a3",
+            "move": {
+              "color": "w",
+              "from": "b1",
+              "to": "a3",
+              "piece": "n",
+              "flags": "n",
+              "san": "Na3",
+              "lan": "b1a3",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/8/N7/PPPPPPPP/R1BQKBNR b KQkq - 1 1"
+            },
+            "visits": 1,
+            "valueVisits": 1,
+            "prior": 0.049999999999999996,
+            "value": 0
+          },
+          {
+            "uci": "b1c3",
+            "move": {
+              "color": "w",
+              "from": "b1",
+              "to": "c3",
+              "piece": "n",
+              "flags": "n",
+              "san": "Nc3",
+              "lan": "b1c3",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/8/2N5/PPPPPPPP/R1BQKBNR b KQkq - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.049999999999999996,
+            "value": null
+          },
+          {
+            "uci": "g1f3",
+            "move": {
+              "color": "w",
+              "from": "g1",
+              "to": "f3",
+              "piece": "n",
+              "flags": "n",
+              "san": "Nf3",
+              "lan": "g1f3",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.049999999999999996,
+            "value": null
+          },
+          {
+            "uci": "g1h3",
+            "move": {
+              "color": "w",
+              "from": "g1",
+              "to": "h3",
+              "piece": "n",
+              "flags": "n",
+              "san": "Nh3",
+              "lan": "g1h3",
+              "before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+              "after": "rnbqkbnr/pppppppp/8/8/8/7N/PPPPPPPP/RNBQKB1R b KQkq - 1 1"
+            },
+            "visits": 0,
+            "valueVisits": 0,
+            "prior": 0.049999999999999996,
+            "value": null
+          }
+        ],
+        "seed": 17,
+        "randomState": 3092164965,
+        "simulations": 15,
+        "evaluations": 16,
+        "nodes": 323,
+        "terminalLeaves": 0,
+        "cutoffs": {
+          "depth": 0,
+          "capacity": 0,
+          "evaluations": 1,
+          "time": 0
+        },
+        "elapsedMs": 48.851600000000076,
+        "stoppedBy": {
+          "simulations": false,
+          "evaluations": true,
+          "time": false,
+          "depth": false,
+          "capacity": false
+        },
+        "scope": "Seeded stochastic PUCT; sampled replies and estimates are not independent outcome verification"
+      },
+      "review": {
+        "schema": "trace-consequence-review-v1",
+        "objective": "forced-mate",
+        "plies": 3,
+        "task": {
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n *",
+          "actor": "w"
+        },
+        "chosen": "a2a4",
+        "initialPreference": "a2a3",
+        "evidence": [
+          {
+            "move": "a2a4",
+            "actor": "w",
+            "startingFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "successorFen": "rnbqkbnr/pppppppp/8/8/P7/8/1PPPPPPP/RNBQKBNR b KQkq - 0 1",
+            "generated": true,
+            "visits": 2,
+            "prior": 0.049999999999999996,
+            "searchEstimate": 0,
+            "verifier": {
+              "method": "independently-checked-AND-OR-certificate-v1",
+              "budget": 1024,
+              "horizon": 2,
+              "millisecondsPerStage": 2000
+            },
+            "proof": {
+              "status": "failure",
+              "reward": -1,
+              "nodes": 23,
+              "attacker": "w",
+              "criterion": "force_mate_within_2_remaining_plies",
+              "certificate": {
+                "schema": "bounded-mate-certificate-v1",
+                "rootFen": "rnbqkbnr/pppppppp/8/8/P7/8/1PPPPPPP/RNBQKBNR b KQkq - 0 1",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n\n1. a4 *",
+                "attacker": "w",
+                "plies": 2,
+                "tree": {
+                  "status": "failure",
+                  "children": [
+                    {
+                      "move": "b8c6",
+                      "node": {
+                        "status": "failure",
+                        "children": [
+                          {
+                            "move": "a4a5",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "b2b3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "b2b4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "c2c3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "c2c4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "d2d3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "d2d4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "e2e3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "e2e4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "f2f3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "f2f4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g2g3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g2g4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "h2h3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "h2h4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "a1a2",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "a1a3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "b1a3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "b1c3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g1f3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g1h3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "certificateCheck": {
+                "verified": true,
+                "status": "failure",
+                "nodes": 23,
+                "elapsedMs": 36.72340000000008
+              },
+              "bounds": {
+                "maxNodes": 1024,
+                "millisecondsPerStage": 2000,
+                "constructionStop": null,
+                "checkingNodes": 23,
+                "elapsedMs": 58.90059999999994
+              },
+              "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+            }
+          },
+          {
+            "move": "a2a3",
+            "actor": "w",
+            "startingFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "successorFen": "rnbqkbnr/pppppppp/8/8/8/P7/1PPPPPPP/RNBQKBNR b KQkq - 0 1",
+            "generated": true,
+            "visits": 1,
+            "prior": 0.049999999999999996,
+            "searchEstimate": 0,
+            "verifier": {
+              "method": "independently-checked-AND-OR-certificate-v1",
+              "budget": 1024,
+              "horizon": 2,
+              "millisecondsPerStage": 2000
+            },
+            "proof": {
+              "status": "failure",
+              "reward": -1,
+              "nodes": 21,
+              "attacker": "w",
+              "criterion": "force_mate_within_2_remaining_plies",
+              "certificate": {
+                "schema": "bounded-mate-certificate-v1",
+                "rootFen": "rnbqkbnr/pppppppp/8/8/8/P7/1PPPPPPP/RNBQKBNR b KQkq - 0 1",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n\n1. a3 *",
+                "attacker": "w",
+                "plies": 2,
+                "tree": {
+                  "status": "failure",
+                  "children": [
+                    {
+                      "move": "b8c6",
+                      "node": {
+                        "status": "failure",
+                        "children": [
+                          {
+                            "move": "a3a4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "b2b3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "b2b4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "c2c3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "c2c4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "d2d3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "d2d4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "e2e3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "e2e4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "f2f3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "f2f4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g2g3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g2g4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "h2h3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "h2h4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "a1a2",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "b1c3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g1f3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g1h3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "certificateCheck": {
+                "verified": true,
+                "status": "failure",
+                "nodes": 21,
+                "elapsedMs": 22.23599999999999
+              },
+              "bounds": {
+                "maxNodes": 1024,
+                "millisecondsPerStage": 2000,
+                "constructionStop": null,
+                "checkingNodes": 21,
+                "elapsedMs": 34.360000000000014
+              },
+              "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+            }
+          },
+          {
+            "move": "b2b3",
+            "actor": "w",
+            "startingFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "successorFen": "rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq - 0 1",
+            "generated": true,
+            "visits": 1,
+            "prior": 0.049999999999999996,
+            "searchEstimate": 0,
+            "verifier": {
+              "method": "independently-checked-AND-OR-certificate-v1",
+              "budget": 1024,
+              "horizon": 2,
+              "millisecondsPerStage": 2000
+            },
+            "proof": {
+              "status": "failure",
+              "reward": -1,
+              "nodes": 23,
+              "attacker": "w",
+              "criterion": "force_mate_within_2_remaining_plies",
+              "certificate": {
+                "schema": "bounded-mate-certificate-v1",
+                "rootFen": "rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq - 0 1",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n\n1. b3 *",
+                "attacker": "w",
+                "plies": 2,
+                "tree": {
+                  "status": "failure",
+                  "children": [
+                    {
+                      "move": "b8c6",
+                      "node": {
+                        "status": "failure",
+                        "children": [
+                          {
+                            "move": "b3b4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "a2a3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "a2a4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "c2c3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "c2c4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "d2d3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "d2d4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "e2e3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "e2e4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "f2f3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "f2f4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g2g3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g2g4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "h2h3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "h2h4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "b1a3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "b1c3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "c1b2",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "c1a3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g1f3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g1h3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "certificateCheck": {
+                "verified": true,
+                "status": "failure",
+                "nodes": 23,
+                "elapsedMs": 14.02290000000005
+              },
+              "bounds": {
+                "maxNodes": 1024,
+                "millisecondsPerStage": 2000,
+                "constructionStop": null,
+                "checkingNodes": 23,
+                "elapsedMs": 27.455600000000004
+              },
+              "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+            }
+          },
+          {
+            "move": "b2b4",
+            "actor": "w",
+            "startingFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "successorFen": "rnbqkbnr/pppppppp/8/8/1P6/8/P1PPPPPP/RNBQKBNR b KQkq - 0 1",
+            "generated": true,
+            "visits": 2,
+            "prior": 0.049999999999999996,
+            "searchEstimate": 0,
+            "verifier": {
+              "method": "independently-checked-AND-OR-certificate-v1",
+              "budget": 1024,
+              "horizon": 2,
+              "millisecondsPerStage": 2000
+            },
+            "proof": {
+              "status": "failure",
+              "reward": -1,
+              "nodes": 23,
+              "attacker": "w",
+              "criterion": "force_mate_within_2_remaining_plies",
+              "certificate": {
+                "schema": "bounded-mate-certificate-v1",
+                "rootFen": "rnbqkbnr/pppppppp/8/8/1P6/8/P1PPPPPP/RNBQKBNR b KQkq - 0 1",
+                "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n\n1. b4 *",
+                "attacker": "w",
+                "plies": 2,
+                "tree": {
+                  "status": "failure",
+                  "children": [
+                    {
+                      "move": "b8c6",
+                      "node": {
+                        "status": "failure",
+                        "children": [
+                          {
+                            "move": "b4b5",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "a2a3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "a2a4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "c2c3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "c2c4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "d2d3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "d2d4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "e2e3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "e2e4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "f2f3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "f2f4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g2g3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g2g4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "h2h3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "h2h4",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "b1a3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "b1c3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "c1b2",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "c1a3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g1f3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          },
+                          {
+                            "move": "g1h3",
+                            "node": {
+                              "status": "failure",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "certificateCheck": {
+                "verified": true,
+                "status": "failure",
+                "nodes": 23,
+                "elapsedMs": 12.38919999999996
+              },
+              "bounds": {
+                "maxNodes": 1024,
+                "millisecondsPerStage": 2000,
+                "constructionStop": null,
+                "checkingNodes": 23,
+                "elapsedMs": 23.507100000000037
+              },
+              "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+            }
+          }
+        ],
+        "diagnostics": [
+          {
+            "kind": "verified-defense-sampled",
+            "candidate": "a2a4",
+            "reply": "b8c6",
+            "sampled": 1,
+            "criterion": "force_mate_within_2_remaining_plies",
+            "meaning": "Reply prevents forced mate within the stated horizon; not a full-game loss or a unique best reply"
+          },
+          {
+            "kind": "verified-defense-not-sampled",
+            "candidate": "a2a3",
+            "reply": "b8c6",
+            "sampled": 0,
+            "criterion": "force_mate_within_2_remaining_plies",
+            "meaning": "Reply prevents forced mate within the stated horizon; not a full-game loss or a unique best reply"
+          },
+          {
+            "kind": "verified-defense-not-sampled",
+            "candidate": "b2b3",
+            "reply": "b8c6",
+            "sampled": 0,
+            "criterion": "force_mate_within_2_remaining_plies",
+            "meaning": "Reply prevents forced mate within the stated horizon; not a full-game loss or a unique best reply"
+          },
+          {
+            "kind": "verified-defense-sampled",
+            "candidate": "b2b4",
+            "reply": "b8c6",
+            "sampled": 1,
+            "criterion": "force_mate_within_2_remaining_plies",
+            "meaning": "Reply prevents forced mate within the stated horizon; not a full-game loss or a unique best reply"
+          }
+        ],
+        "teachingExperiences": [
+          {
+            "move": "a2a4",
+            "actor": "w",
+            "outcome": "failure",
+            "criterion": "force_mate_within_2_remaining_plies",
+            "role": "committed-choice",
+            "certificateSha256": "433e37c77dbd93ba6a5146ecca8957143f53104e8b2a9c240ce2c5dce0414c79",
+            "neuralDelivery": "not-implemented"
+          },
+          {
+            "move": "a2a3",
+            "actor": "w",
+            "outcome": "failure",
+            "criterion": "force_mate_within_2_remaining_plies",
+            "role": "teacher-counterfactual",
+            "certificateSha256": "b863dce6c77380380d109cc9541f403ae886e935c7e6c9ab4995d73cafa84772",
+            "neuralDelivery": "not-implemented"
+          },
+          {
+            "move": "b2b3",
+            "actor": "w",
+            "outcome": "failure",
+            "criterion": "force_mate_within_2_remaining_plies",
+            "role": "teacher-counterfactual",
+            "certificateSha256": "a8bf6b31f53e074b9eec94c771c7976254173c24ae82952a57ddd5e72779cb31",
+            "neuralDelivery": "not-implemented"
+          },
+          {
+            "move": "b2b4",
+            "actor": "w",
+            "outcome": "failure",
+            "criterion": "force_mate_within_2_remaining_plies",
+            "role": "teacher-counterfactual",
+            "certificateSha256": "356d0940924ced81666abb8e1e508cce041669596bdeb83bd346638d6284a5ba",
+            "neuralDelivery": "not-implemented"
+          }
+        ],
+        "outcome": {
+          "status": "failure",
+          "avoidableMiss": false,
+          "fullGameConsequence": "unknown",
+          "rootCause": "undetermined"
+        },
+        "coverage": {
+          "legalMoves": 20,
+          "generatedCandidates": 20,
+          "reviewedCandidates": 4,
+          "allAlternativesReviewed": false,
+          "nodes": 90,
+          "checkingNodes": 90,
+          "maxProofNodes": 4096,
+          "nodesPerCandidate": 1024,
+          "maxCandidates": 4,
+          "proofMilliseconds": 2000
+        },
+        "limitations": [
+          "Only bounded forced-mate consequences are checked; exchange/compensation feedback is not implemented.",
+          "Aggregate root statistics cannot establish a missed defensive reply, an evaluation error, or the cause of a rejected sacrifice.",
+          "Known consequences require replay-checked certificates bound to the position/history/actor/horizon; incomplete construction or checking remains unknown.",
+          "Teacher counterfactuals are additional experiences and must be counted; unknowns supply no training event.",
+          "Structured evidence is not neural learning or held-out transfer.",
+          "Located cutoffs and verified unsampled defenses do not establish calibrated evaluation error or delayed neural credit.",
+          "Trace records are bounded by the caller and must be streamed for larger training programs."
+        ],
+        "investigation": {
+          "completeTraces": true,
+          "simulations": 15,
+          "cutoffs": [],
+          "defensiveReplyScope": "Independent bounded-mate certificates, not sampled weak-play success"
+        }
+      },
+      "traceFile": "research\\reports\\monte-carlo-review-software-2026-10-06\\bounded-no-mate-opening.jsonl",
+      "traceSha256": "afe906ee58872944a6d2d661caed28bb810d961a7b381d159c834dfccaad7e47",
+      "taskHistoryPreserved": true
+    }
+  ],
+  "resources": {
+    "peakRssMiB": 51.59765625,
+    "elapsedSeconds": 0.8319413000000001,
+    "cpuSeconds": 1.001
+  },
+  "scope": "Bounded synthetic policy probe; no graph, fly inference, teaching pulse, persistent neural learning or transfer ran"
+}

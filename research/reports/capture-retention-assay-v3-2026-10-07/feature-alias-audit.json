@@ -1,0 +1,442 @@
+{
+  "schema": "capture-retention-feature-alias-audit-v1",
+  "scope": "Read-only cross-family audit of selected hash-projected KC identities for the trained counterfactual pair; aliases are evidence of shared coding, not by themselves proof of causal interference.",
+  "protocolSha256": "abb80b8c33e7e0204b8bb141fcfa3f23f81dcce6a546622bdebca054fdf2f279",
+  "runReportSha256": "4b5fbf3acb049a2239f745de4008218e26506b05a8f3893c372edc99dfeecf8a",
+  "activityReportSha256": "97927bacc535d3e772e5a2e6e82195d9d8471c0ede510d1c5ebcb353f7d7e080",
+  "scriptPath": "C:/Users/ethan/Documents/fly-chess-research/.codebase/scripts/puzzle-learning/audit-capture-retention-feature-aliases.mjs",
+  "scriptSha256": "8295d9bb6c2954b741bae0ec2da29ed6800f0313383035574d714d5ec3514aec",
+  "cueIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+  "trainExperiences": 16,
+  "finalCounterfactualAliases": [
+    {
+      "panelId": "te-01",
+      "move": "a2a4",
+      "outcome": "success",
+      "testToken": "around-target:r:opponent:b:-2,4",
+      "kcIndex": 32718,
+      "testExcessRate": 1.4819307764992118,
+      "selectedInTraining": 4,
+      "distinctTrainingTokens": [
+        "around-origin:r:0,3:-:self:r:-4,0"
+      ],
+      "trainingEvents": [
+        {
+          "eventIndex": 0,
+          "panelId": "tr-01",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:r:-4,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 3,
+          "panelId": "tr-02",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:r:-4,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 7,
+          "panelId": "tr-04",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:r:-4,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 11,
+          "panelId": "tr-06",
+          "move": "a1a4",
+          "status": "failure",
+          "channel": "PPL103",
+          "token": "around-origin:r:0,3:-:self:r:-4,0",
+          "activeEntries": 1
+        }
+      ]
+    },
+    {
+      "panelId": "te-01",
+      "move": "a2a4",
+      "outcome": "success",
+      "testToken": "around-target:r:self:r:-4,-2",
+      "kcIndex": 103828,
+      "testExcessRate": 1.481877788901329,
+      "selectedInTraining": 1,
+      "distinctTrainingTokens": [
+        "around-origin:r:0,3:-:self:p:-2,3"
+      ],
+      "trainingEvents": [
+        {
+          "eventIndex": 3,
+          "panelId": "tr-02",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:p:-2,3",
+          "activeEntries": 1
+        }
+      ]
+    },
+    {
+      "panelId": "te-01",
+      "move": "e2e6",
+      "outcome": "failure",
+      "testToken": "around-origin:r:0,4:-:self:p:-2,0",
+      "kcIndex": 25020,
+      "testExcessRate": 1.4807760282419622,
+      "selectedInTraining": 2,
+      "distinctTrainingTokens": [
+        "around-origin:r:0,3:-:self:p:-4,5"
+      ],
+      "trainingEvents": [
+        {
+          "eventIndex": 8,
+          "panelId": "tr-05",
+          "move": "a1a4",
+          "status": "failure",
+          "channel": "PPL103",
+          "token": "around-origin:r:0,3:-:self:p:-4,5",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 12,
+          "panelId": "tr-07",
+          "move": "a1a4",
+          "status": "failure",
+          "channel": "PPL103",
+          "token": "around-origin:r:0,3:-:self:p:-4,5",
+          "activeEntries": 1
+        }
+      ]
+    },
+    {
+      "panelId": "te-01",
+      "move": "e2e6",
+      "outcome": "failure",
+      "testToken": "around-origin:r:0,4:-:self:r:-4,0",
+      "kcIndex": 124260,
+      "testExcessRate": 1.482556676492095,
+      "selectedInTraining": 8,
+      "distinctTrainingTokens": [
+        "around-origin:r:0,3:-:self:k:-1,0"
+      ],
+      "trainingEvents": [
+        {
+          "eventIndex": 0,
+          "panelId": "tr-01",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 3,
+          "panelId": "tr-02",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 4,
+          "panelId": "tr-03",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 7,
+          "panelId": "tr-04",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 8,
+          "panelId": "tr-05",
+          "move": "a1a4",
+          "status": "failure",
+          "channel": "PPL103",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 11,
+          "panelId": "tr-06",
+          "move": "a1a4",
+          "status": "failure",
+          "channel": "PPL103",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 12,
+          "panelId": "tr-07",
+          "move": "a1a4",
+          "status": "failure",
+          "channel": "PPL103",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 15,
+          "panelId": "tr-08",
+          "move": "a1a4",
+          "status": "failure",
+          "channel": "PPL103",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        }
+      ]
+    },
+    {
+      "panelId": "te-05",
+      "move": "a2a4",
+      "outcome": "failure",
+      "testToken": "around-target:r:opponent:b:-2,4",
+      "kcIndex": 32718,
+      "testExcessRate": 1.4818348130211234,
+      "selectedInTraining": 4,
+      "distinctTrainingTokens": [
+        "around-origin:r:0,3:-:self:r:-4,0"
+      ],
+      "trainingEvents": [
+        {
+          "eventIndex": 0,
+          "panelId": "tr-01",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:r:-4,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 3,
+          "panelId": "tr-02",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:r:-4,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 7,
+          "panelId": "tr-04",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:r:-4,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 11,
+          "panelId": "tr-06",
+          "move": "a1a4",
+          "status": "failure",
+          "channel": "PPL103",
+          "token": "around-origin:r:0,3:-:self:r:-4,0",
+          "activeEntries": 1
+        }
+      ]
+    },
+    {
+      "panelId": "te-05",
+      "move": "a2a4",
+      "outcome": "failure",
+      "testToken": "around-target:r:self:r:-4,-2",
+      "kcIndex": 103828,
+      "testExcessRate": 1.481774315237999,
+      "selectedInTraining": 1,
+      "distinctTrainingTokens": [
+        "around-origin:r:0,3:-:self:p:-2,3"
+      ],
+      "trainingEvents": [
+        {
+          "eventIndex": 3,
+          "panelId": "tr-02",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:p:-2,3",
+          "activeEntries": 1
+        }
+      ]
+    },
+    {
+      "panelId": "te-05",
+      "move": "e2e6",
+      "outcome": "success",
+      "testToken": "around-origin:r:0,4:-:self:p:-1,5",
+      "kcIndex": 124,
+      "testExcessRate": 1.482146417722106,
+      "selectedInTraining": 1,
+      "distinctTrainingTokens": [
+        "around-target:r:self:p:2,-3"
+      ],
+      "trainingEvents": [
+        {
+          "eventIndex": 13,
+          "panelId": "tr-07",
+          "move": "e1e5",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-target:r:self:p:2,-3",
+          "activeEntries": 1
+        }
+      ]
+    },
+    {
+      "panelId": "te-05",
+      "move": "e2e6",
+      "outcome": "success",
+      "testToken": "around-origin:r:0,4:-:self:p:-2,0",
+      "kcIndex": 25020,
+      "testExcessRate": 1.4807787700556219,
+      "selectedInTraining": 2,
+      "distinctTrainingTokens": [
+        "around-origin:r:0,3:-:self:p:-4,5"
+      ],
+      "trainingEvents": [
+        {
+          "eventIndex": 8,
+          "panelId": "tr-05",
+          "move": "a1a4",
+          "status": "failure",
+          "channel": "PPL103",
+          "token": "around-origin:r:0,3:-:self:p:-4,5",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 12,
+          "panelId": "tr-07",
+          "move": "a1a4",
+          "status": "failure",
+          "channel": "PPL103",
+          "token": "around-origin:r:0,3:-:self:p:-4,5",
+          "activeEntries": 1
+        }
+      ]
+    },
+    {
+      "panelId": "te-05",
+      "move": "e2e6",
+      "outcome": "success",
+      "testToken": "around-origin:r:0,4:-:self:r:-4,0",
+      "kcIndex": 124260,
+      "testExcessRate": 1.4825571533292532,
+      "selectedInTraining": 8,
+      "distinctTrainingTokens": [
+        "around-origin:r:0,3:-:self:k:-1,0"
+      ],
+      "trainingEvents": [
+        {
+          "eventIndex": 0,
+          "panelId": "tr-01",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 3,
+          "panelId": "tr-02",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 4,
+          "panelId": "tr-03",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 7,
+          "panelId": "tr-04",
+          "move": "a1a4",
+          "status": "success",
+          "channel": "PAM02",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 8,
+          "panelId": "tr-05",
+          "move": "a1a4",
+          "status": "failure",
+          "channel": "PPL103",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 11,
+          "panelId": "tr-06",
+          "move": "a1a4",
+          "status": "failure",
+          "channel": "PPL103",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 12,
+          "panelId": "tr-07",
+          "move": "a1a4",
+          "status": "failure",
+          "channel": "PPL103",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        },
+        {
+          "eventIndex": 15,
+          "panelId": "tr-08",
+          "move": "a1a4",
+          "status": "failure",
+          "channel": "PPL103",
+          "token": "around-origin:r:0,3:-:self:k:-1,0",
+          "activeEntries": 1
+        }
+      ]
+    }
+  ],
+  "criticalMovedBlockerAlias": {
+    "panelId": "te-05",
+    "move": "e2e6",
+    "outcome": "success",
+    "testToken": "around-origin:r:0,4:-:self:p:-1,5",
+    "kcIndex": 124,
+    "testExcessRate": 1.482146417722106,
+    "selectedInTraining": 1,
+    "distinctTrainingTokens": [
+      "around-target:r:self:p:2,-3"
+    ],
+    "trainingEvents": [
+      {
+        "eventIndex": 13,
+        "panelId": "tr-07",
+        "move": "e1e5",
+        "status": "success",
+        "channel": "PAM02",
+        "token": "around-target:r:self:p:2,-3",
+        "activeEntries": 1
+      }
+    ]
+  },
+  "interpretation": "The te-05 e2e6 blocker feature is selected and active at KC124. The same KC was selected and active during tr-07/e1e5 for the distinct token around-target:r:self:p:2,-3; that training event carried success/PAM02 feedback. This gives a concrete input-feature collision on the path to the blocker-related MBON12-right edge. It is a plausible interference route; the assay does not isolate the alias as the cause of the unchanged action ranking."
+}

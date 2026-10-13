@@ -1,0 +1,307 @@
+{
+  "schema": "correction-preservation-v2-frozen-protocol-v1",
+  "frozenAt": "2026-10-08T04:17:18.196Z",
+  "scope": "One-seed, one-ply candidate-pair mechanism screen. No delayed biological retention, all-legal usefulness, unfamiliar transfer, or reasoning claim.",
+  "graphPath": ".cache/full.npz",
+  "graphSha256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+  "annotationPath": ".cache/flywire-annotations-v2.1.0.tsv",
+  "annotationSha256": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+  "mappingPath": "research/reports/reversal-candidate-2026-10-05/mapping.json",
+  "mappingHash": "b2d7bf351dbe9889aa6a17216cca6cb7671f4f99d9661e604609a7ff51686fff",
+  "data": {
+    "trainPath": "research/data/capture-retention-transfer-v2/train.jsonl",
+    "validationPath": "research/data/capture-retention-transfer-v2/validation.jsonl",
+    "trainPanels": 8,
+    "validationPanels": 4,
+    "candidatesPerPanel": 2,
+    "splits": [
+      "train",
+      "validation"
+    ]
+  },
+  "model": {
+    "steps": 8,
+    "inputDim": 1,
+    "outputs": 1,
+    "seed": 47,
+    "precision": "float32",
+    "saturation": 10,
+    "recurrentScale": 0.9,
+    "normalization": "row"
+  },
+  "memory": {
+    "eta": 0.5,
+    "minGain": 0.2,
+    "maxGain": 1.8,
+    "activityScale": 1.5
+  },
+  "task": {
+    "objective": "capture-retention",
+    "plies": 1
+  },
+  "readouts": {
+    "MBON12": [
+      {
+        "index": 56337,
+        "rootId": "720575940623001480"
+      },
+      {
+        "index": 49989,
+        "rootId": "720575940621828443"
+      },
+      {
+        "index": 61287,
+        "rootId": "720575940623905719"
+      },
+      {
+        "index": 93832,
+        "rootId": "720575940630075703"
+      }
+    ],
+    "MBON01": [
+      {
+        "index": 62498,
+        "rootId": "720575940624117245"
+      },
+      {
+        "index": 128004,
+        "rootId": "720575940643309197"
+      }
+    ]
+  },
+  "encoders": [
+    {
+      "id": "bound-ray",
+      "identity": "4248d2bc93854a6aac3033cc6a49b2b09c1b9d1adb3b20a2f9d01577a41f4c64",
+      "config": {
+        "seed": 14009,
+        "maxCells": 14,
+        "totalCurrent": 21,
+        "maxCellCurrent": 1.5,
+        "maxRelationCells": 4,
+        "maxHistoryPlies": 512
+      }
+    }
+  ],
+  "schedules": {
+    "selected": {
+      "events": [
+        {
+          "index": 0,
+          "panelId": "tr-06",
+          "move": "a1a4",
+          "role": "target-failure",
+          "status": "failure",
+          "certificateSha256": "4d13c368a4295c3c4e3f28e6879630fa55b910b35b3bdac3c4157491a5a559f4"
+        },
+        {
+          "index": 1,
+          "panelId": "tr-06",
+          "move": "e1e5",
+          "role": "target-success",
+          "status": "success",
+          "certificateSha256": "c69bee3eeca947d67e87c93dc6839635949d4fdf245c3a73b884890326ca40f6"
+        },
+        {
+          "index": 2,
+          "panelId": "tr-03",
+          "move": "a1a4",
+          "role": "preserve-success",
+          "status": "success",
+          "certificateSha256": "67039604bea15e49c2ae0d5860c0f203922f63abefb8e7566ce31326846f2c6b"
+        },
+        {
+          "index": 3,
+          "panelId": "tr-03",
+          "move": "e1e5",
+          "role": "preserve-failure",
+          "status": "failure",
+          "certificateSha256": "e099e8b2aaeb6e40b7da07501eaeed9efeef505ae7c76d16405055c569ce1d9b"
+        }
+      ],
+      "shuffledChannels": [
+        {
+          "index": 0,
+          "channel": "PAM02"
+        },
+        {
+          "index": 1,
+          "channel": "PPL103"
+        },
+        {
+          "index": 2,
+          "channel": "PPL103"
+        },
+        {
+          "index": 3,
+          "channel": "PAM02"
+        }
+      ]
+    },
+    "uniform": {
+      "events": [
+        {
+          "index": 0,
+          "panelId": "tr-05",
+          "move": "a1a4",
+          "role": "uniform-matched-failure",
+          "status": "failure",
+          "certificateSha256": "7f226d25ce9e4f526e89e1e86b2369a9af873876895db71fc23bb625c9983b1e"
+        },
+        {
+          "index": 1,
+          "panelId": "tr-05",
+          "move": "e1e5",
+          "role": "uniform-matched-success",
+          "status": "success",
+          "certificateSha256": "746e757021edf9f8fb3b7dc928ab9386bbfae94dc3eff3839d5a467d126b5abd"
+        },
+        {
+          "index": 2,
+          "panelId": "tr-02",
+          "move": "a1a4",
+          "role": "uniform-matched-success",
+          "status": "success",
+          "certificateSha256": "29badf079783c5fb71c50131f78abfa21d08e0cd39ec6fbc6c764d268db8952c"
+        },
+        {
+          "index": 3,
+          "panelId": "tr-02",
+          "move": "e1e5",
+          "role": "uniform-matched-failure",
+          "status": "failure",
+          "certificateSha256": "25f6e856941ff0cc1b8dd67674f8da17426e0856e12be09e51c61d64063dd487"
+        }
+      ],
+      "shuffledChannels": [
+        {
+          "index": 0,
+          "channel": "PAM02"
+        },
+        {
+          "index": 1,
+          "channel": "PPL103"
+        },
+        {
+          "index": 2,
+          "channel": "PPL103"
+        },
+        {
+          "index": 3,
+          "channel": "PAM02"
+        }
+      ]
+    }
+  },
+  "scheduleSource": {
+    "path": "research/data/correction-preservation-schedules-v2/schedules.json",
+    "sha256": "9052300b9e68f462f46de8cd0b1e83a2ba3fa8c2154016bd2d5d403e7b8c23a7",
+    "manifestPath": "research/data/correction-preservation-schedules-v2/manifest.json",
+    "manifestSha256": "7128e62d5772343f5f3f7afa41a7e2cf1363d6f085d10ba179b41fcb3aa32fef"
+  },
+  "conditions": [
+    "informative",
+    "no-channel",
+    "shuffled",
+    "disabled"
+  ],
+  "current": 1.5,
+  "priorScale": 4,
+  "maxPresentations": 128,
+  "gates": {
+    "selected": "Report tr-06 correction, tr-03 preservation and all 12 candidate-pair panels per condition; no required-panel regressions.",
+    "controls": "Compare informative only with matched no-channel, within-move shuffled and disabled-plasticity arms.",
+    "policy": "Selected versus score-blind schedule is descriptive only; one schedule per policy cannot establish policy superiority.",
+    "interpretation": "Candidate-pair and one-ply only. No delayed biological retention, all-legal choice, final-family access, or transferable reasoning claim."
+  },
+  "runtime": {
+    "nodeVersion": "v22.23.2",
+    "heapMiB": 256,
+    "cpuDuty": 0.5,
+    "maxRssBytes": 805306368,
+    "minFreeBytes": 268435456
+  },
+  "requiredAudits": [
+    {
+      "report": "research/reports/bound-ray-activity-probe-v1-2026-10-07/audit.json",
+      "reportSha256": "1bcae1c545e2592aa0b583bae568a7a7ca1589228baadaf8cb509788c18ee0f9",
+      "expected": {
+        "exactGraphReadoutReplays": true,
+        "zeroPlasticUpdates": true,
+        "finalFamilyFilesRead": false
+      }
+    },
+    {
+      "report": "research/reports/capture-retention-transfer-audit-v1-2026-10-07/audit.json",
+      "reportSha256": "70ded7e1d65d986709c3c14f7c1b3b959aeb50ce5cbf1131a2cc1190e6d55f51",
+      "expected": {
+        "protocolSha256": "217fe1449fc66aad0ca275f6661afff3da97fbb25dd38cbc17106f46ddfb71b0",
+        "fullSet.conflictingCueLabels": 0,
+        "splits.train.panels": 8,
+        "splits.validation.panels": 4
+      }
+    }
+  ],
+  "baseProtocol": {
+    "path": "research/data/bound-ray-feedback-development-v1/protocol.json",
+    "sha256": "a865684916952b5e7199c6cc8671c5d5b5b4b1146d49c667ee9eee242e10af86"
+  },
+  "inputHashes": {
+    ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    "research/reports/reversal-candidate-2026-10-05/mapping.json": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+    "research/data/capture-retention-transfer-v2/protocol.json": "217fe1449fc66aad0ca275f6661afff3da97fbb25dd38cbc17106f46ddfb71b0",
+    "research/data/capture-retention-transfer-v2/train.jsonl": "a9959dfe502e8d45db5991e63143dc5767b10ffed8e74e3701e6ebd9e2d10079",
+    "research/data/capture-retention-transfer-v2/validation.jsonl": "278355ece0033fa3a6405bd5daf00b08aa728f75bf402d494569c58c766174e8",
+    "package.json": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+    "package-lock.json": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\node_modules\\chess.js\\package.json": "36a258fdfb5e76d0816bf2b63dab3c917a0a8652f943da0e6be7e9b543765dfd",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\node_modules\\chess.js\\dist\\cjs\\chess.js": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f",
+    "research/data/bound-ray-activity-probe-v1/protocol.json": "336f2f0759c4014fef053cb700bdb5ac0e533d8d1dfb21dabde89b35b4d4f399",
+    "research/reports/bound-ray-activity-probe-v1-2026-10-07/audit.json": "1bcae1c545e2592aa0b583bae568a7a7ca1589228baadaf8cb509788c18ee0f9",
+    "research/reports/bound-ray-activity-probe-v1-2026-10-07/report.json": "a37f3ce627d69bd204fda81ce5df36cb89582fd6a5b76749c08cc8a0bfc17ddd",
+    "research/reports/bound-ray-activity-probe-v1-2026-10-07/audit.json.COMPLETE": "dcc224cc53b4e4c5fac243007ad84faba66c502d1ab8201dbd2102aee0dc7321",
+    "research/reports/bound-ray-activity-probe-v1-2026-10-07/report.json.COMPLETE": "559be9d4980220ac229f9d6f20a788a5b6981547a50b9bd39d0c319ececacfea",
+    "research/reports/capture-retention-transfer-audit-v1-2026-10-07/audit.json": "70ded7e1d65d986709c3c14f7c1b3b959aeb50ce5cbf1131a2cc1190e6d55f51",
+    "research/data/bound-ray-feedback-development-v1/protocol.json": "a865684916952b5e7199c6cc8671c5d5b5b4b1146d49c667ee9eee242e10af86",
+    "research/source-archives/bound-ray-feedback-development-v1/manifest.json": "579112ab9cbda6674191ec5c14776d728fdb0ed44d8b4f8ee0064e7a825315b4",
+    "research/data/correction-preservation-schedules-v2/schedules.json": "9052300b9e68f462f46de8cd0b1e83a2ba3fa8c2154016bd2d5d403e7b8c23a7",
+    "research/data/correction-preservation-schedules-v2/manifest.json": "7128e62d5772343f5f3f7afa41a7e2cf1363d6f085d10ba179b41fcb3aa32fef",
+    ".codebase/scripts/diagnostics/prepare-correction-preservation-schedules-v2.mjs": "78cbe20f8b997d4503707918b9b4411765f8e4582d9fd2e86a76cf6c16ff8263"
+  },
+  "sourceHashes": {
+    ".codebase/scripts/diagnostics/audit-correction-preservation-v2-recovery.mjs": "e9d3eb749690fd65cc47ba959fa95749fd32d5fd9177dfa18ccfb9efb4909e90",
+    ".codebase/scripts/diagnostics/prepare-correction-preservation-v2-recovery.mjs": "87300ee8e42c447870b867638492b8a70a93b834ef17e624c75507a1eae5ba6e",
+    ".codebase/scripts/puzzle-learning/audit-correction-preservation-v2.mjs": "65d3d29718466715c496dedb85a8be945bad8feb5ad110831c91ea9473d44471",
+    ".codebase/scripts/puzzle-learning/freeze-correction-preservation-v2.mjs": "abdaca6b3ef255c59f1f5d239fb28f0e1b21d469aebcb5f1984c9a4469dda373",
+    ".codebase/scripts/puzzle-learning/train-correction-preservation-v2.mjs": "82bf15beab8d9e3a23979b3e8b4576fc8b7caaa88e54dfd33830308fe7e21980",
+    ".codebase/scripts/runtime/fetch-graph.mjs": "5e48960ed947379ba31fc5cb10b791d6e5891913ed073a4443e6e9c875fab52a",
+    ".codebase/src/chess-input/bound-ray-relational-cue.mjs": "b04c70cdba2488a4a4665d73fad52d3faa7089223a13b0187f0cdc629b13c72f",
+    ".codebase/src/chess-input/relational-chess-cue-v3.mjs": "a19b3e65fda0300b5a361d028c706fcd1b5d1278f2496a11234ccd06690ce47f",
+    ".codebase/src/neural-learning/association-validation.mjs": "b62d6f6bf4ab51f0ed993877026ac1cde0914c582fb479ea27fdc028a7dc2c91",
+    ".codebase/src/neural-learning/dual-valence-interface.mjs": "206fa1d12050463d15bc5b0a31ad30491cdf0507877182a134ff0af796873397",
+    ".codebase/src/neural-learning/mbon-readout.mjs": "bf639c8e0f2ed96d2dc31939abf560d1194fccb1beed486ea6ffccbb74601923",
+    ".codebase/src/neural-learning/mushroom-body.mjs": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    ".codebase/src/puzzle-learning/dual-valence-puzzle-brain.mjs": "9a91a188d6ef40de5a21402ccd90f9a0192b46d664b26c414b86e0650d503c81",
+    ".codebase/src/puzzle-learning/feedback-quality.mjs": "ed2e4176e8ff38e03678c99c203e1a287f01d7253f17ddc3a15d3eb19fce31f0",
+    ".codebase/src/puzzle-learning/mapped-puzzle-brain.mjs": "cca4ed8e2d79ff1c6786eb866141007d9d8f0dc36c1eb3776e11f549a9151c1b",
+    ".codebase/src/runtime/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+    ".codebase/src/search-and-feedback/experimental-puzzle-search.mjs": "dc7ac5e894879ae75a1b0bd5931b1e72466c14b707d2ff987ee6ee1f6d259ebb",
+    ".codebase/src/search-and-feedback/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+    ".codebase/src/search-and-feedback/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+    ".codebase/src/search-and-feedback/verified-feedback.mjs": "33a420b7f0ef9bda52a73ff37f199bc090ee1ab9a2bae5b2f22f166e3e0edf7a",
+    ".codebase/src/supervised-baselines/trainer.mjs": "54b5175481460593dde0c8761c90142d31ad52df6f29a17e873651bf53934b31"
+  },
+  "dependency": {
+    "name": "chess.js",
+    "version": "1.4.0",
+    "packagePath": "C:\\Users\\ethan\\Documents\\fly-chess-research\\node_modules\\chess.js\\package.json",
+    "packageSha256": "36a258fdfb5e76d0816bf2b63dab3c917a0a8652f943da0e6be7e9b543765dfd",
+    "resolvedEntryPath": "C:\\Users\\ethan\\Documents\\fly-chess-research\\node_modules\\chess.js\\dist\\cjs\\chess.js",
+    "resolvedEntrySha256": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f",
+    "lockResolved": "https://registry.npmjs.org/chess.js/-/chess.js-1.4.0.tgz",
+    "lockIntegrity": "sha512-BBJgrrtKQOzFLonR0l+k64A98NLemPwNsCskwb+29bRwobUa4iTm51E1kwGPbWXAcfdDa18nad6vpPPKPWarqw=="
+  }
+}

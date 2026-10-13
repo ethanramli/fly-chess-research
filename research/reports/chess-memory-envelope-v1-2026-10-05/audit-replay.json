@@ -1,0 +1,17 @@
+{
+  "allChecksPassed": true,
+  "interventions": 42,
+  "reportSha256": "b91a8abd56ff096d0e9038eaeb9d952e1bfd357595d474c4abeb3e426b05c341",
+  "sourceSha256": "ee3f1a92c0ca2985636a026b7f978afb03ed0414190846d5f8c35906bb706c79",
+  "checks": [
+    "Input/source identity and original failed gates preserved",
+    "Complete informative seed/phase/intervention coverage",
+    "Every fixed efficacy-floor mask, selected edge count, zero event count and memory hash reconstructed",
+    "Fixed GF arithmetic, original all/naive responses and summary counts recomputed"
+  ],
+  "replayCompared": true,
+  "limitations": [
+    "Does not independently re-simulate neurons; the gain floor is an engineering bound, not a measured physiological limit.",
+    "Intervention choices cannot replace failed original acceptance, implement a new learning rule or establish verified chess learning/transfer."
+  ]
+}

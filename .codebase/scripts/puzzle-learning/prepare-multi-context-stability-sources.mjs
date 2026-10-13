@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+const originalModule='.codebase/src/puzzle-learning/multi-context-coverage-experiment.mjs';
+let module=fs.readFileSync(originalModule,'utf8').replaceAll('\r\n','\n');
+const early="if (panels.every(panel => panel.review.status === 'success')) {\n            a.phase = 'final'; a.stoppedBy = 'verified-all-contexts-success';\n          } else if (selected.review.status === 'success') {";
+if(!module.includes(early))throw Error('Unexpected original selection source');
+module=module.replace(early,"if (selected.review.status === 'success') {");
+module=module.replace('export async function runMultiContextCoverage','export async function runMultiContextStability');
+module='// Separate development stability condition: fixed context-slot budget, no early joint-success stop.\n'+module;
+const targetModule='.codebase/src/puzzle-learning/multi-context-stability-experiment.mjs';
+fs.writeFileSync(targetModule,module,{flag:'wx'});
+let runner=fs.readFileSync('.codebase/scripts/puzzle-learning/train-multi-context-coverage.mjs','utf8');
+runner=runner.replaceAll('runMultiContextCoverage','runMultiContextStability').replaceAll('multi-context-coverage-experiment.mjs','multi-context-stability-experiment.mjs').replaceAll('research/data/multi-context-coverage-v1/protocol.json','research/data/multi-context-stability-v1/protocol.json');
+const needle='const naive = memory.snapshot(), invariant = fixedStateHash(model, memory.edges);';
+if(!runner.includes(needle))throw Error('Missing initialization');
+runner=runner.replace(needle,"const initial = read(p.initialMemoryPath);\nassert.equal(digest(initial.memory), p.initialMemoryHash);\nassert.equal(initial.memory.identity, memory.identity);\nmemory.restore(initial.memory);\nconst naive = memory.snapshot(), invariant = fixedStateHash(model, memory.edges);");
+fs.writeFileSync('.codebase/scripts/puzzle-learning/train-multi-context-stability.mjs',runner,{flag:'wx'});
+console.log('Created separate stability module and warm-start runner; original pinned sources untouched.');

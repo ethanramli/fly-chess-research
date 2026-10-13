@@ -1,0 +1,15 @@
+{
+ "schema":"representation-learning-v1","frozen":"2026-10-06 before learning",
+ "sourceRun":"research/reports/puzzle-neural-v1-2026-10-06",
+ "prerequisite":"research/reports/mbon-choice-v1-2026-10-06",
+ "puzzles":"research/data/puzzle-round-fixture/puzzles.jsonl",
+ "encoders":["absolute","relational-v2"],"conditions":["informative","absent","shuffled","disabled"],
+ "encoder":{"seed":14009,"maxCells":14,"totalCurrent":21,"maxCellCurrent":1.5,"maxHistoryPlies":512},
+ "schedule":["f7g7","f7f6","f7f1","g6h6"],
+ "eta":0.5,"minGain":0.2,"maxGain":1.8,"activityScale":1.5,"current":1.5,
+ "maxLegalMoves":64,"maxBrainCalls":512,"maxEvents":32,
+ "comparison":"Both encoders receive exactly the same four previously verified experiences and pulse sequence, from naive gains, with exactly 14 KC cells at amplitude 1.5 for every legal training candidate. Same full graph, dynamics, readout and plasticity. Complete legal scores after each experience; no candidate exclusion. Controls replay the same experiences, absent removes external pulses, shuffled permutes known flags using seed 14009, disabled skips plasticity. All control exposure and reinforcement dose differences explicit.",
+ "gates":"For each encoder: final unaided verified mate from initial non-mate, exact repeat/restoration and return to initial scores on reset. Feedback specificity additionally requires informative success and absent/shuffled/disabled failures, and shuffled flags differing from informative. Preserve failures. No acceptance inferred from reviewed margins or source gates.",
+ "measurement":"Reviewed safe-minus-bad mean and full-root choices/rankings after every event. Representation effect is paired informative-vs-absent reviewed-margin change difference, descriptive on this one seed/fixture. Compare full-root outcomes separately; a positive margin does not establish useful choice. Exact source-state identity and resource metrics.",
+ "limitations":"One fixed four-experience coverage condition, not adaptive repair, biological validation, contingency reversal, full-model learning, actual Monte Carlo reasoning, long credit assignment or held-out transfer. Engineered symmetry cannot count as learned transfer. Both sensory interfaces bypass the eyes. A successful fixture still leaves the original objective unfinished."
+}

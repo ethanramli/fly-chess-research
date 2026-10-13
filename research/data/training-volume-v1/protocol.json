@@ -1,0 +1,13 @@
+{
+ "schema":"training-volume-v1","frozen":"2026-10-06 before extended training",
+ "sourceRun":"research/reports/puzzle-neural-v1-2026-10-06","prerequisite":"research/reports/mbon-choice-v1-2026-10-06",
+ "encoders":["absolute","relational-v2"],"conditions":["informative","absent","shuffled","disabled"],
+ "encoder":{"seed":14009,"maxCells":14,"totalCurrent":21,"maxCellCurrent":1.5,"maxHistoryPlies":512},
+ "baseSchedule":["f7g7","f7f6","f7f1","g6h6"],"budgets":[8,32,128],"maxExperiences":128,
+ "eta":0.5,"minGain":0.2,"maxGain":1.8,"activityScale":1.5,"current":1.5,
+ "maxLegalMoves":64,"maxBrainCalls":512,"maxEvents":1024,
+ "sequence":"Repeat the known four-experience sequence 32 times. Fixed coverage, order, inputs and dynamics; informative, absent, whole-sequence count-matched shuffled and disabled controls receive exactly the same experiences. Seed 14009 freezes the 128-event shuffle before training. Unknown provides no teaching event. Exactly 14 KC cells at amplitude 1.5 for every legal training candidate; graph sparse and serial.",
+ "measurement":"Measure the complete legal root at naive state and after 8,32,128 experiences, with verified unaided choices, all scores, reviewed margins and gain-floor occupancy. No intermediate root measurements are required because teaching selection is fixed and does not depend on current preference. Continue to 128 regardless of early success. Final repeat/reset/restoration and exact after-update resume. Stream event receipts, bounded checkpoint references and per-invocation resource reports including interruption metrics.",
+ "gates":"For each encoder: doseRescue requires initial failure, failure at 8, success at 128, exact repeat/restoration/reset. persistentSuccess requires success at both 32 and 128 plus memory checks. finalFeedbackSpecificity requires informative success, absent/shuffled/disabled failures at 128 and a nonidentical shuffle. Record every gate even if false; no post-hoc checkpoint choice or statistical generalization from one seed. Reviewed margins alone are not task success.",
+ "interpretation":"Low-volume hypothesis at fixed coverage. Repeating one fixture is not varied puzzle learning or reasoning. Any success needs independent frozen unfamiliar/counterfactual evaluation, not built-in symmetry examples. Failure at 128 cannot prove universal failure at all volumes. No modeled biological consolidation/spacing, natural visual/reward pathway, delayed credit, broader adaptation or complete original goal is established. Previous failures remain unchanged."
+}

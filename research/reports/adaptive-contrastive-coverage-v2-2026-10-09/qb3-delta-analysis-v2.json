@@ -1,0 +1,2348 @@
+{
+  "schema": "adaptive-contrastive-coverage-v2-qb3-delta-analysis-v1",
+  "planPath": "research/data/adaptive-contrastive-coverage-v2/qb3-analysis-plan.json",
+  "planSha256": "55dd3be612adc7bbddeb3acea68899e438513bbcec39ee06c65b26fe8c084a6e",
+  "protocolSha256": "23465c26bcb808ddbc0fa8e21773868648535b5602d258802b1b60e0564cab7b",
+  "auditSha256": "d1238878fce3cc7dd471523f579dc95c57b8e67d200bb3e0148ed095edf36c2d",
+  "trainingReportSha256": "66678af7317083571d51e0a6a6ffdeecb0be02968535167ae6f23a6f7b376437",
+  "cap14ReportSha256": "3703c4614871ea76a2ea96951a9c3649dd1afc6c351be4d436c60b8bc1bec1da",
+  "cap14AuditSha256": "f9d11124fb77030b4f627bd65fe0362d0b4cdcb340863c0514d626575c21ee16",
+  "cap14DeltaSha256": "34b87182d13ffb1a63f9496b9f50cfa0f7fa227cdd8f666c5f991fa01aac7ea3",
+  "sourceSha256": "02e7ea39fa4ed51143f25949e47b167db59ce39a0e8c3adb08c032e216e0cf9e",
+  "config": {
+    "encoder": {
+      "seed": 14009,
+      "maxCells": 28,
+      "totalCurrent": 21,
+      "maxCellCurrent": 0.75,
+      "maxHistoryPlies": 512,
+      "conjoin": false,
+      "stratify": true
+    },
+    "model": {
+      "steps": 8,
+      "inputDim": 1,
+      "outputs": 1,
+      "seed": 47,
+      "precision": "float32",
+      "saturation": 10,
+      "recurrentScale": 0.9,
+      "normalization": "row"
+    },
+    "memory": {
+      "eta": 0.5,
+      "minGain": 0.2,
+      "maxGain": 1.8,
+      "activityScale": 1.5
+    }
+  },
+  "panels": [
+    {
+      "condition": "informative",
+      "positionId": "smothered-queen-b3-rook-e8",
+      "memoryFingerprint": "ca801d192dda1e3c1ebc260692503a945a191738a8b180224ea5b7ecaa44e931",
+      "rows": [
+        {
+          "move": "h6f7",
+          "MBON12": 0.02873890195041895,
+          "MBON01": 0.026539920829236507,
+          "score": 0.0021989811211824417,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "9304e6524cad8931804f50e3512dc489f79a60d15189e32b606fd6c4e451531a"
+        },
+        {
+          "move": "h6g8",
+          "MBON12": 0.03021426498889923,
+          "MBON01": 0.03065318986773491,
+          "score": -0.0004389248788356781,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "bab86f3f912eec4aa28bf17cd9163212a708e1dccf586a3775a19ce3f4c17ad9"
+        },
+        {
+          "move": "h6g4",
+          "MBON12": 0.028763403883203864,
+          "MBON01": 0.025573577731847763,
+          "score": 0.003189826151356101,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "bd85fd2f41ef184b78195c90e58c611032668e5f4570ff1948a12b44bfad0427"
+        },
+        {
+          "move": "h6f5",
+          "MBON12": 0.030071500688791275,
+          "MBON01": 0.028231877833604813,
+          "score": 0.0018396228551864624,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "bca194e1aa2ebc0c7119f5b8f6b5f51ab0f2ed71ac8d688e282a8094c2412efd"
+        },
+        {
+          "move": "b3a4",
+          "MBON12": 0.030806972179561853,
+          "MBON01": 0.025449080392718315,
+          "score": 0.005357891786843538,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "72d6706fbb0c20839fb9d0e1819d9a49804c1fc3266405b02b33d773582db68b"
+        },
+        {
+          "move": "b3b4",
+          "MBON12": 0.03122179489582777,
+          "MBON01": 0.027758857235312462,
+          "score": 0.0034629376605153084,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "2aa73d19b462d40ab6d2d6d2284e136d9fa8687812030e454f88204f5900c07a"
+        },
+        {
+          "move": "b3b5",
+          "MBON12": 0.027759947814047337,
+          "MBON01": 0.027793618850409985,
+          "score": -0.00003367103636264801,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "76b8b9da0d7d894f9e18c7e324864159e09cbb91340fe18c4df3bdfac73fba35"
+        },
+        {
+          "move": "b3b6",
+          "MBON12": 0.02987522352486849,
+          "MBON01": 0.028478736989200115,
+          "score": 0.001396486535668373,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "4a410f244eff7e3773b65ae7cc37f6c72d290451d70523d5b42cd36498e85c97"
+        },
+        {
+          "move": "b3b7",
+          "MBON12": 0.02859008638188243,
+          "MBON01": 0.026241067796945572,
+          "score": 0.0023490185849368572,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "635badb1d2e452ec0e41251c86f2075a88ab52c36a64f52a0788f5a4ba557821"
+        },
+        {
+          "move": "b3b8",
+          "MBON12": 0.02937696874141693,
+          "MBON01": 0.02606179565191269,
+          "score": 0.003315173089504242,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "91f376931153201ac1f502256dbd772418bead418e202936453ac30800f5a4e6"
+        },
+        {
+          "move": "b3c4",
+          "MBON12": 0.03278794977813959,
+          "MBON01": 0.026739634573459625,
+          "score": 0.006048315204679966,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "0b9eeca87575ba70a56916332953df4b9c8f1c310268edfeb15fcd2b65971e4e"
+        },
+        {
+          "move": "b3d5",
+          "MBON12": 0.029043052345514297,
+          "MBON01": 0.02635776996612549,
+          "score": 0.002685282379388809,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "8080ad5745ff44b0611cd80ab38bb87ca4b894f49aafc0004d91109d7316e065"
+        },
+        {
+          "move": "b3e6",
+          "MBON12": 0.029871198348701,
+          "MBON01": 0.026020131073892117,
+          "score": 0.0038510672748088837,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "f7487a3ea7cd744ca55bc2affd3587de66b6287d62652ccd6e519474c0677618"
+        },
+        {
+          "move": "b3f7",
+          "MBON12": 0.03181539149954915,
+          "MBON01": 0.027382152155041695,
+          "score": 0.004433239344507456,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "fd3d4909497e38f3eb3d2c0885a5bf774144a9cda8a6511f034441e53bdad6af"
+        },
+        {
+          "move": "b3g8",
+          "MBON12": 0.03037211112678051,
+          "MBON01": 0.02568394783884287,
+          "score": 0.004688163287937641,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "success",
+          "certificateSha256": "071faed0612c47ed31d913b5eae641b75378e73618ec6150a0ecd8930bc1c745"
+        },
+        {
+          "move": "b3c3",
+          "MBON12": 0.029718312434852123,
+          "MBON01": 0.026973551139235497,
+          "score": 0.0027447612956166267,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "39578f466d119d6d9e9d2ae6a06046822fe4f0fe5a1cd46d606a8809ddcf191a"
+        },
+        {
+          "move": "b3d3",
+          "MBON12": 0.030824714340269566,
+          "MBON01": 0.027895478531718254,
+          "score": 0.0029292358085513115,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "78e08c4eea6afe0138693e66e0ef4fbfed999c1baa75418db020c8acd8425099"
+        },
+        {
+          "move": "b3e3",
+          "MBON12": 0.028550513554364443,
+          "MBON01": 0.026749015785753727,
+          "score": 0.0018014977686107159,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "3a63bd6f9eb76fec095a279dafe8e730af0da4c54f3560896a6198429f74f5a7"
+        },
+        {
+          "move": "b3f3",
+          "MBON12": 0.03036772832274437,
+          "MBON01": 0.027611030265688896,
+          "score": 0.0027566980570554733,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "5d046036f0541d5181923ed4958c5c71f6d5b348f941e6d23d2b63e88b7b711d"
+        },
+        {
+          "move": "b3g3",
+          "MBON12": 0.031602397095412016,
+          "MBON01": 0.02742251753807068,
+          "score": 0.004179879557341337,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "cf1b2f2382831422d2abdfe835912fb34927a67185ce337a940931f1b8cbdf30"
+        },
+        {
+          "move": "b3h3",
+          "MBON12": 0.029741684440523386,
+          "MBON01": 0.026688355021178722,
+          "score": 0.0030533294193446636,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "6a194d9834c50177bd857a0df07d14a8f5eac86b1ac7a1c50b11d17eb4766ab1"
+        },
+        {
+          "move": "b3c2",
+          "MBON12": 0.031707657501101494,
+          "MBON01": 0.027258219197392464,
+          "score": 0.00444943830370903,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "d724c64e03b0d9af969ecf4754a5710db13fee0cf93c500a4a20bcab75a42dd6"
+        },
+        {
+          "move": "b3d1",
+          "MBON12": 0.03294050833210349,
+          "MBON01": 0.0269620344042778,
+          "score": 0.005978473927825689,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "119a7ad167a6140dfde81a1649ecfe0f4f350e7a3eea4117c4813519a0b58f51"
+        },
+        {
+          "move": "b3b2",
+          "MBON12": 0.02962639881297946,
+          "MBON01": 0.02814036700874567,
+          "score": 0.0014860318042337894,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "4cda3a8fd2657fd92366a6620ae469878f9500e345c695ff2b05807ec36ac7b8"
+        },
+        {
+          "move": "b3b1",
+          "MBON12": 0.030016193632036448,
+          "MBON01": 0.026275649666786194,
+          "score": 0.0037405439652502537,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "a423fd24b34ade0073f31b423900675ce368070ee935fbeaf9e7e64ab42f09e3"
+        },
+        {
+          "move": "b3a2",
+          "MBON12": 0.028880559839308262,
+          "MBON01": 0.02607259713113308,
+          "score": 0.0028079627081751823,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "de42e47331a6424e700a93b5b4d7b65c52ee5d44a3543f32a85a5fbcdd7fa965"
+        },
+        {
+          "move": "b3a3",
+          "MBON12": 0.028170701349154115,
+          "MBON01": 0.026204757392406464,
+          "score": 0.001965943956747651,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "7d69946fba1a1972bdc79d0ec30592d74328515c518d36b5256e139602d13e0e"
+        },
+        {
+          "move": "a1a2",
+          "MBON12": 0.030412317253649235,
+          "MBON01": 0.026636681519448757,
+          "score": 0.0037756357342004776,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "9417cd4fb0a4e054f129f2771123edd79e2d480ac6fc7b2ef9fa0269c792944c"
+        },
+        {
+          "move": "a1b2",
+          "MBON12": 0.029898274689912796,
+          "MBON01": 0.02561985421925783,
+          "score": 0.0042784204706549644,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "792f1f1d15edf3272931a6e2482b8790d15686097ca8f186fe06a07a0ec82ce8"
+        },
+        {
+          "move": "a1b1",
+          "MBON12": 0.029622159898281097,
+          "MBON01": 0.02734503149986267,
+          "score": 0.0022771283984184265,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "d451c7c0ac2222e8ec7136f5f4b202abcc0dbd3d70b12c2d30ab0a1c1afcfc44"
+        }
+      ]
+    },
+    {
+      "condition": "absent",
+      "positionId": "smothered-queen-b3-rook-e8",
+      "memoryFingerprint": "0a7c5801c655e9ac0ddcb5691e908aeb54c3ddd83fb8cfa3bab011abc4f699db",
+      "rows": [
+        {
+          "move": "h6f7",
+          "MBON12": 0.03206845233216882,
+          "MBON01": 0.029288792982697487,
+          "score": 0.0027796593494713306,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "9304e6524cad8931804f50e3512dc489f79a60d15189e32b606fd6c4e451531a"
+        },
+        {
+          "move": "h6g8",
+          "MBON12": 0.0340892830863595,
+          "MBON01": 0.0327402725815773,
+          "score": 0.0013490105047821999,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "bab86f3f912eec4aa28bf17cd9163212a708e1dccf586a3775a19ce3f4c17ad9"
+        },
+        {
+          "move": "h6g4",
+          "MBON12": 0.032249122858047485,
+          "MBON01": 0.027675334364175797,
+          "score": 0.004573788493871689,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "bd85fd2f41ef184b78195c90e58c611032668e5f4570ff1948a12b44bfad0427"
+        },
+        {
+          "move": "h6f5",
+          "MBON12": 0.03381074499338865,
+          "MBON01": 0.030124114826321602,
+          "score": 0.003686630167067051,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "bca194e1aa2ebc0c7119f5b8f6b5f51ab0f2ed71ac8d688e282a8094c2412efd"
+        },
+        {
+          "move": "b3a4",
+          "MBON12": 0.034830749966204166,
+          "MBON01": 0.027750471606850624,
+          "score": 0.007080278359353542,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "72d6706fbb0c20839fb9d0e1819d9a49804c1fc3266405b02b33d773582db68b"
+        },
+        {
+          "move": "b3b4",
+          "MBON12": 0.03452950809150934,
+          "MBON01": 0.030226701870560646,
+          "score": 0.004302806220948696,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "2aa73d19b462d40ab6d2d6d2284e136d9fa8687812030e454f88204f5900c07a"
+        },
+        {
+          "move": "b3b5",
+          "MBON12": 0.03132160101085901,
+          "MBON01": 0.03028019145131111,
+          "score": 0.0010414095595479012,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "76b8b9da0d7d894f9e18c7e324864159e09cbb91340fe18c4df3bdfac73fba35"
+        },
+        {
+          "move": "b3b6",
+          "MBON12": 0.03314043860882521,
+          "MBON01": 0.03030320815742016,
+          "score": 0.0028372304514050484,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "4a410f244eff7e3773b65ae7cc37f6c72d290451d70523d5b42cd36498e85c97"
+        },
+        {
+          "move": "b3b7",
+          "MBON12": 0.031546308659017086,
+          "MBON01": 0.028980053029954433,
+          "score": 0.0025662556290626526,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "635badb1d2e452ec0e41251c86f2075a88ab52c36a64f52a0788f5a4ba557821"
+        },
+        {
+          "move": "b3b8",
+          "MBON12": 0.033042088616639376,
+          "MBON01": 0.02893119864165783,
+          "score": 0.004110889974981546,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "91f376931153201ac1f502256dbd772418bead418e202936453ac30800f5a4e6"
+        },
+        {
+          "move": "b3c4",
+          "MBON12": 0.03621974168345332,
+          "MBON01": 0.02863036561757326,
+          "score": 0.00758937606588006,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "0b9eeca87575ba70a56916332953df4b9c8f1c310268edfeb15fcd2b65971e4e"
+        },
+        {
+          "move": "b3d5",
+          "MBON12": 0.03188123553991318,
+          "MBON01": 0.028275979682803154,
+          "score": 0.0036052558571100235,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "8080ad5745ff44b0611cd80ab38bb87ca4b894f49aafc0004d91109d7316e065"
+        },
+        {
+          "move": "b3e6",
+          "MBON12": 0.033472539857029915,
+          "MBON01": 0.027646340429782867,
+          "score": 0.005826199427247047,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "f7487a3ea7cd744ca55bc2affd3587de66b6287d62652ccd6e519474c0677618"
+        },
+        {
+          "move": "b3f7",
+          "MBON12": 0.03566117491573095,
+          "MBON01": 0.03051803633570671,
+          "score": 0.005143138580024242,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "fd3d4909497e38f3eb3d2c0885a5bf774144a9cda8a6511f034441e53bdad6af"
+        },
+        {
+          "move": "b3g8",
+          "MBON12": 0.033158198930323124,
+          "MBON01": 0.02889629453420639,
+          "score": 0.0042619043961167336,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "success",
+          "certificateSha256": "071faed0612c47ed31d913b5eae641b75378e73618ec6150a0ecd8930bc1c745"
+        },
+        {
+          "move": "b3c3",
+          "MBON12": 0.033227075822651386,
+          "MBON01": 0.029102614149451256,
+          "score": 0.0041244616732001305,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "39578f466d119d6d9e9d2ae6a06046822fe4f0fe5a1cd46d606a8809ddcf191a"
+        },
+        {
+          "move": "b3d3",
+          "MBON12": 0.034100556280463934,
+          "MBON01": 0.030360031872987747,
+          "score": 0.0037405244074761868,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "78e08c4eea6afe0138693e66e0ef4fbfed999c1baa75418db020c8acd8425099"
+        },
+        {
+          "move": "b3e3",
+          "MBON12": 0.03167048189789057,
+          "MBON01": 0.028911445289850235,
+          "score": 0.002759036608040333,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "3a63bd6f9eb76fec095a279dafe8e730af0da4c54f3560896a6198429f74f5a7"
+        },
+        {
+          "move": "b3f3",
+          "MBON12": 0.03334939666092396,
+          "MBON01": 0.02947990410029888,
+          "score": 0.0038694925606250763,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "5d046036f0541d5181923ed4958c5c71f6d5b348f941e6d23d2b63e88b7b711d"
+        },
+        {
+          "move": "b3g3",
+          "MBON12": 0.03537557786330581,
+          "MBON01": 0.029272396117448807,
+          "score": 0.006103181745857,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "cf1b2f2382831422d2abdfe835912fb34927a67185ce337a940931f1b8cbdf30"
+        },
+        {
+          "move": "b3h3",
+          "MBON12": 0.033404470421373844,
+          "MBON01": 0.028391792438924313,
+          "score": 0.0050126779824495316,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "6a194d9834c50177bd857a0df07d14a8f5eac86b1ac7a1c50b11d17eb4766ab1"
+        },
+        {
+          "move": "b3c2",
+          "MBON12": 0.035054540261626244,
+          "MBON01": 0.028690660372376442,
+          "score": 0.006363879889249802,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "d724c64e03b0d9af969ecf4754a5710db13fee0cf93c500a4a20bcab75a42dd6"
+        },
+        {
+          "move": "b3d1",
+          "MBON12": 0.036540424451231956,
+          "MBON01": 0.029282690957188606,
+          "score": 0.00725773349404335,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "119a7ad167a6140dfde81a1649ecfe0f4f350e7a3eea4117c4813519a0b58f51"
+        },
+        {
+          "move": "b3b2",
+          "MBON12": 0.03374809958040714,
+          "MBON01": 0.030662664212286472,
+          "score": 0.0030854353681206703,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "4cda3a8fd2657fd92366a6620ae469878f9500e345c695ff2b05807ec36ac7b8"
+        },
+        {
+          "move": "b3b1",
+          "MBON12": 0.03338684234768152,
+          "MBON01": 0.02831311710178852,
+          "score": 0.0050737252458930016,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "a423fd24b34ade0073f31b423900675ce368070ee935fbeaf9e7e64ab42f09e3"
+        },
+        {
+          "move": "b3a2",
+          "MBON12": 0.03233330603688955,
+          "MBON01": 0.02831103280186653,
+          "score": 0.004022273235023022,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "de42e47331a6424e700a93b5b4d7b65c52ee5d44a3543f32a85a5fbcdd7fa965"
+        },
+        {
+          "move": "b3a3",
+          "MBON12": 0.03143449733033776,
+          "MBON01": 0.027862507849931717,
+          "score": 0.003571989480406046,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "7d69946fba1a1972bdc79d0ec30592d74328515c518d36b5256e139602d13e0e"
+        },
+        {
+          "move": "a1a2",
+          "MBON12": 0.03405494196340442,
+          "MBON01": 0.02867439202964306,
+          "score": 0.005380549933761358,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "9417cd4fb0a4e054f129f2771123edd79e2d480ac6fc7b2ef9fa0269c792944c"
+        },
+        {
+          "move": "a1b2",
+          "MBON12": 0.033525033853948116,
+          "MBON01": 0.02791924774646759,
+          "score": 0.005605786107480526,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "792f1f1d15edf3272931a6e2482b8790d15686097ca8f186fe06a07a0ec82ce8"
+        },
+        {
+          "move": "a1b1",
+          "MBON12": 0.034229996614158154,
+          "MBON01": 0.02895773947238922,
+          "score": 0.005272257141768932,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "d451c7c0ac2222e8ec7136f5f4b202abcc0dbd3d70b12c2d30ab0a1c1afcfc44"
+        }
+      ]
+    },
+    {
+      "condition": "shuffled",
+      "positionId": "smothered-queen-b3-rook-e8",
+      "memoryFingerprint": "d31195ac2966094deae1b1d280ac35cb84e203640fafbb23a02cc13aa5d8ccb4",
+      "rows": [
+        {
+          "move": "h6f7",
+          "MBON12": 0.028331689070910215,
+          "MBON01": 0.026965461671352386,
+          "score": 0.001366227399557829,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "9304e6524cad8931804f50e3512dc489f79a60d15189e32b606fd6c4e451531a"
+        },
+        {
+          "move": "h6g8",
+          "MBON12": 0.030567758716642857,
+          "MBON01": 0.030607908964157104,
+          "score": -0.000040150247514247894,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "bab86f3f912eec4aa28bf17cd9163212a708e1dccf586a3775a19ce3f4c17ad9"
+        },
+        {
+          "move": "h6g4",
+          "MBON12": 0.02839583856984973,
+          "MBON01": 0.025623098015785217,
+          "score": 0.0027727405540645123,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "bd85fd2f41ef184b78195c90e58c611032668e5f4570ff1948a12b44bfad0427"
+        },
+        {
+          "move": "h6f5",
+          "MBON12": 0.029938599560409784,
+          "MBON01": 0.02812996506690979,
+          "score": 0.0018086344934999943,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "bca194e1aa2ebc0c7119f5b8f6b5f51ab0f2ed71ac8d688e282a8094c2412efd"
+        },
+        {
+          "move": "b3a4",
+          "MBON12": 0.03093314217403531,
+          "MBON01": 0.02566837053745985,
+          "score": 0.0052647716365754604,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "72d6706fbb0c20839fb9d0e1819d9a49804c1fc3266405b02b33d773582db68b"
+        },
+        {
+          "move": "b3b4",
+          "MBON12": 0.031799037009477615,
+          "MBON01": 0.028147438541054726,
+          "score": 0.0036515984684228897,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "2aa73d19b462d40ab6d2d6d2284e136d9fa8687812030e454f88204f5900c07a"
+        },
+        {
+          "move": "b3b5",
+          "MBON12": 0.02757378574460745,
+          "MBON01": 0.02798564825206995,
+          "score": -0.0004118625074625015,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "76b8b9da0d7d894f9e18c7e324864159e09cbb91340fe18c4df3bdfac73fba35"
+        },
+        {
+          "move": "b3b6",
+          "MBON12": 0.02994787646457553,
+          "MBON01": 0.028518715873360634,
+          "score": 0.0014291605912148952,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "4a410f244eff7e3773b65ae7cc37f6c72d290451d70523d5b42cd36498e85c97"
+        },
+        {
+          "move": "b3b7",
+          "MBON12": 0.027988245710730553,
+          "MBON01": 0.026782551780343056,
+          "score": 0.001205693930387497,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "635badb1d2e452ec0e41251c86f2075a88ab52c36a64f52a0788f5a4ba557821"
+        },
+        {
+          "move": "b3b8",
+          "MBON12": 0.029463079292327166,
+          "MBON01": 0.026353425346314907,
+          "score": 0.0031096539460122585,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "91f376931153201ac1f502256dbd772418bead418e202936453ac30800f5a4e6"
+        },
+        {
+          "move": "b3c4",
+          "MBON12": 0.032732767052948475,
+          "MBON01": 0.026801378466188908,
+          "score": 0.005931388586759567,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "0b9eeca87575ba70a56916332953df4b9c8f1c310268edfeb15fcd2b65971e4e"
+        },
+        {
+          "move": "b3d5",
+          "MBON12": 0.029179589357227087,
+          "MBON01": 0.02646966464817524,
+          "score": 0.0027099247090518475,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "8080ad5745ff44b0611cd80ab38bb87ca4b894f49aafc0004d91109d7316e065"
+        },
+        {
+          "move": "b3e6",
+          "MBON12": 0.030116168782114983,
+          "MBON01": 0.025809288024902344,
+          "score": 0.004306880757212639,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "f7487a3ea7cd744ca55bc2affd3587de66b6287d62652ccd6e519474c0677618"
+        },
+        {
+          "move": "b3f7",
+          "MBON12": 0.030030769761651754,
+          "MBON01": 0.027824893593788147,
+          "score": 0.0022058761678636074,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "fd3d4909497e38f3eb3d2c0885a5bf774144a9cda8a6511f034441e53bdad6af"
+        },
+        {
+          "move": "b3g8",
+          "MBON12": 0.02855389518663287,
+          "MBON01": 0.026417657732963562,
+          "score": 0.0021362374536693096,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "success",
+          "certificateSha256": "071faed0612c47ed31d913b5eae641b75378e73618ec6150a0ecd8930bc1c745"
+        },
+        {
+          "move": "b3c3",
+          "MBON12": 0.029531272128224373,
+          "MBON01": 0.02703938540071249,
+          "score": 0.0024918867275118828,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "39578f466d119d6d9e9d2ae6a06046822fe4f0fe5a1cd46d606a8809ddcf191a"
+        },
+        {
+          "move": "b3d3",
+          "MBON12": 0.03083059936761856,
+          "MBON01": 0.028196774423122406,
+          "score": 0.002633824944496155,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "78e08c4eea6afe0138693e66e0ef4fbfed999c1baa75418db020c8acd8425099"
+        },
+        {
+          "move": "b3e3",
+          "MBON12": 0.028374662157148123,
+          "MBON01": 0.0269326725974679,
+          "score": 0.0014419895596802235,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "3a63bd6f9eb76fec095a279dafe8e730af0da4c54f3560896a6198429f74f5a7"
+        },
+        {
+          "move": "b3f3",
+          "MBON12": 0.029644297901540995,
+          "MBON01": 0.027711203321814537,
+          "score": 0.0019330945797264576,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "5d046036f0541d5181923ed4958c5c71f6d5b348f941e6d23d2b63e88b7b711d"
+        },
+        {
+          "move": "b3g3",
+          "MBON12": 0.031877958215773106,
+          "MBON01": 0.027374323457479477,
+          "score": 0.004503634758293629,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "cf1b2f2382831422d2abdfe835912fb34927a67185ce337a940931f1b8cbdf30"
+        },
+        {
+          "move": "b3h3",
+          "MBON12": 0.030582234263420105,
+          "MBON01": 0.026584133505821228,
+          "score": 0.003998100757598877,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "6a194d9834c50177bd857a0df07d14a8f5eac86b1ac7a1c50b11d17eb4766ab1"
+        },
+        {
+          "move": "b3c2",
+          "MBON12": 0.03227191045880318,
+          "MBON01": 0.027076526544988155,
+          "score": 0.0051953839138150215,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "d724c64e03b0d9af969ecf4754a5710db13fee0cf93c500a4a20bcab75a42dd6"
+        },
+        {
+          "move": "b3d1",
+          "MBON12": 0.03242013789713383,
+          "MBON01": 0.027244380675256252,
+          "score": 0.005175757221877575,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "119a7ad167a6140dfde81a1649ecfe0f4f350e7a3eea4117c4813519a0b58f51"
+        },
+        {
+          "move": "b3b2",
+          "MBON12": 0.029722887091338634,
+          "MBON01": 0.028221359476447105,
+          "score": 0.001501527614891529,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "4cda3a8fd2657fd92366a6620ae469878f9500e345c695ff2b05807ec36ac7b8"
+        },
+        {
+          "move": "b3b1",
+          "MBON12": 0.02963987970724702,
+          "MBON01": 0.02634582668542862,
+          "score": 0.0032940530218183994,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "a423fd24b34ade0073f31b423900675ce368070ee935fbeaf9e7e64ab42f09e3"
+        },
+        {
+          "move": "b3a2",
+          "MBON12": 0.02821934875100851,
+          "MBON01": 0.02622811123728752,
+          "score": 0.0019912375137209892,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "de42e47331a6424e700a93b5b4d7b65c52ee5d44a3543f32a85a5fbcdd7fa965"
+        },
+        {
+          "move": "b3a3",
+          "MBON12": 0.028479051776230335,
+          "MBON01": 0.02609446831047535,
+          "score": 0.002384583465754986,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "7d69946fba1a1972bdc79d0ec30592d74328515c518d36b5256e139602d13e0e"
+        },
+        {
+          "move": "a1a2",
+          "MBON12": 0.0302186687476933,
+          "MBON01": 0.026742772199213505,
+          "score": 0.0034758965484797955,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "9417cd4fb0a4e054f129f2771123edd79e2d480ac6fc7b2ef9fa0269c792944c"
+        },
+        {
+          "move": "a1b2",
+          "MBON12": 0.02913057804107666,
+          "MBON01": 0.025828473269939423,
+          "score": 0.0033021047711372375,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "792f1f1d15edf3272931a6e2482b8790d15686097ca8f186fe06a07a0ec82ce8"
+        },
+        {
+          "move": "a1b1",
+          "MBON12": 0.03110996726900339,
+          "MBON01": 0.027075299993157387,
+          "score": 0.0040346672758460045,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "d451c7c0ac2222e8ec7136f5f4b202abcc0dbd3d70b12c2d30ab0a1c1afcfc44"
+        }
+      ]
+    },
+    {
+      "condition": "disabled",
+      "positionId": "smothered-queen-b3-rook-e8",
+      "memoryFingerprint": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+      "rows": [
+        {
+          "move": "h6f7",
+          "MBON12": 0.03226559981703758,
+          "MBON01": 0.029323402792215347,
+          "score": 0.002942197024822235,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "9304e6524cad8931804f50e3512dc489f79a60d15189e32b606fd6c4e451531a"
+        },
+        {
+          "move": "h6g8",
+          "MBON12": 0.034300172701478004,
+          "MBON01": 0.03276884742081165,
+          "score": 0.0015313252806663513,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "bab86f3f912eec4aa28bf17cd9163212a708e1dccf586a3775a19ce3f4c17ad9"
+        },
+        {
+          "move": "h6g4",
+          "MBON12": 0.03246180829592049,
+          "MBON01": 0.02770410105586052,
+          "score": 0.004757707240059972,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "bd85fd2f41ef184b78195c90e58c611032668e5f4570ff1948a12b44bfad0427"
+        },
+        {
+          "move": "h6f5",
+          "MBON12": 0.0340251992456615,
+          "MBON01": 0.03015073388814926,
+          "score": 0.0038744653575122356,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "bca194e1aa2ebc0c7119f5b8f6b5f51ab0f2ed71ac8d688e282a8094c2412efd"
+        },
+        {
+          "move": "b3a4",
+          "MBON12": 0.035054970532655716,
+          "MBON01": 0.027778753079473972,
+          "score": 0.007276217453181744,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "72d6706fbb0c20839fb9d0e1819d9a49804c1fc3266405b02b33d773582db68b"
+        },
+        {
+          "move": "b3b4",
+          "MBON12": 0.03468322241678834,
+          "MBON01": 0.030256429687142372,
+          "score": 0.0044267927296459675,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "2aa73d19b462d40ab6d2d6d2284e136d9fa8687812030e454f88204f5900c07a"
+        },
+        {
+          "move": "b3b5",
+          "MBON12": 0.03151826839894056,
+          "MBON01": 0.030314477160573006,
+          "score": 0.0012037912383675575,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "76b8b9da0d7d894f9e18c7e324864159e09cbb91340fe18c4df3bdfac73fba35"
+        },
+        {
+          "move": "b3b6",
+          "MBON12": 0.033317241817712784,
+          "MBON01": 0.030327191576361656,
+          "score": 0.0029900502413511276,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "4a410f244eff7e3773b65ae7cc37f6c72d290451d70523d5b42cd36498e85c97"
+        },
+        {
+          "move": "b3b7",
+          "MBON12": 0.031705014407634735,
+          "MBON01": 0.029010044410824776,
+          "score": 0.0026949699968099594,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "635badb1d2e452ec0e41251c86f2075a88ab52c36a64f52a0788f5a4ba557821"
+        },
+        {
+          "move": "b3b8",
+          "MBON12": 0.033253917936235666,
+          "MBON01": 0.02896933536976576,
+          "score": 0.004284582566469908,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "91f376931153201ac1f502256dbd772418bead418e202936453ac30800f5a4e6"
+        },
+        {
+          "move": "b3c4",
+          "MBON12": 0.03641732316464186,
+          "MBON01": 0.02865562029182911,
+          "score": 0.007761702872812748,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "0b9eeca87575ba70a56916332953df4b9c8f1c310268edfeb15fcd2b65971e4e"
+        },
+        {
+          "move": "b3d5",
+          "MBON12": 0.0320397038012743,
+          "MBON01": 0.028299794532358646,
+          "score": 0.0037399092689156532,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "8080ad5745ff44b0611cd80ab38bb87ca4b894f49aafc0004d91109d7316e065"
+        },
+        {
+          "move": "b3e6",
+          "MBON12": 0.03367007803171873,
+          "MBON01": 0.02767368033528328,
+          "score": 0.0059963976964354515,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "f7487a3ea7cd744ca55bc2affd3587de66b6287d62652ccd6e519474c0677618"
+        },
+        {
+          "move": "b3f7",
+          "MBON12": 0.03593368362635374,
+          "MBON01": 0.030555888079106808,
+          "score": 0.005377795547246933,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "fd3d4909497e38f3eb3d2c0885a5bf774144a9cda8a6511f034441e53bdad6af"
+        },
+        {
+          "move": "b3g8",
+          "MBON12": 0.03337395330891013,
+          "MBON01": 0.0289302384480834,
+          "score": 0.004443714860826731,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "success",
+          "certificateSha256": "071faed0612c47ed31d913b5eae641b75378e73618ec6150a0ecd8930bc1c745"
+        },
+        {
+          "move": "b3c3",
+          "MBON12": 0.03343379870057106,
+          "MBON01": 0.029131083749234676,
+          "score": 0.004302714951336384,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "39578f466d119d6d9e9d2ae6a06046822fe4f0fe5a1cd46d606a8809ddcf191a"
+        },
+        {
+          "move": "b3d3",
+          "MBON12": 0.03428519982844591,
+          "MBON01": 0.03039182350039482,
+          "score": 0.0038933763280510902,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "78e08c4eea6afe0138693e66e0ef4fbfed999c1baa75418db020c8acd8425099"
+        },
+        {
+          "move": "b3e3",
+          "MBON12": 0.031852793879806995,
+          "MBON01": 0.02893822267651558,
+          "score": 0.002914571203291416,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "3a63bd6f9eb76fec095a279dafe8e730af0da4c54f3560896a6198429f74f5a7"
+        },
+        {
+          "move": "b3f3",
+          "MBON12": 0.033519220538437366,
+          "MBON01": 0.029504291713237762,
+          "score": 0.004014928825199604,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "5d046036f0541d5181923ed4958c5c71f6d5b348f941e6d23d2b63e88b7b711d"
+        },
+        {
+          "move": "b3g3",
+          "MBON12": 0.03558621369302273,
+          "MBON01": 0.029299546033143997,
+          "score": 0.006286667659878731,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "cf1b2f2382831422d2abdfe835912fb34927a67185ce337a940931f1b8cbdf30"
+        },
+        {
+          "move": "b3h3",
+          "MBON12": 0.03357789572328329,
+          "MBON01": 0.0284174382686615,
+          "score": 0.005160457454621792,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "6a194d9834c50177bd857a0df07d14a8f5eac86b1ac7a1c50b11d17eb4766ab1"
+        },
+        {
+          "move": "b3c2",
+          "MBON12": 0.03521789889782667,
+          "MBON01": 0.02871391549706459,
+          "score": 0.006503983400762081,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "d724c64e03b0d9af969ecf4754a5710db13fee0cf93c500a4a20bcab75a42dd6"
+        },
+        {
+          "move": "b3d1",
+          "MBON12": 0.036767806857824326,
+          "MBON01": 0.029310036450624466,
+          "score": 0.00745777040719986,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "119a7ad167a6140dfde81a1649ecfe0f4f350e7a3eea4117c4813519a0b58f51"
+        },
+        {
+          "move": "b3b2",
+          "MBON12": 0.03398304618895054,
+          "MBON01": 0.03069471288472414,
+          "score": 0.0032883333042263985,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "4cda3a8fd2657fd92366a6620ae469878f9500e345c695ff2b05807ec36ac7b8"
+        },
+        {
+          "move": "b3b1",
+          "MBON12": 0.033590066246688366,
+          "MBON01": 0.028339731507003307,
+          "score": 0.005250334739685059,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "a423fd24b34ade0073f31b423900675ce368070ee935fbeaf9e7e64ab42f09e3"
+        },
+        {
+          "move": "b3a2",
+          "MBON12": 0.03255625069141388,
+          "MBON01": 0.028339041396975517,
+          "score": 0.004217209294438362,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "de42e47331a6424e700a93b5b4d7b65c52ee5d44a3543f32a85a5fbcdd7fa965"
+        },
+        {
+          "move": "b3a3",
+          "MBON12": 0.031600903486832976,
+          "MBON01": 0.027887025848031044,
+          "score": 0.0037138776388019323,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "7d69946fba1a1972bdc79d0ec30592d74328515c518d36b5256e139602d13e0e"
+        },
+        {
+          "move": "a1a2",
+          "MBON12": 0.0342636052519083,
+          "MBON01": 0.02870056964457035,
+          "score": 0.005563035607337952,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "9417cd4fb0a4e054f129f2771123edd79e2d480ac6fc7b2ef9fa0269c792944c"
+        },
+        {
+          "move": "a1b2",
+          "MBON12": 0.03375359531491995,
+          "MBON01": 0.02794721908867359,
+          "score": 0.005806376226246357,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "792f1f1d15edf3272931a6e2482b8790d15686097ca8f186fe06a07a0ec82ce8"
+        },
+        {
+          "move": "a1b1",
+          "MBON12": 0.03441918920725584,
+          "MBON01": 0.028982331976294518,
+          "score": 0.005436857230961323,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "d451c7c0ac2222e8ec7136f5f4b202abcc0dbd3d70b12c2d30ab0a1c1afcfc44"
+        }
+      ]
+    },
+    {
+      "condition": "informative",
+      "positionId": "smothered-queen-b3-rook-f8",
+      "memoryFingerprint": "ca801d192dda1e3c1ebc260692503a945a191738a8b180224ea5b7ecaa44e931",
+      "rows": [
+        {
+          "move": "h6f7",
+          "MBON12": 0.029908036813139915,
+          "MBON01": 0.02665567956864834,
+          "score": 0.003252357244491577,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b9ed7358e98ee41926c6947bc25ae930c956d9db7dd9d85b5248b4d5856404b9"
+        },
+        {
+          "move": "h6g8",
+          "MBON12": 0.03068920411169529,
+          "MBON01": 0.03064404521137476,
+          "score": 0.00004515890032052994,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "804856756668ca7bb375631b7b2314d82adb17c18dd275266586f315993b8eb8"
+        },
+        {
+          "move": "h6g4",
+          "MBON12": 0.029053857550024986,
+          "MBON01": 0.026063458994030952,
+          "score": 0.002990398555994034,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "83cacfe85a893279f27eb969d00a83596b6b20b0fb4bd4fd59afffacbf34f0c6"
+        },
+        {
+          "move": "h6f5",
+          "MBON12": 0.03070733742788434,
+          "MBON01": 0.029392875730991364,
+          "score": 0.0013144616968929768,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "1a4d483106552775e8aad29d69d3821c390f895f1fc775ef061bce70316cad37"
+        },
+        {
+          "move": "b3a4",
+          "MBON12": 0.031163193751126528,
+          "MBON01": 0.025454264134168625,
+          "score": 0.005708929616957903,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "4c86512654cab6cebf7c4065e029c48976aa594ee6fe792899b86c73f4a99a99"
+        },
+        {
+          "move": "b3b4",
+          "MBON12": 0.031131962314248085,
+          "MBON01": 0.027521226555109024,
+          "score": 0.003610735759139061,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "80fe4431726859971e6bfc038adf52ddb9c2709a971626d5b6787c1a0b97f960"
+        },
+        {
+          "move": "b3b5",
+          "MBON12": 0.027131988666951656,
+          "MBON01": 0.02764267846941948,
+          "score": -0.000510689802467823,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b61c097e569afbc8f8b52233991eed6f459ab185a4be3dbdc828e398c9f9a5bf"
+        },
+        {
+          "move": "b3b6",
+          "MBON12": 0.02967353304848075,
+          "MBON01": 0.02661684900522232,
+          "score": 0.0030566840432584286,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "a8be2c4e209f564fd3924bf4edc943347cf7cb0682438c2a7ad27f92898c52c7"
+        },
+        {
+          "move": "b3b7",
+          "MBON12": 0.029684449546039104,
+          "MBON01": 0.026154215447604656,
+          "score": 0.0035302340984344482,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b22340fc75fe747a4e5a6eae95f70ad7ef93349ddaf3dde2d2235c371e67724e"
+        },
+        {
+          "move": "b3b8",
+          "MBON12": 0.028338568285107613,
+          "MBON01": 0.0259948018938303,
+          "score": 0.0023437663912773132,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "de71b90001ea1af3e4d3e7daf7d7f7f6533aadae191b9c79890bebd21796eee4"
+        },
+        {
+          "move": "b3c4",
+          "MBON12": 0.03188060410320759,
+          "MBON01": 0.02679785806685686,
+          "score": 0.005082746036350727,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "20a4b347a3a18dbb5b6e91a6157efc7e14031060b097d58d67f7ff0bacc57ed8"
+        },
+        {
+          "move": "b3d5",
+          "MBON12": 0.03048180602490902,
+          "MBON01": 0.02776888944208622,
+          "score": 0.0027129165828227997,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "316d0674a4cd12c99d80ecdfbeccee1ea4670d3f38e059f48a5ca86abe36fd91"
+        },
+        {
+          "move": "b3e6",
+          "MBON12": 0.03033988131210208,
+          "MBON01": 0.025680968537926674,
+          "score": 0.0046589127741754055,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "ef06f695515c5356598fc40a277f6370a8da4d3767e2838041f6643021bd20dd"
+        },
+        {
+          "move": "b3f7",
+          "MBON12": 0.03175182966515422,
+          "MBON01": 0.027644192799925804,
+          "score": 0.0041076368652284145,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b55f48f1f1b0a04d90d9a40d30b7a2beb660aa319bc4280d4adbfc6d9e17fae4"
+        },
+        {
+          "move": "b3g8",
+          "MBON12": 0.030385220423340797,
+          "MBON01": 0.02525433525443077,
+          "score": 0.0051308851689100266,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "success",
+          "certificateSha256": "07b62270aec205650e52b304d59485cc0cd7534970a546d629ed207fc727d573"
+        },
+        {
+          "move": "b3c3",
+          "MBON12": 0.02857474470511079,
+          "MBON01": 0.027185522951185703,
+          "score": 0.001389221753925085,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "278553954aacf0254c41d15bf8bf7d6f691cb419cc766c6d0b995537d2460bb9"
+        },
+        {
+          "move": "b3d3",
+          "MBON12": 0.03024583077058196,
+          "MBON01": 0.0282593946903944,
+          "score": 0.001986436080187559,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "904043f09ea9613cf201d7285c014ace63b3d591a1cdac766bec7b611e15ce67"
+        },
+        {
+          "move": "b3e3",
+          "MBON12": 0.02706024469807744,
+          "MBON01": 0.02690696157515049,
+          "score": 0.00015328312292695045,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b7c1308654c833bafd12673ef9c2dd8cb8829b6f01dbb093c6c730fa734423fd"
+        },
+        {
+          "move": "b3f3",
+          "MBON12": 0.030988310929387808,
+          "MBON01": 0.02781200222671032,
+          "score": 0.0031763087026774883,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "912626d5a93cd87c060c39c7a1a51ded788fc6c08362369b0a476a83928a9447"
+        },
+        {
+          "move": "b3g3",
+          "MBON12": 0.03181344037875533,
+          "MBON01": 0.02575156558305025,
+          "score": 0.00606187479570508,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "56ff62c4ed1eba5a7ce75295fa90f7f0f7ca552193d805f4f435b70bd4580dfe"
+        },
+        {
+          "move": "b3h3",
+          "MBON12": 0.030935431830585003,
+          "MBON01": 0.02818804234266281,
+          "score": 0.0027473894879221916,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "145391bb98395bf653777c2d9bdd5c880f55c571e6b136943dd5695d0a595793"
+        },
+        {
+          "move": "b3c2",
+          "MBON12": 0.03015567734837532,
+          "MBON01": 0.02615650836378336,
+          "score": 0.003999168984591961,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b562d6ed2345585bd2109f7b730b1583ba39310038c692b57b52ddf6915a1f88"
+        },
+        {
+          "move": "b3d1",
+          "MBON12": 0.033480869606137276,
+          "MBON01": 0.026799926534295082,
+          "score": 0.006680943071842194,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "3872b3932bfd78ff660e68abf9e210956815294ad77b65f9565600b180405f46"
+        },
+        {
+          "move": "b3b2",
+          "MBON12": 0.0312013765797019,
+          "MBON01": 0.02919613476842642,
+          "score": 0.002005241811275482,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "cd401cffee1708e208c08d40c9da7b43d2c99ba4c6fde1d00c6020d5f63e0425"
+        },
+        {
+          "move": "b3b1",
+          "MBON12": 0.030253933742642403,
+          "MBON01": 0.025780100375413895,
+          "score": 0.004473833367228508,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "920c0807bb57bb468a38d8077fee141ba17ebe77251b69c353919ef50d8c486a"
+        },
+        {
+          "move": "b3a2",
+          "MBON12": 0.02959895972162485,
+          "MBON01": 0.025771054439246655,
+          "score": 0.0038279052823781967,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "9905505433d023f51ac857178c5743867c31cdea2c69a8e1e4b883c48233f562"
+        },
+        {
+          "move": "b3a3",
+          "MBON12": 0.028146615251898766,
+          "MBON01": 0.02675086259841919,
+          "score": 0.0013957526534795761,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "50badc7a316f7810a2668034e46f35d8cc4694a44c8eac6539bccb4c88c8cd1a"
+        },
+        {
+          "move": "a1a2",
+          "MBON12": 0.029726391658186913,
+          "MBON01": 0.026840630918741226,
+          "score": 0.0028857607394456863,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b46eaf2803d68cb524c5e581d2cb7399a087b43b588acffd6df76693ff51d4d0"
+        },
+        {
+          "move": "a1b2",
+          "MBON12": 0.030292937997728586,
+          "MBON01": 0.025776526890695095,
+          "score": 0.004516411107033491,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "a12af784c55b28cb3fd0eb8155e20a48173817f98d3b340b56428f793df3cde0"
+        },
+        {
+          "move": "a1b1",
+          "MBON12": 0.03041093237698078,
+          "MBON01": 0.027117925696074963,
+          "score": 0.003293006680905819,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "ccca84bc4f9ffa8c4f9f0451d529e2df9a7b4ad2d597223609a9f6f56dcd0d95"
+        }
+      ]
+    },
+    {
+      "condition": "absent",
+      "positionId": "smothered-queen-b3-rook-f8",
+      "memoryFingerprint": "0a7c5801c655e9ac0ddcb5691e908aeb54c3ddd83fb8cfa3bab011abc4f699db",
+      "rows": [
+        {
+          "move": "h6f7",
+          "MBON12": 0.033206590451300144,
+          "MBON01": 0.02914302796125412,
+          "score": 0.004063562490046024,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b9ed7358e98ee41926c6947bc25ae930c956d9db7dd9d85b5248b4d5856404b9"
+        },
+        {
+          "move": "h6g8",
+          "MBON12": 0.03456153813749552,
+          "MBON01": 0.03273114189505577,
+          "score": 0.0018303962424397469,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "804856756668ca7bb375631b7b2314d82adb17c18dd275266586f315993b8eb8"
+        },
+        {
+          "move": "h6g4",
+          "MBON12": 0.03253713622689247,
+          "MBON01": 0.028999916277825832,
+          "score": 0.003537219949066639,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "83cacfe85a893279f27eb969d00a83596b6b20b0fb4bd4fd59afffacbf34f0c6"
+        },
+        {
+          "move": "h6f5",
+          "MBON12": 0.034315943252295256,
+          "MBON01": 0.03128509968519211,
+          "score": 0.0030308435671031475,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "1a4d483106552775e8aad29d69d3821c390f895f1fc775ef061bce70316cad37"
+        },
+        {
+          "move": "b3a4",
+          "MBON12": 0.03532285708934069,
+          "MBON01": 0.02775493822991848,
+          "score": 0.007567918859422207,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "4c86512654cab6cebf7c4065e029c48976aa594ee6fe792899b86c73f4a99a99"
+        },
+        {
+          "move": "b3b4",
+          "MBON12": 0.0351679977029562,
+          "MBON01": 0.029989364556968212,
+          "score": 0.0051786331459879875,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "80fe4431726859971e6bfc038adf52ddb9c2709a971626d5b6787c1a0b97f960"
+        },
+        {
+          "move": "b3b5",
+          "MBON12": 0.030173438601195812,
+          "MBON01": 0.029934894293546677,
+          "score": 0.0002385443076491356,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b61c097e569afbc8f8b52233991eed6f459ab185a4be3dbdc828e398c9f9a5bf"
+        },
+        {
+          "move": "b3b6",
+          "MBON12": 0.03308490104973316,
+          "MBON01": 0.028652705252170563,
+          "score": 0.004432195797562599,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "a8be2c4e209f564fd3924bf4edc943347cf7cb0682438c2a7ad27f92898c52c7"
+        },
+        {
+          "move": "b3b7",
+          "MBON12": 0.03293664287775755,
+          "MBON01": 0.02883313875645399,
+          "score": 0.004103504121303558,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b22340fc75fe747a4e5a6eae95f70ad7ef93349ddaf3dde2d2235c371e67724e"
+        },
+        {
+          "move": "b3b8",
+          "MBON12": 0.03147928882390261,
+          "MBON01": 0.02783642988651991,
+          "score": 0.003642858937382698,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "de71b90001ea1af3e4d3e7daf7d7f7f6533aadae191b9c79890bebd21796eee4"
+        },
+        {
+          "move": "b3c4",
+          "MBON12": 0.03520461870357394,
+          "MBON01": 0.028621945530176163,
+          "score": 0.0065826731733977795,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "20a4b347a3a18dbb5b6e91a6157efc7e14031060b097d58d67f7ff0bacc57ed8"
+        },
+        {
+          "move": "b3d5",
+          "MBON12": 0.03309896495193243,
+          "MBON01": 0.029475665651261806,
+          "score": 0.0036232993006706238,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "316d0674a4cd12c99d80ecdfbeccee1ea4670d3f38e059f48a5ca86abe36fd91"
+        },
+        {
+          "move": "b3e6",
+          "MBON12": 0.034094409085810184,
+          "MBON01": 0.02778141014277935,
+          "score": 0.006312998943030834,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "ef06f695515c5356598fc40a277f6370a8da4d3767e2838041f6643021bd20dd"
+        },
+        {
+          "move": "b3f7",
+          "MBON12": 0.03577279578894377,
+          "MBON01": 0.030517621897161007,
+          "score": 0.005255173891782761,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b55f48f1f1b0a04d90d9a40d30b7a2beb660aa319bc4280d4adbfc6d9e17fae4"
+        },
+        {
+          "move": "b3g8",
+          "MBON12": 0.03316774591803551,
+          "MBON01": 0.028661074116826057,
+          "score": 0.00450667180120945,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "success",
+          "certificateSha256": "07b62270aec205650e52b304d59485cc0cd7534970a546d629ed207fc727d573"
+        },
+        {
+          "move": "b3c3",
+          "MBON12": 0.03215356636792421,
+          "MBON01": 0.02905001863837242,
+          "score": 0.003103547729551792,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "278553954aacf0254c41d15bf8bf7d6f691cb419cc766c6d0b995537d2460bb9"
+        },
+        {
+          "move": "b3d3",
+          "MBON12": 0.033090148121118546,
+          "MBON01": 0.030531592667102814,
+          "score": 0.002558555454015732,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "904043f09ea9613cf201d7285c014ace63b3d591a1cdac766bec7b611e15ce67"
+        },
+        {
+          "move": "b3e3",
+          "MBON12": 0.030179315712302923,
+          "MBON01": 0.029069308191537857,
+          "score": 0.0011100075207650661,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b7c1308654c833bafd12673ef9c2dd8cb8829b6f01dbb093c6c730fa734423fd"
+        },
+        {
+          "move": "b3f3",
+          "MBON12": 0.033827866427600384,
+          "MBON01": 0.02944786474108696,
+          "score": 0.004380001686513424,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "912626d5a93cd87c060c39c7a1a51ded788fc6c08362369b0a476a83928a9447"
+        },
+        {
+          "move": "b3g3",
+          "MBON12": 0.03561095707118511,
+          "MBON01": 0.02762255072593689,
+          "score": 0.007988406345248222,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "56ff62c4ed1eba5a7ce75295fa90f7f0f7ca552193d805f4f435b70bd4580dfe"
+        },
+        {
+          "move": "b3h3",
+          "MBON12": 0.03455742355436087,
+          "MBON01": 0.029679633677005768,
+          "score": 0.004877789877355099,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "145391bb98395bf653777c2d9bdd5c880f55c571e6b136943dd5695d0a595793"
+        },
+        {
+          "move": "b3c2",
+          "MBON12": 0.03362990636378527,
+          "MBON01": 0.027785914950072765,
+          "score": 0.0058439914137125015,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b562d6ed2345585bd2109f7b730b1583ba39310038c692b57b52ddf6915a1f88"
+        },
+        {
+          "move": "b3d1",
+          "MBON12": 0.03708825074136257,
+          "MBON01": 0.0289067467674613,
+          "score": 0.008181503973901272,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "3872b3932bfd78ff660e68abf9e210956815294ad77b65f9565600b180405f46"
+        },
+        {
+          "move": "b3b2",
+          "MBON12": 0.03478905372321606,
+          "MBON01": 0.0315219284966588,
+          "score": 0.003267125226557255,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "cd401cffee1708e208c08d40c9da7b43d2c99ba4c6fde1d00c6020d5f63e0425"
+        },
+        {
+          "move": "b3b1",
+          "MBON12": 0.033625612501055,
+          "MBON01": 0.027817584574222565,
+          "score": 0.0058080279268324375,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "920c0807bb57bb468a38d8077fee141ba17ebe77251b69c353919ef50d8c486a"
+        },
+        {
+          "move": "b3a2",
+          "MBON12": 0.0326824439689517,
+          "MBON01": 0.02781439945101738,
+          "score": 0.004868044517934322,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "9905505433d023f51ac857178c5743867c31cdea2c69a8e1e4b883c48233f562"
+        },
+        {
+          "move": "b3a3",
+          "MBON12": 0.031407895497977734,
+          "MBON01": 0.029243276454508305,
+          "score": 0.002164619043469429,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "50badc7a316f7810a2668034e46f35d8cc4694a44c8eac6539bccb4c88c8cd1a"
+        },
+        {
+          "move": "a1a2",
+          "MBON12": 0.03337443573400378,
+          "MBON01": 0.02866540476679802,
+          "score": 0.004709030967205763,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b46eaf2803d68cb524c5e581d2cb7399a087b43b588acffd6df76693ff51d4d0"
+        },
+        {
+          "move": "a1b2",
+          "MBON12": 0.033559381030499935,
+          "MBON01": 0.027814519591629505,
+          "score": 0.00574486143887043,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "a12af784c55b28cb3fd0eb8155e20a48173817f98d3b340b56428f793df3cde0"
+        },
+        {
+          "move": "a1b1",
+          "MBON12": 0.035701916087418795,
+          "MBON01": 0.028536268509924412,
+          "score": 0.007165647577494383,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "ccca84bc4f9ffa8c4f9f0451d529e2df9a7b4ad2d597223609a9f6f56dcd0d95"
+        }
+      ]
+    },
+    {
+      "condition": "shuffled",
+      "positionId": "smothered-queen-b3-rook-f8",
+      "memoryFingerprint": "d31195ac2966094deae1b1d280ac35cb84e203640fafbb23a02cc13aa5d8ccb4",
+      "rows": [
+        {
+          "move": "h6f7",
+          "MBON12": 0.029686820693314075,
+          "MBON01": 0.026975585147738457,
+          "score": 0.0027112355455756187,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b9ed7358e98ee41926c6947bc25ae930c956d9db7dd9d85b5248b4d5856404b9"
+        },
+        {
+          "move": "h6g8",
+          "MBON12": 0.030985672026872635,
+          "MBON01": 0.030585680156946182,
+          "score": 0.00039999186992645264,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "804856756668ca7bb375631b7b2314d82adb17c18dd275266586f315993b8eb8"
+        },
+        {
+          "move": "h6g4",
+          "MBON12": 0.028437423519790173,
+          "MBON01": 0.026507817208766937,
+          "score": 0.0019296063110232353,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "83cacfe85a893279f27eb969d00a83596b6b20b0fb4bd4fd59afffacbf34f0c6"
+        },
+        {
+          "move": "h6f5",
+          "MBON12": 0.030459178145974874,
+          "MBON01": 0.029287217184901237,
+          "score": 0.001171960961073637,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "1a4d483106552775e8aad29d69d3821c390f895f1fc775ef061bce70316cad37"
+        },
+        {
+          "move": "b3a4",
+          "MBON12": 0.031412878539413214,
+          "MBON01": 0.025621086359024048,
+          "score": 0.005791792180389166,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "4c86512654cab6cebf7c4065e029c48976aa594ee6fe792899b86c73f4a99a99"
+        },
+        {
+          "move": "b3b4",
+          "MBON12": 0.03152933483943343,
+          "MBON01": 0.027857689186930656,
+          "score": 0.003671645652502775,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "80fe4431726859971e6bfc038adf52ddb9c2709a971626d5b6787c1a0b97f960"
+        },
+        {
+          "move": "b3b5",
+          "MBON12": 0.026981895323842764,
+          "MBON01": 0.027844058349728584,
+          "score": -0.0008621630258858204,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b61c097e569afbc8f8b52233991eed6f459ab185a4be3dbdc828e398c9f9a5bf"
+        },
+        {
+          "move": "b3b6",
+          "MBON12": 0.029693519230931997,
+          "MBON01": 0.026685411110520363,
+          "score": 0.0030081081204116344,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "a8be2c4e209f564fd3924bf4edc943347cf7cb0682438c2a7ad27f92898c52c7"
+        },
+        {
+          "move": "b3b7",
+          "MBON12": 0.029181932099163532,
+          "MBON01": 0.026622883044183254,
+          "score": 0.002559049054980278,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b22340fc75fe747a4e5a6eae95f70ad7ef93349ddaf3dde2d2235c371e67724e"
+        },
+        {
+          "move": "b3b8",
+          "MBON12": 0.028751944191753864,
+          "MBON01": 0.02592259645462036,
+          "score": 0.002829347737133503,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "de71b90001ea1af3e4d3e7daf7d7f7f6533aadae191b9c79890bebd21796eee4"
+        },
+        {
+          "move": "b3c4",
+          "MBON12": 0.031927562318742275,
+          "MBON01": 0.02685904037207365,
+          "score": 0.005068521946668625,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "20a4b347a3a18dbb5b6e91a6157efc7e14031060b097d58d67f7ff0bacc57ed8"
+        },
+        {
+          "move": "b3d5",
+          "MBON12": 0.03058697935193777,
+          "MBON01": 0.02785227820277214,
+          "score": 0.0027347011491656303,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "316d0674a4cd12c99d80ecdfbeccee1ea4670d3f38e059f48a5ca86abe36fd91"
+        },
+        {
+          "move": "b3e6",
+          "MBON12": 0.030209765303879976,
+          "MBON01": 0.025671256706118584,
+          "score": 0.004538508597761393,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "ef06f695515c5356598fc40a277f6370a8da4d3767e2838041f6643021bd20dd"
+        },
+        {
+          "move": "b3f7",
+          "MBON12": 0.03035728633403778,
+          "MBON01": 0.027913672849535942,
+          "score": 0.0024436134845018387,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b55f48f1f1b0a04d90d9a40d30b7a2beb660aa319bc4280d4adbfc6d9e17fae4"
+        },
+        {
+          "move": "b3g8",
+          "MBON12": 0.028380461502820253,
+          "MBON01": 0.02606650535017252,
+          "score": 0.0023139561526477337,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "success",
+          "certificateSha256": "07b62270aec205650e52b304d59485cc0cd7534970a546d629ed207fc727d573"
+        },
+        {
+          "move": "b3c3",
+          "MBON12": 0.02862670924514532,
+          "MBON01": 0.027118835598230362,
+          "score": 0.001507873646914959,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "278553954aacf0254c41d15bf8bf7d6f691cb419cc766c6d0b995537d2460bb9"
+        },
+        {
+          "move": "b3d3",
+          "MBON12": 0.030393789522349834,
+          "MBON01": 0.028534790500998497,
+          "score": 0.0018589990213513374,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "904043f09ea9613cf201d7285c014ace63b3d591a1cdac766bec7b611e15ce67"
+        },
+        {
+          "move": "b3e3",
+          "MBON12": 0.026884467341005802,
+          "MBON01": 0.027090677991509438,
+          "score": -0.0002062106505036354,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b7c1308654c833bafd12673ef9c2dd8cb8829b6f01dbb093c6c730fa734423fd"
+        },
+        {
+          "move": "b3f3",
+          "MBON12": 0.030439283698797226,
+          "MBON01": 0.027828154154121876,
+          "score": 0.00261112954467535,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "912626d5a93cd87c060c39c7a1a51ded788fc6c08362369b0a476a83928a9447"
+        },
+        {
+          "move": "b3g3",
+          "MBON12": 0.03197535499930382,
+          "MBON01": 0.025736914947628975,
+          "score": 0.006238440051674843,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "56ff62c4ed1eba5a7ce75295fa90f7f0f7ca552193d805f4f435b70bd4580dfe"
+        },
+        {
+          "move": "b3h3",
+          "MBON12": 0.03192828921601176,
+          "MBON01": 0.028024587780237198,
+          "score": 0.0039037014357745647,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "145391bb98395bf653777c2d9bdd5c880f55c571e6b136943dd5695d0a595793"
+        },
+        {
+          "move": "b3c2",
+          "MBON12": 0.030636001378297806,
+          "MBON01": 0.02594743575900793,
+          "score": 0.004688565619289875,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b562d6ed2345585bd2109f7b730b1583ba39310038c692b57b52ddf6915a1f88"
+        },
+        {
+          "move": "b3d1",
+          "MBON12": 0.03314881678670645,
+          "MBON01": 0.026914380490779877,
+          "score": 0.006234436295926571,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "3872b3932bfd78ff660e68abf9e210956815294ad77b65f9565600b180405f46"
+        },
+        {
+          "move": "b3b2",
+          "MBON12": 0.03135202918201685,
+          "MBON01": 0.029333196580410004,
+          "score": 0.002018832601606846,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "cd401cffee1708e208c08d40c9da7b43d2c99ba4c6fde1d00c6020d5f63e0425"
+        },
+        {
+          "move": "b3b1",
+          "MBON12": 0.029877420514822006,
+          "MBON01": 0.025850294157862663,
+          "score": 0.004027126356959343,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "920c0807bb57bb468a38d8077fee141ba17ebe77251b69c353919ef50d8c486a"
+        },
+        {
+          "move": "b3a2",
+          "MBON12": 0.029098486062139273,
+          "MBON01": 0.025900143198668957,
+          "score": 0.003198342863470316,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "9905505433d023f51ac857178c5743867c31cdea2c69a8e1e4b883c48233f562"
+        },
+        {
+          "move": "b3a3",
+          "MBON12": 0.028206042014062405,
+          "MBON01": 0.027035466395318508,
+          "score": 0.0011705756187438965,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "50badc7a316f7810a2668034e46f35d8cc4694a44c8eac6539bccb4c88c8cd1a"
+        },
+        {
+          "move": "a1a2",
+          "MBON12": 0.029719282872974873,
+          "MBON01": 0.026844254694879055,
+          "score": 0.0028750281780958176,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b46eaf2803d68cb524c5e581d2cb7399a087b43b588acffd6df76693ff51d4d0"
+        },
+        {
+          "move": "a1b2",
+          "MBON12": 0.029750690795481205,
+          "MBON01": 0.025879554450511932,
+          "score": 0.0038711363449692726,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "a12af784c55b28cb3fd0eb8155e20a48173817f98d3b340b56428f793df3cde0"
+        },
+        {
+          "move": "a1b1",
+          "MBON12": 0.03274215245619416,
+          "MBON01": 0.026795503683388233,
+          "score": 0.005946648772805929,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "ccca84bc4f9ffa8c4f9f0451d529e2df9a7b4ad2d597223609a9f6f56dcd0d95"
+        }
+      ]
+    },
+    {
+      "condition": "disabled",
+      "positionId": "smothered-queen-b3-rook-f8",
+      "memoryFingerprint": "53e5b8ec192693913fcf1e703c979f2b1ee6ade28cfd3a2acd07cf5540740064",
+      "rows": [
+        {
+          "move": "h6f7",
+          "MBON12": 0.0333927059546113,
+          "MBON01": 0.02917562611401081,
+          "score": 0.004217079840600491,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b9ed7358e98ee41926c6947bc25ae930c956d9db7dd9d85b5248b4d5856404b9"
+        },
+        {
+          "move": "h6g8",
+          "MBON12": 0.03477487759664655,
+          "MBON01": 0.03275972604751587,
+          "score": 0.002015151549130678,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "804856756668ca7bb375631b7b2314d82adb17c18dd275266586f315993b8eb8"
+        },
+        {
+          "move": "h6g4",
+          "MBON12": 0.032755156978964806,
+          "MBON01": 0.0290373582392931,
+          "score": 0.003717798739671707,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "83cacfe85a893279f27eb969d00a83596b6b20b0fb4bd4fd59afffacbf34f0c6"
+        },
+        {
+          "move": "h6f5",
+          "MBON12": 0.034526786766946316,
+          "MBON01": 0.03131179232150316,
+          "score": 0.0032149944454431534,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "1a4d483106552775e8aad29d69d3821c390f895f1fc775ef061bce70316cad37"
+        },
+        {
+          "move": "b3a4",
+          "MBON12": 0.035551701206713915,
+          "MBON01": 0.027784353122115135,
+          "score": 0.00776734808459878,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "4c86512654cab6cebf7c4065e029c48976aa594ee6fe792899b86c73f4a99a99"
+        },
+        {
+          "move": "b3b4",
+          "MBON12": 0.03536814916878939,
+          "MBON01": 0.03002023510634899,
+          "score": 0.005347914062440395,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "80fe4431726859971e6bfc038adf52ddb9c2709a971626d5b6787c1a0b97f960"
+        },
+        {
+          "move": "b3b5",
+          "MBON12": 0.030329119879752398,
+          "MBON01": 0.029965711757540703,
+          "score": 0.0003634081222116947,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b61c097e569afbc8f8b52233991eed6f459ab185a4be3dbdc828e398c9f9a5bf"
+        },
+        {
+          "move": "b3b6",
+          "MBON12": 0.03327523311600089,
+          "MBON01": 0.028679557144641876,
+          "score": 0.0045956759713590145,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "a8be2c4e209f564fd3924bf4edc943347cf7cb0682438c2a7ad27f92898c52c7"
+        },
+        {
+          "move": "b3b7",
+          "MBON12": 0.03311305958777666,
+          "MBON01": 0.028864093124866486,
+          "score": 0.004248966462910175,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b22340fc75fe747a4e5a6eae95f70ad7ef93349ddaf3dde2d2235c371e67724e"
+        },
+        {
+          "move": "b3b8",
+          "MBON12": 0.0316487867385149,
+          "MBON01": 0.027863258495926857,
+          "score": 0.003785528242588043,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "de71b90001ea1af3e4d3e7daf7d7f7f6533aadae191b9c79890bebd21796eee4"
+        },
+        {
+          "move": "b3c4",
+          "MBON12": 0.03538883663713932,
+          "MBON01": 0.028646161779761314,
+          "score": 0.006742674857378006,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "20a4b347a3a18dbb5b6e91a6157efc7e14031060b097d58d67f7ff0bacc57ed8"
+        },
+        {
+          "move": "b3d5",
+          "MBON12": 0.03324174601584673,
+          "MBON01": 0.029496613889932632,
+          "score": 0.003745132125914097,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "316d0674a4cd12c99d80ecdfbeccee1ea4670d3f38e059f48a5ca86abe36fd91"
+        },
+        {
+          "move": "b3e6",
+          "MBON12": 0.034320942126214504,
+          "MBON01": 0.027811946347355843,
+          "score": 0.006508995778858662,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "ef06f695515c5356598fc40a277f6370a8da4d3767e2838041f6643021bd20dd"
+        },
+        {
+          "move": "b3f7",
+          "MBON12": 0.03604191169142723,
+          "MBON01": 0.03055492416024208,
+          "score": 0.00548698753118515,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b55f48f1f1b0a04d90d9a40d30b7a2beb660aa319bc4280d4adbfc6d9e17fae4"
+        },
+        {
+          "move": "b3g8",
+          "MBON12": 0.03339150734245777,
+          "MBON01": 0.028696510940790176,
+          "score": 0.004694996401667595,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "success",
+          "certificateSha256": "07b62270aec205650e52b304d59485cc0cd7534970a546d629ed207fc727d573"
+        },
+        {
+          "move": "b3c3",
+          "MBON12": 0.03235071059316397,
+          "MBON01": 0.029076967388391495,
+          "score": 0.0032737432047724724,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "278553954aacf0254c41d15bf8bf7d6f691cb419cc766c6d0b995537d2460bb9"
+        },
+        {
+          "move": "b3d3",
+          "MBON12": 0.03323836391791701,
+          "MBON01": 0.030560767278075218,
+          "score": 0.002677596639841795,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "904043f09ea9613cf201d7285c014ace63b3d591a1cdac766bec7b611e15ce67"
+        },
+        {
+          "move": "b3e3",
+          "MBON12": 0.030361606739461422,
+          "MBON01": 0.029096081852912903,
+          "score": 0.0012655248865485191,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b7c1308654c833bafd12673ef9c2dd8cb8829b6f01dbb093c6c730fa734423fd"
+        },
+        {
+          "move": "b3f3",
+          "MBON12": 0.03398440033197403,
+          "MBON01": 0.029470236971974373,
+          "score": 0.004514163359999657,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "912626d5a93cd87c060c39c7a1a51ded788fc6c08362369b0a476a83928a9447"
+        },
+        {
+          "move": "b3g3",
+          "MBON12": 0.03582262061536312,
+          "MBON01": 0.02764937374740839,
+          "score": 0.008173246867954731,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "56ff62c4ed1eba5a7ce75295fa90f7f0f7ca552193d805f4f435b70bd4580dfe"
+        },
+        {
+          "move": "b3h3",
+          "MBON12": 0.03472004923969507,
+          "MBON01": 0.029703015461564064,
+          "score": 0.005017033778131008,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "145391bb98395bf653777c2d9bdd5c880f55c571e6b136943dd5695d0a595793"
+        },
+        {
+          "move": "b3c2",
+          "MBON12": 0.033806396182626486,
+          "MBON01": 0.027812794782221317,
+          "score": 0.0059936014004051685,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b562d6ed2345585bd2109f7b730b1583ba39310038c692b57b52ddf6915a1f88"
+        },
+        {
+          "move": "b3d1",
+          "MBON12": 0.03730771457776427,
+          "MBON01": 0.028934470377862453,
+          "score": 0.00837324419990182,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "3872b3932bfd78ff660e68abf9e210956815294ad77b65f9565600b180405f46"
+        },
+        {
+          "move": "b3b2",
+          "MBON12": 0.034998942632228136,
+          "MBON01": 0.03154978808015585,
+          "score": 0.0034491545520722866,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "cd401cffee1708e208c08d40c9da7b43d2c99ba4c6fde1d00c6020d5f63e0425"
+        },
+        {
+          "move": "b3b1",
+          "MBON12": 0.03382884804159403,
+          "MBON01": 0.027844198048114777,
+          "score": 0.005984649993479252,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "920c0807bb57bb468a38d8077fee141ba17ebe77251b69c353919ef50d8c486a"
+        },
+        {
+          "move": "b3a2",
+          "MBON12": 0.032869684509932995,
+          "MBON01": 0.027839763090014458,
+          "score": 0.005029921419918537,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "9905505433d023f51ac857178c5743867c31cdea2c69a8e1e4b883c48233f562"
+        },
+        {
+          "move": "b3a3",
+          "MBON12": 0.031579622998833656,
+          "MBON01": 0.029276469722390175,
+          "score": 0.0023031532764434814,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "50badc7a316f7810a2668034e46f35d8cc4694a44c8eac6539bccb4c88c8cd1a"
+        },
+        {
+          "move": "a1a2",
+          "MBON12": 0.03357511479407549,
+          "MBON01": 0.02869054116308689,
+          "score": 0.004884573630988598,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "b46eaf2803d68cb524c5e581d2cb7399a087b43b588acffd6df76693ff51d4d0"
+        },
+        {
+          "move": "a1b2",
+          "MBON12": 0.033766900189220905,
+          "MBON01": 0.02784048207104206,
+          "score": 0.0059264181181788445,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "a12af784c55b28cb3fd0eb8155e20a48173817f98d3b340b56428f793df3cde0"
+        },
+        {
+          "move": "a1b1",
+          "MBON12": 0.03589235758408904,
+          "MBON01": 0.028558743186295033,
+          "score": 0.007333614397794008,
+          "meaning": "Fixed mean(MBON12) minus mean(MBON01); larger preferred; engineered memory readout",
+          "status": "failure",
+          "certificateSha256": "ccca84bc4f9ffa8c4f9f0451d529e2df9a7b4ad2d597223609a9f6f56dcd0d95"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "passed": true,
+    "criterion": "For each legal move, score-change is the condition's final absolute MBON score minus the absent-control absolute score on the same board/action under the same encoder cap. Rank descending with lexical UCI tie-break. For informative memory, both success moves must rank strictly better (smaller rank) than their recorded cap-14 rank for the cap-increase hypothesis to pass. Shuffled-minus-absent and disabled-minus-absent ranks are reported as controls, not substituted for the informative criterion.",
+    "comparisons": [
+      {
+        "position": "smothered-queen-b3-rook-e8",
+        "successMove": "b3g8",
+        "legalMoves": 30,
+        "cap14SuccessRank": 5,
+        "cap28SuccessRank": 1,
+        "cap28TopDeltaMove": "b3g8",
+        "cap28TopDelta": 0.0004262588918209076,
+        "successDelta": 0.0004262588918209076,
+        "absoluteChoices": {
+          "informative": "b3c4",
+          "absent": "b3c4",
+          "shuffled": "b3c4",
+          "disabled": "b3c4"
+        },
+        "controls": {
+          "shuffled": {
+            "successRank": 28,
+            "topMove": "b3b4",
+            "topDelta": -0.0006512077525258064
+          },
+          "disabled": {
+            "successRank": 12,
+            "topMove": "b3f7",
+            "topDelta": 0.00023465696722269058
+          }
+        },
+        "improved": true
+      },
+      {
+        "position": "smothered-queen-b3-rook-f8",
+        "successMove": "b3g8",
+        "legalMoves": 30,
+        "cap14SuccessRank": 4,
+        "cap28SuccessRank": 1,
+        "cap28TopDeltaMove": "b3g8",
+        "cap28TopDelta": 0.0006242133677005768,
+        "successDelta": 0.0006242133677005768,
+        "absoluteChoices": {
+          "informative": "b3d1",
+          "absent": "b3d1",
+          "shuffled": "b3g3",
+          "disabled": "b3d1"
+        },
+        "controls": {
+          "shuffled": {
+            "successRank": 29,
+            "topMove": "b3d3",
+            "topDelta": -0.0006995564326643944
+          },
+          "disabled": {
+            "successRank": 5,
+            "topMove": "b3f7",
+            "topDelta": 0.00023181363940238953
+          }
+        },
+        "improved": true
+      }
+    ],
+    "cap14RanksVerifiedFromAuditedRawPanels": [
+      {
+        "position": "smothered-queen-b3-rook-e8",
+        "successMove": "b3g8",
+        "rank": 5,
+        "topMove": "b3f7",
+        "topConsequence": "failure",
+        "delta": -0.0004222034476697445
+      },
+      {
+        "position": "smothered-queen-b3-rook-f8",
+        "successMove": "b3g8",
+        "rank": 4,
+        "topMove": "b3a3",
+        "topConsequence": "failure",
+        "delta": 0.00023419316858053207
+      }
+    ],
+    "interpretation": "This compares informative-minus-absent score-change ranks on two already inspected development probes. It is not independent transfer, a biological plasticity test, or a solution to the all-legal choice failure."
+  },
+  "resources": {
+    "elapsedSeconds": 74.9811333,
+    "cpuSeconds": 38.86,
+    "peakRssMiB": 108.82421875,
+    "cpuDuty": 0.5,
+    "presentations": 240
+  },
+  "coverage": "Complete all-legal action assessment; no training, feedback events, or memory updates."
+}

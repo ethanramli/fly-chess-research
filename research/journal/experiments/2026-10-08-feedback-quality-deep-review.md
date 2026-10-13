@@ -1,0 +1,11 @@
+# Deep feedback-quality research and first metadata improvement
+
+2026-10-08, Asia/Jakarta. User requested deep research into MiMo coding training, Stockfish, Capablanca, and broader feedback weaknesses to pursue an effective 8/10 method under laptop limits.
+
+Research package: [review and access coverage](../../literature/feedback-quality-deep-review-2026-10-08/README.md). Proposed contract: [quality improvement](../../../documentation/design/puzzle-learning/feedback-quality-improvement.md). Exa retrieved 95 result slots over 19 successful searches; duplicates/secondary pages were filtered and primary-source coverage is stated individually. No claim that 95 full papers were read.
+
+Read-only saved-receipt analysis: positive teaching increased the unsafe score slightly more than the safe score. Safe-minus-unsafe margin changed -0.0000624391; no-channel changed -0.0000605001; difference -0.00000193901. This single inspected pair shows no beneficial differential effect, despite 76 changed efficacy entries. No fresh graph inference or independent full-graph replay was performed. [Audit](../../reports/feedback-quality-review-2026-10-08/timing-margin-audit.json).
+
+Isolated checked lesson metadata module now preserves verified transitions, recapture witnesses, action contrasts, task/credit scope, ranking coverage, unknown omission and the distinction between teacher evidence and actual neural signal. It reuses existing certificate checkers and the pre-feedback binder, computes no neural deltas, and requires fresh per-event memory binding before real replay. Four adversarial tests pass; npm test passes154/154. Retrospective example prepared from the saved timing ranking and existing training certificates, with no neural updates.
+
+Existing fixed-budget sequence/contrast planners and frozen protocols remain unchanged. Graded value teaching, neural selectivity, retained all-legal improvement, counterfactual transfer and 8/10 quality remain unverified. The next graph experiment must be separately pinned/frozen, feedback-enabled with matched nondegenerate controls and directional/retention gates. First resolve whether the local update selectively improves the intended consequence relation; richer teacher prose or more repetition does not establish that.

@@ -1,0 +1,53 @@
+{
+  "scope": "Analytic bounds only; no graph, neural input fitting or prospective training.",
+  "reversal": {
+    "up": {
+      "from": 0.2,
+      "threshold": 1,
+      "pulses": 63,
+      "lastBefore": 0.9975175415134627,
+      "firstAfter": 1.0063995087227098,
+      "assumption": "Identical isolated pulse map with negligible intervening traces; scalar gain crossing, not behavioral reversal."
+    },
+    "down": {
+      "from": 1.8,
+      "threshold": 1,
+      "pulses": 27,
+      "lastBefore": 1.0017627179742372,
+      "firstAfter": 0.9811829216093488,
+      "assumption": "Identical isolated pulse map with negligible intervening traces; scalar gain crossing, not behavioral reversal."
+    }
+  },
+  "inactiveCueBound": {
+    "formula": "abs(gFuture-gNow) <= (gmax-gmin)*eta*R*eNow*tauKC",
+    "assumptions": [
+      "KC input remains exactly zero for the entire future interval",
+      "DAN rate and both response states stay in [0,R]",
+      "Only the declared local gain equation acts; initial KC trace is eNow",
+      "Quiet-gap examples assume KC remains zero and eBeforeGap <= 1; no CPU rest-to-model-time conversion"
+    ],
+    "bounds": [
+      {
+        "quietGap": 0,
+        "atUnitDANBound": 0.32000000000000006,
+        "atModelRateBound": 2.1333333333333337
+      },
+      {
+        "quietGap": 0.8,
+        "atUnitDANBound": 0.043307290635716075,
+        "atModelRateBound": 0.28871527090477384
+      },
+      {
+        "quietGap": 2,
+        "atUnitDANBound": 0.00215614303970735,
+        "atModelRateBound": 0.014374286931382332
+      },
+      {
+        "quietGap": 4,
+        "atUnitDANBound": 0.000014527977523995155,
+        "atModelRateBound": 0.00009685318349330103
+      }
+    ]
+  },
+  "limitation": "Shared KC activity invalidates the inactive-cue premise. Static cue separation and existing all-legal overlap do not establish behavioral retention."
+}

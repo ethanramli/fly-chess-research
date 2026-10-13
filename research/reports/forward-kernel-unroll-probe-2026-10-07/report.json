@@ -1,0 +1,249 @@
+{
+  "complete": true,
+  "scope": "Interleaved A/B/C comparison on the same frozen brain state and saved teaching stimulation. Production kernel versus local-array-hoisted kernel versus precomputed signed edge magnitudes. Each candidate exactly matches production predictions and every recurrent activity buffer on every sample. No learner source is changed and no update is applied.",
+  "timestamp": "2026-10-07T02:59:21.562Z",
+  "identity": {
+    "graphSHA256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    "sources": {
+      ".codebase/scripts/evaluation-and-performance/benchmark-forward-kernels.mjs": "17daea1f2f8598f0c0516788dfb048e0c9e63cfa2d9d82b7348ba0a2f0fc4699",
+      ".codebase/scripts/runtime/fetch-graph.mjs": "5e48960ed947379ba31fc5cb10b791d6e5891913ed073a4443e6e9c875fab52a",
+      ".codebase/src/supervised-baselines/trainer.mjs": "54b5175481460593dde0c8761c90142d31ad52df6f29a17e873651bf53934b31",
+      ".codebase/src/runtime/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+      ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+      ".codebase/src/neural-learning/mushroom-body.mjs": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5",
+      "package.json": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+      "package-lock.json": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214"
+    },
+    "inputs": {
+      "research/data/adaptive-two-valence-v1/protocol.json": "862fa96e8792d80c70eb080316c2f993270840a692cf1461920dc09ee2561e05",
+      "research\\reports\\compartment-input-original-2026-10-06\\report.json": "9647b9c1cd0311a237c7ddd38691a88b07754de19331c4a5240388f3d2e5fdd8",
+      "research/reports/reversal-candidate-2026-10-05/mapping.json": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+      "research\\reports\\adaptive-two-valence-original-v2-2026-10-06\\report.json": "db86e70153328af10c9bc2826784390dd3e80d2c351c2d73672abf21139fdb16",
+      "research\\reports\\adaptive-two-valence-original-v2-2026-10-06\\audit.json": "e1856b587bb09432cf5f61ba66cbdddb5a080238d86a3756e59bb2405e06b4a2",
+      "research\\reports\\adaptive-two-valence-original-v2-2026-10-06\\event-adaptive-0.json": "c2319db21a226dd48ff2a70e68e1e45c76ff8ba68c2d5d57be31fcc079445994",
+      ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+      ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6"
+    },
+    "model": {
+      "steps": 8,
+      "inputDim": 1,
+      "outputs": 1,
+      "seed": 47,
+      "precision": "float32",
+      "saturation": 10,
+      "recurrentScale": 0.9,
+      "normalization": "row"
+    },
+    "memory": {
+      "eta": 0.5,
+      "minGain": 0.2,
+      "maxGain": 1.8,
+      "activityScale": 1.5
+    },
+    "dependencyIdentity": {
+      "node": "v22.23.2",
+      "chessJs": "1.4.0"
+    },
+    "signedWeightCache": {
+      "bytes": 10802052,
+      "buildMs": 921.4812000000001
+    },
+    "sampleStimulation": [
+      {
+        "index": 18263,
+        "current": 1.5
+      },
+      {
+        "index": 22716,
+        "current": 1.5
+      },
+      {
+        "index": 30996,
+        "current": 1.5
+      },
+      {
+        "index": 32718,
+        "current": 1.5
+      },
+      {
+        "index": 41089,
+        "current": 1.5
+      },
+      {
+        "index": 46108,
+        "current": 1.5
+      },
+      {
+        "index": 56052,
+        "current": 1.5
+      },
+      {
+        "index": 70921,
+        "current": 1.5
+      },
+      {
+        "index": 80472,
+        "current": 1.5
+      },
+      {
+        "index": 87599,
+        "current": 1.5
+      },
+      {
+        "index": 100077,
+        "current": 1.5
+      },
+      {
+        "index": 101284,
+        "current": 1.5
+      },
+      {
+        "index": 132157,
+        "current": 1.5
+      },
+      {
+        "index": 132695,
+        "current": 1.5
+      },
+      {
+        "index": 80782,
+        "current": 1.5
+      },
+      {
+        "index": 102192,
+        "current": 1.5
+      }
+    ]
+  },
+  "fixture": {
+    "move": "f7f5",
+    "channel": "PPL103",
+    "neurons": 134209,
+    "edges": 2700513,
+    "steps": 8,
+    "samples": 12,
+    "warmupPassesPerKernel": 2,
+    "exactChecks": 24
+  },
+  "timing": {
+    "kernels": {
+      "production": {
+        "count": 12,
+        "totalMs": 3044.892399999998,
+        "meanMs": 253.74103333333315,
+        "medianMs": 264.9315999999999,
+        "p95Ms": 337.66359999999986,
+        "maxMs": 337.66359999999986
+      },
+      "hoistedArrays": {
+        "count": 12,
+        "totalMs": 3420.235200000002,
+        "meanMs": 285.01960000000014,
+        "medianMs": 284.47470000000067,
+        "p95Ms": 442.40769999999975,
+        "maxMs": 442.40769999999975
+      },
+      "signedMagnitude": {
+        "count": 12,
+        "totalMs": 2980.4344999999985,
+        "meanMs": 248.36954166666655,
+        "medianMs": 192.07500000000073,
+        "p95Ms": 434.46799999999985,
+        "maxMs": 434.46799999999985
+      },
+      "unrolledSigned": {
+        "count": 0,
+        "totalMs": 0,
+        "meanMs": null
+      }
+    },
+    "relativeMedian": {
+      "production": 1,
+      "hoistedArrays": 1.0737665873002722,
+      "signedMagnitude": 0.7249984524307437,
+      "unrolledSigned": null
+    },
+    "rawMs": {
+      "production": [
+        327.4977999999992,
+        323.6212000000005,
+        156.83109999999942,
+        288.2613999999994,
+        198.65020000000004,
+        150.4426000000003,
+        215.7484999999997,
+        200.96429999999964,
+        281.1370999999999,
+        337.66359999999986,
+        264.9315999999999,
+        299.14300000000003
+      ],
+      "hoistedArrays": [
+        392.91210000000046,
+        351.79449999999997,
+        442.40769999999975,
+        288.0519999999997,
+        179.58069999999861,
+        282.5012999999999,
+        228.91340000000127,
+        320.84050000000025,
+        193.66769999999997,
+        170.38050000000112,
+        284.47470000000067,
+        284.71010000000024
+      ],
+      "signedMagnitude": [
+        434.46799999999985,
+        345.91179999999986,
+        380.70180000000073,
+        352.27639999999883,
+        155.16299999999865,
+        171.32400000000052,
+        172.10019999999895,
+        192.07500000000073,
+        212.20329999999922,
+        201.1229000000003,
+        182.16890000000058,
+        180.91920000000027
+      ],
+      "unrolledSigned": []
+    },
+    "sampleActivityHashes": [
+      "e222a0d365ea5bd7ccccb86d8860bd2c7da4a0d1610a8a986a28f81e953214f7",
+      "e222a0d365ea5bd7ccccb86d8860bd2c7da4a0d1610a8a986a28f81e953214f7",
+      "e222a0d365ea5bd7ccccb86d8860bd2c7da4a0d1610a8a986a28f81e953214f7",
+      "e222a0d365ea5bd7ccccb86d8860bd2c7da4a0d1610a8a986a28f81e953214f7",
+      "e222a0d365ea5bd7ccccb86d8860bd2c7da4a0d1610a8a986a28f81e953214f7",
+      "e222a0d365ea5bd7ccccb86d8860bd2c7da4a0d1610a8a986a28f81e953214f7",
+      "e222a0d365ea5bd7ccccb86d8860bd2c7da4a0d1610a8a986a28f81e953214f7",
+      "e222a0d365ea5bd7ccccb86d8860bd2c7da4a0d1610a8a986a28f81e953214f7",
+      "e222a0d365ea5bd7ccccb86d8860bd2c7da4a0d1610a8a986a28f81e953214f7",
+      "e222a0d365ea5bd7ccccb86d8860bd2c7da4a0d1610a8a986a28f81e953214f7",
+      "e222a0d365ea5bd7ccccb86d8860bd2c7da4a0d1610a8a986a28f81e953214f7",
+      "e222a0d365ea5bd7ccccb86d8860bd2c7da4a0d1610a8a986a28f81e953214f7"
+    ],
+    "note": "Short single-host microbenchmark; p95/max are noisy. Signed-magnitude cache requires every magnitude mutation path to refresh affected entries before it can be used in production. Its memory allocation/build cost is reported."
+  },
+  "resources": {
+    "peakRssMiB": 218.7734375,
+    "elapsedSeconds": 18.218627700000003,
+    "cpuSeconds": 17.969,
+    "freeMemoryMiBAtEnd": 1634.2890625,
+    "cpu": "Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz"
+  },
+  "exactEquivalence": true,
+  "command": {
+    "executable": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe",
+    "options": [
+      "--max-old-space-size=256"
+    ],
+    "argv": [
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\evaluation-and-performance\\benchmark-forward-kernels.mjs",
+      "--out",
+      "research/reports/forward-kernel-unroll-probe-2026-10-07",
+      "--samples",
+      "12"
+    ],
+    "node": "v22.23.2"
+  }
+}

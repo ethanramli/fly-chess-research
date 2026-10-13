@@ -1,0 +1,2527 @@
+{
+  "allChecksPassed": true,
+  "checks": [
+    {
+      "name": "unchanged label-free calibration",
+      "passed": true
+    },
+    {
+      "name": "fresh encoder seeds, unchanged conditioning/input/plasticity/kernel settings",
+      "passed": true
+    },
+    {
+      "name": "previous GF failure preserved and shared model/encoder/plasticity source hashes unchanged",
+      "passed": true
+    },
+    {
+      "name": "completed condition/seed coverage",
+      "passed": true
+    },
+    {
+      "name": "input: .cache/full.npz",
+      "passed": true
+    },
+    {
+      "name": "input: .cache/flywire-annotations-v2.1.0.tsv",
+      "passed": true
+    },
+    {
+      "name": "input: research/data/mbon-choice-v1/protocol.json",
+      "passed": true
+    },
+    {
+      "name": "input: research/reports/reversal-candidate-2026-10-05/mapping.json",
+      "passed": true
+    },
+    {
+      "name": "input: research/reports/instinct-design-2026-10-05/anatomy-with-relay.json",
+      "passed": true
+    },
+    {
+      "name": "input: research/reports/chess-cue-panel-v1-2026-10-05/report.json",
+      "passed": true
+    },
+    {
+      "name": "source: .codebase/scripts/validate-mbon-choice.mjs",
+      "passed": true
+    },
+    {
+      "name": "source: .codebase/src/lowram/mbon-readout.mjs",
+      "passed": true
+    },
+    {
+      "name": "source: .codebase/src/lowram/chess-cue.mjs",
+      "passed": true
+    },
+    {
+      "name": "source: .codebase/src/lowram/gf-readout.mjs",
+      "passed": true
+    },
+    {
+      "name": "source: .codebase/src/lowram/reversal-memory.mjs",
+      "passed": true
+    },
+    {
+      "name": "source: .codebase/src/lowram/trainer.mjs",
+      "passed": true
+    },
+    {
+      "name": "source: .codebase/src/lowram/graph.mjs",
+      "passed": true
+    },
+    {
+      "name": "source: .codebase/src/lowram/association-validation.mjs",
+      "passed": true
+    },
+    {
+      "name": "source: .codebase/src/lowram/mushroom-body.mjs",
+      "passed": true
+    },
+    {
+      "name": "12011/informative: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12011/informative: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12011/informative: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12011/informative: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12011/informative: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12011/informative: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12011/informative: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12011/absent: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12011/absent: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12011/absent: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12011/absent: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12011/absent: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12011/absent: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12011/absent: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12011/shuffled: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12011/shuffled: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12011/shuffled: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12011/shuffled: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12011/shuffled: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12011/shuffled: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12011/shuffled: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12011: phase pulse counts matched",
+      "passed": true
+    },
+    {
+      "name": "12011: independently reconstructed phase permutation",
+      "passed": true
+    },
+    {
+      "name": "12011/disabled: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12011/disabled: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12011/disabled: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12011/disabled: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12011/disabled: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12011/disabled: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12011/disabled: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12011: disabled control unchanged",
+      "passed": true
+    },
+    {
+      "name": "12037/informative: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12037/informative: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12037/informative: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12037/informative: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12037/informative: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12037/informative: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12037/informative: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12037/absent: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12037/absent: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12037/absent: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12037/absent: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12037/absent: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12037/absent: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12037/absent: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12037/shuffled: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12037/shuffled: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12037/shuffled: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12037/shuffled: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12037/shuffled: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12037/shuffled: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12037/shuffled: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12037: phase pulse counts matched",
+      "passed": true
+    },
+    {
+      "name": "12037: independently reconstructed phase permutation",
+      "passed": true
+    },
+    {
+      "name": "12037/disabled: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12037/disabled: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12037/disabled: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12037/disabled: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12037/disabled: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12037/disabled: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12037/disabled: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12037: disabled control unchanged",
+      "passed": true
+    },
+    {
+      "name": "12049/informative: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12049/informative: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12049/informative: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12049/informative: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12049/informative: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12049/informative: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12049/informative: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12049/absent: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12049/absent: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12049/absent: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12049/absent: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12049/absent: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12049/absent: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12049/absent: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12049/shuffled: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12049/shuffled: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12049/shuffled: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12049/shuffled: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12049/shuffled: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12049/shuffled: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12049/shuffled: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12049: phase pulse counts matched",
+      "passed": true
+    },
+    {
+      "name": "12049: independently reconstructed phase permutation",
+      "passed": true
+    },
+    {
+      "name": "12049/disabled: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12049/disabled: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12049/disabled: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12049/disabled: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12049/disabled: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12049/disabled: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12049/disabled: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12049: disabled control unchanged",
+      "passed": true
+    },
+    {
+      "name": "12071/informative: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12071/informative: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12071/informative: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12071/informative: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12071/informative: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12071/informative: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12071/informative: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12071/absent: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12071/absent: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12071/absent: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12071/absent: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12071/absent: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12071/absent: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12071/absent: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12071/shuffled: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12071/shuffled: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12071/shuffled: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12071/shuffled: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12071/shuffled: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12071/shuffled: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12071/shuffled: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12071: phase pulse counts matched",
+      "passed": true
+    },
+    {
+      "name": "12071: independently reconstructed phase permutation",
+      "passed": true
+    },
+    {
+      "name": "12071/disabled: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12071/disabled: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12071/disabled: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12071/disabled: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12071/disabled: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12071/disabled: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12071/disabled: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12071: disabled control unchanged",
+      "passed": true
+    },
+    {
+      "name": "12101/informative: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12101/informative: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12101/informative: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12101/informative: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12101/informative: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12101/informative: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12101/informative: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12101/absent: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12101/absent: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12101/absent: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12101/absent: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12101/absent: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12101/absent: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12101/absent: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12101/shuffled: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12101/shuffled: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12101/shuffled: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12101/shuffled: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12101/shuffled: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12101/shuffled: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12101/shuffled: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12101: phase pulse counts matched",
+      "passed": true
+    },
+    {
+      "name": "12101: independently reconstructed phase permutation",
+      "passed": true
+    },
+    {
+      "name": "12101/disabled: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12101/disabled: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12101/disabled: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12101/disabled: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12101/disabled: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12101/disabled: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12101/disabled: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12101: disabled control unchanged",
+      "passed": true
+    },
+    {
+      "name": "12143/informative: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12143/informative: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12143/informative: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12143/informative: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12143/informative: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12143/informative: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12143/informative: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12143/absent: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12143/absent: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12143/absent: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12143/absent: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12143/absent: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12143/absent: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12143/absent: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12143/shuffled: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12143/shuffled: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12143/shuffled: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12143/shuffled: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12143/shuffled: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12143/shuffled: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12143/shuffled: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12143: phase pulse counts matched",
+      "passed": true
+    },
+    {
+      "name": "12143: independently reconstructed phase permutation",
+      "passed": true
+    },
+    {
+      "name": "12143/disabled: counterbalanced target and identical cue pool",
+      "passed": true
+    },
+    {
+      "name": "12143/disabled: bounded overlapping public chess cues",
+      "passed": true
+    },
+    {
+      "name": "12143/disabled: complete balanced cue/target/pulse schedule",
+      "passed": true
+    },
+    {
+      "name": "12143/disabled: fixed MBON balance/margin/choice with separate GF diagnostics",
+      "passed": true
+    },
+    {
+      "name": "12143/disabled: reset/restoration",
+      "passed": true
+    },
+    {
+      "name": "12143/disabled: fixed graph and nonplastic parameters",
+      "passed": true
+    },
+    {
+      "name": "12143/disabled: efficacy bounds",
+      "passed": true
+    },
+    {
+      "name": "12143: disabled control unchanged",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00003: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00004: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00005: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00006: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00007: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00008: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00009: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00010: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00011: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00012: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00013: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00014: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00015: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00016: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00017: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00018: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00021: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00022: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00023: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00024: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00025: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00026: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00027: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00028: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00029: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00030: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00031: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00032: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00033: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00034: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00035: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00036: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00039: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00040: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00041: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00042: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00043: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00044: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00045: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00046: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00047: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00048: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00049: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00050: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00051: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00052: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00053: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00054: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00057: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00058: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00059: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00060: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00061: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00062: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00063: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00064: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00065: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00066: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00067: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00068: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00069: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00070: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00071: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00072: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00075: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00076: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00077: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00078: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00079: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00080: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00081: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00082: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00083: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00084: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00085: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00086: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00087: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00088: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00089: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00090: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00093: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00094: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00095: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00096: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00097: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00098: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00099: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00100: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00101: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00102: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00103: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00104: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00105: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00106: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00107: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00108: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00111: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00112: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00113: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00114: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00115: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00116: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00117: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00118: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00119: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00120: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00121: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00122: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00123: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00124: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00125: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00126: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00129: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00130: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00131: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00132: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00133: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00134: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00135: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00136: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00137: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00138: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00139: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00140: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00141: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00142: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00143: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00144: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00147: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00148: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00149: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00150: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00151: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00152: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00153: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00154: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00155: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00156: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00157: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00158: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00159: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00160: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00161: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00162: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00165: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00166: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00167: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00168: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00169: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00170: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00171: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00172: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00173: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00174: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00175: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00176: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00177: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00178: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00179: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00180: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00183: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00184: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00185: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00186: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00187: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00188: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00189: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00190: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00191: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00192: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00193: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00194: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00195: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00196: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00197: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00198: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00201: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00202: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00203: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00204: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00205: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00206: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00207: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00208: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00209: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00210: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00211: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00212: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00213: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00214: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00215: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00216: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00219: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00220: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00221: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00222: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00223: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00224: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00225: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00226: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00227: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00228: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00229: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00230: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00231: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00232: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00233: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00234: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00237: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00238: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00239: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00240: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00241: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00242: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00243: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00244: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00245: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00246: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00247: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00248: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00249: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00250: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00251: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00252: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00255: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00256: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00257: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00258: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00259: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00260: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00261: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00262: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00263: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00264: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00265: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00266: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00267: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00268: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00269: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00270: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00273: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00274: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00275: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00276: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00277: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00278: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00279: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00280: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00281: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00282: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00283: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00284: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00285: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00286: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00287: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00288: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00291: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00292: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00293: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00294: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00295: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00296: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00297: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00298: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00299: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00300: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00301: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00302: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00303: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00304: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00305: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00306: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00309: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00310: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00311: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00312: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00313: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00314: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00315: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00316: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00317: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00318: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00319: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00320: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00321: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00322: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00323: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00324: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00327: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00328: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00329: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00330: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00331: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00332: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00333: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00334: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00335: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00336: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00337: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00338: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00339: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00340: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00341: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00342: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00345: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00346: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00347: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00348: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00349: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00350: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00351: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00352: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00353: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00354: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00355: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00356: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00357: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00358: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00359: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00360: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00363: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00364: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00365: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00366: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00367: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00368: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00369: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00370: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00371: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00372: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00373: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00374: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00375: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00376: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00377: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00378: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00381: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00382: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00383: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00384: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00385: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00386: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00387: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00388: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00389: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00390: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00391: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00392: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00393: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00394: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00395: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00396: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00399: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00400: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00401: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00402: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00403: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00404: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00405: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00406: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00407: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00408: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00409: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00410: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00411: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00412: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00413: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00414: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00417: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00418: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00419: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00420: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00421: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00422: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00423: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00424: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00425: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00426: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00427: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00428: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00429: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00430: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00431: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "checkpoint-00432: cue-specific efficacy observations",
+      "passed": true
+    },
+    {
+      "name": "all local update checkpoints audited",
+      "passed": true
+    },
+    {
+      "name": "12011: independent effect/choice calculations",
+      "passed": true
+    },
+    {
+      "name": "12037: independent effect/choice calculations",
+      "passed": true
+    },
+    {
+      "name": "12049: independent effect/choice calculations",
+      "passed": true
+    },
+    {
+      "name": "12071: independent effect/choice calculations",
+      "passed": true
+    },
+    {
+      "name": "12101: independent effect/choice calculations",
+      "passed": true
+    },
+    {
+      "name": "12143: independent effect/choice calculations",
+      "passed": true
+    },
+    {
+      "name": "independent sign test: acquisitionEffect",
+      "passed": true
+    },
+    {
+      "name": "independent sign test: reversalEffect",
+      "passed": true
+    },
+    {
+      "name": "independent sign test: acquisitionAbsentAdvantage",
+      "passed": true
+    },
+    {
+      "name": "independent sign test: acquisitionShuffledAdvantage",
+      "passed": true
+    },
+    {
+      "name": "independent sign test: absentAdvantage",
+      "passed": true
+    },
+    {
+      "name": "independent sign test: shuffledAdvantage",
+      "passed": true
+    },
+    {
+      "name": "acquisition/reversal gate retains every correct-choice requirement",
+      "passed": true
+    },
+    {
+      "name": "full acceptance matches all reported gates",
+      "passed": true
+    },
+    {
+      "name": "all seven frozen gates independently recomputed",
+      "passed": true
+    }
+  ],
+  "perSeed": [
+    {
+      "seed": 12011,
+      "acquisitionCorrect": true,
+      "reversalCorrect": true,
+      "acquisitionEffect": 0.004389187321066856,
+      "acquisitionMargin": 0.004812199622392654,
+      "reversalMargin": 0.004419967997819185,
+      "rankingSwitch": true,
+      "acquisitionAbsentAdvantage": 0.004395552445203066,
+      "acquisitionShuffledAdvantage": 0.005886992439627647,
+      "reversalEffect": 0.00923216762021184,
+      "absentAdvantage": 0.009213886223733425,
+      "shuffledAdvantage": 0.006753424648195505
+    },
+    {
+      "seed": 12037,
+      "acquisitionCorrect": true,
+      "reversalCorrect": true,
+      "acquisitionEffect": 0.0038634799420833588,
+      "acquisitionMargin": 0.00552019290626049,
+      "reversalMargin": 0.0039556631818413734,
+      "rankingSwitch": true,
+      "acquisitionAbsentAdvantage": 0.003883439116179943,
+      "acquisitionShuffledAdvantage": 0.002930743619799614,
+      "reversalEffect": 0.009475856088101864,
+      "absentAdvantage": 0.009418240748345852,
+      "shuffledAdvantage": 0.011211482807993889
+    },
+    {
+      "seed": 12049,
+      "acquisitionCorrect": true,
+      "reversalCorrect": true,
+      "acquisitionEffect": 0.00346263125538826,
+      "acquisitionMargin": 0.0039197467267513275,
+      "reversalMargin": 0.0039636557921767235,
+      "rankingSwitch": true,
+      "acquisitionAbsentAdvantage": 0.0034757833927869797,
+      "acquisitionShuffledAdvantage": 0.004960959777235985,
+      "reversalEffect": 0.007883402518928051,
+      "absentAdvantage": 0.007846061140298843,
+      "shuffledAdvantage": 0.006097366567701101
+    },
+    {
+      "seed": 12071,
+      "acquisitionCorrect": true,
+      "reversalCorrect": true,
+      "acquisitionEffect": 0.0047560823149979115,
+      "acquisitionMargin": 0.00515178544446826,
+      "reversalMargin": 0.005553557071834803,
+      "rankingSwitch": true,
+      "acquisitionAbsentAdvantage": 0.004771956708282232,
+      "acquisitionShuffledAdvantage": 0.003422195091843605,
+      "reversalEffect": 0.010705342516303062,
+      "absentAdvantage": 0.010658050887286663,
+      "shuffledAdvantage": 0.006198917981237173
+    },
+    {
+      "seed": 12101,
+      "acquisitionCorrect": true,
+      "reversalCorrect": true,
+      "acquisitionEffect": 0.0037303194403648376,
+      "acquisitionMargin": 0.005207315552979708,
+      "reversalMargin": 0.003606279380619526,
+      "rankingSwitch": true,
+      "acquisitionAbsentAdvantage": 0.0037873319815844297,
+      "acquisitionShuffledAdvantage": 0.005506931338459253,
+      "reversalEffect": 0.008813594933599234,
+      "absentAdvantage": 0.008649998810142279,
+      "shuffledAdvantage": 0.007750013144686818
+    },
+    {
+      "seed": 12143,
+      "acquisitionCorrect": true,
+      "reversalCorrect": true,
+      "acquisitionEffect": 0.0035294699482619762,
+      "acquisitionMargin": 0.0023672697134315968,
+      "reversalMargin": 0.004431047011166811,
+      "rankingSwitch": true,
+      "acquisitionAbsentAdvantage": 0.0035073235630989075,
+      "acquisitionShuffledAdvantage": 0.0021425727754831314,
+      "reversalEffect": 0.006798316724598408,
+      "absentAdvantage": 0.006862454116344452,
+      "shuffledAdvantage": 0.007003025151789188
+    }
+  ],
+  "checkedUpdates": 384,
+  "updateErrors": [],
+  "replay": null,
+  "sourceSHA256": "23bdfd86ab81414fb77c978a84915a3fb21d94be4c6232f6fff225234004b6a6",
+  "reportSHA256": "a74bf8d7a48ff163d1905b9d0bed3c5285c9e02f377fa1c6d0389dbad2561910",
+  "originalAcceptance": {
+    "acquisition": true,
+    "reversal": true,
+    "informative": true,
+    "persistence": true,
+    "causalReset": true,
+    "controls": true,
+    "fixedState": true
+  },
+  "originalAllGatesPassed": true,
+  "scope": "Public cue projection, fixed MBON arithmetic, GF diagnostics and local-update recurrence; experimental contingencies, not biological action validation or verified chess outcomes."
+}

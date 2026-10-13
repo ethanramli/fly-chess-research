@@ -1,0 +1,8 @@
+The first invocation exited 1 at the existing soft resource guard while measuring disabled-control attempt 4. Last atomic checkpoint: checkpoint-00126/state.json, phase measure, nextEvent 3; four conditions complete. The runner checks RSS > 768 MiB OR free system memory < 256 MiB. The exception does not record which term triggered, so do not infer one. No limit or scientific protocol was changed. An immediate post-exit probe reported 1180.027 MiB free system memory. Resume in a new output directory from that checkpoint, preserving the already completed neural update.
+
+Error: Soft guard: resume last completed state to new output
+    at guard (.codebase/scripts/adaptive-review.mjs:27)
+    at pace (.codebase/scripts/adaptive-review.mjs:28)
+    at async evoke (.codebase/scripts/adaptive-review.mjs:60)
+    at async probe (.codebase/scripts/adaptive-review.mjs:62)
+    at async .codebase/scripts/adaptive-review.mjs:100

@@ -1,0 +1,48 @@
+{
+    "schema":  "positive-puzzle-pipeline-v1",
+    "prerequisite":  "research/reports/positive-channel-association-v2-2026-10-06",
+    "puzzles":  "research/data/puzzle-pipeline-v1/puzzles.jsonl",
+    "seed":  14009,
+    "conditions":  [
+                       "informative",
+                       "punishment-only",
+                       "absent",
+                       "shuffled",
+                       "disabled"
+                   ],
+    "maxPuzzles":  2,
+    "maxExperiences":  40,
+    "maxPresentationsPerCondition":  1600,
+    "encoder":  {
+                    "seed":  14009,
+                    "maxCells":  14,
+                    "totalCurrent":  21,
+                    "maxCellCurrent":  1.5,
+                    "maxHistoryPlies":  512
+                },
+    "memory":  {
+                   "eta":  0.5,
+                   "minGain":  0.2,
+                   "maxGain":  1.8,
+                   "activityScale":  1.5
+               },
+    "current":  1.5,
+    "priorScale":  4,
+    "search":  {
+                   "simulations":  32,
+                   "maxEvaluations":  3,
+                   "maxDepth":  3,
+                   "maxNodes":  1024,
+                   "milliseconds":  60000,
+                   "randomFraction":  0.25
+               },
+    "review":  {
+                   "maxCandidates":  4,
+                   "maxProofNodes":  4096,
+                   "nodesPerCandidate":  1024,
+                   "proofMilliseconds":  2000
+               },
+    "schedule":  "Same declared fixtures, encoder, learning rule and bounded Monte Carlo investigation as puzzle-pipeline-v1. Informative verified success selects PAM02, failure PPL103. All controls replay identical informative experiences. Punishment-only omits positive pulses; absent omits both; shuffled permutes both channel identities with global population counts matched; disabled freezes adaptation. Unknown produces no event. Full legal choice, equal-bound search and causal reset/restoration remain separate measurements.",
+    "scope":  "Full-graph orchestration pilot, not unfamiliar-family transfer or completed reasoning. Candidate priors are neural; leaf value remains neutral. Explicit cue/reinforcement replay is not delayed eligibility, natural sensory/reward reconstruction or biological validation. Two fixtures do not constitute a validated curriculum or a capacity test. Earlier failed experiments remain unchanged.",
+    "acceptance":  "Pilot useful-choice gate: both informative fixtures end with independently verified successful unaided choices; at least one formerly failing fixture improves, while its absent and disabled matched controls remain failing. Require exact causal reset/restoration and independently audited persistence/unknown handling, channel counts, local recurrence, fixed wiring and after-update recovery. Report shuffled and punishment-only results explicitly; this single-seed pilot does not establish statistical specificity or transfer."
+}

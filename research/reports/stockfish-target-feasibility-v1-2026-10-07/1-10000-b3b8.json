@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "protocolSha256": "4b6b3860801908ff9e25ad092d7574be9e0c1b9387517654ac41fbb5795b3e91",
+    "pins": {
+      "package.json": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+      ".codebase/src/search-and-feedback/stockfish-target.mjs": "1931d16a1883e76615be32cf13fb359286c06fd8a95d3c88812171f48c13158f",
+      "research/reports/smothered-training-variations-v1-2026-10-07/puzzles.jsonl": "489bdb5bf825e154fcc215cc1555ff0937bb811cf991ed8f42034b1e3b596f61",
+      "node_modules/chess.js/dist/cjs/chess.js": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f",
+      "research/data/smothered-acquisition-v1/puzzles.jsonl": "3b40d90e82e215c77ab15fa41705a66da08fa574efc7f3f3ee3a56cd7af89fd5",
+      "research/reports/shared-memory-multi-context-coverage-v1-2026-10-07/audit.json": "db65fbb56703dcb5918965cdf0e6f22514f69c2b9c34e894783b23408dae4863",
+      ".codebase/src/search-and-feedback/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+      ".codebase/src/search-and-feedback/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+      ".codebase/vendor/stockfish/sf-19/release.json": "ad2d183b980b0c119909398581ce59abb059174d022320687b3b05001ae24f2e",
+      "package-lock.json": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214",
+      ".codebase/scripts/puzzle-learning/probe-stockfish-targets.mjs": "c2412daa42db592d43b25a9fdbf0534153cc773fde396d18623e27c7754b646f",
+      ".codebase/vendor/stockfish/sf-19/extracted/stockfish/Copying.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      ".codebase/vendor/stockfish/sf-19/extracted/stockfish/stockfish-windows-x86-64-universal.exe": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+      ".codebase/scripts/puzzle-learning/audit-stockfish-targets.mjs": "1b0d1d31c470880b029c8701af610e1bfb00698bcc6ffa24ecba3e28c01601b8",
+      ".codebase/src/search-and-feedback/mate-certificate.mjs": "b7bdab76a3faa78c203971991c3b2e00cdfd359cfca08b6e1f7b1ae8d430b700",
+      "research/reports/shared-memory-multi-context-coverage-v1-2026-10-07/report.json": "8ab9f3a95ecd8db2e9a11166963743b23ffe018bddf06827c59be8c4582d38b5"
+    }
+  },
+  "rowId": "smothered-queen-b3-rook-e8",
+  "rootFen": "4r2k/6pp/7N/8/8/1Q6/8/K7 w - - 0 1",
+  "childFen": "1Q2r2k/6pp/7N/8/8/8/8/K7 b - - 1 1",
+  "move": "b3b8",
+  "nodeBudget": 10000,
+  "raw": [
+    "info string Available processors: 0-7",
+    "info string Using 1 thread",
+    "info string NNUE evaluation using nn-1a298aa575a0.nnue (109MiB, (86896, 1024, 32, 32, 1))",
+    "info string Network replica 1: Shared memory.",
+    "info depth 1 seldepth 4 multipv 1 score cp 407 wdl 1000 0 0 nodes 10 nps 10000 hashfull 0 tbhits 0 time 1 pv e8b8",
+    "info depth 2 seldepth 4 multipv 1 score cp 468 wdl 1000 0 0 nodes 25 nps 25000 hashfull 0 tbhits 0 time 1 pv e8b8 h6f7 h8g8",
+    "info depth 3 seldepth 4 multipv 1 score cp 468 wdl 1000 0 0 nodes 37 nps 37000 hashfull 0 tbhits 0 time 1 pv e8b8 h6f7 h8g8",
+    "info depth 4 seldepth 5 multipv 1 score cp 670 wdl 1000 0 0 nodes 66 nps 66000 hashfull 0 tbhits 0 time 1 pv e8b8 h6f7 h8g8",
+    "info depth 5 seldepth 7 multipv 1 score cp 681 wdl 1000 0 0 nodes 83 nps 83000 hashfull 0 tbhits 0 time 1 pv e8b8 h6f7 h8g8 f7e5 b8a8 a1b1",
+    "info depth 6 seldepth 8 multipv 1 score cp 662 wdl 1000 0 0 nodes 134 nps 134000 hashfull 0 tbhits 0 time 1 pv e8b8 h6f7 h8g8 f7h8 b8a8 a1b2 g8h8",
+    "info depth 7 seldepth 9 multipv 1 score cp 670 wdl 1000 0 0 nodes 183 nps 183000 hashfull 0 tbhits 0 time 1 pv e8b8 h6f7 h8g8 f7e5",
+    "info depth 8 seldepth 11 multipv 1 score cp 584 wdl 1000 0 0 nodes 285 nps 285000 hashfull 0 tbhits 0 time 1 pv e8b8 h6f7 h8g8 f7e5 b8d8 a1b2 d8d2 b2b1 d2d1 b1c2",
+    "info depth 9 seldepth 12 multipv 1 score cp 645 wdl 1000 0 0 nodes 561 nps 561000 hashfull 0 tbhits 0 time 1 pv e8b8 h6f7 h8g8 f7g5 b8a8 a1b1",
+    "info depth 10 seldepth 11 multipv 1 score cp 633 wdl 1000 0 0 nodes 905 nps 452500 hashfull 0 tbhits 0 time 2 pv e8b8 h6f7 h8g8 f7e5 b8e8 e5g4 e8e1 a1b2",
+    "info depth 11 seldepth 17 multipv 1 score cp 631 wdl 1000 0 0 nodes 1963 nps 654333 hashfull 0 tbhits 0 time 3 pv e8b8 h6g4 b8e8 a1b2",
+    "info depth 12 seldepth 14 multipv 1 score cp 623 wdl 1000 0 0 nodes 2713 nps 678250 hashfull 0 tbhits 0 time 4 pv e8b8 h6f7 h8g8 f7e5 h7h6 e5g4 b8e8 a1b2 e8e2 b2c3",
+    "info depth 13 seldepth 16 multipv 1 score cp 634 wdl 1000 0 0 nodes 6121 nps 510083 hashfull 2 tbhits 0 time 12 pv e8b8 h6f5 h7h6",
+    "info depth 14 seldepth 16 multipv 1 score cp 634 wdl 1000 0 0 nodes 10006 nps 625375 hashfull 3 tbhits 0 time 16 pv e8b8 h6f5 h7h6",
+    "bestmove e8b8 ponder h6f5"
+  ],
+  "target": {
+    "available": true,
+    "teachingAllowed": true,
+    "utility": -1,
+    "actor": "w",
+    "sideToMove": "b",
+    "actorScore": -634,
+    "info": {
+      "kind": "cp",
+      "score": 634,
+      "wdl": [
+        1000,
+        0,
+        0
+      ],
+      "depth": 14,
+      "nodes": 10006,
+      "pv": [
+        "e8b8",
+        "h6f5",
+        "h7h6"
+      ],
+      "bounded": false,
+      "line": "info depth 14 seldepth 16 multipv 1 score cp 634 wdl 1000 0 0 nodes 10006 nps 625375 hashfull 3 tbhits 0 time 16 pv e8b8 h6f5 h7h6"
+    },
+    "meaning": "Searched engine target; WDL model utility, not certified truth or fly win probability"
+  },
+  "proof": {
+    "status": "failure",
+    "reward": -1,
+    "nodes": 23,
+    "attacker": "w",
+    "criterion": "force_mate_within_2_remaining_plies",
+    "certificate": {
+      "schema": "bounded-mate-certificate-v1",
+      "rootFen": "1Q2r2k/6pp/7N/8/8/8/8/K7 b - - 1 1",
+      "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/6pp/7N/8/8/1Q6/8/K7 w - - 0 1\"]\n\n1. Qb8 *",
+      "attacker": "w",
+      "plies": 2,
+      "tree": {
+        "status": "failure",
+        "children": [
+          {
+            "move": "e8b8",
+            "node": {
+              "status": "failure",
+              "children": [
+                {
+                  "move": "h6f7",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "h6g8",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "h6g4",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "h6f5",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                },
+                {
+                  "move": "a1a2",
+                  "node": {
+                    "status": "failure",
+                    "children": []
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "certificateCheck": {
+      "verified": true,
+      "status": "failure",
+      "nodes": 7,
+      "elapsedMs": 3.084400000007008
+    },
+    "bounds": {
+      "maxNodes": 4096,
+      "millisecondsPerStage": 2000,
+      "constructionStop": null,
+      "checkingNodes": 7,
+      "elapsedMs": 30.252499999987776
+    },
+    "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+  },
+  "predictions": {
+    "baseline": 0.0033943010522733677,
+    "informative": 0.0022258162993705677,
+    "absent": 0.0032822809588573796,
+    "shuffled": 0.002772439618379689,
+    "disabled": 0.0033943010522733677
+  },
+  "elapsedMs": 16.701600000000326,
+  "stages": {
+    "engineSearch": true,
+    "recordedTargets": true,
+    "neuralFeedback": false,
+    "persistentLearning": false,
+    "transfer": false
+  }
+}

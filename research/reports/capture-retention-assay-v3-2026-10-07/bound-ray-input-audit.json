@@ -1,0 +1,1108 @@
+{
+  "schema": "bound-ray-relational-cue-static-audit-v1",
+  "scope": "Static train/validation input comparison only. The final family is not opened. No neural activity, connectome inference, feedback, plastic update, search, or performance claim.",
+  "protocolSha256": "abb80b8c33e7e0204b8bb141fcfa3f23f81dcce6a546622bdebca054fdf2f279",
+  "mappingHash": "b2d7bf351dbe9889aa6a17216cca6cb7671f4f99d9661e604609a7ff51686fff",
+  "v3CueIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+  "boundRayCueIdentity": "4248d2bc93854a6aac3033cc6a49b2b09c1b9d1adb3b20a2f9d01577a41f4c64",
+  "auditScriptSha256": "906604ca2c48de1a34ab27d0ac132421ffb710930b3f9b38c6cc48bdec5188a0",
+  "encoderSha256": "b04c70cdba2488a4a4665d73fad52d3faa7089223a13b0187f0cdc629b13c72f",
+  "config": {
+    "seed": 14009,
+    "maxCells": 14,
+    "totalCurrent": 21,
+    "maxCellCurrent": 1.5,
+    "maxRelationCells": 4
+  },
+  "dose": {
+    "cells": 14,
+    "totalCurrent": 21
+  },
+  "splits": {
+    "train": {
+      "datasetPath": "research/data/capture-retention-transfer-v2/train.jsonl",
+      "datasetSha256": "a9959dfe502e8d45db5991e63143dc5767b10ffed8e74e3701e6ebd9e2d10079",
+      "panels": 8,
+      "candidateCues": 16,
+      "panelsWithDifferentBoundRayInventories": 8,
+      "cuesWithSelectedRelationCells": 16,
+      "meanSelectedRelationCellsPerCue": 1.5,
+      "cuesWithChangedStimulationVsV3": 16,
+      "meanWithinPanelSharedCellsV3": 3.25,
+      "meanWithinPanelSharedCellsBoundRay": 4.25,
+      "rows": [
+        {
+          "panel": "tr-01",
+          "candidates": [
+            {
+              "move": "a1a4",
+              "baselineCells": [
+                2741,
+                3491,
+                9048,
+                11918,
+                14333,
+                18263,
+                32718,
+                34140,
+                41522,
+                45965,
+                58368,
+                90824,
+                100077,
+                124260
+              ],
+              "boundCells": [
+                3491,
+                6719,
+                18263,
+                22716,
+                24188,
+                31634,
+                32718,
+                32724,
+                45965,
+                65345,
+                88883,
+                100077,
+                121147,
+                124260
+              ],
+              "relationTokens": [
+                "slider-context:r:opponent:r:7,0:self:p:1,0",
+                "slider-line:r:opponent:r:7,0"
+              ],
+              "relationTokenCount": 2,
+              "relationCellsSelected": 2,
+              "droppedRelationTokens": 0
+            },
+            {
+              "move": "e1e5",
+              "baselineCells": [
+                216,
+                3491,
+                3785,
+                18263,
+                25233,
+                46881,
+                72764,
+                76692,
+                85134,
+                87736,
+                90696,
+                95653,
+                100077,
+                129867
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                21831,
+                22716,
+                31634,
+                64399,
+                85134,
+                87736,
+                90696,
+                92849,
+                113561,
+                121147,
+                127563,
+                129867
+              ],
+              "relationTokens": [
+                "slider-line:r:opponent:r:0,3"
+              ],
+              "relationTokenCount": 1,
+              "relationCellsSelected": 1,
+              "droppedRelationTokens": 0
+            }
+          ]
+        },
+        {
+          "panel": "tr-02",
+          "candidates": [
+            {
+              "move": "e1e5",
+              "baselineCells": [
+                216,
+                3491,
+                3785,
+                5432,
+                18263,
+                25233,
+                46881,
+                58598,
+                85134,
+                87736,
+                90696,
+                95653,
+                100077,
+                129867
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                21831,
+                22716,
+                31634,
+                64399,
+                85134,
+                87736,
+                90696,
+                92849,
+                113561,
+                121147,
+                127563,
+                129867
+              ],
+              "relationTokens": [
+                "slider-line:r:opponent:r:0,3"
+              ],
+              "relationTokenCount": 1,
+              "relationCellsSelected": 1,
+              "droppedRelationTokens": 0
+            },
+            {
+              "move": "a1a4",
+              "baselineCells": [
+                2741,
+                3491,
+                9048,
+                11918,
+                14333,
+                18263,
+                32718,
+                34140,
+                41522,
+                45965,
+                58368,
+                100077,
+                103828,
+                124260
+              ],
+              "boundCells": [
+                3491,
+                8334,
+                18263,
+                22716,
+                24188,
+                31634,
+                32718,
+                32724,
+                45965,
+                46260,
+                65345,
+                88883,
+                103828,
+                124260
+              ],
+              "relationTokens": [
+                "slider-context:r:opponent:r:7,0:self:p:2,0",
+                "slider-line:r:opponent:r:7,0"
+              ],
+              "relationTokenCount": 2,
+              "relationCellsSelected": 2,
+              "droppedRelationTokens": 0
+            }
+          ]
+        },
+        {
+          "panel": "tr-03",
+          "candidates": [
+            {
+              "move": "a1a4",
+              "baselineCells": [
+                2741,
+                3491,
+                9048,
+                11918,
+                14333,
+                16531,
+                18263,
+                34140,
+                37027,
+                41522,
+                58368,
+                100077,
+                114030,
+                124260
+              ],
+              "boundCells": [
+                3491,
+                11687,
+                18263,
+                22716,
+                31634,
+                32718,
+                32724,
+                37027,
+                46260,
+                88883,
+                100077,
+                114030,
+                121147,
+                124260
+              ],
+              "relationTokens": [
+                "slider-context:r:opponent:r:5,0:self:p:3,0",
+                "slider-line:r:opponent:r:5,0"
+              ],
+              "relationTokenCount": 2,
+              "relationCellsSelected": 2,
+              "droppedRelationTokens": 0
+            },
+            {
+              "move": "e1e5",
+              "baselineCells": [
+                216,
+                3491,
+                3785,
+                18263,
+                46881,
+                57778,
+                85134,
+                87736,
+                90696,
+                95653,
+                100077,
+                114030,
+                118822,
+                129867
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                22716,
+                31634,
+                57778,
+                64399,
+                85134,
+                87736,
+                90696,
+                92849,
+                113561,
+                114030,
+                127563,
+                129867
+              ],
+              "relationTokens": [
+                "slider-line:r:opponent:r:0,3"
+              ],
+              "relationTokenCount": 1,
+              "relationCellsSelected": 1,
+              "droppedRelationTokens": 0
+            }
+          ]
+        },
+        {
+          "panel": "tr-04",
+          "candidates": [
+            {
+              "move": "e1e5",
+              "baselineCells": [
+                216,
+                3491,
+                3785,
+                18263,
+                25233,
+                46881,
+                58598,
+                72764,
+                85134,
+                87736,
+                90696,
+                95653,
+                100077,
+                129867
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                21831,
+                22716,
+                31634,
+                54399,
+                64399,
+                85134,
+                87736,
+                90696,
+                92849,
+                113561,
+                127563,
+                129867
+              ],
+              "relationTokens": [
+                "slider-line:r:opponent:r:0,3"
+              ],
+              "relationTokenCount": 1,
+              "relationCellsSelected": 1,
+              "droppedRelationTokens": 0
+            },
+            {
+              "move": "a1a4",
+              "baselineCells": [
+                2741,
+                3491,
+                9048,
+                11918,
+                14333,
+                18263,
+                32718,
+                34140,
+                41522,
+                45965,
+                58368,
+                61395,
+                100077,
+                124260
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                22716,
+                24188,
+                31634,
+                32718,
+                32724,
+                41794,
+                45965,
+                61395,
+                65345,
+                88883,
+                116177,
+                124260
+              ],
+              "relationTokens": [
+                "slider-context:r:opponent:r:7,0:self:p:6,0",
+                "slider-line:r:opponent:r:7,0"
+              ],
+              "relationTokenCount": 2,
+              "relationCellsSelected": 2,
+              "droppedRelationTokens": 0
+            }
+          ]
+        },
+        {
+          "panel": "tr-05",
+          "candidates": [
+            {
+              "move": "a1a4",
+              "baselineCells": [
+                2741,
+                3491,
+                9048,
+                11918,
+                14333,
+                18263,
+                25020,
+                34140,
+                41522,
+                45965,
+                58368,
+                77784,
+                100077,
+                124260
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                22716,
+                24188,
+                31634,
+                32718,
+                32724,
+                45965,
+                65345,
+                77784,
+                88883,
+                100077,
+                121147,
+                124260
+              ],
+              "relationTokens": [
+                "slider-line:r:opponent:r:7,0"
+              ],
+              "relationTokenCount": 1,
+              "relationCellsSelected": 1,
+              "droppedRelationTokens": 0
+            },
+            {
+              "move": "e1e5",
+              "baselineCells": [
+                216,
+                3491,
+                3785,
+                14333,
+                18263,
+                25233,
+                46881,
+                58598,
+                85134,
+                87736,
+                90696,
+                95653,
+                100077,
+                129867
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                22716,
+                31634,
+                39687,
+                64399,
+                85134,
+                87736,
+                90696,
+                92849,
+                113561,
+                114085,
+                127563,
+                129867
+              ],
+              "relationTokens": [
+                "slider-context:r:opponent:r:0,3:self:p:0,1",
+                "slider-line:r:opponent:r:0,3"
+              ],
+              "relationTokenCount": 2,
+              "relationCellsSelected": 2,
+              "droppedRelationTokens": 0
+            }
+          ]
+        },
+        {
+          "panel": "tr-06",
+          "candidates": [
+            {
+              "move": "e1e5",
+              "baselineCells": [
+                216,
+                3491,
+                3785,
+                5612,
+                18263,
+                25233,
+                46881,
+                58598,
+                85134,
+                87736,
+                90696,
+                95653,
+                100077,
+                129867
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                21831,
+                22716,
+                31634,
+                39120,
+                64399,
+                85134,
+                87736,
+                90696,
+                92849,
+                113561,
+                127563,
+                129867
+              ],
+              "relationTokens": [
+                "slider-context:r:opponent:r:0,3:self:p:0,2",
+                "slider-line:r:opponent:r:0,3"
+              ],
+              "relationTokenCount": 2,
+              "relationCellsSelected": 2,
+              "droppedRelationTokens": 0
+            },
+            {
+              "move": "a1a4",
+              "baselineCells": [
+                2741,
+                3491,
+                9048,
+                10785,
+                11918,
+                14333,
+                18263,
+                32718,
+                34140,
+                41522,
+                45965,
+                58368,
+                100077,
+                124260
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                22716,
+                24188,
+                31634,
+                32718,
+                32724,
+                45965,
+                50504,
+                65345,
+                88883,
+                100077,
+                121147,
+                124260
+              ],
+              "relationTokens": [
+                "slider-line:r:opponent:r:7,0"
+              ],
+              "relationTokenCount": 1,
+              "relationCellsSelected": 1,
+              "droppedRelationTokens": 0
+            }
+          ]
+        },
+        {
+          "panel": "tr-07",
+          "candidates": [
+            {
+              "move": "a1a4",
+              "baselineCells": [
+                2741,
+                3491,
+                9048,
+                11918,
+                14333,
+                18263,
+                25020,
+                31551,
+                34140,
+                41522,
+                58368,
+                77784,
+                100077,
+                124260
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                22716,
+                24188,
+                31634,
+                32718,
+                32724,
+                45965,
+                65345,
+                77784,
+                88883,
+                100077,
+                121147,
+                124260
+              ],
+              "relationTokens": [
+                "slider-line:r:opponent:r:7,0"
+              ],
+              "relationTokenCount": 1,
+              "relationCellsSelected": 1,
+              "droppedRelationTokens": 0
+            },
+            {
+              "move": "e1e5",
+              "baselineCells": [
+                124,
+                216,
+                3491,
+                3785,
+                18263,
+                25233,
+                46881,
+                58598,
+                85134,
+                87736,
+                90696,
+                95653,
+                100077,
+                129867
+              ],
+              "boundCells": [
+                124,
+                3491,
+                18263,
+                22716,
+                31634,
+                39687,
+                64399,
+                85134,
+                87736,
+                92849,
+                113561,
+                114085,
+                127563,
+                129867
+              ],
+              "relationTokens": [
+                "slider-context:r:opponent:r:0,3:self:p:0,1",
+                "slider-line:r:opponent:r:0,3"
+              ],
+              "relationTokenCount": 2,
+              "relationCellsSelected": 2,
+              "droppedRelationTokens": 0
+            }
+          ]
+        },
+        {
+          "panel": "tr-08",
+          "candidates": [
+            {
+              "move": "e1e5",
+              "baselineCells": [
+                216,
+                3491,
+                3785,
+                5612,
+                18263,
+                25233,
+                46881,
+                85134,
+                87736,
+                90696,
+                95653,
+                100077,
+                129867,
+                132216
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                22716,
+                31634,
+                39120,
+                64399,
+                75417,
+                85134,
+                87736,
+                92849,
+                113561,
+                127563,
+                129867,
+                132216
+              ],
+              "relationTokens": [
+                "slider-context:r:opponent:r:0,3:self:p:0,2",
+                "slider-line:r:opponent:r:0,3"
+              ],
+              "relationTokenCount": 2,
+              "relationCellsSelected": 2,
+              "droppedRelationTokens": 0
+            },
+            {
+              "move": "a1a4",
+              "baselineCells": [
+                2741,
+                3491,
+                9048,
+                10785,
+                11918,
+                14333,
+                18263,
+                34140,
+                41522,
+                45965,
+                48467,
+                58368,
+                100077,
+                124260
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                22716,
+                24188,
+                31634,
+                32718,
+                32724,
+                45965,
+                50504,
+                65345,
+                88883,
+                121147,
+                124260,
+                125580
+              ],
+              "relationTokens": [
+                "slider-line:r:opponent:r:7,0"
+              ],
+              "relationTokenCount": 1,
+              "relationCellsSelected": 1,
+              "droppedRelationTokens": 0
+            }
+          ]
+        }
+      ]
+    },
+    "validation": {
+      "datasetPath": "research/data/capture-retention-transfer-v2/validation.jsonl",
+      "datasetSha256": "278355ece0033fa3a6405bd5daf00b08aa728f75bf402d494569c58c766174e8",
+      "panels": 4,
+      "candidateCues": 8,
+      "panelsWithDifferentBoundRayInventories": 4,
+      "cuesWithSelectedRelationCells": 8,
+      "meanSelectedRelationCellsPerCue": 1.5,
+      "cuesWithChangedStimulationVsV3": 8,
+      "meanWithinPanelSharedCellsV3": 3,
+      "meanWithinPanelSharedCellsBoundRay": 4,
+      "rows": [
+        {
+          "panel": "va-01",
+          "candidates": [
+            {
+              "move": "a1a4",
+              "baselineCells": [
+                2741,
+                3491,
+                9048,
+                11918,
+                14333,
+                16531,
+                18263,
+                31551,
+                34140,
+                41522,
+                58368,
+                100077,
+                103828,
+                124260
+              ],
+              "boundCells": [
+                3491,
+                11687,
+                18263,
+                22716,
+                31634,
+                32718,
+                32724,
+                37027,
+                46260,
+                88883,
+                103828,
+                103841,
+                121147,
+                124260
+              ],
+              "relationTokens": [
+                "slider-context:r:opponent:r:5,0:self:p:2,0",
+                "slider-line:r:opponent:r:5,0"
+              ],
+              "relationTokenCount": 2,
+              "relationCellsSelected": 2,
+              "droppedRelationTokens": 0
+            },
+            {
+              "move": "e1e5",
+              "baselineCells": [
+                124,
+                216,
+                3491,
+                3785,
+                5432,
+                18263,
+                46881,
+                85134,
+                87736,
+                90696,
+                95653,
+                100077,
+                114030,
+                129867
+              ],
+              "boundCells": [
+                124,
+                3491,
+                18263,
+                22716,
+                31634,
+                64399,
+                85134,
+                87736,
+                90696,
+                92849,
+                113561,
+                114030,
+                127563,
+                129867
+              ],
+              "relationTokens": [
+                "slider-line:r:opponent:r:0,3"
+              ],
+              "relationTokenCount": 1,
+              "relationCellsSelected": 1,
+              "droppedRelationTokens": 0
+            }
+          ]
+        },
+        {
+          "panel": "va-02",
+          "candidates": [
+            {
+              "move": "e1e5",
+              "baselineCells": [
+                216,
+                3491,
+                3785,
+                18263,
+                25233,
+                46881,
+                72764,
+                85134,
+                87736,
+                90696,
+                95653,
+                100077,
+                129867,
+                132216
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                22716,
+                31634,
+                54399,
+                64399,
+                75417,
+                85134,
+                87736,
+                92849,
+                113561,
+                127563,
+                129867,
+                132216
+              ],
+              "relationTokens": [
+                "slider-line:r:opponent:r:0,3"
+              ],
+              "relationTokenCount": 1,
+              "relationCellsSelected": 1,
+              "droppedRelationTokens": 0
+            },
+            {
+              "move": "a1a4",
+              "baselineCells": [
+                2741,
+                3491,
+                9048,
+                11918,
+                14333,
+                18263,
+                34140,
+                41522,
+                45965,
+                48467,
+                58368,
+                61395,
+                100077,
+                124260
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                22716,
+                24188,
+                31634,
+                32718,
+                32724,
+                41794,
+                45965,
+                61395,
+                65345,
+                88883,
+                116177,
+                124260
+              ],
+              "relationTokens": [
+                "slider-context:r:opponent:r:7,0:self:p:6,0",
+                "slider-line:r:opponent:r:7,0"
+              ],
+              "relationTokenCount": 2,
+              "relationCellsSelected": 2,
+              "droppedRelationTokens": 0
+            }
+          ]
+        },
+        {
+          "panel": "va-03",
+          "candidates": [
+            {
+              "move": "a1a4",
+              "baselineCells": [
+                2741,
+                3491,
+                9048,
+                11918,
+                14333,
+                18263,
+                19967,
+                25020,
+                34140,
+                41522,
+                58368,
+                77784,
+                100077,
+                124260
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                19967,
+                22716,
+                24188,
+                31634,
+                32718,
+                32724,
+                40821,
+                45965,
+                65345,
+                77784,
+                88883,
+                124260
+              ],
+              "relationTokens": [
+                "slider-line:r:opponent:r:7,0"
+              ],
+              "relationTokenCount": 1,
+              "relationCellsSelected": 1,
+              "droppedRelationTokens": 0
+            },
+            {
+              "move": "e1e5",
+              "baselineCells": [
+                216,
+                3491,
+                3785,
+                16531,
+                18263,
+                25233,
+                46881,
+                61273,
+                85134,
+                87736,
+                90696,
+                95653,
+                100077,
+                129867
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                22716,
+                31634,
+                39687,
+                61273,
+                64399,
+                85134,
+                87736,
+                92849,
+                113561,
+                114085,
+                127563,
+                129867
+              ],
+              "relationTokens": [
+                "slider-context:r:opponent:r:0,3:self:p:0,1",
+                "slider-line:r:opponent:r:0,3"
+              ],
+              "relationTokenCount": 2,
+              "relationCellsSelected": 2,
+              "droppedRelationTokens": 0
+            }
+          ]
+        },
+        {
+          "panel": "va-04",
+          "candidates": [
+            {
+              "move": "e1e5",
+              "baselineCells": [
+                124,
+                216,
+                3491,
+                3785,
+                5612,
+                18263,
+                25233,
+                46881,
+                85134,
+                87736,
+                90696,
+                100077,
+                129867,
+                132216
+              ],
+              "boundCells": [
+                124,
+                3491,
+                18263,
+                22716,
+                31634,
+                39120,
+                75417,
+                85134,
+                87736,
+                92849,
+                113561,
+                127563,
+                129867,
+                132216
+              ],
+              "relationTokens": [
+                "slider-context:r:opponent:r:0,3:self:p:0,2",
+                "slider-line:r:opponent:r:0,3"
+              ],
+              "relationTokenCount": 2,
+              "relationCellsSelected": 2,
+              "droppedRelationTokens": 0
+            },
+            {
+              "move": "a1a4",
+              "baselineCells": [
+                2741,
+                3491,
+                9048,
+                10785,
+                11918,
+                14333,
+                18263,
+                31551,
+                34140,
+                41522,
+                45965,
+                58368,
+                100077,
+                124260
+              ],
+              "boundCells": [
+                3491,
+                18263,
+                22716,
+                24188,
+                31634,
+                32718,
+                32724,
+                45965,
+                50504,
+                65345,
+                88883,
+                121147,
+                124260,
+                125580
+              ],
+              "relationTokens": [
+                "slider-line:r:opponent:r:7,0"
+              ],
+              "relationTokenCount": 1,
+              "relationCellsSelected": 1,
+              "droppedRelationTokens": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "interpretation": "This checks whether a label-blind, candidate-target slider/intervening-piece geometry feature is present and selected under the fixed input budget. Different tokens and KC stimulation do not establish neural activation, useful synaptic change, learning, causal credit, transfer, or improved search. This is an engineering hypothesis requiring a new frozen protocol and untouched final families."
+}

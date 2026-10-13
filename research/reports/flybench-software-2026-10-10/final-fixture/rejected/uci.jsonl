@@ -1,0 +1,32 @@
+{"direction":"in","line":"uci"}
+{"direction":"out","line":"Stockfish 19 by the Stockfish developers (see AUTHORS file)"}
+{"direction":"out","line":"id name Stockfish 19"}
+{"direction":"out","line":"id author the Stockfish developers (see AUTHORS file)"}
+{"direction":"out","line":""}
+{"direction":"out","line":"option name Debug Log File type string default <empty>"}
+{"direction":"out","line":"option name NumaPolicy type string default auto"}
+{"direction":"out","line":"option name Threads type spin default 1 min 1 max 1024"}
+{"direction":"out","line":"option name Hash type spin default 16 min 1 max 33554432"}
+{"direction":"out","line":"option name Clear Hash type button"}
+{"direction":"out","line":"option name Ponder type check default false"}
+{"direction":"out","line":"option name MultiPV type spin default 1 min 1 max 256"}
+{"direction":"out","line":"option name Skill Level type spin default 20 min 0 max 20"}
+{"direction":"out","line":"option name Move Overhead type spin default 10 min 0 max 5000"}
+{"direction":"out","line":"option name nodestime type spin default 0 min 0 max 10000"}
+{"direction":"out","line":"option name UCI_Chess960 type check default false"}
+{"direction":"out","line":"option name UCI_LimitStrength type check default false"}
+{"direction":"out","line":"option name UCI_Elo type spin default 1320 min 1320 max 3190"}
+{"direction":"out","line":"option name UCI_ShowWDL type check default false"}
+{"direction":"out","line":"option name SyzygyPath type string default <empty>"}
+{"direction":"out","line":"option name SyzygyProbeDepth type spin default 1 min 1 max 100"}
+{"direction":"out","line":"option name Syzygy50MoveRule type check default true"}
+{"direction":"out","line":"option name SyzygyProbeLimit type spin default 7 min 0 max 7"}
+{"direction":"out","line":"option name EvalFile type string default nn-1a298aa575a0.nnue"}
+{"direction":"out","line":"uciok"}
+{"direction":"in","line":"setoption name Threads value 1"}
+{"direction":"in","line":"setoption name Hash value 32"}
+{"direction":"in","line":"setoption name Ponder value false"}
+{"direction":"in","line":"setoption name UCI_LimitStrength value true"}
+{"direction":"in","line":"isready"}
+{"direction":"out","line":"info string Using 1 thread"}
+{"direction":"out","line":"readyok"}

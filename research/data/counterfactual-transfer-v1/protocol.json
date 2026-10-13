@@ -1,0 +1,24 @@
+{
+  "schema": "counterfactual-transfer-v1",
+  "frozen": "2026-10-06",
+  "purpose": "Diagnostic consequence-sensitive choice check after familiar adaptive repair",
+  "positions": [
+    {
+      "id": "original-kqk",
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+      "checkedMove": "f7g7",
+      "role": "familiar reference"
+    },
+    {
+      "id": "king-support-counterfactual",
+      "fen": "7k/5Q2/4K3/8/8/8/8/8 w - - 0 1",
+      "checkedMove": "f7g7",
+      "role": "support removed; formerly checked move must fail"
+    }
+  ],
+  "task": { "objective": "forced-mate", "plies": 1 },
+  "memory": "research/reports/adaptive-two-valence-original-v2-2026-10-06/report.json",
+  "candidateInterface": { "maxCandidates": 24, "quietReserve": 8 },
+  "controls": ["all-legal", "delta-shortlist", "independent-certificate"],
+  "scope": "No feedback, plasticity or tuning during evaluation. The counterfactual has no declared successful alternative under this one-ply task; it cannot pass a transfer gate by itself."
+}

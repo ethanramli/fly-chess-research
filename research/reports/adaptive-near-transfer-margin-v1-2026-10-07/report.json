@@ -1,0 +1,315 @@
+{
+  "schema": "adaptive-near-transfer-margin-diagnostic-v1",
+  "scope": "Exploratory descriptive reanalysis of already audited saved scores; no graph inference or feedback.",
+  "formula": "margin = max(score of certified successful moves) - max(score of certified failures); informativeMarginLift = informative margin - mean(absent, shuffled, disabled margins).",
+  "inputs": {
+    "research\\reports\\adaptive-near-transfer-v4-2026-10-07\\report.json": "3703c4614871ea76a2ea96951a9c3649dd1afc6c351be4d436c60b8bc1bec1da",
+    "research\\reports\\adaptive-near-transfer-v4-2026-10-07\\audit.json": "f9d11124fb77030b4f627bd65fe0362d0b4cdcb340863c0514d626575c21ee16",
+    "research/data/adaptive-near-transfer-v4/protocol.json": "681e76a5d9f21b20a822342c32222f5add273c60e7c3e7c6c2296061e8355462"
+  },
+  "analyzer": {
+    "path": ".codebase/scripts/puzzle-learning/diagnose-near-transfer-margin.mjs",
+    "sha256": "c7861356278d07733abdd1d74808299aa399fb0197f4a9e863bc51dffad88343"
+  },
+  "auditSummary": {
+    "panels": 20,
+    "candidates": 636,
+    "certificates": 636,
+    "feedbackEvents": 0,
+    "memoryUnchangedPanels": 20
+  },
+  "panels": [
+    {
+      "id": "smothered-queen-b3-rook-e8",
+      "legalCandidates": 30,
+      "successMoves": [
+        "b3g8"
+      ],
+      "informative": {
+        "bestSuccess": {
+          "move": "b3g8",
+          "score": 0.00032678665593266487
+        },
+        "bestFailure": {
+          "move": "a1b2",
+          "score": 0.005974993109703064
+        },
+        "margin": -0.005648206453770399,
+        "correctChoice": false
+      },
+      "absent": {
+        "bestSuccess": {
+          "move": "b3g8",
+          "score": 0.0007489901036024094
+        },
+        "bestFailure": {
+          "move": "b3c4",
+          "score": 0.00840647192671895
+        },
+        "margin": -0.007657481823116541,
+        "correctChoice": false
+      },
+      "shuffled": {
+        "bestSuccess": {
+          "move": "b3g8",
+          "score": -0.0011383830569684505
+        },
+        "bestFailure": {
+          "move": "b3c2",
+          "score": 0.007009998895227909
+        },
+        "margin": -0.00814838195219636,
+        "correctChoice": false
+      },
+      "disabled": {
+        "bestSuccess": {
+          "move": "b3g8",
+          "score": 0.000853473786264658
+        },
+        "bestFailure": {
+          "move": "b3c4",
+          "score": 0.008523944765329361
+        },
+        "margin": -0.007670470979064703,
+        "correctChoice": false
+      },
+      "meanMatchedControlMargin": -0.007825444918125868,
+      "informativeMarginLift": 0.0021772384643554688
+    },
+    {
+      "id": "smothered-queen-b3-rook-f8",
+      "legalCandidates": 30,
+      "successMoves": [
+        "b3g8"
+      ],
+      "informative": {
+        "bestSuccess": {
+          "move": "b3g8",
+          "score": -0.0005710339173674583
+        },
+        "bestFailure": {
+          "move": "b3d1",
+          "score": 0.006332540884613991
+        },
+        "margin": -0.006903574801981449,
+        "correctChoice": false
+      },
+      "absent": {
+        "bestSuccess": {
+          "move": "b3g8",
+          "score": -0.0008052270859479904
+        },
+        "bestFailure": {
+          "move": "b3d1",
+          "score": 0.00989674311131239
+        },
+        "margin": -0.01070197019726038,
+        "correctChoice": false
+      },
+      "shuffled": {
+        "bestSuccess": {
+          "move": "b3g8",
+          "score": -0.002869199961423874
+        },
+        "bestFailure": {
+          "move": "b3d1",
+          "score": 0.0075861308723688126
+        },
+        "margin": -0.010455330833792686,
+        "correctChoice": false
+      },
+      "disabled": {
+        "bestSuccess": {
+          "move": "b3g8",
+          "score": -0.0006903354078531265
+        },
+        "bestFailure": {
+          "move": "b3d1",
+          "score": 0.01005433639511466
+        },
+        "margin": -0.010744671802967787,
+        "correctChoice": false
+      },
+      "meanMatchedControlMargin": -0.010633990944673618,
+      "informativeMarginLift": 0.003730416142692169
+    },
+    {
+      "id": "smothered-queen-d5-rook-e8",
+      "legalCandidates": 34,
+      "successMoves": [
+        "d5g8"
+      ],
+      "informative": {
+        "bestSuccess": {
+          "move": "d5g8",
+          "score": 0.0023466991260647774
+        },
+        "bestFailure": {
+          "move": "a1a2",
+          "score": 0.006288086995482445
+        },
+        "margin": -0.003941387869417667,
+        "correctChoice": false
+      },
+      "absent": {
+        "bestSuccess": {
+          "move": "d5g8",
+          "score": -0.000602460466325283
+        },
+        "bestFailure": {
+          "move": "d5b3",
+          "score": 0.010220547672361135
+        },
+        "margin": -0.010823008138686419,
+        "correctChoice": false
+      },
+      "shuffled": {
+        "bestSuccess": {
+          "move": "d5g8",
+          "score": -0.0018472163937985897
+        },
+        "bestFailure": {
+          "move": "d5e4",
+          "score": 0.007450771983712912
+        },
+        "margin": -0.009297988377511501,
+        "correctChoice": false
+      },
+      "disabled": {
+        "bestSuccess": {
+          "move": "d5g8",
+          "score": -0.0005263155326247215
+        },
+        "bestFailure": {
+          "move": "d5b3",
+          "score": 0.010396633762866259
+        },
+        "margin": -0.01092294929549098,
+        "correctChoice": false
+      },
+      "meanMatchedControlMargin": -0.010347981937229633,
+      "informativeMarginLift": 0.006406594067811966
+    },
+    {
+      "id": "smothered-queen-d5-rook-f8",
+      "legalCandidates": 34,
+      "successMoves": [
+        "d5g8"
+      ],
+      "informative": {
+        "bestSuccess": {
+          "move": "d5g8",
+          "score": 0.005741622764617205
+        },
+        "bestFailure": {
+          "move": "a1b2",
+          "score": 0.006699895951896906
+        },
+        "margin": -0.0009582731872797012,
+        "correctChoice": false
+      },
+      "absent": {
+        "bestSuccess": {
+          "move": "d5g8",
+          "score": 0.0021618385799229145
+        },
+        "bestFailure": {
+          "move": "d5e5",
+          "score": 0.010263383388519287
+        },
+        "margin": -0.008101544808596373,
+        "correctChoice": false
+      },
+      "shuffled": {
+        "bestSuccess": {
+          "move": "d5g8",
+          "score": -6.509944796562195e-7
+        },
+        "bestFailure": {
+          "move": "d5b3",
+          "score": 0.006651912350207567
+        },
+        "margin": -0.0066525633446872234,
+        "correctChoice": false
+      },
+      "disabled": {
+        "bestSuccess": {
+          "move": "d5g8",
+          "score": 0.002271746750921011
+        },
+        "bestFailure": {
+          "move": "d5e5",
+          "score": 0.010492664761841297
+        },
+        "margin": -0.008220918010920286,
+        "correctChoice": false
+      },
+      "meanMatchedControlMargin": -0.007658342054734628,
+      "informativeMarginLift": 0.0067000688674549265
+    },
+    {
+      "id": "smothered-queen-e6-rook-f8",
+      "legalCandidates": 31,
+      "successMoves": [
+        "e6g8"
+      ],
+      "informative": {
+        "bestSuccess": {
+          "move": "e6g8",
+          "score": 0.0011979492846876383
+        },
+        "bestFailure": {
+          "move": "a1b2",
+          "score": 0.006252816878259182
+        },
+        "margin": -0.005054867593571544,
+        "correctChoice": false
+      },
+      "absent": {
+        "bestSuccess": {
+          "move": "e6g8",
+          "score": -0.0011162019800394773
+        },
+        "bestFailure": {
+          "move": "a1b2",
+          "score": 0.009743992239236832
+        },
+        "margin": -0.010860194219276309,
+        "correctChoice": false
+      },
+      "shuffled": {
+        "bestSuccess": {
+          "move": "e6g8",
+          "score": -0.002427558181807399
+        },
+        "bestFailure": {
+          "move": "e6d7",
+          "score": 0.007606241852045059
+        },
+        "margin": -0.010033800033852458,
+        "correctChoice": false
+      },
+      "disabled": {
+        "bestSuccess": {
+          "move": "e6g8",
+          "score": -0.0010391566902399063
+        },
+        "bestFailure": {
+          "move": "a1b2",
+          "score": 0.009912467561662197
+        },
+        "margin": -0.010951624251902103,
+        "correctChoice": false
+      },
+      "meanMatchedControlMargin": -0.010615206168343624,
+      "informativeMarginLift": 0.00556033857477208
+    }
+  ],
+  "summary": {
+    "panels": 5,
+    "positiveMarginLifts": 5,
+    "informativeCorrectChoices": 0,
+    "meanInformativeMarginLift": 0.004914931223417322,
+    "scope": "Within-motif ranking transfer only; the learned memory chooses a certified failure on all five panels."
+  }
+}

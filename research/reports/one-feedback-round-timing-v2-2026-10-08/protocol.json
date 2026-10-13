@@ -1,0 +1,45 @@
+{
+  "protocolSha256": "a865684916952b5e7199c6cc8671c5d5b5b4b1146d49c667ee9eee242e10af86",
+  "runnerSha256": "38baffa0eea7421b34eedb8507d9bdeda0e213b4ceeed07b241e1a1f0fa2b3e9",
+  "graphSha256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+  "annotationSha256": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+  "mappingHash": "b2d7bf351dbe9889aa6a17216cca6cb7671f4f99d9661e604609a7ff51686fff",
+  "panelId": "tr-01",
+  "move": "a1a4",
+  "model": {
+    "steps": 8,
+    "inputDim": 1,
+    "outputs": 1,
+    "seed": 47,
+    "precision": "float32",
+    "saturation": 10,
+    "recurrentScale": 0.9,
+    "normalization": "row"
+  },
+  "memory": {
+    "eta": 0.5,
+    "minGain": 0.2,
+    "maxGain": 1.8,
+    "activityScale": 1.5
+  },
+  "encoder": {
+    "id": "bound-ray",
+    "identity": "4248d2bc93854a6aac3033cc6a49b2b09c1b9d1adb3b20a2f9d01577a41f4c64",
+    "config": {
+      "seed": 14009,
+      "maxCells": 14,
+      "totalCurrent": 21,
+      "maxCellCurrent": 1.5,
+      "maxRelationCells": 4,
+      "maxHistoryPlies": 512
+    }
+  },
+  "conditions": [
+    "informative",
+    "no-channel",
+    "shuffled",
+    "disabled"
+  ],
+  "cpuDuty": 0.5,
+  "scope": "One first training candidate, fresh memory per arm; shuffled is an opposite-valence single-event control and cannot be count-balanced. No transfer or learning acceptance gate."
+}

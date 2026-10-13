@@ -1,0 +1,827 @@
+{
+  "complete": false,
+  "identity": {
+    "schema": "fixed-relay-probe-v1",
+    "inputs": {
+      ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+      ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+      "research/data/relay-probe-v1/protocol.json": "a8c09a3f6355d89b607e2f8ff52fdfcc38ffb75d3b77c77d9ec181623f2efea3",
+      "research/reports/instinct-design-2026-10-05/anatomy-with-relay.json": "58e3feffd9488212d433c9a310d9de0073e9b48926b916982d2d94aa51be0755"
+    },
+    "sources": {
+      ".codebase/scripts/probe-learning-relay.mjs": "527fb95484978073321d1f7a5d3979035da0a4a12d3734096b106f9a125dc6f7",
+      ".codebase/src/lowram/trainer.mjs": "ffefd16ad1fd2e438dba89c45072ea2229091832a46349958b8668aa7517b7f9",
+      ".codebase/src/lowram/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+      ".codebase/src/lowram/association-validation.mjs": "bb457f747bb8e37fe096ac1a3e9117afc4f2b494a4b683a6a49dacf1dcadae66"
+    },
+    "model": {
+      "steps": 8,
+      "inputDim": 1,
+      "outputs": 1,
+      "seed": 47,
+      "precision": "float32",
+      "saturation": 10,
+      "recurrentScale": 0.9,
+      "normalization": "row"
+    },
+    "invariant": "3ba81790ad91b71d30b6607a8878ba0682d032b50ffa6d2d65ab6ccb4d5a1a25",
+    "duty": 0.5,
+    "scheduleHash": "80304190c3358360002956a9b87fa965ef69b38e58eb57747146791b93fda572"
+  },
+  "protocol": {
+    "schema": "fixed-relay-probe-v1",
+    "status": "frozen before first probe on 2026-10-05",
+    "claim": "Engineering response of mapped cells in the unchanged sparse rate kernel; no learning or biological validation",
+    "currents": [
+      0.25,
+      0.75,
+      1.5
+    ],
+    "modelSeed": 47,
+    "steps": 8,
+    "individualStimulusTypes": [
+      "MBON12",
+      "MBON01",
+      "PPL103"
+    ],
+    "groupStimulusTypes": [
+      "PAM02",
+      "MBON05"
+    ],
+    "includeDirectGFControl": true,
+    "readTypes": [
+      "MBON12",
+      "MBON01",
+      "PPL103",
+      "PAM02",
+      "MBON05",
+      "GF"
+    ],
+    "directionResolution": 1e-7,
+    "maximumProbes": 40,
+    "interpretation": "Above-resolution positive PAM02 response to MBON12 is compatible with relay propagation; it is not proof of omission learning, transmitter physiology, or a functional route to GF. Direct GF stimulation tests readout responsiveness only. All doses and all mapped cells are retained without outcome-based selection."
+  },
+  "cells": [
+    {
+      "index": 62498,
+      "rootId": "720575940624117245",
+      "kind": "MBON",
+      "type": "MBON01",
+      "hemibrainType": "MBON01",
+      "side": "right",
+      "knownTransmitter": "glutamate, sparkly, proctolin, Nplp1",
+      "predictedTransmitter": "glutamate",
+      "predictedConfidence": 0.7386130312879104,
+      "ontologyIds": "FBbt_00100234"
+    },
+    {
+      "index": 116972,
+      "rootId": "720575940636659886",
+      "kind": "DAN",
+      "type": "PAM02",
+      "hemibrainType": "PAM02",
+      "side": "right",
+      "knownTransmitter": "dopamine, Nplp1, sNPF, sparkly, amnesiac, CG34136",
+      "predictedTransmitter": "dopamine",
+      "predictedConfidence": 0.7737345173870552,
+      "ontologyIds": "FBbt_00111016"
+    },
+    {
+      "index": 98563,
+      "rootId": "720575940630998287",
+      "kind": "DAN",
+      "type": "PAM02",
+      "hemibrainType": "PAM02",
+      "side": "left",
+      "knownTransmitter": "dopamine, Nplp1, sNPF, sparkly, amnesiac, CG34136",
+      "predictedTransmitter": "dopamine",
+      "predictedConfidence": 0.4994284869636272,
+      "ontologyIds": "FBbt_00111016"
+    },
+    {
+      "index": 95882,
+      "rootId": "720575940630496374",
+      "kind": "MBON",
+      "type": "MBON05",
+      "hemibrainType": "MBON05",
+      "side": "right",
+      "knownTransmitter": "glutamate",
+      "predictedTransmitter": "glutamate",
+      "predictedConfidence": 0.5672063035300218,
+      "ontologyIds": "FBbt_00111004"
+    },
+    {
+      "index": 92272,
+      "rootId": "720575940629774891",
+      "kind": "DAN",
+      "type": "PAM02",
+      "hemibrainType": "PAM02",
+      "side": "left",
+      "knownTransmitter": "dopamine, Nplp1, sNPF, sparkly, amnesiac, CG34136",
+      "predictedTransmitter": "dopamine",
+      "predictedConfidence": 0.7619846266993989,
+      "ontologyIds": "FBbt_00111016"
+    },
+    {
+      "index": 42407,
+      "rootId": "720575940620497217",
+      "kind": "DAN",
+      "type": "PAM02",
+      "hemibrainType": "PAM02",
+      "side": "right",
+      "knownTransmitter": "dopamine, Nplp1, sNPF, sparkly, amnesiac, CG34136",
+      "predictedTransmitter": "dopamine",
+      "predictedConfidence": 0.8381575358124752,
+      "ontologyIds": "FBbt_00111016"
+    },
+    {
+      "index": 56337,
+      "rootId": "720575940623001480",
+      "kind": "MBON",
+      "type": "MBON12",
+      "hemibrainType": "MBON12",
+      "side": "right",
+      "knownTransmitter": "acetylcholine",
+      "predictedTransmitter": "acetylcholine",
+      "predictedConfidence": 0.8942156867525906,
+      "ontologyIds": "FBbt_00111009"
+    },
+    {
+      "index": 102192,
+      "rootId": "720575940631758393",
+      "kind": "DAN",
+      "type": "PPL103",
+      "hemibrainType": "PPL103",
+      "side": "right",
+      "knownTransmitter": "dopamine, sparkly, Nplp1",
+      "predictedTransmitter": "dopamine",
+      "predictedConfidence": 0.803390416304107,
+      "ontologyIds": "FBbt_00100241"
+    },
+    {
+      "index": 49989,
+      "rootId": "720575940621828443",
+      "kind": "MBON",
+      "type": "MBON12",
+      "hemibrainType": "MBON12",
+      "side": "left",
+      "knownTransmitter": "acetylcholine",
+      "predictedTransmitter": "acetylcholine",
+      "predictedConfidence": 0.8760643793124306,
+      "ontologyIds": "FBbt_00111009"
+    },
+    {
+      "index": 61287,
+      "rootId": "720575940623905719",
+      "kind": "MBON",
+      "type": "MBON12",
+      "hemibrainType": "MBON12",
+      "side": "right",
+      "knownTransmitter": "acetylcholine",
+      "predictedTransmitter": "acetylcholine",
+      "predictedConfidence": 0.9010706195122313,
+      "ontologyIds": "FBbt_00111009"
+    },
+    {
+      "index": 124397,
+      "rootId": "720575940640048768",
+      "kind": "DAN",
+      "type": "PAM02",
+      "hemibrainType": "PAM02",
+      "side": "left",
+      "knownTransmitter": "dopamine, Nplp1, sNPF, sparkly, amnesiac, CG34136",
+      "predictedTransmitter": "dopamine",
+      "predictedConfidence": 0.719290715820351,
+      "ontologyIds": "FBbt_00111016"
+    },
+    {
+      "index": 105560,
+      "rootId": "720575940632541523",
+      "kind": "DAN",
+      "type": "PAM02",
+      "hemibrainType": "PAM02",
+      "side": "left",
+      "knownTransmitter": "dopamine, Nplp1, sNPF, sparkly, amnesiac, CG34136",
+      "predictedTransmitter": "dopamine",
+      "predictedConfidence": 0.8276778479218813,
+      "ontologyIds": "FBbt_00111016"
+    },
+    {
+      "index": 99184,
+      "rootId": "720575940631118610",
+      "kind": "DAN",
+      "type": "PAM02",
+      "hemibrainType": "PAM02",
+      "side": "left",
+      "knownTransmitter": "dopamine, Nplp1, sNPF, sparkly, amnesiac, CG34136",
+      "predictedTransmitter": "dopamine",
+      "predictedConfidence": 0.8099785930801247,
+      "ontologyIds": "FBbt_00111016"
+    },
+    {
+      "index": 61687,
+      "rootId": "720575940623979593",
+      "kind": "DAN",
+      "type": "PAM02",
+      "hemibrainType": "PAM02",
+      "side": "right",
+      "knownTransmitter": "dopamine, Nplp1, sNPF, sparkly, amnesiac, CG34136",
+      "predictedTransmitter": "dopamine",
+      "predictedConfidence": 0.7475486891961933,
+      "ontologyIds": "FBbt_00111016"
+    },
+    {
+      "index": 93832,
+      "rootId": "720575940630075703",
+      "kind": "MBON",
+      "type": "MBON12",
+      "hemibrainType": "MBON12",
+      "side": "left",
+      "knownTransmitter": "acetylcholine",
+      "predictedTransmitter": "acetylcholine",
+      "predictedConfidence": 0.886691032764705,
+      "ontologyIds": "FBbt_00111009"
+    },
+    {
+      "index": 128004,
+      "rootId": "720575940643309197",
+      "kind": "MBON",
+      "type": "MBON01",
+      "hemibrainType": "MBON01",
+      "side": "left",
+      "knownTransmitter": "glutamate, sparkly, proctolin, Nplp1",
+      "predictedTransmitter": "glutamate",
+      "predictedConfidence": 0.803689515262566,
+      "ontologyIds": "FBbt_00100234"
+    },
+    {
+      "index": 80782,
+      "rootId": "720575940627594568",
+      "kind": "DAN",
+      "type": "PPL103",
+      "hemibrainType": "PPL103",
+      "side": "left",
+      "knownTransmitter": "dopamine, sparkly, Nplp1",
+      "predictedTransmitter": "dopamine",
+      "predictedConfidence": 0.78450007387693,
+      "ontologyIds": "FBbt_00100241"
+    },
+    {
+      "index": 46203,
+      "rootId": "720575940621164720",
+      "kind": "MBON",
+      "type": "MBON05",
+      "hemibrainType": "MBON05",
+      "side": "left",
+      "knownTransmitter": "glutamate",
+      "predictedTransmitter": "acetylcholine",
+      "predictedConfidence": 0.3284336563623594,
+      "ontologyIds": "FBbt_00111004"
+    },
+    {
+      "index": 86947,
+      "rootId": "720575940628708139",
+      "kind": "DAN",
+      "type": "PAM02",
+      "hemibrainType": "PAM02",
+      "side": "right",
+      "knownTransmitter": "dopamine, Nplp1, sNPF, sparkly, amnesiac, CG34136",
+      "predictedTransmitter": "dopamine",
+      "predictedConfidence": 0.7058017673467545,
+      "ontologyIds": "FBbt_00111016"
+    },
+    {
+      "index": 56065,
+      "rootId": "720575940622950605",
+      "kind": "DAN",
+      "type": "PAM02",
+      "hemibrainType": "PAM02",
+      "side": "right",
+      "knownTransmitter": "dopamine, Nplp1, sNPF, sparkly, amnesiac, CG34136",
+      "predictedTransmitter": "dopamine",
+      "predictedConfidence": 0.7229146441129134,
+      "ontologyIds": "FBbt_00111016"
+    },
+    {
+      "index": 17743,
+      "rootId": "720575940613732271",
+      "kind": "DAN",
+      "type": "PAM02",
+      "hemibrainType": "PAM02",
+      "side": "left",
+      "knownTransmitter": "dopamine, Nplp1, sNPF, sparkly, amnesiac, CG34136",
+      "predictedTransmitter": "dopamine",
+      "predictedConfidence": 0.8192149151352325,
+      "ontologyIds": "FBbt_00111016"
+    },
+    {
+      "index": 115051,
+      "rootId": "720575940635779959",
+      "kind": "DAN",
+      "type": "PAM02",
+      "hemibrainType": "PAM02",
+      "side": "right",
+      "knownTransmitter": "dopamine, Nplp1, sNPF, sparkly, amnesiac, CG34136",
+      "predictedTransmitter": "dopamine",
+      "predictedConfidence": 0.6927980883071365,
+      "ontologyIds": ""
+    },
+    {
+      "index": 105374,
+      "rootId": "720575940632499757",
+      "kind": "GF",
+      "type": "GF",
+      "hemibrainType": "Giant Fiber",
+      "side": "right",
+      "knownTransmitter": "",
+      "predictedTransmitter": "glutamate",
+      "predictedConfidence": 0.26569821946215116,
+      "ontologyIds": "FBbt_00047634, FBbt_00004020",
+      "incoming": {
+        "other": {
+          "edges": 164,
+          "anatomicalCount": 3770,
+          "positiveEdges": 67,
+          "negativeEdges": 97
+        },
+        "LC4": {
+          "edges": 49,
+          "anatomicalCount": 428,
+          "positiveEdges": 49,
+          "negativeEdges": 0
+        },
+        "LPLC2": {
+          "edges": 62,
+          "anatomicalCount": 539,
+          "positiveEdges": 62,
+          "negativeEdges": 0
+        }
+      }
+    },
+    {
+      "index": 55463,
+      "rootId": "720575940622838154",
+      "kind": "GF",
+      "type": "GF",
+      "hemibrainType": "Giant Fiber",
+      "side": "left",
+      "knownTransmitter": "",
+      "predictedTransmitter": "acetylcholine",
+      "predictedConfidence": 0.3171494291445193,
+      "ontologyIds": "FBbt_00047634, FBbt_00004020",
+      "incoming": {
+        "other": {
+          "edges": 145,
+          "anatomicalCount": 3124,
+          "positiveEdges": 56,
+          "negativeEdges": 89
+        },
+        "LC4": {
+          "edges": 40,
+          "anatomicalCount": 329,
+          "positiveEdges": 40,
+          "negativeEdges": 0
+        },
+        "LPLC2": {
+          "edges": 37,
+          "anatomicalCount": 305,
+          "positiveEdges": 37,
+          "negativeEdges": 0
+        }
+      }
+    }
+  ],
+  "observations": [
+    {
+      "stimulus": {
+        "group": "rest",
+        "indices": [],
+        "current": 0
+      },
+      "cells": [
+        {
+          "rootId": "720575940624117245",
+          "index": 62498,
+          "type": "MBON01",
+          "side": "right",
+          "response": 0.021223843097686768,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940636659886",
+          "index": 116972,
+          "type": "PAM02",
+          "side": "right",
+          "response": 0.012426953762769699,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940630998287",
+          "index": 98563,
+          "type": "PAM02",
+          "side": "left",
+          "response": 0.02033083513379097,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940630496374",
+          "index": 95882,
+          "type": "MBON05",
+          "side": "right",
+          "response": 0.022298619151115417,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940629774891",
+          "index": 92272,
+          "type": "PAM02",
+          "side": "left",
+          "response": 0.0005988557240925729,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940620497217",
+          "index": 42407,
+          "type": "PAM02",
+          "side": "right",
+          "response": 0.010290013626217842,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940623001480",
+          "index": 56337,
+          "type": "MBON12",
+          "side": "right",
+          "response": 0.014812049455940723,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940631758393",
+          "index": 102192,
+          "type": "PPL103",
+          "side": "right",
+          "response": 0.015334546566009521,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940621828443",
+          "index": 49989,
+          "type": "MBON12",
+          "side": "left",
+          "response": 0.015537943691015244,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940623905719",
+          "index": 61287,
+          "type": "MBON12",
+          "side": "right",
+          "response": 0.01577792502939701,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940640048768",
+          "index": 124397,
+          "type": "PAM02",
+          "side": "left",
+          "response": 0.015792936086654663,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940632541523",
+          "index": 105560,
+          "type": "PAM02",
+          "side": "left",
+          "response": 0.0173056498169899,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940631118610",
+          "index": 99184,
+          "type": "PAM02",
+          "side": "left",
+          "response": 0.013119730167090893,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940623979593",
+          "index": 61687,
+          "type": "PAM02",
+          "side": "right",
+          "response": 0.01942726969718933,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940630075703",
+          "index": 93832,
+          "type": "MBON12",
+          "side": "left",
+          "response": 0.017253700643777847,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940643309197",
+          "index": 128004,
+          "type": "MBON01",
+          "side": "left",
+          "response": 0.018759772181510925,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940627594568",
+          "index": 80782,
+          "type": "PPL103",
+          "side": "left",
+          "response": 0.015561079606413841,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940621164720",
+          "index": 46203,
+          "type": "MBON05",
+          "side": "left",
+          "response": 0.022487744688987732,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940628708139",
+          "index": 86947,
+          "type": "PAM02",
+          "side": "right",
+          "response": 0.009960933588445187,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940622950605",
+          "index": 56065,
+          "type": "PAM02",
+          "side": "right",
+          "response": 0.006080965511500835,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940613732271",
+          "index": 17743,
+          "type": "PAM02",
+          "side": "left",
+          "response": 0.012734221294522285,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940635779959",
+          "index": 115051,
+          "type": "PAM02",
+          "side": "right",
+          "response": 0.005995781626552343,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940632499757",
+          "index": 105374,
+          "type": "GF",
+          "side": "right",
+          "response": 0.011928383260965347,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940622838154",
+          "index": 55463,
+          "type": "GF",
+          "side": "left",
+          "response": 0.011184213683009148,
+          "deltaFromRest": 0
+        }
+      ]
+    },
+    {
+      "stimulus": {
+        "group": "MBON12/720575940621828443",
+        "indices": [
+          49989
+        ],
+        "current": 0.25
+      },
+      "cells": [
+        {
+          "rootId": "720575940624117245",
+          "index": 62498,
+          "type": "MBON01",
+          "side": "right",
+          "response": 0.02123083919286728,
+          "deltaFromRest": 0.000006996095180511475
+        },
+        {
+          "rootId": "720575940636659886",
+          "index": 116972,
+          "type": "PAM02",
+          "side": "right",
+          "response": 0.012417982332408428,
+          "deltaFromRest": -0.000008971430361270905
+        },
+        {
+          "rootId": "720575940630998287",
+          "index": 98563,
+          "type": "PAM02",
+          "side": "left",
+          "response": 0.020344195887446404,
+          "deltaFromRest": 0.000013360753655433655
+        },
+        {
+          "rootId": "720575940630496374",
+          "index": 95882,
+          "type": "MBON05",
+          "side": "right",
+          "response": 0.022311106324195862,
+          "deltaFromRest": 0.000012487173080444336
+        },
+        {
+          "rootId": "720575940629774891",
+          "index": 92272,
+          "type": "PAM02",
+          "side": "left",
+          "response": 0.00010915983148152009,
+          "deltaFromRest": -0.0004896958926110528
+        },
+        {
+          "rootId": "720575940620497217",
+          "index": 42407,
+          "type": "PAM02",
+          "side": "right",
+          "response": 0.009931867942214012,
+          "deltaFromRest": -0.00035814568400382996
+        },
+        {
+          "rootId": "720575940623001480",
+          "index": 56337,
+          "type": "MBON12",
+          "side": "right",
+          "response": 0.014814401976764202,
+          "deltaFromRest": 0.0000023525208234786987
+        },
+        {
+          "rootId": "720575940631758393",
+          "index": 102192,
+          "type": "PPL103",
+          "side": "right",
+          "response": 0.016425609588623047,
+          "deltaFromRest": 0.0010910630226135254
+        },
+        {
+          "rootId": "720575940621828443",
+          "index": 49989,
+          "type": "MBON12",
+          "side": "left",
+          "response": 0.26351797580718994,
+          "deltaFromRest": 0.2479800321161747
+        },
+        {
+          "rootId": "720575940623905719",
+          "index": 61287,
+          "type": "MBON12",
+          "side": "right",
+          "response": 0.015778884291648865,
+          "deltaFromRest": 9.592622518539429e-7
+        },
+        {
+          "rootId": "720575940640048768",
+          "index": 124397,
+          "type": "PAM02",
+          "side": "left",
+          "response": 0.015709225088357925,
+          "deltaFromRest": -0.00008371099829673767
+        },
+        {
+          "rootId": "720575940632541523",
+          "index": 105560,
+          "type": "PAM02",
+          "side": "left",
+          "response": 0.017233505845069885,
+          "deltaFromRest": -0.00007214397192001343
+        },
+        {
+          "rootId": "720575940631118610",
+          "index": 99184,
+          "type": "PAM02",
+          "side": "left",
+          "response": 0.013090038672089577,
+          "deltaFromRest": -0.00002969149500131607
+        },
+        {
+          "rootId": "720575940623979593",
+          "index": 61687,
+          "type": "PAM02",
+          "side": "right",
+          "response": 0.01942712813615799,
+          "deltaFromRest": -1.4156103134155273e-7
+        },
+        {
+          "rootId": "720575940630075703",
+          "index": 93832,
+          "type": "MBON12",
+          "side": "left",
+          "response": 0.016623057425022125,
+          "deltaFromRest": -0.000630643218755722
+        },
+        {
+          "rootId": "720575940643309197",
+          "index": 128004,
+          "type": "MBON01",
+          "side": "left",
+          "response": 0.018756546080112457,
+          "deltaFromRest": -0.0000032261013984680176
+        },
+        {
+          "rootId": "720575940627594568",
+          "index": 80782,
+          "type": "PPL103",
+          "side": "left",
+          "response": 0.016210656613111496,
+          "deltaFromRest": 0.0006495770066976547
+        },
+        {
+          "rootId": "720575940621164720",
+          "index": 46203,
+          "type": "MBON05",
+          "side": "left",
+          "response": 0.022483866661787033,
+          "deltaFromRest": -0.0000038780272006988525
+        },
+        {
+          "rootId": "720575940628708139",
+          "index": 86947,
+          "type": "PAM02",
+          "side": "right",
+          "response": 0.009960933588445187,
+          "deltaFromRest": 0
+        },
+        {
+          "rootId": "720575940622950605",
+          "index": 56065,
+          "type": "PAM02",
+          "side": "right",
+          "response": 0.0060884300619363785,
+          "deltaFromRest": 0.00000746455043554306
+        },
+        {
+          "rootId": "720575940613732271",
+          "index": 17743,
+          "type": "PAM02",
+          "side": "left",
+          "response": 0.012105110101401806,
+          "deltaFromRest": -0.0006291111931204796
+        },
+        {
+          "rootId": "720575940635779959",
+          "index": 115051,
+          "type": "PAM02",
+          "side": "right",
+          "response": 0.005371939390897751,
+          "deltaFromRest": -0.0006238422356545925
+        },
+        {
+          "rootId": "720575940632499757",
+          "index": 105374,
+          "type": "GF",
+          "side": "right",
+          "response": 0.011928325518965721,
+          "deltaFromRest": -5.774199962615967e-8
+        },
+        {
+          "rootId": "720575940622838154",
+          "index": 55463,
+          "type": "GF",
+          "side": "left",
+          "response": 0.011183533817529678,
+          "deltaFromRest": -6.798654794692993e-7
+        }
+      ]
+    }
+  ],
+  "nextProbe": 2,
+  "totalProbes": 34,
+  "allParametersAndGraphPreserved": true,
+  "interpretation": "Above-resolution positive PAM02 response to MBON12 is compatible with relay propagation; it is not proof of omission learning, transmitter physiology, or a functional route to GF. Direct GF stimulation tests readout responsiveness only. All doses and all mapped cells are retained without outcome-based selection.",
+  "command": {
+    "executable": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe",
+    "execArgv": [
+      "--max-old-space-size=256"
+    ],
+    "argv": [
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\probe-learning-relay.mjs",
+      "--out",
+      "research/reports/relay-probe-prefix-2026-10-05",
+      "--cpu-duty",
+      "0.5",
+      "--max-probes",
+      "2"
+    ],
+    "node": "v22.23.2"
+  },
+  "resources": {
+    "peakRssMiB": 120.97265625,
+    "elapsedSeconds": 2.3215989999999995,
+    "cpuSeconds": 1.485,
+    "cpuDuty": 0.5,
+    "scope": "This invocation through report preparation"
+  }
+}

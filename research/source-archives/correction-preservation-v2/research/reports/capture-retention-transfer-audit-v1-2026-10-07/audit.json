@@ -1,0 +1,63 @@
+{
+  "schema": "capture-retention-dataset-audit-v1",
+  "date": "2026-10-07",
+  "scope": "Independent certificate, split, leakage, exact-cue and overlap audit; no graph inference, learning, candidate selection, Monte Carlo search, or final performance evaluation.",
+  "protocolSha256": "217fe1449fc66aad0ca275f6661afff3da97fbb25dd38cbc17106f46ddfb71b0",
+  "protocolPath": "research/data/capture-retention-transfer-v2/protocol.json",
+  "encoderIdentity": "e959effabb3fb9bae6e1dbc9199f5edb1b8ac38443c15a40f97e57221bf65188",
+  "mappingSha256": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b",
+  "splits": {
+    "train": {
+      "panels": 8,
+      "candidateExperiences": 16,
+      "consequenceCounts": {
+        "success": 8,
+        "failure": 8
+      },
+      "uniqueCuePatterns": 16
+    },
+    "validation": {
+      "panels": 4,
+      "candidateExperiences": 8,
+      "consequenceCounts": {
+        "success": 4,
+        "failure": 4
+      },
+      "uniqueCuePatterns": 8
+    },
+    "final": {
+      "panels": 8,
+      "candidateExperiences": 16,
+      "consequenceCounts": {
+        "success": 8,
+        "failure": 8
+      },
+      "uniqueCuePatterns": 16
+    }
+  },
+  "fullSet": {
+    "distinctPositions": 20,
+    "distinctCuePatterns": 40,
+    "exactCueCollisionGroups": [],
+    "conflictingCueLabels": 0,
+    "trainToFinalPairwiseCellOverlap": {
+      "min": 3,
+      "max": 7,
+      "mean": 4.33203125,
+      "median": 4
+    },
+    "trainToFinalPairwiseTokenOverlap": {
+      "min": 7,
+      "max": 13,
+      "mean": 9.046875,
+      "median": 7
+    }
+  },
+  "sourceHashes": {
+    ".codebase/scripts/search-and-feedback/audit-capture-retention-dataset.mjs": "cc87bf9d84b31bb64bd99cb176e667af61a9f5b1d43e148467ceb691303b4449",
+    ".codebase/src/chess-input/relational-chess-cue-v3.mjs": "a19b3e65fda0300b5a361d028c706fcd1b5d1278f2496a11234ccd06690ce47f",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+    "package.json": "8ae8151c56589449dc6401daba94377167c1aa6048eccf7e93b8a29b327cb634",
+    "package-lock.json": "a94f82d01d9f2e6aa95537b07949a6b0166890ea401d737262340640a9b50214"
+  }
+}

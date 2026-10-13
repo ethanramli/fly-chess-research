@@ -1,0 +1,957 @@
+{
+  "scope": "Graph-free analysis of previously inspected development counterfactual; no teaching, learner changes, or untouched transfer claim.",
+  "inputs": {
+    "research/reports/adaptive-contrastive-coverage-v1-2026-10-07/naive-counterfactual.json": "640590d626d8cd2b018d16f80eab3eff3fd4625ba44ea6d4013c64c1c65d18b0",
+    "research/reports/adaptive-contrastive-coverage-v1-2026-10-07/evaluation-informative.json": "a1ea6a4b7692fe986259cddf8baa16a25f8ca8aba397bcd4e6315ba78890064a",
+    "research/data/counterfactual-delayed-v1/puzzles.jsonl": "f7118abc7ef1d0c4f9d3b9285f47c92bc486933a2bfec6e30e0b006c9f243417",
+    "research/reports/reversal-candidate-2026-10-05/mapping.json": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b"
+  },
+  "encoderIdentity": "7bb299889b330136a17b6ccddbf9b8c06c0c63b7212040fc49ff9f2bba2a3343",
+  "verifiedPositive": {
+    "move": "h5e8",
+    "actor": "w",
+    "status": "success",
+    "experimentalPulse": false,
+    "learningAllowed": true,
+    "certificateSha256": "7d9605b9d81402aa2c8687a323e2e924519de2cbe16c1bf470af1d94126891ef",
+    "meaning": "Experimental PPL103 stimulus for failure of this bounded mate objective; not full-game loss or natural reward reconstruction",
+    "proof": {
+      "status": "success",
+      "reward": 1,
+      "nodes": 1,
+      "attacker": "w",
+      "criterion": "force_mate_within_2_remaining_plies",
+      "certificate": {
+        "schema": "bounded-mate-certificate-v1",
+        "rootFen": "4Q2k/6pr/8/8/6K1/8/8/5R2 b - - 0 1",
+        "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/6pr/8/7Q/6K1/8/8/5R2 w - - 0 1\"]\n\n1. Qxe8# *",
+        "attacker": "w",
+        "plies": 2,
+        "tree": {
+          "status": "success",
+          "children": []
+        }
+      },
+      "certificateCheck": {
+        "verified": true,
+        "status": "success",
+        "nodes": 1,
+        "elapsedMs": 1.811399999999992
+      },
+      "bounds": {
+        "maxNodes": 4096,
+        "millisecondsPerStage": 2000,
+        "constructionStop": null,
+        "checkingNodes": 1,
+        "elapsedMs": 2.6159999999999997
+      },
+      "meaning": "Failure proves only that forced mate cannot be achieved within this horizon; it does not prove a full-game loss"
+    },
+    "context": {
+      "fen": "4r2k/6pr/8/7Q/6K1/8/8/5R2 w - - 0 1",
+      "pgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/6pr/8/7Q/6K1/8/8/5R2 w - - 0 1\"]\n *",
+      "task": {
+        "objective": "forced-mate",
+        "plies": 3
+      }
+    },
+    "role": "committed-choice",
+    "explanation": {
+      "schema": "verified-line-explanation-v1",
+      "status": "success",
+      "teachingAllowed": true,
+      "actor": "w",
+      "candidate": "h5e8",
+      "criterion": "force_mate_within_2_remaining_plies",
+      "certificateSha256": "7d9605b9d81402aa2c8687a323e2e924519de2cbe16c1bf470af1d94126891ef",
+      "materialRubric": {
+        "units": {
+          "p": 1,
+          "n": 3,
+          "b": 3,
+          "r": 5,
+          "q": 9,
+          "k": 0
+        },
+        "initialBalance": 3,
+        "finalBalance": 8,
+        "scope": "Conventional fixed material accounting for teacher explanation; not a complete position assessment"
+      },
+      "sequence": [
+        {
+          "ply": 1,
+          "move": "h5e8",
+          "san": "Qxe8#",
+          "playedBy": "w",
+          "captured": "r",
+          "promotion": null,
+          "materialBefore": 3,
+          "materialAfter": 8,
+          "change": 5,
+          "legalRepliesAtThisNode": null,
+          "certifiedDefensiveBranches": null,
+          "onlyLegalReply": false,
+          "successorFen": "4Q2k/6pr/8/8/6K1/8/8/5R2 b - - 0 1"
+        }
+      ],
+      "actorLosses": [],
+      "materialConcessionObserved": false,
+      "mateDespiteMaterialConcession": false,
+      "earlierAttackingChoices": [
+        {
+          "ply": 1,
+          "move": "h5e8"
+        }
+      ],
+      "outcome": "Forced mate under the stated horizon and covered defenses",
+      "limitations": [
+        "One illustrative branch of the independently checked strategy/counterstrategy.",
+        "A material concession does not establish necessity, best full-game play, or that the model rejected the move for material reasons.",
+        "This explanation is teacher evidence, not a neural evaluation, arbitrary parameter update or validated delayed credit."
+      ]
+    },
+    "delivery": "Immediate checked board/action replay; no delayed eligibility or natural reward reconstruction"
+  },
+  "positive": {
+    "move": "h5e8",
+    "before": {
+      "rank": 20,
+      "score": 0.003708409611135721,
+      "marginToTop": -0.007590150460600853
+    },
+    "after": {
+      "rank": 21,
+      "score": 0.0014792205765843391,
+      "marginToTop": -0.006215333007276058
+    }
+  },
+  "wrongChoice": {
+    "move": "h5c5",
+    "before": {
+      "rank": 1,
+      "score": 0.011298560071736574,
+      "marginToTop": 0
+    },
+    "after": {
+      "rank": 1,
+      "score": 0.007694553583860397,
+      "marginToTop": 0
+    }
+  },
+  "comparisons": [
+    {
+      "move": "h5g6",
+      "sharedStimulatedCells": 7,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:-1,1:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:-1,1:-",
+          "group": "PAM02",
+          "index": 108400,
+          "stimulated": true
+        },
+        {
+          "token": "action:q:-1,1:-",
+          "group": "PPL103",
+          "index": 42837,
+          "stimulated": true
+        }
+      ]
+    },
+    {
+      "move": "h5f7",
+      "sharedStimulatedCells": 4,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:-2,2:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:-2,2:-",
+          "group": "PAM02",
+          "index": 80666,
+          "stimulated": false
+        },
+        {
+          "token": "action:q:-2,2:-",
+          "group": "PPL103",
+          "index": 132157,
+          "stimulated": true
+        }
+      ]
+    },
+    {
+      "move": "h5e8",
+      "sharedStimulatedCells": 14,
+      "identicalStimulation": true,
+      "actionTokens": [
+        "action:q:-3,3:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:-3,3:-",
+          "group": "PAM02",
+          "index": 97269,
+          "stimulated": false
+        },
+        {
+          "token": "action:q:-3,3:-",
+          "group": "PPL103",
+          "index": 36812,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "h5h6",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:0,1:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:0,1:-",
+          "group": "PAM02",
+          "index": 97269,
+          "stimulated": false
+        },
+        {
+          "token": "action:q:0,1:-",
+          "group": "PPL103",
+          "index": 10688,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "h5h7",
+      "sharedStimulatedCells": 7,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:0,2:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:0,2:-",
+          "group": "PAM02",
+          "index": 10500,
+          "stimulated": false
+        },
+        {
+          "token": "action:q:0,2:-",
+          "group": "PPL103",
+          "index": 38766,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "h5h4",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:0,-1:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:0,-1:-",
+          "group": "PAM02",
+          "index": 80177,
+          "stimulated": false
+        },
+        {
+          "token": "action:q:0,-1:-",
+          "group": "PPL103",
+          "index": 122454,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "h5h3",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:0,-2:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:0,-2:-",
+          "group": "PAM02",
+          "index": 84258,
+          "stimulated": true
+        },
+        {
+          "token": "action:q:0,-2:-",
+          "group": "PPL103",
+          "index": 2741,
+          "stimulated": true
+        }
+      ]
+    },
+    {
+      "move": "h5h2",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:0,-3:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:0,-3:-",
+          "group": "PAM02",
+          "index": 76431,
+          "stimulated": false
+        },
+        {
+          "token": "action:q:0,-3:-",
+          "group": "PPL103",
+          "index": 89923,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "h5h1",
+      "sharedStimulatedCells": 6,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:0,-4:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:0,-4:-",
+          "group": "PAM02",
+          "index": 112744,
+          "stimulated": false
+        },
+        {
+          "token": "action:q:0,-4:-",
+          "group": "PPL103",
+          "index": 5908,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "h5g5",
+      "sharedStimulatedCells": 4,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:-1,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:-1,0:-",
+          "group": "PAM02",
+          "index": 110604,
+          "stimulated": false
+        },
+        {
+          "token": "action:q:-1,0:-",
+          "group": "PPL103",
+          "index": 64512,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "h5f5",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:-2,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:-2,0:-",
+          "group": "PAM02",
+          "index": 92339,
+          "stimulated": false
+        },
+        {
+          "token": "action:q:-2,0:-",
+          "group": "PPL103",
+          "index": 123685,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "h5e5",
+      "sharedStimulatedCells": 6,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:-3,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:-3,0:-",
+          "group": "PAM02",
+          "index": 68284,
+          "stimulated": false
+        },
+        {
+          "token": "action:q:-3,0:-",
+          "group": "PPL103",
+          "index": 27796,
+          "stimulated": true
+        }
+      ]
+    },
+    {
+      "move": "h5d5",
+      "sharedStimulatedCells": 7,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:-4,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:-4,0:-",
+          "group": "PAM02",
+          "index": 68284,
+          "stimulated": false
+        },
+        {
+          "token": "action:q:-4,0:-",
+          "group": "PPL103",
+          "index": 78170,
+          "stimulated": true
+        }
+      ]
+    },
+    {
+      "move": "h5c5",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:-5,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:-5,0:-",
+          "group": "PAM02",
+          "index": 116168,
+          "stimulated": false
+        },
+        {
+          "token": "action:q:-5,0:-",
+          "group": "PPL103",
+          "index": 56210,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "h5b5",
+      "sharedStimulatedCells": 4,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:-6,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:-6,0:-",
+          "group": "PAM02",
+          "index": 123685,
+          "stimulated": false
+        },
+        {
+          "token": "action:q:-6,0:-",
+          "group": "PPL103",
+          "index": 92454,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "h5a5",
+      "sharedStimulatedCells": 6,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:q:-7,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:q:-7,0:-",
+          "group": "PAM02",
+          "index": 11918,
+          "stimulated": false
+        },
+        {
+          "token": "action:q:-7,0:-",
+          "group": "PPL103",
+          "index": 95453,
+          "stimulated": true
+        }
+      ]
+    },
+    {
+      "move": "g4f5",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:k:-1,1:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:k:-1,1:-",
+          "group": "PAM02",
+          "index": 78136,
+          "stimulated": false
+        },
+        {
+          "token": "action:k:-1,1:-",
+          "group": "PPL103",
+          "index": 95557,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "g4g5",
+      "sharedStimulatedCells": 7,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:k:0,1:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:k:0,1:-",
+          "group": "PAM02",
+          "index": 114030,
+          "stimulated": true
+        },
+        {
+          "token": "action:k:0,1:-",
+          "group": "PPL103",
+          "index": 128121,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "g4h4",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:k:-1,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:k:-1,0:-",
+          "group": "PAM02",
+          "index": 92415,
+          "stimulated": false
+        },
+        {
+          "token": "action:k:-1,0:-",
+          "group": "PPL103",
+          "index": 62303,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "g4h3",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:k:-1,-1:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:k:-1,-1:-",
+          "group": "PAM02",
+          "index": 123685,
+          "stimulated": false
+        },
+        {
+          "token": "action:k:-1,-1:-",
+          "group": "PPL103",
+          "index": 117921,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "g4g3",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:k:0,-1:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:k:0,-1:-",
+          "group": "PAM02",
+          "index": 48548,
+          "stimulated": true
+        },
+        {
+          "token": "action:k:0,-1:-",
+          "group": "PPL103",
+          "index": 76561,
+          "stimulated": true
+        }
+      ]
+    },
+    {
+      "move": "g4f3",
+      "sharedStimulatedCells": 4,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:k:-1,-1:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:k:-1,-1:-",
+          "group": "PAM02",
+          "index": 123685,
+          "stimulated": false
+        },
+        {
+          "token": "action:k:-1,-1:-",
+          "group": "PPL103",
+          "index": 117921,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "g4f4",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:k:-1,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:k:-1,0:-",
+          "group": "PAM02",
+          "index": 92415,
+          "stimulated": false
+        },
+        {
+          "token": "action:k:-1,0:-",
+          "group": "PPL103",
+          "index": 62303,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "f1f2",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:r:0,1:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:r:0,1:-",
+          "group": "PAM02",
+          "index": 133200,
+          "stimulated": true
+        },
+        {
+          "token": "action:r:0,1:-",
+          "group": "PPL103",
+          "index": 100077,
+          "stimulated": true
+        }
+      ]
+    },
+    {
+      "move": "f1f3",
+      "sharedStimulatedCells": 4,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:r:0,2:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:r:0,2:-",
+          "group": "PAM02",
+          "index": 48548,
+          "stimulated": true
+        },
+        {
+          "token": "action:r:0,2:-",
+          "group": "PPL103",
+          "index": 76676,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "f1f4",
+      "sharedStimulatedCells": 6,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:r:0,3:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:r:0,3:-",
+          "group": "PAM02",
+          "index": 61395,
+          "stimulated": true
+        },
+        {
+          "token": "action:r:0,3:-",
+          "group": "PPL103",
+          "index": 15597,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "f1f5",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:r:0,4:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:r:0,4:-",
+          "group": "PAM02",
+          "index": 35045,
+          "stimulated": true
+        },
+        {
+          "token": "action:r:0,4:-",
+          "group": "PPL103",
+          "index": 65916,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "f1f6",
+      "sharedStimulatedCells": 6,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:r:0,5:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:r:0,5:-",
+          "group": "PAM02",
+          "index": 128104,
+          "stimulated": false
+        },
+        {
+          "token": "action:r:0,5:-",
+          "group": "PPL103",
+          "index": 22545,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "f1f7",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:r:0,6:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:r:0,6:-",
+          "group": "PAM02",
+          "index": 48972,
+          "stimulated": false
+        },
+        {
+          "token": "action:r:0,6:-",
+          "group": "PPL103",
+          "index": 42837,
+          "stimulated": true
+        }
+      ]
+    },
+    {
+      "move": "f1f8",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:r:0,7:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:r:0,7:-",
+          "group": "PAM02",
+          "index": 112744,
+          "stimulated": false
+        },
+        {
+          "token": "action:r:0,7:-",
+          "group": "PPL103",
+          "index": 23469,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "f1g1",
+      "sharedStimulatedCells": 4,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:r:-1,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:r:-1,0:-",
+          "group": "PAM02",
+          "index": 10500,
+          "stimulated": false
+        },
+        {
+          "token": "action:r:-1,0:-",
+          "group": "PPL103",
+          "index": 97082,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "f1h1",
+      "sharedStimulatedCells": 6,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:r:-2,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:r:-2,0:-",
+          "group": "PAM02",
+          "index": 35045,
+          "stimulated": true
+        },
+        {
+          "token": "action:r:-2,0:-",
+          "group": "PPL103",
+          "index": 4798,
+          "stimulated": true
+        }
+      ]
+    },
+    {
+      "move": "f1e1",
+      "sharedStimulatedCells": 4,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:r:-1,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:r:-1,0:-",
+          "group": "PAM02",
+          "index": 10500,
+          "stimulated": false
+        },
+        {
+          "token": "action:r:-1,0:-",
+          "group": "PPL103",
+          "index": 97082,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "f1d1",
+      "sharedStimulatedCells": 6,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:r:-2,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:r:-2,0:-",
+          "group": "PAM02",
+          "index": 35045,
+          "stimulated": true
+        },
+        {
+          "token": "action:r:-2,0:-",
+          "group": "PPL103",
+          "index": 4798,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "f1c1",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:r:-3,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:r:-3,0:-",
+          "group": "PAM02",
+          "index": 133200,
+          "stimulated": true
+        },
+        {
+          "token": "action:r:-3,0:-",
+          "group": "PPL103",
+          "index": 56512,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "f1b1",
+      "sharedStimulatedCells": 5,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:r:-4,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:r:-4,0:-",
+          "group": "PAM02",
+          "index": 129108,
+          "stimulated": true
+        },
+        {
+          "token": "action:r:-4,0:-",
+          "group": "PPL103",
+          "index": 55588,
+          "stimulated": false
+        }
+      ]
+    },
+    {
+      "move": "f1a1",
+      "sharedStimulatedCells": 6,
+      "identicalStimulation": false,
+      "actionTokens": [
+        "action:r:-5,0:-"
+      ],
+      "actionAssignments": [
+        {
+          "token": "action:r:-5,0:-",
+          "group": "PAM02",
+          "index": 35756,
+          "stimulated": false
+        },
+        {
+          "token": "action:r:-5,0:-",
+          "group": "PPL103",
+          "index": 88735,
+          "stimulated": true
+        }
+      ]
+    }
+  ]
+}

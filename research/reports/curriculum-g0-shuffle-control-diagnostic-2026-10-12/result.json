@@ -1,0 +1,114 @@
+{
+  "schema": "curriculum-g0-shuffle-control-diagnostic-v1",
+  "scope": "Static schedule sensitivity only; no neural simulation, training, gate change, or causal explanation.",
+  "run": "C:/Users/ethan/Documents/fly-chess-research/runs/curriculum-g0-assay-v1-resumed5",
+  "protocolHash": "105b72ae075fcbfaad13e522ba6acc068e04c32891debfbc104de9628e4c32a6",
+  "frozenScheduleHash": "c5543dd8f91ed3a004b80539d54d1dc138f93ff9b7aef91f1d7345702d9aef8e",
+  "sourceHashes": {
+    ".codebase/src/neural-learning/curriculum-g0.mjs": "627f91e764d6d4cb7ff3d6dd1729418b840228de43185d0a5b74845ea65ac997",
+    ".codebase/src/neural-learning/mushroom-body.mjs": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5"
+  },
+  "frozenSeed": {
+    "seed": 20261011,
+    "reversal": {
+      "matchingAssignments": 18,
+      "assignments": 32,
+      "cuesWithAtLeastThreeOfFourMatching": 4,
+      "cuesWithAllFourMatching": 2,
+      "perCueMatches": {
+        "0000": 4,
+        "0001": 2,
+        "0010": 1,
+        "0011": 0,
+        "0100": 3,
+        "0101": 3,
+        "0110": 1,
+        "0111": 4
+      }
+    },
+    "cumulativeTargetHistory": {
+      "matchingAssignmentsToFinalReversalTruth": 36,
+      "assignments": 64,
+      "cuesWithAtLeastSixOfEightMatching": 1,
+      "cuesWithAllEightMatching": 0,
+      "perCueMatches": {
+        "0000": 7,
+        "0001": 5,
+        "0010": 3,
+        "0011": 4,
+        "0100": 4,
+        "0101": 4,
+        "0110": 4,
+        "0111": 5
+      }
+    }
+  },
+  "sample": {
+    "seedStartInclusive": 0,
+    "seedEndInclusive": 511,
+    "seedCount": 512,
+    "meanReversalMatchingAssignments": 16.203125,
+    "schedulesWithAtLeastTwoFullyMatchingReversalCues": 67,
+    "meanCumulativeTargetHistoryMatchesToFinalReversalTruth": 31.98828125,
+    "schedulesWithAtLeastTwoCumulativeCues": 0,
+    "schedulesAtLeastAsAlignedCumulativelyAsFrozenSeed": 117,
+    "histogram": {
+      "reversal": {
+        "matchingAssignments": {
+          "8": 5,
+          "10": 16,
+          "12": 59,
+          "14": 92,
+          "16": 136,
+          "18": 114,
+          "20": 60,
+          "22": 24,
+          "24": 6
+        },
+        "cuesWithAtLeastThreeOfFourMatching": {
+          "0": 36,
+          "1": 80,
+          "2": 145,
+          "3": 125,
+          "4": 84,
+          "5": 31,
+          "6": 11
+        },
+        "cuesWithAllFourMatching": {
+          "0": 296,
+          "1": 149,
+          "2": 56,
+          "3": 8,
+          "4": 2,
+          "5": 1
+        }
+      },
+      "cumulativeTargetHistory": {
+        "matchingAssignmentsToFinalReversalTruth": {
+          "22": 4,
+          "24": 14,
+          "26": 31,
+          "28": 65,
+          "30": 94,
+          "32": 112,
+          "34": 75,
+          "36": 60,
+          "38": 38,
+          "40": 14,
+          "42": 5
+        },
+        "cuesWithAtLeastSixOfEightMatching": {
+          "0": 227,
+          "1": 155,
+          "2": 88,
+          "3": 31,
+          "4": 11
+        },
+        "cuesWithAllEightMatching": {
+          "0": 506,
+          "1": 6
+        }
+      }
+    }
+  }
+}

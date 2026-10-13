@@ -1,0 +1,9 @@
+# C01 all-legal teacher preflight v1
+
+2026-10-12. [Audit](audit.json) passes independent task-certificate replay for all **69 legal actions** on [four known six-piece software examples](examples.json). The blocked/open ray and pinned/unpinned defender examples each have balanced successful/failed capture probes; designated capture consequences reverse between counterparts. All examples are explicitly excluded from future training, validation and final splits. No graph, neural update or C01 advancement occurred.
+
+The [new domain](../../../.codebase/src/search-and-feedback/capture-retention-action-domain.mjs) delegates captures to the unchanged independent capture checker. Quiet actions receive a context-bound certificate that they do not perform this narrowly declared task, rather than an overall bad-move label. The audit rejects a forged quiet success and confirms incomplete reply coverage yields unknown/no teaching permission. [Five software test groups](../../../.codebase/tests/search-and-feedback/capture-retention-action-domain.test.mjs) additionally cover en passant, both actors, promotions and identical FEN with different histories; those five plus four legacy capture tests pass9/9.
+
+[Specification and remaining integrations](../../../documentation/design/puzzle-learning/capture-retention-all-legal-domain.md). The active G0 frozen source closure was not changed. C01 still needs temporal receiver/all-legal ranking integration, disjoint balanced family manifests, checkpoint/control/audit orchestration and a passed G0 prerequisite. Software labels alone are not learning or transfer evidence.
+
+Reproduce the static audit in a fresh copy/output package: [verify.mjs](verify.mjs) refuses overwriting its recorded results. Source and legal-engine hashes are saved in audit.json. Existing capture-only behavior and frozen protocols remain intact.
