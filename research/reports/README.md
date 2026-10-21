@@ -81,3 +81,5 @@ The conjoined-balanced association invocation completed during documentation rev
 - [Consequence-value readout: 2/2 taught choices; new-board feasibility rejected, full replay passes](consequence-value-feasibility-v1-2026-10-10/README.md).
 
 - [G0 shuffled-control schedule sensitivity (static only, 2026-10-12)](curriculum-g0-shuffle-control-diagnostic-2026-10-12/README.md)
+
+- [2026-10-19 training latency investigation](training-latency-2026-10-19/README.md): component evidence; whole-training comparison pending.

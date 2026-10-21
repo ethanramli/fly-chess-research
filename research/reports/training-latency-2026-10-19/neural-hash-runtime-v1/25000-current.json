@@ -1,0 +1,67 @@
+{
+  "scope": "Offline canonical state hashing; concurrent audit; not training speed",
+  "node": "v22.23.2",
+  "v8": "12.4.254.21-node.56",
+  "neurons": 134209,
+  "inputSha256": "de2450f83022449543438b98e35c6374c47171ef1b1212850011f32e25663ae8",
+  "canonicalSha256": "87c2fabdd130c9f7694393b2e2683eab78de016c44f1b2c23aa2b804aacf997b",
+  "canonicalBytes": 2815682,
+  "medianMs": 82.99150000000009,
+  "samples": [
+    {
+      "round": 0,
+      "elapsedMs": 52.00710000000004,
+      "cpuUs": 47000
+    },
+    {
+      "round": 1,
+      "elapsedMs": 77.39949999999999,
+      "cpuUs": 78000
+    },
+    {
+      "round": 2,
+      "elapsedMs": 93.78070000000002,
+      "cpuUs": 94000
+    },
+    {
+      "round": 3,
+      "elapsedMs": 83.5018,
+      "cpuUs": 94000
+    },
+    {
+      "round": 4,
+      "elapsedMs": 97.05970000000002,
+      "cpuUs": 78000
+    },
+    {
+      "round": 5,
+      "elapsedMs": 82.99150000000009,
+      "cpuUs": 62000
+    },
+    {
+      "round": 6,
+      "elapsedMs": 57.123800000000074,
+      "cpuUs": 63000
+    }
+  ],
+  "peakRssMiB": 74.65234375,
+  "minimumFreeMiB": 1033.0859375,
+  "command": {
+    "argv": [
+      "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\evaluation-and-performance\\profile-neural-state-hash.mjs",
+      "--input",
+      "runs\\g0-reversal-history-diagnostic-v1-resumed2\\checkpoint-025000.json.gz",
+      "--sha256",
+      "de2450f83022449543438b98e35c6374c47171ef1b1212850011f32e25663ae8",
+      "--out",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\training-latency-2026-10-19\\neural-hash-runtime-v1\\25000-current.json",
+      "--cpu-duty",
+      "0.5"
+    ],
+    "execArgv": [
+      "--max-old-space-size=256"
+    ]
+  },
+  "sourceSha256": "d53ac2bb7eca23292362a3b48fffda4265768c2eed2088f9707cc094a297b094"
+}

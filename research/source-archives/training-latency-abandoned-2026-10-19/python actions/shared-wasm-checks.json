@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "name": "shared-wasm-bounded-software-checks-v2",
+  "paused": true,
+  "paths": {"run": "research/reports/training-latency-2026-10-19/shared-wasm-v2"},
+  "state_file": "runs/python-actions/shared-wasm-checks-current.json",
+  "pins": {
+    "{run}/candidate-trainer.mjs": "75b1eb62c193224304a69dfa282527b0e60093ee9ee11953f023570465f4b2b9",
+    "{run}/candidate-accumulator.mjs": "f74e1f4238928b554cb152e44022c5fa38faa37a810aeea12a1924b3ab623cd6"
+  },
+  "artifacts": {},
+  "jobs": {
+    "equivalence": {"role": "check", "argv": ["node", "--max-old-space-size=256", "--test", "--test-concurrency=1", "{run}/equivalence.test.mjs"]},
+    "candidate-fixtures": {"role": "check", "argv": ["node", "--max-old-space-size=256", "--loader", "./{run}/candidate-test-loader.mjs", "--test", "--test-concurrency=1", ".codebase/tests/supervised-baselines/trainer.test.mjs", ".codebase/tests/runtime/sparse-accumulator.test.mjs", ".codebase/tests/puzzle-learning/temporal-feedback-session.test.mjs", ".codebase/tests/runtime/checkpoint-resume-fixture.test.mjs"]},
+    "candidate-lessons": {"role": "check", "argv": ["node", "--max-old-space-size=256", "--loader", "./{run}/candidate-test-loader.mjs", "--test", "--test-concurrency=1", ".codebase/tests/runtime/pipeline-lesson-fixture.test.mjs"]},
+    "candidate-recovery": {"role": "check", "argv": ["node", "--max-old-space-size=256", "--loader", "./{run}/candidate-test-loader.mjs", "--test", "--test-concurrency=1", "{run}/candidate-recovery.test.mjs"]}
+  }
+}

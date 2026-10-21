@@ -1,0 +1,44 @@
+{
+  "variants": {
+    "json6": {
+      "lessons": 24,
+      "neuralPresentations": 504,
+      "elapsedSeconds": 456.15875129999995,
+      "cpuSeconds": 348.218,
+      "forwardSeconds": 64.61356630000006,
+      "sleepSeconds": 116.17941709999953,
+      "checkpointPublicationSeconds": 224.33053150000003
+    },
+    "nativeZstd1": {
+      "lessons": 24,
+      "neuralPresentations": 504,
+      "elapsedSeconds": 184.726894,
+      "cpuSeconds": 114.516,
+      "forwardSeconds": 54.01517429999996,
+      "sleepSeconds": 76.52939999999994,
+      "checkpointPublicationSeconds": 28.642538100000216
+    }
+  },
+  "elapsedReduction": 0.5950381452212643,
+  "simulationReduction": 0.16402734916057538,
+  "coldInvocationSeconds": {
+    "json6": 500.8364282,
+    "nativeZstd1": 208.6533467
+  },
+  "setup": {
+    "json6": 2.3678784999999998,
+    "nativeZstd1": 2.3816962999999998
+  },
+  "timingContext": null,
+  "protocolSha256": "46fe50297e8b2080381d2d8a85d4687070eb9ca42b95c33c75dc9e1f4928cd21",
+  "auditSha256": "c0acca15327a6f4b00b5c30a6f1e6d787fc60594c54af29595b84876fdd13bd8",
+  "sourceSha256": "fc1148c63c05cd0411824404cfd45afda994195374bd5ce52b9af330fcfd3ba7",
+  "scope": "Complete historical lesson comparison, Node22 JSON versus Node26 native; no whole-study, scientific resume or learning-quality improvement claim",
+  "limitations": [
+    "Elapsed totals cover measured matched lessons, including their original pacing and durable evidence.",
+    "Simulation-only forward time excludes hashing, persistence, sleep and setup.",
+    "Phase timers can nest; do not add arbitrary phases.",
+    "Cold invocation includes warmup, setup and checks when separate runtime batches exist.",
+    "These lesson samples are not an observed duration for the entire curriculum."
+  ]
+}

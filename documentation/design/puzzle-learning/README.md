@@ -1,6 +1,7 @@
 # Puzzle-learning experiments
 
 - [Full principles curriculum: twelve cumulative stages, feedback and advancement gates](principles-curriculum.md): design complete; G0, receiver integrations and learning gates unpassed.
+- [Reusable Python curriculum commands](python-curriculum-actions.md): short launcher, editable step file, compact operational output; preserves gates and pauses.
 - [Plain-English curriculum and 13 October status](principles-curriculum-plain-english.md): meeting explanation, audited G0 reversal failure and unfinished follow-up.
 
 - [Interactive value-teaching math explainer](value-teaching-explainer.html): educational illustration of the proposed teaching signal, not an implemented or validated learner.

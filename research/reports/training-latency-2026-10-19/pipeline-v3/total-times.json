@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "json6": {
+      "lessons": 24,
+      "neuralPresentations": 504,
+      "elapsedSeconds": 476.41453770000004,
+      "cpuSeconds": 343.511,
+      "forwardSeconds": 76.16184139999844,
+      "sleepSeconds": 121.63082239999973,
+      "checkpointPublicationSeconds": 227.07328500000204
+    },
+    "nativeZstd1": {
+      "lessons": 24,
+      "neuralPresentations": 504,
+      "elapsedSeconds": 275.2934189,
+      "cpuSeconds": 160.903,
+      "forwardSeconds": 73.90838440000051,
+      "sleepSeconds": 119.5579821999995,
+      "checkpointPublicationSeconds": 31.406152399999772
+    }
+  },
+  "elapsedReduction": 0.4221557129027971,
+  "simulationReduction": 0.0295877431345557,
+  "coldInvocationSeconds": null,
+  "setup": {
+    "sharedProcessSetupSeconds": 2.0397549
+  },
+  "timingContext": {
+    "cleanExclusiveTiming": false,
+    "knownDisturbances": [
+      {
+        "kind": "oversized-repository-search",
+        "process": "rg.exe PID7424",
+        "description": "A mistaken numeric text search streamed several gigabytes during late round1. It is terminal; no graph process was stopped. Exact timing impact is unmeasured.",
+        "recordedUtc": "2026-10-19T07:04:30Z"
+      }
+    ],
+    "disposition": "Preserve every sample. Use independent decoding for integrity, but do not make a clean performance claim from this run or remove individual samples after observing timings.",
+    "nextComparison": "Separately registered fresh-process runtime comparison after this run and independent integrity audit finish."
+  },
+  "protocolSha256": "fd9d5a1d73f0b26b9b943072c9569ef3e71175bf95257ded62c92d7bf3551189",
+  "auditSha256": "84ef4eccba605dd5b6704fad5e9f7bcdfca7ac6e1379249000846b828ed68bf2",
+  "sourceSha256": "fc1148c63c05cd0411824404cfd45afda994195374bd5ce52b9af330fcfd3ba7",
+  "scope": "Historical complete-lesson engineering replay; no G0, transfer or time-to-success claim",
+  "limitations": [
+    "Elapsed totals cover measured matched lessons, including their original pacing and durable evidence.",
+    "Simulation-only forward time excludes hashing, persistence, sleep and setup.",
+    "Phase timers can nest; do not add arbitrary phases.",
+    "Cold invocation includes warmup, setup and checks when separate runtime batches exist.",
+    "These lesson samples are not an observed duration for the entire curriculum."
+  ]
+}

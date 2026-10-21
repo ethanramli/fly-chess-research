@@ -1,0 +1,885 @@
+{
+  "schema": "flychess-principles-curriculum-v1",
+  "created": "2026-10-11",
+  "status": "design-complete-not-experiment-ready",
+  "graphLaunchAuthorized": false,
+  "learnedStages": [],
+  "scope": "A full prerequisite-led curriculum specification. It does not claim implemented training, biological validation, positional value or reasoning.",
+  "prerequisites": {
+    "id": "G0",
+    "name": "Learning, retention and reversal handshake",
+    "status": "not-passed-for-this-curriculum",
+    "contexts": 8,
+    "acquisitionPresentations": 32,
+    "interferencePresentations": 16,
+    "reversalPresentations": 32,
+    "minCorrectContexts": 6,
+    "minControlAdvantageContexts": 2,
+    "epsilon": 1e-8,
+    "requires": [
+      "verified released neuron identities and supported anatomical eligibility",
+      "balanced independently checkable synthetic-contingency assay, separate from chess truth",
+      "association, interference retention and reversal in each of three distinct computational replicas",
+      "direction and output specificity against absent, matched-shuffled and disabled controls",
+      "exact reset/restoration and interrupted pending-frame recovery"
+    ]
+  },
+  "datasets": {
+    "perLesson": {
+      "train": {
+        "boards": 24,
+        "pairs": 12,
+        "families": 6
+      },
+      "validation": {
+        "boards": 16,
+        "pairs": 8,
+        "families": 4
+      },
+      "final": {
+        "boards": 64,
+        "pairs": 32,
+        "families": 8
+      }
+    },
+    "disjointBy": "structural family, causal relation composition and board/history identities; built-in symmetry equivalents remain in the same split",
+    "finalReadPolicy": "sealed until checkpoint selection; one primary evaluation only",
+    "requireEveryLegalActionCertified": true,
+    "unknownFinalPolicy": "invalid audit; no advancement, no silent replacement or denominator reduction",
+    "minimumCertifiedProbeActionsPerBoard": 2
+  },
+  "training": {
+    "replicas": 3,
+    "replicaContract": "Different frozen public-input projection seeds must actually change evoked neural responses. Identical unused-head seeds do not count as independent replicas.",
+    "blocks": 32,
+    "eventsPerBlock": 4,
+    "maxTeachingEventsPerLessonPerReplica": 128,
+    "blockComposition": [
+      "current training failed action",
+      "independently certified training successful alternative",
+      "earlier-principle training success rehearsal",
+      "earlier-principle training failure rehearsal"
+    ],
+    "firstLessonRehearsal": "different C01 training pair",
+    "outcomeBalancePerBlock": {
+      "success": 2,
+      "failure": 2
+    },
+    "checkpointBlocks": [
+      8,
+      16,
+      24,
+      32
+    ],
+    "checkpointSelection": "earliest checkpoint passing every validation criterion and earlier-principle retention; controls use the same block index",
+    "targetSelection": "informative arm's freshly reassessed training errors only; controls replay the complete identical experience schedule",
+    "rollbackInsidePrimaryTrajectory": false,
+    "unknownPolicy": "no event; log and stop the frozen block rather than silently drop it",
+    "conditions": [
+      "informative",
+      "absent",
+      "matched-shuffled",
+      "disabled"
+    ],
+    "shuffledContract": "Freeze permutation algorithm/seed before informative execution; construct yoked schedule before control replay. Preserve action/task/actor exposure, success/failure pulse totals and timing; break context-outcome contingency. Reject unbalanced strata.",
+    "assessmentContract": "Current TemporalFeedbackSession requires all-legal pre-teaching binding. Selective-decision plus separate diagnostic binding needs a new reviewed interface; do not bypass the existing assertion.",
+    "memory": "one continuous from-scratch lineage per condition/replica; accepted stage checkpoints continue; no per-lesson reinitialization"
+  },
+  "gates": {
+    "D1": {
+      "metric": "training useful choices",
+      "required": 22,
+      "total": 24
+    },
+    "D2": {
+      "metric": "validation useful choices at selection",
+      "required": 14,
+      "total": 16,
+      "perStratumRequired": 3,
+      "perStratumTotal": 4
+    },
+    "D3": {
+      "metric": "final unaided all-legal useful choices, every replica",
+      "required": 52,
+      "total": 64,
+      "perStratumRequired": 12,
+      "perStratumTotal": 16,
+      "perFamilyRequired": 6,
+      "perFamilyTotal": 8
+    },
+    "D4": {
+      "metric": "final consequence sign predictions on two certified probe actions per board",
+      "required": 104,
+      "total": 128,
+      "ties": "incorrect; not calibrated probabilities"
+    },
+    "D5": {
+      "metric": "both counterfactual boards correctly chosen",
+      "required": 26,
+      "total": 32,
+      "requiredProbeOrderingReversal": true
+    },
+    "D6": {
+      "metric": "final useful-choice advantage over scratch and each matched control",
+      "requiredAdditionalCorrect": 10,
+      "total": 64,
+      "confidence": "95 percent paired family-cluster bootstrap, 10000 resamples, seed 20261011; require positive lower bound for each comparison; report replica results separately"
+    },
+    "D7": {
+      "metric": "retention after 8 additional four-event blocks and after every later stage",
+      "newPrincipleRequired": 14,
+      "newPrincipleTotal": 16,
+      "earlierValidationCountMayFall": false,
+      "earlierTrainingSentinelsPerPrinciple": 4,
+      "allSentinelsMustRemainCorrect": true,
+      "scope": "computational interference retention, not biological elapsed-time retention"
+    },
+    "D8": {
+      "metric": "causal state/persistence/audit",
+      "requires": [
+        "remove latest-stage learned memory and lose acquired advantage",
+        "restore selected memory and recover identical predictions/rankings",
+        "fixed graph/topology/sign/readout identities unchanged",
+        "independent certificate and local update replay",
+        "exact pending-receipt recovery with no duplicated update",
+        "unaided and fixed-budget search reported separately"
+      ]
+    },
+    "extendedPosition": {
+      "requiredLessons": [
+        "C09",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "estimateMAEMax": 0.1,
+      "MAEImprovementOverEachControlMin": 0.05,
+      "scope": "calibration to pinned engine estimates, not true win probability",
+      "exactCriterionFloorsStillApply": true
+    },
+    "integratedPlay": {
+      "requiredLesson": "C12",
+      "openingPairs": 32,
+      "games": 64,
+      "maxPlies": 80,
+      "minDecisiveGamePairsWithInformativeAdvantage": 20,
+      "gamePointRateAdvantageOverEachControlMin": 0.15,
+      "unknownStoppedGamePolicy": "incomplete evaluation; do not label an unfinished game a draw",
+      "scope": "frozen mini-position/reference-policy pool, not Elo or general human-level strength"
+    }
+  },
+  "feedback": {
+    "F0": {
+      "name": "Certificate-bound root association",
+      "status": "implemented-engineering-not-validated-curriculum",
+      "learnerReceives": "public root board/action/task cue and bounded experimental PPL103 stimulus timing; never certificate text or a safe/unsafe input flag",
+      "referenceTiming": {
+        "cueFrame": 2,
+        "leadFrames": 2,
+        "tailFrames": 16,
+        "currentMax": 1.5
+      },
+      "success": "pulse at cueFrame minus leadFrames",
+      "failure": "pulse at cueFrame",
+      "memory": "RateTimingMemory eligible KC-to-MBON gains plus kcTrace/short/long; fixed graph signs/topology",
+      "teacherComputesNeuralDeltas": false,
+      "unknownProducesFrames": false
+    },
+    "F1": {
+      "name": "Verified sequence/root-credit learning",
+      "status": "requires-validation-and-task-specific-integration",
+      "learnerReceives": "bounded public transition frames and a declared outcome code; certificate scope, earlier choice binding and illustrative branch remain teacher-side",
+      "requires": "independent root and selected earlier-choice proofs, causal root-cue/credit ablation, matched root-only F0 comparator, validated within-budget credit timing",
+      "teacherComputesNeuralDeltas": false,
+      "unknownProducesFrames": false
+    },
+    "F2": {
+      "name": "Additional positional value-error teaching",
+      "status": "requires-defined-neural-output-and-reviewed-receiver; calibration-before-strategic-use",
+      "prediction": "Candidate-free position cue -> fixed reference-relative MBON ensemble contrast z -> p_child=(1+tanh(z))/2; orient to root actor as 1-p_child when the child side to move is the opponent. This is an uncalibrated candidate until gates pass; max over action preferences is not a position-value implementation.",
+      "target": "exact child board/history; actor-oriented (W + D/2)/1000 from pinned Stockfish estimates",
+      "engine": {
+        "threads": 1,
+        "hashMiB": 16,
+        "nodeBudgets": [
+          2000,
+          10000
+        ],
+        "maxTargetDisagreement": 0.1
+      },
+      "error": "Child-side target minus child-side frozen prediction for delivery. Root-actor target/prediction/error are also recorded, with complement/sign conversion when child turn is opponent.",
+      "delivery": "additional current 1.5*abs(error), clipped to 1.5, through a newly preregistered timing/pathway interface; sign must pass G0 direction/retention/reversal at graded doses",
+      "conditions": [
+        "outcome-only",
+        "outcome-plus-value",
+        "absent",
+        "matched-value-shuffled",
+        "disabled"
+      ],
+      "requiresCertifiedOutcomeAlongsideEstimate": true,
+      "teacherComputesNeuralDeltas": false,
+      "unknownTaskSuppressesAllTeaching": true,
+      "unknownEngineSuppressesOnlyAdditionalSignal": true
+    },
+    "F3": {
+      "name": "Independently replayed actual episode outcomes",
+      "status": "requires-episode-receipts-and-credit-validation",
+      "learnerReceives": "public actual trajectory plus declared terminal teaching; sampled opponent outcomes are not best-defense proofs",
+      "terminal": "verified legal checkmate/draw rules on complete history; max80-plies unfinished episode is unknown",
+      "credit": "earlier choice attribution needs certified counterfactual replay under a pinned reference policy and the episode-credit prerequisite",
+      "teacherComputesNeuralDeltas": false,
+      "unknownProducesFrames": false
+    }
+  },
+  "taskContracts": {
+    "capture-retention": {
+      "status": "existing-bounded-verifier",
+      "scope": "Existing verifier accepts captures only. Full-action task version must independently certify legal noncaptures as failure to perform the declared capture task, without calling them globally bad moves.",
+      "maxHorizon": 1
+    },
+    "forced-mate": {
+      "status": "existing-for-1-3-5-7-plies; 9 requires new version",
+      "scope": "attacker OR / defender AND complete bounded mate consequence",
+      "maxHorizon": 9
+    },
+    "bounded-material": {
+      "status": "new-independent-verifier-required",
+      "scope": "guarantee declared net nominal material delta by horizon while avoiding certified own checkmate; draws and terminal precedence are specified in the curriculum",
+      "defaultGainUnits": 1,
+      "maxHorizon": 9
+    },
+    "avoid-loss": {
+      "status": "new-independent-verifier-required",
+      "scope": "guarantee no own checkmate and material loss above declared tolerance through all required opponent replies",
+      "defaultLossToleranceUnits": 0,
+      "maxHorizon": 9
+    },
+    "promotion": {
+      "status": "new-independent-verifier-required",
+      "scope": "force declared pawn promotion by horizon under legal defensive replies; no assumption promotion wins",
+      "maxHorizon": 9
+    },
+    "position-estimate": {
+      "status": "additional-estimate-only",
+      "scope": "pinned multi-budget Stockfish child-position target; never a consequence certificate",
+      "maxHorizon": 9
+    },
+    "played-outcome": {
+      "status": "new-episode-certificate-required",
+      "scope": "actual legal terminal episode under declared reference policy; not unsampled best defense",
+      "maxHorizon": 80
+    }
+  },
+  "resources": {
+    "heapMiB": 256,
+    "cpuDuty": 0.5,
+    "maxRssMiB": 768,
+    "minFreeMiB": 256,
+    "graphRunsSerial": true,
+    "positionsAtOnce": 1,
+    "maxNeuralPresentationsPerPosition": 256,
+    "maxSelectedCandidates": 16,
+    "quietReserve": 4,
+    "maxSearchSimulations": 32,
+    "maxSearchEvaluations": 16,
+    "maxSearchDepth": 9,
+    "maxSearchNodes": 4096,
+    "maxSearchMilliseconds": 10000,
+    "maxProofNodesPerAction": 20000,
+    "maxProofMillisecondsPerAction": 5000,
+    "maxLegalReplies": 256,
+    "maxSequenceNeuralFrames": 32,
+    "maxLocalPlasticEdges": 2048,
+    "unknownIsNotDraw": true,
+    "deadlines": "soft across uninterruptible evaluator calls; memory guards between calls"
+  },
+  "capabilities": [
+    {
+      "id": "root-feedback",
+      "status": "implemented-engineering",
+      "path": ".codebase/src/puzzle-learning/temporal-feedback-session.mjs"
+    },
+    {
+      "id": "capture-certificate",
+      "status": "implemented-bounded",
+      "path": ".codebase/src/search-and-feedback/capture-retention-certificate.mjs"
+    },
+    {
+      "id": "mate-certificate",
+      "status": "implemented-bounded-1-3-5-7",
+      "path": ".codebase/src/search-and-feedback/mate-certificate.mjs"
+    },
+    {
+      "id": "relation-transfer",
+      "status": "failed-prior-gates",
+      "path": "research/reports/capture-retention-assay-v3-2026-10-07/README.md"
+    },
+    {
+      "id": "sequence-feedback",
+      "status": "partial-frames-not-accepted-learning",
+      "path": ".codebase/src/puzzle-learning/verified-lesson-frames.mjs"
+    },
+    {
+      "id": "root-credit",
+      "status": "requires-new-causal-validation",
+      "path": "documentation/design/puzzle-learning/verified-consequence-lessons.md"
+    },
+    {
+      "id": "material-certificate",
+      "status": "not-implemented",
+      "path": null
+    },
+    {
+      "id": "avoid-loss-certificate",
+      "status": "not-implemented",
+      "path": null
+    },
+    {
+      "id": "promotion-certificate",
+      "status": "not-implemented",
+      "path": null
+    },
+    {
+      "id": "position-value",
+      "status": "prototype-failed-unfamiliar-gate",
+      "path": "research/reports/consequence-value-feasibility-v1-2026-10-10/README.md"
+    },
+    {
+      "id": "graded-feedback",
+      "status": "isolated-adapter-unvalidated-graph",
+      "path": ".codebase/src/puzzle-learning/stockfish-value-brain.mjs"
+    },
+    {
+      "id": "episode-credit",
+      "status": "not-implemented",
+      "path": null
+    },
+    {
+      "id": "selective-coverage",
+      "status": "engineering-shortlist-only",
+      "path": ".codebase/src/search-and-feedback/delta-forcing-candidates.mjs"
+    },
+    {
+      "id": "quiet-coverage",
+      "status": "arbitrary-reserve-not-plan-aware",
+      "path": ".codebase/src/search-and-feedback/delta-forcing-candidates.mjs"
+    },
+    {
+      "id": "all-legal-task-domain",
+      "status": "new-task-domain-wrapper-required",
+      "path": null
+    }
+  ],
+  "principlesCoverage": {
+    "forcing moves": [
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06"
+    ],
+    "opponent moves and plans": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11",
+      "C12"
+    ],
+    "improve ineffective piece": [
+      "C07"
+    ],
+    "remove or compensate for weaknesses": [
+      "C09"
+    ],
+    "pieces working together": [
+      "C08"
+    ],
+    "restriction and prophylaxis": [
+      "C10"
+    ],
+    "pawn structure breaks exchanges endings": [
+      "C09",
+      "C11"
+    ],
+    "novel composition and selective calculation": [
+      "C12"
+    ]
+  },
+  "lessons": [
+    {
+      "id": "C01",
+      "principle": "Attack, defense and recapture",
+      "definition": "Whether an opponent can legally recapture the moved capturing piece depends on defenders, blockers and king constraints.",
+      "target": "Predict immediate recapturability and prefer retention when retention is the declared task.",
+      "positive": "Same capture survives every legal immediate reply because the defender is absent, its line is blocked, or an apparent defender is pinned and cannot legally recapture.",
+      "negative": "The otherwise similar capture allows a legal recapture by an available, unblocked and unpinned defender.",
+      "counterfactual": "Change one blocker or defender while retaining the capture identity and material, reversing recapturability.",
+      "opponent": "Enumerate the exact legal next replies; distinguish an available recapture from an obligation to recapture.",
+      "tasks": [
+        "capture-retention"
+      ],
+      "feedback": [
+        "F0"
+      ],
+      "done": "At least 12/16 on each of four strata: open defender, blocked defender, absent defender, pinned apparent defender; never interpret retention as universal move quality.",
+      "capabilities": [
+        "root-feedback",
+        "capture-certificate",
+        "relation-transfer",
+        "all-legal-task-domain"
+      ],
+      "maxPieces": 6,
+      "horizon": 1,
+      "order": 1,
+      "prerequisites": [
+        "G0"
+      ],
+      "status": "specified-not-trained",
+      "definitionOfDone": {
+        "commonGate": "D1-D8",
+        "specialization": "At least 12/16 on each of four strata: open defender, blocked defender, absent defender, pinned apparent defender; never interpret retention as universal move quality."
+      }
+    },
+    {
+      "id": "C02",
+      "principle": "King safety, check and mate",
+      "definition": "Check restricts legal replies; mate requires that no legal escape remains. A useful defense prevents a verified impending consequence.",
+      "target": "Distinguish check from mate and select a defense when a quiet improvement permits mate.",
+      "positive": "Certified mate-in-one, or a legal defensive move preventing every opponent mating continuation within the declared horizon.",
+      "negative": "A check has a quiet blocking/escaping defense; an attractive nondefensive move permits a certified mating reply.",
+      "counterfactual": "Change one escape square, supporting piece or interposition route so the same check or defense changes outcome.",
+      "opponent": "Include king escapes, captures of the checker, interpositions and quiet mating threats.",
+      "tasks": [
+        "forced-mate",
+        "avoid-loss"
+      ],
+      "feedback": [
+        "F0"
+      ],
+      "done": "At least 12/16 in each stratum: actual mate, escapable check, mandatory defense, misleading improving move; all success claims cover every required escape.",
+      "capabilities": [
+        "root-feedback",
+        "mate-certificate",
+        "avoid-loss-certificate",
+        "relation-transfer"
+      ],
+      "maxPieces": 6,
+      "horizon": 3,
+      "order": 2,
+      "prerequisites": [
+        "C01"
+      ],
+      "status": "specified-not-trained",
+      "definitionOfDone": {
+        "commonGate": "D1-D8",
+        "specialization": "At least 12/16 in each stratum: actual mate, escapable check, mandatory defense, misleading improving move; all success claims cover every required escape."
+      }
+    },
+    {
+      "id": "C03",
+      "principle": "Sound forcing moves and reply awareness",
+      "definition": "Checks, captures and threats are investigation priorities; soundness depends on what an opponent can force in response.",
+      "target": "Select a useful forcing candidate when one exists, and reject tempting forcing candidates refuted by forcing or quiet defense.",
+      "positive": "A check, capture or threat meets the fixed mate/material criterion against all required defenses.",
+      "negative": "A high-priority check loses the payoff, an apparently profitable capture is refuted, or a threat can be neutralized quietly.",
+      "counterfactual": "Preserve the surface forcing move while adding or removing a specific defensive resource.",
+      "opponent": "Include counterchecks, recaptures, queen trades and quiet refutations. Do not filter opponent moves to only forcing tags.",
+      "tasks": [
+        "forced-mate",
+        "bounded-material"
+      ],
+      "feedback": [
+        "F0",
+        "F1"
+      ],
+      "done": "At least 12/16 in each stratum: sound check, sound capture/threat, forcing refutation, quiet refutation; no check-priority score may supply the final answer.",
+      "capabilities": [
+        "root-feedback",
+        "sequence-feedback",
+        "mate-certificate",
+        "material-certificate",
+        "selective-coverage",
+        "relation-transfer"
+      ],
+      "maxPieces": 8,
+      "horizon": 3,
+      "order": 3,
+      "prerequisites": [
+        "C02"
+      ],
+      "status": "specified-not-trained",
+      "definitionOfDone": {
+        "commonGate": "D1-D8",
+        "specialization": "At least 12/16 in each stratum: sound check, sound capture/threat, forcing refutation, quiet refutation; no check-priority score may supply the final answer."
+      }
+    },
+    {
+      "id": "C04",
+      "principle": "Double threats and overloaded defense",
+      "definition": "Multiple targets matter only when the opponent cannot neutralize the consequences together; geometric double attacks alone do not prove a gain.",
+      "target": "Use forks and overworked defenders to obtain a guaranteed bounded payoff, while rejecting apparent forks that can be parried.",
+      "positive": "The opponent's legal defenses cannot save both relevant outcomes, producing a certified material gain or mate.",
+      "negative": "One reply trades the attacker, checks our king, or otherwise neutralizes both apparent threats.",
+      "counterfactual": "Add one defensive option or remove an overloaded duty so the double threat no longer wins.",
+      "opponent": "Look for combined defenses and counterattacks, not merely retreating one target.",
+      "tasks": [
+        "forced-mate",
+        "bounded-material"
+      ],
+      "feedback": [
+        "F1"
+      ],
+      "done": "At least 12/16 separately for real forks, apparent forks, overloaded defenders and defensive counterattacks; a count of attacked pieces cannot pass.",
+      "capabilities": [
+        "sequence-feedback",
+        "mate-certificate",
+        "material-certificate",
+        "relation-transfer"
+      ],
+      "maxPieces": 8,
+      "horizon": 5,
+      "order": 4,
+      "prerequisites": [
+        "C03"
+      ],
+      "status": "specified-not-trained",
+      "definitionOfDone": {
+        "commonGate": "D1-D8",
+        "specialization": "At least 12/16 separately for real forks, apparent forks, overloaded defenders and defensive counterattacks; a count of attacked pieces cannot pass."
+      }
+    },
+    {
+      "id": "C05",
+      "principle": "Lines, blockers and removal of defenders",
+      "definition": "Changing a blocker or defender changes which attacks and defensive resources are available.",
+      "target": "Choose a line-opening or defender-removing action because of its verified resulting consequence.",
+      "positive": "Opening a ray, a discovered attack, or removing a defender permits a certified payoff.",
+      "negative": "A remaining blocker, a second defender or an exposed own king prevents the same-looking plan.",
+      "counterfactual": "Move one blocker or substitute a defensive resource while preserving the candidate's local appearance.",
+      "opponent": "Include interposition, replacement defense, countercheck and recapture after defender removal.",
+      "tasks": [
+        "forced-mate",
+        "bounded-material"
+      ],
+      "feedback": [
+        "F1"
+      ],
+      "done": "At least 12/16 for opening a line, discovered attack, defender removal and replacement defense; removal of a piece is not sufficient evidence of causal usefulness.",
+      "capabilities": [
+        "sequence-feedback",
+        "mate-certificate",
+        "material-certificate",
+        "relation-transfer"
+      ],
+      "maxPieces": 8,
+      "horizon": 5,
+      "order": 5,
+      "prerequisites": [
+        "C04"
+      ],
+      "status": "specified-not-trained",
+      "definitionOfDone": {
+        "commonGate": "D1-D8",
+        "specialization": "At least 12/16 for opening a line, discovered attack, defender removal and replacement defense; removal of a piece is not sufficient evidence of causal usefulness."
+      }
+    },
+    {
+      "id": "C06",
+      "principle": "Move order, intermediate moves and sacrifices",
+      "definition": "An earlier concession can enable a later consequence; changing move order or support can invalidate it.",
+      "target": "Prefer a necessary intermediate move or supported sacrifice when its full declared consequence succeeds, and reject its unsound counterpart.",
+      "positive": "A certified sequence requires the preparatory action or concession before the payoff against all required replies.",
+      "negative": "Direct execution fails, an opponent intermediate move refutes the concession, or the later compensation is unavailable.",
+      "counterfactual": "Remove payoff support or change move order so the same concession fails at the same horizon.",
+      "opponent": "Search intermediate checks, declined sacrifices and defensive alternatives; accepting a sacrifice is not assumed.",
+      "tasks": [
+        "forced-mate",
+        "bounded-material"
+      ],
+      "feedback": [
+        "F1"
+      ],
+      "done": "At least 12/16 for necessary preparation, sound concession, unsound concession and opponent intermediate move. Credit root and later choices only with independent state/action certificates.",
+      "capabilities": [
+        "sequence-feedback",
+        "mate-certificate",
+        "material-certificate",
+        "root-credit",
+        "relation-transfer"
+      ],
+      "maxPieces": 8,
+      "horizon": 7,
+      "order": 6,
+      "prerequisites": [
+        "C05"
+      ],
+      "status": "specified-not-trained",
+      "definitionOfDone": {
+        "commonGate": "D1-D8",
+        "specialization": "At least 12/16 for necessary preparation, sound concession, unsound concession and opponent intermediate move. Credit root and later choices only with independent state/action certificates."
+      }
+    },
+    {
+      "id": "C07",
+      "principle": "Piece effectiveness and improving an ineffective piece",
+      "definition": "A piece is useful through its contextual attacking or defensive role, not simply its number of moves or nominal value.",
+      "target": "Activate a constrained piece, sometimes by moving a blocker or preparing a route, while preserving important duties.",
+      "positive": "A quiet action improves participation and enables a certified later payoff; alternative high-mobility moves do not.",
+      "negative": "A mobility increase has no useful consequence, abandons defense, or activates the wrong piece for the position.",
+      "counterfactual": "Change the relevant target or defensive duty so the same activation ceases to help.",
+      "opponent": "Include a timely attack on the abandoned duty and interference with the intended route.",
+      "tasks": [
+        "forced-mate",
+        "bounded-material",
+        "avoid-loss"
+      ],
+      "feedback": [
+        "F1"
+      ],
+      "done": "At least 12/16 for freeing a blocker, rerouting a piece, useless mobility and abandoned duty; include successful actions by a piece other than the ineffective piece.",
+      "capabilities": [
+        "sequence-feedback",
+        "mate-certificate",
+        "material-certificate",
+        "avoid-loss-certificate",
+        "root-credit",
+        "quiet-coverage",
+        "relation-transfer"
+      ],
+      "maxPieces": 8,
+      "horizon": 7,
+      "order": 7,
+      "prerequisites": [
+        "C06"
+      ],
+      "status": "specified-not-trained",
+      "definitionOfDone": {
+        "commonGate": "D1-D8",
+        "specialization": "At least 12/16 for freeing a blocker, rerouting a piece, useless mobility and abandoned duty; include successful actions by a piece other than the ineffective piece."
+      }
+    },
+    {
+      "id": "C08",
+      "principle": "Coordination and shared duties",
+      "definition": "Pieces can enable one another's consequences by support, access and complementary duties; redundant attacks need not improve the position.",
+      "target": "Develop coordinated participation rather than independently maximize each piece's activity.",
+      "positive": "Preparing support or access lets multiple pieces complete a certified consequence without losing an essential duty.",
+      "negative": "Redundant participation adds nothing, a support piece is removable, or coordination is achieved at the cost of an urgent defense.",
+      "counterfactual": "Remove one supporting relationship or change its legal availability so the coordinated plan fails.",
+      "opponent": "Include exchanges of supporters, interference and exploitation of overloaded own defenders.",
+      "tasks": [
+        "forced-mate",
+        "bounded-material",
+        "avoid-loss"
+      ],
+      "feedback": [
+        "F1"
+      ],
+      "done": "At least 12/16 for shared targets, support preparation, interference and redundant/unsafe coordination; supply paired support interventions, not only co-occurring activity.",
+      "capabilities": [
+        "sequence-feedback",
+        "mate-certificate",
+        "material-certificate",
+        "avoid-loss-certificate",
+        "root-credit",
+        "quiet-coverage",
+        "relation-transfer"
+      ],
+      "maxPieces": 8,
+      "horizon": 7,
+      "order": 8,
+      "prerequisites": [
+        "C07"
+      ],
+      "status": "specified-not-trained",
+      "definitionOfDone": {
+        "commonGate": "D1-D8",
+        "specialization": "At least 12/16 for shared targets, support preparation, interference and redundant/unsafe coordination; supply paired support interventions, not only co-occurring activity."
+      }
+    },
+    {
+      "id": "C09",
+      "principle": "Weaknesses, pawn structure and weak squares",
+      "definition": "A weakness is exploitable in context through available routes, targets and timing; structural labels alone do not determine value.",
+      "target": "Repair, defend, compensate for or exploit a weakness based on consequences, including exceptions to textbook structural preferences.",
+      "positive": "A defense or pressure plan changes a certified material/mating consequence, or improves the separately measured value target.",
+      "negative": "Repairing a pawn structure permits a greater loss; an isolated/doubled pawn is unexploitable or compensated by activity.",
+      "counterfactual": "Change access to the weak square or supporting route while leaving the superficial pawn classification unchanged.",
+      "opponent": "Include pawn breaks, exchanges of attackers and switching pressure to another target.",
+      "tasks": [
+        "forced-mate",
+        "bounded-material",
+        "avoid-loss",
+        "position-estimate"
+      ],
+      "feedback": [
+        "F1",
+        "F2"
+      ],
+      "done": "At least 12/16 for repair, exploitation, compensation and unexploitable apparent weakness; the extended positional value gate is required in addition to bounded task gates.",
+      "capabilities": [
+        "sequence-feedback",
+        "material-certificate",
+        "avoid-loss-certificate",
+        "position-value",
+        "graded-feedback",
+        "quiet-coverage",
+        "relation-transfer"
+      ],
+      "maxPieces": 10,
+      "horizon": 7,
+      "order": 9,
+      "prerequisites": [
+        "C08"
+      ],
+      "status": "specified-not-trained",
+      "definitionOfDone": {
+        "commonGate": "D1-D8",
+        "specialization": "At least 12/16 for repair, exploitation, compensation and unexploitable apparent weakness; the extended positional value gate is required in addition to bounded task gates."
+      }
+    },
+    {
+      "id": "C10",
+      "principle": "Restriction, prophylaxis and the opponent's plan",
+      "definition": "A move can be useful by preventing a consequential opponent plan even without an immediate attacking gain.",
+      "target": "Choose timely prevention when an opponent's verified threat outranks a tempting own improvement, and avoid unnecessary passive prevention.",
+      "positive": "A quiet restraining action denies an otherwise certified opponent payoff and preserves our counterplay.",
+      "negative": "An improving move ignores the threat, or prophylaxis addresses a nonexistent threat and permits a stronger opponent plan.",
+      "counterfactual": "Remove the opponent plan's prerequisite so the preventative move becomes unnecessary or wrong.",
+      "opponent": "Model future pawn breaks, activation routes, exchanges and quiet preparation in the actual legal child positions.",
+      "tasks": [
+        "avoid-loss",
+        "bounded-material",
+        "position-estimate"
+      ],
+      "feedback": [
+        "F1",
+        "F2"
+      ],
+      "done": "At least 12/16 for preventing a break, restricting a piece, unnecessary prophylaxis and competing threats; include changed-plan pairs where the preferred response reverses.",
+      "capabilities": [
+        "sequence-feedback",
+        "avoid-loss-certificate",
+        "material-certificate",
+        "position-value",
+        "graded-feedback",
+        "quiet-coverage",
+        "relation-transfer"
+      ],
+      "maxPieces": 10,
+      "horizon": 7,
+      "order": 10,
+      "prerequisites": [
+        "C09"
+      ],
+      "status": "specified-not-trained",
+      "definitionOfDone": {
+        "commonGate": "D1-D8",
+        "specialization": "At least 12/16 for preventing a break, restricting a piece, unnecessary prophylaxis and competing threats; include changed-plan pairs where the preferred response reverses."
+      }
+    },
+    {
+      "id": "C11",
+      "principle": "Pawn breaks, exchanges and endgame transitions",
+      "definition": "Irreversible changes alter access, king roles, pawn prospects and the value of preserving or exchanging pieces.",
+      "target": "Compare preparing a pawn break, trading into an ending and preserving tension according to the resulting consequences.",
+      "positive": "A prepared break, an appropriate exchange or king activation enables certified promotion/material/mate or a better declared position target.",
+      "negative": "The same exchange causes a draw or exposes the king; an unprepared break creates a decisive weakness; nominal simplification loses the useful plan.",
+      "counterfactual": "Change king activity, pawn support or an exchange partner so the same transition changes outcome.",
+      "opponent": "Include blockade, counterbreak, refusal of an exchange and promotion races.",
+      "tasks": [
+        "forced-mate",
+        "bounded-material",
+        "avoid-loss",
+        "promotion",
+        "position-estimate"
+      ],
+      "feedback": [
+        "F1",
+        "F2"
+      ],
+      "done": "At least 12/16 for prepared breaks, premature breaks, exchanges and king/pawn endings; favorable endgame labels require exact bounded evidence or an explicitly labeled estimate.",
+      "capabilities": [
+        "sequence-feedback",
+        "mate-certificate",
+        "material-certificate",
+        "avoid-loss-certificate",
+        "promotion-certificate",
+        "position-value",
+        "graded-feedback",
+        "quiet-coverage",
+        "relation-transfer"
+      ],
+      "maxPieces": 8,
+      "horizon": 9,
+      "order": 11,
+      "prerequisites": [
+        "C10"
+      ],
+      "status": "specified-not-trained",
+      "definitionOfDone": {
+        "commonGate": "D1-D8",
+        "specialization": "At least 12/16 for prepared breaks, premature breaks, exchanges and king/pawn endings; favorable endgame labels require exact bounded evidence or an explicitly labeled estimate."
+      }
+    },
+    {
+      "id": "C12",
+      "principle": "Compositional plans and selective adversarial investigation",
+      "definition": "Reusable relationships must be combined and revised in unfamiliar positions while both players pursue their own consequences.",
+      "target": "Select forcing or positional candidates, examine opposing refutations, combine learned relationships and abandon plans when their premises fail.",
+      "positive": "A held-out combination of mastered relationships yields a useful choice and a robust continuation under a fixed investigation budget.",
+      "negative": "A familiar-looking combination has a quiet refutation, or a memorized plan persists after its enabling relationship changes.",
+      "counterfactual": "Hold most of the plan constant while altering one learned prerequisite, reversing the appropriate action or plan.",
+      "opponent": "At every simulated ply retain forcing counterplay, necessary defense and quiet counterplans; widen unresolved candidate sets within the fixed budget.",
+      "tasks": [
+        "forced-mate",
+        "bounded-material",
+        "avoid-loss",
+        "promotion",
+        "position-estimate",
+        "played-outcome"
+      ],
+      "feedback": [
+        "F1",
+        "F2",
+        "F3"
+      ],
+      "done": "Pass all component strata and the integrated value/whole-episode gates; final combinations are absent from training, no lesson/motif answer tags reach the policy, and no engine query enters the learner evaluation function.",
+      "capabilities": [
+        "sequence-feedback",
+        "material-certificate",
+        "avoid-loss-certificate",
+        "promotion-certificate",
+        "position-value",
+        "graded-feedback",
+        "episode-credit",
+        "selective-coverage",
+        "quiet-coverage",
+        "relation-transfer"
+      ],
+      "maxPieces": 12,
+      "horizon": 9,
+      "order": 12,
+      "prerequisites": [
+        "C11"
+      ],
+      "status": "specified-not-trained",
+      "definitionOfDone": {
+        "commonGate": "D1-D8",
+        "specialization": "Pass all component strata and the integrated value/whole-episode gates; final combinations are absent from training, no lesson/motif answer tags reach the policy, and no engine query enters the learner evaluation function."
+      }
+    }
+  ],
+  "documents": {
+    "curriculum": "documentation/design/puzzle-learning/principles-curriculum.md",
+    "earlierDiscussion": "documentation/design/search-and-feedback/forcing-and-positional-curriculum.md",
+    "feedbackGate": "documentation/design/puzzle-learning/feedback-quality-gate.md"
+  }
+}

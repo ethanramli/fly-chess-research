@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "name": "exact-reuse-independent-audit-v1",
+  "paused": false,
+  "paths": {
+    "runner": ".codebase/scripts/evaluation-and-performance/audit-exact-reuse-latency.mjs",
+    "protocol": "research/data/exact-reuse-latency-v1/protocol.json",
+    "auditProtocol": "research/data/exact-reuse-latency-audit-v1/protocol.json",
+    "run": "research/reports/training-latency-2026-10-19/exact-reuse-latency-v1",
+    "runtime": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.cache\\latency-runtimes\\v26.12.0\\node.exe"
+  },
+  "state_file": "runs/python-actions/exact-reuse-latency-audit-current.json",
+  "pins": {
+    "{runner}": "8f6bf8dd2d24d52bd9089ef4b98557f482f454d4fb9b09413474f745b2f25d67",
+    "{protocol}": "8e7d7b989d1bbc5546c48333cb7368a18240886854aee32867f82ae1492ea775",
+    "{auditProtocol}": "52a4117a8e15763f963054999c7c105bb77c8781297773d2e4ab32bb34995fc3"
+  },
+  "artifacts": {
+    "audit": "{run}/timing-audit.json"
+  },
+  "jobs": {
+    "audit": {
+      "role": "audit",
+      "argv": [
+        "{runtime}",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--out",
+        "{run}",
+        "--protocol",
+        "{auditProtocol}",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{run}/batch-index.json",
+        "{run}/protocol.json"
+      ],
+      "refuse_existing": [
+        "{run}/timing-audit.json"
+      ]
+    }
+  }
+}

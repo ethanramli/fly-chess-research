@@ -17,3 +17,8 @@ Register externally sourced solutions before experimental use. Preserve source a
 - [Deep feedback-quality review: MiMo, Stockfish, Capablanca and neural learning](feedback-quality-deep-review-2026-10-08/README.md)
 
 - [Feedback specificity: separated cues plus current-error correction, primary biology and saved-receipt analysis; no training](feedback-specificity-2026-10-08/README.md)
+
+
+- [Training latency: serialization, compression, Wasm data ownership and audit recovery](training-latency-techniques-2026-10-19.md)
+
+- [V8 runtime candidate: canonical state-hash measurement and compatibility](../reports/training-latency-2026-10-19/neural-hash-runtime-v1/README.md)

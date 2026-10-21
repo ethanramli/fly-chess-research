@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "name": "runtime-latency-audit-software-checks",
+  "paused": true,
+  "paths": {"run": "research/data/training-latency-runtime-comparison-v1"},
+  "state_file": "runs/python-actions/runtime-audit-checks-current.json",
+  "pins": {},
+  "artifacts": {},
+  "jobs": {
+    "arithmetic": {"role": "check", "argv": ["node", "--max-old-space-size=256", "--test", "--test-reporter=tap", "--test-concurrency=1", ".codebase/tests/runtime/runtime-latency-audit.test.mjs"]}
+  }
+}

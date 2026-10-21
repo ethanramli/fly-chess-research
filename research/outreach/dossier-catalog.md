@@ -1,5 +1,9 @@
 # Expert dossier catalog
 
+## 13 October2026 referral addendum
+
+[Damon Clark](dossiers/additional/damon-clark.md): personally referred by McCurdy according to the researcher's meeting account; source-checked neural-computation reading brief. Introduction delivery and mentoring are unconfirmed. This is an addition to the historical inventory below, not a sent-email claim.
+
 **Verified inventory:** 2026-10-04  
 **Scope:** 78 unique people: the original 56, 14 additional researchers and eight professors with verified eLife research authorship. Across the current collection, 68 people have direct emails and forwarding/contact requests cover ten others, whose receipt remains unconfirmed. See [latest professor research and send log](campaigns/elife-professors-2026-10-04.md), [previous 14-person log](campaigns/sent-2026-10-04-expansion.md) and [original campaign](campaigns/sent-2026-10-04.md).
 

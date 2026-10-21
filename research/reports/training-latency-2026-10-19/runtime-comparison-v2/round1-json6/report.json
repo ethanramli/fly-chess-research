@@ -1,0 +1,1109 @@
+{
+  "schema": "training-latency-runtime-comparison-v1",
+  "scope": "Complete historical lesson comparison, Node22 JSON versus Node26 native; no whole-study, scientific resume or learning-quality improvement claim",
+  "variant": "json6",
+  "round": 1,
+  "exactHistoricalReceipts": true,
+  "samples": [
+    {
+      "stageId": "acquisition:prefix:informative",
+      "condition": "informative",
+      "lesson": 0,
+      "variant": "json6",
+      "round": 1,
+      "elapsedMs": 38767.8308,
+      "cpuUs": 27485000,
+      "cpuFraction": 0.7089640929819575,
+      "setupMs": 72.175900000002,
+      "phases": {
+        "memorySnapshot": {
+          "ms": 5.037800000049174,
+          "count": 63
+        },
+        "encoding": {
+          "ms": 3.620099999992817,
+          "count": 2
+        },
+        "csrCopies": {
+          "ms": 132.20409999997355,
+          "count": 21
+        },
+        "csrAccumulation": {
+          "ms": 3862.751899999974,
+          "count": 168
+        },
+        "forward": {
+          "ms": 6325.355199999991,
+          "count": 21
+        },
+        "sleep": {
+          "ms": 9452.656099999978,
+          "count": 21
+        },
+        "planVerification": {
+          "ms": 62.20279999997729,
+          "count": 21
+        },
+        "lessonStart": {
+          "ms": 5.528900000004796,
+          "count": 1
+        },
+        "episodeSnapshot": {
+          "ms": 976.290399999998,
+          "count": 40
+        },
+        "sessionSnapshot": {
+          "ms": 377.7931999999855,
+          "count": 21
+        },
+        "checkpointEncoding": {
+          "ms": 18499.873700000033,
+          "count": 84
+        },
+        "checkpointPublication": {
+          "ms": 19097.810300000034,
+          "count": 42
+        },
+        "receiptPublication": {
+          "ms": 107.23690000001079,
+          "count": 21
+        },
+        "localPlasticity": {
+          "ms": 41.59749999998894,
+          "count": 19
+        },
+        "sessionStep": {
+          "ms": 9236.961199999947,
+          "count": 19
+        },
+        "trajectoryHash": {
+          "ms": 27.37860000001092,
+          "count": 19
+        },
+        "lessonFinish": {
+          "ms": 4.370100000000093,
+          "count": 1
+        }
+      },
+      "finalStateHash": "6878d17b6db8988844685edfb38b37e867774b78877f30b3d4f2a3d373d45201",
+      "finalMemoryHash": "f892d4bdd7d988bbaae0764ebc3c5d8aaa35812b9fdadfd9766773b5b84edb5f",
+      "receipts": 21,
+      "lastCheckpoint": "research\\reports\\training-latency-2026-10-19\\runtime-comparison-v2\\round1-json6\\2-acquisition-prefix-informative-0-json6\\checkpoint-000047.json.gz",
+      "exactHistoricalReceipts": true,
+      "exactCheckpointState": true
+    },
+    {
+      "stageId": "acquisition:prefix:informative",
+      "condition": "informative",
+      "lesson": 1,
+      "variant": "json6",
+      "round": 1,
+      "elapsedMs": 42404.06300000001,
+      "cpuUs": 30282000,
+      "cpuFraction": 0.7141296813939738,
+      "setupMs": 114.48490000001038,
+      "phases": {
+        "memorySnapshot": {
+          "ms": 4.857700000007753,
+          "count": 63
+        },
+        "encoding": {
+          "ms": 2.175299999988056,
+          "count": 2
+        },
+        "csrCopies": {
+          "ms": 122.62209999996412,
+          "count": 21
+        },
+        "csrAccumulation": {
+          "ms": 4009.303500000009,
+          "count": 168
+        },
+        "forward": {
+          "ms": 6546.80829999999,
+          "count": 21
+        },
+        "sleep": {
+          "ms": 10115.428700000033,
+          "count": 21
+        },
+        "planVerification": {
+          "ms": 63.05239999995683,
+          "count": 21
+        },
+        "lessonStart": {
+          "ms": 4.997199999997974,
+          "count": 1
+        },
+        "episodeSnapshot": {
+          "ms": 1041.2376000000222,
+          "count": 40
+        },
+        "sessionSnapshot": {
+          "ms": 450.9344999999739,
+          "count": 21
+        },
+        "checkpointEncoding": {
+          "ms": 20995.121899999984,
+          "count": 84
+        },
+        "checkpointPublication": {
+          "ms": 21601.945699999982,
+          "count": 42
+        },
+        "receiptPublication": {
+          "ms": 129.3301000000065,
+          "count": 21
+        },
+        "localPlasticity": {
+          "ms": 46.92639999999665,
+          "count": 19
+        },
+        "sessionStep": {
+          "ms": 9564.432,
+          "count": 19
+        },
+        "trajectoryHash": {
+          "ms": 36.102199999950244,
+          "count": 19
+        },
+        "lessonFinish": {
+          "ms": 4.786500000001979,
+          "count": 1
+        }
+      },
+      "finalStateHash": "fa3989f6f7b9837cbffac7ea3f110f3a42b7e9f35bb2efdde249d4e24f9da0b5",
+      "finalMemoryHash": "9e3a959e73295ba442f0b449d7b6bd968380b8b0b18f39c8364ff77e8d6903f4",
+      "receipts": 21,
+      "lastCheckpoint": "research\\reports\\training-latency-2026-10-19\\runtime-comparison-v2\\round1-json6\\2-acquisition-prefix-informative-1-json6\\checkpoint-000089.json.gz",
+      "exactHistoricalReceipts": true,
+      "exactCheckpointState": true
+    },
+    {
+      "stageId": "acquisition:prefix:absent",
+      "condition": "absent",
+      "lesson": 0,
+      "variant": "json6",
+      "round": 1,
+      "elapsedMs": 39760.3033,
+      "cpuUs": 28751000,
+      "cpuFraction": 0.7231081660285021,
+      "setupMs": 108.83209999999963,
+      "phases": {
+        "memorySnapshot": {
+          "ms": 5.257999999914318,
+          "count": 63
+        },
+        "encoding": {
+          "ms": 3.6986000000033528,
+          "count": 2
+        },
+        "csrCopies": {
+          "ms": 129.05259999992268,
+          "count": 21
+        },
+        "csrAccumulation": {
+          "ms": 4020.9354999999778,
+          "count": 168
+        },
+        "forward": {
+          "ms": 6541.359199999948,
+          "count": 21
+        },
+        "sleep": {
+          "ms": 9927.142300000007,
+          "count": 21
+        },
+        "planVerification": {
+          "ms": 60.8798999999708,
+          "count": 21
+        },
+        "lessonStart": {
+          "ms": 8.12380000000121,
+          "count": 1
+        },
+        "episodeSnapshot": {
+          "ms": 941.8786999999429,
+          "count": 40
+        },
+        "sessionSnapshot": {
+          "ms": 410.4738999998808,
+          "count": 21
+        },
+        "checkpointEncoding": {
+          "ms": 18494.513299999948,
+          "count": 84
+        },
+        "checkpointPublication": {
+          "ms": 19040.38559999992,
+          "count": 42
+        },
+        "receiptPublication": {
+          "ms": 98.40849999996135,
+          "count": 21
+        },
+        "localPlasticity": {
+          "ms": 24.612399999969057,
+          "count": 19
+        },
+        "sessionStep": {
+          "ms": 9543.081999999908,
+          "count": 19
+        },
+        "trajectoryHash": {
+          "ms": 30.467000000018743,
+          "count": 19
+        },
+        "lessonFinish": {
+          "ms": 5.940000000002328,
+          "count": 1
+        }
+      },
+      "finalStateHash": "c639871ba40d83dc7691a136094014140b583a34504872384636b8b05a7cce86",
+      "finalMemoryHash": "3e4e99b07e71291d421cd49d405217095c762ae078a71058f835e85a9c0ffb01",
+      "receipts": 21,
+      "lastCheckpoint": "research\\reports\\training-latency-2026-10-19\\runtime-comparison-v2\\round1-json6\\2-acquisition-prefix-absent-0-json6\\checkpoint-001395.json.gz",
+      "exactHistoricalReceipts": true,
+      "exactCheckpointState": true
+    },
+    {
+      "stageId": "acquisition:prefix:absent",
+      "condition": "absent",
+      "lesson": 1,
+      "variant": "json6",
+      "round": 1,
+      "elapsedMs": 49731.236999999994,
+      "cpuUs": 34297000,
+      "cpuFraction": 0.6896470321057971,
+      "setupMs": 132.85839999999735,
+      "phases": {
+        "memorySnapshot": {
+          "ms": 6.655799999891315,
+          "count": 63
+        },
+        "encoding": {
+          "ms": 4.544199999974808,
+          "count": 2
+        },
+        "csrCopies": {
+          "ms": 151.30529999991995,
+          "count": 21
+        },
+        "csrAccumulation": {
+          "ms": 5173.14649999977,
+          "count": 168
+        },
+        "forward": {
+          "ms": 8169.597600000008,
+          "count": 21
+        },
+        "sleep": {
+          "ms": 11752.760899999994,
+          "count": 21
+        },
+        "planVerification": {
+          "ms": 82.85780000005616,
+          "count": 21
+        },
+        "lessonStart": {
+          "ms": 13.566300000005867,
+          "count": 1
+        },
+        "episodeSnapshot": {
+          "ms": 1297.6295999999857,
+          "count": 40
+        },
+        "sessionSnapshot": {
+          "ms": 636.2331000000704,
+          "count": 21
+        },
+        "checkpointEncoding": {
+          "ms": 24066.344100000075,
+          "count": 84
+        },
+        "checkpointPublication": {
+          "ms": 24790.29720000006,
+          "count": 42
+        },
+        "receiptPublication": {
+          "ms": 99.86649999994552,
+          "count": 21
+        },
+        "localPlasticity": {
+          "ms": 27.540400000027148,
+          "count": 19
+        },
+        "sessionStep": {
+          "ms": 11247.274599999946,
+          "count": 19
+        },
+        "trajectoryHash": {
+          "ms": 44.743500000069616,
+          "count": 19
+        },
+        "lessonFinish": {
+          "ms": 5.696200000005774,
+          "count": 1
+        }
+      },
+      "finalStateHash": "2a2fe2e445da63d9db6b4542b5158af7f8ef6db8070c85b40f93c8530b10ecb5",
+      "finalMemoryHash": "22f24bb213ff375fb1f3311222e32f378bc653317a52b989c133a47ce1439b61",
+      "receipts": 21,
+      "lastCheckpoint": "research\\reports\\training-latency-2026-10-19\\runtime-comparison-v2\\round1-json6\\2-acquisition-prefix-absent-1-json6\\checkpoint-001437.json.gz",
+      "exactHistoricalReceipts": true,
+      "exactCheckpointState": true
+    },
+    {
+      "stageId": "acquisition:prefix:disabled",
+      "condition": "disabled",
+      "lesson": 0,
+      "variant": "json6",
+      "round": 1,
+      "elapsedMs": 64632.672500000015,
+      "cpuUs": 40906000,
+      "cpuFraction": 0.6328997149235936,
+      "setupMs": 135.8172000000195,
+      "phases": {
+        "memorySnapshot": {
+          "ms": 7.876300000119954,
+          "count": 63
+        },
+        "encoding": {
+          "ms": 5.972399999998743,
+          "count": 2
+        },
+        "csrCopies": {
+          "ms": 450.80730000004405,
+          "count": 21
+        },
+        "csrAccumulation": {
+          "ms": 7911.564200000168,
+          "count": 168
+        },
+        "forward": {
+          "ms": 12466.797800000058,
+          "count": 21
+        },
+        "sleep": {
+          "ms": 14019.932599999913,
+          "count": 21
+        },
+        "planVerification": {
+          "ms": 99.16290000005392,
+          "count": 21
+        },
+        "lessonStart": {
+          "ms": 9.370800000004238,
+          "count": 1
+        },
+        "episodeSnapshot": {
+          "ms": 1594.0580999999074,
+          "count": 40
+        },
+        "sessionSnapshot": {
+          "ms": 703.2467999999935,
+          "count": 21
+        },
+        "checkpointEncoding": {
+          "ms": 30640.825499999977,
+          "count": 84
+        },
+        "checkpointPublication": {
+          "ms": 31454.32919999995,
+          "count": 42
+        },
+        "receiptPublication": {
+          "ms": 131.08659999995143,
+          "count": 21
+        },
+        "localPlasticity": {
+          "ms": 21.520499999984168,
+          "count": 19
+        },
+        "sessionStep": {
+          "ms": 17214.173200000107,
+          "count": 19
+        },
+        "trajectoryHash": {
+          "ms": 60.07259999998496,
+          "count": 19
+        },
+        "lessonFinish": {
+          "ms": 8.687099999981001,
+          "count": 1
+        }
+      },
+      "finalStateHash": "571758ff5599d4aeb829d9af2bbd49e7ac74d7be0741a90cc2c1547d75e3fd77",
+      "finalMemoryHash": "19293207d4e836ea1be6451310fa9771fed51803e03e8c2722212e20ad5944db",
+      "receipts": 21,
+      "lastCheckpoint": "research\\reports\\training-latency-2026-10-19\\runtime-comparison-v2\\round1-json6\\2-acquisition-prefix-disabled-0-json6\\checkpoint-002743.json.gz",
+      "exactHistoricalReceipts": true,
+      "exactCheckpointState": true
+    },
+    {
+      "stageId": "acquisition:prefix:disabled",
+      "condition": "disabled",
+      "lesson": 1,
+      "variant": "json6",
+      "round": 1,
+      "elapsedMs": 77669.14779999998,
+      "cpuUs": 45484000,
+      "cpuFraction": 0.585612193365665,
+      "setupMs": 209.95329999999376,
+      "phases": {
+        "memorySnapshot": {
+          "ms": 19.26109999982873,
+          "count": 63
+        },
+        "encoding": {
+          "ms": 7.721000000019558,
+          "count": 2
+        },
+        "csrCopies": {
+          "ms": 204.98050000006333,
+          "count": 21
+        },
+        "csrAccumulation": {
+          "ms": 9090.345200000098,
+          "count": 168
+        },
+        "forward": {
+          "ms": 14342.96419999993,
+          "count": 21
+        },
+        "sleep": {
+          "ms": 16197.429799999925,
+          "count": 21
+        },
+        "planVerification": {
+          "ms": 97.17210000019986,
+          "count": 21
+        },
+        "lessonStart": {
+          "ms": 9.122700000007171,
+          "count": 1
+        },
+        "episodeSnapshot": {
+          "ms": 1934.2752999999211,
+          "count": 40
+        },
+        "sessionSnapshot": {
+          "ms": 934.58450000023,
+          "count": 21
+        },
+        "checkpointEncoding": {
+          "ms": 38364.63599999994,
+          "count": 84
+        },
+        "checkpointPublication": {
+          "ms": 39243.95610000001,
+          "count": 42
+        },
+        "receiptPublication": {
+          "ms": 140.43230000004405,
+          "count": 21
+        },
+        "localPlasticity": {
+          "ms": 4.024800000130199,
+          "count": 19
+        },
+        "sessionStep": {
+          "ms": 20111.619999999937,
+          "count": 19
+        },
+        "trajectoryHash": {
+          "ms": 100.40720000007423,
+          "count": 19
+        },
+        "lessonFinish": {
+          "ms": 6.565400000021327,
+          "count": 1
+        }
+      },
+      "finalStateHash": "f341e509c4114edbaa3310c0b38586f79c30331f3fdd4a0042ea968b3b5afd52",
+      "finalMemoryHash": "19293207d4e836ea1be6451310fa9771fed51803e03e8c2722212e20ad5944db",
+      "receipts": 21,
+      "lastCheckpoint": "research\\reports\\training-latency-2026-10-19\\runtime-comparison-v2\\round1-json6\\2-acquisition-prefix-disabled-1-json6\\checkpoint-002785.json.gz",
+      "exactHistoricalReceipts": true,
+      "exactCheckpointState": true
+    },
+    {
+      "stageId": "acquisition:prefix:shuffled-20261011",
+      "condition": "shuffled",
+      "lesson": 0,
+      "variant": "json6",
+      "round": 1,
+      "elapsedMs": 63393.45260000002,
+      "cpuUs": 38859000,
+      "cpuFraction": 0.6129812844426143,
+      "setupMs": 182.57850000000326,
+      "phases": {
+        "memorySnapshot": {
+          "ms": 9.917999999888707,
+          "count": 63
+        },
+        "encoding": {
+          "ms": 5.232599999988452,
+          "count": 2
+        },
+        "csrCopies": {
+          "ms": 179.13160000008065,
+          "count": 21
+        },
+        "csrAccumulation": {
+          "ms": 7566.241999999795,
+          "count": 168
+        },
+        "forward": {
+          "ms": 11985.811000000162,
+          "count": 21
+        },
+        "sleep": {
+          "ms": 14263.258599999885,
+          "count": 21
+        },
+        "planVerification": {
+          "ms": 87.68020000000251,
+          "count": 21
+        },
+        "lessonStart": {
+          "ms": 10.932399999990594,
+          "count": 1
+        },
+        "episodeSnapshot": {
+          "ms": 1516.063099999912,
+          "count": 40
+        },
+        "sessionSnapshot": {
+          "ms": 615.2945000000182,
+          "count": 21
+        },
+        "checkpointEncoding": {
+          "ms": 29734.836200000078,
+          "count": 84
+        },
+        "checkpointPublication": {
+          "ms": 30641.349899999914,
+          "count": 42
+        },
+        "receiptPublication": {
+          "ms": 121.31029999995371,
+          "count": 21
+        },
+        "localPlasticity": {
+          "ms": 74.97550000005867,
+          "count": 19
+        },
+        "sessionStep": {
+          "ms": 16509.50869999989,
+          "count": 19
+        },
+        "trajectoryHash": {
+          "ms": 48.753400000045076,
+          "count": 19
+        },
+        "lessonFinish": {
+          "ms": 5.728000000002794,
+          "count": 1
+        }
+      },
+      "finalStateHash": "23734afdf26054345adf6b15eba3ca50a6451ac32bc8b4c28cdb4ca24760ef3c",
+      "finalMemoryHash": "9b2154a4c0e36204e607bc7bf4276e8b5ffe09246074b8b077645b9ec076e480",
+      "receipts": 21,
+      "lastCheckpoint": "research\\reports\\training-latency-2026-10-19\\runtime-comparison-v2\\round1-json6\\2-acquisition-prefix-shuffled-20261011-0-json6\\checkpoint-004091.json.gz",
+      "exactHistoricalReceipts": true,
+      "exactCheckpointState": true
+    },
+    {
+      "stageId": "acquisition:prefix:shuffled-20261011",
+      "condition": "shuffled",
+      "lesson": 1,
+      "variant": "json6",
+      "round": 1,
+      "elapsedMs": 58776.650999999954,
+      "cpuUs": 36063000,
+      "cpuFraction": 0.6135599661845318,
+      "setupMs": 355.84130000002915,
+      "phases": {
+        "memorySnapshot": {
+          "ms": 9.254100000136532,
+          "count": 63
+        },
+        "encoding": {
+          "ms": 20.28200000000652,
+          "count": 2
+        },
+        "csrCopies": {
+          "ms": 212.08730000001378,
+          "count": 21
+        },
+        "csrAccumulation": {
+          "ms": 7056.088200000173,
+          "count": 168
+        },
+        "forward": {
+          "ms": 11273.800199999823,
+          "count": 21
+        },
+        "sleep": {
+          "ms": 13679.087200000009,
+          "count": 21
+        },
+        "planVerification": {
+          "ms": 71.66789999976754,
+          "count": 21
+        },
+        "lessonStart": {
+          "ms": 17.447099999990314,
+          "count": 1
+        },
+        "episodeSnapshot": {
+          "ms": 1297.746700000076,
+          "count": 40
+        },
+        "sessionSnapshot": {
+          "ms": 598.9506000000983,
+          "count": 21
+        },
+        "checkpointEncoding": {
+          "ms": 26784.16620000056,
+          "count": 84
+        },
+        "checkpointPublication": {
+          "ms": 27587.460799999943,
+          "count": 42
+        },
+        "receiptPublication": {
+          "ms": 68.50549999979557,
+          "count": 21
+        },
+        "localPlasticity": {
+          "ms": 69.95800000004238,
+          "count": 19
+        },
+        "sessionStep": {
+          "ms": 15289.170299999998,
+          "count": 19
+        },
+        "trajectoryHash": {
+          "ms": 58.86389999993844,
+          "count": 19
+        },
+        "lessonFinish": {
+          "ms": 4.067600000009406,
+          "count": 1
+        }
+      },
+      "finalStateHash": "7e7450faf7a0bfb55a5ab4c4a79b23381238a06953c47b12b2056ff75050a99d",
+      "finalMemoryHash": "15ad170a1c3e1ce59a6820eceb5c5236a84d8ba7335c3dd8733f48f5bbe2580d",
+      "receipts": 21,
+      "lastCheckpoint": "research\\reports\\training-latency-2026-10-19\\runtime-comparison-v2\\round1-json6\\2-acquisition-prefix-shuffled-20261011-1-json6\\checkpoint-004133.json.gz",
+      "exactHistoricalReceipts": true,
+      "exactCheckpointState": true
+    },
+    {
+      "stageId": "acquisition:prefix:shuffled-20261014",
+      "condition": "shuffled",
+      "lesson": 0,
+      "variant": "json6",
+      "round": 1,
+      "elapsedMs": 54089.49310000002,
+      "cpuUs": 30782000,
+      "cpuFraction": 0.5690938893269086,
+      "setupMs": 135.54649999999674,
+      "phases": {
+        "memorySnapshot": {
+          "ms": 7.5915000004461035,
+          "count": 63
+        },
+        "encoding": {
+          "ms": 2.03449999995064,
+          "count": 2
+        },
+        "csrCopies": {
+          "ms": 202.60869999986608,
+          "count": 21
+        },
+        "csrAccumulation": {
+          "ms": 6790.6861999999965,
+          "count": 168
+        },
+        "forward": {
+          "ms": 10429.430100000056,
+          "count": 21
+        },
+        "sleep": {
+          "ms": 11678.870999999926,
+          "count": 21
+        },
+        "planVerification": {
+          "ms": 67.65950000000885,
+          "count": 21
+        },
+        "lessonStart": {
+          "ms": 13.212400000018533,
+          "count": 1
+        },
+        "episodeSnapshot": {
+          "ms": 1224.917199999909,
+          "count": 40
+        },
+        "sessionSnapshot": {
+          "ms": 660.6196999999229,
+          "count": 21
+        },
+        "checkpointEncoding": {
+          "ms": 25893.541099999915,
+          "count": 84
+        },
+        "checkpointPublication": {
+          "ms": 26669.7857000003,
+          "count": 42
+        },
+        "receiptPublication": {
+          "ms": 89.47849999985192,
+          "count": 21
+        },
+        "localPlasticity": {
+          "ms": 80.5482999998494,
+          "count": 19
+        },
+        "sessionStep": {
+          "ms": 14149.277800000214,
+          "count": 19
+        },
+        "trajectoryHash": {
+          "ms": 50.36619999993127,
+          "count": 19
+        },
+        "lessonFinish": {
+          "ms": 3.6795000000856817,
+          "count": 1
+        }
+      },
+      "finalStateHash": "bfc4e58dbb2f36d194c15bfc8154bad23426b904dcc5a14bac1ca62bb2261450",
+      "finalMemoryHash": "9b2154a4c0e36204e607bc7bf4276e8b5ffe09246074b8b077645b9ec076e480",
+      "receipts": 21,
+      "lastCheckpoint": "research\\reports\\training-latency-2026-10-19\\runtime-comparison-v2\\round1-json6\\2-acquisition-prefix-shuffled-20261014-0-json6\\checkpoint-005439.json.gz",
+      "exactHistoricalReceipts": true,
+      "exactCheckpointState": true
+    },
+    {
+      "stageId": "acquisition:prefix:shuffled-20261014",
+      "condition": "shuffled",
+      "lesson": 1,
+      "variant": "json6",
+      "round": 1,
+      "elapsedMs": 51966.533999999985,
+      "cpuUs": 31360000,
+      "cpuFraction": 0.603465299417506,
+      "setupMs": 226.72810000006575,
+      "phases": {
+        "memorySnapshot": {
+          "ms": 6.620800000615418,
+          "count": 63
+        },
+        "encoding": {
+          "ms": 21.103099999949336,
+          "count": 2
+        },
+        "csrCopies": {
+          "ms": 171.97979999985546,
+          "count": 21
+        },
+        "csrAccumulation": {
+          "ms": 6235.5601999996,
+          "count": 168
+        },
+        "forward": {
+          "ms": 9477.051600000006,
+          "count": 21
+        },
+        "sleep": {
+          "ms": 11151.634999999893,
+          "count": 21
+        },
+        "planVerification": {
+          "ms": 69.08190000010654,
+          "count": 21
+        },
+        "lessonStart": {
+          "ms": 5.390499999979511,
+          "count": 1
+        },
+        "episodeSnapshot": {
+          "ms": 1172.0840999992797,
+          "count": 40
+        },
+        "sessionSnapshot": {
+          "ms": 604.9278000001796,
+          "count": 21
+        },
+        "checkpointEncoding": {
+          "ms": 25243.71779999917,
+          "count": 84
+        },
+        "checkpointPublication": {
+          "ms": 25928.623400000622,
+          "count": 42
+        },
+        "receiptPublication": {
+          "ms": 73.42070000001695,
+          "count": 21
+        },
+        "localPlasticity": {
+          "ms": 80.57550000003539,
+          "count": 19
+        },
+        "sessionStep": {
+          "ms": 13289.58030000003,
+          "count": 19
+        },
+        "trajectoryHash": {
+          "ms": 40.95909999997821,
+          "count": 19
+        },
+        "lessonFinish": {
+          "ms": 4.385699999984354,
+          "count": 1
+        }
+      },
+      "finalStateHash": "997d257947e0ee94465b56be8be3aa838f9a8fe236d3355de13a466c573a851a",
+      "finalMemoryHash": "9dd399623a2b847da3df3a53a5fcf8650e3a596ddb2197278da5c92f22eef98a",
+      "receipts": 21,
+      "lastCheckpoint": "research\\reports\\training-latency-2026-10-19\\runtime-comparison-v2\\round1-json6\\2-acquisition-prefix-shuffled-20261014-1-json6\\checkpoint-005481.json.gz",
+      "exactHistoricalReceipts": true,
+      "exactCheckpointState": true
+    },
+    {
+      "stageId": "acquisition:prefix:shuffled-20261015",
+      "condition": "shuffled",
+      "lesson": 0,
+      "variant": "json6",
+      "round": 1,
+      "elapsedMs": 57689.57010000001,
+      "cpuUs": 34703000,
+      "cpuFraction": 0.6015472110443062,
+      "setupMs": 231.55289999989327,
+      "phases": {
+        "memorySnapshot": {
+          "ms": 7.153699999442324,
+          "count": 63
+        },
+        "encoding": {
+          "ms": 3.064799999934621,
+          "count": 2
+        },
+        "csrCopies": {
+          "ms": 174.05019999970682,
+          "count": 21
+        },
+        "csrAccumulation": {
+          "ms": 6628.948299999232,
+          "count": 168
+        },
+        "forward": {
+          "ms": 10191.654800000368,
+          "count": 21
+        },
+        "sleep": {
+          "ms": 12432.740099999704,
+          "count": 21
+        },
+        "planVerification": {
+          "ms": 81.58269999991171,
+          "count": 21
+        },
+        "lessonStart": {
+          "ms": 10.65460000000894,
+          "count": 1
+        },
+        "episodeSnapshot": {
+          "ms": 1332.8187000002945,
+          "count": 40
+        },
+        "sessionSnapshot": {
+          "ms": 676.6789999997709,
+          "count": 21
+        },
+        "checkpointEncoding": {
+          "ms": 28279.40120000008,
+          "count": 84
+        },
+        "checkpointPublication": {
+          "ms": 29037.457200000063,
+          "count": 42
+        },
+        "receiptPublication": {
+          "ms": 79.1680000006454,
+          "count": 21
+        },
+        "localPlasticity": {
+          "ms": 64.14910000003874,
+          "count": 19
+        },
+        "sessionStep": {
+          "ms": 14809.306699999957,
+          "count": 19
+        },
+        "trajectoryHash": {
+          "ms": 43.04079999984242,
+          "count": 19
+        },
+        "lessonFinish": {
+          "ms": 5.033800000092015,
+          "count": 1
+        }
+      },
+      "finalStateHash": "48f7cec2fa15c774a05b12bc5e761c9d0f562f684266da65b888f818e3b8d047",
+      "finalMemoryHash": "f892d4bdd7d988bbaae0764ebc3c5d8aaa35812b9fdadfd9766773b5b84edb5f",
+      "receipts": 21,
+      "lastCheckpoint": "research\\reports\\training-latency-2026-10-19\\runtime-comparison-v2\\round1-json6\\2-acquisition-prefix-shuffled-20261015-0-json6\\checkpoint-006787.json.gz",
+      "exactHistoricalReceipts": true,
+      "exactCheckpointState": true
+    },
+    {
+      "stageId": "acquisition:prefix:shuffled-20261015",
+      "condition": "shuffled",
+      "lesson": 1,
+      "variant": "json6",
+      "round": 1,
+      "elapsedMs": 69249.98920000007,
+      "cpuUs": 41265000,
+      "cpuFraction": 0.5958845694664738,
+      "setupMs": 250.92049999989104,
+      "phases": {
+        "memorySnapshot": {
+          "ms": 7.92809999990277,
+          "count": 63
+        },
+        "encoding": {
+          "ms": 7.805400000070222,
+          "count": 2
+        },
+        "csrCopies": {
+          "ms": 237.35869999986608,
+          "count": 21
+        },
+        "csrAccumulation": {
+          "ms": 7795.803400000907,
+          "count": 168
+        },
+        "forward": {
+          "ms": 12435.902799999807,
+          "count": 21
+        },
+        "sleep": {
+          "ms": 14679.741100000334,
+          "count": 21
+        },
+        "planVerification": {
+          "ms": 88.47130000009201,
+          "count": 21
+        },
+        "lessonStart": {
+          "ms": 27.287299999967217,
+          "count": 1
+        },
+        "episodeSnapshot": {
+          "ms": 1515.0793999998132,
+          "count": 40
+        },
+        "sessionSnapshot": {
+          "ms": 791.0331000000006,
+          "count": 21
+        },
+        "checkpointEncoding": {
+          "ms": 34222.166099999915,
+          "count": 84
+        },
+        "checkpointPublication": {
+          "ms": 35088.81660000037,
+          "count": 42
+        },
+        "receiptPublication": {
+          "ms": 79.98590000008699,
+          "count": 21
+        },
+        "localPlasticity": {
+          "ms": 107.56530000013299,
+          "count": 19
+        },
+        "sessionStep": {
+          "ms": 16870.64979999978,
+          "count": 19
+        },
+        "trajectoryHash": {
+          "ms": 60.718199999886565,
+          "count": 19
+        },
+        "lessonFinish": {
+          "ms": 5.592199999955483,
+          "count": 1
+        }
+      },
+      "finalStateHash": "27230307f5b2e905eec0a04923d19bf9e1b43b7557acde30203377d44d599cdd",
+      "finalMemoryHash": "9e3a959e73295ba442f0b449d7b6bd968380b8b0b18f39c8364ff77e8d6903f4",
+      "receipts": 21,
+      "lastCheckpoint": "research\\reports\\training-latency-2026-10-19\\runtime-comparison-v2\\round1-json6\\2-acquisition-prefix-shuffled-20261015-1-json6\\checkpoint-006829.json.gz",
+      "exactHistoricalReceipts": true,
+      "exactCheckpointState": true
+    }
+  ],
+  "setupSeconds": 3.2315669,
+  "graphSha256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+  "neurons": 134209,
+  "fixedStateHash": "48b93f75808fd192455b26cd4b7f91e12070f65f31c682761cc96cde9d6c8bb0",
+  "protocolHash": "46fe50297e8b2080381d2d8a85d4687070eb9ca42b95c33c75dc9e1f4928cd21",
+  "command": {
+    "argv": [
+      "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\evaluation-and-performance\\profile-g0-training-runtime-fixed.mjs",
+      "--protocol",
+      "research/data/training-latency-runtime-comparison-v2/protocol.json",
+      "--out",
+      "research/reports/training-latency-2026-10-19/runtime-comparison-v2/round1-json6",
+      "--variant",
+      "json6",
+      "--round",
+      "1",
+      "--cpu-duty",
+      "0.5"
+    ],
+    "execArgv": [
+      "--max-old-space-size=256"
+    ]
+  },
+  "node": "v22.23.2",
+  "v8": "12.4.254.21-node.56",
+  "runtimeSha256": "0d0f5e39f9f3d9587bc19f73eab3c2c9c4903fd02d6dbf9c853dd81b3d95fad4",
+  "sources": {
+    "research/data/g0-reversal-history-diagnostic-v1/protocol.json": "d3c06c715f5aa7eec5f570544648f76486fdc33dbb48c659860ee7a99a29c6fc",
+    "runs/g0-reversal-history-diagnostic-v1/receipts.jsonl": "3046fd8a5e785d307544065120eb8e3e0b5a70a77a9561e9c48ba4dc5ae42bc6",
+    ".codebase\\scripts\\evaluation-and-performance\\profile-g0-training-runtime.mjs": "d5e9b3bfa4b2ed7f90a0fbeaf3ac82789d8773fb20b2cef933974702fe827944",
+    ".codebase/src/runtime/checkpoint-codec.mjs": "31956d5985c25ca521c080ee716199d70761d2eacefc913afd3f375390a018ed",
+    ".codebase\\scripts\\evaluation-and-performance\\profile-g0-training-pipeline.mjs": "879a5766d05ee63213ddfffeb04fdf8aecb2ad4d22ae1999ddc0ff0bec539631",
+    "python actions\\prepare_runtime_latency.py": "d3b5f256f24e4e44bb437b25d3dbd71fd067281aaba3e56e42ca660eeb825662",
+    "research\\data\\training-latency-runtime-v1\\runtime.json": "127816f62da61f3b302e33911bc317ed28268b340a2a0f77c6809962646eddd6",
+    ".codebase/scripts/evaluation-and-performance/audit-training-latency.mjs": "23ef97160d3f85ebffe4251e1fd897886c258271729de260dfa31764b4abe0bb",
+    ".codebase/scripts/evaluation-and-performance/profile-g0-training-runtime-fixed.mjs": "10705b1e319fa9307b1ec6f3e548a98517360ea45da574ec1d7ba1314d4d298b",
+    "python actions/prepare_runtime_fixed_latency.py": "237326904843310b991ea63c8691ae7935b4ca181d84149e86997d2071443b92"
+  },
+  "presentations": 273,
+  "peakRssMiB": 203.453125,
+  "elapsedSeconds": 716.5492822,
+  "cpu": {
+    "user": 437875000,
+    "system": 17781000
+  },
+  "processUptimeSeconds": 718.2860334,
+  "processCpu": {
+    "user": 438437000,
+    "system": 17843000
+  },
+  "limitations": [
+    "Fixed historical comparison identity is retained in replay checkpoints; actual runtime is separately pinned here.",
+    "No cross-runtime scientific resume, G0, transfer or time-to-success claim.",
+    "Nested timers overlap; two rounds do not establish stable tail latency."
+  ]
+}

@@ -2,6 +2,11 @@
 
 Chronological implementation and experiment history. Pending statements are historical; use current status for latest audited conclusions.
 
+- [2026-10-20: G0 history replication on projection seed 20261012](2026-10-20-g0-history-replication.md)
+
+- [2026-10-19: G0 audit memory-guard failures and recovery](2026-10-19-g0-audit-memory-guard.md)
+- [2026-10-19: Python curriculum tooling, validation and development mistakes](2026-10-19-python-curriculum-actions.md)
+
 - [2026-10-09: Baseline-relative readout hypothesis test](2026-10-09-relative-readout-hypothesis.md)
 
 - [2026-09-30: From playable chess to a feedback-driven learning experiment](2026-09-30-feedback-and-conditioning.md)
@@ -76,3 +81,8 @@ Chronological implementation and experiment history. Pending statements are hist
 - [2026-10-09 cue width at matched total current](experiments/2026-10-09-cue-width-dose-hypothesis.md)
 
 - [2026-10-09 gamma2 adaptive cue-capacity test](2026-10-09-gamma2-adaptive-cue-capacity.md)
+
+- [2026-10-19 training latency investigation and mistakes](2026-10-19-training-latency.md).
+
+- [2026-10-20 registered-run babysitter and recovery-state mismatch](2026-10-20-registered-run-babysitter.md).
+- [2026-10-20 visual terminal report and lesson-boundary pause](2026-10-20-terminal-report-and-pause.md).

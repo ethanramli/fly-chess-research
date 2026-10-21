@@ -1,0 +1,12 @@
+{
+  "graphJobsSerial": true,
+  "hostConditionsStable": false,
+  "knownObservations": [
+    "The second Node22 baseline batch took substantially longer than the first on the identical twelve inputs.",
+    "During the middle and later batches, observed host free memory ranged down to roughly385-414MiB while sampled process RSS remained within768MiB and the configured free-memory floor remained256MiB.",
+    "A direct process inventory during the late baseline found only that graph job and the Codex CLI among Node processes. No competing graph job was observed.",
+    "The fresh-process timing window had no local test, bulk repository search or checkpoint-reuse analysis launched by this session. Small status/source/document operations continued."
+  ],
+  "cause": "Unresolved. These observations do not identify RAM pressure, CPU frequency, heat, scheduling, garbage collection or another cause.",
+  "interpretation": "Preserve all paired and per-round totals. Do not describe the pooled result as a stable device-wide constant or infer a specific environmental cause without evidence. Exact-state checks and independent audit remain required."
+}

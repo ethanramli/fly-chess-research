@@ -10,5 +10,7 @@ Researcher profile, project summary, source-checking guidance and mentor plannin
 - [Potential mentors and research hubs](mentor-contacts-and-research-hubs.md)
 - [FlyChess: one-page outreach summary](project-one-page-summary.md)
 - [13 October 2026: Meeting with Li Yan McCurdy](li-yan-mccurdy-meeting-2026-10-13.md)
+- [14 October 2026: One-page project draft for Damon Clark](damon-clark-one-page-brief-2026-10-14.md)
+- [Clark draft: source checks and evidence corrections](damon-clark-brief-evidence-2026-10-14.md)
 
 [Current research status](../../../documentation/current-status.md) · [Documentation guide](../../../documentation/README.md)

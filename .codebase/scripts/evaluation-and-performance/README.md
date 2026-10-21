@@ -30,3 +30,7 @@ Run from the repository root. Use the documented resource guards for experiments
 - [FlyBench runner](flybench.mjs) and [replay auditor](audit-flybench.mjs): [usage and limits](../../../documentation/design/evaluation-and-performance/flybench.md).
 
 - [Pinned Nova v3b raw-policy fetcher](fetch-nova.mjs) and FlyBench adapter: [scale, license, and runtime limits](../../../documentation/design/evaluation-and-performance/flybench.md#2026-10-10-nova-raw-policy-integration).
+
+- [Complete G0 teaching-lesson profiler](profile-g0-training-pipeline.mjs) and [offline checkpoint profiler](profile-training-persistence.mjs): [registration and limits](../../../research/reports/training-latency-2026-10-19/README.md).
+
+- [Accepted training latency result](../../../research/reports/training-latency-2026-10-19/accepted-result.md): retain the original trainer, native checkpoint codec and pinned Node26 runtime. Abandoned reuse/derived-checkpoint code and actions are preserved in the [source archive](../../../research/source-archives/training-latency-abandoned-2026-10-19/README.md), outside active code.

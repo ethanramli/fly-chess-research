@@ -216,3 +216,8 @@ The following journals are selected based on fit with the cognitive-science fram
 | Date | Decision | Reason | Approved |
 |---|---|---|---|
 | 2026-09-28 | Target journals: Cognitive Science (primary), eLife (secondary), Journal of Cognitive Neuroscience (tertiary). | Best fit for cognitive-science framing; strong editorial ethos for careful, reproducible, and intellectually honest research. | Researcher |
+
+
+## 2026-10-18: eLife model and portfolio correction
+
+The September eLife process description above is historical and superseded: current official pages describe editorial selection before review, Reviewed Preprints with public assessments, and an optional Version of Record. Earlier turnaround, fee, impact-factor and acceptance descriptions are not current verified promises. The researcher now explicitly targets eLife alongside multiple compatible research events; preserve the September preference as history. See [current venue and eligibility review](multi-venue-eligibility-2026-10-18.md) and its official sources. Exact minor-author, prior-dissemination and initial concurrent-journal-review terms need confirmation for the actual submission. No manuscript was submitted.

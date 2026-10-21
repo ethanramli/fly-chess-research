@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "protocol": "research/data/exact-reuse-latency-v1/protocol.json",
+  "run": "research/reports/training-latency-2026-10-19/exact-reuse-latency-v1",
+  "prerequisite": "research/reports/training-latency-2026-10-19/pipeline-v3/timing-audit.json",
+  "profiles": [
+    {
+      "id": "round0-nativeOriginal",
+      "config": "python actions/exact-reuse-latency-round0-nativeOriginal.json",
+      "sha256": "12bea9a647de4526ce6e22c294d344e92c5ff7b696706c4217321b732c23b32b"
+    },
+    {
+      "id": "round0-nativeReuse",
+      "config": "python actions/exact-reuse-latency-round0-nativeReuse.json",
+      "sha256": "5b8569e1ccc1722212b83872216352e5d61cbe73d53d18ee8da84d3bfc9d1add"
+    },
+    {
+      "id": "round1-nativeReuse",
+      "config": "python actions/exact-reuse-latency-round1-nativeReuse.json",
+      "sha256": "224fd96a5a0c5878b43f2a4196e21f7900709fa4884852c48dbd6d8647a68acb"
+    },
+    {
+      "id": "round1-nativeOriginal",
+      "config": "python actions/exact-reuse-latency-round1-nativeOriginal.json",
+      "sha256": "f3f02473bb287f9e5174aa831aa737c750e867cd397d333440199b698d51647f"
+    }
+  ],
+  "audit": {
+    "config": "python actions/exact-reuse-latency-audit.json",
+    "sha256": "08d37a9bb2233dfba9f3a55d80d1f7f4d34a689e25a112d50997927dcaf50a32"
+  },
+  "sources": {
+    ".codebase/scripts/evaluation-and-performance/profile-exact-reuse-latency.mjs": "9d6d86e48f55456d58361588a7652822d2e3bbd3f1fdb63e0f7a4f3ea86bbb8a",
+    ".codebase/scripts/evaluation-and-performance/audit-exact-reuse-publications.mjs": "6f2aa45af853070ebdd2356c2ce2df234a55ef87a3a3f38f56bef63e1c89e584",
+    ".codebase/scripts/evaluation-and-performance/audit-exact-reuse-latency.mjs": "8f6bf8dd2d24d52bd9089ef4b98557f482f454d4fb9b09413474f745b2f25d67",
+    "python actions/run_exact_reuse_latency.py": "cc64d685854f21087a945d092f47936079fb8deb8127bf72e03e62c161f04f2e",
+    "python actions/curriculum.py": "a5c1c095bad4512938f178ddf944698c3c11d8d7ef2cb501dd1d4066e5bb2dc6",
+    "python actions/run_latency_campaign.py": "7c157bbc0495f39be6fbcb0b7509a337a9339bacfc34313f0aa874d2a4fe6d0e",
+    "python actions/prepare_exact_reuse_latency.py": "b196a21cf0343c92290c2d242f6f31e08958122b59c301f9410dc6a34da3ddf6",
+    ".codebase/src/runtime/frame-reuse-cache.mjs": "baf117c453d656a41a4569bc44162efde5fc9e14e62867a483e3077a475c370e",
+    ".codebase/src/runtime/sparse-accumulator-masked-candidate.mjs": "d777ca7f635ad2bc08cfdbc1e8cc3f5bd4584b638149a3cba871cd5bdc392520",
+    ".codebase/src/supervised-baselines/trainer-reuse-candidate.mjs": "94ae05a0d1c8003fb977503266fc75e07917b13d8c194660898d91f64dbe137d",
+    "research/data/exact-reuse-latency-v1/protocol.json": "8e7d7b989d1bbc5546c48333cb7368a18240886854aee32867f82ae1492ea775",
+    "research/data/exact-reuse-latency-audit-v1/protocol.json": "52a4117a8e15763f963054999c7c105bb77c8781297773d2e4ab32bb34995fc3"
+  }
+}

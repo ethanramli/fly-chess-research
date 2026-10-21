@@ -1,0 +1,24 @@
+{
+  "scope": "Native encoding compatibility: Node26 writer/current Node22 metadata reader; no graph",
+  "writer": {
+    "node": "v26.12.0",
+    "bytes": 505605
+  },
+  "writerCommand": [
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\.cache\\latency-runtimes\\v26.12.0\\node.exe",
+    "--max-old-space-size=256",
+    "--input-type=module",
+    "-e",
+    "import{readFileSync,writeFileSync}from'node:fs';import{encodeNativeCheckpoint,decodeCheckpoint}from\"file:///C:/Users/ethan/Documents/fly-chess-research/.codebase/src/runtime/checkpoint-codec.mjs\";const state=decodeCheckpoint(readFileSync(\"C:\\\\Users\\\\ethan\\\\Documents\\\\fly-chess-research\\\\runs\\\\g0-reversal-history-diagnostic-v1-resumed2\\\\checkpoint-022000.json.gz\"));const data=encodeNativeCheckpoint(state);writeFileSync(\"C:\\\\Users\\\\ethan\\\\Documents\\\\fly-chess-research\\\\research\\\\reports\\\\training-latency-2026-10-19\\\\neural-hash-runtime-v1\\\\checkpoint-v26.checkpoint\",data,{flag:'wx'});console.log(JSON.stringify({node:process.version,bytes:data.length}));"
+  ],
+  "readerCommand": [
+    "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+    "--max-old-space-size=256",
+    ".codebase/scripts/runtime/inspect-checkpoint.mjs",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\training-latency-2026-10-19\\neural-hash-runtime-v1\\checkpoint-v26.checkpoint"
+  ],
+  "readerExitCode": 0,
+  "readerStdout": "{\"path\":\"C:\\\\Users\\\\ethan\\\\Documents\\\\fly-chess-research\\\\research\\\\reports\\\\training-latency-2026-10-19\\\\neural-hash-runtime-v1\\\\checkpoint-v26.checkpoint\",\"sha256\":\"3001e6bf80e64221be55bce5f630e58bed006746f072fbfc91d3c4efd3fc471a\",\"protocolHash\":\"d3c06c715f5aa7eec5f570544648f76486fdc33dbb48c659860ee7a99a29c6fc\",\"sequence\":22000,\"receiptCount\":10998,\"stage\":19,\"lesson\":9,\"logBytes\":16656430,\"chainHash\":\"b30ec8be7bab9d60f2f422b8ebf6664ff16b60361032b10a36a59182f40c813c\",\"pendingReceipt\":true,\"scope\":\"Parsed publication only; runner and independent recovery audit must verify continuity\"}\n",
+  "readerStderr": "",
+  "nativeSha256": "3001e6bf80e64221be55bce5f630e58bed006746f072fbfc91d3c4efd3fc471a"
+}

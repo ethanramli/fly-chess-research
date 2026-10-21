@@ -1,0 +1,19 @@
+# 2026-10-18: Multiple venues and publication eligibility
+
+## Researcher intent and personal inputs
+
+Researcher wants the same research disseminated across multiple high-quality events, alongside Earth Prize and an eventual eLife paper. Clarifies birth 22 January 2010, Singapore citizenship, residence/study in Indonesia and high-school graduation July 2028. These are self-reported eligibility inputs, not memory updates. Expected Damon Clark mentorship remains prospective, not confirmed by this work.
+
+## Advice corrections and source limitations
+
+- Earlier advice treated national research events as broadly available from Indonesia before knowing citizenship. ISPO's explicit Indonesian-citizenship condition excludes this researcher under the published rule; Singapore SSEF's MOE-school condition prevents assuming a route based only on Singapore citizenship. Do not promise ISEF entry until an affiliate confirms eligibility.
+- Earlier ICYS advice quoted the homepage's 14-18 range. The newer October 2025 regulation says secondary education, no university enrollment and no older than 19. Correct the age interpretation without assuming nomination. CYS describes the LPB-to-ICYS route but foreign-national eligibility and current deadlines are unresolved. Central next-edition content has stale labels; do not use its historical deadlines for 2027.
+- Earlier advice too broadly suggested choosing competitions as alternatives. The appropriate policy is multiple compatible events, with event-specific restrictions. SfN requires actual new progress; an abstract DOI is not itself a duplicate full journal publication. COSYNE explicitly says its summaries do not preclude later publication; this is not clearance for every simultaneous-review combination.
+- The historical September target-journal note describes eLife using an outdated post-review acceptance model. Current official pages describe editorial selection before review, then Reviewed Preprints with public assessments and optional Version of Record. Append a correction; preserve the old note. Main submission page USD 3,750 conflicts with alternate author FAQ USD 3,000; verify live fee rather than silently pick a quote. Exact initial simultaneous-journal-review clause and minor-author terms remain unverified because canonical guide/policy fetches hit access challenges. Historical 2020 pilots and old PDFs were excluded as current authority.
+- Some combined tool outputs truncated. Subsequent targeted fetches provided COSYNE, CNS and SfN policies and ICYS regulation passages. Guessed paths for COSYNE abstract submission and CNS FAQ failed; actual COSYNE route was found and read. No missing URL was treated as a missing policy or permission. No source failure proves eligibility.
+
+## Outcome and proposed next step
+
+Prepared the [venue/eligibility matrix](../../../documentation/writing/multi-venue-eligibility-2026-10-18.md), with official URLs, dates, compatibility boundaries and unsent organizer questions. COSYNE deadline 18 October 23:59 AoE converts to 19 October 18:59 Jakarta; readiness must be judged against supported existing evidence. CNS*2027 and SfN are relevant later opportunities; ICYS/ISEF remain selection-route conditional. Earth Prize age/status fits, but environmental relevance still needs its own evidence. A computational fly-derived model is not a demonstration of reasoning in living flies or an energy-equivalent replacement for an LLM.
+
+No competition registration, organizer outreach, manuscript/abstract submission, graph execution, live process inspection, mechanism change, environmental claim or scientific gate promotion. Next: researcher confirms under-18/overseas-school and reuse policies using the prepared questions, with actual author consent and assistance disclosure. Preserve all existing failed research gates and final-test separation.

@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "name": "wasm-reuse-independent-audit-v2",
+  "paused": false,
+  "paths": {
+    "runner": ".codebase/scripts/evaluation-and-performance/audit-wasm-reuse-latency.mjs",
+    "protocol": "research/data/wasm-reuse-latency-v2/protocol.json",
+    "auditProtocol": "research/data/wasm-reuse-latency-audit-v2/protocol.json",
+    "run": "research/reports/training-latency-2026-10-19/wasm-reuse-latency-v2",
+    "runtime": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.cache\\latency-runtimes\\v26.12.0\\node.exe"
+  },
+  "state_file": "runs/python-actions/wasm-reuse-latency-audit-v2-current.json",
+  "pins": {
+    "{runner}": "766c0137ba49867791d3b406385f8d7244f964ba48b1181d7c1da57526dbcbb7",
+    "{protocol}": "f00f38643855967a1d6b67df2000f51b61d266f8203d2935253a5e4711b8084f",
+    "{auditProtocol}": "dd0ba4bf57f48108ba5bb2d37af1584f0121ad696f519fc3533622736cf9a606"
+  },
+  "artifacts": {
+    "audit": "{run}/timing-audit.json"
+  },
+  "jobs": {
+    "audit": {
+      "role": "audit",
+      "argv": [
+        "{runtime}",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--out",
+        "{run}",
+        "--protocol",
+        "{auditProtocol}",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{run}/batch-index.json",
+        "{run}/protocol.json"
+      ],
+      "refuse_existing": [
+        "{run}/timing-audit.json"
+      ]
+    }
+  }
+}

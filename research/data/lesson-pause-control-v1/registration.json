@@ -1,0 +1,55 @@
+{
+  "schema": "lesson-pause-control-v1",
+  "created": "2026-10-20",
+  "scope": "Explicit operational source variant: save/stop after a completed lesson; canonical neural/protocol/receipt identity remains for exact recovery. Actual execution source identity is separately archived and verified. No model, feedback, exposure or gate change.",
+  "variants": [
+    {
+      "canonical": ".codebase/scripts/neural-learning/run-g0-reversal-history-replication.mjs",
+      "adapted": ".codebase/scripts/neural-learning/run-g0-history-with-pause.mjs",
+      "edits": [
+        {
+          "anchor": "import assert from 'node:assert/strict';",
+          "replacement": "import assert from 'node:assert/strict';\nimport {recordPauseExecution,pauseAtLesson} from '../runtime/lesson-pause-control.mjs';"
+        },
+        {
+          "anchor": "'interrupt-after-pending':{type:'string'}",
+          "replacement": "'interrupt-after-pending':{type:'string'},'pause-file':{type:'string'}"
+        },
+        {
+          "anchor": "acknowledge();save();guard();",
+          "replacement": "acknowledge();save();guard();\nrecordPauseExecution(a);"
+        },
+        {
+          "anchor": "    publish('lesson',{stageId:stage.id,lesson:state.lesson-1,receipt});",
+          "replacement": "    publish('lesson',{stageId:stage.id,lesson:state.lesson-1,receipt});\n    pauseAtLesson(a,state,lastCheckpoint);"
+        }
+      ]
+    },
+    {
+      "canonical": "research/data/g0-reversal-history-replication-v1/audit.mjs",
+      "adapted": "research/data/lesson-pause-control-v1/audit.mjs",
+      "edits": [
+        {
+          "anchor": "import assert from 'node:assert/strict';",
+          "replacement": "import assert from 'node:assert/strict';\nimport {verifyPauseLineage,pauseAudit} from '../../../.codebase/scripts/runtime/lesson-pause-control.mjs';"
+        },
+        {
+          "anchor": "let peakRss=0,presentations=0,frames=0,lessons=0;",
+          "replacement": "verifyPauseLineage(out);\nlet peakRss=0,presentations=0,frames=0,lessons=0;"
+        },
+        {
+          "anchor": "assert.deepEqual(session.finish(),r.receipt);lessonIndex++;lessons++;",
+          "replacement": "assert.deepEqual(session.finish(),r.receipt);lessonIndex++;lessons++;\n    pauseAudit(out,join(out,'protocol.json'),lessons);"
+        }
+      ]
+    }
+  ],
+  "sources": {
+    ".codebase/scripts/neural-learning/run-g0-reversal-history-replication.mjs": "0101bb57eaadcc8231645d3afc3b2f43467946de61b0ebcbf5a6f4578908b60e",
+    "research/data/g0-reversal-history-replication-v1/audit.mjs": "53af15cd88f05da12350f947f564c75f52b5fa5fb96d85b55bd215e09df729d5",
+    ".codebase/scripts/neural-learning/run-g0-history-with-pause.mjs": "58e711d6fe0a837f3e687b6622cc8873a90afc756f752936b423cb98f0c04552",
+    "research/data/lesson-pause-control-v1/audit.mjs": "d67feba9e6b4b4f27b09b52a20237e1bcd2be930932e396fba308fac893e1d26",
+    ".codebase/scripts/runtime/lesson-pause-control.mjs": "2c790df7be84391d64c768e70bf863495d74630238cebe13e31ad8f956027c79"
+  },
+  "recovery": "Same saved physiological identity; complete new execution identity recorded in every run. Independent numerical replay plus operational-source and parent-publication verification required."
+}

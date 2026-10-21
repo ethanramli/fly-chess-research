@@ -2,6 +2,8 @@
 
 All commands below run from the repository root with Node 22 or newer. [Current research status](../documentation/current-status.md) distinguishes implementation from scientific results. Check for an active full-graph experiment before launching another.
 
+For repeated curriculum operations, prefer the [Python command interface](../documentation/design/puzzle-learning/python-curriculum-actions.md): `fly.cmd` wraps these same runners through an editable step file and keeps raw output in logs.
+
 | Folder | Contents |
 |---|---|
 | [scripts](scripts/README.md) | CLI runners, independent auditors, fetching and profiling |

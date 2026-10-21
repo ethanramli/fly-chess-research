@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "protocol": "research/data/wasm-reuse-latency-v2/protocol.json",
+  "run": "research/reports/training-latency-2026-10-19/wasm-reuse-latency-v2",
+  "prerequisite": "research/reports/training-latency-2026-10-19/exact-reuse-latency-v1/timing-audit.json",
+  "profiles": [
+    {
+      "id": "round0-nativeOriginal",
+      "config": "python actions/wasm-reuse-latency-round0-nativeOriginal-v2.json",
+      "sha256": "87d9b9808ec23d64dadc8b29521b404d2d6005eb603daa0b39e5990f82f2cb49"
+    },
+    {
+      "id": "round0-nativeReuse",
+      "config": "python actions/wasm-reuse-latency-round0-nativeReuse-v2.json",
+      "sha256": "7ff34ea9b6aeb0e68451de58b2e96f68c8ab90b7015017a78d7d53e64b4bceac"
+    },
+    {
+      "id": "round1-nativeReuse",
+      "config": "python actions/wasm-reuse-latency-round1-nativeReuse-v2.json",
+      "sha256": "8d19cf4479b7c76d461f1ed61c985086588a40598999880dc8bab0d05000e365"
+    },
+    {
+      "id": "round1-nativeOriginal",
+      "config": "python actions/wasm-reuse-latency-round1-nativeOriginal-v2.json",
+      "sha256": "f40e32ffe8d1781c63cabe6e7929e63c278870dfc73544a9f3f13c07f70dbdc4"
+    }
+  ],
+  "audit": {
+    "config": "python actions/wasm-reuse-latency-audit-v2.json",
+    "sha256": "cc64a56cced4b5ffd8de76dc843527c789ef26432dc340184e3468b5a6e1291a"
+  },
+  "sources": {
+    ".codebase/scripts/evaluation-and-performance/profile-wasm-reuse-latency.mjs": "731a6485a77503a2b111383e142e94e39a180e3f334bd1867abb7522d7d3277a",
+    ".codebase/scripts/evaluation-and-performance/audit-wasm-reuse-latency.mjs": "766c0137ba49867791d3b406385f8d7244f964ba48b1181d7c1da57526dbcbb7",
+    "python actions/run_wasm_reuse_latency.py": "c5e37f81b8ec32e15e166ac22e42a3a1b5a2490d3f95ccfaa1b5859cf6153e76",
+    "python actions/prepare_wasm_reuse_latency.py": "03551a453d2278ecc52075e38eb54dbd980963235980bb7f5f3dc1df747c6128",
+    ".codebase/src/runtime/sparse-accumulator-reuse-wasm-candidate.mjs": "150e7e4a25325b2d75cde3a2f449f9f1fa3b92a19576d68fd2df7cfd04c47826",
+    ".codebase/src/runtime/frame-reuse-cache-wasm-candidate.mjs": "3d5f97b50a8aeb28cf8ae489332d89a6e5053f9f7eda076624300a3a50251f07",
+    ".codebase/src/supervised-baselines/trainer-reuse-wasm-candidate.mjs": "964ce24cfa5d321ba98c16f022702f201cc04f6c9bc4e9935a7580689159e3eb",
+    "python actions/prepare_wasm_reuse_candidate.py": "2da26ccc2dc970607573eb060ebce0a0e57e118ac997342a9a315c57499ab360",
+    "research/data/wasm-reuse-latency-v2/protocol.json": "f00f38643855967a1d6b67df2000f51b61d266f8203d2935253a5e4711b8084f",
+    "research/data/wasm-reuse-latency-audit-v2/protocol.json": "dd0ba4bf57f48108ba5bb2d37af1584f0121ad696f519fc3533622736cf9a606",
+    ".codebase/scripts/evaluation-and-performance/audit-exact-reuse-publications.mjs": "6f2aa45af853070ebdd2356c2ce2df234a55ef87a3a3f38f56bef63e1c89e584",
+    "python actions/curriculum.py": "a5c1c095bad4512938f178ddf944698c3c11d8d7ef2cb501dd1d4066e5bb2dc6",
+    "python actions/run_latency_campaign.py": "7c157bbc0495f39be6fbcb0b7509a337a9339bacfc34313f0aa874d2a4fe6d0e"
+  }
+}

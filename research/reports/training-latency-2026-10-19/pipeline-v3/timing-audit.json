@@ -1,0 +1,46 @@
+{
+  "integrityPassed": true,
+  "timingPassed": false,
+  "gates": {
+    "exactReceiptsAndStates": true,
+    "perCondition": false,
+    "pooled": false
+  },
+  "perCondition": {
+    "acquisition:prefix:informative": 0.3677880473791931,
+    "acquisition:prefix:absent": 0.43457657634241714,
+    "acquisition:prefix:disabled": 0.3935916024130496,
+    "acquisition:prefix:shuffled-20261011": 0.40664138429221774,
+    "acquisition:prefix:shuffled-20261014": 0.2985793524675656,
+    "acquisition:prefix:shuffled-20261015": 0.4212956805355716
+  },
+  "pooledReduction": 0.4221557129027972,
+  "checkpointPairs": 1050,
+  "checkpointsInspected": 2100,
+  "historicalReceiptsCompared": 525,
+  "protocolSha256": "d405fbebfef42ece08245829203101a964efc0cb0ae477c2549050a199b5d8ee",
+  "auditorSha256": "23ef97160d3f85ebffe4251e1fd897886c258271729de260dfa31764b4abe0bb",
+  "node": "v22.23.2",
+  "command": {
+    "argv": [
+      "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\evaluation-and-performance\\audit-training-latency.mjs",
+      "--out",
+      "research/reports/training-latency-2026-10-19/pipeline-v3",
+      "--protocol",
+      "research/data/training-latency-audit-v1/protocol.json",
+      "--cpu-duty",
+      "0.5"
+    ],
+    "execArgv": [
+      "--max-old-space-size=256"
+    ]
+  },
+  "peakRssMiB": 112.05859375,
+  "elapsedSeconds": 180.3306485,
+  "cpu": {
+    "user": 114235000,
+    "system": 12297000
+  },
+  "scope": "Independent decoding, every pending/acknowledged state, historical receipt-prefix and raw timing recomputation; no biological or reasoning claim."
+}

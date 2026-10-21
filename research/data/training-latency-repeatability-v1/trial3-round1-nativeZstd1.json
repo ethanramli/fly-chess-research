@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "name": "latency-repeatability-v1-trial3-round1-nativeZstd1",
+  "paused": false,
+  "paths": {
+    "protocol": "research/data/training-latency-runtime-comparison-v2/protocol.json",
+    "runner": ".codebase/scripts/evaluation-and-performance/profile-g0-training-runtime-fixed.mjs",
+    "run": "research/reports/training-latency-2026-10-19/repeatability-v1/trial3/round1-nativeZstd1",
+    "runtime": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.cache\\latency-runtimes\\v26.12.0\\node.exe"
+  },
+  "state_file": "runs/python-actions/latency-repeatability-v1-trial3-round1-nativeZstd1-current.json",
+  "pins": {
+    "{protocol}": "46fe50297e8b2080381d2d8a85d4687070eb9ca42b95c33c75dc9e1f4928cd21",
+    "{runner}": "10705b1e319fa9307b1ec6f3e548a98517360ea45da574ec1d7ba1314d4d298b"
+  },
+  "artifacts": {
+    "report": "{run}/report.json"
+  },
+  "jobs": {
+    "profile": {
+      "role": "train",
+      "argv": [
+        "{runtime}",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--protocol",
+        "{protocol}",
+        "--out",
+        "{run}",
+        "--variant",
+        "nativeZstd1",
+        "--round",
+        "1",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{protocol}",
+        "{runner}"
+      ],
+      "fresh_output": "{run}"
+    }
+  }
+}

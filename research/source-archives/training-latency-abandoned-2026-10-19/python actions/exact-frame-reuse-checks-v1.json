@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "name": "exact-frame-reuse-checks-v1",
+  "paused": false,
+  "paths": {
+    "run": "research/reports/training-latency-2026-10-19/exact-frame-reuse-v1",
+    "runtime": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.cache\\latency-runtimes\\v26.12.0\\node.exe"
+  },
+  "state_file": "runs/python-actions/exact-frame-reuse-checks-v1-current.json",
+  "pins": {
+    ".codebase/src/runtime/frame-reuse-cache.mjs": "baf117c453d656a41a4569bc44162efde5fc9e14e62867a483e3077a475c370e",
+    ".codebase/src/runtime/sparse-accumulator-masked-candidate.mjs": "d777ca7f635ad2bc08cfdbc1e8cc3f5bd4584b638149a3cba871cd5bdc392520",
+    ".codebase/src/supervised-baselines/trainer-reuse-candidate.mjs": "94ae05a0d1c8003fb977503266fc75e07917b13d8c194660898d91f64dbe137d",
+    ".codebase/tests/evaluation-and-performance/exact-frame-reuse.test.mjs": "3a9714a8e8fa28c8147c219be738bad1adc2a1e0bb33db983d25830b049057ae",
+    "research/reports/training-latency-2026-10-19/exact-frame-reuse-v1/candidate-episode.mjs": "ac8d2394c84744535668012bd6184f1f3865e5ca1732a3bb501fdd7cdb8324f3",
+    "research/reports/training-latency-2026-10-19/exact-frame-reuse-v1/candidate-test-loader.mjs": "b74028b6b893ad90012e0fc263b2099b0c94468e0955237a9b53b112bd35bbc0",
+    "research/reports/training-latency-2026-10-19/exact-frame-reuse-v1/candidate-recovery.test.mjs": "b2279d890ed8c5acba3f3f763802c1775ab3a4191e4a5d70cadc8bc36da3d62c"
+  },
+  "artifacts": {},
+  "jobs": {
+    "exact-check": {
+      "role": "check",
+      "argv": [
+        "{runtime}",
+        "--test",
+        "--test-reporter=tap",
+        ".codebase/tests/evaluation-and-performance/exact-frame-reuse.test.mjs"
+      ]
+    },
+    "math-regression": {
+      "role": "check",
+      "argv": [
+        "npm.cmd",
+        "test"
+      ]
+    },
+    "candidate-fixtures": {
+      "role": "check",
+      "argv": [
+        "{runtime}",
+        "--max-old-space-size=256",
+        "--loader",
+        "./research/reports/training-latency-2026-10-19/exact-frame-reuse-v1/candidate-test-loader.mjs",
+        "--test",
+        "--test-reporter=tap",
+        "--test-concurrency=1",
+        ".codebase/tests/supervised-baselines/trainer.test.mjs",
+        ".codebase/tests/puzzle-learning/temporal-feedback-session.test.mjs"
+      ]
+    },
+    "candidate-lessons": {
+      "role": "check",
+      "argv": [
+        "{runtime}",
+        "--max-old-space-size=256",
+        "--loader",
+        "./research/reports/training-latency-2026-10-19/exact-frame-reuse-v1/candidate-test-loader.mjs",
+        "--test",
+        "--test-reporter=tap",
+        "--test-concurrency=1",
+        ".codebase/tests/runtime/pipeline-lesson-fixture.test.mjs"
+      ]
+    },
+    "candidate-recovery": {
+      "role": "check",
+      "argv": [
+        "{runtime}",
+        "--max-old-space-size=256",
+        "--loader",
+        "./research/reports/training-latency-2026-10-19/exact-frame-reuse-v1/candidate-test-loader.mjs",
+        "--test",
+        "--test-reporter=tap",
+        "--test-concurrency=1",
+        "research/reports/training-latency-2026-10-19/exact-frame-reuse-v1/candidate-recovery.test.mjs"
+      ]
+    }
+  }
+}

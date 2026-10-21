@@ -312,3 +312,6 @@ Follow-up correction, 2026-10-10: changed the untested byte-buffer external-data
 - [2026-10-11: Stockfish-only calibration revision and preserved continuation mistakes](discussions/2026-10-11-stockfish-calibration-revision.md)
 
 - [2026-10-11: Curriculum G0 receiver continuation and inspection mistakes](experiments/2026-10-11-curriculum-g0-receiver.md)
+
+- [2026-10-20: Registered-run babysitter and recovery-state mismatch](experiments/2026-10-20-registered-run-babysitter.md)
+- [2026-10-20: Visual terminal report and lesson-boundary pause](experiments/2026-10-20-terminal-report-and-pause.md)

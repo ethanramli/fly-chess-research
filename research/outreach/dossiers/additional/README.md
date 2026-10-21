@@ -12,6 +12,7 @@ Historical research/contact material. Verify current sources before reuse; draft
 - [Christopher J. Potter](christopher-potter.md)
 - [Claire Eschbach](claire-eschbach.md)
 - [David Owald](david-owald.md)
+- [Damon Clark: McCurdy referral and relevant papers](damon-clark.md)
 - [Emmanuel Périsse](emmanuel-perisse.md)
 - [Ilona Grunwald Kadow](ilona-grunwald-kadow.md)
 - [Johannes Felsenberg](johannes-felsenberg.md)

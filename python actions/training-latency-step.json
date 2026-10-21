@@ -1,0 +1,115 @@
+{
+    "schema":  1,
+    "name":  "training-latency-v3",
+    "paused":  false,
+    "paths":  {
+                  "protocol":  "research/data/training-latency-v3/protocol.json",
+                  "runner":  ".codebase/scripts/evaluation-and-performance/profile-g0-training-pipeline.mjs",
+                  "run":  "research/reports/training-latency-2026-10-19/pipeline-v3",
+                  "auditor":  ".codebase/scripts/evaluation-and-performance/audit-training-latency.mjs",
+                  "auditProtocol":  "research/data/training-latency-audit-v1/protocol.json"
+              },
+    "pins":  {
+                 "{protocol}":  "fd9d5a1d73f0b26b9b943072c9569ef3e71175bf95257ded62c92d7bf3551189",
+                 "{runner}":  "879a5766d05ee63213ddfffeb04fdf8aecb2ad4d22ae1999ddc0ff0bec539631",
+                 "{auditor}":  "23ef97160d3f85ebffe4251e1fd897886c258271729de260dfa31764b4abe0bb",
+                 "{auditProtocol}":  "d405fbebfef42ece08245829203101a964efc0cb0ae477c2549050a199b5d8ee"
+             },
+    "state_file":  "runs/python-actions/training-latency-current.json",
+    "jobs":  {
+                 "profile":  {
+                                 "role":  "train",
+                                 "argv":  [
+                                              "node",
+                                              "--max-old-space-size=256",
+                                              "{runner}",
+                                              "--protocol",
+                                              "{protocol}",
+                                              "--out",
+                                              "{run}",
+                                              "--cpu-duty",
+                                              "0.5"
+                                          ],
+                                 "requires":  [
+                                                  "{protocol}",
+                                                  "{runner}"
+                                              ],
+                                 "fresh_output":  "{run}"
+                             },
+                 "codec-tests":  {
+                                     "role":  "check",
+                                     "argv":  [
+                                                  "node",
+                                                  "--test",
+                                                  "--test-concurrency=1",
+                                                  ".codebase/tests/runtime/checkpoint-codec.test.mjs",
+                                                  ".codebase/tests/runtime/checkpoint-resume-fixture.test.mjs"
+                                              ]
+                                 },
+                 "publication-tests":  {
+                                           "role":  "check",
+                                           "argv":  [
+                                                        "node",
+                                                        "--test",
+                                                        "--test-concurrency=1",
+                                                        ".codebase/tests/runtime/pipeline-publication.test.mjs"
+                                                    ]
+                                       },
+                 "lesson-tests":  {
+                                      "role":  "check",
+                                      "argv":  [
+                                                   "node",
+                                                   "--test",
+                                                   "--test-concurrency=1",
+                                                   ".codebase/tests/runtime/pipeline-lesson-fixture.test.mjs"
+                                               ]
+                                  },
+                 "timing-audit":  {
+                                      "role":  "audit",
+                                      "argv":  [
+                                                   "node",
+                                                   "--max-old-space-size=256",
+                                                   "{auditor}",
+                                                   "--out",
+                                                   "{run}",
+                                                   "--protocol",
+                                                   "{auditProtocol}",
+                                                   "--cpu-duty",
+                                                   "0.5"
+                                               ],
+                                      "requires":  [
+                                                       "{run}/report.json",
+                                                       "{run}/protocol.json",
+                                                       "{auditor}",
+                                                       "{auditProtocol}"
+                                                   ],
+                                      "refuse_existing":  [
+                                                              "{run}/timing-audit.json"
+                                                          ]
+                                  }
+             },
+    "observe":  {
+                    "job":  "profile",
+                    "pid":  0,
+                    "expected":  [
+                                     "{runner}",
+                                     "{run}"
+                                 ],
+                    "stdout":  "{run}.stdout.txt",
+                    "stderr":  "{run}.stderr.txt"
+                },
+    "artifacts":  {
+                      "report":  "{run}/report.json",
+                      "timing-audit":  "{run}/timing-audit.json"
+                  },
+    "report_fields":  [
+                          "passedTimingAndEquality",
+                          "gates",
+                          "perCondition",
+                          "pooledReduction",
+                          "presentations",
+                          "peakRssMiB",
+                          "elapsedSeconds",
+                          "limitations"
+                      ]
+}

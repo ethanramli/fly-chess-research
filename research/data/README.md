@@ -79,4 +79,12 @@ For each permitted dataset, document its origin, license/permission, date receiv
 
 - [G0 history diagnostic runner fixture v1](g0-history-runner-fixture-v1/README.md): frozen six-neuron software execution and recovery verification; in progress.
 
-- [G0 reversal history diagnostic v1](g0-reversal-history-diagnostic-v1/README.md): frozen connectome paired-memory diagnostic after fixture/recovery replay validation; execution launched.
+- [G0 reversal history diagnostic v1](g0-reversal-history-diagnostic-v1/README.md)
+- [G0 reversal history resource-wait audit v1](g0-reversal-history-audit-wait-v1/README.md): supplementary full replay preserving the original 256 MiB free-memory floor.: frozen connectome paired-memory diagnostic after fixture/recovery replay validation; execution launched.
+
+- [Portable V8/Node runtime candidate and pinned binary/license](training-latency-runtime-v1/README.md)
+
+- [Complete-lesson runtime comparison v2](training-latency-runtime-comparison-v2/README.md): separately registered, prepared and unlaunched.
+- [Independent runtime timing/publication checker](training-latency-runtime-audit-v1/README.md).
+
+- [Lesson pause operational version v1](lesson-pause-control-v1/README.md): declared execution-source additions for safe lesson stops, preserving canonical physiological/receipt identities.

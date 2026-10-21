@@ -1,0 +1,183 @@
+{
+  "schema": "training-latency-runtime-comparison-v1",
+  "baseProtocol": "research/data/g0-reversal-history-diagnostic-v1/protocol.json",
+  "recordedReceipts": "runs/g0-reversal-history-diagnostic-v1/receipts.jsonl",
+  "rounds": 2,
+  "duty": 0.5,
+  "maxPresentations": 1200,
+  "units": [
+    {
+      "stageId": "acquisition:prefix:informative",
+      "condition": "informative",
+      "lesson": 0,
+      "parent": "runs/g0-reversal-history-diagnostic-v1/checkpoint-000005.json.gz",
+      "parentSha256": "78b071386ed390454d292a19ce02bb34b44060901be3d31c68ff265f636807d2",
+      "firstReceipt": 2,
+      "receiptCount": 21
+    },
+    {
+      "stageId": "acquisition:prefix:informative",
+      "condition": "informative",
+      "lesson": 1,
+      "parent": "runs/g0-reversal-history-diagnostic-v1/checkpoint-000047.json.gz",
+      "parentSha256": "1cfa3fdac30a1099ff7edfbcf6322abbcce947777cb5854631745ad315dc1615",
+      "firstReceipt": 23,
+      "receiptCount": 21
+    },
+    {
+      "stageId": "acquisition:prefix:absent",
+      "condition": "absent",
+      "lesson": 0,
+      "parent": "runs/g0-reversal-history-diagnostic-v1/checkpoint-001353.json.gz",
+      "parentSha256": "15476ce7d468e4b8679cf0a5794de0639f2283fdf8e1819a8ee84fa5656657af",
+      "firstReceipt": 676,
+      "receiptCount": 21
+    },
+    {
+      "stageId": "acquisition:prefix:absent",
+      "condition": "absent",
+      "lesson": 1,
+      "parent": "runs/g0-reversal-history-diagnostic-v1/checkpoint-001395.json.gz",
+      "parentSha256": "3b8aef175a75470d84fc961fb574bb003f0be488c6fe4b568136c44125fab4ac",
+      "firstReceipt": 697,
+      "receiptCount": 21
+    },
+    {
+      "stageId": "acquisition:prefix:disabled",
+      "condition": "disabled",
+      "lesson": 0,
+      "parent": "runs/g0-reversal-history-diagnostic-v1/checkpoint-002701.json.gz",
+      "parentSha256": "b73127b090afc6ab1bfd40fc094f2f6d359bf7c2a6b4786290cc887067de1122",
+      "firstReceipt": 1350,
+      "receiptCount": 21
+    },
+    {
+      "stageId": "acquisition:prefix:disabled",
+      "condition": "disabled",
+      "lesson": 1,
+      "parent": "runs/g0-reversal-history-diagnostic-v1/checkpoint-002743.json.gz",
+      "parentSha256": "5c5e25fcee253e1f13f7bc316a7e7e845789a9d4ee00dd3a0c721bb43f604d55",
+      "firstReceipt": 1371,
+      "receiptCount": 21
+    },
+    {
+      "stageId": "acquisition:prefix:shuffled-20261011",
+      "condition": "shuffled",
+      "lesson": 0,
+      "parent": "runs/g0-reversal-history-diagnostic-v1/checkpoint-004049.json.gz",
+      "parentSha256": "c1dbb480e6f56b3bbcb8163eb7dd6f56338cca3d8924a58ce3c5a7601132ee12",
+      "firstReceipt": 2024,
+      "receiptCount": 21
+    },
+    {
+      "stageId": "acquisition:prefix:shuffled-20261011",
+      "condition": "shuffled",
+      "lesson": 1,
+      "parent": "runs/g0-reversal-history-diagnostic-v1/checkpoint-004091.json.gz",
+      "parentSha256": "ff36316f82d084969b5e194e8226fd82c828eba451f8a2801d0cf6cf04b76d71",
+      "firstReceipt": 2045,
+      "receiptCount": 21
+    },
+    {
+      "stageId": "acquisition:prefix:shuffled-20261014",
+      "condition": "shuffled",
+      "lesson": 0,
+      "parent": "runs/g0-reversal-history-diagnostic-v1/checkpoint-005397.json.gz",
+      "parentSha256": "955f79dd68f299b2c3608e51d097600dbe68dac4924060479bcc4a10867eb923",
+      "firstReceipt": 2698,
+      "receiptCount": 21
+    },
+    {
+      "stageId": "acquisition:prefix:shuffled-20261014",
+      "condition": "shuffled",
+      "lesson": 1,
+      "parent": "runs/g0-reversal-history-diagnostic-v1/checkpoint-005439.json.gz",
+      "parentSha256": "2724430db53f38d8f089dd03e5631db45040edbfc217263bb7217d251f2c11df",
+      "firstReceipt": 2719,
+      "receiptCount": 21
+    },
+    {
+      "stageId": "acquisition:prefix:shuffled-20261015",
+      "condition": "shuffled",
+      "lesson": 0,
+      "parent": "runs/g0-reversal-history-diagnostic-v1/checkpoint-006745.json.gz",
+      "parentSha256": "2ea048b6e7c64c6df647cf0ad058bba040d5765c0feb9c1f0b8f7bbd57170412",
+      "firstReceipt": 3372,
+      "receiptCount": 21
+    },
+    {
+      "stageId": "acquisition:prefix:shuffled-20261015",
+      "condition": "shuffled",
+      "lesson": 1,
+      "parent": "runs/g0-reversal-history-diagnostic-v1/checkpoint-006787.json.gz",
+      "parentSha256": "2666c323c92d31b676d1e163115861ce30fc8c357ceca76e1bf6873785cae0cb",
+      "firstReceipt": 3393,
+      "receiptCount": 21
+    }
+  ],
+  "sources": {
+    "research/data/g0-reversal-history-diagnostic-v1/protocol.json": "d3c06c715f5aa7eec5f570544648f76486fdc33dbb48c659860ee7a99a29c6fc",
+    "runs/g0-reversal-history-diagnostic-v1/receipts.jsonl": "3046fd8a5e785d307544065120eb8e3e0b5a70a77a9561e9c48ba4dc5ae42bc6",
+    ".codebase\\scripts\\evaluation-and-performance\\profile-g0-training-runtime.mjs": "d5e9b3bfa4b2ed7f90a0fbeaf3ac82789d8773fb20b2cef933974702fe827944",
+    ".codebase/src/runtime/checkpoint-codec.mjs": "31956d5985c25ca521c080ee716199d70761d2eacefc913afd3f375390a018ed",
+    ".codebase\\scripts\\evaluation-and-performance\\profile-g0-training-pipeline.mjs": "879a5766d05ee63213ddfffeb04fdf8aecb2ad4d22ae1999ddc0ff0bec539631",
+    "python actions\\prepare_runtime_latency.py": "d3b5f256f24e4e44bb437b25d3dbd71fd067281aaba3e56e42ca660eeb825662",
+    "research\\data\\training-latency-runtime-v1\\runtime.json": "127816f62da61f3b302e33911bc317ed28268b340a2a0f77c6809962646eddd6",
+    ".codebase/scripts/evaluation-and-performance/audit-training-latency.mjs": "23ef97160d3f85ebffe4251e1fd897886c258271729de260dfa31764b4abe0bb",
+    ".codebase/scripts/evaluation-and-performance/profile-g0-training-runtime-fixed.mjs": "10705b1e319fa9307b1ec6f3e548a98517360ea45da574ec1d7ba1314d4d298b",
+    "python actions/prepare_runtime_fixed_latency.py": "237326904843310b991ea63c8691ae7935b4ca181d84149e86997d2071443b92"
+  },
+  "gates": {
+    "minPerConditionElapsedReduction": 0.4,
+    "minPooledElapsedReduction": 0.45,
+    "exactReceiptsAndStates": true,
+    "minColdInvocationElapsedReduction": 0.45
+  },
+  "scope": "Complete historical lesson comparison, Node22 JSON versus Node26 native; no whole-study, scientific resume or learning-quality improvement claim",
+  "runtimes": {
+    "json6": {
+      "binary": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+      "sha256": "0d0f5e39f9f3d9587bc19f73eab3c2c9c4903fd02d6dbf9c853dd81b3d95fad4",
+      "node": "v22.23.2",
+      "v8": "12.4.254.21-node.56"
+    },
+    "nativeZstd1": {
+      "binary": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.cache\\latency-runtimes\\v26.12.0\\node.exe",
+      "sha256": "1a14457b043fe82fd2fc027959595e91d138a8185c7ca6c02c15c16632b51aa4",
+      "node": "v26.12.0",
+      "v8": "14.6.202.34-node.39"
+    }
+  },
+  "batches": [
+    {
+      "id": "round0-json6",
+      "variant": "json6",
+      "round": 0
+    },
+    {
+      "id": "round0-nativeZstd1",
+      "variant": "nativeZstd1",
+      "round": 0
+    },
+    {
+      "id": "round1-nativeZstd1",
+      "variant": "nativeZstd1",
+      "round": 1
+    },
+    {
+      "id": "round1-json6",
+      "variant": "json6",
+      "round": 1
+    }
+  ],
+  "expected": {
+    "batches": 4,
+    "measuredSamples": 48,
+    "casesWithWarmup": 52,
+    "presentations": 1092,
+    "checkpointPairs": 1092,
+    "checkpoints": 2184,
+    "historicalReceipts": 546
+  },
+  "historicalFixedParameterGate": "receipt0.baselines.fixed"
+}

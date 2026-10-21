@@ -1,0 +1,18 @@
+{
+  "schema": "shared-wasm-candidate-v1",
+  "scope": "isolated candidate; no graph timing or adoption",
+  "sources": {
+    ".codebase/src/supervised-baselines/trainer.mjs": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+    ".codebase/src/runtime/sparse-accumulator.mjs": "7a578b92a215aabf612d0c74899e9bff92054fe5d7d5b8e8f35f57ba0fd2ade9"
+  },
+  "candidate": {
+    "candidate-trainer.mjs": "75b1eb62c193224304a69dfa282527b0e60093ee9ee11953f023570465f4b2b9",
+    "candidate-accumulator.mjs": "0d1d6a333c0663e7c9be947fb96c85f05ac567e764e6718fdfaafaedc2471a30"
+  },
+  "invariants": [
+    "identical kernel bytes and serial summation",
+    "all histories and activities retained",
+    "topology copied per forward",
+    "fixed memory and owned histories only bypass scratch copy"
+  ]
+}

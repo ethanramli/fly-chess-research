@@ -1,0 +1,32 @@
+{
+  "schema": "g0-reversal-history-audit-wait-v1",
+  "created": "2026-10-19",
+  "parentRun": "runs/g0-reversal-history-diagnostic-v1-resumed2",
+  "parentResultSha256": "0afc65fa9dd93d39ccb935c8effdd68bdd864ed7642fa8ee4b502a62bd125670",
+  "parentProtocolSha256": "d3c06c715f5aa7eec5f570544648f76486fdc33dbb48c659860ee7a99a29c6fc",
+  "parentFrozenAuditorSha256": "51e7d73380153b930a75ab79299e65d2e4ae2a1fd75c54d8af3910477feb3ca9",
+  "auditorSha256": "e6f3292193e458471b7f38bd83ab2ddeb449fa52ae916b124ab3fe2ec41ae148",
+  "question": "Can the unchanged full diagnostic replay complete under transient host-memory pressure when it waits below the existing free-memory floor?",
+  "intervention": "Replace the frozen auditor guard assertion on os.freemem()<256MiB with a 1-second asynchronous wait loop before and after each replay step and during streamed hash reads. Preserve the 256MiB threshold, 768MiB RSS ceiling, presentation bound, 0.5 CPU duty, replay equations, certificates, gates, and publication behavior.",
+  "scope": "Read-only independent replay of an already completed diagnostic; cannot pass G0 or authorize C01.",
+  "failedAttempts": [
+    "runs/g0-reversal-history-diagnostic-v1-resumed2.audit-retry1.stderr.txt",
+    "runs/python-actions/20261019T025915-83e394a3/stderr.txt"
+  ],
+  "expectedCommand": [
+    "node",
+    "--max-old-space-size=256",
+    "research/data/g0-reversal-history-audit-wait-v1/audit.mjs",
+    "runs/g0-reversal-history-diagnostic-v1-resumed2",
+    "--cpu-duty",
+    "0.5"
+  ],
+  "resources": {
+    "maxOldSpaceMiB": 256,
+    "maxRssMiB": 768,
+    "minFreeMiB": 256,
+    "cpuDuty": 0.5,
+    "maxPresentations": 15481
+  },
+  "outcomeRule": "Accept only atomic audit.json after full receipt, certificate, recurrence, branch, wiring and original gate replay. A resource wait is not a scientific event. No publication or process exit remains incomplete/unknown."
+}

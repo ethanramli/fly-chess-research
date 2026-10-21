@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "name": "derived-checkpoint-candidate-v1",
+  "paused": false,
+  "paths": {
+    "runtime": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.cache\\latency-runtimes\\v26.12.0\\node.exe",
+    "run": "research/reports/training-latency-2026-10-19/derived-checkpoints-v1"
+  },
+  "state_file": "runs/python-actions/derived-checkpoint-checks-v1-current.json",
+  "pins": {
+    ".codebase/src/neural-learning/curriculum-g0-derived-candidate.mjs": "0118c6c99dc232c2096e642d127a8a5f03700701525d9a329ade531ebaef729c",
+    ".codebase/scripts/neural-learning/run-g0-history-derived-candidate.mjs": "790e576f0a013cf52d43461732f600a006e42a2c36b58220642271c98932939a",
+    ".codebase/src/puzzle-learning/derived-temporal-feedback-session-candidate.mjs": "0ccf865691ae1c1c1c9ae298bcda75a807a4c6fb5538ca21cf6f06d5ba979ab6",
+    ".codebase/src/neural-learning/derived-neural-episode-candidate.mjs": "1ca7a0e71fcc2b5290a8e4208528563884c11aa154643248afa8e43fca8741fd",
+    ".codebase/src/runtime/derived-checkpoint-codec-candidate.mjs": "b044cb2def9f4919dc636488f619a17d2e94b07c2e5a0c8677ef6379cd637a13",
+    ".codebase/src/puzzle-learning/temporal-feedback-session.mjs": "67a80a9edd59c25f5aa60eb4cab32048cb6052e309d54025ef70fdf2cdcca46c",
+    ".codebase/src/neural-learning/neural-episode.mjs": "8ebe1d5bf26e9648cd7b60137868ca5fd7ea3b838373f15d22c6b3415f20752e",
+    ".codebase/src/neural-learning/curriculum-g0.mjs": "627f91e764d6d4cb7ff3d6dd1729418b840228de43185d0a5b74845ea65ac997",
+    ".codebase/scripts/neural-learning/run-g0-reversal-history-diagnostic.mjs": "c49eadf124c265bbf03ddb8e29457ba6f1a24961c21826fd1ae63481167fc8a7",
+    "research/reports/training-latency-2026-10-19/derived-checkpoints-v1/equivalence.test.mjs": "985f86be0e253747be70c20506c28e3cbd6f23dd249e69e4a10befa9ec0c604c",
+    "python actions/prepare_derived_checkpoint_candidate.py": "eb55bd63e59ab190e1da7a21f836725ca27ab89c81847a015a0cfba4e0ba5e76"
+  },
+  "artifacts": {},
+  "jobs": {
+    "exact-check": {
+      "role": "check",
+      "argv": [
+        "{runtime}",
+        "--max-old-space-size=256",
+        "--test",
+        "--test-reporter=tap",
+        "--test-concurrency=1",
+        "research/reports/training-latency-2026-10-19/derived-checkpoints-v1/equivalence.test.mjs"
+      ]
+    },
+    "runner-syntax": {
+      "role": "check",
+      "argv": [
+        "{runtime}",
+        "--check",
+        ".codebase/scripts/neural-learning/run-g0-history-derived-candidate.mjs"
+      ]
+    },
+    "math-regression": {
+      "role": "check",
+      "argv": [
+        "npm.cmd",
+        "test"
+      ]
+    }
+  }
+}

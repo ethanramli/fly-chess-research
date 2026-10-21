@@ -1,0 +1,55 @@
+{
+  "variants": {
+    "json6": {
+      "lessons": 24,
+      "neuralPresentations": 504,
+      "elapsedSeconds": 913.8016641,
+      "cpuSeconds": 599.317,
+      "forwardSeconds": 160.4185762999999,
+      "sleepSeconds": 214.56406809999962,
+      "checkpointPublicationSeconds": 444.03695880000123
+    },
+    "nativeZstd1": {
+      "lessons": 24,
+      "neuralPresentations": 504,
+      "elapsedSeconds": 282.12719280000005,
+      "cpuSeconds": 162.532,
+      "forwardSeconds": 93.49888850000035,
+      "sleepSeconds": 121.57955280000013,
+      "checkpointPublicationSeconds": 31.398441400000113
+    }
+  },
+  "elapsedReduction": 0.6912599266517356,
+  "simulationReduction": 0.4171567242614881,
+  "coldInvocationSeconds": {
+    "json6": 987.2199232999999,
+    "nativeZstd1": 327.6996793
+  },
+  "setup": {
+    "json6": 4.7403246,
+    "nativeZstd1": 6.458950300000001
+  },
+  "timingContext": {
+    "graphJobsSerial": true,
+    "hostConditionsStable": false,
+    "knownObservations": [
+      "The second Node22 baseline batch took substantially longer than the first on the identical twelve inputs.",
+      "During the middle and later batches, observed host free memory ranged down to roughly385-414MiB while sampled process RSS remained within768MiB and the configured free-memory floor remained256MiB.",
+      "A direct process inventory during the late baseline found only that graph job and the Codex CLI among Node processes. No competing graph job was observed.",
+      "The fresh-process timing window had no local test, bulk repository search or checkpoint-reuse analysis launched by this session. Small status/source/document operations continued."
+    ],
+    "cause": "Unresolved. These observations do not identify RAM pressure, CPU frequency, heat, scheduling, garbage collection or another cause.",
+    "interpretation": "Preserve all paired and per-round totals. Do not describe the pooled result as a stable device-wide constant or infer a specific environmental cause without evidence. Exact-state checks and independent audit remain required."
+  },
+  "protocolSha256": "46fe50297e8b2080381d2d8a85d4687070eb9ca42b95c33c75dc9e1f4928cd21",
+  "auditSha256": "2ef15f704d00f1f54cba3ee2b7ad8d7b90e3008bf95a042685b0421df8932139",
+  "sourceSha256": "fc1148c63c05cd0411824404cfd45afda994195374bd5ce52b9af330fcfd3ba7",
+  "scope": "Complete historical lesson comparison, Node22 JSON versus Node26 native; no whole-study, scientific resume or learning-quality improvement claim",
+  "limitations": [
+    "Elapsed totals cover measured matched lessons, including their original pacing and durable evidence.",
+    "Simulation-only forward time excludes hashing, persistence, sleep and setup.",
+    "Phase timers can nest; do not add arbitrary phases.",
+    "Cold invocation includes warmup, setup and checks when separate runtime batches exist.",
+    "These lesson samples are not an observed duration for the entire curriculum."
+  ]
+}

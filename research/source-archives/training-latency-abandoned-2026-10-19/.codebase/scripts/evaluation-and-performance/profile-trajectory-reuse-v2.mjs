@@ -1,0 +1,237 @@
+// Exact historical teaching lessons, including their durable evidence and original pacing.
+import assert from 'node:assert/strict';
+import {readFileSync, createReadStream, mkdirSync, copyFileSync, writeFileSync, renameSync,
+  openSync, closeSync, fsyncSync, writeSync, statSync, truncateSync} from 'node:fs';
+import {join, dirname} from 'node:path';
+import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+import {parseArgs} from 'node:util';
+import {gzipSync} from 'node:zlib';
+import os from 'node:os';
+import {loadGraph, validateGraph} from '../../src/runtime/graph.mjs';
+import {streamRows} from '../../src/runtime/storage.mjs';
+import {SparseTrainer} from '../../src/supervised-baselines/trainer.mjs';
+import {digest} from '../../src/neural-learning/mushroom-body.mjs';
+import {fixedStateHash} from '../../src/neural-learning/association-validation.mjs';
+import {RateTimingMemory} from '../../src/neural-learning/rate-timing-memory.mjs';
+import {readConsequenceValue} from '../../src/neural-learning/consequence-value-readout.mjs';
+import {createG0Table, createG0Encoder, G0FeedbackSession} from '../../src/neural-learning/curriculum-g0.mjs';
+import {encodeNativeCheckpoint, decodeCheckpoint} from '../../src/runtime/checkpoint-codec.mjs';
+
+import {captureTrajectory, compareTrajectory} from './trajectory-reuse-observer.mjs';
+
+const {values: a} = parseArgs({options: {out: {type: 'string'}, protocol: {type: 'string'}, variant: {type: 'string'}, round: {type: 'string'}, 'cpu-duty': {type: 'string'}}});
+assert(a.out && a.protocol && a['cpu-duty'] === '0.5' && process.execArgv.includes('--max-old-space-size=256'));
+const json = path => JSON.parse(readFileSync(path, 'utf8').replace(/^\uFEFF/, ''));
+const processes = JSON.parse(execFileSync('powershell.exe', ['-NoProfile', '-Command',
+  "@(Get-CimInstance Win32_Process -Filter \"Name='node.exe'\" | Select-Object ProcessId,CommandLine) | ConvertTo-Json -Compress"],
+  {encoding: 'utf8', windowsHide: true, timeout: 15000}));
+assert(!(Array.isArray(processes) ? processes : [processes]).some(p => p.ProcessId !== process.pid &&
+  (!p.CommandLine || /(?:--cpu-duty\b|\.codebase[\\/]scripts[\\/]|research[\\/]reports.*[\\/](?:run[^\\/]*|benchmark|audit[^\\/]*)\.mjs)/i.test(p.CommandLine))),
+  'Another experiment is live; preserve serial graph work');
+const registration = json(a.protocol), p = json(registration.baseProtocol), mapping = json(p.mappingPath);
+assert(a.variant === 'nativeZstd1' && a.round === '0' && typeof global.gc === 'function');
+const variant = a.variant, round = Number(a.round);
+assert.equal(process.version, registration.runtimes[variant].node);
+assert.equal(process.versions.v8, registration.runtimes[variant].v8);
+assert.equal(registration.schema, 'training-trajectory-reuse-v2');
+assert.equal(registration.rounds, 1); assert.equal(registration.units.length, 72);
+assert.equal(registration.duty, .5); assert.equal(registration.maxPresentations, 1512);
+assert.deepEqual(registration.gates, {exactReceiptsAndStates: true, everyCausallyCleanOutputExact: true});
+const started = performance.now(), cpuStart = process.cpuUsage();
+let peakRss = 0, presentations = 0, phases = null;
+function guard() {
+  const rss = process.memoryUsage().rss, free = os.freemem();
+  peakRss = Math.max(peakRss, rss);
+  assert(peakRss <= 768 * 2 ** 20 && free >= 256 * 2 ** 20,
+    JSON.stringify({error: 'Resource guard', rssMiB: rss / 2 ** 20, peakRssMiB: peakRss / 2 ** 20,
+      freeMiB: free / 2 ** 20, presentations}));
+  assert(presentations <= registration.maxPresentations);
+}
+async function hash(path) {
+  const h = createHash('sha256');
+  for await (const chunk of createReadStream(path)) {h.update(chunk); guard();}
+  return h.digest('hex');
+}
+for (const [path, expected] of Object.entries({...p.sources, ...p.dependencies, ...registration.sources}))
+  assert.equal(await hash(path), expected, path);
+if (!p.fixture) {assert.equal(await hash(p.graphPath), mapping.inputs.graph);
+assert.equal(await hash(p.annotationPath), mapping.inputs.annotations);}
+assert.equal(await hash(process.execPath), registration.runtimes[variant].sha256);
+const protocolHash = await hash(a.protocol);
+mkdirSync(a.out, {recursive: false}); copyFileSync(a.protocol, join(a.out, 'protocol.json'));
+for (const path of Object.keys({...p.sources, ...registration.sources})) {
+  const target = join(a.out, 'sources', path); mkdirSync(dirname(target), {recursive: true}); copyFileSync(path, target);
+}
+const recorded = new Map(); let referenceFixed = null;
+const needed = new Set(registration.units.flatMap(u => Array.from({length: u.receiptCount}, (_, i) => u.firstReceipt + i)));
+for await (const row of streamRows(registration.recordedReceipts)) {
+  if (row.sequence === 0) {assert.equal(row.kind, 'baselines'); referenceFixed = row.fixed;}
+  if (needed.has(row.sequence)) recorded.set(row.sequence, row);
+}
+assert.equal(recorded.size, 1512);
+const graph = p.fixture ? validateGraph(Object.fromEntries(Object.entries(p.fixtureGraph).map(([k,v]) =>
+  [k, k === 'initial' ? Float32Array.from(v) : k === 'sign' ? Int8Array.from(v) : Int32Array.from(v)]))) : loadGraph(p.graphPath); guard();
+const model = new SparseTrainer(graph, p.model); model.forward([0]); guard();
+const memory = new RateTimingMemory(model, mapping, Float32Array.from(model.h[model.steps]), p.memory);
+const fixed = fixedStateHash(model, memory.edges), table = createG0Table();
+assert(typeof referenceFixed === 'string' && /^[a-f0-9]{64}$/.test(referenceFixed));
+assert.equal(fixed, referenceFixed, 'Runtime changed historical fixed parameters');
+const encoder = createG0Encoder(mapping, {...p.encoder, seed: p.projectionSeeds[0]});
+
+// Nested timers expose neural/copy/plasticity costs without adding their durations twice.
+function timed(name, fn) {const start = performance.now(); try {return fn();} finally {
+  if (phases) {const row = phases[name] ??= {ms: 0, count: 0}; row.ms += performance.now() - start; row.count++;}
+}}
+function instrument(object, method, name) {
+  const original = object[method].bind(object);
+  object[method] = (...args) => timed(name, () => original(...args));
+}
+instrument(model, 'forward', 'forward');
+instrument(model.sparseAccumulator, 'prepare', 'csrCopies');
+instrument(model.sparseAccumulator, 'accumulate', 'csrAccumulation');
+instrument(memory, 'observeTrajectory', 'localPlasticity');
+instrument(memory, 'snapshot', 'memorySnapshot');
+async function pace(fn) {
+  guard(); const before = process.cpuUsage(), value = fn(), cpu = process.cpuUsage(before); presentations++;
+  const start = performance.now();
+  await new Promise(resolve => setTimeout(resolve, Math.max(1, (cpu.user + cpu.system) / 1000)));
+  const row = phases.sleep ??= {ms: 0, count: 0}; row.ms += performance.now() - start; row.count++;
+  guard(); return value;
+}
+async function assess(cue, baselines) {
+  const before = digest(memory.snapshot()), rows = [];
+  for (const action of ['A', 'B']) {
+    const encoded = timed('encoding', () => encoder.encode({cue, action}));
+    await pace(() => model.forward([0], encoded.stimulation));
+    const rates = Object.fromEntries(Object.entries(p.readout.cells).map(([type, cells]) =>
+      [type, cells.map(c => model.h[model.steps][c.index])]));
+    const prior = baselines[cue.join('')].rows.find(row => row.action === action).rates;
+    const row = {action, cueHash: digest(encoded), rates, ...readConsequenceValue(rates, prior, p.readout.scale)};
+    row.score = row.value; rows.push(row);
+  }
+  assert.equal(digest(memory.snapshot()), before);
+  return {cue, encoderIdentity: encoder.identity, memoryHash: before, rows,
+    choice: rows[0].score === rows[1].score ? null : rows[0].score > rows[1].score ? 'A' : 'B'};
+}
+const samples = [], observations = [];
+let referenceStage = null, references = [], activeObservation = null;
+const posts = mapping.groups.flatMap(group => group.mbon.map(cell => cell.index));
+assert.equal(posts.length, memory.edges.length);
+const fullForward = model.forward.bind(model);
+model.forward = (...args) => {
+  const prediction = fullForward(...args);
+  if (activeObservation) {
+    // Fixed-state hash is checked at both lesson boundaries. This observation
+    // additionally verifies the complete derived signed-weight array each frame.
+    for (let edge = 0; edge < model.signedMagnitude.length; edge++)
+      assert(Object.is(model.signedMagnitude[edge], Math.fround(graph.sign[edge] * model.params.magnitude[edge])));
+    const frame = activeObservation.frame;
+    if (!references[frame]) references[frame] = captureTrajectory(model, memory.edges);
+    else observations.push({...activeObservation,
+      steps: compareTrajectory(model, references[frame], memory.edges, posts)});
+  }
+  return prediction;
+};
+async function runUnit(unit, variant, round) {
+  const setupStart = performance.now(), observationStart = observations.length;
+  if (referenceStage !== unit.stageId) {
+    referenceStage = unit.stageId; references = []; global.gc(); guard();
+  }
+  assert.equal(fixedStateHash(model, memory.edges), fixed);
+  assert.equal(await hash(unit.parent), unit.parentSha256);
+  const state = decodeCheckpoint(readFileSync(unit.parent));
+  const expected = Array.from({length: unit.receiptCount}, (_, i) => recorded.get(unit.firstReceipt + i));
+  const first = expected[0]; assert.equal(first.kind, 'lesson-start');
+  assert.equal(state.pendingReceipt, null); assert.equal(state.receiptCount, unit.firstReceipt);
+  memory.restore(state.session.memory);
+  const session = new G0FeedbackSession({model, memory, mapping, table, encoder, timing: p.timing, identity: state.session.identity});
+  session.restore(state.session);
+  const directory = join(a.out, `${round + 1}-${unit.stageId.replaceAll(':', '-')}-${unit.lesson}-${variant}`);
+  mkdirSync(directory); const log = join(directory, 'receipts.jsonl');
+  copyFileSync(registration.recordedReceipts, log); truncateSync(log, state.logBytes);
+  const setupMs = performance.now() - setupStart;
+  phases = {};
+  instrument(session, 'verify', 'planVerification'); instrument(session, 'snapshot', 'sessionSnapshot');
+  instrument(session.episode, 'snapshot', 'episodeSnapshot');
+  const emitted = []; let lastCheckpoint;
+  function save() {
+    state.sequence++;
+    timed('checkpointPublication', () => {
+      // Keep original JSON baseline order: stringify/bound, open, compress, write/fsync/rename.
+      const json = variant === 'json6' ? timed('checkpointEncoding', () => JSON.stringify(state) + '\n') : null;
+      if (json !== null) assert(Buffer.byteLength(json) <= 16 * 2 ** 20);
+      const target = join(directory, `checkpoint-${String(state.sequence).padStart(6, '0')}.${variant === 'json6' ? 'json.gz' : 'checkpoint'}`);
+      const fd = openSync(target + '.partial', 'wx');
+      try {
+        const bytes = timed('checkpointEncoding', () => json !== null ? gzipSync(json) : encodeNativeCheckpoint(state));
+        writeFileSync(fd, bytes); fsyncSync(fd);
+      } finally {closeSync(fd);}
+      renameSync(target + '.partial', target); lastCheckpoint = target;
+    });
+  }
+  function publish(kind, value) {
+    assert.equal(state.pendingReceipt, null);
+    const receipt = {sequence: state.receiptCount, previousChainHash: state.chainHash, kind, ...value};
+    state.pendingReceipt = receipt; save();
+    timed('receiptPublication', () => {
+      const line = JSON.stringify(receipt) + '\n'; assert(Buffer.byteLength(line) <= 65536);
+      assert.equal(statSync(log).size, state.logBytes);
+      const fd = openSync(log, 'a');
+      try {assert.equal(writeSync(fd, line), Buffer.byteLength(line)); fsyncSync(fd);} finally {closeSync(fd);}
+      state.logBytes += Buffer.byteLength(line); state.receiptCount++; state.chainHash = digest(receipt);
+      state.pendingReceipt = null;
+    });
+    save(); emitted.push(receipt);
+  }
+  const before = performance.now(), cpuBefore = process.cpuUsage();
+  const assessment = await assess(first.experience.publicInput.cue, state.baselines[p.projectionSeeds[0]]);
+  timed('lessonStart', () => session.start(first.experience, assessment, first.options));
+  state.session = session.snapshot();
+  publish('lesson-start', {stageId: unit.stageId, lesson: state.lesson, experience: first.experience,
+    options: first.options, binding: session.pending.binding, plan: session.pending.plan});
+  while (session.pending.cursor < session.pending.plan.frames.length) {
+    activeObservation = {stageId: unit.stageId, lesson: unit.lesson, frame: session.pending.cursor};
+    const frame = await pace(() => timed('sessionStep', () => session.step()));
+    activeObservation = null;
+    state.session = session.snapshot();
+    const localHash = timed('trajectoryHash', () => digest(model.h.slice(1).map(h =>
+      memory.kc.map((index, i) => [h[index], h[memory.dan[i]]]))));
+    publish('frame', {stageId: unit.stageId, lesson: state.lesson, frame, localHash});
+  }
+  const receipt = timed('lessonFinish', () => session.finish()); state.lesson++; state.session = session.snapshot();
+  publish('lesson', {stageId: unit.stageId, lesson: state.lesson - 1, receipt});
+  guard();
+  const elapsedMs = performance.now() - before, cpu = process.cpuUsage(cpuBefore), measurements = phases;
+  phases = null;
+  assert.deepEqual(emitted, expected, 'Changed recorded certificate, assessment, neural trajectory, update or receipt');
+  assert.deepEqual(decodeCheckpoint(readFileSync(lastCheckpoint)), state, 'Checkpoint changed state');
+  assert.equal(fixedStateHash(model, memory.edges), fixed, 'Changed fixed wiring/parameters');
+  const sample = {stageId: unit.stageId, condition: unit.condition, lesson: unit.lesson, variant, round,
+    elapsedMs, cpuUs: cpu.user + cpu.system, cpuFraction: (cpu.user + cpu.system) / (elapsedMs * 1000), setupMs,
+    phases: measurements, finalStateHash: digest(state), finalMemoryHash: digest(memory.snapshot()), receipts: emitted.length,
+    lastCheckpoint, exactHistoricalReceipts: true, exactCheckpointState: true};
+  writeFileSync(join(directory, 'sample.json'), JSON.stringify(sample, null, 2) + '\n');
+  for (const row of observations.slice(observationStart))
+    writeFileSync(join(a.out, 'causal-observations.jsonl'), JSON.stringify(row) + '\n', {flag: 'a'});
+  console.log(JSON.stringify({unit: unit.stageId, lesson: unit.lesson, variant, round, elapsedMs, exact: true}));
+  return sample;
+}
+const setupSeconds = (performance.now() - started) / 1000;
+for (const unit of registration.units) samples.push(await runUnit(unit, variant, round));
+assert.equal(samples.length, 72); assert.equal(presentations, 1512); assert.equal(observations.length, 912);
+const report = {schema: registration.schema, scope: registration.scope, variant, round,
+  exactHistoricalReceipts: samples.every(sample => sample.exactHistoricalReceipts && sample.exactCheckpointState),
+  observations, samples, setupSeconds, graphSha256: p.fixture ? null : mapping.inputs.graph, neurons: model.n, fixedStateHash: fixed,
+  protocolHash, command: {argv: process.argv, execArgv: process.execArgv}, node: process.version,
+  v8: process.versions.v8, runtimeSha256: registration.runtimes[variant].sha256,
+  sources: registration.sources, presentations, peakRssMiB: peakRss / 2 ** 20,
+  elapsedSeconds: (performance.now() - started) / 1000, cpu: process.cpuUsage(cpuStart),
+  processUptimeSeconds: process.uptime(), processCpu: process.cpuUsage(),
+  limitations: ['Fixed historical comparison identity is retained in replay checkpoints; actual runtime is separately pinned here.',
+    'No cross-runtime scientific resume, G0, transfer or time-to-success claim.',
+    'Observation overhead is included; these timings are not a speed benchmark.',
+    'Equal row arguments are a feasibility condition, not a measured cache speedup.']};
+writeFileSync(join(a.out, 'report.json'), JSON.stringify(report, null, 2) + '\n');
+console.log(JSON.stringify({variant, round, presentations, exact: report.exactHistoricalReceipts,
+  elapsedSeconds: report.elapsedSeconds, processUptimeSeconds: report.processUptimeSeconds, report: join(a.out, 'report.json')}));

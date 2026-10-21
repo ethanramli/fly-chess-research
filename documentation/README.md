@@ -6,6 +6,8 @@ Current handoff: [plasticity repair and bounded next-step prompt](handoffs/plast
 
 Start with [current status](current-status.md), then [research goals](design/research-goals/README.md). Choose one topic below; dated discussion and raw evidence live in [research](../research/README.md).
 
+For recurring curriculum work, use the [Python command guide](design/puzzle-learning/python-curriculum-actions.md) and `fly.cmd`; configure a registered step once and keep raw logs on disk.
+
 | Section | Read it for |
 |---|---|
 | [Research goals](design/research-goals/README.md) | Intended contribution, feedback-learning boundary and learning-efficiency hypothesis |
@@ -18,6 +20,7 @@ Start with [current status](current-status.md), then [research goals](design/res
 | [Supervised baselines](design/supervised-baselines/README.md) | Sparse Adam/gradient engineering comparisons and historical draft protocol |
 | [Idea notebook](ideas/README.md) | Early proposals; the rubric-supervision brief is historical and superseded |
 | [Writing](writing/README.md) | Manuscript outline, submission checklist and venue planning |
+| [Handoffs](handoffs/README.md) | Task-specific recovery prompts and compact state for long-running research goals |
 
 ## Where to put a new note
 

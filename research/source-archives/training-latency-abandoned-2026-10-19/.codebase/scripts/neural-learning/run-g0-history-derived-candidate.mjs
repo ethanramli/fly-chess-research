@@ -1,0 +1,203 @@
+// Serial prerequisite assay. Teacher waveform timing never calculates gain updates.
+import assert from 'node:assert/strict';
+import {readFileSync,createReadStream,mkdirSync,copyFileSync,writeFileSync,renameSync,existsSync,openSync,closeSync,fsyncSync,writeSync,readSync,statSync} from 'node:fs';
+import {join,dirname,resolve} from 'node:path';
+import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+import {parseArgs} from 'node:util';
+import {encodeDerivedCheckpoint,decodeDerivedCheckpoint} from '../../src/runtime/derived-checkpoint-codec-candidate.mjs';
+import os from 'node:os';
+import {loadGraph,readNpz,validateGraph} from '../../src/runtime/graph.mjs';
+import {streamRows} from '../../src/runtime/storage.mjs';
+import {SparseTrainer} from '../../src/supervised-baselines/trainer.mjs';
+import {fixedStateHash} from '../../src/neural-learning/association-validation.mjs';
+import {digest} from '../../src/neural-learning/mushroom-body.mjs';
+import {RateTimingMemory} from '../../src/neural-learning/rate-timing-memory.mjs';
+import {readConsequenceValue} from '../../src/neural-learning/consequence-value-readout.mjs';
+import {createG0Table,verifyG0,createG0Encoder,G0FeedbackSession} from '../../src/neural-learning/curriculum-g0-derived-candidate.mjs';
+import {planG0HistoryDiagnostic} from '../../src/neural-learning/g0-reversal-history-diagnostic.mjs';
+import {publishAtomicJson} from '../../src/puzzle-learning/plasticity-mechanism-assay.mjs';
+
+const {values:a}=parseArgs({options:{out:{type:'string'},protocol:{type:'string'},resume:{type:'string'},'cpu-duty':{type:'string'},'interrupt-after-pending':{type:'string'}}});
+assert(a.out&&a.protocol&&Number(a['cpu-duty'])===.5&&process.execArgv.includes('--max-old-space-size=256'));
+const json=path=>{const bytes=readFileSync(path);return path.endsWith('.checkpoint')?decodeDerivedCheckpoint(bytes):JSON.parse(bytes.toString('utf8').replace(/^\uFEFF/,''));};
+const processes=JSON.parse(execFileSync('powershell.exe',['-NoProfile','-Command',
+  "@(Get-CimInstance Win32_Process -Filter \"Name='node.exe'\" | Select-Object ProcessId,CommandLine) | ConvertTo-Json -Compress"],{encoding:'utf8',windowsHide:true,timeout:15000}));
+assert(!(Array.isArray(processes)?processes:[processes]).some(x=>x.ProcessId!==process.pid&&
+  /(?:\.codebase[\\/]scripts[\\/]|research[\\/]reports.*[\\/](?:run[^\\/]*|benchmark|audit[^\\/]*)\.mjs)/i.test(x.CommandLine??'')),'Another experiment is live');
+const p=json(a.protocol),mapping=json(p.mappingPath),table=createG0Table(),plan=planG0HistoryDiagnostic();
+assert.equal(p.schema,'g0-history-derived-engineering-v1');assert.equal(p.planHash,digest(plan));
+assert.deepEqual(p.projectionSeeds,[plan.projectionSeed]);assert.equal(p.maxPresentations,16000);
+assert.equal(p.stopping,'complete-all-matched-diagnostic-stages');
+assert.deepEqual(p.gates,{minCorrectContexts:6,minControlAdvantageContexts:2,epsilon:1e-8});
+const started=performance.now(),cpuStart=process.cpuUsage();let peakRss=0,presentations=0,recoveryPresentations=0,recoverySeconds=0;
+function guard(){peakRss=Math.max(peakRss,process.memoryUsage().rss);assert(peakRss<=768*2**20&&os.freemem()>=256*2**20,'Resource guard');assert(presentations<=p.maxPresentations);}
+async function pace(fn){guard();const before=process.cpuUsage(),v=fn(),cpu=process.cpuUsage(before);presentations++;await new Promise(r=>setTimeout(r,Math.max(1,(cpu.user+cpu.system)/1000)));guard();return v;}
+async function hash(path){const h=createHash('sha256');for await(const b of createReadStream(path)){h.update(b);guard();}return h.digest('hex');}
+for(const [path,expected] of Object.entries(p.sources))assert.equal(await hash(path),expected,path);
+for(const [path,expected] of Object.entries(p.dependencies))assert.equal(await hash(path),expected,path);
+if(!p.fixture){assert.equal(await hash(p.graphPath),mapping.inputs.graph);assert.equal(await hash(p.annotationPath),mapping.inputs.annotations);}
+const identity={protocolHash:await hash(a.protocol),sources:p.sources,dependencies:p.dependencies,node:process.version,algorithm:p.schema};
+mkdirSync(a.out,{recursive:false});copyFileSync(a.protocol,join(a.out,'protocol.json'));
+for(const path of Object.keys(p.sources)){const target=join(a.out,'sources',path);mkdirSync(dirname(target),{recursive:true});copyFileSync(path,target);}
+let state=a.resume?json(a.resume):{identity,stage:0,stageStarted:false,lesson:0,sequence:0,receiptCount:0,logBytes:0,chainHash:digest(identity),pendingReceipt:null,session:null,memories:{},baselines:{},results:[],replicaResponses:{}};
+assert.deepEqual(state.identity,identity);
+if(a.resume){
+  assert(!a.resume.endsWith('.partial'));assert(statSync(a.resume).size<=16*2**20,'Checkpoint exceeds bound');
+  const source=join(dirname(a.resume),'receipts.jsonl');
+  if(existsSync(source))copyFileSync(source,join(a.out,'receipts.jsonl'));
+  let sequence=0,chainHash=digest(identity);
+  if(existsSync(source))for await(const r of streamRows(source)){
+    assert.equal(r.sequence,sequence);assert.equal(r.previousChainHash,chainHash);
+    if(sequence===state.receiptCount){assert.deepEqual(r,state.pendingReceipt);}
+    else assert(sequence<state.receiptCount,'Unexpected future receipt');
+    chainHash=digest(r);sequence++;
+    if(sequence===state.receiptCount)assert.equal(chainHash,state.chainHash);
+  }
+  assert(sequence===state.receiptCount||sequence===state.receiptCount+1,'Missing acknowledged receipt');
+}
+let lastCheckpoint=null;
+// Immutable compressed publications avoid replacing a checkpoint held by a Windows reader.
+function save(){
+  state.sequence++;const bytes=encodeDerivedCheckpoint(state);
+  const target=join(a.out,`checkpoint-${String(state.sequence).padStart(6,'0')}.checkpoint`),partial=`${target}.partial`,fd=openSync(partial,'wx');
+  try{writeFileSync(fd,bytes);fsyncSync(fd);}finally{closeSync(fd);}renameSync(partial,target);lastCheckpoint=target;
+}
+function acknowledge(){
+  const r=state.pendingReceipt;if(!r)return;
+  const line=JSON.stringify(r)+'\n';assert(Buffer.byteLength(line)<=65536,'Receipt exceeds stream bound');
+  const path=join(a.out,'receipts.jsonl'),size=existsSync(path)?statSync(path).size:0;
+  if(size===state.logBytes){const fd=openSync(path,'a');try{assert.equal(writeSync(fd,line),Buffer.byteLength(line));fsyncSync(fd);}finally{closeSync(fd);}}
+  else{assert.equal(size,state.logBytes+Buffer.byteLength(line),'Partial or extra receipt log; refuse recovery');
+    const bytes=Buffer.alloc(Buffer.byteLength(line)),fd=openSync(path,'r');
+    try{assert.equal(readSync(fd,bytes,0,bytes.length,state.logBytes),bytes.length);}finally{closeSync(fd);}
+    assert.equal(bytes.toString('utf8'),line,'Conflicting pending receipt');}
+  state.logBytes+=Buffer.byteLength(line);state.receiptCount++;state.chainHash=digest(r);state.pendingReceipt=null;save();
+}
+function publish(kind,value){
+  assert.equal(state.pendingReceipt,null);state.pendingReceipt={sequence:state.receiptCount,previousChainHash:state.chainHash,kind,...value};save();
+  if(a['interrupt-after-pending']&&kind==='frame'&&state.receiptCount===Number(a['interrupt-after-pending'])){
+    publishAtomicJson(join(a.out,'interruption.json'),{publishedPendingReceipt:state.receiptCount,presentations,peakRssMiB:peakRss/2**20,
+      elapsedSeconds:(performance.now()-started)/1000,cpu:process.cpuUsage(cpuStart),command:{argv:process.argv,execArgv:process.execArgv},exitCode:75});
+    console.log(JSON.stringify({status:'Injected interruption after published pending frame',resume:lastCheckpoint,receiptCount:state.receiptCount}));process.exit(75);
+  }
+  acknowledge();
+}
+// Active session recovery must validate its derived state before acknowledging any receipt.
+if(state.session===null){acknowledge();save();}else assert(state.stageStarted,'Orphaned session');
+guard();
+const graph=p.fixture?validateGraph(Object.fromEntries(Object.entries(p.fixtureGraph).map(([k,v])=>[k,k==='initial'?Float32Array.from(v):k==='sign'?Int8Array.from(v):Int32Array.from(v)]))):loadGraph(p.graphPath);guard();
+if(!p.fixture){
+  const roots=readNpz(p.graphPath,['root_ids']).root_ids;
+  for(const c of [...Object.values(p.readout.cells).flat(),...mapping.groups.flatMap(g=>g.dan)])assert.equal(roots[c.index].toString(),c.rootId);
+}
+for(const g of mapping.groups)for(let i=0;i<g.edges.length;i++){
+  const edge=g.edges[i],post=g.mbon[i].index;
+  assert.equal(graph.col[edge],g.kc[i]);assert.equal(graph.sign[edge],1);
+  assert(edge>=graph.row[post]&&edge<graph.row[post+1],'Wrong mapped postsynaptic endpoint');
+}
+const model=new SparseTrainer(graph,p.model);await pace(()=>model.forward([0]));
+const reference=Float32Array.from(model.h[model.steps]),memory=new RateTimingMemory(model,mapping,reference,p.memory);
+const initial=memory.snapshot(),fixed=fixedStateHash(model,memory.edges);
+const rates=()=>Object.fromEntries(Object.entries(p.readout.cells).map(([type,cells])=>[type,cells.map(c=>model.h[model.steps][c.index])]));
+const targetCues=Array.from({length:8},(_,i)=>[0,...[2,1,0].map(bit=>(i>>bit)&1)]);
+// Measurements do not consume local plasticity or persist transient assessment activity.
+async function assess(cue,encoder,baseline=null){
+  const before=digest(memory.snapshot()),rows=[];
+  for(const action of ['A','B']){
+    const encoded=encoder.encode({cue,action});await pace(()=>model.forward([0],encoded.stimulation));
+    const response=rates(),prior=baseline?.rows.find(r=>r.action===action)?.rates??response;
+    rows.push({action,cueHash:digest(encoded),rates:response,...readConsequenceValue(response,prior,p.readout.scale)});
+    rows.at(-1).score=rows.at(-1).value;
+  }
+  assert.equal(digest(memory.snapshot()),before);const [aa,bb]=rows;
+  return {cue,encoderIdentity:encoder.identity,memoryHash:before,rows,choice:aa.score===bb.score?null:aa.score>bb.score?'A':'B'};
+}
+// Effective replica checks accompany this feedback-enabled assay, never a standalone graph probe.
+if(!Object.keys(state.replicaResponses).length){
+  for(const seed of p.projectionSeeds){
+    const encoder=createG0Encoder(mapping,{...p.encoder,seed});state.baselines[seed]={};
+    for(const cue of [...targetCues,...Array.from({length:4},(_,i)=>[1,...[2,1,0].map(bit=>(i>>bit)&1)])])
+      state.baselines[seed][cue.join('')]=await assess(cue,encoder);
+    state.replicaResponses[seed]=digest(Object.values(state.baselines[seed]).map(a=>a.rows.map(r=>r.rates)));
+  }
+  assert.equal(new Set(Object.values(state.replicaResponses)).size,p.projectionSeeds.length,'Ineffective replicas');
+  publish('baselines',{baselines:state.baselines,replicaResponses:state.replicaResponses,fixed,memory:initial});
+}
+const seed=plan.projectionSeed,encoder=createG0Encoder(mapping,{...p.encoder,seed});
+const baseline=cue=>state.baselines[seed][cue.join('')];
+while(state.stage<plan.stages.length){
+  const stage=plan.stages[state.stage],condition=stage.condition.id;
+  const prefixKey='prefix:'+condition,key=stage.branch+':'+condition;
+  let entry=initial;
+  if(stage.phase==='interference'||stage.branch!=='prefix'){
+    assert(state.memories[prefixKey],'Missing prior teaching state');
+    if(stage.memoryStart!=='initial')entry=state.memories[prefixKey];
+  }
+  memory.restore(entry);
+  const session=new G0FeedbackSession({model,memory,mapping,table,encoder,timing:p.timing,
+    identity:digest({identity,stage:stage.id,memory:memory.identity,encoder:encoder.identity,readout:p.readout})});
+  if(state.stageStarted){
+    assert(state.session,'Missing entered-stage state');const recoveryStarted=performance.now();
+    await session.restore(state.session,{pace:async fn=>{const value=await pace(fn);recoveryPresentations++;return value;}});
+    recoverySeconds+=(performance.now()-recoveryStarted)/1000;
+    acknowledge();save();
+  }
+  else{
+    assert.equal(state.lesson,0);assert.equal(state.session,null);
+    const beforeRows=[];
+    if(stage.phase==='reversal')for(const cue of targetCues)beforeRows.push(await assess(cue,encoder,baseline(cue)));
+    state.stageStarted=true;state.session=session.snapshot();
+    publish('stage-start',{stageId:stage.id,condition,branch:stage.branch,phase:stage.phase,
+      memoryStart:stage.memoryStart,parentMemoryHash:digest(state.memories[prefixKey]??initial),
+      entryMemory:memory.snapshot(),beforeRows});
+  }
+  for(;state.lesson<stage.slots.length;){
+    const {experience,options}=stage.slots[state.lesson];
+    if(!session.pending){
+      const assessment=await assess(experience.publicInput.cue,encoder,baseline(experience.publicInput.cue));
+      assert(verifyG0(table,experience).learningAllowed);session.start(experience,assessment,options);
+      state.session=session.snapshot();publish('lesson-start',{stageId:stage.id,lesson:state.lesson,
+        experience,options,binding:session.pending.binding,plan:session.pending.plan});
+    }
+    while(session.pending.cursor<session.pending.plan.frames.length){
+      const frame=await pace(()=>session.step());state.session=session.snapshot();
+      const localHash=digest(model.h.slice(1).map(h=>memory.kc.map((index,i)=>[h[index],h[memory.dan[i]]])));
+      publish('frame',{stageId:stage.id,lesson:state.lesson,frame,localHash});
+    }
+    const receipt=session.finish();state.lesson++;state.session=session.snapshot();
+    publish('lesson',{stageId:stage.id,lesson:state.lesson-1,receipt});
+  }
+  const assessments=[];for(const cue of targetCues)assessments.push(await assess(cue,encoder,baseline(cue)));
+  const target=stage.phase==='reversal'?'reversal':'acquisition';
+  const contextRows=assessments.map(assessment=>{
+    const expected=table.rows.find(r=>r.phase===target&&digest(r.cue)===digest(assessment.cue)&&r.status==='success').action;
+    const raw=(assessment.rows[0].score-assessment.rows[1].score)*(expected==='A'?1:-1);
+    return {cue:assessment.cue,expected,choice:assessment.choice,correct:assessment.choice===expected,margin:raw===0?0:raw,assessment};
+  });
+  const finalMemory=memory.snapshot();assert.equal(fixedStateHash(model,memory.edges),fixed);
+  memory.restore(initial);for(const cue of targetCues)assert((await assess(cue,encoder,baseline(cue))).rows.every(r=>r.value===0));
+  memory.restore(finalMemory);for(let i=0;i<targetCues.length;i++)assert.deepEqual(await assess(targetCues[i],encoder,baseline(targetCues[i])),assessments[i]);
+  if(stage.condition.kind==='disabled')assert.deepEqual(finalMemory,initial);
+  const result={stageId:stage.id,phase:stage.phase,branch:stage.branch,condition,contextRows,
+    correct:contextRows.filter(r=>r.correct).length,meanMargin:contextRows.reduce((n,r)=>n+r.margin,0)/8,
+    causalResetRestore:true,fixedAfter:fixed};
+  state.memories[key]=structuredClone(finalMemory);state.results.push(result);
+  state.stage++;state.stageStarted=false;state.lesson=0;state.session=null;
+  publish('stage-end',{result,memory:finalMemory});console.log(JSON.stringify({stage:stage.id,correct:result.correct}));
+}
+const branchResults=['retained','reset'].map(branch=>{
+  const rows=state.results.filter(r=>r.branch===branch),info=rows.find(r=>r.condition==='informative'),controls=rows.filter(r=>r.condition!=='informative');
+  assert.equal(rows.length,plan.conditions.length);
+  const gates={minCorrect:info.correct>=p.gates.minCorrectContexts,
+    contextAdvantage:controls.every(c=>info.correct>=c.correct+p.gates.minControlAdvantageContexts),
+    marginAdvantage:info.meanMargin>p.gates.epsilon&&controls.every(c=>info.meanMargin>c.meanMargin+p.gates.epsilon),
+    stateAndWiring:rows.every(r=>r.causalResetRestore&&r.fixedAfter===fixed)};
+  return {branch,gates,passed:Object.values(gates).every(Boolean)};
+});
+guard();const result={identity,stageResults:state.results,memories:state.memories,branchResults,baselines:state.baselines,replicaResponses:state.replicaResponses,
+  G0Passed:false,diagnosticComplete:state.stage===plan.stages.length,
+  receiptCount:state.receiptCount,chainHash:state.chainHash,invocation:{presentations,recoveryPresentations,recoverySeconds,peakRssMiB:peakRss/2**20,
+    elapsedSeconds:(performance.now()-started)/1000,cpu:process.cpuUsage(cpuStart),command:{argv:process.argv,execArgv:process.execArgv},resumedFrom:a.resume?resolve(a.resume):null},
+  scope:p.scope,status:'Diagnostic only; independent archived replay required; cannot pass G0.'};
+publishAtomicJson(join(a.out,'result.json'),result);console.log(JSON.stringify({G0Passed:result.G0Passed,diagnosticComplete:result.diagnosticComplete,receipts:state.receiptCount,invocation:result.invocation}));

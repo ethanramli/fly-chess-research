@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "trajectory-reuse-v2",
+  "paused": false,
+  "paths": {
+    "runner": ".codebase/scripts/evaluation-and-performance/profile-trajectory-reuse-v2.mjs",
+    "protocol": "research/data/trajectory-reuse-v2/protocol.json",
+    "run": "research/reports/training-latency-2026-10-19/trajectory-reuse-v2",
+    "runtime": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.cache\\latency-runtimes\\v26.12.0\\node.exe"
+  },
+  "state_file": "runs/python-actions/trajectory-reuse-v2-current.json",
+  "pins": {
+    "{runner}": "edddbf1e8281a30581da8dccdb254779ebc5d7737b5315b6c31b5ad13de83121",
+    "{protocol}": "454987e4e19880db6d37e53f8a8482f969d865ee65a250a0545408993c821c39"
+  },
+  "artifacts": {
+    "report": "{run}/report.json"
+  },
+  "jobs": {
+    "profile": {
+      "role": "train",
+      "argv": [
+        "{runtime}",
+        "--expose-gc",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--protocol",
+        "{protocol}",
+        "--out",
+        "{run}",
+        "--variant",
+        "nativeZstd1",
+        "--round",
+        "0",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{protocol}",
+        "{runner}"
+      ],
+      "fresh_output": "{run}"
+    }
+  }
+}

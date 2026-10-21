@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "name": "exact-reuse-latency-software-checks-v1",
+  "paused": false,
+  "paths": {
+    "runtime": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.cache\\latency-runtimes\\v26.12.0\\node.exe",
+    "run": "research/reports/training-latency-2026-10-19/exact-frame-reuse-v1"
+  },
+  "state_file": "runs/python-actions/exact-reuse-latency-checks-current.json",
+  "pins": {
+    ".codebase/scripts/evaluation-and-performance/profile-exact-reuse-latency.mjs": "9d6d86e48f55456d58361588a7652822d2e3bbd3f1fdb63e0f7a4f3ea86bbb8a",
+    ".codebase/scripts/evaluation-and-performance/audit-exact-reuse-latency.mjs": "8f6bf8dd2d24d52bd9089ef4b98557f482f454d4fb9b09413474f745b2f25d67",
+    ".codebase/scripts/evaluation-and-performance/audit-exact-reuse-publications.mjs": "6f2aa45af853070ebdd2356c2ce2df234a55ef87a3a3f38f56bef63e1c89e584",
+    "research/reports/training-latency-2026-10-19/exact-frame-reuse-v1/latency-audit.test.mjs": "a2063d8fc134360c802c4c0ec7788aba55d366a1052eb42e43feafac4fb3de0f"
+  },
+  "artifacts": {},
+  "jobs": {
+    "math-check": {
+      "role": "check",
+      "argv": [
+        "{runtime}",
+        "--test",
+        "--test-reporter=tap",
+        "research/reports/training-latency-2026-10-19/exact-frame-reuse-v1/latency-audit.test.mjs"
+      ]
+    },
+    "runner-syntax": {
+      "role": "check",
+      "argv": [
+        "{runtime}",
+        "--check",
+        ".codebase/scripts/evaluation-and-performance/profile-exact-reuse-latency.mjs"
+      ]
+    }
+  }
+}

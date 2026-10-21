@@ -1,0 +1,69 @@
+{
+    "schema":  1,
+    "name":  "training-latency-v2",
+    "paused":  true,
+    "paths":  {
+                  "protocol":  "research/data/training-latency-v2/protocol.json",
+                  "runner":  ".codebase/scripts/evaluation-and-performance/profile-g0-training-pipeline.mjs",
+                  "run":  "research/reports/training-latency-2026-10-19/pipeline-v2"
+              },
+    "pins":  {
+                 "{protocol}":  "81fc2c844c56ec009f432e719e7033834dcd9967100ec3ca9f2e8a5724f6c25c",
+                 "{runner}":  "c53247cb07def6bf6b74ac71e3b50b267510b36e04735d2c691845f07dcb6b6a"
+             },
+    "state_file":  "runs/python-actions/training-latency-current.json",
+    "jobs":  {
+                 "profile":  {
+                                 "role":  "train",
+                                 "argv":  [
+                                              "node",
+                                              "--max-old-space-size=256",
+                                              "{runner}",
+                                              "--protocol",
+                                              "{protocol}",
+                                              "--out",
+                                              "{run}",
+                                              "--cpu-duty",
+                                              "0.5"
+                                          ],
+                                 "requires":  [
+                                                  "{protocol}",
+                                                  "{runner}"
+                                              ],
+                                 "fresh_output":  "{run}"
+                             },
+                 "codec-tests":  {
+                                     "role":  "check",
+                                     "argv":  [
+                                                  "node",
+                                                  "--test",
+                                                  "--test-concurrency=1",
+                                                  ".codebase/tests/runtime/checkpoint-codec.test.mjs",
+                                                  ".codebase/tests/runtime/checkpoint-resume-fixture.test.mjs"
+                                              ]
+                                 }
+             },
+    "observe":  {
+                    "job":  "profile",
+                    "pid":  0,
+                    "expected":  [
+                                     "{runner}",
+                                     "{run}"
+                                 ],
+                    "stdout":  "{run}.stdout.txt",
+                    "stderr":  "{run}.stderr.txt"
+                },
+    "artifacts":  {
+                      "report":  "{run}/report.json"
+                  },
+    "report_fields":  [
+                          "passedTimingAndEquality",
+                          "gates",
+                          "perCondition",
+                          "pooledReduction",
+                          "presentations",
+                          "peakRssMiB",
+                          "elapsedSeconds",
+                          "limitations"
+                      ]
+}

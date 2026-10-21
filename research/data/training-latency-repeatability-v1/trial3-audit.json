@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "name": "latency-repeatability-v1-trial3-audit",
+  "paused": false,
+  "paths": {
+    "protocol": "research/data/training-latency-runtime-comparison-v2/protocol.json",
+    "runner": ".codebase/scripts/evaluation-and-performance/audit-training-runtime.mjs",
+    "run": "research/reports/training-latency-2026-10-19/repeatability-v1/trial3",
+    "auditProtocol": "research/data/training-latency-runtime-audit-v1/protocol.json"
+  },
+  "state_file": "runs/python-actions/latency-repeatability-v1-trial3-audit-current.json",
+  "pins": {
+    "{protocol}": "46fe50297e8b2080381d2d8a85d4687070eb9ca42b95c33c75dc9e1f4928cd21",
+    "{runner}": "add25d51e85bf5b0152f5209825ba6bff37f10e2e964e1a48e605c8cb109ac56",
+    "{auditProtocol}": "f38bf3b3ccd27afea20a81dbc304630e8f14e2b3f47efe26f85a9943195e4260"
+  },
+  "artifacts": {
+    "audit": "{run}/timing-audit.json"
+  },
+  "jobs": {
+    "audit": {
+      "role": "audit",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--out",
+        "{run}",
+        "--protocol",
+        "{auditProtocol}",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{run}/batch-index.json",
+        "{run}/protocol.json"
+      ],
+      "refuse_existing": [
+        "{run}/timing-audit.json"
+      ]
+    }
+  }
+}

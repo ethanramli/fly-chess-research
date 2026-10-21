@@ -1,0 +1,2220 @@
+{
+  "scope": "Offline persistence component only; concurrent graph audit may affect timing. No training speed claim.",
+  "command": {
+    "argv": [
+      "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\evaluation-and-performance\\profile-training-persistence.mjs",
+      "--run",
+      "runs/g0-reversal-history-diagnostic-v1-resumed2",
+      "--out",
+      "research/reports/training-latency-2026-10-19/persistence-native",
+      "--cpu-duty",
+      "0.5"
+    ],
+    "execArgv": [
+      "--max-old-space-size=256"
+    ]
+  },
+  "node": "v22.23.2",
+  "sources": {
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\evaluation-and-performance\\profile-training-persistence.mjs": "007bdc0135ed77357abdb4a797e25028bc0922b904c4e1f170016655035050c7",
+    ".codebase/src/runtime/checkpoint-codec.mjs": "31956d5985c25ca521c080ee716199d70761d2eacefc913afd3f375390a018ed"
+  },
+  "graphHash": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+  "inputs": [
+    {
+      "path": "runs\\g0-reversal-history-diagnostic-v1-resumed2\\checkpoint-022000.json.gz",
+      "sha256": "7fc0cfc6678b4c8b09c3584679fd8109cf31382ffc3544776f0412d4f8a36220",
+      "sequence": 22000,
+      "pending": "frame",
+      "neurons": 134209,
+      "sourceBytes": 1187218
+    },
+    {
+      "path": "runs\\g0-reversal-history-diagnostic-v1-resumed2\\checkpoint-022001.json.gz",
+      "sha256": "5f9e98e84e96452b23361ee2e1ecd6ad931acfb978edd68390b5424b8d053a99",
+      "sequence": 22001,
+      "pending": null,
+      "neurons": 134209,
+      "sourceBytes": 1186768
+    },
+    {
+      "path": "runs\\g0-reversal-history-diagnostic-v1-resumed2\\checkpoint-025000.json.gz",
+      "sha256": "de2450f83022449543438b98e35c6374c47171ef1b1212850011f32e25663ae8",
+      "sequence": 25000,
+      "pending": "frame",
+      "neurons": 134209,
+      "sourceBytes": 1198179
+    },
+    {
+      "path": "runs\\g0-reversal-history-diagnostic-v1-resumed2\\checkpoint-025001.json.gz",
+      "sha256": "8f1a5b4a2da495c75b24df6c82228250624984e6e2d11f8b6428f51e0d33f643",
+      "sequence": 25001,
+      "pending": null,
+      "neurons": 134209,
+      "sourceBytes": 1197672
+    },
+    {
+      "path": "runs\\g0-reversal-history-diagnostic-v1-resumed2\\checkpoint-028300.json.gz",
+      "sha256": "eac200581b9e5bd0ba4d4c8eb83b8d2f973f0899078e13fc224b717e534a426e",
+      "sequence": 28300,
+      "pending": "frame",
+      "neurons": 134209,
+      "sourceBytes": 1210441
+    },
+    {
+      "path": "runs\\g0-reversal-history-diagnostic-v1-resumed2\\checkpoint-028301.json.gz",
+      "sha256": "37352a488bd4a3aeaa8d02f8c553c256b48c46c2f6f2ebe81f9d3c02d1a3f7af",
+      "sequence": 28301,
+      "pending": null,
+      "neurons": 134209,
+      "sourceBytes": 1209861
+    }
+  ],
+  "exactRoundtrips": 240,
+  "samples": [
+    {
+      "sequence": 22000,
+      "round": 0,
+      "variant": "nativeZstd1",
+      "encodeMs": 22.651200000000017,
+      "publicationMs": 26.8759,
+      "decodeMs": 23.820600000000013,
+      "bytes": 505424,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 22000,
+      "round": 0,
+      "variant": "binaryBrotli0",
+      "encodeMs": 47.534400000000005,
+      "publicationMs": 52.68189999999959,
+      "decodeMs": 46.421800000000076,
+      "bytes": 795286,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 22000,
+      "round": 0,
+      "variant": "binary1",
+      "encodeMs": 58.74630000000025,
+      "publicationMs": 62.412500000000364,
+      "decodeMs": 35.32330000000002,
+      "bytes": 695160,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 22000,
+      "round": 0,
+      "variant": "json1",
+      "encodeMs": 144.4940999999999,
+      "publicationMs": 157.6790000000001,
+      "decodeMs": 62.80210000000034,
+      "bytes": 1267794,
+      "cpuUs": 125000
+    },
+    {
+      "sequence": 22000,
+      "round": 0,
+      "variant": "json6",
+      "encodeMs": 321.9005000000002,
+      "publicationMs": 334.2053000000001,
+      "decodeMs": 51.24389999999994,
+      "bytes": 1187218,
+      "cpuUs": 297000
+    },
+    {
+      "sequence": 22000,
+      "round": 1,
+      "variant": "json6",
+      "encodeMs": 232.8394000000003,
+      "publicationMs": 237.73230000000012,
+      "decodeMs": 46.68170000000009,
+      "bytes": 1187218,
+      "cpuUs": 235000
+    },
+    {
+      "sequence": 22000,
+      "round": 1,
+      "variant": "json1",
+      "encodeMs": 119.9376000000002,
+      "publicationMs": 125.89210000000003,
+      "decodeMs": 50.97990000000027,
+      "bytes": 1267794,
+      "cpuUs": 124000
+    },
+    {
+      "sequence": 22000,
+      "round": 1,
+      "variant": "binary1",
+      "encodeMs": 55.327000000000226,
+      "publicationMs": 60.443099999999504,
+      "decodeMs": 35.91639999999916,
+      "bytes": 695160,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 22000,
+      "round": 1,
+      "variant": "binaryBrotli0",
+      "encodeMs": 34.28320000000076,
+      "publicationMs": 38.479200000000674,
+      "decodeMs": 66.95190000000002,
+      "bytes": 795286,
+      "cpuUs": 31000
+    },
+    {
+      "sequence": 22000,
+      "round": 1,
+      "variant": "nativeZstd1",
+      "encodeMs": 27.45589999999993,
+      "publicationMs": 31.24579999999969,
+      "decodeMs": 38.039700000000266,
+      "bytes": 505424,
+      "cpuUs": 16000
+    },
+    {
+      "sequence": 22000,
+      "round": 2,
+      "variant": "nativeZstd1",
+      "encodeMs": 22.85399999999936,
+      "publicationMs": 30.626899999999296,
+      "decodeMs": 26.46610000000055,
+      "bytes": 505424,
+      "cpuUs": 16000
+    },
+    {
+      "sequence": 22000,
+      "round": 2,
+      "variant": "binaryBrotli0",
+      "encodeMs": 63.662099999999555,
+      "publicationMs": 68.3702000000003,
+      "decodeMs": 41.281700000000455,
+      "bytes": 795286,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 22000,
+      "round": 2,
+      "variant": "binary1",
+      "encodeMs": 51.21110000000044,
+      "publicationMs": 61.960399999999936,
+      "decodeMs": 36.032900000000154,
+      "bytes": 695160,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 22000,
+      "round": 2,
+      "variant": "json1",
+      "encodeMs": 160.09999999999945,
+      "publicationMs": 176.9372999999996,
+      "decodeMs": 63.07290000000012,
+      "bytes": 1267794,
+      "cpuUs": 157000
+    },
+    {
+      "sequence": 22000,
+      "round": 2,
+      "variant": "json6",
+      "encodeMs": 233.27829999999994,
+      "publicationMs": 243.5081,
+      "decodeMs": 55.736000000000786,
+      "bytes": 1187218,
+      "cpuUs": 234000
+    },
+    {
+      "sequence": 22000,
+      "round": 3,
+      "variant": "json6",
+      "encodeMs": 234.20830000000024,
+      "publicationMs": 241.1927999999998,
+      "decodeMs": 45.79740000000038,
+      "bytes": 1187218,
+      "cpuUs": 235000
+    },
+    {
+      "sequence": 22000,
+      "round": 3,
+      "variant": "json1",
+      "encodeMs": 127.16859999999997,
+      "publicationMs": 132.8182999999999,
+      "decodeMs": 53.78570000000036,
+      "bytes": 1267794,
+      "cpuUs": 125000
+    },
+    {
+      "sequence": 22000,
+      "round": 3,
+      "variant": "binary1",
+      "encodeMs": 58.67910000000029,
+      "publicationMs": 63.95789999999943,
+      "decodeMs": 58.93000000000029,
+      "bytes": 695160,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 22000,
+      "round": 3,
+      "variant": "binaryBrotli0",
+      "encodeMs": 46.82919999999831,
+      "publicationMs": 49.91649999999936,
+      "decodeMs": 55.542199999999866,
+      "bytes": 795286,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 22000,
+      "round": 3,
+      "variant": "nativeZstd1",
+      "encodeMs": 23.001400000001013,
+      "publicationMs": 26.617599999999584,
+      "decodeMs": 51.61290000000008,
+      "bytes": 505424,
+      "cpuUs": 30000
+    },
+    {
+      "sequence": 22000,
+      "round": 4,
+      "variant": "nativeZstd1",
+      "encodeMs": 24.20180000000073,
+      "publicationMs": 28.585500000001048,
+      "decodeMs": 27.313599999999497,
+      "bytes": 505424,
+      "cpuUs": 31000
+    },
+    {
+      "sequence": 22000,
+      "round": 4,
+      "variant": "binaryBrotli0",
+      "encodeMs": 47.30149999999958,
+      "publicationMs": 51.93279999999868,
+      "decodeMs": 62.660499999999956,
+      "bytes": 795286,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 22000,
+      "round": 4,
+      "variant": "binary1",
+      "encodeMs": 116.80689999999959,
+      "publicationMs": 128.89680000000044,
+      "decodeMs": 66.45229999999901,
+      "bytes": 695160,
+      "cpuUs": 125000
+    },
+    {
+      "sequence": 22000,
+      "round": 4,
+      "variant": "json1",
+      "encodeMs": 144.0529000000006,
+      "publicationMs": 160.6304,
+      "decodeMs": 55.760699999998906,
+      "bytes": 1267794,
+      "cpuUs": 157000
+    },
+    {
+      "sequence": 22000,
+      "round": 4,
+      "variant": "json6",
+      "encodeMs": 203.17779999999948,
+      "publicationMs": 221.56349999999838,
+      "decodeMs": 55.84730000000127,
+      "bytes": 1187218,
+      "cpuUs": 203000
+    },
+    {
+      "sequence": 22000,
+      "round": 5,
+      "variant": "json6",
+      "encodeMs": 258.202299999999,
+      "publicationMs": 262.441499999999,
+      "decodeMs": 52.61319999999978,
+      "bytes": 1187218,
+      "cpuUs": 266000
+    },
+    {
+      "sequence": 22000,
+      "round": 5,
+      "variant": "json1",
+      "encodeMs": 127.02870000000075,
+      "publicationMs": 130.66210000000137,
+      "decodeMs": 49.3729000000003,
+      "bytes": 1267794,
+      "cpuUs": 110000
+    },
+    {
+      "sequence": 22000,
+      "round": 5,
+      "variant": "binary1",
+      "encodeMs": 49.748999999999796,
+      "publicationMs": 55.555599999999686,
+      "decodeMs": 46.95260000000053,
+      "bytes": 695160,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 22000,
+      "round": 5,
+      "variant": "binaryBrotli0",
+      "encodeMs": 57.86919999999918,
+      "publicationMs": 62.91109999999935,
+      "decodeMs": 82.6348999999991,
+      "bytes": 795286,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 22000,
+      "round": 5,
+      "variant": "nativeZstd1",
+      "encodeMs": 21.46559999999954,
+      "publicationMs": 25.084199999999328,
+      "decodeMs": 46.730499999999665,
+      "bytes": 505424,
+      "cpuUs": 32000
+    },
+    {
+      "sequence": 22000,
+      "round": 6,
+      "variant": "nativeZstd1",
+      "encodeMs": 19.682699999999386,
+      "publicationMs": 23.249100000000908,
+      "decodeMs": 32.83380000000034,
+      "bytes": 505424,
+      "cpuUs": 31000
+    },
+    {
+      "sequence": 22000,
+      "round": 6,
+      "variant": "binaryBrotli0",
+      "encodeMs": 57.773299999998926,
+      "publicationMs": 62.612999999999374,
+      "decodeMs": 50.43469999999979,
+      "bytes": 795286,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 22000,
+      "round": 6,
+      "variant": "binary1",
+      "encodeMs": 68.15480000000025,
+      "publicationMs": 75.23009999999886,
+      "decodeMs": 59.73400000000038,
+      "bytes": 695160,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 22000,
+      "round": 6,
+      "variant": "json1",
+      "encodeMs": 198.66860000000088,
+      "publicationMs": 205.48559999999998,
+      "decodeMs": 57.212899999998626,
+      "bytes": 1267794,
+      "cpuUs": 172000
+    },
+    {
+      "sequence": 22000,
+      "round": 6,
+      "variant": "json6",
+      "encodeMs": 460.5082999999995,
+      "publicationMs": 466.3730999999989,
+      "decodeMs": 95.67630000000099,
+      "bytes": 1187218,
+      "cpuUs": 328000
+    },
+    {
+      "sequence": 22001,
+      "round": 0,
+      "variant": "nativeZstd1",
+      "encodeMs": 17.917999999997846,
+      "publicationMs": 22.06039999999848,
+      "decodeMs": 33.227100000000064,
+      "bytes": 504239,
+      "cpuUs": 16000
+    },
+    {
+      "sequence": 22001,
+      "round": 0,
+      "variant": "binaryBrotli0",
+      "encodeMs": 131.99530000000232,
+      "publicationMs": 138.51250000000073,
+      "decodeMs": 78.51120000000083,
+      "bytes": 797113,
+      "cpuUs": 78000
+    },
+    {
+      "sequence": 22001,
+      "round": 0,
+      "variant": "binary1",
+      "encodeMs": 54.56580000000031,
+      "publicationMs": 58.09809999999925,
+      "decodeMs": 31.208699999999226,
+      "bytes": 694760,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 22001,
+      "round": 0,
+      "variant": "json1",
+      "encodeMs": 156.85970000000088,
+      "publicationMs": 163.98029999999926,
+      "decodeMs": 51.668100000002596,
+      "bytes": 1267314,
+      "cpuUs": 156000
+    },
+    {
+      "sequence": 22001,
+      "round": 0,
+      "variant": "json6",
+      "encodeMs": 230.3156999999992,
+      "publicationMs": 241.58759999999893,
+      "decodeMs": 57.711599999998725,
+      "bytes": 1186768,
+      "cpuUs": 235000
+    },
+    {
+      "sequence": 22001,
+      "round": 1,
+      "variant": "json6",
+      "encodeMs": 215.51789999999892,
+      "publicationMs": 229.45769999999902,
+      "decodeMs": 52.085299999998824,
+      "bytes": 1186768,
+      "cpuUs": 218000
+    },
+    {
+      "sequence": 22001,
+      "round": 1,
+      "variant": "json1",
+      "encodeMs": 119.74569999999949,
+      "publicationMs": 128.75339999999778,
+      "decodeMs": 55.987700000001496,
+      "bytes": 1267314,
+      "cpuUs": 126000
+    },
+    {
+      "sequence": 22001,
+      "round": 1,
+      "variant": "binary1",
+      "encodeMs": 55.351699999999255,
+      "publicationMs": 59.66370000000097,
+      "decodeMs": 45.91140000000087,
+      "bytes": 694760,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 22001,
+      "round": 1,
+      "variant": "binaryBrotli0",
+      "encodeMs": 49.233500000002095,
+      "publicationMs": 54.3566000000028,
+      "decodeMs": 48.286800000001676,
+      "bytes": 797113,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 22001,
+      "round": 1,
+      "variant": "nativeZstd1",
+      "encodeMs": 23.76209999999992,
+      "publicationMs": 27.388699999999517,
+      "decodeMs": 37.072299999999814,
+      "bytes": 504239,
+      "cpuUs": 15000
+    },
+    {
+      "sequence": 22001,
+      "round": 2,
+      "variant": "nativeZstd1",
+      "encodeMs": 28.01599999999962,
+      "publicationMs": 32.79539999999906,
+      "decodeMs": 28.136099999999715,
+      "bytes": 504239,
+      "cpuUs": 31000
+    },
+    {
+      "sequence": 22001,
+      "round": 2,
+      "variant": "binaryBrotli0",
+      "encodeMs": 78.53429999999935,
+      "publicationMs": 110.6893999999993,
+      "decodeMs": 88.43940000000293,
+      "bytes": 797113,
+      "cpuUs": 78000
+    },
+    {
+      "sequence": 22001,
+      "round": 2,
+      "variant": "binary1",
+      "encodeMs": 52.700700000001234,
+      "publicationMs": 58.05240000000049,
+      "decodeMs": 60.977100000000064,
+      "bytes": 694760,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 22001,
+      "round": 2,
+      "variant": "json1",
+      "encodeMs": 437.98679999999877,
+      "publicationMs": 456.7105999999985,
+      "decodeMs": 179.22179999999935,
+      "bytes": 1267314,
+      "cpuUs": 313000
+    },
+    {
+      "sequence": 22001,
+      "round": 2,
+      "variant": "json6",
+      "encodeMs": 258.82580000000235,
+      "publicationMs": 263.917300000001,
+      "decodeMs": 49.59470000000147,
+      "bytes": 1186768,
+      "cpuUs": 266000
+    },
+    {
+      "sequence": 22001,
+      "round": 3,
+      "variant": "json6",
+      "encodeMs": 199.34839999999895,
+      "publicationMs": 209.01959999999963,
+      "decodeMs": 69.33790000000226,
+      "bytes": 1186768,
+      "cpuUs": 203000
+    },
+    {
+      "sequence": 22001,
+      "round": 3,
+      "variant": "json1",
+      "encodeMs": 125.35299999999916,
+      "publicationMs": 140.35729999999967,
+      "decodeMs": 82.00920000000042,
+      "bytes": 1267314,
+      "cpuUs": 141000
+    },
+    {
+      "sequence": 22001,
+      "round": 3,
+      "variant": "binary1",
+      "encodeMs": 81.21889999999985,
+      "publicationMs": 91.3101999999999,
+      "decodeMs": 48.015800000001036,
+      "bytes": 694760,
+      "cpuUs": 78000
+    },
+    {
+      "sequence": 22001,
+      "round": 3,
+      "variant": "binaryBrotli0",
+      "encodeMs": 80.36880000000019,
+      "publicationMs": 85.39870000000155,
+      "decodeMs": 124.72509999999966,
+      "bytes": 797113,
+      "cpuUs": 77000
+    },
+    {
+      "sequence": 22001,
+      "round": 3,
+      "variant": "nativeZstd1",
+      "encodeMs": 33.49150000000009,
+      "publicationMs": 39.506100000002334,
+      "decodeMs": 59.22569999999905,
+      "bytes": 504239,
+      "cpuUs": 32000
+    },
+    {
+      "sequence": 22001,
+      "round": 4,
+      "variant": "nativeZstd1",
+      "encodeMs": 20.740100000002712,
+      "publicationMs": 24.36250000000291,
+      "decodeMs": 22.900300000001153,
+      "bytes": 504239,
+      "cpuUs": 15000
+    },
+    {
+      "sequence": 22001,
+      "round": 4,
+      "variant": "binaryBrotli0",
+      "encodeMs": 40.43640000000232,
+      "publicationMs": 48.57619999999952,
+      "decodeMs": 40.72759999999835,
+      "bytes": 797113,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 22001,
+      "round": 4,
+      "variant": "binary1",
+      "encodeMs": 60.08889999999883,
+      "publicationMs": 65.08109999999942,
+      "decodeMs": 53.74490000000151,
+      "bytes": 694760,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 22001,
+      "round": 4,
+      "variant": "json1",
+      "encodeMs": 117.27950000000055,
+      "publicationMs": 122.68730000000141,
+      "decodeMs": 53.14899999999761,
+      "bytes": 1267314,
+      "cpuUs": 110000
+    },
+    {
+      "sequence": 22001,
+      "round": 4,
+      "variant": "json6",
+      "encodeMs": 212.89010000000053,
+      "publicationMs": 225.27509999999893,
+      "decodeMs": 59.60910000000149,
+      "bytes": 1186768,
+      "cpuUs": 218000
+    },
+    {
+      "sequence": 22001,
+      "round": 5,
+      "variant": "json6",
+      "encodeMs": 222.8225999999995,
+      "publicationMs": 230.06009999999878,
+      "decodeMs": 103.01640000000043,
+      "bytes": 1186768,
+      "cpuUs": 218000
+    },
+    {
+      "sequence": 22001,
+      "round": 5,
+      "variant": "json1",
+      "encodeMs": 376.45100000000093,
+      "publicationMs": 393.0640999999996,
+      "decodeMs": 146.4328999999998,
+      "bytes": 1267314,
+      "cpuUs": 250000
+    },
+    {
+      "sequence": 22001,
+      "round": 5,
+      "variant": "binary1",
+      "encodeMs": 61.78369999999995,
+      "publicationMs": 65.82969999999841,
+      "decodeMs": 63.09560000000056,
+      "bytes": 694760,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 22001,
+      "round": 5,
+      "variant": "binaryBrotli0",
+      "encodeMs": 36.300200000001496,
+      "publicationMs": 48.43930000000182,
+      "decodeMs": 44.11829999999827,
+      "bytes": 797113,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 22001,
+      "round": 5,
+      "variant": "nativeZstd1",
+      "encodeMs": 98.56620000000112,
+      "publicationMs": 114.98449999999866,
+      "decodeMs": 218.9400999999998,
+      "bytes": 504239,
+      "cpuUs": 78000
+    },
+    {
+      "sequence": 22001,
+      "round": 6,
+      "variant": "nativeZstd1",
+      "encodeMs": 57.040399999998044,
+      "publicationMs": 65.55809999999838,
+      "decodeMs": 60.02929999999833,
+      "bytes": 504239,
+      "cpuUs": 46000
+    },
+    {
+      "sequence": 22001,
+      "round": 6,
+      "variant": "binaryBrotli0",
+      "encodeMs": 78.77369999999792,
+      "publicationMs": 87.06659999999829,
+      "decodeMs": 80.484800000002,
+      "bytes": 797113,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 22001,
+      "round": 6,
+      "variant": "binary1",
+      "encodeMs": 60.97060000000056,
+      "publicationMs": 71.81630000000223,
+      "decodeMs": 39.99499999999898,
+      "bytes": 694760,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 22001,
+      "round": 6,
+      "variant": "json1",
+      "encodeMs": 142.56730000000243,
+      "publicationMs": 159.0460000000021,
+      "decodeMs": 68.64549999999872,
+      "bytes": 1267314,
+      "cpuUs": 141000
+    },
+    {
+      "sequence": 22001,
+      "round": 6,
+      "variant": "json6",
+      "encodeMs": 306.0070000000014,
+      "publicationMs": 321.6319000000003,
+      "decodeMs": 51.40459999999803,
+      "bytes": 1186768,
+      "cpuUs": 296000
+    },
+    {
+      "sequence": 25000,
+      "round": 0,
+      "variant": "nativeZstd1",
+      "encodeMs": 16.41149999999834,
+      "publicationMs": 20.23540000000139,
+      "decodeMs": 39.48400000000038,
+      "bytes": 511294,
+      "cpuUs": 15000
+    },
+    {
+      "sequence": 25000,
+      "round": 0,
+      "variant": "binaryBrotli0",
+      "encodeMs": 35.05459999999948,
+      "publicationMs": 41.42779999999766,
+      "decodeMs": 45.32370000000083,
+      "bytes": 814599,
+      "cpuUs": 31000
+    },
+    {
+      "sequence": 25000,
+      "round": 0,
+      "variant": "binary1",
+      "encodeMs": 56.025299999997515,
+      "publicationMs": 60.56109999999899,
+      "decodeMs": 37.801400000000285,
+      "bytes": 714956,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 25000,
+      "round": 0,
+      "variant": "json1",
+      "encodeMs": 169.38340000000244,
+      "publicationMs": 176.3546000000024,
+      "decodeMs": 66.42459999999846,
+      "bytes": 1277158,
+      "cpuUs": 172000
+    },
+    {
+      "sequence": 25000,
+      "round": 0,
+      "variant": "json6",
+      "encodeMs": 246.8984000000055,
+      "publicationMs": 252.41670000000158,
+      "decodeMs": 55.12480000000505,
+      "bytes": 1198179,
+      "cpuUs": 234000
+    },
+    {
+      "sequence": 25000,
+      "round": 1,
+      "variant": "json6",
+      "encodeMs": 263.99989999999525,
+      "publicationMs": 270.93019999999524,
+      "decodeMs": 106.80920000000333,
+      "bytes": 1198179,
+      "cpuUs": 282000
+    },
+    {
+      "sequence": 25000,
+      "round": 1,
+      "variant": "json1",
+      "encodeMs": 121.96639999999752,
+      "publicationMs": 130.3304999999964,
+      "decodeMs": 60.37649999999849,
+      "bytes": 1277158,
+      "cpuUs": 125000
+    },
+    {
+      "sequence": 25000,
+      "round": 1,
+      "variant": "binary1",
+      "encodeMs": 118.81020000000717,
+      "publicationMs": 122.95310000000609,
+      "decodeMs": 46.47119999999995,
+      "bytes": 714956,
+      "cpuUs": 124000
+    },
+    {
+      "sequence": 25000,
+      "round": 1,
+      "variant": "binaryBrotli0",
+      "encodeMs": 55.07930000000488,
+      "publicationMs": 60.64730000000418,
+      "decodeMs": 44.720900000000256,
+      "bytes": 814599,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 25000,
+      "round": 1,
+      "variant": "nativeZstd1",
+      "encodeMs": 17.57440000000497,
+      "publicationMs": 21.719499999999243,
+      "decodeMs": 28.61880000000383,
+      "bytes": 511294,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 25000,
+      "round": 2,
+      "variant": "nativeZstd1",
+      "encodeMs": 35.8041000000012,
+      "publicationMs": 40.8266999999978,
+      "decodeMs": 45.23229999999603,
+      "bytes": 511294,
+      "cpuUs": 32000
+    },
+    {
+      "sequence": 25000,
+      "round": 2,
+      "variant": "binaryBrotli0",
+      "encodeMs": 65.96419999999489,
+      "publicationMs": 71.20010000000184,
+      "decodeMs": 43.26230000000214,
+      "bytes": 814599,
+      "cpuUs": 79000
+    },
+    {
+      "sequence": 25000,
+      "round": 2,
+      "variant": "binary1",
+      "encodeMs": 51.53910000000178,
+      "publicationMs": 55.49880000000121,
+      "decodeMs": 36.70599999999831,
+      "bytes": 714956,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 25000,
+      "round": 2,
+      "variant": "json1",
+      "encodeMs": 140.00180000000546,
+      "publicationMs": 149.12030000000232,
+      "decodeMs": 59.85369999999966,
+      "bytes": 1277158,
+      "cpuUs": 157000
+    },
+    {
+      "sequence": 25000,
+      "round": 2,
+      "variant": "json6",
+      "encodeMs": 249.05920000000333,
+      "publicationMs": 254.7488000000012,
+      "decodeMs": 53.52850000000035,
+      "bytes": 1198179,
+      "cpuUs": 267000
+    },
+    {
+      "sequence": 25000,
+      "round": 3,
+      "variant": "json6",
+      "encodeMs": 224.60139999999956,
+      "publicationMs": 232.6713000000018,
+      "decodeMs": 70.70370000000548,
+      "bytes": 1198179,
+      "cpuUs": 234000
+    },
+    {
+      "sequence": 25000,
+      "round": 3,
+      "variant": "json1",
+      "encodeMs": 130.72649999999703,
+      "publicationMs": 135.03989999999612,
+      "decodeMs": 50.98939999999857,
+      "bytes": 1277158,
+      "cpuUs": 140000
+    },
+    {
+      "sequence": 25000,
+      "round": 3,
+      "variant": "binary1",
+      "encodeMs": 64.12940000000526,
+      "publicationMs": 68.55860000000393,
+      "decodeMs": 52.87360000000626,
+      "bytes": 714956,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 25000,
+      "round": 3,
+      "variant": "binaryBrotli0",
+      "encodeMs": 47.315999999998894,
+      "publicationMs": 51.535400000000664,
+      "decodeMs": 72.16939999999886,
+      "bytes": 814599,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 25000,
+      "round": 3,
+      "variant": "nativeZstd1",
+      "encodeMs": 33.94709999999759,
+      "publicationMs": 39.447299999999814,
+      "decodeMs": 63.5396999999939,
+      "bytes": 511294,
+      "cpuUs": 32000
+    },
+    {
+      "sequence": 25000,
+      "round": 4,
+      "variant": "nativeZstd1",
+      "encodeMs": 25.850299999998242,
+      "publicationMs": 31.657899999998335,
+      "decodeMs": 32.54399999999441,
+      "bytes": 511294,
+      "cpuUs": 32000
+    },
+    {
+      "sequence": 25000,
+      "round": 4,
+      "variant": "binaryBrotli0",
+      "encodeMs": 37.83380000000034,
+      "publicationMs": 41.41690000000381,
+      "decodeMs": 46.09100000000035,
+      "bytes": 814599,
+      "cpuUs": 46000
+    },
+    {
+      "sequence": 25000,
+      "round": 4,
+      "variant": "binary1",
+      "encodeMs": 143.10169999999925,
+      "publicationMs": 151.94779999999446,
+      "decodeMs": 86.95939999999973,
+      "bytes": 714956,
+      "cpuUs": 156000
+    },
+    {
+      "sequence": 25000,
+      "round": 4,
+      "variant": "json1",
+      "encodeMs": 183.52999999999884,
+      "publicationMs": 195.9001999999964,
+      "decodeMs": 60.04950000000099,
+      "bytes": 1277158,
+      "cpuUs": 171000
+    },
+    {
+      "sequence": 25000,
+      "round": 4,
+      "variant": "json6",
+      "encodeMs": 334.9864000000016,
+      "publicationMs": 338.3825999999972,
+      "decodeMs": 62.30649999999878,
+      "bytes": 1198179,
+      "cpuUs": 313000
+    },
+    {
+      "sequence": 25000,
+      "round": 5,
+      "variant": "json6",
+      "encodeMs": 293.6177000000025,
+      "publicationMs": 299.609000000004,
+      "decodeMs": 86.55349999999453,
+      "bytes": 1198179,
+      "cpuUs": 266000
+    },
+    {
+      "sequence": 25000,
+      "round": 5,
+      "variant": "json1",
+      "encodeMs": 143.7413000000015,
+      "publicationMs": 147.68359999999666,
+      "decodeMs": 60.0457000000024,
+      "bytes": 1277158,
+      "cpuUs": 156000
+    },
+    {
+      "sequence": 25000,
+      "round": 5,
+      "variant": "binary1",
+      "encodeMs": 88.17050000000017,
+      "publicationMs": 96.39540000000125,
+      "decodeMs": 37.93630000000121,
+      "bytes": 714956,
+      "cpuUs": 93000
+    },
+    {
+      "sequence": 25000,
+      "round": 5,
+      "variant": "binaryBrotli0",
+      "encodeMs": 50.20110000000568,
+      "publicationMs": 56.810199999999895,
+      "decodeMs": 85.02040000000125,
+      "bytes": 814599,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 25000,
+      "round": 5,
+      "variant": "nativeZstd1",
+      "encodeMs": 36.57250000000204,
+      "publicationMs": 41.700700000001234,
+      "decodeMs": 46.55069999999978,
+      "bytes": 511294,
+      "cpuUs": 32000
+    },
+    {
+      "sequence": 25000,
+      "round": 6,
+      "variant": "nativeZstd1",
+      "encodeMs": 22.530500000000757,
+      "publicationMs": 25.608000000000175,
+      "decodeMs": 29.6701999999932,
+      "bytes": 511294,
+      "cpuUs": 15000
+    },
+    {
+      "sequence": 25000,
+      "round": 6,
+      "variant": "binaryBrotli0",
+      "encodeMs": 68.7106000000058,
+      "publicationMs": 72.64790000000357,
+      "decodeMs": 41.999299999995856,
+      "bytes": 814599,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 25000,
+      "round": 6,
+      "variant": "binary1",
+      "encodeMs": 78.60360000000219,
+      "publicationMs": 84.28310000000056,
+      "decodeMs": 34.5998000000036,
+      "bytes": 714956,
+      "cpuUs": 79000
+    },
+    {
+      "sequence": 25000,
+      "round": 6,
+      "variant": "json1",
+      "encodeMs": 133.65329999999813,
+      "publicationMs": 137.78740000000107,
+      "decodeMs": 50.88040000000183,
+      "bytes": 1277158,
+      "cpuUs": 140000
+    },
+    {
+      "sequence": 25000,
+      "round": 6,
+      "variant": "json6",
+      "encodeMs": 197.63140000000567,
+      "publicationMs": 206.075499999999,
+      "decodeMs": 64.44829999999638,
+      "bytes": 1198179,
+      "cpuUs": 219000
+    },
+    {
+      "sequence": 25001,
+      "round": 0,
+      "variant": "nativeZstd1",
+      "encodeMs": 24.182699999997567,
+      "publicationMs": 28.942900000001828,
+      "decodeMs": 29.477000000006228,
+      "bytes": 510565,
+      "cpuUs": 16000
+    },
+    {
+      "sequence": 25001,
+      "round": 0,
+      "variant": "binaryBrotli0",
+      "encodeMs": 46.201600000000326,
+      "publicationMs": 51.260599999994156,
+      "decodeMs": 49.680499999994936,
+      "bytes": 814528,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 25001,
+      "round": 0,
+      "variant": "binary1",
+      "encodeMs": 66.01370000000315,
+      "publicationMs": 72.00269999999728,
+      "decodeMs": 36.704899999997,
+      "bytes": 714417,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 25001,
+      "round": 0,
+      "variant": "json1",
+      "encodeMs": 178.1626000000033,
+      "publicationMs": 187.44140000000334,
+      "decodeMs": 67.95179999999527,
+      "bytes": 1276635,
+      "cpuUs": 172000
+    },
+    {
+      "sequence": 25001,
+      "round": 0,
+      "variant": "json6",
+      "encodeMs": 356.61249999999563,
+      "publicationMs": 365.60319999999774,
+      "decodeMs": 54.13940000000002,
+      "bytes": 1197672,
+      "cpuUs": 391000
+    },
+    {
+      "sequence": 25001,
+      "round": 1,
+      "variant": "json6",
+      "encodeMs": 205.74690000000555,
+      "publicationMs": 222.3463000000047,
+      "decodeMs": 67.06680000000051,
+      "bytes": 1197672,
+      "cpuUs": 203000
+    },
+    {
+      "sequence": 25001,
+      "round": 1,
+      "variant": "json1",
+      "encodeMs": 154.26429999999527,
+      "publicationMs": 164.21340000000055,
+      "decodeMs": 57.427700000000186,
+      "bytes": 1276635,
+      "cpuUs": 172000
+    },
+    {
+      "sequence": 25001,
+      "round": 1,
+      "variant": "binary1",
+      "encodeMs": 81.11249999999563,
+      "publicationMs": 93.9510999999984,
+      "decodeMs": 38.67629999999917,
+      "bytes": 714417,
+      "cpuUs": 94000
+    },
+    {
+      "sequence": 25001,
+      "round": 1,
+      "variant": "binaryBrotli0",
+      "encodeMs": 41.755199999999604,
+      "publicationMs": 44.92290000000503,
+      "decodeMs": 64.58570000000327,
+      "bytes": 814528,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 25001,
+      "round": 1,
+      "variant": "nativeZstd1",
+      "encodeMs": 24.017100000004575,
+      "publicationMs": 35.64440000000468,
+      "decodeMs": 33.138099999996484,
+      "bytes": 510565,
+      "cpuUs": 32000
+    },
+    {
+      "sequence": 25001,
+      "round": 2,
+      "variant": "nativeZstd1",
+      "encodeMs": 15.474999999998545,
+      "publicationMs": 21.87399999999616,
+      "decodeMs": 25.936900000000605,
+      "bytes": 510565,
+      "cpuUs": 16000
+    },
+    {
+      "sequence": 25001,
+      "round": 2,
+      "variant": "binaryBrotli0",
+      "encodeMs": 37.837600000006205,
+      "publicationMs": 42.193200000001525,
+      "decodeMs": 53.16509999999835,
+      "bytes": 814528,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 25001,
+      "round": 2,
+      "variant": "binary1",
+      "encodeMs": 75.12649999999849,
+      "publicationMs": 80.13530000000173,
+      "decodeMs": 42.29149999999936,
+      "bytes": 714417,
+      "cpuUs": 79000
+    },
+    {
+      "sequence": 25001,
+      "round": 2,
+      "variant": "json1",
+      "encodeMs": 166.83669999999984,
+      "publicationMs": 180.3672000000006,
+      "decodeMs": 54.27919999999722,
+      "bytes": 1276635,
+      "cpuUs": 156000
+    },
+    {
+      "sequence": 25001,
+      "round": 2,
+      "variant": "json6",
+      "encodeMs": 229.39340000000084,
+      "publicationMs": 233.67149999999674,
+      "decodeMs": 55.15249999999651,
+      "bytes": 1197672,
+      "cpuUs": 234000
+    },
+    {
+      "sequence": 25001,
+      "round": 3,
+      "variant": "json6",
+      "encodeMs": 191.1915999999983,
+      "publicationMs": 198.03080000000045,
+      "decodeMs": 47.32339999999385,
+      "bytes": 1197672,
+      "cpuUs": 203000
+    },
+    {
+      "sequence": 25001,
+      "round": 3,
+      "variant": "json1",
+      "encodeMs": 122.12199999999575,
+      "publicationMs": 130.75009999999747,
+      "decodeMs": 60.46979999999894,
+      "bytes": 1276635,
+      "cpuUs": 142000
+    },
+    {
+      "sequence": 25001,
+      "round": 3,
+      "variant": "binary1",
+      "encodeMs": 55.88669999999547,
+      "publicationMs": 61.03149999999732,
+      "decodeMs": 33.98410000000149,
+      "bytes": 714417,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 25001,
+      "round": 3,
+      "variant": "binaryBrotli0",
+      "encodeMs": 37.77700000000186,
+      "publicationMs": 41.51000000000204,
+      "decodeMs": 61.54780000000028,
+      "bytes": 814528,
+      "cpuUs": 31000
+    },
+    {
+      "sequence": 25001,
+      "round": 3,
+      "variant": "nativeZstd1",
+      "encodeMs": 17.281999999999243,
+      "publicationMs": 25.313399999999092,
+      "decodeMs": 33.28040000000328,
+      "bytes": 510565,
+      "cpuUs": 16000
+    },
+    {
+      "sequence": 25001,
+      "round": 4,
+      "variant": "nativeZstd1",
+      "encodeMs": 41.81739999999991,
+      "publicationMs": 47.12629999999626,
+      "decodeMs": 44.81910000000062,
+      "bytes": 510565,
+      "cpuUs": 46000
+    },
+    {
+      "sequence": 25001,
+      "round": 4,
+      "variant": "binaryBrotli0",
+      "encodeMs": 36.74569999999949,
+      "publicationMs": 40.476699999999255,
+      "decodeMs": 40.78560000000289,
+      "bytes": 814528,
+      "cpuUs": 31000
+    },
+    {
+      "sequence": 25001,
+      "round": 4,
+      "variant": "binary1",
+      "encodeMs": 49.12829999999667,
+      "publicationMs": 52.63989999999467,
+      "decodeMs": 30.37750000000233,
+      "bytes": 714417,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 25001,
+      "round": 4,
+      "variant": "json1",
+      "encodeMs": 132.5807000000059,
+      "publicationMs": 139.1224000000002,
+      "decodeMs": 64.47149999999965,
+      "bytes": 1276635,
+      "cpuUs": 141000
+    },
+    {
+      "sequence": 25001,
+      "round": 4,
+      "variant": "json6",
+      "encodeMs": 223.4603999999963,
+      "publicationMs": 232.33030000000144,
+      "decodeMs": 55.72009999999864,
+      "bytes": 1197672,
+      "cpuUs": 235000
+    },
+    {
+      "sequence": 25001,
+      "round": 5,
+      "variant": "json6",
+      "encodeMs": 228.8978999999963,
+      "publicationMs": 242.01499999999942,
+      "decodeMs": 51.47250000000349,
+      "bytes": 1197672,
+      "cpuUs": 218000
+    },
+    {
+      "sequence": 25001,
+      "round": 5,
+      "variant": "json1",
+      "encodeMs": 104.61520000000019,
+      "publicationMs": 113.92229999999836,
+      "decodeMs": 49.823199999998906,
+      "bytes": 1276635,
+      "cpuUs": 110000
+    },
+    {
+      "sequence": 25001,
+      "round": 5,
+      "variant": "binary1",
+      "encodeMs": 45.40430000000197,
+      "publicationMs": 49.947299999999814,
+      "decodeMs": 40.743099999999686,
+      "bytes": 714417,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 25001,
+      "round": 5,
+      "variant": "binaryBrotli0",
+      "encodeMs": 50.902399999999034,
+      "publicationMs": 59.76090000000113,
+      "decodeMs": 56.28050000000076,
+      "bytes": 814528,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 25001,
+      "round": 5,
+      "variant": "nativeZstd1",
+      "encodeMs": 14.919600000001083,
+      "publicationMs": 19.456600000004983,
+      "decodeMs": 21.213700000000244,
+      "bytes": 510565,
+      "cpuUs": 16000
+    },
+    {
+      "sequence": 25001,
+      "round": 6,
+      "variant": "nativeZstd1",
+      "encodeMs": 16.961499999997613,
+      "publicationMs": 21.636899999997695,
+      "decodeMs": 23.814399999995658,
+      "bytes": 510565,
+      "cpuUs": 16000
+    },
+    {
+      "sequence": 25001,
+      "round": 6,
+      "variant": "binaryBrotli0",
+      "encodeMs": 38.412100000001374,
+      "publicationMs": 41.834499999997206,
+      "decodeMs": 34.40720000000147,
+      "bytes": 814528,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 25001,
+      "round": 6,
+      "variant": "binary1",
+      "encodeMs": 51.64390000000276,
+      "publicationMs": 57.10469999999623,
+      "decodeMs": 50.225100000003295,
+      "bytes": 714417,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 25001,
+      "round": 6,
+      "variant": "json1",
+      "encodeMs": 117.23249999999825,
+      "publicationMs": 125.01269999999931,
+      "decodeMs": 47.42540000000008,
+      "bytes": 1276635,
+      "cpuUs": 125000
+    },
+    {
+      "sequence": 25001,
+      "round": 6,
+      "variant": "json6",
+      "encodeMs": 251.18710000000283,
+      "publicationMs": 264.02189999999973,
+      "decodeMs": 49.08299999999872,
+      "bytes": 1197672,
+      "cpuUs": 250000
+    },
+    {
+      "sequence": 28300,
+      "round": 0,
+      "variant": "nativeZstd1",
+      "encodeMs": 17.784299999999348,
+      "publicationMs": 21.866399999998976,
+      "decodeMs": 39.485200000002806,
+      "bytes": 515680,
+      "cpuUs": 31000
+    },
+    {
+      "sequence": 28300,
+      "round": 0,
+      "variant": "binaryBrotli0",
+      "encodeMs": 36.88680000000022,
+      "publicationMs": 41.96809999999823,
+      "decodeMs": 37.9861000000019,
+      "bytes": 820678,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 28300,
+      "round": 0,
+      "variant": "binary1",
+      "encodeMs": 82.20049999999901,
+      "publicationMs": 88.1221000000005,
+      "decodeMs": 30.796699999998964,
+      "bytes": 720257,
+      "cpuUs": 93000
+    },
+    {
+      "sequence": 28300,
+      "round": 0,
+      "variant": "json1",
+      "encodeMs": 104.43879999999626,
+      "publicationMs": 110.96949999999924,
+      "decodeMs": 48.59679999999935,
+      "bytes": 1291657,
+      "cpuUs": 110000
+    },
+    {
+      "sequence": 28300,
+      "round": 0,
+      "variant": "json6",
+      "encodeMs": 273.40610000000015,
+      "publicationMs": 276.59300000000076,
+      "decodeMs": 48.92859999999928,
+      "bytes": 1210441,
+      "cpuUs": 250000
+    },
+    {
+      "sequence": 28300,
+      "round": 1,
+      "variant": "json6",
+      "encodeMs": 269.23159999999916,
+      "publicationMs": 276.106200000002,
+      "decodeMs": 105.45580000000336,
+      "bytes": 1210441,
+      "cpuUs": 266000
+    },
+    {
+      "sequence": 28300,
+      "round": 1,
+      "variant": "json1",
+      "encodeMs": 234.5685999999987,
+      "publicationMs": 241.37600000000384,
+      "decodeMs": 53.064100000003236,
+      "bytes": 1291657,
+      "cpuUs": 219000
+    },
+    {
+      "sequence": 28300,
+      "round": 1,
+      "variant": "binary1",
+      "encodeMs": 69.58179999999993,
+      "publicationMs": 72.88519999999698,
+      "decodeMs": 48.75409999999829,
+      "bytes": 720257,
+      "cpuUs": 61000
+    },
+    {
+      "sequence": 28300,
+      "round": 1,
+      "variant": "binaryBrotli0",
+      "encodeMs": 58.05040000000008,
+      "publicationMs": 63.06459999999788,
+      "decodeMs": 54.05460000000312,
+      "bytes": 820678,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 28300,
+      "round": 1,
+      "variant": "nativeZstd1",
+      "encodeMs": 29.649499999999534,
+      "publicationMs": 39.65380000000005,
+      "decodeMs": 39.524499999999534,
+      "bytes": 515680,
+      "cpuUs": 31000
+    },
+    {
+      "sequence": 28300,
+      "round": 2,
+      "variant": "nativeZstd1",
+      "encodeMs": 31.681200000006356,
+      "publicationMs": 37.04160000000411,
+      "decodeMs": 42.03759999999602,
+      "bytes": 515680,
+      "cpuUs": 31000
+    },
+    {
+      "sequence": 28300,
+      "round": 2,
+      "variant": "binaryBrotli0",
+      "encodeMs": 49.641600000002654,
+      "publicationMs": 54.23739999999816,
+      "decodeMs": 62.23139999999694,
+      "bytes": 820678,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 28300,
+      "round": 2,
+      "variant": "binary1",
+      "encodeMs": 62.08729999999923,
+      "publicationMs": 67.14319999999861,
+      "decodeMs": 33.38010000000213,
+      "bytes": 720257,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 28300,
+      "round": 2,
+      "variant": "json1",
+      "encodeMs": 153.24059999999736,
+      "publicationMs": 156.73769999999786,
+      "decodeMs": 56.444400000000314,
+      "bytes": 1291657,
+      "cpuUs": 109000
+    },
+    {
+      "sequence": 28300,
+      "round": 2,
+      "variant": "json6",
+      "encodeMs": 251.75729999999749,
+      "publicationMs": 260.71160000000236,
+      "decodeMs": 53.11829999999463,
+      "bytes": 1210441,
+      "cpuUs": 265000
+    },
+    {
+      "sequence": 28300,
+      "round": 3,
+      "variant": "json6",
+      "encodeMs": 258.51319999999396,
+      "publicationMs": 270.4470999999976,
+      "decodeMs": 79.38349999999627,
+      "bytes": 1210441,
+      "cpuUs": 280000
+    },
+    {
+      "sequence": 28300,
+      "round": 3,
+      "variant": "json1",
+      "encodeMs": 207.2674999999872,
+      "publicationMs": 220.5725999999995,
+      "decodeMs": 56.84679999999935,
+      "bytes": 1291657,
+      "cpuUs": 187000
+    },
+    {
+      "sequence": 28300,
+      "round": 3,
+      "variant": "binary1",
+      "encodeMs": 68.6423000000068,
+      "publicationMs": 79.50140000000829,
+      "decodeMs": 48.785900000002584,
+      "bytes": 720257,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 28300,
+      "round": 3,
+      "variant": "binaryBrotli0",
+      "encodeMs": 79.10700000000361,
+      "publicationMs": 90.92859999999928,
+      "decodeMs": 64.56759999999485,
+      "bytes": 820678,
+      "cpuUs": 77000
+    },
+    {
+      "sequence": 28300,
+      "round": 3,
+      "variant": "nativeZstd1",
+      "encodeMs": 19.794599999993807,
+      "publicationMs": 23.37829999999667,
+      "decodeMs": 30.822200000009616,
+      "bytes": 515680,
+      "cpuUs": 16000
+    },
+    {
+      "sequence": 28300,
+      "round": 4,
+      "variant": "nativeZstd1",
+      "encodeMs": 14.18279999999504,
+      "publicationMs": 18.308499999999185,
+      "decodeMs": 24.562900000004447,
+      "bytes": 515680,
+      "cpuUs": 16000
+    },
+    {
+      "sequence": 28300,
+      "round": 4,
+      "variant": "binaryBrotli0",
+      "encodeMs": 83.47940000001108,
+      "publicationMs": 90.99150000000373,
+      "decodeMs": 49.16459999998915,
+      "bytes": 820678,
+      "cpuUs": 78000
+    },
+    {
+      "sequence": 28300,
+      "round": 4,
+      "variant": "binary1",
+      "encodeMs": 224.78259999999136,
+      "publicationMs": 232.59299999999348,
+      "decodeMs": 209.03859999999986,
+      "bytes": 720257,
+      "cpuUs": 156000
+    },
+    {
+      "sequence": 28300,
+      "round": 4,
+      "variant": "json1",
+      "encodeMs": 125.1198000000004,
+      "publicationMs": 134.20960000000196,
+      "decodeMs": 57.636799999992945,
+      "bytes": 1291657,
+      "cpuUs": 125000
+    },
+    {
+      "sequence": 28300,
+      "round": 4,
+      "variant": "json6",
+      "encodeMs": 328.604800000001,
+      "publicationMs": 336.0223999999871,
+      "decodeMs": 78.05400000000373,
+      "bytes": 1210441,
+      "cpuUs": 328000
+    },
+    {
+      "sequence": 28300,
+      "round": 5,
+      "variant": "json6",
+      "encodeMs": 419.978099999993,
+      "publicationMs": 431.185799999992,
+      "decodeMs": 70.54389999998966,
+      "bytes": 1210441,
+      "cpuUs": 313000
+    },
+    {
+      "sequence": 28300,
+      "round": 5,
+      "variant": "json1",
+      "encodeMs": 184.55190000000584,
+      "publicationMs": 196.05160000000615,
+      "decodeMs": 53.03729999999632,
+      "bytes": 1291657,
+      "cpuUs": 172000
+    },
+    {
+      "sequence": 28300,
+      "round": 5,
+      "variant": "binary1",
+      "encodeMs": 124.90710000001127,
+      "publicationMs": 136.05359999999928,
+      "decodeMs": 85.69409999999334,
+      "bytes": 720257,
+      "cpuUs": 125000
+    },
+    {
+      "sequence": 28300,
+      "round": 5,
+      "variant": "binaryBrotli0",
+      "encodeMs": 72.54349999999977,
+      "publicationMs": 81.88699999998789,
+      "decodeMs": 79.99980000000505,
+      "bytes": 820678,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 28300,
+      "round": 5,
+      "variant": "nativeZstd1",
+      "encodeMs": 47.34969999999157,
+      "publicationMs": 52.74769999999262,
+      "decodeMs": 53.22569999999541,
+      "bytes": 515680,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 28300,
+      "round": 6,
+      "variant": "nativeZstd1",
+      "encodeMs": 38.6874000000098,
+      "publicationMs": 45.76190000001225,
+      "decodeMs": 52.50830000000133,
+      "bytes": 515680,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 28300,
+      "round": 6,
+      "variant": "binaryBrotli0",
+      "encodeMs": 41.69999999999709,
+      "publicationMs": 47.28540000000794,
+      "decodeMs": 46.682300000000396,
+      "bytes": 820678,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 28300,
+      "round": 6,
+      "variant": "binary1",
+      "encodeMs": 80.91780000001017,
+      "publicationMs": 85.880799999999,
+      "decodeMs": 45.22239999999874,
+      "bytes": 720257,
+      "cpuUs": 93000
+    },
+    {
+      "sequence": 28300,
+      "round": 6,
+      "variant": "json1",
+      "encodeMs": 177.5778999999893,
+      "publicationMs": 183.27589999999327,
+      "decodeMs": 60.47969999999623,
+      "bytes": 1291657,
+      "cpuUs": 187000
+    },
+    {
+      "sequence": 28300,
+      "round": 6,
+      "variant": "json6",
+      "encodeMs": 256.99860000000626,
+      "publicationMs": 261.3613999999943,
+      "decodeMs": 68.35940000000119,
+      "bytes": 1210441,
+      "cpuUs": 265000
+    },
+    {
+      "sequence": 28301,
+      "round": 0,
+      "variant": "nativeZstd1",
+      "encodeMs": 27.68289999999979,
+      "publicationMs": 40.84100000000035,
+      "decodeMs": 31.57270000000426,
+      "bytes": 514853,
+      "cpuUs": 31000
+    },
+    {
+      "sequence": 28301,
+      "round": 0,
+      "variant": "binaryBrotli0",
+      "encodeMs": 81.95810000000347,
+      "publicationMs": 91.59799999999814,
+      "decodeMs": 74.07069999999658,
+      "bytes": 820031,
+      "cpuUs": 94000
+    },
+    {
+      "sequence": 28301,
+      "round": 0,
+      "variant": "binary1",
+      "encodeMs": 94.8579999999929,
+      "publicationMs": 98.97060000000056,
+      "decodeMs": 33.55760000000009,
+      "bytes": 719534,
+      "cpuUs": 109000
+    },
+    {
+      "sequence": 28301,
+      "round": 0,
+      "variant": "json1",
+      "encodeMs": 132.96270000000368,
+      "publicationMs": 140.101800000004,
+      "decodeMs": 59.92029999999795,
+      "bytes": 1291129,
+      "cpuUs": 141000
+    },
+    {
+      "sequence": 28301,
+      "round": 0,
+      "variant": "json6",
+      "encodeMs": 269.72389999999723,
+      "publicationMs": 298.190499999997,
+      "decodeMs": 67.82769999999437,
+      "bytes": 1209861,
+      "cpuUs": 281000
+    },
+    {
+      "sequence": 28301,
+      "round": 1,
+      "variant": "json6",
+      "encodeMs": 278.9795999999915,
+      "publicationMs": 284.0862999999954,
+      "decodeMs": 57.51350000000093,
+      "bytes": 1209861,
+      "cpuUs": 280000
+    },
+    {
+      "sequence": 28301,
+      "round": 1,
+      "variant": "json1",
+      "encodeMs": 130.65039999999863,
+      "publicationMs": 138.65709999999672,
+      "decodeMs": 56.65439999999944,
+      "bytes": 1291129,
+      "cpuUs": 141000
+    },
+    {
+      "sequence": 28301,
+      "round": 1,
+      "variant": "binary1",
+      "encodeMs": 72.56840000000375,
+      "publicationMs": 81.40780000000086,
+      "decodeMs": 47.95440000000235,
+      "bytes": 719534,
+      "cpuUs": 78000
+    },
+    {
+      "sequence": 28301,
+      "round": 1,
+      "variant": "binaryBrotli0",
+      "encodeMs": 52.63760000000184,
+      "publicationMs": 58.935599999997066,
+      "decodeMs": 50.88340000000608,
+      "bytes": 820031,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 28301,
+      "round": 1,
+      "variant": "nativeZstd1",
+      "encodeMs": 31.314100000003236,
+      "publicationMs": 36.83690000000934,
+      "decodeMs": 46.01539999998931,
+      "bytes": 514853,
+      "cpuUs": 31000
+    },
+    {
+      "sequence": 28301,
+      "round": 2,
+      "variant": "nativeZstd1",
+      "encodeMs": 44.854000000006636,
+      "publicationMs": 49.88560000000871,
+      "decodeMs": 47.68610000000626,
+      "bytes": 514853,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 28301,
+      "round": 2,
+      "variant": "binaryBrotli0",
+      "encodeMs": 72.81420000000799,
+      "publicationMs": 78.42399999999907,
+      "decodeMs": 66.28809999999066,
+      "bytes": 820031,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 28301,
+      "round": 2,
+      "variant": "binary1",
+      "encodeMs": 66.38030000000435,
+      "publicationMs": 70.19080000001122,
+      "decodeMs": 44.36930000000575,
+      "bytes": 719534,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 28301,
+      "round": 2,
+      "variant": "json1",
+      "encodeMs": 113.38940000000002,
+      "publicationMs": 117.40320000000065,
+      "decodeMs": 47.80319999999483,
+      "bytes": 1291129,
+      "cpuUs": 109000
+    },
+    {
+      "sequence": 28301,
+      "round": 2,
+      "variant": "json6",
+      "encodeMs": 213.33839999999327,
+      "publicationMs": 223.93919999999343,
+      "decodeMs": 63.87979999999516,
+      "bytes": 1209861,
+      "cpuUs": 203000
+    },
+    {
+      "sequence": 28301,
+      "round": 3,
+      "variant": "json6",
+      "encodeMs": 331.4406999999919,
+      "publicationMs": 343.3564999999944,
+      "decodeMs": 59.097099999999045,
+      "bytes": 1209861,
+      "cpuUs": 328000
+    },
+    {
+      "sequence": 28301,
+      "round": 3,
+      "variant": "json1",
+      "encodeMs": 215.9725999999937,
+      "publicationMs": 224.78170000000682,
+      "decodeMs": 77.42960000000312,
+      "bytes": 1291129,
+      "cpuUs": 218000
+    },
+    {
+      "sequence": 28301,
+      "round": 3,
+      "variant": "binary1",
+      "encodeMs": 63.35129999999481,
+      "publicationMs": 67.73189999999886,
+      "decodeMs": 42.93609999999171,
+      "bytes": 719534,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 28301,
+      "round": 3,
+      "variant": "binaryBrotli0",
+      "encodeMs": 70.4320000000007,
+      "publicationMs": 78.24210000000312,
+      "decodeMs": 75.82279999999446,
+      "bytes": 820031,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 28301,
+      "round": 3,
+      "variant": "nativeZstd1",
+      "encodeMs": 18.913099999990663,
+      "publicationMs": 22.991699999998673,
+      "decodeMs": 25.748200000001816,
+      "bytes": 514853,
+      "cpuUs": 15000
+    },
+    {
+      "sequence": 28301,
+      "round": 4,
+      "variant": "nativeZstd1",
+      "encodeMs": 31.18159999999625,
+      "publicationMs": 37.20249999999942,
+      "decodeMs": 60.075500000006286,
+      "bytes": 514853,
+      "cpuUs": 32000
+    },
+    {
+      "sequence": 28301,
+      "round": 4,
+      "variant": "binaryBrotli0",
+      "encodeMs": 65.96950000000652,
+      "publicationMs": 70.78840000000491,
+      "decodeMs": 54.96349999999802,
+      "bytes": 820031,
+      "cpuUs": 46000
+    },
+    {
+      "sequence": 28301,
+      "round": 4,
+      "variant": "binary1",
+      "encodeMs": 123.24739999999292,
+      "publicationMs": 129.73509999999078,
+      "decodeMs": 75.6652000000031,
+      "bytes": 719534,
+      "cpuUs": 109000
+    },
+    {
+      "sequence": 28301,
+      "round": 4,
+      "variant": "json1",
+      "encodeMs": 123.11039999999048,
+      "publicationMs": 134.51780000000144,
+      "decodeMs": 61.18270000000484,
+      "bytes": 1291129,
+      "cpuUs": 140000
+    },
+    {
+      "sequence": 28301,
+      "round": 4,
+      "variant": "json6",
+      "encodeMs": 236.33370000000286,
+      "publicationMs": 241.4429999999993,
+      "decodeMs": 56.484499999991385,
+      "bytes": 1209861,
+      "cpuUs": 235000
+    },
+    {
+      "sequence": 28301,
+      "round": 5,
+      "variant": "json6",
+      "encodeMs": 244.84919999999693,
+      "publicationMs": 249.601800000004,
+      "decodeMs": 66.73060000000987,
+      "bytes": 1209861,
+      "cpuUs": 250000
+    },
+    {
+      "sequence": 28301,
+      "round": 5,
+      "variant": "json1",
+      "encodeMs": 203.87669999999343,
+      "publicationMs": 222.41739999999118,
+      "decodeMs": 65.85130000000936,
+      "bytes": 1291129,
+      "cpuUs": 204000
+    },
+    {
+      "sequence": 28301,
+      "round": 5,
+      "variant": "binary1",
+      "encodeMs": 115.93589999999676,
+      "publicationMs": 128.79369999999471,
+      "decodeMs": 88.27680000000692,
+      "bytes": 719534,
+      "cpuUs": 109000
+    },
+    {
+      "sequence": 28301,
+      "round": 5,
+      "variant": "binaryBrotli0",
+      "encodeMs": 103.89830000000075,
+      "publicationMs": 111.26089999999385,
+      "decodeMs": 75.4371000000101,
+      "bytes": 820031,
+      "cpuUs": 47000
+    },
+    {
+      "sequence": 28301,
+      "round": 5,
+      "variant": "nativeZstd1",
+      "encodeMs": 21.374900000009802,
+      "publicationMs": 26.48530000000028,
+      "decodeMs": 37.974300000001676,
+      "bytes": 514853,
+      "cpuUs": 16000
+    },
+    {
+      "sequence": 28301,
+      "round": 6,
+      "variant": "nativeZstd1",
+      "encodeMs": 19.464399999997113,
+      "publicationMs": 23.03310000000056,
+      "decodeMs": 27.00680000000284,
+      "bytes": 514853,
+      "cpuUs": 16000
+    },
+    {
+      "sequence": 28301,
+      "round": 6,
+      "variant": "binaryBrotli0",
+      "encodeMs": 72.81710000000021,
+      "publicationMs": 78.08770000000368,
+      "decodeMs": 78.92390000000887,
+      "bytes": 820031,
+      "cpuUs": 62000
+    },
+    {
+      "sequence": 28301,
+      "round": 6,
+      "variant": "binary1",
+      "encodeMs": 57.27599999999802,
+      "publicationMs": 68.80680000000575,
+      "decodeMs": 33.94460000000254,
+      "bytes": 719534,
+      "cpuUs": 63000
+    },
+    {
+      "sequence": 28301,
+      "round": 6,
+      "variant": "json1",
+      "encodeMs": 121.97149999999965,
+      "publicationMs": 135.77000000000407,
+      "decodeMs": 54.29970000000321,
+      "bytes": 1291129,
+      "cpuUs": 125000
+    },
+    {
+      "sequence": 28301,
+      "round": 6,
+      "variant": "json6",
+      "encodeMs": 249.5896000000066,
+      "publicationMs": 262.57040000001143,
+      "decodeMs": 62.36140000000887,
+      "bytes": 1209861,
+      "cpuUs": 266000
+    }
+  ],
+  "summary": {
+    "json6": {
+      "encodeMs": 249.32440000000497,
+      "publicationMs": 257.7302000000018,
+      "decodeMs": 57.61254999999983,
+      "bytes": 1197925.5,
+      "cpuUs": 250000
+    },
+    "json1": {
+      "encodeMs": 141.28455000000395,
+      "publicationMs": 148.4019499999995,
+      "decodeMs": 57.320299999999406,
+      "bytes": 1276896.5,
+      "cpuUs": 141000
+    },
+    "binary1": {
+      "encodeMs": 65.07155000000421,
+      "publicationMs": 71.00355000000673,
+      "decodeMs": 44.79585000000225,
+      "bytes": 714686.5,
+      "cpuUs": 63000
+    },
+    "binaryBrotli0": {
+      "encodeMs": 51.77000000000044,
+      "publicationMs": 59.3482499999991,
+      "decodeMs": 55.25284999999894,
+      "bytes": 814563.5,
+      "cpuUs": 54500
+    },
+    "nativeZstd1": {
+      "encodeMs": 23.889600000002247,
+      "publicationMs": 28.764200000001438,
+      "decodeMs": 35.17635000000155,
+      "bytes": 510929.5,
+      "cpuUs": 31000
+    }
+  },
+  "peakRssMiB": 111.2734375,
+  "elapsedSeconds": 89.509722,
+  "cpu": {
+    "user": 45969000,
+    "system": 5328000
+  }
+}

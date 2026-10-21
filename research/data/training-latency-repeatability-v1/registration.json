@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "output": "research/reports/training-latency-2026-10-19/repeatability-v1",
+  "originalCampaignSha256": "0679f00cf14a16b29bb93f0c473c7af71be14ac165754b364752f6f9fb7aac02",
+  "referencePooledReduction": 0.6912599266517356,
+  "absoluteTolerance": 0.05,
+  "consistencyDefinition": "All three independently valid repetitions within five percentage points of the historical pooled reduction; report all timings and failures.",
+  "noRetries": true,
+  "noImplementationChanges": true,
+  "trials": [
+    {
+      "trial": 1,
+      "campaign": "research/data/training-latency-repeatability-v1/trial1-campaign.json",
+      "sha256": "3df91146493a03c869b7b5cc8584aa75ff9805463885b6707253b245a724d585"
+    },
+    {
+      "trial": 2,
+      "campaign": "research/data/training-latency-repeatability-v1/trial2-campaign.json",
+      "sha256": "134ebe505b29a77abf194dd429242b75257635c0640a221ef7b85a90e23f7b69"
+    },
+    {
+      "trial": 3,
+      "campaign": "research/data/training-latency-repeatability-v1/trial3-campaign.json",
+      "sha256": "be4fa3bdf8b1c9cbecd5f28db5efd6030ff5a8891a99f885d93468f89da96cfb"
+    }
+  ],
+  "sourceSha256": "a155a5a06565825204a01c42b7b4837aa52d4ff127cb90c0f87f949891bbb430"
+}

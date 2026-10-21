@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "name": "round0-nativeReuse",
+  "paused": false,
+  "paths": {
+    "runner": ".codebase/scripts/evaluation-and-performance/profile-exact-reuse-latency.mjs",
+    "protocol": "research/data/exact-reuse-latency-v1/protocol.json",
+    "run": "research/reports/training-latency-2026-10-19/exact-reuse-latency-v1/round0-nativeReuse",
+    "runtime": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.cache\\latency-runtimes\\v26.12.0\\node.exe"
+  },
+  "state_file": "runs/python-actions/exact-reuse-latency-round0-nativeReuse-current.json",
+  "pins": {
+    "{runner}": "9d6d86e48f55456d58361588a7652822d2e3bbd3f1fdb63e0f7a4f3ea86bbb8a",
+    "{protocol}": "8e7d7b989d1bbc5546c48333cb7368a18240886854aee32867f82ae1492ea775"
+  },
+  "artifacts": {
+    "report": "{run}/report.json"
+  },
+  "jobs": {
+    "profile": {
+      "role": "train",
+      "argv": [
+        "{runtime}",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--protocol",
+        "{protocol}",
+        "--out",
+        "{run}",
+        "--variant",
+        "nativeReuse",
+        "--round",
+        "0",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{protocol}",
+        "{runner}"
+      ],
+      "fresh_output": "{run}"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "name": "latency-runtime-bounded-checks-v1",
+  "paused": true,
+  "paths": {
+    "runtime": ".cache/latency-runtimes/v26.12.0/node.exe",
+    "run": "research/reports/training-latency-2026-10-19/neural-hash-runtime-v1"
+  },
+  "state_file": "runs/python-actions/latency-runtime-checks-current.json",
+  "pins": {
+    "{runtime}": "1a14457b043fe82fd2fc027959595e91d138a8185c7ca6c02c15c16632b51aa4"
+  },
+  "artifacts": {},
+  "jobs": {
+    "bounded-compatibility": {"role": "check", "argv": ["{runtime}", "--max-old-space-size=256", "--test", "--test-reporter=tap", "--test-concurrency=1", ".codebase/tests/supervised-baselines/trainer.test.mjs", ".codebase/tests/runtime/sparse-accumulator.test.mjs", ".codebase/tests/runtime/checkpoint-codec.test.mjs", ".codebase/tests/runtime/checkpoint-resume-fixture.test.mjs"]},
+    "historical-lessons": {"role": "check", "argv": ["{runtime}", "--max-old-space-size=256", "--test", "--test-reporter=tap", "--test-concurrency=1", ".codebase/tests/runtime/pipeline-lesson-fixture.test.mjs"]},
+    "shared-memory-equivalence": {"role": "check", "argv": ["{runtime}", "--max-old-space-size=256", "--test", "--test-reporter=tap", "--test-concurrency=1", "research/reports/training-latency-2026-10-19/shared-wasm-v2/equivalence.test.mjs"]}
+  }
+}

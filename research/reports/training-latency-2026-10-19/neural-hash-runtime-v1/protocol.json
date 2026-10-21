@@ -1,0 +1,73 @@
+{
+  "schema": "neural-hash-runtime-v1",
+  "scope": "Offline component only; concurrent audit; no graph, learning or overall speed claim",
+  "inputs": [
+    {
+      "path": "runs\\g0-reversal-history-diagnostic-v1-resumed2\\checkpoint-022000.json.gz",
+      "sha256": "7fc0cfc6678b4c8b09c3584679fd8109cf31382ffc3544776f0412d4f8a36220",
+      "sequence": 22000,
+      "pending": "frame",
+      "neurons": 134209,
+      "sourceBytes": 1187218
+    },
+    {
+      "path": "runs\\g0-reversal-history-diagnostic-v1-resumed2\\checkpoint-022001.json.gz",
+      "sha256": "5f9e98e84e96452b23361ee2e1ecd6ad931acfb978edd68390b5424b8d053a99",
+      "sequence": 22001,
+      "pending": null,
+      "neurons": 134209,
+      "sourceBytes": 1186768
+    },
+    {
+      "path": "runs\\g0-reversal-history-diagnostic-v1-resumed2\\checkpoint-025000.json.gz",
+      "sha256": "de2450f83022449543438b98e35c6374c47171ef1b1212850011f32e25663ae8",
+      "sequence": 25000,
+      "pending": "frame",
+      "neurons": 134209,
+      "sourceBytes": 1198179
+    },
+    {
+      "path": "runs\\g0-reversal-history-diagnostic-v1-resumed2\\checkpoint-025001.json.gz",
+      "sha256": "8f1a5b4a2da495c75b24df6c82228250624984e6e2d11f8b6428f51e0d33f643",
+      "sequence": 25001,
+      "pending": null,
+      "neurons": 134209,
+      "sourceBytes": 1197672
+    },
+    {
+      "path": "runs\\g0-reversal-history-diagnostic-v1-resumed2\\checkpoint-028300.json.gz",
+      "sha256": "eac200581b9e5bd0ba4d4c8eb83b8d2f973f0899078e13fc224b717e534a426e",
+      "sequence": 28300,
+      "pending": "frame",
+      "neurons": 134209,
+      "sourceBytes": 1210441
+    },
+    {
+      "path": "runs\\g0-reversal-history-diagnostic-v1-resumed2\\checkpoint-028301.json.gz",
+      "sha256": "37352a488bd4a3aeaa8d02f8c553c256b48c46c2f6f2ebe81f9d3c02d1a3f7af",
+      "sequence": 28301,
+      "pending": null,
+      "neurons": 134209,
+      "sourceBytes": 1209861
+    }
+  ],
+  "rounds": 7,
+  "warmup": 1,
+  "duty": 0.5,
+  "sources": {
+    ".codebase\\scripts\\evaluation-and-performance\\profile-neural-state-hash.mjs": "d53ac2bb7eca23292362a3b48fffda4265768c2eed2088f9707cc094a297b094",
+    "python actions\\profile_neural_hash.py": "d03f2c273bc87d2ff760c26f03220f79a3512cb9457de57e1b6a2aa62651ae32"
+  },
+  "runtimeRegistrationSha256": "127816f62da61f3b302e33911bc317ed28268b340a2a0f77c6809962646eddd6",
+  "runtimes": {
+    "current": {
+      "binary": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+      "sha256": "0d0f5e39f9f3d9587bc19f73eab3c2c9c4903fd02d6dbf9c853dd81b3d95fad4"
+    },
+    "candidate": {
+      "binary": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.cache\\latency-runtimes\\v26.12.0\\node.exe",
+      "sha256": "1a14457b043fe82fd2fc027959595e91d138a8185c7ca6c02c15c16632b51aa4"
+    }
+  },
+  "gate": "All canonical bytes identical; report observed timings including regressions"
+}

@@ -1,0 +1,13 @@
+{
+  "cleanExclusiveTiming": false,
+  "knownDisturbances": [
+    {
+      "kind": "oversized-repository-search",
+      "process": "rg.exe PID7424",
+      "description": "A mistaken numeric text search streamed several gigabytes during late round1. It is terminal; no graph process was stopped. Exact timing impact is unmeasured.",
+      "recordedUtc": "2026-10-19T07:04:30Z"
+    }
+  ],
+  "disposition": "Preserve every sample. Use independent decoding for integrity, but do not make a clean performance claim from this run or remove individual samples after observing timings.",
+  "nextComparison": "Separately registered fresh-process runtime comparison after this run and independent integrity audit finish."
+}

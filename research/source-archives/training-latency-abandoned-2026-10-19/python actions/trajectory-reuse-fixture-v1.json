@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "name": "trajectory-reuse-fixture-v1",
+  "paused": false,
+  "paths": {
+    "runner": ".codebase/scripts/evaluation-and-performance/profile-trajectory-reuse.mjs",
+    "protocol": "research/data/trajectory-reuse-fixture-v1/protocol.json",
+    "run": "research/reports/training-latency-2026-10-19/trajectory-reuse-fixture-v1",
+    "runtime": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.cache\\latency-runtimes\\v26.12.0\\node.exe"
+  },
+  "state_file": "runs/python-actions/trajectory-reuse-fixture-v1-current.json",
+  "pins": {
+    "{runner}": "c029bcf3492933a13e619e4060efc5313e4bd340e3ca87d70f3cea6ae963e897",
+    "{protocol}": "3666998474f5dd6dc67f0021533d9d1fc8e60750207172511668f0435d947ff9",
+    ".codebase/tests/evaluation-and-performance/trajectory-reuse-observer.test.mjs": "dbbbb2e275684732e9394b809a48c5e156e5b4420f4c915578896c5bc1492962"
+  },
+  "artifacts": {
+    "report": "{run}/report.json"
+  },
+  "jobs": {
+    "profile": {
+      "role": "train",
+      "argv": [
+        "{runtime}",
+        "--expose-gc",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--protocol",
+        "{protocol}",
+        "--out",
+        "{run}",
+        "--variant",
+        "nativeZstd1",
+        "--round",
+        "0",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{protocol}",
+        "{runner}"
+      ],
+      "fresh_output": "{run}"
+    },
+    "observer-check": {
+      "role": "check",
+      "argv": [
+        "{runtime}",
+        "--test",
+        "--test-reporter=tap",
+        ".codebase/tests/evaluation-and-performance/trajectory-reuse-observer.test.mjs"
+      ]
+    }
+  }
+}

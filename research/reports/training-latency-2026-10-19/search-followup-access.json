@@ -1,0 +1,119 @@
+{
+  "accessDate": "2026-10-19",
+  "tool": "Exa Search and Web Fetch",
+  "searchWorkstreams": 3,
+  "resultEntriesRequested": 15,
+  "meaning": "Search result entries including duplicate topics; not 15 papers fully read.",
+  "queries": [
+    {
+      "stream": 0,
+      "requestedResults": 5,
+      "entries": [
+        {
+          "title": "src/wasm/module-instantiate.h - v8/v8 - Git at Google",
+          "url": "https://chromium.googlesource.com/v8/v8/+/fb9a925cdc18e8277123212b8c7bc270c483b8b9/src/wasm/module-instantiate.h"
+        },
+        {
+          "title": "0397f782cdd6b73a9212de41e9a0f4071ca42e0e - v8/v8 - Git at Google",
+          "url": "https://chromium.googlesource.com/v8/v8/+/0397f782cdd6b73a9212de41e9a0f4071ca42e0e"
+        },
+        {
+          "title": "src/wasm/well-known-imports.h - v8/v8 - Git at Google",
+          "url": "https://chromium.googlesource.com/v8/v8/+/1eda9300e26ec1aad95f98b6cb8e0d3ca6fb1e92/src/wasm/well-known-imports.h"
+        },
+        {
+          "title": "Diff - c1486295ae5bcb0f8fb078b7cf921802ccd75eaf^! - v8/v8 - Git at Google",
+          "url": "https://chromium.googlesource.com/v8/v8/+/c1486295ae5bcb0f8fb078b7cf921802ccd75eaf%5E%21/"
+        },
+        {
+          "title": "test/message/wasm-recognize-imports.out - v8/v8 - Git at Google",
+          "url": "https://chromium.googlesource.com/v8/v8/+/7b26e81087ec88c287d9a4812f969d412f32774e/test/message/wasm-recognize-imports.out"
+        }
+      ]
+    },
+    {
+      "stream": 1,
+      "requestedResults": 5,
+      "entries": [
+        {
+          "title": "B-SCT: Improve SpMV processing on SIMD architectures",
+          "url": "https://doi.org/10.1587/elex.12.20150170"
+        },
+        {
+          "title": "CCF: An efficient SpMV storage format for AVX512 platforms",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0167819120300958"
+        },
+        {
+          "title": "N/A",
+          "url": "https://arxiv.org/pdf/1307.6209"
+        },
+        {
+          "title": "[1711.05487] Performance Analysis and Optimization of Sparse Matrix-Vector Multiplication on Modern Multi- and Many-Core Processors",
+          "url": "https://ar5iv.labs.arxiv.org/html/1711.05487"
+        },
+        {
+          "title": "Optimizing the Performance of Sparse-Matrix Vector Products on Next-Generation Processors",
+          "url": "https://doi.org/10.2172/1528773"
+        }
+      ]
+    },
+    {
+      "stream": 2,
+      "requestedResults": 5,
+      "entries": [
+        {
+          "title": "Hash | Node.js 26.11.0 Documentation",
+          "url": "https://beta.docs.nodejs.org/crypto/Hash"
+        },
+        {
+          "title": "Crypto | Node.js v26.10.0 Documentation",
+          "url": "https://nodejs.org/api/crypto.html"
+        },
+        {
+          "title": "Hash.prototype.update - crypto - Node documentation | Deno Docs",
+          "url": "https://docs.deno.com/api/node/crypto/~/Hash.prototype.update"
+        },
+        {
+          "title": "Buffer | Node.js v26.10.0 Documentation",
+          "url": "https://nodejs.org/api/buffer.html"
+        },
+        {
+          "title": "Crypto | Node.js v10.2.0 Documentation",
+          "url": "https://nodejs.org/download/release/v10.2.0/docs/api/crypto.html"
+        }
+      ]
+    }
+  ],
+  "primaryCoverage": [
+    {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v26.12.0/deps/v8/src/wasm/well-known-imports.h",
+      "coverage": "Complete header; recognized Math import list lacks tanh. Does not prove all engine optimization paths."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v26.12.0/deps/v8/src/base/ieee754.h",
+      "coverage": "Complete release header; declares tanh. Search returned a different later-looking std::tanh change which is not present in this release header; do not assume it applies."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v22.23.2/doc/api/crypto.md",
+      "coverage": "Full fetched text164498 characters; explicitly inspected hash.update section after rendered HTML truncation missed it."
+    },
+    {
+      "url": "https://nodejs.org/docs/latest-v22.x/api/buffer.html#static-method-bufferfromarraybuffer-byteoffset-length",
+      "coverage": "Buffer/TypedArrays sharing examples and byteOffset/length coverage. Not the entire Buffer manual."
+    },
+    {
+      "url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-serializejsonproperty",
+      "coverage": "Fetched structured-data chapter and inspected finite-number SerializeJSONProperty and compact SerializeJSONArray algorithms. Page labels itself ECMAScript2027 draft; local runtime compatibility still requires exact-byte tests."
+    },
+    {
+      "url": "https://arxiv.org/abs/1307.6209",
+      "coverage": "Abstract and bibliographic metadata only, not full paper; SELL-C-sigma is hardware-specific, no local gain or exact summation proof inferred."
+    }
+  ],
+  "proposals": [
+    "Versioned binary neural-state hash preserving dtype, length, endianness and exact view span; cannot replace historical JSON hash silently.",
+    "Researcher engineering hypothesis: bounded per-neuron canonical-number token reuse across frames, preserving old JSON hash. Need temporal stability measurements; spatial uniqueness does not decide it.",
+    "No assumed gain from SpMV SIMD formats or Wasm activation fusion; exact summation and tanh call path remain constraints."
+  ],
+  "experimentalStatus": "No new local test or benchmark launched; existing frozen runtime comparison remains unchanged."
+}

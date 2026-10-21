@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "name": "historical-neural-state-reuse-v2",
+  "paused": false,
+  "paths": {
+    "runner": ".codebase/scripts/evaluation-and-performance/analyze-neural-state-reuse-bits.mjs",
+    "protocol": "research/data/g0-reversal-history-diagnostic-v1/protocol.json",
+    "inputRun": "runs/g0-reversal-history-diagnostic-v1-resumed2",
+    "run": "research/reports/training-latency-2026-10-19/neural-state-reuse-v2"
+  },
+  "state_file": "runs/python-actions/neural-state-reuse-v2-current.json",
+  "pins": {
+    "{runner}": "11c8d242b223b613738e408bebbd8737556cff99cc71e69c78d0c6f519046510",
+    ".codebase/src/runtime/checkpoint-codec.mjs": "31956d5985c25ca521c080ee716199d70761d2eacefc913afd3f375390a018ed",
+    ".codebase/src/neural-learning/g0-reversal-history-diagnostic.mjs": "7c692781db81ca9b428db52a8b140f0fba29c2618daa4ec5b9d57c4bcb1a1743",
+    "{protocol}": "d3c06c715f5aa7eec5f570544648f76486fdc33dbb48c659860ee7a99a29c6fc",
+    "{inputRun}/result.json": "0afc65fa9dd93d39ccb935c8effdd68bdd864ed7642fa8ee4b502a62bd125670",
+    ".codebase/scripts/evaluation-and-performance/analyze-neural-state-reuse.mjs": "6ee9cbd10ae09a292c188cd7969b9382a189e7a0ff98d5c64bf8bd49cfab58a0",
+    "python actions/prepare_neural_reuse_bits.py": "83fa239effe40d2a3ca8142feda77ca79c3beaf52cf88f7e376b176e15e2ff23"
+  },
+  "artifacts": {
+    "report": "{run}/report.json",
+    "selection": "{run}/selection.json"
+  },
+  "jobs": {
+    "analyze": {
+      "role": "audit",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--run",
+        "{inputRun}",
+        "--history",
+        "runs/g0-reversal-history-diagnostic-v1",
+        "--history",
+        "runs/g0-reversal-history-diagnostic-v1-resumed1",
+        "--history",
+        "runs/g0-reversal-history-diagnostic-v1-resumed2",
+        "--out",
+        "{run}",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{runner}",
+        "{protocol}",
+        "{inputRun}/result.json",
+        "{inputRun}/receipts.jsonl"
+      ],
+      "fresh_output": "{run}"
+    },
+    "self-check": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--self-check"
+      ]
+    }
+  }
+}

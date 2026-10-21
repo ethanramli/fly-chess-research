@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "name": "wasm-reuse-v2-round0-nativeReuse",
+  "paused": false,
+  "paths": {
+    "runner": ".codebase/scripts/evaluation-and-performance/profile-wasm-reuse-latency.mjs",
+    "protocol": "research/data/wasm-reuse-latency-v2/protocol.json",
+    "run": "research/reports/training-latency-2026-10-19/wasm-reuse-latency-v2/round0-nativeReuse",
+    "runtime": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.cache\\latency-runtimes\\v26.12.0\\node.exe"
+  },
+  "state_file": "runs/python-actions/wasm-reuse-latency-round0-nativeReuse-v2-current.json",
+  "pins": {
+    "{runner}": "731a6485a77503a2b111383e142e94e39a180e3f334bd1867abb7522d7d3277a",
+    "{protocol}": "f00f38643855967a1d6b67df2000f51b61d266f8203d2935253a5e4711b8084f"
+  },
+  "artifacts": {
+    "report": "{run}/report.json"
+  },
+  "jobs": {
+    "profile": {
+      "role": "train",
+      "argv": [
+        "{runtime}",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--protocol",
+        "{protocol}",
+        "--out",
+        "{run}",
+        "--variant",
+        "nativeReuse",
+        "--round",
+        "0",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{protocol}",
+        "{runner}"
+      ],
+      "fresh_output": "{run}"
+    },
+    "runner-syntax": {
+      "role": "check",
+      "argv": [
+        "{runtime}",
+        "--check",
+        "{runner}"
+      ]
+    }
+  }
+}

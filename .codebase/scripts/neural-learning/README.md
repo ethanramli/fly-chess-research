@@ -10,6 +10,7 @@
 - [condition-fly.mjs](condition-fly.mjs)
 - [map-reversal-memory.mjs](map-reversal-memory.mjs)
 - [validate-learning.mjs](validate-learning.mjs)
+- [run-g0-history-with-pause.mjs](run-g0-history-with-pause.mjs): [registered operational pause version](../../../research/data/lesson-pause-control-v1/README.md); frozen canonical sources are preserved.
 - [validate-positive-channel-v2.mjs](validate-positive-channel-v2.mjs)
 - [validate-positive-channel.mjs](validate-positive-channel.mjs)
 

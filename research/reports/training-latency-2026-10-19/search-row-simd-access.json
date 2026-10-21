@@ -1,0 +1,28 @@
+{
+  "accessDate": "2026-10-19",
+  "provider": "Exa",
+  "search": {
+    "query": "WebAssembly SIMD f64x2 promote_low_f32x4 two independent sparse matrix rows SELL-C-sigma exact summation",
+    "requestedEntries": 5
+  },
+  "fetches": [
+    {
+      "url": "https://raw.githubusercontent.com/WebAssembly/simd/main/proposals/simd/BinarySIMD.md",
+      "coverage": "Binary prefix/LEB128 encoding and targeted lane/load/mul/add/conversion opcode table inspected."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/WebAssembly/simd/main/proposals/simd/SIMD.md",
+      "coverage": "Floating interpretations, IEEE roundTiesToEven and lane-wise add/mul/conversion semantics inspected."
+    },
+    {
+      "url": "https://arxiv.org/pdf/1307.6209",
+      "coverage": "Extracted text covering abstract and sections3.2-3.4 including row-major/column-major layout, row chunks, padding, sorting scope and absence of horizontal reduction inspected; figures were not visually inspected."
+    }
+  ],
+  "combinedReturnedCharacters": 97174,
+  "limits": [
+    "No local speed or exactness claim follows.",
+    "No SIMD implementation or graph-layout measurement has run.",
+    "Metadata/text retrieval is not full visual paper review."
+  ]
+}

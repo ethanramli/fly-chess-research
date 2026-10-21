@@ -30,3 +30,6 @@ The first equivalent sparse-forward optimization, full-graph Monte Carlo profile
 ## 2026-10-11: Replacement Stockfish-only calibration proposal
 
 [Fresh local reference-pool proposal](stockfish-only-calibration-proposal.md): excludes the original 13 games and flawed seed-48 continuation; proposes measured Stockfish/error-policy references, separate player/RNG identities, 10 placement plus 40 scoring games, joint W/D/L fitting and pair-aware uncertainty. Proposal only; native-only evaluation may supply bounds rather than a finite rating.
+
+- [Current training latency investigation](training-latency.md).
+- [Accepted latency result and stopping point](../../../research/reports/training-latency-2026-10-19/accepted-result.md).

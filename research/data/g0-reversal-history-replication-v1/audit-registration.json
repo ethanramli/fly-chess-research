@@ -1,0 +1,28 @@
+﻿{
+    "schema":  "g0-reversal-history-replication-audit-v1",
+    "created":  "2026-10-20",
+    "parentRun":  "runs/g0-reversal-history-diagnostic-v1-resumed2",
+    "parentResultSha256":  "0afc65fa9dd93d39ccb935c8effdd68bdd864ed7642fa8ee4b502a62bd125670",
+    "parentProtocolSha256":  "d3c06c715f5aa7eec5f570544648f76486fdc33dbb48c659860ee7a99a29c6fc",
+    "parentAuditSha256":  "bdc2213e459ea7765032db26a29bb9ab9743bcc628787fdca7a38d669209d23d",
+    "auditorSha256":  "53af15cd88f05da12350f947f564c75f52b5fa5fb96d85b55bd215e09df729d5",
+    "question":  "Does the audited retained-versus-reset branch pattern reproduce on the second predetermined effective projection seed?",
+    "intervention":  "Same frozen schedule and thresholds; only projection seed 20261012 differs. Full independent receipt/certificate/recurrence/branch/wiring replay with resource waiting.",
+    "scope":  "Read-only independent replay of the replication run; cannot pass G0 or authorize C01.",
+    "expectedCommand":  [
+                            "node",
+                            "--max-old-space-size=256",
+                            "research/data/g0-reversal-history-replication-v1/audit.mjs",
+                            "runs/g0-history-replication-20261012-v1",
+                            "--cpu-duty",
+                            "0.5"
+                        ],
+    "resources":  {
+                      "maxOldSpaceMiB":  256,
+                      "maxRssMiB":  768,
+                      "minFreeMiB":  256,
+                      "cpuDuty":  0.5,
+                      "maxPresentations":  16000
+                  },
+    "outcomeRule":  "Accept only atomic audit.json after full receipt, certificate, recurrence, branch, wiring and original gate replay. No publication or process exit remains incomplete/unknown."
+}

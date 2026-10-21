@@ -1,0 +1,57 @@
+{
+  "accessDate": "2026-10-19",
+  "provider": "Exa",
+  "searchCalls": 6,
+  "numResultsPerCall": 5,
+  "sourcesReviewedMetric": 30,
+  "metricMeaning": "Sum of requested numResults, includes duplicates and unaccepted results; not full texts read",
+  "workstreams": [
+    "serialization",
+    "WebAssembly data movement and CPU SpMV",
+    "compression",
+    "durability and recovery"
+  ],
+  "primaryFetches": [
+    {
+      "url": "https://nodejs.org/docs/latest-v22.x/api/v8.html",
+      "coverage": "14500 character extraction ended before target serialization section; superseded by versioned raw source"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v22.23.2/doc/api/v8.md",
+      "coverage": "48214 character extraction; Serialization API and DefaultSerializer sections inspected",
+      "quality": "Official version-pinned Node repository documentation"
+    },
+    {
+      "url": "https://webassembly.org/getting-started/js-api/",
+      "coverage": "Memory section including typed-array views and grow invalidation inspected",
+      "quality": "Official WebAssembly project JS API guide"
+    },
+    {
+      "url": "https://github.com/facebook/zstd/wiki/Using-libzstd-in-a-memory-constrained-environment",
+      "coverage": "Single-shot and streaming memory, compression levels and table/window controls inspected",
+      "quality": "Upstream compressor developers; API and workload tradeoffs stated"
+    },
+    {
+      "url": "https://www.sqlite.org/wal.html",
+      "coverage": "Extracted first 14500 characters, design, checkpoint and performance sections inspected; later bug/history sections not reviewed",
+      "quality": "Database implementers explaining commit/checkpoint and synchronization design"
+    }
+  ],
+  "abstractOnly": [
+    {
+      "url": "https://doi.org/10.1109/TPDS.2022.3225230",
+      "title": "A Comprehensive Performance Model of Sparse Matrix-Vector Multiplication to Guide Kernel Optimization",
+      "coverage": "Exa abstract, no full paper or code reviewed",
+      "quality": "Original research abstract; no local applicability or speed claim established"
+    }
+  ],
+  "notUsed": [
+    "GPU-specific SpMV overlap results",
+    "Third-party Node type declarations returned by version-targeted search"
+  ],
+  "limitations": [
+    "No whole-training result produced by this literature search",
+    "Original first four search outputs remain in the tool history; this record preserves access metadata, not complete result excerpts",
+    "No externally sourced biological mechanism introduced"
+  ]
+}

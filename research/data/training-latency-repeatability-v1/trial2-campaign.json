@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "protocol": "research/data/training-latency-runtime-comparison-v2/protocol.json",
+  "run": "research/reports/training-latency-2026-10-19/repeatability-v1/trial2",
+  "prerequisite": "research/reports/training-latency-2026-10-19/pipeline-v3/timing-audit.json",
+  "profiles": [
+    {
+      "id": "round0-json6",
+      "config": "research/data/training-latency-repeatability-v1/trial2-round0-json6.json",
+      "sha256": "c2cb6b1ffec59fb9e573e772fd2f30d7184a225d86612d4c1bea4b524e28cde9"
+    },
+    {
+      "id": "round0-nativeZstd1",
+      "config": "research/data/training-latency-repeatability-v1/trial2-round0-nativeZstd1.json",
+      "sha256": "94702718d4ac60e3c95f9ad45386ff0f802c0fef8d24037eb094861526ecae64"
+    },
+    {
+      "id": "round1-nativeZstd1",
+      "config": "research/data/training-latency-repeatability-v1/trial2-round1-nativeZstd1.json",
+      "sha256": "2bc43864bf8434660c24640b38549e13be52ec5a7933b68189101b54c738f733"
+    },
+    {
+      "id": "round1-json6",
+      "config": "research/data/training-latency-repeatability-v1/trial2-round1-json6.json",
+      "sha256": "e6fc7126061d6c0ad23b3110a3d42330b26da3bb901292bc3ba0a7e9617c8761"
+    }
+  ],
+  "audit": {
+    "config": "research/data/training-latency-repeatability-v1/trial2-audit.json",
+    "sha256": "dcaabb8026c0ce54942a99cb9244c5de7e9769c0d0f7fb39f1386969f4041de0"
+  },
+  "sources": {
+    ".codebase/scripts/evaluation-and-performance/audit-training-runtime.mjs": "add25d51e85bf5b0152f5209825ba6bff37f10e2e964e1a48e605c8cb109ac56",
+    ".codebase/scripts/evaluation-and-performance/audit-training-latency.mjs": "23ef97160d3f85ebffe4251e1fd897886c258271729de260dfa31764b4abe0bb",
+    "python actions/run_runtime_latency.py": "c94ff16f09711132e42becb895f0c8f605a8aaaf46201ab2ae7b89fb469e3378",
+    "python actions/run_latency_campaign.py": "7c157bbc0495f39be6fbcb0b7509a337a9339bacfc34313f0aa874d2a4fe6d0e",
+    "python actions/curriculum.py": "a5c1c095bad4512938f178ddf944698c3c11d8d7ef2cb501dd1d4066e5bb2dc6",
+    "python actions/prepare_runtime_latency_steps.py": "0a801d3b5e718c89ef5f3ba7ad046f38549c95dba7c349fa96d7e678d6bbf1e3",
+    "research/data/training-latency-runtime-comparison-v2/protocol.json": "46fe50297e8b2080381d2d8a85d4687070eb9ca42b95c33c75dc9e1f4928cd21",
+    "research/data/training-latency-runtime-audit-v1/protocol.json": "f38bf3b3ccd27afea20a81dbc304630e8f14e2b3f47efe26f85a9943195e4260",
+    "python actions/repeat_training_latency.py": "a155a5a06565825204a01c42b7b4837aa52d4ff127cb90c0f87f949891bbb430"
+  }
+}
