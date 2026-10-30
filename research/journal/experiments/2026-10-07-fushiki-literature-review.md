@@ -2,7 +2,7 @@
 
 2026-10-07 (Asia/Jakarta). Researcher requested rereading Akira Fushiki's email, reading the four linked papers, and assessing whether their findings could address current roadblocks.
 
-Read primary main texts and methods through PLOS, PMC, a university-hosted published Nature PDF and the review author's published PDF. Coverage restrictions and uninspected supplements/code are recorded in [access evidence](../../reports/fushiki-literature-review-2026-10-07/access-evidence.json). [Reading notes](../../literature/fushiki-reading-notes-2026-10-07.md) connect these to live code and preserved failures.
+Read primary main texts and methods through PLOS, PMC, a university-hosted published Nature PDF and the review author's published PDF. Coverage restrictions and uninspected supplements/code are recorded in [access evidence](../../../archive/early-development/research/reports/fushiki-literature-review-2026-10-07/access-evidence.json). [Reading notes](../../literature/fushiki-reading-notes-2026-10-07.md) connect these to live code and preserved failures.
 
 Separate teaching channels and per-edge memory already exist. Aso/Rubin suggests validating distinct preservation/updating dynamics and timing; Jiang/Litwin-Kumar highlights recovery versus memory-lifetime tradeoffs and recurrent teaching signals. Its gradient-optimized circuitry is outside our intended learner. Dabney's mouse distributional evidence is not a direct binary-chess repair. The connectome review strengthens the need for physiological constraints beyond topology.
 

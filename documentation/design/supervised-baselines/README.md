@@ -10,4 +10,4 @@ Gradient/Adam training is engineering or comparison evidence. These drafts do no
 
 [Current status](../../current-status.md) · [All design topics](../README.md)
 
-- [2026-10-10 checkpoint restoration repair and regression evidence](../../../research/reports/checkpoint-sync-repair-2026-10-10/README.md).
+- [2026-10-10 checkpoint restoration repair and regression evidence](../../../archive/early-development/research/reports/checkpoint-sync-repair-2026-10-10/README.md).

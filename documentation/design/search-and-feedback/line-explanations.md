@@ -18,7 +18,7 @@ Command:
 node --max-old-space-size=256 .codebase/scripts/probe-verified-lines.mjs --out research/reports/verified-line-explanation-2026-10-06
 ```
 
-[Raw report](../../../research/reports/verified-line-explanation-2026-10-06/report.json) pins sources and preserves complete certificates and explanations. Both examples are engineering fixtures used in implementation checks, **not held-out transfer data**. No fly inference, teaching pulse or neural learning ran in this probe.
+[Raw report](../../../archive/early-development/research/reports/verified-line-explanation-2026-10-06/report.json) pins sources and preserves complete certificates and explanations. Both examples are engineering fixtures used in implementation checks, **not held-out transfer data**. No fly inference, teaching pulse or neural learning ran in this probe.
 
 - `4r2k/6pr/6K1/7Q/8/8/8/5R2 w - - 0 1`: candidate `Rf8+` has a checked five-node success certificate. The line is `Rf8+ Rxf8 Qxh7#`. The sole legal defensive reply captures the white rook, reducing the attacker's declared material balance by five units; the subsequent mating capture recovers material. This establishes a delayed consequence despite an immediate concession. Another immediate mating option exists, so this fixture does not establish the necessity of the rook move.
 - `4r2k/6pr/8/7Q/6K1/8/8/5R2 w - - 0 1`: moving the white king to g4 changes support. `Rf8+` has a checked 22-node failure certificate at the same remaining two-ply horizon. It does not force mate within that budget; full-game outcome remains unknown.

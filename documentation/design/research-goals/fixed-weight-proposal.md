@@ -12,7 +12,7 @@ Evaluation already freezes learning: assessment does not call the local adaptati
 
 The disabled-plasticity comparison presents the same experimental cues and reinforcement without changing local efficacy. It is already a fixed-strength control. In the current [trainer](../../../.codebase/src/lowram/trainer.mjs), each forward call initializes neural activity to zero. With identical board/history/task inputs and all effective parameters fixed, the deterministic assessment repeats the same response. Search can still investigate and find a correct move; that is calculation evidence, not lasting improvement from previous feedback.
 
-The completed [puzzle-pipeline control](../../../research/reports/puzzle-pipeline-v1-2026-10-06/README.md) illustrates this distinction: searched choices succeed before and after exposure, while its disabled unaided choices stay unchanged. The current positive-channel association includes a disabled condition as well; complete results and audits are pending. Neither condition establishes persistent fixed-weight learning.
+The completed [puzzle-pipeline control](../../../archive/early-development/research/reports/puzzle-pipeline-v1-2026-10-06/README.md) illustrates this distinction: searched choices succeed before and after exposure, while its disabled unaided choices stay unchanged. The current positive-channel association includes a disabled condition as well; complete results and audits are pending. Neither condition establishes persistent fixed-weight learning.
 
 ## A different memory mechanism would be required
 

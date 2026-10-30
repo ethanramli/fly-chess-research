@@ -4,4 +4,4 @@
 
 The initial preflight used the wrong report level for the historical mapping and failed closed; inspecting `.mapping` corrected the invocation. Successful reproducible preflight: failure/success changed-blocker contexts produce different root cues, with zero collisions/drops in all six frames on the 693-cell pool. Synthetic terminal-board and forged-input tests pass; full suite174/174. No graph training.
 
-See [report, command and raw evidence](../../reports/public-frame-encoding-preflight-2026-10-08/README.md). Delayed physiological credit, reversible learning, pre-feedback ranking, persistent publication and causal controls remain incomplete. Goal active.
+See [report, command and raw evidence](../../../archive/early-development/research/reports/public-frame-encoding-preflight-2026-10-08/README.md). Delayed physiological credit, reversible learning, pre-feedback ranking, persistent publication and causal controls remain incomplete. Goal active.

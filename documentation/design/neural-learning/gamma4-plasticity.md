@@ -77,7 +77,7 @@ The runner uses the 768 MiB RSS / 256 MiB free-memory soft guard, sparse propaga
 
 ## Observed engineering result
 
-[Full report](../../../research/reports/gamma4-conditioning-2026-09-30/report.json), [mapping](../../../research/reports/gamma4-conditioning-2026-09-30/mapping.json).
+[Full report](../../../archive/early-development/research/reports/gamma4-conditioning-2026-09-30/report.json), [mapping](../../../archive/early-development/research/reports/gamma4-conditioning-2026-09-30/mapping.json).
 
 | Condition | Initial B−A | After pairing | After retention interval | After temporal reversal |
 |---|---:|---:|---:|---:|
@@ -89,7 +89,7 @@ All fixed-state invariants held. Peak RSS was 145.21 MiB; elapsed time 113.11 s;
 
 `npm test`: 24/24 passed, including local timing, retention, reversal, no-dopamine and unpaired-timing controls, positive bounds, checkpoint equivalence, invariant parameters, sparse stimulation, exact int64 parsing and contralateral mapping. Existing gradient and puzzle tests still pass.
 
-[Full-graph replay](../../../research/reports/gamma4-resume-2026-09-30/report.json) resumed event 3, between the first cue and its PAM pulse, and produced a byte-identical final state. Both final state files have SHA-256 `add9f154ae6421ca8b56763882941b941d3f139ab118a9bd2e91ca7b68b0a07f`. Replay peak RSS was 146.21 MiB, elapsed time 110.37 s and CPU time 65.45 s. This verifies stored eligibility survives restart without double-applying the cue or reinforcement.
+[Full-graph replay](../../../archive/early-development/research/reports/gamma4-resume-2026-09-30/report.json) resumed event 3, between the first cue and its PAM pulse, and produced a byte-identical final state. Both final state files have SHA-256 `add9f154ae6421ca8b56763882941b941d3f139ab118a9bd2e91ca7b68b0a07f`. Replay peak RSS was 146.21 MiB, elapsed time 110.37 s and CPU time 65.45 s. This verifies stored eligibility survives restart without double-applying the cue or reinforcement.
 
 ## Remaining gate before chess
 

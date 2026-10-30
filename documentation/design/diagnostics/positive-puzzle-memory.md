@@ -4,7 +4,7 @@
 
 ## Question and frozen interventions
 
-The [recorded local diagnostic](../../../research/reports/positive-puzzle-ranking-local-diagnostic-2026-10-06/README.md) finds only one active/changed PAM02-associated edge out of 84 during the first verified Qh7# success replay, plus endogenous PPL103 changes. Final scores after four events cannot isolate that first event's contribution.
+The [recorded local diagnostic](../../../archive/early-development/research/reports/positive-puzzle-ranking-local-diagnostic-2026-10-06/README.md) finds only one active/changed PAM02-associated edge out of 84 during the first verified Qh7# success replay, plus endogenous PPL103 changes. Final scores after four events cannot isolate that first event's contribution.
 
 [Probe](../../../.codebase/scripts/probe-positive-puzzle-memory.mjs) independently assesses all legal moves under six specified memory states: the fixture's original pre-teaching memory, the complete first-event memory, first-event PAM02 gains with other gains restored to their original values, first-event PPL103 gains with other gains restored, final memory and final memory restored again. These are artificial computational memory interventions, not learning trials or modeled physiological silencing. Existing topology, signs, neuron identities, readout, encoder and nonplastic parameters remain unchanged. No calculated update or new feedback is supplied.
 

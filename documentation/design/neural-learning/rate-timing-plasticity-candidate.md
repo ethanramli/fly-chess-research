@@ -4,7 +4,7 @@
 
 ## Static feedback-path result
 
-The [complete direct/two-edge scan](../../../research/reports/plasticity-timing-candidate-2026-10-09/feedback-paths.json) over the pinned sparse graph found eight direct MBON12-to-PPL103 edges, all positive, and 129 two-edge paths, 84 with negative sign products. Existing inhibitory relay paths therefore warrant investigation, but path signs do not establish net inhibition in the recurrent dynamics. The source timing model's direct `-MBON` feedback cannot be copied into this graph. No paths, signs or magnitudes were changed. The audit read annotations and sparse arrays, not model activity; observed peak RSS was 78.54 MiB for this static task only, not a runtime performance claim.
+The [complete direct/two-edge scan](../../../archive/early-development/research/reports/plasticity-timing-candidate-2026-10-09/feedback-paths.json) over the pinned sparse graph found eight direct MBON12-to-PPL103 edges, all positive, and 129 two-edge paths, 84 with negative sign products. Existing inhibitory relay paths therefore warrant investigation, but path signs do not establish net inhibition in the recurrent dynamics. The source timing model's direct `-MBON` feedback cannot be copied into this graph. No paths, signs or magnitudes were changed. The audit read annotations and sparse arrays, not model activity; observed peak RSS was 78.54 MiB for this static task only, not a runtime performance claim.
 
 ## Rate-to-gain contract
 
@@ -24,4 +24,4 @@ Residual KC credit can still associate later DAN activity with an earlier cue. T
 
 Next: bind the existing sparse rate trajectory to this integrator with explicit reference/baseline, per-cell component states, interval duration, reset semantics, and disabled-plasticity behavior. Preserve direct positive feedback and existing indirect paths. Then prepare the matched rule/input-pool conditions; only an authorized experiment can establish dynamic feedback, retention and behavior. The no-training instruction remains active.
 
-2026-10-09 full-waveform qualification: [complete-pulse arithmetic](../../../research/reports/plasticity-timing-candidate-2026-10-09/complete-pulses.json) shows timing-sensitive net direction and timing-dependent repeated-pulse equilibria. Isolated tail potentiation is insufficient to certify a teaching schedule or an accuracy-sensitive stopping rule.
+2026-10-09 full-waveform qualification: [complete-pulse arithmetic](../../../archive/early-development/research/reports/plasticity-timing-candidate-2026-10-09/complete-pulses.json) shows timing-sensitive net direction and timing-dependent repeated-pulse equilibria. Isolated tail potentiation is insufficient to certify a teaching schedule or an accuracy-sensitive stopping rule.

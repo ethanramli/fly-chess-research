@@ -1,6 +1,6 @@
 # 2026-10-24: Stage 1 memory retention fix (fix goal task 1)
 
-Work under [the fix-goal prompt](../../../documentation/handoffs/fix-goal-prompt-2026-10-24.md); every change and run is also in [the review ledger](../../../documentation/handoffs/fix-goal-ledger-2026-10-24.md). Background: [Stage 1 end-to-end journal](2026-10-23-babysit-stage1-end-to-end.md) (2026-10-24 sections) and [learnability diagnostics](../../reports/stage1-learnability-diagnostics-2026-10-24/README.md).
+Work under [the fix-goal prompt](../../../documentation/handoffs/fix-goal-prompt-2026-10-24.md); every change and run is also in [the review ledger](../../../documentation/handoffs/fix-goal-ledger-2026-10-24.md). Background: [Stage 1 end-to-end journal](2026-10-23-babysit-stage1-end-to-end.md) (2026-10-24 sections) and [learnability diagnostics](../../../archive/early-development/research/reports/stage1-learnability-diagnostics-2026-10-24/README.md).
 
 ## Problem carried over
 
@@ -46,7 +46,7 @@ Results: `runs/stage1-retention-probe-v1/result.json` (SHA-256 `e7c34b0d...16d6`
 
 ## Probe v3 and the task 1 outcome (18:47)
 
-v3 (revision 7: Stockfish value on the move's own cue, mover perspective) retained 1/4 at eta 0.5 and 0/4 at every smaller eta; acquisition is unchanged (3/4 at 0.5-0.1, 0/4 below). Across all three probes no eta keeps A correct in 3 of 4 probes, so **task 1b cannot choose an eta: task 1 is recorded as failed** (full table and diagnosis in the [probe report](../../reports/stage1-retention-probe-2026-10-24/README.md)).
+v3 (revision 7: Stockfish value on the move's own cue, mover perspective) retained 1/4 at eta 0.5 and 0/4 at every smaller eta; acquisition is unchanged (3/4 at 0.5-0.1, 0/4 below). Across all three probes no eta keeps A correct in 3 of 4 probes, so **task 1b cannot choose an eta: task 1 is recorded as failed** (full table and diagnosis in the [probe report](../../../archive/early-development/research/reports/stage1-retention-probe-2026-10-24/README.md)).
 
 Task 1c: the only allowed alternative is a separately registered rule with slower dopamine-only recovery, backed by primary literature. Aso and Rubin 2016 report that DAN activation without odor reduces immediate memory in four of five DAN sets (the alpha1 compartment resists), and that one-day memory after spaced training (MB099C, which includes PPL1-gamma2alpha'1, and MB630B) resists it; Berry et al. 2012 report that DAN activity after training drives forgetting. For immediate memory in the compartments we model this supports the existing fast recovery, not a slower one; slower erasure is supported only for another compartment or after consolidation, which is a different mechanism with timing semantics our lesson counts do not have. In addition, the probe evidence points to cross-board cue overlap, which a slower recovery would not remove. Per the prompt: STOP the memory path and ask the researcher.
 
@@ -60,7 +60,7 @@ The researcher chose the input-representation path for memory (decision 1a), a r
 
 ## 2026-10-25 correction: input-first recommendation weakened by new evidence
 
-Mistake (mine, analysis): I recommended the input-representation path because 21-27 of a board's cue cells are shared with other boards, without first checking the sign of that sharing or the size of passive recovery. Evidence: v1 interference is net helpful at cell level (52 harmful vs 63 helpful pushes), signed overlap correlates weakly with rank change (r 0.21-0.22), and the logged DAN factors imply an inactive synapse keeps 2e-4 of a lesson after 10 lessons at eta 0.5 and 0.25 at eta 0.1, while eta <= 0.05 does not flip the choice. Diagnosis (hypothesis): the registered rule and compartment pair cannot hold one-shot lessons over 10 others; input can only reduce the active-cell part. Literature: the modeled compartments are restrained short-term stores in the source model (Gkanias et al. 2022); fast compartments hold about one association (Aso and Rubin 2016). Probe v4 continues as agreed; next decision if it fails is the memory mechanism. Full list: [build weakness audit](../../reports/build-weakness-audit-2026-10-25/README.md).
+Mistake (mine, analysis): I recommended the input-representation path because 21-27 of a board's cue cells are shared with other boards, without first checking the sign of that sharing or the size of passive recovery. Evidence: v1 interference is net helpful at cell level (52 harmful vs 63 helpful pushes), signed overlap correlates weakly with rank change (r 0.21-0.22), and the logged DAN factors imply an inactive synapse keeps 2e-4 of a lesson after 10 lessons at eta 0.5 and 0.25 at eta 0.1, while eta <= 0.05 does not flip the choice. Diagnosis (hypothesis): the registered rule and compartment pair cannot hold one-shot lessons over 10 others; input can only reduce the active-cell part. Literature: the modeled compartments are restrained short-term stores in the source model (Gkanias et al. 2022); fast compartments hold about one association (Aso and Rubin 2016). Probe v4 continues as agreed; next decision if it fails is the memory mechanism. Full list: [build weakness audit](../../../archive/early-development/research/reports/build-weakness-audit-2026-10-25/README.md).
 
 ## 2026-10-25 pivots: Gkanias LTM branch abandoned; alpha1 reward store registered (r10)
 
@@ -126,7 +126,7 @@ Predeclared at 05:44, before any v7 result (fix goal 1d allows a predeclared 16-
 
 What happened: probe v7 (launched 2026-10-26 05:40, L035) stopped after 4 of 20 lineages; last file 06:23:16; stdout ends at completedLineages 4, stderr empty, exitCode null; no result.json. The eta 0.5 lineage retained 3/4 (f5-absent-p0a not, rank 4/7, also never correct after its own lessons). Mistake: a 3.4 h probe was started with `fly start` from the agent session, although L018 had shown that the session's job object kills such processes and `fly detach` only wraps `fly babysit` (cause is a hypothesis, not verified). Ledger L037.
 
-What was tried (no graph run, no pinned file changed): a direct-path linear surrogate of the r11 learner, validated on the recorded v7 pulses, plus mechanism, representation and control screens on training boards only; static readout and feedback measurements; a literature pass (five subagents, quotes not verbatim). Full numbers, scripts and sources: [report](../../reports/stage1-memory-literature-and-surrogate-2026-10-27/README.md).
+What was tried (no graph run, no pinned file changed): a direct-path linear surrogate of the r11 learner, validated on the recorded v7 pulses, plus mechanism, representation and control screens on training boards only; static readout and feedback measurements; a literature pass (five subagents, quotes not verbatim). Full numbers, scripts and sources: [report](../../../archive/early-development/research/reports/stage1-memory-literature-and-surrogate-2026-10-27/README.md).
 
 Findings (diagnostic, partly hypothesis): v7 retention needs A's own lessons in the surrogate (no-own-lesson control 0/4); the r11 learner plateaus near 12/24 training boards under rotation and shows no held-out-family transfer (2/24 = scratch); a supervised perceptron on the same tokens reaches 10/24 held out, so D2 looks representation-limited; removing restrained recovery raises fit (18/24) but lowers probe retention (1/4), unresolved; 74/182 v7 Stockfish pulses oppose the verified outcome; MBON01 input is 13% plastic; MBON07 -> PAM11 is negative in the pinned graph (sign convention unverified).
 
@@ -138,7 +138,7 @@ Next (not started; needs decisions): verify the sign convention; surrogate test 
 
 Researcher decisions the same day: representation first, and outcome-only teaching for Stage 1 encoder and memory work (decision log).
 
-What was tried: a perfect-memory perceptron (supervised comparison baseline, never part of the Fly), alone and with all fact pairs. It was trained on 5 training families and tested on the 6th, for each of 6 allowed and 6 restricted move descriptions plus an oracle harness check. Training rows only. Full numbers: [report](../../reports/stage1-representation-ceiling-2026-10-27/README.md).
+What was tried: a perfect-memory perceptron (supervised comparison baseline, never part of the Fly), alone and with all fact pairs. It was trained on 5 training families and tested on the 6th, for each of 6 allowed and 6 restricted move descriptions plus an oracle harness check. Training rows only. Full numbers: [report](../../../archive/early-development/research/reports/stage1-representation-ceiling-2026-10-27/README.md).
 
 Result: every allowed description is at or below chance on held-out families. Twin pairs both right: 0-2.6 of 12 against a chance of 2.7. Their curves stay below chance up to 5 families. An attack map, which is restricted, reaches 18.6/24. Marking each attacker that stands on a clear line with its own king raises this to 20-21/24 (8-9/12 pairs), and its curve still rises at 5 families. The oracle gives 24/24.
 
@@ -150,7 +150,7 @@ Next: a researcher decision on an attack-map input (restricted), with or without
 
 ## 2026-10-27 option A: attack-map cue, surrogate pivot and probe v8
 
-Researcher decision: option A, with outcome-only teaching (decision log). What was tried, in order (details: [report](../../reports/stage1-attack-map-cue-2026-10-27/README.md)):
+Researcher decision: option A, with outcome-only teaching (decision log). What was tried, in order (details: [report](../../../archive/early-development/research/reports/stage1-attack-map-cue-2026-10-27/README.md)):
 
 1. **First encoder draft** (move tag, task token, one KC per token per pool) on the r11 surrogate. It failed: 6-8/24 on held-out training families and 0/4 on the retention probe. Teaching only on errors did not rescue it (5-6/24).
 2. **Diagnosis** (measured in the surrogate). Capacity was not the limit: an idealized learner working within the reachable gain ranges fits 24/24. The obstacle is the scratch weight of each cell. Its spread across cells is about 5 times the learnable range, so facts that are never or rarely taught keep a random push larger than anything learned.
@@ -177,7 +177,7 @@ Probe v8 (attack-map cue, r12, outcome-only) chose **eta 0.2** under its predecl
 
 ## 2026-10-27 23:45 smoke r13: early stop, diagnosis, stop S2 (plan P5-P6)
 
-Smoke r13 (outcome-only, attack-map cue, eta 0.2) learned fast: the informative arm went from 0 to 20 of 24 training boards in two blocks, against 4 to 1 for the Stockfish-taught r6. It then flipped between 20 and 7 and was stopped by the registered early-stop rule at 20, below D1's 22. Diagnosis ([report](../../reports/stage1-smoke-r13-2026-10-27/README.md)):
+Smoke r13 (outcome-only, attack-map cue, eta 0.2) learned fast: the informative arm went from 0 to 20 of 24 training boards in two blocks, against 4 to 1 for the Stockfish-taught r6. It then flipped between 20 and 7 and was stopped by the registered early-stop rule at 20, below D1's 22. Diagnosis ([report](../../../archive/early-development/research/reports/stage1-smoke-r13-2026-10-27/README.md)):
 - Collapses follow punishments of safe quiet moves. Those moves share the attack-map token `att:none` with safe captures (measured coincidence; mechanism hypothesis).
 - 2 training boards tie by construction under the cue (pin limit), so D1 has zero margin.
 - The surrogate does not reproduce the collapse size (open).

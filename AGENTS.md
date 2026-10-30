@@ -81,7 +81,7 @@ Preserve frozen sources, protocols, reports, receipts, audits and failures. Do n
 
 When changing core math, run npm test. For feedback/search/learning/persistence changes, verify reward perspective, unknown handling, task/search separation, pending-receipt persistence and applicable wiring invariants. Record-only rounds preserve every parameter hash; learning conditions must declare permitted memory changes. Documentation-only work does not require simulation tests.
 
-Keep [current status](documentation/current-status.md), [decision log](research/project/decision_log.md) and dated [journal](research/journal/README.md) consistent with material changes. Append dated corrections to history. Put new specifications in topic subfolders and add links in their README; do not append experiment logs here or in the root README. Use descriptive kebab-case filenames. After moving documentation, verify local links, folder navigation and note reachability; keep raw protocol/result paths stable.
+Keep [current status](documentation/current-status.md), [decision log](research/project/decision_log.md) and dated [journal](research/journal/README.md) consistent with material changes. Append dated corrections to history. Put new specifications in topic subfolders and add links in their README; do not append experiment logs here or in the root README. Use descriptive kebab-case filenames. After moving documentation, verify local links, folder navigation and note reachability; keep raw protocol/result paths stable. Exception (researcher, 2026-10-30): pre-restart evidence moved to `archive/early-development/`; tag `early-development-final` keeps the original paths. Do not change files inside the archive.
 
 ## Commands and code navigation
 

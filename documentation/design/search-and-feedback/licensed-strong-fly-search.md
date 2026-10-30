@@ -12,4 +12,4 @@ Next graph comparison must freeze sources, graph/annotations, memory checkpoint,
 
 No graph comparison has run yet. Learning/transfer acceptance remains separate from search reuse.
 
-2026-10-07 graph comparison completed: both searches make identical choices and use equal candidate presentations across four paired cases. Independent certificate/trace/replay audit passes. Familiar repair survives; counterfactual fails. No speedup, learned value or reasoning improvement. [Evidence](../../../research/reports/licensed-search-comparison-v1-2026-10-07/README.md).
+2026-10-07 graph comparison completed: both searches make identical choices and use equal candidate presentations across four paired cases. Independent certificate/trace/replay audit passes. Familiar repair survives; counterfactual fails. No speedup, learned value or reasoning improvement. [Evidence](../../../archive/early-development/research/reports/licensed-search-comparison-v1-2026-10-07/README.md).

@@ -98,7 +98,7 @@ Shared-Wasm v2 now passes5/5 direct exact comparisons (float32/64,1/8/40 steps, 
 
 Coverage correction found by inspecting the existing recovery fixture: its fresh child omits the loader, so that result is candidate-producer/original-resumer interoperability, not candidate-only fresh-process recovery. Preserve this limit in the report; candidate-only recovery and broad serial regression remain prerequisites for adoption. A guessed supervised checkpoint module path also did not exist; rg located the actual save/load APIs in runtime/storage.mjs, and the direct test uses those real APIs.
 
-Latest researcher steering: quantify how much faster the repository's training becomes. Prioritize the queued actual timing comparison over further speculative candidates. Existing current audit14548 remains live; own plan still refuses overlap and all four pins match. Free disk88.61GiB was observed (point-in-time only). Shared-Wasm byte savings4E+36N per float32 eight-step forward are not a measured gain. [Candidate evidence](../../reports/training-latency-2026-10-19/shared-wasm-v2/README.md).
+Latest researcher steering: quantify how much faster the repository's training becomes. Prioritize the queued actual timing comparison over further speculative candidates. Existing current audit14548 remains live; own plan still refuses overlap and all four pins match. Free disk88.61GiB was observed (point-in-time only). Shared-Wasm byte savings4E+36N per float32 eight-step forward are not a measured gain. [Candidate evidence](../../../archive/early-development/research/reports/training-latency-2026-10-19/shared-wasm-v2/README.md).
 
 ## Candidate-only recovery coverage completed
 

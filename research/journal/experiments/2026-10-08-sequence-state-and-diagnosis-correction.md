@@ -16,4 +16,4 @@ Meaningful numerical tests establish exact equality between two continuous two-s
 
 This is an engineering prerequisite, not a complete neural receiver. Caller must validate board/history/frame semantics and bind graph/model/memory/encoder identities. The helper does not validate certificates, model eligibility/receptors, atomically publish memory/pending receipts, guarantee crash recovery or deliver verified feedback. No graph experiment or biological retention/transfer result. Next: integrate certified bounded lesson frames with source-supported local plasticity and freeze an informative controlled experiment. Old gamma4 and reversal-gain implementations and failed experiments remain untouched.
 
-Previous failed branch report: [selective-credit prerequisite](../../reports/selective-credit-prerequisite-v2-2026-10-08/README.md). The goal remains active; 8/10 is unproved.
+Previous failed branch report: [selective-credit prerequisite](../../../archive/early-development/research/reports/selective-credit-prerequisite-v2-2026-10-08/README.md). The goal remains active; 8/10 is unproved.

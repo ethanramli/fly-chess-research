@@ -2,7 +2,7 @@
 
 **What was tried.** The registered full Stage 1 run r14: 3 replicas x 4 arms x 32 blocks, attack-map cue v2, outcome-only, evaluator v2, independent audit.
 
-**What failed.** The audit is gate-failed: D4 is exactly 64/128 in every replica. All other measured gates pass (final 61-64/64, pairs 29-32/32, D6 lower95 > 0 against every control). [Report](../../reports/stage1-full-r14-2026-10-30/README.md).
+**What failed.** The audit is gate-failed: D4 is exactly 64/128 in every replica. All other measured gates pass (final 61-64/64, pairs 29-32/32, D6 lower95 > 0 against every control). [Report](../../../archive/early-development/research/reports/stage1-full-r14-2026-10-30/README.md).
 
 **The mistake.** The D4 observation in evaluators v1-v3 reads `provisionalMBONValue`, tanh(MBON12 - MBON01), the value proxy of the Stockfish-value prototype. When brain v5 (2026-10-26) moved the choice readout to MBON12 - MBON01 - MBON07 + MBON14, D4 was not moved with it. On every training row the receipts hold (1,412/1,412, trained and naive), MBON12 - MBON01 is positive, so D4 always predicts +1 and is structurally 64/128. The mistake was missed because no test ties the D4 value to the choice readout, smokes never run D4, and I (Claude Code) did not trace each gate's observation path before registering full-r14.
 

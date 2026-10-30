@@ -1,6 +1,6 @@
 # Documentation guide
 
-Latest completed diagnostic review: [plasticity problem.md](../plasticity%20problem.md), based on predecessors' runs and [verified evidence package](../research/reports/plasticity-evidence-review-2026-10-10/README.md). Broader useful preservation/reversal/transfer remains unresolved; the inherited larger-dose proposal has not run.
+Latest completed diagnostic review: [plasticity problem.md](../plasticity%20problem.md), based on predecessors' runs and [verified evidence package](../archive/early-development/research/reports/plasticity-evidence-review-2026-10-10/README.md). Broader useful preservation/reversal/transfer remains unresolved; the inherited larger-dose proposal has not run.
 
 Current handoff: [plasticity repair and bounded next-step prompt](handoffs/plasticity-repair.md).
 
@@ -24,12 +24,12 @@ For recurring curriculum work, use the [Python command guide](design/puzzle-lear
 
 ## Where to put a new note
 
-Put specifications in the matching design topic, source evidence in [literature](../research/literature/README.md), dated discussion in [journal](../research/journal/README.md), and outcomes in [reports](../research/reports/README.md). Add the note to its folder README. Update [current status](current-status.md) when an audited result changes; preserve earlier failures and historical entries.
+Put specifications in the matching design topic, source evidence in [literature](../research/literature/README.md), dated discussion in [journal](../research/journal/README.md), and outcomes in [reports](../archive/early-development/research/reports/README.md). Add the note to its folder README. Update [current status](current-status.md) when an audited result changes; preserve earlier failures and historical entries.
 
 Filenames use descriptive kebab-case; journal filenames begin with the Asia/Jakarta date. Label hypotheses, proposed protocols, frozen protocols, software evidence and measured results explicitly. Keep experiment appendices out of the root README and AGENTS.md.
 
 [Previous-to-current path map](relocation-map.md) resolves older citations and references in immutable raw records.
 
-- [2026-10-09 temporal plasticity hypothesis result](../research/reports/gamma2-temporal-hypothesis-v2-2026-10-09/README.md): local effect verified; full plasticity solution unproved.
+- [2026-10-09 temporal plasticity hypothesis result](../archive/early-development/research/reports/gamma2-temporal-hypothesis-v2-2026-10-09/README.md): local effect verified; full plasticity solution unproved.
 
-- [Adaptive feedback on current top error](../research/reports/gamma2-adaptive-target-v1-2026-10-09/README.md): verified cue separation and targeted learning, while the top wrong all-legal move remains unchanged.
+- [Adaptive feedback on current top error](../archive/early-development/research/reports/gamma2-adaptive-target-v1-2026-10-09/README.md): verified cue separation and targeted learning, while the top wrong all-legal move remains unchanged.

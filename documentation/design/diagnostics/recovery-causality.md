@@ -1,6 +1,6 @@
 # Recovery causality: single-event memory replay
 
-2026-10-06. [Frozen protocol](../../../research/data/recovery-causal-v1/protocol.json) completed: **each intervention prevents only 1/5 selected revivals; no correct choice emerges**. The original objective remains transferable reasoning through verified consequence feedback, not successful memory interventions.
+2026-10-06. [Frozen protocol](../../../archive/early-development/research/data/recovery-causal-v1/protocol.json) completed: **each intervention prevents only 1/5 selected revivals; no correct choice emerges**. The original objective remains transferable reasoning through verified consequence feedback, not successful memory interventions.
 
 Adaptive review failed with five previously reviewed mistakes returning to the top. A read-only decomposition found recovery of old-action-associated gains at every revival, but that correlation could not establish causation. This follow-up replays the five saved training events (attempts 4–8), preserving the exact encoder, full graph, readout and all 26 legal candidates.
 
@@ -25,6 +25,6 @@ The current source-derived rule is unchanged. A positive causal result would jus
 
 ## Results and next implication
 
-[Raw evidence and commands](../../../research/reports/recovery-causal-v1-2026-10-06/README.md): both interventions replace attempt 4's Kh6 with Qf6, another previously rejected non-mating action. Four later revivals survive both interventions. All 15 recorded/intervened choices fail independent mate verification. All recorded responses reproduce exactly, 15 memory masks/proofs audit, a resumed one-job prefix matches and 52 tests pass. Main 390 presentations: 108.84 MiB peak RSS, 164.424 elapsed seconds, 79.750 CPU seconds; heap 256/duty 0.5.
+[Raw evidence and commands](../../../archive/early-development/research/reports/recovery-causal-v1-2026-10-06/README.md): both interventions replace attempt 4's Kh6 with Qf6, another previously rejected non-mating action. Four later revivals survive both interventions. All 15 recorded/intervened choices fail independent mate verification. All recorded responses reproduce exactly, 15 memory masks/proofs audit, a resumed one-job prefix matches and 52 tests pass. Main 390 presentations: 108.84 MiB peak RSS, 164.424 elapsed seconds, 79.750 CPU seconds; heap 256/duty 0.5.
 
 This weakens a recovery-only explanation. Recovery contributes to the specific event-4 top ranking, but eliminating it for a single event does not generally prevent the observed revival or correct choice. Accumulated recovery over earlier events was not removed, so the result does not rule out a trajectory-level contribution. Representation/readout and supported memory capacity must be investigated alongside recovery; no artificial intervention is installed as a learning cure. A fixture success would still require separate unfamiliar/counterfactual reasoning tests.

@@ -9,5 +9,5 @@ Interpretation is deliberately narrow: this is a one-seed, one-ply candidate-pai
 No graph run was launched. The frozen executable protocol, isolated runner, independent graph auditor and recovery validation remain to be built and archived. Documentation-only change; no simulation tests run.
 
 - Specification: [correction-preservation v2 protocol](../../../documentation/design/puzzle-learning/correction-preservation-v2-protocol.md)
-- Schedule: [v2 schedule manifest](../../data/correction-preservation-schedules-v2/manifest.json)
+- Schedule: [v2 schedule manifest](../../../archive/early-development/research/data/correction-preservation-schedules-v2/manifest.json)
 - Feedback design: [quality improvement contract](../../../documentation/design/puzzle-learning/feedback-quality-improvement.md)

@@ -22,5 +22,5 @@ Register externally sourced solutions before experimental use. Preserve source a
 
 - [Training latency: serialization, compression, Wasm data ownership and audit recovery](training-latency-techniques-2026-10-19.md)
 
-- [V8 runtime candidate: canonical state-hash measurement and compatibility](../reports/training-latency-2026-10-19/neural-hash-runtime-v1/README.md)
+- [V8 runtime candidate: canonical state-hash measurement and compatibility](../../archive/early-development/research/reports/training-latency-2026-10-19/neural-hash-runtime-v1/README.md)
 - [Novelty search 2026-10-29](novelty-search-2026-10-29/README.md): scoping search for whole-connectome plasticity learning with transfer tests; none found combining all elements (bounded by coverage).

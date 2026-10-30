@@ -6,7 +6,7 @@ The user requested a deep investigation of weak improvement per experience, Xiao
 
 - [Detailed review and intervention order](review.md)
 - [Proposed operational feedback contract](../../../documentation/design/puzzle-learning/feedback-quality-improvement.md)
-- [Retrospective timing margin audit](../../reports/feedback-quality-review-2026-10-08/timing-margin-audit.json)
+- [Retrospective timing margin audit](../../../archive/early-development/research/reports/feedback-quality-review-2026-10-08/timing-margin-audit.json)
 - [Source-to-solution register](../source-solution-register.md)
 - Raw Exa results and fetched excerpts are in `raw/`. They preserve retrieval output rather than claiming complete article/PDF coverage.
 
@@ -36,4 +36,4 @@ Exa discovery: 19 successful searches requesting 95 result slots across MiMo, en
 
 No new external learning equation or chess evaluation function has been adopted. Sources are registered for review/design only before any experimental use.
 
-2026-10-08 subsequent evidence: [complete comparison and recovery](../../reports/bound-ray-feedback-development-completion-2026-10-08/README.md) confirm useful acquisition remains failed despite average margin gains. [Correction and preservation](../../../documentation/design/puzzle-learning/correction-and-preservation-feedback.md) is the next registered teacher-plan hypothesis; software tested, graph untested.
+2026-10-08 subsequent evidence: [complete comparison and recovery](../../../archive/early-development/research/reports/bound-ray-feedback-development-completion-2026-10-08/README.md) confirm useful acquisition remains failed despite average margin gains. [Correction and preservation](../../../documentation/design/puzzle-learning/correction-and-preservation-feedback.md) is the next registered teacher-plan hypothesis; software tested, graph untested.

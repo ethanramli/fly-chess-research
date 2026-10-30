@@ -1,6 +1,6 @@
 # Transfer assessment after stability
 
-2026-10-07 preparation only. The active [stability trial](../../../research/reports/multi-context-stability-v1-2026-10-07/README.md) must finish controls and independent full/search/recovery audits before serial transfer graph work. No intermediate successful checkpoint may be selected.
+2026-10-07 preparation only. The active [stability trial](../../../archive/early-development/research/reports/multi-context-stability-v1-2026-10-07/README.md) must finish controls and independent full/search/recovery audits before serial transfer graph work. No intermediate successful checkpoint may be selected.
 
 Separate [evaluator](../../../.codebase/scripts/puzzle-learning/evaluate-stability-transfer.mjs) is prepared and syntax-checked. It requires the terminal stability report, audit and completion marker, declared acquired-memory identity and joint acquisition. It never replays feedback. Both conditions' memory snapshots and fixed encoder/model/readout are pinned by the future protocol. Rest activity is reconstructed from the common training warm-start snapshot and frozen throughout evaluation, making it match the training contract rather than silently using naive rest.
 

@@ -6,7 +6,7 @@ stdout confirms that result; `fly status` still reports `not_registered`, 0/12.
 No production graph run or source scan is authorized by this continuation.
 
 The 45-check pinned source versions were copied only after verifying every registered
-hash into the [pinned source archive](../../source-archives/babysit-promotion-software-v1-2026-10-23/README.md).
+hash into the [pinned source archive](../../../archive/early-development/research/source-archives/babysit-promotion-software-v1-2026-10-23/README.md).
 The original raw logs/receipt and registered source identities are preserved.
 
 ## Missing execution boundary

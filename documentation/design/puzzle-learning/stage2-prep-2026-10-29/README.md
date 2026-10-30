@@ -11,7 +11,7 @@ Haiku sub-agents drafted this preparation while the full-r14 Stage 1 audit ran; 
 
 ## Cue v3 budget defect (measured)
 
-[budget check](../../../../research/reports/stage2-cue-v3-budget-2026-10-29/budget.mjs): 142 moves from Stage 1 training boards, synthetic 3x1000-KC mapping, no graph.
+[budget check](../../../../archive/early-development/research/reports/stage2-cue-v3-budget-2026-10-29/budget.mjs): 142 moves from Stage 1 training boards, synthetic 3x1000-KC mapping, no graph.
 - v2 uses about 117 cells on average.
 - v3 fills the 128-cell cap and drops about 60% of all token-cell assignments.
 - Only about 43% of v2-token cells survive (34% at worst).

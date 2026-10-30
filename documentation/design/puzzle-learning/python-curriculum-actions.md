@@ -36,7 +36,7 @@ Edit [curriculum-step.json](../../../python%20actions/curriculum-step.json); eac
 | `observe` | Existing PID and sibling logs, only when attaching to earlier work. |
 | `paused` | Keep true during a research pause. Editing it does not authorize research. |
 
-The supplied config describes the registered G0 history replication, with the separately pinned [lesson-pause execution version](../../../research/data/lesson-pause-control-v1/README.md). Its unpaused config permits an explicit launch/resume after preflight; this documentation does not launch it. Original frozen sources/protocol remain preserved and canonical numerical identity is distinct from actual operational-source identity. This interface adds no executable C01 protocol.
+The supplied config describes the registered G0 history replication, with the separately pinned [lesson-pause execution version](../../../archive/early-development/research/data/lesson-pause-control-v1/README.md). Its unpaused config permits an explicit launch/resume after preflight; this documentation does not launch it. Original frozen sources/protocol remain preserved and canonical numerical identity is distinct from actual operational-source identity. This interface adds no executable C01 protocol.
 
 ## Command reference
 

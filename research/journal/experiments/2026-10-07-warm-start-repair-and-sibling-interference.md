@@ -6,4 +6,4 @@ The subsequent no-feedback test excludes that training position and assesses fou
 
 V1 resource/schema failures and the evaluation auditor's first undefined-variable failure are preserved. No old protocol pins were overwritten to make outcomes pass.
 
-[Repair report](../../reports/adaptive-near-transfer-repair-v2-2026-10-07/README.md) · [Sibling report](../../reports/adaptive-near-transfer-repair-transfer-v1-2026-10-07/README.md).
+[Repair report](../../../archive/early-development/research/reports/adaptive-near-transfer-repair-v2-2026-10-07/README.md) · [Sibling report](../../../archive/early-development/research/reports/adaptive-near-transfer-repair-transfer-v1-2026-10-07/README.md).

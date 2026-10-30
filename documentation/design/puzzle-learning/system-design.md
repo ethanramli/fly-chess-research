@@ -16,7 +16,7 @@ Inspected source: `puzzle-round.mjs`, `puzzle-search.mjs`, `positions.mjs`, `tra
 
 The gamma4 prototype has individual efficacy gains on selected existing KC-to-MBON connections. A single activity value per neuron does **not** imply a single memory value per neuron. However, subcellular physiology, natural reward delivery and reliable contingency reversal remain absent. V1 and V2 failed their complete gates; V2 strengthened acquisition preferences in 6/6 seeds and selected the reversed target in 3/6. These results remain unchanged.
 
-Read-only audit: [raw anatomy report](../../../research/reports/instinct-design-2026-10-05/anatomy-with-relay.json). Both annotated GF cells occur in the pinned 134,209-neuron, 2,700,513-directed-edge graph:
+Read-only audit: [raw anatomy report](../../../archive/early-development/research/reports/instinct-design-2026-10-05/anatomy-with-relay.json). Both annotated GF cells occur in the pinned 134,209-neuron, 2,700,513-directed-edge graph:
 
 | Cell | Root ID | Index in this graph | LC4 incoming edges | LPLC2 incoming edges |
 |---|---|---:|---:|---:|
@@ -133,7 +133,7 @@ Planning budget: reserve up to 180 MiB for graph, model and load-time transients
 
 Keep the existing inference kernel first. A later two-buffer inference path could reduce tapes, but must be verified against the current recurrence and measured; no improvement is claimed here. Do not load Adam states in the biological condition. Run commands with `node --max-old-space-size=256` and `--cpu-duty 0.5`.
 
-Fresh evidence: the existing record-only fixture used **101.01 MiB peak RSS**, 2.110 seconds through reporting preparation and 1.594 CPU seconds. The anatomy audit used **138.94 MiB peak RSS**. These are different workloads, not performance comparisons or measurements of M1. [Measurement note and exact commands](../../../research/reports/instinct-design-2026-10-05/anatomy-with-relay.json).
+Fresh evidence: the existing record-only fixture used **101.01 MiB peak RSS**, 2.110 seconds through reporting preparation and 1.594 CPU seconds. The anatomy audit used **138.94 MiB peak RSS**. These are different workloads, not performance comparisons or measurements of M1. [Measurement note and exact commands](../../../archive/early-development/research/reports/instinct-design-2026-10-05/anatomy-with-relay.json).
 
 ## 7. High-quality feedback means evidence, specificity and a useful next experience
 
@@ -206,7 +206,7 @@ Proposed implementation boundaries: `instinct-interface.mjs` (fixed cues and GF 
 
 ## 12. Design coverage and unresolved facts
 
-2026-10-05 implementation evidence: a [frozen read-only relay probe](../../../research/reports/relay-probe-2026-10-05/README.md) now measures mapped cell responses and exact checkpoint replay while preserving every parameter. A [mechanism evidence card](../neural-learning/reversal-mechanism.md) records source/mapping gaps. This is Gate A investigation; it does not pass the learning or GF-choice gates.
+2026-10-05 implementation evidence: a [frozen read-only relay probe](../../../archive/early-development/research/reports/relay-probe-2026-10-05/README.md) now measures mapped cell responses and exact checkpoint replay while preserving every parameter. A [mechanism evidence card](../neural-learning/reversal-mechanism.md) records source/mapping gaps. This is Gate A investigation; it does not pass the learning or GF-choice gates.
 
 Later 2026-10-05 GF replay: [stored-memory probes](../diagnostics/gf-readout-probe.md) now reproduce all original MBON responses and measure causal downstream GF changes. The unclipped diagnostic decoder makes correct acquisition/reversal choices in 6/6 informative seeds, but all tested cue responses are below rest; the application clipping specified in section 3 erases them into ties. This preserves a failed application-interface prediction. Reused synthetic cues, coarse masks and a diagnostic decoder do not pass Gate B, and no puzzle feedback is connected. Do not choose a new offset/gain from these outcomes and call the original interface validated.
 

@@ -1,6 +1,6 @@
 # Curriculum G0: registered neutral association assay
 
-2026-10-11. The researcher requests continuing the [curriculum](../puzzle-learning/principles-curriculum.md). [Frozen protocol](../../../research/data/curriculum-g0-assay-v1/protocol.json) follows its unmet G0 prerequisite, before capture/recapture C01. Earlier chess-transfer failures remain preserved. This is a synthetic association prerequisite, not chess reasoning.
+2026-10-11. The researcher requests continuing the [curriculum](../puzzle-learning/principles-curriculum.md). [Frozen protocol](../../../archive/early-development/research/data/curriculum-g0-assay-v1/protocol.json) follows its unmet G0 prerequisite, before capture/recapture C01. Earlier chess-transfer failures remain preserved. This is a synthetic association prerequisite, not chess reasoning.
 
 ## Frozen experiment
 
@@ -26,4 +26,4 @@ Each update publishes an immutable compressed checkpoint containing physiologica
 
 The V1 small-graph fixture exposed a Windows overwrite publication failure and signed-zero audit bug; preserve all V1 protocols/sources/raw partials. V2 uses immutable gzip publications and exact numeric zero-equivalent margin comparison, adding explicit per-arm lesson ordering/exposure checks. [Receiver and V1/V2 mistakes](../../../research/journal/experiments/2026-10-11-curriculum-g0-receiver.md) precede the changes. Full graph use requires V2 process interruption/resume replay, equality to uninterrupted fixture receipts and software regression. Fixture results do not count as connectome G0 evidence.
 
-[Protocol and commands](../../../research/data/curriculum-g0-assay-v1/README.md) · [Registered source assumptions](../../../research/literature/source-solution-register.md)
+[Protocol and commands](../../../archive/early-development/research/data/curriculum-g0-assay-v1/README.md) · [Registered source assumptions](../../../research/literature/source-solution-register.md)

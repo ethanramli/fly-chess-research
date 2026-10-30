@@ -4,4 +4,4 @@
 
 Before using the probe, add an independent certificate and per-edge recurrence audit; enforce every prerequisite report/audit hash and shared identity; reject non-finite duty inputs; record the transitive source, runtime and dependency identities; and publish receipt/report files atomically with receipt hashes. The existing memory reset and forward-state reset are consistent. `active` counts edge-associated KC entries, not unique cells. A single fresh reward per variant measures this fixture's eligibility/update path only; it cannot establish acquired choice, retention, reversal or transfer.
 
-Full findings and reviewed source hash: [probe review memo](../../reports/smothered-probe-review-2026-10-07/README.md). See also [current status](../../../documentation/current-status.md) and [decision log](../../project/decision_log.md).
+Full findings and reviewed source hash: [probe review memo](../../../archive/early-development/research/reports/smothered-probe-review-2026-10-07/README.md). See also [current status](../../../documentation/current-status.md) and [decision log](../../project/decision_log.md).

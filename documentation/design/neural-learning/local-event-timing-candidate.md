@@ -1,6 +1,6 @@
 # Local event timing candidate
 
-2026-10-09. Disconnected numerical engineering hypothesis. This implements neither a fly training run nor a validated biochemical receptor model. [Source/mapping evidence and historical cue coverage](../../../research/reports/plasticity-timing-candidate-2026-10-09/README.md).
+2026-10-09. Disconnected numerical engineering hypothesis. This implements neither a fly training run nor a validated biochemical receptor model. [Source/mapping evidence and historical cue coverage](../../../archive/early-development/research/reports/plasticity-timing-candidate-2026-10-09/README.md).
 
 ## Contract
 

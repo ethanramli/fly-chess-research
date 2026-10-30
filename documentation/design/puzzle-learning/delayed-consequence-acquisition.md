@@ -2,7 +2,7 @@
 
 2026-10-07. Development specification; no frozen learning protocol or completed transfer experiment.
 
-The [all-legal certificate audit](../../../research/reports/delayed-transfer-solvability-2026-10-07/README.md) confirms that the existing rook-concession fixture has an immediate mating alternative. It remains useful for teacher replay and explicit root-action feedback, but accuracy on it cannot demonstrate learning to investigate a delayed concession. The inspected support counterfactual is also development evidence, not untouched final testing.
+The [all-legal certificate audit](../../../archive/early-development/research/reports/delayed-transfer-solvability-2026-10-07/README.md) confirms that the existing rook-concession fixture has an immediate mating alternative. It remains useful for teacher replay and explicit root-action feedback, but accuracy on it cannot demonstrate learning to investigate a delayed concession. The inspected support counterfactual is also development evidence, not untouched final testing.
 
 Before a delayed-concept experiment, construct and independently certify training positions where no immediate mating alternative satisfies the task. Verify a successful strategy with the concession and adequate defensive coverage. A material loss on one illustrative branch alone does not establish that the concession is necessary. Record all legal root outcomes, including unknowns, and explicitly check shorter horizons.
 

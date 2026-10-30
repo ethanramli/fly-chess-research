@@ -1,6 +1,6 @@
 # Multi-context stability follow-up
 
-Researcher-aligned engineering hypothesis, 2026-10-07. Not a source-derived biological repair. The [component score diagnostic](../../../research/reports/component-score-effects-v1-2026-10-07/README.md) shows the original correct preference margin is only 0.00009788, then both isolated components of second-task punishment cross the boundary. Preserve all earlier failed shared-memory and conjunction experiments.
+Researcher-aligned engineering hypothesis, 2026-10-07. Not a source-derived biological repair. The [component score diagnostic](../../../archive/early-development/research/reports/component-score-effects-v1-2026-10-07/README.md) shows the original correct preference margin is only 0.00009788, then both isolated components of second-task punishment cross the boundary. Preserve all earlier failed shared-memory and conjunction experiments.
 
 Proposed next experiment: keep graph, plasticity, encoder and readout fixed; start all conditions from the same audited original acquired memory. Alternate bounded adaptive contrastive review between the two already inspected training positions. Select the current all-legal failure for checked consequences and a verified positive alternative. Unknown supplies no teaching event. Never prune failures from choice.
 

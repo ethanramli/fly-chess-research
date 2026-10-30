@@ -6,7 +6,7 @@ Short form for the `/goal` command: **"Follow documentation/handoffs/codebase-we
 
 ## 1. Why this review exists
 
-The project asks whether a from-scratch, connectome-constrained fly brain can learn chess from verified consequences and transfer that learning to unfamiliar positions. The most expensive mistakes so far were not learner failures. They were measurement mistakes. For example, full-r14 failed gate D4 because the evaluator read a readout channel that is positive on every row, so its sign carried no information ([full-r14 report](../../research/reports/stage1-full-r14-2026-10-30/README.md)). A second pair of eyes should look for more mistakes of that kind before they cost another multi-hour run.
+The project asks whether a from-scratch, connectome-constrained fly brain can learn chess from verified consequences and transfer that learning to unfamiliar positions. The most expensive mistakes so far were not learner failures. They were measurement mistakes. For example, full-r14 failed gate D4 because the evaluator read a readout channel that is positive on every row, so its sign carried no information ([full-r14 report](../../archive/early-development/research/reports/stage1-full-r14-2026-10-30/README.md)). A second pair of eyes should look for more mistakes of that kind before they cost another multi-hour run.
 
 ## 2. Hard rules (read AGENTS.md first; these add to it)
 

@@ -16,7 +16,7 @@ Initial batched inspection printed the entire large current-status/state files a
 
 ## Pending evidence
 
-Candidate, test output, benchmark protocol and eventual full-graph measurements are indexed in [the engineering report](../../reports/move-latency-zero-reset-2026-10-10/README.md). Production adoption and a speedup claim remain pending until those requirements pass.
+Candidate, test output, benchmark protocol and eventual full-graph measurements are indexed in [the engineering report](../../../archive/early-development/research/reports/move-latency-zero-reset-2026-10-10/README.md). Production adoption and a speedup claim remain pending until those requirements pass.
 
 ## Synthetic check and prelaunch review
 
@@ -62,7 +62,7 @@ The saved prefix pins FlyBench runner SHA-256 `37b356fdebafa08f13896d53fbb578b4e
 
 ### WASM graph comparison launch
 
-The new candidate and fixed comparison are registered in [the WASM report](../../reports/move-latency-wasm-2026-10-10/README.md), with helper/candidate/oracle hashes and the unchanged four-fixture median/p95 gates. Synthetic f32/f64/full-buffer/derivative/choice checks and 221 full candidate checks pass. Authoritative process inspection finds no active graph/experiment process after tests completed. Launch exactly `node --max-old-space-size=256 research/reports/move-latency-wasm-2026-10-10/benchmark.mjs --out runs/move-latency-wasm-v1 --cpu-duty 0.5`, serially, with 768 MiB RSS / 256 MiB free-memory guards. Raw output and report are required before adoption; learning/transfer gates remain unmet.
+The new candidate and fixed comparison are registered in [the WASM report](../../../archive/early-development/research/reports/move-latency-wasm-2026-10-10/README.md), with helper/candidate/oracle hashes and the unchanged four-fixture median/p95 gates. Synthetic f32/f64/full-buffer/derivative/choice checks and 221 full candidate checks pass. Authoritative process inspection finds no active graph/experiment process after tests completed. Launch exactly `node --max-old-space-size=256 research/reports/move-latency-wasm-2026-10-10/benchmark.mjs --out runs/move-latency-wasm-v1 --cpu-duty 0.5`, serially, with 768 MiB RSS / 256 MiB free-memory guards. Raw output and report are required before adoption; learning/transfer gates remain unmet.
 ## 2026-10-10: WASM comparison passes; audit before adoption
 
 The serial comparison is terminal. Independently recomputed all 32 recorded sample summaries, legal candidate coverage (92 successor positions), equal candidate scores/choices, source hashes and resource bounds; the audit passes. Every fixture improves its median with no worse p95 (four samples means this p95 is the observed maximum). Median reductions are 11.25% white-start, 23.18% black-after-e4, 21.45% six-ply opening and 16.52% rook endgame. Peak RSS is 135.39 MiB, elapsed 465.392 s, CPU 222.344 s, duty 0.5; end free memory 991.86 MiB. This small, variable host sample does not establish a universal latency guarantee or learning speedup.

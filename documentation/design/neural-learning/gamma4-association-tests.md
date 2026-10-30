@@ -1,10 +1,10 @@
 # Gamma4 association and reversal tests: V1 and V2 failed
 
-Protocol frozen before the first run, 2026-09-30. [Machine-readable specification](../../../research/data/association-validation-v1/protocol.json). The existing plasticity equation and its rates are unchanged. This experiment may fail; failures are retained and do not trigger automatic rate or trial-count tuning.
+Protocol frozen before the first run, 2026-09-30. [Machine-readable specification](../../../archive/early-development/research/data/association-validation-v1/protocol.json). The existing plasticity equation and its rates are unchanged. This experiment may fail; failures are retained and do not trigger automatic rate or trial-count tuning.
 
 ## Discussion takeaway, 2026-09-30
 
-2026-10-05 diagnostic addendum: [reproducible observational analysis](../../../research/reports/reversal-diagnostic-2026-10-05/README.md) decomposes reversal response changes and records each adjacent trial response. All contingent seeds show slight further old-cue depression rather than aggregate recovery; three V2 margins remain below the fixed decoder threshold. Counts alone do not explain success: one seed succeeds and another fails with three new-target rewards. This is post-hoc diagnosis, not a gate change or mechanism validation. Both original failures remain preserved; the exposure-controlled mechanism comparison is still proposed.
+2026-10-05 diagnostic addendum: [reproducible observational analysis](../../../archive/early-development/research/reports/reversal-diagnostic-2026-10-05/README.md) decomposes reversal response changes and records each adjacent trial response. All contingent seeds show slight further old-cue depression rather than aggregate recovery; three V2 margins remain below the fixed decoder threshold. Counts alone do not explain success: one seed succeeds and another fails with three new-target rewards. This is post-hoc diagnosis, not a gate change or mechanism validation. Both original failures remain preserved; the exposure-controlled mechanism comparison is still proposed.
 
 The researcher requested that the learning result and its limits be documented. The supported claim is basic association in the simplified simulation: with both options sampled, feedback strengthened rewarded preference in 6/6 V2 runs; memory erasure removed the changes and restoration recovered them, while nonlearning controls stayed fixed. Four runs already chose the initial target before training, so this represents two corrected choices and four strengthened preferences.
 
@@ -48,7 +48,7 @@ At most two small response vectors are cached within a condition. Reuse requires
 
 ## Results
 
-V1 completed: [raw report](../../../research/reports/association-validation-v1-2026-09-30/report.json), [independent audit](../../../research/reports/association-validation-v1-2026-09-30/audit.json). The overall acceptance gate **failed**. Acquisition succeeded in 3/6 seeds; seeds 1, 17 and 47 received zero acquisition reward. Their unchanged response is compatible with missing rewarded experience rather than an observed failure to store a rewarded experience. Reversal, informative-feedback comparison, persistence, memory reset/restoration, controls and wiring gates passed. This result is preserved, not overwritten by the follow-up.
+V1 completed: [raw report](../../../archive/early-development/research/reports/association-validation-v1-2026-09-30/report.json), [independent audit](../../../archive/early-development/research/reports/association-validation-v1-2026-09-30/audit.json). The overall acceptance gate **failed**. Acquisition succeeded in 3/6 seeds; seeds 1, 17 and 47 received zero acquisition reward. Their unchanged response is compatible with missing rewarded experience rather than an observed failure to store a rewarded experience. Reversal, informative-feedback comparison, persistence, memory reset/restoration, controls and wiring gates passed. This result is preserved, not overwritten by the follow-up.
 
 V1 measured 139.90 MiB peak RSS, 325.68 elapsed seconds and 171.84 CPU seconds in its final resumed invocation (two initial trials were performed in the documented prefix). Acquisition sign test: 3 positive, 3 tied, p=0.125. Reversal: 6 positive, p=0.015625. Reversal advantage over shuffled feedback: 5 positive, 1 tied, p=0.03125. Final reversed-choice accuracy alone was misleading: even unchanged controls chose the new target in 5/6 seeds because they often retained an initially incorrect preference. The target-signed **change** in response and causal controls are needed alongside accuracy.
 
@@ -56,7 +56,7 @@ The audit found no inconsistencies in decoded choices, teacher labels, delivered
 
 ## Prospectively specified opportunity-control follow-up
 
-[V2 protocol](../../../research/data/association-validation-v2/protocol.json) was specified after V1 completed and before V2 ran. It uses six **new** seeds (503, 947, 1601, 2357, 3511, 5003). Each phase first samples A and B once in seed-dependent order; subsequent training trials use the same free-choice rule and exploration rate. This sampling order never consults the rewarded target. Frozen probes remain fully greedy, with no sampling overrides. Trial counts, plasticity, stimulation, delay and acceptance thresholds are unchanged. Both controls and shuffled feedback receive the same sampling protocol.
+[V2 protocol](../../../archive/early-development/research/data/association-validation-v2/protocol.json) was specified after V1 completed and before V2 ran. It uses six **new** seeds (503, 947, 1601, 2357, 3511, 5003). Each phase first samples A and B once in seed-dependent order; subsequent training trials use the same free-choice rule and exploration rate. This sampling order never consults the rewarded target. Frozen probes remain fully greedy, with no sampling overrides. Trial counts, plasticity, stimulation, delay and acceptance thresholds are unchanged. Both controls and shuffled feedback receive the same sampling protocol.
 
 This changes experience coverage and narrows the claim to learning given balanced initial sampling. It cannot rescue V1's original acceptance result or establish that autonomous exploration is adequate. Keeping new seeds and the failed first report avoids selecting successful V1 seeds or rerunning them until acceptance. V2 is a follow-up computational experiment, not a final untouched biological or chess test set.
 
@@ -64,7 +64,7 @@ Run the same runner with `--protocol research/data/association-validation-v2/pro
 
 ## Observed V2 result and accepted scope
 
-[Raw report](../../../research/reports/association-validation-v2-2026-09-30/report.json), [independent audit](../../../research/reports/association-validation-v2-2026-09-30/audit.json). The overall acceptance gate **failed** because final reversal choices were correct in only 3/6 seeds.
+[Raw report](../../../archive/early-development/research/reports/association-validation-v2-2026-09-30/report.json), [independent audit](../../../archive/early-development/research/reports/association-validation-v2-2026-09-30/audit.json). The overall acceptance gate **failed** because final reversal choices were correct in only 3/6 seeds.
 
 | Condition | Initial target chosen before training | Initial target chosen after acquisition | New target chosen after reversal |
 |---|---:|---:|---:|

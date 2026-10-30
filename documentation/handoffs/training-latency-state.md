@@ -2,7 +2,7 @@
 
 2026-10-19. Original optimization goal remains closed at researcher request. A later separately authorized three-repeat consistency check is now complete; no further graph work is pending.
 
-[Three-repeat report](../../research/reports/training-latency-2026-10-19/repeatability-v1/README.md) and [machine-readable summary](../../research/reports/training-latency-2026-10-19/repeatability-v1/summary.json).
+[Three-repeat report](../../archive/early-development/research/reports/training-latency-2026-10-19/repeatability-v1/README.md) and [machine-readable summary](../../archive/early-development/research/reports/training-latency-2026-10-19/repeatability-v1/summary.json).
 
 Trials:447.550->187.664s (58.069%),429.130->172.096s (59.897%),456.159->184.727s (59.504%). Mean59.156%, median59.504%, range58.069-59.897%. All3 independent integrity/timing gates pass;6552 publications/3276 pairs/1638 historical receipt instances. Historical69.126% plus/minus5-point consistency band fails. Keep historical evidence unchanged; current replicated selected-workload gain is approximately59%. No whole-curriculum timing or RAM-causality claim.
 

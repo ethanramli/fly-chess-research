@@ -6,4 +6,4 @@ The independent replay audit reproduces every readout exactly. All 246 selected 
 
 No reinforcement was delivered, no gain or fixed parameter changed, and no Monte Carlo search occurred. This is not learning or transfer. Next, test the same cue and rule with one verified-feedback pass and absent, shuffled, and disabled controls; treat the existing validation set as development-only and prepare a fresh final family before any transfer claim.
 
-See the [frozen protocol and audited result](../../../research/reports/bound-ray-activity-probe-v1-2026-10-07/README.md).
+See the [frozen protocol and audited result](../../../archive/early-development/research/reports/bound-ray-activity-probe-v1-2026-10-07/README.md).

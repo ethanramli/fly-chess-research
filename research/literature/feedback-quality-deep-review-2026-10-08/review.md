@@ -6,7 +6,7 @@
 
 The bottleneck is broader than teacher correctness. A useful training event needs four links: a discriminating experience, evidence matched to the objective, a neural update with the right selective effect, and retained transfer. The present system has strong checks on parts of the evidence/publication chain but weak evidence for the last two links.
 
-The latest timing fixture is especially revealing. Its safe capture was already preferred. Informative replay increased that candidate's score by 0.00079142, but increased the unsafe alternative by 0.00085386. The safe-minus-unsafe margin fell by 0.0000624391. No-channel replay also reduced the margin, by 0.0000605001. Informative-minus-no-channel margin change was -0.00000193901. Thus the positive pulse changed the score level substantially without improving discrimination in this inspected fixture. This is a descriptive two-action decomposition, not causal attribution to any edge or a universal failure claim. [Reproducible audit](../../reports/feedback-quality-review-2026-10-08/timing-margin-audit.json).
+The latest timing fixture is especially revealing. Its safe capture was already preferred. Informative replay increased that candidate's score by 0.00079142, but increased the unsafe alternative by 0.00085386. The safe-minus-unsafe margin fell by 0.0000624391. No-channel replay also reduced the margin, by 0.0000605001. Informative-minus-no-channel margin change was -0.00000193901. Thus the positive pulse changed the score level substantially without improving discrimination in this inspected fixture. This is a descriptive two-action decomposition, not causal attribution to any edge or a universal failure claim. [Reproducible audit](../../../archive/early-development/research/reports/feedback-quality-review-2026-10-08/timing-margin-audit.json).
 
 Calling the 76 changed entries learning progress would hide this distinction. Calling the 0.62-second replay a complete training cost would also hide setup, candidate assessment, proof, controls, persistence and auditing. The complete four-arm invocation took 26.33 seconds; the opposite-valence one-event control was not count-balanced.
 
@@ -45,7 +45,7 @@ The pinned sf_19 source performs iterative deepening with alpha-beta search, mov
 
 Stockfish's normalized score/WDL are engine-specific measures calibrated to engine game conditions. They are not proof of a bounded mate and not calibrated win probabilities for the fly. [FAQ](https://official-stockfish.github.io/docs/stockfish-wiki/Stockfish-FAQ.html), [WDL model](https://github.com/official-stockfish/WDL_model).
 
-Our completed target probe makes this distinction concrete: 124 analyses, 82 usable exact UCI targets, and 8–11 deadline-failing actions per board/budget tied with the winning action at maximum utility. Here “exact” means an unbounded UCI score report, not a mathematical proof. More nodes did not cure the objective mismatch. [Local evidence](../../reports/stockfish-target-feasibility-v1-2026-10-07/README.md).
+Our completed target probe makes this distinction concrete: 124 analyses, 82 usable exact UCI targets, and 8–11 deadline-failing actions per board/budget tied with the winning action at maximum utility. Here “exact” means an unbounded UCI score report, not a mathematical proof. More nodes did not cure the objective mismatch. [Local evidence](../../../archive/early-development/research/reports/stockfish-target-feasibility-v1-2026-10-07/README.md).
 
 Proposed teacher representation:
 

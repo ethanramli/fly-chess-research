@@ -7,9 +7,9 @@ Written for a fresh session at the researcher's request. It is a handoff, not an
 Under attack-map cue v2, the Fly never saw the board. An encoder turned each legal move into a few tokens (for example `act:capture|att:q:pin`). KC cells were chosen by token name only, and each assessment starts from a zeroed state, so the Fly's response was a fixed function of its token set. In training, 390 actions collapse to 33 token sets built from 28 tokens. A simple token lookup transfers to a held-out family on 23/24 boards. The encoder did the chess thinking, and Stage 1 "transfer" measured token recurrence.
 
 Evidence:
-- [response report](../../research/reports/maturity-review-response-2026-10-30/README.md)
-- [Codex maturity review](../../research/reports/research-maturity-review-2026-10-30/README.md)
-- [Codex code review](../../research/reports/codebase-weakness-review-2026-10-30/README.md)
+- [response report](../../archive/early-development/research/reports/maturity-review-response-2026-10-30/README.md)
+- [Codex maturity review](../../archive/early-development/research/reports/research-maturity-review-2026-10-30/README.md)
+- [Codex code review](../../archive/early-development/research/reports/codebase-weakness-review-2026-10-30/README.md)
 
 ## Researcher decisions (2026-10-30; decision log entry 15:34)
 
@@ -42,7 +42,7 @@ Never: train before the plan is approved, add hints or labels that do the thinki
 
 - **Memory rule.** The alpha1/alpha3 stores can only depress, down to a floor of 0.2, so long training exhausts them. Freezing alone stops new learning. Check the literature for bidirectional (strengthening) plasticity at KC-MBON synapses before building anything.
 - **Showing a candidate move to the eyes.** One option is to show the board after the move.
-- **Eye signal strength.** Measured 2026-10-29: the eye signal reaches KCs at under 1% of the cue drive, saturates, and boards are partly alike (correlation about 0.4) ([eye-route report](../../research/reports/stage1-eye-route-2026-10-29/README.md)).
+- **Eye signal strength.** Measured 2026-10-29: the eye signal reaches KCs at under 1% of the cue drive, saturates, and boards are partly alike (correlation about 0.4) ([eye-route report](../../archive/early-development/research/reports/stage1-eye-route-2026-10-29/README.md)).
 - **Fresh locked test puzzles,** prepared before any training. They should include new kinds of problems, not only new positions.
 - **r15.** Stopped by the researcher at 17:15 (ledger L112); its audit was never published. A pacing bug turned laptop sleep into long rests (journal 2026-10-30-audit-stall-after-laptop-sleep). Its training result is kept as old-design development data.
 

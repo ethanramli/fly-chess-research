@@ -4,7 +4,7 @@
 
 ## Evidence motivating the comparison
 
-The [audited positive puzzle pilot](../../../research/reports/positive-puzzle-pipeline-v1-2026-10-06/README.md) fails useful full-root acquisition. The [audited saved-memory probe](../../../research/reports/positive-puzzle-memory-probe-2026-10-06/README.md) shows that the first event's sole PAM02 gain change raises almost all candidates by a common offset, improving the successful candidate's margin over the leading failure by only about 1.07e-8. Incomplete review coverage also remains unresolved. No result establishes universal incapacity or that volume cannot help.
+The [audited positive puzzle pilot](../../../archive/early-development/research/reports/positive-puzzle-pipeline-v1-2026-10-06/README.md) fails useful full-root acquisition. The [audited saved-memory probe](../../../archive/early-development/research/reports/positive-puzzle-memory-probe-2026-10-06/README.md) shows that the first event's sole PAM02 gain change raises almost all candidates by a common offset, improving the successful candidate's margin over the leading failure by only about 1.07e-8. Incomplete review coverage also remains unresolved. No result establishes universal incapacity or that volume cannot help.
 
 The pinned mapping has 84 unique PAM02-eligible KCs and 664 PPL103-eligible KCs; 55 belong to both. These overlapping masks remain unchanged. Stimulating a mapped KC does not guarantee a measured selective memory effect after propagation. Do not present projection quotas as anatomical separation or eligibility validation.
 

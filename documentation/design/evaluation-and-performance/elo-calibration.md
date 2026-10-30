@@ -55,7 +55,7 @@ See [performance and evaluation implementation](implementation-roadmap.md) for p
 
 ## 2026-10-10: FlyBench first implementation
 
-The researcher now requests implementation. [FlyBench v1](flybench.md) implements 50 adaptive colour-paired Stockfish games, frozen player adapters, nominal/reference-supplied Glicko estimates, game-boundary recovery and replay audit. This advances runner infrastructure; it does not establish the measured reference pool or decimal accuracy. Earlier future-scope statements remain historical. See the [software record](../../../research/reports/flybench-software-2026-10-10/README.md).
+The researcher now requests implementation. [FlyBench v1](flybench.md) implements 50 adaptive colour-paired Stockfish games, frozen player adapters, nominal/reference-supplied Glicko estimates, game-boundary recovery and replay audit. This advances runner infrastructure; it does not establish the measured reference pool or decimal accuracy. Earlier future-scope statements remain historical. See the [software record](../../../archive/early-development/research/reports/flybench-software-2026-10-10/README.md).
 
 ## 2026-10-11: Revised Stockfish-only proposal
 

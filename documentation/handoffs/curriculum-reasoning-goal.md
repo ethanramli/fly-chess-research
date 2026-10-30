@@ -48,7 +48,7 @@ On initial activation and every compaction/recovery:
 
 Core references, read initially and again only when needed:
 
-- [Curriculum](../design/puzzle-learning/principles-curriculum.md) and [machine specification](../../research/data/principles-curriculum-v1/curriculum.json).
+- [Curriculum](../design/puzzle-learning/principles-curriculum.md) and [machine specification](../../archive/early-development/research/data/principles-curriculum-v1/curriculum.json).
 - [Feedback requirements](../design/puzzle-learning/feedback-quality-gate.md).
 - [Learning direction](../design/research-goals/feedback-learning.md) and [scientific scope](../design/research-goals/scientific-contribution.md).
 - [Search/teacher boundaries](../design/search-and-feedback/README.md), [puzzle paths](../design/puzzle-learning/README.md) and [code entry points](../../.codebase/README.md).

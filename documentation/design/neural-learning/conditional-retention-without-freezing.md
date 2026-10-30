@@ -1,6 +1,6 @@
 # Conditional retention and revisability without freezing
 
-2026-10-09. Analytical consequences of the existing candidate, not graph or biological validation. [Reproducible arithmetic](../../../research/reports/plasticity-timing-candidate-2026-10-09/derive-retention-reversal.mjs) and [output](../../../research/reports/plasticity-timing-candidate-2026-10-09/retention-reversal-bounds.json).
+2026-10-09. Analytical consequences of the existing candidate, not graph or biological validation. [Reproducible arithmetic](../../../archive/early-development/research/reports/plasticity-timing-candidate-2026-10-09/derive-retention-reversal.mjs) and [output](../../../archive/early-development/research/reports/plasticity-timing-candidate-2026-10-09/retention-reversal-bounds.json).
 
 ## Correction to the preceding interpretation
 

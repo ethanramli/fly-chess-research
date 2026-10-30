@@ -1,6 +1,6 @@
 # Prompt for the successor model
 
-2026-10-10 superseding direction: the researcher requested review of predecessors' evidence before further training. Completed diagnosis is [plasticity problem.md](../../plasticity%20problem.md), with [review notes](../../research/reports/plasticity-evidence-review-2026-10-10/review-notes.md) and [verification package](../../research/reports/plasticity-evidence-review-2026-10-10/README.md). The 32-pair proposal below remains unregistered and unrun. It is a possible future bounded question, not an automatic next launch. No learner repair, retention/reversal or transfer success is claimed by the diagnostic deliverable.
+2026-10-10 superseding direction: the researcher requested review of predecessors' evidence before further training. Completed diagnosis is [plasticity problem.md](../../plasticity%20problem.md), with [review notes](../../archive/early-development/research/reports/plasticity-evidence-review-2026-10-10/review-notes.md) and [verification package](../../archive/early-development/research/reports/plasticity-evidence-review-2026-10-10/README.md). The 32-pair proposal below remains unregistered and unrun. It is a possible future bounded question, not an automatic next launch. No learner repair, retention/reversal or transfer success is claimed by the diagnostic deliverable.
 
 Verified handoff state: the four-pair run and audit are complete. All 215
 software tests, 760 recorded frame replays and 130 final graph score rows pass.

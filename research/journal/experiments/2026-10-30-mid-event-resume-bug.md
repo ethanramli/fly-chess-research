@@ -22,4 +22,4 @@ The selection accounting is already inside every block checkpoint, because it ru
 
 ## Addendum 2026-10-30 12:16: fix verified
 
-Block v3 regression test 1/1: a mid-event resume through v3 matches the uninterrupted run, and v2 throws. The witness, rerun with the v3 resume order, gives `pendingReceiptExactlyOnce: true` on r1, r2 and r3 (each reproduces training exactly). Report: [recovery witness](../../reports/stage1-full-r15-recovery-witness-2026-10-30/README.md).
+Block v3 regression test 1/1: a mid-event resume through v3 matches the uninterrupted run, and v2 throws. The witness, rerun with the v3 resume order, gives `pendingReceiptExactlyOnce: true` on r1, r2 and r3 (each reproduces training exactly). Report: [recovery witness](../../../archive/early-development/research/reports/stage1-full-r15-recovery-witness-2026-10-30/README.md).

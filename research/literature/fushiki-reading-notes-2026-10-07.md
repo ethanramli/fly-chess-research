@@ -1,6 +1,6 @@
 # Fushiki's four papers: implications for current roadblocks
 
-2026-10-07, Asia/Jakarta. Source-grounded assessment, not a validated replacement learner. [Access evidence](../reports/fushiki-literature-review-2026-10-07/access-evidence.json) records coverage and restrictions. [Raw development-receipt summary](../reports/fushiki-literature-review-2026-10-07/receipt-summary.json) is independent arithmetic on six failed reviews and one positive replay, without graph inference. [Proposed next study](../../documentation/design/neural-learning/compartment-memory-diagnostics.md) separates diagnostics from mechanism changes.
+2026-10-07, Asia/Jakarta. Source-grounded assessment, not a validated replacement learner. [Access evidence](../../archive/early-development/research/reports/fushiki-literature-review-2026-10-07/access-evidence.json) records coverage and restrictions. [Raw development-receipt summary](../../archive/early-development/research/reports/fushiki-literature-review-2026-10-07/receipt-summary.json) is independent arithmetic on six failed reviews and one positive replay, without graph inference. [Proposed next study](../../documentation/design/neural-learning/compartment-memory-diagnostics.md) separates diagnostics from mechanism changes.
 
 ## What Dr Fushiki actually advised
 

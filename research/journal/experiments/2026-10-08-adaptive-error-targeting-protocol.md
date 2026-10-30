@@ -2,7 +2,7 @@
 
 2026-10-08. Status: predeclared design; implementation and graph execution pending. This is a researcher engineering hypothesis, not a new source-backed biological mechanism.
 
-Evidence: [initial-error screen](../../reports/delayed-mate-chosen-error-v1-2026-10-08/README.md) and its independent audit reproduce Qe6 rank1->4 and wrong new choice Kh6. Mistake: fixed later Qe6 reviews no longer follow the current attempted error. Hypothesis: following the newly preferred failure will repair more of the all-legal ranking. This is not established by the partial previous result.
+Evidence: [initial-error screen](../../../archive/early-development/research/reports/delayed-mate-chosen-error-v1-2026-10-08/README.md) and its independent audit reproduce Qe6 rank1->4 and wrong new choice Kh6. Mistake: fixed later Qe6 reviews no longer follow the current attempted error. Hypothesis: following the newly preferred failure will repair more of the all-legal ranking. This is not established by the partial previous result.
 
 Keep graph, initialization, seed, readout, public encoder, delayed eligibility/plasticity constants, teaching amplitude, task and board unchanged. Use only the previously inspected training fixture; no validation/final selection. Preserve all prior protocols and archives. Compare adaptive targeting against a separate fixed-initial-error arm at the same maximum budget, in addition to absent, matched-shuffled and disabled controls. Otherwise a larger event budget would confound the targeting comparison.
 

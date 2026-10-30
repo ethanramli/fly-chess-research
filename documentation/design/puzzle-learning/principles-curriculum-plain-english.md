@@ -1,6 +1,6 @@
 # FlyChess curriculum and current status — plain English
 
-Prepared 13 October 2026, Asia/Jakarta, for explaining the project to Dr Li Yan McCurdy. This explains the existing [full curriculum](principles-curriculum.md); it does not change its protocol, teaching dose, pass requirements or learning mechanism. The [machine-readable curriculum](../../../research/data/principles-curriculum-v1/curriculum.json) specifies the exact requirements.
+Prepared 13 October 2026, Asia/Jakarta, for explaining the project to Dr Li Yan McCurdy. This explains the existing [full curriculum](principles-curriculum.md); it does not change its protocol, teaching dose, pass requirements or learning mechanism. The [machine-readable curriculum](../../../archive/early-development/research/data/principles-curriculum-v1/curriculum.json) specifies the exact requirements.
 
 ## The idea
 
@@ -77,7 +77,7 @@ The [reversal-history diagnostic](../neural-learning/g0-reversal-history-diagnos
 
 If reset helps specifically where retained memory fails, that supports a history-dependent limitation in this configuration. If both fail, the cause remains unresolved. Reset is a diagnostic intervention, not a biological forgetting mechanism or an accepted learner repair. This one-projection diagnostic cannot pass the full G0 requirement.
 
-The follow-up was launched on 13 October. At the approximately **19:02 Jakarta** preparation check, its recorded launch PID7348 was absent and no terminal result or audit was present. The latest inspected publication was checkpoint009875, with receipt4936 in disabled-plasticity interference, lesson10/frame3. Its exit cause is unconfirmed and its branch comparison remains unfinished. Do not describe it as currently running or as having fixed reversal. No process was restarted or stopped during this documentation task. [Frozen diagnostic package](../../../research/data/g0-reversal-history-diagnostic-v1/README.md).
+The follow-up was launched on 13 October. At the approximately **19:02 Jakarta** preparation check, its recorded launch PID7348 was absent and no terminal result or audit was present. The latest inspected publication was checkpoint009875, with receipt4936 in disabled-plasticity interference, lesson10/frame3. Its exit cause is unconfirmed and its branch comparison remains unfinished. Do not describe it as currently running or as having fixed reversal. No process was restarted or stopped during this documentation task. [Frozen diagnostic package](../../../archive/early-development/research/data/g0-reversal-history-diagnostic-v1/README.md).
 
 Older experiments also show the larger unresolved gap: some familiar chess choices improved, but new-board and counterfactual tests failed. Completing G0 would establish a necessary learning prerequisite; it would not itself establish chess transfer.
 

@@ -18,19 +18,19 @@ Computational association prerequisites are distinct from biological validation 
 - [Bidirectional plasticity without freezing: analytical failure modes, primary evidence and untested replacement specification](bidirectional-plasticity-without-freezing.md)
 - [Assay infrastructure review](../../../research/journal/experiments/2026-10-08-bidirectional-assay-infrastructure.md): preflight-only software utilities; local signal/anatomy and resumable graph integration remain blocked.
 
-- [Bidirectional plasticity assay protocol v2](../../../research/data/bidirectional-plasticity-assay-v2/README.md): identity-pinned static preflight; blocked before graph execution.
+- [Bidirectional plasticity assay protocol v2](../../../archive/early-development/research/data/bidirectional-plasticity-assay-v2/README.md): identity-pinned static preflight; blocked before graph execution.
 
-- [Bidirectional assay protocol v3](../../../research/data/bidirectional-plasticity-assay-v3/README.md): matched retention probes, long alternating schedule and explicit reversal blocker.
+- [Bidirectional assay protocol v3](../../../archive/early-development/research/data/bidirectional-plasticity-assay-v3/README.md): matched retention probes, long alternating schedule and explicit reversal blocker.
 
 - [Independent assay receipt auditor](../../../.codebase/scripts/puzzle-learning/audit-bidirectional-plasticity-assay.mjs): static post-run verification of certificates, control signals, exposure, checkpoints, and gates; not run.
 
-- [Independent infrastructure review](../../../research/reports/bidirectional-assay-infrastructure-review-2026-10-08/README.md): original fixtures pass, but inert checks expose recovery, disabled-state isolation, behavioral-audit and contextual-gate defects; training remains blocked.
+- [Independent infrastructure review](../../../archive/early-development/research/reports/bidirectional-assay-infrastructure-review-2026-10-08/README.md): original fixtures pass, but inert checks expose recovery, disabled-state isolation, behavioral-audit and contextual-gate defects; training remains blocked.
 
 
-- [Repaired v4 infrastructure](../../../research/data/bidirectional-plasticity-assay-v4/README.md): 195/195 fixture tests pass; explicit recovery stages, whole-slot disabled isolation, bound rankings/margins and measured-cue reversal contract; actual graph learning remains blocked.
+- [Repaired v4 infrastructure](../../../archive/early-development/research/data/bidirectional-plasticity-assay-v4/README.md): 195/195 fixture tests pass; explicit recovery stages, whole-slot disabled isolation, bound rankings/margins and measured-cue reversal contract; actual graph learning remains blocked.
 
 
-- [Gamma2 timing candidate: 122 existing edges, static evidence and remaining mechanism work](../../../research/reports/plasticity-timing-candidate-2026-10-09/README.md).
+- [Gamma2 timing candidate: 122 existing edges, static evidence and remaining mechanism work](../../../archive/early-development/research/reports/plasticity-timing-candidate-2026-10-09/README.md).
 
 - [Local event timing numerical candidate](local-event-timing-candidate.md): disconnected hypothesis; numerical reversibility checked, retention and graph integration unresolved.
 
@@ -42,7 +42,7 @@ Computational association prerequisites are distinct from biological validation 
 
 - [Conditional retention and revisability without freezing](conditional-retention-without-freezing.md): analytic inactive-cue protection, finite scalar reversal and limits under overlapping activity.
 
-- [Read-only gamma2 neural overlap result](../../../research/reports/gamma2-neural-overlap-v1-2026-10-09/README.md): actual cue separation improved with fixed parameters; learning and retention still untested.
+- [Read-only gamma2 neural overlap result](../../../archive/early-development/research/reports/gamma2-neural-overlap-v1-2026-10-09/README.md): actual cue separation improved with fixed parameters; learning and retention still untested.
 
 - [Curriculum G0 neutral association assay](curriculum-g0-assay.md): frozen serial receiver prerequisite, original gates, matched controls and real checkpoint recovery.
 - [G0 reversal history diagnostic](g0-reversal-history-diagnostic.md): unlaunched paired retained/reset memory specification following the independently replayed reversal failure.

@@ -10,7 +10,7 @@ Following the user's puzzle → bottleneck → improvement → puzzle loop, ran 
 
 Next loop step: use the improved teacher-side search to source verified candidate consequences, then run a separately frozen matched-control learning screen and check whether the learner's own all-legal and equal-budget search choices improve. Preserve unfamiliar/counterfactual transfer as a separate later gate.
 
-Evidence: [contrastive screen](../../reports/contrastive-feedback-screen-v1-2026-10-07/README.md), [forcing-prior same-puzzle rerun](../../reports/forcing-loop-v4-2026-10-07/README.md), [current status](../../../documentation/current-status.md).
+Evidence: [contrastive screen](../../../archive/early-development/research/reports/contrastive-feedback-screen-v1-2026-10-07/README.md), [forcing-prior same-puzzle rerun](../../../archive/early-development/research/reports/forcing-loop-v4-2026-10-07/README.md), [current status](../../../documentation/current-status.md).
 
 ## Follow-up: v2 terminal outcome
 
@@ -18,4 +18,4 @@ The separately frozen v2 screen is terminal. Every forcing-prior search succeeds
 
 The frozen auditor failed on JSON normalizing `-0` to `0`; its log is preserved. A separate corrective auditor verifies exact numerical equality and preserves all frozen identity, certificate and recurrence checks. It passes 54 certificates, 10 trace replays and 12 recurrences. No gate or neural equation changed.
 
-Prepared a separate adaptive contrastive module that reviews the current unaided failure plus a verified positive alternative, then measures all legal scores after every event. Software tests check adaptive targeting, exact experience controls, pending-update recovery without duplication and unknown outcomes without teaching. All 107 project tests pass. Full-graph execution and independent audit remain pending. See [v2 outcome](../../reports/contrastive-feedback-screen-v2-2026-10-07/README.md) and [adaptive coverage design](../../../documentation/design/puzzle-learning/adaptive-contrastive-coverage.md).
+Prepared a separate adaptive contrastive module that reviews the current unaided failure plus a verified positive alternative, then measures all legal scores after every event. Software tests check adaptive targeting, exact experience controls, pending-update recovery without duplication and unknown outcomes without teaching. All 107 project tests pass. Full-graph execution and independent audit remain pending. See [v2 outcome](../../../archive/early-development/research/reports/contrastive-feedback-screen-v2-2026-10-07/README.md) and [adaptive coverage design](../../../documentation/design/puzzle-learning/adaptive-contrastive-coverage.md).

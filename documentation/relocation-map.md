@@ -89,5 +89,5 @@ Documentation cleanup on 2026-10-06. Human-facing links were updated. Raw protoc
 
 | Previous path | Current path |
 |---|---|
-| current compact.md | [Plasticity review notes](../research/reports/plasticity-evidence-review-2026-10-10/review-notes.md) |
+| current compact.md | [Plasticity review notes](../archive/early-development/research/reports/plasticity-evidence-review-2026-10-10/review-notes.md) |
 | math.html | [Value-teaching math explainer](design/puzzle-learning/value-teaching-explainer.html) |

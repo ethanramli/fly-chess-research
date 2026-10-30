@@ -1,6 +1,6 @@
 # 2026-10-08 independent bidirectional assay infrastructure review
 
-Researcher requested an actual-work review of the infrastructure completion claim. Verdict: useful groundwork and a correct stop gate; incomplete infrastructure correctness. Findings and evidence: [independent review](../../reports/bidirectional-assay-infrastructure-review-2026-10-08/README.md).
+Researcher requested an actual-work review of the infrastructure completion claim. Verdict: useful groundwork and a correct stop gate; incomplete infrastructure correctness. Findings and evidence: [independent review](../../../archive/early-development/research/reports/bidirectional-assay-infrastructure-review-2026-10-08/README.md).
 
 ## Mistakes and pivot
 

@@ -34,10 +34,10 @@ The 17-test suite passed after correcting a test example that unexpectedly produ
 
 Evidence:
 
-- [Original full-graph report](../../reports/puzzle-round-2026-09-30/round-000001/result.json).
-- [Replay report](../../reports/puzzle-round-replay-2026-09-30/round-000001/result.json).
+- [Original full-graph report](../../../archive/early-development/research/reports/puzzle-round-2026-09-30/round-000001/result.json).
+- [Replay report](../../../archive/early-development/research/reports/puzzle-round-replay-2026-09-30/round-000001/result.json).
 - [Implementation and reproducible command](../../../documentation/design/puzzle-learning/record-only-round.md).
-- [Single engineering fixture](../../data/puzzle-round-fixture/README.md).
+- [Single engineering fixture](../../../archive/early-development/research/data/puzzle-round-fixture/README.md).
 
 ## Where the discussion stopped
 
@@ -69,7 +69,7 @@ Important limitations: direct experimental stimulation is not a natural sensory 
 
 The puzzle receiver remains record-only; the browser is unchanged. Before reconnecting chess, the board/action encoding, reward interface, action readout and credit assignment still require justification, along with broader controls and independent biological predictions. The requested puzzle-learning → latency → scale sequence remains intact.
 
-Evidence: [mechanism and sources](../../../documentation/design/neural-learning/gamma4-plasticity.md), [original report](../../reports/gamma4-conditioning-2026-09-30/report.json), [mapping](../../reports/gamma4-conditioning-2026-09-30/mapping.json), [checkpoint replay report](../../reports/gamma4-resume-2026-09-30/report.json).
+Evidence: [mechanism and sources](../../../documentation/design/neural-learning/gamma4-plasticity.md), [original report](../../../archive/early-development/research/reports/gamma4-conditioning-2026-09-30/report.json), [mapping](../../../archive/early-development/research/reports/gamma4-conditioning-2026-09-30/mapping.json), [checkpoint replay report](../../../archive/early-development/research/reports/gamma4-resume-2026-09-30/report.json).
 
 ## Later addition: first human-vs-fly baseline game (researcher Black wins)
 
@@ -79,9 +79,9 @@ An earlier assistant reply misread this as a White win; move-pair order shows
 White played `21. f5` and Black replied `21... Qf4#`. Correction preserved
 here rather than rewriting the earlier discussion.
 
-Archived byte-for-byte in [game-001.pgn](../../data/human-vs-fly/game-001.pgn)
+Archived byte-for-byte in [game-001.pgn](../../../archive/early-development/research/data/human-vs-fly/game-001.pgn)
 (SHA-256 `D3B0082801A53708BC463D0F155481A54FD398DB3B24F4AFFBCB560AA73BEFC4`)
-with provenance and limits in [human-vs-fly README](../../data/human-vs-fly/README.md).
+with provenance and limits in [human-vs-fly README](../../../archive/early-development/research/data/human-vs-fly/README.md).
 This is one informal game against the untrained one-ply browser policy: not
 training data, not evidence of learning or transfer, and not to be used for
 checkpoint selection or tuning.
@@ -102,7 +102,7 @@ Software verification: 29/29 tests passed. V1's final resumed invocation used 13
 
 Supported scope: basic feedback-dependent association and causal stored-state effects within this explicitly specified simulation. Reliability of adaptation, independently predicted biological behavior and held-out chess transfer are not established. Synthetic-seed p-values are descriptive checks of the frozen computational protocol, not population estimates across flies. The puzzle receiver and browser policy remain unchanged. The next research issue is incomplete reversal and a justified account of reward omission, alongside the still-missing sensory/motor interfaces.
 
-Evidence: [frozen protocols, result tables and interpretation](../../../documentation/design/neural-learning/gamma4-association-tests.md), [V1 report](../../reports/association-validation-v1-2026-09-30/report.json), [V1 audit](../../reports/association-validation-v1-2026-09-30/audit.json), [V2 report](../../reports/association-validation-v2-2026-09-30/report.json), [V2 audit](../../reports/association-validation-v2-2026-09-30/audit.json). Latest primary-source check: [Handler 2019 PubMed](https://pubmed.ncbi.nlm.nih.gov/31230716/); its timing/receptor evidence does not specify or validate the new software choice decoder.
+Evidence: [frozen protocols, result tables and interpretation](../../../documentation/design/neural-learning/gamma4-association-tests.md), [V1 report](../../../archive/early-development/research/reports/association-validation-v1-2026-09-30/report.json), [V1 audit](../../../archive/early-development/research/reports/association-validation-v1-2026-09-30/audit.json), [V2 report](../../../archive/early-development/research/reports/association-validation-v2-2026-09-30/report.json), [V2 audit](../../../archive/early-development/research/reports/association-validation-v2-2026-09-30/audit.json). Latest primary-source check: [Handler 2019 PubMed](https://pubmed.ncbi.nlm.nih.gov/31230716/); its timing/receptor evidence does not specify or validate the new software choice decoder.
 
 ## Discussion takeaway and documentation request
 

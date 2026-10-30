@@ -2,7 +2,7 @@
 
 Target: more than40% less elapsed training time than the current implementation, with identical experiences, neural trajectories, feedback, rankings, controls and recovery. The competitor's raw benchmark is unavailable, so any comparison must name the baseline actually measured.
 
-[Registration and mistakes](../../../research/journal/experiments/2026-10-19-training-latency.md) · [Raw evidence](../../../research/reports/training-latency-2026-10-19/README.md)
+[Registration and mistakes](../../../research/journal/experiments/2026-10-19-training-latency.md) · [Raw evidence](../../../archive/early-development/research/reports/training-latency-2026-10-19/README.md)
 
 | Process | Preserve | Investigate |
 |---|---|---|

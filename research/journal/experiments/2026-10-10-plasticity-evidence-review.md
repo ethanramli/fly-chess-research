@@ -56,7 +56,7 @@ Verification: 42 existing indexed artifact hashes, 16 report/audit hash bindings
 
 Primary refresh: Handler full text and Cesp README accessible; Gkanias/Aso eLife challenges, Gkanias PMC challenge and Aso PubMed internal error. Previously registered local source provenance is retained; no new external mechanism used experimentally. Access failures do not support scientific conclusions.
 
-Deliverable: [plasticity problem.md](../../../plasticity%20problem.md), [reproducible review package](../../reports/plasticity-evidence-review-2026-10-10/README.md), [current compact](../../reports/plasticity-evidence-review-2026-10-10/review-notes.md). Hypotheses about capacity, readout domination, overlap and stabilization are explicitly unresolved. No fitted comparator, pretrained weights, permanent gain locking or external search was substituted for endogenous learning.
+Deliverable: [plasticity problem.md](../../../plasticity%20problem.md), [reproducible review package](../../../archive/early-development/research/reports/plasticity-evidence-review-2026-10-10/README.md), [current compact](../../../archive/early-development/research/reports/plasticity-evidence-review-2026-10-10/review-notes.md). Hypotheses about capacity, readout domination, overlap and stabilization are explicitly unresolved. No fitted comparator, pretrained weights, permanent gain locking or external search was substituted for endogenous learning.
 
 ## 2026-10-10: Repository-wide goal coherence audit
 

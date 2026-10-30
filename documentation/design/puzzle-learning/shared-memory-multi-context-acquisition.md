@@ -16,4 +16,4 @@ Tests113/113 pass: shared two-context acquisition/first-context retention in a s
 
 Full-graph runner, frozen protocol, independent recurrence/proof/control audit, pending-receipt recovery and outcome gates remain pending. Software fixture results do not establish neural capacity, concepts or reasoning.
 
-[Audited familiar repair](../../../research/reports/adaptive-contrastive-coverage-v1-2026-10-07/README.md) · [Training-only variations](../../../research/reports/smothered-training-variations-v1-2026-10-07/README.md)
+[Audited familiar repair](../../../archive/early-development/research/reports/adaptive-contrastive-coverage-v1-2026-10-07/README.md) · [Training-only variations](../../../archive/early-development/research/reports/smothered-training-variations-v1-2026-10-07/README.md)

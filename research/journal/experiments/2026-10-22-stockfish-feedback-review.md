@@ -6,7 +6,7 @@ The earlier statement that this was mostly an implementation task omitted unreso
 
 The first test invocation failed before running test bodies (`spawn EPERM` in Node file workers). Native one-process testing then passed all17 existing focused tests. Those tests do not establish selective chess learning, useful error correction, retention or transfer. A separate eight-cell adversarial probe was prepared but not executed after the researcher directed the task to preparing the prompt.
 
-Full findings, test invocation paths, primary-source coverage, failed attempts, archived previous question and evidence limits are in the [review report](../../reports/stockfish-feedback-review-2026-10-22/README.md). The [new root prompt](../../../question.md) is self-contained and accurately distinguishes implemented behavior from promised integration. Next: evaluate the external review, then choose the minimal justified correction and causal quality test. No new graph run or accepted model exists.
+Full findings, test invocation paths, primary-source coverage, failed attempts, archived previous question and evidence limits are in the [review report](../../../archive/early-development/research/reports/stockfish-feedback-review-2026-10-22/README.md). The [new root prompt](../../../question.md) is self-contained and accurately distinguishes implemented behavior from promised integration. Next: evaluate the external review, then choose the minimal justified correction and causal quality test. No new graph run or accepted model exists.
 
 ## Separate Astra-prompt goal
 
