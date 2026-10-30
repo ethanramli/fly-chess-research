@@ -44,7 +44,7 @@ Run from the repository root. Use the documented resource guards for experiments
 
 - [Training variation generator](prepare-smothered-training-variations.mjs) · [all-legal certificate auditor](audit-smothered-training-variations.mjs)
 
-- [Stockfish target collector](probe-stockfish-targets.mjs) and [independent auditor](audit-stockfish-targets.mjs): [record-only protocol](../../../research/data/stockfish-target-feasibility-v1/README.md).
+- [Stockfish target collector](probe-stockfish-targets.mjs) and [independent auditor](audit-stockfish-targets.mjs): [record-only protocol](../../../archive/early-development/research/data/stockfish-target-feasibility-v1/README.md).
 
 - [Adaptive near-transfer protocol freezer](freeze-adaptive-near-transfer.mjs), [runner](evaluate-adaptive-near-transfer.mjs), [auditor](audit-adaptive-near-transfer.mjs), and [audit-correction freezer](freeze-adaptive-near-transfer-audit-correction.mjs).
 - [Stockfish target auditor serialization correction](audit-stockfish-targets-json-zero.mjs): preserves original pinned auditor failure and independently checks completed records.
@@ -58,7 +58,7 @@ Run from the repository root. Use the documented resource guards for experiments
 - [audit-bound-ray-relational-cue.mjs](audit-bound-ray-relational-cue.mjs) runs a static train/validation-only projection check; it does not open final positions or run the graph.
 
 
-- Correction-preservation v2: [freezer](freeze-correction-preservation-v2.mjs), [runner](train-correction-preservation-v2.mjs), [independent auditor](audit-correction-preservation-v2.mjs); [frozen protocol](../../../research/data/correction-preservation-v2/README.md).
+- Correction-preservation v2: [freezer](freeze-correction-preservation-v2.mjs), [runner](train-correction-preservation-v2.mjs), [independent auditor](audit-correction-preservation-v2.mjs); [frozen protocol](../../../archive/early-development/research/data/correction-preservation-v2/README.md).
 
 - [train-bidirectional-plasticity-assay.mjs](train-bidirectional-plasticity-assay.mjs): identity/certificate/anatomy preflight; run mode requires the same complete preflight and a separately reviewed adapter.
 
@@ -68,6 +68,6 @@ Run from the repository root. Use the documented resource guards for experiments
 
 ## 2026-10-24 fix goal additions (Stage 1)
 
-- [stage1-retention-probe.mjs](stage1-retention-probe.mjs) and [stage1-retention-probe-v2.mjs](stage1-retention-probe-v2.mjs): training-only retention probe (teach board A, then 10 other boards, track A's certified-move rank) for `ReversalMemory` eta; v2 takes the teaching condition from its protocol. Python actions `python actions/stage1-retention-probe-*-step.json`; results in [the probe report](../../../research/reports/stage1-retention-probe-2026-10-24/README.md).
+- [stage1-retention-probe.mjs](stage1-retention-probe.mjs) and [stage1-retention-probe-v2.mjs](stage1-retention-probe-v2.mjs): training-only retention probe (teach board A, then 10 other boards, track A's certified-move rank) for `ReversalMemory` eta; v2 takes the teaching condition from its protocol. Python actions `python actions/stage1-retention-probe-*-step.json`; results in [the probe report](../../../archive/early-development/research/reports/stage1-retention-probe-2026-10-24/README.md).
 - [lichess-stage1-runtime-factory-v2.mjs](lichess-stage1-runtime-factory-v2.mjs): registration revision 7+ (action-relative cue v2, coupled brain v3); otherwise identical to the pinned v1 factory.
 - [run-lichess-curriculum-matrix-v2.mjs](run-lichess-curriculum-matrix-v2.mjs): registration revision 8+; registered rehearsal planner v2 and informative-arm early stop, and a cooperative block-boundary pause that writes `paused.json` for `fly pause`. Older registrations keep the v1 runner.

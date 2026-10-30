@@ -48,7 +48,7 @@
 
 - [plasticity-mechanism-assay.mjs](plasticity-mechanism-assay.mjs): bounded coordinator, pending receipt recovery, matched controls, and behavior/resource gates; no biological adapter.
 
-- Retention-probe slots are nonteaching observations; see [assay protocol v3](../../../research/data/bidirectional-plasticity-assay-v3/README.md).
+- Retention-probe slots are nonteaching observations; see [assay protocol v3](../../../archive/early-development/research/data/bidirectional-plasticity-assay-v3/README.md).
 - [Accepted stage memory handoff](curriculum-memory-handoff.mjs): restores only a condition/replica's independently accepted, validation-selected predecessor checkpoint. Stage 2 training and replay now use it; failed, missing or changed evidence stops the stage. Offline fixtures only; full campaign remains unregistered.
 - [Prospective checkpoint selection](curriculum-checkpoint-selection.mjs): earliest passing published block with per-stratum validation and earlier retention; controls use the informative block. The frozen original selector is preserved.
 - [Additional interference execution and replay](curriculum-retention-challenge.mjs): Stage 2 uses the serial resumable matrix for eight extra four-event blocks on earlier training foundations, starting from each selected source memory. Delivery does not pass D7; independently measured post-challenge validation/sentinels remain required.

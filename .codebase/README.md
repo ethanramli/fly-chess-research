@@ -37,7 +37,7 @@ This is an Adam engineering baseline, not endogenous biological learning. Resume
 
 - npm run play: separate browser player using an untrained one-ply policy.
 - npm run evaluate -- --checkpoint DIRECTORY --fen "FEN": criterion predictions, without move search.
-- validate-compartment-input.mjs / audit-compartment-input.mjs: frozen association comparison and independent receipt/recovery audit; use [the pinned protocol](../research/data/compartment-input-association-v1/protocol.json), not improvised settings.
+- validate-compartment-input.mjs / audit-compartment-input.mjs: frozen association comparison and independent receipt/recovery audit; use [the pinned protocol](../archive/early-development/research/data/compartment-input-association-v1/protocol.json), not improvised settings.
 
 Maintain sparse one-position execution, 768 MiB RSS / 256 MiB free-memory guards, atomic resumability and serial full-graph experiments. Numerical/software passes are distinct from biological validation and reasoning.
 
@@ -47,4 +47,4 @@ The [source](src/README.md), [command](scripts/README.md) and [test](tests/READM
 
 [Relocation map](relocation-map.json) records every previous and current code path. Historical commands in dated notes remain historical; consult the map for current entry points.
 
-[Pre-move source snapshot](../research/source-archives/codebase-before-2026-10-07/README.md) preserves exact original bytes with a SHA-256 manifest. Existing frozen protocols and report source archives remain unchanged. Relocated imports change live source identities: frozen experiments and checkpoint resumes require their matching archived code in a separate checkout, rather than bypassing provenance checks. New experiments require separately reviewed source pins.
+[Pre-move source snapshot](../archive/early-development/research/source-archives/codebase-before-2026-10-07/README.md) preserves exact original bytes with a SHA-256 manifest. Existing frozen protocols and report source archives remain unchanged. Relocated imports change live source identities: frozen experiments and checkpoint resumes require their matching archived code in a separate checkout, rather than bypassing provenance checks. New experiments require separately reviewed source pins.

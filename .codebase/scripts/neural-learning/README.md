@@ -10,7 +10,7 @@
 - [condition-fly.mjs](condition-fly.mjs)
 - [map-reversal-memory.mjs](map-reversal-memory.mjs)
 - [validate-learning.mjs](validate-learning.mjs)
-- [run-g0-history-with-pause.mjs](run-g0-history-with-pause.mjs): [registered operational pause version](../../../research/data/lesson-pause-control-v1/README.md); frozen canonical sources are preserved.
+- [run-g0-history-with-pause.mjs](run-g0-history-with-pause.mjs): [registered operational pause version](../../../archive/early-development/research/data/lesson-pause-control-v1/README.md); frozen canonical sources are preserved.
 - [validate-positive-channel-v2.mjs](validate-positive-channel-v2.mjs)
 - [validate-positive-channel.mjs](validate-positive-channel.mjs)
 
@@ -18,4 +18,4 @@ Run from the repository root. Use the documented resource guards for experiments
 
 - [preflight-curriculum-g0.mjs](preflight-curriculum-g0.mjs): static teacher/control/annotation checks; no graph dynamics or training.
 
-- [register-curriculum-g0.mjs](register-curriculum-g0.mjs), [run-curriculum-g0.mjs](run-curriculum-g0.mjs), [audit-curriculum-g0.mjs](audit-curriculum-g0.mjs): [frozen G0 assay](../../../research/data/curriculum-g0-assay-v1/README.md), serial feedback and archived-source full replay.
+- [register-curriculum-g0.mjs](register-curriculum-g0.mjs), [run-curriculum-g0.mjs](run-curriculum-g0.mjs), [audit-curriculum-g0.mjs](audit-curriculum-g0.mjs): [frozen G0 assay](../../../archive/early-development/research/data/curriculum-g0-assay-v1/README.md), serial feedback and archived-source full replay.

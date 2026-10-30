@@ -26,6 +26,6 @@
 
 - [rate-timing-memory.mjs](rate-timing-memory.mjs): full-frame candidate memory; explicit reference/timing, persistent traces, no mainline graph integration.
 
-- [consequence-value-readout.mjs](consequence-value-readout.mjs): fixed reference-relative MBON contrast; [audited scope and limits](../../../research/reports/consequence-value-feasibility-v1-2026-10-10/README.md).
+- [consequence-value-readout.mjs](consequence-value-readout.mjs): fixed reference-relative MBON contrast; [audited scope and limits](../../../archive/early-development/research/reports/consequence-value-feasibility-v1-2026-10-10/README.md).
 
-- [curriculum-g0.mjs](curriculum-g0.mjs): neutral certificates, public-only cue projection and explicit frame receiver; [static preflight](../../../research/data/curriculum-g0-receiver-v1/README.md), no learning result.
+- [curriculum-g0.mjs](curriculum-g0.mjs): neutral certificates, public-only cue projection and explicit frame receiver; [static preflight](../../../archive/early-development/research/data/curriculum-g0-receiver-v1/README.md), no learning result.
