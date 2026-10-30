@@ -1,0 +1,26 @@
+{
+  "schema": "lesson-batch-interruption-v1",
+  "checkpoint": "research\\data\\lichess-stage1-prepared-batches-v5\\checkpoint.json",
+  "checkpointSha256": "497d623fb44612fd35a8c7d0edf3fec5e8d07f48bb1985d7611c2e8e17616896",
+  "phase": "failed",
+  "completedChunks": 2,
+  "completedRows": 64,
+  "failure": {
+    "job": "prepare-train-002",
+    "exitCode": 1,
+    "testCounts": {},
+    "checkSummary": null,
+    "logs": {
+      "stdout": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261022T043359-88f0918f\\stdout.txt",
+      "stderr": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261022T043359-88f0918f\\stderr.txt"
+    },
+    "errorTail": "node:internal/modules/run_main:123\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Lesson preparation elapsed bound\r\n    at guard (file:///C:/Users/ethan/Documents/fly-chess-research/.codebase/scripts/data/prepare-lichess-lessons.mjs:41:3)\r\n    at prepare (file:///C:/Users/ethan/Documents/fly-chess-research/.codebase/scripts/data/prepare-lichess-lessons.mjs:74:3)\r\n    at file:///C:/Users/ethan/Documents/fly-chess-research/.codebase/scripts/data/prepare-lichess-lessons.mjs:92:7 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: false,\r\n  expected: true,\r\n  operator: '==',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v22.23.2\r\n"
+  },
+  "preservedSources": {
+    "research\\reports\\lichess-foundations-pilot-2026-10-21\\prepare-lichess-lessons-before-stage1-filter.mjs": "b8da4d5735a4b3f60ca3aab2d4d3d231d4b64b49f5f4569aaf5147f64a300927",
+    "research\\reports\\lichess-foundations-pilot-2026-10-21\\lichess-capture-lesson-before-stage1-filter.mjs": "d13679522f2b4dd132f16265db043f44c47044d77318788c4509decac2bac5a7",
+    "research\\reports\\lichess-foundations-pilot-2026-10-21\\audit-lichess-csv-lessons-before-stage1-filter.mjs": "0bbcaee617db5948401b8c0ec9e9d34742f6a795870164d9c8fac1c545d488b3",
+    "research\\reports\\lichess-foundations-pilot-2026-10-21\\lichess-lessons.test-before-stage1-filter.mjs": "32112d1fb53564020639c158143ebb2a0e1ff23ed1863782a0bbecf2b78f5a66"
+  },
+  "diagnosis": "Observed elapsed bound at third32-row chunk; code computes all-legal certificates even when piece count exceeds unchanged stage1 limit. Avoiding this work is an untested optimization hypothesis, not identified universal cause or measured speedup."
+}

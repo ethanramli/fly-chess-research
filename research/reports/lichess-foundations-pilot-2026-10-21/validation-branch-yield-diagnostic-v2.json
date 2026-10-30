@@ -1,0 +1,56 @@
+{
+  "schema": "lichess-validation-branch-yield-diagnostic-v2",
+  "passed": true,
+  "inputs": {
+    "preparedManifestSha256": "f67d505405942a2de9648d7ccc7d5468e538e144278cd401ccfdce4080c0913c",
+    "lessonAuditSha256": "b616ddeca62cc2ab0e9a4f4121bf15367e26f7edaad8be6713f67397d8f60977",
+    "previousFamilyManifestSha256": "9d8efc9e4d8b9b09fb621b770f7059319c8559185708d07c4145a1d728339373",
+    "previousFamiliesSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "previousFamilyAuditSha256": "f0e7bfca12a7ea6d8ba543fb133cf0531fa345f99948600b416fa578d10b0e9e",
+    "lessonsSha256": "ea76fe1144fd4814c3f15707f404a48348f3cc578f16320bd52e6483e0b63644"
+  },
+  "bounds": {
+    "maxRows": 1022,
+    "maxBranches": 4096,
+    "maxSeconds": 2700,
+    "maxRssMiB": 2048,
+    "minFreeMiB": 256,
+    "cpuDuty": 0.5
+  },
+  "stats": {
+    "rows": 1022,
+    "eligibleRows": 192,
+    "branches": 3218,
+    "unknown": 0,
+    "pairs": 0,
+    "rootTerminal": 0,
+    "tooFewTargets": 22,
+    "noCommonQuiet": 0,
+    "commonMoves": 1556,
+    "commonWithoutTwoTargets": 1305,
+    "commonWithTwoTargets": 251,
+    "noResponseQuiet": 1,
+    "terminalReplies": 0,
+    "repliesWithFewerThanTwoCaptures": 1451,
+    "unknownReplies": 0,
+    "zeroSuccessfulActions": 49,
+    "multipleSuccessfulActions": 1252,
+    "uniqueSuccessReplies": 466,
+    "uniqueSuccessWithoutPartner": 56,
+    "partnerChecks": 1047,
+    "pairedVariants": 0
+  },
+  "finalSplitInspected": false,
+  "neuralEventsDelivered": 0,
+  "graphLaunchAuthorized": false,
+  "stoppingBound": "validation-roots-exhausted",
+  "resources": {
+    "elapsedSeconds": 712.331928,
+    "peakRssMiB": 174.5,
+    "cpu": {
+      "user": 346953000,
+      "system": 906000
+    }
+  },
+  "scope": "Bounded diagnostic replay of the exact audited validation roots and branch bound; counters explain construction yield only and do not authorize learning."
+}

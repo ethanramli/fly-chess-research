@@ -1,0 +1,66 @@
+{
+ "schema": "lichess-stage1-synthetic-families-v1-manifest",
+ "split": "final",
+ "inputs": [
+  {
+   "path": "research/data/lichess-stage1-synthetic-final-sources-v1.jsonl",
+   "sha256": "bf238fba76010d472e107ad34cfb113d24738d1ffe4c20fc311045b5078d459d"
+  }
+ ],
+ "composition": [
+  [
+   "pin",
+   4
+  ],
+  [
+   "pin",
+   4
+  ],
+  [
+   "pin",
+   4
+  ],
+  [
+   "pin",
+   4
+  ],
+  [
+   "blocked",
+   4
+  ],
+  [
+   "blocked",
+   4
+  ],
+  [
+   "absent",
+   4
+  ],
+  [
+   "absent",
+   4
+  ]
+ ],
+ "outputs": {
+  "rows": "f5095d7698dbed52aa39776e611aed17ab95e7815ebaaa0b7c02108d6b149ddd",
+  "families": "f80a0ca614ddc926653dd0b3ac2e329cfe04a97b19ac62eb35637ace447ca30f"
+ },
+ "counts": {
+  "rows": 64,
+  "families": 8,
+  "pairs": 32,
+  "sourcesConsidered": 96,
+  "strata": {
+   "pinned-apparent-defender": 16,
+   "open-defender": 16,
+   "blocked-defender": 16,
+   "absent-defender": 16
+  }
+ },
+ "attemptLog": {
+  "entries": 13
+ },
+ "elapsedMs": 138400,
+ "peakRssMiB": 86,
+ "scope": "Teacher-side synthetic task preparation; requires the separate independent audit before any registration. No learner, Stockfish or neural event."
+}

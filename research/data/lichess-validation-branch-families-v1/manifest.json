@@ -1,0 +1,53 @@
+{
+  "schema": "lichess-branch-contrast-preparation-v1",
+  "split": "validation",
+  "inputs": {
+    "packageSha256": "e31bcf389a8780668be231d3278221138048b267437cbfddd21f2c596a2a4434",
+    "auditSha256": "0a8b655bff466c4a137693a353651bf3c19b9fe11ca057f904f5483f54aefe85",
+    "validationChunks": {
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\validation-chunk-000\\lessons.jsonl": "2b5e0c905b101952570a55d5970925b22f13b48cb47e8962074467e36bbfad17",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\validation-chunk-001\\lessons.jsonl": "feb9a809d231c897d2f1c5df70c0836332332a2ba47010d1324c95643eb3c5ee",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\validation-chunk-002\\lessons.jsonl": "3e33e8570726c67c71114beb2a84081e9196ff6bc2354b0ee72226e929de52f7",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\validation-chunk-003\\lessons.jsonl": "d4da7faa9b2bd5a60c87baaf5d4e69b5c465858401f06eca83ce0efcca705ece"
+    }
+  },
+  "bounds": {
+    "maxValidationRows": 128,
+    "maxBranches": 4096,
+    "maxFamilies": 16,
+    "maxSeconds": 2700,
+    "maxRssMiB": 2048,
+    "minFreeMiB": 256,
+    "cpuDuty": 0.5,
+    "heapMiB": 256,
+    "maxFamilyBytes": 2097152,
+    "maxOutputBytes": 33554432
+  },
+  "counts": {
+    "validationRows": 128,
+    "eligibleRows": 20,
+    "branches": 251,
+    "families": 1,
+    "unknownBranches": 0,
+    "oversizedFamilies": 0
+  },
+  "commonMoveKind": "any-quiet",
+  "responseMoveKind": "any-quiet",
+  "stoppingBound": "validation-roots-exhausted",
+  "outputSha256": "112a6f6db7e4b7ce164b3ca7b283c87ea448abbe18c3233ed1f33ef74ff0f238",
+  "outputBytes": 67986,
+  "resources": {
+    "elapsedSeconds": 52.2225999,
+    "cpu": {
+      "user": 25390000,
+      "system": 156000
+    },
+    "peakRssMiB": 79.3671875
+  },
+  "neuralEventsDelivered": 0,
+  "graphLaunchAuthorized": false,
+  "independentFamilyAuditPassed": false,
+  "validationLessonContentInspected": true,
+  "finalSplitInspected": false,
+  "scope": "Bounded validation-only counterfactual construction; requires separate family partition audit and does not authorize graph training."
+}

@@ -1,0 +1,234 @@
+{
+ "schema": "lichess-stage1-synthetic-split-plan-v1",
+ "split": "validation",
+ "panelIds": [
+  "s1syn-validation-f0-pin-p0a",
+  "s1syn-validation-f0-pin-p0b",
+  "s1syn-validation-f0-pin-p1a",
+  "s1syn-validation-f0-pin-p1b",
+  "s1syn-validation-f1-pin-p0a",
+  "s1syn-validation-f1-pin-p0b",
+  "s1syn-validation-f1-pin-p1a",
+  "s1syn-validation-f1-pin-p1b",
+  "s1syn-validation-f2-blocked-p0a",
+  "s1syn-validation-f2-blocked-p0b",
+  "s1syn-validation-f2-blocked-p1a",
+  "s1syn-validation-f2-blocked-p1b",
+  "s1syn-validation-f3-absent-p0a",
+  "s1syn-validation-f3-absent-p0b",
+  "s1syn-validation-f3-absent-p1a",
+  "s1syn-validation-f3-absent-p1b"
+ ],
+ "probeActions": [
+  {
+   "panelId": "s1syn-validation-f0-pin-p0a",
+   "actionId": "c4a5"
+  },
+  {
+   "panelId": "s1syn-validation-f0-pin-p0a",
+   "actionId": "a3c3"
+  },
+  {
+   "panelId": "s1syn-validation-f0-pin-p0b",
+   "actionId": "c4a5"
+  },
+  {
+   "panelId": "s1syn-validation-f0-pin-p0b",
+   "actionId": "a3c3"
+  },
+  {
+   "panelId": "s1syn-validation-f0-pin-p1a",
+   "actionId": "c4a5"
+  },
+  {
+   "panelId": "s1syn-validation-f0-pin-p1a",
+   "actionId": "a3b3"
+  },
+  {
+   "panelId": "s1syn-validation-f0-pin-p1b",
+   "actionId": "c4a5"
+  },
+  {
+   "panelId": "s1syn-validation-f0-pin-p1b",
+   "actionId": "a3b3"
+  },
+  {
+   "panelId": "s1syn-validation-f1-pin-p0a",
+   "actionId": "f5e4"
+  },
+  {
+   "panelId": "s1syn-validation-f1-pin-p0a",
+   "actionId": "c4d3"
+  },
+  {
+   "panelId": "s1syn-validation-f1-pin-p0b",
+   "actionId": "f5e4"
+  },
+  {
+   "panelId": "s1syn-validation-f1-pin-p0b",
+   "actionId": "c4d3"
+  },
+  {
+   "panelId": "s1syn-validation-f1-pin-p1a",
+   "actionId": "f5e4"
+  },
+  {
+   "panelId": "s1syn-validation-f1-pin-p1a",
+   "actionId": "a6d3"
+  },
+  {
+   "panelId": "s1syn-validation-f1-pin-p1b",
+   "actionId": "f5e4"
+  },
+  {
+   "panelId": "s1syn-validation-f1-pin-p1b",
+   "actionId": "a6d3"
+  },
+  {
+   "panelId": "s1syn-validation-f2-blocked-p0a",
+   "actionId": "f4f3"
+  },
+  {
+   "panelId": "s1syn-validation-f2-blocked-p0a",
+   "actionId": "f4g4"
+  },
+  {
+   "panelId": "s1syn-validation-f2-blocked-p0b",
+   "actionId": "f4f3"
+  },
+  {
+   "panelId": "s1syn-validation-f2-blocked-p0b",
+   "actionId": "f4g4"
+  },
+  {
+   "panelId": "s1syn-validation-f2-blocked-p1a",
+   "actionId": "f4f3"
+  },
+  {
+   "panelId": "s1syn-validation-f2-blocked-p1a",
+   "actionId": "f4g4"
+  },
+  {
+   "panelId": "s1syn-validation-f2-blocked-p1b",
+   "actionId": "f4f3"
+  },
+  {
+   "panelId": "s1syn-validation-f2-blocked-p1b",
+   "actionId": "f4g4"
+  },
+  {
+   "panelId": "s1syn-validation-f3-absent-p0a",
+   "actionId": "a3f3"
+  },
+  {
+   "panelId": "s1syn-validation-f3-absent-p0a",
+   "actionId": "a3a6"
+  },
+  {
+   "panelId": "s1syn-validation-f3-absent-p0b",
+   "actionId": "a3f3"
+  },
+  {
+   "panelId": "s1syn-validation-f3-absent-p0b",
+   "actionId": "a3a6"
+  },
+  {
+   "panelId": "s1syn-validation-f3-absent-p1a",
+   "actionId": "a3f3"
+  },
+  {
+   "panelId": "s1syn-validation-f3-absent-p1a",
+   "actionId": "a3a5"
+  },
+  {
+   "panelId": "s1syn-validation-f3-absent-p1b",
+   "actionId": "a3f3"
+  },
+  {
+   "panelId": "s1syn-validation-f3-absent-p1b",
+   "actionId": "a3a5"
+  }
+ ],
+ "counterfactualPairs": [
+  {
+   "pairId": "s1syn-validation-f0-pin-p0",
+   "familyId": "s1syn-validation-f0-pin",
+   "firstPanelId": "s1syn-validation-f0-pin-p0a",
+   "secondPanelId": "s1syn-validation-f0-pin-p0b",
+   "actionIds": [
+    "c4a5",
+    "a3c3"
+   ]
+  },
+  {
+   "pairId": "s1syn-validation-f0-pin-p1",
+   "familyId": "s1syn-validation-f0-pin",
+   "firstPanelId": "s1syn-validation-f0-pin-p1a",
+   "secondPanelId": "s1syn-validation-f0-pin-p1b",
+   "actionIds": [
+    "c4a5",
+    "a3b3"
+   ]
+  },
+  {
+   "pairId": "s1syn-validation-f1-pin-p0",
+   "familyId": "s1syn-validation-f1-pin",
+   "firstPanelId": "s1syn-validation-f1-pin-p0a",
+   "secondPanelId": "s1syn-validation-f1-pin-p0b",
+   "actionIds": [
+    "f5e4",
+    "c4d3"
+   ]
+  },
+  {
+   "pairId": "s1syn-validation-f1-pin-p1",
+   "familyId": "s1syn-validation-f1-pin",
+   "firstPanelId": "s1syn-validation-f1-pin-p1a",
+   "secondPanelId": "s1syn-validation-f1-pin-p1b",
+   "actionIds": [
+    "f5e4",
+    "a6d3"
+   ]
+  },
+  {
+   "pairId": "s1syn-validation-f2-blocked-p0",
+   "familyId": "s1syn-validation-f2-blocked",
+   "firstPanelId": "s1syn-validation-f2-blocked-p0a",
+   "secondPanelId": "s1syn-validation-f2-blocked-p0b",
+   "actionIds": [
+    "f4f3",
+    "f4g4"
+   ]
+  },
+  {
+   "pairId": "s1syn-validation-f2-blocked-p1",
+   "familyId": "s1syn-validation-f2-blocked",
+   "firstPanelId": "s1syn-validation-f2-blocked-p1a",
+   "secondPanelId": "s1syn-validation-f2-blocked-p1b",
+   "actionIds": [
+    "f4f3",
+    "f4g4"
+   ]
+  },
+  {
+   "pairId": "s1syn-validation-f3-absent-p0",
+   "familyId": "s1syn-validation-f3-absent",
+   "firstPanelId": "s1syn-validation-f3-absent-p0a",
+   "secondPanelId": "s1syn-validation-f3-absent-p0b",
+   "actionIds": [
+    "a3f3",
+    "a3a6"
+   ]
+  },
+  {
+   "pairId": "s1syn-validation-f3-absent-p1",
+   "familyId": "s1syn-validation-f3-absent",
+   "firstPanelId": "s1syn-validation-f3-absent-p1a",
+   "secondPanelId": "s1syn-validation-f3-absent-p1b",
+   "actionIds": [
+    "a3f3",
+    "a3a5"
+   ]
+  }
+ ]
+}

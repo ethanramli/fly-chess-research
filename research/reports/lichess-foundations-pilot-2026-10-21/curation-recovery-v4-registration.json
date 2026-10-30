@@ -1,0 +1,48 @@
+{
+  "schema": "lichess-stage1-curation-recovery-v4",
+  "createdAt": "2026-10-22T02:37:31.582273+00:00",
+  "purpose": "Preserve interrupted v3 and validate legal source moves directly rather than enumerating every SAN alternative. Same filters, sampling, splits, seed and bounds.",
+  "previousAttempt": {
+    "invocation": "runs/python-actions/20261021T143122-cc11d054",
+    "completionExitCode": null,
+    "failure": "Owned process/session missing; no completion receipt or corpus manifest. Exact exit cause unknown.",
+    "sourceSnapshot": "research\\reports\\lichess-foundations-pilot-2026-10-21\\curate-lichess-puzzles-v3-source.mjs",
+    "sourceSha256": "1afafbcec82b6c86dd76ee13aeb3bf258244671b437e5652e3608fc90ea6e254"
+  },
+  "source": {
+    "url": "https://database.lichess.org/",
+    "license": "CC0-1.0",
+    "compressedArchive": ".cache/lichess-puzzles-2026-10-21.csv.zst",
+    "compressedSha256": "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+    "decodedCsv": ".cache/lichess-puzzles-2026-10-21.csv",
+    "decodedCsvSha256": "ec2dd1a8f9cbd139ebb4aee228f72e77f8e2a581a24d25f61f71e6cf306b10f8",
+    "extractionReceipt": "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json",
+    "extractionReceiptSha256": "deac9b4792742a84fde9f3273caabcf5f505d957fb142881a8345aae356b4510"
+  },
+  "curator": {
+    "script": ".codebase/scripts/data/curate-lichess-puzzles.mjs",
+    "scriptSha256": "a2724bdc8f1292cffb36563f445eeab3a6b89f62ed82ee2b8fa997c473497cf7",
+    "previousScriptSnapshotSha256": "1afafbcec82b6c86dd76ee13aeb3bf258244671b437e5652e3608fc90ea6e254",
+    "pacer": ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs",
+    "pacerSha256": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    "limitPerSplit": 128,
+    "minRating": 0,
+    "maxRating": 5000,
+    "maxPieces": 6,
+    "seed": 20261021,
+    "themes": [],
+    "cpuDuty": 0.5,
+    "maxSeconds": 7200,
+    "maximumSupportedSeconds": 7200,
+    "implementationChange": "Apply each UCI move through chess.js move validation once; check promotion suffix equality explicitly. Preserve selection, reservoir counting, row/provenance semantics and resource bounds."
+  },
+  "resources": {
+    "maxRssMiB": 2048,
+    "minFreeMiB": 256,
+    "nodeHeapMiB": 256,
+    "cpuDuty": 0.5
+  },
+  "output": "research/data/lichess-stage1-candidates-v4",
+  "scope": "Source candidate selection only. History, relation families, consequence certificates, neural teaching and Stage1 acceptance require separate audits. Final rows stay sealed.",
+  "status": "registered-not-started"
+}

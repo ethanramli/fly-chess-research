@@ -1,0 +1,14 @@
+# Review log and corrections
+
+- 2026-10-30: Initial review traced W01/W02 and wrote an explicitly incomplete report. Neither finding asserted that current sealed data actually overlapped or repeated pairs. This continuation reproduced the repeated-pair acceptance on synthetic gate observations and training-only data.
+- 2026-10-30: An initial tool-orchestration call had a missing parenthesis and never executed. Corrected the call. Some initial `rg` commands used Windows-incompatible wildcard path arguments or guessed missing filenames; they failed to inspect those files. Subsequent searches used explicit paths and `rg --files`. These command failures are not codebase defects.
+- 2026-10-30: `tasklist` was denied inside the sandbox. The required process check succeeded after escalation; PID 9520 was present. No experiment-control command was invoked.
+- 2026-10-30: The first two single-file Node test launches failed before running tests with `spawn EPERM`. Their logs are preserved. Escalated reruns used separate output files and exited zero. The first logs are environment failures, not failed assertions or learner failures.
+- 2026-10-30: The import walk reports modules reachable through literal relative imports, including some unused comparison/search code. It does not establish that all 37 modules execute in Stage 1. The finding uses concrete executed dependencies (the forward kernel and certificate checker); it does not claim the imported Adam module performs supervised learning.
+- 2026-10-30: Recovery review narrowed W04 to an unhandled termination during an already resumed invocation. A caught exception updates the matrix's recovery pointers; the identified stale-pointer failure requires bypassing that catch. No actual experiment was interrupted to test this.
+- 2026-10-30: Sealed-set overlap, real final pair coverage, full-graph replay, serial/parallel numerical equivalence and actual pending-publication crash recovery were not executed. The report specifies the checks an authorized future audit would need. Nothing here upgrades Stage 1 or broader reasoning evidence.
+
+All review-created scripts, outputs and documentation are kept in this report directory. Existing current-status, decision-log and journal files were not edited because the review contract prohibits editing existing project files; this log records review mistakes and scope refinements within that boundary.
+
+- 2026-10-30: The first attempt to replace the review-authored README used two operations on the same path in one patch; the patch tool rejected it without changes. Replaced it with a single update operation. No codebase file was affected.
+- 2026-10-30: The first final-artifact check decoded PowerShell's UTF-16 redirected test logs as UTF-8 and falsely missed the passing summary. Preserved `completion-checks-initial.txt`; added BOM-aware decoding to the report-only checker. The test results themselves were unchanged.

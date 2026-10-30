@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto';
 import { copyBoard, uci } from './puzzle-search.mjs';
 import { checkMateCertificate } from './mate-certificate-check.mjs';
 import { checkCaptureRetentionCertificate } from './capture-retention-certificate-check.mjs';
+import { checkAvoidMateActionCertificate } from './avoid-mate-action-certificate-check.mjs';
 export function verifiedExperience(board, move, task, proof) {
   if (task?.objective === 'capture-retention' && task.plies === 1) {
     const checked = checkCaptureRetentionCertificate(board, move, proof);
@@ -16,6 +17,16 @@ export function verifiedExperience(board, move, task, proof) {
       experimentalPulse: checked.experimentalPulse, learningAllowed: true,
       certificateSha256: checked.certificateSha256,
       meaning: checked.meaning };
+  }
+  if(task?.objective==='avoid-mate'){
+    const checked=checkAvoidMateActionCertificate(board,move,task,proof);
+    if(!checked.verified)return{move,actor:checked.actor,status:'unknown',experimentalPulse:null,
+      certificateSha256:null,learningAllowed:false,opponentMateStatus:checked.opponentMateStatus??'unknown',
+      meaning:checked.meaning};
+    return{move,actor:checked.actor,status:checked.status,
+      experimentalPulse:checked.status==='failure',learningAllowed:true,
+      certificateSha256:checked.certificateSha256,opponentMateStatus:checked.opponentMateStatus,
+      meaning:checked.meaning};
   }
   if(task?.objective!=='forced-mate'||![1,3,5,7].includes(task.plies)||!['success','failure','unknown'].includes(proof?.status))throw Error('Invalid bounded consequence');
   const legal=board.moves({verbose:true}).find(m=>uci(m)===move);

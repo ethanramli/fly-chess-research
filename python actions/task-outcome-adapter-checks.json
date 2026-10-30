@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "name": "task-outcome-adapter-checks-2026-10-22",
+  "paused": false,
+  "paths": {
+    "run": "research/reports/task-outcome-adapter-2026-10-22"
+  },
+  "pins": {
+    ".codebase/src/puzzle-learning/stockfish-value-brain.mjs": "aac59407351a4aa100849ca0254304ba0dba4e6e6f84162f3deacd613b3f2a05",
+    ".codebase/src/puzzle-learning/dual-valence-puzzle-brain.mjs": "1ce7b7fcd1a54dfc2ee5043a7caaa7e6d4b2baeb80c8ca396763bd03ff8be84e",
+    ".codebase/src/puzzle-learning/mapped-puzzle-brain.mjs": "38af4c1eaec066f12d87f86c3994eec6a77cdbb016a6a455bc3bc0b519572cc2",
+    ".codebase/src/search-and-feedback/stockfish-feedback-rubric.mjs": "7401b7ea819c24bcbf41071ce95a5b58b32293242ef9cc2e8473a4d7a0923359",
+    ".codebase/src/search-and-feedback/stockfish-target.mjs": "1931d16a1883e76615be32cf13fb359286c06fd8a95d3c88812171f48c13158f",
+    ".codebase/src/search-and-feedback/verified-feedback.mjs": "33a420b7f0ef9bda52a73ff37f199bc090ee1ab9a2bae5b2f22f166e3e0edf7a",
+    ".codebase/tests/puzzle-learning/stockfish-value-brain.test.mjs": "0383152582a331937030c8660e2edb3c7b3e5610fd073eb938cafd42a5b9de2a",
+    ".codebase/tests/puzzle-learning/dual-valence-puzzle-brain.test.mjs": "ae4425f87ffb7d636dbd979d46479b22040a6bfc97ebf57b348dc465a9477eba",
+    ".codebase/tests/puzzle-learning/mapped-puzzle-brain.test.mjs": "e40244abc182c14b306125452d4592539c3cf3a99735bfdbc8839a05e67c6756",
+    ".codebase/tests/search-and-feedback/stockfish-feedback-rubric.test.mjs": "fe97ce65d86561d59ff5c3a73b029f04aa1ce5d36cdb7093460eda5277fca9eb",
+    ".codebase/tests/search-and-feedback/stockfish-target.test.mjs": "f0f3df48cd7952190a6cc22ef3585bfda8415c7bbcdda6dc412238a051583ef9",
+    ".codebase/tests/search-and-feedback/verified-feedback.test.mjs": "93283851dea763b3e478ad9d0d950588b0ba10f111beb428bc7e2bd1c31f04cd",
+    ".codebase/tests/neural-learning/dual-valence-interface.test.mjs": "e1e5aa8f0c27166cb525b0f1674a3498a4d4763bd8e65c1c09810fcbb3b47047"
+  },
+  "state_file": "runs/python-actions/current-task-outcome-adapter-checks.json",
+  "jobs": {
+    "tests": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        ".codebase/tests/puzzle-learning/stockfish-value-brain.test.mjs",
+        ".codebase/tests/puzzle-learning/dual-valence-puzzle-brain.test.mjs",
+        ".codebase/tests/puzzle-learning/mapped-puzzle-brain.test.mjs",
+        ".codebase/tests/search-and-feedback/stockfish-feedback-rubric.test.mjs",
+        ".codebase/tests/search-and-feedback/stockfish-target.test.mjs",
+        ".codebase/tests/search-and-feedback/verified-feedback.test.mjs",
+        ".codebase/tests/neural-learning/dual-valence-interface.test.mjs"
+      ]
+    }
+  },
+  "artifacts": {}
+}

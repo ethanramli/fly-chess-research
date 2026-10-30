@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "name": "source-completion-handoff-checks",
+  "paused": false,
+  "paths": {
+    "run": "research/reports/lichess-foundations-pilot-2026-10-21"
+  },
+  "pins": {
+    "python actions/finish_lichess_source.py": "cafe479f13fd700b039292695d3d0262860006114c95f3d4964fb4e7ed1d2c53",
+    "python actions/verify_finish_lichess_source.py": "603d3d8fa9032e0bd4c27b89d97908a6eca11031ad4f3eabebb6cedaa7c97847",
+    "python actions/curriculum.py": "55f550cdedd4dddfe9ad51ddc695c835865c21fab7019e2bc5d0861fb374ec1b"
+  },
+  "state_file": "runs/python-actions/current-source-completion-checks.json",
+  "jobs": {
+    "tests": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "python actions/verify_finish_lichess_source.py"
+      ]
+    }
+  },
+  "artifacts": {}
+}

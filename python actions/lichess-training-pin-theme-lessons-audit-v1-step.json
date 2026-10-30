@@ -1,0 +1,84 @@
+﻿{
+    "schema":  1,
+    "name":  "lichess-training-pin-theme-lessons-audit-v1",
+    "paused":  false,
+    "paths":  {
+                  "run":  "runs/python-actions/lichess-training-pin-theme-lessons-audit-v1",
+                  "batchConfig":  "python actions/lichess-training-pin-theme-lessons-v2-step.json",
+                  "batches":  "research/data/lichess-stage1-pin-theme-prepared-v2",
+                  "corpus":  "research/data/lichess-stage1-training-pin-theme-v2",
+                  "sourceAudit":  "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-source-audit-v2.json",
+                  "gamesRoot":  "research/data/lichess-stage1-training-pin-theme-v2-pgn",
+                  "auditor":  ".codebase/scripts/data/audit-lichess-csv-lessons.mjs",
+                  "out":  "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-lessons-audit-v1.json",
+                  "corpusManifest":  "research/data/lichess-stage1-training-pin-theme-v2/manifest.json",
+                  "rows":  "research/data/lichess-stage1-training-pin-theme-v2/train.jsonl"
+              },
+    "pins":  {
+                 "python actions/lichess-training-pin-theme-lessons-v2-step.json":  "9c5725c7aabc15044f88e8553c2827e76ceff5a2fd9106b5352d4c0b7893200b",
+                 "research/data/lichess-stage1-pin-theme-prepared-v2/manifest.json":  "3bc8d6cf1d47c3fb5523d5def6d00da147e56d8de5dc547428c18455ff747ee9",
+                 "research/data/lichess-stage1-training-pin-theme-v2/train.jsonl":  "ac742b70b15cfb1e015ba86a31b4b88eba7f2508a4e0111e9b08d73bc93fdd3f",
+                 "research/data/lichess-stage1-training-pin-theme-v2/manifest.json":  "d77fbe023dab9f143145f9587413834f31bc601bf9ba09b93efe4fb36a429518",
+                 "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-source-audit-v2.json":  "9ad2922b9a54468b26f69637b179dbe5f857837f4e5c78a0db948484258c25ff",
+                 "research/data/lichess-stage1-training-pin-theme-v2-pgn/train/manifest.json":  "00b52419bc59dc167ba26ef8d6a3df476591797f4b51615f355b6d5daf290f61",
+                 ".codebase/scripts/data/audit-lichess-csv-lessons.mjs":  "23fe7e06cd6a1545201e89d54a0312efb239016920c18da5b29a48488527cf26",
+                 "package-lock.json":  "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+                 ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs":  "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+                 ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs":  "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+                 "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-lessons-audit-v1-registration.json":  "f7f70285b4d4d1b9b114aa314523803cbe963a3eb9ba346c06f54a6994673883"
+             },
+    "state_file":  "runs/python-actions/lichess-training-pin-theme-lessons-audit-v1.json",
+    "jobs":  {
+                 "audit-lessons":  {
+                                       "role":  "check",
+                                       "argv":  [
+                                                    "node",
+                                                    "--max-old-space-size=256",
+                                                    "{auditor}",
+                                                    "--config",
+                                                    "{batchConfig}",
+                                                    "--batches",
+                                                    "{batches}",
+                                                    "--corpus",
+                                                    "{corpus}",
+                                                    "--source-audit",
+                                                    "{sourceAudit}",
+                                                    "--games-root",
+                                                    "{gamesRoot}",
+                                                    "--out",
+                                                    "{out}",
+                                                    "--cpu-duty",
+                                                    "0.5",
+                                                    "--max-seconds",
+                                                    "900"
+                                                ],
+                                       "requires":  [
+                                                        "{batchConfig}",
+                                                        "{batches}/manifest.json",
+                                                        "{corpusManifest}",
+                                                        "{rows}",
+                                                        "{sourceAudit}",
+                                                        "{gamesRoot}/train/manifest.json",
+                                                        "{auditor}"
+                                                    ],
+                                       "fresh_output":  "{out}"
+                                   }
+             },
+    "artifacts":  {
+                      "audit":  "{out}"
+                  },
+    "report_fields":  [
+                          "schema",
+                          "passed",
+                          "chunks",
+                          "totals",
+                          "finalSplitInspected",
+                          "sourceHistoryVerified",
+                          "consequenceCertificatesRechecked",
+                          "relationFamilyDisjointnessEstablished",
+                          "eligibleForNeuralTeaching",
+                          "graphLaunchAuthorized",
+                          "resources",
+                          "scope"
+                      ]
+}

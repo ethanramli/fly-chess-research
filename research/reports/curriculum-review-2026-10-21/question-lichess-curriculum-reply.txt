@@ -1,0 +1,123 @@
+﻿# Follow-up: design the Lichess puzzle curriculum that could build toward reasoning
+
+Your review identifies important receiver and representation risks. Please now resolve the practical question that motivated it:
+
+**What chess foundations should this learner acquire, in what progression, through a repeatable loop of Lichess puzzles and verified feedback, so we can later test whether it combines those foundations to solve unfamiliar problems?**
+
+We want a curriculum and an executable teaching process. Synthetic receiver assays establish prerequisites; they are not the research endpoint. Likewise, higher puzzle accuracy alone is insufficient: the intended novelty is evidence of consequence-sensitive, transferable reasoning, under a definition and controls that withstand simpler explanations. Treat that as an experimental ambition, not an established result or novelty claim.
+
+Please use the architecture and evidence in our previous prompt without repeating the full G0 review. Search is optional. Ground your plan in the supplied facts, distinguish hypotheses from demonstrated limits, and flag biological claims requiring source verification.
+
+## 1. Clarify what is fixed and what can evolve
+
+The 120-KC/122-edge configuration is the current narrow receiver experiment. It is **not a researcher-imposed permanent ceiling** on future plasticity. Released neuron identities, anatomical topology and fixed signs must remain intact. A separately justified, source-supported mechanism may eventually use additional existing anatomical pathways or eligible synapses, subject to new registration and validation. That is a proposal to investigate, not an already available fix.
+
+Separate three questions:
+
+1. What can we legitimately test with the present receiver after qualification?
+2. What minimal additional representation, physiological memory, value, or credit mechanism would make the next curriculum step testable?
+3. What is the longer-term sequence of learned capabilities, conditional on those mechanisms working?
+
+Do not permanently discard a foundational chess relation solely because today's assay has not implemented its prerequisites. Conversely, give explicit stop conditions if the relation cannot be taught or measured without outsourcing the claimed computation. A static evaluator trained on certified multi-move outcomes need not perform the teacher's tree search; an unaided transfer result would not by itself demonstrate internal planning.
+
+Your answer calls G0's cause both an established update-dose artifact and an unresolved hypothesis. The dose ratio comes from an illustrative rectangular-rate calculation, not measured neural waveforms. Likewise, a split reset could implicate a state component without proving depression-plus-collision as the unique cause. Keep that uncertainty explicit. We will preserve frozen gates and qualify any changed receiver separately; we are not asking you to waive G0 to begin training.
+
+## 2. Lichess is the intended experience source
+
+Official reference pages, checked for this request:
+
+- Database and row conventions: https://database.lichess.org/#puzzles
+- Available themes: https://lichess.org/training/themes
+- Theme identifiers: https://github.com/lichess-org/lila/blob/master/translation/source/puzzleTheme.xml
+
+The CC0 CSV provides puzzle identity, FEN, UCI moves, rating metadata, themes, source game URL, and opening metadata. Apply the first listed move to obtain the solver's position; the next move begins the solver line. Use the archive for corpus-scale work. Themes and ratings are sampling metadata, not neural inputs, physiological teaching signals, causal proof, or Elo measurements. A supplied line does not certify every defensive alternative.
+
+The repository already has a streaming curator that checks source-line legality, groups sampled rows by source game, separates splits, removes selected exact duplicates, and records hashes. It does not establish all structural-family separation, complete history, or independent consequence certificates. Earlier acquisition attempts did not yield a usable local corpus. Do not assume we have already generated a certified dataset or run this curriculum.
+
+The source FEN alone does not reconstruct repetition history. Source-game replay and task-relevant history must be resolved before teaching under our existing contract. Preserve the puzzle/game lineage and any uncertainty.
+
+The loop we want is:
+
+**select training experience -> record unaided choice -> independently verify consequence -> deliver modeled feedback -> targeted practice and cumulative rehearsal -> delayed/family-disjoint evaluation -> continue or return a specific diagnosis.**
+
+A Python campaign should execute registered lessons, replications, checkpointing, resource monitoring, and audits without an AI supervising every run. Scientific redesign and unregistered interventions remain review decisions.
+
+## 3. Produce a stage plan tied to actual learning units
+
+Choose the smallest defensible set of **Stage 1, Stage 2, ...** foundations. The original twelve topics ranged from attack/defense/recapture through king safety, forcing replies, double threats, lines/defenders, move order/sacrifices, piece effectiveness, coordination, weaknesses, prevention, exchanges/endings, and compositional plans. You may merge, reorder, or defer them. Explain what is missing if you replace them with only three tactical stages.
+
+A pillar should name a reusable conditional computation, not merely a motif label: for example, whether an apparent defender can legally perform its duty, whether one reply neutralizes two threats, or whether a preparatory choice enables a delayed consequence. Do not assume these examples prescribe the correct final ordering.
+
+For each stage, provide a compact operational record:
+
+- **Learned relation and dependency:** What computation should transfer from the preceding stage? Which prerequisite is demonstrated, hypothesized, or still unimplemented?
+- **Lichess selection:** Exact relevant theme IDs and exclusions, then additional teacher-side checks. Separate directly supported coverage from ideas the corpus may not adequately contain. Avoid inventing tags for broad concepts such as coordination or prophylaxis.
+- **Learning unit:** Whole puzzle, solver decision, short verified sequence, or derived comparison. State how many plies its criterion covers and distinguish a solver move from an opponent reply.
+- **Positive and negative evidence:** A successful action, a tempting failure, a relevant consequence-changing variation, and an irrelevant variation that should preserve the answer. Keep this concrete without supplying another large list of unchecked FENs.
+- **Teaching contract:** What the learner actually receives before commitment and during feedback; what the teacher verifies privately; what signal the current or proposed neural mechanism can convey.
+- **Advancement and retention:** Useful choice, matched-control advantage, counterfactual behavior, preservation of earlier stages, and held-out-family transfer. Give a statistical design and pilot requirements rather than unexplained numerical quotas.
+- **Failure decision:** Which result suggests a dataset, verifier, interface, delivery, learning, interference, or capacity problem? Which further observation distinguishes those explanations?
+
+Prefer a table plus worked detail for the first two stages. Indicate later extension requirements without pretending they are already feasible. Tactical pillars may provide a first result while broad positional judgment remains a separate hypothesis.
+
+## 4. Explain how ordinary Lichess puzzles become controlled lessons
+
+This is the largest missing part of the plan. Please resolve it explicitly:
+
+1. **Winning-tactic selection bias.** Puzzles are selected because something consequential exists. How do we avoid teaching "there is always a tactic" or "always capture/check"? Obtain tempting failures, quiet alternatives, defended targets, and positions where restraint is correct. Decide which can come from alternative legal moves, source-game positions, counterfactual derivatives, or a separately declared supplemental generator.
+2. **Themes are not mastery labels.** Puzzles have multiple motifs; a tagged fork may depend on a pin or intermediate move. How will teacher-side certification assign a lesson to a computational pillar and prevent an early stage silently requiring later knowledge? How do we check a motif actually determines the consequence instead of merely appearing on the board?
+3. **Natural board complexity.** The six-piece limit belongs to a first bounded diagnostic, not necessarily every later lesson. Many source positions contain more pieces. Specify how we progress from certified small tasks to original Lichess positions. If selecting sparse endings, estimate availability only after sampling. If simplifying a source board, preserve provenance, recompute legality and consequence, and label it a derivative. Deleting a supposed distractor can remove a defense or pin; do not assume equivalence.
+4. **Teacher verification.** A principal variation is not coverage of every required defense. Give tractable certification rules for early stages, a budgeted route to later sequence tasks, and the boundary between exact task-relative proof and estimated engine teaching. Unknown remains no teaching, not a failed learner answer. Bound verification and audit costs separately from neural inference.
+5. **Input/readout leakage.** Keep puzzle IDs, rating, themes, solution moves, and proof conclusions out of pre-feedback input. Specify any supplied action coordinates, post-move board, relative geometry, or legal-action list. What computation remains endogenous? How do we avoid interpreting a fitted probe as a proof that learning is possible or impossible?
+6. **Feedback information.** The existing outcome code is narrow. If teaching richer relations requires exposing the actual successor/recapture board or a contrasting experience, specify that stimulus and mechanism rather than assuming a prose certificate enters the brain. Track the difference between verified teacher knowledge and information delivered to the learner.
+7. **History and splits.** Group source-game, near-duplicate, transformation, tactical-structure, and derivative lineages before splitting. Keep related positive/counterfactual examples together. Explain what held-out coordinates, roles, and relation combinations each test, and avoid withholding a piece's movement semantics while calling failure an inability to compose known rules.
+
+## 5. Give a campaign specification we can implement
+
+Describe one reusable lesson/block loop with explicit inputs, persistent state, outputs, and stop conditions. Pseudocode is useful; repository-specific APIs are unnecessary.
+
+It should answer:
+
+- How does it choose the next pillar and training example using training evidence only? What is fixed, and what may adapt under the registered policy?
+- What is the pre-feedback task: two-action mechanism discrimination, all-legal ranking, or a declared limited-candidate condition? How does it eventually demonstrate useful all-legal choice rather than success within teacher-selected options?
+- How does it pair failures with successful alternatives, rehearse earlier learning, revisit after intervening experience, and avoid an endless loop on a few memorized puzzles?
+- How are informative, absent, shuffled, and disabled arms matched when the informative learner adaptively selects lessons? What is counted as a board exposure, candidate assessment, teaching event, and independent family?
+- How are checkpoint selection, per-pillar retention, minimum useful choices, unknown coverage, and final-test release controlled? Aggregate margin or loss improvement must not conceal a failing pillar or wrong action preferences.
+- Which actions may Python perform unattended, including predeclared progression within a campaign? At which exact scientific or integrity result must it stop? Preserve registered hashes, frozen resource limits, complete checkpoints, pending-receipt recovery, and all failed results.
+
+Give one small pilot campaign that establishes whether this process is worth scaling. Specify the families and conditions needed, measurements to estimate exposure/sample requirements, total resource bounds to register, and what its result would change. Do not assume 24 puzzles, a fixed number of repetitions, or a higher sample budget guarantees learning.
+
+## 6. Define the transition from foundations to the reasoning experiment
+
+We do not want "it solves harder puzzles" to become the reasoning claim. Nor should foundational training become an endless prerequisite program with no test of the original question.
+
+Propose a concrete **first reasoning/transfer experiment after the relevant foundations pass**:
+
+- What two or more learned relations must be combined in an unfamiliar situation?
+- Which combinations are taught, which are held out, and which teacher information is unavailable at evaluation?
+- What relevant intervention should reverse the chosen plan, and what irrelevant change should leave it intact?
+- Which simpler material, coordinate, nearest-template, fixed-associative, or externally searched explanations are the strongest competitors? Choose informative comparisons rather than an unlimited baseline checklist.
+- What would distinguish positive curriculum transfer from simply seeing more target-task examples? Compare staged, direct, or interleaved learning with the relevant exposures matched.
+- What unaided result supports systematic composition? What stronger evidence would be needed to claim internal planning rather than static learned evaluation?
+- What failure leaves the curriculum hypothesis unsupported, and what further diagnosis is needed before blaming the organism's topology?
+
+The model can learn something valuable without internal minimax. Conversely, a recurrence with few plastic gains does not gain unlimited capacity because we call a task reasoning. We need a test that makes those competing explanations distinguishable. Describe the scope of a defensible novelty claim, and what literature would still need checking before claiming it is new.
+
+## 7. Correct the few issues that materially affect that design
+
+Keep these corrections short and integrate their implications into the plan:
+
+- Your proposed minimal pair is legal, and both d1d5 and g1f2 are legal in both FENs. However, after d1d5 in `3r2k1/8/2p5/3n4/8/8/8/3R2K1 w - - 0 1`, chess.js finds **two** recaptures: d8d5 and c6d5. Moving Pd6 to c6 opens the rook ray and creates a direct pawn guard. This supports a recapturability contrast, but does not isolate a learned blocker/ray computation. How will a lesson's controls isolate the claimed pillar?
+- The scalar example does not establish the cause of G0 failure. A boundary-only trace reset does not test carryover after every episode; a successful gain reset does not uniquely establish collision or dose asymmetry. No diagnostic is literally zero-cost if it requires rerunning neural dynamics.
+- Current 122-edge limits, missing PN mappings, and failed linear probes are reasons to ask targeted questions, not proofs that all later reasoning is computationally impossible. If you retain an impossibility claim, state the assumptions and argument. Otherwise give a conditional mechanism requirement.
+- Aso and Rubin (2016) reports timing-dependent writing/reduction of memories with a single DAN type: https://elifesciences.org/articles/16135 . Please reconcile that finding with your categorical contrast between opposing multi-compartment learning and single-DAN pulse-order teaching. The paper does not validate our exact equation, two-frame timing, or reversal mechanism. Without search, mark the detailed biological interpretation provisional.
+
+## Requested answer
+
+1. A direct verdict on the **Lichess-foundations-to-transfer strategy**, separating today's implementation from the broader research route.
+2. The stage table and worked first two stages from Section 3, including actual Lichess selection and verification logic.
+3. The reusable campaign loop and one bounded pilot from Section 5.
+4. The first compositional reasoning/transfer experiment from Section 6, with simpler explanations and falsifying outcomes.
+5. Only the remaining mechanism or data questions that block implementing that plan, plus sources or verification needs.
+
+You may conclude that Lichess needs controlled supplemental experiences, that a pillar must wait for a justified new mechanism, or that a proposed test cannot establish the intended claim. Explain how that affects the route rather than replacing the curriculum question with another general G0 discussion. Keep the answer specific enough for a coding agent to implement after review, and concise enough that the actual decisions remain visible.

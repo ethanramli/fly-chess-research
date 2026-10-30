@@ -137,6 +137,62 @@ class ControlsTests(unittest.TestCase):
                 controls.pause(self.config, api)
         self.assertFalse((self.run / 'pause-request.json').exists())
 
+    def test_matrix_runner_v2_pause_publication_is_a_valid_receipt(self):
+        # Shape written by run-lichess-curriculum-matrix-v2.mjs at a block boundary.
+        state = self.run / 'matrix-state.json'
+        api.atomic_json(state, {'schema': 'lichess-curriculum-matrix-state-v1', 'status': 'running', 'active': {}})
+        api.atomic_json(self.run / 'paused.json', {'schema': 1, 'phase': 'training', 'run': str(self.run),
+            'protocolHash': self.hash, 'checkpoint': str(state), 'checkpointSha256': api.digest(state)})
+        self.assertEqual(controls.pause_receipt(self.run, api)['phase'], 'training')
+        api.atomic_json(state, {'schema': 'lichess-curriculum-matrix-state-v1', 'status': 'running', 'active': {'x': 1}})
+        with self.assertRaisesRegex(ValueError, 'changed after pause'):
+            controls.pause_receipt(self.run, api)
+
+    def test_campaign_pause_targets_the_running_stage_config(self):
+        stage = dict(self.config)
+        stage = {k: v for k, v in stage.items() if not k.startswith('_')}
+        stage['state_file'] = 'stage-handle.json'
+        api.atomic_json(self.root / 'stage1.json', stage)
+        registration = self.root / 'campaign.json'
+        api.atomic_json(registration, {'schema': 1, 'paused': False, 'stages': [{'stage': 1, 'config': 'stage1.json'}]
+                                       + [{'stage': n, 'readinessBlockedReason': 'x'} for n in range(2, 13)]})
+        self.assertIsNone(api.campaign_stage_config(registration), 'no campaign state yet')
+        api.atomic_json(api.campaign_state_location(registration), {'schema': 1, 'stage': 1, 'terminal': None})
+        self.assertEqual(Path(api.campaign_stage_config(registration)['_path']), (self.root / 'stage1.json').resolve())
+        api.atomic_json(api.campaign_state_location(registration), {'schema': 1, 'stage': 1, 'terminal': 'gate-failed'})
+        self.assertIsNone(api.campaign_stage_config(registration), 'a terminal campaign has nothing to pause')
+
+    def test_campaign_records_a_paused_stage_as_resumable_not_terminal(self):
+        # Minimal registered stage-1 campaign whose stage cycle ends in a cooperative pause.
+        api.atomic_json(self.root / 'evidence.json', {'ok': True})
+        stage = {k: v for k, v in self.config.items() if not k.startswith('_')}
+        stage.update({'state_file': 'stage-handle.json', 'jobs': {'train': {'role': 'train', 'argv': ['node']},
+                                                                   'audit': {'role': 'audit', 'argv': ['node']}}})
+        api.atomic_json(self.root / 'stage1.json', stage)
+        registration = self.root / 'campaign.json'
+        api.atomic_json(registration, {'schema': 1, 'paused': False, 'stages': [{
+            'stage': 1, 'config': 'stage1.json', 'configSha256': api.digest(self.root / 'stage1.json'),
+            'trainJob': 'train', 'auditJob': 'audit',
+            'requiredAuditTrue': ['audit.fullNeuralReplay', 'audit.memoryContinuityVerified', 'audit.stageAccepted'],
+            'initialMemoryHashes': {'r1:informative': 'a' * 64},
+            'prerequisites': [{'path': 'evidence.json', 'sha256': api.digest(self.root / 'evidence.json'), 'requiredTrue': ['ok']}]}]
+            + [{'stage': n, 'readinessBlockedReason': 'x'} for n in range(2, 13)]})
+        state = self.run / 'matrix-state.json'
+        def paused_cycle(*args, **kwargs):
+            api.atomic_json(state, {'schema': 'lichess-curriculum-matrix-state-v1', 'status': 'running'})
+            api.atomic_json(self.run / 'paused.json', {'schema': 1, 'phase': 'training', 'run': str(self.run),
+                'protocolHash': self.hash, 'checkpoint': str(state), 'checkpointSha256': api.digest(state)})
+            return 0
+        stream = io.StringIO()
+        with patch.object(api, 'supervise', side_effect=paused_cycle) as cycle, contextlib.redirect_stdout(stream):
+            self.assertEqual(api.supervise_curriculum(registration, 60), 0)
+            saved = api.read_json(api.campaign_state_location(registration))
+            self.assertIsNone(saved['terminal'])
+            self.assertEqual(saved['stages'][0]['status'], 'paused')
+            self.assertEqual(api.supervise_curriculum(registration, 60), 0)
+        self.assertEqual(cycle.call_count, 2, 'rerunning the campaign resumes the paused stage')
+        self.assertIn('"checkpoint":"paused"', stream.getvalue())
+
     def test_report_follows_resumed_run_instead_of_old_base(self):
         resumed = self.root / 'resumed'
         resumed.mkdir()

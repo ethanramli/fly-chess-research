@@ -1,0 +1,58 @@
+{
+  "schema": "lichess-preparation-batches-v1",
+  "configSha256": "3b449e9481e3d32455212bb47c7af8b80abb7457135b912ea83bdc87c6fceb2a",
+  "completed": [
+    {
+      "job": "prepare-train-000",
+      "manifest": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v6\\train-chunk-000\\manifest.json",
+      "manifestSha256": "2fe27d705bce4f900435819930c083ef5d940bd63a0e3afb082cb8c99d9f8f43",
+      "counts": {
+        "sourceRows": 32,
+        "prepared": 32,
+        "rejected": 0,
+        "stage1DomainEligible": 3,
+        "unknownActions": 0
+      }
+    }
+  ],
+  "pending": {
+    "job": "prepare-train-001",
+    "role": "check",
+    "run": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v6",
+    "pid": 12584,
+    "configHash": "bc631365b8e3991e0c8318983a7fb569777776a1195b429f33977e13a3017b31",
+    "stdout": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261022T044701-4a18ddec\\stdout.txt",
+    "stderr": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261022T044701-4a18ddec\\stderr.txt",
+    "argv": [
+      "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+      "--max-old-space-size=256",
+      ".codebase/scripts/data/prepare-lichess-lessons.mjs",
+      "--rows",
+      "research\\data\\lichess-stage1-candidates-v4\\train.jsonl",
+      "--games",
+      "research\\data\\lichess-stage1-source-pgn-v4\\train",
+      "--split",
+      "train",
+      "--out",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v6/train-chunk-001",
+      "--cpu-duty",
+      "0.5",
+      "--max-seconds",
+      "300",
+      "--start-row",
+      "32",
+      "--row-limit",
+      "32",
+      "--stage1-only"
+    ],
+    "exitCode": null,
+    "artifacts": {
+      "batch": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v6\\manifest.json"
+    },
+    "created": "2026-10-22T04:47:01.3237548Z",
+    "command": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE --max-old-space-size=256 .codebase/scripts/data/prepare-lichess-lessons.mjs --rows research\\data\\lichess-stage1-candidates-v4\\train.jsonl --games research\\data\\lichess-stage1-source-pgn-v4\\train --split train --out C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v6/train-chunk-001 --cpu-duty 0.5 --max-seconds 300 --start-row 32 --row-limit 32 --stage1-only",
+    "imagePath": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE"
+  },
+  "phase": "preparing",
+  "parentState": null
+}

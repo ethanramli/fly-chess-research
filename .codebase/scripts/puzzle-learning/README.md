@@ -65,3 +65,9 @@ Run from the repository root. Use the documented resource guards for experiments
 - The v3 protocol includes no-teaching retention probes and is blocked by local-signal, model-identity, adapter and certified-reversal prerequisites.
 
 - [audit-bidirectional-plasticity-assay.mjs](audit-bidirectional-plasticity-assay.mjs): independent read-only certificate, signal, exposure, checkpoint, and gate audit; protocol v3 remains blocked so no audit was run.
+
+## 2026-10-24 fix goal additions (Stage 1)
+
+- [stage1-retention-probe.mjs](stage1-retention-probe.mjs) and [stage1-retention-probe-v2.mjs](stage1-retention-probe-v2.mjs): training-only retention probe (teach board A, then 10 other boards, track A's certified-move rank) for `ReversalMemory` eta; v2 takes the teaching condition from its protocol. Python actions `python actions/stage1-retention-probe-*-step.json`; results in [the probe report](../../../research/reports/stage1-retention-probe-2026-10-24/README.md).
+- [lichess-stage1-runtime-factory-v2.mjs](lichess-stage1-runtime-factory-v2.mjs): registration revision 7+ (action-relative cue v2, coupled brain v3); otherwise identical to the pinned v1 factory.
+- [run-lichess-curriculum-matrix-v2.mjs](run-lichess-curriculum-matrix-v2.mjs): registration revision 8+; registered rehearsal planner v2 and informative-arm early stop, and a cooperative block-boundary pause that writes `paused.json` for `fly pause`. Older registrations keep the v1 runner.

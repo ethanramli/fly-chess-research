@@ -1,0 +1,15 @@
+{
+  "schema": "lichess-csv-lesson-audit-registration-v1",
+  "preparationConfig": "python actions\\lichess-lesson-batches-v6-step.json",
+  "preparationConfigSha256": "3b449e9481e3d32455212bb47c7af8b80abb7457135b912ea83bdc87c6fceb2a",
+  "auditorSha256": "ad2e8af4a6008266d7d4e7c308ac5d05f9cf80ebaa531b0dc54c8c93cf6f058c",
+  "bounds": {
+    "maxSeconds": 900,
+    "rssMiB": 2048,
+    "minFreeMiB": 256,
+    "cpuDuty": 0.5,
+    "heapMiB": 256
+  },
+  "scope": "Independent source/history replay for all selected rows, exact stage1 piece exclusions and all-legal certificate replay only for in-domain nonterminal rows. No final access, relational-family, graph, learning or general move-quality claim. Unknown never teaches.",
+  "checks": "runs/python-actions/20261022T044148-82acc056"
+}

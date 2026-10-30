@@ -1,0 +1,45 @@
+{
+  "schema": "lichess-lesson-stage1-filter-registration-v1",
+  "previousAttempt": "research/data/lichess-stage1-prepared-batches-v5",
+  "previousInterruption": "research\\reports\\lichess-foundations-pilot-2026-10-21\\lesson-batches-v5-interruption.json",
+  "previousInterruptionSha256": "badfb6c38cba3b770c26178500f784ce9ed38541ea4bd724a128b73e439c5d25",
+  "hypothesis": "Avoid certifying domain-excluded >6-piece positions; keep accepted action certificates and all source rows unchanged.",
+  "bounds": {
+    "chunkRows": 32,
+    "chunks": 8,
+    "maxSecondsPerChunk": 300,
+    "cpuDuty": 0.5,
+    "rssMiB": 2048,
+    "minFreeMiB": 256,
+    "heapMiB": 256
+  },
+  "changed": "Explicit --stage1-only branch with audited source-only exclusion; original default unchanged. No relaxed gates or new selection.",
+  "checks": [
+    "runs/python-actions/20261022T044231-61a20bb7",
+    "runs/python-actions/20261022T044148-82acc056"
+  ],
+  "stop": "Preserve failures and no automatic retries. Complete package requires independent history/certificate/exclusion audit. No graph launch.",
+  "preparation": {
+    "order": [
+      "prepare-train-000",
+      "prepare-train-001",
+      "prepare-train-002",
+      "prepare-train-003",
+      "prepare-validation-000",
+      "prepare-validation-001",
+      "prepare-validation-002",
+      "prepare-validation-003"
+    ],
+    "chunkRows": 32,
+    "inputRows": {
+      "train": 128,
+      "validation": 128
+    },
+    "scope": "Same256 audited source rows. Skip action certification only for >6-piece boards excluded by frozen Stage1; keep source/history records, no labels or events. Default development preparation unchanged."
+  },
+  "sources": {
+    ".codebase/scripts/data/prepare-lichess-lessons.mjs": "794af92dcfbd096bc3dd20ba04666381456d981c46378548955f37b3e36c195b",
+    ".codebase/src/puzzle-learning/lichess-capture-lesson.mjs": "64a6ffc337065d50049e511ef244fdb5c8fb93e7deff95ab7056412038a3662b",
+    ".codebase/scripts/data/audit-lichess-csv-lessons.mjs": "ad2e8af4a6008266d7d4e7c308ac5d05f9cf80ebaa531b0dc54c8c93cf6f058c"
+  }
+}

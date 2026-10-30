@@ -1,0 +1,82 @@
+{
+  "schema": "lichess-curriculum-matrix-audit-v1",
+  "identity": "synthetic-identity",
+  "stage": 1,
+  "status": "accepted",
+  "diagnosis": [
+    "replica 1: accepted; train 23/24, validation 15/16, final 56/64, probe signs 110/128, pairs 27/32, advantage {\"scratch\":14,\"absent\":12,\"shuffled\":13,\"disabled\":15}",
+    "replica 2: accepted; train 22/24, validation 14/16, final 53/64, probe signs 108/128, pairs 26/32, advantage {\"scratch\":11,\"absent\":10,\"shuffled\":12,\"disabled\":13}"
+  ],
+  "fullNeuralReplay": true,
+  "memoryContinuityVerified": true,
+  "stageAccepted": true,
+  "acceptanceEvidence": {
+    "schema": "curriculum-stage1-replica-acceptance-v2",
+    "status": "accepted",
+    "stageAccepted": true,
+    "requiredReplicaCount": 2,
+    "acceptedReplicas": 2,
+    "reports": [
+      {
+        "replica": 1,
+        "status": "accepted",
+        "stageAccepted": true,
+        "prerequisites": {"receiverAccepted": true, "familySplitsDisjoint": true, "sourceCertificatesReplayed": true, "finalSetSealedUntilFreeze": true, "independentStageReplay": true, "memoryContinuityVerified": true},
+        "checks": {"D1": true, "D2": true, "D3": true, "D4": true, "D5": true, "D6": true, "D8": true},
+        "failed": [],
+        "missingPrerequisites": [],
+        "unknown": [],
+        "deferred": ["D7"],
+        "metrics": {
+          "trainingCorrect": 23,
+          "validationCorrect": 15,
+          "validationByStratum": {"open-defender": 4, "blocked-defender": 4, "absent-defender": 3, "pinned-apparent-defender": 4},
+          "finalCorrect": 56,
+          "finalByStratum": {"open-defender": 15, "blocked-defender": 14, "absent-defender": 14, "pinned-apparent-defender": 13},
+          "consequenceSignCorrect": 110,
+          "counterfactualPairsCorrect": 27,
+          "causalAdvantages": {"scratch": 14, "absent": 12, "shuffled": 13, "disabled": 15},
+          "pairedFamilyBootstrap": {
+            "scratch": {"lower95": 3, "families": 8, "resamples": 10000, "seed": 20261011, "rng": "xorshift32"},
+            "absent": {"lower95": 2, "families": 8, "resamples": 10000, "seed": 20261011, "rng": "xorshift32"},
+            "shuffled": {"lower95": 2, "families": 8, "resamples": 10000, "seed": 20261011, "rng": "xorshift32"},
+            "disabled": {"lower95": 4, "families": 8, "resamples": 10000, "seed": 20261011, "rng": "xorshift32"}
+          },
+          "retentionCorrect": null
+        }
+      },
+      {
+        "replica": 2,
+        "status": "accepted",
+        "stageAccepted": true,
+        "prerequisites": {"receiverAccepted": true, "familySplitsDisjoint": true, "sourceCertificatesReplayed": true, "finalSetSealedUntilFreeze": true, "independentStageReplay": true, "memoryContinuityVerified": true},
+        "checks": {"D1": true, "D2": true, "D3": true, "D4": true, "D5": true, "D6": true, "D8": true},
+        "failed": [],
+        "missingPrerequisites": [],
+        "unknown": [],
+        "deferred": ["D7"],
+        "metrics": {
+          "trainingCorrect": 22,
+          "validationCorrect": 14,
+          "validationByStratum": {"open-defender": 3, "blocked-defender": 4, "absent-defender": 3, "pinned-apparent-defender": 4},
+          "finalCorrect": 53,
+          "finalByStratum": {"open-defender": 13, "blocked-defender": 13, "absent-defender": 14, "pinned-apparent-defender": 13},
+          "consequenceSignCorrect": 108,
+          "counterfactualPairsCorrect": 26,
+          "causalAdvantages": {"scratch": 11, "absent": 10, "shuffled": 12, "disabled": 13},
+          "pairedFamilyBootstrap": {
+            "scratch": {"lower95": 1, "families": 8, "resamples": 10000, "seed": 20261011, "rng": "xorshift32"},
+            "absent": {"lower95": 1, "families": 8, "resamples": 10000, "seed": 20261011, "rng": "xorshift32"},
+            "shuffled": {"lower95": 2, "families": 8, "resamples": 10000, "seed": 20261011, "rng": "xorshift32"},
+            "disabled": {"lower95": 3, "families": 8, "resamples": 10000, "seed": 20261011, "rng": "xorshift32"}
+          },
+          "retentionCorrect": null
+        }
+      }
+    ],
+    "checkpointSelection": {"schema": "stage1-validation-checkpoint-selection-v1", "frozen": true, "status": "selected"},
+    "promotionMemoryHashes": {"1:informative": "a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1", "2:informative": "b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2"},
+    "scope": "Synthetic fixture for report-tool tests; not a real run"
+  },
+  "scope": "Synthetic fixture for report-tool tests; not a real run"
+}

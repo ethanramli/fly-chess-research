@@ -1,0 +1,3725 @@
+{
+  "schema": "lichess-v7-stage1-capture-counterfactual-feasibility-v1",
+  "method": "For each audited, source-bound Stage 1 root, move one non-king piece to an empty square in a legal static FEN. Keep the same capture action and require its independent one-reply retention consequence to flip.",
+  "inputs": {
+    "batchManifestSha256": "e31bcf389a8780668be231d3278221138048b267437cbfddd21f2c596a2a4434",
+    "lessonAuditSha256": "0a8b655bff466c4a137693a353651bf3c19b9fe11ca057f904f5483f54aefe85",
+    "chunks": [
+      {
+        "job": "prepare-train-000",
+        "manifestSha256": "11de2333f73b1fff3c67fa67c5a18bc8c490f547d393877126610805fa4e0f0e",
+        "lessonsSha256": "13ce8eb30d843a2ac72ad14e9a708149d3d2c5d1c95b9b55cfede6c9f5fe6a8b",
+        "rows": 32
+      },
+      {
+        "job": "prepare-train-001",
+        "manifestSha256": "dd91fa5c1ac6acdbab86cc05cbcad2ef4322183500add083f0c79fd7ca8d37b5",
+        "lessonsSha256": "56d7de3dfd390c30341d6d6095f07638af1e0795b712a7afc0d98ba34e856633",
+        "rows": 32
+      },
+      {
+        "job": "prepare-train-002",
+        "manifestSha256": "3fa5c6ec314e3070cc1a2eea593550ecf9744d470a06272c5200808040629fcb",
+        "lessonsSha256": "6769f4b355bcc44bf42c879052d2100e374fa47c1eb2db75d781185b04e8c8c2",
+        "rows": 32
+      },
+      {
+        "job": "prepare-train-003",
+        "manifestSha256": "55597eb56dfce941032287b3695562e490c9150917ebc5c980756d5f616137bf",
+        "lessonsSha256": "c9b1d8abde0817e0f895bbcc0528f677a30c782a7222a7e9620b166ec1d2ed06",
+        "rows": 32
+      },
+      {
+        "job": "prepare-validation-000",
+        "manifestSha256": "f3aa3e289731b1d85bce14d1513a08401f7b2438f10b5d57040e7dd2372dc578",
+        "lessonsSha256": "2b5e0c905b101952570a55d5970925b22f13b48cb47e8962074467e36bbfad17",
+        "rows": 32
+      },
+      {
+        "job": "prepare-validation-001",
+        "manifestSha256": "a43c31284e88138bbeb90e51133a5f6dc159ad160728217a0991c80711424b4c",
+        "lessonsSha256": "feb9a809d231c897d2f1c5df70c0836332332a2ba47010d1324c95643eb3c5ee",
+        "rows": 32
+      },
+      {
+        "job": "prepare-validation-002",
+        "manifestSha256": "37c8932236e6641abf6ef3976a97105547e3f653c92430df6f7a67842562649d",
+        "lessonsSha256": "3e33e8570726c67c71114beb2a84081e9196ff6bc2354b0ee72226e929de52f7",
+        "rows": 32
+      },
+      {
+        "job": "prepare-validation-003",
+        "manifestSha256": "26e748f6e7d071468f800a24fca3264406a4d61254bb1ab860f9f679c2a2086f",
+        "lessonsSha256": "d4da7faa9b2bd5a60c87baaf5d4e69b5c465858401f06eca83ce0efcca705ece",
+        "rows": 32
+      }
+    ]
+  },
+  "bounds": {
+    "splits": [
+      "train",
+      "validation"
+    ],
+    "maxRowsPerSplit": 128,
+    "maxEvaluationsPerSplit": 20000,
+    "maxSeconds": 1800,
+    "maxRssMiB": 2048,
+    "minFreeMiB": 256,
+    "cpuDuty": 0.5
+  },
+  "bySplit": {
+    "train": {
+      "counts": {
+        "rows": 128,
+        "eligibleRows": 20,
+        "rootsWithFlip": 9,
+        "mutations": 2361,
+        "evaluations": 1119,
+        "flipPairs": 58,
+        "byTransition": {
+          "success-to-failure": 58
+        }
+      },
+      "flips": [
+        {
+          "split": "train",
+          "puzzleId": "Yoq87",
+          "gameId": "x3TOHYwh",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "588a5afbef6e0d670acc2c5f4d0483c08cfa735d3842c7425cf6c03a06f7df2f",
+          "sourceFen": "8/p7/8/3k4/6P1/R2K4/6r1/8 b - - 2 58",
+          "syntheticFen": "6R1/p7/8/3k4/6P1/3K4/6r1/8 b - - 2 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "a3",
+            "to": "g8"
+          },
+          "unchangedCapture": "g2g4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "Yoq87",
+          "gameId": "x3TOHYwh",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "588a5afbef6e0d670acc2c5f4d0483c08cfa735d3842c7425cf6c03a06f7df2f",
+          "sourceFen": "8/p7/8/3k4/6P1/R2K4/6r1/8 b - - 2 58",
+          "syntheticFen": "8/p5R1/8/3k4/6P1/3K4/6r1/8 b - - 2 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "a3",
+            "to": "g7"
+          },
+          "unchangedCapture": "g2g4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "Yoq87",
+          "gameId": "x3TOHYwh",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "588a5afbef6e0d670acc2c5f4d0483c08cfa735d3842c7425cf6c03a06f7df2f",
+          "sourceFen": "8/p7/8/3k4/6P1/R2K4/6r1/8 b - - 2 58",
+          "syntheticFen": "8/p7/6R1/3k4/6P1/3K4/6r1/8 b - - 2 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "a3",
+            "to": "g6"
+          },
+          "unchangedCapture": "g2g4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "Yoq87",
+          "gameId": "x3TOHYwh",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "588a5afbef6e0d670acc2c5f4d0483c08cfa735d3842c7425cf6c03a06f7df2f",
+          "sourceFen": "8/p7/8/3k4/6P1/R2K4/6r1/8 b - - 2 58",
+          "syntheticFen": "8/p7/8/3k4/R5P1/3K4/6r1/8 b - - 2 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "a3",
+            "to": "a4"
+          },
+          "unchangedCapture": "g2g4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "Yoq87",
+          "gameId": "x3TOHYwh",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "588a5afbef6e0d670acc2c5f4d0483c08cfa735d3842c7425cf6c03a06f7df2f",
+          "sourceFen": "8/p7/8/3k4/6P1/R2K4/6r1/8 b - - 2 58",
+          "syntheticFen": "8/p7/8/3k4/1R4P1/3K4/6r1/8 b - - 2 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "a3",
+            "to": "b4"
+          },
+          "unchangedCapture": "g2g4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "Yoq87",
+          "gameId": "x3TOHYwh",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "588a5afbef6e0d670acc2c5f4d0483c08cfa735d3842c7425cf6c03a06f7df2f",
+          "sourceFen": "8/p7/8/3k4/6P1/R2K4/6r1/8 b - - 2 58",
+          "syntheticFen": "8/p7/8/3k4/2R3P1/3K4/6r1/8 b - - 2 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "a3",
+            "to": "c4"
+          },
+          "unchangedCapture": "g2g4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "Yoq87",
+          "gameId": "x3TOHYwh",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "588a5afbef6e0d670acc2c5f4d0483c08cfa735d3842c7425cf6c03a06f7df2f",
+          "sourceFen": "8/p7/8/3k4/6P1/R2K4/6r1/8 b - - 2 58",
+          "syntheticFen": "8/p7/8/3k4/4R1P1/3K4/6r1/8 b - - 2 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "a3",
+            "to": "e4"
+          },
+          "unchangedCapture": "g2g4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "Yoq87",
+          "gameId": "x3TOHYwh",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "588a5afbef6e0d670acc2c5f4d0483c08cfa735d3842c7425cf6c03a06f7df2f",
+          "sourceFen": "8/p7/8/3k4/6P1/R2K4/6r1/8 b - - 2 58",
+          "syntheticFen": "8/p7/8/3k4/5RP1/3K4/6r1/8 b - - 2 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "a3",
+            "to": "f4"
+          },
+          "unchangedCapture": "g2g4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "Yoq87",
+          "gameId": "x3TOHYwh",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "588a5afbef6e0d670acc2c5f4d0483c08cfa735d3842c7425cf6c03a06f7df2f",
+          "sourceFen": "8/p7/8/3k4/6P1/R2K4/6r1/8 b - - 2 58",
+          "syntheticFen": "8/p7/8/3k4/6PR/3K4/6r1/8 b - - 2 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "a3",
+            "to": "h4"
+          },
+          "unchangedCapture": "g2g4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "Yoq87",
+          "gameId": "x3TOHYwh",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "588a5afbef6e0d670acc2c5f4d0483c08cfa735d3842c7425cf6c03a06f7df2f",
+          "sourceFen": "8/p7/8/3k4/6P1/R2K4/6r1/8 b - - 2 58",
+          "syntheticFen": "8/p7/8/3k4/6P1/3K4/6r1/6R1 b - - 2 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "a3",
+            "to": "g1"
+          },
+          "unchangedCapture": "g2g4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "5UjOH",
+          "gameId": "USaPkxIS",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "a1fe62f996de76ac9196491465060dd6ac7bbf3e0cb738590141b78ce8806119",
+          "sourceFen": "8/7p/8/1r3k2/8/3P1K1R/8/8 w - - 0 52",
+          "syntheticFen": "7r/7p/8/5k2/8/3P1K1R/8/8 w - - 0 52",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "b5",
+            "to": "h8"
+          },
+          "unchangedCapture": "h3h7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "5UjOH",
+          "gameId": "USaPkxIS",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "a1fe62f996de76ac9196491465060dd6ac7bbf3e0cb738590141b78ce8806119",
+          "sourceFen": "8/7p/8/1r3k2/8/3P1K1R/8/8 w - - 0 52",
+          "syntheticFen": "8/r6p/8/5k2/8/3P1K1R/8/8 w - - 0 52",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "b5",
+            "to": "a7"
+          },
+          "unchangedCapture": "h3h7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "5UjOH",
+          "gameId": "USaPkxIS",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "a1fe62f996de76ac9196491465060dd6ac7bbf3e0cb738590141b78ce8806119",
+          "sourceFen": "8/7p/8/1r3k2/8/3P1K1R/8/8 w - - 0 52",
+          "syntheticFen": "8/1r5p/8/5k2/8/3P1K1R/8/8 w - - 0 52",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "b5",
+            "to": "b7"
+          },
+          "unchangedCapture": "h3h7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "5UjOH",
+          "gameId": "USaPkxIS",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "a1fe62f996de76ac9196491465060dd6ac7bbf3e0cb738590141b78ce8806119",
+          "sourceFen": "8/7p/8/1r3k2/8/3P1K1R/8/8 w - - 0 52",
+          "syntheticFen": "8/2r4p/8/5k2/8/3P1K1R/8/8 w - - 0 52",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "b5",
+            "to": "c7"
+          },
+          "unchangedCapture": "h3h7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "5UjOH",
+          "gameId": "USaPkxIS",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "a1fe62f996de76ac9196491465060dd6ac7bbf3e0cb738590141b78ce8806119",
+          "sourceFen": "8/7p/8/1r3k2/8/3P1K1R/8/8 w - - 0 52",
+          "syntheticFen": "8/3r3p/8/5k2/8/3P1K1R/8/8 w - - 0 52",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "b5",
+            "to": "d7"
+          },
+          "unchangedCapture": "h3h7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "5UjOH",
+          "gameId": "USaPkxIS",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "a1fe62f996de76ac9196491465060dd6ac7bbf3e0cb738590141b78ce8806119",
+          "sourceFen": "8/7p/8/1r3k2/8/3P1K1R/8/8 w - - 0 52",
+          "syntheticFen": "8/4r2p/8/5k2/8/3P1K1R/8/8 w - - 0 52",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "b5",
+            "to": "e7"
+          },
+          "unchangedCapture": "h3h7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "5UjOH",
+          "gameId": "USaPkxIS",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "a1fe62f996de76ac9196491465060dd6ac7bbf3e0cb738590141b78ce8806119",
+          "sourceFen": "8/7p/8/1r3k2/8/3P1K1R/8/8 w - - 0 52",
+          "syntheticFen": "8/5r1p/8/5k2/8/3P1K1R/8/8 w - - 0 52",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "b5",
+            "to": "f7"
+          },
+          "unchangedCapture": "h3h7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "5UjOH",
+          "gameId": "USaPkxIS",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "a1fe62f996de76ac9196491465060dd6ac7bbf3e0cb738590141b78ce8806119",
+          "sourceFen": "8/7p/8/1r3k2/8/3P1K1R/8/8 w - - 0 52",
+          "syntheticFen": "8/6rp/8/5k2/8/3P1K1R/8/8 w - - 0 52",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "b5",
+            "to": "g7"
+          },
+          "unchangedCapture": "h3h7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "5UjOH",
+          "gameId": "USaPkxIS",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "a1fe62f996de76ac9196491465060dd6ac7bbf3e0cb738590141b78ce8806119",
+          "sourceFen": "8/7p/8/1r3k2/8/3P1K1R/8/8 w - - 0 52",
+          "syntheticFen": "8/7p/8/5k2/8/3P1K1R/7r/8 w - - 0 52",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "b5",
+            "to": "h2"
+          },
+          "unchangedCapture": "h3h7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "5UjOH",
+          "gameId": "USaPkxIS",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "a1fe62f996de76ac9196491465060dd6ac7bbf3e0cb738590141b78ce8806119",
+          "sourceFen": "8/7p/8/1r3k2/8/3P1K1R/8/8 w - - 0 52",
+          "syntheticFen": "8/7p/8/5k2/8/3P1K1R/8/7r w - - 0 52",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "b5",
+            "to": "h1"
+          },
+          "unchangedCapture": "h3h7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "8EYF4",
+          "gameId": "DVP3UGDo",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "54c56b31308899524a10a723a8f05a5a3645b54dd4c4255feca7ea188d0d530e",
+          "sourceFen": "8/8/2k5/8/4pK2/3RP3/8/8 b - - 0 60",
+          "syntheticFen": "8/8/2k5/8/4pK2/3R4/2P5/8 b - - 0 60",
+          "changedPiece": {
+            "color": "w",
+            "type": "p",
+            "from": "e3",
+            "to": "c2"
+          },
+          "unchangedCapture": "e4d3",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "8EYF4",
+          "gameId": "DVP3UGDo",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "54c56b31308899524a10a723a8f05a5a3645b54dd4c4255feca7ea188d0d530e",
+          "sourceFen": "8/8/2k5/8/4pK2/3RP3/8/8 b - - 0 60",
+          "syntheticFen": "8/8/2k5/8/4pK2/3R4/4P3/8 b - - 0 60",
+          "changedPiece": {
+            "color": "w",
+            "type": "p",
+            "from": "e3",
+            "to": "e2"
+          },
+          "unchangedCapture": "e4d3",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "pnUgw",
+          "gameId": "xjmkVmE4",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "bb50d3dbdc9a6e8dfd10bf0ef87b9815b415b34fe040f036a6cf3e919baaf264",
+          "sourceFen": "8/8/2k1pR2/3r4/3PK3/8/8/8 w - - 0 68",
+          "syntheticFen": "4r3/8/2k1pR2/8/3PK3/8/8/8 w - - 0 68",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "d5",
+            "to": "e8"
+          },
+          "unchangedCapture": "f6e6",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "pnUgw",
+          "gameId": "xjmkVmE4",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "bb50d3dbdc9a6e8dfd10bf0ef87b9815b415b34fe040f036a6cf3e919baaf264",
+          "sourceFen": "8/8/2k1pR2/3r4/3PK3/8/8/8 w - - 0 68",
+          "syntheticFen": "8/4r3/2k1pR2/8/3PK3/8/8/8 w - - 0 68",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "d5",
+            "to": "e7"
+          },
+          "unchangedCapture": "f6e6",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "pnUgw",
+          "gameId": "xjmkVmE4",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "bb50d3dbdc9a6e8dfd10bf0ef87b9815b415b34fe040f036a6cf3e919baaf264",
+          "sourceFen": "8/8/2k1pR2/3r4/3PK3/8/8/8 w - - 0 68",
+          "syntheticFen": "8/8/2krpR2/8/3PK3/8/8/8 w - - 0 68",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "d5",
+            "to": "d6"
+          },
+          "unchangedCapture": "f6e6",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "pnUgw",
+          "gameId": "xjmkVmE4",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "bb50d3dbdc9a6e8dfd10bf0ef87b9815b415b34fe040f036a6cf3e919baaf264",
+          "sourceFen": "8/8/2k1pR2/3r4/3PK3/8/8/8 w - - 0 68",
+          "syntheticFen": "8/8/2k1pRr1/8/3PK3/8/8/8 w - - 0 68",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "d5",
+            "to": "g6"
+          },
+          "unchangedCapture": "f6e6",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "pnUgw",
+          "gameId": "xjmkVmE4",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001",
+          "sourceRecordSha256": "bb50d3dbdc9a6e8dfd10bf0ef87b9815b415b34fe040f036a6cf3e919baaf264",
+          "sourceFen": "8/8/2k1pR2/3r4/3PK3/8/8/8 w - - 0 68",
+          "syntheticFen": "8/8/2k1pR1r/8/3PK3/8/8/8 w - - 0 68",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "d5",
+            "to": "h6"
+          },
+          "unchangedCapture": "f6e6",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "qypY8",
+          "gameId": "aNMjDTlZ",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "1172afc9215000bd0e513f4151a2863bb6e1b9afca6fb9235bb622a6f8e032a1",
+          "sourceFen": "5K2/1Q6/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "syntheticFen": "3Q1K2/8/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "q",
+            "from": "b7",
+            "to": "d8"
+          },
+          "unchangedCapture": "e5g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "qypY8",
+          "gameId": "aNMjDTlZ",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "1172afc9215000bd0e513f4151a2863bb6e1b9afca6fb9235bb622a6f8e032a1",
+          "sourceFen": "5K2/1Q6/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "syntheticFen": "5KQ1/8/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "q",
+            "from": "b7",
+            "to": "g8"
+          },
+          "unchangedCapture": "e5g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "qypY8",
+          "gameId": "aNMjDTlZ",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "1172afc9215000bd0e513f4151a2863bb6e1b9afca6fb9235bb622a6f8e032a1",
+          "sourceFen": "5K2/1Q6/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "syntheticFen": "5K2/6Q1/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "q",
+            "from": "b7",
+            "to": "g7"
+          },
+          "unchangedCapture": "e5g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "qypY8",
+          "gameId": "aNMjDTlZ",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "1172afc9215000bd0e513f4151a2863bb6e1b9afca6fb9235bb622a6f8e032a1",
+          "sourceFen": "5K2/1Q6/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "syntheticFen": "5K2/8/5Q2/2k1q1P1/8/8/8/8 b - - 4 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "q",
+            "from": "b7",
+            "to": "f6"
+          },
+          "unchangedCapture": "e5g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "qypY8",
+          "gameId": "aNMjDTlZ",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "1172afc9215000bd0e513f4151a2863bb6e1b9afca6fb9235bb622a6f8e032a1",
+          "sourceFen": "5K2/1Q6/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "syntheticFen": "5K2/8/6Q1/2k1q1P1/8/8/8/8 b - - 4 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "q",
+            "from": "b7",
+            "to": "g6"
+          },
+          "unchangedCapture": "e5g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "qypY8",
+          "gameId": "aNMjDTlZ",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "1172afc9215000bd0e513f4151a2863bb6e1b9afca6fb9235bb622a6f8e032a1",
+          "sourceFen": "5K2/1Q6/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "syntheticFen": "5K2/8/7Q/2k1q1P1/8/8/8/8 b - - 4 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "q",
+            "from": "b7",
+            "to": "h6"
+          },
+          "unchangedCapture": "e5g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "qypY8",
+          "gameId": "aNMjDTlZ",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "1172afc9215000bd0e513f4151a2863bb6e1b9afca6fb9235bb622a6f8e032a1",
+          "sourceFen": "5K2/1Q6/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "syntheticFen": "5K2/8/8/2k1q1PQ/8/8/8/8 b - - 4 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "q",
+            "from": "b7",
+            "to": "h5"
+          },
+          "unchangedCapture": "e5g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "qypY8",
+          "gameId": "aNMjDTlZ",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "1172afc9215000bd0e513f4151a2863bb6e1b9afca6fb9235bb622a6f8e032a1",
+          "sourceFen": "5K2/1Q6/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "syntheticFen": "5K2/8/8/2k1q1P1/5Q2/8/8/8 b - - 4 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "q",
+            "from": "b7",
+            "to": "f4"
+          },
+          "unchangedCapture": "e5g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "qypY8",
+          "gameId": "aNMjDTlZ",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "1172afc9215000bd0e513f4151a2863bb6e1b9afca6fb9235bb622a6f8e032a1",
+          "sourceFen": "5K2/1Q6/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "syntheticFen": "5K2/8/8/2k1q1P1/6Q1/8/8/8 b - - 4 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "q",
+            "from": "b7",
+            "to": "g4"
+          },
+          "unchangedCapture": "e5g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "qypY8",
+          "gameId": "aNMjDTlZ",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "1172afc9215000bd0e513f4151a2863bb6e1b9afca6fb9235bb622a6f8e032a1",
+          "sourceFen": "5K2/1Q6/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "syntheticFen": "5K2/8/8/2k1q1P1/7Q/8/8/8 b - - 4 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "q",
+            "from": "b7",
+            "to": "h4"
+          },
+          "unchangedCapture": "e5g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "qypY8",
+          "gameId": "aNMjDTlZ",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "1172afc9215000bd0e513f4151a2863bb6e1b9afca6fb9235bb622a6f8e032a1",
+          "sourceFen": "5K2/1Q6/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "syntheticFen": "5K2/8/8/2k1q1P1/8/6Q1/8/8 b - - 4 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "q",
+            "from": "b7",
+            "to": "g3"
+          },
+          "unchangedCapture": "e5g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "qypY8",
+          "gameId": "aNMjDTlZ",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "1172afc9215000bd0e513f4151a2863bb6e1b9afca6fb9235bb622a6f8e032a1",
+          "sourceFen": "5K2/1Q6/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "syntheticFen": "5K2/8/8/2k1q1P1/8/8/3Q4/8 b - - 4 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "q",
+            "from": "b7",
+            "to": "d2"
+          },
+          "unchangedCapture": "e5g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "qypY8",
+          "gameId": "aNMjDTlZ",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "1172afc9215000bd0e513f4151a2863bb6e1b9afca6fb9235bb622a6f8e032a1",
+          "sourceFen": "5K2/1Q6/8/2k1q1P1/8/8/8/8 b - - 4 58",
+          "syntheticFen": "5K2/8/8/2k1q1P1/8/8/6Q1/8 b - - 4 58",
+          "changedPiece": {
+            "color": "w",
+            "type": "q",
+            "from": "b7",
+            "to": "g2"
+          },
+          "unchangedCapture": "e5g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "9kcZK",
+          "gameId": "4Vklk7wW",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "23d33dc4c79f69bbef70c6324edcf23b71a03daa9372fbdf02eb456507e53623",
+          "sourceFen": "8/6P1/8/8/3R4/1P3k1K/8/6r1 b - - 0 61",
+          "syntheticFen": "6R1/6P1/8/8/8/1P3k1K/8/6r1 b - - 0 61",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "d4",
+            "to": "g8"
+          },
+          "unchangedCapture": "g1g7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "9kcZK",
+          "gameId": "4Vklk7wW",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "23d33dc4c79f69bbef70c6324edcf23b71a03daa9372fbdf02eb456507e53623",
+          "sourceFen": "8/6P1/8/8/3R4/1P3k1K/8/6r1 b - - 0 61",
+          "syntheticFen": "8/R5P1/8/8/8/1P3k1K/8/6r1 b - - 0 61",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "d4",
+            "to": "a7"
+          },
+          "unchangedCapture": "g1g7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "9kcZK",
+          "gameId": "4Vklk7wW",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "23d33dc4c79f69bbef70c6324edcf23b71a03daa9372fbdf02eb456507e53623",
+          "sourceFen": "8/6P1/8/8/3R4/1P3k1K/8/6r1 b - - 0 61",
+          "syntheticFen": "8/1R4P1/8/8/8/1P3k1K/8/6r1 b - - 0 61",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "d4",
+            "to": "b7"
+          },
+          "unchangedCapture": "g1g7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "9kcZK",
+          "gameId": "4Vklk7wW",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "23d33dc4c79f69bbef70c6324edcf23b71a03daa9372fbdf02eb456507e53623",
+          "sourceFen": "8/6P1/8/8/3R4/1P3k1K/8/6r1 b - - 0 61",
+          "syntheticFen": "8/2R3P1/8/8/8/1P3k1K/8/6r1 b - - 0 61",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "d4",
+            "to": "c7"
+          },
+          "unchangedCapture": "g1g7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "9kcZK",
+          "gameId": "4Vklk7wW",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "23d33dc4c79f69bbef70c6324edcf23b71a03daa9372fbdf02eb456507e53623",
+          "sourceFen": "8/6P1/8/8/3R4/1P3k1K/8/6r1 b - - 0 61",
+          "syntheticFen": "8/3R2P1/8/8/8/1P3k1K/8/6r1 b - - 0 61",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "d4",
+            "to": "d7"
+          },
+          "unchangedCapture": "g1g7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "9kcZK",
+          "gameId": "4Vklk7wW",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "23d33dc4c79f69bbef70c6324edcf23b71a03daa9372fbdf02eb456507e53623",
+          "sourceFen": "8/6P1/8/8/3R4/1P3k1K/8/6r1 b - - 0 61",
+          "syntheticFen": "8/4R1P1/8/8/8/1P3k1K/8/6r1 b - - 0 61",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "d4",
+            "to": "e7"
+          },
+          "unchangedCapture": "g1g7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "9kcZK",
+          "gameId": "4Vklk7wW",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "23d33dc4c79f69bbef70c6324edcf23b71a03daa9372fbdf02eb456507e53623",
+          "sourceFen": "8/6P1/8/8/3R4/1P3k1K/8/6r1 b - - 0 61",
+          "syntheticFen": "8/6PR/8/8/8/1P3k1K/8/6r1 b - - 0 61",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "d4",
+            "to": "h7"
+          },
+          "unchangedCapture": "g1g7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "9kcZK",
+          "gameId": "4Vklk7wW",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "23d33dc4c79f69bbef70c6324edcf23b71a03daa9372fbdf02eb456507e53623",
+          "sourceFen": "8/6P1/8/8/3R4/1P3k1K/8/6r1 b - - 0 61",
+          "syntheticFen": "8/6P1/5P2/8/3R4/5k1K/8/6r1 b - - 0 61",
+          "changedPiece": {
+            "color": "w",
+            "type": "p",
+            "from": "b3",
+            "to": "f6"
+          },
+          "unchangedCapture": "g1g7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "9kcZK",
+          "gameId": "4Vklk7wW",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "23d33dc4c79f69bbef70c6324edcf23b71a03daa9372fbdf02eb456507e53623",
+          "sourceFen": "8/6P1/8/8/3R4/1P3k1K/8/6r1 b - - 0 61",
+          "syntheticFen": "8/6P1/7P/8/3R4/5k1K/8/6r1 b - - 0 61",
+          "changedPiece": {
+            "color": "w",
+            "type": "p",
+            "from": "b3",
+            "to": "h6"
+          },
+          "unchangedCapture": "g1g7",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "1YPFs",
+          "gameId": "eM59H8WH",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "e3560f041b9a6a3f95ca17f80e46225e6541172c69d6c8fb03dd9c032916d033",
+          "sourceFen": "8/8/8/4k2P/7r/8/2R2K2/8 b - - 0 45",
+          "syntheticFen": "7R/8/8/4k2P/7r/8/5K2/8 b - - 0 45",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "c2",
+            "to": "h8"
+          },
+          "unchangedCapture": "h4h5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "1YPFs",
+          "gameId": "eM59H8WH",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "e3560f041b9a6a3f95ca17f80e46225e6541172c69d6c8fb03dd9c032916d033",
+          "sourceFen": "8/8/8/4k2P/7r/8/2R2K2/8 b - - 0 45",
+          "syntheticFen": "8/7R/8/4k2P/7r/8/5K2/8 b - - 0 45",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "c2",
+            "to": "h7"
+          },
+          "unchangedCapture": "h4h5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "1YPFs",
+          "gameId": "eM59H8WH",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "e3560f041b9a6a3f95ca17f80e46225e6541172c69d6c8fb03dd9c032916d033",
+          "sourceFen": "8/8/8/4k2P/7r/8/2R2K2/8 b - - 0 45",
+          "syntheticFen": "8/8/7R/4k2P/7r/8/5K2/8 b - - 0 45",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "c2",
+            "to": "h6"
+          },
+          "unchangedCapture": "h4h5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "1YPFs",
+          "gameId": "eM59H8WH",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "e3560f041b9a6a3f95ca17f80e46225e6541172c69d6c8fb03dd9c032916d033",
+          "sourceFen": "8/8/8/4k2P/7r/8/2R2K2/8 b - - 0 45",
+          "syntheticFen": "8/8/8/4k2P/7r/7R/5K2/8 b - - 0 45",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "c2",
+            "to": "h3"
+          },
+          "unchangedCapture": "h4h5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "1YPFs",
+          "gameId": "eM59H8WH",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "e3560f041b9a6a3f95ca17f80e46225e6541172c69d6c8fb03dd9c032916d033",
+          "sourceFen": "8/8/8/4k2P/7r/8/2R2K2/8 b - - 0 45",
+          "syntheticFen": "8/8/8/4k2P/7r/8/5K1R/8 b - - 0 45",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "c2",
+            "to": "h2"
+          },
+          "unchangedCapture": "h4h5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "1YPFs",
+          "gameId": "eM59H8WH",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002",
+          "sourceRecordSha256": "e3560f041b9a6a3f95ca17f80e46225e6541172c69d6c8fb03dd9c032916d033",
+          "sourceFen": "8/8/8/4k2P/7r/8/2R2K2/8 b - - 0 45",
+          "syntheticFen": "8/8/8/4k2P/7r/8/5K2/7R b - - 0 45",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "c2",
+            "to": "h1"
+          },
+          "unchangedCapture": "h4h5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "5STCq",
+          "gameId": "jVdltyer",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-003",
+          "sourceRecordSha256": "dac93fd36f98c80fc0f3040ded7d79c2601b637f5b7b868422e6e7fed968f7ae",
+          "sourceFen": "8/8/2k2K2/6pp/7P/8/8/8 w - - 0 47",
+          "syntheticFen": "8/8/2k2K1p/6p1/7P/8/8/8 w - - 0 47",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "h5",
+            "to": "h6"
+          },
+          "unchangedCapture": "h4g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "86rRi",
+          "gameId": "9l5VAne9",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-003",
+          "sourceRecordSha256": "3a71dd116ec652b5b1486a26f7cb02497bff5ab2288b41377e41d6c508a4cff7",
+          "sourceFen": "8/8/8/5p2/3k2P1/6P1/3K4/8 b - - 0 60",
+          "syntheticFen": "8/8/8/5p2/3k2P1/5P2/3K4/8 b - - 0 60",
+          "changedPiece": {
+            "color": "w",
+            "type": "p",
+            "from": "g3",
+            "to": "f3"
+          },
+          "unchangedCapture": "f5g4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "train",
+          "puzzleId": "86rRi",
+          "gameId": "9l5VAne9",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-003",
+          "sourceRecordSha256": "3a71dd116ec652b5b1486a26f7cb02497bff5ab2288b41377e41d6c508a4cff7",
+          "sourceFen": "8/8/8/5p2/3k2P1/6P1/3K4/8 b - - 0 60",
+          "syntheticFen": "8/8/8/5p2/3k2P1/7P/3K4/8 b - - 0 60",
+          "changedPiece": {
+            "color": "w",
+            "type": "p",
+            "from": "g3",
+            "to": "h3"
+          },
+          "unchangedCapture": "f5g4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        }
+      ]
+    },
+    "validation": {
+      "counts": {
+        "rows": 128,
+        "eligibleRows": 20,
+        "rootsWithFlip": 8,
+        "mutations": 2620,
+        "evaluations": 1837,
+        "flipPairs": 132,
+        "byTransition": {
+          "failure-to-success": 79,
+          "success-to-failure": 53
+        }
+      },
+      "flips": [
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/p7/8/1K6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "a7"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/1p6/8/1K6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "b7"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/2p5/8/1K6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "c7"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/3p4/8/1K6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "d7"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/4p3/8/1K6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "e7"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/5p2/8/1K6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "f7"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/6p1/8/1K6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "g7"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/7p/8/1K6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "h7"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/1p6/1K6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "b6"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/3p4/1K6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "d6"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/4p3/1K6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "e6"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/5p2/1K6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "f6"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/6p1/1K6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "g6"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/7p/1K6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "h6"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/pK6/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "a5"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1Kp5/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "c5"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K1p4/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "d5"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K2p3/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "e5"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K3p2/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "f5"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K4p1/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "g5"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K5p/3k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "h5"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/1p1k4/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "b4"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3kp3/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "e4"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k1p2/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "f4"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k2p1/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "g4"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k3p/1p6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "h4"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k4/pp6/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "a3"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k4/1pp5/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "c3"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k4/1p1p4/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "d3"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k4/1p2p3/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "e3"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k4/1p3p2/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "f3"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k4/1p4p1/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "g3"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k4/1p5p/PP6/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "h3"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k4/1p6/PPp5/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "c2"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k4/1p6/PP1p4/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "d2"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k4/1p6/PP2p3/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "e2"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k4/1p6/PP3p2/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "f2"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k4/1p6/PP4p1/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "g2"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "sourceFen": "8/8/8/1K6/p2k4/1p6/PP6/8 w - - 0 75",
+          "syntheticFen": "8/8/8/1K6/3k4/1p6/PP5p/8 w - - 0 75",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "a4",
+            "to": "h2"
+          },
+          "unchangedCapture": "a2b3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "5WHl1",
+          "gameId": "PFs4E7JG",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "5d32dfad6c73b0894a67a35bd5c5e07abc570d2340ea41f8eebede12386d0026",
+          "sourceFen": "7R/KPk5/8/6P1/6r1/8/8/8 b - - 8 76",
+          "syntheticFen": "6R1/KPk5/8/6P1/6r1/8/8/8 b - - 8 76",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "h8",
+            "to": "g8"
+          },
+          "unchangedCapture": "g4g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "5WHl1",
+          "gameId": "PFs4E7JG",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "5d32dfad6c73b0894a67a35bd5c5e07abc570d2340ea41f8eebede12386d0026",
+          "sourceFen": "7R/KPk5/8/6P1/6r1/8/8/8 b - - 8 76",
+          "syntheticFen": "8/KPk5/6R1/6P1/6r1/8/8/8 b - - 8 76",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "h8",
+            "to": "g6"
+          },
+          "unchangedCapture": "g4g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "5WHl1",
+          "gameId": "PFs4E7JG",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "5d32dfad6c73b0894a67a35bd5c5e07abc570d2340ea41f8eebede12386d0026",
+          "sourceFen": "7R/KPk5/8/6P1/6r1/8/8/8 b - - 8 76",
+          "syntheticFen": "8/KPk5/8/R5P1/6r1/8/8/8 b - - 8 76",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "h8",
+            "to": "a5"
+          },
+          "unchangedCapture": "g4g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "5WHl1",
+          "gameId": "PFs4E7JG",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "5d32dfad6c73b0894a67a35bd5c5e07abc570d2340ea41f8eebede12386d0026",
+          "sourceFen": "7R/KPk5/8/6P1/6r1/8/8/8 b - - 8 76",
+          "syntheticFen": "8/KPk5/8/1R4P1/6r1/8/8/8 b - - 8 76",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "h8",
+            "to": "b5"
+          },
+          "unchangedCapture": "g4g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "5WHl1",
+          "gameId": "PFs4E7JG",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "5d32dfad6c73b0894a67a35bd5c5e07abc570d2340ea41f8eebede12386d0026",
+          "sourceFen": "7R/KPk5/8/6P1/6r1/8/8/8 b - - 8 76",
+          "syntheticFen": "8/KPk5/8/3R2P1/6r1/8/8/8 b - - 8 76",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "h8",
+            "to": "d5"
+          },
+          "unchangedCapture": "g4g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "5WHl1",
+          "gameId": "PFs4E7JG",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "5d32dfad6c73b0894a67a35bd5c5e07abc570d2340ea41f8eebede12386d0026",
+          "sourceFen": "7R/KPk5/8/6P1/6r1/8/8/8 b - - 8 76",
+          "syntheticFen": "8/KPk5/8/4R1P1/6r1/8/8/8 b - - 8 76",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "h8",
+            "to": "e5"
+          },
+          "unchangedCapture": "g4g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "5WHl1",
+          "gameId": "PFs4E7JG",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "5d32dfad6c73b0894a67a35bd5c5e07abc570d2340ea41f8eebede12386d0026",
+          "sourceFen": "7R/KPk5/8/6P1/6r1/8/8/8 b - - 8 76",
+          "syntheticFen": "8/KPk5/8/5RP1/6r1/8/8/8 b - - 8 76",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "h8",
+            "to": "f5"
+          },
+          "unchangedCapture": "g4g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "5WHl1",
+          "gameId": "PFs4E7JG",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "5d32dfad6c73b0894a67a35bd5c5e07abc570d2340ea41f8eebede12386d0026",
+          "sourceFen": "7R/KPk5/8/6P1/6r1/8/8/8 b - - 8 76",
+          "syntheticFen": "8/KPk5/8/6PR/6r1/8/8/8 b - - 8 76",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "h8",
+            "to": "h5"
+          },
+          "unchangedCapture": "g4g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "5WHl1",
+          "gameId": "PFs4E7JG",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "5d32dfad6c73b0894a67a35bd5c5e07abc570d2340ea41f8eebede12386d0026",
+          "sourceFen": "7R/KPk5/8/6P1/6r1/8/8/8 b - - 8 76",
+          "syntheticFen": "8/KPk5/8/6P1/6r1/6R1/8/8 b - - 8 76",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "h8",
+            "to": "g3"
+          },
+          "unchangedCapture": "g4g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "5WHl1",
+          "gameId": "PFs4E7JG",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "5d32dfad6c73b0894a67a35bd5c5e07abc570d2340ea41f8eebede12386d0026",
+          "sourceFen": "7R/KPk5/8/6P1/6r1/8/8/8 b - - 8 76",
+          "syntheticFen": "8/KPk5/8/6P1/6r1/8/6R1/8 b - - 8 76",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "h8",
+            "to": "g2"
+          },
+          "unchangedCapture": "g4g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "5WHl1",
+          "gameId": "PFs4E7JG",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "5d32dfad6c73b0894a67a35bd5c5e07abc570d2340ea41f8eebede12386d0026",
+          "sourceFen": "7R/KPk5/8/6P1/6r1/8/8/8 b - - 8 76",
+          "syntheticFen": "8/KPk5/8/6P1/6r1/8/8/6R1 b - - 8 76",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "h8",
+            "to": "g1"
+          },
+          "unchangedCapture": "g4g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "5WHl1",
+          "gameId": "PFs4E7JG",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "5d32dfad6c73b0894a67a35bd5c5e07abc570d2340ea41f8eebede12386d0026",
+          "sourceFen": "7R/KPk5/8/6P1/6r1/8/8/8 b - - 8 76",
+          "syntheticFen": "7R/K1k5/8/6P1/5Pr1/8/8/8 b - - 8 76",
+          "changedPiece": {
+            "color": "w",
+            "type": "p",
+            "from": "b7",
+            "to": "f4"
+          },
+          "unchangedCapture": "g4g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "5WHl1",
+          "gameId": "PFs4E7JG",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "5d32dfad6c73b0894a67a35bd5c5e07abc570d2340ea41f8eebede12386d0026",
+          "sourceFen": "7R/KPk5/8/6P1/6r1/8/8/8 b - - 8 76",
+          "syntheticFen": "7R/K1k5/8/6P1/6rP/8/8/8 b - - 8 76",
+          "changedPiece": {
+            "color": "w",
+            "type": "p",
+            "from": "b7",
+            "to": "h4"
+          },
+          "unchangedCapture": "g4g5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "kDqnJ",
+          "gameId": "Hmh9oJXz",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "571aa532f37644d460b85d40f025d1e91c046d78d0e456f0c65aebcc9f572e26",
+          "sourceFen": "8/7R/7p/7P/6k1/8/3K4/6r1 w - - 4 61",
+          "syntheticFen": "7r/7R/7p/7P/6k1/8/3K4/8 w - - 4 61",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "g1",
+            "to": "h8"
+          },
+          "unchangedCapture": "h7h6",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "kDqnJ",
+          "gameId": "Hmh9oJXz",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "571aa532f37644d460b85d40f025d1e91c046d78d0e456f0c65aebcc9f572e26",
+          "sourceFen": "8/7R/7p/7P/6k1/8/3K4/6r1 w - - 4 61",
+          "syntheticFen": "8/7R/r6p/7P/6k1/8/3K4/8 w - - 4 61",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "g1",
+            "to": "a6"
+          },
+          "unchangedCapture": "h7h6",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "kDqnJ",
+          "gameId": "Hmh9oJXz",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "571aa532f37644d460b85d40f025d1e91c046d78d0e456f0c65aebcc9f572e26",
+          "sourceFen": "8/7R/7p/7P/6k1/8/3K4/6r1 w - - 4 61",
+          "syntheticFen": "8/7R/1r5p/7P/6k1/8/3K4/8 w - - 4 61",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "g1",
+            "to": "b6"
+          },
+          "unchangedCapture": "h7h6",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "kDqnJ",
+          "gameId": "Hmh9oJXz",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "571aa532f37644d460b85d40f025d1e91c046d78d0e456f0c65aebcc9f572e26",
+          "sourceFen": "8/7R/7p/7P/6k1/8/3K4/6r1 w - - 4 61",
+          "syntheticFen": "8/7R/2r4p/7P/6k1/8/3K4/8 w - - 4 61",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "g1",
+            "to": "c6"
+          },
+          "unchangedCapture": "h7h6",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "kDqnJ",
+          "gameId": "Hmh9oJXz",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "571aa532f37644d460b85d40f025d1e91c046d78d0e456f0c65aebcc9f572e26",
+          "sourceFen": "8/7R/7p/7P/6k1/8/3K4/6r1 w - - 4 61",
+          "syntheticFen": "8/7R/4r2p/7P/6k1/8/3K4/8 w - - 4 61",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "g1",
+            "to": "e6"
+          },
+          "unchangedCapture": "h7h6",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "kDqnJ",
+          "gameId": "Hmh9oJXz",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "571aa532f37644d460b85d40f025d1e91c046d78d0e456f0c65aebcc9f572e26",
+          "sourceFen": "8/7R/7p/7P/6k1/8/3K4/6r1 w - - 4 61",
+          "syntheticFen": "8/7R/5r1p/7P/6k1/8/3K4/8 w - - 4 61",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "g1",
+            "to": "f6"
+          },
+          "unchangedCapture": "h7h6",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "kDqnJ",
+          "gameId": "Hmh9oJXz",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000",
+          "sourceRecordSha256": "571aa532f37644d460b85d40f025d1e91c046d78d0e456f0c65aebcc9f572e26",
+          "sourceFen": "8/7R/7p/7P/6k1/8/3K4/6r1 w - - 4 61",
+          "syntheticFen": "8/7R/6rp/7P/6k1/8/3K4/8 w - - 4 61",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "g1",
+            "to": "g6"
+          },
+          "unchangedCapture": "h7h6",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "Ph9jG",
+          "gameId": "djVLaept",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "7aa5c044f269234a470934e84fea8e25e9bd9c509897e4bfe600b1ce4e8b4efe",
+          "sourceFen": "8/8/8/8/5Ppp/4K2P/8/4k3 w - - 0 52",
+          "syntheticFen": "8/8/8/5p2/5Pp1/4K2P/8/4k3 w - - 0 52",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "h4",
+            "to": "f5"
+          },
+          "unchangedCapture": "h3g4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "Ph9jG",
+          "gameId": "djVLaept",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "7aa5c044f269234a470934e84fea8e25e9bd9c509897e4bfe600b1ce4e8b4efe",
+          "sourceFen": "8/8/8/8/5Ppp/4K2P/8/4k3 w - - 0 52",
+          "syntheticFen": "8/8/8/7p/5Pp1/4K2P/8/4k3 w - - 0 52",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "h4",
+            "to": "h5"
+          },
+          "unchangedCapture": "h3g4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/p7/8/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "a7"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/1p6/8/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "b7"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/2p5/8/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "c7"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/3p4/8/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "d7"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/4p3/8/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "e7"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/5p2/8/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "f7"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/6p1/8/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "g7"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/7p/8/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "h7"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/p7/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "a6"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/1p6/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "b6"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/2p5/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "c6"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/3p4/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "d6"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/4p3/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "e6"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/5p2/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "f6"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/6p1/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "g6"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/7p/8/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "h6"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/p7/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "a5"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/1p6/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "b5"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/2p5/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "c5"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/3p4/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "d5"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/4p3/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "e5"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/6p1/5RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "g5"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/p4RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "a4"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/1p3RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "b4"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/2p2RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "c4"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/3p1RK1/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "d4"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/5RKp/5r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "h4"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/5RK1/p4r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "a3"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/5RK1/1p3r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "b3"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/5RK1/2p2r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "c3"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/5RK1/3p1r2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "d3"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/5RK1/4pr2/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "e3"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/5RK1/5rp1/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "g3"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/5RK1/5r1p/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "h3"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/5RK1/5r2/p3kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "a2"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/5RK1/5r2/1p2kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "b2"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/5RK1/5r2/2p1kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "c2"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/5RK1/5r2/3pkP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "d2"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/5RK1/5r2/4kPp1/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "g2"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/5RK1/5r2/4kP1p/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "e4",
+            "to": "h2"
+          },
+          "unchangedCapture": "f4f3",
+          "sourceOutcome": "failure",
+          "counterfactualOutcome": "success",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "4r3/8/8/8/4pRK1/8/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "f3",
+            "to": "e8"
+          },
+          "unchangedCapture": "f4e4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/4r3/8/8/4pRK1/8/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "f3",
+            "to": "e7"
+          },
+          "unchangedCapture": "f4e4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/4r3/8/4pRK1/8/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "f3",
+            "to": "e6"
+          },
+          "unchangedCapture": "f4e4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/4r3/4pRK1/8/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "f3",
+            "to": "e5"
+          },
+          "unchangedCapture": "f4e4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/r3pRK1/8/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "f3",
+            "to": "a4"
+          },
+          "unchangedCapture": "f4e4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/1r2pRK1/8/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "f3",
+            "to": "b4"
+          },
+          "unchangedCapture": "f4e4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/2r1pRK1/8/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "f3",
+            "to": "c4"
+          },
+          "unchangedCapture": "f4e4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/3rpRK1/8/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "f3",
+            "to": "d4"
+          },
+          "unchangedCapture": "f4e4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "sourceFen": "8/8/8/8/4pRK1/5r2/4kP2/8 w - - 7 74",
+          "syntheticFen": "8/8/8/8/4pRK1/4r3/4kP2/8 w - - 7 74",
+          "changedPiece": {
+            "color": "b",
+            "type": "r",
+            "from": "f3",
+            "to": "e3"
+          },
+          "unchangedCapture": "f4e4",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "MO9R5",
+          "gameId": "5do8xpdO",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001",
+          "sourceRecordSha256": "1e080e5f3ab3ee6759385fbe38fe3be3af2be9129e4fefa5a652e9c4cf85fc40",
+          "sourceFen": "8/8/8/8/2B2k2/1P1r2p1/4K3/8 w - - 2 67",
+          "syntheticFen": "8/8/8/8/2B1pk2/1P1r4/4K3/8 w - - 2 67",
+          "changedPiece": {
+            "color": "b",
+            "type": "p",
+            "from": "g3",
+            "to": "e4"
+          },
+          "unchangedCapture": "c4d3",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "EP2Bb",
+          "gameId": "zxdCuUk7",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-002",
+          "sourceRecordSha256": "7d61c8c7b8ee258fe1972070c6360dd80f5e102bd17c5e0f28bfee12680e72b8",
+          "sourceFen": "8/8/7P/2k4B/5K2/8/6Pr/8 b - - 0 64",
+          "syntheticFen": "8/8/8/2k4B/5KP1/8/6Pr/8 b - - 0 64",
+          "changedPiece": {
+            "color": "w",
+            "type": "p",
+            "from": "h6",
+            "to": "g4"
+          },
+          "unchangedCapture": "h2h5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "EP2Bb",
+          "gameId": "zxdCuUk7",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-002",
+          "sourceRecordSha256": "7d61c8c7b8ee258fe1972070c6360dd80f5e102bd17c5e0f28bfee12680e72b8",
+          "sourceFen": "8/8/7P/2k4B/5K2/8/6Pr/8 b - - 0 64",
+          "syntheticFen": "B7/8/7P/2k5/5K2/8/6Pr/8 b - - 0 64",
+          "changedPiece": {
+            "color": "w",
+            "type": "b",
+            "from": "h5",
+            "to": "a8"
+          },
+          "unchangedCapture": "h2g2",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "EP2Bb",
+          "gameId": "zxdCuUk7",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-002",
+          "sourceRecordSha256": "7d61c8c7b8ee258fe1972070c6360dd80f5e102bd17c5e0f28bfee12680e72b8",
+          "sourceFen": "8/8/7P/2k4B/5K2/8/6Pr/8 b - - 0 64",
+          "syntheticFen": "8/1B6/7P/2k5/5K2/8/6Pr/8 b - - 0 64",
+          "changedPiece": {
+            "color": "w",
+            "type": "b",
+            "from": "h5",
+            "to": "b7"
+          },
+          "unchangedCapture": "h2g2",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "EP2Bb",
+          "gameId": "zxdCuUk7",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-002",
+          "sourceRecordSha256": "7d61c8c7b8ee258fe1972070c6360dd80f5e102bd17c5e0f28bfee12680e72b8",
+          "sourceFen": "8/8/7P/2k4B/5K2/8/6Pr/8 b - - 0 64",
+          "syntheticFen": "8/8/2B4P/2k5/5K2/8/6Pr/8 b - - 0 64",
+          "changedPiece": {
+            "color": "w",
+            "type": "b",
+            "from": "h5",
+            "to": "c6"
+          },
+          "unchangedCapture": "h2g2",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "EP2Bb",
+          "gameId": "zxdCuUk7",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-002",
+          "sourceRecordSha256": "7d61c8c7b8ee258fe1972070c6360dd80f5e102bd17c5e0f28bfee12680e72b8",
+          "sourceFen": "8/8/7P/2k4B/5K2/8/6Pr/8 b - - 0 64",
+          "syntheticFen": "8/8/7P/2kB4/5K2/8/6Pr/8 b - - 0 64",
+          "changedPiece": {
+            "color": "w",
+            "type": "b",
+            "from": "h5",
+            "to": "d5"
+          },
+          "unchangedCapture": "h2g2",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "EP2Bb",
+          "gameId": "zxdCuUk7",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-002",
+          "sourceRecordSha256": "7d61c8c7b8ee258fe1972070c6360dd80f5e102bd17c5e0f28bfee12680e72b8",
+          "sourceFen": "8/8/7P/2k4B/5K2/8/6Pr/8 b - - 0 64",
+          "syntheticFen": "8/8/7P/2k5/4BK2/8/6Pr/8 b - - 0 64",
+          "changedPiece": {
+            "color": "w",
+            "type": "b",
+            "from": "h5",
+            "to": "e4"
+          },
+          "unchangedCapture": "h2g2",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "EP2Bb",
+          "gameId": "zxdCuUk7",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-002",
+          "sourceRecordSha256": "7d61c8c7b8ee258fe1972070c6360dd80f5e102bd17c5e0f28bfee12680e72b8",
+          "sourceFen": "8/8/7P/2k4B/5K2/8/6Pr/8 b - - 0 64",
+          "syntheticFen": "8/8/7P/2k5/5K2/5B2/6Pr/8 b - - 0 64",
+          "changedPiece": {
+            "color": "w",
+            "type": "b",
+            "from": "h5",
+            "to": "f3"
+          },
+          "unchangedCapture": "h2g2",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "EP2Bb",
+          "gameId": "zxdCuUk7",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-002",
+          "sourceRecordSha256": "7d61c8c7b8ee258fe1972070c6360dd80f5e102bd17c5e0f28bfee12680e72b8",
+          "sourceFen": "8/8/7P/2k4B/5K2/8/6Pr/8 b - - 0 64",
+          "syntheticFen": "8/8/7P/2k5/5K2/7B/6Pr/8 b - - 0 64",
+          "changedPiece": {
+            "color": "w",
+            "type": "b",
+            "from": "h5",
+            "to": "h3"
+          },
+          "unchangedCapture": "h2g2",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "EP2Bb",
+          "gameId": "zxdCuUk7",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-002",
+          "sourceRecordSha256": "7d61c8c7b8ee258fe1972070c6360dd80f5e102bd17c5e0f28bfee12680e72b8",
+          "sourceFen": "8/8/7P/2k4B/5K2/8/6Pr/8 b - - 0 64",
+          "syntheticFen": "8/8/7P/2k5/5K2/8/6Pr/5B2 b - - 0 64",
+          "changedPiece": {
+            "color": "w",
+            "type": "b",
+            "from": "h5",
+            "to": "f1"
+          },
+          "unchangedCapture": "h2g2",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "EP2Bb",
+          "gameId": "zxdCuUk7",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-002",
+          "sourceRecordSha256": "7d61c8c7b8ee258fe1972070c6360dd80f5e102bd17c5e0f28bfee12680e72b8",
+          "sourceFen": "8/8/7P/2k4B/5K2/8/6Pr/8 b - - 0 64",
+          "syntheticFen": "8/8/7P/2k5/5K2/8/6Pr/7B b - - 0 64",
+          "changedPiece": {
+            "color": "w",
+            "type": "b",
+            "from": "h5",
+            "to": "h1"
+          },
+          "unchangedCapture": "h2g2",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "EP2Bb",
+          "gameId": "zxdCuUk7",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-002",
+          "sourceRecordSha256": "7d61c8c7b8ee258fe1972070c6360dd80f5e102bd17c5e0f28bfee12680e72b8",
+          "sourceFen": "8/8/7P/2k4B/5K2/8/6Pr/8 b - - 0 64",
+          "syntheticFen": "8/8/7P/2k4B/5KP1/8/7r/8 b - - 0 64",
+          "changedPiece": {
+            "color": "w",
+            "type": "p",
+            "from": "g2",
+            "to": "g4"
+          },
+          "unchangedCapture": "h2h5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "VJSml",
+          "gameId": "8NTf6m0P",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-003",
+          "sourceRecordSha256": "e2da8ead6a4fa54c5b850707e5d6ec0a0e1c8e2e4ee122670e9120684ab36857",
+          "sourceFen": "8/8/8/1P6/6R1/4k1p1/1r6/6K1 b - - 11 68",
+          "syntheticFen": "1R6/8/8/1P6/8/4k1p1/1r6/6K1 b - - 11 68",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "g4",
+            "to": "b8"
+          },
+          "unchangedCapture": "b2b5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "VJSml",
+          "gameId": "8NTf6m0P",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-003",
+          "sourceRecordSha256": "e2da8ead6a4fa54c5b850707e5d6ec0a0e1c8e2e4ee122670e9120684ab36857",
+          "sourceFen": "8/8/8/1P6/6R1/4k1p1/1r6/6K1 b - - 11 68",
+          "syntheticFen": "8/1R6/8/1P6/8/4k1p1/1r6/6K1 b - - 11 68",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "g4",
+            "to": "b7"
+          },
+          "unchangedCapture": "b2b5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "VJSml",
+          "gameId": "8NTf6m0P",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-003",
+          "sourceRecordSha256": "e2da8ead6a4fa54c5b850707e5d6ec0a0e1c8e2e4ee122670e9120684ab36857",
+          "sourceFen": "8/8/8/1P6/6R1/4k1p1/1r6/6K1 b - - 11 68",
+          "syntheticFen": "8/8/1R6/1P6/8/4k1p1/1r6/6K1 b - - 11 68",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "g4",
+            "to": "b6"
+          },
+          "unchangedCapture": "b2b5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "VJSml",
+          "gameId": "8NTf6m0P",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-003",
+          "sourceRecordSha256": "e2da8ead6a4fa54c5b850707e5d6ec0a0e1c8e2e4ee122670e9120684ab36857",
+          "sourceFen": "8/8/8/1P6/6R1/4k1p1/1r6/6K1 b - - 11 68",
+          "syntheticFen": "8/8/8/RP6/8/4k1p1/1r6/6K1 b - - 11 68",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "g4",
+            "to": "a5"
+          },
+          "unchangedCapture": "b2b5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "VJSml",
+          "gameId": "8NTf6m0P",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-003",
+          "sourceRecordSha256": "e2da8ead6a4fa54c5b850707e5d6ec0a0e1c8e2e4ee122670e9120684ab36857",
+          "sourceFen": "8/8/8/1P6/6R1/4k1p1/1r6/6K1 b - - 11 68",
+          "syntheticFen": "8/8/8/1PR5/8/4k1p1/1r6/6K1 b - - 11 68",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "g4",
+            "to": "c5"
+          },
+          "unchangedCapture": "b2b5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "VJSml",
+          "gameId": "8NTf6m0P",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-003",
+          "sourceRecordSha256": "e2da8ead6a4fa54c5b850707e5d6ec0a0e1c8e2e4ee122670e9120684ab36857",
+          "sourceFen": "8/8/8/1P6/6R1/4k1p1/1r6/6K1 b - - 11 68",
+          "syntheticFen": "8/8/8/1P1R4/8/4k1p1/1r6/6K1 b - - 11 68",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "g4",
+            "to": "d5"
+          },
+          "unchangedCapture": "b2b5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "VJSml",
+          "gameId": "8NTf6m0P",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-003",
+          "sourceRecordSha256": "e2da8ead6a4fa54c5b850707e5d6ec0a0e1c8e2e4ee122670e9120684ab36857",
+          "sourceFen": "8/8/8/1P6/6R1/4k1p1/1r6/6K1 b - - 11 68",
+          "syntheticFen": "8/8/8/1P3R2/8/4k1p1/1r6/6K1 b - - 11 68",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "g4",
+            "to": "f5"
+          },
+          "unchangedCapture": "b2b5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "VJSml",
+          "gameId": "8NTf6m0P",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-003",
+          "sourceRecordSha256": "e2da8ead6a4fa54c5b850707e5d6ec0a0e1c8e2e4ee122670e9120684ab36857",
+          "sourceFen": "8/8/8/1P6/6R1/4k1p1/1r6/6K1 b - - 11 68",
+          "syntheticFen": "8/8/8/1P4R1/8/4k1p1/1r6/6K1 b - - 11 68",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "g4",
+            "to": "g5"
+          },
+          "unchangedCapture": "b2b5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "VJSml",
+          "gameId": "8NTf6m0P",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-003",
+          "sourceRecordSha256": "e2da8ead6a4fa54c5b850707e5d6ec0a0e1c8e2e4ee122670e9120684ab36857",
+          "sourceFen": "8/8/8/1P6/6R1/4k1p1/1r6/6K1 b - - 11 68",
+          "syntheticFen": "8/8/8/1P5R/8/4k1p1/1r6/6K1 b - - 11 68",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "g4",
+            "to": "h5"
+          },
+          "unchangedCapture": "b2b5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        },
+        {
+          "split": "validation",
+          "puzzleId": "VJSml",
+          "gameId": "8NTf6m0P",
+          "sourceChunk": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-003",
+          "sourceRecordSha256": "e2da8ead6a4fa54c5b850707e5d6ec0a0e1c8e2e4ee122670e9120684ab36857",
+          "sourceFen": "8/8/8/1P6/6R1/4k1p1/1r6/6K1 b - - 11 68",
+          "syntheticFen": "8/8/8/1P6/8/4k1p1/1r6/1R4K1 b - - 11 68",
+          "changedPiece": {
+            "color": "w",
+            "type": "r",
+            "from": "g4",
+            "to": "b1"
+          },
+          "unchangedCapture": "b2b5",
+          "sourceOutcome": "success",
+          "counterfactualOutcome": "failure",
+          "scope": "static board perturbation of an audited Lichess root; synthetic history"
+        }
+      ]
+    }
+  },
+  "neuralEventsDelivered": 0,
+  "graphLaunchAuthorized": false,
+  "finalSplitInspected": false,
+  "scope": "Candidate construction from audited train and validation roots only; static variants are synthetic-history candidates and are not learning authorization.",
+  "resources": {
+    "elapsedSeconds": 72.4361156,
+    "cpu": {
+      "user": 35844000,
+      "system": 172000
+    },
+    "peakRssMiB": 86.4921875
+  }
+}

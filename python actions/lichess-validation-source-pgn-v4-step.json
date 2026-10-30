@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "name": "lichess-validation-source-pgn-v4",
+  "paused": false,
+  "paths": {
+    "run": "runs/python-actions/lichess-validation-source-pgn-v4",
+    "rows": "research/data/lichess-validation-candidates-v1/validation.jsonl",
+    "manifest": "research/data/lichess-validation-candidates-v1/manifest.json",
+    "sourceAudit": "research/reports/lichess-foundations-pilot-2026-10-21/validation-candidate-source-audit-v1.json",
+    "out": "research/data/lichess-validation-source-pgn-v4"
+  },
+  "pins": {
+    "research/data/lichess-validation-candidates-v1/validation.jsonl": "4bd37573eeefbdfbcd941438a07f6ae6423936acf347878b33d2be584716d484",
+    "research/data/lichess-validation-candidates-v1/manifest.json": "ff7d5c544ed23bc36694e03ae848a7255ae82794a2bb84e87067cf54aef18b0f",
+    "research/reports/lichess-foundations-pilot-2026-10-21/validation-candidate-source-audit-v1.json": "bcbdce686038c895517e341ababa74928b66cc7a13c88e9fe2030c0a5a1fed6b",
+    "python actions/fetch_lichess_game_pgns_v3.py": "fe060fcefec8440cd53f13fe6904d46295634bd5cd7a198c6f3e6aea628abe5c",
+    "python actions/fetch_lichess_game_pgns_v4.py": "0acdf108593b46b23f6ddd7da24e6a2e962b9f0325f49974900c7b13d6c2fcf8"
+  },
+  "state_file": "runs/python-actions/lichess-validation-source-pgn-v4.json",
+  "jobs": {
+    "fetch": {
+      "role": "check",
+      "argv": [
+        "C:/Users/ethan/.venv-class/Scripts/python.exe",
+        "python actions/fetch_lichess_game_pgns_v4.py",
+        "--rows", "{rows}",
+        "--manifest", "{manifest}",
+        "--source-audit", "{sourceAudit}",
+        "--out", "{out}"
+      ],
+      "requires": ["{rows}", "{manifest}", "{sourceAudit}"],
+      "fresh_output": "{out}"
+    }
+  },
+  "artifacts": {
+    "manifest": "{out}/manifest.json"
+  },
+  "report_fields": ["split", "candidateRowCount", "uniqueGameCount", "totalResponseBytes", "finalSplitInspected", "graphLaunchAuthorized", "scope"]
+}

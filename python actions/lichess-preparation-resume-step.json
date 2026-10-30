@@ -1,0 +1,64 @@
+{
+    "schema":  1,
+    "name":  "lichess-preparation-resume1-v1",
+    "paused":  false,
+    "paths":  {
+                  "registration":  "research/reports/lichess-foundations-pilot-2026-10-21/archive-resume-registration.json",
+                  "run":  "research/reports/lichess-foundations-pilot-2026-10-21"
+              },
+    "pins":  {
+                 "research/reports/lichess-foundations-pilot-2026-10-21/archive-resume-registration.json":  "d9b8438936579f72c645058b0ba9dd102b88c753ebb7fc2e3841560d067a696a",
+                 ".cache/lichess-puzzles-2026-10-21.partial.zst":  "ab5be87f7e4b7349d5e7029143d18a5abc6bf9eb54d325c440370be3f6c25bab"
+             },
+    "state_file":  "runs/python-actions/current-lichess-preparation-resume1.json",
+    "jobs":  {
+                 "fetch":  {
+                               "argv":  [
+                                            "curl.exe",
+                                            "--fail",
+                                            "--location",
+                                            "--continue-at",
+                                            "-",
+                                            "--max-time",
+                                            "3600",
+                                            "--max-filesize",
+                                            "335544320",
+                                            "--speed-limit",
+                                            "1024",
+                                            "--speed-time",
+                                            "60",
+                                            "--silent",
+                                            "--show-error",
+                                            "--header",
+                                            "If-Match: \"6abf70a1-125007eb\"",
+                                            "--dump-header",
+                                            "research/reports/lichess-foundations-pilot-2026-10-21/archive-resume-response-headers.txt",
+                                            "--output",
+                                            ".cache/lichess-puzzles-2026-10-21-resume1.partial.zst",
+                                            "https://database.lichess.org/lichess_db_puzzle.csv.zst"
+                                        ],
+                               "refuse_existing":  [
+                                                       "research/reports/lichess-foundations-pilot-2026-10-21/archive-resume-response-headers.txt"
+                                                   ],
+                               "role":  "check",
+                               "requires":  [
+                                                ".cache/lichess-puzzles-2026-10-21-resume1.partial.zst"
+                                            ]
+                           },
+                 "tests":  {
+                               "role":  "check",
+                               "argv":  [
+                                            "node",
+                                            "--test",
+                                            ".codebase/tests/puzzle-learning/lichess-lessons.test.mjs",
+                                            ".codebase/tests/search-and-feedback/capture-retention-certificate.test.mjs"
+                                        ]
+                           }
+             },
+    "artifacts":  {
+
+                  },
+    "report_fields":  [
+
+                      ]
+}

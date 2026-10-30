@@ -1,5 +1,18 @@
 # Research journal
 
+- [2026-10-30: training cannot resume from a mid-event checkpoint (found by the D8 recovery witness; fails safe; fixed in block v3)](experiments/2026-10-30-mid-event-resume-bug.md)
+- [2026-10-30: research maturity review — fixed training comparator, scientific limitations, corrected software findings and ISEF 2028+ scope](experiments/2026-10-30-research-maturity-review.md)
+
+- [2026-10-30: full-r15 audit stalled after laptop sleep - CPU pacing counted the sleep as work (prediction: resumes about 12:39)](experiments/2026-10-30-audit-stall-after-laptop-sleep.md)
+- [2026-10-30: full-r14 D4 failure - measurement mistake (constant-sign value channel) and the Fly's missing absolute valence](experiments/2026-10-30-stage1-full-r14-d4-measurement-mistake.md)
+- [2026-10-27: Stage 1 retention probes v1-v8 summary - what changed, results, why each failed](experiments/2026-10-27-stage1-memory-probes-v1-v8-summary.md)
+- [2026-10-27: Stockfish teaching set aside for Stage 1 (failed experiment)](experiments/2026-10-27-stockfish-teaching-set-aside.md)
+- [2026-10-24: babysit safety features - early stop, pause, planner cap, detached launcher](experiments/2026-10-24-babysit-safety-features.md)
+- [2026-10-24: Stage 1 memory retention fix — retention probe, eta choice and acceptance smoke](experiments/2026-10-24-stage1-memory-retention-fix.md)
+- [2026-10-23: babysit Stage 1 end to end — delegated decisions, synthetic data, real-run defects](experiments/2026-10-23-babysit-stage1-end-to-end.md)
+- [2026-10-23: Stage 1 evaluator retention stub and reverted edit](experiments/2026-10-23-babysit-stage1-retention-stop.md)
+- [2026-10-21: curriculum execution, seed-3 launch and source-to-lesson pilot](experiments/2026-10-21-curriculum-execution.md)
+
 - [2026-10-10: Plasticity evidence review, mistakes and researcher-directed pivot](experiments/2026-10-10-plasticity-evidence-review.md)
 
 ## 2026-10-09: Actual adaptive-loop repair and interpretation corrections
@@ -312,6 +325,9 @@ Follow-up correction, 2026-10-10: changed the untested byte-buffer external-data
 - [2026-10-11: Stockfish-only calibration revision and preserved continuation mistakes](discussions/2026-10-11-stockfish-calibration-revision.md)
 
 - [2026-10-11: Curriculum G0 receiver continuation and inspection mistakes](experiments/2026-10-11-curriculum-g0-receiver.md)
+- [2026-10-19/20: Completed G0 diagnostic replay audit and reversal-history result](experiments/2026-10-19-g0-audit-memory-guard.md)
 
 - [2026-10-20: Registered-run babysitter and recovery-state mismatch](experiments/2026-10-20-registered-run-babysitter.md)
 - [2026-10-20: Visual terminal report and lesson-boundary pause](experiments/2026-10-20-terminal-report-and-pause.md)
+
+- [2026-10-22 babysit campaign controller](experiments/2026-10-22-babysit-campaign-controller.md).

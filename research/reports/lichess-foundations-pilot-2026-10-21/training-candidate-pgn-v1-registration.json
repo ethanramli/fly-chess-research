@@ -1,0 +1,17 @@
+﻿{
+    "schema":  "stage1-training-candidate-pgn-registration-v1",
+    "sourceManifestSha256":  "3ddf8855ddb0d8f20e0a865e47e8567557f960611f64ac5a9b370876bf07daf9",
+    "sourceAuditSha256":  "a46882712f0cb1fa619d722ec9d83a3e5dc578d11518e90c242f076066cf3393",
+    "trainingRowsSha256":  "4aaa70e25513eb69c3925f51189f6baf37fa7746acb73f2912efc9e8d07ada0f",
+    "trainingRows":  44,
+    "sourceAuditScope":  "Independently audited CSV membership, source-game split and legal puzzle line only; full PGN history and consequence certificates remain unverified.",
+    "action":  "Fetch source PGNs for the exact training-only candidate IDs. No validation/final export or neural event.",
+    "bounds":  {
+                   "socketTimeoutSeconds":  60,
+                   "maxResponseBytes":  25165824,
+                   "maxGameBytes":  65536,
+                   "maxRows":  4096,
+                   "maxIds":  300
+               },
+    "publication":  "Fresh output directory, exact game ID/hash checks and preserved raw response."
+}

@@ -1,0 +1,76 @@
+{
+    "schema":  1,
+    "name":  "babysit-coupled-feedback-software-checks-v3",
+    "paused":  false,
+    "paths":  {
+                  "registration":  "research/journal/experiments/2026-10-23-babysit-coupled-feedback.md",
+                  "run":  "runs/babysit-coupled-feedback-checks-v3"
+              },
+    "pins":  {
+                 ".codebase/src/puzzle-learning/curriculum-checkpoint-selection.mjs":  "98653bca61e51d7a2c2075f0c42300eeed3b5f2b8b7f676ae27afd6db87fe15b",
+                 ".codebase/src/puzzle-learning/curriculum-retention-challenge.mjs":  "7be64148d0dfceab7935608628b4e7a61c62c577d09c52c17bf3b97a058530e8",
+                 ".codebase/src/puzzle-learning/curriculum-outcome-shuffle.mjs":  "45688b8f488672496820c32a7c8ade616856f60f1a47dcdcdc59f94665745dc7",
+                 ".codebase/src/puzzle-learning/curriculum-block-audit.mjs":  "cfc69e21f9f478fb838c59f4c800efe449e04e36fb804c89315bb955a98bcdc5",
+                 ".codebase/src/puzzle-learning/lichess-curriculum-stage-audit.mjs":  "21dabd2e64c433f10ef36b5471b4fa4e0b1d274394d2d99a73250bf383da69fb",
+                 ".codebase/src/puzzle-learning/stockfish-value-session.mjs":  "543b1145d57ad969925f501216c27dfca180c6f0657f4fa33789e4a2c2de8717",
+                 ".codebase/src/puzzle-learning/stockfish-value-brain.mjs":  "a5a40279a71b3d0bd66109179e0a1db53293445164e44dae9e95a15da9f0bca8",
+                 ".codebase/scripts/puzzle-learning/lichess-stage1-acceptance-evaluator.mjs":  "6c6540db91d9ee7de23d783842c4a51fe27a57719c4da6761fc017f4e225f088",
+                 ".codebase/scripts/puzzle-learning/lichess-stage1-runtime-factory.mjs":  "24a881c676734ebf204aa13bc0cd02c57cf12b34a631bf1953e603af2d78a750",
+                 ".codebase/scripts/puzzle-learning/lichess-stage2-runtime-factory.mjs":  "1e8fc427d38d9f1996de04676e232812c61d40741222174dbc246059c1c03843",
+                 ".codebase/scripts/puzzle-learning/run-lichess-curriculum-matrix.mjs":  "ce936e8a65877c5f904eb0f2ba9ec367a7b291996c8a56b8de3002245768ca90",
+                 ".codebase/tests/puzzle-learning/curriculum-checkpoint-selection.test.mjs":  "12ed844f567a5f53c036d2dda0a7b40c7fb1e44e4c4c07445f65f134425acff2",
+                 ".codebase/tests/puzzle-learning/curriculum-memory-handoff.test.mjs":  "7a47ee78fed18490182d812160a32b5b373db65b3b312b0074704519ab2a28ba",
+                 ".codebase/tests/puzzle-learning/stockfish-value-session.test.mjs":  "308cb9319866164fecffb9a6fc89d48328a005ceb7a088ff1f54acc011092ccb",
+                 ".codebase/tests/puzzle-learning/stockfish-value-brain.test.mjs":  "7a79e1c8ab8116cd19b4b56316f2651702364c277b59fb8d3761807bd84ff437",
+                 ".codebase/tests/puzzle-learning/lichess-stage1-acceptance-evaluator.test.mjs":  "f00f7c37c54a3489c553d231324f684884511588e67ca37087901a3135dade66",
+                 ".codebase/tests/puzzle-learning/run-lichess-curriculum-matrix-preflight.test.mjs":  "6b43d40e95284cef4ae0a12f1d9529c40d3b5d4630cc225806d9ff5d6bc3d71e",
+                 ".codebase/tests/chess-input/public-lesson-frame-cue.test.mjs":  "44e4ee5a5c21eaf27064bb861791c94802f65fd99e21578f9b2d02327d38e088",
+                 ".codebase/src/puzzle-learning/curriculum-retention-observations.mjs":  "0072e1a6f0a0905a0dcb6fb1c489bd84735a52ec95b51f73de67e1ff0c36eb9c",
+                 ".codebase/src/puzzle-learning/curriculum-retention-promotion.mjs":  "b712b0e07ce632b86002567eb87f99ca1e41aef17b6d03d72a4c4df23aa338f5",
+                 ".codebase/src/puzzle-learning/curriculum-memory-handoff.mjs":  "f4d6d8cbe667b366cba7ef4a07e9263a8acbd24bc337269d033e5d37f9059923",
+                 ".codebase/src/puzzle-learning/lichess-curriculum-matrix.mjs":  "fbb12b27d68a678ca96c9f08579c039866db9d6c3a3e2ad2f8f90b2a7292a9da",
+                 ".codebase/tests/puzzle-learning/curriculum-retention-observations.test.mjs":  "9fc91b083fbc61ef40d39348d982702b987ec1285db1bc5df4ade66a4829bb9d",
+                 ".codebase/tests/puzzle-learning/curriculum-retention-promotion.test.mjs":  "ead40073ca30b4c5903209287a8798ef4faea3fc6e039dd8fd6861157933306a",
+                 ".codebase/tests/puzzle-learning/curriculum-block-session.test.mjs":  "e3e686c94399e7264ee76ed46896ca0433925ee9be8fc60b971237485db7dba9",
+                 ".codebase/src/puzzle-learning/coupled-stockfish-brain.mjs":  "1589c12a834a9b74fab7f87996a9f46a9eab74b5d70c363874d89b311ef68fc9",
+                 ".codebase/src/puzzle-learning/coupled-stockfish-session.mjs":  "d15f2e85ffd5e9ff70de508f969b66446534aab292db9d5040256240ed558d78",
+                 ".codebase/src/puzzle-learning/lichess-stockfish-review.mjs":  "a0bafb0e721b4b5539136b8351b60597a84ddb37c8d02bfc0903a9f647585ef1",
+                 ".codebase/src/puzzle-learning/lichess-stage1-brain-factory.mjs":  "89757c9e780a698c4cca6f1d843ac49971d89770e5dcca4dbf219e923dc4505f",
+                 ".codebase/src/puzzle-learning/lichess-stage2-brain-factory.mjs":  "ad7c377432516baace0c30762dde47f28e3ca16ee6cb41b0b315a3466e9fb7bb",
+                 ".codebase/tests/puzzle-learning/coupled-stockfish-feedback.test.mjs":  "15b2e0a633d23f3486d89698b73a3f4810b8bb3013fc4572aedc35f20b4554bd"
+             },
+    "state_file":  "runs/python-actions/current-babysit-coupled-feedback-checks-v3.json",
+    "resourceLimits":  {
+                           "freeMiB":  256,
+                           "rssMiB":  2048
+                       },
+    "jobs":  {
+                 "tests":  {
+                               "role":  "check",
+                               "argv":  [
+                                            "node",
+                                            "--max-old-space-size=256",
+                                            "--test",
+                                            "--experimental-test-isolation=none",
+                                            "--test-concurrency=1",
+                                            ".codebase/tests/puzzle-learning/curriculum-checkpoint-selection.test.mjs",
+                                            ".codebase/tests/puzzle-learning/curriculum-memory-handoff.test.mjs",
+                                            ".codebase/tests/puzzle-learning/stockfish-value-session.test.mjs",
+                                            ".codebase/tests/puzzle-learning/stockfish-value-brain.test.mjs",
+                                            ".codebase/tests/puzzle-learning/lichess-stage1-acceptance-evaluator.test.mjs",
+                                            ".codebase/tests/puzzle-learning/run-lichess-curriculum-matrix-preflight.test.mjs",
+                                            ".codebase/tests/chess-input/public-lesson-frame-cue.test.mjs",
+                                            ".codebase/tests/puzzle-learning/curriculum-retention-observations.test.mjs",
+                                            ".codebase/tests/puzzle-learning/curriculum-retention-promotion.test.mjs",
+                                            ".codebase/tests/puzzle-learning/curriculum-block-session.test.mjs",
+                                            ".codebase/tests/puzzle-learning/coupled-stockfish-feedback.test.mjs"
+                                        ]
+                           }
+             },
+    "artifacts":  {
+
+                  },
+    "report_fields":  [
+
+                      ]
+}

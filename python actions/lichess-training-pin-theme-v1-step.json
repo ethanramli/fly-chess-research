@@ -1,0 +1,105 @@
+﻿{
+    "schema":  1,
+    "name":  "lichess-stage1-training-pin-theme-v1",
+    "paused":  false,
+    "paths":  {
+                  "input":  ".cache/lichess-puzzles-2026-10-21.csv",
+                  "compressed":  ".cache/lichess-puzzles-2026-10-21.csv.zst",
+                  "extraction":  "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json",
+                  "registration":  "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-v1-registration.json",
+                  "out":  "research/data/lichess-stage1-training-pin-theme-v1",
+                  "audit":  "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-source-audit-v1.json",
+                  "curator":  ".codebase/scripts/data/curate-lichess-puzzles.mjs",
+                  "auditor":  ".codebase/scripts/data/audit-lichess-source-candidates.mjs",
+                  "filter":  ".codebase/src/puzzle-learning/mixed-capture-filter.mjs",
+                  "pacer":  ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs",
+                  "run":  "runs/python-actions/lichess-training-pin-theme-v1"
+              },
+    "pins":  {
+                 ".cache/lichess-puzzles-2026-10-21.csv":  "ec2dd1a8f9cbd139ebb4aee228f72e77f8e2a581a24d25f61f71e6cf306b10f8",
+                 ".cache/lichess-puzzles-2026-10-21.csv.zst":  "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+                 "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json":  "deac9b4792742a84fde9f3273caabcf5f505d957fb142881a8345aae356b4510",
+                 ".codebase/scripts/data/curate-lichess-puzzles.mjs":  "cc090296dff6ba3287b3d26cc14021fcca7aae66c6cb3edafaa2ccdc323a6dd4",
+                 ".codebase/scripts/data/audit-lichess-source-candidates.mjs":  "b68b66bfb1f4f1688617a61fc27b213f7cbb425ed2e5776af6c493efe5296ccb",
+                 ".codebase/src/puzzle-learning/mixed-capture-filter.mjs":  "4a950efee6a1ecb043e780cc257d5cfa41543f1ca075a159d52f66e5ad64d9c9",
+                 ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs":  "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+                 "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-v1-registration.json":  "720045cdc2e0de5e2e9122da4d8c197e14c5ee8d6658fe7a8db1c8e575d1a5b1"
+             },
+    "state_file":  "runs/python-actions/lichess-training-pin-theme-v1.json",
+    "jobs":  {
+                 "prepare":  {
+                                 "role":  "check",
+                                 "argv":  [
+                                              "node",
+                                              "--max-old-space-size=256",
+                                              "{curator}",
+                                              "--input",
+                                              "{input}",
+                                              "--extraction-receipt",
+                                              "{extraction}",
+                                              "--out",
+                                              "{out}",
+                                              "--limit-per-split",
+                                              "1024",
+                                              "--max-pieces",
+                                              "6",
+                                              "--seed",
+                                              "20261023",
+                                              "--only-split",
+                                              "train",
+                                              "--require-matched-captures",
+                                              "--themes",
+                                              "pin",
+                                              "--max-seconds",
+                                              "7200",
+                                              "--cpu-duty",
+                                              "0.5"
+                                          ],
+                                 "requires":  [
+                                                  "{input}",
+                                                  "{compressed}",
+                                                  "{extraction}",
+                                                  "{registration}"
+                                              ],
+                                 "fresh_output":  "{out}"
+                             },
+                 "audit":  {
+                               "role":  "check",
+                               "argv":  [
+                                            "node",
+                                            "--max-old-space-size=256",
+                                            "{auditor}",
+                                            "--corpus",
+                                            "{out}",
+                                            "--out",
+                                            "{audit}",
+                                            "--cpu-duty",
+                                            "0.5"
+                                        ],
+                               "requires":  [
+                                                "{out}/manifest.json",
+                                                "{input}",
+                                                "{compressed}",
+                                                "{extraction}"
+                                            ],
+                               "refuse_existing":  [
+                                                       "{audit}"
+                                                   ]
+                           }
+             },
+    "artifacts":  {
+                      "manifest":  "{out}/manifest.json",
+                      "audit":  "{audit}"
+                  },
+    "report_fields":  [
+                          "schema",
+                          "sourceChecksPassed",
+                          "counts",
+                          "selected",
+                          "onlySplit",
+                          "requireMatchedCaptures",
+                          "finalSplitInspected",
+                          "eligibleForNeuralTeaching",
+                          "resources"
+                      ]
+}

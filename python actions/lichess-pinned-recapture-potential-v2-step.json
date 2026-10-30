@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "name": "lichess-pinned-recapture-potential-v2",
+  "paused": false,
+  "state_file": "runs/python-actions/lichess-pinned-recapture-potential-v2-state.json",
+  "paths": {
+    "run": "runs/python-actions/lichess-pinned-recapture-potential-v2-20261023",
+    "input": "research/reports/babysit-stage1-direct-counterfactual-feasibility-2026-10-23.json",
+    "report": "research/reports/babysit-stage1-pinned-recapture-potential-v2-2026-10-23.json",
+    "script": ".codebase/scripts/data/probe-lichess-pinned-recapture-potential-v2.mjs"
+  },
+  "pins": {
+    ".codebase/scripts/data/probe-lichess-pinned-recapture-potential-v2.mjs": "be2b993a465b3782f8b327a5e903a89a29fec95190e486c339240631119ca0ec",
+    ".codebase/src/puzzle-learning/capture-retention-stratum.mjs": "bf4085df082ecfafe2d393d3fa5095082fc35e7144bd5f7bbe05ecf0708ab986",
+    "research/reports/babysit-stage1-direct-counterfactual-feasibility-2026-10-23.json": "107c56b0ad70aeefc2e271aa09a31b6270304a4abd4eaf631a982b88589e2a9e",
+    "package-lock.json": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9"
+  },
+  "jobs": {
+    "probe": {
+      "role": "check",
+      "argv": ["node", "--max-old-space-size=256", "{script}", "{input}", "{report}"],
+      "requires": ["{script}", "{input}"],
+      "fresh_output": "{report}"
+    }
+  },
+  "artifacts": {"report": "{report}"},
+  "report_fields": ["status", "counts", "resources", "graphLaunchAuthorized"]
+}

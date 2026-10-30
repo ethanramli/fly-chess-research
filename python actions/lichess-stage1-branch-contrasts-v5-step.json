@@ -1,0 +1,58 @@
+{
+    "schema":  1,
+    "name":  "lichess-stage1-branch-contrasts-v5",
+    "paused":  false,
+    "paths":  {
+                  "run":  "research/data/lichess-stage1-branch-contrasts-v5"
+              },
+    "pins":  {
+                 ".codebase\\src\\search-and-feedback\\capture-retention-action-domain.mjs":  "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+                 ".codebase\\src\\search-and-feedback\\capture-retention-certificate.mjs":  "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+                 ".codebase\\src\\search-and-feedback\\capture-retention-certificate-check.mjs":  "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+                 ".codebase\\src\\puzzle-learning\\plasticity-mechanism-assay.mjs":  "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+                 "research\\data\\lichess-stage1-prepared-batches-v7\\manifest.json":  "e31bcf389a8780668be231d3278221138048b267437cbfddd21f2c596a2a4434",
+                 "research\\reports\\lichess-foundations-pilot-2026-10-21\\lesson-batches-audit-v7.json":  "0a8b655bff466c4a137693a353651bf3c19b9fe11ca057f904f5483f54aefe85",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-000\\manifest.json":  "11de2333f73b1fff3c67fa67c5a18bc8c490f547d393877126610805fa4e0f0e",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-000\\lessons.jsonl":  "13ce8eb30d843a2ac72ad14e9a708149d3d2c5d1c95b9b55cfede6c9f5fe6a8b",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-001\\manifest.json":  "dd91fa5c1ac6acdbab86cc05cbcad2ef4322183500add083f0c79fd7ca8d37b5",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-001\\lessons.jsonl":  "56d7de3dfd390c30341d6d6095f07638af1e0795b712a7afc0d98ba34e856633",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-002\\manifest.json":  "3fa5c6ec314e3070cc1a2eea593550ecf9744d470a06272c5200808040629fcb",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-002\\lessons.jsonl":  "6769f4b355bcc44bf42c879052d2100e374fa47c1eb2db75d781185b04e8c8c2",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-003\\manifest.json":  "55597eb56dfce941032287b3695562e490c9150917ebc5c980756d5f616137bf",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-003\\lessons.jsonl":  "c9b1d8abde0817e0f895bbcc0528f677a30c782a7222a7e9620b166ec1d2ed06",
+                 ".codebase\\scripts\\data\\prepare-lichess-branch-contrasts-v5.mjs":  "171e4a438bc46f8730aa5abcfaab0a54d226163327c572ee4b7e55f4abe52099",
+                 ".codebase\\src\\puzzle-learning\\lichess-branch-contrast-v3.mjs":  "8310646590a6610d593253b307f4a8c810f66b2971200707404aee46aaa2a594",
+                 ".codebase\\tests\\puzzle-learning\\lichess-branch-contrast-v3.test.mjs":  "2e965ddaf21cb62e35f8897b538b0be25d13fe9a0f207be67aeab845d41b5b5c",
+                 ".codebase\\src\\puzzle-learning\\lichess-branch-contrast-check-v2.mjs":  "f9173598b3c2a9274b3bc673f7811dca964951e7d78f7f7d256d7966876827c8"
+             },
+    "state_file":  "runs/python-actions/current-lichess-stage1-branch-contrasts-v5.json",
+    "jobs":  {
+                 "prepare":  {
+                                 "role":  "check",
+                                 "argv":  [
+                                              "node",
+                                              "--max-old-space-size=256",
+                                              ".codebase/scripts/data/prepare-lichess-branch-contrasts-v4.mjs",
+                                              "--package",
+                                              "research\\data\\lichess-stage1-prepared-batches-v7\\manifest.json",
+                                              "--audit",
+                                              "research\\reports\\lichess-foundations-pilot-2026-10-21\\lesson-batches-audit-v7.json",
+                                              "--out",
+                                              "{run}",
+                                              "--all-quiet-common",
+                                              "--all-quiet-response"
+                                          ],
+                                 "fresh_output":  "{run}"
+                             }
+             },
+    "artifacts":  {
+                      "manifest":  "{run}/manifest.json"
+                  },
+    "report_fields":  [
+                          "counts",
+                          "stoppingBound",
+                          "resources",
+                          "independentFamilyAuditPassed",
+                          "graphLaunchAuthorized"
+                      ]
+}

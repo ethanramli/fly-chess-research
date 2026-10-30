@@ -1,0 +1,47 @@
+{
+  "schema": "lichess-branch-contrast-preparation-v1",
+  "inputs": {
+    "packageSha256": "e31bcf389a8780668be231d3278221138048b267437cbfddd21f2c596a2a4434",
+    "auditSha256": "0a8b655bff466c4a137693a353651bf3c19b9fe11ca057f904f5483f54aefe85",
+    "trainingChunks": {
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-000\\lessons.jsonl": "13ce8eb30d843a2ac72ad14e9a708149d3d2c5d1c95b9b55cfede6c9f5fe6a8b",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-001\\lessons.jsonl": "56d7de3dfd390c30341d6d6095f07638af1e0795b712a7afc0d98ba34e856633"
+    }
+  },
+  "bounds": {
+    "maxTrainingRows": 128,
+    "maxBranches": 512,
+    "maxFamilies": 16,
+    "maxSeconds": 300,
+    "maxRssMiB": 2048,
+    "minFreeMiB": 256,
+    "cpuDuty": 0.5,
+    "heapMiB": 256,
+    "maxFamilyBytes": 2097152,
+    "maxOutputBytes": 33554432
+  },
+  "counts": {
+    "trainingRows": 39,
+    "branches": 512,
+    "families": 0,
+    "unknownBranches": 0,
+    "oversizedFamilies": 0
+  },
+  "stoppingBound": "branch-bound",
+  "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputBytes": 0,
+  "resources": {
+    "elapsedSeconds": 24.772621299999997,
+    "cpu": {
+      "user": 12188000,
+      "system": 235000
+    },
+    "peakRssMiB": 79.3046875
+  },
+  "neuralEventsDelivered": 0,
+  "graphLaunchAuthorized": false,
+  "independentFamilyAuditPassed": false,
+  "validationLessonContentInspected": false,
+  "finalSplitInspected": false,
+  "scope": "Bounded training-only construction feasibility; requires independent legal derivation/consequence/family audit and receiver gates. Zero yield is not impossibility."
+}

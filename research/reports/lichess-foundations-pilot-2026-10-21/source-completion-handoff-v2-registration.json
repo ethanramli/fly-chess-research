@@ -1,0 +1,21 @@
+{
+  "schema": "source-completion-handoff-registration-v2",
+  "previousFailure": "runs/python-actions/20261022T054457-d7e06e9b",
+  "correction": "Native attach receipts use command string instead of argv; parse with existing native helper and normalize as attach does. No source/audit/experiment changes.",
+  "checks": "5/5 real-shape mocked mechanics in runs/python-actions/20261022T054603-c7c2f6e8",
+  "scope": "Observe existing owned source process; run only its registered independent source audit on matched clean completion/manifest. No source restart, PGN fetch, graph, training or stage promotion.",
+  "bounds": {
+    "waitSeconds": 7200,
+    "intervalSeconds": 30,
+    "missingCompletionGraceSeconds": 30
+  },
+  "pins": {
+    "python actions\\lichess-matched-capture-train-v1-step.json": "ce37a5524bcacc2e638e5324c43e8eda4924a8bd64dd680c43cc9da2c4509e2f",
+    "python actions\\lichess-matched-capture-source-observer.json": "a23f3535306657f13b571948c9ceb444ce7138a6b7af03ea8389fa0c32ef6651",
+    "runs\\python-actions\\20261022T052256-8324fdd0\\handle.json": "df63d79b63078cf4e6948b27f37ef1e681b9d92e60ef7757e56560c8b9774e9d",
+    "python actions\\finish_lichess_source.py": "c44b9ec7df368cb06655cd92c45bb052753e2a0c9486727674ed750fd682f067",
+    "python actions\\curriculum.py": "55f550cdedd4dddfe9ad51ddc695c835865c21fab7019e2bc5d0861fb374ec1b",
+    "python actions\\lichess-source-completion-checks.json": "0112306e82fc3657117b8907573f1f82aa39ba58d30935314b4c3119437b4e77",
+    "python actions/lichess-source-completion-v2-checks.json": "ce827f549ce361062726d079051047c513a36137de7d890471f3e777b58554b2"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "name": "stage1-retention-probe-v4-tag-cue",
+  "paused": false,
+  "paths": {
+    "protocol": "research/data/lichess-stage1-synthetic-v1/stage1-retention-probe-v4-tag-cue-protocol.json",
+    "runner": ".codebase/scripts/puzzle-learning/stage1-retention-probe-v2.mjs",
+    "run": "runs/stage1-retention-probe-v4-tag-cue",
+    "checkpoint": "runs/stage1-retention-probe-v4-tag-cue/result.json"
+  },
+  "pins": {
+    "{protocol}": "63eda7bec247dfcf1f5083d4f1cb1e8d29d015c6f51d063310ec08ead7b005c8",
+    "{runner}": "a6840932e46415c157f4fba9d8878829983893970adac0e768685fe45f982d2b",
+    ".codebase/scripts/puzzle-learning/stage1-retention-probe.mjs": "ca3cc6de76fea79d8e2d14c648bea830e5b037bf985f864757cfbfdbc2122d4b",
+    "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r9-registration.json": "d7bb28c4fcb4314f9fb30eab19f402ee143815abc2fbe0a466f1ee5012113655",
+    ".codebase/scripts/puzzle-learning/lichess-stage1-runtime-factory-v3.mjs": "112f726b4b1df32716b393ed126337bdff0dd6ba8c3fd192b008c6a29100f60f",
+    ".codebase/src/puzzle-learning/lichess-stage1-brain-factory-v3.mjs": "387beff2b05267457c4e3cb6f052f571a65e7693869853b0f9750487f0068207",
+    ".codebase/src/puzzle-learning/coupled-stockfish-brain-v3.mjs": "d831d2b41d3befa8713389332ca9bb140494549bc4f0e868b0803d474bf1c812",
+    ".codebase/src/puzzle-learning/coupled-stockfish-brain.mjs": "c487b99184ed713f8f7ed338e34dfecb97810efebe117988c9c70dd1c7ecb2fd",
+    ".codebase/src/puzzle-learning/coupled-stockfish-session.mjs": "bb7d693f5f97aed6006d77dafb98a3ccb937ab7f716f7a8528085638f2946b47",
+    ".codebase/src/puzzle-learning/lichess-curriculum-panel.mjs": "1321cfb4425aa6758162269d34d5ab65cc972401fa5209c50c43ee3d40d9f17a",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    ".codebase/src/chess-input/public-action-relative-cue-v3.mjs": "d30f1e84a4afdc72192137f7325fd55415afc9edde0d5049e4dbfa335b9fcea1"
+  },
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256
+  },
+  "state_file": "runs/python-actions/stage1-retention-probe-v4-tag-cue-state.json",
+  "jobs": {
+    "probe": {
+      "role": "train",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--protocol",
+        "{protocol}",
+        "--out",
+        "{run}",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{protocol}",
+        "{runner}"
+      ],
+      "fresh_output": "{run}"
+    }
+  },
+  "artifacts": {
+    "result": "{run}/result.json"
+  },
+  "report_fields": [
+    "status",
+    "condition",
+    "chosenEta",
+    "perEtaPasses",
+    "aBoards",
+    "scratchCorrect",
+    "decisionRule",
+    "peakRssMiB",
+    "elapsedSeconds",
+    "cpuSeconds",
+    "scope"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "schema": "lichess-training-pinned-capture-coverage-v1",
+  "status": "diagnostic-complete",
+  "inputs": {
+    "audit": {
+      "path": "research/reports/lichess-foundations-pilot-2026-10-21/lesson-batches-audit-v7.json",
+      "sha256": "0a8b655bff466c4a137693a353651bf3c19b9fe11ca057f904f5483f54aefe85"
+    },
+    "manifest": {
+      "path": "research/data/lichess-stage1-prepared-batches-v7/manifest.json",
+      "sha256": "e31bcf389a8780668be231d3278221138048b267437cbfddd21f2c596a2a4434"
+    },
+    "trainChunks": [
+      {
+        "path": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-000/lessons.jsonl",
+        "sha256": "13ce8eb30d843a2ac72ad14e9a708149d3d2c5d1c95b9b55cfede6c9f5fe6a8b"
+      },
+      {
+        "path": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001/lessons.jsonl",
+        "sha256": "56d7de3dfd390c30341d6d6095f07638af1e0795b712a7afc0d98ba34e856633"
+      },
+      {
+        "path": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002/lessons.jsonl",
+        "sha256": "6769f4b355bcc44bf42c879052d2100e374fa47c1eb2db75d781185b04e8c8c2"
+      },
+      {
+        "path": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-003/lessons.jsonl",
+        "sha256": "c9b1d8abde0817e0f895bbcc0528f677a30c782a7222a7e9620b166ec1d2ed06"
+      }
+    ]
+  },
+  "totals": {
+    "sourceRows": 128,
+    "eligibleRows": 20,
+    "captureActions": 21,
+    "byStratum": {
+      "absent-defender": 19
+    },
+    "unknownReasons": {
+      "capture-gives-check": 2
+    }
+  },
+  "distinctPuzzleRootsByStratum": {
+    "absent-defender": 18
+  },
+  "distinctSourceGamesByStratum": {
+    "absent-defender": 18
+  },
+  "puzzleIdsByStratum": {
+    "absent-defender": [
+      "1YPFs",
+      "1oawa",
+      "2RqNr",
+      "5STCq",
+      "5UjOH",
+      "86rRi",
+      "8EYF4",
+      "9kcZK",
+      "9va72",
+      "B324n",
+      "NEdAo",
+      "Yoq87",
+      "aGYNk",
+      "dsblY",
+      "qBbZP",
+      "qypY8",
+      "ttwC3",
+      "v2pMo"
+    ]
+  },
+  "neuralEventsDelivered": 0,
+  "graphLaunchAuthorized": false,
+  "validationInspected": false,
+  "finalInspected": false,
+  "scope": "Read-only classification of captures in four existing audited training chunks. It does not inspect validation/final lesson rows, prove family disjointness, authorize neural teaching, or establish learning/reasoning."
+}

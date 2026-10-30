@@ -1,0 +1,48 @@
+{
+  "schema": "lichess-stage1-retention-probe-protocol-spaced-v1",
+  "question": "With the alpha1 reward and alpha3 aversive long-term stores (revision 11), does spaced re-teaching of a Stage 1 training board keep it correct after 10 further training boards are taught, and at which eta?",
+  "task": "Predeclared test of the alpha3 pivot (journal 2026-10-26, before any r11 result); fix-goal task 1 decision rule otherwise unchanged",
+  "baseRegistration": {
+    "path": "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r11-registration.json",
+    "sha256": "62e5bfbfdfd8b9ffee77c2c2018044014513a1a2a718c73260aa9572a6768155"
+  },
+  "override": "Only learner.memory.eta changes (in memory, per probe; it sets the restrained, alpha1 and alpha3 rates); everything else is the revision-11 registration.",
+  "replica": "r1",
+  "etas": [
+    0.5,
+    0.2,
+    0.1,
+    0.05,
+    0.02
+  ],
+  "data": "Training panels of the base registration only. Validation and final rows are never loaded.",
+  "aBoardRule": "As probe v6: one A board per stratum, the first training panel by panelId whose unaided scratch choice is not the certified success (flagged fallback if a stratum is all correct). The MBON14 readout term can change scratch choices, so the A boards are re-derived and may differ from v6.",
+  "lesson": "As probe v6 (informative: verified task pulse plus Stockfish value pulse); PAM-alpha1 co-stimulated only with verified task-success pulses and PPL1-alpha3 only with verified task-failure pulses.",
+  "gaps": [
+    5,
+    5,
+    10
+  ],
+  "sequence": "From scratch memory: lesson on A, 5 other boards, lesson on A, 5 other boards, lesson on A, 10 other boards; every other board is distinct and taught once; A is assessed after every lesson.",
+  "interferingLessons": 20,
+  "interferenceSeed": "stage1-retention-probe-v1",
+  "interferenceRule": "The 23 other training panels ordered by sha256(seed:A:panelId); the first 20, in that order. The first 10 are probe v5's interfering boards in v5's order. The same boards and order are used for every eta.",
+  "decision": {
+    "requiredRetained": 3,
+    "rule": "Choose the largest eta whose A board is the unique top choice after the final 10 interfering lessons in at least 3 of 4 probes. A pass is reported as spaced-training retention, not one-shot retention. If none passes, the memory path stops and is reported to the researcher, with no further mechanism."
+  },
+  "measures": [
+    "A certified-move rank and correctness after every lesson",
+    "A correctness right after each of its own lessons and at the end of each gap",
+    "each interfering board's rank before and after its lesson",
+    "pulse channels, currents, restrained and alpha1 factors and changed-edge counts"
+  ],
+  "scope": "Diagnostic spaced-repetition probe on training boards with one replica; not a gate result, not a learning claim and not biological validation. Lesson counts are not biological spacing intervals.",
+  "cpuDuty": 0.5,
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256
+  },
+  "condition": "informative",
+  "comparison": "Matched to probe v6 (same replica, A-board rule, gaps, interference rule and order, etas and lesson procedure; cue v4 unchanged). Differs only in the learner: revision 11 adds the alpha3 store and the +MBON14 readout term."
+}

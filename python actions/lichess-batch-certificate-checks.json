@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "name": "lichess-batch-certificate-checks",
+  "paused": false,
+  "paths": {
+    "run": "research/reports/lichess-foundations-pilot-2026-10-21"
+  },
+  "pins": {
+    ".codebase/scripts/data/prepare-lichess-lessons.mjs": "b8da4d5735a4b3f60ca3aab2d4d3d231d4b64b49f5f4569aaf5147f64a300927",
+    ".codebase/scripts/data/audit-lichess-api-lessons.mjs": "f3ef15f9b50ec2653dc4bba8a55496833a3596ea1770ead752cc5e3a7aa49def",
+    ".codebase/scripts/data/curate-lichess-puzzles.mjs": "a2724bdc8f1292cffb36563f445eeab3a6b89f62ed82ee2b8fa997c473497cf7",
+    ".codebase/scripts/data/audit-lichess-source-candidates.mjs": "473b23aff4cd544bdfde68fd3d703a008229f0db7bea89d486a7be6415088ebf",
+    ".codebase/src/puzzle-learning/lichess-history.mjs": "26d69604d59847109b7e9408c0ab03a0afdb2ae60fd502ad2431477443d5a630",
+    ".codebase/src/puzzle-learning/lichess-capture-lesson.mjs": "359c85af6ae0326378833d27e10aac9b64fa260e22dc3a1e48e2b2f13baeb0bf",
+    ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+    ".codebase/tests/puzzle-learning/lichess-lessons.test.mjs": "32112d1fb53564020639c158143ebb2a0e1ff23ed1863782a0bbecf2b78f5a66",
+    ".codebase/tests/puzzle-learning/curriculum-rehearsal-plan.test.mjs": "a0b2a4a3c23ca286b7fdceed58f2d11214e74419aa3338a31925a239703d617f",
+    ".codebase/tests/search-and-feedback/capture-retention-certificate.test.mjs": "0d10b40cf7894087729bee0f60f1accdcc7ecf3ecb88c4ab7c90d2bb42f06413",
+    "python actions/prepare_lichess_lesson_batches.py": "cffddc240c4566ad48109f5ec31bcdd8910a066a2930350142d940f4d92cfa0c",
+    "python actions/verify_lichess_lesson_batches.py": "3779c6a327dcd6b5fb9693d25d8648b24a09b801a36cf89c6e72a165fa069900",
+    "python actions/curriculum.py": "55f550cdedd4dddfe9ad51ddc695c835865c21fab7019e2bc5d0861fb374ec1b",
+    ".codebase/tests/search-and-feedback/capture-retention-action-batch.test.mjs": "5c66ebb1680a0f7602f49fdf44b5894b4204227dd080a33dd6b675e5181bebd9"
+  },
+  "state_file": "runs/python-actions/current-lichess-batch-certificate-checks.json",
+  "jobs": {
+    "tests": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        ".codebase/tests/puzzle-learning/lichess-lessons.test.mjs",
+        ".codebase/tests/puzzle-learning/curriculum-rehearsal-plan.test.mjs",
+        ".codebase/tests/search-and-feedback/capture-retention-certificate.test.mjs",
+        ".codebase/tests/search-and-feedback/capture-retention-action-batch.test.mjs"
+      ]
+    },
+    "recovery": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "python actions/verify_lichess_lesson_batches.py"
+      ]
+    }
+  },
+  "artifacts": {}
+}

@@ -1,0 +1,198 @@
+{
+  "schema": 1,
+  "name": "lichess-matched-capture-lessons-v1",
+  "paused": false,
+  "paths": {
+    "run": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-matched-capture-prepared-v1",
+    "configuration": "python actions\\lichess-matched-capture-lessons-v1-step.json",
+    "sourceManifest": "research\\data\\lichess-matched-capture-train-v1\\manifest.json",
+    "sourceAudit": "research\\reports\\lichess-foundations-pilot-2026-10-21\\matched-capture-train-source-audit-v1.json",
+    "rows": "research\\data\\lichess-matched-capture-train-v1\\train.jsonl",
+    "games": "research\\data\\lichess-matched-capture-source-pgn-v1\\train"
+  },
+  "pins": {
+    ".codebase/scripts/data/prepare-lichess-lessons.mjs": "b8da4d5735a4b3f60ca3aab2d4d3d231d4b64b49f5f4569aaf5147f64a300927",
+    ".codebase/scripts/data/audit-lichess-csv-lessons.mjs": "23fe7e06cd6a1545201e89d54a0312efb239016920c18da5b29a48488527cf26",
+    ".codebase/src/puzzle-learning/lichess-history.mjs": "26d69604d59847109b7e9408c0ab03a0afdb2ae60fd502ad2431477443d5a630",
+    ".codebase/src/puzzle-learning/lichess-capture-lesson.mjs": "359c85af6ae0326378833d27e10aac9b64fa260e22dc3a1e48e2b2f13baeb0bf",
+    ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+    ".codebase/src/search-and-feedback/capture-retention-certificate.mjs": "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+    ".codebase/src/search-and-feedback/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+    ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    "package-lock.json": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+    "python actions/prepare_lichess_lesson_batches.py": "cffddc240c4566ad48109f5ec31bcdd8910a066a2930350142d940f4d92cfa0c",
+    "python actions/curriculum.py": "55f550cdedd4dddfe9ad51ddc695c835865c21fab7019e2bc5d0861fb374ec1b",
+    "python actions/lichess-training-contrast-csv-audit-checks.json": "c588800502070795e4dac461162db28c535acd33b422d8bb1795bbf1f9d91047",
+    "research\\data\\lichess-matched-capture-train-v1\\manifest.json": "a639d50c8d58bbfba7746c7cb63af5fe86187e149e62c12abc988df56aea25d7",
+    "research\\data\\lichess-matched-capture-train-v1\\train.jsonl": "4aaa70e25513eb69c3925f51189f6baf37fa7746acb73f2912efc9e8d07ada0f",
+    "research\\data\\lichess-matched-capture-train-v1\\validation.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research\\reports\\lichess-foundations-pilot-2026-10-21\\matched-capture-train-source-audit-v1.json": "17fb76171a03c73593c01ef49a38cafc8c237e5e17b27e8ffb2b51662c0f9d81",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\manifest.json": "1bff4d0538a8cb8061558851364d94a02e8127df44c86fc107461b6abc26419c",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\response.pgn": "77ccacdc5472324a3e966f898851fa7980f5fda9af587a4d362735c70482864c",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\0S9ZzdPJ.pgn": "59008252e2f5f895b9fbc6ef4fe72d4932729d8820c569762a349d7b3dfa4ef0",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\1FCX9GXJ.pgn": "f810aeea029a9463c3f6e367209d5abcfeb1ba203a87339c5a776891b76c5480",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\4gyUfOPw.pgn": "e7584237f8e44d74b22f6ec4941b89d8283ad964ffad77c0b36e1f00eea5aafa",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\5e7rXYOu.pgn": "aee35828a75442fd41f36f00328a5d67193a63c9af2eeb3bc05e6c15a29ed0e2",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\5lb7Flef.pgn": "87a4c9af3490355510090e9df0f1b68792e30717aa09830518606592bdd98464",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\6sOiL9G9.pgn": "1676cf62eadb6575ef0e3b541e48cdddf58a19c21d02c86f3dd9961552bfb78d",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\7QQv358t.pgn": "4493ff37872960272079620fd750c537942500a9b4400010a428c998be951f83",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\Ci3Bg4m2.pgn": "0bb99043ca7c6a5125515e773ef759ddabf7812369adc5e7144cd2b03fc5fc28",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\CqyYPkXH.pgn": "c76dc00c0375fef1f2666afd871ba1d3dafb73e433f110acba636a89ee1d9ba0",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\G6dUdnOR.pgn": "6203c5fa9e77acb4406dcc61dc7c1ec17c7c170dd1d215d426836da53835fd07",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\HBRcxel6.pgn": "234bd7e7125c0e6918dd1bdc8fe7de42464cc0f8781d55965a4d05d0807cfc63",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\IrmK2cU3.pgn": "33ca469f727356bd8bb573675d3a5ffa785b102494ab57d69cdfc0e5a53673d8",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\KdaoVwmW.pgn": "86b6ffc397fc851bc852112ba410d3cdeb29725b532106d5e85252f2431cb88d",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\KfisCEr4.pgn": "314ab72a145fbb3299352efac45bf22feeef6390293d31c1fcc56c47204d7f89",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\NpyzV6I2.pgn": "41dad999f70107a32ee355362370eefb417f5d0636277ae89bb877139e37f648",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\QNXTmdw9.pgn": "f11738256b8459686bf0cd1d1843090f8da1acbdbd9f2c01ddaf8987ae566b16",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\R9nwIC7F.pgn": "caf3136e332d8460862c773041e3cfd69b03b59296d22622aa75470123a1cbd1",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\T2G49oHj.pgn": "f200232d4f8e2c2241c5d0bb17a38c47923dd7262e090316485b17f23fb19ff2",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\TGhbf1W0.pgn": "a46feba87572fac366fcb5dbb899cb6dc70433f7db6fb14cb6613e2b6d44dfba",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\WhB48gYk.pgn": "f612dd470994cd8c0432aa10f23bd34ff59f914aa20f1170fff024f4088ede33",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\Y7Uuzhzq.pgn": "753ee0bb66b995fb4b363f079c2d00a1d03918d4d678854d2614ed14ea8fb0b5",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\ZNPa2akn.pgn": "500989e66eff1706353710201e2824eb4ccef1669c7f5a2654fb380ad5fcfe5d",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\aSmGYwqD.pgn": "bdb480c76c9cc6e5ebc1200a160f4181bdbd56ef3d0cf61e6f809fefdabdcb55",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\edQxmeOY.pgn": "d866f8a58bdabf56fa432c29980da599bd11824eeadefef48e179bf83b29e897",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\g4auUbDg.pgn": "67e2c8369545ae1556cc0042105b1b6623daddc616a3d5d2dc2bd2ddd2d1141a",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\hzYO25u1.pgn": "1b6b8e034230f60b6823be286be8dea538fef22dd10da3698ff5824b5c82e739",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\ijuAGvBJ.pgn": "60198e400a6ab647f30d263a9952ff28eec0278acc437d03e5bff11a7b6a54d7",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\jU8PHMgg.pgn": "a170884942a8b588055ae7e724bb7c62df1d6773d73d8503e74bf03c0994b8ed",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\kIJCKQE0.pgn": "8fe5544f30e5e0e14a668bc8f6907f7a923c684e2ab9a20e22eefe6699fb7d7a",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\m4vvUfxx.pgn": "fdd6059d97eed26f8793e205bc08b3b4759850b8c2d89d6b9c1157ab11cc7d7a",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\mXS2kmlx.pgn": "488716dfc55bc3a814b1616f2319fbbb95c5b4fd1ab7f04e5e2bb829aa5dc317",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\mZhSBw6q.pgn": "5bc38605a1f7d637134ae5f9cb1fde7c885f2459324bd324c56c0fcf7020fd83",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\mef4LcHN.pgn": "b3a8e7d535d3d3382ce2015c5b112448c9befaf05254a11668917b4c9c2a9f56",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\nRFiPMlH.pgn": "6e3a9eeede69b71ae6003cb535941ba42e5cd2e6939730a87e6fcf477b4a14fb",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\oDiSuKTJ.pgn": "1c873be4f977f679a0e8f139deade495e0c07d029bd2beef1c3073920f53e1e4",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\pSAfdAal.pgn": "caf052a989e69dd6fdd7fa5b8429fbc381fb888945e8f1a40e502e154af118cb",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\pXSYJgU7.pgn": "031060c85849e08d75f6ca684bed7d9f30b462fb5d74bfd0655af64b7effb552",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\q2xoGb9G.pgn": "8b708634a180e3461d4509360938d82b385ef202bc08324fbdd4650bca78a6d0",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\qjywf87T.pgn": "186412d5d4089d57057ddd84c7851fa6c7e0b67bf9170ad8cfb6984dcf5472f5",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\smiLeGXr.pgn": "dc1131d329c6c1bcef94586844e8c7e0dfc1121062143684e3df25c38deea3a7",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\tXjKWUv5.pgn": "1172f3c6869ae091ddd84c6ec8bc14bc61e53dc74f9444574e1a9c0e9c8bea20",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\wF7l5HGJ.pgn": "9c5676a2d852e433229f2625aebfd52d43bff1309659040052b647ad78df4390",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\yoairWnM.pgn": "d1b05ad6942981669010f6ba77e5790068dd93c359b030e122d7210a7a4b1b00",
+    "research\\data\\lichess-matched-capture-source-pgn-v1\\train\\zV57ZPKN.pgn": "c7310a4642a00fbdd5dbb23c6a636094b3b5b516ae7fb45efc76846f5ba234c4",
+    "research\\reports\\lichess-foundations-pilot-2026-10-21\\matched-capture-lessons-v1-registration.json": "7ce44e2b43c1431880c7fc2b373bc3faf6a3f78e8a9a63185cf2ec638c28de32"
+  },
+  "state_file": "runs/python-actions/current-matched-capture-lessons-v1.json",
+  "jobs": {
+    "prepare-train-000": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/data/prepare-lichess-lessons.mjs",
+        "--rows",
+        "{rows}",
+        "--games",
+        "{games}",
+        "--split",
+        "train",
+        "--out",
+        "{run}/train-chunk-000",
+        "--cpu-duty",
+        "0.5",
+        "--max-seconds",
+        "300",
+        "--start-row",
+        "0",
+        "--row-limit",
+        "32"
+      ],
+      "fresh_output": "{run}/train-chunk-000"
+    },
+    "prepare-train-001": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/data/prepare-lichess-lessons.mjs",
+        "--rows",
+        "{rows}",
+        "--games",
+        "{games}",
+        "--split",
+        "train",
+        "--out",
+        "{run}/train-chunk-001",
+        "--cpu-duty",
+        "0.5",
+        "--max-seconds",
+        "300",
+        "--start-row",
+        "32",
+        "--row-limit",
+        "12"
+      ],
+      "fresh_output": "{run}/train-chunk-001"
+    },
+    "prepare-all": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "python actions/prepare_lichess_lesson_batches.py",
+        "--config",
+        "{configuration}",
+        "--out",
+        "{run}"
+      ],
+      "fresh_output": "{run}"
+    },
+    "audit-lessons": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/data/audit-lichess-csv-lessons.mjs",
+        "--config",
+        "{configuration}",
+        "--batches",
+        "{run}",
+        "--corpus",
+        "research\\data\\lichess-matched-capture-train-v1",
+        "--source-audit",
+        "research\\reports\\lichess-foundations-pilot-2026-10-21\\matched-capture-train-source-audit-v1.json",
+        "--games-root",
+        "research\\data\\lichess-matched-capture-source-pgn-v1",
+        "--out",
+        "research\\reports\\lichess-foundations-pilot-2026-10-21\\matched-capture-lessons-audit-v1.json",
+        "--cpu-duty",
+        "0.5",
+        "--max-seconds",
+        "900"
+      ],
+      "requires": [
+        "{run}/manifest.json"
+      ],
+      "refuse_existing": [
+        "research\\reports\\lichess-foundations-pilot-2026-10-21\\matched-capture-lessons-audit-v1.json"
+      ]
+    }
+  },
+  "artifacts": {
+    "batch": "{run}/manifest.json",
+    "lessonAudit": "research\\reports\\lichess-foundations-pilot-2026-10-21\\matched-capture-lessons-audit-v1.json"
+  },
+  "report_fields": [
+    "phase",
+    "counts",
+    "totals",
+    "passed",
+    "resources",
+    "eligibleForNeuralTeaching"
+  ],
+  "preparation": {
+    "order": [
+      "prepare-train-000",
+      "prepare-train-001"
+    ],
+    "chunkRows": 32,
+    "inputRows": {
+      "train": 44,
+      "validation": 0
+    },
+    "scope": "Same44 audited training candidates and exported games; full source history and matched capture criterion, no new source selection or neural event."
+  }
+}

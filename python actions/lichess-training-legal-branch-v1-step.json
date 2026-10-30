@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "name": "lichess-training-legal-branch-v1",
+  "paused": false,
+  "paths": {
+    "run": "research\\data\\lichess-training-branch-contrasts-v1"
+  },
+  "pins": {
+    ".codebase/src/puzzle-learning/lichess-branch-contrast.mjs": "5b0734e85e909b168c91d015d381a55ef26fd72cf972449bb68494a8ddd37c36",
+    ".codebase/scripts/data/prepare-lichess-branch-contrasts.mjs": "3d6eb2b5d11c2dbc06be8a33649b1a55d54aec698e0cb1686c46620f07dc12e3",
+    ".codebase/tests/puzzle-learning/lichess-branch-contrast.test.mjs": "870ad268d00b3ebd4415a790cac8d37e6aec565f81530576d53f2952e06735fa",
+    ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+    ".codebase/src/search-and-feedback/capture-retention-certificate.mjs": "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+    "research\\data\\lichess-stage1-prepared-batches-v7\\manifest.json": "e31bcf389a8780668be231d3278221138048b267437cbfddd21f2c596a2a4434",
+    "research\\reports\\lichess-foundations-pilot-2026-10-21\\lesson-batches-audit-v7.json": "0a8b655bff466c4a137693a353651bf3c19b9fe11ca057f904f5483f54aefe85",
+    ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-000\\manifest.json": "11de2333f73b1fff3c67fa67c5a18bc8c490f547d393877126610805fa4e0f0e",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-000\\lessons.jsonl": "13ce8eb30d843a2ac72ad14e9a708149d3d2c5d1c95b9b55cfede6c9f5fe6a8b",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-001\\manifest.json": "dd91fa5c1ac6acdbab86cc05cbcad2ef4322183500add083f0c79fd7ca8d37b5",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-001\\lessons.jsonl": "56d7de3dfd390c30341d6d6095f07638af1e0795b712a7afc0d98ba34e856633",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-002\\manifest.json": "3fa5c6ec314e3070cc1a2eea593550ecf9744d470a06272c5200808040629fcb",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-002\\lessons.jsonl": "6769f4b355bcc44bf42c879052d2100e374fa47c1eb2db75d781185b04e8c8c2",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-003\\manifest.json": "55597eb56dfce941032287b3695562e490c9150917ebc5c980756d5f616137bf",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-003\\lessons.jsonl": "c9b1d8abde0817e0f895bbcc0528f677a30c782a7222a7e9620b166ec1d2ed06",
+    "research\\reports\\lichess-foundations-pilot-2026-10-21\\legal-branch-contrast-v1-registration.json": "0bd9b46c8864a9473c2596dda7072acdf358c8114d8ea762501d11a4a89a73cb"
+  },
+  "state_file": "runs/python-actions/current-training-legal-branch-v1.json",
+  "jobs": {
+    "prepare": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase\\scripts\\data\\prepare-lichess-branch-contrasts.mjs",
+        "--package",
+        "research\\data\\lichess-stage1-prepared-batches-v7\\manifest.json",
+        "--audit",
+        "research\\reports\\lichess-foundations-pilot-2026-10-21\\lesson-batches-audit-v7.json",
+        "--out",
+        "{run}"
+      ],
+      "requires": [
+        "research\\data\\lichess-stage1-prepared-batches-v7\\manifest.json",
+        "research\\reports\\lichess-foundations-pilot-2026-10-21\\lesson-batches-audit-v7.json"
+      ],
+      "fresh_output": "{run}"
+    }
+  },
+  "artifacts": {
+    "manifest": "{run}/manifest.json"
+  },
+  "report_fields": [
+    "counts",
+    "stoppingBound",
+    "resources",
+    "independentFamilyAuditPassed",
+    "graphLaunchAuthorized"
+  ]
+}

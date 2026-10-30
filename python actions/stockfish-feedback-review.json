@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "name": "stockfish-feedback-quality-review-2026-10-22",
+  "paused": true,
+  "paths": {
+    "run": "research/reports/stockfish-feedback-review-2026-10-22"
+  },
+  "pins": {
+    "research/reports/stockfish-feedback-review-2026-10-22/probe.mjs": "2ddbee40ff00688f7d0d3420377e0e679bc3f1ba904fa1bce071a2f776469a8f",
+    ".codebase/src/puzzle-learning/stockfish-value-brain.mjs": "f2191fe80eb47ace4fd3bb2a418525b49b879d6aaf9cf7f67197801a8ae924ab",
+    ".codebase/src/puzzle-learning/dual-valence-puzzle-brain.mjs": "9a91a188d6ef40de5a21402ccd90f9a0192b46d664b26c414b86e0650d503c81",
+    ".codebase/src/puzzle-learning/mapped-puzzle-brain.mjs": "38af4c1eaec066f12d87f86c3994eec6a77cdbb016a6a455bc3bc0b519572cc2",
+    ".codebase/src/search-and-feedback/stockfish-target.mjs": "1931d16a1883e76615be32cf13fb359286c06fd8a95d3c88812171f48c13158f",
+    ".codebase/src/search-and-feedback/stockfish-feedback-rubric.mjs": "7401b7ea819c24bcbf41071ce95a5b58b32293242ef9cc2e8473a4d7a0923359",
+    ".codebase/src/search-and-feedback/verified-feedback.mjs": "33a420b7f0ef9bda52a73ff37f199bc090ee1ab9a2bae5b2f22f166e3e0edf7a",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    ".codebase/tests/puzzle-learning/stockfish-value-brain.test.mjs": "354ed933c13628974ce82a8f6b991835f33cf2ea87f0ae3e50428d4a41fe0d35",
+    ".codebase/tests/search-and-feedback/stockfish-feedback-rubric.test.mjs": "fe97ce65d86561d59ff5c3a73b029f04aa1ce5d36cdb7093460eda5277fca9eb",
+    ".codebase/tests/search-and-feedback/stockfish-target.test.mjs": "f0f3df48cd7952190a6cc22ef3585bfda8415c7bbcdda6dc412238a051583ef9"
+  },
+  "state_file": "runs/python-actions/current-stockfish-feedback-review.json",
+  "jobs": {
+    "focused-tests": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        "--test-concurrency=1",
+        ".codebase/tests/puzzle-learning/stockfish-value-brain.test.mjs",
+        ".codebase/tests/search-and-feedback/stockfish-feedback-rubric.test.mjs",
+        ".codebase/tests/search-and-feedback/stockfish-target.test.mjs"
+      ]
+    },
+    "probes": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "research/reports/stockfish-feedback-review-2026-10-22/probe.mjs"
+      ],
+      "refuse_existing": [
+        "research/reports/stockfish-feedback-review-2026-10-22/probe-results.json"
+      ]
+    },
+    "focused-tests-in-process": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        ".codebase/tests/puzzle-learning/stockfish-value-brain.test.mjs",
+        ".codebase/tests/search-and-feedback/stockfish-feedback-rubric.test.mjs",
+        ".codebase/tests/search-and-feedback/stockfish-target.test.mjs"
+      ]
+    }
+  },
+  "artifacts": {
+    "probes": "research/reports/stockfish-feedback-review-2026-10-22/probe-results.json"
+  },
+  "report_fields": [
+    "schema",
+    "scope",
+    "observations",
+    "verdict"
+  ]
+}

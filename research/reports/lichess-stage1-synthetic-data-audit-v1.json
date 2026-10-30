@@ -1,0 +1,121 @@
+{
+ "schema": "lichess-stage1-synthetic-data-audit-v1",
+ "eligibleForNeuralTeaching": true,
+ "relationFamilyDisjointnessEstablished": true,
+ "graphLaunchAuthorized": true,
+ "finalSplitInspected": false,
+ "familyRegistrationSha256": "90520c013c1fad5bf53e61aa6e7f2506957dfdf88af2fc02af965f5e6e464863",
+ "inputs": {
+  "train": {
+   "rows": "cc165730948dce734b785a1f4d246dc1a3bb809ee5f23a7cdd869b0d249767dd",
+   "families": "90520c013c1fad5bf53e61aa6e7f2506957dfdf88af2fc02af965f5e6e464863",
+   "plan": "136867226a91c7fd738b6ba70df587cee05860ecd5d31d0ffdf51872116eed19"
+  },
+  "validation": {
+   "rows": "1f0d28819851f2194964d7fc3d2070ac79b64025e6248fb26f697c752a04b0a9",
+   "families": "6b10212a449e6753cbab5534247eb7c32390f362fb1fcf115061337feb95ea7b",
+   "plan": "b78c3227be9ad385b4f9fd3a74dee9e014704d649358026d05ca7e089e8ee549"
+  },
+  "final": {
+   "rows": "f5095d7698dbed52aa39776e611aed17ab95e7815ebaaa0b7c02108d6b149ddd",
+   "families": "f80a0ca614ddc926653dd0b3ac2e329cfe04a97b19ac62eb35637ace447ca30f",
+   "plan": "828ac6fa2df028c7510966a5916c8953783dd61a38ce424373dff421afec3fcd"
+  }
+ },
+ "sources": {
+  "train": [
+   {
+    "path": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-000/lessons.jsonl",
+    "sha256": "13ce8eb30d843a2ac72ad14e9a708149d3d2c5d1c95b9b55cfede6c9f5fe6a8b"
+   },
+   {
+    "path": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001/lessons.jsonl",
+    "sha256": "56d7de3dfd390c30341d6d6095f07638af1e0795b712a7afc0d98ba34e856633"
+   },
+   {
+    "path": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002/lessons.jsonl",
+    "sha256": "6769f4b355bcc44bf42c879052d2100e374fa47c1eb2db75d781185b04e8c8c2"
+   },
+   {
+    "path": "research/data/lichess-stage1-prepared-batches-v7/train-chunk-003/lessons.jsonl",
+    "sha256": "c9b1d8abde0817e0f895bbcc0528f677a30c782a7222a7e9620b166ec1d2ed06"
+   }
+  ],
+  "validation": [
+   {
+    "path": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-000/lessons.jsonl",
+    "sha256": "2b5e0c905b101952570a55d5970925b22f13b48cb47e8962074467e36bbfad17"
+   },
+   {
+    "path": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-001/lessons.jsonl",
+    "sha256": "feb9a809d231c897d2f1c5df70c0836332332a2ba47010d1324c95643eb3c5ee"
+   },
+   {
+    "path": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-002/lessons.jsonl",
+    "sha256": "3e33e8570726c67c71114beb2a84081e9196ff6bc2354b0ee72226e929de52f7"
+   },
+   {
+    "path": "research/data/lichess-stage1-prepared-batches-v7/validation-chunk-003/lessons.jsonl",
+    "sha256": "d4da7faa9b2bd5a60c87baaf5d4e69b5c465858401f06eca83ce0efcca705ece"
+   }
+  ],
+  "final": [
+   {
+    "path": "research/data/lichess-stage1-synthetic-final-sources-v1.jsonl",
+    "sha256": "bf238fba76010d472e107ad34cfb113d24738d1ffe4c20fc311045b5078d459d"
+   }
+  ]
+ },
+ "counts": {
+  "train": {
+   "boards": 24,
+   "families": 6,
+   "pairs": 12,
+   "strata": {
+    "open-defender": 6,
+    "blocked-defender": 6,
+    "absent-defender": 6,
+    "pinned-apparent-defender": 6
+   }
+  },
+  "validation": {
+   "boards": 16,
+   "families": 4,
+   "pairs": 8,
+   "strata": {
+    "open-defender": 4,
+    "blocked-defender": 4,
+    "absent-defender": 4,
+    "pinned-apparent-defender": 4
+   }
+  },
+  "final": {
+   "boards": 64,
+   "families": 8,
+   "pairs": 32,
+   "strata": {
+    "open-defender": 16,
+    "blocked-defender": 16,
+    "absent-defender": 16,
+    "pinned-apparent-defender": 16
+   }
+  }
+ },
+ "checks": {
+  "train": {
+   "passed": true,
+   "failures": []
+  },
+  "validation": {
+   "passed": true,
+   "failures": []
+  },
+  "final": {
+   "passed": true,
+   "failures": 0
+  }
+ },
+ "scope": "Explicitly synthetic FEN-rooted Stage 1 tasks bound to verified Lichess source puzzles. Final rows were replayed by this program only; their contents and labels were not reported or used for any design or selection decision.",
+ "elapsedMs": 12547,
+ "peakRssMiB": 96.2
+}

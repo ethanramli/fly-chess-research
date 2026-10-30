@@ -1,0 +1,35 @@
+{
+ "schema": "lichess-stage1-synthetic-protocol-v1",
+ "mode": "smoke",
+ "registration": {
+  "path": "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r13-registration.json",
+  "sha256": "8d091e5eadd498c167da6740c70ef8f1894e3ddea34ef5a5d5429abd6b4df51a"
+ },
+ "question": "Does verified capture-retention feedback alone, delivered through the attack-map cue, produce lasting, consequence-sensitive Stage 1 choices that transfer to unfamiliar counterfactual families, beyond matched controls?",
+ "learner": "From-scratch full FlyWire graph; restrained ReversalMemory compartments plus the alpha1 reward and alpha3 aversive long-term stores on mapped KC-to-MBON edges are the only lasting memory; wiring, root IDs and signs stay fixed.",
+ "teaching": "Each event binds the Fly's own all-legal ranking before feedback to an independently replayed one-reply certificate. Only the verified task outcome is delivered (protocol verified-outcome-only-v1): the informative arm's third frame carries no channel. The pinned Stockfish review cache is read only to bind each event to its panel. No teacher computes neural parameter updates.",
+ "controls": [
+  "absent",
+  "disabled",
+  "shuffled",
+  "scratch (block 0)"
+ ],
+ "data": "Explicitly synthetic <=6-piece FEN-rooted tasks bound to verified Lichess source puzzles (first-solution capture identity); train/validation/final families are source-game disjoint and final rows stay unevaluated until checkpoint selection is frozen.",
+ "gates": "Original frozen Stage 1 D1-D6, D8 thresholds (curriculum-stage-acceptance.mjs); every replica must pass. D9 (Stockfish assistance) does not apply: Stockfish teaching was set aside for Stage 1 (researcher decision 2026-10-27). Policy B (researcher, 2026-10-24): receiver causality is shown by the matched controls (D6/D8), not G0; Stage 1 D7 is deferred to the Stage 2 cumulative retention gate.",
+ "deviations": [
+  "Stratum labels are the classifier stratum of each board's predeclared focal capture; pin families pair a pinned board with its open counterpart, resolving an inconsistency between the 16-per-stratum quota and reversing pairs (journal 2026-10-23-babysit-stage1-end-to-end).",
+  "Receiver acceptance gates promotion, not feedback-enabled training.",
+  "Stockfish reviews use depth budgets 10 and 14: node-limited searches usually end mid-iteration with only a bound, which the exact-score rule rejects (r1 smoke failure).",
+  "Policy B: no G0 dependency; Stage 1 D7 deferred to Stage 2 (researcher decision 2026-10-24).",
+  "Input cue public-action-relative-cue-v1: the v1 absolute board cue gave two moves on one board 86% shared cells, so opposite lessons cancelled (receipts of full-r5).",
+  "Revision 7+: public-action-relative-cue-v2 and CoupledStockfishBrainV3 (runtime factory v2): the Stockfish child-position cue uses the token family of the move cue, seen from the side that moved (the v1 state cue shared about 2.6 of 15 cells with the move cue), and its value and error stay in the perspective of the mover (reviewer finding 2, fix goal 2026-10-24).",
+  "Revision 7+: reuses the complete smoke-r6 Stockfish review cache read-only (identical engine settings and panels; per-file hashes verified on load).",
+  "Revision 8+: registered babysit safety controls (fix goal task 2): runner v2 with a cooperative block-boundary pause; rehearsal planner v2 (no panel targeted in more than 2 consecutive blocks); informative-arm early stop with gate-failed when the best block-start training-board count does not improve within 3 (smoke) or 8 (full) blocks. ReversalMemory eta stays 0.5: the retention probe chose no eta (fix goal task 1 failed).",
+  "Revision 9+: public-action-relative-cue-v3 (runtime factory v3): every action token is conjoined with the action tag (moving piece, captured piece, promotion), because generic v2 tokens recurred across boards and lessons on other boards rewrote taught boards (researcher decision 1a, 2026-10-25; retention probe v4).",
+  "Revision 10+: alpha1 reward long-term store (alpha-one-memory.mjs, cue v4, brain v4, runtime factory v4): alpha/beta KC -> MBON-alpha1 edges depressed by PAM-alpha1 without DAN-alone recovery (Aso and Rubin 2016; Ichinose et al. 2015), PAM-alpha1 co-stimulated only with verified task-success pulses, readout minus mean(MBON07). Reason: restrained compartments erase a one-lesson trace within about 10 lessons at any acquiring eta (build weakness audit 2026-10-25); the Gkanias charging-to-LTM branch is not mappable on the >=5-synapse graph.",
+  "Revision 11+: aversive alpha3 long-term store (alpha-lobe-memory.mjs, brain v5, runtime factory v5; cue v4 unchanged): alpha/beta KC -> MBON-alpha3 edges depressed by PPL1-alpha3 without DAN-alone recovery (Aso and Rubin 2016; Wu et al. 2017), PPL1-alpha3 co-stimulated only with verified task-failure pulses, readout plus mean(MBON14). Reason: spaced probe v6 retained 1/4, and in every failed probe the final choice was a move punished by the board's own lessons (only the reward side had a long-term store). Approximations: no slow alpha3 acquisition or consolidation timing.",
+  "Revision 12+: attack-map cue public-attack-map-cue-v1 (runtime/brain factory v6; researcher option A, 2026-10-27): act:capture or act:quiet plus each enemy piece type that can reach the landing square after the move (pseudo-legal, pins ignored), marked when on a clear line with its own king; 20 KCs per token per pool. Engineered restricted input given to the Fly. Reason: every allowed occupancy cue was at chance on held-out training families for a perfect-memory learner (research/reports/stage1-representation-ceiling-2026-10-27).",
+  "Revision 13+: outcome-only protocol verified-outcome-only-v1 (runner v3, runtime/brain factory v7, evaluator v2): arms informative (verified task pulses only), absent, disabled and shuffled; no Stockfish arm; acceptance by the original frozen D1-D8 module. Memory eta 0.2, chosen by retention probe v8 under its predeclared rule. Reasons: Stockfish targets disagreed with the verified outcome (research/journal/experiments/2026-10-27-stockfish-teaching-set-aside.md); researcher decision 2026-10-27."
+ ],
+ "scope": "Engineering smoke test of the complete outcome-only babysit path (1 replica, 8 blocks); not scientific evidence."
+}

@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "name": "source-completion-handoff-v2",
+  "paused": false,
+  "paths": {
+    "run": "research/data/lichess-matched-capture-train-v1"
+  },
+  "pins": {
+    "python actions\\lichess-matched-capture-train-v1-step.json": "ce37a5524bcacc2e638e5324c43e8eda4924a8bd64dd680c43cc9da2c4509e2f",
+    "python actions\\lichess-matched-capture-source-observer.json": "a23f3535306657f13b571948c9ceb444ce7138a6b7af03ea8389fa0c32ef6651",
+    "runs\\python-actions\\20261022T052256-8324fdd0\\handle.json": "df63d79b63078cf4e6948b27f37ef1e681b9d92e60ef7757e56560c8b9774e9d",
+    "python actions\\finish_lichess_source.py": "c44b9ec7df368cb06655cd92c45bb052753e2a0c9486727674ed750fd682f067",
+    "python actions\\curriculum.py": "55f550cdedd4dddfe9ad51ddc695c835865c21fab7019e2bc5d0861fb374ec1b",
+    "python actions\\lichess-source-completion-checks.json": "0112306e82fc3657117b8907573f1f82aa39ba58d30935314b4c3119437b4e77",
+    "python actions/lichess-source-completion-v2-checks.json": "ce827f549ce361062726d079051047c513a36137de7d890471f3e777b58554b2",
+    "research\\reports\\lichess-foundations-pilot-2026-10-21\\source-completion-handoff-v2-registration.json": "4010232aad3c4eaaa6ed35361a93257c18868152eada87a857c8f9631323a8da"
+  },
+  "state_file": "runs/python-actions/current-source-completion-v2-driver.json",
+  "jobs": {
+    "finish": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "python actions/finish_lichess_source.py",
+        "--config",
+        "python actions\\lichess-matched-capture-train-v1-step.json",
+        "--observer",
+        "python actions\\lichess-matched-capture-source-observer.json",
+        "--source-handle",
+        "runs\\python-actions\\20261022T052256-8324fdd0\\handle.json",
+        "--out",
+        "research\\reports\\lichess-foundations-pilot-2026-10-21\\source-completion-watch-v2",
+        "--wait-seconds",
+        "7200",
+        "--interval",
+        "30"
+      ],
+      "requires": [
+        "runs\\python-actions\\20261022T052256-8324fdd0\\handle.json"
+      ],
+      "fresh_output": "research\\reports\\lichess-foundations-pilot-2026-10-21\\source-completion-watch-v2"
+    }
+  },
+  "artifacts": {
+    "handoff": "research\\reports\\lichess-foundations-pilot-2026-10-21\\source-completion-watch-v2\\state.json"
+  },
+  "report_fields": [
+    "phase",
+    "sourcePid",
+    "progress",
+    "checkedSplits",
+    "error",
+    "scope",
+    "graphLaunchAuthorized"
+  ]
+}

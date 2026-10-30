@@ -1,0 +1,74 @@
+{
+  "schema": "lichess-curriculum-matrix-audit-v1",
+  "identity": "synthetic-identity",
+  "stage": 1,
+  "status": "gate-failed",
+  "diagnosis": [
+    "replica 1: gate-failed; failed D2; validation by block 0:11/16 1:13/16 2:12/16 (needs 14/16 and 3/4 per stratum); training boards by block 0:18/24 1:20/24 2:21/24",
+    "replica 2: gate-failed; failed D2; validation by block 0:10/16 1:12/16 2:13/16 (needs 14/16 and 3/4 per stratum); training boards by block 0:17/24 1:19/24 2:20/24"
+  ],
+  "fullNeuralReplay": true,
+  "memoryContinuityVerified": true,
+  "stageAccepted": false,
+  "acceptanceEvidence": {
+    "schema": "curriculum-stage1-replica-acceptance-v2",
+    "status": "gate-failed",
+    "stageAccepted": false,
+    "requiredReplicaCount": 2,
+    "acceptedReplicas": 0,
+    "reports": [
+      {
+        "replica": "1",
+        "status": "gate-failed",
+        "stageAccepted": false,
+        "failed": ["D2"],
+        "unknown": [],
+        "missingPrerequisites": [],
+        "metrics": {
+          "validationByCheckpoint": [
+            {"blockIndex": 0, "correct": 11},
+            {"blockIndex": 1, "correct": 13},
+            {"blockIndex": 2, "correct": 12}
+          ],
+          "trainingByBlock": [
+            {"blockIndex": 0, "correct": 18},
+            {"blockIndex": 1, "correct": 20},
+            {"blockIndex": 2, "correct": 21}
+          ],
+          "controlTraining": {
+            "absent": {"correct": 15, "blockIndex": 2},
+            "shuffled": {"correct": 12, "blockIndex": 2}
+          }
+        }
+      },
+      {
+        "replica": "2",
+        "status": "gate-failed",
+        "stageAccepted": false,
+        "failed": ["D2"],
+        "unknown": [],
+        "missingPrerequisites": [],
+        "metrics": {
+          "validationByCheckpoint": [
+            {"blockIndex": 0, "correct": 10},
+            {"blockIndex": 1, "correct": 12},
+            {"blockIndex": 2, "correct": 13}
+          ],
+          "trainingByBlock": [
+            {"blockIndex": 0, "correct": 17},
+            {"blockIndex": 1, "correct": 19},
+            {"blockIndex": 2, "correct": 20}
+          ],
+          "controlTraining": {
+            "absent": {"correct": 14, "blockIndex": 2},
+            "shuffled": {"correct": 11, "blockIndex": 2}
+          }
+        }
+      }
+    ],
+    "checkpointSelection": {"schema": "stage1-validation-checkpoint-selection-v1", "frozen": true, "status": "gate-failed"},
+    "promotionMemoryHashes": null,
+    "scope": "Validation-only checkpoint selection failed, so final families stayed sealed and no transfer was measured"
+  },
+  "scope": "Synthetic fixture for report-tool tests; not a real run"
+}

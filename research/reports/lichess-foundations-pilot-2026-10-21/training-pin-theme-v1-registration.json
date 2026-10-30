@@ -1,0 +1,36 @@
+﻿{
+    "schema":  "lichess-stage1-training-pin-theme-v1",
+    "createdAt":  "2026-10-23T03:10:01.0493194Z",
+    "purpose":  "Distinct training-only source query to find Lichess pin-themed roots after the existing matched-capture sample lacked pinned-defender cases. This is source sampling only; theme tags are not teaching evidence or proof of a pin consequence.",
+    "source":  {
+                   "url":  "https://database.lichess.org/",
+                   "license":  "CC0-1.0",
+                   "csv":  ".cache/lichess-puzzles-2026-10-21.csv",
+                   "csvSha256":  "ec2dd1a8f9cbd139ebb4aee228f72e77f8e2a581a24d25f61f71e6cf306b10f8",
+                   "compressedArchive":  ".cache/lichess-puzzles-2026-10-21.csv.zst",
+                   "compressedSha256":  "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+                   "extractionReceipt":  "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json",
+                   "extractionSha256":  "deac9b4792742a84fde9f3273caabcf5f505d957fb142881a8345aae356b4510"
+               },
+    "selection":  {
+                      "themes":  [
+                                     "pin"
+                                 ],
+                      "onlySplit":  "train",
+                      "requireMatchedCaptures":  true,
+                      "limitPerSplit":  1024,
+                      "maxPieces":  6,
+                      "seed":  20261023,
+                      "maxSeconds":  7200,
+                      "cpuDuty":  0.5
+                  },
+    "boundaries":  [
+                       "Validation and final puzzle content must not be inspected by this action.",
+                       "Every selected row still requires actual source history, independent legal/consequence audit and disjoint family construction.",
+                       "No graph training, Stockfish feedback, campaign authorization, or G0 work is included."
+                   ],
+    "curatorSha256":  "cc090296dff6ba3287b3d26cc14021fcca7aae66c6cb3edafaa2ccdc323a6dd4",
+    "sourceAuditorSha256":  "b68b66bfb1f4f1688617a61fc27b213f7cbb425ed2e5776af6c493efe5296ccb",
+    "captureFilterSha256":  "4a950efee6a1ecb043e780cc257d5cfa41543f1ca075a159d52f66e5ad64d9c9",
+    "cpuPacerSha256":  "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c"
+}

@@ -1,0 +1,35 @@
+﻿{
+    "schema":  "lichess-pin-theme-history-bound-lessons-v1",
+    "createdAt":  "2026-10-23T03:48:35.3757023Z",
+    "purpose":  "Bind audited train-only pin-theme candidate rows to retrieved Lichess source-game PGNs and independently certifiable legal consequences before any learner use.",
+    "inputs":  {
+                   "rowsPath":  "research/data/lichess-stage1-training-pin-theme-v2/train.jsonl",
+                   "rowsSha256":  "ac742b70b15cfb1e015ba86a31b4b88eba7f2508a4e0111e9b08d73bc93fdd3f",
+                   "candidateManifest":  "research/data/lichess-stage1-training-pin-theme-v2/manifest.json",
+                   "candidateManifestSha256":  "d77fbe023dab9f143145f9587413834f31bc601bf9ba09b93efe4fb36a429518",
+                   "sourceAudit":  "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-source-audit-v2.json",
+                   "sourceAuditSha256":  "9ad2922b9a54468b26f69637b179dbe5f857837f4e5c78a0db948484258c25ff",
+                   "sourcePgnManifest":  "research/data/lichess-stage1-training-pin-theme-v2-pgn/train/manifest.json",
+                   "sourcePgnManifestSha256":  "00b52419bc59dc167ba26ef8d6a3df476591797f4b51615f355b6d5daf290f61",
+                   "fetchRegistration":  "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-pgn-v1-registration.json",
+                   "fetchRegistrationSha256":  "05832804c925197705f70120d254f591d7d288419b4285b8590d8aef517bcd5a",
+                   "split":  "train",
+                   "rowCount":  1024,
+                   "uniqueGames":  1024,
+                   "finalSplitInspected":  false
+               },
+    "preparation":  {
+                        "chunkRows":  32,
+                        "chunks":  32,
+                        "nodeHeapMiB":  256,
+                        "cpuDuty":  0.5,
+                        "maxSecondsPerChunk":  300,
+                        "maxRssMiB":  2048,
+                        "minimumFreeMiB":  256
+                    },
+    "boundaries":  [
+                       "All puzzle rows and source games are training split only.",
+                       "Prepared lesson outputs remain provisional until the separate independent lesson auditor reconstructs source history and replays all certificates.",
+                       "No Stockfish teaching, connectome learner, final split, or G0 is part of preparation."
+                   ]
+}

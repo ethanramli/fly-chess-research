@@ -1,0 +1,48 @@
+{
+  "schema": "lichess-branch-contrast-preparation-v1",
+  "split": "validation",
+  "inputs": {
+    "preparedManifestSha256": "f67d505405942a2de9648d7ccc7d5468e538e144278cd401ccfdce4080c0913c",
+    "lessonsSha256": "ea76fe1144fd4814c3f15707f404a48348f3cc578f16320bd52e6483e0b63644",
+    "auditSha256": "b616ddeca62cc2ab0e9a4f4121bf15367e26f7edaad8be6713f67397d8f60977"
+  },
+  "bounds": {
+    "maxValidationRows": 1022,
+    "maxBranches": 4096,
+    "maxFamilies": 16,
+    "maxSeconds": 2700,
+    "maxRssMiB": 2048,
+    "minFreeMiB": 256,
+    "cpuDuty": 0.5,
+    "heapMiB": 256,
+    "maxFamilyBytes": 2097152,
+    "maxOutputBytes": 33554432
+  },
+  "counts": {
+    "validationRows": 1022,
+    "eligibleRows": 192,
+    "branches": 3218,
+    "families": 0,
+    "unknownBranches": 0,
+    "oversizedFamilies": 0
+  },
+  "commonMoveKind": "any-quiet",
+  "responseMoveKind": "any-quiet",
+  "stoppingBound": "validation-roots-exhausted",
+  "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputBytes": 0,
+  "resources": {
+    "elapsedSeconds": 774.8554674,
+    "cpu": {
+      "user": 377734000,
+      "system": 1032000
+    },
+    "peakRssMiB": 177.3203125
+  },
+  "neuralEventsDelivered": 0,
+  "graphLaunchAuthorized": false,
+  "independentFamilyAuditPassed": false,
+  "validationLessonContentInspected": true,
+  "finalSplitInspected": false,
+  "scope": "Bounded validation-only counterfactual construction; requires separate family partition audit and does not authorize graph training."
+}

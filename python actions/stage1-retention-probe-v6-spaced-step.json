@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "stage1-retention-probe-v6-spaced",
+  "paused": false,
+  "paths": {
+    "protocol": "research/data/lichess-stage1-synthetic-v1/stage1-retention-probe-v6-spaced-protocol.json",
+    "runner": ".codebase/scripts/puzzle-learning/stage1-retention-probe-spaced.mjs",
+    "run": "runs/stage1-retention-probe-v6-spaced",
+    "checkpoint": "runs/stage1-retention-probe-v6-spaced/result.json"
+  },
+  "pins": {
+    "{protocol}": "ae5fe62e23af2ac6abf842aae9034402cf285694ac3aa4d55c11cd0cd96aa9e5",
+    "{runner}": "ef6927baf0ef743d89a641f913ef85470fbecd860c9c085016f811cd5a95eb2d",
+    ".codebase/scripts/puzzle-learning/stage1-retention-probe.mjs": "ca3cc6de76fea79d8e2d14c648bea830e5b037bf985f864757cfbfdbc2122d4b",
+    "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r10-registration.json": "95df8db02e03c92a80896b588de5b0729468924394212ca2e2014478e500003f",
+    ".codebase/scripts/puzzle-learning/lichess-stage1-runtime-factory-v4.mjs": "e77fdf634e5c666e974bbe60230cca35dc20d44b834d1e65c59a63d3da551419",
+    ".codebase/src/puzzle-learning/lichess-stage1-brain-factory-v4.mjs": "6bca945247b3f17b237e1be221eae5a819f04a2c0fa02324985d23bfa096eec1",
+    ".codebase/src/puzzle-learning/coupled-stockfish-brain-v4.mjs": "df4409963bcf356ecf88720337edcb7649f0912babfdb8078be9739cd26c6c93",
+    ".codebase/src/puzzle-learning/coupled-stockfish-brain-v3.mjs": "d831d2b41d3befa8713389332ca9bb140494549bc4f0e868b0803d474bf1c812",
+    ".codebase/src/puzzle-learning/coupled-stockfish-brain.mjs": "c487b99184ed713f8f7ed338e34dfecb97810efebe117988c9c70dd1c7ecb2fd",
+    ".codebase/src/puzzle-learning/coupled-stockfish-session.mjs": "bb7d693f5f97aed6006d77dafb98a3ccb937ab7f716f7a8528085638f2946b47",
+    ".codebase/src/puzzle-learning/lichess-curriculum-panel.mjs": "1321cfb4425aa6758162269d34d5ab65cc972401fa5209c50c43ee3d40d9f17a",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    ".codebase/src/neural-learning/alpha-one-memory.mjs": "9d56939898913ba8744725ac3bde75ef89b5ad552b21ec841a4fc0079c45b400",
+    ".codebase/src/chess-input/public-action-relative-cue-v4.mjs": "c1352a917e0a683bb7bef50f26e45a8cf59dfd4181b6257d0829eacfe2a3882d",
+    "research/reports/alpha-one-mapping-2026-10-25/mapping.json": "487acc95d01967c5ea5bcdfe9b0a8305df785a7d08852bda85213f181d15b220"
+  },
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256
+  },
+  "state_file": "runs/python-actions/stage1-retention-probe-v6-spaced-state.json",
+  "jobs": {
+    "probe": {
+      "role": "train",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--protocol",
+        "{protocol}",
+        "--out",
+        "{run}",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{protocol}",
+        "{runner}"
+      ],
+      "fresh_output": "{run}"
+    }
+  },
+  "artifacts": {
+    "result": "{run}/result.json"
+  },
+  "report_fields": [
+    "status",
+    "condition",
+    "chosenEta",
+    "perEtaPasses",
+    "gaps",
+    "aBoards",
+    "scratchCorrect",
+    "decisionRule",
+    "peakRssMiB",
+    "elapsedSeconds",
+    "cpuSeconds",
+    "scope"
+  ]
+}

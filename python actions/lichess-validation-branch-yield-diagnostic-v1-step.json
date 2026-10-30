@@ -1,0 +1,74 @@
+﻿{
+    "schema":  1,
+    "name":  "lichess-validation-branch-yield-diagnostic-v1",
+    "paused":  false,
+    "paths":  {
+                  "prepared":  "research/data/lichess-validation-prepared-v3",
+                  "lessonAudit":  "research/reports/lichess-foundations-pilot-2026-10-21/validation-lessons-audit-v3.json",
+                  "previous":  "research/data/lichess-validation-branch-families-v2",
+                  "previousAudit":  "research/reports/lichess-foundations-pilot-2026-10-21/validation-branch-family-audit-v2.json",
+                  "runner":  ".codebase/scripts/data/diagnose-lichess-validation-branch-yield-v1.mjs",
+                  "out":  "research/reports/lichess-foundations-pilot-2026-10-21/validation-branch-yield-diagnostic-v1.json",
+                  "run":  "runs/python-actions/lichess-validation-branch-yield-diagnostic-v1"
+              },
+    "pins":  {
+                 "research/data/lichess-validation-prepared-v3/manifest.json":  "f67d505405942a2de9648d7ccc7d5468e538e144278cd401ccfdce4080c0913c",
+                 "research/data/lichess-validation-prepared-v3/lessons.jsonl":  "ea76fe1144fd4814c3f15707f404a48348f3cc578f16320bd52e6483e0b63644",
+                 "research/reports/lichess-foundations-pilot-2026-10-21/validation-lessons-audit-v3.json":  "b616ddeca62cc2ab0e9a4f4121bf15367e26f7edaad8be6713f67397d8f60977",
+                 "research/data/lichess-validation-branch-families-v2/manifest.json":  "f85db73521b5855dcb2c4aee81eb551d7eddcc679125db0b850e9ebcc773b83b",
+                 "research/data/lichess-validation-branch-families-v2/families.jsonl":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                 "research/reports/lichess-foundations-pilot-2026-10-21/validation-branch-family-audit-v2.json":  "8153ef21ed06dde1d2d691ab0d08cec6482baa14b6ab92861192d2a6df761bac",
+                 ".codebase/scripts/data/diagnose-lichess-validation-branch-yield-v1.mjs":  "4812820ebc515b8652474368c780ff37d0944e3454287393c60ca5a2f4f340fe",
+                 ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs":  "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+                 ".codebase/src/search-and-feedback/capture-retention-certificate.mjs":  "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+                 ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs":  "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+                 ".codebase/src/search-and-feedback/puzzle-search.mjs":  "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+                 ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs":  "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+                 "package-lock.json":  "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9"
+             },
+    "state_file":  "runs/python-actions/lichess-validation-branch-yield-diagnostic-v1.json",
+    "jobs":  {
+                 "diagnose":  {
+                                  "role":  "check",
+                                  "argv":  [
+                                               "node",
+                                               "--max-old-space-size=256",
+                                               "{runner}",
+                                               "--prepared",
+                                               "{prepared}",
+                                               "--audit",
+                                               "{lessonAudit}",
+                                               "--previous",
+                                               "{previous}",
+                                               "--previous-families",
+                                               "{previous}",
+                                               "--previous-audit",
+                                               "{previousAudit}",
+                                               "--out",
+                                               "{out}"
+                                           ],
+                                  "requires":  [
+                                                   "research/data/lichess-validation-prepared-v3/manifest.json",
+                                                   "research/data/lichess-validation-prepared-v3/lessons.jsonl",
+                                                   "{lessonAudit}",
+                                                   "research/data/lichess-validation-branch-families-v2/manifest.json",
+                                                   "research/data/lichess-validation-branch-families-v2/families.jsonl",
+                                                   "{previousAudit}"
+                                               ],
+                                  "refuse_existing":  [
+                                                          "{out}"
+                                                      ]
+                              }
+             },
+    "artifacts":  {
+                      "diagnostic":  "{out}"
+                  },
+    "report_fields":  [
+                          "passed",
+                          "stats",
+                          "stoppingBound",
+                          "resources",
+                          "finalSplitInspected",
+                          "graphLaunchAuthorized"
+                      ]
+}

@@ -1,0 +1,98 @@
+{
+    "schema":  1,
+    "name":  "lichess-training-counterfactual-families-v6",
+    "paused":  false,
+    "paths":  {
+                  "prepared":  "research/data/lichess-stage1-prepared-batches-v7",
+                  "lessonAudit":  "research/reports/lichess-foundations-pilot-2026-10-21/lesson-batches-audit-v7.json",
+                  "out":  "research/data/lichess-training-counterfactual-families-v6",
+                  "audit":  "research/reports/lichess-foundations-pilot-2026-10-21/training-counterfactual-family-audit-v6.json",
+                  "producer":  ".codebase/scripts/data/prepare-lichess-training-counterfactual-families-v6.mjs",
+                  "auditor":  ".codebase/scripts/data/audit-lichess-training-counterfactual-families-v6.mjs",
+                  "run":  "runs/python-actions/lichess-training-counterfactual-families-v6"
+              },
+    "pins":  {
+                 "research/reports/lichess-foundations-pilot-2026-10-21/lesson-batches-audit-v7.json":  "0a8b655bff466c4a137693a353651bf3c19b9fe11ca057f904f5483f54aefe85",
+                 "research/data/lichess-stage1-prepared-batches-v7/manifest.json":  "e31bcf389a8780668be231d3278221138048b267437cbfddd21f2c596a2a4434",
+                 ".codebase/src/puzzle-learning/lichess-counterfactual-action-pair-check-v1.mjs":  "307ccd7f4e464e5c53d6b4521505aec288490b752d15e8511673988dc8a57b51",
+                 ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs":  "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+                 ".codebase/src/search-and-feedback/capture-retention-certificate.mjs":  "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+                 ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs":  "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+                 ".codebase/src/search-and-feedback/puzzle-search.mjs":  "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+                 ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs":  "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+                 "package-lock.json":  "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+                 "research/data/lichess-stage1-prepared-batches-v7/train-chunk-000/manifest.json":  "11de2333f73b1fff3c67fa67c5a18bc8c490f547d393877126610805fa4e0f0e",
+                 "research/data/lichess-stage1-prepared-batches-v7/train-chunk-000/lessons.jsonl":  "13ce8eb30d843a2ac72ad14e9a708149d3d2c5d1c95b9b55cfede6c9f5fe6a8b",
+                 "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001/manifest.json":  "dd91fa5c1ac6acdbab86cc05cbcad2ef4322183500add083f0c79fd7ca8d37b5",
+                 "research/data/lichess-stage1-prepared-batches-v7/train-chunk-001/lessons.jsonl":  "56d7de3dfd390c30341d6d6095f07638af1e0795b712a7afc0d98ba34e856633",
+                 "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002/manifest.json":  "3fa5c6ec314e3070cc1a2eea593550ecf9744d470a06272c5200808040629fcb",
+                 "research/data/lichess-stage1-prepared-batches-v7/train-chunk-002/lessons.jsonl":  "6769f4b355bcc44bf42c879052d2100e374fa47c1eb2db75d781185b04e8c8c2",
+                 "research/data/lichess-stage1-prepared-batches-v7/train-chunk-003/manifest.json":  "55597eb56dfce941032287b3695562e490c9150917ebc5c980756d5f616137bf",
+                 "research/data/lichess-stage1-prepared-batches-v7/train-chunk-003/lessons.jsonl":  "c9b1d8abde0817e0f895bbcc0528f677a30c782a7222a7e9620b166ec1d2ed06",
+                 ".codebase/scripts/data/prepare-lichess-training-counterfactual-families-v6.mjs":  "f895f695bef182229a7e4ea9e5ebbec16f23f370ce75a589aad44faf5772b3b1",
+                 ".codebase/scripts/data/audit-lichess-training-counterfactual-families-v6.mjs":  "ae8f8d21169966333264f4c4560cdbf428f59c3ed3096915ae849f894a6ae712",
+                 ".codebase/src/puzzle-learning/lichess-counterfactual-action-pairs-v2.mjs":  "0b24d5ee5b48ee047f1444c3bbfadb6ed68909c24b10ea395090433b0f833723"
+             },
+    "state_file":  "runs/python-actions/lichess-training-counterfactual-families-v6.json",
+    "jobs":  {
+                 "prepare":  {
+                                 "role":  "check",
+                                 "argv":  [
+                                              "node",
+                                              "--max-old-space-size=256",
+                                              "{producer}",
+                                              "--prepared",
+                                              "{prepared}",
+                                              "--audit",
+                                              "{lessonAudit}",
+                                              "--out",
+                                              "{out}"
+                                          ],
+                                 "requires":  [
+                                                  "{prepared}/manifest.json",
+                                                  "{lessonAudit}"
+                                              ],
+                                 "fresh_output":  "{out}"
+                             },
+                 "audit":  {
+                               "role":  "check",
+                               "argv":  [
+                                            "node",
+                                            "--max-old-space-size=256",
+                                            "{auditor}",
+                                            "--prepared",
+                                            "{prepared}",
+                                            "--audit",
+                                            "{lessonAudit}",
+                                            "--families",
+                                            "{out}",
+                                            "--out",
+                                            "{audit}"
+                                        ],
+                               "requires":  [
+                                                "{prepared}/manifest.json",
+                                                "{lessonAudit}",
+                                                "{out}/manifest.json",
+                                                "{out}/families.jsonl"
+                                            ],
+                               "refuse_existing":  [
+                                                       "{audit}"
+                                                   ]
+                           }
+             },
+    "artifacts":  {
+                      "manifest":  "{out}/manifest.json",
+                      "families":  "{out}/families.jsonl",
+                      "audit":  "{audit}"
+                  },
+    "report_fields":  [
+                          "counts",
+                          "stoppingBound",
+                          "trainingRows",
+                          "eligibleRows",
+                          "families",
+                          "finalSplitInspected",
+                          "relationFamilyDisjointnessEstablished",
+                          "graphLaunchAuthorized"
+                      ]
+}

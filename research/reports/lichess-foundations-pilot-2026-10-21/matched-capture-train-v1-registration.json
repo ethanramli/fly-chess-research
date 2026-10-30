@@ -1,0 +1,41 @@
+{
+  "schema": "matched-capture-training-source-registration-v1",
+  "question": "Can real training-source puzzles supply meaningful within-root capture comparisons under the unchanged immediate-retention criterion?",
+  "motivation": "Existing128 training roots have no mixed capture outcomes; two bounded legal-branch construction attempts yielded zero strict pairs.",
+  "filter": "Post-setup <=6 pieces. Exactly one retained nonpromotion capture, another recapturable capture by the same moving piece and of the same target type. Reject capture-promotion roots.",
+  "historyScope": "FEN-only filter is preliminary selection, never a certified consequence or source-history proof. Fetch actual PGNs and independently replay all actions before any teaching.",
+  "privacy": "Stable source-game hash train split only, routed before semantic FEN/rating/theme inspection of excluded validation/final games. No existing reserved final JSONL access. No relation-family separation claim.",
+  "sampling": {
+    "limit": 64,
+    "seed": 20261021,
+    "rating": [
+      0,
+      5000
+    ],
+    "themes": [],
+    "coverage": "Full pinned CSV, reservoir sampling after filter, not repeat-until-pass."
+  },
+  "bounds": {
+    "maxSeconds": 7200,
+    "rssMiB": 2048,
+    "minFreeMiB": 256,
+    "heapMiB": 256,
+    "cpuDuty": 0.5
+  },
+  "checks": "27/27 in runs/python-actions/20261022T052013-85d95c1a; includes source-filter and independent forged-candidate rejection. No neural efficacy.",
+  "stop": "No automatic retries/selection changes. Zero yield is bounded data evidence, not incapacity. Any candidates require independent source audit, actual histories, certificates, family/split/receiver gates.",
+  "pins": {
+    ".codebase/scripts/data/curate-lichess-puzzles.mjs": "cc090296dff6ba3287b3d26cc14021fcca7aae66c6cb3edafaa2ccdc323a6dd4",
+    ".codebase/scripts/data/audit-lichess-source-candidates.mjs": "b68b66bfb1f4f1688617a61fc27b213f7cbb425ed2e5776af6c493efe5296ccb",
+    ".codebase/src/puzzle-learning/mixed-capture-filter.mjs": "4a950efee6a1ecb043e780cc257d5cfa41543f1ca075a159d52f66e5ad64d9c9",
+    ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    "package-lock.json": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+    ".cache/lichess-puzzles-2026-10-21.csv": "ec2dd1a8f9cbd139ebb4aee228f72e77f8e2a581a24d25f61f71e6cf306b10f8",
+    ".cache/lichess-puzzles-2026-10-21.csv.zst": "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+    "research\\reports\\lichess-foundations-pilot-2026-10-21\\extraction.json": "deac9b4792742a84fde9f3273caabcf5f505d957fb142881a8345aae356b4510",
+    "research\\reports\\lichess-foundations-pilot-2026-10-21\\training-consequence-contrast.json": "61b135aac0464c577eda88d4e2c9254f2b48f94f3461591bfb44da4d6eb1feec",
+    "research/data/lichess-training-branch-contrasts-v1/manifest.json": "1fa020ffe5a5c0aec4e5815d76a7dabb99f92cc8a3b5db74cd79a83de0250958",
+    "research/data/lichess-training-branch-contrasts-v2/manifest.json": "0dfc7f8779ca02d942593aad7c30516d1383982ae19a33fd1906cf50f851f051",
+    "python actions/lichess-mixed-capture-source-checks.json": "421b4fc016e70f37705448974b3e9f06ea083a58cfa6f650a010d83a5e88a8e9"
+  }
+}

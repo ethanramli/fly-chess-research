@@ -1,0 +1,56 @@
+{
+  "schema": "lichess-stage1-model-source-v1",
+  "provenance": {
+    "path": "research/reports/adaptive-contrastive-coverage-v1-2026-10-07/run-identity.json",
+    "sha256": "168208d06962bfd42b252f09750ca1457259892d58e7629cd85360c7fdb2284f"
+  },
+  "identity": {
+    "mappingHash": "b2d7bf351dbe9889aa6a17216cca6cb7671f4f99d9661e604609a7ff51686fff",
+    "inputs": {
+      ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+      ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+      "research/reports/reversal-candidate-2026-10-05/mapping.json": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b"
+    },
+    "model": {
+      "steps": 8,
+      "inputDim": 1,
+      "outputs": 1,
+      "seed": 47,
+      "precision": "float32",
+      "saturation": 10,
+      "recurrentScale": 0.9,
+      "normalization": "row"
+    },
+    "readouts": {
+      "MBON12": [
+        {
+          "index": 56337,
+          "rootId": "720575940623001480"
+        },
+        {
+          "index": 49989,
+          "rootId": "720575940621828443"
+        },
+        {
+          "index": 61287,
+          "rootId": "720575940623905719"
+        },
+        {
+          "index": 93832,
+          "rootId": "720575940630075703"
+        }
+      ],
+      "MBON01": [
+        {
+          "index": 62498,
+          "rootId": "720575940624117245"
+        },
+        {
+          "index": 128004,
+          "rootId": "720575940643309197"
+        }
+      ]
+    }
+  },
+  "scope": "Fixed model configuration and MBON01/MBON12 readout identities copied from a pinned run identity. No trained parameters or memory are loaded; every Stage 1 learner starts from scratch."
+}

@@ -1,0 +1,40 @@
+﻿{
+    "schema":  "lichess-pin-theme-history-bound-lessons-v2",
+    "createdAt":  "2026-10-23T03:51:33.2055926Z",
+    "purpose":  "Bind train-only pin-theme candidates to fetched Lichess game histories and prepare rule-verified lesson evidence through the URL-compatible v2 history binder.",
+    "inputs":  {
+                   "candidateRows":  "research/data/lichess-stage1-training-pin-theme-v2/train.jsonl",
+                   "candidateRowsSha256":  "ac742b70b15cfb1e015ba86a31b4b88eba7f2508a4e0111e9b08d73bc93fdd3f",
+                   "candidateManifest":  "research/data/lichess-stage1-training-pin-theme-v2/manifest.json",
+                   "candidateManifestSha256":  "d77fbe023dab9f143145f9587413834f31bc601bf9ba09b93efe4fb36a429518",
+                   "sourceAudit":  "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-source-audit-v2.json",
+                   "sourceAuditSha256":  "9ad2922b9a54468b26f69637b179dbe5f857837f4e5c78a0db948484258c25ff",
+                   "sourcePgnManifest":  "research/data/lichess-stage1-training-pin-theme-v2-pgn/train/manifest.json",
+                   "sourcePgnManifestSha256":  "00b52419bc59dc167ba26ef8d6a3df476591797f4b51615f355b6d5daf290f61",
+                   "fetchRegistration":  "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-pgn-v1-registration.json",
+                   "split":  "train",
+                   "rowCount":  1024,
+                   "uniqueGames":  1024,
+                   "finalSplitInspected":  false
+               },
+    "implementation":  {
+                           "producer":  ".codebase/scripts/data/prepare-lichess-lessons-v2.mjs",
+                           "producerSha256":  "9e3126f2917a080f5e1f042c79a90e4ffc36f3c14dad49fbeb1791a378276a58",
+                           "historyBinder":  ".codebase/src/puzzle-learning/lichess-history-v2.mjs",
+                           "historyBinderSha256":  "4a1f43cbd27d33b45981d222d5044644014ffd9541abdb6daaeafe29febb8070",
+                           "batchRunner":  "python actions\\prepare_lichess_lesson_batches_v2.py",
+                           "batchRunnerSha256":  "87531e40557f99ed2a135e88904c071a2512d3944c1724ddc1b7b77c2602cdf9",
+                           "nodeHeapMiB":  256,
+                           "chunkRows":  32,
+                           "chunks":  32,
+                           "cpuDuty":  0.5,
+                           "maxSecondsPerChunk":  300,
+                           "maxRssMiB":  2048,
+                           "minimumFreeMiB":  256
+                       },
+    "boundaries":  [
+                       "Only training rows and source histories are used.",
+                       "Every chunk remains provisional until a separate independent audit verifies source-history binding and replays every consequence certificate.",
+                       "No learner, Stockfish teacher, final split, or G0 is included."
+                   ]
+}

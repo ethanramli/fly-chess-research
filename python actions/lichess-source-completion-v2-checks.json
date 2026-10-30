@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "name": "source-completion-attach-receipt-checks",
+  "paused": false,
+  "paths": {
+    "run": "research/reports/lichess-foundations-pilot-2026-10-21"
+  },
+  "pins": {
+    "python actions/finish_lichess_source.py": "c44b9ec7df368cb06655cd92c45bb052753e2a0c9486727674ed750fd682f067",
+    "python actions/verify_finish_lichess_source.py": "d411e376f5daa4c73642bfcca11679065d3046c87b70f2dea3c0965a6bcbf955",
+    "python actions/curriculum.py": "55f550cdedd4dddfe9ad51ddc695c835865c21fab7019e2bc5d0861fb374ec1b"
+  },
+  "state_file": "runs/python-actions/current-source-completion-v2-checks.json",
+  "jobs": {
+    "tests": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "python actions/verify_finish_lichess_source.py"
+      ]
+    }
+  },
+  "artifacts": {}
+}

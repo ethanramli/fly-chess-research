@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "name": "lichess-training-contrast-csv-audit-checks",
+  "paused": false,
+  "paths": {
+    "run": "research/reports/lichess-foundations-pilot-2026-10-21"
+  },
+  "pins": {
+    "python actions/verify_lichess_csv_audit.py": "e601adfa841fb4fd40d5ae817246b1b83622907c589e6dba0ab65fd71a84ff8d",
+    ".codebase/scripts/data/audit-lichess-csv-lessons.mjs": "23fe7e06cd6a1545201e89d54a0312efb239016920c18da5b29a48488527cf26"
+  },
+  "state_file": "runs/python-actions/current-training-contrast-csv-audit-checks.json",
+  "jobs": {
+    "tests": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "python actions/verify_lichess_csv_audit.py"
+      ]
+    }
+  },
+  "artifacts": {}
+}

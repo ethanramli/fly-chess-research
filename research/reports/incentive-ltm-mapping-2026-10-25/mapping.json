@@ -1,0 +1,258 @@
+{
+  "inputs": {
+    "graph": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    "annotations": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    "restrainedMapping": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b"
+  },
+  "upstream": {
+    "commit": "1610c80072fe8bb59bd397e7a61f716393a509b9",
+    "repository": "https://github.com/InsectRobotics/IncentiveCircuit",
+    "files": {
+      "models_base.py": "0113fedc0f15eb8c1f5c0f94a4bd566e1723a0aac34e4ab2ca8538363187f0a7",
+      "circuit.py": "94139014ada70594545becc730fb4e9c86e0aab584d39cf993e54d8e37acbb9a"
+    }
+  },
+  "mapping": {
+    "schema": "incentive-ltm-mapping-v1",
+    "groups": [
+      {
+        "side": "left",
+        "mbonType": "MBON02",
+        "danType": "PAM02",
+        "valence": "attraction",
+        "dan": [
+          {
+            "index": 98563,
+            "rootId": "720575940630998287"
+          },
+          {
+            "index": 92272,
+            "rootId": "720575940629774891"
+          },
+          {
+            "index": 124397,
+            "rootId": "720575940640048768"
+          },
+          {
+            "index": 105560,
+            "rootId": "720575940632541523"
+          },
+          {
+            "index": 99184,
+            "rootId": "720575940631118610"
+          },
+          {
+            "index": 17743,
+            "rootId": "720575940613732271"
+          }
+        ],
+        "edges": [],
+        "kc": [],
+        "observedKCTypes": {
+          "KCab-s": 168,
+          "KCab-m": 80,
+          "KCab-p": 8,
+          "KCab-c": 8
+        }
+      },
+      {
+        "side": "left",
+        "mbonType": "MBON15",
+        "danType": "PPL103",
+        "valence": "avoidance",
+        "dan": [
+          {
+            "index": 80782,
+            "rootId": "720575940627594568"
+          }
+        ],
+        "edges": [],
+        "kc": [],
+        "observedKCTypes": {}
+      },
+      {
+        "side": "right",
+        "mbonType": "MBON02",
+        "danType": "PAM02",
+        "valence": "attraction",
+        "dan": [
+          {
+            "index": 116972,
+            "rootId": "720575940636659886"
+          },
+          {
+            "index": 42407,
+            "rootId": "720575940620497217"
+          },
+          {
+            "index": 61687,
+            "rootId": "720575940623979593"
+          },
+          {
+            "index": 86947,
+            "rootId": "720575940628708139"
+          },
+          {
+            "index": 56065,
+            "rootId": "720575940622950605"
+          },
+          {
+            "index": 115051,
+            "rootId": "720575940635779959"
+          }
+        ],
+        "edges": [
+          606389,
+          606476,
+          606486
+        ],
+        "kc": [
+          73481,
+          95453,
+          97858
+        ],
+        "observedKCTypes": {
+          "KCab-m": 135,
+          "KCab-c": 37,
+          "KCab-s": 185,
+          "KCab-p": 13,
+          "KCa'b'-m": 2,
+          "KCa'b'-ap2": 1
+        }
+      },
+      {
+        "side": "right",
+        "mbonType": "MBON15",
+        "danType": "PPL103",
+        "valence": "avoidance",
+        "dan": [
+          {
+            "index": 102192,
+            "rootId": "720575940631758393"
+          }
+        ],
+        "edges": [],
+        "kc": [],
+        "observedKCTypes": {}
+      }
+    ],
+    "readouts": {
+      "MBON02": [
+        {
+          "index": 62883,
+          "rootId": "720575940624185095"
+        },
+        {
+          "index": 30349,
+          "rootId": "720575940617552340"
+        }
+      ],
+      "MBON15": [
+        {
+          "index": 115173,
+          "rootId": "720575940635841143"
+        },
+        {
+          "index": 97342,
+          "rootId": "720575940630767959"
+        },
+        {
+          "index": 51363,
+          "rootId": "720575940622093436"
+        },
+        {
+          "index": 13715,
+          "rootId": "720575940612455338"
+        }
+      ]
+    },
+    "excluded": {
+      "negativeSign": 0,
+      "unsupportedKCType": 634,
+      "unannotatedInputs": 212
+    },
+    "readyForCandidateExperiment": false,
+    "approximation": "Positive alpha'beta' KC-to-LTM-MBON edges by KC hemisphere; the same-side charging DAN population modulates them; no synapse-coordinate compartment or receptor identity."
+  },
+  "coverage": [
+    {
+      "side": "left",
+      "mbonType": "MBON02",
+      "danType": "PAM02",
+      "dan": 6,
+      "edges": 0,
+      "uniqueKC": 0,
+      "sharedWithMBON01Pool": 0,
+      "sharedWithMBON12Pool": 0,
+      "observedKCTypes": {
+        "KCab-s": 168,
+        "KCab-m": 80,
+        "KCab-p": 8,
+        "KCab-c": 8
+      }
+    },
+    {
+      "side": "left",
+      "mbonType": "MBON15",
+      "danType": "PPL103",
+      "dan": 1,
+      "edges": 0,
+      "uniqueKC": 0,
+      "sharedWithMBON01Pool": 0,
+      "sharedWithMBON12Pool": 0,
+      "observedKCTypes": {}
+    },
+    {
+      "side": "right",
+      "mbonType": "MBON02",
+      "danType": "PAM02",
+      "dan": 6,
+      "edges": 3,
+      "uniqueKC": 3,
+      "sharedWithMBON01Pool": 0,
+      "sharedWithMBON12Pool": 1,
+      "observedKCTypes": {
+        "KCab-m": 135,
+        "KCab-c": 37,
+        "KCab-s": 185,
+        "KCab-p": 13,
+        "KCa'b'-m": 2,
+        "KCa'b'-ap2": 1
+      }
+    },
+    {
+      "side": "right",
+      "mbonType": "MBON15",
+      "danType": "PPL103",
+      "dan": 1,
+      "edges": 0,
+      "uniqueKC": 0,
+      "sharedWithMBON01Pool": 0,
+      "sharedWithMBON12Pool": 0,
+      "observedKCTypes": {}
+    }
+  ],
+  "poolSizes": {
+    "MBON01": 84,
+    "MBON12": 664
+  },
+  "command": [
+    "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\neural-learning\\map-incentive-ltm.mjs",
+    "--out",
+    "research/reports/incentive-ltm-mapping-2026-10-25/mapping.json",
+    "--cpu-duty",
+    "0.5"
+  ],
+  "executableOptions": [
+    "--max-old-space-size=256"
+  ],
+  "moduleSha256": "0aae087a9f674c9037fc1102ebc98ded21f38cc8b7782dcb29c8b97fe2aba0d9",
+  "scope": "Coarse candidate mask only; no learning experiment or validated compartment/receptor physiology",
+  "resources": {
+    "peakRssMiB": 123.6328125,
+    "elapsedSeconds": 20.8488863,
+    "cpuSeconds": 5.734,
+    "cpuDuty": 0.5
+  }
+}

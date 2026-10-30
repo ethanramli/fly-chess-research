@@ -1,0 +1,48 @@
+Schema: lichess-curriculum-matrix-audit-v1
+Status: gate-failed  stageAccepted: false
+fullNeuralReplay: true  memoryContinuityVerified: true
+Acceptance evidence: curriculum-stage-replica-acceptance-v1 status=gate-failed
+Checkpoint selection: lichess-stage1-checkpoint-selection-v1 frozen=true status=not stated
+
+Replica 1: status=gate-failed stageAccepted=false
+  Gate  Observed                                         Threshold                                                                                                                Controls                                                                         Verdict
+  D1    24/24                                            training >=22/24 [curriculum-stage-acceptance.mjs:100]                                                                                                                                                    pass
+  D2    15/16 (strata 4/4 4/4 4/4 3/4)                   validation >=14/16 and >=3 per stratum [curriculum-stage-acceptance.mjs:101-103]                                                                                                                          pass
+  D3    61/64 (strata 16/16 16/16 16/16 13/16)           final >=52/64, >=12/16 per stratum, 8 families of 8 each >=6 [curriculum-stage-acceptance.mjs:104-107]                                                                                                    pass
+  D4    64/128                                           probe signs >=104/128 [curriculum-stage-acceptance.mjs:108]                                                                                                                                               fail
+  D5    29/32                                            counterfactual pairs >=26/32, all probeOrderingReversed [curriculum-stage-acceptance.mjs:109-110]                                                                                                         pass
+  D6    scratch 43, absent 61, shuffled 60, disabled 43  advantage >=10 and paired family-bootstrap lower95 >0, per control [curriculum-stage-acceptance.mjs:112-118]             scratch lower95 36, absent lower95 57, shuffled lower95 54, disabled lower95 36  pass
+  D7    not stated                                       retention >=14/16, before==after, sentinels correct (deferred under policy B) [curriculum-stage-acceptance.mjs:122-134]                                                                                   deferred
+  D8    boolean state audit                              all six state-audit checks true [curriculum-stage-acceptance.mjs:136-140]                                                                                                                                 pass
+
+Replica 2: status=gate-failed stageAccepted=false
+  Gate  Observed                                         Threshold                                                                                                                Controls                                                                         Verdict
+  D1    24/24                                            training >=22/24 [curriculum-stage-acceptance.mjs:100]                                                                                                                                                    pass
+  D2    15/16 (strata 4/4 4/4 4/4 3/4)                   validation >=14/16 and >=3 per stratum [curriculum-stage-acceptance.mjs:101-103]                                                                                                                          pass
+  D3    64/64 (strata 16/16 16/16 16/16 16/16)           final >=52/64, >=12/16 per stratum, 8 families of 8 each >=6 [curriculum-stage-acceptance.mjs:104-107]                                                                                                    pass
+  D4    64/128                                           probe signs >=104/128 [curriculum-stage-acceptance.mjs:108]                                                                                                                                               fail
+  D5    32/32                                            counterfactual pairs >=26/32, all probeOrderingReversed [curriculum-stage-acceptance.mjs:109-110]                                                                                                         pass
+  D6    scratch 21, absent 56, shuffled 64, disabled 21  advantage >=10 and paired family-bootstrap lower95 >0, per control [curriculum-stage-acceptance.mjs:112-118]             scratch lower95 14, absent lower95 48, shuffled lower95 64, disabled lower95 14  pass
+  D7    not stated                                       retention >=14/16, before==after, sentinels correct (deferred under policy B) [curriculum-stage-acceptance.mjs:122-134]                                                                                   deferred
+  D8    boolean state audit                              all six state-audit checks true [curriculum-stage-acceptance.mjs:136-140]                                                                                                                                 pass
+
+Replica 3: status=gate-failed stageAccepted=false
+  Gate  Observed                                         Threshold                                                                                                                Controls                                                                         Verdict
+  D1    24/24                                            training >=22/24 [curriculum-stage-acceptance.mjs:100]                                                                                                                                                    pass
+  D2    15/16 (strata 4/4 4/4 4/4 3/4)                   validation >=14/16 and >=3 per stratum [curriculum-stage-acceptance.mjs:101-103]                                                                                                                          pass
+  D3    63/64 (strata 16/16 16/16 16/16 15/16)           final >=52/64, >=12/16 per stratum, 8 families of 8 each >=6 [curriculum-stage-acceptance.mjs:104-107]                                                                                                    pass
+  D4    64/128                                           probe signs >=104/128 [curriculum-stage-acceptance.mjs:108]                                                                                                                                               fail
+  D5    31/32                                            counterfactual pairs >=26/32, all probeOrderingReversed [curriculum-stage-acceptance.mjs:109-110]                                                                                                         pass
+  D6    scratch 59, absent 63, shuffled 56, disabled 59  advantage >=10 and paired family-bootstrap lower95 >0, per control [curriculum-stage-acceptance.mjs:112-118]             scratch lower95 52, absent lower95 61, shuffled lower95 48, disabled lower95 52  pass
+  D7    not stated                                       retention >=14/16, before==after, sentinels correct (deferred under policy B) [curriculum-stage-acceptance.mjs:122-134]                                                                                   deferred
+  D8    boolean state audit                              all six state-audit checks true [curriculum-stage-acceptance.mjs:136-140]                                                                                                                                 pass
+
+Diagnosis (verbatim from audit):
+  replica 1: gate-failed; failed D4; train 24/24, validation 15/16, final 61/64, probe signs 64/128, pairs 29/32, advantage {"scratch":43,"absent":61,"shuffled":60,"disabled":43}
+  replica 2: gate-failed; failed D4; train 24/24, validation 15/16, final 64/64, probe signs 64/128, pairs 32/32, advantage {"scratch":21,"absent":56,"shuffled":64,"disabled":21}
+  replica 3: gate-failed; failed D4; train 24/24, validation 15/16, final 63/64, probe signs 64/128, pairs 31/32, advantage {"scratch":59,"absent":63,"shuffled":56,"disabled":59}
+
+First failing gate per replica:
+  replica 1: D4
+  replica 2: D4
+  replica 3: D4

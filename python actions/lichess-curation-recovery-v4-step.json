@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "name": "lichess-stage1-curation-recovery-v4",
+  "paused": false,
+  "paths": {
+    "input": ".cache/lichess-puzzles-2026-10-21.csv",
+    "extraction": "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json",
+    "registration": "research\\reports\\lichess-foundations-pilot-2026-10-21\\curation-recovery-v4-registration.json",
+    "out": "research/data/lichess-stage1-candidates-v4",
+    "run": "research/data/lichess-stage1-candidates-v4"
+  },
+  "pins": {
+    "{registration}": "0ca30fe1b6f398608f770bd70aad1da6663009212655d1e5e488070a1c572290",
+    ".codebase/scripts/data/curate-lichess-puzzles.mjs": "a2724bdc8f1292cffb36563f445eeab3a6b89f62ed82ee2b8fa997c473497cf7",
+    ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    "{input}": "ec2dd1a8f9cbd139ebb4aee228f72e77f8e2a581a24d25f61f71e6cf306b10f8",
+    "{extraction}": "deac9b4792742a84fde9f3273caabcf5f505d957fb142881a8345aae356b4510",
+    ".cache/lichess-puzzles-2026-10-21.csv.zst": "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+    ".codebase/scripts/data/audit-lichess-source-candidates.mjs": "473b23aff4cd544bdfde68fd3d703a008229f0db7bea89d486a7be6415088ebf",
+    ".codebase/tests/puzzle-learning/lichess-lessons.test.mjs": "32112d1fb53564020639c158143ebb2a0e1ff23ed1863782a0bbecf2b78f5a66",
+    ".codebase/tests/puzzle-learning/curriculum-rehearsal-plan.test.mjs": "a0b2a4a3c23ca286b7fdceed58f2d11214e74419aa3338a31925a239703d617f",
+    ".codebase/tests/search-and-feedback/capture-retention-certificate.test.mjs": "0d10b40cf7894087729bee0f60f1accdcc7ecf3ecb88c4ab7c90d2bb42f06413"
+  },
+  "state_file": "runs/python-actions/current-lichess-curation-v4.json",
+  "jobs": {
+    "curate-stage1-v4": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/data/curate-lichess-puzzles.mjs",
+        "--input",
+        "{input}",
+        "--extraction-receipt",
+        "{extraction}",
+        "--out",
+        "{out}",
+        "--limit-per-split",
+        "128",
+        "--max-pieces",
+        "6",
+        "--seed",
+        "20261021",
+        "--max-seconds",
+        "7200",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{input}",
+        "{extraction}",
+        "{registration}",
+        ".cache/lichess-puzzles-2026-10-21.csv.zst"
+      ],
+      "fresh_output": "{out}"
+    },
+    "source-tests": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        ".codebase/tests/puzzle-learning/lichess-lessons.test.mjs",
+        ".codebase/tests/puzzle-learning/curriculum-rehearsal-plan.test.mjs",
+        ".codebase/tests/search-and-feedback/capture-retention-certificate.test.mjs"
+      ]
+    },
+    "audit-source-v4": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/data/audit-lichess-source-candidates.mjs",
+        "--corpus",
+        "{out}",
+        "--out",
+        "research\\reports\\lichess-foundations-pilot-2026-10-21\\source-candidates-audit-v4.json",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{out}/manifest.json",
+        "{input}",
+        "{extraction}"
+      ],
+      "refuse_existing": [
+        "research\\reports\\lichess-foundations-pilot-2026-10-21\\source-candidates-audit-v4.json"
+      ]
+    }
+  },
+  "artifacts": {
+    "corpus": "{out}/manifest.json",
+    "audit": "research\\reports\\lichess-foundations-pilot-2026-10-21\\source-candidates-audit-v4.json"
+  },
+  "report_fields": [
+    "schema",
+    "status",
+    "counts",
+    "source",
+    "resources"
+  ]
+}

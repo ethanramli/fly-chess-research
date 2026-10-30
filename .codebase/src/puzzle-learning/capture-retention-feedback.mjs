@@ -54,7 +54,13 @@ export function bindCaptureRetentionAssessment(board,task,assessment,experience,
   const tied=rows.filter(row=>row.score===best).map(row=>row.move).sort();
   assert.equal(assessment.choice,tied.length===1?tied[0]:null,'Choice does not match ranking');
   assert.equal(rows.length,legal.length,'Require all-legal unaided assessment');
-  assert.deepEqual(experience.context,{fen:board.fen(),pgn:board.pgn(),task},'Teaching context mismatch');
+  // Synthetic FEN-rooted tasks also carry their source provenance; the board,
+  // history and task must still match exactly.
+  const {historyKind,parentSourceRecordSha256,...core}=experience.context??{};
+  assert.deepEqual(core,{fen:board.fen(),pgn:board.pgn(),task},'Teaching context mismatch');
+  assert((historyKind===undefined&&parentSourceRecordSha256===undefined)
+    ||(historyKind==='synthetic-root-position'&&/^[a-f0-9]{64}$/.test(parentSourceRecordSha256??'')),
+    'Unregistered teaching history kind');
   const checked=checkedExperience(board,experience);
   return {schema:'c01-assessed-feedback-binding-v1',assessment:structuredClone(assessment),coverage:'all-legal',
     legalMoveCount:legal.length,assessedMoveCount:rows.length,tiedTopMoves:tied,reviewedMove:experience.move,

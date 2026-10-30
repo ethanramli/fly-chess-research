@@ -2,6 +2,7 @@ import { Chess } from 'chess.js';
 import { digest } from '../neural-learning/mushroom-body.mjs';
 import { readMBON } from '../neural-learning/mbon-readout.mjs';
 import { verifiedExperience } from '../search-and-feedback/verified-feedback.mjs';
+import {checkCaptureRetentionAction} from '../search-and-feedback/capture-retention-action-domain.mjs';
 import { uci } from '../search-and-feedback/experimental-puzzle-search.mjs';
 
 // Adapter around the existing mapped local learner, not a new learning rule.
@@ -20,6 +21,27 @@ export class MappedPuzzleBrain {
     this.presentations = 0;
   }
   memoryFingerprint() { return digest(this.memory.snapshot()); }
+  assertMemoryChannels(requiredDanTypes = []) {
+    if (typeof this.memory.observeTrajectory !== 'function') return;
+    const mapped = new Set(this.memory.mapping.groups.map(group => group.danType));
+    if (requiredDanTypes.some(type => !mapped.has(type)))
+      throw Error('Trajectory memory does not map the required teaching channel');
+  }
+  observeMemory(requiredDanTypes = []) {
+    // The curriculum's RateTimingMemory consumes the complete neural frame
+    // trajectory; older endpoint memories keep their existing observe API.
+    if (typeof this.memory.observeTrajectory !== 'function') return this.memory.observe(this.rest);
+    this.assertMemoryChannels(requiredDanTypes);
+    return this.memory.observeTrajectory({ plasticityEnabled: true });
+  }
+  verifyExperience(board, move, task, proof) {
+    if (task?.objective !== 'capture-retention') return verifiedExperience(board, move, task, proof);
+    const checked = checkCaptureRetentionAction(board, move, task, proof);
+    return { move, actor: checked.actor ?? board.turn(), status: checked.status,
+      experimentalPulse: checked.status === 'unknown' ? null : checked.experimentalPulse,
+      learningAllowed: checked.learningAllowed, certificateSha256: checked.certificateSha256,
+      ...(checked.meaning === undefined ? {} : { meaning: checked.meaning }) };
+  }
   async evoke(stimulation, episode = null, frameIdentity = null) {
     this.guard();
     if (this.presentations >= this.maxPresentations) throw Error('Neural presentation budget exhausted');
@@ -42,8 +64,10 @@ export class MappedPuzzleBrain {
     }
     if (this.memoryFingerprint() !== frozen || board.pgn() !== history)
       throw Error('Assessment changed task or lasting memory');
-    return { rows, choice: [...rows].sort((a, b) => b.score - a.score)[0].move,
-      memoryFingerprint: frozen };
+    const highest = Math.max(...rows.map(row => row.score));
+    const tiedTopMoves = rows.filter(row => row.score === highest).map(row => row.move).sort();
+    return { rows, choice: tiedTopMoves.length === 1 ? tiedTopMoves[0] : null,
+      tiedTopMoves, memoryFingerprint: frozen };
   }
   async evaluate(board, moves, task) {
     const assessment = await this.assess(board, moves, task);
@@ -66,7 +90,7 @@ export class MappedPuzzleBrain {
     if (typeof context?.pgn !== 'string' || context.pgn.length > 65536) throw Error('Missing bounded replay history');
     const board = new Chess(); board.loadPgn(context.pgn);
     if (board.fen() !== context.fen || board.history().length > 512) throw Error('Replay context mismatch');
-    const verified = verifiedExperience(board, experience.move, context.task, experience.proof);
+    const verified = this.verifyExperience(board, experience.move, context.task, experience.proof);
     if (!verified.learningAllowed || verified.status !== experience.status
       || verified.actor !== experience.actor || verified.certificateSha256 !== experience.certificateSha256)
       throw Error('Replay consequence does not match checked context');
@@ -79,7 +103,7 @@ export class MappedPuzzleBrain {
     const before = this.memory.snapshot(), response = await this.evoke(stimulation);
     const h = this.model.h[this.model.steps], scale = this.memory.config.activityScale;
     const kc = this.mapping.groups.flatMap(g => g.kc.map(i => Math.max(0, h[i] - this.rest[i]) / scale));
-    const update = plasticityEnabled ? this.memory.observe(this.rest)
+    const update = plasticityEnabled ? this.observeMemory(pulse ? ['PPL103'] : [])
       : { events: this.memory.events, changedEdges: 0, factors: [] };
     const after = this.memory.snapshot();
     return { event: { ...verified, delivered: pulse }, context, cue, response, before, after,

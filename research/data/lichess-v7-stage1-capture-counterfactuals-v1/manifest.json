@@ -1,0 +1,87 @@
+{
+  "schema": "lichess-v7-stage1-capture-counterfactual-candidates-v1",
+  "reportSha256": "4d421b9c89424cbf14ed6110fc69576cb8a4d554c519ccd5ca74dceafb6bf692",
+  "inputs": {
+    "batchManifestSha256": "e31bcf389a8780668be231d3278221138048b267437cbfddd21f2c596a2a4434",
+    "lessonAuditSha256": "0a8b655bff466c4a137693a353651bf3c19b9fe11ca057f904f5483f54aefe85",
+    "chunks": [
+      {
+        "job": "prepare-train-000",
+        "manifestSha256": "11de2333f73b1fff3c67fa67c5a18bc8c490f547d393877126610805fa4e0f0e",
+        "lessonsSha256": "13ce8eb30d843a2ac72ad14e9a708149d3d2c5d1c95b9b55cfede6c9f5fe6a8b",
+        "rows": 32
+      },
+      {
+        "job": "prepare-train-001",
+        "manifestSha256": "dd91fa5c1ac6acdbab86cc05cbcad2ef4322183500add083f0c79fd7ca8d37b5",
+        "lessonsSha256": "56d7de3dfd390c30341d6d6095f07638af1e0795b712a7afc0d98ba34e856633",
+        "rows": 32
+      },
+      {
+        "job": "prepare-train-002",
+        "manifestSha256": "3fa5c6ec314e3070cc1a2eea593550ecf9744d470a06272c5200808040629fcb",
+        "lessonsSha256": "6769f4b355bcc44bf42c879052d2100e374fa47c1eb2db75d781185b04e8c8c2",
+        "rows": 32
+      },
+      {
+        "job": "prepare-train-003",
+        "manifestSha256": "55597eb56dfce941032287b3695562e490c9150917ebc5c980756d5f616137bf",
+        "lessonsSha256": "c9b1d8abde0817e0f895bbcc0528f677a30c782a7222a7e9620b166ec1d2ed06",
+        "rows": 32
+      },
+      {
+        "job": "prepare-validation-000",
+        "manifestSha256": "f3aa3e289731b1d85bce14d1513a08401f7b2438f10b5d57040e7dd2372dc578",
+        "lessonsSha256": "2b5e0c905b101952570a55d5970925b22f13b48cb47e8962074467e36bbfad17",
+        "rows": 32
+      },
+      {
+        "job": "prepare-validation-001",
+        "manifestSha256": "a43c31284e88138bbeb90e51133a5f6dc159ad160728217a0991c80711424b4c",
+        "lessonsSha256": "feb9a809d231c897d2f1c5df70c0836332332a2ba47010d1324c95643eb3c5ee",
+        "rows": 32
+      },
+      {
+        "job": "prepare-validation-002",
+        "manifestSha256": "37c8932236e6641abf6ef3976a97105547e3f653c92430df6f7a67842562649d",
+        "lessonsSha256": "3e33e8570726c67c71114beb2a84081e9196ff6bc2354b0ee72226e929de52f7",
+        "rows": 32
+      },
+      {
+        "job": "prepare-validation-003",
+        "manifestSha256": "26e748f6e7d071468f800a24fca3264406a4d61254bb1ab860f9f679c2a2086f",
+        "lessonsSha256": "d4da7faa9b2bd5a60c87baaf5d4e69b5c465858401f06eca83ce0efcca705ece",
+        "rows": 32
+      }
+    ]
+  },
+  "counts": {
+    "train": {
+      "rows": 128,
+      "eligibleRows": 20,
+      "rootsWithFlip": 9,
+      "mutations": 2361,
+      "evaluations": 1119,
+      "flipPairs": 58,
+      "byTransition": {
+        "success-to-failure": 58
+      }
+    },
+    "validation": {
+      "rows": 128,
+      "eligibleRows": 20,
+      "rootsWithFlip": 8,
+      "mutations": 2620,
+      "evaluations": 1837,
+      "flipPairs": 132,
+      "byTransition": {
+        "failure-to-success": 79,
+        "success-to-failure": 53
+      }
+    }
+  },
+  "finalSplitInspected": false,
+  "neuralEventsDelivered": 0,
+  "graphLaunchAuthorized": false,
+  "scope": "Candidate feasibility only; no family audit, learning or reasoning claim."
+}

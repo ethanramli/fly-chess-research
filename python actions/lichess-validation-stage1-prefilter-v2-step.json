@@ -1,0 +1,74 @@
+{
+    "schema":  1,
+    "name":  "lichess-validation-stage1-prefilter-v2",
+    "paused":  false,
+    "paths":  {
+                  "run":  "research/data/lichess-validation-stage1-prefilter-v2",
+                  "sourceCorpus":  "research/data/lichess-validation-candidates-v1",
+                  "filtered":  "research/data/lichess-validation-stage1-prefilter-v2"
+              },
+    "pins":  {
+                 ".codebase/scripts/data/audit-lichess-validation-stage1-candidates-v2.mjs":  "01af92961ff7e9db0339489f90673927e3f4bacb8079cb6c167f0d87acd5d2ad",
+                 ".codebase/src/search-and-feedback/puzzle-search.mjs":  "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+                 ".codebase/scripts/data/filter-lichess-validation-stage1-candidates-v2.mjs":  "2deb9dd4dd9ef03f7c057620a1a244e77261e57222422e12e42546ac87a76a49",
+                 ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs":  "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+                 "research/data/lichess-validation-candidates-v1/manifest.json":  "ff7d5c544ed23bc36694e03ae848a7255ae82794a2bb84e87067cf54aef18b0f",
+                 ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs":  "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+                 ".codebase/src/search-and-feedback/capture-retention-certificate.mjs":  "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+                 "package-lock.json":  "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+                 "research/data/lichess-validation-candidates-v1/validation.jsonl":  "4bd37573eeefbdfbcd941438a07f6ae6423936acf347878b33d2be584716d484"
+             },
+    "state_file":  "runs/python-actions/current-lichess-validation-stage1-prefilter-v2.json",
+    "jobs":  {
+                 "audit":  {
+                               "argv":  [
+                                            "node",
+                                            "--max-old-space-size=256",
+                                            ".codebase/scripts/data/audit-lichess-validation-stage1-candidates-v2.mjs",
+                                            "--corpus",
+                                            "{sourceCorpus}",
+                                            "--filtered",
+                                            "{filtered}",
+                                            "--out",
+                                            "research/reports/lichess-foundations-pilot-2026-10-21/validation-stage1-prefilter-audit-v2.json"
+                                        ],
+                               "requires":  [
+                                                "{filtered}/manifest.json",
+                                                "{filtered}/validation.jsonl"
+                                            ],
+                               "refuse_existing":  [
+                                                       "research/reports/lichess-foundations-pilot-2026-10-21/validation-stage1-prefilter-audit-v2.json"
+                                                   ],
+                               "role":  "check"
+                           },
+                 "prefilter":  {
+                                   "argv":  [
+                                                "node",
+                                                "--max-old-space-size=256",
+                                                ".codebase/scripts/data/filter-lichess-validation-stage1-candidates-v2.mjs",
+                                                "--corpus",
+                                                "{sourceCorpus}",
+                                                "--out",
+                                                "{run}"
+                                            ],
+                                   "fresh_output":  "{run}",
+                                   "role":  "check"
+                               }
+             },
+    "artifacts":  {
+                      "audit":  "research/reports/lichess-foundations-pilot-2026-10-21/validation-stage1-prefilter-audit-v2.json",
+                      "manifest":  "{run}/manifest.json"
+                  },
+    "report_fields":  [
+                          "tested",
+                          "domainCandidates",
+                          "unknownCandidates",
+                          "selected",
+                          "selectedGameIds",
+                          "passed",
+                          "finalSplitInspected",
+                          "eligibleForNeuralTeaching",
+                          "graphLaunchAuthorized",
+                          "scope"
+                      ]
+}

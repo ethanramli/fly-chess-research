@@ -13,19 +13,33 @@ export function createPublicLessonFrameEncoder(mapping, { seed = 14009, maxCells
     || !Number.isSafeInteger(maxHistoryPlies) || maxHistoryPlies < 1 || maxHistoryPlies > 512
     || !Number.isFinite(totalCurrent) || totalCurrent <= 0 || totalCurrent > 192
     || !Number.isFinite(maxCellCurrent) || maxCellCurrent <= 0 || maxCellCurrent > 1.5
-    || !['capture-retention','forced-mate'].includes(taskFamily))
+    || !['capture-retention','forced-mate','avoid-mate','stage2-mate','stage2-with-rehearsal'].includes(taskFamily))
     throw Error('Invalid public frame encoder configuration');
   const pool = [...new Set(mapping.groups.flatMap(g => g.kc))].sort((a,b) => a-b);
   if (!pool.length || pool.some(i => !Number.isSafeInteger(i) || i < 0)) throw Error('Invalid KC pool');
   const config = { seed, maxCells, totalCurrent, maxCellCurrent, maxHistoryPlies };
-  const schema = taskFamily === 'capture-retention' ? 'public-lesson-frame-cue-v1' : 'public-mate-frame-cue-v1';
+  const schema = taskFamily === 'capture-retention' ? 'public-lesson-frame-cue-v1'
+    : taskFamily === 'forced-mate' ? 'public-mate-frame-cue-v1'
+      : taskFamily === 'avoid-mate' ? 'public-avoid-mate-frame-cue-v1'
+        : taskFamily === 'stage2-with-rehearsal' ? 'public-stage2-rehearsal-frame-cue-v1' : 'public-stage2-mate-frame-cue-v1';
   const identity = hash({ schema, mapping, config, pool });
-  function encode(frame) {
+  function encode(frame, action, task) {
+    // MappedPuzzleBrain uses the shared board/action encoder contract. Accept
+    // it here too, while keeping the serialized public-frame contract exact.
+    if (frame && typeof frame.fen === 'function' && typeof frame.pgn === 'function')
+      frame = { schema: 'public-lesson-frame-v1', fen: frame.fen(), pgn: frame.pgn(), action, task };
+    const taskAllowed = frame?.task && (['stage2-mate','stage2-with-rehearsal'].includes(taskFamily)
+      ? (frame.task.objective === 'forced-mate' && [1,3].includes(frame.task.plies))
+        || (frame.task.objective === 'avoid-mate' && frame.task.plies === 3)
+        || (taskFamily === 'stage2-with-rehearsal' && frame.task.objective === 'capture-retention' && frame.task.plies === 1)
+      : frame.task.objective === taskFamily
+        && (taskFamily === 'capture-retention' ? frame.task.plies === 1
+          : taskFamily === 'forced-mate' ? [1,3,5,7].includes(frame.task.plies)
+            : frame.task.plies === 3));
     if (frame?.schema !== 'public-lesson-frame-v1'
       || Object.keys(frame).sort().join(',') !== 'action,fen,pgn,schema,task'
       || typeof frame.fen !== 'string' || typeof frame.pgn !== 'string' || frame.pgn.length > 65536
-      || frame.task?.objective !== taskFamily
-      || !(taskFamily === 'capture-retention' ? frame.task.plies === 1 : [1,3,5,7].includes(frame.task.plies))
+      || !taskAllowed
       || Object.keys(frame.task).sort().join(',') !== 'objective,plies')
       throw Error('Only public board/history/action/task frames; no teacher labels');
     const board = new Chess(); board.loadPgn(frame.pgn);
@@ -58,4 +72,16 @@ export function createPublicLessonFrameEncoder(mapping, { seed = 14009, maxCells
 
 export function createPublicMateFrameEncoder(mapping, config = {}) {
   return createPublicLessonFrameEncoder(mapping, { ...config, taskFamily: 'forced-mate' });
+}
+
+export function createPublicAvoidMateFrameEncoder(mapping, config = {}) {
+  return createPublicLessonFrameEncoder(mapping, { ...config, taskFamily: 'avoid-mate' });
+}
+
+export function createPublicStage2MateFrameEncoder(mapping, config = {}) {
+  return createPublicLessonFrameEncoder(mapping, { ...config, taskFamily: 'stage2-mate' });
+}
+
+export function createPublicStage2CurriculumFrameEncoder(mapping, config = {}) {
+  return createPublicLessonFrameEncoder(mapping, { ...config, taskFamily: 'stage2-with-rehearsal' });
 }

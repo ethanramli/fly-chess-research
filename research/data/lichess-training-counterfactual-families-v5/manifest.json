@@ -1,0 +1,73 @@
+{
+  "schema": "lichess-counterfactual-family-preparation-v2",
+  "split": "train",
+  "inputs": {
+    "batchManifestSha256": "e31bcf389a8780668be231d3278221138048b267437cbfddd21f2c596a2a4434",
+    "lessonAuditSha256": "0a8b655bff466c4a137693a353651bf3c19b9fe11ca057f904f5483f54aefe85",
+    "inputChunks": [
+      {
+        "job": "prepare-train-000",
+        "manifestSha256": "11de2333f73b1fff3c67fa67c5a18bc8c490f547d393877126610805fa4e0f0e",
+        "lessonsSha256": "13ce8eb30d843a2ac72ad14e9a708149d3d2c5d1c95b9b55cfede6c9f5fe6a8b",
+        "rows": 32
+      },
+      {
+        "job": "prepare-train-001",
+        "manifestSha256": "dd91fa5c1ac6acdbab86cc05cbcad2ef4322183500add083f0c79fd7ca8d37b5",
+        "lessonsSha256": "56d7de3dfd390c30341d6d6095f07638af1e0795b712a7afc0d98ba34e856633",
+        "rows": 32
+      },
+      {
+        "job": "prepare-train-002",
+        "manifestSha256": "3fa5c6ec314e3070cc1a2eea593550ecf9744d470a06272c5200808040629fcb",
+        "lessonsSha256": "6769f4b355bcc44bf42c879052d2100e374fa47c1eb2db75d781185b04e8c8c2",
+        "rows": 32
+      },
+      {
+        "job": "prepare-train-003",
+        "manifestSha256": "55597eb56dfce941032287b3695562e490c9150917ebc5c980756d5f616137bf",
+        "lessonsSha256": "c9b1d8abde0817e0f895bbcc0528f677a30c782a7222a7e9620b166ec1d2ed06",
+        "rows": 32
+      }
+    ]
+  },
+  "bounds": {
+    "maxTrainingRows": 128,
+    "maxBranches": 4096,
+    "maxFamilies": 16,
+    "maxSeconds": 2700,
+    "maxRssMiB": 2048,
+    "minFreeMiB": 256,
+    "cpuDuty": 0.5,
+    "heapMiB": 256,
+    "maxFamilyBytes": 2097152,
+    "maxOutputBytes": 33554432
+  },
+  "counts": {
+    "trainingRows": 128,
+    "eligibleRows": 20,
+    "branches": 1536,
+    "families": 3,
+    "unknownBranches": 0,
+    "oversizedFamilies": 0
+  },
+  "commonMoveKind": "any-quiet",
+  "responseMoveKind": "any-quiet",
+  "stoppingBound": "training-roots-exhausted",
+  "outputSha256": "f1558d89d3e6cd194a5ee25b859bf1d7daede397a5cd55e45172d4d795a555a1",
+  "outputBytes": 245703,
+  "resources": {
+    "elapsedSeconds": 386.5181498,
+    "cpu": {
+      "user": 184671000,
+      "system": 875000
+    },
+    "peakRssMiB": 86.93359375
+  },
+  "neuralEventsDelivered": 0,
+  "graphLaunchAuthorized": false,
+  "independentFamilyAuditPassed": false,
+  "trainingLessonContentInspected": true,
+  "finalSplitInspected": false,
+  "scope": "Bounded training-only counterfactual construction; needs independent legal/family replay and a separate cross-split audit before any learning."
+}

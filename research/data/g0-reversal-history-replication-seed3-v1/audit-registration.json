@@ -1,0 +1,48 @@
+{
+  "schema": "g0-history-seed3-registration-v1",
+  "created": "2026-10-21T08:58:45.841Z",
+  "parentProtocol": "5943dc8fcb68d2dd6a92ec5fd5ae3e4985daf37e2a9c2afe58b012b19a3f025d",
+  "protocolSha256": "ddeffa58240f600dd93a68fe53a8aa2ad82d6a294f2de217ba7b4069d7953eb0",
+  "planHash": "88e78fcff45be2ffb4a5f12063f4f6f5487886949cb04ed9705ea2398e3b0238",
+  "scientificChange": "Projection seed 20261012 -> 20261013 only; new publication paths and provenance metadata",
+  "preservedKeys": [
+    "model",
+    "memory",
+    "timing",
+    "encoder",
+    "readout",
+    "conditions",
+    "gates",
+    "stopping",
+    "maxPresentations"
+  ],
+  "runnerSha256": "0101bb57eaadcc8231645d3afc3b2f43467946de61b0ebcbf5a6f4578908b60e",
+  "auditorSha256": "53af15cd88f05da12350f947f564c75f52b5fa5fb96d85b55bd215e09df729d5",
+  "expectedCommand": [
+    "node",
+    "--max-old-space-size=256",
+    ".codebase/scripts/neural-learning/run-g0-reversal-history-replication.mjs",
+    "--protocol",
+    "research/data/g0-reversal-history-replication-seed3-v1/protocol.json",
+    "--out",
+    "runs/g0-history-replication-20261013-v1",
+    "--cpu-duty",
+    "0.5"
+  ],
+  "auditCommand": [
+    "node",
+    "--max-old-space-size=256",
+    "research/data/g0-reversal-history-replication-seed3-v1/audit.mjs",
+    "runs/g0-history-replication-20261013-v1",
+    "--cpu-duty",
+    "0.5"
+  ],
+  "resources": {
+    "maxOldSpaceMiB": 256,
+    "maxRssMiB": 768,
+    "minFreeMiB": 256,
+    "cpuDuty": 0.5,
+    "maxPresentations": 16000
+  },
+  "outcomeRule": "Report complete matched branches and all controls; audit full recurrence before classification. This replication cannot pass G0 or authorize Stage 1."
+}

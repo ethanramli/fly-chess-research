@@ -1,0 +1,17 @@
+# Registered seed-3 recovery and supervisor inspection
+
+22 October 2026. The researcher explicitly resumed the full learning-loop goal. This is operational recovery of the same registered G0-history diagnostic, not a new scientific condition or a G0 pass.
+
+The old process was missing with complete checkpoint015232/7615 receipts/pending=false. Its protocol hash, runner, auditor and audit registration matched. Preserve the zero-byte015233 partial.
+
+The supervisor's prior WMI fallback omitted every process command line, causing all Node processes to be treated as unknown experiments. A bounded native Windows query now obtains command lines using ordinary limited-query permissions. Failed inspection stays unknown and blocks launch. **22/22** action checks pass in `runs/python-actions/20261022T022917-1e1f76b9/`. Permission/setup and test-assumption failures are recorded in the [journal](../../journal/experiments/2026-10-22-babysit-integration.md).
+
+The first resumed launch, PID16912/invocation `runs/python-actions/20261022T023111-9dc59cea/`, failed before output publication: the frozen Node runner could not spawn its own PowerShell process guard (`EPERM`) in the sandbox. No run directory, result or checkpoint was created. [Campaign](failed-launch-campaign.json), [handle](failed-launch-handle.json) and [explicit reconciliation decision](recovery-decision.json) preserve this attempt. After confirming PID absence, no output and the old valid checkpoint/pins, the mutable campaign cache was returned to the complete source run while retaining its resume count. This was explicit reconciliation, not a silent restart.
+
+Read-only process ownership inspection outside the sandbox succeeded. The unchanged registered babysit command was then run through that environment. It started **PID292**, supervisor session20485, invocation `runs/python-actions/20261022T023347-2665a211/`, new run `runs/g0-history-replication-20261013-v1-resume-0003`. Runtime config: `runs/python-actions/babysit-configs/448a0488cd47134f-resume-9259cacff1.json`. Checkpoint/receipt advancement proves the runner accepted the recovered identity and continued execution; independent neural replay remains required.
+
+Latest sample at this entry: live at checkpoint016284/8140 receipts, retained-disabled reversal stage15 lesson2, pending=true;186.1 MiB working set, no stderr or guard, no result/audit. This is a historical sample, not ongoing liveness proof or permission to relaunch. Use the same runtime/handle and authoritative status. The frozen768 MiB guard, protocol, waveform, exposure caps and scientific gates remain unchanged.
+
+## Source-PGN publication access
+
+The same private-directory issue found in the action checks also applies to the PGN fetcher's use of Python3.14 `mkdtemp`. It now creates a fresh UUID partial directory with inherited workspace permissions before atomic rename. No existing ACL was changed and request/ID/PGN validation is unchanged. [Prior fetcher](fetch_lichess_game_pgns_before.py) is preserved. The [registered offline check](../../../python%20actions/lichess-pgn-publication-check.json) passes1/1 in `runs/python-actions/20261022T025436-12717a62/`: a mocked public-response fixture is published and consumed by a fresh managed Python reader. This is not a live network fetch or history/consequence audit. Production retrieval requires fresh updated pins after source acceptance.

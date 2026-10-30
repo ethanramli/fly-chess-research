@@ -1,8 +1,14 @@
 # Puzzle-learning experiments
 
-- [Full principles curriculum: twelve cumulative stages, feedback and advancement gates](principles-curriculum.md): design complete; G0, receiver integrations and learning gates unpassed.
+- [Lichess capture comparisons and data readiness](lichess-capture-comparisons.md): audited source/proof corpus, capture shortcut, preserved negative branch attempts and current training-only source selection; no neural qualification.
+
+- [Lichess foundations and automated teaching loop](lichess-foundations-loop.md): twelve-stage meaning, Stockfish/outcome teaching boundaries, rehearsal and one-command progression contract; partial source/proof software, no neural qualification.
+- [Synthetic-position provenance for Lichess-derived counterfactuals](synthetic-position-provenance.md): source/task separation contract and FEN-root panel/Stockfish binding are implemented; prepared data, independent split audit, and training authorization remain absent.
+
+- [Full principles curriculum: twelve cumulative stages, feedback and advancement gates](principles-curriculum.md): design complete; G0 gate failed, so Stage 1 remains gated.
 - [Reusable Python curriculum commands](python-curriculum-actions.md): short launcher, editable step file, compact operational output; preserves gates and pauses.
-- [Plain-English curriculum and 13 October status](principles-curriculum-plain-english.md): meeting explanation, audited G0 reversal failure and unfinished follow-up.
+- [Plain-English curriculum and current status](principles-curriculum-plain-english.md): G0 reversal failure, completed follow-up diagnostic and remaining gate.
+- [Completed G0 reversal-history diagnostic and full replay audit](../../../research/journal/experiments/2026-10-19-g0-audit-memory-guard.md): replay passed; G0 did not pass.
 
 - [Interactive value-teaching math explainer](value-teaching-explainer.html): educational illustration of the proposed teaching signal, not an implemented or validated learner.
 
@@ -97,8 +103,16 @@ One inspected development fixture now passes audited acquired repair under adapt
 
 - [Prospective consequence-value readout feasibility](../../../research/reports/consequence-value-feasibility-v1-2026-10-10/README.md): fixed unconditioned-reference contrast and certified-feedback controls; 2/2 taught choices, new-board failure and passing full replay.
 
-- [G0 neutral receiver preflight](../../../research/data/curriculum-g0-receiver-v1/README.md): receiver implemented and static checks pass; behavioral G0 and C01 remain pending.
+- [G0 neutral receiver preflight](../../../research/data/curriculum-g0-receiver-v1/README.md): receiver implemented and static checks pass; behavioral G0 and Stage 1 remain pending.
 
-- [C01 all-legal capture-retention teacher domain](capture-retention-all-legal-domain.md): new quiet-action evidence plus unchanged capture replay; receiver/datasets/training pending.
+- [Stage 1 all-legal capture-retention teacher domain](capture-retention-all-legal-domain.md): new quiet-action evidence plus unchanged capture replay; receiver/datasets/training pending.
 
-- [C01 all-legal bound-ray cue preflight](../../../research/data/c01-input-domain-preflight-v1/README.md): static 207-action/seed projection audit; bounded cue loss recorded; no neural delivery or C01 split generation.
+- [Stage 1 all-legal bound-ray cue preflight](../../../research/data/c01-input-domain-preflight-v1/README.md): static 207-action/seed projection audit; bounded cue loss recorded; no neural delivery or Stage 1 split generation.
+# Curriculum subdomains
+
+- [Stage 2 bounded avoid-mate feedback primitive](stage2-avoid-mate-domain.md): checked opponent-mate certificates for one narrow defensive task; not a production stage runtime or launch authorization.
+
+
+- [Explicit training phases before independent audit](../../../research/journal/experiments/2026-10-23-babysit-training-phases.md): pinned matrix completion, retention delivery and interruption recovery; Stage 2 selector/evaluator still required.
+
+- [Stage 2 validation-only checkpoint selection](../../../research/journal/experiments/2026-10-23-babysit-stage2-checkpoint-selection.md): current and earlier validation, four training sentinels, exact snapshot freeze and matched controls; full final evaluator remains incomplete.

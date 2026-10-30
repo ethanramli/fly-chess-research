@@ -1,0 +1,194 @@
+{
+  "schema": "g0-reversal-history-replication-v1",
+  "created": "2026-10-21T08:58:45.841Z",
+  "fixture": false,
+  "graphPath": ".cache/full.npz",
+  "annotationPath": ".cache/flywire-annotations-v2.1.0.tsv",
+  "mappingPath": "research/reports/plasticity-timing-candidate-2026-10-09/rate-timing-map.json",
+  "model": {
+    "steps": 8,
+    "inputDim": 1,
+    "outputs": 1,
+    "seed": 47,
+    "precision": "float32",
+    "saturation": 10,
+    "recurrentScale": 0.9,
+    "normalization": "row"
+  },
+  "memory": {
+    "eta": 0.5,
+    "minGain": 0.2,
+    "maxGain": 1.8,
+    "activityScale": 1.5,
+    "referenceMode": "fixed-unstimulated-model",
+    "tauKC": 0.4,
+    "tauShort": 0.6,
+    "tauLong": 1,
+    "stepDuration": 0.075
+  },
+  "timing": {
+    "cueFrame": 2,
+    "leadFrames": 2,
+    "tailFrames": 16,
+    "current": 1.5
+  },
+  "encoder": {
+    "maxCells": 8,
+    "totalCurrent": 12
+  },
+  "readout": {
+    "cells": {
+      "MBON12": [
+        {
+          "index": 56337,
+          "rootId": "720575940623001480"
+        },
+        {
+          "index": 49989,
+          "rootId": "720575940621828443"
+        },
+        {
+          "index": 61287,
+          "rootId": "720575940623905719"
+        },
+        {
+          "index": 93832,
+          "rootId": "720575940630075703"
+        }
+      ],
+      "MBON01": [
+        {
+          "index": 62498,
+          "rootId": "720575940624117245"
+        },
+        {
+          "index": 128004,
+          "rootId": "720575940643309197"
+        }
+      ]
+    },
+    "scale": 1,
+    "algorithm": "tanh((fixed MBON12-minus-MBON01 balance - identical unconditioned cue response)/1); larger preferred, null choice on tied maximum; no label fitting"
+  },
+  "projectionSeeds": [
+    20261013
+  ],
+  "shuffleSeeds": [
+    20261011,
+    20261014,
+    20261015
+  ],
+  "conditions": [
+    {
+      "id": "informative",
+      "kind": "informative"
+    },
+    {
+      "id": "absent",
+      "kind": "absent"
+    },
+    {
+      "id": "disabled",
+      "kind": "disabled"
+    },
+    {
+      "id": "shuffled-20261011",
+      "kind": "shuffled",
+      "seed": 20261011
+    },
+    {
+      "id": "shuffled-20261014",
+      "kind": "shuffled",
+      "seed": 20261014
+    },
+    {
+      "id": "shuffled-20261015",
+      "kind": "shuffled",
+      "seed": 20261015
+    }
+  ],
+  "preflight": {
+    "runs/g0-history-fixture-v1-uninterrupted/audit.json": "24f5434040ff147765308554fb6ca2fe1a0c71b640e5bdc0e76eaac9996e7c8c",
+    "runs/g0-history-fixture-v1-resumed/audit.json": "007205e1d88acf8c4de5276485b0dc4310b438a874f3942b7209622e509a50d2",
+    "runs/g0-history-fixture-v1-resumed/recovery-check.json": "677e4af139fe5e60f3864a57a2cf8f18f3e694eadee235b643c3bfb306ec0d7a"
+  },
+  "gates": {
+    "minCorrectContexts": 6,
+    "minControlAdvantageContexts": 2,
+    "epsilon": 1e-8
+  },
+  "stopping": "complete-all-matched-diagnostic-stages",
+  "maxPresentations": 16000,
+  "scope": "Third predetermined effective projection seed of the retained versus complete-memory-reset G0 history diagnostic. Same schedule, model, memory, encoder/readout, controls, gates and guards. Synthetic diagnostic only; cannot pass G0, authorize chess, or identify a biological mechanism.",
+  "approximations": [
+    "positive existing gamma-KC-to-MBON12 edges; coarse hemisphere/compartment map",
+    "synapse-coordinate and receptor-specific identities unmeasured",
+    "fixed unstimulated-model local reference and numerical rate normalization",
+    "frame-held gains and model-unit intervals; not biological seconds",
+    "external favorable/adverse pulse-order code is not natural dopamine reward",
+    "engineered direct KC sensory projection and reference subtraction; no modeled eyes or label-fitted decoder",
+    "whole-memory reset is an explicit causal intervention, not modeled biological forgetting"
+  ],
+  "checkpointContract": "Bounded immutable gzip JSON checkpoints include all physiological state, transient episode, next-frame cursor and pending receipt before JSONL acknowledgement. Resume the last completed publication into a new directory, validate receipt chain/pins, acknowledge pending record without neural reapplication. Preserve raw JSONL, all completed publications and partials. Real process recovery, not a power-loss/filesystem guarantee.",
+  "staticMappingChecks": {
+    "passed": true,
+    "mappedEdges": 122,
+    "readoutCells": 6,
+    "scope": "released endpoints/signs/root IDs and MBON/DAN annotation types; no receptor or synapse-coordinate validation"
+  },
+  "planHash": "88e78fcff45be2ffb4a5f12063f4f6f5487886949cb04ed9705ea2398e3b0238",
+  "parentFailureAudit": {
+    "path": "runs/curriculum-g0-assay-v1-resumed5/audit.json",
+    "sha256": "6f0b74fe346c657a0897ac61e4d70017e84f3cf5612f68b4d7e77a6000c9ef24"
+  },
+  "sources": {
+    "documentation/design/neural-learning/g0-reversal-history-diagnostic.md": "619f908e42d17f1bcb3487d1d47aa996723830457266b273d9b6ffb9a72e7f56",
+    "research/data/principles-curriculum-v1/curriculum.json": "6d30e344423660399eb1ca412c1ea1d2f49856783d973c36203d13098db60d45",
+    "research/reports/plasticity-timing-candidate-2026-10-09/rate-timing-map.json": "87a22bf79564faf017f4a6889f1cf950c55037fd84afa52efbc133be09025ce7",
+    ".codebase/src/neural-learning/curriculum-g0.mjs": "627f91e764d6d4cb7ff3d6dd1729418b840228de43185d0a5b74845ea65ac997",
+    ".codebase/src/puzzle-learning/temporal-feedback-plan.mjs": "941192f4051ea8a25ceff26363d8e412d081b5627e012318711f7db41f2aab18",
+    ".codebase/src/neural-learning/mushroom-body.mjs": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5",
+    ".codebase/src/search-and-feedback/verified-feedback.mjs": "33a420b7f0ef9bda52a73ff37f199bc090ee1ab9a2bae5b2f22f166e3e0edf7a",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+    ".codebase/src/search-and-feedback/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+    ".codebase/src/search-and-feedback/mate-certificate-check.mjs": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c",
+    ".codebase/src/puzzle-learning/temporal-feedback-session.mjs": "67a80a9edd59c25f5aa60eb4cab32048cb6052e309d54025ef70fdf2cdcca46c",
+    ".codebase/src/puzzle-learning/feedback-quality.mjs": "ed2e4176e8ff38e03678c99c203e1a287f01d7253f17ddc3a15d3eb19fce31f0",
+    ".codebase/src/neural-learning/neural-episode.mjs": "8ebe1d5bf26e9648cd7b60137868ca5fd7ea3b838373f15d22c6b3415f20752e",
+    ".codebase/src/neural-learning/association-validation.mjs": "b62d6f6bf4ab51f0ed993877026ac1cde0914c582fb479ea27fdc028a7dc2c91",
+    ".codebase/src/supervised-baselines/trainer.mjs": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+    ".codebase/src/runtime/sparse-accumulator.mjs": "7a578b92a215aabf612d0c74899e9bff92054fe5d7d5b8e8f35f57ba0fd2ade9",
+    ".codebase/src/runtime/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+    ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    ".codebase/src/runtime/storage.mjs": "aaceb04fd6fc19e44c28c675a551ebb0e6f8d81a771f531f719d69630bb5742c",
+    ".codebase/src/supervised-baselines/adam.mjs": "5635efabf0723c50d4322ca9e744081e7e44b04a35691c46b9aef171abc54c34",
+    ".codebase/src/neural-learning/consequence-value-readout.mjs": "20bee733a92d7805a91cd7029064dde42fc783eaac41e2c8aee1d62b166f3288",
+    ".codebase/src/neural-learning/mbon-readout.mjs": "bf639c8e0f2ed96d2dc31939abf560d1194fccb1beed486ea6ffccbb74601923",
+    ".codebase/src/neural-learning/rate-timing-memory.mjs": "dcb96abe443e05c1983fa829f2a978fbe6de3be701779edc9a17854b111c0d65",
+    ".codebase/src/neural-learning/rate-timing-plasticity-candidate.mjs": "bcdbb31b8dc21f786d63b607c749ab7dc0d5b233013546a2e7828e0e9f37fbbf",
+    ".codebase/src/neural-learning/bidirectional-plasticity-kernel.mjs": "ac4e7d84895a13394b4a3f43ad25381b0d6492f187dc5c28184d31d4db976c6f",
+    ".codebase/src/neural-learning/dopamine-response-components.mjs": "dc576261f9908262d76cf78516ee630a6f1f8e795a1b03176c782dc31c14fc9d",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    ".codebase/scripts/neural-learning/run-g0-reversal-history-replication.mjs": "0101bb57eaadcc8231645d3afc3b2f43467946de61b0ebcbf5a6f4578908b60e",
+    ".codebase/src/neural-learning/g0-reversal-history-replication.mjs": "5c986de473aa427c8e2af68a9a5b7edd8e88b24627b42b594494a1959113be43",
+    "research/data/g0-reversal-history-replication-seed3-v1/audit.mjs": "53af15cd88f05da12350f947f564c75f52b5fa5fb96d85b55bd215e09df729d5"
+  },
+  "dependencies": {
+    "package-lock.json": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+    "node_modules/chess.js/package.json": "36a258fdfb5e76d0816bf2b63dab3c917a0a8652f943da0e6be7e9b543765dfd",
+    "node_modules/chess.js/dist/esm/chess.js": "76c7c34f0e2e9ab076521a5d6fe786a9cce537bb1b6f29d32a9c9970b5b232d2"
+  },
+  "registrationPeakRssMiB": 71.98828125,
+  "parentDiagnostic": {
+    "question": "Does the retained-versus-reset branch pattern reproduce on the next effective projection seed?",
+    "protocolSha256": "d3c06c715f5aa7eec5f570544648f76486fdc33dbb48c659860ee7a99a29c6fc",
+    "resultSha256": "0afc65fa9dd93d39ccb935c8effdd68bdd864ed7642fa8ee4b502a62bd125670",
+    "auditSha256": "bdc2213e459ea7765032db26a29bb9ab9743bcc628787fdca7a38d669209d23d"
+  },
+  "parentReplication": {
+    "protocolSha256": "5943dc8fcb68d2dd6a92ec5fd5ae3e4985daf37e2a9c2afe58b012b19a3f025d",
+    "resultSha256": "55361a633112bebf3c137e334de02340c33d8e07c00f695a081580351bbfbfa5",
+    "auditSha256": "508e79254a4e16e75582b89ded8bb167928875b9212082b9952cf21b0e4119ea",
+    "question": "Does the predeclared retained/reset pattern reproduce on the final predetermined projection seed, 20261013?"
+  }
+}

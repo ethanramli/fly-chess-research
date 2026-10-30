@@ -1,0 +1,34 @@
+{
+  "schema": "lichess-capture-retention-strata-diagnostic-v1",
+  "status": "diagnostic-complete",
+  "input": {
+    "path": "research/reports/babysit-stage1-direct-counterfactual-feasibility-2026-10-23.json",
+    "sha256": "107c56b0ad70aeefc2e271aa09a31b6270304a4abd4eaf631a982b88589e2a9e"
+  },
+  "counts": {
+    "sourceRows": 44,
+    "flipPairs": 1653,
+    "classifiedPairs": 1405,
+    "unknownPairs": 248,
+    "transitionPatterns": {
+      "open-defender -> absent-defender": 1134,
+      "open-defender -> blocked-defender": 37,
+      "absent-defender -> open-defender": 129,
+      "blocked-defender -> open-defender": 105
+    },
+    "unknownReasons": {
+      "capture-gives-check -> capture-gives-check": 226,
+      "capture-gives-check -> open-defender": 21,
+      "capture-gives-check -> absent-defender": 1
+    },
+    "distinctTransitionPatternsAcrossPuzzleRoots": 7,
+    "distinctTransitionPatternsAcrossSourceGames": 7
+  },
+  "scope": "Training-only synthetic-board mechanism diagnostic. Does not restore authentic game history, assign audited relational families, establish disjoint splits, authorize graph learning, or show neural learning or reasoning.",
+  "semanticFamilyDiversityEstablished": false,
+  "relationFamilyDisjointnessEstablished": false,
+  "graphLaunchAuthorized": false,
+  "neuralEventsDelivered": 0,
+  "validationInspected": false,
+  "finalInspected": false
+}

@@ -1,0 +1,38 @@
+{
+    "schema":  "lichess-stage1-training-candidate-expansion-v1",
+    "createdAt":  "2026-10-23T01:24:47.9014775Z",
+    "purpose":  "Expand only training source candidates after the independently audited 128-row sample yielded zero valid counterfactual families.",
+    "source":  {
+                   "url":  "https://database.lichess.org/",
+                   "license":  "CC0-1.0",
+                   "csv":  ".cache/lichess-puzzles-2026-10-21.csv",
+                   "csvSha256":  "ec2dd1a8f9cbd139ebb4aee228f72e77f8e2a581a24d25f61f71e6cf306b10f8",
+                   "compressedArchive":  ".cache/lichess-puzzles-2026-10-21.csv.zst",
+                   "compressedSha256":  "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+                   "extractionReceipt":  "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json",
+                   "extractionReceiptSha256":  "deac9b4792742a84fde9f3273caabcf5f505d957fb142881a8345aae356b4510"
+               },
+    "selection":  {
+                      "onlySplit":  "train",
+                      "requireMatchedCaptures":  true,
+                      "limit":  1024,
+                      "maxPieces":  6,
+                      "seed":  20261023,
+                      "minRating":  0,
+                      "maxRating":  5000,
+                      "themes":  [
+
+                                 ],
+                      "cpuDuty":  0.5,
+                      "maxSeconds":  7200
+                  },
+    "resources":  {
+                      "maxRssMiB":  2048,
+                      "minFreeMiB":  256,
+                      "heapMiB":  256,
+                      "cpuDuty":  0.5
+                  },
+    "output":  "research/data/lichess-stage1-training-candidates-v1",
+    "scope":  "Training-only source-candidate selection. No game history, consequence certificates, family membership, neural teaching, or graph authorization is established. Validation and final content remain unopened.",
+    "status":  "registered-not-started"
+}

@@ -1,0 +1,1034 @@
+{
+  "schema": "lichess-v7-stage1-capture-counterfactual-audit-v1",
+  "passed": true,
+  "batchManifestSha256": "e31bcf389a8780668be231d3278221138048b267437cbfddd21f2c596a2a4434",
+  "lessonAuditSha256": "0a8b655bff466c4a137693a353651bf3c19b9fe11ca057f904f5483f54aefe85",
+  "reportSha256": "4d421b9c89424cbf14ed6110fc69576cb8a4d554c519ccd5ca74dceafb6bf692",
+  "sourceRows": 256,
+  "summary": {
+    "train": {
+      "candidatePairs": 58,
+      "sourceRoots": 9,
+      "sourceGames": 9,
+      "proposedFamilies": 45,
+      "familiesRepeatedAcrossGames": 0
+    },
+    "validation": {
+      "candidatePairs": 132,
+      "sourceRoots": 8,
+      "sourceGames": 8,
+      "proposedFamilies": 79,
+      "familiesRepeatedAcrossGames": 3
+    }
+  },
+  "proposedFamilies": {
+    "train": [
+      {
+        "familyId": "04c1f8ceefe82199cb8b994b",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:long\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "4Vklk7wW"
+        ]
+      },
+      {
+        "familyId": "0939f99a8f353c2147bf7917",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "eM59H8WH"
+        ]
+      },
+      {
+        "familyId": "10cffe6b75853bcf8d634aef",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"q\",\"target\":\"p\",\"captureGeometry\":\"rank:two\",\"mutation\":{\"type\":\"q\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"q\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 4,
+        "sourceGames": [
+          "aNMjDTlZ"
+        ]
+      },
+      {
+        "familyId": "14ce8a9adccd85ba4435c13a",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "USaPkxIS"
+        ]
+      },
+      {
+        "familyId": "14dad11e13adf5b7ff3cac3d",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "USaPkxIS"
+        ]
+      },
+      {
+        "familyId": "18dc52cf53cf88106b3565d6",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:long\",\"toTarget\":\"rank:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "4Vklk7wW"
+        ]
+      },
+      {
+        "familyId": "1b2e9345977c2ca2df3f8074",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:two\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "x3TOHYwh"
+        ]
+      },
+      {
+        "familyId": "1e3d7cf07743e1f1d7d7c17d",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"file:one\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "xjmkVmE4"
+        ]
+      },
+      {
+        "familyId": "21bb2bd58798797c30b9ccc4",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:two\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "x3TOHYwh"
+        ]
+      },
+      {
+        "familyId": "23533f415719113900432833",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "USaPkxIS"
+        ]
+      },
+      {
+        "familyId": "26f39f925636341d73012ba3",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:one\",\"moveGeometry\":\"file:one\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "xjmkVmE4"
+        ]
+      },
+      {
+        "familyId": "2beaba1e60d12785b19aa0c1",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"q\",\"target\":\"p\",\"captureGeometry\":\"rank:two\",\"mutation\":{\"type\":\"q\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"diagonal:long\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"q\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "aNMjDTlZ"
+        ]
+      },
+      {
+        "familyId": "335919fad9eba3315d12eb06",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "eM59H8WH"
+        ]
+      },
+      {
+        "familyId": "36c095af714ea69eaafaf5c0",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"file:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "xjmkVmE4"
+        ]
+      },
+      {
+        "familyId": "4085117b1727ea951350fecf",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "USaPkxIS"
+        ]
+      },
+      {
+        "familyId": "4180424ee2797e30723a8c9b",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "xjmkVmE4"
+        ]
+      },
+      {
+        "familyId": "4250db828a8c02e2a819b8dc",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:two\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "x3TOHYwh"
+        ]
+      },
+      {
+        "familyId": "4298526873275d1a105a57e2",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"q\",\"target\":\"p\",\"captureGeometry\":\"rank:two\",\"mutation\":{\"type\":\"q\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:long\",\"moveGeometry\":\"diagonal:long\"},\"recaptures\":[{\"type\":\"q\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "aNMjDTlZ"
+        ]
+      },
+      {
+        "familyId": "47679fd9bc014cf1a377003b",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"rank:one\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"file:one\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "jVdltyer"
+        ]
+      },
+      {
+        "familyId": "58b64616322ccfce78e8bce0",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:two\",\"moveGeometry\":\"diagonal:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "eM59H8WH"
+        ]
+      },
+      {
+        "familyId": "5f02360334ad1297ade4dd24",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:two\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"diagonal:one\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "x3TOHYwh"
+        ]
+      },
+      {
+        "familyId": "66f33ae4220747e35bc235ac",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "4Vklk7wW"
+        ]
+      },
+      {
+        "familyId": "6c2ea31f3ec5ea9e53d21d33",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "USaPkxIS"
+        ]
+      },
+      {
+        "familyId": "6c43260952c679dd2d07ef39",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:long\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"diagonal:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "4Vklk7wW"
+        ]
+      },
+      {
+        "familyId": "6fcbc81fbcdb791f6090db41",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"q\",\"target\":\"p\",\"captureGeometry\":\"rank:two\",\"mutation\":{\"type\":\"q\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"q\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "aNMjDTlZ"
+        ]
+      },
+      {
+        "familyId": "7c85ef3aa3890e85be33c714",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:long\",\"toTarget\":\"rank:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "4Vklk7wW"
+        ]
+      },
+      {
+        "familyId": "7fd5a170c1e8f45658d8fe3f",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"q\",\"target\":\"p\",\"captureGeometry\":\"rank:two\",\"mutation\":{\"type\":\"q\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"diagonal:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"q\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "aNMjDTlZ"
+        ]
+      },
+      {
+        "familyId": "82a34ac9b4e26297f83adf19",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:long\",\"moveGeometry\":\"rank:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "eM59H8WH"
+        ]
+      },
+      {
+        "familyId": "884c52ebab5045715773b1e7",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"q\",\"target\":\"p\",\"captureGeometry\":\"rank:two\",\"mutation\":{\"type\":\"q\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"q\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "aNMjDTlZ"
+        ]
+      },
+      {
+        "familyId": "8e668d714e5dba906fbae713",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"q\",\"target\":\"p\",\"captureGeometry\":\"rank:two\",\"mutation\":{\"type\":\"q\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:two\",\"moveGeometry\":\"rank:long\"},\"recaptures\":[{\"type\":\"q\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "aNMjDTlZ"
+        ]
+      },
+      {
+        "familyId": "920b7882f41796c57c6f137d",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"file:two\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "USaPkxIS"
+        ]
+      },
+      {
+        "familyId": "96ea97426ea72f751bb9865d",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "USaPkxIS"
+        ]
+      },
+      {
+        "familyId": "c2c304cc7f72a4e28d5b6cea",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:long\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"file:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "4Vklk7wW"
+        ]
+      },
+      {
+        "familyId": "c6c0a48eb37a22ccbd7bd87f",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:long\",\"toTarget\":\"file:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "4Vklk7wW"
+        ]
+      },
+      {
+        "familyId": "cacc43f91bc9cd35c2baa529",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "eM59H8WH"
+        ]
+      },
+      {
+        "familyId": "cc854db2d5baab1f5b1b4545",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:two\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 3,
+        "sourceGames": [
+          "x3TOHYwh"
+        ]
+      },
+      {
+        "familyId": "cf715526ed5f0cd5795e892b",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "xjmkVmE4"
+        ]
+      },
+      {
+        "familyId": "d185588bf846251f70c8e40c",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"p\",\"target\":\"r\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"rank:one\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"file:one\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "DVP3UGDo"
+        ]
+      },
+      {
+        "familyId": "e064ffd485982964ccf13a32",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:two\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"file:one\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "x3TOHYwh"
+        ]
+      },
+      {
+        "familyId": "e45d4287124b6b4250cf039e",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"file:one\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"rank:one\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "9l5VAne9"
+        ]
+      },
+      {
+        "familyId": "e8eab0d5772ea37ff21072c1",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:two\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "x3TOHYwh"
+        ]
+      },
+      {
+        "familyId": "ebd8aa0b4a9529e741bb7e04",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"p\",\"target\":\"r\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"rank:one\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "DVP3UGDo"
+        ]
+      },
+      {
+        "familyId": "f51a75ba4248acb02e952898",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"q\",\"target\":\"p\",\"captureGeometry\":\"rank:two\",\"mutation\":{\"type\":\"q\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"q\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "aNMjDTlZ"
+        ]
+      },
+      {
+        "familyId": "f84e1e376da4e1b70c7083cc",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"diagonal:two\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "USaPkxIS"
+        ]
+      },
+      {
+        "familyId": "fa6962d30e3fc29f7306fe0b",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"q\",\"target\":\"p\",\"captureGeometry\":\"rank:two\",\"mutation\":{\"type\":\"q\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"q\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "aNMjDTlZ"
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "familyId": "002868fb7f17279906e913d8",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"diagonal:two\",\"moveGeometry\":\"diagonal:one\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "06618a8e0395a4625f513107",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"other:long\",\"moveGeometry\":\"file:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "06a988635005210949154cf1",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:one\",\"moveGeometry\":\"file:one\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "07bcd40abe95448198ca9a92",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"knight:two\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "087798e1f76a6496aa4c2eea",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"file:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "0939f99a8f353c2147bf7917",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "Hmh9oJXz",
+          "PFs4E7JG"
+        ]
+      },
+      {
+        "familyId": "0f4a9a9e34fcc4863999bdc2",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:one\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "PFs4E7JG"
+        ]
+      },
+      {
+        "familyId": "11c04c3303f00bdd1602ce9b",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"file:one\",\"moveGeometry\":\"rank:one\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "14dad11e13adf5b7ff3cac3d",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "8NTf6m0P"
+        ]
+      },
+      {
+        "familyId": "19c23c40e64bd46033134bb5",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"file:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "1e3d7cf07743e1f1d7d7c17d",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"file:one\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "21262d718d64812597687c8a",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"file:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "21ae88cf34e0ac5ddf5eb423",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "23533f415719113900432833",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "8NTf6m0P"
+        ]
+      },
+      {
+        "familyId": "28e52726c888f6e725e60d3d",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"other:long\",\"moveGeometry\":\"diagonal:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "2f8f383f1e9cd7148de87d72",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"b\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"file:two\"},\"recaptures\":[{\"type\":\"b\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "zxdCuUk7"
+        ]
+      },
+      {
+        "familyId": "36c095af714ea69eaafaf5c0",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"file:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "4085117b1727ea951350fecf",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "8NTf6m0P"
+        ]
+      },
+      {
+        "familyId": "41590ad23c93f600a72f0cd9",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"other:long\",\"moveGeometry\":\"rank:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "4180424ee2797e30723a8c9b",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "4249e6c3ac68be698042715b",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"b\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"diagonal:two\"},\"recaptures\":[{\"type\":\"b\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "zxdCuUk7"
+        ]
+      },
+      {
+        "familyId": "42b91c427ae4a743705b184d",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"b\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"file:long\"},\"recaptures\":[{\"type\":\"b\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "zxdCuUk7"
+        ]
+      },
+      {
+        "familyId": "42ffc018190323fd99414d12",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"file:long\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "47679fd9bc014cf1a377003b",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"rank:one\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"file:one\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "djVLaept"
+        ]
+      },
+      {
+        "familyId": "488aa5a587b292edd0512143",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "489a0f989e65d3ab8d88ca4f",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:one\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "4a069bdd158b358d3e2a87f2",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"knight:two\",\"moveGeometry\":\"rank:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "4cd985f22ddc70316d57cf2d",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "8NTf6m0P"
+        ]
+      },
+      {
+        "familyId": "4ea18e9028ac25c830deb715",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"other:long\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "50d4c5f680ba7b1cffc79f71",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Hmh9oJXz"
+        ]
+      },
+      {
+        "familyId": "519f94b910f4e99dbe81710a",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 4,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "5524c7c40a8f1c0bdc7301a6",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"diagonal:long\",\"moveGeometry\":\"diagonal:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "5e707cceb2df11fe919c9793",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"file:long\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "60c4e2aa003af374d93fc990",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"knight:two\",\"moveGeometry\":\"file:one\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "6196d0ca4268cf6c77c2f884",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"file:one\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "8NTf6m0P"
+        ]
+      },
+      {
+        "familyId": "62bf9e8d76e0fa7c4ce0a731",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"knight:two\",\"moveGeometry\":\"file:one\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "6c2ea31f3ec5ea9e53d21d33",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "8NTf6m0P"
+        ]
+      },
+      {
+        "familyId": "6e7e632f93b5dc4418db82a0",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"b\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"diagonal:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"b\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "zxdCuUk7"
+        ]
+      },
+      {
+        "familyId": "78103adc660e3d7e38a3c838",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"b\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"diagonal:long\",\"moveGeometry\":\"rank:long\"},\"recaptures\":[{\"type\":\"b\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "zxdCuUk7"
+        ]
+      },
+      {
+        "familyId": "79b8c2ebf152dada8ba9c2f2",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"b\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"b\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "zxdCuUk7"
+        ]
+      },
+      {
+        "familyId": "7c10fd2d00b4fb2e8a41f5a6",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"diagonal:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Hmh9oJXz"
+        ]
+      },
+      {
+        "familyId": "818938cdcb496cfb5a778137",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:one\",\"moveGeometry\":\"file:one\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "872fbf426f3f996fb8bc6430",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:one\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "8b66a6059a08fca0415c6568",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "97eb49e97a1dc42c2eae1102",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"knight:two\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "98badfb39ec9b7b8c47cede4",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 6,
+        "sourceGames": [
+          "Hmh9oJXz",
+          "PFs4E7JG"
+        ]
+      },
+      {
+        "familyId": "993b68dfda0abe0c60554e9d",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:long\",\"moveGeometry\":\"rank:one\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "PFs4E7JG"
+        ]
+      },
+      {
+        "familyId": "9a4930eefea3b4b49d624f17",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"other:long\",\"moveGeometry\":\"file:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "9fafdabe00eda81a40ce6c58",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:two\",\"moveGeometry\":\"diagonal:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "PFs4E7JG"
+        ]
+      },
+      {
+        "familyId": "a24359e36344ee0fae09bc32",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "PFs4E7JG"
+        ]
+      },
+      {
+        "familyId": "a4dfc02e2e174316c7d5e063",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"diagonal:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "a6ec3dbd0535370f1bbe0b81",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "a704d272d578443e7022b352",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"diagonal:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "aa68af02177de037da791ddd",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"diagonal:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "ab9497369384cae73ec6bb02",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"diagonal:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "b51c09243aa0cadbed6da88f",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"other:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 16,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "bd323b6250a7ae156c25d128",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:one\",\"moveGeometry\":\"file:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "Hmh9oJXz",
+          "PFs4E7JG"
+        ]
+      },
+      {
+        "familyId": "c2d238a51d21411604003bab",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"other:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 11,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "c456a18b7dc3449c0b6be56d",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"diagonal:long\",\"moveGeometry\":\"diagonal:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "c8327f3642b487a466b8b584",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"knight:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "cacc43f91bc9cd35c2baa529",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"file:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "PFs4E7JG"
+        ]
+      },
+      {
+        "familyId": "cb689cc79475a4d88a95e673",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"b\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"file:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "zxdCuUk7"
+        ]
+      },
+      {
+        "familyId": "cddd904c23913ceb7178afbe",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:one\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "PFs4E7JG"
+        ]
+      },
+      {
+        "familyId": "cf715526ed5f0cd5795e892b",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "d1462a625778928e698f46ac",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"other:long\",\"moveGeometry\":\"diagonal:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "d8469ce931e0f2a5e26c8646",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"b\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"diagonal:long\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"b\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 3,
+        "sourceGames": [
+          "zxdCuUk7"
+        ]
+      },
+      {
+        "familyId": "dcff2dd77e52ff1ac90ecf89",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:one\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "e4a2daa6bbbea27a2fdf7659",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"rank:one\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "djVLaept"
+        ]
+      },
+      {
+        "familyId": "e5a563a34b5ece2515749faf",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"other:long\",\"moveGeometry\":\"diagonal:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "e83082add0b3f08d83375551",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"b\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"file:one\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "zxdCuUk7"
+        ]
+      },
+      {
+        "familyId": "ea767fadcb1e9902b0d95e49",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"knight:two\",\"moveGeometry\":\"rank:one\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "f081bd44586585e86fe64b07",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"rank:two\",\"moveGeometry\":\"diagonal:one\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "f4409af0107b5746279c8dec",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"other:long\",\"moveGeometry\":\"rank:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "f75d9fdb9855335d3b7ac5a8",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"file:long\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"other:long\",\"toTarget\":\"rank:long\",\"moveGeometry\":\"diagonal:one\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 2,
+        "sourceGames": [
+          "8NTf6m0P"
+        ]
+      },
+      {
+        "familyId": "fa8fec030ee9bda391d1b662",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"r\",\"target\":\"p\",\"captureGeometry\":\"rank:one\",\"mutation\":{\"type\":\"r\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"file:one\",\"moveGeometry\":\"rank:one\"},\"recaptures\":[{\"type\":\"r\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "fabeef3d3bd4953dc77cf151",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"r\",\"target\":\"r\",\"captureGeometry\":\"file:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"other:long\",\"moveGeometry\":\"file:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "Fz4CdY9j"
+        ]
+      },
+      {
+        "familyId": "fad303ca0810eacafd0576cf",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"knight:two\",\"moveGeometry\":\"other:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      },
+      {
+        "familyId": "fbec2474e139cd88755697b1",
+        "signature": "{\"transition\":\"success-to-failure\",\"actor\":\"b\",\"target\":\"r\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"rank:long\",\"toTarget\":\"diagonal:one\",\"moveGeometry\":\"knight:two\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 1,
+        "sourceGames": [
+          "5do8xpdO"
+        ]
+      },
+      {
+        "familyId": "ff560e5bf28096e41a3b14f5",
+        "signature": "{\"transition\":\"failure-to-success\",\"actor\":\"p\",\"target\":\"p\",\"captureGeometry\":\"diagonal:one\",\"mutation\":{\"type\":\"p\",\"side\":\"opponent\",\"fromTarget\":\"diagonal:one\",\"toTarget\":\"other:long\",\"moveGeometry\":\"rank:long\"},\"recaptures\":[{\"type\":\"p\",\"side\":\"opponent\"}]}",
+        "candidatePairs": 4,
+        "sourceGames": [
+          "9IgxlFwD"
+        ]
+      }
+    ]
+  },
+  "proposedSignatureOverlapAcrossSplits": 11,
+  "candidateSignatureDisjointness": false,
+  "semanticFamilyDiversityEstablished": false,
+  "relationFamilyDisjointnessEstablished": false,
+  "eligibleForNeuralTeaching": false,
+  "graphLaunchAuthorized": false,
+  "finalSplitInspected": false,
+  "neuralEventsDelivered": 0,
+  "scope": "Independent source binding, one-piece mutation verification, and all reported capture consequence replays for train and validation. It does not prove candidate search exhaustiveness, semantic family validity, runtime readiness, neural learning or reasoning."
+}

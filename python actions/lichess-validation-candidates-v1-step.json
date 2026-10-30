@@ -1,0 +1,85 @@
+{
+    "schema":  1,
+    "name":  "lichess-validation-candidates-v1",
+    "paused":  false,
+    "paths":  {
+                  "run":  "research/data/lichess-validation-candidates-v1",
+                  "input":  ".cache/lichess-puzzles-2026-10-21.csv",
+                  "extraction":  "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json",
+                  "corpus":  "research/data/lichess-validation-candidates-v1"
+              },
+    "pins":  {
+                 ".cache/lichess-puzzles-2026-10-21.csv":  "ec2dd1a8f9cbd139ebb4aee228f72e77f8e2a581a24d25f61f71e6cf306b10f8",
+                 "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json":  "deac9b4792742a84fde9f3273caabcf5f505d957fb142881a8345aae356b4510",
+                 ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs":  "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+                 "package-lock.json":  "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+                 ".codebase/scripts/data/curate-lichess-validation-puzzles-v1.mjs":  "cc8d8c8c5b7c0ad2ad2a4556aebf1ecefb01383472c44b224ec365fc660f82dd",
+                 ".codebase/scripts/data/audit-lichess-validation-puzzles-v1.mjs":  "8b2c8a8a181cab6858182549df87ae2ce48c50739caa725a6a55eadfdea29925"
+             },
+    "state_file":  "runs/python-actions/current-lichess-validation-candidates-v1.json",
+    "jobs":  {
+                 "audit":  {
+                               "argv":  [
+                                            "node",
+                                            "--max-old-space-size=256",
+                                            ".codebase/scripts/data/audit-lichess-validation-puzzles-v1.mjs",
+                                            "--corpus",
+                                            "{corpus}",
+                                            "--out",
+                                            "research/reports/lichess-foundations-pilot-2026-10-21/validation-candidate-source-audit-v1.json",
+                                            "--cpu-duty",
+                                            "0.5"
+                                        ],
+                               "requires":  [
+                                                "{corpus}/manifest.json",
+                                                "{corpus}/validation.jsonl"
+                                            ],
+                               "refuse_existing":  [
+                                                       "research/reports/lichess-foundations-pilot-2026-10-21/validation-candidate-source-audit-v1.json"
+                                                   ],
+                               "role":  "check"
+                           },
+                 "curate":  {
+                                "argv":  [
+                                             "node",
+                                             "--max-old-space-size=256",
+                                             ".codebase/scripts/data/curate-lichess-validation-puzzles-v1.mjs",
+                                             "--input",
+                                             "{input}",
+                                             "--extraction-receipt",
+                                             "{extraction}",
+                                             "--out",
+                                             "{run}",
+                                             "--only-split",
+                                             "validation",
+                                             "--limit-per-split",
+                                             "1024",
+                                             "--max-pieces",
+                                             "6",
+                                             "--max-seconds",
+                                             "7200",
+                                             "--cpu-duty",
+                                             "0.5",
+                                             "--seed",
+                                             "20261022"
+                                         ],
+                                "fresh_output":  "{run}",
+                                "role":  "check"
+                            }
+             },
+    "artifacts":  {
+                      "manifest":  "{run}/manifest.json",
+                      "audit":  "research/reports/lichess-foundations-pilot-2026-10-21/validation-candidate-source-audit-v1.json"
+                  },
+    "report_fields":  [
+                          "counts",
+                          "selected",
+                          "resources",
+                          "sourceChecksPassed",
+                          "checkedSplits",
+                          "finalSplitInspected",
+                          "eligibleForNeuralTeaching",
+                          "graphLaunchAuthorized",
+                          "scope"
+                      ]
+}

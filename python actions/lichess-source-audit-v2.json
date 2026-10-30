@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "name": "lichess-stage1-source-audit-v2",
+  "paused": false,
+  "paths": {
+    "registration": "research/reports/lichess-foundations-pilot-2026-10-21/curation-recovery-v2-registration.json",
+    "run": "research/reports/lichess-foundations-pilot-2026-10-21"
+  },
+  "pins": {
+    "research/reports/lichess-foundations-pilot-2026-10-21/curation-recovery-v2-registration.json": "3ae5df713cb8dcfed6b3c6763cad35d4265bfde1f1c434bfe236777c2290e910",
+    ".codebase/scripts/data/curate-lichess-puzzles.mjs": "306987357b05dee044eed1fcaab2e6088a61fdad115f5950de21f3b54a2a7edf",
+    ".codebase/scripts/data/audit-lichess-source-candidates.mjs": "473b23aff4cd544bdfde68fd3d703a008229f0db7bea89d486a7be6415088ebf",
+    ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c"
+  },
+  "state_file": "runs/python-actions/current-lichess-source-audit-v2.json",
+  "jobs": {
+    "audit-source-v2": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/data/audit-lichess-source-candidates.mjs",
+        "--corpus",
+        "research/data/lichess-stage1-candidates-v2",
+        "--out",
+        "research/reports/lichess-foundations-pilot-2026-10-21/source-candidates-audit-v2.json",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "research/data/lichess-stage1-candidates-v2/manifest.json",
+        ".cache/lichess-puzzles-2026-10-21.csv",
+        ".cache/lichess-puzzles-2026-10-21.csv.zst",
+        "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json"
+      ],
+      "refuse_existing": [
+        "research/reports/lichess-foundations-pilot-2026-10-21/source-candidates-audit-v2.json"
+      ]
+    }
+  },
+  "artifacts": {
+    "audit": "research/reports/lichess-foundations-pilot-2026-10-21/source-candidates-audit-v2.json"
+  },
+  "report_fields": [
+    "schema",
+    "sourceChecksPassed",
+    "checkedSplits",
+    "sourceRows",
+    "finalSplitInspected",
+    "eligibleForNeuralTeaching"
+  ]
+}

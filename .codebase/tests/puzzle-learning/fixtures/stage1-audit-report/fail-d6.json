@@ -1,0 +1,53 @@
+{
+  "schema": "lichess-curriculum-matrix-audit-v1",
+  "identity": "synthetic-identity",
+  "stage": 1,
+  "status": "gate-failed",
+  "diagnosis": [
+    "replica 1: gate-failed; failed D6; train 22/24, validation 15/16, final 55/64, probe signs 109/128, pairs 27/32, advantage {\"scratch\":9,\"absent\":8,\"shuffled\":10,\"disabled\":6}"
+  ],
+  "fullNeuralReplay": true,
+  "memoryContinuityVerified": true,
+  "stageAccepted": false,
+  "acceptanceEvidence": {
+    "schema": "curriculum-stage1-replica-acceptance-v2",
+    "status": "gate-failed",
+    "stageAccepted": false,
+    "requiredReplicaCount": 1,
+    "acceptedReplicas": 0,
+    "reports": [
+      {
+        "replica": 1,
+        "status": "gate-failed",
+        "stageAccepted": false,
+        "prerequisites": {"receiverAccepted": true, "familySplitsDisjoint": true, "sourceCertificatesReplayed": true, "finalSetSealedUntilFreeze": true, "independentStageReplay": true, "memoryContinuityVerified": true},
+        "checks": {"D1": true, "D2": true, "D3": true, "D4": true, "D5": true, "D6": false, "D8": true},
+        "failed": ["D6"],
+        "missingPrerequisites": [],
+        "unknown": [],
+        "deferred": ["D7"],
+        "metrics": {
+          "trainingCorrect": 22,
+          "validationCorrect": 15,
+          "validationByStratum": {"open-defender": 4, "blocked-defender": 4, "absent-defender": 4, "pinned-apparent-defender": 3},
+          "finalCorrect": 55,
+          "finalByStratum": {"open-defender": 14, "blocked-defender": 14, "absent-defender": 13, "pinned-apparent-defender": 14},
+          "consequenceSignCorrect": 109,
+          "counterfactualPairsCorrect": 27,
+          "causalAdvantages": {"scratch": 9, "absent": 8, "shuffled": 10, "disabled": 6},
+          "pairedFamilyBootstrap": {
+            "scratch": {"lower95": 0, "families": 8, "resamples": 10000, "seed": 20261011, "rng": "xorshift32"},
+            "absent": {"lower95": -1, "families": 8, "resamples": 10000, "seed": 20261011, "rng": "xorshift32"},
+            "shuffled": {"lower95": 1, "families": 8, "resamples": 10000, "seed": 20261011, "rng": "xorshift32"},
+            "disabled": {"lower95": -2, "families": 8, "resamples": 10000, "seed": 20261011, "rng": "xorshift32"}
+          },
+          "retentionCorrect": null
+        }
+      }
+    ],
+    "checkpointSelection": {"schema": "stage1-validation-checkpoint-selection-v1", "frozen": true, "status": "selected"},
+    "promotionMemoryHashes": null,
+    "scope": "Synthetic fixture for report-tool tests; not a real run"
+  },
+  "scope": "Synthetic fixture for report-tool tests; not a real run"
+}

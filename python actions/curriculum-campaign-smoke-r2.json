@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "paused": false,
+  "name": "lichess-foundations-campaign-v1-smoke-r2",
+  "stages": [
+    {
+      "stage": 1,
+      "config": "python actions/lichess-stage1-synthetic-v1-smoke-r2-step.json",
+      "configSha256": "0e1064ff7de05c842a1232d5a447171d3304f204ba5a8b186a41e63e01a006f1",
+      "trainJob": "train",
+      "auditJob": "audit",
+      "requiredAuditTrue": [
+        "audit.fullNeuralReplay",
+        "audit.memoryContinuityVerified",
+        "audit.stageAccepted"
+      ],
+      "initialMemoryHashes": {
+        "r1:informative": "0c8aa99968bfa2f9ea68931de8f772f9dce2cf3ad09fa3b78b854e00710b241e",
+        "r1:outcome-only": "0c8aa99968bfa2f9ea68931de8f772f9dce2cf3ad09fa3b78b854e00710b241e",
+        "r1:absent": "0c8aa99968bfa2f9ea68931de8f772f9dce2cf3ad09fa3b78b854e00710b241e",
+        "r1:disabled": "0c8aa99968bfa2f9ea68931de8f772f9dce2cf3ad09fa3b78b854e00710b241e",
+        "r1:shuffled": "0c8aa99968bfa2f9ea68931de8f772f9dce2cf3ad09fa3b78b854e00710b241e",
+        "r1:stockfish-shuffled": "0c8aa99968bfa2f9ea68931de8f772f9dce2cf3ad09fa3b78b854e00710b241e"
+      },
+      "prerequisites": [
+        {
+          "path": "research/reports/lichess-stage1-synthetic-data-audit-v1.json",
+          "sha256": "8bca0cf84946451bae1a60d55f91cc6e25c457eb8561c83a7139371229749a11",
+          "requiredTrue": [
+            "eligibleForNeuralTeaching",
+            "relationFamilyDisjointnessEstablished",
+            "graphLaunchAuthorized"
+          ]
+        },
+        {
+          "path": "research/reports/lichess-stage1-synthetic-acceptance-audit-v1.json",
+          "sha256": "1bd5cf09e79d75b695becf64e12498ec7f6423d8fb5f7ddbea24c32c9ecdb1c0",
+          "requiredTrue": [
+            "eligibleForNeuralTeaching",
+            "familySplitsDisjoint",
+            "sourceCertificatesReplayed"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": 2,
+      "readinessBlockedReason": "Stage 2 (king safety, check and mate): runtime factory and validation selector exist, but no audited mate-family train/validation/final data, final evaluator or registration exists."
+    },
+    {
+      "stage": 3,
+      "readinessBlockedReason": "Stage 3 (sound forcing moves): needs a bounded material certificate and all-legal stage runner; neither is implemented."
+    },
+    {
+      "stage": 4,
+      "readinessBlockedReason": "Stage 4 (double threats): needs a complete bounded payoff proof over every reply; not implemented."
+    },
+    {
+      "stage": 5,
+      "readinessBlockedReason": "Stage 5 (lines and removal of defenders): needs preparatory-sequence credit assignment with certificates; not implemented."
+    },
+    {
+      "stage": 6,
+      "readinessBlockedReason": "Stage 6 (move order and sacrifices): needs an explicit delayed-credit mechanism and multi-ply certificates; not implemented."
+    },
+    {
+      "stage": 7,
+      "readinessBlockedReason": "Stage 7 (piece effectiveness): no bounded consequence verifier exists; research target only."
+    },
+    {
+      "stage": 8,
+      "readinessBlockedReason": "Stage 8 (coordination): longer-horizon coordination verifier and interference tests are not implemented."
+    },
+    {
+      "stage": 9,
+      "readinessBlockedReason": "Stage 9 (weaknesses and pawn structure): no exact positional verifier exists; research target only."
+    },
+    {
+      "stage": 10,
+      "readinessBlockedReason": "Stage 10 (prophylaxis): needs independent horizon/working-memory evidence; not implemented."
+    },
+    {
+      "stage": 11,
+      "readinessBlockedReason": "Stage 11 (transitions and endgames): restricted exact tasks or oracle comparisons are not implemented."
+    },
+    {
+      "stage": 12,
+      "readinessBlockedReason": "Stage 12 (composition): unfamiliar compositional evaluation over accepted stages is not implemented."
+    }
+  ]
+}

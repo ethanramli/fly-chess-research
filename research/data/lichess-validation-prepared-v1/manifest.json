@@ -1,0 +1,1235 @@
+{
+  "schema": "lichess-prepared-lessons-v1",
+  "created": "2026-10-22T15:50:11.587Z",
+  "argv": [
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\data\\prepare-lichess-lessons.mjs",
+    "--rows",
+    "research/data/lichess-validation-stage1-prefilter-v2/validation.jsonl",
+    "--games",
+    "research/data/lichess-validation-source-pgn-v3",
+    "--split",
+    "validation",
+    "--out",
+    "research/data/lichess-validation-prepared-v1",
+    "--cpu-duty",
+    "0.5",
+    "--max-seconds",
+    "3600"
+  ],
+  "input": {
+    "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-stage1-prefilter-v2\\validation.jsonl",
+    "sha256": "ecabc3af28daaf93c92fccba15e48326a716e4bddc9d974a0c29510abeacccff",
+    "format": "curated-csv-rows"
+  },
+  "split": "validation",
+  "sourceGames": {
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\LaW8e3Jl.pgn": "4dded0e9385b6bec2c2420006be3b159d597ce62cfe3a4ff6fb3954a5b1b8ded",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\obzSlG0b.pgn": "fd3e24da57b5adddb220dd7293a3a61bf06ab9bc5ce284fb71d2e36ed61b38ca",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\DHi81Lis.pgn": "5233115711e8daa6f7ee27778b9ef5b795dc1939d20c0f5b4c55fc8c34e898da",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\SzzraSc1.pgn": "d6e65de7216ff1d185fe885295f14fe8931dacf7ed3ec5a13992cb0ad92e801f",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\NubuSXwu.pgn": "8bf9740b5fb38593eb397e9873d336f4f3cde424905707af9bed574a934c330e",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\ANzvp1ou.pgn": "9c09129c3548faa39fd3e56eaae31d39b2bc52b44e0ce35289c3ac46612707e1",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\VHQ5ruiq.pgn": "8fa43c9b699dc30320e3c1c749db5d410c9a8b842f23bca8301aeba243137bcd",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\crb6Udk0.pgn": "c726c71ba37309ca8064dd962297a868dbd49e0ccb5eadb49a71b5d45741809c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\mEjy82Ho.pgn": "02cfaad089f89055fc2ef892e219ff8fca6c126cc67324462222fddc5ceac9ae",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\2DV1nhD2.pgn": "1236f86761cd474b9f76651a532090a9cfb7325d6999dddceafb944f7e5b1174",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\efurVQE9.pgn": "84174aa536742f3704a75a91c3c2116a84ecf257ea6c725c8af430e1908394e6",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\kZywpt5q.pgn": "0bb8f82a9206ff68404e04e67267a87353112ff4f125066165f6d97627fb9859",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\9UeXozXk.pgn": "442192d5e47d44c7fc13f788353cb5dd661e10306fca28c235a5820183443c78",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\TdR3A46S.pgn": "f9ef3bdbcbc5573c61c3c199547a8fd8461af4e9da78f0c57f1b4b779fd52069",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\aOa9CCEW.pgn": "30bdd2b87df14033614e6608fd43e77084f6de61092c284341b820163a0d1a07",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\fImaCMwP.pgn": "aa9f651de994b51a0ca9c01fa4252b2557465f80d6b3a650ef2394e21377a29e",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\yCnwDgOK.pgn": "4b313fd71ea18f4a03daf643bbd760e1aff2c5b4c39998a08dc4fc7904f2ac16",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\FNjmXrzi.pgn": "d165779338c906a1685725c486b014d8a1b5c33556a977763c0a7d795f81bacb",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\Yuw29DQc.pgn": "6d27571011f1f1d0fde9d08dda2acafbb08f923d57606bacc0df211dcba981f6",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\sCtOkYss.pgn": "d957df5b543abf14f460a911f7ac02f2eba1b4bc2a8b104e6de8f88395b0ca4e",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\vaOdLZVZ.pgn": "836b48b57694945de746f66f2657e2be8095db9900c7a9c54cc9171293623670",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\4yDH9fBw.pgn": "744328645157986aa52f7018b5f17bac4b36dca2008fe29512953eb6fb2df6c6",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\WMPoDYoF.pgn": "17b4c373445ef1215d4e202f3878d4c850bceb231167582dea764984f59e5606",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\FarMxmG7.pgn": "16f1425be53e8545a5fb1cb09fa84bc696e7ab5556bde4a5227f655973652206",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\xAiKKMBa.pgn": "17b7112d3a76a1c3cdb409aee0ab5366386ee286edb91da5e81620d81d3c5a3b",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\JBUW0u3T.pgn": "9f4ff4222985beb95df9f2f8f67a95a1a1322d39a519ccbbe587d47fb82f8ccf",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\ZyOWXEO3.pgn": "5078030fb74c1a9328bf3f5e12b7eff799b97792f3f28d56fc0800420a180d74",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\fD3O4MCc.pgn": "efb47d7228b54eddc0563ebeee6415a876bca2824122eaf3284a39eba045dbed",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\gxvfaHRd.pgn": "45618343ba5895124225a3e3d6247e17c8e34b326258332d8fe34a0183f1ee60",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\R5Zh0X2r.pgn": "1c56608a61da0c091a455e5a5203c60a087eaf2372fc5b9a50450e92157f782c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\xRmbatbe.pgn": "475e0682a9a8d0772450d46b5ac0b36023ab8a790d771c45d18075d3f487e76a",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\tYAerJIV.pgn": "389fecd57f2b2b5b72473ea2eed0c924103dba525e89a4d7a12b085cbac3e4a1",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\krL4fbG1.pgn": "47908f2724cbd28966d42652e11339a60a4f1b3bc26fefb85a21091ca9579a2c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\wCiIk6ML.pgn": "d18fc5427bc5ded9eebbe4ed826adf17e3498ee5df9ad73f953d4a92f1b1b90f",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\iwP7j2Oe.pgn": "d44f27c4ee63e0ae2042856252b0fcdddee4587ef92fcaeb98ebbc9c7b305bb5",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\VtVpGDhl.pgn": "78f7a2a4970f821e3069a50067b30c1a9a388c2eaedbbf144ef7ab12655a6d0d",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\hXnZPEIR.pgn": "0f4e3108083bbe2525ad882228b0741c067cfe3c026399c75fe269950cfd49c3",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\E3bJZZq3.pgn": "4143a8f6ab77e464b6dbb81601f52149def168725a3554469d36bc7b25169f94",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\AIs7wbZD.pgn": "424d5065f870f52b3ac4580d362ad427dfb6f22f933519ebed907958d3270c25",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\fxhnDkxm.pgn": "702fcea7073d46d8cadf38d478518cb1ee99ad2278a6825ed3d696be935d6681",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\PKPWDgXh.pgn": "cf10e05a51866bbed1ca94a14397bc1d2753f62277b382ef0d2007eccecab6fd",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\hCwgSomJ.pgn": "6c61fdc4ee18d57ecc6f675d1a60baa222db832ee5e393169b7dce877e74268d",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\lMsQGPsW.pgn": "cf66e270fe55fa0ff116504c1cb6d46d17376e3bc49f9622f5c8b9528ed94949",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\ufzqp1Hd.pgn": "95ae97b383290f76859ec9d891e1e5617f705b1cd4e083465733b8c02c86fa70",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\hd4SzXvE.pgn": "b7ce1e3900843bf654fea8f65524a82d2fe458a4fa8dd6579f0da9a4155e2acf",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\lJ9YVUTJ.pgn": "d7c115a0dbcfddc3404f705dae76cc0a2d745f2888e811a8d9ab530204b71bc4",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\HGwA967t.pgn": "e92714c6c796a261b043c1a41839f807b89c5688b8e690b289b5494898b95cab",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\7O9RHPat.pgn": "b787e9923e87a1e272f371cba4e1c998db61bf6c5122156d9fb14773adb95739",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\1vuGMAE4.pgn": "5169ccd33b47ea92454b2b095fa2735466426dc5c5b387c536f94681a4e31a14",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\JzmoYdzP.pgn": "809f3f5b6bb92097920009d2748e04d2b502ec6028e921ebe8db8987941089a1",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\TZSZPgnQ.pgn": "88fa05cdc39ec7a1c3a84685b18256dbde62f17b91065b0890c68e36f92c7947",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\u4ABqeIa.pgn": "eece092a3788259ba453a3f58fba6009375f0022a521efd0317b27b8933bf257",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\81EIgWYq.pgn": "ab697fc7bd6ef83070b0e61e559a465541f77144f9559771e4d07d8413d893e0",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\P3qVClqw.pgn": "05bd2798331bad2a326bbd559bd61dc3185db9f3ed0fcbe40eedcd6660d590bc",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\HyragD1i.pgn": "36cfc963b35a7475cffdc2fadb2cb19c7f2ff32862c8e5748a4e8cdf016c342a",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\fF1esRM4.pgn": "6cf559dc36243157ee2574abc271031e29533d650f5868f9c2c5749da8644d4d",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\RYeUt3FJ.pgn": "95f834b1d408853861e1a44294b528302897ab570c899d8bafec59f45902016d",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\UihkQOjn.pgn": "2438783ea8603fe007fb2c44ecaf0e5486d02dba24bda02c65b605189a7e3929",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\7UHmTw9r.pgn": "97ab14610491ca5e9ac268d5955b37a33c13c6a70634653716a1d9a22c552fcd",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\vpyB7t4H.pgn": "a76f86f7c2cb17925fccfa78a0f9529a726b809596757553290bf7a35fff17db",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\9bH5ZPCi.pgn": "f9b18cc2d615ce1732dc7e36c8631b848e07259a37139f6d022400218af0cffb",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\XZjJAzJy.pgn": "4de2b417835f8f8ef933c412c3a8134a82e57771e93c8bcc2a5eb58c85b78950",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\QXN12f3f.pgn": "ed781f557a8e474b985d8940eae0a080c0c549cce2aa42da843830f83fa65118",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\V2IRvnU5.pgn": "4b94cd8455eb0e99b9578c8c66a6175439585262e26bffdbf06da5382edfcdad",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\bKiRHKmW.pgn": "0474beb985a3b68643522c6116601e66b26f9bda2e9ed6de07afab57e430e57e",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\HoG7VmC4.pgn": "6077f1965922e8f89a8d97a9e048633b0f276230bd11d48fca46d6b8f69e8d7c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\lRq2XZ8s.pgn": "0f2b428daf5de4ec4684e5cccc41ac48ff9576f7f27a30e80a38aca285c4542c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\xdLq11Pn.pgn": "40f44d561e2c9ee48a149f2b534ed2a175000e18d64af86f80fa9396f116da45",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\WG7SuuWf.pgn": "1f949a767ba0cb201b6386c982b52f8efc3daf8eddedb0720f1fb16ed27308ff",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\NpjeMNHD.pgn": "1025c3231b6707eae2354c154cb4215e4e8bf26eca8e8e092aa7a6a2d80d906e",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\J1ZHkF7H.pgn": "68b00b7b3970cfbbbbb3211c6460890baae11875567985aeca6b5677626cb2bc",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\QXiFkqyU.pgn": "3496663df1629dc22a9ec0feb5858379343025fc55eec882bb35ac673b9ca59b",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\hUzzhI2U.pgn": "4d76fa173bd87195b870da95c88ad6bd155f20ad21eb03d906ed3776dc927d65",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\Igc8WyFt.pgn": "4d299f11113dbe3424b8c0195dbc428f5090c6f5bf76617729b4218d92754c4c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\n80ni3Uy.pgn": "4fb2ac1f9cc2ced19e12eeab67cc751c699e2300f71c045639c5f75c5f7fd1e3",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\p1zv6dtW.pgn": "e3ef77860531eb7d8c0a87a4a84b83856611591bccc2efc10b573fb48f396ed4",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\ydqLQmbE.pgn": "01b9ac015ac7ab046e4d4471c6c349efb732aba552763280e4e50bedfa2664c4",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\Q8Nqguv1.pgn": "9787371e0325270bcd40cb1876889db20a3a9ce19974f4c8ff6e5bdc381f548f",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\O1uKMZ0Y.pgn": "b65739242b0e0fc581fce9f92f2105230467177a2b4071297897fbb1d2b38af8",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\cnPqUDA4.pgn": "71a72ae6665ff6e5158cb36c9be5b2471add284adad49334b5d532b6cf72cf20",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\Eiq6p58h.pgn": "839883146b09d2f7f0b0ba6fb76049ce75a06692d67d83445c2d8e3190a5db04",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\tkr3vfOS.pgn": "e83c5a86792547919d84707abb4ae8a1b3994a0f2f334c2a4bb957444fb410d8",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\iPdfdLl9.pgn": "7b939daf7ce0fc573150557f9e223a1efb78d4532386df19305bcc1f852df443",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\7bCX4Lja.pgn": "e989e458b1545f13e3820920d48b3797bb0fb230974ff1e883a37ad7a0f5cd63",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\4iyfE0WN.pgn": "53f6d5bca2b4d516b51e3100c6cdcbc30b8a073dcb14a7726434ee96b65bdf81",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\HCIHYRyc.pgn": "1838014050d8e5d9414ae905e17ea6e7e3c4b6ae122ace1a2a80874d0b959ccc",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\bO7iuoJc.pgn": "5781c64df511397eaf6ab64b1b0689a4f40e86fe8b7a38d9e1d368896d896d95",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\ab4tWjlL.pgn": "5054df084f79e5cece53f72ba9881510f79c0f16dee942a7b4d79b95a8de122a",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\gEK55XOx.pgn": "ed1631e23c4cf0a2b391938e88855bc603d350a03ceae36cd113fff6d11e36e5",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\jL5V8x7l.pgn": "b8f03f5883b8b094edd204bc7c88d18966711caf8989af91064f64487764b340",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\4cyJnmR4.pgn": "17ece81a22ecd03d3a1412e71ffd8f303b877a2e8613fadfc1ca0f9c5e1d602c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\rWA9yhT7.pgn": "eeb2b1590d70952de4e828e05a1943671e0327c99ddd254fe86b8f03434055d2",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\8Mqdodu8.pgn": "a3b86f9af2222345b4d6af021ee5d5bcd9f5318c609cbbd2a9b389724a4ce005",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\s3LG8YPC.pgn": "a48b0887a7ba82cf9d49709d83e040cb52c5578906267f0b874fdd39a392dac5",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\HCUOyfKZ.pgn": "4ad41039f93030467ecc2e4e8b01e17bb9d680128ec0b0f00a5857ca0b593d20",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\lwhBa1Du.pgn": "c66d0b8c24cfcca9252a07df8bd85f22583fc122c9df62c8cbfad301fc00c41a",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\3oLmw0RO.pgn": "4f64ad60e969f3d2ff64275c9484c2f48152b6640b1036c602ddef5d5bf53749",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\GQwiOvTq.pgn": "b4d619571129c745acc39a97296a3089fc24f29f2917f18ce1613be1aba84a0e",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\qBGmVkV1.pgn": "70a0a5fd092f80701dbda4bd97c9d534b6ff9c7519aaab98b57e0cd252af9aab",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\y761tmEF.pgn": "912eff7e60ede23264d1a1a2efd36905961f5b86edf5ce0d008d8961d7265122",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\TtQkiKfe.pgn": "f30a7346358e167823176be0b70b83ae42ef7eb24d77ada34469a39e0d51aeb2",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\Yi9dU8FD.pgn": "09b2f25dce77f8805543b1e86138864030bd2613e2d52449e505cf69006158bf",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\9Ndg0cNe.pgn": "8e7205314401c9ef08e4e787d429f56ef104d9c828a37f8853d26a6bac29175c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\8xkl9Y1d.pgn": "decac99a23b4a6f47fa4849d64ec96988bd02a63c42533a19eac9a8d2aa36273",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\p5DsriwN.pgn": "39f5c228d66c29ee53696ff6b6d11e99eb5a073feb8f52e7f233dc1a8d3adbd2",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\0kROPZ6m.pgn": "205568255f6761cd41592700e91124805d4e10deca1cdb7ecc56c808a08a2d9f",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\WN6zd8Ce.pgn": "6d1e892dabbb38dbd047205bb97cd30b316d5fb8329312d429bd072e11bd9221",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\gGottOCQ.pgn": "246fa304662a9044358039516acded955d28fd40576e63e7f94de4697e9b2fbb",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\JXBwrNrJ.pgn": "9831ce1bbc5a411d2959d37b58410c20929f9a88c355a0145f96211eda1f11ce",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\dXFaymAA.pgn": "ae077f5343e9308d9f1c6e070b7fdaa8f45d363b2c325fb148c3b51866a5110c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\hazOvJHc.pgn": "7f5c384825f720a9d86f6306ff8efc4c38b8684b44e3259d98f3bc615fd127fa",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\KXz9Y0Cd.pgn": "a2f662ebf8d99e0c79e49ac964ce4b1b0e9fab0ca6fa24daebd0fd61a351705c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\JLV10xCq.pgn": "d9e2199fbc50d8f69358da9f05313e6e1a6b2f9d5eb8c22b5cfea60794f33045",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\qT82MYCh.pgn": "93ed1196fcab9845ef64790c1484d69c3d1d134952c9b960e51a8e281eef3c96",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\9kzaW5bW.pgn": "5e4a08acdea85b7308c806897248ee990b8101f3ebdf9805ad02d816021396f7",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\4myma8rF.pgn": "f59ee64fe44c11d4c3eb2a8b2a6a4427fec92c25a32049296bde01635cfec268",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\o4yNMnYw.pgn": "1637d7e614675db4784564b1b048152f9db9fc4fae5d45ceb8478fc1b38c9d22",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\NxUnAgzn.pgn": "1ef4333e95f6d59bf258e78e28ca1a21d2d537d26e6e764693ed7863276f15d1",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\tGQzQ7DT.pgn": "101467c5c4d4c3b009bdd23f4b3cbf1d853136c4503d9d0f2bc4614c6821d173",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\YIqJlKDk.pgn": "7cde4f09664a0b212d7c73c9818b046a6d3592d5531f6d68181f2ee37390c739",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\OG5aGZJm.pgn": "cbbc633453399ff4c6eb5e92b444dc82a8153f2f76ce54efe7c43808707bb814",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\PXkNMBsq.pgn": "36acf715a958922f1288a986f186cad18e5bf6fac5dd22bf3469cbe2cd1b8ddf",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\epQKTTGY.pgn": "55ec4f1468a2655576dcd411b591e768f1a7cba4535c9dd8e0ec469edd74650d",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\bVurREmH.pgn": "d677c1d9e53f7a31d0e2cc3dee518ae36d91a8aaabb776bb0824eefea15b24da",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\mCtdOTIi.pgn": "23c72ebd824d4be8469a2ef391614e9f736e10f287263a5e17e2b1011925377d",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\hPYQSPzj.pgn": "cf654381056ebc4ed1c4585220ef1c250e84f6d6a7144c6337aeaaf5d8016267",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\Zi4Wg07Q.pgn": "23d158a718d0a823581d27418963732205b49eb1eb06633f799af17ce391f149",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\UNGrZJe5.pgn": "a499383cb342adcf90c819aa4db778bd6544b6aeb3f2041d4d7679e2418052bd",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\ySLdNgZl.pgn": "f677cfb95bfd58e5583f944ed17870adcf2facd04ebf77534f7318e5f846bb3c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\YEgLj77a.pgn": "b000dcb4facfff8782eed8d468760d4fc07dd7687e7ceaa772d0517ed07babf6",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\6iMry27T.pgn": "1634234869d536d6b06b47e9424f91a82188411439a9d06d443c8e117b0df311",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\ro0zxzVr.pgn": "91ac6ff5b0c8227e20a73644117ee2b2ae44e1e00472c5d8d35818d8d36b50b3",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\c7DkwJkk.pgn": "c440595ae15d69ab09e2fff0c796d34a4fe7be63323481dffed40f33072a62b1",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\GpbQlyys.pgn": "1f8f7df9fb01c7fdf3463ccf9e38da768f4a7709b65f58ebafc89783a302c7f3",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\uWreyKVM.pgn": "8d938789b24d39a138cea974a6c6643d0b69ece8880b630873e61de8ecae2746",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\DkXu3oMs.pgn": "fe15bcd6ba1718554cfa965977d1b627a66465c0f73b03f281dea257aa7a841f",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\irGMBUrH.pgn": "14b6c9eb20e54920e9019fb802b0aeae69e570843f6a005a1103992009a73085",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\MmK56dLZ.pgn": "97fb1d00f600a85470304c171bcab8dcd4287dbbd4bb3ea0645a3f0f08bc23d8",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\tkDas3H8.pgn": "d201adb981fe8d11607373534120b2d81f0932ee0fe72ee0788779cb589e5680",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\Lo7eRW0x.pgn": "224e57cf7785df36d46f26adacdc88e613c758e7a1d347b911a43e78e86ee587",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\Mq02s3bd.pgn": "d4ee61042f3ed715fbe18793ee05c8d7ca07a70884c8333b181bafc7c8fcb293",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\VuZVe7Nl.pgn": "140123d4b4fbefb4dd56eb546798d2a4f6f203d1706d725411c10b2dd2b0caba",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\VKtDdS2Q.pgn": "48cc2b21ab3a533dcf384526027eadeb5df45353584c160ecaee6fe6e9129a87",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\rrJthUH5.pgn": "6eae72849e877522ce2381fd6273791ac35ee88712e26d55f3c0d52601a12155",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\aOBsmSoK.pgn": "89254da929cc58ff0b377cc7c1508a7fa7e8523defd42eed6398e9941332ea5d",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\Y1RGASxk.pgn": "b458ea4b97b5953c009a956a995faff3f07d688ade71a1f328ff96421699d4bd",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\8cRidNmZ.pgn": "91f99ace463227649fd40e4afa415ce47c38f3b4d6aec7f5352780239cd6b92f",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\awBm9NLi.pgn": "0ff7d4d68e9db9b632b145ba679f51f7b865eba060016d16298060296a673fb4",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\8nnoIRFh.pgn": "dbd5d3af6c168974f1bccedaa0d01f1e45534f62c17b49a593f45c95c5639e3c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\NHMNd4jn.pgn": "12791c644304abb9ee90898f171bd5e1b7b5770dd256385ff991dee5d7cf0dd5",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\RxfOdrb0.pgn": "0f253a6ed6651a9bfdd449ff780d4a429dba8dbf0fc9fa06747c22d893764bb1",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\XZGLQeNx.pgn": "2379842b5ee5a16bdf6ac9266723c4f32f9a02ddf4c8faaee0206561735ad230",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\QXbVYmYf.pgn": "e4eba89ef106178a896c29279916296f65ca112e904768d552e0a0a1522250d4",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\Bt7B7kWn.pgn": "004fe4e16714f23a4ed10a135b2a62d41f17d8ed46896210404293df2838d127",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\fDvagIxW.pgn": "f86ca486b08df94a14680e2829d48d40b531fe8f517bae0f0cbd57d31ab4a9bd",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\JS5npijr.pgn": "c014ffa8f402f82e42c4e2a7a3f2e8649c277a604cff5a3af0a279386203098a",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\cjWVTDDW.pgn": "094330822838b6811b464822f6737281694aa72f20b5bb86c9ea77a0fea4c962",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\kcHVLpIb.pgn": "6dab20b393cca3d8af590efcefa0f763977d3a66e24ccaf6bd7128626bbb0147",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\I0VEqDMm.pgn": "539bdf93a77d16285d7b5adb8ba12bd7355a66513b8ecd2d5cb7cc46ea568cca",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\0847fr9P.pgn": "8707fc43090200e5848a6eec35bb6437fe2ca7739eed943089899a1453c16f99",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\q4MZAD0D.pgn": "f896199cedf933f9d3e5f2e1450ce23ab5817f32b23f200d29233c402d58faa0",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\wylmAz9H.pgn": "61100c36f34fa60c49993e96b0ce9639d925f1e93454ee924de704cefb51817e",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\t8DCS3eo.pgn": "ecedb3611a43760662ea6ba5d51c5387369d16ce766a9a14099a40d668aadf41",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\fkCWy5rY.pgn": "048f73f361c3f907408172a3df69099e26218aff169b9c4f25550d4d4b2c882a",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\PQ6Bib9s.pgn": "c5654d8624f545fd7081baa40320574ee80722590899eb4d4e936dd3aab479d2",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\Lyhn1gsW.pgn": "6f66bc84b22563ce9463849a212d29e1f9fd074f5a93859682ede06387dd8177",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\Rq35DF5B.pgn": "9234533c02aefe86c7877f3a1d424216d198dfa5c377d9d3560fd06fcc0118c2",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\Qod3wbh2.pgn": "3ce560fa378a02cecb4fc57e4ac15d425997fe61d49af4806cdec0670aa48a7b",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\rOSi6dwn.pgn": "1e25964850d94950b92873ffa40aa1b22efb6887df132f142d918bd8d714427b",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\Xb6ykDQ7.pgn": "91673c34a1fb8393410345fb23c2a1e570f7e8286024f89fcc1db258d22ab416",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\i5pNvbU5.pgn": "6aa80f294e13797a8394f98a321d1687c03d59222d9b2b3e417a4dd328f57f5d",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\zjqFxSHj.pgn": "d02a9d871d76a7711ff75986e98831fffdb2d3007ef45a3eff297381fab18607",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\AIGeHjUZ.pgn": "89fbee63055561433d9cf04eda37f8f89171f9189d87cfd4b8c02742e9b98f6e",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\yXrl9AGH.pgn": "656291258c440d1ff754f8e09c8fa8bd9b747979bd5f94d7bce1ad62476bf6ab",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\tSqHd8c4.pgn": "cc8252d8cc683655b3f3884591591030c21b37fa16f351b9ed77e6b5b022a1d2",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\VQOSQMDn.pgn": "f43f95e889adf3967e15c7dbf1562f4530dae80d0e918f698e8643f49b87f41f",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\dGxqw8WM.pgn": "eb456e68f183f7009d8ba51ace41b478463cbcf6050cdabbf94723678a17c3a3",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\joPXu1YK.pgn": "d49c8bad8a1135e1b6aafcbf3a6de59b653c0a0c9db2cc44a5591cc76c4a759b",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\oP6bSBLO.pgn": "87ba8e49475bb2a59a11a96413227b33395f5bf4dee27e50031b81e3b3499b69",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\le8Rynby.pgn": "e886f1170b23565044658c86521841cfb9d2cd52275012a5dc8ae3413a640bb6",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\vNEx17r3.pgn": "9a016a06bd134c8d81d990f62dd00869e68390ca91141fd4ede2d2b3b1d42600",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\1sKUgWxf.pgn": "1e393c596c4b3c21077645c507df13bb148ef22661fdc075714544f92032014c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\tJW4vvn7.pgn": "96e673ae337a98949a16e7b3682a57f0d4734ca2019dba72d3c44bb3f7d63f5f",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\b81WHm4I.pgn": "c93ad8d0c3b7f5032e7c82bb9ff167916e0daef417f85b1118cd824a26618c53",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\UgYaOReg.pgn": "7d4dfb1b4cb445281dcb6d17395540ddc6667bc87384285167ff957a3657e62c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\eFgo4pWs.pgn": "457c787255fd5c475113a1c7e5b3d248bc06c5aab7f515398596e0bd2e690d28",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\ZNqajRiu.pgn": "01f92e196ad4ad28e4b6db8f95a57e32f7f8693e5bc5ef15f80409c46c23f87c",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\7ryJlK6c.pgn": "29a16a304583d0450713eee743a69b51188f0bab0eb1bb1f8d44f3cb517b3c7e",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\9RJwtus3.pgn": "3db5902ec8e8906f61144d8292a014b92bec8fd23ef2e6653e4ceec33f3adc45",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\nKkO0SrA.pgn": "f98bb7f9547f82641e15c72b9ae9b8a3e8bbd94c690ff5130e5f299a2bb83da2",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\5Wzq38ua.pgn": "7c808328607b721f33b70b499d065f5ecb3bce3b1b3e37e3248fa4ec8e843d26",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-validation-source-pgn-v3\\G2pNCLYg.pgn": "b2e66cad211aacf5813cd74771ef3eba2378a42a2c7c5e217ff7375cf24d3daa"
+  },
+  "counts": {
+    "sourceRows": 192,
+    "prepared": 0,
+    "rejected": 192,
+    "stage1DomainEligible": 0,
+    "unknownActions": 0
+  },
+  "rejections": [
+    {
+      "row": 1,
+      "puzzleId": "O4ORZ",
+      "reason": "PGN source game mismatch\n\n'game' !== 'LaW8e3Jl'\n"
+    },
+    {
+      "row": 2,
+      "puzzleId": "FzgBT",
+      "reason": "PGN source game mismatch\n\n'game' !== 'obzSlG0b'\n"
+    },
+    {
+      "row": 3,
+      "puzzleId": "88GRj",
+      "reason": "PGN source game mismatch\n\n'game' !== 'DHi81Lis'\n"
+    },
+    {
+      "row": 4,
+      "puzzleId": "EuRIO",
+      "reason": "PGN source game mismatch\n\n'game' !== 'SzzraSc1'\n"
+    },
+    {
+      "row": 5,
+      "puzzleId": "Ogq3i",
+      "reason": "PGN source game mismatch\n\n'game' !== 'NubuSXwu'\n"
+    },
+    {
+      "row": 6,
+      "puzzleId": "05XSy",
+      "reason": "PGN source game mismatch\n\n'game' !== 'ANzvp1ou'\n"
+    },
+    {
+      "row": 7,
+      "puzzleId": "qpZpD",
+      "reason": "PGN source game mismatch\n\n'game' !== 'VHQ5ruiq'\n"
+    },
+    {
+      "row": 8,
+      "puzzleId": "7meZZ",
+      "reason": "PGN source game mismatch\n\n'game' !== 'crb6Udk0'\n"
+    },
+    {
+      "row": 9,
+      "puzzleId": "aBH19",
+      "reason": "PGN source game mismatch\n\n'game' !== 'mEjy82Ho'\n"
+    },
+    {
+      "row": 10,
+      "puzzleId": "ZEQEt",
+      "reason": "PGN source game mismatch\n\n'game' !== '2DV1nhD2'\n"
+    },
+    {
+      "row": 11,
+      "puzzleId": "eD7Wy",
+      "reason": "PGN source game mismatch\n\n'game' !== 'efurVQE9'\n"
+    },
+    {
+      "row": 12,
+      "puzzleId": "yNqr7",
+      "reason": "PGN source game mismatch\n\n'game' !== 'kZywpt5q'\n"
+    },
+    {
+      "row": 13,
+      "puzzleId": "igtfv",
+      "reason": "PGN source game mismatch\n\n'game' !== '9UeXozXk'\n"
+    },
+    {
+      "row": 14,
+      "puzzleId": "5Aqmn",
+      "reason": "PGN source game mismatch\n\n'game' !== 'TdR3A46S'\n"
+    },
+    {
+      "row": 15,
+      "puzzleId": "RBNis",
+      "reason": "PGN source game mismatch\n\n'game' !== 'aOa9CCEW'\n"
+    },
+    {
+      "row": 16,
+      "puzzleId": "Xz02I",
+      "reason": "PGN source game mismatch\n\n'game' !== 'fImaCMwP'\n"
+    },
+    {
+      "row": 17,
+      "puzzleId": "MFvjC",
+      "reason": "PGN source game mismatch\n\n'game' !== 'yCnwDgOK'\n"
+    },
+    {
+      "row": 18,
+      "puzzleId": "awY10",
+      "reason": "PGN source game mismatch\n\n'game' !== 'FNjmXrzi'\n"
+    },
+    {
+      "row": 19,
+      "puzzleId": "pkdR5",
+      "reason": "PGN source game mismatch\n\n'game' !== 'Yuw29DQc'\n"
+    },
+    {
+      "row": 20,
+      "puzzleId": "pMveR",
+      "reason": "PGN source game mismatch\n\n'game' !== 'sCtOkYss'\n"
+    },
+    {
+      "row": 21,
+      "puzzleId": "vYowd",
+      "reason": "PGN source game mismatch\n\n'game' !== 'vaOdLZVZ'\n"
+    },
+    {
+      "row": 22,
+      "puzzleId": "nXWvW",
+      "reason": "PGN source game mismatch\n\n'game' !== '4yDH9fBw'\n"
+    },
+    {
+      "row": 23,
+      "puzzleId": "6VE7Z",
+      "reason": "PGN source game mismatch\n\n'game' !== 'WMPoDYoF'\n"
+    },
+    {
+      "row": 24,
+      "puzzleId": "XI2JW",
+      "reason": "PGN source game mismatch\n\n'game' !== 'FarMxmG7'\n"
+    },
+    {
+      "row": 25,
+      "puzzleId": "Kl0F6",
+      "reason": "PGN source game mismatch\n\n'game' !== 'xAiKKMBa'\n"
+    },
+    {
+      "row": 26,
+      "puzzleId": "0TDPG",
+      "reason": "PGN source game mismatch\n\n'game' !== 'JBUW0u3T'\n"
+    },
+    {
+      "row": 27,
+      "puzzleId": "VDkx1",
+      "reason": "PGN source game mismatch\n\n'game' !== 'ZyOWXEO3'\n"
+    },
+    {
+      "row": 28,
+      "puzzleId": "UpnVr",
+      "reason": "PGN source game mismatch\n\n'game' !== 'fD3O4MCc'\n"
+    },
+    {
+      "row": 29,
+      "puzzleId": "uxABU",
+      "reason": "PGN source game mismatch\n\n'game' !== 'gxvfaHRd'\n"
+    },
+    {
+      "row": 30,
+      "puzzleId": "jIQb1",
+      "reason": "PGN source game mismatch\n\n'game' !== 'R5Zh0X2r'\n"
+    },
+    {
+      "row": 31,
+      "puzzleId": "xm1lS",
+      "reason": "PGN source game mismatch\n\n'game' !== 'xRmbatbe'\n"
+    },
+    {
+      "row": 32,
+      "puzzleId": "7zpm7",
+      "reason": "PGN source game mismatch\n\n'game' !== 'tYAerJIV'\n"
+    },
+    {
+      "row": 33,
+      "puzzleId": "hmgsx",
+      "reason": "PGN source game mismatch\n\n'game' !== 'krL4fbG1'\n"
+    },
+    {
+      "row": 34,
+      "puzzleId": "7whYN",
+      "reason": "PGN source game mismatch\n\n'game' !== 'wCiIk6ML'\n"
+    },
+    {
+      "row": 35,
+      "puzzleId": "DVgbX",
+      "reason": "PGN source game mismatch\n\n'game' !== 'iwP7j2Oe'\n"
+    },
+    {
+      "row": 36,
+      "puzzleId": "0gg7A",
+      "reason": "PGN source game mismatch\n\n'game' !== 'VtVpGDhl'\n"
+    },
+    {
+      "row": 37,
+      "puzzleId": "AIFrD",
+      "reason": "PGN source game mismatch\n\n'game' !== 'hXnZPEIR'\n"
+    },
+    {
+      "row": 38,
+      "puzzleId": "Ft1J1",
+      "reason": "PGN source game mismatch\n\n'game' !== 'E3bJZZq3'\n"
+    },
+    {
+      "row": 39,
+      "puzzleId": "Kzv5e",
+      "reason": "PGN source game mismatch\n\n'game' !== 'AIs7wbZD'\n"
+    },
+    {
+      "row": 40,
+      "puzzleId": "puVf1",
+      "reason": "PGN source game mismatch\n\n'game' !== 'fxhnDkxm'\n"
+    },
+    {
+      "row": 41,
+      "puzzleId": "lR59m",
+      "reason": "PGN source game mismatch\n\n'game' !== 'PKPWDgXh'\n"
+    },
+    {
+      "row": 42,
+      "puzzleId": "cflBu",
+      "reason": "PGN source game mismatch\n\n'game' !== 'hCwgSomJ'\n"
+    },
+    {
+      "row": 43,
+      "puzzleId": "buHxY",
+      "reason": "PGN source game mismatch\n\n'game' !== 'lMsQGPsW'\n"
+    },
+    {
+      "row": 44,
+      "puzzleId": "CUmxQ",
+      "reason": "PGN source game mismatch\n\n'game' !== 'ufzqp1Hd'\n"
+    },
+    {
+      "row": 45,
+      "puzzleId": "L50M3",
+      "reason": "PGN source game mismatch\n\n'game' !== 'hd4SzXvE'\n"
+    },
+    {
+      "row": 46,
+      "puzzleId": "UUHvj",
+      "reason": "PGN source game mismatch\n\n'game' !== 'lJ9YVUTJ'\n"
+    },
+    {
+      "row": 47,
+      "puzzleId": "0wY1I",
+      "reason": "PGN source game mismatch\n\n'game' !== 'HGwA967t'\n"
+    },
+    {
+      "row": 48,
+      "puzzleId": "gH1ux",
+      "reason": "PGN source game mismatch\n\n'game' !== '7O9RHPat'\n"
+    },
+    {
+      "row": 49,
+      "puzzleId": "hIUes",
+      "reason": "PGN source game mismatch\n\n'game' !== '1vuGMAE4'\n"
+    },
+    {
+      "row": 50,
+      "puzzleId": "MnBFr",
+      "reason": "PGN source game mismatch\n\n'game' !== 'JzmoYdzP'\n"
+    },
+    {
+      "row": 51,
+      "puzzleId": "fxwad",
+      "reason": "PGN source game mismatch\n\n'game' !== 'TZSZPgnQ'\n"
+    },
+    {
+      "row": 52,
+      "puzzleId": "12eiO",
+      "reason": "PGN source game mismatch\n\n'game' !== 'u4ABqeIa'\n"
+    },
+    {
+      "row": 53,
+      "puzzleId": "RatnA",
+      "reason": "PGN source game mismatch\n\n'game' !== '81EIgWYq'\n"
+    },
+    {
+      "row": 54,
+      "puzzleId": "6v7iM",
+      "reason": "PGN source game mismatch\n\n'game' !== 'P3qVClqw'\n"
+    },
+    {
+      "row": 55,
+      "puzzleId": "wE3dv",
+      "reason": "PGN source game mismatch\n\n'game' !== 'HyragD1i'\n"
+    },
+    {
+      "row": 56,
+      "puzzleId": "fjqs8",
+      "reason": "PGN source game mismatch\n\n'game' !== 'fF1esRM4'\n"
+    },
+    {
+      "row": 57,
+      "puzzleId": "W5sJo",
+      "reason": "PGN source game mismatch\n\n'game' !== 'RYeUt3FJ'\n"
+    },
+    {
+      "row": 58,
+      "puzzleId": "R8FbX",
+      "reason": "PGN source game mismatch\n\n'game' !== 'UihkQOjn'\n"
+    },
+    {
+      "row": 59,
+      "puzzleId": "19mW2",
+      "reason": "PGN source game mismatch\n\n'game' !== '7UHmTw9r'\n"
+    },
+    {
+      "row": 60,
+      "puzzleId": "1B3hk",
+      "reason": "PGN source game mismatch\n\n'game' !== 'vpyB7t4H'\n"
+    },
+    {
+      "row": 61,
+      "puzzleId": "5dt1J",
+      "reason": "PGN source game mismatch\n\n'game' !== '9bH5ZPCi'\n"
+    },
+    {
+      "row": 62,
+      "puzzleId": "mF5PU",
+      "reason": "PGN source game mismatch\n\n'game' !== 'XZjJAzJy'\n"
+    },
+    {
+      "row": 63,
+      "puzzleId": "9NNhx",
+      "reason": "PGN source game mismatch\n\n'game' !== 'QXN12f3f'\n"
+    },
+    {
+      "row": 64,
+      "puzzleId": "byKLM",
+      "reason": "PGN source game mismatch\n\n'game' !== 'V2IRvnU5'\n"
+    },
+    {
+      "row": 65,
+      "puzzleId": "iD7mS",
+      "reason": "PGN source game mismatch\n\n'game' !== 'bKiRHKmW'\n"
+    },
+    {
+      "row": 66,
+      "puzzleId": "CyL8x",
+      "reason": "PGN source game mismatch\n\n'game' !== 'HoG7VmC4'\n"
+    },
+    {
+      "row": 67,
+      "puzzleId": "LJ2uz",
+      "reason": "PGN source game mismatch\n\n'game' !== 'lRq2XZ8s'\n"
+    },
+    {
+      "row": 68,
+      "puzzleId": "Jw3sK",
+      "reason": "PGN source game mismatch\n\n'game' !== 'xdLq11Pn'\n"
+    },
+    {
+      "row": 69,
+      "puzzleId": "htN62",
+      "reason": "PGN source game mismatch\n\n'game' !== 'WG7SuuWf'\n"
+    },
+    {
+      "row": 70,
+      "puzzleId": "YI67P",
+      "reason": "PGN source game mismatch\n\n'game' !== 'NpjeMNHD'\n"
+    },
+    {
+      "row": 71,
+      "puzzleId": "1TBNC",
+      "reason": "PGN source game mismatch\n\n'game' !== 'J1ZHkF7H'\n"
+    },
+    {
+      "row": 72,
+      "puzzleId": "1TuxS",
+      "reason": "PGN source game mismatch\n\n'game' !== 'QXiFkqyU'\n"
+    },
+    {
+      "row": 73,
+      "puzzleId": "ttSjU",
+      "reason": "PGN source game mismatch\n\n'game' !== 'hUzzhI2U'\n"
+    },
+    {
+      "row": 74,
+      "puzzleId": "jGVbp",
+      "reason": "PGN source game mismatch\n\n'game' !== 'Igc8WyFt'\n"
+    },
+    {
+      "row": 75,
+      "puzzleId": "5Poks",
+      "reason": "PGN source game mismatch\n\n'game' !== 'n80ni3Uy'\n"
+    },
+    {
+      "row": 76,
+      "puzzleId": "VY1Au",
+      "reason": "PGN source game mismatch\n\n'game' !== 'p1zv6dtW'\n"
+    },
+    {
+      "row": 77,
+      "puzzleId": "YS8UC",
+      "reason": "PGN source game mismatch\n\n'game' !== 'ydqLQmbE'\n"
+    },
+    {
+      "row": 78,
+      "puzzleId": "IfHgv",
+      "reason": "PGN source game mismatch\n\n'game' !== 'Q8Nqguv1'\n"
+    },
+    {
+      "row": 79,
+      "puzzleId": "zjXZo",
+      "reason": "PGN source game mismatch\n\n'game' !== 'O1uKMZ0Y'\n"
+    },
+    {
+      "row": 80,
+      "puzzleId": "tlqd2",
+      "reason": "PGN source game mismatch\n\n'game' !== 'cnPqUDA4'\n"
+    },
+    {
+      "row": 81,
+      "puzzleId": "mEUh7",
+      "reason": "PGN source game mismatch\n\n'game' !== 'Eiq6p58h'\n"
+    },
+    {
+      "row": 82,
+      "puzzleId": "Aax5A",
+      "reason": "PGN source game mismatch\n\n'game' !== 'tkr3vfOS'\n"
+    },
+    {
+      "row": 83,
+      "puzzleId": "IQpYF",
+      "reason": "PGN source game mismatch\n\n'game' !== 'iPdfdLl9'\n"
+    },
+    {
+      "row": 84,
+      "puzzleId": "EgoY8",
+      "reason": "PGN source game mismatch\n\n'game' !== '7bCX4Lja'\n"
+    },
+    {
+      "row": 85,
+      "puzzleId": "BS5sA",
+      "reason": "PGN source game mismatch\n\n'game' !== '4iyfE0WN'\n"
+    },
+    {
+      "row": 86,
+      "puzzleId": "i02IY",
+      "reason": "PGN source game mismatch\n\n'game' !== 'HCIHYRyc'\n"
+    },
+    {
+      "row": 87,
+      "puzzleId": "ez20G",
+      "reason": "PGN source game mismatch\n\n'game' !== 'bO7iuoJc'\n"
+    },
+    {
+      "row": 88,
+      "puzzleId": "BaFsc",
+      "reason": "PGN source game mismatch\n\n'game' !== 'ab4tWjlL'\n"
+    },
+    {
+      "row": 89,
+      "puzzleId": "HhpDz",
+      "reason": "PGN source game mismatch\n\n'game' !== 'gEK55XOx'\n"
+    },
+    {
+      "row": 90,
+      "puzzleId": "kov5b",
+      "reason": "PGN source game mismatch\n\n'game' !== 'jL5V8x7l'\n"
+    },
+    {
+      "row": 91,
+      "puzzleId": "PfC44",
+      "reason": "PGN source game mismatch\n\n'game' !== '4cyJnmR4'\n"
+    },
+    {
+      "row": 92,
+      "puzzleId": "9DExo",
+      "reason": "PGN source game mismatch\n\n'game' !== 'rWA9yhT7'\n"
+    },
+    {
+      "row": 93,
+      "puzzleId": "218Xd",
+      "reason": "PGN source game mismatch\n\n'game' !== '8Mqdodu8'\n"
+    },
+    {
+      "row": 94,
+      "puzzleId": "Odvbl",
+      "reason": "PGN source game mismatch\n\n'game' !== 's3LG8YPC'\n"
+    },
+    {
+      "row": 95,
+      "puzzleId": "eJS2S",
+      "reason": "PGN source game mismatch\n\n'game' !== 'HCUOyfKZ'\n"
+    },
+    {
+      "row": 96,
+      "puzzleId": "MaQxO",
+      "reason": "PGN source game mismatch\n\n'game' !== 'lwhBa1Du'\n"
+    },
+    {
+      "row": 97,
+      "puzzleId": "ZKEDV",
+      "reason": "PGN source game mismatch\n\n'game' !== '3oLmw0RO'\n"
+    },
+    {
+      "row": 98,
+      "puzzleId": "L8Xnb",
+      "reason": "PGN source game mismatch\n\n'game' !== 'GQwiOvTq'\n"
+    },
+    {
+      "row": 99,
+      "puzzleId": "y8sa2",
+      "reason": "PGN source game mismatch\n\n'game' !== 'qBGmVkV1'\n"
+    },
+    {
+      "row": 100,
+      "puzzleId": "dDBn0",
+      "reason": "PGN source game mismatch\n\n'game' !== 'y761tmEF'\n"
+    },
+    {
+      "row": 101,
+      "puzzleId": "eYT3E",
+      "reason": "PGN source game mismatch\n\n'game' !== 'TtQkiKfe'\n"
+    },
+    {
+      "row": 102,
+      "puzzleId": "ihq3N",
+      "reason": "PGN source game mismatch\n\n'game' !== 'Yi9dU8FD'\n"
+    },
+    {
+      "row": 103,
+      "puzzleId": "5B6mb",
+      "reason": "PGN source game mismatch\n\n'game' !== '9Ndg0cNe'\n"
+    },
+    {
+      "row": 104,
+      "puzzleId": "HX3jU",
+      "reason": "PGN source game mismatch\n\n'game' !== '8xkl9Y1d'\n"
+    },
+    {
+      "row": 105,
+      "puzzleId": "xHPij",
+      "reason": "PGN source game mismatch\n\n'game' !== 'p5DsriwN'\n"
+    },
+    {
+      "row": 106,
+      "puzzleId": "OzfzB",
+      "reason": "PGN source game mismatch\n\n'game' !== '0kROPZ6m'\n"
+    },
+    {
+      "row": 107,
+      "puzzleId": "sVotS",
+      "reason": "PGN source game mismatch\n\n'game' !== 'WN6zd8Ce'\n"
+    },
+    {
+      "row": 108,
+      "puzzleId": "TsCyy",
+      "reason": "PGN source game mismatch\n\n'game' !== 'gGottOCQ'\n"
+    },
+    {
+      "row": 109,
+      "puzzleId": "bsIPU",
+      "reason": "PGN source game mismatch\n\n'game' !== 'JXBwrNrJ'\n"
+    },
+    {
+      "row": 110,
+      "puzzleId": "XWPAc",
+      "reason": "PGN source game mismatch\n\n'game' !== 'dXFaymAA'\n"
+    },
+    {
+      "row": 111,
+      "puzzleId": "zPm7r",
+      "reason": "PGN source game mismatch\n\n'game' !== 'hazOvJHc'\n"
+    },
+    {
+      "row": 112,
+      "puzzleId": "u0QJr",
+      "reason": "PGN source game mismatch\n\n'game' !== 'KXz9Y0Cd'\n"
+    },
+    {
+      "row": 113,
+      "puzzleId": "hJN1v",
+      "reason": "PGN source game mismatch\n\n'game' !== 'JLV10xCq'\n"
+    },
+    {
+      "row": 114,
+      "puzzleId": "IE9mc",
+      "reason": "PGN source game mismatch\n\n'game' !== 'qT82MYCh'\n"
+    },
+    {
+      "row": 115,
+      "puzzleId": "XmQPT",
+      "reason": "PGN source game mismatch\n\n'game' !== '9kzaW5bW'\n"
+    },
+    {
+      "row": 116,
+      "puzzleId": "6h1sB",
+      "reason": "PGN source game mismatch\n\n'game' !== '4myma8rF'\n"
+    },
+    {
+      "row": 117,
+      "puzzleId": "nfBiB",
+      "reason": "PGN source game mismatch\n\n'game' !== 'o4yNMnYw'\n"
+    },
+    {
+      "row": 118,
+      "puzzleId": "Ts169",
+      "reason": "PGN source game mismatch\n\n'game' !== 'NxUnAgzn'\n"
+    },
+    {
+      "row": 119,
+      "puzzleId": "2md2u",
+      "reason": "PGN source game mismatch\n\n'game' !== 'tGQzQ7DT'\n"
+    },
+    {
+      "row": 120,
+      "puzzleId": "YX3Ld",
+      "reason": "PGN source game mismatch\n\n'game' !== 'YIqJlKDk'\n"
+    },
+    {
+      "row": 121,
+      "puzzleId": "FcXk8",
+      "reason": "PGN source game mismatch\n\n'game' !== 'OG5aGZJm'\n"
+    },
+    {
+      "row": 122,
+      "puzzleId": "2ocam",
+      "reason": "PGN source game mismatch\n\n'game' !== 'PXkNMBsq'\n"
+    },
+    {
+      "row": 123,
+      "puzzleId": "Mc2iz",
+      "reason": "PGN source game mismatch\n\n'game' !== 'epQKTTGY'\n"
+    },
+    {
+      "row": 124,
+      "puzzleId": "2pYbM",
+      "reason": "PGN source game mismatch\n\n'game' !== 'bVurREmH'\n"
+    },
+    {
+      "row": 125,
+      "puzzleId": "GbhAu",
+      "reason": "PGN source game mismatch\n\n'game' !== 'mCtdOTIi'\n"
+    },
+    {
+      "row": 126,
+      "puzzleId": "EJ9Hx",
+      "reason": "PGN source game mismatch\n\n'game' !== 'hPYQSPzj'\n"
+    },
+    {
+      "row": 127,
+      "puzzleId": "iEjjU",
+      "reason": "PGN source game mismatch\n\n'game' !== 'Zi4Wg07Q'\n"
+    },
+    {
+      "row": 128,
+      "puzzleId": "LSEIV",
+      "reason": "PGN source game mismatch\n\n'game' !== 'UNGrZJe5'\n"
+    },
+    {
+      "row": 129,
+      "puzzleId": "qVuje",
+      "reason": "PGN source game mismatch\n\n'game' !== 'ySLdNgZl'\n"
+    },
+    {
+      "row": 130,
+      "puzzleId": "XAPg4",
+      "reason": "PGN source game mismatch\n\n'game' !== 'YEgLj77a'\n"
+    },
+    {
+      "row": 131,
+      "puzzleId": "b2fCD",
+      "reason": "PGN source game mismatch\n\n'game' !== '6iMry27T'\n"
+    },
+    {
+      "row": 132,
+      "puzzleId": "cbcfp",
+      "reason": "PGN source game mismatch\n\n'game' !== 'ro0zxzVr'\n"
+    },
+    {
+      "row": 133,
+      "puzzleId": "jvc1V",
+      "reason": "PGN source game mismatch\n\n'game' !== 'c7DkwJkk'\n"
+    },
+    {
+      "row": 134,
+      "puzzleId": "iP1TI",
+      "reason": "PGN source game mismatch\n\n'game' !== 'GpbQlyys'\n"
+    },
+    {
+      "row": 135,
+      "puzzleId": "6Hm3W",
+      "reason": "PGN source game mismatch\n\n'game' !== 'uWreyKVM'\n"
+    },
+    {
+      "row": 136,
+      "puzzleId": "KdIG1",
+      "reason": "PGN source game mismatch\n\n'game' !== 'DkXu3oMs'\n"
+    },
+    {
+      "row": 137,
+      "puzzleId": "f8wEr",
+      "reason": "PGN source game mismatch\n\n'game' !== 'irGMBUrH'\n"
+    },
+    {
+      "row": 138,
+      "puzzleId": "M9h71",
+      "reason": "PGN source game mismatch\n\n'game' !== 'MmK56dLZ'\n"
+    },
+    {
+      "row": 139,
+      "puzzleId": "9zfg5",
+      "reason": "PGN source game mismatch\n\n'game' !== 'tkDas3H8'\n"
+    },
+    {
+      "row": 140,
+      "puzzleId": "M6YI0",
+      "reason": "PGN source game mismatch\n\n'game' !== 'Lo7eRW0x'\n"
+    },
+    {
+      "row": 141,
+      "puzzleId": "AdF5y",
+      "reason": "PGN source game mismatch\n\n'game' !== 'Mq02s3bd'\n"
+    },
+    {
+      "row": 142,
+      "puzzleId": "hj9Ez",
+      "reason": "PGN source game mismatch\n\n'game' !== 'VuZVe7Nl'\n"
+    },
+    {
+      "row": 143,
+      "puzzleId": "M8v3h",
+      "reason": "PGN source game mismatch\n\n'game' !== 'VKtDdS2Q'\n"
+    },
+    {
+      "row": 144,
+      "puzzleId": "38ccj",
+      "reason": "PGN source game mismatch\n\n'game' !== 'rrJthUH5'\n"
+    },
+    {
+      "row": 145,
+      "puzzleId": "Rp0Nn",
+      "reason": "PGN source game mismatch\n\n'game' !== 'aOBsmSoK'\n"
+    },
+    {
+      "row": 146,
+      "puzzleId": "sAT4S",
+      "reason": "PGN source game mismatch\n\n'game' !== 'Y1RGASxk'\n"
+    },
+    {
+      "row": 147,
+      "puzzleId": "upz3k",
+      "reason": "PGN source game mismatch\n\n'game' !== '8cRidNmZ'\n"
+    },
+    {
+      "row": 148,
+      "puzzleId": "cV0PQ",
+      "reason": "PGN source game mismatch\n\n'game' !== 'awBm9NLi'\n"
+    },
+    {
+      "row": 149,
+      "puzzleId": "t27Ez",
+      "reason": "PGN source game mismatch\n\n'game' !== '8nnoIRFh'\n"
+    },
+    {
+      "row": 150,
+      "puzzleId": "oks5s",
+      "reason": "PGN source game mismatch\n\n'game' !== 'NHMNd4jn'\n"
+    },
+    {
+      "row": 151,
+      "puzzleId": "KYt3V",
+      "reason": "PGN source game mismatch\n\n'game' !== 'RxfOdrb0'\n"
+    },
+    {
+      "row": 152,
+      "puzzleId": "9fS84",
+      "reason": "PGN source game mismatch\n\n'game' !== 'XZGLQeNx'\n"
+    },
+    {
+      "row": 153,
+      "puzzleId": "A56BW",
+      "reason": "PGN source game mismatch\n\n'game' !== 'QXbVYmYf'\n"
+    },
+    {
+      "row": 154,
+      "puzzleId": "gCbPp",
+      "reason": "PGN source game mismatch\n\n'game' !== 'Bt7B7kWn'\n"
+    },
+    {
+      "row": 155,
+      "puzzleId": "qxYCW",
+      "reason": "PGN source game mismatch\n\n'game' !== 'fDvagIxW'\n"
+    },
+    {
+      "row": 156,
+      "puzzleId": "jqwH9",
+      "reason": "PGN source game mismatch\n\n'game' !== 'JS5npijr'\n"
+    },
+    {
+      "row": 157,
+      "puzzleId": "Klm0P",
+      "reason": "PGN source game mismatch\n\n'game' !== 'cjWVTDDW'\n"
+    },
+    {
+      "row": 158,
+      "puzzleId": "vwq7r",
+      "reason": "PGN source game mismatch\n\n'game' !== 'kcHVLpIb'\n"
+    },
+    {
+      "row": 159,
+      "puzzleId": "9EYpV",
+      "reason": "PGN source game mismatch\n\n'game' !== 'I0VEqDMm'\n"
+    },
+    {
+      "row": 160,
+      "puzzleId": "A5xPv",
+      "reason": "PGN source game mismatch\n\n'game' !== '0847fr9P'\n"
+    },
+    {
+      "row": 161,
+      "puzzleId": "mCodg",
+      "reason": "PGN source game mismatch\n\n'game' !== 'q4MZAD0D'\n"
+    },
+    {
+      "row": 162,
+      "puzzleId": "gfiew",
+      "reason": "PGN source game mismatch\n\n'game' !== 'wylmAz9H'\n"
+    },
+    {
+      "row": 163,
+      "puzzleId": "Fu8Yf",
+      "reason": "PGN source game mismatch\n\n'game' !== 't8DCS3eo'\n"
+    },
+    {
+      "row": 164,
+      "puzzleId": "CG6Uo",
+      "reason": "PGN source game mismatch\n\n'game' !== 'fkCWy5rY'\n"
+    },
+    {
+      "row": 165,
+      "puzzleId": "HzRvm",
+      "reason": "PGN source game mismatch\n\n'game' !== 'PQ6Bib9s'\n"
+    },
+    {
+      "row": 166,
+      "puzzleId": "jCSFq",
+      "reason": "PGN source game mismatch\n\n'game' !== 'Lyhn1gsW'\n"
+    },
+    {
+      "row": 167,
+      "puzzleId": "a6Goe",
+      "reason": "PGN source game mismatch\n\n'game' !== 'Rq35DF5B'\n"
+    },
+    {
+      "row": 168,
+      "puzzleId": "QTwWC",
+      "reason": "PGN source game mismatch\n\n'game' !== 'Qod3wbh2'\n"
+    },
+    {
+      "row": 169,
+      "puzzleId": "BWaPM",
+      "reason": "PGN source game mismatch\n\n'game' !== 'rOSi6dwn'\n"
+    },
+    {
+      "row": 170,
+      "puzzleId": "zRoWi",
+      "reason": "PGN source game mismatch\n\n'game' !== 'Xb6ykDQ7'\n"
+    },
+    {
+      "row": 171,
+      "puzzleId": "Q5g6a",
+      "reason": "PGN source game mismatch\n\n'game' !== 'i5pNvbU5'\n"
+    },
+    {
+      "row": 172,
+      "puzzleId": "neAry",
+      "reason": "PGN source game mismatch\n\n'game' !== 'zjqFxSHj'\n"
+    },
+    {
+      "row": 173,
+      "puzzleId": "nSNS3",
+      "reason": "PGN source game mismatch\n\n'game' !== 'AIGeHjUZ'\n"
+    },
+    {
+      "row": 174,
+      "puzzleId": "TUhin",
+      "reason": "PGN source game mismatch\n\n'game' !== 'yXrl9AGH'\n"
+    },
+    {
+      "row": 175,
+      "puzzleId": "lcGOJ",
+      "reason": "PGN source game mismatch\n\n'game' !== 'tSqHd8c4'\n"
+    },
+    {
+      "row": 176,
+      "puzzleId": "yxgRv",
+      "reason": "PGN source game mismatch\n\n'game' !== 'VQOSQMDn'\n"
+    },
+    {
+      "row": 177,
+      "puzzleId": "nrZZd",
+      "reason": "PGN source game mismatch\n\n'game' !== 'dGxqw8WM'\n"
+    },
+    {
+      "row": 178,
+      "puzzleId": "agr3a",
+      "reason": "PGN source game mismatch\n\n'game' !== 'joPXu1YK'\n"
+    },
+    {
+      "row": 179,
+      "puzzleId": "OKxIA",
+      "reason": "PGN source game mismatch\n\n'game' !== 'oP6bSBLO'\n"
+    },
+    {
+      "row": 180,
+      "puzzleId": "edIrE",
+      "reason": "PGN source game mismatch\n\n'game' !== 'le8Rynby'\n"
+    },
+    {
+      "row": 181,
+      "puzzleId": "49EU8",
+      "reason": "PGN source game mismatch\n\n'game' !== 'vNEx17r3'\n"
+    },
+    {
+      "row": 182,
+      "puzzleId": "gsAbp",
+      "reason": "PGN source game mismatch\n\n'game' !== '1sKUgWxf'\n"
+    },
+    {
+      "row": 183,
+      "puzzleId": "zWHTn",
+      "reason": "PGN source game mismatch\n\n'game' !== 'tJW4vvn7'\n"
+    },
+    {
+      "row": 184,
+      "puzzleId": "8ZkvG",
+      "reason": "PGN source game mismatch\n\n'game' !== 'b81WHm4I'\n"
+    },
+    {
+      "row": 185,
+      "puzzleId": "rvnBB",
+      "reason": "PGN source game mismatch\n\n'game' !== 'UgYaOReg'\n"
+    },
+    {
+      "row": 186,
+      "puzzleId": "rLcwb",
+      "reason": "PGN source game mismatch\n\n'game' !== 'eFgo4pWs'\n"
+    },
+    {
+      "row": 187,
+      "puzzleId": "bWIm2",
+      "reason": "PGN source game mismatch\n\n'game' !== 'ZNqajRiu'\n"
+    },
+    {
+      "row": 188,
+      "puzzleId": "j9R7V",
+      "reason": "PGN source game mismatch\n\n'game' !== '7ryJlK6c'\n"
+    },
+    {
+      "row": 189,
+      "puzzleId": "JwpZM",
+      "reason": "PGN source game mismatch\n\n'game' !== '9RJwtus3'\n"
+    },
+    {
+      "row": 190,
+      "puzzleId": "rdFx1",
+      "reason": "PGN source game mismatch\n\n'game' !== 'nKkO0SrA'\n"
+    },
+    {
+      "row": 191,
+      "puzzleId": "nbDbp",
+      "reason": "PGN source game mismatch\n\n'game' !== '5Wzq38ua'\n"
+    },
+    {
+      "row": 192,
+      "puzzleId": "BfFWG",
+      "reason": "PGN source game mismatch\n\n'game' !== 'G2pNCLYg'\n"
+    }
+  ],
+  "selection": {
+    "startRow": 0,
+    "rowLimit": 4096,
+    "totalInputRows": 192,
+    "selectedInputRows": 192
+  },
+  "sources": {
+    ".codebase/scripts/data/prepare-lichess-lessons.mjs": "b8da4d5735a4b3f60ca3aab2d4d3d231d4b64b49f5f4569aaf5147f64a300927",
+    ".codebase/src/puzzle-learning/lichess-history.mjs": "26d69604d59847109b7e9408c0ab03a0afdb2ae60fd502ad2431477443d5a630",
+    ".codebase/src/puzzle-learning/lichess-capture-lesson.mjs": "359c85af6ae0326378833d27e10aac9b64fa260e22dc3a1e48e2b2f13baeb0bf",
+    ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+    ".codebase/src/search-and-feedback/capture-retention-certificate.mjs": "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+    ".codebase/src/search-and-feedback/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+    ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    "package-lock.json": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9"
+  },
+  "node": "v22.23.2",
+  "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputBytes": 0,
+  "bounds": {
+    "maxInputBytes": 67108864,
+    "maxSourceRows": 4096,
+    "maxHistoryPlies": 512,
+    "maxPgnBytes": 65536,
+    "maxOutputRowBytes": 2097152,
+    "maxOutputBytes": 67108864,
+    "maxRssMiB": 2048,
+    "minFreeMiB": 256,
+    "maxSeconds": 3600,
+    "cpuDuty": 0.5,
+    "heapMiB": 256,
+    "deadlineScope": "Soft row boundary; a synchronous bounded certificate call is not interruptible."
+  },
+  "resources": {
+    "cpu": {
+      "user": 9094000,
+      "system": 297000
+    },
+    "peakRssMiB": 73.59375,
+    "cpuDuty": 0.5
+  },
+  "elapsedSeconds": 19.2963979,
+  "peakRssMiB": 73.59375,
+  "neuralEventsDelivered": 0,
+  "graphLaunchAuthorized": false,
+  "scope": "Teacher preparation only; domain eligibility is not family separation, G0 qualification, neural delivery or a passed curriculum stage"
+}

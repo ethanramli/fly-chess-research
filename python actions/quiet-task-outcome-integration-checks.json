@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "quiet-task-outcome-integration-checks",
+  "paused": false,
+  "paths": {
+    "run": "research/reports/task-outcome-adapter-2026-10-22"
+  },
+  "pins": {
+    ".codebase/src/puzzle-learning/stockfish-value-brain.mjs": "2991fe6435b85aa5de63945ebe089941c209f9d85e21f7a834c9c499ae8316f2",
+    ".codebase/src/puzzle-learning/dual-valence-puzzle-brain.mjs": "d787ac5f05eff2bf1dc596cde5474c1085d916d66303dfc4a776b41da2d6ccd8",
+    ".codebase/src/puzzle-learning/mapped-puzzle-brain.mjs": "81022b9f40b45523b8c6589407f06529cd57486d3e87459674751c2d86330882",
+    ".codebase/src/search-and-feedback/stockfish-feedback-rubric.mjs": "7401b7ea819c24bcbf41071ce95a5b58b32293242ef9cc2e8473a4d7a0923359",
+    ".codebase/src/search-and-feedback/stockfish-target.mjs": "1931d16a1883e76615be32cf13fb359286c06fd8a95d3c88812171f48c13158f",
+    ".codebase/src/search-and-feedback/verified-feedback.mjs": "33a420b7f0ef9bda52a73ff37f199bc090ee1ab9a2bae5b2f22f166e3e0edf7a",
+    ".codebase/tests/puzzle-learning/stockfish-value-brain.test.mjs": "2e3d9234068fea6286c144f423ae8c4a3c95823e1125d0b1b9ae95e8b263bdef",
+    ".codebase/tests/puzzle-learning/dual-valence-puzzle-brain.test.mjs": "ae4425f87ffb7d636dbd979d46479b22040a6bfc97ebf57b348dc465a9477eba",
+    ".codebase/tests/puzzle-learning/mapped-puzzle-brain.test.mjs": "e40244abc182c14b306125452d4592539c3cf3a99735bfdbc8839a05e67c6756",
+    ".codebase/tests/search-and-feedback/stockfish-feedback-rubric.test.mjs": "fe97ce65d86561d59ff5c3a73b029f04aa1ce5d36cdb7093460eda5277fca9eb",
+    ".codebase/tests/search-and-feedback/stockfish-target.test.mjs": "f0f3df48cd7952190a6cc22ef3585bfda8415c7bbcdda6dc412238a051583ef9",
+    ".codebase/tests/search-and-feedback/verified-feedback.test.mjs": "93283851dea763b3e478ad9d0d950588b0ba10f111beb428bc7e2bd1c31f04cd",
+    ".codebase/tests/neural-learning/dual-valence-interface.test.mjs": "e1e5aa8f0c27166cb525b0f1674a3498a4d4763bd8e65c1c09810fcbb3b47047",
+    ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83"
+  },
+  "state_file": "runs/python-actions/current-quiet-task-outcome-checks.json",
+  "jobs": {
+    "tests": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        ".codebase/tests/puzzle-learning/stockfish-value-brain.test.mjs",
+        ".codebase/tests/puzzle-learning/dual-valence-puzzle-brain.test.mjs",
+        ".codebase/tests/puzzle-learning/mapped-puzzle-brain.test.mjs",
+        ".codebase/tests/search-and-feedback/stockfish-feedback-rubric.test.mjs",
+        ".codebase/tests/search-and-feedback/stockfish-target.test.mjs",
+        ".codebase/tests/search-and-feedback/verified-feedback.test.mjs",
+        ".codebase/tests/neural-learning/dual-valence-interface.test.mjs"
+      ]
+    }
+  },
+  "artifacts": {}
+}

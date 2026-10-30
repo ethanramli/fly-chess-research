@@ -1,10 +1,16 @@
 ﻿# Frozen protocols, datasets and fixtures
 
 This folder contains versioned protocol JSON, streamed position/puzzle JSONL and dataset manifests. These are experimental inputs, not discussion notes. Preserve paths and bytes when an experiment pins their hashes.
+
+- [G0 history replication: final predetermined projection seed 20261013](g0-reversal-history-replication-seed3-v1/README.md)
 - [Capture-retention family v1: cue-alias preflight failure](capture-retention-transfer-v1/README.md)
 - [Capture-retention family v2: frozen data, no neural run protocol](capture-retention-transfer-v2/README.md)
 - [Bound-ray activity probe v1: read-only train/validation neural screen](bound-ray-activity-probe-v1/README.md)
 - [Correction-preservation schedules v2: action/outcome-matched teacher schedules; no graph run](correction-preservation-schedules-v2/README.md)
+- [Stage 1 derived capture family candidates v1: 1,653 replayed pairs, proposed grouping too specific, no teaching authorization](lichess-stage1-derived-family-candidates-v1/README.md)
+- [Stage 1 derived capture family candidates v2: 613 causal-role groups, 110 recur across games; no training authorization](lichess-stage1-derived-family-candidates-v2/README.md)
+- [Validation v3 Stage 1 capture counterfactual candidates v2: 822 replayed flips; synthetic history; no training authorization](lichess-validation-v3-stage1-capture-counterfactuals-v2/README.md)
+- [Validation v3 Stage 1 king-relocation candidates v4: 1,277 replayed flips; no pin stratum; no training authorization](lichess-validation-v3-stage1-capture-counterfactuals-v4-king-only/README.md)
 
 - [Contrastive feedback screen v1](contrastive-feedback-screen-v1/README.md)
 - [Contrastive feedback screen v2](contrastive-feedback-screen-v2/README.md)
@@ -88,3 +94,7 @@ For each permitted dataset, document its origin, license/permission, date receiv
 - [Independent runtime timing/publication checker](training-latency-runtime-audit-v1/README.md).
 
 - [Lesson pause operational version v1](lesson-pause-control-v1/README.md): declared execution-source additions for safe lesson stops, preserving canonical physiological/receipt identities.
+
+## Babysit validation input expansion - 22 October 2026
+
+The independently verified validation-only candidate pool now has 192 source/history-bound lessons and all-legal Stage 1 consequence checks. See [validation report and audit](../reports/lichess-foundations-pilot-2026-10-21/README.md). It remains ineligible for neural teaching until the family and Stage 1 gates pass.

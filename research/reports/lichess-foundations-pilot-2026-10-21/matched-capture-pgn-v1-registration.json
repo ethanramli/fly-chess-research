@@ -1,0 +1,22 @@
+{
+  "schema": "matched-capture-training-pgn-registration-v1",
+  "sourceManifestSha256": "a639d50c8d58bbfba7746c7cb63af5fe86187e149e62c12abc988df56aea25d7",
+  "sourceAuditSha256": "17fb76171a03c73593c01ef49a38cafc8c237e5e17b27e8ffb2b51662c0f9d81",
+  "trainingRows": 44,
+  "sourceAuditScope": "Candidate CSV membership, matched-capture FEN selection and legal source line only; actual PGN history and teaching consequences remain unverified.",
+  "action": "One public read-only Lichess batch game export, exact training-source IDs. No validation/final export or neural event.",
+  "bounds": {
+    "maxIds": 300,
+    "maxRows": 4096,
+    "maxResponseBytes": 25165824,
+    "maxGameBytes": 65536,
+    "socketTimeoutSeconds": 60
+  },
+  "publication": "Fresh inherited-access partial directory, exact ID/hash checks, atomic rename; preserve all failed responses/partial outputs.",
+  "pins": {
+    "research\\data\\lichess-matched-capture-train-v1\\manifest.json": "a639d50c8d58bbfba7746c7cb63af5fe86187e149e62c12abc988df56aea25d7",
+    "research\\reports\\lichess-foundations-pilot-2026-10-21\\matched-capture-train-source-audit-v1.json": "17fb76171a03c73593c01ef49a38cafc8c237e5e17b27e8ffb2b51662c0f9d81",
+    "research\\data\\lichess-matched-capture-train-v1\\train.jsonl": "4aaa70e25513eb69c3925f51189f6baf37fa7746acb73f2912efc9e8d07ada0f",
+    "python actions\\fetch_lichess_game_pgns.py": "3d83ffa0144d3ed35eac710fe119a723c0687b1cdbd37d7bdb67e6e0dc4b6bc1"
+  }
+}

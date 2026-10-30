@@ -1,0 +1,48 @@
+{
+  "schema": "lichess-stage1-curation-recovery-v2",
+  "createdAt": "2026-10-21T13:12:09Z",
+  "purpose": "Retry the bounded source-candidate scan after the first full-CSV pass exceeded its one-hour elapsed bound before output publication.",
+  "previousAttempt": {
+    "invocation": "runs/python-actions/20261021T121022-d220d9ba",
+    "completion": "runs/python-actions/20261021T121022-d220d9ba/completion.json",
+    "exitCode": 1,
+    "failure": "Source preparation elapsed bound at 3600 seconds; no candidate output directory was published.",
+    "sourceSnapshot": "research/reports/lichess-foundations-pilot-2026-10-21/curate-lichess-puzzles-v1-source.mjs",
+    "sourceSha256": "88d036c6ceca115c33330bc83801e96f721403a6c471e209480ce28b9e25f4a5"
+  },
+  "source": {
+    "url": "https://database.lichess.org/",
+    "license": "CC0-1.0",
+    "compressedArchive": ".cache/lichess-puzzles-2026-10-21.csv.zst",
+    "compressedSha256": "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+    "decodedCsv": ".cache/lichess-puzzles-2026-10-21.csv",
+    "decodedCsvSha256": "ec2dd1a8f9cbd139ebb4aee228f72e77f8e2a581a24d25f61f71e6cf306b10f8",
+    "extractionReceipt": "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json",
+    "extractionReceiptSha256": "deac9b4792742a84fde9f3273caabcf5f505d957fb142881a8345aae356b4510"
+  },
+  "curator": {
+    "script": ".codebase/scripts/data/curate-lichess-puzzles.mjs",
+    "scriptSha256": "306987357b05dee044eed1fcaab2e6088a61fdad115f5950de21f3b54a2a7edf",
+    "previousScriptSnapshotSha256": "88d036c6ceca115c33330bc83801e96f721403a6c471e209480ce28b9e25f4a5",
+    "pacer": ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs",
+    "pacerSha256": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    "limitPerSplit": 128,
+    "minRating": 0,
+    "maxRating": 5000,
+    "maxPieces": 6,
+    "seed": 20261021,
+    "themes": [],
+    "cpuDuty": 0.5,
+    "maxSeconds": 4200,
+    "maximumSupportedSeconds": 7200
+  },
+  "resources": {
+    "maxRssMiB": 2048,
+    "minFreeMiB": 256,
+    "nodeHeapMiB": 256,
+    "cpuDuty": 0.5
+  },
+  "output": "research/data/lichess-stage1-candidates-v2",
+  "scope": "Source candidate selection only. History, relation families, consequence certificates, neural teaching and Stage1 acceptance require separate audits. Final rows stay sealed.",
+  "status": "registered-not-started"
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "stage1-smoke-audit-addendum-v1",
+  "date": "2026-10-28",
+  "registration": {
+    "path": "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r14-registration.json",
+    "sha256": "609728635d3044d2db47bd3f36e12ad578c0d53740b4095f15e99c4b9e6b7de9"
+  },
+  "reason": "The registered evaluator v2 opens the sealed final set once the validation freeze succeeds; an engineering smoke must not spend the one-time final test (ledger L056; researcher asked for the option giving the best evidence and chance).",
+  "change": "r14 is audited by audit-stage1-validation-only.mjs: same independent full neural replay and validation-only checkpoint selection, evaluator v3 that never opens final rows or families. The registered audit job is not run.",
+  "training": "Training resumed training-only (no audit job) into runs/lichess-stage1-synthetic-v1-smoke-r14-resume-0002 after a deliberate pause.",
+  "command": "node --max-old-space-size=256 .codebase/scripts/puzzle-learning/audit-stage1-validation-only.mjs --registration research/data/lichess-stage1-synthetic-v1/stage1-smoke-r14-registration.json --result runs/lichess-stage1-synthetic-v1-smoke-r14-resume-0002/result.json --out runs/lichess-stage1-synthetic-v1-smoke-r14-validation-audit",
+  "sources": {
+    "driver": {
+      "path": ".codebase/scripts/puzzle-learning/audit-stage1-validation-only.mjs",
+      "sha256": "bda87ec79483fed3e07f571294c9d5735d10bc8b1d1b9a7313c3388f47474e8b"
+    },
+    "evaluator": {
+      "path": ".codebase/scripts/puzzle-learning/lichess-stage1-acceptance-evaluator-v3.mjs",
+      "sha256": "2d6638d7b450bcb64aacac88b159bf1e1d03ea952be9102baba1d6b77870ed0f"
+    }
+  },
+  "reported": "D1 (training, informative >= 22/24) and D2 (validation >= 14/16 and >= 3 per stratum) for the informative arm, and each matched control scored on validation at the informative arm's block (diagnostic only; D6 is a final-set gate and is not evaluated). D3-D6 and D8 are not evaluated. Not a stage acceptance.",
+  "interpretation": "D2 pass: register the full run (3 replicas, 32 blocks, no early stop). D2 fail: diagnose on training evidence only; validation results guide no encoder or data change beyond the registered selection."
+}

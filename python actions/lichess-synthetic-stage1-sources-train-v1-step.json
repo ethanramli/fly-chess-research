@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "name": "lichess-synthetic-stage1-sources-train-v1",
+  "paused": false,
+  "paths": {
+    "run": "runs/python-actions/lichess-synthetic-stage1-sources-train-v1-20261023",
+    "input": ".cache/lichess-puzzles-2026-10-21.csv",
+    "extraction": "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json",
+    "archive": ".cache/lichess-puzzles-2026-10-21.csv.zst",
+    "out": "research/data/lichess-synthetic-stage1-source-candidates-v1/train",
+    "audit": "research/reports/lichess-synthetic-stage1-source-candidates-train-audit-v1-2026-10-23.json",
+    "curator": ".codebase/scripts/data/curate-lichess-synthetic-stage1-sources-v1.mjs",
+    "auditor": ".codebase/scripts/data/audit-lichess-synthetic-stage1-sources-v1.mjs"
+  },
+  "pins": {
+    ".codebase/scripts/data/curate-lichess-synthetic-stage1-sources-v1.mjs": "f171c45b69ea6ceb2cc7c5775e4db1217f079f2b3d05a5c88772294f2220a45d",
+    ".codebase/scripts/data/audit-lichess-synthetic-stage1-sources-v1.mjs": "fb3a68ebfbb8dc56c8d6650c3864a9d015f180817336022a07efbf30c918bdaa",
+    ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    ".codebase/src/puzzle-learning/mixed-capture-filter.mjs": "4a950efee6a1ecb043e780cc257d5cfa41543f1ca075a159d52f66e5ad64d9c9",
+    "package-lock.json": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+    ".cache/lichess-puzzles-2026-10-21.csv": "ec2dd1a8f9cbd139ebb4aee228f72e77f8e2a581a24d25f61f71e6cf306b10f8",
+    ".cache/lichess-puzzles-2026-10-21.csv.zst": "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+    "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json": "deac9b4792742a84fde9f3273caabcf5f505d957fb142881a8345aae356b4510"
+  },
+  "state_file": "runs/python-actions/lichess-synthetic-stage1-sources-train-v1-state.json",
+  "jobs": {
+    "curate": {
+      "role": "check",
+      "argv": [
+        "node", "--max-old-space-size=256", "{curator}",
+        "--input", "{input}", "--extraction-receipt", "{extraction}",
+        "--out", "{out}", "--limit-per-split", "512", "--max-pieces", "32",
+        "--only-split", "train", "--require-first-solution-capture",
+        "--seed", "20261023", "--max-seconds", "7200", "--cpu-duty", "0.5"
+      ],
+      "requires": ["{curator}", "{input}", "{extraction}", "{archive}"],
+      "fresh_output": "{out}"
+    },
+    "audit": {
+      "role": "check",
+      "argv": [
+        "node", "--max-old-space-size=256", "{auditor}",
+        "--corpus", "{out}", "--out", "{audit}", "--cpu-duty", "0.5"
+      ],
+      "requires": ["{out}/manifest.json", "{input}", "{extraction}", "{archive}"],
+      "fresh_output": "{audit}"
+    }
+  },
+  "artifacts": {"corpus": "{out}/manifest.json", "audit": "{audit}"},
+  "report_fields": ["sourceChecksPassed", "checkedSplits", "sourceRows", "finalSplitInspected", "eligibleForNeuralTeaching", "resources"]
+}

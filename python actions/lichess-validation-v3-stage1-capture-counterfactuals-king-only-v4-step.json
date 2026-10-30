@@ -1,0 +1,81 @@
+{
+    "schema":  1,
+    "name":  "lichess-validation-v3-stage1-capture-counterfactuals-king-only-v4",
+    "paused":  false,
+    "paths":  {
+                  "prepared":  "research/data/lichess-validation-prepared-v3",
+                  "inputAudit":  "research/reports/lichess-foundations-pilot-2026-10-21/validation-lessons-audit-v3.json",
+                  "out":  "research/data/lichess-validation-v3-stage1-capture-counterfactuals-v4-king-only",
+                  "report":  "research/data/lichess-validation-v3-stage1-capture-counterfactuals-v4-king-only/report.json",
+                  "audit":  "research/reports/babysit-stage1-validation-v3-capture-counterfactual-audit-v5-2026-10-23.json",
+                  "producer":  ".codebase/scripts/data/probe-lichess-validation-v3-capture-counterfactuals-king-only-v4.mjs",
+                  "auditor":  ".codebase/scripts/data/audit-lichess-validation-v3-stage1-capture-counterfactuals-v2.mjs",
+                  "run":  "runs/python-actions/lichess-validation-v3-stage1-capture-counterfactuals-king-only-v4"
+              },
+    "pins":  {
+                 "research/data/lichess-validation-prepared-v3/manifest.json":  "f67d505405942a2de9648d7ccc7d5468e538e144278cd401ccfdce4080c0913c",
+                 "research/data/lichess-validation-prepared-v3/lessons.jsonl":  "ea76fe1144fd4814c3f15707f404a48348f3cc578f16320bd52e6483e0b63644",
+                 "research/reports/lichess-foundations-pilot-2026-10-21/validation-lessons-audit-v3.json":  "b616ddeca62cc2ab0e9a4f4121bf15367e26f7edaad8be6713f67397d8f60977",
+                 ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs":  "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+                 ".codebase/src/search-and-feedback/capture-retention-certificate.mjs":  "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+                 ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs":  "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+                 ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs":  "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+                 "package-lock.json":  "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+                 "python actions/curriculum.py":  "60d67b65abe9fa196c35849feaace844fe8df727edf4e3caa708585790d4338c",
+                 "python actions/fly_controls.py":  "05e1121f2be288c9d86b0c31493181c582c7f5bb9d24a9bc1e26ae3d2ed1300c",
+                 ".codebase/scripts/data/audit-lichess-validation-v3-stage1-capture-counterfactuals-v2.mjs":  "922f34d9865caabc3d471ad8290edf8742b5d649033164b592efcf44a4e2d20b",
+                 ".codebase/scripts/data/probe-lichess-validation-v3-capture-counterfactuals-king-only-v4.mjs":  "14882591987ba07353ba058bb5b7cc7401f4dc6cac3db293d61d0a8933d9b670"
+             },
+    "state_file":  "runs/python-actions/lichess-validation-v3-stage1-capture-counterfactuals-king-only-v4.json",
+    "jobs":  {
+                 "prepare":  {
+                                 "role":  "check",
+                                 "argv":  [
+                                              "node",
+                                              "--max-old-space-size=256",
+                                              "{producer}",
+                                              "--prepared",
+                                              "{prepared}",
+                                              "--audit",
+                                              "{inputAudit}",
+                                              "--out",
+                                              "{out}"
+                                          ],
+                                 "requires":  [
+                                                  "{prepared}/manifest.json",
+                                                  "{prepared}/lessons.jsonl",
+                                                  "{inputAudit}"
+                                              ],
+                                 "fresh_output":  "{out}"
+                             },
+                 "audit":  {
+                               "role":  "check",
+                               "argv":  [
+                                            "node",
+                                            "--max-old-space-size=256",
+                                            "{auditor}",
+                                            "--prepared",
+                                            "{prepared}",
+                                            "--audit",
+                                            "{inputAudit}",
+                                            "--report",
+                                            "{report}",
+                                            "--out",
+                                            "{audit}"
+                                        ],
+                               "requires":  [
+                                                "{prepared}/manifest.json",
+                                                "{prepared}/lessons.jsonl",
+                                                "{inputAudit}",
+                                                "{report}"
+                                            ],
+                               "refuse_existing":  [
+                                                       "{audit}"
+                                                   ]
+                           }
+             },
+    "artifacts":  {
+                      "result":  "{report}",
+                      "audit":  "{audit}"
+                  }
+}

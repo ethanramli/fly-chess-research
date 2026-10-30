@@ -1,0 +1,36 @@
+﻿{
+    "schema":  "lichess-stage1-training-pin-theme-v2",
+    "createdAt":  "2026-10-23T03:18:40.7151712Z",
+    "purpose":  "Broaden source candidate sampling after v1 returned zero rows under the combined six-piece and matched-capture filters. Source theme is only a sampling cue; semantic family and consequence audits remain authoritative.",
+    "source":  {
+                   "url":  "https://database.lichess.org/",
+                   "license":  "CC0-1.0",
+                   "csv":  ".cache/lichess-puzzles-2026-10-21.csv",
+                   "csvSha256":  "ec2dd1a8f9cbd139ebb4aee228f72e77f8e2a581a24d25f61f71e6cf306b10f8",
+                   "compressedArchive":  ".cache/lichess-puzzles-2026-10-21.csv.zst",
+                   "compressedSha256":  "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+                   "extractionReceipt":  "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json",
+                   "extractionSha256":  "deac9b4792742a84fde9f3273caabcf5f505d957fb142881a8345aae356b4510"
+               },
+    "selection":  {
+                      "themes":  [
+                                     "pin"
+                                 ],
+                      "onlySplit":  "train",
+                      "requireMatchedCaptures":  false,
+                      "limitPerSplit":  1024,
+                      "maxPieces":  32,
+                      "seed":  20261023,
+                      "maxSeconds":  7200,
+                      "cpuDuty":  0.5
+                  },
+    "boundaries":  [
+                       "Only training source rows may be inspected or emitted; validation and final puzzle content remain sealed.",
+                       "Candidate source rows require independent game-history retrieval, legal consequence certificates, family construction and split audit before teaching.",
+                       "This action does not launch the connectome learner, Stockfish feedback, or G0."
+                   ],
+    "curatorSha256":  "cc090296dff6ba3287b3d26cc14021fcca7aae66c6cb3edafaa2ccdc323a6dd4",
+    "sourceAuditorSha256":  "b68b66bfb1f4f1688617a61fc27b213f7cbb425ed2e5776af6c493efe5296ccb",
+    "captureFilterSha256":  "4a950efee6a1ecb043e780cc257d5cfa41543f1ca075a159d52f66e5ad64d9c9",
+    "cpuPacerSha256":  "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c"
+}

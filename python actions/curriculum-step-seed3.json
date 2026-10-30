@@ -1,0 +1,317 @@
+{
+  "schema": 1,
+  "name": "g0-history-replication-seed3-v1",
+  "paused": false,
+  "paths": {
+    "protocol": "research/data/g0-reversal-history-replication-seed3-v1/protocol.json",
+    "runner": ".codebase/scripts/neural-learning/run-g0-reversal-history-replication.mjs",
+    "auditor": "research/data/g0-reversal-history-replication-seed3-v1/audit.mjs",
+    "run": "runs/g0-history-replication-20261013-v1",
+    "checkpoint": "runs/g0-history-replication-20261013-v1/checkpoint.json.gz",
+    "auditRegistration": "research/data/g0-reversal-history-replication-seed3-v1/audit-registration.json"
+  },
+  "pins": {
+    "{protocol}": "ddeffa58240f600dd93a68fe53a8aa2ad82d6a294f2de217ba7b4069d7953eb0",
+    "{runner}": "0101bb57eaadcc8231645d3afc3b2f43467946de61b0ebcbf5a6f4578908b60e",
+    "{auditor}": "53af15cd88f05da12350f947f564c75f52b5fa5fb96d85b55bd215e09df729d5",
+    "{auditRegistration}": "84d77cd7b8f67505e5153c83bc324362d4ef13e3f961e1231f7250412ea5b469"
+  },
+  "state_file": "runs/python-actions/current-seed3.json",
+  "jobs": {
+    "train": {
+      "role": "train",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--protocol",
+        "{protocol}",
+        "--out",
+        "{run}",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{protocol}",
+        "{runner}"
+      ],
+      "fresh_output": "{run}"
+    },
+    "resume": {
+      "role": "resume",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--protocol",
+        "{protocol}",
+        "--out",
+        "{run}",
+        "--resume",
+        "{checkpoint}",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{protocol}",
+        "{runner}",
+        "{checkpoint}"
+      ],
+      "fresh_output": "{run}"
+    },
+    "audit": {
+      "role": "audit",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{auditor}",
+        "{run}",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{run}/result.json",
+        "{run}/protocol.json",
+        "{auditor}"
+      ],
+      "refuse_existing": [
+        "{run}/audit.json"
+      ]
+    },
+    "action-tests": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "python actions/test_curriculum.py"
+      ]
+    },
+    "core-tests": {
+      "role": "check",
+      "argv": [
+        "npm",
+        "test"
+      ]
+    },
+    "control-tests": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "python actions/test_fly_controls.py"
+      ]
+    },
+    "control-integration": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "python actions/verify_pause_controls.py"
+      ]
+    }
+  },
+  "observe": {
+    "job": "audit",
+    "pid": null,
+    "expected": [
+      "{auditor}",
+      "{run}"
+    ],
+    "stdout": "{run}.audit.stdout.txt",
+    "stderr": "{run}.audit.stderr.txt"
+  },
+  "artifacts": {
+    "result": "{run}/result.json",
+    "audit": "{run}/audit.json"
+  },
+  "report_fields": [
+    "passed",
+    "fullNeuralReplay",
+    "G0Passed",
+    "diagnosticComplete",
+    "receiptCount",
+    "receipts",
+    "branchResults",
+    "gates",
+    "scope",
+    "peakRssMiB",
+    "elapsedSeconds",
+    "stageCount",
+    "frames",
+    "lessons",
+    "invocation"
+  ],
+  "reporting": {
+    "title": "Learning, remembering and adapting (association study)",
+    "stages": [
+      {
+        "phase": "acquisition",
+        "branch": "prefix",
+        "condition": "informative",
+        "lessons": 32,
+        "label": "Learning associations / teaching"
+      },
+      {
+        "phase": "acquisition",
+        "branch": "prefix",
+        "condition": "absent",
+        "lessons": 32,
+        "label": "Learning associations / no teaching comparison"
+      },
+      {
+        "phase": "acquisition",
+        "branch": "prefix",
+        "condition": "disabled",
+        "lessons": 32,
+        "label": "Learning associations / learning switched off"
+      },
+      {
+        "phase": "acquisition",
+        "branch": "prefix",
+        "condition": "shuffled-20261011",
+        "lessons": 32,
+        "label": "Learning associations / shuffled feedback comparison"
+      },
+      {
+        "phase": "acquisition",
+        "branch": "prefix",
+        "condition": "shuffled-20261014",
+        "lessons": 32,
+        "label": "Learning associations / shuffled feedback comparison"
+      },
+      {
+        "phase": "acquisition",
+        "branch": "prefix",
+        "condition": "shuffled-20261015",
+        "lessons": 32,
+        "label": "Learning associations / shuffled feedback comparison"
+      },
+      {
+        "phase": "interference",
+        "branch": "prefix",
+        "condition": "informative",
+        "lessons": 16,
+        "label": "Remembering while learning other associations / teaching"
+      },
+      {
+        "phase": "interference",
+        "branch": "prefix",
+        "condition": "absent",
+        "lessons": 16,
+        "label": "Remembering while learning other associations / no teaching comparison"
+      },
+      {
+        "phase": "interference",
+        "branch": "prefix",
+        "condition": "disabled",
+        "lessons": 16,
+        "label": "Remembering while learning other associations / learning switched off"
+      },
+      {
+        "phase": "interference",
+        "branch": "prefix",
+        "condition": "shuffled-20261011",
+        "lessons": 16,
+        "label": "Remembering while learning other associations / shuffled feedback comparison"
+      },
+      {
+        "phase": "interference",
+        "branch": "prefix",
+        "condition": "shuffled-20261014",
+        "lessons": 16,
+        "label": "Remembering while learning other associations / shuffled feedback comparison"
+      },
+      {
+        "phase": "interference",
+        "branch": "prefix",
+        "condition": "shuffled-20261015",
+        "lessons": 16,
+        "label": "Remembering while learning other associations / shuffled feedback comparison"
+      },
+      {
+        "phase": "reversal",
+        "branch": "retained",
+        "condition": "informative",
+        "lessons": 32,
+        "label": "Adapting to changed feedback / teaching"
+      },
+      {
+        "phase": "reversal",
+        "branch": "retained",
+        "condition": "absent",
+        "lessons": 32,
+        "label": "Adapting to changed feedback / no teaching comparison"
+      },
+      {
+        "phase": "reversal",
+        "branch": "retained",
+        "condition": "disabled",
+        "lessons": 32,
+        "label": "Adapting to changed feedback / learning switched off"
+      },
+      {
+        "phase": "reversal",
+        "branch": "retained",
+        "condition": "shuffled-20261011",
+        "lessons": 32,
+        "label": "Adapting to changed feedback / shuffled feedback comparison"
+      },
+      {
+        "phase": "reversal",
+        "branch": "retained",
+        "condition": "shuffled-20261014",
+        "lessons": 32,
+        "label": "Adapting to changed feedback / shuffled feedback comparison"
+      },
+      {
+        "phase": "reversal",
+        "branch": "retained",
+        "condition": "shuffled-20261015",
+        "lessons": 32,
+        "label": "Adapting to changed feedback / shuffled feedback comparison"
+      },
+      {
+        "phase": "reversal",
+        "branch": "reset",
+        "condition": "informative",
+        "lessons": 32,
+        "label": "Fresh-start comparison / teaching"
+      },
+      {
+        "phase": "reversal",
+        "branch": "reset",
+        "condition": "absent",
+        "lessons": 32,
+        "label": "Fresh-start comparison / no teaching comparison"
+      },
+      {
+        "phase": "reversal",
+        "branch": "reset",
+        "condition": "disabled",
+        "lessons": 32,
+        "label": "Fresh-start comparison / learning switched off"
+      },
+      {
+        "phase": "reversal",
+        "branch": "reset",
+        "condition": "shuffled-20261011",
+        "lessons": 32,
+        "label": "Fresh-start comparison / shuffled feedback comparison"
+      },
+      {
+        "phase": "reversal",
+        "branch": "reset",
+        "condition": "shuffled-20261014",
+        "lessons": 32,
+        "label": "Fresh-start comparison / shuffled feedback comparison"
+      },
+      {
+        "phase": "reversal",
+        "branch": "reset",
+        "condition": "shuffled-20261015",
+        "lessons": 32,
+        "label": "Fresh-start comparison / shuffled feedback comparison"
+      }
+    ],
+    "history": [
+      "runs/g0-reversal-history-diagnostic-v1-resumed2"
+    ]
+  }
+}

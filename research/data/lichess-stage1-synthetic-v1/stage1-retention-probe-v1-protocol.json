@@ -1,0 +1,27 @@
+{
+ "schema": "lichess-stage1-retention-probe-protocol-v1",
+ "question": "Which ReversalMemory eta keeps a taught Stage 1 training board correct after 10 other training boards are taught?",
+ "task": "fix-goal-prompt-2026-10-24 task 1a/1b",
+ "baseRegistration": {
+  "path": "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r6-registration.json",
+  "sha256": "754f4d5efc43156ae4a9e661a21b5b69f657018e8def6a173b4cd06bb48b8163"
+ },
+ "override": "Only learner.memory.eta changes (in memory, per probe); every other learner, encoder, graph, mapping, feedback and Stockfish-review setting is the base registration's.",
+ "replica": "r1",
+ "etas": [0.5, 0.2, 0.1, 0.05, 0.02],
+ "data": "Training panels of the base registration only. Validation and final rows are never loaded.",
+ "aBoardRule": "One A board per stratum (open-defender, blocked-defender, absent-defender, pinned-apparent-defender): the first training panel by panelId whose unaided scratch choice is not the certified success (if every panel of a stratum is correct at scratch, the first by panelId, flagged).",
+ "lesson": "Assess the board; take its highest-scored failure and highest-scored success (ties by move name), as the rehearsal planner does; deliver each as one informative CoupledStockfishSession event (fresh all-legal assessment, preparation, verified task pulse, Stockfish value pulse) in the order failure then success.",
+ "sequence": "From scratch memory: lesson on A, then one lesson on each of 10 interfering training boards, assessing A after every lesson.",
+ "interferingLessons": 10,
+ "interferenceSeed": "stage1-retention-probe-v1",
+ "interferenceRule": "The 23 other training panels ordered by sha256(seed:A:panelId); the first 10. The same 10 boards and order are used for every eta.",
+ "decision": {
+  "requiredRetained": 3,
+  "rule": "Choose the largest eta whose A board is the unique top choice after all 10 interfering lessons in at least 3 of 4 probes. If none passes, no eta is chosen; a new rule class then needs registered primary-literature support, otherwise stop."
+ },
+ "measures": ["A certified-move rank and correctness after every lesson", "A correctness right after its own lesson", "each interfering board's rank before and after its lesson", "pulse channels, currents and ReversalMemory factors"],
+ "scope": "Diagnostic dose probe on training boards with one replica; not a gate result, not a learning claim and not biological validation.",
+ "cpuDuty": 0.5,
+ "resourceLimits": {"rssMiB": 2048, "freeMiB": 256}
+}

@@ -27,3 +27,17 @@ The prior failed-retention event cannot be reconstructed at full neural resoluti
 Before launch: pin actual engine binary/settings, sources, graph/mapping, encoder, value interface and existing memory rule; register fixed training experiences; compare outcome-only, informative value teaching, no-channel, matched signed-error shuffle and disabled plasticity at matched exposure. Check acquisition, reset/restoration, persistence and pending-receipt recovery. Checkpoints must improve per-criterion validation error and useful choices, without worsening another required criterion. Freeze selection before disjoint and counterfactual final evaluation; run unaided and equal-search-budget conditions separately.
 
 Piece activity is contextual. Do not supply hand-assigned dynamic piece values as learned outputs. Later counterfactual probes can ask whether blocking a knight's activity or removing its support changes the learned value appropriately; an attribution is not a unique intrinsic piece price. Current scalar feedback alone may be insufficient to teach these relations.
+
+## 22 October: root-only outcome repair after external review
+
+The unfrozen outcome-only path now obtains a fresh all-legal root ranking and reuses checked root-action replay without computing a child value. Certified terminal outcomes can therefore receive their declared task feedback. Actor, root/action, memory, budget and wiring checks apply; a bounded current override preserves the configured dose. A separate task-consequence receipt distinguishes this path from engine-value prediction. **31/31 bounded software checks pass**; [repair and raw evidence](../../../research/reports/task-outcome-adapter-2026-10-22/README.md).
+
+The old terminal-skip discussion above remains historical for outcome-only and still describes the engine-value path's lack of a terminal neural proxy. Combined outcome-plus-Stockfish delivery, residual/control alignment, the value proxy and a registered independently audited graph campaign remain unfinished. No learning efficacy, calibrated value or transfer was established by this repair. [Astra answer and repository-specific assessment](../../../research/reports/stockfish-feedback-review-2026-10-22/astra-answer-review.md).
+
+## 22 October: complete task-action domain at the endpoint boundary
+
+The isolated endpoint/Stockfish adapters now accept certified quiet-action failures under the exact capture-retention task through a shared adapter verifier. Their earlier generic capture-only verifier is frozen in live G0 and remains unchanged.34 software checks pass; [evidence and limits](../../../research/reports/task-outcome-adapter-2026-10-22/quiet-action-integration/README.md). This does not resolve the engine-value branch's prediction/update cue mismatch, combined delivery, temporal receiver integration, persistence or efficacy.
+
+## 27 October: set aside for Stage 1
+
+Researcher decision: Stockfish teaching is excluded from Stage 1 and documented as a failed experiment. The absolute target opposed the verified outcome on 74 of 182 probe-v7 pulses. The all-legal regret signal rewards 19 of 28 unsafe captures. Stage 1 is outcome-only and judged on frozen D1-D8. The code, caches and D9 module are preserved. [Journal](../../../research/journal/experiments/2026-10-27-stockfish-teaching-set-aside.md).

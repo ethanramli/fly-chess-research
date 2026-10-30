@@ -1,0 +1,29 @@
+{
+  "schema": "lichess-derived-capture-family-candidate-audit-v1",
+  "passed": true,
+  "inputs": {
+    "report": {
+      "path": "research/reports/babysit-stage1-direct-counterfactual-feasibility-2026-10-23.json",
+      "sha256": "107c56b0ad70aeefc2e271aa09a31b6270304a4abd4eaf631a982b88589e2a9e"
+    },
+    "independentCounterfactualAudit": {
+      "path": "research/reports/babysit-stage1-direct-counterfactual-feasibility-audit-v2-2026-10-23.json",
+      "sha256": "1c048e484cf74df1bdcd51da98a33a07f06218885968d17e7d5ba220be9ba3c3"
+    },
+    "candidateManifestSha256": "04a0e3db7ef83f452bcb00eaa58b17b29f709d5d2bcb6ba036f1e0ba8893991f",
+    "candidateOutputSha256": "d7965397f2cac4895de537ce664fff5e9db141e1298c69e9a6ff93bf2d87bbab"
+  },
+  "candidatePairs": 1653,
+  "candidateFamilies": 1650,
+  "familiesWithAtLeastTwoSourceGames": 3,
+  "familySignatureIndependentlyReplayed": true,
+  "trainingOnly": true,
+  "validationInspected": false,
+  "finalInspected": false,
+  "semanticFamilyDiversityEstablished": false,
+  "relationFamilyDisjointnessEstablished": false,
+  "eligibleForNeuralTeaching": false,
+  "graphLaunchAuthorized": false,
+  "neuralEventsDelivered": 0,
+  "scope": "Independent replay validates the candidate structural grouping and each previously audited legal recapture flip. The grouping is a proposed data organization, not a validated cognitive primitive; no training eligibility, cross-split disjointness, runtime binding, neural learning or reasoning is established."
+}

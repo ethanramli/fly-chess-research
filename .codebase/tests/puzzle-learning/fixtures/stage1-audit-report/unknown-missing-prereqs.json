@@ -1,0 +1,38 @@
+{
+  "schema": "lichess-curriculum-matrix-audit-v1",
+  "identity": "synthetic-identity",
+  "stage": 1,
+  "status": "unknown",
+  "diagnosis": [
+    "replica 1: unknown; missing finalSetSealedUntilFreeze; unknown: Retention challenge evidence is incomplete"
+  ],
+  "fullNeuralReplay": true,
+  "memoryContinuityVerified": true,
+  "stageAccepted": false,
+  "acceptanceEvidence": {
+    "schema": "curriculum-stage1-replica-acceptance-v2",
+    "status": "unknown",
+    "stageAccepted": false,
+    "requiredReplicaCount": 1,
+    "acceptedReplicas": 0,
+    "reports": [
+      {
+        "replica": 1,
+        "status": "unknown",
+        "stageAccepted": false,
+        "failed": [],
+        "unknown": ["Retention challenge evidence is incomplete"],
+        "missingPrerequisites": ["finalSetSealedUntilFreeze"],
+        "metrics": {
+          "validationByCheckpoint": null,
+          "trainingByBlock": null,
+          "controlTraining": {}
+        }
+      }
+    ],
+    "checkpointSelection": null,
+    "promotionMemoryHashes": null,
+    "scope": "Synthetic fixture for report-tool tests; not a real run"
+  },
+  "scope": "Synthetic fixture for report-tool tests; not a real run"
+}

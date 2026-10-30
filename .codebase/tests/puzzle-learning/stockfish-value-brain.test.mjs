@@ -7,7 +7,9 @@ import { StockfishValueBrain } from '../../src/puzzle-learning/stockfish-value-b
 import { verifiedExperience } from '../../src/search-and-feedback/verified-feedback.mjs';
 import { certifyMate } from '../../src/search-and-feedback/mate-certificate.mjs';
 import { fixedStateHash } from '../../src/neural-learning/association-validation.mjs';
-function fixture() {
+import {certifyCaptureRetentionAction} from '../../src/search-and-feedback/capture-retention-action-domain.mjs';
+import {MappedPuzzleBrain} from '../../src/puzzle-learning/mapped-puzzle-brain.mjs';
+function fixture(valueOptions = {}) {
   // Eight-cell numerical fixture; root IDs are not fly anatomical claims.
   const graph = { row: Int32Array.from([0,0,0,0,0,0,0,2,4]), col: Int32Array.from([0,1,0,1]),
     sign: Int8Array.from([1,1,1,1]), initial: Float32Array.from([1,1,1,1]),
@@ -20,7 +22,7 @@ function fixture() {
   const rest = Float32Array.from(model.h[model.steps]);
   const brain = new StockfishValueBrain({model,memory,mapping,rest,
     encoder:{encode:()=>({stimulation:[{index:0,current:1.5}]})},
-    readouts:{MBON12:[{index:6}],MBON01:[{index:7}]} });
+    readouts:{MBON12:[{index:6}],MBON01:[{index:7}]} },valueOptions);
   const board = new Chess('7k/5Q2/6K1/8/8/8/8/8 w - - 0 1'), task={objective:'forced-mate',plies:1};
   const experience = move => {
     const successor = new Chess(board.fen()); successor.move({from:move.slice(0,2),to:move.slice(2,4)});
@@ -41,6 +43,22 @@ function reviewFor(a, win = true) {
   const chosen='f7e7';
   return {criterion:'full-game-expected-score',context:{fen:a.board.fen(),pgn:a.board.pgn(),task:a.task},
     actor:'w',chosen,taskProof:a.experience(chosen).proof,engine,analyses};
+}
+function installUniqueAssessment(a) {
+  // Contract-only test seam: production assessment remains the real learner;
+  // this fixture gives the binding assertion one deterministic unique choice.
+  a.brain.assess=async(board,moves)=>{
+    const selected=moves.find(move=>{
+      const child=new Chess();child.loadPgn(board.pgn());child.move(move);return child.moves().length>0;
+    });
+    const chosen=selected.from+selected.to+(selected.promotion??'');
+    const rows=moves.map(move=>{
+      const key=move.from+move.to+(move.promotion??''),score=key===chosen?1:0;
+      return {move:key,score,MBON12:score,MBON01:0};
+    });
+    return {rows,choice:chosen,tiedTopMoves:[chosen],memoryFingerprint:a.brain.memoryFingerprint()};
+  };
+  return a.brain.assess(a.board,a.board.moves({verbose:true}),a.task);
 }
 function withoutElapsed(value) {
   if (Array.isArray(value)) return value.map(withoutElapsed);
@@ -97,6 +115,39 @@ test('value prediction is bound to the post-move child and converted to root-act
   assert.equal(receipt.predictionContext.memoryHash,receipt.rootAssessment.memoryFingerprint);
 });
 
+test('engine assistance consumes the recorded fresh all-legal choice and exact certificate',async()=>{
+  const a=fixture(),before=await installUniqueAssessment(a);
+  const review=reviewFor(a);
+  review.chosen=before.choice;review.taskProof=a.experience(before.choice).proof;
+  review.decision={memoryHash:before.memoryFingerprint,choice:before.choice,rows:structuredClone(before.rows),
+    taskProofSha256:a.experience(before.choice).certificateSha256};
+  const receipt=await a.brain.replayValue(review);
+  assert.equal(receipt.rootAssessment.memoryFingerprint,before.memoryFingerprint);
+  assert.equal(receipt.teacherReview.decision.choice,before.choice);
+  assert.equal(receipt.taskEvidence.certificateSha256,review.decision.taskProofSha256);
+});
+
+test('engine assistance rejects a stale pre-feedback ranking before adapting',async()=>{
+  const a=fixture(),before=await installUniqueAssessment(a),review=reviewFor(a);
+  review.chosen=before.choice;review.taskProof=a.experience(before.choice).proof;
+  review.decision={memoryHash:'0'.repeat(64),choice:before.choice,rows:structuredClone(before.rows),
+    taskProofSha256:a.experience(before.choice).certificateSha256};
+  const presentations=a.brain.presentations,memory=a.memory.snapshot();
+  await assert.rejects(()=>a.brain.replayValue(review),/stale learner memory/);
+  assert.equal(a.brain.presentations,presentations);assert.deepEqual(a.memory.snapshot(),memory);
+});
+
+test('engine assistance rejects a ranking that changed before feedback replay',async()=>{
+  const a=fixture(),before=await installUniqueAssessment(a),review=reviewFor(a);
+  review.chosen=before.choice;review.taskProof=a.experience(before.choice).proof;
+  const changed=structuredClone(before.rows);changed[0].score+=0.25;
+  review.decision={memoryHash:before.memoryFingerprint,choice:before.choice,rows:changed,
+    taskProofSha256:a.experience(before.choice).certificateSha256};
+  const memory=a.memory.snapshot();
+  await assert.rejects(()=>a.brain.replayValue(review),/ranking differs/);
+  assert.deepEqual(a.memory.snapshot(),memory);
+});
+
 test('terminal child has no fabricated value and spends no neural presentations',async()=>{
   const a=fixture(), review=reviewFor(a); review.chosen='f7h7'; review.taskProof=a.experience(review.chosen).proof;
   const before=a.brain.presentations, memory=a.memory.snapshot();
@@ -128,6 +179,59 @@ test('outcome-only uses checked task valence and ignores missing engine targets'
   assert.equal(a.memory.events,1);
 });
 
+test('shared endpoint verification accepts exact prepared quiet-action task failures',async()=>{
+  const a=fixture(),board=new Chess('6k1/8/8/8/p6r/1P6/8/RK6 w - - 1 2');
+  const task={objective:'capture-retention',plies:1},move='a1a2';
+  const proof=certifyCaptureRetentionAction(board,move,task);
+  const checked=a.brain.verifyExperience(board,move,task,proof);
+  assert.equal(checked.status,'failure');assert.match(checked.meaning,/no overall move-quality/);
+  const review={context:{fen:board.fen(),pgn:board.pgn(),task},actor:'w',chosen:move,taskProof:proof,analyses:[]};
+  const receipt=await a.brain.replayValue(review,{condition:'outcome-only'});
+  assert.equal(receipt.channel,'PPL103');assert.equal(receipt.taskEvidence.certificateSha256,checked.certificateSha256);
+  assert.equal(a.memory.events,1);assert.equal(receipt.context.pgn,board.pgn());
+  const b=fixture(),base=new MappedPuzzleBrain(b.brain);
+  const result=await base.replay({...checked,context:review.context,proof});
+  assert.equal(result.event.status,'failure');assert.equal(b.memory.events,1);
+});
+
+test('task-outcome shuffle changes only delivered valence and retains the true consequence certificate',async()=>{
+  const board=new Chess('6k1/8/8/8/p6r/1P6/8/RK6 w - - 1 2');
+  const task={objective:'capture-retention',plies:1},move='a1a2';
+  const proof=certifyCaptureRetentionAction(board,move,task);
+  const review={context:{fen:board.fen(),pgn:board.pgn(),task},actor:'w',chosen:move,taskProof:proof,analyses:[]};
+  const informative=fixture(),shuffled=fixture();
+  const fixed=fixedStateHash(shuffled.model,shuffled.memory.edges);
+  const correct=await informative.brain.replayValue(review,{condition:'outcome-only'});
+  const receipt=await shuffled.brain.replayValue(review,{condition:'outcome-shuffled',shuffledStatus:'success'});
+  assert.equal(correct.channel,'PPL103');assert.equal(receipt.channel,'PAM02');
+  assert.equal(receipt.taskEvidence.status,'failure');assert.equal(receipt.event.status,'failure');
+  assert.equal(receipt.deliveredTaskStatus,'success');
+  assert.equal(receipt.taskEvidence.certificateSha256,correct.taskEvidence.certificateSha256);
+  assert.equal(shuffled.brain.presentations,informative.brain.presentations);
+  assert.equal(fixedStateHash(shuffled.model,shuffled.memory.edges),fixed);
+  assert.equal(shuffled.memory.events,1);
+  await assert.rejects(()=>fixture().brain.replayValue(review,{condition:'outcome-shuffled',shuffledStatus:'unknown'}));
+});
+
+test('quiet-action unknown and forged proof do not trigger graph presentations or adaptation',async()=>{
+  const board=new Chess('6k1/8/8/8/p6r/1P6/8/RK6 w - - 1 2'),task={objective:'capture-retention',plies:1};
+  const review={context:{fen:board.fen(),pgn:board.pgn(),task},actor:'w',chosen:'a1a2',analyses:[],
+    taskProof:{status:'unknown',certificate:null}};
+  const a=fixture(),before=a.memory.snapshot();
+  const unknown=await a.brain.replayValue(review,{condition:'outcome-only'});
+  assert.equal(unknown.skipped,true);assert.equal(a.brain.presentations,0);assert.deepEqual(a.memory.snapshot(),before);
+  review.taskProof=certifyCaptureRetentionAction(board,review.chosen,task);
+  review.taskProof.certificate.rootPgn+=' *';
+  await assert.rejects(()=>a.brain.replayValue(review,{condition:'outcome-only'}));
+  assert.equal(a.brain.presentations,0);assert.deepEqual(a.memory.snapshot(),before);
+});
+
+test('adapter capture verification remains identical to the frozen capture-only helper',()=>{
+  const a=fixture(),board=new Chess('6k1/8/8/8/p6r/1P6/8/RK6 w - - 1 2');
+  const task={objective:'capture-retention',plies:1},move='a1a4',proof=certifyCaptureRetentionAction(board,move,task);
+  assert.deepEqual(a.brain.verifyExperience(board,move,task,proof),verifiedExperience(board,move,task,proof));
+});
+
 test('matched value shuffle reverses sign at the same nonzero magnitude',async()=>{
   const source=fixture(), expected=await source.brain.replayValue(reviewFor(source));
   assert.ok(expected.error.available);
@@ -139,6 +243,45 @@ test('matched value shuffle reverses sign at the same nonzero magnitude',async()
   assert.equal(receipt.shuffle.scheduleSha256,'c'.repeat(64));
   assert.equal(receipt.channel,expected.channel==='PAM02'?'PPL103':'PAM02');
   assert.equal(receipt.current,expected.current);
+});
+
+test('registered error-sign schedule derives the matched opposite error inside the receiver',async()=>{
+  const source=fixture(),expected=await source.brain.replayValue(reviewFor(source));
+  const shuffled=fixture(),receipt=await shuffled.brain.replayValue(reviewFor(shuffled),{
+    condition:'shuffled',shuffle:{schema:'matched-stockfish-error-shuffle-v1',
+      scheduleSha256:'e'.repeat(64),eventIndex:2,errorSign:-1}});
+  assert.equal(receipt.deliveredError,-expected.error.error);
+  assert.equal(receipt.shuffle.error,-expected.error.error);
+  assert.equal(receipt.shuffle.eventIndex,2);
+});
+
+test('outcome-only teaches certified terminal success on the root cue without engine or child prediction',async()=>{
+  const a=fixture({maxReinforcementCurrent:0.5}),review=reviewFor(a);review.chosen='f7h7';
+  review.taskProof=a.experience(review.chosen).proof;review.analyses=[];
+  const invariant=fixedStateHash(a.model,a.memory.edges),before=a.brain.presentations;
+  const memoryHash=a.brain.memoryFingerprint(),encoded=[],encode=a.brain.encoder.encode;
+  a.brain.encoder.encode=(board,move,task)=>{encoded.push({fen:board.fen(),move});return encode(board,move,task);};
+  const receipt=await a.brain.replayValue(review,{condition:'outcome-only'});
+  assert.equal(receipt.schema,'task-consequence-feedback-receipt-v1');
+  assert.equal(receipt.taskEvidence.status,'success');assert.equal(receipt.channel,'PAM02');
+  assert.equal(receipt.current,0.5);assert.equal(receipt.grade,null);
+  assert.equal(receipt.rootAssessment.memoryFingerprint,memoryHash);
+  assert.equal(a.brain.presentations-before,receipt.rootLegalMoves+1);
+  assert.equal(a.memory.events,1);assert.equal(fixedStateHash(a.model,a.memory.edges),invariant);
+  assert.equal('childAssessment' in receipt,false);assert.equal('prediction' in receipt,false);
+  assert.equal(receipt.context.fen,a.board.fen());
+  assert(encoded.every(row=>row.fen===a.board.fen()));assert.equal(encoded.at(-1).move,review.chosen);
+});
+
+test('outcome-only presentation exhaustion and actor mismatch fail before adaptation',async()=>{
+  const a=fixture(),review=reviewFor(a),before=a.memory.snapshot();
+  a.brain.maxPresentations=a.board.moves().length;
+  const result=await a.brain.replayValue(review,{condition:'outcome-only'});
+  assert.equal(result.skipped,true);assert.equal(a.brain.presentations,0);
+  assert.deepEqual(a.memory.snapshot(),before);
+  review.actor='b';
+  await assert.rejects(()=>a.brain.replayValue(review,{condition:'outcome-only'}),/actor mismatch/);
+  assert.deepEqual(a.memory.snapshot(),before);
 });
 
 test('shuffled condition rejects an unbound or sign-aligned caller value',async()=>{

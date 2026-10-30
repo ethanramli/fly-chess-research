@@ -1,0 +1,32 @@
+{
+  "schema": "lichess-batch-certificate-preparation-registration-v1",
+  "previousFailedAttempt": "research/data/lichess-stage1-prepared-batches-v5",
+  "abandonedNoopAttempt": "research/data/lichess-stage1-prepared-batches-v6",
+  "hypothesis": "Repeated full-prefix PGN/history rendering dominates quiet-action preparation. Validate bounded root once per all-legal batch; preserve full board/history and all proof fields.",
+  "developmentEvidence": {
+    "beforeProfile": "research\\reports\\lichess-foundations-pilot-2026-10-21\\lesson-profile-row80.json",
+    "afterProfile": "research\\reports\\lichess-foundations-pilot-2026-10-21\\lesson-profile-row80-batch.json",
+    "scope": "One instrumented training row; not matched whole-run speedup."
+  },
+  "checks": [
+    "runs/python-actions/20261022T045221-bbddeb35",
+    "runs/python-actions/20261022T045229-e25d8b88"
+  ],
+  "bounds": {
+    "chunkRows": 32,
+    "chunks": 8,
+    "maxSecondsPerChunk": 300,
+    "cpuDuty": 0.5,
+    "rssMiB": 2048,
+    "minFreeMiB": 256,
+    "heapMiB": 256
+  },
+  "acceptance": "Complete package plus fresh independent source/history/all-legal certificate replay; compare overlapping prior completed training outputs for exact equivalence. No graph permission or family/learning acceptance.",
+  "stop": "Preserve failures; no automatic retries or relaxed time/gates.",
+  "sources": {
+    ".codebase/scripts/data/prepare-lichess-lessons.mjs": "b8da4d5735a4b3f60ca3aab2d4d3d231d4b64b49f5f4569aaf5147f64a300927",
+    ".codebase/src/puzzle-learning/lichess-capture-lesson.mjs": "359c85af6ae0326378833d27e10aac9b64fa260e22dc3a1e48e2b2f13baeb0bf",
+    ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+    ".codebase/scripts/data/audit-lichess-csv-lessons.mjs": "386bbb699a1be2d1c21df64e7fe2a018309c90c908d52c00e60a83dc2a1a204a"
+  }
+}

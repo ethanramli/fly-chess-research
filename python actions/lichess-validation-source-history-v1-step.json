@@ -1,0 +1,40 @@
+{
+    "schema":  1,
+    "name":  "lichess-validation-source-history-v1",
+    "paused":  false,
+    "paths":  {
+                  "rows":  "research/data/lichess-validation-stage1-prefilter-v2/validation.jsonl",
+                  "out":  "research/data/lichess-validation-source-pgn-v1",
+                  "run":  "runs/python-actions/lichess-validation-source-history-v1"
+              },
+    "pins":  {
+                 "python actions/fetch_lichess_game_pgns.py":  "3d83ffa0144d3ed35eac710fe119a723c0687b1cdbd37d7bdb67e6e0dc4b6bc1",
+                 "research/data/lichess-validation-stage1-prefilter-v2/validation.jsonl":  "ecabc3af28daaf93c92fccba15e48326a716e4bddc9d974a0c29510abeacccff"
+             },
+    "state_file":  "runs/python-actions/lichess-validation-source-history-v1.json",
+    "jobs":  {
+                 "fetch-probe":  {
+                                     "role":  "check",
+                                     "argv":  [
+                                                  "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+                                                  "python actions/fetch_lichess_game_pgns.py",
+                                                  "--rows",
+                                                  "{rows}",
+                                                  "--split",
+                                                  "validation",
+                                                  "--out",
+                                                  "{out}"
+                                              ],
+                                     "requires":  [
+                                                      "{rows}"
+                                                  ],
+                                     "fresh_output":  "{out}"
+                                 }
+             },
+    "artifacts":  {
+
+                  },
+    "report_fields":  [
+
+                      ]
+}

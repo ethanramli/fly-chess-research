@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "name": "lichess-training-only-csv-audit-checks",
+  "paused": false,
+  "paths": {
+    "run": "research/reports/lichess-foundations-pilot-2026-10-21"
+  },
+  "pins": {
+    "python actions/verify_lichess_csv_audit.py": "9e77b5960fc6ecbb79e99932db552875a24e516c4c1b74ee3c9f9974836c26a7",
+    ".codebase/scripts/data/audit-lichess-csv-lessons.mjs": "37770ba30b05cfd5b4ae4a9431b0176ed0a676333b4138b7bcaa257540a8f58b"
+  },
+  "state_file": "runs/python-actions/current-training-only-csv-audit-checks.json",
+  "jobs": {
+    "tests": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "python actions/verify_lichess_csv_audit.py"
+      ]
+    }
+  },
+  "artifacts": {}
+}

@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "name": "lichess-stage1-curation-recovery-v2",
+  "paused": false,
+  "paths": {
+    "registration": "research/reports/lichess-foundations-pilot-2026-10-21/curation-recovery-v2-registration.json",
+    "input": ".cache/lichess-puzzles-2026-10-21.csv",
+    "extraction": "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json",
+    "out": "research/data/lichess-stage1-candidates-v2",
+    "run": "research/reports/lichess-foundations-pilot-2026-10-21"
+  },
+  "pins": {
+    "research/reports/lichess-foundations-pilot-2026-10-21/curation-recovery-v2-registration.json": "3ae5df713cb8dcfed6b3c6763cad35d4265bfde1f1c434bfe236777c2290e910",
+    ".codebase/scripts/data/curate-lichess-puzzles.mjs": "306987357b05dee044eed1fcaab2e6088a61fdad115f5950de21f3b54a2a7edf",
+    ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    ".cache/lichess-puzzles-2026-10-21.csv.zst": "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+    ".cache/lichess-puzzles-2026-10-21.csv": "ec2dd1a8f9cbd139ebb4aee228f72e77f8e2a581a24d25f61f71e6cf306b10f8",
+    "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json": "deac9b4792742a84fde9f3273caabcf5f505d957fb142881a8345aae356b4510"
+  },
+  "state_file": "runs/python-actions/current-lichess-curation-recovery-v2.json",
+  "jobs": {
+    "curate-stage1-v2": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/data/curate-lichess-puzzles.mjs",
+        "--input",
+        "{input}",
+        "--extraction-receipt",
+        "{extraction}",
+        "--out",
+        "{out}",
+        "--limit-per-split",
+        "128",
+        "--max-pieces",
+        "6",
+        "--seed",
+        "20261021",
+        "--max-seconds",
+        "4200",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{input}",
+        "{extraction}",
+        "{registration}",
+        ".cache/lichess-puzzles-2026-10-21.csv.zst"
+      ],
+      "fresh_output": "{out}"
+    }
+  },
+  "artifacts": {
+    "corpus": "{out}/manifest.json"
+  },
+  "report_fields": [
+    "schema",
+    "status",
+    "counts",
+    "source",
+    "resources"
+  ]
+}

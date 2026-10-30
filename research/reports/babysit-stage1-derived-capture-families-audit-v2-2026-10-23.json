@@ -1,0 +1,29 @@
+{
+  "schema": "lichess-derived-capture-family-candidate-audit-v2",
+  "passed": true,
+  "inputs": {
+    "report": {
+      "path": "research/reports/babysit-stage1-direct-counterfactual-feasibility-2026-10-23.json",
+      "sha256": "107c56b0ad70aeefc2e271aa09a31b6270304a4abd4eaf631a982b88589e2a9e"
+    },
+    "independentCounterfactualAudit": {
+      "path": "research/reports/babysit-stage1-direct-counterfactual-feasibility-audit-v2-2026-10-23.json",
+      "sha256": "1c048e484cf74df1bdcd51da98a33a07f06218885968d17e7d5ba220be9ba3c3"
+    },
+    "candidateManifestSha256": "716ec37cc29175e1c8c95af7efbd8ade1f30803aafb288816742a8ecfb7c6fe7",
+    "candidateOutputSha256": "f97cd89a6cacbf6320a6a059d1f7f24988e147c0ec2461bf8b4dc168974bf7f5"
+  },
+  "candidatePairs": 1653,
+  "candidateFamilies": 613,
+  "familiesWithAtLeastTwoSourceGames": 110,
+  "familySignatureIndependentlyReplayed": true,
+  "trainingOnly": true,
+  "validationInspected": false,
+  "finalInspected": false,
+  "semanticFamilyDiversityEstablished": false,
+  "relationFamilyDisjointnessEstablished": false,
+  "eligibleForNeuralTeaching": false,
+  "graphLaunchAuthorized": false,
+  "neuralEventsDelivered": 0,
+  "scope": "Independent replay of training-only candidate grouping and every legal recapture flip. Family key remains a hypothesis; no split disjointness, runtime compatibility, learning or reasoning is established."
+}

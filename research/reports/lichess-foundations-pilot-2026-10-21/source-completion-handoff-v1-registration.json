@@ -1,0 +1,22 @@
+{
+  "schema": "source-completion-handoff-registration-v1",
+  "sourceConfigSha256": "ce37a5524bcacc2e638e5324c43e8eda4924a8bd64dd680c43cc9da2c4509e2f",
+  "observerConfigSha256": "a23f3535306657f13b571948c9ceb444ce7138a6b7af03ea8389fa0c32ef6651",
+  "sourceHandleSha256": "df63d79b63078cf4e6948b27f37ef1e681b9d92e60ef7757e56560c8b9774e9d",
+  "scope": "Observe existing source PID only, then execute only its unchanged registered independent source audit after matching clean completion and complete manifest. No source start/resume, PGN fetch, model or stage promotion.",
+  "bounds": {
+    "waitSeconds": 7200,
+    "intervalSeconds": 30,
+    "missingCompletionGraceSeconds": 30
+  },
+  "failure": "Stop and preserve state on unknown ownership, changed configs, bad/missing completion or failed audit; no automatic retry.",
+  "checks": "5/5 mocked handoff mechanics in runs/python-actions/20261022T054355-22c45d47; real source audit still pending.",
+  "pins": {
+    "python actions\\lichess-matched-capture-train-v1-step.json": "ce37a5524bcacc2e638e5324c43e8eda4924a8bd64dd680c43cc9da2c4509e2f",
+    "python actions\\lichess-matched-capture-source-observer.json": "a23f3535306657f13b571948c9ceb444ce7138a6b7af03ea8389fa0c32ef6651",
+    "runs\\python-actions\\20261022T052256-8324fdd0\\handle.json": "df63d79b63078cf4e6948b27f37ef1e681b9d92e60ef7757e56560c8b9774e9d",
+    "python actions\\finish_lichess_source.py": "cafe479f13fd700b039292695d3d0262860006114c95f3d4964fb4e7ed1d2c53",
+    "python actions\\curriculum.py": "55f550cdedd4dddfe9ad51ddc695c835865c21fab7019e2bc5d0861fb374ec1b",
+    "python actions\\lichess-source-completion-checks.json": "0112306e82fc3657117b8907573f1f82aa39ba58d30935314b4c3119437b4e77"
+  }
+}

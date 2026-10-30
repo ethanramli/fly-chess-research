@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "name": "lichess-pgn-publication-check",
+  "paused": false,
+  "paths": {
+    "run": "research/reports/babysit-recovery-2026-10-22"
+  },
+  "pins": {
+    "python actions/fetch_lichess_game_pgns.py": "3d83ffa0144d3ed35eac710fe119a723c0687b1cdbd37d7bdb67e6e0dc4b6bc1",
+    "python actions/verify_lichess_pgn_publication.py": "2a1538ee72abcf64e7cf95588ad1c6f1738d84fb839bc50bdbc56475eccd57be"
+  },
+  "state_file": "runs/python-actions/current-pgn-publication-check.json",
+  "jobs": {
+    "verify": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "python actions/verify_lichess_pgn_publication.py"
+      ]
+    }
+  },
+  "artifacts": {}
+}

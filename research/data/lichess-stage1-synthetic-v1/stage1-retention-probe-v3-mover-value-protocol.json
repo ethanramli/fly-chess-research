@@ -1,0 +1,43 @@
+{
+ "schema": "lichess-stage1-retention-probe-protocol-v2",
+ "question": "With the Stockfish value pulse moved onto the move cue token family (revision 7: public-action-relative-cue-v2 + CoupledStockfishBrainV3, mover-perspective value), which ReversalMemory eta keeps a taught Stage 1 training board correct after 10 other training boards are taught?",
+ "task": "fix-goal-prompt-2026-10-24 task 1; reviewer finding 2 (13:20) part 2",
+ "baseRegistration": {
+  "path": "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r7-registration.json",
+  "sha256": "db14a957cd47bc6d5169a54328cb365a87767dbc6437bd20678998346c68fea2"
+ },
+ "override": "Only learner.memory.eta changes (in memory, per probe); everything else is the revision-7 registration.",
+ "replica": "r1",
+ "etas": [
+  0.5,
+  0.2,
+  0.1,
+  0.05,
+  0.02
+ ],
+ "data": "Training panels of the base registration only. Validation and final rows are never loaded.",
+ "aBoardRule": "One A board per stratum (open-defender, blocked-defender, absent-defender, pinned-apparent-defender): the first training panel by panelId whose unaided scratch choice is not the certified success (if every panel of a stratum is correct at scratch, the first by panelId, flagged).",
+ "lesson": "As stage1-retention-probe-v1 (informative: verified task pulse plus Stockfish value pulse), with the revision-7 learner.",
+ "sequence": "From scratch memory: lesson on A, then one lesson on each of 10 interfering training boards, assessing A after every lesson.",
+ "interferingLessons": 10,
+ "interferenceSeed": "stage1-retention-probe-v1",
+ "interferenceRule": "The 23 other training panels ordered by sha256(seed:A:panelId); the first 10. The same 10 boards and order are used for every eta.",
+ "decision": {
+  "requiredRetained": 3,
+  "rule": "Choose the largest eta whose A board is the unique top choice after all 10 interfering lessons in at least 3 of 4 probes. If none passes, no eta is chosen; a new rule class then needs registered primary-literature support, otherwise stop."
+ },
+ "measures": [
+  "A certified-move rank and correctness after every lesson",
+  "A correctness right after its own lesson",
+  "each interfering board's rank before and after its lesson",
+  "pulse channels, currents and ReversalMemory factors"
+ ],
+ "scope": "Diagnostic dose probe on training boards with one replica; not a gate result, not a learning claim and not biological validation.",
+ "cpuDuty": 0.5,
+ "resourceLimits": {
+  "rssMiB": 2048,
+  "freeMiB": 256
+ },
+ "condition": "informative",
+ "comparison": "Matched to stage1-retention-probe-v1 and -v2-no-stockfish: same replica, scratch rule, A-board rule, interference boards and order, etas; action cues and initial memory are identical to revision 6, so the A boards are expected to be the same."
+}

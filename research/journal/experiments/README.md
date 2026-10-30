@@ -2,6 +2,18 @@
 
 Chronological implementation and experiment history. Pending statements are historical; use current status for latest audited conclusions.
 
+- [2026-10-22: full babysit goal resumption, integration and recovery](2026-10-22-babysit-integration.md)
+- [2026-10-22: babysit scope correction](2026-10-22-babysit-scope-correction.md)
+- [2026-10-22: babysit Stockfish review collector and scope correction](2026-10-22-babysit-stockfish-collector.md)
+- [2026-10-23: babysit status routing correction](2026-10-23-babysit-status-routing.md)
+- [2026-10-23: FEN-rooted Stockfish collection path](2026-10-23-babysit-fen-root-stockfish.md)
+- [2026-10-24: babysit safety features (early stop, pause, planner cap, detached launcher)](2026-10-24-babysit-safety-features.md)
+- [2026-10-24: Stage 1 memory retention fix (retention probe, eta choice, acceptance smoke)](2026-10-24-stage1-memory-retention-fix.md)
+
+- [2026-10-22: Stockfish feedback quality review and standalone reviewer prompt](2026-10-22-stockfish-feedback-review.md)
+
+- [2026-10-21: expanded curriculum goal and final G0 history replication](2026-10-21-curriculum-execution.md)
+
 - [2026-10-20: G0 history replication on projection seed 20261012](2026-10-20-g0-history-replication.md)
 
 - [2026-10-19: G0 audit memory-guard failures and recovery](2026-10-19-g0-audit-memory-guard.md)
@@ -86,3 +98,23 @@ Chronological implementation and experiment history. Pending statements are hist
 
 - [2026-10-20 registered-run babysitter and recovery-state mismatch](2026-10-20-registered-run-babysitter.md).
 - [2026-10-20 visual terminal report and lesson-boundary pause](2026-10-20-terminal-report-and-pause.md).
+
+- [2026-10-22 babysit campaign controller](2026-10-22-babysit-campaign-controller.md).
+
+- [2026-10-22 babysit integration, including Stockfish review binding](2026-10-22-babysit-integration.md)
+
+- [2026-10-22 Stockfish choice-binding integration](2026-10-22-babysit-integration.md)
+- [2026-10-22 babysit encoder bridge and scope correction](2026-10-22-babysit-encoder-bridge.md)
+- [2026-10-22 babysit encoder/runtime-constructor progress](2026-10-22-babysit-encoder-bridge.md)
+- [2026-10-22 babysit source-pool reconciliation](2026-10-22-babysit-source-pool-reconciliation.md)
+- [2026-10-22 babysit runtime Stockfish collection integration](2026-10-22-babysit-stockfish-runtime.md)
+- [2026-10-23 Stage 1 synthetic microfamily feasibility](2026-10-23-babysit-synthetic-microfamilies.md): found candidate four-stratum layouts from train/validation roots; concrete tasks and independent audit remain absent.
+- [2026-10-23 first-solution microfamily correction](2026-10-23-babysit-synthetic-microfamilies-v2.md): requires the Lichess first solution move; current pool has only 4 suitable train roots and 5 validation roots.
+- [2026-10-23 expanded first-solution source corpus](2026-10-23-babysit-first-solution-source-corpus.md): separate train-only/validation-only curated jobs are registered; train curation is in progress, final remains excluded.
+# Active babysit implementation notes
+
+- [Stage 2 bounded avoid-mate verifier](2026-10-23-stage2-avoid-mate-domain.md): narrow opponent-mate certificate semantics; primitive only, no Stage 2 runtime or launch authorization.
+
+- [23 October: babysit accepted-memory handoff, Stage 2 rehearsal and promotion-path defects](2026-10-23-babysit-stage-memory-handoff.md)
+- [23 October: babysit checkpoint selection, matched controls and actual interference execution](2026-10-23-babysit-checkpoint-retention.md)
+- [23 October: post-interference measurements and promotion of the tested memory](2026-10-23-babysit-post-interference-promotion.md)

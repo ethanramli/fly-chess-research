@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "name": "lichess-matched-capture-training-pgn-v1",
+  "paused": false,
+  "paths": {
+    "run": "research/data/lichess-matched-capture-source-pgn-v1",
+    "rows": "research\\data\\lichess-matched-capture-train-v1\\train.jsonl",
+    "sourceManifest": "research\\data\\lichess-matched-capture-train-v1\\manifest.json",
+    "sourceAudit": "research\\reports\\lichess-foundations-pilot-2026-10-21\\matched-capture-train-source-audit-v1.json",
+    "registration": "research\\reports\\lichess-foundations-pilot-2026-10-21\\matched-capture-pgn-v1-registration.json"
+  },
+  "pins": {
+    "research\\data\\lichess-matched-capture-train-v1\\manifest.json": "a639d50c8d58bbfba7746c7cb63af5fe86187e149e62c12abc988df56aea25d7",
+    "research\\reports\\lichess-foundations-pilot-2026-10-21\\matched-capture-train-source-audit-v1.json": "17fb76171a03c73593c01ef49a38cafc8c237e5e17b27e8ffb2b51662c0f9d81",
+    "research\\data\\lichess-matched-capture-train-v1\\train.jsonl": "4aaa70e25513eb69c3925f51189f6baf37fa7746acb73f2912efc9e8d07ada0f",
+    "python actions\\fetch_lichess_game_pgns.py": "3d83ffa0144d3ed35eac710fe119a723c0687b1cdbd37d7bdb67e6e0dc4b6bc1",
+    "research\\reports\\lichess-foundations-pilot-2026-10-21\\matched-capture-pgn-v1-registration.json": "d16d7f80b2bf8885117bef32b005f4b072ef3692a3672ee84ea759ef24303470"
+  },
+  "state_file": "runs/python-actions/current-matched-capture-pgn-v1.json",
+  "jobs": {
+    "fetch-train": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "python actions/fetch_lichess_game_pgns.py",
+        "--rows",
+        "{rows}",
+        "--split",
+        "train",
+        "--out",
+        "{run}/train"
+      ],
+      "requires": [
+        "{sourceManifest}",
+        "{sourceAudit}",
+        "{registration}"
+      ],
+      "fresh_output": "{run}/train"
+    }
+  },
+  "artifacts": {
+    "train": "{run}/train/manifest.json"
+  },
+  "report_fields": [
+    "status",
+    "sourceSplit",
+    "sourceRows",
+    "scope"
+  ]
+}

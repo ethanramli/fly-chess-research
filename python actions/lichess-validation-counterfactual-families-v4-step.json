@@ -1,0 +1,88 @@
+﻿{
+    "schema":  1,
+    "name":  "lichess-validation-counterfactual-families-v4",
+    "paused":  false,
+    "paths":  {
+                  "prepared":  "research/data/lichess-validation-prepared-v3",
+                  "lessonAudit":  "research/reports/lichess-foundations-pilot-2026-10-21/validation-lessons-audit-v3.json",
+                  "out":  "research/data/lichess-validation-counterfactual-families-v4",
+                  "audit":  "research/reports/lichess-foundations-pilot-2026-10-21/validation-counterfactual-family-audit-v4.json",
+                  "producer":  ".codebase/scripts/data/prepare-lichess-validation-branch-families-v4.mjs",
+                  "auditor":  ".codebase/scripts/data/audit-lichess-validation-branch-families-v4.mjs",
+                  "run":  "runs/python-actions/lichess-validation-counterfactual-families-v4"
+              },
+    "pins":  {
+                 "research/reports/lichess-foundations-pilot-2026-10-21/validation-lessons-audit-v3.json":  "b616ddeca62cc2ab0e9a4f4121bf15367e26f7edaad8be6713f67397d8f60977",
+                 ".codebase/scripts/data/prepare-lichess-validation-branch-families-v4.mjs":  "6af7e74eca914e28ba4e7a9cd9282bcfeb2dd4a60922b0fbfa16157894053703",
+                 ".codebase/scripts/data/audit-lichess-validation-branch-families-v4.mjs":  "604e9576adfb93d277db6aada480d7317d6b2935641dbd68cb98698d5d27e048",
+                 "research/data/lichess-validation-prepared-v3/manifest.json":  "f67d505405942a2de9648d7ccc7d5468e538e144278cd401ccfdce4080c0913c",
+                 "research/data/lichess-validation-prepared-v3/lessons.jsonl":  "ea76fe1144fd4814c3f15707f404a48348f3cc578f16320bd52e6483e0b63644",
+                 ".codebase/src/puzzle-learning/lichess-counterfactual-action-pairs-v1.mjs":  "40eb1c91c97276c44c5c7f79663f0c72bcc8f1e6b9f1a1f172da2123cc38b1da",
+                 ".codebase/src/puzzle-learning/lichess-counterfactual-action-pair-check-v1.mjs":  "307ccd7f4e464e5c53d6b4521505aec288490b752d15e8511673988dc8a57b51",
+                 ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs":  "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+                 ".codebase/src/search-and-feedback/capture-retention-certificate.mjs":  "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+                 ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs":  "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+                 ".codebase/src/search-and-feedback/puzzle-search.mjs":  "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+                 ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs":  "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+                 "package-lock.json":  "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9"
+             },
+    "state_file":  "runs/python-actions/lichess-validation-counterfactual-families-v4.json",
+    "jobs":  {
+                 "prepare":  {
+                                 "role":  "check",
+                                 "argv":  [
+                                              "node",
+                                              "--max-old-space-size=256",
+                                              "{producer}",
+                                              "--prepared",
+                                              "{prepared}",
+                                              "--audit",
+                                              "{lessonAudit}",
+                                              "--out",
+                                              "{out}"
+                                          ],
+                                 "requires":  [
+                                                  "{prepared}/manifest.json",
+                                                  "{prepared}/lessons.jsonl",
+                                                  "{lessonAudit}"
+                                              ],
+                                 "fresh_output":  "{out}"
+                             },
+                 "audit":  {
+                               "role":  "check",
+                               "argv":  [
+                                            "node",
+                                            "--max-old-space-size=256",
+                                            "{auditor}",
+                                            "--prepared",
+                                            "{prepared}",
+                                            "--audit",
+                                            "{lessonAudit}",
+                                            "--families",
+                                            "{out}",
+                                            "--out",
+                                            "{audit}"
+                                        ],
+                               "requires":  [
+                                                "{prepared}/manifest.json",
+                                                "{lessonAudit}",
+                                                "{out}/manifest.json",
+                                                "{out}/families.jsonl"
+                                            ],
+                               "refuse_existing":  [
+                                                       "{audit}"
+                                                   ]
+                           }
+             },
+    "artifacts":  {
+                      "manifest":  "{out}/manifest.json",
+                      "families":  "{out}/families.jsonl",
+                      "audit":  "{audit}"
+                  },
+    "report_fields":  [
+                          "counts",
+                          "stoppingBound",
+                          "finalSplitInspected",
+                          "graphLaunchAuthorized"
+                      ]
+}

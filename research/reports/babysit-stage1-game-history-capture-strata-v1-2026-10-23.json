@@ -1,0 +1,506 @@
+{
+  "schema": "lichess-game-history-capture-strata-feasibility-v1",
+  "status": "diagnostic-complete",
+  "inputs": {
+    "pgnManifest": {
+      "path": "research\\data\\lichess-stage1-training-pin-theme-v2-pgn\\train\\manifest.json",
+      "sha256": "00b52419bc59dc167ba26ef8d6a3df476591797f4b51615f355b6d5daf290f61"
+    },
+    "trainRows": {
+      "path": "research/data/lichess-stage1-training-pin-theme-v2/train.jsonl",
+      "sha256": "ac742b70b15cfb1e015ba86a31b4b88eba7f2508a4e0111e9b08d73bc93fdd3f"
+    },
+    "auditedLessonReport": {
+      "path": "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-lessons-audit-v3.json",
+      "sha256": "8be3f6ff559d193d14fe5122c388df71bc1f75c47958fd9fa5f958a748d15d38"
+    }
+  },
+  "counts": {
+    "games": 1024,
+    "plies": 77273,
+    "positions": 77273,
+    "positionsAtMostSixPieces": 1878,
+    "eligiblePositions": 338,
+    "captureActions": 378,
+    "verifiedCaptureActions": 260,
+    "unknownCaptureActions": 118,
+    "byStratum": {
+      "absent-defender": 186,
+      "open-defender": 74
+    },
+    "gamesByStratum": {
+      "absent-defender": 75,
+      "open-defender": 33,
+      "blocked-defender": 0,
+      "pinned-apparent-defender": 0
+    },
+    "uniquePositionKeysByStratum": {
+      "open-defender": 73,
+      "blocked-defender": 0,
+      "absent-defender": 173,
+      "pinned-apparent-defender": 0
+    }
+  },
+  "examples": {
+    "open-defender": [
+      {
+        "gameId": "1lTWQnAU",
+        "ply": 132,
+        "fen": "8/8/2K5/4pk2/3P4/6p1/8/R7 w - - 0 67",
+        "action": "d4e5",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "82231f97b7f5cfa55987f99d902786cb8c4f158559481a8ba12bf2a07e9cf939"
+      },
+      {
+        "gameId": "3CI0YQdf",
+        "ply": 127,
+        "fen": "8/8/8/6q1/5R2/6P1/6K1/4k3 b - - 4 64",
+        "action": "g5f4",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "d970c308a33fa0df63e8a5a2973858e5f1612b18b0f908edcf12eae24918827e"
+      },
+      {
+        "gameId": "3siyo5ut",
+        "ply": 126,
+        "fen": "8/6k1/1R5p/2r2p2/8/K7/8/8 w - - 0 64",
+        "action": "b6h6",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "4df89a2b611a8f2e04415f2a74af3f4a660152b041c005ec1bbfdfff8e0e9e1c"
+      },
+      {
+        "gameId": "3siyo5ut",
+        "ply": 128,
+        "fen": "8/6k1/1R5p/5p2/1K6/8/8/2r5 w - - 2 65",
+        "action": "b6h6",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "7131a52d374f5e36236daec60aa2d2af5648953a747917d365a4520491c2654b"
+      },
+      {
+        "gameId": "7wFOeupf",
+        "ply": 122,
+        "fen": "8/7p/6p1/8/5k2/7P/2B5/7K w - - 0 62",
+        "action": "c2g6",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "08fc1de644c2f245dc8c34ebaccf0fa9bf0cbbaa7749e8258d235703a5f6e760"
+      },
+      {
+        "gameId": "7wFOeupf",
+        "ply": 126,
+        "fen": "8/8/6B1/6kp/8/7P/6K1/8 w - - 1 64",
+        "action": "g6h5",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "bbec9c601fe5a928b96b72f03c7e81611f3d2cd6e6b6ea90f1265134ec17c527"
+      },
+      {
+        "gameId": "9wEHuve8",
+        "ply": 91,
+        "fen": "8/4k3/8/R7/1P6/2P1K3/r7/8 b - - 0 46",
+        "action": "a2a5",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "816955b136271f88be4018b9412fbb7050430928f25246aa402d4d3827c24d44"
+      },
+      {
+        "gameId": "ADPTxbL1",
+        "ply": 116,
+        "fen": "8/R5p1/r6k/1K6/8/8/r7/8 w - - 0 59",
+        "action": "a7g7",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "825bce4ccff5138324646d1c7c5e1b91387a11e04f20c2d54fd3cc0b1f0de822"
+      },
+      {
+        "gameId": "ARjAKGEC",
+        "ply": 101,
+        "fen": "r7/8/P7/1K6/5k2/R6p/8/8 b - - 1 51",
+        "action": "a8a6",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "7c29073024a63c4dab649b10791c45342ea2c80074685c684640aa53812420f4"
+      },
+      {
+        "gameId": "ARjAKGEC",
+        "ply": 102,
+        "fen": "7r/8/P7/1K6/5k2/R6p/8/8 w - - 2 52",
+        "action": "a3h3",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "4ac9b23a2a8d280e225aeb5cfdd9d635427707f640890e54581d94c05af56799"
+      },
+      {
+        "gameId": "ARjAKGEC",
+        "ply": 110,
+        "fen": "7r/PK6/8/8/8/8/6k1/R6q w - - 0 56",
+        "action": "a1h1",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "b6688ac6fe4158fbf47198904a9e17c47accea913df59a5719414d605e58b121"
+      },
+      {
+        "gameId": "ARjAKGEC",
+        "ply": 113,
+        "fen": "Q6r/1K6/8/8/8/8/8/7k b - - 0 57",
+        "action": "h8a8",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "2e8876597dd364006fa54b7dd4897f857a37873d31178038ebd340ac94fb0c3d"
+      },
+      {
+        "gameId": "Asj8aH6Y",
+        "ply": 125,
+        "fen": "8/8/5kp1/5p2/5PPK/8/8/8 b - - 0 63",
+        "action": "f5g4",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "8be33e1e909ebfb4d9c4122521127785b64fac5a17d0da15eb8fe675a1c3b7b7"
+      },
+      {
+        "gameId": "Asj8aH6Y",
+        "ply": 131,
+        "fen": "8/5k2/6p1/5PK1/8/8/8/8 b - - 0 66",
+        "action": "g6f5",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "570805cde6028e069308107e71e2a69a0e9c954a3ddcb7c4702a6e3b0650b6e0"
+      },
+      {
+        "gameId": "Bxl1c3aI",
+        "ply": 115,
+        "fen": "8/8/7Q/8/1K2n3/6P1/6kP/8 b - - 0 58",
+        "action": "e4g3",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "ee045d2b56bd423987faf41992f5f4639167285928cb24968e7856df34f7a91f"
+      },
+      {
+        "gameId": "CginzDUY",
+        "ply": 107,
+        "fen": "8/4r1P1/5R1K/8/6k1/4p3/8/8 b - - 0 54",
+        "action": "e7g7",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "2d6c8f15aa3ffd9955e7a1380e902b42f9b5402e5a34da7b8d0102e4675f07d3"
+      },
+      {
+        "gameId": "CginzDUY",
+        "ply": 111,
+        "fen": "4r1Q1/8/6RK/8/8/4pk2/8/8 b - - 0 56",
+        "action": "e8g8",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "36e42035db018c2e20eb04d0557f05e54021f5eb86c19c97d3c7d0c2ab84f3e8"
+      },
+      {
+        "gameId": "D3DcV7OD",
+        "ply": 120,
+        "fen": "4k3/1Q6/4q3/3p2K1/8/8/8/8 w - - 7 61",
+        "action": "b7d5",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "aeca424e473d64d22cb2cc173797bd9af41bb90ad9e41ed8f47a2d2648235a34"
+      },
+      {
+        "gameId": "F7nPgYNA",
+        "ply": 114,
+        "fen": "8/2R3p1/5p1k/7p/8/5K2/8/8 w - - 2 58",
+        "action": "c7g7",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "bca7e38c3fed9088a54499c0000839830167cba69a2e17378e9114edf4dfdf2b"
+      },
+      {
+        "gameId": "F7nPgYNA",
+        "ply": 126,
+        "fen": "8/8/2R2p2/6k1/6pp/8/6K1/8 w - - 2 64",
+        "action": "c6f6",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "b445a0a6c1ad2e80a8de44cd9181f8fa69314251a966a466f4eae80ecd454245"
+      },
+      {
+        "gameId": "F7nPgYNA",
+        "ply": 134,
+        "fen": "6R1/8/8/5p2/6p1/5k1p/7K/8 w - - 2 68",
+        "action": "g8g4",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "3e10178468b25a743d12683764697c27cd4193248abb5b44e77e27ab8d2918cd"
+      },
+      {
+        "gameId": "F7nPgYNA",
+        "ply": 138,
+        "fen": "7R/8/8/8/5pp1/7p/5k1K/8 w - - 2 70",
+        "action": "h8h3",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "61f6cc2c55772bf39c7d8f1818e194d70fb9891fb438178e9e15d853d91551dc"
+      },
+      {
+        "gameId": "F7nPgYNA",
+        "ply": 144,
+        "fen": "8/8/8/8/8/5pRK/4k3/8 w - - 1 73",
+        "action": "g3f3",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "6ddaf7bfbc04c26d43415c3a4cee7c8ea973f12fc7203ea0fc6a3ed2f10b9a52"
+      },
+      {
+        "gameId": "GEh3sZ2a",
+        "ply": 104,
+        "fen": "8/3p4/2b5/4N3/3K4/6k1/8/8 w - - 0 53",
+        "action": "e5c6",
+        "stratum": "open-defender",
+        "taskStatus": "failure",
+        "certificateSha256": "4056ed5c0819f7fa042430769e911bf857719cb423f073859ce35ea11540b62e"
+      }
+    ],
+    "blocked-defender": [],
+    "absent-defender": [
+      {
+        "gameId": "1ZU8CbKO",
+        "ply": 127,
+        "fen": "8/8/8/8/KPq1k3/2P5/5P2/8 b - - 0 64",
+        "action": "c4c3",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "ac1f167d5981c99cbf624e76fe2ad5d2e2516f01f78d34a0304f87a3512a268c"
+      },
+      {
+        "gameId": "1ZU8CbKO",
+        "ply": 133,
+        "fen": "8/8/8/8/1PK5/q4k2/5P2/8 b - - 5 67",
+        "action": "f3f2",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "ebe7882b43afc15e2952fe4bc7406b3bf8ab034275beca5fd48b434bb75942f3"
+      },
+      {
+        "gameId": "1ZU8CbKO",
+        "ply": 135,
+        "fen": "8/8/8/3K4/1P6/5k2/5P2/2q5 b - - 7 68",
+        "action": "f3f2",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "c6c9da03c22ac7f3d6880b73b087c9008a685a38d50519a7dc657f596f4e8a06"
+      },
+      {
+        "gameId": "1ZU8CbKO",
+        "ply": 137,
+        "fen": "8/8/8/8/1PK5/5k2/1q3P2/8 b - - 9 69",
+        "action": "f3f2",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "49c032791887f478ceab225722f9fee52627c1b3472da0874e2b964d77a234b9"
+      },
+      {
+        "gameId": "1ZU8CbKO",
+        "ply": 137,
+        "fen": "8/8/8/8/1PK5/5k2/1q3P2/8 b - - 9 69",
+        "action": "b2f2",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "7be89198852860bf75fced1da8da8e665ad960a53883e9043421c4c1204772df"
+      },
+      {
+        "gameId": "1ZU8CbKO",
+        "ply": 139,
+        "fen": "8/8/8/3K4/1P6/5k2/2q2P2/8 b - - 11 70",
+        "action": "f3f2",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "4b013f5a849d4d47a7a5dc8da62147d9495460889ba1d0bc08212665fcc7c281"
+      },
+      {
+        "gameId": "1ZU8CbKO",
+        "ply": 139,
+        "fen": "8/8/8/3K4/1P6/5k2/2q2P2/8 b - - 11 70",
+        "action": "c2f2",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "c05663d357a8d566fd63b8d0067ffea55c74232bfaaca34f8bc0d8124c1763c2"
+      },
+      {
+        "gameId": "1ZU8CbKO",
+        "ply": 141,
+        "fen": "8/8/8/2K5/1P6/1q3k2/5P2/8 b - - 13 71",
+        "action": "f3f2",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "385330cde7119388a5587fff3ab28074371553a60d0bc095959e990c7e7a5208"
+      },
+      {
+        "gameId": "1ZU8CbKO",
+        "ply": 143,
+        "fen": "8/8/8/1K6/1P6/2q2k2/5P2/8 b - - 15 72",
+        "action": "f3f2",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "5ea99af64dcd63a967b93e34113248fa540b61a9020abbb5c0ebd26b820e7b96"
+      },
+      {
+        "gameId": "1ZU8CbKO",
+        "ply": 151,
+        "fen": "8/8/1P6/2k5/K7/2q5/8/8 b - - 0 76",
+        "action": "c5b6",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "59ff38ec6018e998ef1f96d7879225608891c81d2e2963260fcb3e30ef3c78ad"
+      },
+      {
+        "gameId": "1i0xc85C",
+        "ply": 89,
+        "fen": "8/7p/8/k7/2r4P/4K3/8/8 b - - 0 45",
+        "action": "c4h4",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "67bbfdc5d3cba5513fae4e99b4fdab813b70221e180332b358033d68df784a7a"
+      },
+      {
+        "gameId": "3CI0YQdf",
+        "ply": 109,
+        "fen": "8/8/8/8/5q2/6B1/4R1P1/1k4K1 b - - 0 55",
+        "action": "f4g3",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "b0fa4a8e351c17eafad51f469381f268f970b520d6b564dcaf4b2ecc9ae9c8c6"
+      },
+      {
+        "gameId": "4tac5vk3",
+        "ply": 106,
+        "fen": "8/8/8/5kpp/5p2/8/3pK3/8 w - - 0 54",
+        "action": "e2d2",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "fb599c98e537bd2c40da73353d1af6faef585081753f24b6b1e23ea6a68d2251"
+      },
+      {
+        "gameId": "7CGEWxgz",
+        "ply": 127,
+        "fen": "2k3q1/8/3p4/8/2p3P1/4K3/8/8 b - - 1 64",
+        "action": "g8g4",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "903488a27331d606ae9d50896dd2723df43f0029cc66b6586aeddff5623103aa"
+      },
+      {
+        "gameId": "7CGEWxgz",
+        "ply": 154,
+        "fen": "6q1/8/8/8/1K6/2p5/8/2k5 w - - 2 78",
+        "action": "b4c3",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "6b5a86b9c67dc78940175f42c439008c699444c4078efecb267969c345bee372"
+      },
+      {
+        "gameId": "7wFOeupf",
+        "ply": 124,
+        "fen": "8/8/6p1/7p/5k2/7P/2B3K1/8 w - - 0 63",
+        "action": "c2g6",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "95395ff16422807067a1165b4cab416b66567df2763f60a664714e361fb8c818"
+      },
+      {
+        "gameId": "7wFOeupf",
+        "ply": 144,
+        "fen": "8/3Bk3/8/8/6Kp/7P/8/8 w - - 16 73",
+        "action": "g4h4",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "cd6481e4f6868a273e903bcab56a32f54777b44342738ef9b46370a56c1d1523"
+      },
+      {
+        "gameId": "7wFOeupf",
+        "ply": 146,
+        "fen": "2Bk4/8/8/8/6Kp/7P/8/8 w - - 18 74",
+        "action": "g4h4",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "f1692ab4bc4f43339221ef48467a9ec582207dc9e579be3391e0fda2ddf0455f"
+      },
+      {
+        "gameId": "7wFOeupf",
+        "ply": 148,
+        "fen": "8/4k3/B7/8/6Kp/7P/8/8 w - - 20 75",
+        "action": "g4h4",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "8ec5273db09b8233c4d0e2e50230253eecd508ea6db35b8288f8e4d7d1e070dc"
+      },
+      {
+        "gameId": "7wFOeupf",
+        "ply": 187,
+        "fen": "8/6kP/3K2B1/8/8/8/8/8 b - - 10 94",
+        "action": "g7g6",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "553e9277b719e8e9bd8592644421aaa2e7b11ca2b0c681850db0764765684c54"
+      },
+      {
+        "gameId": "7wFOeupf",
+        "ply": 191,
+        "fen": "8/6kP/4K1B1/8/8/8/8/8 b - - 14 96",
+        "action": "g7g6",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "784b2ae0a60e5cd4cba43d704fab384d2a03cb8300341fd075900396bc2dacf2"
+      },
+      {
+        "gameId": "7wFOeupf",
+        "ply": 195,
+        "fen": "8/6kP/4K1B1/8/8/8/8/8 b - - 18 98",
+        "action": "g7g6",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "3df7c708fdd47fa340109af240f2b2c247c5d9c51042bcf150d1c7d4b598715f"
+      },
+      {
+        "gameId": "9HwomJVi",
+        "ply": 149,
+        "fen": "8/8/7R/2k5/2P5/1q4PK/8/8 b - - 0 75",
+        "action": "c5c4",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "c0256f834e4253377c56ee85aa1bf7808a36fb37e3a4291a81c943df58e75eaf"
+      },
+      {
+        "gameId": "9HwomJVi",
+        "ply": 149,
+        "fen": "8/8/7R/2k5/2P5/1q4PK/8/8 b - - 0 75",
+        "action": "b3c4",
+        "stratum": "absent-defender",
+        "taskStatus": "success",
+        "certificateSha256": "29fca3c492d387d08fffba8878ee201640d13f921c3068f738f488f65f6cbc2f"
+      }
+    ],
+    "pinned-apparent-defender": []
+  },
+  "bounds": {
+    "maxSeconds": 900,
+    "maxPositions": 500000,
+    "maxCaptureChecks": 50000,
+    "maxRssMiB": 2048,
+    "minFreeMiB": 256,
+    "heapMiB": 256,
+    "cpuDuty": 0.5
+  },
+  "resources": {
+    "elapsedSeconds": 43.4968248,
+    "cpu": {
+      "user": 25047000,
+      "system": 266000
+    },
+    "peakRssMiB": 82.01953125
+  },
+  "finalSplitInspected": false,
+  "validationInspected": false,
+  "neuralEventsDelivered": 0,
+  "graphLaunchAuthorized": false,
+  "scope": "Training-only feasibility scan of authentic positions from already-audited Lichess source games. It preserves game history and independently checks immediate capture-retention certificates, but does not establish Stage 1 family diversity, split disjointness, production-panel eligibility, learner feedback quality, neural learning or reasoning."
+}

@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "name": "stage1-retention-probe-v3-mover-value",
+  "paused": false,
+  "paths": {
+    "protocol": "research/data/lichess-stage1-synthetic-v1/stage1-retention-probe-v3-mover-value-protocol.json",
+    "runner": ".codebase/scripts/puzzle-learning/stage1-retention-probe-v2.mjs",
+    "run": "runs/stage1-retention-probe-v3-mover-value",
+    "checkpoint": "runs/stage1-retention-probe-v3-mover-value/result.json"
+  },
+  "pins": {
+    "{protocol}": "b252ea8fb1bd194987e0d2b035def67bce2ad19e6db6e2d9cbd5d5fd3531b60e",
+    "{runner}": "a6840932e46415c157f4fba9d8878829983893970adac0e768685fe45f982d2b",
+    ".codebase/scripts/puzzle-learning/stage1-retention-probe.mjs": "ca3cc6de76fea79d8e2d14c648bea830e5b037bf985f864757cfbfdbc2122d4b",
+    "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r7-registration.json": "db14a957cd47bc6d5169a54328cb365a87767dbc6437bd20678998346c68fea2",
+    ".codebase/scripts/puzzle-learning/lichess-stage1-runtime-factory-v2.mjs": "ca226201aae63ad6c828910e353b311f68696d6f35af0594aa8322694fb2120b",
+    ".codebase/src/puzzle-learning/lichess-stage1-brain-factory-v2.mjs": "dc2d4f04b053c5d1cc6e5c46f7e10ef3330159a48fbe8ae918976b8e1679653c",
+    ".codebase/src/puzzle-learning/coupled-stockfish-brain-v3.mjs": "d831d2b41d3befa8713389332ca9bb140494549bc4f0e868b0803d474bf1c812",
+    ".codebase/src/puzzle-learning/coupled-stockfish-brain.mjs": "c487b99184ed713f8f7ed338e34dfecb97810efebe117988c9c70dd1c7ecb2fd",
+    ".codebase/src/puzzle-learning/coupled-stockfish-session.mjs": "bb7d693f5f97aed6006d77dafb98a3ccb937ab7f716f7a8528085638f2946b47",
+    ".codebase/src/puzzle-learning/lichess-curriculum-panel.mjs": "1321cfb4425aa6758162269d34d5ab65cc972401fa5209c50c43ee3d40d9f17a",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    ".codebase/src/chess-input/public-action-relative-cue-v2.mjs": "f7894c8367431304dbbc994b125130a189aa02f75884ec8d2eb83a6eb3888286"
+  },
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256
+  },
+  "state_file": "runs/python-actions/stage1-retention-probe-v3-mover-value-state.json",
+  "jobs": {
+    "probe": {
+      "role": "train",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--protocol",
+        "{protocol}",
+        "--out",
+        "{run}",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{protocol}",
+        "{runner}"
+      ],
+      "fresh_output": "{run}"
+    }
+  },
+  "artifacts": {
+    "result": "{run}/result.json"
+  },
+  "report_fields": [
+    "status",
+    "condition",
+    "chosenEta",
+    "perEtaPasses",
+    "aBoards",
+    "scratchCorrect",
+    "decisionRule",
+    "peakRssMiB",
+    "elapsedSeconds",
+    "cpuSeconds",
+    "scope"
+  ]
+}

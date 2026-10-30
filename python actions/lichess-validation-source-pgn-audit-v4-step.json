@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "name": "lichess-validation-source-pgn-audit-v4",
+  "paused": false,
+  "paths": {
+    "run": "runs/python-actions/lichess-validation-source-pgn-audit-v4",
+    "rows": "research/data/lichess-validation-candidates-v1/validation.jsonl",
+    "candidateManifest": "research/data/lichess-validation-candidates-v1/manifest.json",
+    "candidateAudit": "research/reports/lichess-foundations-pilot-2026-10-21/validation-candidate-source-audit-v1.json",
+    "source": "research/data/lichess-validation-source-pgn-v4",
+    "manifest": "research/data/lichess-validation-source-pgn-v4/manifest.json",
+    "out": "research/reports/lichess-foundations-pilot-2026-10-21/validation-source-pgn-audit-v4.json"
+  },
+  "pins": {
+    "research/data/lichess-validation-candidates-v1/validation.jsonl": "4bd37573eeefbdfbcd941438a07f6ae6423936acf347878b33d2be584716d484",
+    "research/data/lichess-validation-candidates-v1/manifest.json": "ff7d5c544ed23bc36694e03ae848a7255ae82794a2bb84e87067cf54aef18b0f",
+    "research/reports/lichess-foundations-pilot-2026-10-21/validation-candidate-source-audit-v1.json": "bcbdce686038c895517e341ababa74928b66cc7a13c88e9fe2030c0a5a1fed6b",
+    "research/data/lichess-validation-source-pgn-v4/manifest.json": "94c2528c6e7665f5adf46fb3003f9c5b44ecf7198c93ec72403443fb42bb97f6",
+    ".codebase/scripts/data/audit-lichess-validation-source-pgn-v4.mjs": "344e7717930d462a9976cf0389fb6b05338f25c27c87eef4c84c493556eafbb5"
+  },
+  "state_file": "runs/python-actions/lichess-validation-source-pgn-audit-v4.json",
+  "jobs": {
+    "audit": {
+      "role": "check",
+      "argv": [
+        "node", "--max-old-space-size=256",
+        ".codebase/scripts/data/audit-lichess-validation-source-pgn-v4.mjs",
+        "--rows", "{rows}",
+        "--manifest", "{manifest}",
+        "--candidateManifest", "{candidateManifest}",
+        "--candidateAudit", "{candidateAudit}",
+        "--source", "{source}",
+        "--out", "{out}"
+      ],
+      "requires": ["{rows}", "{manifest}", "{candidateManifest}", "{candidateAudit}"],
+      "fresh_output": "{out}"
+    }
+  },
+  "artifacts": {
+    "audit": "{out}"
+  },
+  "report_fields": ["passed", "candidateRows", "uniqueGames", "batches", "responseBytes", "finalSplitInspected", "graphLaunchAuthorized", "scope"]
+}

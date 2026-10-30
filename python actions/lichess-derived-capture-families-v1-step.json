@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "name": "lichess-derived-capture-families-v1",
+  "paused": false,
+  "paths": {
+    "report": "research/reports/babysit-stage1-direct-counterfactual-feasibility-2026-10-23.json",
+    "inputAudit": "research/reports/babysit-stage1-direct-counterfactual-feasibility-audit-v2-2026-10-23.json",
+    "out": "research/data/lichess-stage1-derived-family-candidates-v1",
+    "audit": "research/reports/babysit-stage1-derived-capture-families-audit-v1-2026-10-23.json",
+    "producer": ".codebase/scripts/data/prepare-lichess-derived-capture-families-v1.mjs",
+    "auditor": ".codebase/scripts/data/audit-lichess-derived-capture-families-v1.mjs",
+    "run": "runs/python-actions/lichess-derived-capture-families-v1"
+  },
+  "pins": {
+    "research/reports/babysit-stage1-direct-counterfactual-feasibility-2026-10-23.json": "107c56b0ad70aeefc2e271aa09a31b6270304a4abd4eaf631a982b88589e2a9e",
+    "research/reports/babysit-stage1-direct-counterfactual-feasibility-audit-v2-2026-10-23.json": "1c048e484cf74df1bdcd51da98a33a07f06218885968d17e7d5ba220be9ba3c3",
+    ".codebase/scripts/data/prepare-lichess-derived-capture-families-v1.mjs": "a268a25e019d3a9ecedb363225bb6bf6d2a4740826841f1a173073659a218073",
+    ".codebase/scripts/data/audit-lichess-derived-capture-families-v1.mjs": "d74189bdfed2a49fe498d978e410e55381eb9519982ad4b0ed14afa2f6a267e0",
+    "package-lock.json": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9"
+  },
+  "state_file": "runs/python-actions/lichess-derived-capture-families-v1.json",
+  "jobs": {
+    "prepare": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{producer}",
+        "--report",
+        "{report}",
+        "--audit",
+        "{inputAudit}",
+        "--out",
+        "{out}"
+      ],
+      "requires": ["{report}", "{inputAudit}"],
+      "fresh_output": "{out}"
+    },
+    "audit": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{auditor}",
+        "--report",
+        "{report}",
+        "--input-audit",
+        "{inputAudit}",
+        "--families",
+        "{out}",
+        "--out",
+        "{audit}"
+      ],
+      "requires": ["{report}", "{inputAudit}", "{out}/manifest.json", "{out}/families.jsonl"],
+      "refuse_existing": ["{audit}"]
+    }
+  },
+  "artifacts": {
+    "result": "{audit}",
+    "audit": "{audit}"
+  }
+}

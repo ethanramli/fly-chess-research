@@ -1,0 +1,80 @@
+{
+  "schema": "lichess-preparation-batches-v1",
+  "configSha256": "544a652edf37e6769d72f675ab142d864884abe061d912f7723cba4fbef9f18c",
+  "completed": [
+    {
+      "job": "prepare-train-000",
+      "manifest": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v5\\train-chunk-000\\manifest.json",
+      "manifestSha256": "75b35f6a770126b80ce7ccbaa48ae2de8e603d28bd0c1470fe77bd1fd8413187",
+      "counts": {
+        "sourceRows": 32,
+        "prepared": 32,
+        "rejected": 0,
+        "stage1DomainEligible": 3,
+        "unknownActions": 0
+      }
+    },
+    {
+      "job": "prepare-train-001",
+      "manifest": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v5\\train-chunk-001\\manifest.json",
+      "manifestSha256": "4aff00b887c32d9f569c54beab425771d05b525ade0130024a103857b76a6706",
+      "counts": {
+        "sourceRows": 32,
+        "prepared": 32,
+        "rejected": 0,
+        "stage1DomainEligible": 5,
+        "unknownActions": 0
+      }
+    }
+  ],
+  "pending": {
+    "job": "prepare-train-002",
+    "role": "check",
+    "run": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v5",
+    "pid": 13144,
+    "configHash": "3f36667d179aab9ff44362ff025bcc1795e870d1787b5367c7e30c0ea76e353e",
+    "stdout": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261022T043359-88f0918f\\stdout.txt",
+    "stderr": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261022T043359-88f0918f\\stderr.txt",
+    "argv": [
+      "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+      "--max-old-space-size=256",
+      ".codebase/scripts/data/prepare-lichess-lessons.mjs",
+      "--rows",
+      "research\\data\\lichess-stage1-candidates-v4\\train.jsonl",
+      "--games",
+      "research\\data\\lichess-stage1-source-pgn-v4\\train",
+      "--split",
+      "train",
+      "--out",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v5/train-chunk-002",
+      "--cpu-duty",
+      "0.5",
+      "--max-seconds",
+      "300",
+      "--start-row",
+      "64",
+      "--row-limit",
+      "32"
+    ],
+    "exitCode": 1,
+    "artifacts": {
+      "batch": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v5\\manifest.json"
+    },
+    "created": "2026-10-22T04:33:59.7575843Z",
+    "command": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE --max-old-space-size=256 .codebase/scripts/data/prepare-lichess-lessons.mjs --rows research\\data\\lichess-stage1-candidates-v4\\train.jsonl --games research\\data\\lichess-stage1-source-pgn-v4\\train --split train --out C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v5/train-chunk-002 --cpu-duty 0.5 --max-seconds 300 --start-row 64 --row-limit 32",
+    "imagePath": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE"
+  },
+  "phase": "failed",
+  "parentState": null,
+  "failure": {
+    "job": "prepare-train-002",
+    "exitCode": 1,
+    "testCounts": {},
+    "checkSummary": null,
+    "logs": {
+      "stdout": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261022T043359-88f0918f\\stdout.txt",
+      "stderr": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261022T043359-88f0918f\\stderr.txt"
+    },
+    "errorTail": "node:internal/modules/run_main:123\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Lesson preparation elapsed bound\r\n    at guard (file:///C:/Users/ethan/Documents/fly-chess-research/.codebase/scripts/data/prepare-lichess-lessons.mjs:41:3)\r\n    at prepare (file:///C:/Users/ethan/Documents/fly-chess-research/.codebase/scripts/data/prepare-lichess-lessons.mjs:74:3)\r\n    at file:///C:/Users/ethan/Documents/fly-chess-research/.codebase/scripts/data/prepare-lichess-lessons.mjs:92:7 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: false,\r\n  expected: true,\r\n  operator: '==',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v22.23.2\r\n"
+  }
+}

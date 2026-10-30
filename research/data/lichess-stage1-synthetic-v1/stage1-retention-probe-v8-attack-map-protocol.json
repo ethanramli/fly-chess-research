@@ -1,0 +1,49 @@
+{
+  "schema": "lichess-stage1-retention-probe-protocol-spaced-v1",
+  "question": "With the attack-map cue (revision 12, researcher option A) and outcome-only teaching, does spaced re-teaching of a Stage 1 training board keep it correct after 10 further training boards are taught, and at which eta?",
+  "task": "Predeclared graph test of the attack-map cue (decision log 2026-10-27, option A) before any r12 result; the v7 decision rule is unchanged.",
+  "baseRegistration": {
+    "path": "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r12-registration.json",
+    "sha256": "2aa02d213057230f34a4fc7b50c66bb79d565fa23b51896fd40defac16944236"
+  },
+  "override": "Only learner.memory.eta changes (in memory, per probe; it sets the restrained, alpha1 and alpha3 rates); everything else is the revision-12 registration.",
+  "replica": "r1",
+  "etas": [
+    0.5,
+    0.2,
+    0.1,
+    0.05,
+    0.02
+  ],
+  "data": "Training panels of the base registration only. Validation and final rows are never loaded.",
+  "aBoardRule": "As probe v6: one A board per stratum, the first training panel by panelId whose unaided scratch choice is not the certified success (flagged fallback if a stratum is all correct). Re-derived with the attack-map cue, so the A boards may differ from v7.",
+  "lesson": "Outcome-only (researcher decision 2026-10-27): verified task pulses on the highest-scored failure and then the certified move; no Stockfish value pulse. PAM-alpha1 is co-stimulated only with verified task-success pulses and PPL1-alpha3 only with verified task-failure pulses.",
+  "gaps": [
+    5,
+    5,
+    10
+  ],
+  "sequence": "From scratch memory: lesson on A, 5 other boards, lesson on A, 5 other boards, lesson on A, 10 other boards; every other board is distinct and taught once; A is assessed after every lesson.",
+  "interferingLessons": 20,
+  "interferenceSeed": "stage1-retention-probe-v1",
+  "interferenceRule": "The 23 other training panels ordered by sha256(seed:A:panelId); the first 20, in that order. The first 10 are probe v5's interfering boards in v5's order. The same boards and order are used for every eta.",
+  "decision": {
+    "requiredRetained": 3,
+    "rule": "Choose the largest eta whose A board is the unique top choice after the final 10 interfering lessons in at least 3 of 4 probes. A pass is reported as spaced-training retention, not one-shot retention. If none passes, the memory path stops and is reported to the researcher, with no further mechanism."
+  },
+  "measures": [
+    "A certified-move rank and correctness after every lesson",
+    "A correctness right after each of its own lessons and at the end of each gap",
+    "each interfering board's rank before and after its lesson",
+    "pulse channels, currents, restrained and alpha1 factors and changed-edge counts"
+  ],
+  "scope": "Diagnostic spaced-repetition probe on training boards with one replica; not a gate result, not a learning claim and not biological validation. Lesson counts are not biological spacing intervals.",
+  "cpuDuty": 0.5,
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256
+  },
+  "condition": "outcome-only",
+  "comparison": "Matched to probe v7 (same replica, A-board rule, gaps, interference rule, etas and lesson procedure, revision-11 memory and readout). Differs in the cue (attack-map v1 instead of action-relative v4) and in teaching (outcome-only instead of informative).",
+  "interpretation": "Predeclared limit: with the attack-map cue an A board can become correct through lessons on other boards (surrogate no-own-lesson control 3/4 at eta 0.1, research/reports/stage1-attack-map-cue-2026-10-27). A pass therefore does not separate retention from within-training transfer. The registered smoke with matched controls and validation families tests transfer."
+}

@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "name": "lichess-batch-preparation-guards-checks",
+  "paused": false,
+  "paths": {
+    "run": "research/reports/lichess-foundations-pilot-2026-10-21"
+  },
+  "pins": {
+    ".codebase/scripts/data/prepare-lichess-lessons.mjs": "fc5fc5fafd129da01ad6ac54716659802118c88a964a47634df98cfd3ba08d46",
+    ".codebase/scripts/data/audit-lichess-api-lessons.mjs": "f3ef15f9b50ec2653dc4bba8a55496833a3596ea1770ead752cc5e3a7aa49def",
+    ".codebase/scripts/data/curate-lichess-puzzles.mjs": "a2724bdc8f1292cffb36563f445eeab3a6b89f62ed82ee2b8fa997c473497cf7",
+    ".codebase/scripts/data/audit-lichess-source-candidates.mjs": "473b23aff4cd544bdfde68fd3d703a008229f0db7bea89d486a7be6415088ebf",
+    ".codebase/src/puzzle-learning/lichess-history.mjs": "26d69604d59847109b7e9408c0ab03a0afdb2ae60fd502ad2431477443d5a630",
+    ".codebase/src/puzzle-learning/lichess-capture-lesson.mjs": "d13679522f2b4dd132f16265db043f44c47044d77318788c4509decac2bac5a7",
+    ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "041fddbfbcd5b85c833ede38f848369793c25033ecbdcbdf0f9cd5b093404c12",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+    ".codebase/tests/puzzle-learning/lichess-lessons.test.mjs": "32112d1fb53564020639c158143ebb2a0e1ff23ed1863782a0bbecf2b78f5a66",
+    ".codebase/tests/puzzle-learning/curriculum-rehearsal-plan.test.mjs": "a0b2a4a3c23ca286b7fdceed58f2d11214e74419aa3338a31925a239703d617f",
+    ".codebase/tests/search-and-feedback/capture-retention-certificate.test.mjs": "0d10b40cf7894087729bee0f60f1accdcc7ecf3ecb88c4ab7c90d2bb42f06413"
+  },
+  "state_file": "runs/python-actions/current-lichess-batch-prepare-checks.json",
+  "jobs": {
+    "tests": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        ".codebase/tests/puzzle-learning/lichess-lessons.test.mjs",
+        ".codebase/tests/puzzle-learning/curriculum-rehearsal-plan.test.mjs",
+        ".codebase/tests/search-and-feedback/capture-retention-certificate.test.mjs"
+      ]
+    }
+  },
+  "artifacts": {}
+}

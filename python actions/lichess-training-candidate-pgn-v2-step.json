@@ -1,0 +1,54 @@
+﻿{
+    "schema":  1,
+    "name":  "lichess-stage1-training-candidate-pgn-v2",
+    "paused":  false,
+    "paths":  {
+                  "run":  "research/data/lichess-stage1-candidate-pgn-v2",
+                  "rows":  "research/data/lichess-stage1-training-candidates-v1/train.jsonl",
+                  "sourceManifest":  "research/data/lichess-stage1-training-candidates-v1/manifest.json",
+                  "sourceAudit":  "research/reports/lichess-foundations-pilot-2026-10-21/training-candidate-source-audit-v1.json",
+                  "registration":  "research/reports/lichess-foundations-pilot-2026-10-21/training-candidate-pgn-v2-registration.json",
+                  "fetcher":  "python actions/fetch_lichess_game_pgns_v3.py",
+                  "trainOut":  "research/data/lichess-stage1-candidate-pgn-v2/train"
+              },
+    "pins":  {
+                 "research/reports/lichess-foundations-pilot-2026-10-21/training-candidate-pgn-v2-registration.json":  "16fe9a02ef32d2b7529422b306efa381eda45ded323d31cbfed33c2e40736f77",
+                 "research/data/lichess-stage1-training-candidates-v1/manifest.json":  "3ddf8855ddb0d8f20e0a865e47e8567557f960611f64ac5a9b370876bf07daf9",
+                 "research/reports/lichess-foundations-pilot-2026-10-21/training-candidate-source-audit-v1.json":  "a46882712f0cb1fa619d722ec9d83a3e5dc578d11518e90c242f076066cf3393",
+                 "research/data/lichess-stage1-training-candidates-v1/train.jsonl":  "4aaa70e25513eb69c3925f51189f6baf37fa7746acb73f2912efc9e8d07ada0f",
+                 "python actions/fetch_lichess_game_pgns_v3.py":  "fe060fcefec8440cd53f13fe6904d46295634bd5cd7a198c6f3e6aea628abe5c"
+             },
+    "state_file":  "runs/python-actions/lichess-stage1-training-candidate-pgn-v2.json",
+    "jobs":  {
+                 "fetch-train":  {
+                                     "argv":  [
+                                                  "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+                                                  "{fetcher}",
+                                                  "--rows",
+                                                  "{rows}",
+                                                  "--split",
+                                                  "train",
+                                                  "--out",
+                                                  "{trainOut}"
+                                              ],
+                                     "requires":  [
+                                                      "{registration}",
+                                                      "{sourceManifest}",
+                                                      "{sourceAudit}",
+                                                      "{rows}",
+                                                      "{fetcher}"
+                                                  ],
+                                     "fresh_output":  "{trainOut}",
+                                     "role":  "check"
+                                 }
+             },
+    "artifacts":  {
+                      "train":  "{trainOut}/manifest.json"
+                  },
+    "report_fields":  [
+                          "status",
+                          "sourceSplit",
+                          "sourceRows",
+                          "scope"
+                      ]
+}

@@ -1,0 +1,88 @@
+﻿{
+    "schema":  1,
+    "name":  "lichess-validation-branch-families-v3",
+    "paused":  false,
+    "paths":  {
+                  "prepared":  "research/data/lichess-validation-prepared-v3",
+                  "lessonAudit":  "research/reports/lichess-foundations-pilot-2026-10-21/validation-lessons-audit-v3.json",
+                  "out":  "research/data/lichess-validation-branch-families-v3",
+                  "audit":  "research/reports/lichess-foundations-pilot-2026-10-21/validation-branch-family-audit-v3.json",
+                  "producer":  ".codebase/scripts/data/prepare-lichess-validation-branch-families-v3.mjs",
+                  "auditor":  ".codebase/scripts/data/audit-lichess-validation-branch-families-v3.mjs",
+                  "run":  "runs/python-actions/lichess-validation-branch-families-v3"
+              },
+    "pins":  {
+                 "research/reports/lichess-foundations-pilot-2026-10-21/validation-lessons-audit-v3.json":  "b616ddeca62cc2ab0e9a4f4121bf15367e26f7edaad8be6713f67397d8f60977",
+                 ".codebase/scripts/data/prepare-lichess-validation-branch-families-v3.mjs":  "35f48b69a3f91da3c7b67f19eff17d7dd6824ad718c2067e96a17f69b67cf1d7",
+                 ".codebase/scripts/data/audit-lichess-validation-branch-families-v3.mjs":  "568418320ae2dad9844200ba8d5d40351f7fd09279338c107ac5c352d816ca1d",
+                 "research/data/lichess-validation-prepared-v3/manifest.json":  "f67d505405942a2de9648d7ccc7d5468e538e144278cd401ccfdce4080c0913c",
+                 "research/data/lichess-validation-prepared-v3/lessons.jsonl":  "ea76fe1144fd4814c3f15707f404a48348f3cc578f16320bd52e6483e0b63644",
+                 ".codebase/src/puzzle-learning/lichess-branch-contrast-check-v2.mjs":  "f9173598b3c2a9274b3bc673f7811dca964951e7d78f7f7d256d7966876827c8",
+                 ".codebase/src/puzzle-learning/lichess-branch-contrast-v3.mjs":  "8310646590a6610d593253b307f4a8c810f66b2971200707404aee46aaa2a594",
+                 ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs":  "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+                 ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs":  "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+                 ".codebase/src/search-and-feedback/capture-retention-certificate.mjs":  "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+                 ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs":  "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+                 ".codebase/src/search-and-feedback/puzzle-search.mjs":  "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+                 "package-lock.json":  "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9"
+             },
+    "state_file":  "runs/python-actions/lichess-validation-branch-families-v3.json",
+    "jobs":  {
+                 "prepare":  {
+                                 "role":  "check",
+                                 "argv":  [
+                                              "node",
+                                              "--max-old-space-size=256",
+                                              "{producer}",
+                                              "--prepared",
+                                              "{prepared}",
+                                              "--audit",
+                                              "{lessonAudit}",
+                                              "--out",
+                                              "{out}"
+                                          ],
+                                 "requires":  [
+                                                  "{prepared}/manifest.json",
+                                                  "{prepared}/lessons.jsonl",
+                                                  "{lessonAudit}"
+                                              ],
+                                 "fresh_output":  "{out}"
+                             },
+                 "audit":  {
+                               "role":  "check",
+                               "argv":  [
+                                            "node",
+                                            "--max-old-space-size=256",
+                                            "{auditor}",
+                                            "--prepared",
+                                            "{prepared}",
+                                            "--audit",
+                                            "{lessonAudit}",
+                                            "--families",
+                                            "{out}",
+                                            "--out",
+                                            "{audit}"
+                                        ],
+                               "requires":  [
+                                                "{prepared}/manifest.json",
+                                                "{lessonAudit}",
+                                                "{out}/manifest.json",
+                                                "{out}/families.jsonl"
+                                            ],
+                               "refuse_existing":  [
+                                                       "{audit}"
+                                                   ]
+                           }
+             },
+    "artifacts":  {
+                      "manifest":  "{out}/manifest.json",
+                      "families":  "{out}/families.jsonl",
+                      "audit":  "{audit}"
+                  },
+    "report_fields":  [
+                          "counts",
+                          "stoppingBound",
+                          "finalSplitInspected",
+                          "graphLaunchAuthorized"
+                      ]
+}

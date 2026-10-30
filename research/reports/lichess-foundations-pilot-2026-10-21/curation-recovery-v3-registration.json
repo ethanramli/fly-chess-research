@@ -1,0 +1,48 @@
+{
+  "schema": "lichess-stage1-curation-recovery-v3",
+  "createdAt": "2026-10-21T14:26:00Z",
+  "purpose": "Recover after the registered v2 full-source scan exceeded its 4200-second elapsed bound without publishing a manifest.",
+  "previousAttempt": {
+    "invocation": "runs/python-actions/20261021T131707-015ad3c6",
+    "completionExitCode": 1,
+    "failure": "Source preparation elapsed bound at 4200 seconds; no v2 corpus manifest was published.",
+    "sourceSnapshot": "research/reports/lichess-foundations-pilot-2026-10-21/curate-lichess-puzzles-v2-source.mjs",
+    "sourceSha256": "306987357b05dee044eed1fcaab2e6088a61fdad115f5950de21f3b54a2a7edf"
+  },
+  "source": {
+    "url": "https://database.lichess.org/",
+    "license": "CC0-1.0",
+    "compressedArchive": ".cache/lichess-puzzles-2026-10-21.csv.zst",
+    "compressedSha256": "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+    "decodedCsv": ".cache/lichess-puzzles-2026-10-21.csv",
+    "decodedCsvSha256": "ec2dd1a8f9cbd139ebb4aee228f72e77f8e2a581a24d25f61f71e6cf306b10f8",
+    "extractionReceipt": "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json",
+    "extractionReceiptSha256": "deac9b4792742a84fde9f3273caabcf5f505d957fb142881a8345aae356b4510"
+  },
+  "curator": {
+    "script": ".codebase/scripts/data/curate-lichess-puzzles.mjs",
+    "scriptSha256": "1afafbcec82b6c86dd76ee13aeb3bf258244671b437e5652e3608fc90ea6e254",
+    "previousScriptSnapshotSha256": "306987357b05dee044eed1fcaab2e6088a61fdad115f5950de21f3b54a2a7edf",
+    "pacer": ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs",
+    "pacerSha256": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    "limitPerSplit": 128,
+    "minRating": 0,
+    "maxRating": 5000,
+    "maxPieces": 6,
+    "seed": 20261021,
+    "themes": [],
+    "cpuDuty": 0.5,
+    "maxSeconds": 7200,
+    "maximumSupportedSeconds": 7200,
+    "implementationChange": "Use native string.split for CSV lines with no quote characters; keep the previous escaped-quote parser for all other lines. Add one-million-line progress records. Sampling/filtering rules, seed, split algorithm and output semantics are unchanged."
+  },
+  "resources": {
+    "maxRssMiB": 2048,
+    "minFreeMiB": 256,
+    "nodeHeapMiB": 256,
+    "cpuDuty": 0.5
+  },
+  "output": "research/data/lichess-stage1-candidates-v3",
+  "scope": "Source candidate selection only. History, relation families, consequence certificates, neural teaching and Stage1 acceptance require separate audits. Final rows stay sealed.",
+  "status": "registered-not-started"
+}

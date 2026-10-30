@@ -4,9 +4,9 @@
 
 | Requested element | Reviewable result | Design result |
 |---|---|---|
-| Start with a learnable elementary relationship | G0 tests association/retention/reversal, then C01 tests legal recapturability; history-preserving teacher examples change one blocker. | Specified |
+| Start with a learnable elementary relationship | G0 tests association/retention/reversal, then Stage 1 tests legal recapturability; history-preserving teacher examples change one blocker. | Specified |
 | Each first principle targeted explicitly | Twelve ordered lesson cards give definition, learning target, positive/negative experience, counterfactual, opponent coverage, task, horizon, capabilities and specialization. | Specified |
-| Cumulative progression toward positional play | C01-C06 cover immediate consequences and tactical composition; C07-C11 cover effectiveness, coordination, weaknesses, prophylaxis and transitions; C12 tests unseen combinations. Continuous memory, 50% rehearsal and later retention checks apply. | Specified |
+| Cumulative progression toward positional play | Stages 1-6 cover immediate consequences and tactical composition; Stages 7-11 cover effectiveness, coordination, weaknesses, prophylaxis and transitions; Stage 12 tests unseen combinations. Continuous memory, 50% rehearsal and later retention checks apply. | Specified |
 | Operational definitions of done | D1-D8 fix acquisition, validation, unfamiliar choices, sign predictions, paired reversals, control advantage, interference retention, causal memory and independent replay. Each lesson adds its own strata; later value/episode gates supplement exact tasks. | Specified |
 | Feedback explains what happened | Exact board/history/action/criterion certificates bind failed choice, defensive refutation and successful alternative. Unknown proof supplies no event. Evidence scope and horizon are explicit. | Specified |
 | Feedback reaches persistent learning | F0 specifies the current cue/stimulus/local-rate recurrence interface; F1 requires sequence and earlier-choice credit validation; F2 defines a child-perspective neural prediction/error and proposed receiver; F3 binds actual terminal episodes and policy-scoped credit. Teacher never computes neural deltas. | Specified, with missing integrations flagged |

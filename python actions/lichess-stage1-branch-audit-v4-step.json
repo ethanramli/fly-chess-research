@@ -1,0 +1,80 @@
+{
+    "schema":  1,
+    "name":  "lichess-stage1-branch-audit-v4",
+    "paused":  false,
+    "paths":  {
+                  "run":  "research/data/lichess-stage1-branch-contrasts-v4",
+                  "package":  "research\\data\\lichess-stage1-prepared-batches-v7\\manifest.json",
+                  "sourceAudit":  "research\\reports\\lichess-foundations-pilot-2026-10-21\\lesson-batches-audit-v7.json"
+              },
+    "pins":  {
+                 ".codebase\\scripts\\data\\prepare-lichess-branch-contrasts-v4.mjs":  "68dfb38fa342daa5eac5233e9d6c757a5ded1aac80a65cc78198ead94715189c",
+                 ".codebase\\src\\puzzle-learning\\lichess-branch-contrast-v2.mjs":  "471c9418e27f518242d904bbd07ddb4caf1b28c8bd112722bcbdad78da266a0c",
+                 ".codebase\\tests\\puzzle-learning\\lichess-branch-contrast-v2.test.mjs":  "3e0e3743f49bf53a3f3d375ccc610aeec546a141d2a7bcbd9c7fbb3e5deaddd3",
+                 ".codebase\\src\\search-and-feedback\\capture-retention-action-domain.mjs":  "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+                 ".codebase\\src\\search-and-feedback\\capture-retention-certificate.mjs":  "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+                 ".codebase\\src\\search-and-feedback\\capture-retention-certificate-check.mjs":  "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+                 ".codebase\\src\\puzzle-learning\\plasticity-mechanism-assay.mjs":  "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+                 "research\\data\\lichess-stage1-prepared-batches-v7\\manifest.json":  "e31bcf389a8780668be231d3278221138048b267437cbfddd21f2c596a2a4434",
+                 "research\\reports\\lichess-foundations-pilot-2026-10-21\\lesson-batches-audit-v7.json":  "0a8b655bff466c4a137693a353651bf3c19b9fe11ca057f904f5483f54aefe85",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-000\\manifest.json":  "11de2333f73b1fff3c67fa67c5a18bc8c490f547d393877126610805fa4e0f0e",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-000\\lessons.jsonl":  "13ce8eb30d843a2ac72ad14e9a708149d3d2c5d1c95b9b55cfede6c9f5fe6a8b",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-001\\manifest.json":  "dd91fa5c1ac6acdbab86cc05cbcad2ef4322183500add083f0c79fd7ca8d37b5",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-001\\lessons.jsonl":  "56d7de3dfd390c30341d6d6095f07638af1e0795b712a7afc0d98ba34e856633",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-002\\manifest.json":  "3fa5c6ec314e3070cc1a2eea593550ecf9744d470a06272c5200808040629fcb",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-002\\lessons.jsonl":  "6769f4b355bcc44bf42c879052d2100e374fa47c1eb2db75d781185b04e8c8c2",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-003\\manifest.json":  "55597eb56dfce941032287b3695562e490c9150917ebc5c980756d5f616137bf",
+                 "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-003\\lessons.jsonl":  "c9b1d8abde0817e0f895bbcc0528f677a30c782a7222a7e9620b166ec1d2ed06",
+                 ".codebase\\scripts\\data\\audit-lichess-branch-contrasts.mjs":  "31d1c9de22894c2f75dc2402f55830ee5de04528a721e10a40ad68fa56118455",
+                 ".codebase\\src\\puzzle-learning\\lichess-branch-contrast-check.mjs":  "e8907ec189960ef324c9c5a823d5b5c99d0bad020d31ba309376e6ee48a5d108",
+                 "python actions\\verify_lichess_branch_audit_v3.py":  "39b64c4cf537648bffd2436b51bf3e4e2df756e11d4e272a7f21b4eb1f399e6b"
+             },
+    "state_file":  "runs/python-actions/current-lichess-stage1-branch-audit-v4.json",
+    "jobs":  {
+                 "audit":  {
+                               "role":  "check",
+                               "argv":  [
+                                            "node",
+                                            "--max-old-space-size=256",
+                                            ".codebase/scripts/data/audit-lichess-branch-contrasts.mjs",
+                                            "--config",
+                                            "python actions\\lichess-stage1-branch-audit-v4-step.json",
+                                            "--out",
+                                            "research\\reports\\lichess-foundations-pilot-2026-10-21\\legal-branch-matched-audit-v3.json"
+                                        ],
+                               "requires":  [
+                                                "{run}/manifest.json"
+                                            ],
+                               "refuse_existing":  [
+                                                       "research\\reports\\lichess-foundations-pilot-2026-10-21\\legal-branch-matched-audit-v3.json"
+                                                   ]
+                           },
+                 "verify-auditor":  {
+                                        "role":  "check",
+                                        "argv":  [
+                                                     "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+                                                     "python actions/verify_lichess_branch_audit_v3.py",
+                                                     "--config",
+                                                     "python actions\\lichess-stage1-branch-audit-v4-step.json",
+                                                     "--out",
+                                                     "research\\reports\\lichess-foundations-pilot-2026-10-21\\legal-branch-matched-audit-checks-v4"
+                                                 ],
+                                        "requires":  [
+                                                         "research\\reports\\lichess-foundations-pilot-2026-10-21\\legal-branch-matched-audit-v3.json"
+                                                     ],
+                                        "fresh_output":  "research\\reports\\lichess-foundations-pilot-2026-10-21\\legal-branch-matched-audit-checks-v4"
+                                    }
+             },
+    "artifacts":  {
+                      "audit":  "research\\reports\\lichess-foundations-pilot-2026-10-21\\legal-branch-matched-audit-v3.json",
+                      "auditorChecks":  "research\\reports\\lichess-foundations-pilot-2026-10-21\\legal-branch-matched-audit-checks-v4"
+                  },
+    "report_fields":  [
+                          "passed",
+                          "verified",
+                          "relationFamilyDisjointnessEstablished",
+                          "graphLaunchAuthorized",
+                          "neuralEventsDelivered",
+                          "finalSplitInspected"
+                      ]
+}

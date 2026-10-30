@@ -2,7 +2,19 @@
 
 Prepared 18 October 2026. Reading this file does not activate a goal. Execute it only when the researcher explicitly starts/resumes the curriculum reasoning goal. This is a research operating prompt, not an experiment registration, a trained model, or evidence of reasoning. Use the selected model, including Luna at low effort; a prompt does not change model settings or guarantee scientific judgment.
 
-## Paste into /goal
+## 21 October 2026: user-directed scope addendum
+
+The active goal is now: build a defensible chess curriculum and automated Lichess-puzzle teaching loop that develops reusable foundations, then test whether the learner can combine those foundations to reason through unfamiliar situations. Define the pillars, verified feedback, rehearsal, progression gates and controls; learning must happen inside the connectome-constrained simulation. Success requires transferable, consequence-sensitive reasoning, not puzzle accuracy alone.
+
+The researcher further clarified the intended interface: `fly babysit` should run registered puzzle practice, Stockfish-assisted teaching conditions, rehearsal, saving and advancement through the twelve planned stages when their gates pass. A failed or unavailable gate must save and stop explicitly; successful completion of all twelve cannot be promised in advance. The existing command supervises one experiment only. Implement the wider behavior through the [foundations-loop contract](../design/puzzle-learning/lichess-foundations-loop.md), preserving outcome-only controls and the distinction between engine estimates and verified consequences.
+
+This explicit user-directed expansion supersedes the earlier instruction below to stop at the first qualifying single-stage transfer result. Such a result is now a milestone; completion also requires the implemented teaching loop and independently audited unfamiliar compositional evaluation. Preserve the original contract below as history. Its frozen prerequisites, evidence requirements, sealed final tests and scientific boundaries still apply. Do not treat this addendum as an executable experiment protocol or relax a frozen gate.
+
+The researcher's 19 October resource revision permits up to 2048 MiB RSS for new, unfrozen work. Existing frozen experiments, including the history replications, retain their registered 768 MiB ceiling; heap 256 MiB, CPU duty 0.5 and minimum free memory 256 MiB remain the defaults.
+
+Use the active goal tool and compact handoff to recover this expanded objective after interruption. A preparation document or successful synthetic diagnostic cannot complete it.
+
+## Historical activation prompt
 
 ```text
 /goal Obtain the first independently audited, reproducible consequence-sensitive transfer result in the from-scratch connectome-constrained FlyChess model, by advancing the existing curriculum through its prerequisites and the earliest chess stage that passes every applicable frozen gate. Execute documentation/handoffs/curriculum-reasoning-goal.md and maintain documentation/handoffs/curriculum-reasoning-state.md as the durable handoff. Continue bounded evidence-led work without asking me to say "continue" after routine steps or failed experiments. Preserve the scientific standard, sealed final tests, biological boundaries, resource guards, all failures and accepted snapshots. Do not substitute a familiar puzzle repair, synthetic association, more training, external search or Elo for transfer. Stop successfully at the first qualifying transfer result; do not require all twelve stages. Before any graph launch, reconcile actual processes, pins and complete checkpoint publications. Respect product budgets and my October 2027-May 2028 research break. Read the operating contract now and execute its first action; do not stop at planning.
@@ -122,3 +134,21 @@ FIRST ACTION: inspect authoritative process state and the actual diagnostic dire
 ## Preparation sources
 
 Official OpenAI documentation checked 18 October 2026: [Goals lifecycle and evidence-based completion](https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex), [GPT-6 Luna and low reasoning effort](https://developers.openai.com/api/docs/models/gpt-6-luna), [compaction](https://developers.openai.com/api/docs/guides/compaction). The file-based recovery scheme is this project's engineering choice, not a documented guarantee of compaction reliability or a tested long-run Luna capability.
+## Researcher scope correction — 23 October 2026
+
+The active goal is to finish the complete unattended `fly babysit` pipeline:
+own choices, independently verified consequence feedback, separately controlled
+Stockfish assistance, endogenous learning, cumulative rehearsal, checkpoint and
+interruption recovery, independent promotion and unfamiliar compositional tests.
+Prioritize executable missing paths over further source-corpus investigations.
+Do not work on G0, restart stopped source scans, weaken frozen experiment gates
+or represent software fixtures as learning. The earlier G0-first recovery text
+below is historical and is superseded by this user instruction. The engineering
+deliverable is the working command; learning/transfer are experimentally tested
+outcomes, with preserved evidence and useful failure stops. Keep the goal active
+until the complete requested outcome is verified or the user changes its state.
+
+
+## 24 October 2026: researcher addendum (policy B)
+
+The researcher decided that the chess curriculum is no longer G0-dependent: completion item 1 (G0 in three replicas) is superseded for the babysit goal by each chess stage's own matched-control causality gates (D6/D8/D9); Stage 1 D7 is deferred to Stage 2's cumulative retention gate. See the dated addendum in the [frozen curriculum](../design/puzzle-learning/principles-curriculum.md). The earlier contract text remains as history.

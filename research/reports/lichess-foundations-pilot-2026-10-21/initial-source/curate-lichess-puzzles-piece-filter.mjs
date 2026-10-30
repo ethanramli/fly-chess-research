@@ -1,0 +1,211 @@
+// Stream a bounded, reproducible candidate sample from the CC0 Lichess puzzle DB.
+// This creates a source corpus only; it does not create teaching labels/certificates.
+import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
+import { createReadStream, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
+import { createInterface } from 'node:readline';
+import { createZstdDecompress } from 'node:zlib';
+import { resolve, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { parseArgs } from 'node:util';
+import { Chess } from 'chess.js';
+
+const sourceUrl = 'https://database.lichess.org/';
+const columns = ['PuzzleId','FEN','Moves','Rating','RatingDeviation','Popularity','NbPlays','Themes','GameUrl','OpeningTags','DailyDate'];
+const { values: args } = parseArgs({ options: {
+  input: { type: 'string' }, out: { type: 'string' },
+  'limit-per-split': { type: 'string', default: '128' },
+  'min-rating': { type: 'string', default: '0' }, 'max-rating': { type: 'string', default: '5000' },
+  'max-pieces': { type: 'string', default: '32' },
+  themes: { type: 'string', default: '' }, seed: { type: 'string', default: '20261008' },
+  help: { type: 'boolean', default: false },
+} });
+if (args.help) {
+  console.log('Usage: node --max-old-space-size=256 .codebase/scripts/data/curate-lichess-puzzles.mjs --input lichess_db_puzzle.csv.zst --out research/data/lichess-pilot-v1 [--limit-per-split 128] [--min-rating 0] [--max-rating 5000] [--max-pieces 32] [--themes mateIn2,backRankMate] [--seed 20261008]');
+  process.exit(0);
+}
+assert.ok(args.input && args.out, 'Both --input and --out are required');
+const inputPath = resolve(args.input), outPath = resolve(args.out);
+assert.ok(existsSync(inputPath), `Input file not found: ${inputPath}`);
+assert.ok(!existsSync(outPath), 'Output must be a fresh directory');
+const limit = Number(args['limit-per-split']), minRating = Number(args['min-rating']), maxRating = Number(args['max-rating']);
+const seed = Number(args.seed);
+const maxPieces = Number(args['max-pieces']);
+assert.ok(Number.isSafeInteger(limit) && limit >= 1 && limit <= 4096);
+assert.ok(Number.isFinite(minRating) && Number.isFinite(maxRating) && minRating >= 0 && maxRating >= minRating);
+assert.ok(Number.isSafeInteger(seed) && seed >= 0 && seed <= 0xffffffff);
+assert.ok(Number.isSafeInteger(maxPieces) && maxPieces >= 2 && maxPieces <= 32);
+const requiredThemes = args.themes.split(',').map(value => value.trim()).filter(Boolean);
+
+// Lichess's published schema has no multiline fields. This line parser supports
+// escaped quotes and commas and rejects malformed rows instead of shifting columns.
+function parseCsvLine(line) {
+  const fields = []; let field = '', quoted = false;
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+    if (quoted) {
+      if (char === '"' && line[i + 1] === '"') { field += '"'; i++; }
+      else if (char === '"') quoted = false;
+      else field += char;
+    } else if (char === ',' && !quoted) { fields.push(field); field = ''; }
+    else if (char === '"' && field.length === 0) quoted = true;
+    else field += char;
+  }
+  if (quoted) throw Error('Unsupported or malformed multiline/unterminated CSV field');
+  fields.push(field);
+  return fields;
+}
+
+function parseGameRef(url) {
+  let parsed;
+  try { parsed = new URL(url); } catch { return null; }
+  if (!['lichess.org','www.lichess.org'].includes(parsed.hostname)) return null;
+  const match = parsed.pathname.match(/^\/([A-Za-z0-9]{8})(?:\/(white|black))?\/?$/);
+  if (!match) return null;
+  const ply = parsed.hash.match(/^#(\d+)$/)?.[1];
+  return { gameId: match[1], color: match[2] ?? null, ply: ply ? Number(ply) : null };
+}
+
+function resolveUci(board, text) {
+  if (!/^[a-h][1-8][a-h][1-8][qrbn]?$/.test(text)) throw Error(`Invalid UCI move: ${text}`);
+  const from = text.slice(0,2), to = text.slice(2,4), promotion = text[4];
+  const legal = board.moves({ verbose: true }).find(move => move.from === from && move.to === to
+    && (move.promotion ?? undefined) === promotion);
+  if (!legal) throw Error(`Illegal puzzle-line move ${text} from ${board.fen()}`);
+  return legal;
+}
+
+function prepare(row) {
+  const moves = row.Moves.trim().split(/\s+/);
+  if (moves.length < 2 || moves.length > 80) throw Error('Solution line outside 2..80 ply bound');
+  const board = new Chess(row.FEN);
+  const setupMove = resolveUci(board, moves[0]); board.move(setupMove);
+  const solverFen = board.fen(), solverColor = board.turn();
+  for (const move of moves.slice(1)) board.move(resolveUci(board, move));
+  const game = parseGameRef(row.GameUrl);
+  if (!game) throw Error('Missing/unrecognized Lichess source-game reference');
+  const fenFields = row.FEN.trim().split(/\s+/);
+  const activeColor = fenFields[1], fullmoveText = fenFields[5];
+  const expectedPly = (Number(fullmoveText) - 1) * 2 + (activeColor === 'w' ? 1 : 2);
+  if (game.color && game.color[0] !== activeColor)
+    throw Error('Source-game URL orientation does not match the side to move in the source FEN');
+  if (game.ply != null && game.ply !== expectedPly)
+    throw Error('Source-game URL ply does not match the move counters in the source FEN');
+  const themes = row.Themes.split(/\s+/).filter(Boolean);
+  if (!/^\d+$/.test(row.Rating) || !/^\d+$/.test(row.RatingDeviation)
+    || !/^\d+$/.test(row.NbPlays) || !/^-?\d+$/.test(row.Popularity))
+    throw Error('Malformed puzzle metadata');
+  return { schema: 'lichess-puzzle-source-row-v1', puzzleId: row.PuzzleId,
+    source: { name: 'Lichess Open Database', url: sourceUrl, license: 'CC0-1.0', gameUrl: row.GameUrl,
+      gameId: game.gameId, gameColor: game.color, puzzlePly: game.ply },
+    history: { status: 'unresolved', fullGamePgnRetrieved: false,
+      requirement: 'Fetch and verify the source game PGN before any history-sensitive teaching event.' },
+    initialFen: row.FEN, setupMove: moves[0], solverFen, solverColor,
+    solutionMoves: moves.slice(1), rating: Number(row.Rating), ratingDeviation: Number(row.RatingDeviation),
+    popularity: Number(row.Popularity), plays: Number(row.NbPlays), themes,
+    openingTags: row.OpeningTags.split(/\s+/).filter(Boolean), dailyDate: row.DailyDate || null,
+    consequence: { status: 'unverified', certificate: null },
+    scope: 'Sourced puzzle line and legal replay only. Not a verified consequence, unique-best-move proof, feedback event, or neural training example.' };
+}
+
+function splitForGame(gameId) {
+  const value = createHash('sha256').update(`lichess-game-split-v1:${gameId}`).digest().readUInt32BE(0) / 0x100000000;
+  return value < 0.8 ? 'train' : value < 0.9 ? 'validation' : 'final';
+}
+
+function rng(initial) {
+  let state = (initial >>> 0) || 1;
+  return () => { state ^= state << 13; state ^= state >>> 17; state ^= state << 5; return (state >>> 0) / 0x100000000; };
+}
+const buckets = Object.fromEntries(['train','validation','final'].map((name, index) => [name,
+  { rows: [], seen: 0, random: rng((seed + index * 0x9e3779b9) >>> 0) }]));
+const counts = { sourceRows: 0, metadataMatched: 0, legalLines: 0, rejected: 0, reasons: {} };
+const inputHash = createHash('sha256');
+const source = createReadStream(inputPath);
+source.on('data', chunk => inputHash.update(chunk));
+const decoded = inputPath.toLowerCase().endsWith('.zst') ? source.pipe(createZstdDecompress()) : source;
+const lines = createInterface({ input: decoded, crlfDelay: Infinity });
+let header = null;
+for await (const line of lines) {
+  if (header === null) {
+    header = parseCsvLine(line);
+    assert.deepEqual(header, columns, 'Lichess database columns differ from the pinned schema');
+    continue;
+  }
+  if (!line) continue;
+  counts.sourceRows++;
+  try {
+    const values = parseCsvLine(line);
+    if (values.length !== columns.length) throw Error('Wrong CSV field count');
+    const row = Object.fromEntries(columns.map((key, index) => [key, values[index]]));
+    if (!row.PuzzleId || Number(row.Rating) < minRating || Number(row.Rating) > maxRating) continue;
+    const rowThemes = new Set(row.Themes.split(/\s+/).filter(Boolean));
+    if (requiredThemes.some(theme => !rowThemes.has(theme))) continue;
+    counts.metadataMatched++;
+    // A setup move can capture one piece. Do not discard a 7 -> 6 transition.
+    if (row.FEN.split(' ')[0].replace(/[0-9/]/g, '').length > maxPieces + 1) continue;
+    const prepared = prepare(row);
+    counts.legalLines++;
+    if (prepared.solverFen.split(' ')[0].replace(/[0-9/]/g, '').length > maxPieces) continue;
+    const bucket = buckets[splitForGame(prepared.source.gameId)]; bucket.seen++;
+    if (bucket.rows.length < limit) bucket.rows.push(prepared);
+    else { const index = Math.floor(bucket.random() * bucket.seen); if (index < limit) bucket.rows[index] = prepared; }
+  } catch (error) {
+    counts.rejected++;
+    const message = String(error?.message ?? error);
+    const reason = message.startsWith('Illegal puzzle-line move') ? 'illegal-puzzle-line'
+      : message.startsWith('Invalid UCI move') ? 'invalid-uci-move'
+      : message.startsWith('Solution line outside') ? 'solution-line-bound'
+      : message.startsWith('Missing/unrecognized') ? 'invalid-source-game-reference'
+      : message.startsWith('Source-game URL orientation') ? 'source-orientation-mismatch'
+      : message.startsWith('Source-game URL ply') ? 'source-ply-mismatch'
+      : message.startsWith('Malformed puzzle metadata') ? 'malformed-metadata'
+      : message.startsWith('Wrong CSV field count') ? 'wrong-csv-field-count'
+      : 'other-invalid-row';
+    counts.reasons[reason] = (counts.reasons[reason] ?? 0) + 1;
+  }
+}
+assert.ok(header, 'Empty source file');
+
+// Exact duplicate solver positions cannot cross splits. Drop later copies after
+// sampling; source-game grouping already keeps same-game puzzles together.
+const positionKeys = new Set(), puzzleIds = new Set();
+for (const name of ['train','validation','final']) {
+  buckets[name].rows = buckets[name].rows.filter(row => {
+    const key = row.solverFen.split(' ').slice(0,4).join(' ');
+    if (positionKeys.has(key) || puzzleIds.has(row.puzzleId)) return false;
+    positionKeys.add(key); puzzleIds.add(row.puzzleId); return true;
+  });
+}
+
+mkdirSync(outPath, { recursive: false });
+const outputHashes = {};
+for (const name of ['train','validation','final']) {
+  const body = buckets[name].rows.map(row => JSON.stringify(row)).join('\n') + (buckets[name].rows.length ? '\n' : '');
+  const path = join(outPath, `${name}.jsonl`);
+  writeFileSync(`${path}.partial`, body, { flag: 'wx' });
+  renameSync(`${path}.partial`, path);
+  outputHashes[`${name}.jsonl`] = createHash('sha256').update(body).digest('hex');
+}
+const scriptPath = fileURLToPath(import.meta.url);
+const manifest = { schema: 'lichess-puzzle-corpus-v1', createdAt: new Date().toISOString(),
+  source: { url: sourceUrl, download: 'lichess_db_puzzle.csv.zst', license: 'CC0-1.0',
+    sourcePath: inputPath, compressedBytesSha256: inputHash.digest('hex'),
+    schema: columns, latestSourceUpdateSeenInResearch: '2026-10-05' },
+  curator: { scriptPath, scriptSha256: createHash('sha256').update(readFileSync(scriptPath)).digest('hex'),
+    node: process.version, seed, limitPerSplit: limit, minRating, maxRating, maxPieces, requiredThemes,
+    split: 'Stable SHA-256 hash of Lichess source game ID: 80% train, 10% validation, 10% final.',
+    deduplication: 'Exact post-setup solver FEN across selected rows; source games are assigned to one split.' },
+  counts: { ...counts, selected: Object.fromEntries(Object.entries(buckets).map(([name, bucket]) => [name, bucket.rows.length])),
+    eligibleBySplitBeforeSampling: Object.fromEntries(Object.entries(buckets).map(([name, bucket]) => [name, bucket.seen])) },
+  outputs: outputHashes,
+  status: { fullGameHistoryRetrieved: false, consequenceCertificatesCreated: false,
+    eligibleForNeuralTeaching: false, finalSplitMustRemainSealedAfterProtocolFreeze: true },
+  limits: ['Puzzle solution lines are source suggestions, not independently checked consequences or proof of a unique best move.',
+    'FEN omits repetition history. Retrieve the linked source game PGN and verify the puzzle FEN before any history-sensitive use.',
+    'Rating, popularity and themes organize sampling; they are not calibrated move-quality feedback.'] };
+const manifestPath = join(outPath, 'manifest.json'), partialPath = `${manifestPath}.partial`;
+writeFileSync(partialPath, `${JSON.stringify(manifest, null, 2)}\n`, { flag: 'wx' });
+renameSync(partialPath, manifestPath);
+console.log(JSON.stringify({ sourceRows: counts.sourceRows, legalLines: counts.legalLines,
+  selected: manifest.counts.selected, output: outPath, neuralTeachingEligible: false }));

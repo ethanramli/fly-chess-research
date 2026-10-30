@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "name": "lichess-v7-stage1-capture-counterfactuals",
+  "paused": false,
+  "paths": {
+    "batches": "research/data/lichess-stage1-prepared-batches-v7",
+    "inputAudit": "research/reports/lichess-foundations-pilot-2026-10-21/lesson-batches-audit-v7.json",
+    "out": "research/data/lichess-v7-stage1-capture-counterfactuals-v1",
+    "report": "research/data/lichess-v7-stage1-capture-counterfactuals-v1/report.json",
+    "audit": "research/reports/babysit-stage1-v7-capture-counterfactual-audit-v3-2026-10-23.json",
+    "producer": ".codebase/scripts/data/probe-lichess-v7-stage1-capture-counterfactuals.mjs",
+    "auditor": ".codebase/scripts/data/audit-lichess-v7-stage1-capture-counterfactuals.mjs",
+    "run": "runs/python-actions/lichess-v7-stage1-capture-counterfactuals"
+  },
+  "pins": {
+    "research/data/lichess-stage1-prepared-batches-v7/manifest.json": "e31bcf389a8780668be231d3278221138048b267437cbfddd21f2c596a2a4434",
+    "research/reports/lichess-foundations-pilot-2026-10-21/lesson-batches-audit-v7.json": "0a8b655bff466c4a137693a353651bf3c19b9fe11ca057f904f5483f54aefe85",
+    ".codebase/scripts/data/probe-lichess-v7-stage1-capture-counterfactuals.mjs": "a0658bb3e73aef11eb71f861d7e90c9cfcb7c1f932e3609234111b87133c9313",
+    ".codebase/scripts/data/audit-lichess-v7-stage1-capture-counterfactuals.mjs": "430561e80e556a9dfa0fe4a6cbd7fb0e7c454c4535c6c57a3d237470a0d41540",
+    ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+    ".codebase/src/search-and-feedback/capture-retention-certificate.mjs": "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+    ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    "package-lock.json": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+    "python actions/curriculum.py": "60d67b65abe9fa196c35849feaace844fe8df727edf4e3caa708585790d4338c",
+    "python actions/fly_controls.py": "05e1121f2be288c9d86b0c31493181c582c7f5bb9d24a9bc1e26ae3d2ed1300c"
+  },
+  "state_file": "runs/python-actions/lichess-v7-stage1-capture-counterfactuals.json",
+  "jobs": {
+    "prepare": {
+      "role": "check",
+      "argv": [
+        "node", "--max-old-space-size=256", "{producer}",
+        "--batches", "{batches}", "--audit", "{inputAudit}", "--out", "{out}"
+      ],
+      "requires": ["{batches}/manifest.json", "{inputAudit}"],
+      "fresh_output": "{out}"
+    },
+    "audit": {
+      "role": "check",
+      "argv": [
+        "node", "--max-old-space-size=256", "{auditor}",
+        "--batches", "{batches}", "--audit", "{inputAudit}", "--report", "{report}", "--out", "{audit}"
+      ],
+      "requires": ["{batches}/manifest.json", "{inputAudit}", "{report}"],
+      "refuse_existing": ["{audit}"]
+    }
+  },
+  "artifacts": {"result": "{report}", "audit": "{audit}"}
+}

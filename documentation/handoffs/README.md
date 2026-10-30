@@ -9,3 +9,10 @@ These files support recovery and orientation. Read a handoff only for its applic
 [Current status](../current-status.md) | [Documentation navigation](../README.md)
 
 - [Training latency engineering state](training-latency-state.md): separate active optimization goal and parallel curriculum scheduling boundary.
+- [Fix-goal prompt, 2026-10-24](fix-goal-prompt-2026-10-24.md): binding task list for the second model fixing Stage 1 memory, babysit safety, transfer and Stage 2 (includes the short /goal form and a reviewer addendum).
+- [Fix-goal ledger](fix-goal-ledger-2026-10-24.md): append-only record of that model's changes and runs, used for review.
+- [Stage 1 outcome-only plan, 2026-10-27](stage1-outcome-only-plan-2026-10-27.md): the step-by-step plan the researcher's goal follows (attack-map cue, no Stockfish teaching, frozen D1-D8), with stop conditions and a progress list.
+- [Reasoning research goal, 2026-10-28](reasoning-research-goal-2026-10-28.md): the agent's written goal (transferable reasoning), its barrier rule (research, locate the weakest component, fix, test) and a component weakness map; supersedes the plan's stop rule S2.
+- [Stage 2 readiness (2026-10-29)](stage2-readiness-2026-10-29.md): what exists, what is missing and the input-representation decision before Stage 2.
+- [Restart handoff (2026-10-30)](restart-handoff-2026-10-30.md): why the evidence restarts (cue-v2 token shortcut), researcher decisions (eyes, own-choice feedback, eLife, pre-registration), open items and first steps.
+- [Codebase weakness review goal (2026-10-30)](codebase-weakness-review-goal-2026-10-30.md): read-only brief for a second agent (for example Codex CLI) to find verified weaknesses, ranked by severity, without touching live runs or sealed data.

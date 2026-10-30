@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "name": "lichess-stage1-synthetic-v1-smoke-r6",
+  "paused": false,
+  "paths": {
+    "protocol": "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r6-protocol.json",
+    "registration": "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r6-registration.json",
+    "runner": ".codebase/scripts/puzzle-learning/run-lichess-curriculum-matrix.mjs",
+    "run": "runs/lichess-stage1-synthetic-v1-smoke-r6",
+    "checkpoint": "runs/lichess-stage1-synthetic-v1-smoke-r6/matrix-state.json"
+  },
+  "pins": {
+    "{protocol}": "c5ca3fadee6a03ddc789d13cb897b68406507f9c9269f5990a2ff97e5d8d757e",
+    "{registration}": "754f4d5efc43156ae4a9e661a21b5b69f657018e8def6a173b4cd06bb48b8163",
+    ".codebase/scripts/puzzle-learning/lichess-stage1-runtime-factory.mjs": "5e2de55d495a82badb8121947d5a36b53ce5c053c3bdd83bbfec14bc6871b4d3",
+    ".codebase/scripts/puzzle-learning/lichess-stage1-acceptance-evaluator.mjs": "6c152811075b59ffdf55ad7b1a117cf5bcb5ca3b25e9def89afba25a608f4945",
+    ".codebase/src/puzzle-learning/lichess-curriculum-matrix.mjs": "7455d5b652ac2c2a15aa0e6531a603b5c4b5a52f847794ebaa7cd6621baa8802",
+    ".codebase/src/puzzle-learning/lichess-curriculum-block.mjs": "58d7a46b9180c59fe02b14118d7aa258029ca3c22dc1055a127989c4aad6dc0d",
+    ".codebase/src/puzzle-learning/lichess-curriculum-stage-audit.mjs": "21dabd2e64c433f10ef36b5471b4fa4e0b1d274394d2d99a73250bf383da69fb",
+    ".codebase/src/puzzle-learning/lichess-curriculum-panel.mjs": "1321cfb4425aa6758162269d34d5ab65cc972401fa5209c50c43ee3d40d9f17a",
+    ".codebase/src/puzzle-learning/lichess-stage1-brain-factory.mjs": "7bfa7a0b75d2fc6706b95674d32c111d85d3f023f26a4b7ec5a97379c1d04f04",
+    ".codebase/src/puzzle-learning/coupled-stockfish-brain.mjs": "c487b99184ed713f8f7ed338e34dfecb97810efebe117988c9c70dd1c7ecb2fd",
+    ".codebase/src/puzzle-learning/coupled-stockfish-session.mjs": "bb7d693f5f97aed6006d77dafb98a3ccb937ab7f716f7a8528085638f2946b47",
+    ".codebase/src/puzzle-learning/curriculum-block-session.mjs": "9a4d02202fa7bb2abda7f72d1bfbc2f5d25a8b82b50ad3498fab1a6c81b8ec9e",
+    ".codebase/src/puzzle-learning/curriculum-rehearsal-plan.mjs": "f3379b43afa4fcc14be740d91ed7ad3eb6040373e5ca3efe049d0dbccc7df9d4",
+    ".codebase/src/puzzle-learning/curriculum-stage-acceptance.mjs": "a03157c14f889665f6e8da55551433fe08e6035ee02e4836d8f5a59a8640a95b",
+    ".codebase/src/puzzle-learning/curriculum-stage1-acceptance-v2.mjs": "1ce65af3fd9762c51fe3f95c27d06b2942fa8b7bd37f781dc653e071cdd3a578",
+    ".codebase/src/puzzle-learning/curriculum-checkpoint-selection.mjs": "98653bca61e51d7a2c2075f0c42300eeed3b5f2b8b7f676ae27afd6db87fe15b",
+    ".codebase/src/puzzle-learning/stockfish-review-collector.mjs": "aa7a5acbc41084467e76943993c882c5919492fa2b04238f48acd716eba65e8e",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    ".codebase/src/chess-input/public-lesson-frame-cue.mjs": "35ba80d6548e5ae988dd4b54b55ba9ae6ac1697c12ace66766b767ce8301175f",
+    ".codebase/src/chess-input/public-action-relative-cue.mjs": "8b14c443c1b41f13f1ade6d5549c9ab3c53805c3398d973589d73b6e963be6da",
+    "package-lock.json": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+    "{runner}": "e5489125b0fbc68f43343be6563dbb08fabd7da1c7fea0b044da8eceaae99401"
+  },
+  "recovery": {
+    "kind": "lichess-stage-matrix-v1",
+    "stateFile": "matrix-state.json"
+  },
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256
+  },
+  "state_file": "runs/python-actions/lichess-stage1-synthetic-v1-smoke-r6-state.json",
+  "jobs": {
+    "train": {
+      "role": "train",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--registration",
+        "{registration}",
+        "--mode",
+        "train",
+        "--out",
+        "{run}",
+        "--protocol",
+        "{protocol}",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{registration}",
+        "{protocol}",
+        "{runner}"
+      ],
+      "fresh_output": "{run}"
+    },
+    "resume": {
+      "role": "resume",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--registration",
+        "{registration}",
+        "--mode",
+        "train",
+        "--out",
+        "{run}",
+        "--protocol",
+        "{protocol}",
+        "--resume-state",
+        "{resume_state}",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{registration}",
+        "{protocol}",
+        "{runner}"
+      ],
+      "fresh_output": "{run}"
+    },
+    "audit": {
+      "role": "audit",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--registration",
+        "{registration}",
+        "--mode",
+        "audit",
+        "--out",
+        "{run}",
+        "--result",
+        "{run}/result.json",
+        "--protocol",
+        "{protocol}",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{registration}",
+        "{protocol}",
+        "{run}/result.json"
+      ]
+    }
+  },
+  "artifacts": {
+    "result": "{run}/result.json",
+    "audit": "{run}/audit.json"
+  },
+  "report_fields": [
+    "status",
+    "stage",
+    "stageAccepted",
+    "fullNeuralReplay",
+    "memoryContinuityVerified",
+    "diagnosis",
+    "reason",
+    "scope"
+  ]
+}

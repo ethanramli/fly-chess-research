@@ -1,0 +1,39 @@
+{
+  "schema": "lichess-derived-capture-family-candidates-v2",
+  "status": "candidate-preparation-complete",
+  "inputs": {
+    "report": {
+      "path": "research/reports/babysit-stage1-direct-counterfactual-feasibility-2026-10-23.json",
+      "sha256": "107c56b0ad70aeefc2e271aa09a31b6270304a4abd4eaf631a982b88589e2a9e"
+    },
+    "independentAudit": {
+      "path": "research/reports/babysit-stage1-direct-counterfactual-feasibility-audit-v2-2026-10-23.json",
+      "sha256": "1c048e484cf74df1bdcd51da98a33a07f06218885968d17e7d5ba220be9ba3c3"
+    }
+  },
+  "familyDefinition": "Candidate grouping by consequence-flip direction, actor/target piece types, legal recapturer types, and coarse geometry of the capture and relocated piece relative to the target. Exact coordinates are omitted. This is a proposed task-specific relation grouping, not a validated cognitive primitive.",
+  "counts": {
+    "candidatePairs": 1653,
+    "candidateFamilies": 613,
+    "familiesWithAtLeastTwoSourceGames": 110,
+    "byTransition": {
+      "failure-to-success": 1215,
+      "success-to-failure": 438
+    }
+  },
+  "output": {
+    "path": "research/data/lichess-stage1-derived-family-candidates-v2/families.jsonl",
+    "sha256": "f97cd89a6cacbf6320a6a059d1f7f24988e147c0ec2461bf8b4dc168974bf7f5",
+    "bytes": 1066193,
+    "families": 613
+  },
+  "trainingOnly": true,
+  "validationInspected": false,
+  "finalInspected": false,
+  "semanticFamilyDiversityEstablished": false,
+  "relationFamilyDisjointnessEstablished": false,
+  "eligibleForNeuralTeaching": false,
+  "graphLaunchAuthorized": false,
+  "neuralEventsDelivered": 0,
+  "scope": "Candidate family organization of previously independently replayed training-only static positions. No split audit, runtime compatibility, learning or reasoning is established."
+}

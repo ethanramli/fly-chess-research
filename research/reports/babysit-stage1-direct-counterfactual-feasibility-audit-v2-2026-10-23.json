@@ -1,0 +1,45 @@
+{
+  "schema": "lichess-derived-capture-counterfactual-feasibility-audit-v1",
+  "passed": true,
+  "inputs": {
+    "report": {
+      "path": "research/reports/babysit-stage1-direct-counterfactual-feasibility-2026-10-23.json",
+      "sha256": "107c56b0ad70aeefc2e271aa09a31b6270304a4abd4eaf631a982b88589e2a9e"
+    },
+    "sources": [
+      {
+        "path": "research/data/lichess-matched-capture-prepared-v1/train-chunk-000/lessons.jsonl",
+        "sha256": "a56e4ebee7eb365d7a5e90f28e610541e10c535bf14da4dc3a4ee01d49162b72"
+      },
+      {
+        "path": "research/data/lichess-matched-capture-prepared-v1/train-chunk-001/lessons.jsonl",
+        "sha256": "5a72a8e46d286aa32727d0bfa0a5808281dacdb779647b15d7e3ea3ddb8f1142"
+      }
+    ]
+  },
+  "replayedFlips": 1653,
+  "sourceRows": 44,
+  "eligibleRows": 44,
+  "sourcePuzzleRootsWithFlip": 43,
+  "sourceGamesWithFlip": 43,
+  "directions": {
+    "failure-to-success": 1215,
+    "success-to-failure": 438
+  },
+  "relationFamilyDiversityEstablished": false,
+  "relationFamilyDisjointnessEstablished": false,
+  "graphLaunchAuthorized": false,
+  "neuralEventsDelivered": 0,
+  "validationInspected": false,
+  "finalInspected": false,
+  "resources": {
+    "elapsedSeconds": 54.217397000000005,
+    "cpu": {
+      "user": 27578000,
+      "system": 156000
+    },
+    "peakRssMiB": 75.77734375,
+    "cpuDuty": 0.5
+  },
+  "scope": "Independent replay of the emitted training-only static board mutations and immediate legal recapture consequences. Does not establish family diversity, source-history equivalence, train/validation disjointness, neural learning or reasoning."
+}

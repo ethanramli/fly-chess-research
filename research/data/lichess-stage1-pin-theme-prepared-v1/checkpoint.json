@@ -1,0 +1,55 @@
+{
+  "schema": "lichess-preparation-batches-v1",
+  "configSha256": "4c94e93e8396eb7d9d42aac995e030eda99b43a3d78b7b56a991b26756a1209c",
+  "completed": [],
+  "pending": {
+    "job": "prepare-train-000",
+    "role": "check",
+    "run": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-pin-theme-prepared-v1",
+    "pid": 15912,
+    "configHash": "75eae54135d55445125c21ea7c6add66a15571783fd0b542c0f7b84c5ae78056",
+    "stdout": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261023T034950-7028e7bf\\stdout.txt",
+    "stderr": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261023T034950-7028e7bf\\stderr.txt",
+    "argv": [
+      "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+      "--max-old-space-size=256",
+      ".codebase/scripts/data/prepare-lichess-lessons.mjs",
+      "--rows",
+      "research/data/lichess-stage1-training-pin-theme-v2/train.jsonl",
+      "--games",
+      "research/data/lichess-stage1-training-pin-theme-v2-pgn/train",
+      "--split",
+      "train",
+      "--out",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-pin-theme-prepared-v1/train-chunk-000",
+      "--cpu-duty",
+      "0.5",
+      "--max-seconds",
+      "300",
+      "--start-row",
+      "0",
+      "--row-limit",
+      "32"
+    ],
+    "exitCode": 1,
+    "artifacts": {
+      "prepared": "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-pin-theme-prepared-v1\\manifest.json"
+    },
+    "created": "2026-10-23T03:49:50.5783875Z",
+    "command": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE --max-old-space-size=256 .codebase/scripts/data/prepare-lichess-lessons.mjs --rows research/data/lichess-stage1-training-pin-theme-v2/train.jsonl --games research/data/lichess-stage1-training-pin-theme-v2-pgn/train --split train --out C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-pin-theme-prepared-v1/train-chunk-000 --cpu-duty 0.5 --max-seconds 300 --start-row 0 --row-limit 32",
+    "imagePath": "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE"
+  },
+  "phase": "failed",
+  "parentState": null,
+  "failure": {
+    "job": "prepare-train-000",
+    "exitCode": 1,
+    "testCounts": {},
+    "checkSummary": {},
+    "logs": {
+      "stdout": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261023T034950-7028e7bf\\stdout.txt",
+      "stderr": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261023T034950-7028e7bf\\stderr.txt"
+    },
+    "errorTail": ""
+  }
+}

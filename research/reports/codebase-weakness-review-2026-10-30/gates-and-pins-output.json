@@ -1,0 +1,182 @@
+{
+  "scope": "Synthetic unit-test observations and training-only data; no validation/final rows or outputs read",
+  "gateFixtureBaseline": "accepted",
+  "duplicatePairGate": {
+    "status": "accepted",
+    "D5": true,
+    "count": 32,
+    "distinctPairs": 1
+  },
+  "trainingDataAudit": {
+    "baselinePassed": true,
+    "duplicatePairPlanPassed": true,
+    "count": 12,
+    "distinctPairs": 1
+  },
+  "staticImports": {
+    "roots": [
+      ".codebase/scripts/puzzle-learning/run-lichess-curriculum-matrix-v5.mjs",
+      ".codebase/scripts/puzzle-learning/lichess-stage1-runtime-factory-v8.mjs",
+      ".codebase/scripts/puzzle-learning/lichess-stage1-acceptance-evaluator-v4.mjs"
+    ],
+    "visited": 66,
+    "stepFiles": [
+      "python actions/lichess-stage1-synthetic-v1-full-r15-r1-step.json",
+      "python actions/lichess-stage1-synthetic-v1-full-r15-r2-step.json",
+      "python actions/lichess-stage1-synthetic-v1-full-r15-r3-step.json",
+      "python actions/lichess-stage1-synthetic-v1-full-r15-merge-step.json"
+    ],
+    "unpinned": [
+      {
+        "path": ".codebase/src/neural-learning/mushroom-body.mjs",
+        "sha256": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5"
+      },
+      {
+        "path": ".codebase/src/runtime/checkpoint-codec.mjs",
+        "sha256": "31956d5985c25ca521c080ee716199d70761d2eacefc913afd3f375390a018ed"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/capture-retention-feedback.mjs",
+        "sha256": "c972844e0cffca5f6f164344507a2f5d6d93c8f77d99d6e22c979b8bfe4a7810"
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs",
+        "sha256": "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83"
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/puzzle-search.mjs",
+        "sha256": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86"
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/capture-retention-certificate.mjs",
+        "sha256": "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5"
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs",
+        "sha256": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/temporal-feedback-plan.mjs",
+        "sha256": "941192f4051ea8a25ceff26363d8e412d081b5627e012318711f7db41f2aab18"
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/verified-feedback.mjs",
+        "sha256": "12f816ae813b59746992b521e3d7463c95059ccaf558cb95b9fc2857d84ad684"
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/mate-certificate-check.mjs",
+        "sha256": "f89a76e295f3a70f04acda568cc5d4c3b229686abf1874707b8774f1c30bd28c"
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/avoid-mate-action-certificate-check.mjs",
+        "sha256": "051e349018b93598c13bc98b87fcc86adf51ba54710ae20affb62a75d57799c3"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/temporal-feedback-session.mjs",
+        "sha256": "67a80a9edd59c25f5aa60eb4cab32048cb6052e309d54025ef70fdf2cdcca46c"
+      },
+      {
+        "path": ".codebase/src/neural-learning/neural-episode.mjs",
+        "sha256": "8ebe1d5bf26e9648cd7b60137868ca5fd7ea3b838373f15d22c6b3415f20752e"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/feedback-quality.mjs",
+        "sha256": "ed2e4176e8ff38e03678c99c203e1a287f01d7253f17ddc3a15d3eb19fce31f0"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/curriculum-block-runner.mjs",
+        "sha256": "fb4e265e7c755bd330629185afe66116fbddfa26f46c7cc78125af5e3202a314"
+      },
+      {
+        "path": ".codebase/src/runtime/storage.mjs",
+        "sha256": "aaceb04fd6fc19e44c28c675a551ebb0e6f8d81a771f531f719d69630bb5742c"
+      },
+      {
+        "path": ".codebase/src/supervised-baselines/adam.mjs",
+        "sha256": "5635efabf0723c50d4322ca9e744081e7e44b04a35691c46b9aef171abc54c34"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/curriculum-block-audit.mjs",
+        "sha256": "cfc69e21f9f478fb838c59f4c800efe449e04e36fb804c89315bb955a98bcdc5"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/curriculum-retention-promotion.mjs",
+        "sha256": "b712b0e07ce632b86002567eb87f99ca1e41aef17b6d03d72a4c4df23aa338f5"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/curriculum-retention-observations.mjs",
+        "sha256": "0072e1a6f0a0905a0dcb6fb1c489bd84735a52ec95b51f73de67e1ff0c36eb9c"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/lichess-curriculum-matrix-audit-v2.mjs",
+        "sha256": "324e51c90c1fd5ad2876c5e5d9c0113c65025ae84f19a3abd70f884ecdd69bac"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/curriculum-outcome-shuffle.mjs",
+        "sha256": "45688b8f488672496820c32a7c8ade616856f60f1a47dcdcdc59f94665745dc7"
+      },
+      {
+        "path": ".codebase/src/runtime/graph.mjs",
+        "sha256": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595"
+      },
+      {
+        "path": ".codebase/src/supervised-baselines/trainer.mjs",
+        "sha256": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044"
+      },
+      {
+        "path": ".codebase/src/runtime/sparse-accumulator.mjs",
+        "sha256": "7a578b92a215aabf612d0c74899e9bff92054fe5d7d5b8e8f35f57ba0fd2ade9"
+      },
+      {
+        "path": ".codebase/src/neural-learning/association-validation.mjs",
+        "sha256": "b62d6f6bf4ab51f0ed993877026ac1cde0914c582fb479ea27fdc028a7dc2c91"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/stockfish-value-brain.mjs",
+        "sha256": "a5a40279a71b3d0bd66109179e0a1db53293445164e44dae9e95a15da9f0bca8"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/dual-valence-puzzle-brain.mjs",
+        "sha256": "4637c0be7c969c213de842aa5d7735e669fec632e251d2addac7b5d20ac18575"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/mapped-puzzle-brain.mjs",
+        "sha256": "c62e19f655183ca397c924caf346c9e94db607527562424a0d6c9680f610d91c"
+      },
+      {
+        "path": ".codebase/src/neural-learning/mbon-readout.mjs",
+        "sha256": "bf639c8e0f2ed96d2dc31939abf560d1194fccb1beed486ea6ffccbb74601923"
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/experimental-puzzle-search.mjs",
+        "sha256": "dc7ac5e894879ae75a1b0bd5931b1e72466c14b707d2ff987ee6ee1f6d259ebb"
+      },
+      {
+        "path": ".codebase/src/neural-learning/dual-valence-interface.mjs",
+        "sha256": "206fa1d12050463d15bc5b0a31ad30491cdf0507877182a134ff0af796873397"
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/stockfish-feedback-rubric.mjs",
+        "sha256": "7401b7ea819c24bcbf41071ce95a5b58b32293242ef9cc2e8473a4d7a0923359"
+      },
+      {
+        "path": ".codebase/src/search-and-feedback/stockfish-target.mjs",
+        "sha256": "1931d16a1883e76615be32cf13fb359286c06fd8a95d3c88812171f48c13158f"
+      },
+      {
+        "path": ".codebase/src/neural-learning/mapped-activity-trace.mjs",
+        "sha256": "f13d98e2da410330dadb53efbf14d890a33e22714b81fc3044c949828e832cea"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/lichess-stockfish-review.mjs",
+        "sha256": "a0bafb0e721b4b5539136b8351b60597a84ddb37c8d02bfc0903a9f647585ef1"
+      },
+      {
+        "path": ".codebase/src/puzzle-learning/stockfish-value-session.mjs",
+        "sha256": "543b1145d57ad969925f501216c27dfca180c6f0657f4fa33789e4a2c2de8717"
+      }
+    ]
+  },
+  "rssMiB": 86.6015625,
+  "freeMiB": 5263.703125
+}

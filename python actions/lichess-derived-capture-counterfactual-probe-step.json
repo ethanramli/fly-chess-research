@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "name": "lichess-derived-capture-counterfactual-probe",
+  "paused": false,
+  "paths": {
+    "run": "runs/python-actions/lichess-derived-capture-counterfactual-probe-20261023",
+    "report": "research/reports/babysit-stage1-direct-counterfactual-feasibility-2026-10-23.json",
+    "script": ".codebase/scripts/data/probe-lichess-capture-counterfactual-potential.mjs"
+  },
+  "pins": {
+    ".codebase/scripts/data/probe-lichess-capture-counterfactual-potential.mjs": "0a55439dd0c7a72aa9081adb59eb583ea7239dbf5db04f8bf0844198207f770f",
+    ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+    ".codebase/src/search-and-feedback/capture-retention-certificate.mjs": "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+    ".codebase/src/search-and-feedback/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+    ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    "package-lock.json": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+    "research/data/lichess-matched-capture-prepared-v1/manifest.json": "c2a37a7985e8d26a7df322e38fdad4c5dd6ab7dc391d86f4182e49b508173cbc",
+    "research/data/lichess-matched-capture-prepared-v1/train-chunk-000/lessons.jsonl": "a56e4ebee7eb365d7a5e90f28e610541e10c535bf14da4dc3a4ee01d49162b72",
+    "research/data/lichess-matched-capture-prepared-v1/train-chunk-001/lessons.jsonl": "5a72a8e46d286aa32727d0bfa0a5808281dacdb779647b15d7e3ea3ddb8f1142"
+  },
+  "state_file": "runs/python-actions/lichess-derived-capture-counterfactual-probe-20261023.json",
+  "jobs": {
+    "probe": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{script}"
+      ],
+      "requires": [
+        "research/data/lichess-matched-capture-prepared-v1/manifest.json",
+        "research/data/lichess-matched-capture-prepared-v1/train-chunk-000/lessons.jsonl",
+        "research/data/lichess-matched-capture-prepared-v1/train-chunk-001/lessons.jsonl"
+      ],
+      "fresh_output": "{report}"
+    }
+  },
+  "artifacts": {
+    "report": "{report}"
+  },
+  "report_fields": [
+    "status",
+    "counts",
+    "elapsedSeconds",
+    "peakRssMiB",
+    "graphLaunchAuthorized"
+  ]
+}

@@ -1,0 +1,181 @@
+{
+ "schema": "stage1-data-separation-check-v1",
+ "scope": "Counts and input hashes only. Validation and final FENs, placements, PGNs, moves and identifiers are never emitted; train family IDs appear only under trainWitnessFamilyIds.",
+ "inputs": {
+  "train": {
+   "rows": {
+    "path": "research/data/lichess-stage1-synthetic-v1/train.jsonl",
+    "sha256": "cc165730948dce734b785a1f4d246dc1a3bb809ee5f23a7cdd869b0d249767dd"
+   },
+   "families": {
+    "path": "research/data/lichess-stage1-synthetic-v1/train-families.json",
+    "sha256": "90520c013c1fad5bf53e61aa6e7f2506957dfdf88af2fc02af965f5e6e464863"
+   },
+   "plan": {
+    "path": "research/data/lichess-stage1-synthetic-v1/train-plan.json",
+    "sha256": "136867226a91c7fd738b6ba70df587cee05860ecd5d31d0ffdf51872116eed19"
+   }
+  },
+  "validation": {
+   "rows": {
+    "path": "research/data/lichess-stage1-synthetic-v1/validation.jsonl",
+    "sha256": "1f0d28819851f2194964d7fc3d2070ac79b64025e6248fb26f697c752a04b0a9"
+   },
+   "families": {
+    "path": "research/data/lichess-stage1-synthetic-v1/validation-families.json",
+    "sha256": "6b10212a449e6753cbab5534247eb7c32390f362fb1fcf115061337feb95ea7b"
+   },
+   "plan": {
+    "path": "research/data/lichess-stage1-synthetic-v1/validation-plan.json",
+    "sha256": "b78c3227be9ad385b4f9fd3a74dee9e014704d649358026d05ca7e089e8ee549"
+   }
+  },
+  "final": {
+   "rows": {
+    "path": "research/data/lichess-stage1-synthetic-v1/final.jsonl",
+    "sha256": "f5095d7698dbed52aa39776e611aed17ab95e7815ebaaa0b7c02108d6b149ddd"
+   },
+   "families": {
+    "path": "research/data/lichess-stage1-synthetic-v1/final-families.json",
+    "sha256": "f80a0ca614ddc926653dd0b3ac2e329cfe04a97b19ac62eb35637ace447ca30f"
+   },
+   "plan": {
+    "path": "research/data/lichess-stage1-synthetic-v1/final-plan.json",
+    "sha256": "828ac6fa2df028c7510966a5916c8953783dd61a38ce424373dff421afec3fcd"
+   }
+  }
+ },
+ "splits": {
+  "train": {
+   "boards": 24,
+   "bindFailures": 0,
+   "duplicateBoards": {
+    "exact": 0,
+    "exactWithHistory": 0,
+    "symmetry": 0,
+    "placementOnly": 0
+   },
+   "counterfactualPairs": {
+    "pairs": 12,
+    "distinctPairIds": 12,
+    "distinctUnorderedPanelPairs": 12,
+    "distinctUnorderedBoardPairsByExact": 12,
+    "unresolvedPairs": 0,
+    "distinctPanelsCovered": 24,
+    "panelsInMultiplePairs": 0,
+    "boardsInSplit": 24
+   }
+  },
+  "validation": {
+   "boards": 16,
+   "bindFailures": 0,
+   "duplicateBoards": {
+    "exact": 0,
+    "exactWithHistory": 0,
+    "symmetry": 0,
+    "placementOnly": 0
+   },
+   "counterfactualPairs": {
+    "pairs": 8,
+    "distinctPairIds": 8,
+    "distinctUnorderedPanelPairs": 8,
+    "distinctUnorderedBoardPairsByExact": 8,
+    "unresolvedPairs": 0,
+    "distinctPanelsCovered": 16,
+    "panelsInMultiplePairs": 0,
+    "boardsInSplit": 16
+   }
+  },
+  "final": {
+   "boards": 64,
+   "bindFailures": 0,
+   "duplicateBoards": {
+    "exact": 0,
+    "exactWithHistory": 0,
+    "symmetry": 0,
+    "placementOnly": 0
+   },
+   "counterfactualPairs": {
+    "pairs": 32,
+    "distinctPairIds": 32,
+    "distinctUnorderedPanelPairs": 32,
+    "distinctUnorderedBoardPairsByExact": 32,
+    "unresolvedPairs": 0,
+    "distinctPanelsCovered": 64,
+    "panelsInMultiplePairs": 0,
+    "boardsInSplit": 64
+   }
+  }
+ },
+ "crossSplit": {
+  "train-validation": {
+   "exact": {
+    "sharedKeys": 0,
+    "leftBoards": 0,
+    "rightBoards": 0
+   },
+   "exactWithHistory": {
+    "sharedKeys": 0,
+    "leftBoards": 0,
+    "rightBoards": 0
+   },
+   "symmetry": {
+    "sharedKeys": 0,
+    "leftBoards": 0,
+    "rightBoards": 0
+   },
+   "placementOnly": {
+    "sharedKeys": 0,
+    "leftBoards": 0,
+    "rightBoards": 0
+   }
+  },
+  "train-final": {
+   "exact": {
+    "sharedKeys": 0,
+    "leftBoards": 0,
+    "rightBoards": 0
+   },
+   "exactWithHistory": {
+    "sharedKeys": 0,
+    "leftBoards": 0,
+    "rightBoards": 0
+   },
+   "symmetry": {
+    "sharedKeys": 0,
+    "leftBoards": 0,
+    "rightBoards": 0
+   },
+   "placementOnly": {
+    "sharedKeys": 0,
+    "leftBoards": 0,
+    "rightBoards": 0
+   }
+  },
+  "validation-final": {
+   "exact": {
+    "sharedKeys": 0,
+    "leftBoards": 0,
+    "rightBoards": 0
+   },
+   "exactWithHistory": {
+    "sharedKeys": 0,
+    "leftBoards": 0,
+    "rightBoards": 0
+   },
+   "symmetry": {
+    "sharedKeys": 0,
+    "leftBoards": 0,
+    "rightBoards": 0
+   },
+   "placementOnly": {
+    "sharedKeys": 0,
+    "leftBoards": 0,
+    "rightBoards": 0
+   }
+  }
+ },
+ "trainWitnessFamilyIds": [],
+ "elapsedMs": 8237,
+ "peakRssMiB": 79.1
+}

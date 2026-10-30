@@ -1,0 +1,48 @@
+{
+  "schema": "lichess-stage1-retention-probe-protocol-spaced-v1",
+  "question": "With the alpha1 reward long-term store (revision 10), does spaced re-teaching of a Stage 1 training board keep it correct after 10 further training boards are taught, and at which eta?",
+  "task": "Predeclared fallback (journal 2026-10-25, before any v5 result): run only if retention probe v5 chooses no eta; fix-goal task 1 decision rule otherwise unchanged",
+  "baseRegistration": {
+    "path": "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r10-registration.json",
+    "sha256": "95df8db02e03c92a80896b588de5b0729468924394212ca2e2014478e500003f"
+  },
+  "override": "Only learner.memory.eta changes (in memory, per probe; it sets both the restrained and the alpha1 rate); everything else is the revision-10 registration.",
+  "replica": "r1",
+  "etas": [
+    0.5,
+    0.2,
+    0.1,
+    0.05,
+    0.02
+  ],
+  "data": "Training panels of the base registration only. Validation and final rows are never loaded.",
+  "aBoardRule": "As probe v5: one A board per stratum, the first training panel by panelId whose unaided scratch choice is not the certified success (flagged fallback if a stratum is all correct).",
+  "lesson": "As probe v5 (informative: verified task pulse plus Stockfish value pulse; PAM-alpha1 co-stimulated only with verified task-success pulses).",
+  "gaps": [
+    5,
+    5,
+    10
+  ],
+  "sequence": "From scratch memory: lesson on A, 5 other boards, lesson on A, 5 other boards, lesson on A, 10 other boards; every other board is distinct and taught once; A is assessed after every lesson.",
+  "interferingLessons": 20,
+  "interferenceSeed": "stage1-retention-probe-v1",
+  "interferenceRule": "The 23 other training panels ordered by sha256(seed:A:panelId); the first 20, in that order. The first 10 are probe v5's interfering boards in v5's order. The same boards and order are used for every eta.",
+  "decision": {
+    "requiredRetained": 3,
+    "rule": "Choose the largest eta whose A board is the unique top choice after the final 10 interfering lessons in at least 3 of 4 probes. A pass is reported as spaced-training retention, not one-shot retention. If none passes, stop and report."
+  },
+  "measures": [
+    "A certified-move rank and correctness after every lesson",
+    "A correctness right after each of its own lessons and at the end of each gap",
+    "each interfering board's rank before and after its lesson",
+    "pulse channels, currents, restrained and alpha1 factors and changed-edge counts"
+  ],
+  "scope": "Diagnostic spaced-repetition probe on training boards with one replica; not a gate result, not a learning claim and not biological validation. Lesson counts are not biological spacing intervals.",
+  "cpuDuty": 0.5,
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256
+  },
+  "condition": "informative",
+  "comparison": "Matched to probe v5 (same registration revision 10, replica, scratch assessment, A-board rule, etas and lesson procedure). Differs only in the sequence: A is taught three times and 20 distinct boards interfere instead of 10. Action cues are cue v4 (revision 10), not revision 6."
+}

@@ -1,0 +1,163 @@
+{
+  "schema": "stage1-synthetic-microfamily-feasibility-v2",
+  "inputs": {
+    "batchManifestSha256": "e31bcf389a8780668be231d3278221138048b267437cbfddd21f2c596a2a4434",
+    "lessonAuditSha256": "0a8b655bff466c4a137693a353651bf3c19b9fe11ca057f904f5483f54aefe85"
+  },
+  "finalSplitInspected": false,
+  "neuralEventsDelivered": 0,
+  "graphLaunchAuthorized": false,
+  "bySplit": {
+    "train": {
+      "eligibleCoreCaptures": 4,
+      "capturesWithAllFour": 4,
+      "distinctPuzzleRootsWithAllFour": 4,
+      "distinctSourceGamesWithAllFour": 4,
+      "coverage": {
+        "absent-defender": 4,
+        "open-defender": 4,
+        "blocked-defender": 4,
+        "pinned-apparent-defender": 4
+      },
+      "candidates": [
+        {
+          "puzzleId": "dsblY",
+          "gameId": "vH5PuxRC",
+          "move": "g5h4",
+          "sourceRecordSha256": "04e73de3b84b776c4064f5de13d3f3d9b5fe5b38c53b0967cabc4e4bf7679cb6",
+          "strata": {
+            "absent-defender": true,
+            "open-defender": true,
+            "blocked-defender": true,
+            "pinned-apparent-defender": true
+          },
+          "allFour": true
+        },
+        {
+          "puzzleId": "8EYF4",
+          "gameId": "DVP3UGDo",
+          "move": "e4d3",
+          "sourceRecordSha256": "54c56b31308899524a10a723a8f05a5a3645b54dd4c4255feca7ea188d0d530e",
+          "strata": {
+            "absent-defender": true,
+            "open-defender": true,
+            "blocked-defender": true,
+            "pinned-apparent-defender": true
+          },
+          "allFour": true
+        },
+        {
+          "puzzleId": "5STCq",
+          "gameId": "jVdltyer",
+          "move": "h4g5",
+          "sourceRecordSha256": "dac93fd36f98c80fc0f3040ded7d79c2601b637f5b7b868422e6e7fed968f7ae",
+          "strata": {
+            "absent-defender": true,
+            "open-defender": true,
+            "blocked-defender": true,
+            "pinned-apparent-defender": true
+          },
+          "allFour": true
+        },
+        {
+          "puzzleId": "86rRi",
+          "gameId": "9l5VAne9",
+          "move": "f5g4",
+          "sourceRecordSha256": "3a71dd116ec652b5b1486a26f7cb02497bff5ab2288b41377e41d6c508a4cff7",
+          "strata": {
+            "absent-defender": true,
+            "open-defender": true,
+            "blocked-defender": true,
+            "pinned-apparent-defender": true
+          },
+          "allFour": true
+        }
+      ]
+    },
+    "validation": {
+      "eligibleCoreCaptures": 5,
+      "capturesWithAllFour": 5,
+      "distinctPuzzleRootsWithAllFour": 5,
+      "distinctSourceGamesWithAllFour": 5,
+      "coverage": {
+        "absent-defender": 5,
+        "open-defender": 5,
+        "blocked-defender": 5,
+        "pinned-apparent-defender": 5
+      },
+      "candidates": [
+        {
+          "puzzleId": "t5IaH",
+          "gameId": "9IgxlFwD",
+          "move": "a2b3",
+          "sourceRecordSha256": "45f893f78f3c34e61af53f1a596963f1e43c604ce12066db044431422c5f49e5",
+          "strata": {
+            "absent-defender": true,
+            "open-defender": true,
+            "blocked-defender": true,
+            "pinned-apparent-defender": true
+          },
+          "allFour": true
+        },
+        {
+          "puzzleId": "Ph9jG",
+          "gameId": "djVLaept",
+          "move": "h3g4",
+          "sourceRecordSha256": "7aa5c044f269234a470934e84fea8e25e9bd9c509897e4bfe600b1ce4e8b4efe",
+          "strata": {
+            "absent-defender": true,
+            "open-defender": true,
+            "blocked-defender": true,
+            "pinned-apparent-defender": true
+          },
+          "allFour": true
+        },
+        {
+          "puzzleId": "wtRiZ",
+          "gameId": "Fz4CdY9j",
+          "move": "f4f3",
+          "sourceRecordSha256": "482729b207c57413badc8c1d1e0f53692642edb5b379bf9857e488c07417e111",
+          "strata": {
+            "absent-defender": true,
+            "open-defender": true,
+            "blocked-defender": true,
+            "pinned-apparent-defender": true
+          },
+          "allFour": true
+        },
+        {
+          "puzzleId": "MO9R5",
+          "gameId": "5do8xpdO",
+          "move": "c4d3",
+          "sourceRecordSha256": "1e080e5f3ab3ee6759385fbe38fe3be3af2be9129e4fefa5a652e9c4cf85fc40",
+          "strata": {
+            "absent-defender": true,
+            "open-defender": true,
+            "blocked-defender": true,
+            "pinned-apparent-defender": true
+          },
+          "allFour": true
+        },
+        {
+          "puzzleId": "EP2Bb",
+          "gameId": "zxdCuUk7",
+          "move": "h2h5",
+          "sourceRecordSha256": "7d61c8c7b8ee258fe1972070c6360dd80f5e102bd17c5e0f28bfee12680e72b8",
+          "strata": {
+            "absent-defender": true,
+            "open-defender": true,
+            "blocked-defender": true,
+            "pinned-apparent-defender": true
+          },
+          "allFour": true
+        }
+      ]
+    }
+  },
+  "scope": "Static feasibility only. Each candidate task keeps the Lichess-derived capture coordinates and piece identities but is a synthetic FEN-rooted micro-position; no task is authentic game history and no training is authorized.",
+  "resources": {
+    "evaluations": 123,
+    "peakRssMiB": 86.44140625,
+    "elapsedSeconds": 1.0881364
+  }
+}

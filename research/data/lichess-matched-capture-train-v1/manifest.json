@@ -1,0 +1,92 @@
+{
+  "schema": "lichess-puzzle-corpus-v2",
+  "createdAt": "2026-10-22T06:06:36.205Z",
+  "source": {
+    "url": "https://database.lichess.org/",
+    "download": "lichess_db_puzzle.csv.zst",
+    "license": "CC0-1.0",
+    "sourcePath": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.cache\\lichess-puzzles-2026-10-21.csv",
+    "inputBytesSha256": "ec2dd1a8f9cbd139ebb4aee228f72e77f8e2a581a24d25f61f71e6cf306b10f8",
+    "compressedBytesSha256": "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+    "extractionReceipt": "research\\reports\\lichess-foundations-pilot-2026-10-21\\extraction.json",
+    "schema": [
+      "PuzzleId",
+      "FEN",
+      "Moves",
+      "Rating",
+      "RatingDeviation",
+      "Popularity",
+      "NbPlays",
+      "Themes",
+      "GameUrl",
+      "OpeningTags",
+      "DailyDate"
+    ],
+    "latestSourceUpdateSeenInResearch": "2026-10-05"
+  },
+  "curator": {
+    "scriptPath": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\data\\curate-lichess-puzzles.mjs",
+    "scriptSha256": "cc090296dff6ba3287b3d26cc14021fcca7aae66c6cb3edafaa2ccdc323a6dd4",
+    "node": "v22.23.2",
+    "seed": 20261021,
+    "limitPerSplit": 64,
+    "minRating": 0,
+    "maxRating": 5000,
+    "maxPieces": 6,
+    "requiredThemes": [],
+    "maxSeconds": 7200,
+    "cpuDuty": 0.5,
+    "pacerSha256": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    "onlySplit": "train",
+    "requireMatchedCaptures": true,
+    "captureFilterScope": "FEN-only source-candidate selection; source history and teaching consequences remain unverified.",
+    "captureFilterSha256": "4a950efee6a1ecb043e780cc257d5cfa41543f1ca075a159d52f66e5ad64d9c9",
+    "split": "Stable SHA-256 hash of Lichess source game ID: 80% train, 10% validation, 10% final.",
+    "deduplication": "Exact post-setup solver FEN across selected rows; source games are assigned to one split."
+  },
+  "counts": {
+    "sourceRows": 6157341,
+    "metadataMatched": 4925595,
+    "legalLines": 272,
+    "rejected": 0,
+    "reasons": {},
+    "selected": {
+      "train": 44,
+      "validation": 0,
+      "final": 0
+    },
+    "eligibleBySplitBeforeSampling": {
+      "train": 45,
+      "validation": 0,
+      "final": 0
+    }
+  },
+  "outputs": {
+    "train.jsonl": "4aaa70e25513eb69c3925f51189f6baf37fa7746acb73f2912efc9e8d07ada0f",
+    "validation.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "final.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "resources": {
+    "elapsedSeconds": 2618.0516350000003,
+    "cpu": {
+      "user": 1057016000,
+      "system": 6328000
+    },
+    "peakRssMiB": 85.59375,
+    "maxRssMiB": 2048,
+    "minFreeMiB": 256,
+    "heapMiB": 256,
+    "cpuDuty": 0.5
+  },
+  "status": {
+    "fullGameHistoryRetrieved": false,
+    "consequenceCertificatesCreated": false,
+    "eligibleForNeuralTeaching": false,
+    "finalSplitMustRemainSealedAfterProtocolFreeze": true
+  },
+  "limits": [
+    "Puzzle solution lines are source suggestions, not independently checked consequences or proof of a unique best move.",
+    "FEN omits repetition history. Retrieve the linked source game PGN and verify the puzzle FEN before any history-sensitive use.",
+    "Rating, popularity and themes organize sampling; they are not calibrated move-quality feedback."
+  ]
+}

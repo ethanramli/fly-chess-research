@@ -14,3 +14,5 @@ Researcher intent, untested hypotheses and documentation decisions. Dates use As
 
 - [2026-10-11: Stockfish-only calibration revision and invalid continuation](2026-10-11-stockfish-calibration-revision.md)
 - [2026-10-18: Durable curriculum reasoning goal prompt and compaction recovery](2026-10-18-curriculum-reasoning-goal.md)
+- [2026-10-21: Curriculum stage labels](2026-10-21-curriculum-stage-labels.md)
+- [2026-10-21: External curriculum review, checked counterexamples and follow-up prompt](../../reports/curriculum-review-2026-10-21/README.md)

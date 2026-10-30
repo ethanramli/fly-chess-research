@@ -1,0 +1,46 @@
+{
+ "schema": "stage1-data-separation-check-v1",
+ "scope": "Counts and input hashes only. Validation and final FENs, placements, PGNs, moves and identifiers are never emitted; train family IDs appear only under trainWitnessFamilyIds.",
+ "inputs": {
+  "train": {
+   "rows": {
+    "path": "research/data/lichess-stage1-synthetic-v1/train.jsonl",
+    "sha256": "cc165730948dce734b785a1f4d246dc1a3bb809ee5f23a7cdd869b0d249767dd"
+   },
+   "families": {
+    "path": "research/data/lichess-stage1-synthetic-v1/train-families.json",
+    "sha256": "90520c013c1fad5bf53e61aa6e7f2506957dfdf88af2fc02af965f5e6e464863"
+   },
+   "plan": {
+    "path": "research/data/lichess-stage1-synthetic-v1/train-plan.json",
+    "sha256": "136867226a91c7fd738b6ba70df587cee05860ecd5d31d0ffdf51872116eed19"
+   }
+  }
+ },
+ "splits": {
+  "train": {
+   "boards": 24,
+   "bindFailures": 0,
+   "duplicateBoards": {
+    "exact": 0,
+    "exactWithHistory": 0,
+    "symmetry": 0,
+    "placementOnly": 0
+   },
+   "counterfactualPairs": {
+    "pairs": 12,
+    "distinctPairIds": 12,
+    "distinctUnorderedPanelPairs": 12,
+    "distinctUnorderedBoardPairsByExact": 12,
+    "unresolvedPairs": 0,
+    "distinctPanelsCovered": 24,
+    "panelsInMultiplePairs": 0,
+    "boardsInSplit": 24
+   }
+  }
+ },
+ "crossSplit": {},
+ "trainWitnessFamilyIds": [],
+ "elapsedMs": 1785,
+ "peakRssMiB": 49.6
+}

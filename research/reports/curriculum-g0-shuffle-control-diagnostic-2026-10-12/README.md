@@ -8,4 +8,8 @@ The frozen seed20261011 has18/32 reversal labels matching reversal truth; four o
 
 The runner's frozen reversal gate remains failed. The full archived-source neural recurrence audit is still required. Do not advance to C01 or revise the failed assay based on this static analysis. Any replacement protocol should decide in advance how many independently shuffled controls are needed and how their results enter the gate, then validate that schedule design before another graph run.
 
+### Dated status correction — 2026-10-21
+
+The status above reflects what was known on 2026-10-12. The later full replay audit was for the separate one-projection reversal-history follow-up, not for this static schedule analysis; it passed replay while confirming that the follow-up cannot pass G0. The original reversal gate remains failed. The follow-up supports a history-dependent limitation in that configuration only. See the [completed audit and interpretation](../../journal/experiments/2026-10-19-g0-audit-memory-guard.md) and [current handoff](../../../documentation/handoffs/curriculum-reasoning-state.md).
+
 Reproduce with `node --max-old-space-size=256 research/reports/curriculum-g0-shuffle-control-diagnostic-2026-10-12/analyze.mjs runs/curriculum-g0-assay-v1-resumed5`. The script checks frozen schedule and source hashes and writes [raw summary](result.json). The initial10,000-seed inline attempt was stopped before completion and produced no result; its mistake is recorded in the [dated G0 journal](../../journal/experiments/2026-10-11-curriculum-g0-receiver.md).

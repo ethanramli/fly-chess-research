@@ -1,0 +1,42 @@
+﻿{
+    "schema":  "lichess-training-pin-theme-pgn-v1",
+    "createdAt":  "2026-10-23T03:43:55.9132306Z",
+    "purpose":  "Retrieve source game histories for an independently source-audited, train-only pin-theme candidate pool before history binding or consequence certification.",
+    "candidatePool":  {
+                          "rows":  "research/data/lichess-stage1-training-pin-theme-v2/train.jsonl",
+                          "rowsSha256":  "ac742b70b15cfb1e015ba86a31b4b88eba7f2508a4e0111e9b08d73bc93fdd3f",
+                          "manifest":  "research/data/lichess-stage1-training-pin-theme-v2/manifest.json",
+                          "manifestSha256":  "d77fbe023dab9f143145f9587413834f31bc601bf9ba09b93efe4fb36a429518",
+                          "sourceAudit":  "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-source-audit-v2.json",
+                          "sourceAuditSha256":  "9ad2922b9a54468b26f69637b179dbe5f857837f4e5c78a0db948484258c25ff",
+                          "checkedSplits":  {
+                                                "train":  1024,
+                                                "validation":  0
+                                            },
+                          "finalSplitInspected":  false,
+                          "eligibleForNeuralTeaching":  false
+                      },
+    "retrieval":  {
+                      "split":  "train",
+                      "endpoint":  "https://lichess.org/api/games/export/_ids",
+                      "maxCandidateRows":  4096,
+                      "maxUniqueGames":  4096,
+                      "batchSize":  300,
+                      "perBatchDelaySeconds":  1,
+                      "perRequestTimeoutSeconds":  60,
+                      "maxPgnBytesPerGame":  65536,
+                      "maxTotalResponseBytes":  100663296,
+                      "finalSplitAllowed":  false
+                  },
+    "tools":  {
+                  "fetcher":  "python actions/fetch_lichess_game_pgns_v5.py",
+                  "fetcherSha256":  "b5aeb07d09cfa91ce37149ba86f8ff476332771b74667e084e3a9f8113e92515",
+                  "sharedPgnParser":  "python actions/fetch_lichess_game_pgns_v3.py",
+                  "sharedPgnParserSha256":  "fe060fcefec8440cd53f13fe6904d46295634bd5cd7a198c6f3e6aea628abe5c"
+              },
+    "boundaries":  [
+                       "The action validates returned PGNs against requested IDs but does not certify puzzle history alignment or consequences.",
+                       "Independent history binding, legal replay, consequence and family audits are required before any teaching.",
+                       "No validation or final puzzle content, graph learner, Stockfish feedback, or G0 is accessed."
+                   ]
+}

@@ -1,0 +1,67 @@
+﻿{
+    "schema":  1,
+    "name":  "lichess-training-pin-theme-pgn-v1",
+    "paused":  false,
+    "paths":  {
+                  "run":  "runs/python-actions/lichess-training-pin-theme-pgn-v1",
+                  "rows":  "research/data/lichess-stage1-training-pin-theme-v2/train.jsonl",
+                  "sourceManifest":  "research/data/lichess-stage1-training-pin-theme-v2/manifest.json",
+                  "sourceAudit":  "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-source-audit-v2.json",
+                  "registration":  "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-pgn-v1-registration.json",
+                  "fetcher":  "python actions/fetch_lichess_game_pgns_v5.py",
+                  "trainOut":  "research/data/lichess-stage1-training-pin-theme-v2-pgn/train"
+              },
+    "pins":  {
+                 "research/data/lichess-stage1-training-pin-theme-v2/train.jsonl":  "ac742b70b15cfb1e015ba86a31b4b88eba7f2508a4e0111e9b08d73bc93fdd3f",
+                 "research/data/lichess-stage1-training-pin-theme-v2/manifest.json":  "d77fbe023dab9f143145f9587413834f31bc601bf9ba09b93efe4fb36a429518",
+                 "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-source-audit-v2.json":  "9ad2922b9a54468b26f69637b179dbe5f857837f4e5c78a0db948484258c25ff",
+                 "python actions/fetch_lichess_game_pgns_v5.py":  "b5aeb07d09cfa91ce37149ba86f8ff476332771b74667e084e3a9f8113e92515",
+                 "python actions/fetch_lichess_game_pgns_v3.py":  "fe060fcefec8440cd53f13fe6904d46295634bd5cd7a198c6f3e6aea628abe5c",
+                 "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-pgn-v1-registration.json":  "05832804c925197705f70120d254f591d7d288419b4285b8590d8aef517bcd5a"
+             },
+    "state_file":  "runs/python-actions/lichess-training-pin-theme-pgn-v1.json",
+    "jobs":  {
+                 "fetch-train":  {
+                                     "role":  "check",
+                                     "argv":  [
+                                                  "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+                                                  "{fetcher}",
+                                                  "--rows",
+                                                  "{rows}",
+                                                  "--split",
+                                                  "train",
+                                                  "--manifest",
+                                                  "{sourceManifest}",
+                                                  "--source-audit",
+                                                  "{sourceAudit}",
+                                                  "--out",
+                                                  "{trainOut}"
+                                              ],
+                                     "requires":  [
+                                                      "{registration}",
+                                                      "{sourceManifest}",
+                                                      "{sourceAudit}",
+                                                      "{rows}",
+                                                      "{fetcher}"
+                                                  ],
+                                     "fresh_output":  "{trainOut}"
+                                 }
+             },
+    "artifacts":  {
+                      "train":  "{trainOut}/manifest.json"
+                  },
+    "report_fields":  [
+                          "schema",
+                          "split",
+                          "candidateRows",
+                          "candidateRowsSha256",
+                          "candidateRowCount",
+                          "uniqueGameCount",
+                          "calls",
+                          "totalResponseBytes",
+                          "finalSplitInspected",
+                          "neuralEventsDelivered",
+                          "graphLaunchAuthorized",
+                          "scope"
+                      ]
+}

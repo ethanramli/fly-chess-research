@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "name": "stage1-retention-probe-v1",
+  "paused": false,
+  "paths": {
+    "protocol": "research/data/lichess-stage1-synthetic-v1/stage1-retention-probe-v1-protocol.json",
+    "runner": ".codebase/scripts/puzzle-learning/stage1-retention-probe.mjs",
+    "run": "runs/stage1-retention-probe-v1",
+    "checkpoint": "runs/stage1-retention-probe-v1/result.json"
+  },
+  "pins": {
+    "{protocol}": "12b73794646c87d76e01962ad24938f9bf8e8e2d54e014faf5cf05966b73fd05",
+    "{runner}": "ca3cc6de76fea79d8e2d14c648bea830e5b037bf985f864757cfbfdbc2122d4b",
+    "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r6-registration.json": "754f4d5efc43156ae4a9e661a21b5b69f657018e8def6a173b4cd06bb48b8163",
+    ".codebase/scripts/puzzle-learning/lichess-stage1-runtime-factory.mjs": "5e2de55d495a82badb8121947d5a36b53ce5c053c3bdd83bbfec14bc6871b4d3",
+    ".codebase/src/puzzle-learning/lichess-stage1-brain-factory.mjs": "7bfa7a0b75d2fc6706b95674d32c111d85d3f023f26a4b7ec5a97379c1d04f04",
+    ".codebase/src/puzzle-learning/coupled-stockfish-brain.mjs": "c487b99184ed713f8f7ed338e34dfecb97810efebe117988c9c70dd1c7ecb2fd",
+    ".codebase/src/puzzle-learning/coupled-stockfish-session.mjs": "bb7d693f5f97aed6006d77dafb98a3ccb937ab7f716f7a8528085638f2946b47",
+    ".codebase/src/puzzle-learning/lichess-curriculum-panel.mjs": "1321cfb4425aa6758162269d34d5ab65cc972401fa5209c50c43ee3d40d9f17a",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    ".codebase/src/chess-input/public-action-relative-cue.mjs": "8b14c443c1b41f13f1ade6d5549c9ab3c53805c3398d973589d73b6e963be6da"
+  },
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256
+  },
+  "state_file": "runs/python-actions/stage1-retention-probe-v1-state.json",
+  "jobs": {
+    "probe": {
+      "role": "train",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "{runner}",
+        "--protocol",
+        "{protocol}",
+        "--out",
+        "{run}",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "{protocol}",
+        "{runner}"
+      ],
+      "fresh_output": "{run}"
+    }
+  },
+  "artifacts": {
+    "result": "{run}/result.json"
+  },
+  "report_fields": [
+    "status",
+    "chosenEta",
+    "perEtaPasses",
+    "aBoards",
+    "scratchCorrect",
+    "decisionRule",
+    "peakRssMiB",
+    "elapsedSeconds",
+    "cpuSeconds",
+    "scope"
+  ]
+}

@@ -1,0 +1,17 @@
+# Stockfish feedback method review and standalone reviewer prompt
+
+22 October 2026. The researcher paused the curriculum goal, then explicitly requested a feedback-quality double check and a root `question.md` for a fresh external-model chat. Training remains paused. This was source review, bounded existing numerical checks and prompt preparation.
+
+The earlier statement that this was mostly an implementation task omitted unresolved feedback-quality decisions. Code inspection found informative replay supplies a value-error pulse rather than the design's separate verified-outcome-plus-engine signals; its child-state proxy and root-action update do not have demonstrated causal alignment. Terminal children skip outcome-only teaching too. The current shuffle/provenance/selected-attempt boundaries need runner contracts. These are implementation/research gaps, not proof that the model cannot learn.
+
+The first test invocation failed before running test bodies (`spawn EPERM` in Node file workers). Native one-process testing then passed all17 existing focused tests. Those tests do not establish selective chess learning, useful error correction, retention or transfer. A separate eight-cell adversarial probe was prepared but not executed after the researcher directed the task to preparing the prompt.
+
+Full findings, test invocation paths, primary-source coverage, failed attempts, archived previous question and evidence limits are in the [review report](../../reports/stockfish-feedback-review-2026-10-22/README.md). The [new root prompt](../../../question.md) is self-contained and accurately distinguishes implemented behavior from promised integration. Next: evaluate the external review, then choose the minimal justified correction and causal quality test. No new graph run or accepted model exists.
+
+## Separate Astra-prompt goal
+
+The researcher cleared the earlier goal and explicitly requested a stronger prompt for Astra. The document was checked against current adapter/rubric/local-memory sources and the existing test receipt. The earlier summary omitted zero/unavailable-residual skip differences between informative/disabled/shuffled and no-channel conditions; that omission is corrected in the prompt without changing implementation. The prior prompt is archived. Added adversarial numerical cases, a demand to justify actual update direction, alternative interpretations, control estimands, explicit uncertainty and a concrete decision format. This completed document work does not resume curriculum training or validate the feedback method. See the report's Astra addendum for evidence and scope.
+
+## Astra answer received and assessed
+
+Read the new root answer.md in full and archived its original bytes and source hashes. The response supports testing certified root-action task preference before integrating the child-value-error pathway. Repository checks refine it: real encoders already exist; the proposed receiver assay overlaps frozen G0 work; the active temporal receiver is not the fixture endpoint rule; the scalar update's accepted-step guard limits its fixed-activity multiplier to[0,1]. See research/reports/stockfish-feedback-review-2026-10-22/astra-answer-review.md for evidence, source-access limits and the missing-path inspection mistake. No new tests, experiment, protocol or learner change; training stays paused.

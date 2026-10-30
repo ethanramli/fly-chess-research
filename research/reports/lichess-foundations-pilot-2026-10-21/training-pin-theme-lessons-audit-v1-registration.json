@@ -1,0 +1,32 @@
+﻿{
+    "schema":  "lichess-training-pin-theme-lessons-independent-audit-v1",
+    "createdAt":  "2026-10-23T04:02:22.3500557Z",
+    "purpose":  "Independently replay all training-only source histories and every legal action consequence certificate emitted by the v2 lesson preparation loop.",
+    "inputs":  {
+                   "batchConfig":  "python actions/lichess-training-pin-theme-lessons-v2-step.json",
+                   "batchConfigSha256":  "9c5725c7aabc15044f88e8553c2827e76ceff5a2fd9106b5352d4c0b7893200b",
+                   "batchManifest":  "research/data/lichess-stage1-pin-theme-prepared-v2/manifest.json",
+                   "batchManifestSha256":  "3bc8d6cf1d47c3fb5523d5def6d00da147e56d8de5dc547428c18455ff747ee9",
+                   "candidateRows":  "research/data/lichess-stage1-training-pin-theme-v2/train.jsonl",
+                   "candidateRowsSha256":  "ac742b70b15cfb1e015ba86a31b4b88eba7f2508a4e0111e9b08d73bc93fdd3f",
+                   "sourceManifest":  "research/data/lichess-stage1-training-pin-theme-v2/manifest.json",
+                   "sourceManifestSha256":  "d77fbe023dab9f143145f9587413834f31bc601bf9ba09b93efe4fb36a429518",
+                   "sourceAudit":  "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-source-audit-v2.json",
+                   "sourceAuditSha256":  "9ad2922b9a54468b26f69637b179dbe5f857837f4e5c78a0db948484258c25ff",
+                   "pgnManifest":  "research/data/lichess-stage1-training-pin-theme-v2-pgn/train/manifest.json",
+                   "pgnManifestSha256":  "00b52419bc59dc167ba26ef8d6a3df476591797f4b51615f355b6d5daf290f61",
+                   "split":  "train",
+                   "rows":  1024,
+                   "finalSplitInspected":  false
+               },
+    "auditor":  ".codebase/scripts/data/audit-lichess-csv-lessons.mjs",
+    "auditorSha256":  "23fe7e06cd6a1545201e89d54a0312efb239016920c18da5b29a48488527cf26",
+    "scope":  "Independent standard-start source-prefix and all-legal immediate consequence replay; no learning efficacy, disjoint family or reasoning claim.",
+    "limits":  {
+                   "nodeHeapMiB":  256,
+                   "cpuDuty":  0.5,
+                   "maxSeconds":  900,
+                   "maxRssMiB":  2048,
+                   "minimumFreeMiB":  256
+               }
+}

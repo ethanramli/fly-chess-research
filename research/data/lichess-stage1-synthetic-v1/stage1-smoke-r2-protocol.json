@@ -1,0 +1,27 @@
+{
+ "schema": "lichess-stage1-synthetic-protocol-v1",
+ "mode": "smoke",
+ "registration": {
+  "path": "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r2-registration.json",
+  "sha256": "c5b67310ca08ca3b08451d074120200be3a5d19358c2b75bbe7e884b48678925"
+ },
+ "question": "Does verified capture-retention feedback, with separately tested Stockfish value-error teaching, produce lasting, consequence-sensitive Stage 1 choices that transfer to unfamiliar counterfactual families, beyond matched controls?",
+ "learner": "From-scratch full FlyWire graph; ReversalMemory gains on mapped KC-to-MBON edges are the only lasting memory; wiring, root IDs and signs stay fixed.",
+ "teaching": "Each event binds the Fly's own all-legal ranking before feedback to an independently replayed one-reply certificate; Stockfish errors use pre-collected pinned reviews. No teacher computes neural parameter updates.",
+ "controls": [
+  "outcome-only",
+  "absent",
+  "disabled",
+  "shuffled",
+  "stockfish-shuffled",
+  "scratch (block 0)"
+ ],
+ "data": "Explicitly synthetic <=6-piece FEN-rooted tasks bound to verified Lichess source puzzles (first-solution capture identity); train/validation/final families are source-game disjoint and final rows stay unevaluated until checkpoint selection is frozen.",
+ "gates": "Frozen Stage 1 D1-D8 thresholds plus the separate Stockfish-assistance gate D9; every replica must pass. Receiver acceptance (G0) and Stage 1 D7 retention are required for acceptance and are currently unavailable, so this run can reveal learning but cannot promote Stage 1.",
+ "deviations": [
+  "Stratum labels are the classifier stratum of each board's predeclared focal capture; pin families pair a pinned board with its open counterpart, resolving an inconsistency between the 16-per-stratum quota and reversing pairs (journal 2026-10-23-babysit-stage1-end-to-end).",
+  "Receiver acceptance gates promotion, not feedback-enabled training.",
+  "Stockfish reviews use depth budgets 10 and 14: node-limited searches usually end mid-iteration with only a bound, which the exact-score rule rejects (r1 smoke failure)."
+ ],
+ "scope": "Engineering smoke test of the complete babysit path (1 replica, 8 blocks); not scientific evidence."
+}

@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "name": "lichess-stage1-source-audit-v3",
+  "paused": false,
+  "paths": {
+    "registration": "research/reports/lichess-foundations-pilot-2026-10-21/curation-recovery-v3-registration.json",
+    "run": "research/reports/lichess-foundations-pilot-2026-10-21"
+  },
+  "pins": {
+    "research/reports/lichess-foundations-pilot-2026-10-21/curation-recovery-v3-registration.json": "054fe3c97a131908a4ebb9b94b049fbe6f6622e377b0082d8dfbef91cd27cebb",
+    ".codebase/scripts/data/curate-lichess-puzzles.mjs": "1afafbcec82b6c86dd76ee13aeb3bf258244671b437e5652e3608fc90ea6e254",
+    ".codebase/scripts/data/audit-lichess-source-candidates.mjs": "473b23aff4cd544bdfde68fd3d703a008229f0db7bea89d486a7be6415088ebf",
+    ".codebase/src/puzzle-learning/plasticity-mechanism-assay.mjs": "97e84603674638888fee5dfa342a4fb4cc3e459d37d9ce852d200273377a257c",
+    ".cache/lichess-puzzles-2026-10-21.csv": "ec2dd1a8f9cbd139ebb4aee228f72e77f8e2a581a24d25f61f71e6cf306b10f8",
+    ".cache/lichess-puzzles-2026-10-21.csv.zst": "76335bfa7d7c4a7f93c1366d81549e53951ebb79dd43d34904cab8f22d962f8d",
+    "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json": "deac9b4792742a84fde9f3273caabcf5f505d957fb142881a8345aae356b4510"
+  },
+  "state_file": "runs/python-actions/current-lichess-source-audit-v3.json",
+  "jobs": {
+    "audit-source-v3": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/data/audit-lichess-source-candidates.mjs",
+        "--corpus",
+        "research/data/lichess-stage1-candidates-v3",
+        "--out",
+        "research/reports/lichess-foundations-pilot-2026-10-21/source-candidates-audit-v3.json",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "research/data/lichess-stage1-candidates-v3/manifest.json",
+        ".cache/lichess-puzzles-2026-10-21.csv",
+        ".cache/lichess-puzzles-2026-10-21.csv.zst",
+        "research/reports/lichess-foundations-pilot-2026-10-21/extraction.json"
+      ],
+      "refuse_existing": [
+        "research/reports/lichess-foundations-pilot-2026-10-21/source-candidates-audit-v3.json"
+      ]
+    }
+  },
+  "artifacts": {
+    "audit": "research/reports/lichess-foundations-pilot-2026-10-21/source-candidates-audit-v3.json"
+  },
+  "report_fields": [
+    "schema",
+    "sourceChecksPassed",
+    "checkedSplits",
+    "sourceRows",
+    "finalSplitInspected",
+    "eligibleForNeuralTeaching"
+  ]
+}

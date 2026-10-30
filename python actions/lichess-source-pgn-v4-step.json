@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "lichess-stage1-source-pgn-v4",
+  "paused": false,
+  "paths": {
+    "run": "research/data/lichess-stage1-source-pgn-v4",
+    "registration": "research\\reports\\lichess-foundations-pilot-2026-10-21\\pgn-batch-v4-registration.json",
+    "manifest": "research\\data\\lichess-stage1-candidates-v4\\manifest.json",
+    "sourceAudit": "research\\reports\\lichess-foundations-pilot-2026-10-21\\source-candidates-audit-v4.json",
+    "fetcher": "python actions/fetch_lichess_game_pgns.py",
+    "trainRows": "research\\data\\lichess-stage1-candidates-v4\\train.jsonl",
+    "trainOut": "research/data/lichess-stage1-source-pgn-v4/train",
+    "validationRows": "research\\data\\lichess-stage1-candidates-v4\\validation.jsonl",
+    "validationOut": "research/data/lichess-stage1-source-pgn-v4/validation"
+  },
+  "pins": {
+    "{registration}": "e534cb7225a3b4e128267a8e3441fc9c40e81773af769c4736c95464425983b3",
+    "{manifest}": "79f7c8d803dc8d1a23f34c49db0369a403c0c5d2056b2d3ba1fbf6998240473c",
+    "{sourceAudit}": "d93a6ef64ec970f00f00fa88f06b87bdd2af5205076f2ae9fa69a06de91579cf",
+    "{fetcher}": "3d83ffa0144d3ed35eac710fe119a723c0687b1cdbd37d7bdb67e6e0dc4b6bc1",
+    "{trainRows}": "5ffd863208a03b5df4c3590ca0e5af77c5fb3049b09984d9e5fea102d3e668ab",
+    "{validationRows}": "a9b4b84f4ccce57cb845dfe811789e58ce0e1786cc6f2b4ba19523afce082b88"
+  },
+  "state_file": "runs/python-actions/current-lichess-source-pgn-v4.json",
+  "jobs": {
+    "fetch-train": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "{fetcher}",
+        "--rows",
+        "{trainRows}",
+        "--split",
+        "train",
+        "--out",
+        "{trainOut}"
+      ],
+      "requires": [
+        "{manifest}",
+        "{sourceAudit}",
+        "{registration}",
+        "{trainRows}"
+      ],
+      "fresh_output": "{trainOut}"
+    },
+    "fetch-validation": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "{fetcher}",
+        "--rows",
+        "{validationRows}",
+        "--split",
+        "validation",
+        "--out",
+        "{validationOut}"
+      ],
+      "requires": [
+        "{manifest}",
+        "{sourceAudit}",
+        "{registration}",
+        "{validationRows}"
+      ],
+      "fresh_output": "{validationOut}"
+    }
+  },
+  "artifacts": {
+    "train": "{trainOut}/manifest.json",
+    "validation": "{validationOut}/manifest.json"
+  }
+}

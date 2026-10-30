@@ -28,6 +28,13 @@ export function compileConsequenceLesson(board, task, assessment, experiences, c
       consequence.witness = {target:certificate.target, recaptures:[...certificate.recaptures],
         statement: checked.status === 'success' ? 'No legal immediate reply recaptures the moved capturing piece'
           : 'A legal immediate reply can recapture the moved capturing piece'};
+    } else if (checked.learningAllowed && task.objective === 'avoid-mate') {
+      consequence.defenseCoverage = {kind:'bounded-opponent-mate-certificate',remainingPlies:task.plies-1,
+        attacker:experience.proof.actor==='w'?'b':'w'};
+      consequence.witness = {opponentMateStatus:checked.opponentMateStatus,
+        statement:checked.status==='success'
+          ?'The opponent has no certified forced mate within the remaining two plies'
+          :'The opponent has a certified forced mate within the remaining two plies'};
     } else if (checked.learningAllowed) {
       consequence.defenseCoverage = {kind:'certificate-required-branches',
         meaning:'Only the independently checked forced-mate quantifiers within the declared horizon; not every game continuation'};

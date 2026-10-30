@@ -1,0 +1,1301 @@
+{
+ "schema": 1,
+ "paused": false,
+ "name": "lichess-stage1-synthetic-v1-smoke-r2",
+ "stage": 1,
+ "allowedModes": [
+  "train",
+  "audit"
+ ],
+ "replicas": [
+  "r1"
+ ],
+ "conditions": [
+  "informative",
+  "outcome-only",
+  "absent",
+  "disabled",
+  "shuffled",
+  "stockfish-shuffled"
+ ],
+ "scheduleCondition": "informative",
+ "maxBlocks": 8,
+ "feedbackProtocol": "verified-outcome-plus-stockfish-v2",
+ "outcomeShuffle": {
+  "schema": "matched-task-outcome-shuffle-v1",
+  "algorithm": "xorshift32 Fisher-Yates over [failure,success,success,failure]",
+  "seed": 20261024,
+  "blocks": [
+   [
+    "failure",
+    "success",
+    "success",
+    "failure"
+   ],
+   [
+    "failure",
+    "success",
+    "success",
+    "failure"
+   ],
+   [
+    "success",
+    "failure",
+    "failure",
+    "success"
+   ],
+   [
+    "success",
+    "failure",
+    "success",
+    "failure"
+   ],
+   [
+    "failure",
+    "success",
+    "failure",
+    "success"
+   ],
+   [
+    "success",
+    "success",
+    "failure",
+    "failure"
+   ],
+   [
+    "failure",
+    "success",
+    "failure",
+    "success"
+   ],
+   [
+    "failure",
+    "failure",
+    "success",
+    "success"
+   ],
+   [
+    "failure",
+    "success",
+    "success",
+    "failure"
+   ],
+   [
+    "success",
+    "failure",
+    "success",
+    "failure"
+   ],
+   [
+    "success",
+    "success",
+    "failure",
+    "failure"
+   ],
+   [
+    "failure",
+    "failure",
+    "success",
+    "success"
+   ],
+   [
+    "success",
+    "success",
+    "failure",
+    "failure"
+   ],
+   [
+    "success",
+    "failure",
+    "failure",
+    "success"
+   ],
+   [
+    "success",
+    "failure",
+    "failure",
+    "success"
+   ],
+   [
+    "failure",
+    "failure",
+    "success",
+    "success"
+   ],
+   [
+    "failure",
+    "success",
+    "success",
+    "failure"
+   ],
+   [
+    "success",
+    "failure",
+    "success",
+    "failure"
+   ],
+   [
+    "success",
+    "failure",
+    "failure",
+    "success"
+   ],
+   [
+    "success",
+    "failure",
+    "success",
+    "failure"
+   ],
+   [
+    "success",
+    "success",
+    "failure",
+    "failure"
+   ],
+   [
+    "success",
+    "failure",
+    "success",
+    "failure"
+   ],
+   [
+    "success",
+    "success",
+    "failure",
+    "failure"
+   ],
+   [
+    "failure",
+    "success",
+    "failure",
+    "success"
+   ],
+   [
+    "success",
+    "failure",
+    "success",
+    "failure"
+   ],
+   [
+    "failure",
+    "success",
+    "success",
+    "failure"
+   ],
+   [
+    "success",
+    "failure",
+    "failure",
+    "success"
+   ],
+   [
+    "success",
+    "success",
+    "failure",
+    "failure"
+   ],
+   [
+    "failure",
+    "success",
+    "failure",
+    "success"
+   ],
+   [
+    "failure",
+    "success",
+    "failure",
+    "success"
+   ],
+   [
+    "success",
+    "success",
+    "failure",
+    "failure"
+   ],
+   [
+    "failure",
+    "success",
+    "failure",
+    "success"
+   ]
+  ],
+  "sha256": "d292ade4872ce81514e19a55fd336b190f6f7114b51a9a3bf00b4d145ec34728"
+ },
+ "stockfishShuffle": {
+  "schema": "matched-stockfish-error-shuffle-v1",
+  "rule": "reverse the sign of every delivered Stockfish value error; magnitude, timing and event order stay yoked",
+  "sha256": "599491dfe8a268dc6ff17ed2cd1853490753246d894bdf8f1cb49b47dc993b4f"
+ },
+ "runtimeFactory": {
+  "schema": "pinned-curriculum-runtime-v1",
+  "path": ".codebase/scripts/puzzle-learning/lichess-stage1-runtime-factory.mjs",
+  "sha256": "383b5ede2136d1e2a59ea7a5ef5308e70e3a00bee172cc793164046096bbef22"
+ },
+ "stageAcceptanceEvaluator": {
+  "path": ".codebase/scripts/puzzle-learning/lichess-stage1-acceptance-evaluator.mjs",
+  "sha256": "315ab76d6d125532fd72df68c3ba9ccf9d74ade5a7f674dc16235fe623c3fe3b"
+ },
+ "dataAudit": {
+  "path": "research/reports/lichess-stage1-synthetic-data-audit-v1.json",
+  "sha256": "8bca0cf84946451bae1a60d55f91cc6e25c457eb8561c83a7139371229749a11",
+  "schema": "lichess-stage1-synthetic-data-audit-v1"
+ },
+ "trainingRows": {
+  "files": [
+   {
+    "path": "research/data/lichess-stage1-synthetic-v1/train.jsonl",
+    "sha256": "cc165730948dce734b785a1f4d246dc1a3bb809ee5f23a7cdd869b0d249767dd"
+   }
+  ]
+ },
+ "trainingFamilies": {
+  "path": "research/data/lichess-stage1-synthetic-v1/train-families.json",
+  "sha256": "90520c013c1fad5bf53e61aa6e7f2506957dfdf88af2fc02af965f5e6e464863"
+ },
+ "acceptanceData": {
+  "schema": "lichess-stage1-acceptance-data-v1",
+  "audit": {
+   "path": "research/reports/lichess-stage1-synthetic-acceptance-audit-v1.json",
+   "sha256": "1bd5cf09e79d75b695becf64e12498ec7f6423d8fb5f7ddbea24c32c9ecdb1c0"
+  },
+  "validationRows": {
+   "files": [
+    {
+     "path": "research/data/lichess-stage1-synthetic-v1/validation.jsonl",
+     "sha256": "1f0d28819851f2194964d7fc3d2070ac79b64025e6248fb26f697c752a04b0a9"
+    }
+   ]
+  },
+  "validationFamilies": {
+   "path": "research/data/lichess-stage1-synthetic-v1/validation-families.json",
+   "sha256": "6b10212a449e6753cbab5534247eb7c32390f362fb1fcf115061337feb95ea7b"
+  },
+  "finalRows": {
+   "files": [
+    {
+     "path": "research/data/lichess-stage1-synthetic-v1/final.jsonl",
+     "sha256": "f5095d7698dbed52aa39776e611aed17ab95e7815ebaaa0b7c02108d6b149ddd"
+    }
+   ]
+  },
+  "finalFamilies": {
+   "path": "research/data/lichess-stage1-synthetic-v1/final-families.json",
+   "sha256": "f80a0ca614ddc926653dd0b3ac2e329cfe04a97b19ac62eb35637ace447ca30f"
+  },
+  "panelIds": {
+   "training": [
+    "s1syn-train-f0-pin-p0a",
+    "s1syn-train-f0-pin-p0b",
+    "s1syn-train-f0-pin-p1a",
+    "s1syn-train-f0-pin-p1b",
+    "s1syn-train-f1-pin-p0a",
+    "s1syn-train-f1-pin-p0b",
+    "s1syn-train-f1-pin-p1a",
+    "s1syn-train-f1-pin-p1b",
+    "s1syn-train-f2-pin-p0a",
+    "s1syn-train-f2-pin-p0b",
+    "s1syn-train-f2-pin-p1a",
+    "s1syn-train-f2-pin-p1b",
+    "s1syn-train-f3-blocked-p0a",
+    "s1syn-train-f3-blocked-p0b",
+    "s1syn-train-f3-blocked-p1a",
+    "s1syn-train-f3-blocked-p1b",
+    "s1syn-train-f4-blocked-p0a",
+    "s1syn-train-f4-blocked-p0b",
+    "s1syn-train-f5-absent-p0a",
+    "s1syn-train-f5-absent-p0b",
+    "s1syn-train-f5-absent-p1a",
+    "s1syn-train-f5-absent-p1b",
+    "s1syn-train-f5-absent-p2a",
+    "s1syn-train-f5-absent-p2b"
+   ],
+   "validation": [
+    "s1syn-validation-f0-pin-p0a",
+    "s1syn-validation-f0-pin-p0b",
+    "s1syn-validation-f0-pin-p1a",
+    "s1syn-validation-f0-pin-p1b",
+    "s1syn-validation-f1-pin-p0a",
+    "s1syn-validation-f1-pin-p0b",
+    "s1syn-validation-f1-pin-p1a",
+    "s1syn-validation-f1-pin-p1b",
+    "s1syn-validation-f2-blocked-p0a",
+    "s1syn-validation-f2-blocked-p0b",
+    "s1syn-validation-f2-blocked-p1a",
+    "s1syn-validation-f2-blocked-p1b",
+    "s1syn-validation-f3-absent-p0a",
+    "s1syn-validation-f3-absent-p0b",
+    "s1syn-validation-f3-absent-p1a",
+    "s1syn-validation-f3-absent-p1b"
+   ],
+   "final": [
+    "s1syn-final-f0-pin-p0a",
+    "s1syn-final-f0-pin-p0b",
+    "s1syn-final-f0-pin-p1a",
+    "s1syn-final-f0-pin-p1b",
+    "s1syn-final-f0-pin-p2a",
+    "s1syn-final-f0-pin-p2b",
+    "s1syn-final-f0-pin-p3a",
+    "s1syn-final-f0-pin-p3b",
+    "s1syn-final-f1-pin-p0a",
+    "s1syn-final-f1-pin-p0b",
+    "s1syn-final-f1-pin-p1a",
+    "s1syn-final-f1-pin-p1b",
+    "s1syn-final-f1-pin-p2a",
+    "s1syn-final-f1-pin-p2b",
+    "s1syn-final-f1-pin-p3a",
+    "s1syn-final-f1-pin-p3b",
+    "s1syn-final-f2-pin-p0a",
+    "s1syn-final-f2-pin-p0b",
+    "s1syn-final-f2-pin-p1a",
+    "s1syn-final-f2-pin-p1b",
+    "s1syn-final-f2-pin-p2a",
+    "s1syn-final-f2-pin-p2b",
+    "s1syn-final-f2-pin-p3a",
+    "s1syn-final-f2-pin-p3b",
+    "s1syn-final-f3-pin-p0a",
+    "s1syn-final-f3-pin-p0b",
+    "s1syn-final-f3-pin-p1a",
+    "s1syn-final-f3-pin-p1b",
+    "s1syn-final-f3-pin-p2a",
+    "s1syn-final-f3-pin-p2b",
+    "s1syn-final-f3-pin-p3a",
+    "s1syn-final-f3-pin-p3b",
+    "s1syn-final-f4-blocked-p0a",
+    "s1syn-final-f4-blocked-p0b",
+    "s1syn-final-f4-blocked-p1a",
+    "s1syn-final-f4-blocked-p1b",
+    "s1syn-final-f4-blocked-p2a",
+    "s1syn-final-f4-blocked-p2b",
+    "s1syn-final-f4-blocked-p3a",
+    "s1syn-final-f4-blocked-p3b",
+    "s1syn-final-f5-blocked-p0a",
+    "s1syn-final-f5-blocked-p0b",
+    "s1syn-final-f5-blocked-p1a",
+    "s1syn-final-f5-blocked-p1b",
+    "s1syn-final-f5-blocked-p2a",
+    "s1syn-final-f5-blocked-p2b",
+    "s1syn-final-f5-blocked-p3a",
+    "s1syn-final-f5-blocked-p3b",
+    "s1syn-final-f6-absent-p0a",
+    "s1syn-final-f6-absent-p0b",
+    "s1syn-final-f6-absent-p1a",
+    "s1syn-final-f6-absent-p1b",
+    "s1syn-final-f6-absent-p2a",
+    "s1syn-final-f6-absent-p2b",
+    "s1syn-final-f6-absent-p3a",
+    "s1syn-final-f6-absent-p3b",
+    "s1syn-final-f7-absent-p0a",
+    "s1syn-final-f7-absent-p0b",
+    "s1syn-final-f7-absent-p1a",
+    "s1syn-final-f7-absent-p1b",
+    "s1syn-final-f7-absent-p2a",
+    "s1syn-final-f7-absent-p2b",
+    "s1syn-final-f7-absent-p3a",
+    "s1syn-final-f7-absent-p3b"
+   ]
+  },
+  "probeActions": [
+   {
+    "panelId": "s1syn-final-f0-pin-p0a",
+    "actionId": "e4f6"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p0a",
+    "actionId": "b1b2"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p0b",
+    "actionId": "e4f6"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p0b",
+    "actionId": "b1b2"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p1a",
+    "actionId": "e4f6"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p1a",
+    "actionId": "e3b6"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p1b",
+    "actionId": "e4f6"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p1b",
+    "actionId": "e3b6"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p2a",
+    "actionId": "e4f6"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p2a",
+    "actionId": "g1f1"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p2b",
+    "actionId": "e4f6"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p2b",
+    "actionId": "g1f1"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p3a",
+    "actionId": "e4f6"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p3a",
+    "actionId": "a2a6"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p3b",
+    "actionId": "e4f6"
+   },
+   {
+    "panelId": "s1syn-final-f0-pin-p3b",
+    "actionId": "a2a6"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p0a",
+    "actionId": "d5e4"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p0a",
+    "actionId": "f8e7"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p0b",
+    "actionId": "d5e4"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p0b",
+    "actionId": "f8e7"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p1a",
+    "actionId": "d5e4"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p1a",
+    "actionId": "e1g3"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p1b",
+    "actionId": "d5e4"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p1b",
+    "actionId": "e1g3"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p2a",
+    "actionId": "d5e4"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p2a",
+    "actionId": "h2e2"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p2b",
+    "actionId": "d5e4"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p2b",
+    "actionId": "h2e2"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p3a",
+    "actionId": "d5e4"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p3a",
+    "actionId": "e2g4"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p3b",
+    "actionId": "d5e4"
+   },
+   {
+    "panelId": "s1syn-final-f1-pin-p3b",
+    "actionId": "e2g4"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p0a",
+    "actionId": "e8e5"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p0a",
+    "actionId": "g1e1"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p0b",
+    "actionId": "e8e5"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p0b",
+    "actionId": "g1e1"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p1a",
+    "actionId": "e8e5"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p1a",
+    "actionId": "a4b5"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p1b",
+    "actionId": "e8e5"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p1b",
+    "actionId": "a4b5"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p2a",
+    "actionId": "e8e5"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p2a",
+    "actionId": "f6c6"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p2b",
+    "actionId": "e8e5"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p2b",
+    "actionId": "f6c6"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p3a",
+    "actionId": "e8e5"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p3a",
+    "actionId": "g8g4"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p3b",
+    "actionId": "e8e5"
+   },
+   {
+    "panelId": "s1syn-final-f2-pin-p3b",
+    "actionId": "g8g4"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p0a",
+    "actionId": "g4h5"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p0a",
+    "actionId": "c1d1"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p0b",
+    "actionId": "g4h5"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p0b",
+    "actionId": "c1d1"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p1a",
+    "actionId": "g4h5"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p1a",
+    "actionId": "g2e2"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p1b",
+    "actionId": "g4h5"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p1b",
+    "actionId": "g2e2"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p2a",
+    "actionId": "g4h5"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p2a",
+    "actionId": "a7a5"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p2b",
+    "actionId": "g4h5"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p2b",
+    "actionId": "a7a5"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p3a",
+    "actionId": "g4h5"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p3a",
+    "actionId": "h4g5"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p3b",
+    "actionId": "g4h5"
+   },
+   {
+    "panelId": "s1syn-final-f3-pin-p3b",
+    "actionId": "h4g5"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p0a",
+    "actionId": "d4e3"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p0a",
+    "actionId": "d4e4"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p0b",
+    "actionId": "d4e3"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p0b",
+    "actionId": "d4e4"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p1a",
+    "actionId": "d4e3"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p1a",
+    "actionId": "d4d3"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p1b",
+    "actionId": "d4e3"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p1b",
+    "actionId": "d4d3"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p2a",
+    "actionId": "d4e3"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p2a",
+    "actionId": "d4e5"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p2b",
+    "actionId": "d4e3"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p2b",
+    "actionId": "d4e5"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p3a",
+    "actionId": "d4e3"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p3a",
+    "actionId": "d4e5"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p3b",
+    "actionId": "d4e3"
+   },
+   {
+    "panelId": "s1syn-final-f4-blocked-p3b",
+    "actionId": "d4e5"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p0a",
+    "actionId": "f6f4"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p0a",
+    "actionId": "f6d6"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p0b",
+    "actionId": "f6f4"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p0b",
+    "actionId": "f6d6"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p1a",
+    "actionId": "f6f4"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p1a",
+    "actionId": "f6d6"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p1b",
+    "actionId": "f6f4"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p1b",
+    "actionId": "f6d6"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p2a",
+    "actionId": "f6f4"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p2a",
+    "actionId": "f6d6"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p2b",
+    "actionId": "f6f4"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p2b",
+    "actionId": "f6d6"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p3a",
+    "actionId": "f6f4"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p3a",
+    "actionId": "f6d6"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p3b",
+    "actionId": "f6f4"
+   },
+   {
+    "panelId": "s1syn-final-f5-blocked-p3b",
+    "actionId": "f6d6"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p0a",
+    "actionId": "d8d6"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p0a",
+    "actionId": "d8h8"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p0b",
+    "actionId": "d8d6"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p0b",
+    "actionId": "d8h8"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p1a",
+    "actionId": "d8d6"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p1a",
+    "actionId": "d8e8"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p1b",
+    "actionId": "d8d6"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p1b",
+    "actionId": "d8e8"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p2a",
+    "actionId": "d8d6"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p2a",
+    "actionId": "d8a8"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p2b",
+    "actionId": "d8d6"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p2b",
+    "actionId": "d8a8"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p3a",
+    "actionId": "d8d6"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p3a",
+    "actionId": "d8c8"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p3b",
+    "actionId": "d8d6"
+   },
+   {
+    "panelId": "s1syn-final-f6-absent-p3b",
+    "actionId": "d8c8"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p0a",
+    "actionId": "f2g2"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p0a",
+    "actionId": "f2a2"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p0b",
+    "actionId": "f2g2"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p0b",
+    "actionId": "f2a2"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p1a",
+    "actionId": "f2g2"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p1a",
+    "actionId": "f2d2"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p1b",
+    "actionId": "f2g2"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p1b",
+    "actionId": "f2d2"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p2a",
+    "actionId": "f2g2"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p2a",
+    "actionId": "f2a2"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p2b",
+    "actionId": "f2g2"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p2b",
+    "actionId": "f2a2"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p3a",
+    "actionId": "f2g2"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p3a",
+    "actionId": "f2f5"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p3b",
+    "actionId": "f2g2"
+   },
+   {
+    "panelId": "s1syn-final-f7-absent-p3b",
+    "actionId": "f2f5"
+   }
+  ],
+  "counterfactualPairs": [
+   {
+    "pairId": "s1syn-final-f0-pin-p0",
+    "familyId": "s1syn-final-f0-pin",
+    "firstPanelId": "s1syn-final-f0-pin-p0a",
+    "secondPanelId": "s1syn-final-f0-pin-p0b",
+    "actionIds": [
+     "e4f6",
+     "b1b2"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f0-pin-p1",
+    "familyId": "s1syn-final-f0-pin",
+    "firstPanelId": "s1syn-final-f0-pin-p1a",
+    "secondPanelId": "s1syn-final-f0-pin-p1b",
+    "actionIds": [
+     "e4f6",
+     "e3b6"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f0-pin-p2",
+    "familyId": "s1syn-final-f0-pin",
+    "firstPanelId": "s1syn-final-f0-pin-p2a",
+    "secondPanelId": "s1syn-final-f0-pin-p2b",
+    "actionIds": [
+     "e4f6",
+     "g1f1"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f0-pin-p3",
+    "familyId": "s1syn-final-f0-pin",
+    "firstPanelId": "s1syn-final-f0-pin-p3a",
+    "secondPanelId": "s1syn-final-f0-pin-p3b",
+    "actionIds": [
+     "e4f6",
+     "a2a6"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f1-pin-p0",
+    "familyId": "s1syn-final-f1-pin",
+    "firstPanelId": "s1syn-final-f1-pin-p0a",
+    "secondPanelId": "s1syn-final-f1-pin-p0b",
+    "actionIds": [
+     "d5e4",
+     "f8e7"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f1-pin-p1",
+    "familyId": "s1syn-final-f1-pin",
+    "firstPanelId": "s1syn-final-f1-pin-p1a",
+    "secondPanelId": "s1syn-final-f1-pin-p1b",
+    "actionIds": [
+     "d5e4",
+     "e1g3"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f1-pin-p2",
+    "familyId": "s1syn-final-f1-pin",
+    "firstPanelId": "s1syn-final-f1-pin-p2a",
+    "secondPanelId": "s1syn-final-f1-pin-p2b",
+    "actionIds": [
+     "d5e4",
+     "h2e2"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f1-pin-p3",
+    "familyId": "s1syn-final-f1-pin",
+    "firstPanelId": "s1syn-final-f1-pin-p3a",
+    "secondPanelId": "s1syn-final-f1-pin-p3b",
+    "actionIds": [
+     "d5e4",
+     "e2g4"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f2-pin-p0",
+    "familyId": "s1syn-final-f2-pin",
+    "firstPanelId": "s1syn-final-f2-pin-p0a",
+    "secondPanelId": "s1syn-final-f2-pin-p0b",
+    "actionIds": [
+     "e8e5",
+     "g1e1"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f2-pin-p1",
+    "familyId": "s1syn-final-f2-pin",
+    "firstPanelId": "s1syn-final-f2-pin-p1a",
+    "secondPanelId": "s1syn-final-f2-pin-p1b",
+    "actionIds": [
+     "e8e5",
+     "a4b5"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f2-pin-p2",
+    "familyId": "s1syn-final-f2-pin",
+    "firstPanelId": "s1syn-final-f2-pin-p2a",
+    "secondPanelId": "s1syn-final-f2-pin-p2b",
+    "actionIds": [
+     "e8e5",
+     "f6c6"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f2-pin-p3",
+    "familyId": "s1syn-final-f2-pin",
+    "firstPanelId": "s1syn-final-f2-pin-p3a",
+    "secondPanelId": "s1syn-final-f2-pin-p3b",
+    "actionIds": [
+     "e8e5",
+     "g8g4"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f3-pin-p0",
+    "familyId": "s1syn-final-f3-pin",
+    "firstPanelId": "s1syn-final-f3-pin-p0a",
+    "secondPanelId": "s1syn-final-f3-pin-p0b",
+    "actionIds": [
+     "g4h5",
+     "c1d1"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f3-pin-p1",
+    "familyId": "s1syn-final-f3-pin",
+    "firstPanelId": "s1syn-final-f3-pin-p1a",
+    "secondPanelId": "s1syn-final-f3-pin-p1b",
+    "actionIds": [
+     "g4h5",
+     "g2e2"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f3-pin-p2",
+    "familyId": "s1syn-final-f3-pin",
+    "firstPanelId": "s1syn-final-f3-pin-p2a",
+    "secondPanelId": "s1syn-final-f3-pin-p2b",
+    "actionIds": [
+     "g4h5",
+     "a7a5"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f3-pin-p3",
+    "familyId": "s1syn-final-f3-pin",
+    "firstPanelId": "s1syn-final-f3-pin-p3a",
+    "secondPanelId": "s1syn-final-f3-pin-p3b",
+    "actionIds": [
+     "g4h5",
+     "h4g5"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f4-blocked-p0",
+    "familyId": "s1syn-final-f4-blocked",
+    "firstPanelId": "s1syn-final-f4-blocked-p0a",
+    "secondPanelId": "s1syn-final-f4-blocked-p0b",
+    "actionIds": [
+     "d4e3",
+     "d4e4"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f4-blocked-p1",
+    "familyId": "s1syn-final-f4-blocked",
+    "firstPanelId": "s1syn-final-f4-blocked-p1a",
+    "secondPanelId": "s1syn-final-f4-blocked-p1b",
+    "actionIds": [
+     "d4e3",
+     "d4d3"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f4-blocked-p2",
+    "familyId": "s1syn-final-f4-blocked",
+    "firstPanelId": "s1syn-final-f4-blocked-p2a",
+    "secondPanelId": "s1syn-final-f4-blocked-p2b",
+    "actionIds": [
+     "d4e3",
+     "d4e5"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f4-blocked-p3",
+    "familyId": "s1syn-final-f4-blocked",
+    "firstPanelId": "s1syn-final-f4-blocked-p3a",
+    "secondPanelId": "s1syn-final-f4-blocked-p3b",
+    "actionIds": [
+     "d4e3",
+     "d4e5"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f5-blocked-p0",
+    "familyId": "s1syn-final-f5-blocked",
+    "firstPanelId": "s1syn-final-f5-blocked-p0a",
+    "secondPanelId": "s1syn-final-f5-blocked-p0b",
+    "actionIds": [
+     "f6f4",
+     "f6d6"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f5-blocked-p1",
+    "familyId": "s1syn-final-f5-blocked",
+    "firstPanelId": "s1syn-final-f5-blocked-p1a",
+    "secondPanelId": "s1syn-final-f5-blocked-p1b",
+    "actionIds": [
+     "f6f4",
+     "f6d6"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f5-blocked-p2",
+    "familyId": "s1syn-final-f5-blocked",
+    "firstPanelId": "s1syn-final-f5-blocked-p2a",
+    "secondPanelId": "s1syn-final-f5-blocked-p2b",
+    "actionIds": [
+     "f6f4",
+     "f6d6"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f5-blocked-p3",
+    "familyId": "s1syn-final-f5-blocked",
+    "firstPanelId": "s1syn-final-f5-blocked-p3a",
+    "secondPanelId": "s1syn-final-f5-blocked-p3b",
+    "actionIds": [
+     "f6f4",
+     "f6d6"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f6-absent-p0",
+    "familyId": "s1syn-final-f6-absent",
+    "firstPanelId": "s1syn-final-f6-absent-p0a",
+    "secondPanelId": "s1syn-final-f6-absent-p0b",
+    "actionIds": [
+     "d8d6",
+     "d8h8"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f6-absent-p1",
+    "familyId": "s1syn-final-f6-absent",
+    "firstPanelId": "s1syn-final-f6-absent-p1a",
+    "secondPanelId": "s1syn-final-f6-absent-p1b",
+    "actionIds": [
+     "d8d6",
+     "d8e8"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f6-absent-p2",
+    "familyId": "s1syn-final-f6-absent",
+    "firstPanelId": "s1syn-final-f6-absent-p2a",
+    "secondPanelId": "s1syn-final-f6-absent-p2b",
+    "actionIds": [
+     "d8d6",
+     "d8a8"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f6-absent-p3",
+    "familyId": "s1syn-final-f6-absent",
+    "firstPanelId": "s1syn-final-f6-absent-p3a",
+    "secondPanelId": "s1syn-final-f6-absent-p3b",
+    "actionIds": [
+     "d8d6",
+     "d8c8"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f7-absent-p0",
+    "familyId": "s1syn-final-f7-absent",
+    "firstPanelId": "s1syn-final-f7-absent-p0a",
+    "secondPanelId": "s1syn-final-f7-absent-p0b",
+    "actionIds": [
+     "f2g2",
+     "f2a2"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f7-absent-p1",
+    "familyId": "s1syn-final-f7-absent",
+    "firstPanelId": "s1syn-final-f7-absent-p1a",
+    "secondPanelId": "s1syn-final-f7-absent-p1b",
+    "actionIds": [
+     "f2g2",
+     "f2d2"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f7-absent-p2",
+    "familyId": "s1syn-final-f7-absent",
+    "firstPanelId": "s1syn-final-f7-absent-p2a",
+    "secondPanelId": "s1syn-final-f7-absent-p2b",
+    "actionIds": [
+     "f2g2",
+     "f2a2"
+    ]
+   },
+   {
+    "pairId": "s1syn-final-f7-absent-p3",
+    "familyId": "s1syn-final-f7-absent",
+    "firstPanelId": "s1syn-final-f7-absent-p3a",
+    "secondPanelId": "s1syn-final-f7-absent-p3b",
+    "actionIds": [
+     "f2g2",
+     "f2f5"
+    ]
+   }
+  ],
+  "retention": {
+   "sentinelPanelIds": [
+    "s1syn-validation-f0-pin-p0b",
+    "s1syn-validation-f2-blocked-p0a",
+    "s1syn-validation-f3-absent-p0a",
+    "s1syn-validation-f0-pin-p0a"
+   ],
+   "earlierPrinciples": []
+  }
+ },
+ "stockfishCollection": {
+  "schema": "registered-stockfish-collection-v1",
+  "executable": "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\vendor\\stockfish\\sf-19\\extracted\\stockfish\\stockfish-windows-x86-64-universal.exe",
+  "binarySha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+  "search": "depth",
+  "budgets": [
+   10,
+   14
+  ],
+  "args": [],
+  "cacheDir": "runs/lichess-stage1-synthetic-v1-smoke-r2-stockfish-cache",
+  "timeoutMs": 120000,
+  "maxElapsedMs": 900000,
+  "hashMiB": 32
+ },
+ "learner": {
+  "schema": "lichess-stage1-brain-v1",
+  "graph": {
+   "path": ".cache/full.npz",
+   "sha256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2"
+  },
+  "mapping": {
+   "path": "research/reports/reversal-candidate-2026-10-05/mapping.json",
+   "sha256": "1751d9a5c0ca048068c0e6501d795b3fcba1242662db461b688f495a92b05b1b"
+  },
+  "modelSource": {
+   "path": "research/data/lichess-stage1-synthetic-v1/model-source.json",
+   "sha256": "093f22b79d2d2f3a61162b1fc3a83c49b0f532177852a26ece5c1ec6d02901d4"
+  },
+  "model": {
+   "steps": 8,
+   "inputDim": 1,
+   "outputs": 1,
+   "precision": "float32",
+   "saturation": 10,
+   "recurrentScale": 0.9,
+   "normalization": "row"
+  },
+  "memory": {
+   "eta": 0.5,
+   "minGain": 0.2,
+   "maxGain": 1.8,
+   "activityScale": 1.5
+  },
+  "encoder": {},
+  "replicaSeeds": {
+   "r1": 20261101
+  },
+  "maxPresentations": 60000,
+  "maxLegalMoves": 64,
+  "priorScale": 4,
+  "current": 1.5
+ },
+ "resourceLimits": {
+  "rssMiB": 2048,
+  "freeMiB": 256
+ },
+ "cpuDuty": 0.5
+}

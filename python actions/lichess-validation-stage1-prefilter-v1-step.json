@@ -1,0 +1,69 @@
+{
+    "schema":  1,
+    "name":  "lichess-validation-stage1-prefilter-v1",
+    "paused":  false,
+    "paths":  {
+                  "run":  "research/data/lichess-validation-stage1-prefilter-v1",
+                  "sourceCorpus":  "research/data/lichess-validation-candidates-v1",
+                  "filtered":  "research/data/lichess-validation-stage1-prefilter-v1"
+              },
+    "pins":  {
+                 "research/data/lichess-validation-candidates-v1/validation.jsonl":  "4bd37573eeefbdfbcd941438a07f6ae6423936acf347878b33d2be584716d484",
+                 ".codebase/scripts/data/filter-lichess-validation-stage1-candidates-v1.mjs":  "026c6d66eaa77a4bf04b6dee5625df52113be943a09602e523075e082eb3a4ef",
+                 "research/data/lichess-validation-candidates-v1/manifest.json":  "ff7d5c544ed23bc36694e03ae848a7255ae82794a2bb84e87067cf54aef18b0f",
+                 ".codebase/src/puzzle-learning/mixed-capture-filter.mjs":  "4a950efee6a1ecb043e780cc257d5cfa41543f1ca075a159d52f66e5ad64d9c9",
+                 "package-lock.json":  "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+                 ".codebase/scripts/data/audit-lichess-validation-stage1-candidates-v1.mjs":  "0f67f433afa2cb61abd0161cc2038432780b34778ac849dad07d67ceabaa35b9"
+             },
+    "state_file":  "runs/python-actions/current-lichess-validation-stage1-prefilter-v1.json",
+    "jobs":  {
+                 "audit":  {
+                               "argv":  [
+                                            "node",
+                                            "--max-old-space-size=256",
+                                            ".codebase/scripts/data/audit-lichess-validation-stage1-candidates-v1.mjs",
+                                            "--corpus",
+                                            "{sourceCorpus}",
+                                            "--filtered",
+                                            "{filtered}",
+                                            "--out",
+                                            "research/reports/lichess-foundations-pilot-2026-10-21/validation-stage1-prefilter-audit-v1.json"
+                                        ],
+                               "requires":  [
+                                                "{filtered}/manifest.json",
+                                                "{filtered}/validation.jsonl"
+                                            ],
+                               "refuse_existing":  [
+                                                       "research/reports/lichess-foundations-pilot-2026-10-21/validation-stage1-prefilter-audit-v1.json"
+                                                   ],
+                               "role":  "check"
+                           },
+                 "prefilter":  {
+                                   "argv":  [
+                                                "node",
+                                                "--max-old-space-size=256",
+                                                ".codebase/scripts/data/filter-lichess-validation-stage1-candidates-v1.mjs",
+                                                "--corpus",
+                                                "{sourceCorpus}",
+                                                "--out",
+                                                "{run}"
+                                            ],
+                                   "fresh_output":  "{run}",
+                                   "role":  "check"
+                               }
+             },
+    "artifacts":  {
+                      "audit":  "research/reports/lichess-foundations-pilot-2026-10-21/validation-stage1-prefilter-audit-v1.json",
+                      "manifest":  "{run}/manifest.json"
+                  },
+    "report_fields":  [
+                          "tested",
+                          "selected",
+                          "selectedGameIds",
+                          "passed",
+                          "finalSplitInspected",
+                          "eligibleForNeuralTeaching",
+                          "graphLaunchAuthorized",
+                          "scope"
+                      ]
+}

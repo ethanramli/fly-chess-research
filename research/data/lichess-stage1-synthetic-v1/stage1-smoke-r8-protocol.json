@@ -1,0 +1,32 @@
+{
+ "schema": "lichess-stage1-synthetic-protocol-v1",
+ "mode": "smoke",
+ "registration": {
+  "path": "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r8-registration.json",
+  "sha256": "98145f161fcb5fbc1a3eaecb9b425fa0d4b70e14e06c36f10217d6459f18daad"
+ },
+ "question": "Does verified capture-retention feedback, with separately tested Stockfish value-error teaching, produce lasting, consequence-sensitive Stage 1 choices that transfer to unfamiliar counterfactual families, beyond matched controls?",
+ "learner": "From-scratch full FlyWire graph; ReversalMemory gains on mapped KC-to-MBON edges are the only lasting memory; wiring, root IDs and signs stay fixed.",
+ "teaching": "Each event binds the Fly's own all-legal ranking before feedback to an independently replayed one-reply certificate; Stockfish errors use pre-collected pinned reviews. No teacher computes neural parameter updates.",
+ "controls": [
+  "outcome-only",
+  "absent",
+  "disabled",
+  "shuffled",
+  "stockfish-shuffled",
+  "scratch (block 0)"
+ ],
+ "data": "Explicitly synthetic <=6-piece FEN-rooted tasks bound to verified Lichess source puzzles (first-solution capture identity); train/validation/final families are source-game disjoint and final rows stay unevaluated until checkpoint selection is frozen.",
+ "gates": "Frozen Stage 1 D1-D6, D8 thresholds plus the separate Stockfish-assistance gate D9; every replica must pass. Policy B (researcher, 2026-10-24): receiver causality is shown by this gate's own matched controls (D6/D8/D9), not G0; Stage 1 D7 is deferred to the Stage 2 cumulative retention gate.",
+ "deviations": [
+  "Stratum labels are the classifier stratum of each board's predeclared focal capture; pin families pair a pinned board with its open counterpart, resolving an inconsistency between the 16-per-stratum quota and reversing pairs (journal 2026-10-23-babysit-stage1-end-to-end).",
+  "Receiver acceptance gates promotion, not feedback-enabled training.",
+  "Stockfish reviews use depth budgets 10 and 14: node-limited searches usually end mid-iteration with only a bound, which the exact-score rule rejects (r1 smoke failure).",
+  "Policy B: no G0 dependency; Stage 1 D7 deferred to Stage 2 (researcher decision 2026-10-24).",
+  "Input cue public-action-relative-cue-v1: the v1 absolute board cue gave two moves on one board 86% shared cells, so opposite lessons cancelled (receipts of full-r5).",
+  "Revision 7+: public-action-relative-cue-v2 and CoupledStockfishBrainV3 (runtime factory v2): the Stockfish child-position cue uses the token family of the move cue, seen from the side that moved (the v1 state cue shared about 2.6 of 15 cells with the move cue), and its value and error stay in the perspective of the mover (reviewer finding 2, fix goal 2026-10-24).",
+  "Revision 7+: reuses the complete smoke-r6 Stockfish review cache read-only (identical engine settings and panels; per-file hashes verified on load).",
+  "Revision 8+: registered babysit safety controls (fix goal task 2): runner v2 with a cooperative block-boundary pause; rehearsal planner v2 (no panel targeted in more than 2 consecutive blocks); informative-arm early stop with gate-failed when the best block-start training-board count does not improve within 3 (smoke) or 8 (full) blocks. ReversalMemory eta stays 0.5: the retention probe chose no eta (fix goal task 1 failed)."
+ ],
+ "scope": "Engineering smoke test of the complete babysit path (1 replica, 8 blocks); not scientific evidence."
+}

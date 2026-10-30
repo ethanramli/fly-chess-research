@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "name": "lichess-history-fetch-development-probe-v1",
+  "paused": false,
+  "paths": {
+    "rows": "research/reports/lichess-foundations-pilot-2026-10-21/batch-export-probe-row.jsonl",
+    "out": "research/data/lichess-source-pgn-probe-v1",
+    "run": "research/reports/lichess-foundations-pilot-2026-10-21"
+  },
+  "pins": {
+    "python actions/fetch_lichess_game_pgns.py": "59460a89bfa8f659dc08b92d97cb954f00590fa0f7fead7b9befdbb1b2941485",
+    "research/reports/lichess-foundations-pilot-2026-10-21/batch-export-probe-row.jsonl": "c4afc9751d2b69803191fa24bb9b3316329848214334e371c2899627cc7fc8c3"
+  },
+  "state_file": "runs/python-actions/current-lichess-history-fetch-probe.json",
+  "jobs": {
+    "fetch-probe": {
+      "role": "check",
+      "argv": [
+        "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+        "python actions/fetch_lichess_game_pgns.py",
+        "--rows",
+        "{rows}",
+        "--split",
+        "development",
+        "--out",
+        "{out}"
+      ],
+      "requires": [
+        "{rows}"
+      ],
+      "fresh_output": "{out}"
+    }
+  },
+  "artifacts": {},
+  "report_fields": []
+}

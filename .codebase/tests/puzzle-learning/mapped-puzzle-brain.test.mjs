@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { Chess } from 'chess.js';
 import { SparseTrainer } from '../../src/supervised-baselines/trainer.mjs';
 import { ReversalMemory } from '../../src/neural-learning/reversal-memory.mjs';
+import { RateTimingMemory } from '../../src/neural-learning/rate-timing-memory.mjs';
 import { MappedPuzzleBrain } from '../../src/puzzle-learning/mapped-puzzle-brain.mjs';
 import { fixedStateHash } from '../../src/neural-learning/association-validation.mjs';
 import { certifyMate } from '../../src/search-and-feedback/mate-certificate.mjs';
@@ -31,6 +32,15 @@ function fixture(maxPresentations = 64) {
   return { brain, memory, model, board, task, experience };
 }
 
+test('mapped assessment records an unresolved top-score tie instead of inventing a move choice', async () => {
+  const { brain, board, task } = fixture();
+  const legal = board.moves({ verbose: true });
+  const assessment = await brain.assess(board, legal, task);
+  assert.equal(assessment.choice, null);
+  assert.equal(assessment.tiedTopMoves.length, legal.length);
+  assert.deepEqual(assessment.tiedTopMoves, legal.map(move => move.from + move.to + (move.promotion ?? '')).sort());
+});
+
 test('mapped replay changes only permitted local efficacy, then restored memory reproduces the next event', async () => {
   const a = fixture(), invariant = fixedStateHash(a.model, a.memory.edges), before = a.memory.snapshot();
   const receipt = await a.brain.replay(a.experience());
@@ -42,6 +52,26 @@ test('mapped replay changes only permitted local efficacy, then restored memory 
   const b = fixture(); b.memory.restore(a.memory.snapshot());
   const nextA = await a.brain.replay(a.experience()), nextB = await b.brain.replay(b.experience());
   assert.deepEqual(nextA, nextB);
+});
+
+test('mapped Lichess replay sends the complete neural frame to RateTimingMemory', async () => {
+  const a = fixture();
+  const mapping = { schema: 'gamma2-rate-timing-map-v1', groups: [{
+    side: 'left', mbonType: 'MBON12', danType: 'PPL103',
+    dan: [{ index: 2 }], edges: [0], kc: [0], kcTypes: ['KCg-test'],
+  }] };
+  const memory = new RateTimingMemory(a.model, mapping, a.brain.rest, {
+    eta: 0.25, minGain: 0.2, maxGain: 1.8, activityScale: 1.5,
+    tauKC: 1, tauShort: 1, tauLong: 3, stepDuration: 0.1,
+    referenceMode: 'fixed-unstimulated-model',
+  });
+  const brain = new MappedPuzzleBrain({ model: a.model, memory, mapping,
+    encoder: a.brain.encoder, readouts: a.brain.readouts, rest: a.brain.rest });
+  assert.throws(() => brain.observeMemory(['PAM02']), /does not map the required teaching channel/);
+  const receipt = await brain.replay(a.experience());
+  assert.equal(memory.events, 1);
+  assert.equal(receipt.update.events, 1);
+  assert.equal(receipt.appliedToNeurons, true);
 });
 
 test('assessment freezes learning; disabled and absent controls preserve their explicit semantics', async () => {

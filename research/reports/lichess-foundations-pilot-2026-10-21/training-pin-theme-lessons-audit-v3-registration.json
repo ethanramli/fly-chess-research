@@ -1,0 +1,33 @@
+﻿{
+  "schema": "lichess-training-pin-theme-lessons-independent-audit-v3",
+  "createdAt": "2026-10-23T04:09:33.728768+00:00",
+  "purpose": "Independently replay all train-only source histories, legal-action consequence certificates, and the exact BOM-bearing batch registration bytes.",
+  "inputs": {
+    "batchConfig": "python actions/lichess-training-pin-theme-lessons-v2-step.json",
+    "batchConfigSha256": "9c5725c7aabc15044f88e8553c2827e76ceff5a2fd9106b5352d4c0b7893200b",
+    "batchManifest": "research/data/lichess-stage1-pin-theme-prepared-v2/manifest.json",
+    "batchManifestSha256": "3bc8d6cf1d47c3fb5523d5def6d00da147e56d8de5dc547428c18455ff747ee9",
+    "candidateRows": "research/data/lichess-stage1-training-pin-theme-v2/train.jsonl",
+    "candidateRowsSha256": "ac742b70b15cfb1e015ba86a31b4b88eba7f2508a4e0111e9b08d73bc93fdd3f",
+    "sourceManifest": "research/data/lichess-stage1-training-pin-theme-v2/manifest.json",
+    "sourceManifestSha256": "d77fbe023dab9f143145f9587413834f31bc601bf9ba09b93efe4fb36a429518",
+    "sourceAudit": "research/reports/lichess-foundations-pilot-2026-10-21/training-pin-theme-source-audit-v2.json",
+    "sourceAuditSha256": "9ad2922b9a54468b26f69637b179dbe5f857837f4e5c78a0db948484258c25ff",
+    "pgnManifest": "research/data/lichess-stage1-training-pin-theme-v2-pgn/train/manifest.json",
+    "pgnManifestSha256": "00b52419bc59dc167ba26ef8d6a3df476591797f4b51615f355b6d5daf290f61",
+    "split": "train",
+    "rowCount": 1024,
+    "finalSplitInspected": false
+  },
+  "auditor": ".codebase/scripts/data/audit-lichess-csv-lessons-v3.mjs",
+  "auditorSha256": "0e47626ca8dc26b5c2be2a190cdae2a54f68c7d56c450944f1881b787559c7c8",
+  "parsing": "Strip UTF-8 BOM for JSON parsing only; SHA256 continues to cover the original config bytes.",
+  "scope": "Independent replay of v5 train-only PGN batch manifest, Lichess source histories, immediate consequence certificates, and prepared lessons; no neural efficacy, family disjointness, or reasoning claim.",
+  "limits": {
+    "nodeHeapMiB": 256,
+    "cpuDuty": 0.5,
+    "maxSeconds": 900,
+    "maxRssMiB": 2048,
+    "minimumFreeMiB": 256
+  }
+}

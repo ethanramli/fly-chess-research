@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "name": "lichess-branch-contrast-checks",
+  "paused": false,
+  "paths": {
+    "run": "research/reports/lichess-foundations-pilot-2026-10-21"
+  },
+  "pins": {
+    ".codebase/src/puzzle-learning/lichess-branch-contrast.mjs": "5b0734e85e909b168c91d015d381a55ef26fd72cf972449bb68494a8ddd37c36",
+    ".codebase/scripts/data/prepare-lichess-branch-contrasts.mjs": "3d6eb2b5d11c2dbc06be8a33649b1a55d54aec698e0cb1686c46620f07dc12e3",
+    ".codebase/tests/puzzle-learning/lichess-branch-contrast.test.mjs": "870ad268d00b3ebd4415a790cac8d37e6aec565f81530576d53f2952e06735fa",
+    ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+    ".codebase/src/search-and-feedback/capture-retention-certificate.mjs": "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46"
+  },
+  "state_file": "runs/python-actions/current-branch-contrast-checks.json",
+  "jobs": {
+    "tests": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        "--experimental-test-isolation=none",
+        ".codebase/tests/puzzle-learning/lichess-branch-contrast.test.mjs"
+      ]
+    }
+  },
+  "artifacts": {}
+}

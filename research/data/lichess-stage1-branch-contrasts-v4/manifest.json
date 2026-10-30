@@ -1,0 +1,50 @@
+{
+  "schema": "lichess-branch-contrast-preparation-v1",
+  "inputs": {
+    "packageSha256": "e31bcf389a8780668be231d3278221138048b267437cbfddd21f2c596a2a4434",
+    "auditSha256": "0a8b655bff466c4a137693a353651bf3c19b9fe11ca057f904f5483f54aefe85",
+    "trainingChunks": {
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-000\\lessons.jsonl": "13ce8eb30d843a2ac72ad14e9a708149d3d2c5d1c95b9b55cfede6c9f5fe6a8b",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-001\\lessons.jsonl": "56d7de3dfd390c30341d6d6095f07638af1e0795b712a7afc0d98ba34e856633",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-002\\lessons.jsonl": "6769f4b355bcc44bf42c879052d2100e374fa47c1eb2db75d781185b04e8c8c2",
+      "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\data\\lichess-stage1-prepared-batches-v7\\train-chunk-003\\lessons.jsonl": "c9b1d8abde0817e0f895bbcc0528f677a30c782a7222a7e9620b166ec1d2ed06"
+    }
+  },
+  "bounds": {
+    "maxTrainingRows": 128,
+    "maxBranches": 4096,
+    "maxFamilies": 16,
+    "maxSeconds": 2700,
+    "maxRssMiB": 2048,
+    "minFreeMiB": 256,
+    "cpuDuty": 0.5,
+    "heapMiB": 256,
+    "maxFamilyBytes": 2097152,
+    "maxOutputBytes": 33554432
+  },
+  "counts": {
+    "trainingRows": 128,
+    "branches": 313,
+    "families": 0,
+    "unknownBranches": 0,
+    "oversizedFamilies": 0
+  },
+  "commonMoveKind": "any-quiet",
+  "stoppingBound": "training-roots-exhausted",
+  "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputBytes": 0,
+  "resources": {
+    "elapsedSeconds": 60.251097099999996,
+    "cpu": {
+      "user": 29172000,
+      "system": 203000
+    },
+    "peakRssMiB": 81.45703125
+  },
+  "neuralEventsDelivered": 0,
+  "graphLaunchAuthorized": false,
+  "independentFamilyAuditPassed": false,
+  "validationLessonContentInspected": false,
+  "finalSplitInspected": false,
+  "scope": "Expanded training-only construction feasibility after v1 exhausted its 512-branch bound; requires independent legal derivation/consequence/family audit and receiver gates. Zero yield is not impossibility."
+}

@@ -1,0 +1,70 @@
+{
+    "schema":  1,
+    "name":  "lichess-validation-lessons-independent-audit-v1",
+    "paused":  false,
+    "paths":  {
+                  "rows":  "research/data/lichess-validation-stage1-prefilter-v2/validation.jsonl",
+                  "source":  "research/data/lichess-validation-source-pgn-v3",
+                  "prepared":  "research/data/lichess-validation-prepared-v2",
+                  "candidateAudit":  "research/reports/lichess-foundations-pilot-2026-10-21/validation-stage1-prefilter-audit-v2.json",
+                  "out":  "research/reports/lichess-foundations-pilot-2026-10-21/validation-lessons-audit-v1.json",
+                  "auditor":  ".codebase/scripts/data/audit-lichess-validation-lessons-v1.mjs",
+                  "run":  "runs/python-actions/lichess-validation-lessons-audit-v1"
+              },
+    "pins":  {
+                 "research/data/lichess-validation-source-pgn-v3/response.pgn":  "ee872cc5ca86bec4ee84aa4ad103219148b11e66a78acf078033ab75252ad7db",
+                 "research/data/lichess-validation-prepared-v2/lessons.jsonl":  "e363e506d3928465ef71be04555992273070b02a32f5e049f90ad99329bd4c18",
+                 ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs":  "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+                 "research/data/lichess-validation-stage1-prefilter-v2/validation.jsonl":  "ecabc3af28daaf93c92fccba15e48326a716e4bddc9d974a0c29510abeacccff",
+                 "research/reports/lichess-foundations-pilot-2026-10-21/validation-stage1-prefilter-audit-v2.json":  "d8f68bb461c46439a26704246fde5737b08caf84c5ca5d8718fc61c4761e88f4",
+                 "research/data/lichess-validation-source-pgn-v3/manifest.json":  "1f6686dc3b59de55097b6038d6c2d33a3291dc3b23ce0760a716264de5d0ba8d",
+                 "research/data/lichess-validation-prepared-v2/manifest.json":  "92913ebe975ba95c1c4df2981de3201a71520ea9a1b2133ef0c5f9dae8f231e1",
+                 ".codebase/scripts/data/audit-lichess-validation-lessons-v1.mjs":  "19098d61235bb95245732345c76f4ea6f8c61866f16e3fe41144547fc3f5f0c1",
+                 ".codebase/src/search-and-feedback/puzzle-search.mjs":  "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+                 "package-lock.json":  "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+                 ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs":  "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+                 "research/data/lichess-validation-stage1-prefilter-v2/manifest.json":  "7d3b0c61ff33290329199e94040030a2f931c958507e4ba891a52fbd7653a45c",
+                 ".codebase/src/search-and-feedback/capture-retention-certificate.mjs":  "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5"
+             },
+    "state_file":  "runs/python-actions/lichess-validation-lessons-audit-v1.json",
+    "jobs":  {
+                 "audit":  {
+                               "role":  "check",
+                               "argv":  [
+                                            "node",
+                                            "--max-old-space-size=256",
+                                            "{auditor}",
+                                            "--rows",
+                                            "{rows}",
+                                            "--source",
+                                            "{source}",
+                                            "--prepared",
+                                            "{prepared}",
+                                            "--candidateAudit",
+                                            "{candidateAudit}",
+                                            "--out",
+                                            "{out}"
+                                        ],
+                               "requires":  [
+                                                "{rows}",
+                                                "{candidateAudit}",
+                                                "{source}/manifest.json",
+                                                "{prepared}/manifest.json",
+                                                "{prepared}/lessons.jsonl"
+                                            ],
+                               "fresh_output":  "{out}"
+                           }
+             },
+    "artifacts":  {
+                      "audit":  "{out}"
+                  },
+    "report_fields":  [
+                          "passed",
+                          "puzzleCount",
+                          "sourceGames",
+                          "stage1DomainEligible",
+                          "consequenceActions",
+                          "eligibleForNeuralTeaching",
+                          "graphLaunchAuthorized"
+                      ]
+}

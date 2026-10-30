@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "curriculum-block-software-checks-v1",
+  "paused": false,
+  "paths": {
+    "registration": "documentation/design/puzzle-learning/lichess-foundations-loop.md",
+    "run": "research/reports/lichess-foundations-pilot-2026-10-21"
+  },
+  "pins": {
+    ".codebase/src/puzzle-learning/curriculum-block-session.mjs": "ac90843105fdd78ea46e5260a82a736fa2d2c4ac014f72bc79ca40135b4e5207",
+    ".codebase/tests/puzzle-learning/curriculum-block-session.test.mjs": "7de72ee1bb23bfabaf49cdd7ed7db2d9368652128d8a42f9f7077972a68f208d",
+    ".codebase/src/puzzle-learning/curriculum-rehearsal-plan.mjs": "29981441de4679dee58ef9f1e4d1d61fb3759f712703295b01f416984209a7eb",
+    ".codebase/src/puzzle-learning/temporal-feedback-session.mjs": "67a80a9edd59c25f5aa60eb4cab32048cb6052e309d54025ef70fdf2cdcca46c",
+    ".codebase/src/puzzle-learning/capture-retention-feedback.mjs": "18a90392a65d576d97db4ad75ed6019e9d7965de9bc1e9c9616492f71fb00913",
+    ".codebase/src/neural-learning/rate-timing-memory.mjs": "dcb96abe443e05c1983fa829f2a978fbe6de3be701779edc9a17854b111c0d65",
+    ".codebase/src/puzzle-learning/curriculum-block-runner.mjs": "ee5ebd45e95fcd8b160f26b3f05aa6ecc87df5a52ff4c583d0e43939c42ab906",
+    ".codebase/src/runtime/checkpoint-codec.mjs": "31956d5985c25ca521c080ee716199d70761d2eacefc913afd3f375390a018ed",
+    ".codebase/src/puzzle-learning/curriculum-block-audit.mjs": "ab9ea43fca8aeb1920d6aaa0918ec81949d2b33f806074cd4fa548ecfaee95c1",
+    ".codebase/src/puzzle-learning/lichess-curriculum-block.mjs": "c854521ce8c55dfca0613621866d3f65f095cc2aa13bf9e93b61cca64f8058a8",
+    ".codebase/scripts/data/audit-lichess-source-candidates.mjs": "473b23aff4cd544bdfde68fd3d703a008229f0db7bea89d486a7be6415088ebf",
+    ".codebase/tests/puzzle-learning/lichess-lessons.test.mjs": "f1dbe69f0991de899c31a9dfde009696030739632d8d15f9436992055eba8f27",
+    ".codebase/scripts/data/curate-lichess-puzzles.mjs": "88d036c6ceca115c33330bc83801e96f721403a6c471e209480ce28b9e25f4a5"
+  },
+  "state_file": "runs/python-actions/current-curriculum-block-checks.json",
+  "jobs": {
+    "tests": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        ".codebase/tests/puzzle-learning/curriculum-block-session.test.mjs",
+        ".codebase/tests/puzzle-learning/curriculum-rehearsal-plan.test.mjs",
+        ".codebase/tests/puzzle-learning/temporal-feedback-session.test.mjs"
+      ]
+    },
+    "source-tests": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        ".codebase/tests/puzzle-learning/lichess-lessons.test.mjs",
+        ".codebase/tests/puzzle-learning/curriculum-rehearsal-plan.test.mjs",
+        ".codebase/tests/search-and-feedback/capture-retention-certificate.test.mjs"
+      ]
+    },
+    "audit-source": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/data/audit-lichess-source-candidates.mjs",
+        "--corpus",
+        "research/data/lichess-stage1-candidates-v1",
+        "--out",
+        "research/reports/lichess-foundations-pilot-2026-10-21/source-candidates-audit-v1.json",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "requires": [
+        "research/data/lichess-stage1-candidates-v1/manifest.json"
+      ],
+      "refuse_existing": [
+        "research/reports/lichess-foundations-pilot-2026-10-21/source-candidates-audit-v1.json"
+      ]
+    }
+  },
+  "artifacts": {},
+  "report_fields": []
+}

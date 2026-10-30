@@ -1,0 +1,35 @@
+# Stage 2 bounded avoid-mate certificate primitive
+
+## Change
+
+Added `avoid-mate` as a narrow, verified task domain in the shared consequence verifier. Its fixed task is `{ objective: "avoid-mate", plies: 3 }`. For a legal learner action, the producer creates the hypothetical child board and certifies whether the opponent, to move, can force mate within the remaining two plies. The independent wrapper checker binds the original FEN/PGN, learner action and actor, exact task, nested opponent-side mate proof, and wrapper SHA256. Verified opponent mate maps to learner task failure; a complete proof of no opponent mate within that horizon maps to task success; unknown maps to no event.
+
+## Evidence and limits
+
+Six edited JavaScript modules passed `node --check`. No behavioral tests or learner runs were performed. Static review confirms the hypothetical board is a copy, the opponent is selected as the mate attacker, the learner-facing label is inverted from the nested proof, and unknown proof/checker outcomes remain non-teaching. The existing dual-valence adapter can consume the shared `verifiedExperience` result. The Stockfish reviewer and value session now accept bounded mate panels from Stage 2 and include stage identity in review/session hashes; Stage 1 remains the default and still pins its capture-retention task. This does not create the missing Stage 2 production factory, data registration, independent acceptance evaluator, or campaign entry.
+
+Implementation correction caught by static review before use: the first draft exposed the wrapper hash as a consequence-certificate hash for unknown cases, and a second-check budget exhaustion raised instead of degrading to unknown. The producer now keeps a separate `proofSha256`, emits no consequence certificate identity when unverified, and converts an independent check timeout to a hashed unknown wrapper. No experiment consumed the initial draft.
+
+This primitive proves only absence/presence of an opponent-forced mate within the remaining two plies after the selected action. It does not prove full-game safety or implement the broader `avoid-loss` objective. It does not change Stage 2 gates or authorize a run. Because Stockfish review/session identities now include stage, any future Stage 1 campaign must pin the updated code hashes; no registered or active campaign exists. No G0 or final-set work occurred.
+
+## Next
+
+Build Stage 2's source-bound all-legal panels and independent data audit around this verifier, then integrate a Stage 2-specific learner/replay factory and acceptance evaluator. Stage 1 remains gated by unavailable eligible data; Stages 2-12 remain non-production. Do not register a campaign until all stage and prerequisite evidence is valid.
+
+## 23 October 2026 correction: combined Stage 2 encoder rejected its own task family
+
+Static call-path review found that `createPublicStage2MateFrameEncoder` configured `taskFamily: 'stage2-mate'`, but the shared encoder first required `frame.task.objective === taskFamily`. Stage 2 frames use the actual objectives `forced-mate` or `avoid-mate`, so the new Stage 2 encoder rejected every otherwise-supported task before reaching its task-specific horizon checks. Removed that contradictory equality and made the family-specific task predicate explicit. `node --check .codebase/src/chess-input/public-lesson-frame-cue.mjs` passes. No behavioral test or learner run was performed. The bug prevents Stage 2 encoder use; fixing it does not provide the still-missing Stage 2 production runtime, acceptance gate or data authorization.
+
+## 23 October 2026 integration correction: matrix preflight assumed Stage 1 audit schema
+
+The shared stage-matrix CLI accepted stage numbers 1-12 and dynamically requested `deriveStageNAcceptanceObservations`, but its data preflight hard-coded the Stage 1 acceptance-data audit schema. Later-stage registrations could therefore never reach their pinned runtime/evaluator, even with valid stage-specific evidence. The preflight now keeps Stage 1's existing schema contract and requires stages 2-12 to declare stage-matching data-audit schemas in both the primary data-audit registration and acceptance-data-audit registration; it checks each declaration against the pinned JSON before allowing launch. Syntax checks pass for the matrix CLI and public encoder. No behavior tests, data generation, learner, Stockfish, graph or G0 run occurred. Stage 2 still lacks its production runtime, independent evaluator and authorized data.
+
+Added a Stage 2 brain constructor that reuses the hash-pinned graph/mapping checks, from-scratch sparse model, reversal memory and fixed MBON value proxy, while selecting the corrected Stage 2 mate-frame encoder. It requires a Stage 2-specific learner schema and task-family configuration and returns a distinct runtime identity. `node --check` passes. The constructor is not connected to a production stage factory, data package, or acceptance evaluator; no learning was run.
+
+## 23 October 2026: Stage 2 runtime/replay adapter
+
+Added a Stage 2 runtime factory that binds registered train-only lesson rows to the Stage 2 family manifest, rechecks every legal task certificate, binds pre-collected all-legal Stockfish reviews, and constructs the existing six-condition `StockfishValueSession`/`CurriculumBlockSession` used by the resumable matrix. Its replay arm reconstructs the same Stage 2 learner and panels for independent block replay. The generic matrix preflight now requires later-stage evaluators to expose both observation derivation and a replica acceptance gate, so a missing decision rule stops before learner construction. Syntax checks passed; no behavioral tests, data preparation, learner, Stockfish process, graph or G0 run occurred. No Stage 2 data package, independent evaluator/gate, or campaign registration exists. Stage 1 remains unauthorized, so this runtime cannot be started yet.
+
+## 23 October 2026: Stage 1 Stockfish panel proof adapter correction
+
+The focused shared-path run initially failed 3 of 43 tests: `bindLichessStockfishReview` sent all-legal Stage 1 action proofs, including quiet noncapture task failures, to the frozen capture-only generic verifier. The prepared panels and mapped learner already used the C01 `checkCaptureRetentionAction` adapter. Updated the Stockfish review binder to route exact `capture-retention` tasks through that same action-domain checker; other tasks still use `verifiedExperience`. Left the generic verifier unchanged. Rerunning the same focused suite passed 43/43, covering encoder, Stockfish value/choice binding, resumable blocks, matrix audit and fail-closed preflight. The new Stage 2 encoder test passes 3/3 when invoked directly with Node. `node --test` on a single file hit environment `spawn EPERM`; direct invocation avoided the test-worker spawn. No graph, learner, Stockfish process or G0 run occurred. This fixes a software integration failure only; Stage 1 data/receiver prerequisites and campaign registration remain unmet.

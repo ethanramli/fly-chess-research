@@ -6,6 +6,8 @@ This replaces the earlier [outline](../search-and-feedback/forcing-and-positiona
 
 Package: [source coverage](../../../research/data/principles-curriculum-v1/source-evidence.md), [completion review and implementation boundaries](../../../research/data/principles-curriculum-v1/completion-audit.md), [checked illustrative teacher examples](../../../research/data/principles-curriculum-v1/teacher-examples.json) and [reproducible specification audit](../../../research/data/principles-curriculum-v1/README.md). Teacher examples are excluded from all curriculum dataset splits.
 
+Reader-facing names are **Stage 1** through **Stage 12**. Existing machine-readable IDs remain stable for protocol and data compatibility.
+
 ## What counts as learning a principle
 
 A principle is a conditional consequence relationship reused beyond taught examples. It is not a geometric feature, a sentence, a universally positive heuristic or one repaired board. Code supplies legal rules and explicitly declared symbolic observations. Task significance must arise through persistent local physiological state. Symbolic chess input bypasses eyes.
@@ -38,7 +40,7 @@ Each lesson has 32 four-event blocks, 128 known teaching events per condition/re
 3. Replay a successful training sentinel from an earlier principle.
 4. Replay a failed earlier-principle counterexample.
 
-This is two successes/two failures and 50 percent rehearsal. C01 rehearses a different C01 pair. When a panel is already mastered, use the predeclared oldest uncovered training pair; do not invent an error. Retarget current competitors after each pair. Unknown/stale proof or a missing balanced stratum stops the block before unverified teaching and is logged.
+This is two successes/two failures and 50 percent rehearsal. Stage 1 rehearses a different Stage 1 pair. When a panel is already mastered, use the predeclared oldest uncovered training pair; do not invent an error. Retarget current competitors after each pair. Unknown/stale proof or a missing balanced stratum stops the block before unverified teaching and is logged.
 
 Yoke every arm to the informative-selected board/action/proof/order/timing sequence. Freeze the shuffle algorithm/seed before informative execution; construct its complete balanced schedule before control replay. Preserve action/task/actor exposure and waveform-class counts while breaking context-outcome contingency. Absent removes external teaching only; activity-driven plasticity may still occur. Disabled receives the informative waveform with every persistent gain/trace held fixed.
 
@@ -61,11 +63,11 @@ Every applicable gate must pass in every replica. Ties are incorrect and favorab
 | D7 cumulative retention | New-principle validation stays at least 14/16 after eight additional four-event interference blocks. Earlier per-principle validation counts may not fall; all four previously mastered training sentinels per earlier principle remain correct. Recheck after every subsequent stage. |
 | D8 state/audit | Removing latest-stage learned state removes the acquired advantage; restoring it reproduces predictions/rankings. Independent certificate/local-update replay, fixed identities, memory continuity and exact pending-receipt recovery pass. Report unaided and fixed-budget searched results separately. |
 
-Interference blocks are additional actual learning on older training families, yoked into controls and counted separately from the 128 new-stage events. C01 uses predeclared unrelated G0 contingency exposures with an already reviewed receiver. Do not silently restore the selected snapshot after interference; a failed challenge is failed retention. CPU sleep or unchanged serialization cannot pass D7.
+Interference blocks are additional actual learning on older training families, yoked into controls and counted separately from the 128 new-stage events. Stage 1 uses predeclared unrelated G0 contingency exposures with an already reviewed receiver. Do not silently restore the selected snapshot after interference; a failed challenge is failed retention. CPU sleep or unchanged serialization cannot pass D7.
 
 D6 can fail from a high scratch ceiling. Do not prune final cases or weaken the threshold afterward: report that acquisition was not established. Family-cluster uncertainty is a planned sampling assumption, not a population-level proof of cognition.
 
-C09-C12 additionally require position MAE at most 0.10 against pinned multi-budget engine estimates, at least 0.05 lower than every matched control in every positional stratum, while exact consequence-choice gates remain intact. This is engine-target calibration, not true win probability. C12 also requires 32 colour-balanced opening pairs/64 completed games per mode/replica/control in a pinned mini-position/reference-policy pool: at least 20/32 pairs favor informative over each control and game-point rate advantage is at least 0.15. Unaided and fixed-search play are separate. Unfinished games are unknown, not draws. No Elo inference.
+Stages 9-12 additionally require position MAE at most 0.10 against pinned multi-budget engine estimates, at least 0.05 lower than every matched control in every positional stratum, while exact consequence-choice gates remain intact. This is engine-target calibration, not true win probability. Stage 12 also requires 32 colour-balanced opening pairs/64 completed games per mode/replica/control in a pinned mini-position/reference-policy pool: at least 20/32 pairs favor informative over each control and game-point rate advantage is at least 0.15. Unaided and fixed-search play are separate. Unfinished games are unknown, not draws. No Elo inference.
 
 Failure stops advancement. Preserve receipts and classify representation, delivery, local update direction, ranking, retention, reply omission, horizon or unknown proof only as supported. New solutions need dated mistake/pivot records and a new protocol with fresh untouched final families. These gates do not guarantee that the proposed mechanism will learn.
 
@@ -73,7 +75,7 @@ Failure stops advancement. Preserve receipts and classify representation, delive
 
 Every lesson requires its predecessor, through G0. Positive/negative descriptions below are template requirements, not claimed certificates. Each specialization adds to D1-D8.
 
-### C01: Attack, defense and recapture
+### Stage 1: Attack, defense and recapture
 
 **Definition:** Whether an opponent can legally recapture the moved capturing piece depends on defenders, blockers and king constraints.
 
@@ -86,11 +88,11 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 
 **Definition of done:** D1-D8 plus At least 12/16 on each of four strata: open defender, blocked defender, absent defender, pinned apparent defender; never interpret retention as universal move quality. Status: specified, not trained; machine data lists required capabilities.
 
-### C02: King safety, check and mate
+### Stage 2: King safety, check and mate
 
 **Definition:** Check restricts legal replies; mate requires that no legal escape remains. A useful defense prevents a verified impending consequence.
 
-**Learning target:** Distinguish check from mate and select a defense when a quiet improvement permits mate. Maximum 6 pieces; consequence horizon up to 3 plies. Tasks: forced-mate, avoid-loss. Feedback: F0.
+**Learning target:** Distinguish check from mate and select a defense when a quiet improvement permits mate. Maximum 6 pieces; consequence horizon up to 3 plies. Tasks: forced-mate, avoid-loss. Feedback: F0. A bounded three-ply avoid-mate verifier now covers only whether the selected move permits an opponent-forced mate within the remaining two plies; it is not a general avoid-loss verifier or a production Stage 2 runtime. See [Stage 2 avoid-mate domain](stage2-avoid-mate-domain.md).
 
 - Positive experience: Certified mate-in-one, or a legal defensive move preventing every opponent mating continuation within the declared horizon.
 - Negative experience: A check has a quiet blocking/escaping defense; an attractive nondefensive move permits a certified mating reply.
@@ -99,7 +101,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 
 **Definition of done:** D1-D8 plus At least 12/16 in each stratum: actual mate, escapable check, mandatory defense, misleading improving move; all success claims cover every required escape. Status: specified, not trained; machine data lists required capabilities.
 
-### C03: Sound forcing moves and reply awareness
+### Stage 3: Sound forcing moves and reply awareness
 
 **Definition:** Checks, captures and threats are investigation priorities; soundness depends on what an opponent can force in response.
 
@@ -112,7 +114,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 
 **Definition of done:** D1-D8 plus At least 12/16 in each stratum: sound check, sound capture/threat, forcing refutation, quiet refutation; no check-priority score may supply the final answer. Status: specified, not trained; machine data lists required capabilities.
 
-### C04: Double threats and overloaded defense
+### Stage 4: Double threats and overloaded defense
 
 **Definition:** Multiple targets matter only when the opponent cannot neutralize the consequences together; geometric double attacks alone do not prove a gain.
 
@@ -125,7 +127,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 
 **Definition of done:** D1-D8 plus At least 12/16 separately for real forks, apparent forks, overloaded defenders and defensive counterattacks; a count of attacked pieces cannot pass. Status: specified, not trained; machine data lists required capabilities.
 
-### C05: Lines, blockers and removal of defenders
+### Stage 5: Lines, blockers and removal of defenders
 
 **Definition:** Changing a blocker or defender changes which attacks and defensive resources are available.
 
@@ -138,7 +140,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 
 **Definition of done:** D1-D8 plus At least 12/16 for opening a line, discovered attack, defender removal and replacement defense; removal of a piece is not sufficient evidence of causal usefulness. Status: specified, not trained; machine data lists required capabilities.
 
-### C06: Move order, intermediate moves and sacrifices
+### Stage 6: Move order, intermediate moves and sacrifices
 
 **Definition:** An earlier concession can enable a later consequence; changing move order or support can invalidate it.
 
@@ -151,7 +153,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 
 **Definition of done:** D1-D8 plus At least 12/16 for necessary preparation, sound concession, unsound concession and opponent intermediate move. Credit root and later choices only with independent state/action certificates. Status: specified, not trained; machine data lists required capabilities.
 
-### C07: Piece effectiveness and improving an ineffective piece
+### Stage 7: Piece effectiveness and improving an ineffective piece
 
 **Definition:** A piece is useful through its contextual attacking or defensive role, not simply its number of moves or nominal value.
 
@@ -164,7 +166,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 
 **Definition of done:** D1-D8 plus At least 12/16 for freeing a blocker, rerouting a piece, useless mobility and abandoned duty; include successful actions by a piece other than the ineffective piece. Status: specified, not trained; machine data lists required capabilities.
 
-### C08: Coordination and shared duties
+### Stage 8: Coordination and shared duties
 
 **Definition:** Pieces can enable one another's consequences by support, access and complementary duties; redundant attacks need not improve the position.
 
@@ -177,7 +179,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 
 **Definition of done:** D1-D8 plus At least 12/16 for shared targets, support preparation, interference and redundant/unsafe coordination; supply paired support interventions, not only co-occurring activity. Status: specified, not trained; machine data lists required capabilities.
 
-### C09: Weaknesses, pawn structure and weak squares
+### Stage 9: Weaknesses, pawn structure and weak squares
 
 **Definition:** A weakness is exploitable in context through available routes, targets and timing; structural labels alone do not determine value.
 
@@ -190,7 +192,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 
 **Definition of done:** D1-D8 plus At least 12/16 for repair, exploitation, compensation and unexploitable apparent weakness; the extended positional value gate is required in addition to bounded task gates. Status: specified, not trained; machine data lists required capabilities.
 
-### C10: Restriction, prophylaxis and the opponent's plan
+### Stage 10: Restriction, prophylaxis and the opponent's plan
 
 **Definition:** A move can be useful by preventing a consequential opponent plan even without an immediate attacking gain.
 
@@ -203,7 +205,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 
 **Definition of done:** D1-D8 plus At least 12/16 for preventing a break, restricting a piece, unnecessary prophylaxis and competing threats; include changed-plan pairs where the preferred response reverses. Status: specified, not trained; machine data lists required capabilities.
 
-### C11: Pawn breaks, exchanges and endgame transitions
+### Stage 11: Pawn breaks, exchanges and endgame transitions
 
 **Definition:** Irreversible changes alter access, king roles, pawn prospects and the value of preserving or exchanging pieces.
 
@@ -216,7 +218,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 
 **Definition of done:** D1-D8 plus At least 12/16 for prepared breaks, premature breaks, exchanges and king/pawn endings; favorable endgame labels require exact bounded evidence or an explicitly labeled estimate. Status: specified, not trained; machine data lists required capabilities.
 
-### C12: Compositional plans and selective adversarial investigation
+### Stage 12: Compositional plans and selective adversarial investigation
 
 **Definition:** Reusable relationships must be combined and revised in unfamiliar positions while both players pursue their own consequences.
 
@@ -235,7 +237,7 @@ Every lesson has two records: **teacher evidence** and **actual neural delivery*
 
 ### F0: certificate-bound action association
 
-For C01-C03, first record the unaided candidate set/ranking, selected action, task, exact FEN/PGN and starting memory hash. On a separate history-preserving board, independently check the certificate. Reject stale, incomplete, mismatched or exhausted proof as unknown: no teaching frames, no invented failure and no reward.
+For Stages 1-3, first record the unaided candidate set/ranking, selected action, task, exact FEN/PGN and starting memory hash. On a separate history-preserving board, independently check the certificate. Reject stale, incomplete, mismatched or exhausted proof as unknown: no teaching frames, no invented failure and no reward.
 
 The existing experimental temporal code presents the board/action cue at frame 2. A certified task success places a nonnegative PPL103 stimulus at frame 0; a certified failure places it at frame 2. Sixteen tail frames give 19 frames total, with external current capped at 1.5. These are an explicitly engineered success/failure timing code, not biological seconds or an identified natural reward signal. The inherited numerical reference is eight recurrent steps/frame, stepDuration 0.075, tauKC 0.4, tauShort 0.6, tauLong 1, eta 0.5, gain bounds 0.2-1.8 and activityScale 1.5; pin or separately version these before experiment use. None is prescribed as a measured fly constant.
 
@@ -261,7 +263,7 @@ Compare outcome-only, outcome-plus-value, absent, matched-value-shuffled and dis
 
 ### F3: actual episode outcomes and plan revision
 
-In C12, bind complete actual legal histories and terminal rule evidence under a pinned reference-opponent policy. Checkmate/draw are checked against history; the 80-ply cap or resource stop leaves an unfinished episode unknown. Freeze the opponent policy and opening identities. Earlier-action credit requires independently replayed counterfactual outcomes under that same policy and the F1/episode-credit gate. These are actual outcomes against a specified opponent, not proof against every possible defense.
+In Stage 12, bind complete actual legal histories and terminal rule evidence under a pinned reference-opponent policy. Checkmate/draw are checked against history; the 80-ply cap or resource stop leaves an unfinished episode unknown. Freeze the opponent policy and opening identities. Earlier-action credit requires independently replayed counterfactual outcomes under that same policy and the F1/episode-credit gate. These are actual outcomes against a specified opponent, not proof against every possible defense.
 
 Evaluation freezes learning. The opponent may be a separately pinned engine/policy, but neither engine evaluation nor teacher search can enter the fly's evaluation function. Compare all-legal diagnostic choices, unaided selective play and same-budget searched play separately. A whole-episode value gain does not establish 2000 Elo or cross-domain reasoning.
 
@@ -296,5 +298,9 @@ Atomically publish memory, neural state, traces and pending cursor/receipt befor
 
 Launch only after a fresh stage protocol pins implementations, graph/annotations/mapping, task verifiers, encoders/readouts/memory, event/shuffle schedule, dataset split manifests, stage thresholds and effective replica identities, and independent audit plus interruption recovery pass. A source hash, lock or old pending sentence is not process evidence. Run informative teaching alongside controls serially; diagnostic-only graph work needs a documented blocker and a specific feedback-enabled next step.
 
-The curriculum is complete as a design when all twelve targets, definitions of done, teacher/receiver contracts, prerequisite statuses and audit requirements are specified and internally checked. Training completion is a different state: G0 and every C01-C12 gate must actually pass. None is marked learned here, and no full curriculum training is launched by this document.
+The curriculum is complete as a design when all twelve targets, definitions of done, teacher/receiver contracts, prerequisite statuses and audit requirements are specified and internally checked. Training completion is a different state: G0 and every Stage 1-12 gate must actually pass. None is marked learned here, and no full curriculum training is launched by this document.
 
+
+## 2026-10-24 researcher addendum: policy B (no G0 dependency for chess stages)
+
+Researcher decision (2026-10-24), recorded before any stage result under it: chess stages no longer require a passed G0 receiver assay. G0's role was to show that the learning machinery can acquire and retain simple associations, which its first replica did; its reversal failure and its different receiver (single-channel `RateTimingMemory`) remain preserved history. For chess stages, receiver causality is established inside each stage's own gate: D6 (informative beats scratch, absent, shuffled and disabled-plasticity controls with the paired family bootstrap), D8 (removing learned state removes the advantage; restoring reproduces it) and D9 (Stockfish assistance). Stage 1 D7 is deferred: Stage 1 has no earlier chess principle, so its retention is tested by Stage 2's cumulative D7, which requires Stage 1 validation counts not to fall and all four Stage 1 sentinels to stay correct after Stage 2 learning and interference. All other D1-D9 thresholds are unchanged. The original text above stays as history. Implementation: `retentionDeferral: 'stage1-d7-rechecked-by-stage2-v1'` in the Stage 1 evaluator/gate and `receiverPolicy: 'stage-matched-controls-v1'` in `research/reports/lichess-stage1-synthetic-acceptance-audit-v2.json`; registrations from revision 6 use them.
