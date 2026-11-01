@@ -1,0 +1,38 @@
+{
+    "schema":  1,
+    "name":  "memory-phase-state-analysis-v1",
+    "paused":  false,
+    "paths":  {
+                  "registration":  "python actions/memory-phase-state-analysis-v1-step.json",
+                  "run":  "runs/memory-retention-2026-10-31"
+              },
+    "pins":  {
+                 ".codebase/scripts/neural-learning/analyse-memory-phase-states.mjs":  "8aa6853ba76c4f6442dbc13286f27184b2356ba47d1e3f04866b72c4c0db90eb",
+                 ".codebase/src/neural-learning/memory-assay-fixture.mjs":  "6bc348bc34a1e41e4185a5e14701612cf1c1b5117b1fc1c6289cff43a9c2d4a6",
+                 "runs/memory-retention-2026-10-31/metaplastic-v1-dev/events.jsonl":  "ef4d633bd795a2da228cc7e0c4dcd5a6ea826e4d45a4f7a94c4c97af0d1e6291",
+                 "runs/memory-retention-2026-10-31/metaplastic-v1-audit/result.json":  "4bddb7feec1e1c684a36c6c78e3277ba6c464f0a52921891184a5f307e89857e",
+                 "runs/memory-retention-2026-10-31/reservoir-v1-dev/events.jsonl":  "cbb81745effc3d83cc23b4665ee2bdec82c6e28c262c4d2fedc77ee583c9ce86",
+                 "runs/memory-retention-2026-10-31/reservoir-v1-audit/result.json":  "9932f49a841eaced902ae3df835b7934a00a2151bfec47a749eb6495a19c59ef"
+             },
+    "state_file":  "runs/python-actions/current-memory-phase-state-analysis-v1.json",
+    "resourceLimits":  {
+                           "freeMiB":  256,
+                           "rssMiB":  2048
+                       },
+    "artifacts":  {
+
+                  },
+    "report_fields":  [
+
+                      ],
+    "jobs":  {
+                 "analyse":  {
+                                 "role":  "check",
+                                 "argv":  [
+                                              "node",
+                                              "--max-old-space-size=256",
+                                              ".codebase/scripts/neural-learning/analyse-memory-phase-states.mjs"
+                                          ]
+                             }
+             }
+}

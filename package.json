@@ -10,7 +10,7 @@
     "condition:fly": "node --max-old-space-size=256 .codebase/scripts/neural-learning/condition-fly.mjs",
     "validate:learning": "node --max-old-space-size=256 .codebase/scripts/neural-learning/validate-learning.mjs",
     "play": "node --max-old-space-size=256 .codebase/scripts/browser/play-server.mjs",
-    "test": "node --test .codebase/tests/runtime/*.test.mjs .codebase/tests/supervised-baselines/*.test.mjs .codebase/tests/neural-learning/*.test.mjs .codebase/tests/chess-input/*.test.mjs .codebase/tests/puzzle-learning/*.test.mjs .codebase/tests/search-and-feedback/*.test.mjs .codebase/tests/evaluation-and-performance/*.test.mjs",
+    "test": "node --test --test-concurrency=1 .codebase/tests/runtime/*.test.mjs .codebase/tests/supervised-baselines/*.test.mjs .codebase/tests/neural-learning/*.test.mjs .codebase/tests/chess-input/*.test.mjs .codebase/tests/puzzle-learning/*.test.mjs .codebase/tests/search-and-feedback/*.test.mjs .codebase/tests/evaluation-and-performance/*.test.mjs",
     "fetch:graph": "node .codebase/scripts/runtime/fetch-graph.mjs",
     "benchmark": "node --max-old-space-size=256 .codebase/scripts/evaluation-and-performance/benchmark.mjs",
     "flybench": "node --max-old-space-size=256 .codebase/scripts/evaluation-and-performance/flybench.mjs --cpu-duty 0.5",

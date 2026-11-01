@@ -1,6 +1,6 @@
 # Curriculum reasoning handoff
 
-**2026-10-28: read [the written goal](reasoning-research-goal-2026-10-28.md) first, then the newest update at the end of this file.** The section below (24 October) is history.
+**2026-10-30: this whole file is early-development history. Follow the [approved restart plan](../design/research-goals/restart-plan-2026-10-30.md).** Earlier note, 2026-10-28: read [the written goal](reasoning-research-goal-2026-10-28.md) first, then the newest update at the end of this file. The section below (24 October) is history.
 
 ## Current state - 24 October 2026 13:10
 

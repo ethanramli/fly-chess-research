@@ -1,0 +1,1 @@
+import test from 'node:test'; import {appendFileSync} from 'node:fs'; import {setTimeout as sleep} from 'node:timers/promises'; test('probe', async()=>{appendFileSync(process.env.PROBE_TRACE,JSON.stringify({tag:'a',stage:'start',time:Date.now()})+'\n'); await sleep(300); appendFileSync(process.env.PROBE_TRACE,JSON.stringify({tag:'a',stage:'end',time:Date.now()})+'\n');});

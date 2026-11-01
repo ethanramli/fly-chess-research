@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "name": "memory-prediction-reservoir-v1-1-development",
+  "paused": false,
+  "paths": {
+    "registration": "python actions/memory-prediction-reservoir-v1-1-step.json",
+    "run": "runs/memory-retention-2026-10-31"
+  },
+  "pins": {
+    ".codebase/scripts/neural-learning/run-memory-assay.mjs": "e83ccf9cbc8a0778c66161a053a01dda2af0d78bb63fe6ba7856f59d45d34541",
+    "research/reports/memory-retention-continuation-2026-10-31/prediction-reservoir-proposal.md": "84d1bc862e483f794f323a1fe0e71fb7cb11a303d4e08f0bff85955864197b7d",
+    "package.json": "cfd4032bf0ce7a9ec728a39004041473a8fe9c1724884e85422ccedcd5b5e824",
+    ".codebase/src/neural-learning/memory-assay-rule-prediction-scaled.mjs": "216f3cd8f555589f93fd69b29fc3eb96eb8dd39ae2636f3df3eb94cb93ae8b5b",
+    ".codebase/src/neural-learning/memory-assay-phase-recorded.mjs": "896c9a266f030a9d729748f63bd2d0121ead0732798263858b1b7d93d72a0d10",
+    ".codebase/src/neural-learning/memory-assay-phase-audit.mjs": "fcb7d725ab548b3f002072b067f16479391bebe583afbab6f4e6b30f5486c39a",
+    ".codebase/src/neural-learning/memory-assay-checker-v2.mjs": "654380080c405594601f9e0c38e4112f8e2bfdf2ac1f53b7398fae6f14c3b188",
+    ".codebase/src/neural-learning/memory-assay-checker.mjs": "6d96a4a9495fbb8089c4d23e77e6624e924bc8fc38aa7935477ee2658bde3fc6",
+    ".codebase/src/neural-learning/memory-assay-fixture.mjs": "6bc348bc34a1e41e4185a5e14701612cf1c1b5117b1fc1c6289cff43a9c2d4a6",
+    ".codebase/src/neural-learning/memory-assay-truth.mjs": "fd277dc6c82fa999cbbb481d09321826413bc69f18bb576e754a24372821eeee",
+    ".codebase/src/neural-learning/memory-assay-adapters.mjs": "f9695f4ebd0043d2b3a489b5f00dc78219911152ca15c4c454a8214c9dbf7a2c",
+    ".codebase/src/neural-learning/memory-assay-gates.mjs": "5be737cdab847b7dc0749cfea7a142d2011725eb323a326bf02271c56b679ae8",
+    ".codebase/src/neural-learning/memory-assay-run.mjs": "790ca537b200aa5793560158b07803e14df4649a43ce2528e3bbcc4d269921d3",
+    ".codebase/src/neural-learning/memory-assay-rule-local-reservoir.mjs": "0ad7f451bdb4c26d4a19d7d55cacb3747315bcf14ca20144062579773aed0c78",
+    ".codebase/src/neural-learning/memory-assay-rule-local-gated.mjs": "36f992488073f330944fae08f060a1820c8b4eb16698ff6ed4f14d5740612e3e",
+    ".codebase/src/neural-learning/local-reservoir-memory.mjs": "568aa12079141b0d0203594c1ef4a03716beeef2ca16c149a1f5f558c8de7588",
+    ".codebase/src/neural-learning/local-gated-memory.mjs": "ae5351bf885db4fe5dfd7467bc9e0059255f14ced4a1210d8d80cde80a2dc49b",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    ".codebase/src/neural-learning/alpha-lobe-memory.mjs": "2882199746cf88e7a2034c875ae7dce65368e937b29355fb196d0b9b33e2ed55",
+    ".codebase/src/neural-learning/mushroom-body.mjs": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5",
+    ".codebase/scripts/neural-learning/run-memory-assay-prediction-reservoir-v1-1.mjs": "061b9106d43e1307140da02230f6d52ff75672a2fdbb68f2fd9c064a0e9edc1d",
+    ".codebase/src/neural-learning/memory-assay-rule-prediction-reservoir-v1-1.mjs": "2fc0fc413a1ac2f96a73ce2d1cb28245324e9f74769299b211d488a9af57258b",
+    ".codebase/tests/neural-learning/memory-assay-prediction-reservoir-gates.test.mjs": "ac061f797791abae2634d562c31848c2a6d155a642d3e5fc3852e09bc5a87995"
+  },
+  "state_file": "runs/python-actions/current-memory-prediction-reservoir-v1-1.json",
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256
+  },
+  "jobs": {
+    "tests": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        "--test-concurrency=1",
+        ".codebase/tests/neural-learning/memory-assay-prediction-reservoir-gates.test.mjs"
+      ]
+    },
+    "run": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/neural-learning/run-memory-assay-prediction-reservoir-v1-1.mjs",
+        "--mode",
+        "run",
+        "--rule",
+        "prediction-reservoir-v1.1",
+        "--cpu-duty",
+        "0.5",
+        "--registration",
+        "python actions/memory-prediction-reservoir-v1-1-step.json",
+        "--out",
+        "runs/memory-retention-2026-10-31/prediction-reservoir-v1-1-dev",
+        "--report",
+        "research/reports/memory-retention-continuation-2026-10-31/prediction-reservoir-v1-1-dev"
+      ]
+    },
+    "audit": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/neural-learning/run-memory-assay-prediction-reservoir-v1-1.mjs",
+        "--mode",
+        "audit",
+        "--rule",
+        "prediction-reservoir-v1.1",
+        "--cpu-duty",
+        "0.5",
+        "--registration",
+        "python actions/memory-prediction-reservoir-v1-1-step.json",
+        "--out",
+        "runs/memory-retention-2026-10-31/prediction-reservoir-v1-1-audit",
+        "--report",
+        "research/reports/memory-retention-continuation-2026-10-31/prediction-reservoir-v1-1-audit",
+        "--run",
+        "runs/memory-retention-2026-10-31/prediction-reservoir-v1-1-dev"
+      ]
+    }
+  },
+  "artifacts": {},
+  "report_fields": []
+}

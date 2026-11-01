@@ -1,0 +1,30 @@
+# 2026-10-31: neuron-reader implementation
+
+Researcher authorization: “okay build”, following the [reader-specific repair plan](../../../documentation/design/neural-learning/neuron-reader.md). Scope: pure recording, an explicit fixed-score contract, a clean streamed candidate path, static mapping verification and software fixtures. No graph propagation experiment or learning is authorized by this build.
+
+## Mistakes and corrections during implementation
+
+1. **Null-state validation error.** The initial focused check passed six of ten tests; four candidate-path tests failed before inference with `Invalid persistent-state value`. The recursive fingerprint recognized null as a terminal value but then rejected its JavaScript type, `object`. The current model legitimately has no optimizer, represented by null. [Saved failing check](../../reports/neuron-reader-build-2026-10-31/initial-focused-failure.txt). Fix: permit null explicitly while retaining invalid-value/cycle checks. Next check: repeat the focused inference/order/mutation tests. This is an implementation error, not a memory or biological failure.
+2. **Score-integrity review.** Inspection found the initial scorer checked an observation hash but trusted its stored type means. A rehashed, inconsistent aggregate could therefore be supplied. Fix: recompute the type means from the copied cells and reject a mismatch; add a rehashed-corruption check. This is semantic validation, not cryptographic authentication or proof of behavioral valence.
+
+The exact released roster was copied from existing static evidence and rejoined with current annotation rows, preserving curated/predicted transmitter differences. Static sparse graph hashing inspected arrays only: no propagation or training. Protected memory sources are read-only; their original hashes are recorded for the final check.
+
+3. **Runtime/config identity gap.** The initial candidate fingerprint covered `model.config`, parameters and persistent memory, but not the model's separate live `steps`/`saturation` fields. A numerical fixture changed live saturation to 8 while declared config stayed 10 and still published a completion receipt. [Preserved reproduction](../../reports/neuron-reader-build-2026-10-31/runtime-identity-before-fix.txt). Fix: include the live dimensions/steps/saturation in the unchanged-state fingerprint and extend the mutation check. Wait for the already-running baseline regression to finish before changing its sources; then rerun the affected checks. No full-graph or experimental result used this implementation.
+
+4. **Log-reading correction.** A one-off Node analysis read the PowerShell-redirected regression log as UTF-8 and printed no failure blocks. The log is UTF-16LE with a BOM; its terminal summary still clearly reports six failures. The corrected analysis detects the BOM. The preserved raw log was not altered and no passing-suite claim followed from the empty parse.
+
+## Verification after the fixes
+
+The first complete repository regression reports 747 tests, 741 pass and six fail. Its original log remains [npm-test.txt](../../reports/neuron-reader-build-2026-10-31/npm-test.txt). After it terminated, the live model dimensions/steps/saturation were added to the fingerprint and both mutations were added to the focused check. [Final focused check](../../reports/neuron-reader-build-2026-10-31/focused-tests-final.txt): ten pass, zero fail. [Final static check](../../reports/neuron-reader-build-2026-10-31/static-check-final/result.json): all 14 identities/annotations and pinned input/graph hashes pass, no graph propagation. A second full regression now tests that final source revision; no source will change while it runs.
+
+## Terminal result, 2026-10-31
+
+The final full regression terminates at 747 tests: 741 pass, six fail, zero skipped, exit 1, 357159.7828 ms reported wall duration. The six failure names exactly match the [older recorded run comparison](../../reports/neuron-reader-build-2026-10-31/historical-failure-comparison.json); they concern historical moved report/data paths and the legacy CLI's resulting exit code. The first complete run and every failed implementation check remain separate artifacts. No unrelated archive/test repair was attempted.
+
+[Final verification](../../reports/neuron-reader-build-2026-10-31/verification.json) binds the focused/static/full results to current source hashes and seven preserved source snapshots. The three protected memory source hashes and Eyes v1 hash still equal their pre-build values. Added navigation and documented the precise manifest/contract/generator interface. No dependency, frozen caller, memory mechanism or experimental gate changed.
+
+The recorder and fixed-score contract machinery are built. No production coefficients or biological compatibility record were selected; no full-graph neural propagation, research training, independent biological validation or chess-strength claim follows. The reader can supply observations to the separately authorized diagnostic after its remaining protocol prerequisites; actual choice policy remains contingent on the approved score and memory contracts.
+
+## 2026-10-31: post-build priority clarification
+
+Workflow/interpretation correction: the assistant called the puzzle generator the next component without distinguishing an independent coding task from the largest scientific dependency. The researcher asked why other components were not prioritized. The generator is needed for controlled eye-test positions and can be developed without editing the other session's memory work; this does not establish that it is scientifically the most important or obligatorily next build. The existing plan first requires the diagnostic specification/F03/F04 decisions. Memory-to-score compatibility and behavioral sign evidence remain substantive open questions; their source investigation can proceed now, while final selection retains its stated prerequisites. Clarify that order before implementing another component. No new build, gate change, experiment or memory edit follows from this recommendation.

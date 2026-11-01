@@ -1,0 +1,213 @@
+{
+  "status": "recorded",
+  "trajectories": 48,
+  "trialRecords": 14160,
+  "evaluation": {
+    "rule": "local-metaplastic-v1",
+    "cell": {
+      "q": 0.25,
+      "relation": "conflicting",
+      "w": 0,
+      "bg": 0
+    },
+    "gated": true,
+    "seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012
+    ],
+    "nSeeds": 12,
+    "degenerateRate": 0,
+    "shuffledPool": {
+      "informative": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "shuffled": [
+        false,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "shuffledMNormA_T1": 0.2955784236146516,
+      "shuffledMNormB_T2": -0.09963962763696231
+    },
+    "RMedian": 0.6826539241536855,
+    "mNormMedian": {
+      "A": {
+        "T1": 0.4687444557594773,
+        "T2": 0.31293653698754686,
+        "T3": 0.3305237198317229,
+        "T4": 0.3403913490799939,
+        "T5": 0.33473733342191414
+      },
+      "B": {
+        "T1": -0.10999734682975328,
+        "T2": 0.406006119404945,
+        "T3": 0.47216076215162445,
+        "T4": 0.31631562099892163,
+        "T5": 0.4547413920985839
+      },
+      "C": {
+        "T1": 0.008732693218895223,
+        "T2": 0.4738149503181207,
+        "T3": 0.4738149503181207,
+        "T4": 0.4738149503181207,
+        "T5": 0.4738149503181207
+      }
+    },
+    "floorOccMedian": {
+      "T1": {
+        "P": 0,
+        "R": 0.1
+      },
+      "T2": {
+        "P": 0,
+        "R": 0.075
+      },
+      "T3": {
+        "P": 0,
+        "R": 0.075
+      },
+      "T4": {
+        "P": 0,
+        "R": 0
+      },
+      "T5": {
+        "P": 0,
+        "R": 0
+      }
+    },
+    "gates": {
+      "G1": {
+        "pass": true,
+        "A_T1": {
+          "mNorm": 0.4687444557594773,
+          "greedyShare": 1
+        }
+      },
+      "G2": {
+        "pass": true,
+        "B_T2": {
+          "mNorm": 0.406006119404945,
+          "greedyShare": 1
+        },
+        "C_T2": {
+          "mNorm": 0.4738149503181207,
+          "greedyShare": 1
+        }
+      },
+      "G3": {
+        "pass": false,
+        "RMedian": 0.6826539241536855,
+        "A_T2": {
+          "mNorm": 0.31293653698754686,
+          "greedyShare": 1
+        }
+      },
+      "G4": {
+        "pass": false,
+        "T3": {
+          "mNorm": 0.3305237198317229,
+          "greedyShare": 1
+        },
+        "T4": {
+          "mNorm": 0.3403913490799939,
+          "greedyShare": 1
+        },
+        "T5": {
+          "mNorm": 0.33473733342191414,
+          "greedyShare": 1
+        }
+      },
+      "G5": {
+        "pass": true,
+        "gainsUnchanged": true,
+        "pairs": {
+          "absent_A_T1": {
+            "medianDiff": 0.43845081996188306,
+            "share": 1
+          },
+          "absent_B_T2": {
+            "medianDiff": 0.4083153891518796,
+            "share": 1
+          },
+          "disabled_A_T1": {
+            "medianDiff": 0.43845081996188306,
+            "share": 1
+          },
+          "disabled_B_T2": {
+            "medianDiff": 0.4083153891518796,
+            "share": 1
+          }
+        }
+      },
+      "G6": {
+        "pass": true,
+        "B_T3": {
+          "mNorm": 0.47216076215162445,
+          "greedyShare": 1
+        }
+      }
+    },
+    "allPass": false
+  },
+  "shuffledDiagnostic": {
+    "informative": 1,
+    "shuffled": 0.5,
+    "pass": true,
+    "scope": "Prospective one-cell diagnostic; not the historical grid-pooled G5s"
+  },
+  "scope": "Predeclared metaplastic-memory development cell; no graph, biological timing or chess claim."
+}

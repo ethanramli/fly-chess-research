@@ -1,0 +1,6 @@
+
+## Coupled v1 result and diagnostic, 2026-10-31
+
+Seven focused checks pass. The first coupled run acquires A/B/C but fails retention (median R=.602879 versus.70) and first-reversal margin (.376738 versus.40). Original gates and the fixed setting remain unchanged. Audits are running separately; no source paper is treated as falsified. An implementation/measurement gap was found before interpreting the hidden mechanism: test receipts store state hashes, while full snapshots are only at start/end, so phase-specific hidden-state content cannot be read directly. A separately pinned diagnostic reruns the identical12 development seeds/4arms, captures phase-state means without changing the learner, and requires every resulting summary to match the original exactly. This is a state-inspection replay, not additional independent evidence or another parameter setting.
+
+Mistake: this diagnostic note was initially appended to the pinned equation-review file while regression was running. The inspection preflight refused the changed pin before launching. Exact original bytes were recovered by matching the registered SHA-256, the unintended append was preserved separately, and this note is now outside active dependencies. No learning source, protocol setting or trial result changed. The refused launch is retained; no process is restarted.

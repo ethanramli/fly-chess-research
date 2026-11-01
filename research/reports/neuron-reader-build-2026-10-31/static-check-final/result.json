@@ -1,0 +1,161 @@
+{
+  "schema": "neuron-reader-static-check-v1",
+  "status": "pass",
+  "scope": "Static graph/root-ID/annotation identities only; no model, neural propagation, teaching or learning",
+  "inputs": {
+    "graphSha256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    "annotationSha256": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    "typeAnnotationsSha256": "8aba246d71dc40361677493629972ce3883048c3d02010adc42bda22962a1a2d"
+  },
+  "rosterIdentity": "709af8170fe7142456abd641390d36414ce3c71961b76d8a73a794f37e457315",
+  "graphStateHash": "87fd4a62b3777636976ea41f315bba3fc4fc40dff0262fde398ca90d1e8b39f8",
+  "nodes": 134209,
+  "cells": [
+    {
+      "type": "MBON05",
+      "rootId": "720575940621164720",
+      "index": 46203,
+      "somaSide": "left",
+      "receivingSide": "right",
+      "knownNT": "glutamate",
+      "predictedNT": "acetylcholine"
+    },
+    {
+      "type": "MBON05",
+      "rootId": "720575940630496374",
+      "index": 95882,
+      "somaSide": "right",
+      "receivingSide": "left",
+      "knownNT": "glutamate",
+      "predictedNT": "glutamate"
+    },
+    {
+      "type": "MBON27",
+      "rootId": "720575940618249797",
+      "index": 33266,
+      "somaSide": "right",
+      "receivingSide": "unknown",
+      "knownNT": "",
+      "predictedNT": "acetylcholine"
+    },
+    {
+      "type": "MBON27",
+      "rootId": "720575940622979277",
+      "index": 56209,
+      "somaSide": "left",
+      "receivingSide": "unknown",
+      "knownNT": "",
+      "predictedNT": "acetylcholine"
+    },
+    {
+      "type": "MBON09",
+      "rootId": "720575940610964946",
+      "index": 9900,
+      "somaSide": "right",
+      "receivingSide": "unknown",
+      "knownNT": "gaba",
+      "predictedNT": "gaba"
+    },
+    {
+      "type": "MBON09",
+      "rootId": "720575940629422086",
+      "index": 90572,
+      "somaSide": "left",
+      "receivingSide": "unknown",
+      "knownNT": "gaba",
+      "predictedNT": "gaba"
+    },
+    {
+      "type": "MBON09",
+      "rootId": "720575940629856515",
+      "index": 92679,
+      "somaSide": "left",
+      "receivingSide": "unknown",
+      "knownNT": "gaba",
+      "predictedNT": "gaba"
+    },
+    {
+      "type": "MBON09",
+      "rootId": "720575940630864847",
+      "index": 97844,
+      "somaSide": "right",
+      "receivingSide": "unknown",
+      "knownNT": "gaba",
+      "predictedNT": "gaba"
+    },
+    {
+      "type": "MBON07",
+      "rootId": "720575940617302365",
+      "index": 29400,
+      "somaSide": "left",
+      "receivingSide": "unknown",
+      "knownNT": "glutamate, sparkly, Nplp1",
+      "predictedNT": "glutamate"
+    },
+    {
+      "type": "MBON07",
+      "rootId": "720575940623381956",
+      "index": 58537,
+      "somaSide": "right",
+      "receivingSide": "unknown",
+      "knownNT": "glutamate, sparkly, Nplp1",
+      "predictedNT": "glutamate"
+    },
+    {
+      "type": "MBON07",
+      "rootId": "720575940628783363",
+      "index": 87355,
+      "somaSide": "right",
+      "receivingSide": "unknown",
+      "knownNT": "glutamate, sparkly, Nplp1",
+      "predictedNT": "glutamate"
+    },
+    {
+      "type": "MBON07",
+      "rootId": "720575940652390134",
+      "index": 132782,
+      "somaSide": "left",
+      "receivingSide": "unknown",
+      "knownNT": "glutamate, sparkly, Nplp1",
+      "predictedNT": "glutamate"
+    },
+    {
+      "type": "MBON06",
+      "rootId": "720575940638028607",
+      "index": 119919,
+      "somaSide": "right",
+      "receivingSide": "unknown",
+      "knownNT": "glutamate, sparkly, Dh31, Gbp5, allatostatin-a, Nplp1",
+      "predictedNT": "glutamate"
+    },
+    {
+      "type": "MBON06",
+      "rootId": "720575940638163428",
+      "index": 120251,
+      "somaSide": "left",
+      "receivingSide": "unknown",
+      "knownNT": "glutamate, sparkly, Dh31, Gbp5, allatostatin-a, Nplp1",
+      "predictedNT": "glutamate"
+    }
+  ],
+  "cpuDuty": 0.5,
+  "elapsedMs": 1785.1560000000002,
+  "rssSnapshotMiB": 69.2734375,
+  "command": [
+    "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe",
+    "--max-old-space-size=256",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\neural-learning\\check-neuron-reader.mjs",
+    "--out",
+    "research/reports/neuron-reader-build-2026-10-31/static-check-final"
+  ],
+  "sources": {
+    ".codebase/src/neural-learning/neuron-reader.mjs": "c26434fb5f9d13cae1d200878773d3f878749315156b2dc0d81eba2006e60874",
+    ".codebase/src/neural-learning/neuron-reader-cells.json": "e979eae031781a606c983bf6c41b54e22a3b544a8f5ce3bd26c4e86198d4c0ec",
+    ".codebase/src/puzzle-learning/record-neuron-candidates.mjs": "90d1f298145ef24930670d83ac3fd35682893ccb397bb59947a2046c5c8a41a7",
+    ".codebase/scripts/neural-learning/check-neuron-reader.mjs": "dc1b0a5f764410e46fe20ca375061734f59e439a9307df05fdac6e309da4649f",
+    ".codebase/src/neural-learning/association-validation.mjs": "b62d6f6bf4ab51f0ed993877026ac1cde0914c582fb479ea27fdc028a7dc2c91",
+    ".codebase/src/runtime/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+    ".codebase/src/supervised-baselines/trainer.mjs": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+    ".codebase/src/chess-input/eyes-v1.mjs": "74ae9ac4fa4e9fc5432099ffd662661632aab9aa89e69f6df7e100b59f6813a2"
+  }
+}

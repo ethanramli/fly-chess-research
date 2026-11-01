@@ -4,6 +4,8 @@
 
 [Design and scientific boundaries](../../../documentation/design/chess-input/README.md)
 
+**Current input (2026-10-31):** [eyes-v1.mjs](eyes-v1.mjs), with [frozen pictures](eyes-v1-pictures.json) and [their licence](eyes-v1-pictures-LICENSE.txt). It renders the board onto the modelled photoreceptors, using Carlo Esposito's placement. [Design](../../../documentation/design/chess-input/eyes-v1.md). The cue modules below are the pre-restart line; frozen code still imports them, so keep them unchanged and do not use them for new work.
+
 - [chess-cue.mjs](chess-cue.mjs)
 - [compartment-chess-cue.mjs](compartment-chess-cue.mjs)
 - [relational-chess-cue-v2.mjs](relational-chess-cue-v2.mjs)

@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "name": "eye-readout-offset-v1-frozen-memory-diagnostic",
+  "paused": false,
+  "paths": {
+    "registration": "python actions/eye-readout-offset-v1-step.json",
+    "run": "runs/memory-retention-2026-11-01/readout-offset-v1",
+    "source_run": "runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1",
+    "protocol": "research/reports/memory-retention-continuation-2026-11-01/readout-interference-diagnostic.md"
+  },
+  "pins": {
+    ".codebase/scripts/neural-learning/inspect-eye-readout-offset.mjs": "a7f4872007fdadbae7263d5aa8905dc5d44ed6a0b7135e1bf9fdeb6c4e53c42b",
+    ".codebase/tests/neural-learning/eye-readout-offset.test.mjs": "55a287aee8f393c8dd5f6c360026727a8b00c84ea5fc3417eed1b2a22fc1cb5a",
+    "research/reports/memory-retention-continuation-2026-11-01/readout-interference-diagnostic.md": "5d62d60970fddd89e4579bc0e7297b02945737df75342654629fae35ab3e29d6",
+    ".codebase/src/supervised-baselines/trainer.mjs": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+    ".codebase/src/runtime/sparse-accumulator.mjs": "7a578b92a215aabf612d0c74899e9bff92054fe5d7d5b8e8f35f57ba0fd2ade9",
+    ".codebase/src/runtime/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+    ".codebase/src/neural-learning/local-cubic-reservoir-memory.mjs": "240ea6b4a7e57bfe62673c816ce7909788882e7ef88dbb6bde6c0bd448c9e317",
+    ".codebase/src/neural-learning/local-reservoir-memory.mjs": "568aa12079141b0d0203594c1ef4a03716beeef2ca16c149a1f5f558c8de7588",
+    ".codebase/src/neural-learning/local-gated-memory.mjs": "ae5351bf885db4fe5dfd7467bc9e0059255f14ced4a1210d8d80cde80a2dc49b",
+    ".codebase/src/neural-learning/local-supralinear-reservoir-memory.mjs": "559513d57acbd5603fd27a8afc3747f1964027f1a948172e5e195713136511d0",
+    ".codebase/src/neural-learning/mushroom-body.mjs": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5",
+    ".codebase/src/neural-learning/neuron-reader.mjs": "c26434fb5f9d13cae1d200878773d3f878749315156b2dc0d81eba2006e60874",
+    ".codebase/src/neural-learning/neuron-reader-cells.json": "e979eae031781a606c983bf6c41b54e22a3b544a8f5ce3bd26c4e86198d4c0ec",
+    ".codebase/scripts/neural-learning/eye-memory-recovery.mjs": "9c37dc1f88622853c4ef34a072015f1385949d1e462e3b5c5a30f6474e4d9ca8",
+    ".codebase/scripts/neural-learning/audit-eye-memory.mjs": "f3697af9d2cdce333dbad9bf16de84fbbcd064006ff1e2e1112cd5fcf1fe97ba",
+    ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    "runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1/frames-4102-informative.jsonl": "f12e50341161d49a8a5bbf73098ee6a7a28482aa0ebc50f2bfb3cc69b668e263",
+    "runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1/snapshot-4102-informative-Delay.json": "8535863fcf50bb17a7e65dbe7756bedf5867241fc216bb502d84e478346e57e6",
+    "runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1/snapshot-4102-informative-Rev.json": "fd1e2ab4d8f9ab5d2dfac710bbcf559d42319cb3b3624a35ce838612db1c55e2"
+  },
+  "state_file": "runs/python-actions/current-eye-readout-offset-v1.json",
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256
+  },
+  "jobs": {
+    "tests": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        ".codebase/tests/neural-learning/eye-readout-offset.test.mjs"
+      ]
+    },
+    "check": {
+      "role": "check",
+      "requires": [
+        "runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1/summary.json",
+        "research/reports/memory-retention-continuation-2026-11-01/cubic-v1-recovery1-audit.json"
+      ],
+      "refuse_existing": [
+        "runs/memory-retention-2026-11-01/readout-offset-v1"
+      ],
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/neural-learning/inspect-eye-readout-offset.mjs",
+        "--run",
+        "runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1",
+        "--audit",
+        "research/reports/memory-retention-continuation-2026-11-01/cubic-v1-recovery1-audit.json",
+        "--out",
+        "runs/memory-retention-2026-11-01/readout-offset-v1",
+        "--cpu-duty",
+        "0.5"
+      ]
+    }
+  },
+  "artifacts": {
+    "manifest": "runs/memory-retention-2026-11-01/readout-offset-v1/manifest.json",
+    "result": "runs/memory-retention-2026-11-01/readout-offset-v1/result.json"
+  },
+  "report_fields": []
+}

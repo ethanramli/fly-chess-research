@@ -1,0 +1,48 @@
+{
+    "schema":  1,
+    "name":  "memory-continuation-analysis-v3",
+    "paused":  false,
+    "paths":  {
+                  "registration":  "python actions/memory-continuation-analysis-v3-step.json",
+                  "run":  "runs/memory-retention-2026-10-31"
+              },
+    "pins":  {
+                 "python actions/analyse_memory_continuation_v2.py":  "8c6cae6945b064c02a69a097f9e2e30d17a6515867b8ba1fb99177fd8c612070",
+                 "runs/overnight-memory-plasticity-2026-10-31/receipt-repair-v3-dev/summaries.jsonl":  "cc313996c920a0d0bd479229a6317594931ab5a8e9f868f99d7223c5fcf8409b",
+                 "runs/memory-retention-2026-10-31/ablation-v1-dev/result.json":  "901017dc87ef3c56783259b1c0618886e77ed95ba875c78b24205d1fc6143792",
+                 "runs/memory-retention-2026-10-31/ablation-v1-dev/summaries.jsonl":  "341be1f095af1be943354a5691b3dccd03b6e46f2400b3f2b8a9e707b2950a69",
+                 "runs/memory-retention-2026-10-31/ablation-v1-audit/result.json":  "2284565993a761f754099d6c7462553b6c132c319d82270fc881b41a2da6c137",
+                 "runs/memory-retention-2026-10-31/coupled-v1-dev/result.json":  "fcd6a0c73ddee450de7b2a083ecee3fa4fc0c5110b57f4abb2b933d33aaccc03",
+                 "runs/memory-retention-2026-10-31/coupled-v1-dev/summaries.jsonl":  "7506eec00c84e8584ace177c95fe55f6a2dd626cee2807461845d825c06cb9cc",
+                 "runs/memory-retention-2026-10-31/coupled-v1-audit/result.json":  "dc7c2ae8074174ba6f0476342aa98a573244224c1574e25472311981d2112f6c",
+                 "runs/memory-retention-2026-10-31/metaplastic-v1-dev/result.json":  "94eb85499b6cb321180b9a49bd3c155f70e6ed416f04c7cac07820a4e899968b",
+                 "runs/memory-retention-2026-10-31/metaplastic-v1-dev/summaries.jsonl":  "1f9205fbd613db6c89c9660b139bc03c4684fdb16439dc906f8e4e557483d12c",
+                 "runs/memory-retention-2026-10-31/metaplastic-v1-audit/result.json":  "4bddb7feec1e1c684a36c6c78e3277ba6c464f0a52921891184a5f307e89857e",
+                 "runs/memory-retention-2026-10-31/metaplastic-v1-dev/events.jsonl":  "ef4d633bd795a2da228cc7e0c4dcd5a6ea826e4d45a4f7a94c4c97af0d1e6291",
+                 "runs/memory-retention-2026-10-31/reservoir-v1-dev/result.json":  "9abc6c9dc2cfbffd700bf120f931add6d3340451fb584696a51ed6bf42f82f24",
+                 "runs/memory-retention-2026-10-31/reservoir-v1-dev/summaries.jsonl":  "199ff83b2149cead7de1df80f63e412f618bd411995d97f02a06cdebc3d8fe83",
+                 "runs/memory-retention-2026-10-31/reservoir-v1-audit/result.json":  "9932f49a841eaced902ae3df835b7934a00a2151bfec47a749eb6495a19c59ef",
+                 "runs/memory-retention-2026-10-31/reservoir-rate-v1-dev/result.json":  "3facadfd7e3e233671cdf9484bbc14ecaed9640b441779f163ce9b6335ef1230",
+                 "runs/memory-retention-2026-10-31/reservoir-rate-v1-dev/summaries.jsonl":  "9efbb000d170592f3a44ba9203be3a41180d00d23eb02a3d39ff28d8e644d462",
+                 "runs/memory-retention-2026-10-31/reservoir-rate-v1-audit/result.json":  "acbf18a7e981a2d2263116631a526d49682e330bf4fc785c87426f0ea73265ce"
+             },
+    "resourceLimits":  {
+                           "freeMiB":  256,
+                           "rssMiB":  2048
+                       },
+    "jobs":  {
+                 "analyse":  {
+                                 "role":  "check",
+                                 "argv":  [
+                                              "C:/Users/ethan/.venv-class/Scripts/python.exe",
+                                              "python actions/analyse_memory_continuation_v2.py"
+                                          ]
+                             }
+             },
+    "artifacts":  {
+
+                  },
+    "report_fields":  [
+
+                      ]
+}

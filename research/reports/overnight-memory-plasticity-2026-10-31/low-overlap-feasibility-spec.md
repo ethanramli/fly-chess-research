@@ -1,0 +1,11 @@
+# Lower-overlap readout feasibility check, declared before calculation
+
+2026-10-31. Mathematical diagnostic only, using the original12 development fixtures at q=.25 conflicting,w=0,bg=0. No graph simulation, learning, teacher pulse, extra repair family or changed gate. This is the positive-witness question named in the prospective assay correction, not a new candidate.
+
+Question: are acquisition, retaining A while B/C are present, reversing A and preserving B compatible with this fixed bounded readout in the cell where the actual learner's retention is.611? An upper bound that did not rule it out was not proof of compatibility.
+
+Construct an explicitly **oracle** readout witness: keep A/B shared cells neutral and use the distinct remaining cells for each association. Give unique positive/negative cells the appropriate gain endpoints, [.2,1]. Neutral cells use gP=1.2*R/(P+R), gR=1.2*P/(P+R), balancing their weighted outputs while respecting gP+gR=1.2, the reciprocal rule's asymptotic target sum. Verify all gains stay in [.2,1] and compute scores using the actual Float32 magnitude convention. All patterns/neuron identities stay fixed. No neuron is added or allocated by an answer.
+
+For T1 set A's unique cells; for T2 also set B/C's unique cells; for T3/T4/T5 flip A's unique cells while holding B/C fixed. Predict that the original normalized margin, retention-ratio and greedy-share constraints G1/G2/G3/G4/G6 are compatible in all12 fixtures. G5 is not applicable: this is an oracle existence proof, not a feedback-trained/control learner. Report failed witnesses without tuning.
+
+The oracle can inspect future patterns and correct relations; the learner cannot. Never install or export these gains as learned state, a trained checkpoint, a teacher update or a candidate. Even a pass proves only compatible readout states under these constraints, not reachability from scratch in24 trials, a successful learning rule, retention through biological time or general reasoning. Save only scores, constraints and checks, not a reusable weight bank. Runtime remains bounded, heap256MiB/RSS2048/free256/duty.5. Independently check gains, paired sums and unchanged B/C scores when A reverses.

@@ -1,0 +1,450 @@
+{
+  "status": "complete",
+  "scope": "Same one development cell, paired seeds; no independent replication or biological retention claim",
+  "inputs": {
+    "runs\\memory-retention-2026-10-31\\ablation-v1-dev\\result.json": "901017dc87ef3c56783259b1c0618886e77ed95ba875c78b24205d1fc6143792",
+    "runs\\memory-retention-2026-10-31\\ablation-v1-audit\\result.json": "2284565993a761f754099d6c7462553b6c132c319d82270fc881b41a2da6c137",
+    "runs\\memory-retention-2026-10-31\\ablation-v1-dev\\summaries.jsonl": "341be1f095af1be943354a5691b3dccd03b6e46f2400b3f2b8a9e707b2950a69",
+    "runs\\memory-retention-2026-10-31\\coupled-v1-dev\\result.json": "fcd6a0c73ddee450de7b2a083ecee3fa4fc0c5110b57f4abb2b933d33aaccc03",
+    "runs\\memory-retention-2026-10-31\\coupled-v1-audit\\result.json": "dc7c2ae8074174ba6f0476342aa98a573244224c1574e25472311981d2112f6c",
+    "runs\\memory-retention-2026-10-31\\coupled-v1-dev\\summaries.jsonl": "7506eec00c84e8584ace177c95fe55f6a2dd626cee2807461845d825c06cb9cc",
+    "runs\\memory-retention-2026-10-31\\metaplastic-v1-dev\\result.json": "94eb85499b6cb321180b9a49bd3c155f70e6ed416f04c7cac07820a4e899968b",
+    "runs\\memory-retention-2026-10-31\\metaplastic-v1-audit\\result.json": "4bddb7feec1e1c684a36c6c78e3277ba6c464f0a52921891184a5f307e89857e",
+    "runs\\memory-retention-2026-10-31\\metaplastic-v1-dev\\summaries.jsonl": "1f9205fbd613db6c89c9660b139bc03c4684fdb16439dc906f8e4e557483d12c",
+    "runs\\overnight-memory-plasticity-2026-10-31\\receipt-repair-v3-dev\\summaries.jsonl": "cc313996c920a0d0bd479229a6317594931ab5a8e9f868f99d7223c5fcf8409b",
+    "runs\\memory-retention-2026-10-31\\metaplastic-v1-dev\\events.jsonl": "ef4d633bd795a2da228cc7e0c4dcd5a6ea826e4d45a4f7a94c4c97af0d1e6291"
+  },
+  "candidates": {
+    "ablation": {
+      "RMedian": 0.6110207874218296,
+      "mNormMedian": {
+        "A": {
+          "T1": 0.4687444578501361,
+          "T2": 0.2776436918214196,
+          "T3": 0.4100489286825568,
+          "T4": 0.43982701234182864,
+          "T5": 0.4417004681432944
+        },
+        "B": {
+          "T1": -0.10999722800131662,
+          "T2": 0.43996285025493065,
+          "T3": 0.5060383849003826,
+          "T4": 0.27579559045218127,
+          "T5": 0.4918952065181278
+        },
+        "C": {
+          "T1": 0.008732693218895223,
+          "T2": 0.4738149824252473,
+          "T3": 0.4738149824252473,
+          "T4": 0.4738149824252473,
+          "T5": 0.4738149824252473
+        }
+      },
+      "gates": {
+        "G1": {
+          "pass": true,
+          "A_T1": {
+            "mNorm": 0.4687444578501361,
+            "greedyShare": 1
+          }
+        },
+        "G2": {
+          "pass": true,
+          "B_T2": {
+            "mNorm": 0.43996285025493065,
+            "greedyShare": 1
+          },
+          "C_T2": {
+            "mNorm": 0.4738149824252473,
+            "greedyShare": 1
+          }
+        },
+        "G3": {
+          "pass": false,
+          "RMedian": 0.6110207874218296,
+          "A_T2": {
+            "mNorm": 0.2776436918214196,
+            "greedyShare": 1
+          }
+        },
+        "G4": {
+          "pass": true,
+          "T3": {
+            "mNorm": 0.4100489286825568,
+            "greedyShare": 1
+          },
+          "T4": {
+            "mNorm": 0.43982701234182864,
+            "greedyShare": 1
+          },
+          "T5": {
+            "mNorm": 0.4417004681432944,
+            "greedyShare": 1
+          }
+        },
+        "G5": {
+          "pass": true,
+          "gainsUnchanged": true,
+          "pairs": {
+            "absent_A_T1": {
+              "medianDiff": 0.43845013841669034,
+              "share": 1
+            },
+            "absent_B_T2": {
+              "medianDiff": 0.43969451058462183,
+              "share": 1
+            },
+            "disabled_A_T1": {
+              "medianDiff": 0.43845013841669034,
+              "share": 1
+            },
+            "disabled_B_T2": {
+              "medianDiff": 0.43969451058462183,
+              "share": 1
+            }
+          }
+        },
+        "G6": {
+          "pass": true,
+          "B_T3": {
+            "mNorm": 0.5060383849003826,
+            "greedyShare": 1
+          }
+        }
+      },
+      "allPass": false,
+      "shuffledDiagnostic": {
+        "informative": 1,
+        "shuffled": 0.5,
+        "pass": true,
+        "scope": "Prospective one-cell diagnostic; not the historical grid-pooled G5s"
+      }
+    },
+    "coupled": {
+      "RMedian": 0.602878818833809,
+      "mNormMedian": {
+        "A": {
+          "T1": 0.4349716696656838,
+          "T2": 0.2516083763089676,
+          "T3": 0.376738298939998,
+          "T4": 0.4207601572085439,
+          "T5": 0.42135795733839654
+        },
+        "B": {
+          "T1": -0.10029896770438308,
+          "T2": 0.4111888198675816,
+          "T3": 0.4682826141441265,
+          "T4": 0.2653984997929898,
+          "T5": 0.4603428879429016
+        },
+        "C": {
+          "T1": 0.008732693218895223,
+          "T2": 0.4371124826235842,
+          "T3": 0.4371124826235842,
+          "T4": 0.4371124826235842,
+          "T5": 0.4371124826235842
+        }
+      },
+      "gates": {
+        "G1": {
+          "pass": true,
+          "A_T1": {
+            "mNorm": 0.4349716696656838,
+            "greedyShare": 1
+          }
+        },
+        "G2": {
+          "pass": true,
+          "B_T2": {
+            "mNorm": 0.4111888198675816,
+            "greedyShare": 1
+          },
+          "C_T2": {
+            "mNorm": 0.4371124826235842,
+            "greedyShare": 1
+          }
+        },
+        "G3": {
+          "pass": false,
+          "RMedian": 0.602878818833809,
+          "A_T2": {
+            "mNorm": 0.2516083763089676,
+            "greedyShare": 1
+          }
+        },
+        "G4": {
+          "pass": false,
+          "T3": {
+            "mNorm": 0.376738298939998,
+            "greedyShare": 1
+          },
+          "T4": {
+            "mNorm": 0.4207601572085439,
+            "greedyShare": 1
+          },
+          "T5": {
+            "mNorm": 0.42135795733839654,
+            "greedyShare": 1
+          }
+        },
+        "G5": {
+          "pass": true,
+          "gainsUnchanged": true,
+          "pairs": {
+            "absent_A_T1": {
+              "medianDiff": 0.40439910783028366,
+              "share": 1
+            },
+            "absent_B_T2": {
+              "medianDiff": 0.4120180789432377,
+              "share": 1
+            },
+            "disabled_A_T1": {
+              "medianDiff": 0.40439910783028366,
+              "share": 1
+            },
+            "disabled_B_T2": {
+              "medianDiff": 0.4120180789432377,
+              "share": 1
+            }
+          }
+        },
+        "G6": {
+          "pass": true,
+          "B_T3": {
+            "mNorm": 0.4682826141441265,
+            "greedyShare": 1
+          }
+        }
+      },
+      "allPass": false,
+      "shuffledDiagnostic": {
+        "informative": 1,
+        "shuffled": 0.5,
+        "pass": true,
+        "scope": "Prospective one-cell diagnostic; not the historical grid-pooled G5s"
+      }
+    },
+    "metaplastic": {
+      "RMedian": 0.6826539241536855,
+      "mNormMedian": {
+        "A": {
+          "T1": 0.4687444557594773,
+          "T2": 0.31293653698754686,
+          "T3": 0.3305237198317229,
+          "T4": 0.3403913490799939,
+          "T5": 0.33473733342191414
+        },
+        "B": {
+          "T1": -0.10999734682975328,
+          "T2": 0.406006119404945,
+          "T3": 0.47216076215162445,
+          "T4": 0.31631562099892163,
+          "T5": 0.4547413920985839
+        },
+        "C": {
+          "T1": 0.008732693218895223,
+          "T2": 0.4738149503181207,
+          "T3": 0.4738149503181207,
+          "T4": 0.4738149503181207,
+          "T5": 0.4738149503181207
+        }
+      },
+      "gates": {
+        "G1": {
+          "pass": true,
+          "A_T1": {
+            "mNorm": 0.4687444557594773,
+            "greedyShare": 1
+          }
+        },
+        "G2": {
+          "pass": true,
+          "B_T2": {
+            "mNorm": 0.406006119404945,
+            "greedyShare": 1
+          },
+          "C_T2": {
+            "mNorm": 0.4738149503181207,
+            "greedyShare": 1
+          }
+        },
+        "G3": {
+          "pass": false,
+          "RMedian": 0.6826539241536855,
+          "A_T2": {
+            "mNorm": 0.31293653698754686,
+            "greedyShare": 1
+          }
+        },
+        "G4": {
+          "pass": false,
+          "T3": {
+            "mNorm": 0.3305237198317229,
+            "greedyShare": 1
+          },
+          "T4": {
+            "mNorm": 0.3403913490799939,
+            "greedyShare": 1
+          },
+          "T5": {
+            "mNorm": 0.33473733342191414,
+            "greedyShare": 1
+          }
+        },
+        "G5": {
+          "pass": true,
+          "gainsUnchanged": true,
+          "pairs": {
+            "absent_A_T1": {
+              "medianDiff": 0.43845081996188306,
+              "share": 1
+            },
+            "absent_B_T2": {
+              "medianDiff": 0.4083153891518796,
+              "share": 1
+            },
+            "disabled_A_T1": {
+              "medianDiff": 0.43845081996188306,
+              "share": 1
+            },
+            "disabled_B_T2": {
+              "medianDiff": 0.4083153891518796,
+              "share": 1
+            }
+          }
+        },
+        "G6": {
+          "pass": true,
+          "B_T3": {
+            "mNorm": 0.47216076215162445,
+            "greedyShare": 1
+          }
+        }
+      },
+      "allPass": false,
+      "shuffledDiagnostic": {
+        "informative": 1,
+        "shuffled": 0.5,
+        "pass": true,
+        "scope": "Prospective one-cell diagnostic; not the historical grid-pooled G5s"
+      }
+    }
+  },
+  "ablationEquivalence": {
+    "matched": 48,
+    "excludedIdentityFields": [
+      "finalStateHash",
+      "initialStateHash",
+      "rule"
+    ]
+  },
+  "metaplasticPhasePopulationMedians": {
+    "T1": {
+      "strongMass": 0.9432402200315478,
+      "deepMass": 0.09904704668873066,
+      "gain": 0.9545921760252383
+    },
+    "T2": {
+      "strongMass": 0.8298808137986173,
+      "deepMass": 0.29501243962083235,
+      "gain": 0.8639046510388939
+    },
+    "T3": {
+      "strongMass": 0.801863779863057,
+      "deepMass": 0.3364952054705246,
+      "gain": 0.8414910238904456
+    },
+    "T4": {
+      "strongMass": 0.7998343753702861,
+      "deepMass": 0.3366947983551683,
+      "gain": 0.8398675002962289
+    },
+    "T5": {
+      "strongMass": 0.797665574447895,
+      "deepMass": 0.33765266448442977,
+      "gain": 0.838132459558316
+    }
+  },
+  "metaplasticAHistoryChanges": [
+    {
+      "seed": 1001,
+      "AHistoryEdges": 80,
+      "changedDuringBC": 52,
+      "meanAbsoluteGainChange": 0.07022272683310897
+    },
+    {
+      "seed": 1002,
+      "AHistoryEdges": 80,
+      "changedDuringBC": 51,
+      "meanAbsoluteGainChange": 0.07057683517689349
+    },
+    {
+      "seed": 1003,
+      "AHistoryEdges": 80,
+      "changedDuringBC": 50,
+      "meanAbsoluteGainChange": 0.06445986377336631
+    },
+    {
+      "seed": 1004,
+      "AHistoryEdges": 80,
+      "changedDuringBC": 53,
+      "meanAbsoluteGainChange": 0.08389278626940135
+    },
+    {
+      "seed": 1005,
+      "AHistoryEdges": 80,
+      "changedDuringBC": 38,
+      "meanAbsoluteGainChange": 0.07029986842331282
+    },
+    {
+      "seed": 1006,
+      "AHistoryEdges": 80,
+      "changedDuringBC": 51,
+      "meanAbsoluteGainChange": 0.07360861008806781
+    },
+    {
+      "seed": 1007,
+      "AHistoryEdges": 80,
+      "changedDuringBC": 38,
+      "meanAbsoluteGainChange": 0.07763902747393588
+    },
+    {
+      "seed": 1008,
+      "AHistoryEdges": 80,
+      "changedDuringBC": 50,
+      "meanAbsoluteGainChange": 0.10203511491106254
+    },
+    {
+      "seed": 1009,
+      "AHistoryEdges": 80,
+      "changedDuringBC": 33,
+      "meanAbsoluteGainChange": 0.07395050260841539
+    },
+    {
+      "seed": 1010,
+      "AHistoryEdges": 80,
+      "changedDuringBC": 51,
+      "meanAbsoluteGainChange": 0.08064713182960401
+    },
+    {
+      "seed": 1011,
+      "AHistoryEdges": 80,
+      "changedDuringBC": 51,
+      "meanAbsoluteGainChange": 0.06363053715585212
+    },
+    {
+      "seed": 1012,
+      "AHistoryEdges": 80,
+      "changedDuringBC": 51,
+      "meanAbsoluteGainChange": 0.07299065558303772
+    }
+  ],
+  "metaplasticMinusAblationPairedAMarginMedian": {
+    "T1": 3.15999685418511e-07,
+    "T2": 0.03228491360908131,
+    "T3": -0.07895399815537543,
+    "T4": -0.09075958369256182,
+    "T5": -0.11829159191360328
+  }
+}

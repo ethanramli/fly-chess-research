@@ -2,6 +2,8 @@
 
 Register externally sourced solutions before experimental use. Preserve source access/coverage, supported claims, approximations and failed implementations.
 
+- [Memory interference: recommendation, sources and test plan, 2026-10-30](memory-interference-2026-10-30/recommendation-and-test-plan.md): local protection, revisable fast/slow memory, overlap/representation diagnostics and matched tests. [Package and scope](memory-interference-2026-10-30/README.md). Research complete; mechanisms remain untested.
+
 - [Existing fly-chess method: first-pass notes](existing_fly_chess_method.md)
 - [Living-fly learning: primary experimental evidence](living-fly-learning.md)
 - [Myelination and synaptic learning: biological distinctions](myelination-and-learning.md)

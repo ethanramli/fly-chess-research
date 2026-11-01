@@ -1,0 +1,47 @@
+{
+  "schema": "neuron-reader-build-verification-v1",
+  "scope": "Software fixtures and static identity only; no full-graph neural propagation or learned chess result",
+  "focused": {
+    "file": "research\\reports\\neuron-reader-build-2026-10-31\\focused-tests-final.txt",
+    "sha256": "e6db38b07f735df86a875af2fcb20105c99df43cfd2a003c78ffdf5c12f6d982",
+    "tests": 10,
+    "pass": 10,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "duration_ms": 653.7469,
+    "failures": []
+  },
+  "fullRegression": {
+    "file": "research\\reports\\neuron-reader-build-2026-10-31\\npm-test-final.txt",
+    "sha256": "e16ddfff3165aa63e80162732238949caea0f19f75eb75484e2fc19d203caec8",
+    "tests": 747,
+    "pass": 741,
+    "fail": 6,
+    "skipped": 0,
+    "cancelled": 0,
+    "duration_ms": 357159.7828,
+    "failures": [
+      ".codebase\\\\tests\\\\chess-input\\\\public-action-relative-cue-v2.test.mjs",
+      ".codebase\\\\tests\\\\chess-input\\\\public-action-relative-cue-v3.test.mjs",
+      ".codebase\\\\tests\\\\puzzle-learning\\\\plasticity-mechanism-assay.test.mjs",
+      "actual pipeline replays original six-neuron lessons exactly in every control and both informative valences",
+      "factory v6 accepts only the attack-map cue and is selected by registration r12",
+      "real run CLI refuses blocked biology before importing any adapter"
+    ],
+    "command": "npm test",
+    "exitCode": 1,
+    "sameHistoricalFailures": true
+  },
+  "staticCheck": {
+    "file": "static-check-final/result.json",
+    "status": "pass",
+    "cells": 14,
+    "rosterIdentity": "709af8170fe7142456abd641390d36414ce3c71961b76d8a73a794f37e457315",
+    "sourceHashesMatch": true
+  },
+  "sourceSnapshotsMatch": true,
+  "protectedSourcesUnchanged": true,
+  "productionScoreContractSelected": false,
+  "graphExperimentStarted": false
+}

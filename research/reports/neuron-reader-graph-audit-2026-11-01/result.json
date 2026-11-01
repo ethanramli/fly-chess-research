@@ -1,0 +1,715 @@
+{
+  "schema": "neuron-reader-graph-audit-v1",
+  "date": "2026-11-01",
+  "scope": "Static sparse-graph and streamed source-table audit; no inference, teaching, learning or graph mutation",
+  "inputs": {
+    "graph": {
+      "path": ".cache/full.npz",
+      "sha256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2"
+    },
+    "annotations": {
+      "path": ".cache/flywire-annotations-v2.1.0.tsv",
+      "sha256": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6"
+    },
+    "connections": {
+      "path": ".cache/flywire-codex-783-verify/connections.csv.gz",
+      "sha256": "d49dd692e59e153aa3c83f5257bfc0eff51247b86d7bb183386c6d1622c70fc9"
+    }
+  },
+  "nodes": 134209,
+  "edges": 2700513,
+  "incidentNodes": 134181,
+  "isolatedNodes": [
+    {
+      "index": 3659,
+      "rootId": "720575940606756309",
+      "type": "DNpe018",
+      "cellClass": "",
+      "side": "left",
+      "knownNT": "",
+      "predictedNT": "acetylcholine",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 8868,
+      "rootId": "720575940610440402",
+      "type": "DNge085",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "glutamate",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 12452,
+      "rootId": "720575940612014131",
+      "type": "DNg02_a",
+      "cellClass": "",
+      "side": "left",
+      "knownNT": "",
+      "predictedNT": "serotonin",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 13635,
+      "rootId": "720575940612429743",
+      "type": "DNge074",
+      "cellClass": "",
+      "side": "left",
+      "knownNT": "",
+      "predictedNT": "acetylcholine",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 18434,
+      "rootId": "720575940613998860",
+      "type": "DNg03",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 28489,
+      "rootId": "720575940617035449",
+      "type": "DNge074",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "serotonin",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 31613,
+      "rootId": "720575940617873201",
+      "type": "DNpe051",
+      "cellClass": "",
+      "side": "left",
+      "knownNT": "",
+      "predictedNT": "acetylcholine",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 34479,
+      "rootId": "720575940618548244",
+      "type": "DNge061",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 35702,
+      "rootId": "720575940618863553",
+      "type": "DNge061",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 37601,
+      "rootId": "720575940619372726",
+      "type": "DNge114",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "acetylcholine",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 37806,
+      "rootId": "720575940619434587",
+      "type": "DNge153",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "gaba",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 41938,
+      "rootId": "720575940620404182",
+      "type": "DNg05_b",
+      "cellClass": "",
+      "side": "left",
+      "knownNT": "",
+      "predictedNT": "glutamate",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 45723,
+      "rootId": "720575940621082111",
+      "type": "DNge061",
+      "cellClass": "",
+      "side": "left",
+      "knownNT": "",
+      "predictedNT": "",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 46864,
+      "rootId": "720575940621294218",
+      "type": "DNge061",
+      "cellClass": "",
+      "side": "left",
+      "knownNT": "",
+      "predictedNT": "",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 54613,
+      "rootId": "720575940622681864",
+      "type": "DNg02_b",
+      "cellClass": "",
+      "side": "left",
+      "knownNT": "",
+      "predictedNT": "",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 55316,
+      "rootId": "720575940622806247",
+      "type": "DNge085",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "gaba",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 74472,
+      "rootId": "720575940626518858",
+      "type": "DNpe051",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "acetylcholine",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 76612,
+      "rootId": "720575940626904219",
+      "type": "DNg02_b",
+      "cellClass": "",
+      "side": "left",
+      "knownNT": "",
+      "predictedNT": "",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 94898,
+      "rootId": "720575940630290536",
+      "type": "DNge108",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "acetylcholine",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 95547,
+      "rootId": "720575940630428324",
+      "type": "DNpe029",
+      "cellClass": "",
+      "side": "left",
+      "knownNT": "",
+      "predictedNT": "acetylcholine",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 101554,
+      "rootId": "720575940631609391",
+      "type": "DNpe029",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "acetylcholine",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 104960,
+      "rootId": "720575940632409130",
+      "type": "DNg03",
+      "cellClass": "",
+      "side": "left",
+      "knownNT": "",
+      "predictedNT": "acetylcholine",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 113704,
+      "rootId": "720575940635261838",
+      "type": "CB2748",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "octopamine",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 116093,
+      "rootId": "720575940636254810",
+      "type": "DNg03",
+      "cellClass": "",
+      "side": "left",
+      "knownNT": "",
+      "predictedNT": "",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 120047,
+      "rootId": "720575940638084149",
+      "type": "DNge112",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "acetylcholine",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 124624,
+      "rootId": "720575940640156301",
+      "type": "DNge014",
+      "cellClass": "",
+      "side": "left",
+      "knownNT": "",
+      "predictedNT": "",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 126909,
+      "rootId": "720575940641793440",
+      "type": "DNge114",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "serotonin",
+      "input": false,
+      "output": true
+    },
+    {
+      "index": 127053,
+      "rootId": "720575940642027464",
+      "type": "DNg03",
+      "cellClass": "",
+      "side": "right",
+      "knownNT": "",
+      "predictedNT": "gaba",
+      "input": false,
+      "output": true
+    }
+  ],
+  "minimumSynapses": 5,
+  "maximumSynapses": 2405,
+  "sourceRows": 3869878,
+  "kcMbon": {
+    "edges": 21438,
+    "synapses": 169931,
+    "retainedEdges": 21438,
+    "retainedSynapses": 169931
+  },
+  "kcMbonByType": {
+    "MBON03": {
+      "edges": 905,
+      "synapses": 15075,
+      "retainedEdges": 905,
+      "retainedSynapses": 15075
+    },
+    "MBON06": {
+      "edges": 1039,
+      "synapses": 10542,
+      "retainedEdges": 1039,
+      "retainedSynapses": 10542
+    },
+    "MBON05": {
+      "edges": 2104,
+      "synapses": 19047,
+      "retainedEdges": 2104,
+      "retainedSynapses": 19047
+    },
+    "MBON26": {
+      "edges": 258,
+      "synapses": 2823,
+      "retainedEdges": 258,
+      "retainedSynapses": 2823
+    },
+    "MBON28": {
+      "edges": 178,
+      "synapses": 1333,
+      "retainedEdges": 178,
+      "retainedSynapses": 1333
+    },
+    "MBON18": {
+      "edges": 1078,
+      "synapses": 8209,
+      "retainedEdges": 1078,
+      "retainedSynapses": 8209
+    },
+    "MBON07": {
+      "edges": 2550,
+      "synapses": 19515,
+      "retainedEdges": 2550,
+      "retainedSynapses": 19515
+    },
+    "MBON12": {
+      "edges": 786,
+      "synapses": 5015,
+      "retainedEdges": 786,
+      "retainedSynapses": 5015
+    },
+    "MBON23": {
+      "edges": 112,
+      "synapses": 654,
+      "retainedEdges": 112,
+      "retainedSynapses": 654
+    },
+    "MBON14": {
+      "edges": 2160,
+      "synapses": 16953,
+      "retainedEdges": 2160,
+      "retainedSynapses": 16953
+    },
+    "MBON13": {
+      "edges": 620,
+      "synapses": 5548,
+      "retainedEdges": 620,
+      "retainedSynapses": 5548
+    },
+    "MBON09": {
+      "edges": 3308,
+      "synapses": 22614,
+      "retainedEdges": 3308,
+      "retainedSynapses": 22614
+    },
+    "MBON11": {
+      "edges": 1775,
+      "synapses": 12040,
+      "retainedEdges": 1775,
+      "retainedSynapses": 12040
+    },
+    "MBON16": {
+      "edges": 264,
+      "synapses": 1765,
+      "retainedEdges": 264,
+      "retainedSynapses": 1765
+    },
+    "MBON04": {
+      "edges": 489,
+      "synapses": 3616,
+      "retainedEdges": 489,
+      "retainedSynapses": 3616
+    },
+    "MBON31": {
+      "edges": 269,
+      "synapses": 2313,
+      "retainedEdges": 269,
+      "retainedSynapses": 2313
+    },
+    "MBON02": {
+      "edges": 637,
+      "synapses": 3971,
+      "retainedEdges": 637,
+      "retainedSynapses": 3971
+    },
+    "MBON30": {
+      "edges": 303,
+      "synapses": 1782,
+      "retainedEdges": 303,
+      "retainedSynapses": 1782
+    },
+    "MBON24": {
+      "edges": 159,
+      "synapses": 941,
+      "retainedEdges": 159,
+      "retainedSynapses": 941
+    },
+    "MBON15-like": {
+      "edges": 13,
+      "synapses": 67,
+      "retainedEdges": 13,
+      "retainedSynapses": 67
+    },
+    "MBON17": {
+      "edges": 151,
+      "synapses": 917,
+      "retainedEdges": 151,
+      "retainedSynapses": 917
+    },
+    "MBON10": {
+      "edges": 8,
+      "synapses": 42,
+      "retainedEdges": 8,
+      "retainedSynapses": 42
+    },
+    "MBON29": {
+      "edges": 11,
+      "synapses": 60,
+      "retainedEdges": 11,
+      "retainedSynapses": 60
+    },
+    "MBON22": {
+      "edges": 996,
+      "synapses": 6662,
+      "retainedEdges": 996,
+      "retainedSynapses": 6662
+    },
+    "MBON35": {
+      "edges": 42,
+      "synapses": 251,
+      "retainedEdges": 42,
+      "retainedSynapses": 251
+    },
+    "MBON27": {
+      "edges": 189,
+      "synapses": 1545,
+      "retainedEdges": 189,
+      "retainedSynapses": 1545
+    },
+    "MBON01": {
+      "edges": 744,
+      "synapses": 4846,
+      "retainedEdges": 744,
+      "retainedSynapses": 4846
+    },
+    "MBON32": {
+      "edges": 168,
+      "synapses": 1040,
+      "retainedEdges": 168,
+      "retainedSynapses": 1040
+    },
+    "MBON21": {
+      "edges": 48,
+      "synapses": 289,
+      "retainedEdges": 48,
+      "retainedSynapses": 289
+    },
+    "MBON33": {
+      "edges": 13,
+      "synapses": 110,
+      "retainedEdges": 13,
+      "retainedSynapses": 110
+    },
+    "MBON17-like": {
+      "edges": 44,
+      "synapses": 252,
+      "retainedEdges": 44,
+      "retainedSynapses": 252
+    },
+    "MBON20": {
+      "edges": 9,
+      "synapses": 45,
+      "retainedEdges": 9,
+      "retainedSynapses": 45
+    },
+    "MBON19": {
+      "edges": 8,
+      "synapses": 49,
+      "retainedEdges": 8,
+      "retainedSynapses": 49
+    }
+  },
+  "annotationKC": {
+    "cells": 5177,
+    "predictedDopamine": 5172,
+    "knownAcetylcholine": 5177
+  },
+  "actualKCOutgoingSigns": {
+    "positive": 5177,
+    "negative": 0,
+    "noOutgoing": 0
+  },
+  "mbon05": [
+    {
+      "index": 46203,
+      "rootId": "720575940621164720",
+      "type": "MBON05",
+      "cellClass": "MBON",
+      "side": "left",
+      "knownNT": "glutamate",
+      "predictedNT": "acetylcholine",
+      "outgoingSign": 1,
+      "outgoingEdges": 112
+    },
+    {
+      "index": 95882,
+      "rootId": "720575940630496374",
+      "type": "MBON05",
+      "cellClass": "MBON",
+      "side": "right",
+      "knownNT": "glutamate",
+      "predictedNT": "glutamate",
+      "outgoingSign": -1,
+      "outgoingEdges": 112
+    }
+  ],
+  "photos": {
+    "selected": 5543,
+    "withOutgoing": 5543,
+    "sides": {
+      "left": 2259,
+      "right": 3284
+    },
+    "eyeCodes": {
+      "0": 2259,
+      "1": 3284
+    },
+    "annotationDisagreements": [
+      {
+        "index": 22398,
+        "rootId": "720575940615229393",
+        "type": "Lawf1",
+        "cellClass": "ME>LA",
+        "side": "left",
+        "knownNT": "acetylcholine",
+        "predictedNT": "acetylcholine"
+      },
+      {
+        "index": 47722,
+        "rootId": "720575940621442731",
+        "type": "L4",
+        "cellClass": "LA>ME",
+        "side": "left",
+        "knownNT": "acetylcholine, allatostatin-c",
+        "predictedNT": "glutamate"
+      },
+      {
+        "index": 58492,
+        "rootId": "720575940623374156",
+        "type": "L3",
+        "cellClass": "LA>ME",
+        "side": "right",
+        "knownNT": "acetylcholine",
+        "predictedNT": "acetylcholine"
+      },
+      {
+        "index": 67758,
+        "rootId": "720575940625112247",
+        "type": "L1-3",
+        "cellClass": "LA>ME",
+        "side": "left",
+        "knownNT": "",
+        "predictedNT": "acetylcholine"
+      },
+      {
+        "index": 70173,
+        "rootId": "720575940625647630",
+        "type": "Mi15",
+        "cellClass": "ME",
+        "side": "left",
+        "knownNT": "acetylcholine, nitric oxide, dopamine",
+        "predictedNT": "acetylcholine"
+      },
+      {
+        "index": 70640,
+        "rootId": "720575940625736525",
+        "type": "Mi15",
+        "cellClass": "ME",
+        "side": "left",
+        "knownNT": "acetylcholine, nitric oxide, dopamine",
+        "predictedNT": "gaba"
+      },
+      {
+        "index": 70850,
+        "rootId": "720575940625777639",
+        "type": "L3",
+        "cellClass": "LA>ME",
+        "side": "left",
+        "knownNT": "acetylcholine",
+        "predictedNT": "acetylcholine"
+      },
+      {
+        "index": 90880,
+        "rootId": "720575940629481457",
+        "type": "",
+        "cellClass": "optic_lobes",
+        "side": "left",
+        "knownNT": "",
+        "predictedNT": "gaba"
+      },
+      {
+        "index": 107886,
+        "rootId": "720575940633146705",
+        "type": "",
+        "cellClass": "LA>ME",
+        "side": "left",
+        "knownNT": "",
+        "predictedNT": "acetylcholine"
+      },
+      {
+        "index": 119496,
+        "rootId": "720575940637820272",
+        "type": "Mi9",
+        "cellClass": "ME",
+        "side": "left",
+        "knownNT": "glutamate, gaba",
+        "predictedNT": "gaba"
+      },
+      {
+        "index": 123768,
+        "rootId": "720575940639763790",
+        "type": "Tm5a",
+        "cellClass": "ME>LO",
+        "side": "left",
+        "knownNT": "",
+        "predictedNT": "acetylcholine"
+      },
+      {
+        "index": 125654,
+        "rootId": "720575940640691619",
+        "type": "L3",
+        "cellClass": "LA>ME",
+        "side": "left",
+        "knownNT": "acetylcholine",
+        "predictedNT": "acetylcholine"
+      },
+      {
+        "index": 134184,
+        "rootId": "720575940661284993",
+        "type": "",
+        "cellClass": "optic_lobes",
+        "side": "right",
+        "knownNT": "",
+        "predictedNT": "acetylcholine"
+      }
+    ]
+  },
+  "command": [
+    "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.exe",
+    "--max-old-space-size=256",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\research\\reports\\neuron-reader-graph-audit-2026-11-01\\audit.mjs"
+  ],
+  "cpuDuty": 0.5,
+  "elapsedMs": 20076.0786,
+  "rssSnapshotMiB": 158.96484375,
+  "scriptSha256": "75670a578e79bbd0e9566b3ac8491a93853a95e0b9b55157edca7612278b7551"
+}

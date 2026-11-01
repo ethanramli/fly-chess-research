@@ -1,0 +1,38 @@
+{
+    "schema":  1,
+    "name":  "memory-feedback-static-paths-v1",
+    "paused":  false,
+    "paths":  {
+                  "registration":  "python actions/memory-feedback-paths-v1-step.json",
+                  "run":  "runs/memory-retention-2026-10-31"
+              },
+    "pins":  {
+                 "python actions/check_memory_feedback_paths.py":  "a178a21888bf8221e1a5915b0cbc41bc46847301ba4d75f2cea8b1852e6a5abb",
+                 "python actions/curriculum.py":  "f084dd00fe3976948b2a96dbb79c65c74c07c80392361d273192b3496bf4cb52",
+                 "python actions/fly_controls.py":  "05e1121f2be288c9d86b0c31493181c582c7f5bb9d24a9bc1e26ae3d2ed1300c",
+                 ".cache/full.npz":  "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+                 ".cache/flywire-annotations-v2.1.0.tsv":  "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+                 ".cache/flywire-codex-783-verify/consolidated_cell_types.csv.gz":  "8aba246d71dc40361677493629972ce3883048c3d02010adc42bda22962a1a2d",
+                 "research/reports/memory-retention-continuation-2026-10-31/feedback-path-feasibility-spec.md":  "1cd47ddfbd849499e1d4d360affe4e0b5441b73ea386d952c61947e58b8c0664"
+             },
+    "artifacts":  {
+
+                  },
+    "report_fields":  [
+
+                      ],
+    "state_file":  "runs/python-actions/current-memory-feedback-paths-v1.json",
+    "resourceLimits":  {
+                           "freeMiB":  256,
+                           "rssMiB":  2048
+                       },
+    "jobs":  {
+                 "analyse":  {
+                                 "role":  "check",
+                                 "argv":  [
+                                              "C:/Users/ethan/.venv-class/Scripts/python.exe",
+                                              "python actions/check_memory_feedback_paths.py"
+                                          ]
+                             }
+             }
+}

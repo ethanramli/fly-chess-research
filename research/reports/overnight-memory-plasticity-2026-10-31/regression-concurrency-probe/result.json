@@ -1,0 +1,70 @@
+[
+  {
+    "optionPosition": "before",
+    "exitCode": 0,
+    "overlap": false,
+    "argv": [
+      "node",
+      "--test",
+      "--test-concurrency=1",
+      "research\\reports\\overnight-memory-plasticity-2026-10-31\\regression-concurrency-probe\\a.test.mjs",
+      "research\\reports\\overnight-memory-plasticity-2026-10-31\\regression-concurrency-probe\\b.test.mjs"
+    ],
+    "events": [
+      {
+        "tag": "a",
+        "stage": "start",
+        "time": 1793421151398
+      },
+      {
+        "tag": "a",
+        "stage": "end",
+        "time": 1793421151708
+      },
+      {
+        "tag": "b",
+        "stage": "start",
+        "time": 1793421151842
+      },
+      {
+        "tag": "b",
+        "stage": "end",
+        "time": 1793421152156
+      }
+    ]
+  },
+  {
+    "optionPosition": "after",
+    "exitCode": 0,
+    "overlap": true,
+    "argv": [
+      "node",
+      "--test",
+      "research\\reports\\overnight-memory-plasticity-2026-10-31\\regression-concurrency-probe\\a.test.mjs",
+      "research\\reports\\overnight-memory-plasticity-2026-10-31\\regression-concurrency-probe\\b.test.mjs",
+      "--test-concurrency=1"
+    ],
+    "events": [
+      {
+        "tag": "a",
+        "stage": "start",
+        "time": 1793421152390
+      },
+      {
+        "tag": "b",
+        "stage": "start",
+        "time": 1793421152399
+      },
+      {
+        "tag": "a",
+        "stage": "end",
+        "time": 1793421152699
+      },
+      {
+        "tag": "b",
+        "stage": "end",
+        "time": 1793421152715
+      }
+    ]
+  }
+]

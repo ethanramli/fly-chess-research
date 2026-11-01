@@ -1,0 +1,13 @@
+# Test the reservoir's additional transition delay
+
+2026-10-31, fixed before results or implementation of this setting. A follow-up within the metaplastic family; no new graph/chess experiment, held-out access, threshold or exposure change.
+
+The audited reservoir passes G1/G2/G3/G5/G6 and the declared shuffled diagnostic, but all G4 reversal margins fail. [Exact phase reconstruction](phase-diagnosis-v1.json) reproduces120 reported phase readouts with zero discrepancy. Unique A+ synapses still carry positive value after the first reversal, so shared-cell conflict alone does not explain G4. Reservoir reversal also consumes more punishment trials, leaving fewer correct-choice reward opportunities within the same24-trial block. These observations identify slowed revision, not an experimentally proven sole cause.
+
+The four-state source topology is unchanged: [Khorsand/Soltani2017 Figure6d](reservoir-proposal.md). It needs two consecutive transition opportunities to switch a protected efficacy; the original local rule needs one. For an approximately constant opportunity probability p, the waiting-time means are2/p versus1/p. A controlled twofold increase in the original eta is therefore a principled latency comparison rather than a free sweep.
+
+Fix eta=1 (previously.5), with every other setting unchanged. This doubles the event hazard, not its probability: p_new=2*p_old-p_old^2. Thus it only approximately matches the binary waiting time; reservoir mean delay remains a factor1/(1-p_old/2) longer. In the assay's one-frame reciprocal pulses, p_old<=1-exp(-.25), so this factor is at most1.1244. This derivation is an engineering normalization; neither source paper supplies a calibrated visual-KC learning rate.
+
+Prediction: reversal margins should recover if transition delay is the main issue. Risk: faster contradiction also increases interference, so G3 may regress. Passing reversal alone is insufficient. Use the same12 seeds, same own-choice144 trials/arm and all four arms; independently replay every event and full phase state. Keep all original G1-G6 plus the declared shuffled diagnostic. Compare the already audited baseline and reservoir without calling reused data independent samples. Preserve this setting even if it fails; no automated sweep or best-seed selection.
+
+All biology/timing limitations remain. New adapter/CLI identities must be pinned before launch; the memory equations and producer/auditor remain byte-identical. Per-run limits remain heap256MiB, RSS2048MiB, free256MiB, duty.5,300s. Existing core regression must complete; the new setting receives its own all-arm replay check. The development cycle count is recorded, with no numerical stopping limit.

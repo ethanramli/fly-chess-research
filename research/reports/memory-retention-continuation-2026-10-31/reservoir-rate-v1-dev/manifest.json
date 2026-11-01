@@ -1,0 +1,93 @@
+{
+  "schema": "memory-assay-reservoir-rate-run-v1",
+  "mode": "run",
+  "status": "complete",
+  "argv": [
+    "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\neural-learning\\run-memory-assay-reservoir-rate.mjs",
+    "--mode",
+    "run",
+    "--rule",
+    "local-reservoir-rate-v1",
+    "--cpu-duty",
+    "0.5",
+    "--registration",
+    "python actions/memory-reservoir-rate-v1-step.json",
+    "--out",
+    "runs/memory-retention-2026-10-31/reservoir-rate-v1-dev",
+    "--report",
+    "research/reports/memory-retention-continuation-2026-10-31/reservoir-rate-v1-dev"
+  ],
+  "node": "v22.23.2",
+  "started": "2026-10-31T06:39:21.337Z",
+  "profile": {
+    "ruleName": "local-reservoir-rate-v1",
+    "seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012
+    ],
+    "nKC": 200,
+    "s": 20,
+    "cell": {
+      "q": 0.25,
+      "relation": "conflicting",
+      "w": 0,
+      "bg": 0
+    },
+    "temperature": 0.1,
+    "danDip": 0
+  },
+  "cpuDuty": 0.5,
+  "limits": {
+    "rssMiB": 2048,
+    "freeMiB": 256,
+    "wallSeconds": 300
+  },
+  "registration": {
+    "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\python actions\\memory-reservoir-rate-v1-step.json",
+    "sha256": "c7495b62fb1e94799a777ff87b1c29c260a071e187a66974479c5704deb3815f"
+  },
+  "sources": {
+    ".codebase/scripts/neural-learning/run-memory-assay-reservoir-rate.mjs": "bc504f33308d940dddb8e837983ec3a3db3e31786a41b402697957a4c379bb42",
+    ".codebase/src/neural-learning/memory-assay-phase-recorded.mjs": "896c9a266f030a9d729748f63bd2d0121ead0732798263858b1b7d93d72a0d10",
+    ".codebase/src/neural-learning/memory-assay-phase-audit.mjs": "fcb7d725ab548b3f002072b067f16479391bebe583afbab6f4e6b30f5486c39a",
+    ".codebase/src/neural-learning/memory-assay-checker-v2.mjs": "654380080c405594601f9e0c38e4112f8e2bfdf2ac1f53b7398fae6f14c3b188",
+    ".codebase/src/neural-learning/memory-assay-checker.mjs": "6d96a4a9495fbb8089c4d23e77e6624e924bc8fc38aa7935477ee2658bde3fc6",
+    ".codebase/src/neural-learning/memory-assay-fixture.mjs": "6bc348bc34a1e41e4185a5e14701612cf1c1b5117b1fc1c6289cff43a9c2d4a6",
+    ".codebase/src/neural-learning/memory-assay-truth.mjs": "fd277dc6c82fa999cbbb481d09321826413bc69f18bb576e754a24372821eeee",
+    ".codebase/src/neural-learning/memory-assay-adapters.mjs": "f9695f4ebd0043d2b3a489b5f00dc78219911152ca15c4c454a8214c9dbf7a2c",
+    ".codebase/src/neural-learning/memory-assay-gates.mjs": "5be737cdab847b7dc0749cfea7a142d2011725eb323a326bf02271c56b679ae8",
+    ".codebase/src/neural-learning/memory-assay-rule-local-reservoir-rate.mjs": "7a5ceefbde3a62971775b9d0c8360bfec78495a9fbd690809f4f4752b8927754",
+    ".codebase/src/neural-learning/memory-assay-rule-local-reservoir.mjs": "0ad7f451bdb4c26d4a19d7d55cacb3747315bcf14ca20144062579773aed0c78",
+    ".codebase/src/neural-learning/memory-assay-rule-local-gated.mjs": "36f992488073f330944fae08f060a1820c8b4eb16698ff6ed4f14d5740612e3e",
+    ".codebase/src/neural-learning/local-reservoir-memory.mjs": "568aa12079141b0d0203594c1ef4a03716beeef2ca16c149a1f5f558c8de7588",
+    ".codebase/src/neural-learning/local-gated-memory.mjs": "ae5351bf885db4fe5dfd7467bc9e0059255f14ced4a1210d8d80cde80a2dc49b",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    ".codebase/src/neural-learning/alpha-lobe-memory.mjs": "2882199746cf88e7a2034c875ae7dce65368e937b29355fb196d0b9b33e2ed55",
+    ".codebase/src/neural-learning/mushroom-body.mjs": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5"
+  },
+  "records": {
+    "path": "events.jsonl",
+    "sha256": "fddfdf13c3c6b8570829da1d9a05bd8d1d3c760714884986a1a4e0dcbb1febbe",
+    "bytes": 20313979,
+    "lines": 14160
+  },
+  "summaries": {
+    "path": "summaries.jsonl",
+    "sha256": "9efbb000d170592f3a44ba9203be3a41180d00d23eb02a3d39ff28d8e644d462"
+  },
+  "ended": "2026-10-31T06:40:27.560Z",
+  "wallSeconds": 66.22624410000002,
+  "cpuSeconds": 32.968,
+  "processHighWaterRssMiB": 82.4765625
+}

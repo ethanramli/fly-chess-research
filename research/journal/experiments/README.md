@@ -118,3 +118,16 @@ Chronological implementation and experiment history. Pending statements are hist
 - [23 October: babysit accepted-memory handoff, Stage 2 rehearsal and promotion-path defects](2026-10-23-babysit-stage-memory-handoff.md)
 - [23 October: babysit checkpoint selection, matched controls and actual interference execution](2026-10-23-babysit-checkpoint-retention.md)
 - [23 October: post-interference measurements and promotion of the tested memory](2026-10-23-babysit-post-interference-promotion.md)
+- [31 October: memory fixture capacity and event-audit limits](2026-10-31-memory-fixture-capacity-and-audit.md): preserved failed candidates, two incompatible readout conditions and a prospective correction.
+- [31 October: Eyes v1 replaces the input and attack-map line](2026-10-31-eyes-v1.md): plan's point sampling failed on geometry; viewing cells and freely licensed pictures adopted; no full-graph run.
+
+- [31 October: neuron-reader naming and design review](2026-10-31-neuron-reader-design-review.md): nine findings, MBON07 comparator correction and passive-recording recommendation; no implementation or experiment.
+- [31 October: neuron-reader build](2026-10-31-neuron-reader-build.md): concrete implementation, preserved null-validation/runtime-identity mistakes and software/static verification; no full-graph propagation or learning result.
+
+- [1 November: neuron-reader graph audit after external review](2026-11-01-neuron-reader-graph-audit.md): exact retained-edge match, thirteen Eyes annotation disagreements, graph-provenance priority and preserved audit mistakes; no propagation or learning.
+
+- [1 November: visual-input memory continuation](2026-11-01-visual-memory-continuation.md): completed delay failure, fixed cubic-exit hypothesis and independent local-state audit; no biological memory claim.
+
+- [1 November: disputed Eyes inputs traced to their sources](2026-11-01-eyes-retina-identity.md): source consistency verified, thirty-eight label conflicts retained, initial subtype-count assertion corrected; no placement or learning change.
+
+- [1 November: MBON05 transmitter fallback and signs](2026-11-01-mbon05-sign-provenance.md): original builder reproduced, curated/predicted label distinction and prospective variant; no graph mutation or learning.

@@ -1,0 +1,215 @@
+{
+  "status": "passed",
+  "checkedRecords": 14160,
+  "checkedTrials": 6912,
+  "unknownTrials": 864,
+  "trajectories": 48,
+  "scope": "Internal separate event replay; pinned memory classes/fixture/checker shared. Not independent numerical replication or biological validation.",
+  "evaluation": {
+    "rule": "local-reservoir-v1",
+    "cell": {
+      "q": 0.25,
+      "relation": "conflicting",
+      "w": 0,
+      "bg": 0
+    },
+    "gated": true,
+    "seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012
+    ],
+    "nSeeds": 12,
+    "degenerateRate": 0,
+    "shuffledPool": {
+      "informative": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "shuffled": [
+        false,
+        false,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "shuffledMNormA_T1": 0.3235826459805209,
+      "shuffledMNormB_T2": -0.0839960734142397
+    },
+    "RMedian": 0.7316268131247732,
+    "mNormMedian": {
+      "A": {
+        "T1": 0.46874446582251983,
+        "T2": 0.34543734064612314,
+        "T3": 0.32041748481897203,
+        "T4": 0.29013376269765323,
+        "T5": 0.302027093724791
+      },
+      "B": {
+        "T1": -0.10999761697309002,
+        "T2": 0.4080232039943843,
+        "T3": 0.510336633941308,
+        "T4": 0.34138116824516085,
+        "T5": 0.48473508854058434
+      },
+      "C": {
+        "T1": 0.008732693218895223,
+        "T2": 0.4738149310362519,
+        "T3": 0.4738149310362519,
+        "T4": 0.4738149310362519,
+        "T5": 0.4738149310362519
+      }
+    },
+    "floorOccMedian": {
+      "T1": {
+        "P": 0,
+        "R": 0.1
+      },
+      "T2": {
+        "P": 0,
+        "R": 0.075
+      },
+      "T3": {
+        "P": 0,
+        "R": 0.0875
+      },
+      "T4": {
+        "P": 0,
+        "R": 0
+      },
+      "T5": {
+        "P": 0,
+        "R": 0
+      }
+    },
+    "gates": {
+      "G1": {
+        "pass": true,
+        "A_T1": {
+          "mNorm": 0.46874446582251983,
+          "greedyShare": 1
+        }
+      },
+      "G2": {
+        "pass": true,
+        "B_T2": {
+          "mNorm": 0.4080232039943843,
+          "greedyShare": 1
+        },
+        "C_T2": {
+          "mNorm": 0.4738149310362519,
+          "greedyShare": 1
+        }
+      },
+      "G3": {
+        "pass": true,
+        "RMedian": 0.7316268131247732,
+        "A_T2": {
+          "mNorm": 0.34543734064612314,
+          "greedyShare": 1
+        }
+      },
+      "G4": {
+        "pass": false,
+        "T3": {
+          "mNorm": 0.32041748481897203,
+          "greedyShare": 1
+        },
+        "T4": {
+          "mNorm": 0.29013376269765323,
+          "greedyShare": 1
+        },
+        "T5": {
+          "mNorm": 0.302027093724791,
+          "greedyShare": 1
+        }
+      },
+      "G5": {
+        "pass": true,
+        "gainsUnchanged": true,
+        "pairs": {
+          "absent_A_T1": {
+            "medianDiff": 0.43845282867130475,
+            "share": 1
+          },
+          "absent_B_T2": {
+            "medianDiff": 0.413096676525942,
+            "share": 1
+          },
+          "disabled_A_T1": {
+            "medianDiff": 0.43845282867130475,
+            "share": 1
+          },
+          "disabled_B_T2": {
+            "medianDiff": 0.413096676525942,
+            "share": 1
+          }
+        }
+      },
+      "G6": {
+        "pass": true,
+        "B_T3": {
+          "mNorm": 0.510336633941308,
+          "greedyShare": 1
+        }
+      }
+    },
+    "allPass": false
+  },
+  "shuffledDiagnostic": {
+    "informative": 1,
+    "shuffled": 0.5,
+    "pass": true,
+    "scope": "Prospective one-cell diagnostic; not the historical grid-pooled G5s"
+  }
+}

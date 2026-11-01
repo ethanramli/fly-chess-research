@@ -1,0 +1,61 @@
+{
+  "status": "active-development",
+  "objectiveComplete": false,
+  "primaryScope": "Long-term memory: acquisition, retention through further learning, delayed retrieval, exact persistence and revisability together; chess teaching stays on hold.",
+  "cycle_limit": null,
+  "authorization": "Researcher removed numerical development end stop; no repeated cycle-count approval.",
+  "priorRepairCycles": 6,
+  "continuationCandidates": [
+    "coupled-v1",
+    "metaplastic-v1",
+    "reservoir-v1",
+    "reservoir-rate-v1",
+    "prediction-reservoir-v1",
+    "prediction-reservoir-v1.1"
+  ],
+  "continuationControl": "ablation-v1",
+  "familiesIncludingHistorical": 3,
+  "graphOrChessAuthorized": false,
+  "completedMainAudits": [
+    "coupled-v1-audit",
+    "ablation-v1-audit",
+    "metaplastic-v1-audit",
+    "reservoir-v1-audit",
+    "reservoir-rate-v1-audit",
+    "prediction-reservoir-v1-audit",
+    "prediction-reservoir-v1-1-audit"
+  ],
+  "completedStaticChecks": [
+    "feedback-path-feasibility-v1.json"
+  ],
+  "jointMemoryPass": false,
+  "selectedCandidate": null,
+  "activeRegistration": null,
+  "activeJobs": [],
+  "nextAction": "Run capacity-delay v2 measurement after review; then decide a mechanism for high-overlap cells, capacity and noise with written predictions.",
+  "nextTest": "capacity-delay-v2-spec.md",
+  "previousCurrentState": "session-state-before-resumed-experiments.json",
+  "results": "development-comparison-v2.json",
+  "journal": "../../journal/experiments/2026-10-31-memory-goal-continuation.md",
+  "lastFullRegression": {
+    "fail": 6,
+    "pass": 648,
+    "tests": 654,
+    "scope": "Same six historical-path failures; all processes terminal. Additional rate-only integration test passed separately."
+  },
+  "staticCheckReceipt": "runs/python-actions/20261031T085837-91f50f2e",
+  "targetCellJointPass": {
+    "rule": "prediction-reservoir-v1.1",
+    "R": 0.7201794050208057,
+    "firstReversal": 0.42865271719434267,
+    "scope": "One development cell, selected from a declared 24-setting grid"
+  },
+  "gridDev": {
+    "rule": "prediction-reservoir-v1",
+    "gatedPassing": 19,
+    "gatedCells": 28,
+    "fixedPulseBaseline": 11
+  },
+  "capacityDelayV1": "All gain rules fail; reversal marks confounded by a design flaw; see journal",
+  "haikuLimit": "Maximum 3 Haiku sub-agents at once (researcher, 2026-10-31)"
+}

@@ -1,0 +1,95 @@
+{
+  "mode": "validity",
+  "seeds": "dev",
+  "valid": true,
+  "checks": {
+    "V1.1 ReversalMemory inactive recovery follows 0.75^N": {
+      "pass": true,
+      "observed": 1.1102230246251565e-16,
+      "required": "<= 1e-9"
+    },
+    "V1.2 ReversalMemory loses A (median R < 0.35)": {
+      "pass": true,
+      "observed": 0.08504575755471434,
+      "required": "< 0.35"
+    },
+    "V2.1 AlphaLobeMemory: no gain rises": {
+      "pass": true,
+      "observed": 0,
+      "required": "<= 0"
+    },
+    "V2.2 AlphaLobeMemory: G3 passes at this cell": {
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "RMedian": 1,
+        "A_T2": {
+          "mNorm": 0.4698800245305323,
+          "greedyShare": 1
+        }
+      },
+      "required": "G3 passes"
+    },
+    "V2.3 AlphaLobeMemory: A floors by T5": {
+      "pass": true,
+      "observed": {
+        "mNormA_T5": 0.003447680841062156,
+        "floorP_T5": 1,
+        "floorR_T5": 1
+      },
+      "required": "mNormA_T5 < 0.10 and both floorOcc >= 0.9"
+    },
+    "V3 SeparateTable passes G1-G6 in all 108 cells": {
+      "pass": true,
+      "observed": {
+        "cells": 108,
+        "failing": []
+      },
+      "required": "108 cells, no failing gate"
+    },
+    "V3 SeparateTable passes pooled G5s": {
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "informativeShare": 1,
+        "shuffledShare": 0.4166666666666667
+      },
+      "required": "shuffled share in [0.35,0.65], informative minus shuffled >= 0.25"
+    },
+    "V4 absent and disabled leave old-rule gains unchanged": {
+      "pass": true,
+      "observed": 0,
+      "required": "0 changed runs"
+    },
+    "V4 conflict control: ReversalMemory": {
+      "pass": true,
+      "observed": 0.5,
+      "required": "within 0.25 of 0.5"
+    },
+    "V4 conflict control: AlphaLobeMemory": {
+      "pass": true,
+      "observed": 0.5,
+      "required": "within 0.25 of 0.5"
+    },
+    "V4 conflict control: SeparateTable": {
+      "pass": true,
+      "observed": 0.5,
+      "required": "within 0.25 of 0.5"
+    },
+    "V5 overlaps match pinned levels within 1/s (SeparateTable, all cells)": {
+      "pass": true,
+      "observed": 0,
+      "required": "<= 1 (units of 1/s)"
+    },
+    "V5 shuffled non-degenerate in validity cell: ReversalMemory": {
+      "pass": true,
+      "observed": 1,
+      "required": ">= 0.9"
+    },
+    "V5 shuffled non-degenerate in validity cell: AlphaLobeMemory": {
+      "pass": true,
+      "observed": 1,
+      "required": ">= 0.9"
+    }
+  }
+}

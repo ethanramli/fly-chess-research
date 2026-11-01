@@ -2,6 +2,8 @@
 
 Researcher intent, untested hypotheses and documentation decisions. Dates use Asia/Jakarta.
 
+- [2026-10-30: Memory interference research and recommendation](2026-10-30-memory-interference-research-scope.md): overlap, inactive recovery, saturation and retrieval distinguished; sources and staged test plan complete, no experiment.
+
 - [2026-10-01 — Researcher vision and outreach interview](2026-10-01-researcher-vision.md)
 - [2026-10-06: Documentation organization and navigation](2026-10-06-documentation-cleanup.md)
 - [2026-10-06: First reasoning breakthrough and subsequent learning efficiency](2026-10-06-learning-efficiency.md)

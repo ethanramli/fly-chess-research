@@ -19,3 +19,5 @@ Accessed 2026-10-28 (Asia/Jakarta) at the researcher's request ("I want to use t
 ## Planned use (not yet an experiment)
 
 This is the eye route of the input v3 candidate (goal file weakness map, Perception row). The first step is a read-only graph check after smoke r14's audit: render the board onto the photoreceptors with a fixed rule, propagate through the pinned graph, and measure whether board-specific activity reaches the KCs. Only if it does, run the surrogate overlap and transfer checks against cue v2. Any claim must state that the board-to-photoreceptor rendering is engineered.
+
+Addendum 2026-10-31: the fixed rendering now exists as [Eyes v1](../../../documentation/design/chess-input/eyes-v1.md). It uses the stored placement and his mirror-when-Black-moves convention. It has not run on the full graph.

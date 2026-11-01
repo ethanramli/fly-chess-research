@@ -12,3 +12,4 @@
 
 Run `npm test` from the repository root. Software checks do not establish biological validation or useful learning.
 - [bound-ray-relational-cue.test.mjs](bound-ray-relational-cue.test.mjs)
+- [eyes-v1.test.mjs](eyes-v1.test.mjs)

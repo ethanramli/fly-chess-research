@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "name": "memory-assay-v7-verification",
+  "paused": false,
+  "paths": {
+    "registration": "research/reports/overnight-memory-plasticity-2026-10-31/readout-bound-spec.md",
+    "run": "research/reports/overnight-memory-plasticity-2026-10-31"
+  },
+  "pins": {
+    ".codebase/scripts/neural-learning/run-memory-assay.mjs": "e83ccf9cbc8a0778c66161a053a01dda2af0d78bb63fe6ba7856f59d45d34541",
+    ".codebase/src/neural-learning/alpha-lobe-memory.mjs": "2882199746cf88e7a2034c875ae7dce65368e937b29355fb196d0b9b33e2ed55",
+    ".codebase/src/neural-learning/alpha-one-memory.mjs": "9d56939898913ba8744725ac3bde75ef89b5ad552b21ec841a4fc0079c45b400",
+    ".codebase/src/neural-learning/delayed-reversal-memory.mjs": "03225a0cb34a85fb4d5b583378ed05530d67056a2fc0ff6149e8111cd7abac6f",
+    ".codebase/src/neural-learning/incentive-ltm-memory.mjs": "0aae087a9f674c9037fc1102ebc98ded21f38cc8b7782dcb29c8b97fe2aba0d9",
+    ".codebase/src/neural-learning/local-gated-memory.mjs": "ae5351bf885db4fe5dfd7467bc9e0059255f14ced4a1210d8d80cde80a2dc49b",
+    ".codebase/src/neural-learning/local-slow-memory.mjs": "c9318b3048c7eeef7ede6ff39e3ba4e6d68ef373b45dc26d221bfbda7b63ba72",
+    ".codebase/src/neural-learning/memory-assay-adapters.mjs": "f9695f4ebd0043d2b3a489b5f00dc78219911152ca15c4c454a8214c9dbf7a2c",
+    ".codebase/src/neural-learning/memory-assay-checker.mjs": "6d96a4a9495fbb8089c4d23e77e6624e924bc8fc38aa7935477ee2658bde3fc6",
+    ".codebase/src/neural-learning/memory-assay-fixture.mjs": "6bc348bc34a1e41e4185a5e14701612cf1c1b5117b1fc1c6289cff43a9c2d4a6",
+    ".codebase/src/neural-learning/memory-assay-gates.mjs": "5be737cdab847b7dc0749cfea7a142d2011725eb323a326bf02271c56b679ae8",
+    ".codebase/src/neural-learning/memory-assay-readout-bound.mjs": "aca6754248aa6d9dd3f5d17fa5c916aa42e10755226a305e384153be02dfc96d",
+    ".codebase/src/neural-learning/memory-assay-rule-diag-selflimit.mjs": "d943eeae4ad6e18bf3d15b65aa552aaa1c8716fd5935d511b66b5b8f40255fcd",
+    ".codebase/src/neural-learning/memory-assay-rule-local-gated.mjs": "36f992488073f330944fae08f060a1820c8b4eb16698ff6ed4f14d5740612e3e",
+    ".codebase/src/neural-learning/memory-assay-rule-local-slow.mjs": "487cd10e6db0c9bbcf50450b981e6971ad6af8c13dcb959f05d2babe60059679",
+    ".codebase/src/neural-learning/memory-assay-run.mjs": "790ca537b200aa5793560158b07803e14df4649a43ce2528e3bbcc4d269921d3",
+    ".codebase/src/neural-learning/memory-assay-truth.mjs": "fd277dc6c82fa999cbbb481d09321826413bc69f18bb576e754a24372821eeee",
+    ".codebase/src/neural-learning/rate-timing-memory.mjs": "dcb96abe443e05c1983fa829f2a978fbe6de3be701779edc9a17854b111c0d65",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    "package.json": "7605c507b0762b1c7b2886860a5ef5227671fdc55227ee15af681de26a6b3802",
+    "research/reports/overnight-memory-plasticity-2026-10-31/readout-bound-spec.md": "283d7ebb9541f805a70c4208719336ab36805f41edff60ed88ea09102dcdd650"
+  },
+  "state_file": "runs/python-actions/current-memory-assay-verification.json",
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256
+  },
+  "jobs": {
+    "math-checks": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        ".codebase/tests/neural-learning/memory-assay-readout-bound.test.mjs"
+      ]
+    },
+    "regression": {
+      "role": "check",
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "npm test -- --test-concurrency=1"
+      ]
+    }
+  },
+  "artifacts": {},
+  "report_fields": []
+}

@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "name": "memory-assay-v4",
+  "paused": false,
+  "paths": {
+    "registration": "research/reports/overnight-memory-plasticity-2026-10-31/acceptance-plan.md",
+    "run": "research/reports/overnight-memory-plasticity-2026-10-31"
+  },
+  "pins": {
+    "research/reports/overnight-memory-plasticity-2026-10-31/acceptance-plan.md": "96e1c23129b132c77c1207975e22839447eaee6278f02b53e90f7a65e8f1a3f5",
+    "research/reports/overnight-memory-plasticity-2026-10-31/assay-spec.md": "52638a9b2b60ac6357104177128dba1ce6ffe4ebf1bd9e8112fbe049aea98360",
+    ".codebase/src/neural-learning/memory-assay-adapters.mjs": "f9695f4ebd0043d2b3a489b5f00dc78219911152ca15c4c454a8214c9dbf7a2c",
+    ".codebase/src/neural-learning/memory-assay-checker.mjs": "6d96a4a9495fbb8089c4d23e77e6624e924bc8fc38aa7935477ee2658bde3fc6",
+    ".codebase/src/neural-learning/memory-assay-fixture.mjs": "6bc348bc34a1e41e4185a5e14701612cf1c1b5117b1fc1c6289cff43a9c2d4a6",
+    ".codebase/src/neural-learning/memory-assay-gates.mjs": "5be737cdab847b7dc0749cfea7a142d2011725eb323a326bf02271c56b679ae8",
+    ".codebase/src/neural-learning/memory-assay-rule-local-gated.mjs": "36f992488073f330944fae08f060a1820c8b4eb16698ff6ed4f14d5740612e3e",
+    ".codebase/src/neural-learning/memory-assay-run.mjs": "790ca537b200aa5793560158b07803e14df4649a43ce2528e3bbcc4d269921d3",
+    ".codebase/src/neural-learning/memory-assay-truth.mjs": "fd277dc6c82fa999cbbb481d09321826413bc69f18bb576e754a24372821eeee",
+    ".codebase/src/neural-learning/local-activity-diagnostic.mjs": "352d69c573dbd9a2069ea818a5d5601d3fd04b5fd689d38905cf0f89b8bc13a3",
+    ".codebase/src/neural-learning/local-gated-memory.mjs": "ae5351bf885db4fe5dfd7467bc9e0059255f14ced4a1210d8d80cde80a2dc49b",
+    ".codebase/scripts/neural-learning/run-memory-assay.mjs": "e83ccf9cbc8a0778c66161a053a01dda2af0d78bb63fe6ba7856f59d45d34541",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    ".codebase/src/neural-learning/alpha-lobe-memory.mjs": "2882199746cf88e7a2034c875ae7dce65368e937b29355fb196d0b9b33e2ed55",
+    ".codebase/src/neural-learning/mushroom-body.mjs": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5",
+    ".codebase/tests/neural-learning/memory-assay-adapters.test.mjs": "e9cd8f9eeb8846c005a0845e603c9faaa9147c5ccc42044652d1c782d695e04b",
+    ".codebase/tests/neural-learning/memory-assay-certificate.test.mjs": "bbde54c2448f50edd7a0ae758d9fb67a1260d396239f0bce8f91fa288015d7ab",
+    ".codebase/tests/neural-learning/memory-assay-fixture.test.mjs": "dc54ab8535d47fd3f1d179b120e1cdea3751506616a2b40e252c6d2bb0e8bc73",
+    ".codebase/tests/neural-learning/memory-assay-local-gated.test.mjs": "a86064bb2c49adcb3f22c908da9e320b7fab0a219d639e3b9fbd282f6bc34f0d",
+    ".codebase/tests/neural-learning/memory-assay-run.test.mjs": "827de5f190e313af5fd7a911a1a43b22ecd99a08a159268fb6051c46f7365f47",
+    ".codebase/tests/neural-learning/local-activity-diagnostic.test.mjs": "57179fbcf02a43b24301f682d7a28c2f8f986b152ff8cf59771e328dba6bf501",
+    ".codebase/tests/neural-learning/local-gated-memory.test.mjs": "57eb8a5d05c1b45e2c0f3795c640b9d51fb53f3de2e10b2fa3c149f554170575"
+  },
+  "state_file": "runs/python-actions/current-memory-assay.json",
+  "jobs": {
+    "tests": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        ".codebase/tests/neural-learning/memory-assay-adapters.test.mjs",
+        ".codebase/tests/neural-learning/memory-assay-certificate.test.mjs",
+        ".codebase/tests/neural-learning/memory-assay-fixture.test.mjs",
+        ".codebase/tests/neural-learning/memory-assay-local-gated.test.mjs",
+        ".codebase/tests/neural-learning/memory-assay-run.test.mjs",
+        ".codebase/tests/neural-learning/local-activity-diagnostic.test.mjs",
+        ".codebase/tests/neural-learning/local-gated-memory.test.mjs"
+      ]
+    },
+    "local-gated-signal2-dev": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/neural-learning/run-memory-assay.mjs",
+        "--mode",
+        "grid",
+        "--rule",
+        "local-gated-v1",
+        "--seeds",
+        "dev",
+        "--cpu-duty",
+        "0.5",
+        "--import",
+        ".codebase/src/neural-learning/memory-assay-rule-local-gated.mjs",
+        "--out",
+        "runs/overnight-memory-plasticity-2026-10-31/local-gated-signal2-dev",
+        "--report",
+        "research/reports/overnight-memory-plasticity-2026-10-31/local-gated-signal2-dev"
+      ]
+    },
+    "baseline-reversal-dev": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/neural-learning/run-memory-assay.mjs",
+        "--mode",
+        "grid",
+        "--rule",
+        "ReversalMemory",
+        "--seeds",
+        "dev",
+        "--cpu-duty",
+        "0.5",
+        "--import",
+        ".codebase/src/neural-learning/memory-assay-rule-local-gated.mjs",
+        "--out",
+        "runs/overnight-memory-plasticity-2026-10-31/baseline-reversal-dev",
+        "--report",
+        "research/reports/overnight-memory-plasticity-2026-10-31/baseline-reversal-dev"
+      ]
+    },
+    "baseline-alpha-dev": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/neural-learning/run-memory-assay.mjs",
+        "--mode",
+        "grid",
+        "--rule",
+        "AlphaLobeMemory",
+        "--seeds",
+        "dev",
+        "--cpu-duty",
+        "0.5",
+        "--import",
+        ".codebase/src/neural-learning/memory-assay-rule-local-gated.mjs",
+        "--out",
+        "runs/overnight-memory-plasticity-2026-10-31/baseline-alpha-dev",
+        "--report",
+        "research/reports/overnight-memory-plasticity-2026-10-31/baseline-alpha-dev"
+      ]
+    },
+    "validity-v3": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/neural-learning/run-memory-assay.mjs",
+        "--mode",
+        "validity",
+        "--seeds",
+        "dev",
+        "--cpu-duty",
+        "0.5",
+        "--out",
+        "runs/overnight-memory-plasticity-2026-10-31/validity-v3",
+        "--report",
+        "research/reports/overnight-memory-plasticity-2026-10-31/validity-v3"
+      ]
+    }
+  },
+  "artifacts": {},
+  "report_fields": []
+}

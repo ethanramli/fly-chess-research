@@ -1,8 +1,6 @@
 # Documentation guide
 
-Latest completed diagnostic review: [plasticity problem.md](../plasticity%20problem.md), based on predecessors' runs and [verified evidence package](../archive/early-development/research/reports/plasticity-evidence-review-2026-10-10/README.md). Broader useful preservation/reversal/transfer remains unresolved; the inherited larger-dose proposal has not run.
-
-Current handoff: [plasticity repair and bounded next-step prompt](handoffs/plasticity-repair.md).
+Current direction: [approved restart plan](design/research-goals/restart-plan-2026-10-30.md). Old experiments are history in [the early-development archive](../archive/early-development/README.md).
 
 Start with [current status](current-status.md), then [research goals](design/research-goals/README.md). Choose one topic below; dated discussion and raw evidence live in [research](../research/README.md).
 

@@ -132,3 +132,30 @@ Synthetic task plumbing now binds a hypothetical FEN to its authentic source PGN
 - [Stage 2 checkpoint selection checks v6](babysit-stage2-checkpoint-selection-checks-v6.json): selector final sealing, retention and Stage 1/shared-phase compatibility; no production training.
 
 - [Stage 2 selection checks v7](babysit-stage2-checkpoint-selection-checks-v7.json): preserves unknown missing-evidence status, measured failure, matched controls and shared helper compatibility.
+
+## Restart memory-fixture evidence repair
+
+[V12 recording/audit registration](memory-assay-v12-step.json) completed fresh from-scratch development evidence and separate replay for the original q=.25 conflicting,w=0,bg=0 cell. Its output paths are complete: do not rerun into them. [Streamed equivalence action](check_memory_receipt_equivalence.py) and [V13 registration](memory-assay-v13-step.json) verify all48 trajectory summaries match the original failed learner exactly. No held-out data or graph training.
+
+[V14 verification](memory-assay-v14-step.json) runs the required npm suite with the concurrency option in the shared test command **before** file paths; appending the option after paths did not serialize this installed Node runtime. Raw receipts preserve both the earlier timeout failure and corrected run. [Report and scientific limits](../research/reports/overnight-memory-plasticity-2026-10-31/MORNING-REPORT.md). Recording/replay supports an auditable retention experiment; it adds no consolidation or improved memory.
+
+## Memory-retention continuation, 2026-10-31
+
+Completed synthetic registrations: [coupled/control](memory-coupled-v1-step.json), [cascade](memory-metaplastic-v1-step.json), [reservoir](memory-reservoir-v1-step.json) and [fixed latency](memory-reservoir-rate-v1-step.json). All main conditions pass separate replay but none passes the joint memory requirements. Output directories and pinned source/protocol identities remain preserved. Do not launch two jobs concurrently through the same registration's launch lock or rerun completed outputs.
+
+Read-only evidence: [coupled state inspection](memory-coupled-v1-inspection-step.json), [five-condition analysis](memory-continuation-analysis-v3-step.json), [phase reconstruction](memory-phase-state-analysis-v1-step.json) and [static signed anatomy](memory-feedback-paths-v1-step.json). Earlier analysis-wrapper failures remain preserved. [Long-term-memory scope and next test](../research/reports/memory-retention-continuation-2026-10-31/long-term-memory-scope-and-next-test.md). Static anatomy runs no neural activity.
+
+
+## Visual-input memory development, 2026-11-01
+
+The separate `eye-memory-cubic-v1-step.json` registers one fixed informative/control comparison and its independent local-frame replay. Use `fly.cmd --config "python actions/eye-memory-cubic-v1-step.json" status`, bounded `watch`, and `run audit` after completion. Preserve its single `paths.run` identity; never relaunch an existing or live run. Graph activity and scalar choices are development approximations, not an approved biological memory rule or chess training.
+
+
+### Exact eye-memory continuation after interruption
+
+The active registration is `eye-memory-cubic-v1-recovery1-step.json`; preserve the original interrupted output. `eye_memory_status.py` defaults to this continuation and accepts bounded `--seconds 0..55`. `fly.cmd --config "python actions/eye-memory-cubic-v1-recovery1-step.json" status` reports its owned handle; `run audit` is available only after its summary exists. `launch_eye_memory_recovery.py` already launched this run outside the session job and refuses existing handles/output, so do not invoke it again. Recovery uses the verified 48-trial T1 boundary, preserves completed arm records, and checks actual overlapping observations/choices before further interpretation. It never silently retries.
+
+
+### Frozen-memory decoder diagnosis
+
+`eye-readout-offset-v1-step.json` registers tests and one bounded diagnostic. Its `run check` must wait for the current six-seed source summary and matching passed full replay audit. It does not start training or modify memory. Inspect authoritative graph processes before launch, keep this graph check serial, and preserve its fresh output. The static capacity analysis is a separate surrogate, not a substitute for this measurement.

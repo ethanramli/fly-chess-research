@@ -5,7 +5,7 @@ Researcher intent and evidence requirements. These notes do not claim reasoning 
 - [Research direction: learning from puzzle consequences](feedback-learning.md)
 - [Proposal: fixed weights and the persistent-learning boundary](fixed-weight-proposal.md)
 - [Hypothesis: does prior reasoning make later learning easier?](learning-efficiency.md)
-- [Restart plan (draft for approval, 2026-10-30)](restart-plan-2026-10-30.md)
+- [Restart plan (approved 2026-10-30; neuron-reader revision 2026-10-31)](restart-plan-2026-10-30.md): section 4A specifies passive recording, later scoring requirements and build order.
 - [Research goal: transferable reasoning in a compact neural system](scientific-contribution.md)
 - [ISEF judging criteria and recommended research direction](isef-research-direction.md)
 - [Accepted scope: piece relationships, contextual usefulness and selective investigation](piece-relationships-and-selective-investigation.md)

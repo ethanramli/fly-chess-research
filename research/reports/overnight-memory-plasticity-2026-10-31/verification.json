@@ -1,0 +1,219 @@
+{
+  "schema": "memory-package-verification-v1",
+  "date": "2026-10-31",
+  "focused": {
+    "tests": 93,
+    "pass": 93,
+    "fail": 0,
+    "receipt": "runs/python-actions/20261031T035024-58d3b3d1/completion.json",
+    "stdout": "runs/python-actions/20261031T035024-58d3b3d1/stdout.txt"
+  },
+  "fullRepository": {
+    "command": "npm test",
+    "environment": {
+      "NODE_OPTIONS": "--max-old-space-size=256"
+    },
+    "tests": 634,
+    "pass": 628,
+    "fail": 6,
+    "exitCode": 1,
+    "receipt": "runs/python-actions/20261031T043316-f41c8eab/completion.json",
+    "stdout": "runs/python-actions/20261031T043316-f41c8eab/stdout.txt",
+    "failureNames": [
+      {
+        "test": ".codebase\\\\tests\\\\chess-input\\\\public-action-relative-cue-v2.test.mjs",
+        "scope": "Same historical-path failure as before repair"
+      },
+      {
+        "test": ".codebase\\\\tests\\\\chess-input\\\\public-action-relative-cue-v3.test.mjs",
+        "scope": "Same historical-path failure as before repair"
+      },
+      {
+        "test": "factory v6 accepts only the attack-map cue and is selected by registration r12",
+        "scope": "Same historical-path failure as before repair"
+      },
+      {
+        "test": "real run CLI refuses blocked biology before importing any adapter",
+        "scope": "Same historical-path failure as before repair"
+      },
+      {
+        "test": ".codebase\\\\tests\\\\puzzle-learning\\\\plasticity-mechanism-assay.test.mjs",
+        "scope": "Same historical-path failure as before repair"
+      },
+      {
+        "test": "actual pipeline replays original six-neuron lessons exactly in every control and both informative valences",
+        "scope": "Same historical-path failure as before repair"
+      }
+    ],
+    "historicalPaths": [
+      {
+        "oldPath": "research/reports/reversal-candidate-2026-10-05/mapping.json",
+        "oldPathExists": false,
+        "archivePath": "archive/early-development/research/reports/reversal-candidate-2026-10-05/mapping.json",
+        "archivePathExists": true,
+        "associatedFailures": 2
+      },
+      {
+        "oldPath": "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r11-registration.json",
+        "oldPathExists": false,
+        "archivePath": "archive/early-development/research/data/lichess-stage1-synthetic-v1/stage1-smoke-r11-registration.json",
+        "archivePathExists": true,
+        "associatedFailures": 1
+      },
+      {
+        "oldPath": "research/reports/plasticity-signal-anatomy-preflight-v2-2026-10-08.json",
+        "oldPathExists": false,
+        "archivePath": "archive/early-development/research/reports/plasticity-signal-anatomy-preflight-v2-2026-10-08.json",
+        "archivePathExists": true,
+        "associatedFailures": 1
+      },
+      {
+        "oldPath": "research/data/bidirectional-plasticity-assay-v4/protocol.json",
+        "oldPathExists": false,
+        "archivePath": "archive/early-development/research/data/bidirectional-plasticity-assay-v4/protocol.json",
+        "archivePathExists": true,
+        "associatedFailures": 1
+      },
+      {
+        "oldPath": "research/data/g0-history-runner-fixture-v1/mapping.json",
+        "oldPathExists": false,
+        "archivePath": "archive/early-development/research/data/g0-history-runner-fixture-v1/mapping.json",
+        "archivePathExists": true,
+        "associatedFailures": 1
+      }
+    ],
+    "note": "All repair tests pass. Six unchanged historical-path failures; no tests skipped. Concurrency flag now precedes paths in npm script.",
+    "skipped": 0,
+    "durationMs": 637270.4198
+  },
+  "originalRuns": 10,
+  "recordCoverage": "record-coverage-audit.json",
+  "readoutProof": "readout-capacity-verified.json",
+  "independentEventReplay": false,
+  "heldOutRuns": false,
+  "graphRuns": false,
+  "haikuCLI": "Provider rate limit; no code delivered; no replacement provider.",
+  "sourceProvenance": {
+    "snapshot": "source-snapshot/.codebase",
+    "scope": "Final working memory source/tests, not standalone installation or historical asymmetric run source",
+    "historicalAsymmetricRunnerSourceMatchesCurrent": false,
+    "historicalAsymmetricRunLocalSnapshot": false,
+    "reciprocalSignalRunListedSourcesMatchCurrent": true,
+    "historicalAsymmetricRunnerRecovered": "historical-source-recovery/memory-assay-run-asymmetric.mjs",
+    "recoveredSha256": "bf7ccbdf23ff231a29d369feca26cf01465cb08008d70b03a6fffcd5febd96b4"
+  },
+  "preRepairFullRepository": {
+    "command": "npm test -- --test-concurrency=1",
+    "environment": {
+      "NODE_OPTIONS": "--max-old-space-size=256"
+    },
+    "tests": 624,
+    "pass": 618,
+    "fail": 6,
+    "exitCode": 1,
+    "receipt": "runs/python-actions/20261031T034601-35f60aaa/completion.json",
+    "stdout": "runs/python-actions/20261031T034601-35f60aaa/stdout.txt",
+    "failureNames": [
+      {
+        "test": ".codebase\\\\tests\\\\chess-input\\\\public-action-relative-cue-v2.test.mjs",
+        "scope": "Historical-path failure; see complete original stdout"
+      },
+      {
+        "test": ".codebase\\\\tests\\\\chess-input\\\\public-action-relative-cue-v3.test.mjs",
+        "scope": "Historical-path failure; see complete original stdout"
+      },
+      {
+        "test": "factory v6 accepts only the attack-map cue and is selected by registration r12",
+        "scope": "Historical-path failure; see complete original stdout"
+      },
+      {
+        "test": "real run CLI refuses blocked biology before importing any adapter",
+        "scope": "Historical-path failure; see complete original stdout"
+      },
+      {
+        "test": ".codebase\\\\tests\\\\puzzle-learning\\\\plasticity-mechanism-assay.test.mjs",
+        "scope": "Historical-path failure; see complete original stdout"
+      },
+      {
+        "test": "actual pipeline replays original six-neuron lessons exactly in every control and both informative valences",
+        "scope": "Historical-path failure; see complete original stdout"
+      }
+    ],
+    "historicalPaths": [
+      {
+        "oldPath": "research/reports/reversal-candidate-2026-10-05/mapping.json",
+        "oldPathExists": false,
+        "archivePath": "archive/early-development/research/reports/reversal-candidate-2026-10-05/mapping.json",
+        "archivePathExists": true,
+        "associatedFailures": 2
+      },
+      {
+        "oldPath": "research/data/lichess-stage1-synthetic-v1/stage1-smoke-r11-registration.json",
+        "oldPathExists": false,
+        "archivePath": "archive/early-development/research/data/lichess-stage1-synthetic-v1/stage1-smoke-r11-registration.json",
+        "archivePathExists": true,
+        "associatedFailures": 1
+      },
+      {
+        "oldPath": "research/reports/plasticity-signal-anatomy-preflight-v2-2026-10-08.json",
+        "oldPathExists": false,
+        "archivePath": "archive/early-development/research/reports/plasticity-signal-anatomy-preflight-v2-2026-10-08.json",
+        "archivePathExists": true,
+        "associatedFailures": 1
+      },
+      {
+        "oldPath": "research/data/bidirectional-plasticity-assay-v4/protocol.json",
+        "oldPathExists": false,
+        "archivePath": "archive/early-development/research/data/bidirectional-plasticity-assay-v4/protocol.json",
+        "archivePathExists": true,
+        "associatedFailures": 1
+      },
+      {
+        "oldPath": "research/data/g0-history-runner-fixture-v1/mapping.json",
+        "oldPathExists": false,
+        "archivePath": "archive/early-development/research/data/g0-history-runner-fixture-v1/mapping.json",
+        "archivePathExists": true,
+        "associatedFailures": 1
+      }
+    ],
+    "note": "Full run preceded final test-only adapter comparison; final focused run covers that change. No baseline-wide rerun or unrelated repair."
+  },
+  "preRepairFocused": {
+    "tests": 93,
+    "pass": 93,
+    "fail": 0,
+    "receipt": "runs/python-actions/20261031T035024-58d3b3d1/completion.json",
+    "stdout": "runs/python-actions/20261031T035024-58d3b3d1/stdout.txt"
+  },
+  "postRepairHarnessFailure": {
+    "tests": 634,
+    "pass": 627,
+    "fail": 7,
+    "receipt": "runs/python-actions/20261031T042234-d27dedf6/completion.json",
+    "stdout": "runs/python-actions/20261031T042234-d27dedf6/stdout.txt",
+    "reason": "Six historical-path failures plus new test child timeout90s; option position caused unintended concurrency. Fixed shared test command and harness allowance; failed temp fixtures now preserved."
+  },
+  "receiptRepair": {
+    "tests": 9,
+    "standaloneReceipt": "runs/python-actions/20261031T041804-e88cef89/completion.json",
+    "finalFullSuitePassed": true,
+    "freshRun": "runs/overnight-memory-plasticity-2026-10-31/receipt-repair-v3-dev/manifest.json",
+    "audit": "runs/overnight-memory-plasticity-2026-10-31/receipt-repair-v3-audit/result.json",
+    "checkedRecords": 14160,
+    "checkedTrials": 6912,
+    "unknownTrials": 864,
+    "trajectories": 48,
+    "equivalence": "receipt-repair-v3-equivalence.json",
+    "all48SummariesMatchOriginal": true,
+    "scope": "Fresh event evidence, not changed learning. Internal replay shares pinned classes/fixture/checker."
+  },
+  "memoryPackageTests": {
+    "count": 102,
+    "passed": 102,
+    "scope": "Original93 plus9 repair checks, all included in terminal full suite; zero failures in these files and zero skipped tests."
+  },
+  "historicalIndependentEventReplay": false,
+  "freshInternalEventReplay": true,
+  "newLearnedMemoryImprovement": false,
+  "lowerOverlapOracleWitness": "low-overlap-feasibility.json"
+}

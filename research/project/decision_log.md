@@ -1,4 +1,4 @@
-# Decision log
+﻿# Decision log
 
 Record consequential choices so the reasoning is recoverable. Add newest entries at the bottom and link to the relevant protocol or notes.
 
@@ -1197,11 +1197,14 @@ The source PGN endpoint is now wrapped in a registered standard-library Python a
 
 | 2026-10-22 | Independently audit all44 matched-capture histories before counterfactual construction; change only corpus for a bounded continuation study. | Source audit plus actual PGNs and full legal certificate replay pass44/44, zero unknown. Former128 training roots had zero mixed-capture roots, motivating the registered input change. Keep fixed acceptance and512-branch/300s bounds; no retry/relaxation from failure. | Reusing always-capture-prone corpus; treating FEN filter as feedback; bypassing G0; arbitrary constructed FEN history. | Active researcher goal | `../reports/lichess-foundations-pilot-2026-10-21/matched-capture-lessons-audit-v1.json`, `../reports/lichess-foundations-pilot-2026-10-21/legal-branch-matched-capture-v1-registration.json` |
 
-| 2026-10-22 | Shift implementation from G0 monitoring to the requested full babysit controller. | Existing lesson, rehearsal and block modules were not connected to the command. Campaign coordinator now requires pinned stage/prerequisite artifacts, independent replay and acceptance booleans, and cross-stage memory identity; bare command does not fall back to G0. | Treating a one-run babysitter or software block fixture as the complete learning curriculum. | Active researcher goal | esearch/journal/experiments/2026-10-22-babysit-campaign-controller.md, python actions/curriculum.py |
+| 2026-10-22 | Shift implementation from G0 monitoring to the requested full babysit controller. | Existing lesson, rehearsal and block modules were not connected to the command. Campaign coordinator now requires pinned stage/prerequisite artifacts, independent replay and acceptance booleans, and cross-stage memory identity; bare command does not fall back to G0. | Treating a one-run babysitter or software block fixture as the complete learning curriculum. | Active researcher goal | 
+esearch/journal/experiments/2026-10-22-babysit-campaign-controller.md, python actions/curriculum.py |
 
-| 2026-10-22 | Preserve bounded auditor-reported diagnosis in curriculum stop records. | Failed/unknown stage status now keeps gate names, artifact hashes and paths, memory-lineage result and bounded reported reason/scope fields. | A gate failure without inspectable evidence or a fabricated causal diagnosis. | Active researcher goal | esearch/journal/experiments/2026-10-22-babysit-campaign-controller.md |
+| 2026-10-22 | Preserve bounded auditor-reported diagnosis in curriculum stop records. | Failed/unknown stage status now keeps gate names, artifact hashes and paths, memory-lineage result and bounded reported reason/scope fields. | A gate failure without inspectable evidence or a fabricated causal diagnosis. | Active researcher goal | 
+esearch/journal/experiments/2026-10-22-babysit-campaign-controller.md |
 
-| 2026-10-22 | Connect prepared Lichess training rows to rehearsal planning and preserve honest tied choices. | Source-prefix/certificate replay and a fresh all-legal ranking now produce the planner's training observation; focused tests pass and one actual train row converts. | Counting a deterministic tie-break as a learned move choice or passing unaudited families into planning. | Active researcher goal | .codebase/src/puzzle-learning/lichess-curriculum-panel.mjs, esearch/journal/experiments/2026-10-22-babysit-campaign-controller.md |
+| 2026-10-22 | Connect prepared Lichess training rows to rehearsal planning and preserve honest tied choices. | Source-prefix/certificate replay and a fresh all-legal ranking now produce the planner's training observation; focused tests pass and one actual train row converts. | Counting a deterministic tie-break as a learned move choice or passing unaudited families into planning. | Active researcher goal | .codebase/src/puzzle-learning/lichess-curriculum-panel.mjs, 
+esearch/journal/experiments/2026-10-22-babysit-campaign-controller.md |
 
 2026-10-22 - Connect registered Lichess panels to fresh rehearsal selection and the resumable neural block; persist the exact plan in the first checkpoint for deterministic recovery. Synthetic integration passes 13/13, with panel and planner checks 3/3 and 6/6. The independent data audit emitted one family only and denies family-disjointness/graph authorization. No graph run; no G0 work. Next is the actual stage runner and CLI connection, still gated on a valid family registration. See research/journal/experiments/2026-10-22-babysit-integration.md.
 | 2026-10-22 | Continue Stage 1 data preparation after the bounded legal-branch producer yielded only one audited family. | Preserve the v1 output and register a separate v2 search at 4096 branches/2700 seconds; action plan validates, mechanics checks 3/3. | Treating one emitted family as a usable disjoint split, or silently relaxing the old bound. | Active researcher goal | `python actions/lichess-matched-capture-legal-branches-v2-step.json`, `.codebase/scripts/data/prepare-lichess-branch-contrasts-v2.mjs`, `../journal/experiments/2026-10-22-babysit-integration.md` |
@@ -1513,3 +1516,181 @@ replicas (encoder seed now per replica), runner rejecting the required
 ## 2026-10-30 18:20 — Old evidence archived inside the repository
 
 - Researcher decision. Old experiments moved to [the archive](../../archive/early-development/README.md) as early development history; nothing deleted. Tag `early-development-final` preserves original paths. Reason: mentors can read the project without digging through raw files. Restart reports start fresh in `research/reports/`.
+
+## 2026-10-30 18:41 - Restart plan approved; researcher's definition of reasoning adopted
+
+- Researcher decision. Reasoning is "being able to apply many unrelated concepts to solve an unfamiliar problem". Plan approved.
+- Pivot (before: plan section 2 treated one hidden relation as reasoning evidence; after: that test covers one learned concept, and a reasoning claim needs new Phase C, which combines separately learned concepts on an unfamiliar problem). Phase C is an outline; its addendum needs researcher approval. Limit: chess concepts come from one game, so a chess pass does not show the researcher's cross-domain example.
+- Agent decisions: old goal file marked replaced; old status moved to documentation/current-status-history-through-2026-10-30.md; new one-page status. A made-up data decoder check runs before the eye test, because a decoder trained on few boards could give a false "No".
+- Open: the plan requires a public, dated pre-registration before data; publishing is the researcher's call.
+
+## 2026-10-30 20:41 - Research-only memory-interference scope requested
+
+- Researcher request: investigate long-term forgetting and overlapping KC/neuron activity scientifically, at the planning stage, with reasoning as the eventual goal. No experiment authorized by this request.
+- Agent scoping draft: [research question and methodology](../literature/memory-interference-2026-10-30/README.md), with [journal record](../journal/discussions/2026-10-30-memory-interference-research-scope.md). It distinguishes inactive recovery, shared activity, downward-gain exhaustion, input ambiguity and readout competition instead of assuming one established cause.
+- Latest-state correction: L125 records a completed synthetic decoder check; a linear-decoder failure cannot exclude the constructed relational signals. Current status now reflects that completion. The approved restart plan and its eye-test rules are unchanged.
+- Pending: researcher confirmation at the requested deep-research scoping checkpoint, then primary-source investigation. No mechanism chosen, experimental numbers registered, learner source changed or final data opened.
+
+## 2026-10-30 20:49 - Memory research scope confirmed
+
+- Researcher: "yeah, thast the scope. go ahead." The [memory-interference scope](../literature/memory-interference-2026-10-30/README.md) is accepted for research and planning.
+- The requested deep-research skill's one-time review-form checkpoint now applies before source searching. It does not reopen scope or authorize training, a memory-rule implementation, or outside-provider manuscript processing.
+
+## 2026-10-30 20:57 - Review-format checkpoint closed; memory investigation proceeds
+
+- Researcher explicitly declined a formal review: "no need review, just figure out what i asked you to figure out"; directed continuation of the whole approved goal. Recorded as no formal review/skip under the requested skill. No further format confirmation is needed in this project.
+- Workflow mistake: repeated format clarification delayed substantive research. Correction: continue primary-source investigation and produce a practical memory recommendation and test design within the approved scope. No training or learner implementation starts.
+
+## 2026-10-30 21:11 - Memory research recommendation completed (research only)
+
+- [Recommendation and test plan](../literature/memory-interference-2026-10-30/recommendation-and-test-plan.md), [primary-source coverage](../literature/memory-interference-2026-10-30/primary-source-notes.md), [search/access log](../literature/memory-interference-2026-10-30/search-log.md). Source-to-solution register updated, original evidence preserved.
+- Proposed sequence: selective compartment/local modulation first; minimal revisable fast/slow physiological state if residual interference remains; measure inhibitory coding and actual overlap. Manoim's local muscarinic suppression is a particularly relevant lead; preserving released fast signs does not itself model receptor modulation.
+- No mechanism or new numerical protocol is approved/implemented by this recommendation. Unknowns include exact visual-compartment physiology and whether slow state benefits correlated inputs. A joint acquisition/retention/reversal assay precedes any concept-combination claim; approved restart gates remain unchanged.
+- Execution limitation: a research helper remained uninitialized, was cancelled and provided no evidence. Parent completed source notes directly. This is a bounded research/planning result, not a claim that FlyChess memory or reasoning is solved.
+
+## 2026-10-31 08:10 - Memory goal prompt tightened after a scope review
+
+- Researcher request. Changed `documentation/handoffs/overnight-memory-plasticity-goal-2026-10-30.md` before any run of it: the assay must first show that old rules fail as predicted and a positive control passes; READY now means ready for the real-graph memory test, not memory on the connectome; the order change (memory work before the eye test) must be logged as a pivot when the run starts; combination test is written only; pending-receipt work is a contract until a candidate survives; Haiku agents write non-core code; a `researcher-review.md` lists AI decisions and equations to explain.
+- Reason: the same agent writes the assay and the candidate, and an earlier surrogate missed real-graph behaviour. These edits are untested. No experiment ran.
+
+## 2026-10-31 08:11 - Order pivot: memory candidates prepared before the eye test; run deadline removed
+
+- **Pivot (order).** The approved restart plan chooses the memory rule after the eye test (plan sections 5 and 7). This run prepares and tests candidates on small synthetic fixtures first. Reason: the eye test's usable-strength check needs the gains a learner can actually reach ([review finding F04](../reports/research-weakness-review-2026-10-30/README.md)). The current rules cannot go above gain 1, so the plan's 0.2/1.8 corners are not reachable states.
+- **What did not change.** Candidate selection and training still wait for the eye test and the researcher's memory-rule approval. Plan numbers, frozen gates and the eye test are unchanged. No graph run, no chess training.
+- **Deadline.** The [goal](../../documentation/handoffs/overnight-memory-plasticity-goal-2026-10-30.md) set start + 8 hours. The researcher said during this run, 2026-10-31: "no you dont have a time constraint". Start stays recorded (08:11:15 Asia/Jakarta). The deadline and the 45-minute finalization rule do not apply to this run. The two-family and six-repair-loop caps, and every permission limit, still apply.
+- Run directory: [research/reports/overnight-memory-plasticity-2026-10-31/](../reports/overnight-memory-plasticity-2026-10-31/).
+
+## 2026-10-31 10:55 - Memory fixture candidates rejected; capacity and evidence repair specified
+
+- Continued the same researcher-authorized goal/run after provider interruption, without a deadline. All ten saved runs are terminal; none was relaunched. Local reciprocal-signal candidate passed 11/28 original conditions; both declared slow variants passed 0/28. Five of six repair loops conservatively accounted for, two families used. No held-out candidate selection, graph run or chess training.
+- **Mistake and pivot:** SeparateTable's pass was treated as sufficient assay validity. It bypasses the bounded neural readout. [Original math and certificates](../reports/overnight-memory-plasticity-2026-10-31/readout-bound-spec.md) prove original G4/G6 incompatible in two required cells, with optimistic median bounds .276/.274 against .40 even allowing G6's one seed failure. Stopped rate repairs under that impossible requirement; [prospective correction](../reports/overnight-memory-plasticity-2026-10-31/assay-correction-proposal.md) is a separate proposal. No original threshold, overlap level or prior result changed.
+- **Evidence gap:** 52,236 saved trajectory/conflict rows contain no per-trial certificates or choices; the checker also accepts a rehashed certificate with an out-of-schedule trial number. This prevents independent event replay, not proof the deterministic producer delivered false feedback. Fresh versioned evidence plumbing/data is required before a selectable candidate.
+- [Final report](../reports/overnight-memory-plasticity-2026-10-31/MORNING-REPORT.md), [internal methodology/integrity review](../reports/overnight-memory-plasticity-2026-10-31/methodology-review.md), [researcher decision/equation record](../reports/overnight-memory-plasticity-2026-10-31/researcher-review.md), [complete failed-attempt log](../reports/overnight-memory-plasticity-2026-10-31/loop-log.md). 93/93 focused checks pass; required full suite: 618/624 pass, six failures tied to historical moved paths. No wholly green-suite or biological learning claim.
+- Required Haiku helper for an optional diagnostic CLI hit the provider rate limit and produced nothing. No replacement provider used. Lead completed its core math/checks. Next decision: prospective assay/evidence repair; actual graph memory still needs the eye-test prerequisite and separate researcher approval.
+
+## 2026-10-31 - Researcher authorized lead-authored evidence repair; memory result unchanged
+
+- Researcher explicitly answered "Yes, write the repair here" to the Haiku authoring handover. That is the limited override; graph permissions, two-family/six-loop scope and original gates/results are unchanged. [Pre-data repair specification](../reports/overnight-memory-plasticity-2026-10-31/receipt-repair-v2-spec.md). This is loop6, with no remaining repair loop in the bounded goal.
+- Added versioned schedule-bound checker, synchronous per-choice/feedback records, separately implemented replay and a bounded record/audit CLI. Nine repair checks pass, including rehashed semantic corruption, actual file/source/config identity failures, refused overwrite, and gain-inert unknown/rejected feedback. The original source files and old aggregate results remain intact.
+- [V3 recorded run](../reports/overnight-memory-plasticity-2026-10-31/receipt-repair-v3-dev/result.json) and [replay audit](../reports/overnight-memory-plasticity-2026-10-31/receipt-repair-v3-audit/result.json):6,912trials,48trajectories,864unknown trials,14,160records. [Exact old/new comparison](../reports/overnight-memory-plasticity-2026-10-31/receipt-repair-v3-equivalence.json):48/48 matching summaries. This validates evidence capture and replay for the original failed learner; it is not a new retention result or independent replication.
+- Mistakes/corrections recorded in [loop log](../reports/overnight-memory-plasticity-2026-10-31/loop-log.md): prose trial count168 corrected to144 before data; first CLI omitted a copied-registration hash guard, corrected in a fresh V3 source/run while retaining V2; overly broad "measuring long-term memory" phrasing narrowed to making interference/retention evidence auditable. No biological clock or consolidation was tested.
+- The original asymmetric runner source was recovered to its exact prior SHA-256 and preserved in [historical recovery](../reports/overnight-memory-plasticity-2026-10-31/historical-source-recovery/README.md). No old receipts were invented. Remaining scientific milestone: useful acquisition, retention through interference and revisability together under a feasible, preregistered readout/task contract.
+- Final verification:634tests,628pass,6 unchanged historical-path failures,0skipped; all102 memory-package checks pass. The first new full run's90s child timeout, unintended concurrency and lost temporary fixture are preserved/disclosed; shared launch option placement and harness allowance were corrected. No new memory mechanism or scientific threshold changed.
+- [Lower-overlap oracle witness](../reports/overnight-memory-plasticity-2026-10-31/low-overlap-feasibility.json) confirms compatible bounded readout states with paired sum1.2 on the original12 development fixtures. It uses future patterns/answers only as a mathematical instrument, exports no weight bank and proves no learning trajectory. Next substantive memory work must make a from-scratch learner reach useful states without that oracle, under a new authorized scope; the present two-family/six-loop package is complete with a negative candidate decision.
+
+## 2026-10-31 - Researcher corrected premature closure of the actual memory goal
+
+- Recording/replay and a completed negative development report did not satisfy the intended long-term-memory problem. The researcher explicitly challenged that stopping point. The actual memory goal is active again; old failures and the completed bounded package remain preserved.
+- Static inspection confirms the old slow candidate used one-way tracking and a mean readout; it did not implement slow-to-fast influence. This was a declared approximation, not a discovered bug or evidence that bidirectional memory succeeds.
+- Targeted primary-source review supports a concrete bidirectional-coupling hypothesis with explicit engineering assumptions. [Proposed single-cycle test](../reports/memory-retention-continuation-2026-10-31/coupled-memory-proposal.md), [mistake/pivot record](../journal/experiments/2026-10-31-memory-goal-continuation.md). No new candidate or experiment has run; the original six-loop limit is still exhausted. No graph/training boundary or gate has changed.
+
+## 2026-10-31 - Researcher removed the repair-cycle stopping limit
+
+Researcher instruction: "just dont have an endstop cycle". This supersedes the old six-cycle numerical stopping rule and the pending one-cycle approval request. Continue evidence-led memory development without another cycle-count permission question. Preserve original failed results, thresholds, bounded per-run resource/exposure limits, and separate graph/chess/training boundaries. The next experiment is the already specified bidirectional fast/slow comparison; its fixed numerical setting is unchanged. The goal remains the actual memory problem.
+
+## Mechanism pivot after coupled v1, 2026-10-31
+
+Both coupled and ablation main runs and separate audits complete: each6912 trials/48 trajectories,864 unknown. Coupled R=.602879 fails G3/G4; zero coupling R=.611021 fails G3. The phase-state diagnostic matches48/48 original coupled summaries. Slow A-negative/P remains near.9992 at T1; it has little old trace to protect. A further analytic residual is that coherent restoration at u=s=1 records no history. The next [metaplastic hypothesis](../reports/memory-retention-continuation-2026-10-31/metaplastic-proposal.md) directly addresses history at saturation. This is a different mechanism, openly counted as a new family under the researcher's removal of the bounded development end stop; it is not a coupling-rate sweep. Retention, acquisition and reversal must pass together. Source graph/training boundaries and original thresholds remain fixed.
+
+Tooling mistake: a diagnostic note was appended to a pinned equation-review document while regression was running. Inspection preflight refused launch. The exact original bytes were restored by matching the registered hash, and the appended copy/note were preserved separately. No learning source changed and the same regression process continued. The corrected separate inspection completed normally. This mistake is unrelated to the learner's negative result.
+
+## 2026-10-31 - Cascade regression and reservoir/buffer hypothesis
+
+The audited cascade still fails G3 and G4. Paired absolute A retention improves by.032285 while reversal margins regress by.078954/.090760/.118292. Do not select it. Primary-source review identifies a distinct four-state transition topology in Khorsand/Soltani2017 Figure6d, visually inspected: contradictory evidence first moves a protected state into a buffer, then can switch it directly into the opposite reservoir. [Fixed pre-data protocol](../reports/memory-retention-continuation-2026-10-31/reservoir-proposal.md), [analysis](../reports/memory-retention-continuation-2026-10-31/development-comparison-v1.json). Test this structural metaplastic revision with unchanged gates/inputs/exposure. No task-change detector, graph run or chess training is authorized or installed.
+
+The read-only analysis wrapper reported a missing `artifacts` field after its child had already finished; a later explicit invocation correctly refused its existing output. Raw receipts and both registrations are retained. The journal's initial inference that no child launched is corrected explicitly. An unrelated attempted decision-log patch matched no text and made no change; this dated entry is the actual pivot record.
+
+## 2026-10-31 - Reservoir retention pass, joint failure and latency comparison
+
+The separate reservoir audit passes6912 trials/14160 records. G3 now passes, but G4 remains failed; no rule is selected. Read-only reconstruction matches120 phase readouts exactly and identifies slow unique-edge revision as well as shared-cell interference. Test one fixed eta1 setting against eta.5 to approximately normalize the two-transition latency; all gates, exposure, feedback, topology and readout remain unchanged. Protocol: [reservoir latency comparison](../reports/memory-retention-continuation-2026-10-31/reservoir-rate-proposal.md). Full core regression completes654 tests:648 pass, same six historical-path failures. This does not establish biological long-term memory or authorize graph/chess work.
+
+## 2026-10-31 - Rate comparison fails; long-term consolidation remains the scope
+
+The fixed faster reservoir and its separate replay complete. Retention=.6979195038552364 fails.70 and first reversal=.3845466728185057 fails.40. Later reversal passes do not rescue the joint result. No candidate is selected and no additional nearby-rate sweep follows. [Exact five-condition comparison](../reports/memory-retention-continuation-2026-10-31/development-comparison-v2.json).
+
+The completed [static anatomy check](../reports/memory-retention-continuation-2026-10-31/feedback-path-feasibility-v1.json) supplies cell-resolved direct edges, not a computed error or consolidation mechanism. Re-reading Bennett2021 identifies acquisition-only scope. Primary Ichinose2015/Dag2019 evidence instead motivates delayed recall and post-learning causal interventions; neither supplies a calibrated visual mechanism. Preserve released signs, distinguish receptor-mediated hypotheses, and require retention under further learning plus revisability together. [Research scope and next-test requirements](../reports/memory-retention-continuation-2026-10-31/long-term-memory-scope-and-next-test.md). Existing failed protocols/gates stay unchanged. Correct stale running-state documentation; the goal remains open with no numerical development-cycle cap.
+
+## 2026-10-31 - Memory candidate pivot: prediction-scaled teaching on the reservoir store
+
+Pivot from fixed-pulse reservoir rates to a pulse scaled by the circuit's own readout, because phase records show fixed rates trade retention against reversal. `prediction-reservoir-v1` (eta 2, V0 1.2) passes G1-G6 in the one development cell with audit; R .720, first reversal .429. Chosen by a declared rule from a 24-setting grid. Not selected for training, not biologically validated. Grid, held-out and delay tests remain open. [Journal](../journal/experiments/2026-10-31-memory-goal-continuation.md).
+
+## 2026-10-31 - Pivot: Eyes v1 replaces the input and attack-map line for new work
+
+- **Researcher direction.** The reviews showed outdated components. The vision line (input v1-v3, attack map v1-v2) should evolve to "eyes v1", similar to Carlo Esposito's eyes, with credit. Fix small problems one at a time.
+- **Done.** [Eyes v1](../../documentation/design/chess-input/eyes-v1.md) renders the board after a candidate move onto 5,543 photoreceptors with Esposito's stored placement. Frozen before any eye test, identity `5ec27466a30d29208afb431f48ebc7ab4bcbfe29cb31296a4b556abb75290cff`. Old cue modules stay unchanged because frozen code imports them.
+- **Correction to the plan.** Point sampling (plan section 3.2) gave identical input for some piece pairs on some squares, so each photoreceptor reads the mean ink over a viewing cell. [Measured comparison](../reports/eyes-v1-2026-10-31/compare-sampling-output.txt).
+- **Agent decisions, marked [choice].** Mover 1.0, opponent 0.5, move mark +0.5. Pictures from DejaVu Sans glyphs, not the vendored browser piece art, because nothing read states where that art came from. All of this stays open to researcher review until the first eye test.
+- **Not done.** No full-graph run, no eye test, no learning, no change to plan thresholds or gates. [Journal](../journal/experiments/2026-10-31-eyes-v1.md), [static check](../reports/eyes-v1-2026-10-31/README.md).
+
+## 2026-10-31 - neuron-reader name and review recommendation
+
+- **Researcher decision:** name the proposed Readout v1 `neuron-reader`; obtain a GPT-6.1 Sol weaknesses review. The review completed. No implementation was requested or created by this review.
+- **Recommendation pivot:** specify passive observations before a signed move score. Cell identities, model-rate measurement, complete persistent-state preservation and memory compatibility need explicit contracts; several behavioral coefficients remain unresolved. [All nine findings](../reports/neuron-reader-design-review-2026-10-31/README.md).
+- **Correction:** later legacy v4/v5 readers already include MBON07. The previous “86% versus 6%” explanation misidentified that comparator; counted positive visual-KC-to-MBON synapses do not establish functional signal or better choices. Previous near-random and false-failure assurances were untested. [Dated mistake record and before/after links](../journal/experiments/2026-10-31-neuron-reader-design-review.md).
+- **Next design check:** pin the passive-reader roster, observable and state-preservation contract. Existing F03/F04 corrections remain proposals; frozen code, memory work, gates and experiment permissions are unchanged. No graph propagation, training or tests ran.
+
+## 2026-10-31 - Researcher directed the actual neuron-reader plan revision
+
+- **Instruction:** “wait so update the goddamn plan”. The review-only response had left the authoritative restart plan unchanged; this was a workflow mistake. The [plan now contains section 4A](../../documentation/design/research-goals/restart-plan-2026-10-30.md#4a-neuron-reader-observation-first-then-a-justified-move-score), concrete measurement/state/output contracts and five build steps. This is the requested planning change, not another approval question.
+- **Preserved before:** [exact previous plan](../reports/neuron-reader-design-review-2026-10-31/restart-plan-before-neuron-reader-update.md), SHA-256 `5a61c183cd98b2f152d227b5b8716b47ff6f0c776e2da4c92ea04b391f64d834`. Corrected the plan's legacy-reader rationale with MBON07 included. [Mistakes and pivot record](../journal/experiments/2026-10-31-neuron-reader-design-review.md).
+- **Order:** implement/check passive recording; resolve the separately documented F03/F04 protocol decisions; run the authorized read-only diagnostic when ready; finalize the score with the separately approved memory rule and real-route memory test; proceed to existing chess phases only under their original prerequisites. Removed a draft circular dependency that would have required final memory selection before its eye-test prerequisite. The other session's development assays continue under their own scope.
+- **Scope:** endpoint model-rate activity and per-type means are declared engineering choices. No coefficients or replacement experimental numbers were chosen, no owned memory file changed, and no graph/training run or simulation test occurred.
+
+## 2026-10-31 - Focused neuron-reader fixes after scope clarification
+
+The researcher clarified that the requested plan concerns the reader's actual critique repairs, not merely the wider restart order. The [dedicated neuron-reader plan](../../documentation/design/neural-learning/neuron-reader.md) maps all nine findings to explicit changes/checks, specifies one two-function module and the exact existing 14-cell roster, and distinguishes raw observation from a fixed source-reviewed scoring contract. Linked it from section 4A and neural-learning navigation. [Scope mistake/correction](../journal/experiments/2026-10-31-neuron-reader-design-review.md). Behavioral coefficients and causal compatibility remain unresolved; no biological claim is inferred from schema validation. No implementation, graph work, gate change or owned-memory-file edit occurred.
+
+## 2026-10-31 - neuron-reader implemented under “okay build”
+
+- **Built:** pure `readNeurons` and explicit-contract `scoreNeurons`, immutable 14-cell roster, a streamed Eyes candidate recorder and a bounded static identity checker. Reused existing rate inference and fixed-state hashing; frozen legacy readers, owned memory sources and evidence remain untouched. No dependency or package-script change.
+- **Evidence:** ten focused tests pass, including actual 17-cell fixture inference, copied values/type means, order invariance and full declared state/runtime-config mutation checks. Static verification matches all 14 root IDs/annotation rows and pinned graph/input hashes. Final `npm test`: 741/747 pass, six failures exactly matching an earlier recorded historical-path failure list; zero skipped. [Build report](../reports/neuron-reader-build-2026-10-31/README.md), [verification](../reports/neuron-reader-build-2026-10-31/verification.json).
+- **Mistakes preserved:** null-state rejection, trusting a rehashed aggregate, missing live runtime fields in a fingerprint, and an incorrect UTF-8 log parse. Each correction and failed/probing output is linked in the [build journal](../journal/experiments/2026-10-31-neuron-reader-build.md); seven source snapshots and the original protected-source hashes are saved separately.
+- **Limit:** no production biological coefficient contract or compatibility result is selected. Choice-policy integration awaits those contracts. This is software/static evidence, not a graph-learning or chess result; original gates and F03/F04 decisions are unchanged.
+
+
+## 2026-11-01 - External review checked against the actual graph
+
+- **Verified:** complete Shiu v783 KC-to-MBON connections reproduce the actual graph retained pairs and weights exactly: 21,438 of 62,261 connections. The graph retains 28 isolated designated outputs; all 5,543 selected Eyes inputs have outgoing edges. Thirteen inputs disagree with pinned photoreceptor annotations. MBON05 has opposite outgoing signs by side. [Audit, scripts and evidence limits](../reports/neuron-reader-graph-audit-2026-11-01/README.md).
+- **Recommendation pivot:** prioritize graph/retina annotation reconciliation before final move scoring. Direct plastic modification of a measured cell is neither a sufficient causal validation nor a required explanation of every downstream response. Proposed lesions, non-chess conditioning and sign/threshold sensitivity conditions require prospective specifications; restoring weak connections or overriding signs is not automatically justified by this review.
+- **Preserved:** original graph, Eyes, reader roster, protected memory code and frozen gates. No production coefficients, neural propagation or training were enabled. [Dated journal and mistakes](../journal/experiments/2026-11-01-neuron-reader-graph-audit.md).
+
+
+## 2026-11-01 - Continue visual-input memory after the completed delay failure
+
+The previous graph-memory run completed before the provider limit. Its original R1/R2/R3/R5 pass, while R4 fails at retained-margin ratio .522180 (required .70). Independent arithmetic reproduces all marks. Same-object restore and median aggregation do not establish fresh-process persistence or every-seed retention. Preserve original files and failed gate.
+
+Prospective pivot: [one fixed cubic-exit development hypothesis](../reports/memory-retention-continuation-2026-11-01/cubic-exit-spec.md), no sweep or changed marks. Add streamed local receipts, saved phase snapshots and a fresh-model restore comparison. Five focused checks pass; graph outcome pending. This remains an arbitrary-association test with an external KC relay and an unvalidated store, not biological long-term memory or chess learning. The concurrent [static graph audit](../reports/neuron-reader-graph-audit-2026-11-01/README.md) is preserved; its thirteen retina annotation disagreements and MBON05 sign conflict further limit biological interpretation, without changing the pinned graph or this within-model comparison. [Dated mistakes and next test](../journal/experiments/2026-11-01-visual-memory-continuation.md).
+
+
+### Same-day memory interpretation pivot after seed 4102
+
+The cubic candidate improves first-seed noisy-delay retention but the second informative seed loses an unrelated old association during reversal. Keep the full goal open and preserve all remaining controls/seeds. Pooled medians cannot justify a universal retention claim. Inspect shared-input interference separately from weak-drive forgetting; neither a smaller code nor an Orb2 store has been demonstrated to solve this. [Exact observations and limits](../journal/experiments/2026-11-01-visual-memory-continuation.md).
+
+
+## 2026-11-01 - Eyes source trace narrows the proposed input repair
+
+The researcher accepted checking the thirteen disputed eye inputs. [Complete selected-population trace](../reports/eyes-retina-identity-2026-11-01/README.md) verifies source types, photoreceptor classifications, sides and column coordinates for all 5,543 inputs, including all direct and partner-derived placements. The discrepancy is between Codex products and the separate v2.1 TSV on v783 roots. A broader exact-type check finds thirty-eight conflicts; thirteen were the non-photoreceptor-label subset.
+
+Decision for interpretation: keep the frozen input map and explicitly bind stored retina types to the Codex primary-type source. Preserve alternate v2.1 labels and curated transmitter data separately. This is source bookkeeping, not independent biological adjudication or a changed graph/input version. The initial assertion that thirteen exhaust all conflicts failed and is preserved; the corrected check retains the twenty-five additional subtype conflicts. [Journal](../journal/experiments/2026-11-01-eyes-retina-identity.md). No production source, gate, propagation or training changed in this task.
+
+
+### 2026-11-01 - Recover the interrupted memory comparison without repeating completed learning
+
+The original owner disappeared and its partial absent-arm log ends in 22,778 NUL bytes. Use the independently verified T1 snapshot and receipt prefix rather than its later progress counter. A new, pinned recovery run preserves the five completed arms and the original first-seed restore trajectory. Its 53 overlapping observations and seven choices match the original exactly; the new owner is verified outside a Windows job via the existing breakaway helper. Eight focused software checks pass. [Recovery evidence and scope](../reports/memory-retention-continuation-2026-11-01/README.md). No scientific gate or memory equation changed; the cross-association failure remains, and resumed timing is not whole-run performance.
+
+
+### 2026-11-01 - Distinguish stored interference from readout offset before another rule change
+
+Six static direct-input comparisons provide no upper-bound certificate that the required margins are impossible in that surrogate. This is not full-graph feasibility or a learned-state witness. The relative-response decoder also admits a common-baseline offset term, and actual later blank responses are missing. [Prospective gate-relevant diagnostic and feedback-enabled next step](../reports/memory-retention-continuation-2026-11-01/readout-interference-diagnostic.md): after the current serial run, compare frozen Delay/Rev memories under original versus current-rest scoring without updating memory. Preserve every original mark and failed association. No new graph run or input rule selected.
+
+
+## 2026-11-01 - MBON05 sign difference traced to transmitter fallback
+
+The researcher authorized the sign provenance audit. The original pure builder functions exactly reproduce both labels and all outgoing signs: left Codex nt_type is blank, weighted connection-label voting selects ACH; right has explicit GLUT. Both curated v2.1 rows state glutamate. The current runtime preserves the graph sign when changing positive magnitudes. [Evidence, full affected-edge set and source coverage](../reports/mbon05-sign-provenance-2026-11-01/README.md).
+
+Interpretation: inherited prediction/fallback policy is not evidence of a biological hemispheric polarity difference. Prepare a separately versioned curated-label/inhibitory-glutamate sensitivity condition, leaving the accepted graph and old outcomes intact. The [unapplied overlay](../reports/mbon05-sign-provenance-2026-11-01/proposed-variant.json) specifies all 112 affected left-cell edges. It requires prospective graph/model/reader/memory pins and a paired informative-feedback protocol before use; receptor-specific polarity and chess valence are not resolved. No propagation, learning, graph mutation or protected memory edit occurred. [Dated journal](../journal/experiments/2026-11-01-mbon05-sign-provenance.md).
+
+
+## 2026-11-01 - MBON05 pilot authorized; preserve serial execution
+
+The researcher authorized trying the comparison. Authoritative status confirms the memory recovery is live, so the project serial-graph rule prevents launching another graph run now. [Prospective pilot](../reports/mbon05-sign-conditioning-2026-11-01/README.md) pins the current candidate sources, two sign variants, common baseline-derived inputs, seed, conditions and descriptive outcomes. Inspection found that invoking the old runner twice would regenerate the KC relay under changed signs and retain the old graph/reader identity. Implement and verify an isolated adapter before launch after the live run terminates. No owned source or running experiment changed; no conditioning result exists for this comparison.

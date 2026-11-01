@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "name": "eye-memory-cubic-v1-development",
+  "paused": false,
+  "paths": {
+    "registration": "python actions/eye-memory-cubic-v1-step.json",
+    "run": "runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1",
+    "protocol": "research/reports/memory-retention-continuation-2026-11-01/cubic-exit-spec.md"
+  },
+  "pins": {
+    ".codebase/scripts/neural-learning/run-eye-graph-memory-cubic.mjs": "25534f91afbcc5da13241abf42d65b2b4fbc1c1e6d51dc84f05b2138790660d2",
+    "research/reports/memory-retention-continuation-2026-11-01/cubic-exit-spec.md": "2e0bbec44703773b5a40b44c2b6c8ed200708a12032fadea0a2d42b51ee0fd8a",
+    ".codebase/scripts/neural-learning/audit-eye-memory.mjs": "f3697af9d2cdce333dbad9bf16de84fbbcd064006ff1e2e1112cd5fcf1fe97ba",
+    ".codebase/src/neural-learning/local-cubic-reservoir-memory.mjs": "240ea6b4a7e57bfe62673c816ce7909788882e7ef88dbb6bde6c0bd448c9e317",
+    ".codebase/src/neural-learning/local-reservoir-memory.mjs": "568aa12079141b0d0203594c1ef4a03716beeef2ca16c149a1f5f558c8de7588",
+    ".codebase/src/neural-learning/local-supralinear-reservoir-memory.mjs": "559513d57acbd5603fd27a8afc3747f1964027f1a948172e5e195713136511d0",
+    ".codebase/src/neural-learning/local-gated-memory.mjs": "ae5351bf885db4fe5dfd7467bc9e0059255f14ced4a1210d8d80cde80a2dc49b",
+    ".codebase/tests/neural-learning/local-cubic-reservoir-memory.test.mjs": "d14dc04935998559c37a53023f1292d61c1a75b426ed36d2afa08cfa7f17ff56",
+    ".codebase/tests/neural-learning/eye-memory-audit.test.mjs": "8ef92ce0c23e045be7518c0b4cf75853ec2d4be573493045770a2f174c33ba5c",
+    ".codebase/src/chess-input/eyes-v1.mjs": "74ae9ac4fa4e9fc5432099ffd662661632aab9aa89e69f6df7e100b59f6813a2",
+    ".codebase/src/neural-learning/neuron-reader.mjs": "c26434fb5f9d13cae1d200878773d3f878749315156b2dc0d81eba2006e60874",
+    ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6"
+  },
+  "state_file": "runs/python-actions/current-eye-memory-cubic-v1.json",
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256
+  },
+  "jobs": {
+    "train": {
+      "role": "train",
+      "fresh_output": "{run}",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/neural-learning/run-eye-graph-memory-cubic.mjs",
+        "--out",
+        "{run}",
+        "--cpu-duty",
+        "0.5"
+      ]
+    },
+    "tests": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "--test",
+        "--test-concurrency=1",
+        ".codebase/tests/neural-learning/local-cubic-reservoir-memory.test.mjs",
+        ".codebase/tests/neural-learning/eye-memory-audit.test.mjs"
+      ]
+    },
+    "audit": {
+      "role": "check",
+      "requires": [
+        "{run}/summary.json"
+      ],
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/neural-learning/audit-eye-memory.mjs",
+        "--run",
+        "{run}",
+        "--out",
+        "research/reports/memory-retention-continuation-2026-11-01/cubic-v1-audit.json"
+      ]
+    }
+  },
+  "artifacts": {
+    "manifest": "{run}/manifest.json",
+    "summary": "{run}/summary.json"
+  },
+  "report_fields": []
+}

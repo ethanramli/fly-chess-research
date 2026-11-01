@@ -1,0 +1,85 @@
+{
+  "schema": "memory-assay-recorded-run-v2",
+  "mode": "audit",
+  "status": "complete",
+  "argv": [
+    "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+    "C:\\Users\\ethan\\Documents\\fly-chess-research\\.codebase\\scripts\\neural-learning\\run-memory-assay-recorded.mjs",
+    "--mode",
+    "audit",
+    "--cpu-duty",
+    "0.5",
+    "--registration",
+    "python actions/memory-assay-v12-step.json",
+    "--run",
+    "runs/overnight-memory-plasticity-2026-10-31/receipt-repair-v3-dev",
+    "--out",
+    "runs/overnight-memory-plasticity-2026-10-31/receipt-repair-v3-audit",
+    "--report",
+    "research/reports/overnight-memory-plasticity-2026-10-31/receipt-repair-v3-audit"
+  ],
+  "node": "v22.23.2",
+  "started": "2026-10-31T04:20:21.436Z",
+  "profile": {
+    "ruleName": "local-gated-v1",
+    "seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012
+    ],
+    "nKC": 200,
+    "s": 20,
+    "cell": {
+      "q": 0.25,
+      "relation": "conflicting",
+      "w": 0,
+      "bg": 0
+    },
+    "temperature": 0.1,
+    "danDip": 0
+  },
+  "cpuDuty": 0.5,
+  "limits": {
+    "rssMiB": 2048,
+    "freeMiB": 256,
+    "wallSeconds": 300
+  },
+  "registration": {
+    "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\python actions\\memory-assay-v12-step.json",
+    "sha256": "dba0bd70f8cbec8cfd20e9595d94072f6a2a638e35b0b7a300ab5982cd3ecc32"
+  },
+  "sources": {
+    ".codebase/scripts/neural-learning/run-memory-assay-recorded.mjs": "e6436cb350fc407c7a0b8a068a0636463f2dea9e54879b6d7b6a9cf5f7b19f59",
+    ".codebase/src/neural-learning/memory-assay-recorded.mjs": "ced117081e09652d6d82105cf9b5231761ba0244c6987c0d77dedfe3aca7d602",
+    ".codebase/src/neural-learning/memory-assay-record-audit.mjs": "7d9ec2151c93d659e5ca533279bead297fdae2c19cd93142b9d4750ff5cbfb73",
+    ".codebase/src/neural-learning/memory-assay-checker-v2.mjs": "654380080c405594601f9e0c38e4112f8e2bfdf2ac1f53b7398fae6f14c3b188",
+    ".codebase/src/neural-learning/memory-assay-checker.mjs": "6d96a4a9495fbb8089c4d23e77e6624e924bc8fc38aa7935477ee2658bde3fc6",
+    ".codebase/src/neural-learning/memory-assay-fixture.mjs": "6bc348bc34a1e41e4185a5e14701612cf1c1b5117b1fc1c6289cff43a9c2d4a6",
+    ".codebase/src/neural-learning/memory-assay-truth.mjs": "fd277dc6c82fa999cbbb481d09321826413bc69f18bb576e754a24372821eeee",
+    ".codebase/src/neural-learning/memory-assay-adapters.mjs": "f9695f4ebd0043d2b3a489b5f00dc78219911152ca15c4c454a8214c9dbf7a2c",
+    ".codebase/src/neural-learning/memory-assay-gates.mjs": "5be737cdab847b7dc0749cfea7a142d2011725eb323a326bf02271c56b679ae8",
+    ".codebase/src/neural-learning/memory-assay-rule-local-gated.mjs": "36f992488073f330944fae08f060a1820c8b4eb16698ff6ed4f14d5740612e3e",
+    ".codebase/src/neural-learning/local-gated-memory.mjs": "ae5351bf885db4fe5dfd7467bc9e0059255f14ced4a1210d8d80cde80a2dc49b",
+    ".codebase/src/neural-learning/reversal-memory.mjs": "3e0fd07e29a3518519a890bf78b8141a27166227ad64248b605edd0aad837e5e",
+    ".codebase/src/neural-learning/alpha-lobe-memory.mjs": "2882199746cf88e7a2034c875ae7dce65368e937b29355fb196d0b9b33e2ed55",
+    ".codebase/src/neural-learning/mushroom-body.mjs": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5"
+  },
+  "originalRun": {
+    "path": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-memory-plasticity-2026-10-31\\receipt-repair-v3-dev",
+    "manifestSha256": "dc603923c19a4436d1b378ec03a9f4ec6d701a67dd58ca8ed963108cbf8426f9",
+    "recordsSha256": "f37c705aded095d63865fd25302c56d7397e0a11f69799752b86b0a8f4cf5b39"
+  },
+  "ended": "2026-10-31T04:20:46.151Z",
+  "wallSeconds": 24.7187249,
+  "cpuSeconds": 13.328,
+  "processHighWaterRssMiB": 105.84765625
+}

@@ -1,0 +1,7 @@
+# 2026-11-01: MBON05 transmitter fallback and stored signs
+
+Researcher authorized tracing the opposite MBON05 signs. The [exact source audit](../../reports/mbon05-sign-provenance-2026-11-01/README.md) reproduces the builder's pure functions and verifies every outgoing pair/weight/sign. The left Codex transmitter field is empty and resolves to ACH through weighted edge-label voting; the right explicitly says GLUT. Curated glutamate on both v2.1 rows is unused by this pipeline. A small constructor/magnitude-refresh fixture confirms that the current runtime retains these graph signs; no inference ran.
+
+The earlier provenance summary did not distinguish a fallback assignment from an explicit neuron label. That uncertainty is now resolved. An initially verbose outgoing-target listing was truncated; the final machine receipt retains the full data, with compact command summaries. No biological effect was inferred from the truncated output or static anatomy.
+
+Prepared a separate, unapplied 112-edge sign overlay and transmitter override as a reviewable sensitivity condition, preserving the original graph and all other signs. The proposal is conditional on an explicit paired protocol and selected memory contract; inhibitory glutamate remains an approximation. It is not a demonstrated biological repair or a chosen move-scoring coefficient. No frozen graph, reader roster, Eyes source, owned memory source, experimental gate or running experiment was changed.

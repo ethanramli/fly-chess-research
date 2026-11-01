@@ -1,0 +1,58 @@
+{
+  "accessDate": "2026-10-31",
+  "purpose": "Prospective bidirectional-memory candidate; no experiment yet",
+  "primarySources": [
+    {
+      "url": "https://arxiv.org/html/1507.07580",
+      "title": "Computational principles of biological memory",
+      "version": "2015 preprint",
+      "coverage": [
+        "M.3 coarse-grained coupled equations",
+        "M.5 discrete implementation and boundaries",
+        "S.4 visible vs hidden state",
+        "S.8 independent timescales comparison",
+        "S.10 illustrative chemical implementation",
+        "S.11 real-time vs event-triggered dynamics"
+      ],
+      "observedLocations": {
+        "coupling": [
+          287,
+          305
+        ],
+        "discretization": [
+          345,
+          364
+        ],
+        "independentStores": [
+          613,
+          640
+        ],
+        "chemistryAndTiming": [
+          646,
+          692
+        ]
+      },
+      "supportedClaim": "Hidden states influence visible efficacy through bidirectional exchange; continuous and event-triggered clocks are discussed.",
+      "limits": "Not direct visual-KC physiology; random/balanced benchmark differs from correlated own-choice feedback; no two-state performance prediction."
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27694992/",
+      "title": "Computational principles of synaptic memory consolidation",
+      "doi": "10.1038/nn.4401",
+      "coverage": [
+        "journal metadata",
+        "abstract"
+      ],
+      "limits": "Journal body not inspected."
+    }
+  ],
+  "adaptations": {
+    "visibleGain": "u",
+    "hiddenGain": "s",
+    "clock": "eligibility times local DAN drive",
+    "coupling": 0.125,
+    "capacityRatio": 2,
+    "terminalLeak": "omitted; bounded two-state hypothesis"
+  },
+  "testStatus": "not implemented; not run"
+}

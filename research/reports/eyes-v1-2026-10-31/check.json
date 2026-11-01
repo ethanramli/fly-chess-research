@@ -1,0 +1,110 @@
+{
+  "graph": {
+    "path": ".cache/full.npz",
+    "sha256": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2"
+  },
+  "identity": "5ec27466a30d29208afb431f48ebc7ab4bcbfe29cb31296a4b556abb75290cff",
+  "config": {
+    "mover": 1,
+    "opponent": 0.5,
+    "mark": 0.5,
+    "pictureSize": 32
+  },
+  "photoreceptors": 5543,
+  "perSquare": {
+    "photoreceptors": {
+      "min": 67,
+      "median": 87,
+      "max": 107
+    },
+    "distinctColumns": {
+      "min": 9,
+      "median": 21,
+      "max": 51
+    }
+  },
+  "pieceSeparation": {
+    "min": 0.0527,
+    "p5": 0.1179,
+    "median": 0.1903,
+    "worst": [
+      {
+        "square": "a1",
+        "a": "p",
+        "b": "b",
+        "value": 0.0527
+      },
+      {
+        "square": "b2",
+        "a": "p",
+        "b": "b",
+        "value": 0.0583
+      },
+      {
+        "square": "c2",
+        "a": "p",
+        "b": "b",
+        "value": 0.0606
+      },
+      {
+        "square": "b2",
+        "a": "p",
+        "b": "n",
+        "value": 0.0645
+      },
+      {
+        "square": "b2",
+        "a": "n",
+        "b": "b",
+        "value": 0.069
+      }
+    ]
+  },
+  "meanInk": {
+    "p": 0.4079,
+    "n": 0.4138,
+    "b": 0.2645,
+    "r": 0.4146,
+    "q": 0.3485,
+    "k": 0.4417
+  },
+  "examples": [
+    {
+      "name": "white-opening",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "action": "e2e4",
+      "drivenPhotoreceptors": 1946,
+      "totalCurrent": 891.3514,
+      "maxCurrent": 1.5
+    },
+    {
+      "name": "black-reply",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "action": "e7e5",
+      "drivenPhotoreceptors": 1917,
+      "totalCurrent": 882.8449,
+      "maxCurrent": 1.5
+    },
+    {
+      "name": "capture",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "action": "f3e5",
+      "drivenPhotoreceptors": 1880,
+      "totalCurrent": 856.9925,
+      "maxCurrent": 1.5
+    }
+  ],
+  "sameBoardMoves": [
+    {
+      "a": "e2e4",
+      "b": "d2d4",
+      "overlap": 0.761
+    },
+    {
+      "a": "e2e4",
+      "b": "g1f3",
+      "overlap": 0.7351
+    }
+  ],
+  "boardsNotUsed": "Examples are hand-written fixtures. No training, development or locked puzzle was read."
+}

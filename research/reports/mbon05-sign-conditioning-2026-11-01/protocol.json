@@ -1,0 +1,65 @@
+{
+  "schema": "mbon05-sign-conditioning-pilot-v1",
+  "status": "waiting-for-serial-graph-slot",
+  "authorization": "Researcher: okay try it out first",
+  "blockingRun": {
+    "config": "python actions/eye-memory-cubic-v1-recovery1-step.json",
+    "observedState": "live",
+    "pid": 15184
+  },
+  "scope": "Development sensitivity pilot, not odor/color validation or chess learning",
+  "variants": [
+    "released-signs",
+    "left-MBON05-curated-GLUT-under-inhibitory-approximation"
+  ],
+  "seed": 4101,
+  "items": 2,
+  "trialsPerBlock": 24,
+  "delaySteps": 400,
+  "conditions": [
+    "informative",
+    "absent",
+    "matched-shuffled",
+    "disabled-plasticity"
+  ],
+  "inputContract": "Generate and freeze baseline Eyes-derived KC relay stimuli once. Replay identical stimuli in both variants. Do not regenerate them under changed signs.",
+  "feedbackContract": "Identical arbitrary conditioning labels, choice RNG seeds and teacher rules; log realized choices/pulses separately because feedback is choice-dependent.",
+  "memoryContract": "Frozen existing cubic-exit development candidate, not selected biological memory. No edits to owned sources.",
+  "readoutContract": "Keep original engineered relative-response formula and prospective per-variant naive calibration; also retain individual raw MBON and DAN responses so normalization cannot conceal sign effects.",
+  "measurements": [
+    "acquisition margins",
+    "old-association margins after subsequent learning",
+    "delay retention",
+    "reversal with unrelated-association preservation",
+    "control contrasts and unchanged disabled/absent memory"
+  ],
+  "interpretation": "One-seed pilot is descriptive. Do not select biological polarity from task performance or treat passing marks as a cohort result.",
+  "limits": {
+    "heapMiB": 256,
+    "rssMiB": 2048,
+    "minFreeMiB": 256,
+    "cpuDuty": 0.5,
+    "graphConcurrency": 1
+  },
+  "requiredBeforeLaunch": [
+    "Authoritative owner state terminal; do not stop/restart it",
+    "Implement isolated source-pinned runner and verify overlay changes exactly 112 outgoing signs",
+    "Freeze common input artifact, both model identities and reader manifests",
+    "Run focused adapter checks and register independent replay audit"
+  ],
+  "pins": {
+    ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    ".codebase/scripts/neural-learning/run-eye-graph-memory-cubic.mjs": "25534f91afbcc5da13241abf42d65b2b4fbc1c1e6d51dc84f05b2138790660d2",
+    ".codebase/src/neural-learning/local-cubic-reservoir-memory.mjs": "240ea6b4a7e57bfe62673c816ce7909788882e7ef88dbb6bde6c0bd448c9e317",
+    ".codebase/src/neural-learning/local-reservoir-memory.mjs": "568aa12079141b0d0203594c1ef4a03716beeef2ca16c149a1f5f558c8de7588",
+    ".codebase/src/neural-learning/local-gated-memory.mjs": "ae5351bf885db4fe5dfd7467bc9e0059255f14ced4a1210d8d80cde80a2dc49b",
+    ".codebase/src/neural-learning/local-supralinear-reservoir-memory.mjs": "559513d57acbd5603fd27a8afc3747f1964027f1a948172e5e195713136511d0",
+    ".codebase/src/neural-learning/memory-assay-rule-prediction-scaled.mjs": "216f3cd8f555589f93fd69b29fc3eb96eb8dd39ae2636f3df3eb94cb93ae8b5b",
+    ".codebase/src/neural-learning/memory-assay-fixture.mjs": "6bc348bc34a1e41e4185a5e14701612cf1c1b5117b1fc1c6289cff43a9c2d4a6",
+    ".codebase/src/neural-learning/neuron-reader.mjs": "c26434fb5f9d13cae1d200878773d3f878749315156b2dc0d81eba2006e60874",
+    ".codebase/src/neural-learning/neuron-reader-cells.json": "e979eae031781a606c983bf6c41b54e22a3b544a8f5ce3bd26c4e86198d4c0ec",
+    ".codebase/src/supervised-baselines/trainer.mjs": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+    "research/reports/mbon05-sign-provenance-2026-11-01/proposed-variant.json": "ecbf1156e44181b0f6eb58e5a556ae6e6f957895579070aa6a3182c7e045f0b2"
+  },
+  "comparisonLaunched": false
+}

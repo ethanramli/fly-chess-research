@@ -1,6 +1,8 @@
 # Chess input representations
 
-All current encoders use symbolic input and mapped stimulation, bypassing modeled eyes. Engineered representation changes do not establish natural perception or reasoning.
+**Current input (2026-10-31): [Eyes v1](eyes-v1.md)**, a fixed, engineered rendering of the board onto the modelled photoreceptors. It is not natural vision and has not run on the full graph. Correction 2026-10-31: the sentence below described all encoders until now, and it still describes every pre-restart encoder listed here.
+
+All pre-restart encoders use symbolic input and mapped stimulation, bypassing modeled eyes. Engineered representation changes do not establish natural perception or reasoning.
 
 - [Board/action cue association experiment](board-action-association.md)
 - [Board and action cue encoder: engineered input interface](board-action-cues.md)

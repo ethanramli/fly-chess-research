@@ -46,3 +46,8 @@ Computational association prerequisites are distinct from biological validation 
 
 - [Curriculum G0 neutral association assay](curriculum-g0-assay.md): frozen serial receiver prerequisite, original gates, matched controls and real checkpoint recovery.
 - [G0 reversal history diagnostic](g0-reversal-history-diagnostic.md): unlaunched paired retained/reset memory specification following the independently replayed reversal failure.
+- [Restart memory-fixture report, 2026-10-31](../../../research/reports/overnight-memory-plasticity-2026-10-31/MORNING-REPORT.md): local/slow candidates failed; bounded-readout capacity and missing event-audit evidence require a prospective repair.
+- [Long-term-memory continuation](../../../research/reports/memory-retention-continuation-2026-10-31/README.md): completed coupled/cascade/reservoir comparisons, preserved joint failures, static anatomy and prospective delayed-retrieval/consolidation requirements. No selected rule or graph learning.
+
+- [neuron-reader design review, 2026-10-31](../../../research/reports/neuron-reader-design-review-2026-10-31/README.md): researcher-chosen name for Readout v1; passive-recording specification recommended, signed chooser unresolved; no implementation or experiment.
+- [neuron-reader repair plan](neuron-reader.md): each critique mapped to a concrete module change/check; exact cell roster, two-function interface, fixed observable/pooling and explicit unresolved scoring decisions.

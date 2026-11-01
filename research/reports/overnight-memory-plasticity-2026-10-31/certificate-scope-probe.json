@@ -1,0 +1,9 @@
+{
+  "scope": "Adversarial static checker probe; no learner training",
+  "expectedTrialGlobal": 0,
+  "submittedGlobal": 999999,
+  "checkerResult": {
+    "ok": true
+  },
+  "interpretation": "Checker authenticates internally supplied fields and consequences, but does not validate actual scheduled trial or recompute actual learner scores. Published trajectory rows also omit per-trial certificates."
+}

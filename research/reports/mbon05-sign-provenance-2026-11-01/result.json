@@ -1,0 +1,2944 @@
+{
+  "schema": "mbon05-sign-provenance-v1",
+  "date": "2026-11-01",
+  "inputs": {
+    ".cache\\full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    ".cache\\flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    ".cache\\flywire-codex-783-verify\\neurons.csv.gz": "6a6b3759e635f0f35a677d169052362131ec61d95f55919298b55c43fce4e719",
+    ".cache\\flywire-codex-783-verify\\connections.csv.gz": "d49dd692e59e153aa3c83f5257bfc0eff51247b86d7bb183386c6d1622c70fc9",
+    ".cache\\flywire-codex-783-verify\\consolidated_cell_types.csv.gz": "8aba246d71dc40361677493629972ce3883048c3d02010adc42bda22962a1a2d",
+    "research\\literature\\cesp99-retina-2026-10-28\\flychess\\connectome\\graph.py": "9fa73558449f5fc28015c63ab2931bd48847bff91fb545a46be30a31229b4b8d",
+    "research\\literature\\cesp99-retina-2026-10-28\\flychess\\connectome\\load.py": "d5d127620c994161ae112f0b6cb92bfe4d28989bb5c93e222737c27d9ca67cd2",
+    ".codebase\\src\\supervised-baselines\\trainer.mjs": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+    ".codebase\\src\\runtime\\graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595"
+  },
+  "scriptSha256": "92e986a4cc23b9e02ebeeb51d9d5a005c0c6b55ae480742bb5651bfa611e09da",
+  "cells": [
+    {
+      "rootId": "720575940621164720",
+      "graphIndex": 46203,
+      "somaSide": "left",
+      "annotation": {
+        "root_id": "720575940621164720",
+        "cell_type": "",
+        "hemibrain_type": "MBON05",
+        "cell_class": "MBON",
+        "side": "left",
+        "known_nt": "glutamate",
+        "known_nt_source": "Aso et al. 2014",
+        "top_nt": "acetylcholine",
+        "top_nt_conf": "0.3284336563623594"
+      },
+      "codexNeuron": {
+        "root_id": "720575940621164720",
+        "group": "MB_ML.CRE",
+        "nt_type": "",
+        "nt_type_score": "0.0",
+        "da_avg": "0.13",
+        "ser_avg": "0.02",
+        "gaba_avg": "0.22",
+        "glut_avg": "0.28",
+        "ach_avg": "0.35",
+        "oct_avg": "0.0"
+      },
+      "assignmentMethod": "edge-label-weighted-fallback",
+      "weightedEdgeLabelTally": {
+        "ACH": 1669,
+        "DA": 332,
+        "GABA": 222,
+        "GLUT": 803
+      },
+      "resolvedTransmitter": "ACH",
+      "storedTransmitter": "ACH",
+      "storedOutgoingSign": 1,
+      "outgoingEdges": 112,
+      "outgoingSynapses": 3026,
+      "targetClassSynapses": {
+        "unclassified": 1370,
+        "DAN": 246,
+        "MBON": 1213,
+        "CX": 71,
+        "MBIN": 86,
+        "Kenyon_Cell": 16,
+        "LHCENT": 24
+      },
+      "targetTypeTotals": {
+        "ATL017,ATL018": {
+          "edges": 1,
+          "synapses": 9
+        },
+        "PAM08": {
+          "edges": 11,
+          "synapses": 81
+        },
+        "CB2018": {
+          "edges": 2,
+          "synapses": 43
+        },
+        "CRE042": {
+          "edges": 1,
+          "synapses": 105
+        },
+        "PAM07": {
+          "edges": 8,
+          "synapses": 154
+        },
+        "CB3077": {
+          "edges": 1,
+          "synapses": 6
+        },
+        "CB1434": {
+          "edges": 1,
+          "synapses": 11
+        },
+        "MBON09": {
+          "edges": 2,
+          "synapses": 81
+        },
+        "MBON20": {
+          "edges": 1,
+          "synapses": 124
+        },
+        "CB1031": {
+          "edges": 2,
+          "synapses": 18
+        },
+        "CB0272": {
+          "edges": 1,
+          "synapses": 9
+        },
+        "LHPD5a1": {
+          "edges": 1,
+          "synapses": 13
+        },
+        "CRE022": {
+          "edges": 1,
+          "synapses": 51
+        },
+        "CRE005": {
+          "edges": 2,
+          "synapses": 33
+        },
+        "CRE043": {
+          "edges": 2,
+          "synapses": 30
+        },
+        "CB.FBTF0": {
+          "edges": 1,
+          "synapses": 32
+        },
+        "APL": {
+          "edges": 1,
+          "synapses": 49
+        },
+        "LAL002": {
+          "edges": 1,
+          "synapses": 20
+        },
+        "LHPV10d1": {
+          "edges": 1,
+          "synapses": 6
+        },
+        "MB-C1": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "MBON10": {
+          "edges": 4,
+          "synapses": 33
+        },
+        "LAL037": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "MBON25,MBON34": {
+          "edges": 3,
+          "synapses": 31
+        },
+        "PS063": {
+          "edges": 1,
+          "synapses": 8
+        },
+        "CRE019": {
+          "edges": 1,
+          "synapses": 10
+        },
+        "CRE069": {
+          "edges": 1,
+          "synapses": 37
+        },
+        "MBON11": {
+          "edges": 1,
+          "synapses": 146
+        },
+        "MBON30": {
+          "edges": 2,
+          "synapses": 684
+        },
+        "MBON27": {
+          "edges": 1,
+          "synapses": 7
+        },
+        "CB2736": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "LAL141": {
+          "edges": 1,
+          "synapses": 8
+        },
+        "LHPV4m1": {
+          "edges": 1,
+          "synapses": 10
+        },
+        "CB.FB3,4D1": {
+          "edges": 1,
+          "synapses": 8
+        },
+        "MBON04": {
+          "edges": 1,
+          "synapses": 19
+        },
+        "SMP568": {
+          "edges": 2,
+          "synapses": 20
+        },
+        "PAM13": {
+          "edges": 2,
+          "synapses": 11
+        },
+        "SMP108": {
+          "edges": 2,
+          "synapses": 21
+        },
+        "CB.FB1H0": {
+          "edges": 2,
+          "synapses": 18
+        },
+        "MBON21": {
+          "edges": 1,
+          "synapses": 20
+        },
+        "CRE006": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "LAL034": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "CB3369": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "SMP558": {
+          "edges": 1,
+          "synapses": 10
+        },
+        "LHPV5e1": {
+          "edges": 1,
+          "synapses": 21
+        },
+        "MBON12": {
+          "edges": 2,
+          "synapses": 22
+        },
+        "CRE020": {
+          "edges": 2,
+          "synapses": 23
+        },
+        "SMP031": {
+          "edges": 1,
+          "synapses": 36
+        },
+        "CRE001": {
+          "edges": 2,
+          "synapses": 65
+        },
+        "CB1079": {
+          "edges": 4,
+          "synapses": 40
+        },
+        "CB2860": {
+          "edges": 1,
+          "synapses": 25
+        },
+        "CRE105": {
+          "edges": 1,
+          "synapses": 21
+        },
+        "DPM": {
+          "edges": 1,
+          "synapses": 37
+        },
+        "SMP030": {
+          "edges": 1,
+          "synapses": 35
+        },
+        "SIP069": {
+          "edges": 2,
+          "synapses": 17
+        },
+        "SMPp&v1A_S02": {
+          "edges": 1,
+          "synapses": 6
+        },
+        "CRE011": {
+          "edges": 1,
+          "synapses": 198
+        },
+        "CB3554": {
+          "edges": 1,
+          "synapses": 8
+        },
+        "CRE080c": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "SMP011b": {
+          "edges": 1,
+          "synapses": 7
+        },
+        "CRE048": {
+          "edges": 1,
+          "synapses": 60
+        },
+        "LHPV7c1": {
+          "edges": 2,
+          "synapses": 266
+        },
+        "ExR6": {
+          "edges": 1,
+          "synapses": 7
+        },
+        "CRE007": {
+          "edges": 1,
+          "synapses": 12
+        },
+        "OA-VPM4": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "MBON31": {
+          "edges": 1,
+          "synapses": 14
+        },
+        "KCg-m": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "KCg-s1": {
+          "edges": 1,
+          "synapses": 11
+        },
+        "MBON01": {
+          "edges": 1,
+          "synapses": 27
+        },
+        "LCNOpm": {
+          "edges": 1,
+          "synapses": 6
+        },
+        "MBON29": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "LHCENT5": {
+          "edges": 1,
+          "synapses": 24
+        },
+        "CB1171": {
+          "edges": 1,
+          "synapses": 12
+        }
+      },
+      "edges": [
+        {
+          "edgeIndex": 25277,
+          "targetIndex": 1217,
+          "targetRootId": "720575940605032550",
+          "targetType": "ATL017,ATL018",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 9,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 26678,
+          "targetIndex": 1299,
+          "targetRootId": "720575940605113376",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 29902,
+          "targetIndex": 1482,
+          "targetRootId": "720575940605280201",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 10,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 59829,
+          "targetIndex": 3227,
+          "targetRootId": "720575940606514878",
+          "targetType": "CB2018",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 14,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 65299,
+          "targetIndex": 3487,
+          "targetRootId": "720575940606664894",
+          "targetType": "CRE042",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 105,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 99663,
+          "targetIndex": 5282,
+          "targetRootId": "720575940608071435",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 6,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 170127,
+          "targetIndex": 8847,
+          "targetRootId": "720575940610430254",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 28,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 176665,
+          "targetIndex": 9106,
+          "targetRootId": "720575940610562969",
+          "targetType": "CB3077",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 6,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 186425,
+          "targetIndex": 9619,
+          "targetRootId": "720575940610818673",
+          "targetType": "CB1434",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 11,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 191761,
+          "targetIndex": 9900,
+          "targetRootId": "720575940610964946",
+          "targetType": "MBON09",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 36,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 208422,
+          "targetIndex": 10725,
+          "targetRootId": "720575940611344078",
+          "targetType": "MBON20",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 124,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 216569,
+          "targetIndex": 11118,
+          "targetRootId": "720575940611502309",
+          "targetType": "CB1031",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 235077,
+          "targetIndex": 11912,
+          "targetRootId": "720575940611812050",
+          "targetType": "CB0272",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 9,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 240767,
+          "targetIndex": 12201,
+          "targetRootId": "720575940611918578",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 12,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 246160,
+          "targetIndex": 12446,
+          "targetRootId": "720575940612011377",
+          "targetType": "LHPD5a1",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 13,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 259842,
+          "targetIndex": 13170,
+          "targetRootId": "720575940612281586",
+          "targetType": "CRE022",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 51,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 259957,
+          "targetIndex": 13172,
+          "targetRootId": "720575940612281842",
+          "targetType": "CRE005",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 13,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 269059,
+          "targetIndex": 13666,
+          "targetRootId": "720575940612437674",
+          "targetType": "CRE043",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 19,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 279689,
+          "targetIndex": 14242,
+          "targetRootId": "720575940612623474",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 7,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 286429,
+          "targetIndex": 14606,
+          "targetRootId": "720575940612734066",
+          "targetType": "CB.FBTF0",
+          "targetClass": "CX",
+          "targetSide": "right",
+          "synapses": 32,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 340498,
+          "targetIndex": 17267,
+          "targetRootId": "720575940613583001",
+          "targetType": "APL",
+          "targetClass": "MBIN",
+          "targetSide": "right",
+          "synapses": 49,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 355650,
+          "targetIndex": 17849,
+          "targetRootId": "720575940613771798",
+          "targetType": "LAL002",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 20,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 444346,
+          "targetIndex": 22169,
+          "targetRootId": "720575940615166111",
+          "targetType": "LHPV10d1",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 6,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 445442,
+          "targetIndex": 22219,
+          "targetRootId": "720575940615183071",
+          "targetType": "MB-C1",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 448434,
+          "targetIndex": 22372,
+          "targetRootId": "720575940615221811",
+          "targetType": "MBON10",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 8,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 515490,
+          "targetIndex": 25747,
+          "targetRootId": "720575940616235348",
+          "targetType": "LAL037",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 524572,
+          "targetIndex": 26296,
+          "targetRootId": "720575940616398303",
+          "targetType": "MBON25,MBON34",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 536519,
+          "targetIndex": 26894,
+          "targetRootId": "720575940616575557",
+          "targetType": "PS063",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 8,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 544313,
+          "targetIndex": 27303,
+          "targetRootId": "720575940616709593",
+          "targetType": "CRE019",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 10,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 581839,
+          "targetIndex": 29170,
+          "targetRootId": "720575940617242841",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 6,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 613839,
+          "targetIndex": 30743,
+          "targetRootId": "720575940617649954",
+          "targetType": "CRE069",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 37,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 621950,
+          "targetIndex": 31128,
+          "targetRootId": "720575940617749538",
+          "targetType": "MBON11",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 146,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 641611,
+          "targetIndex": 32169,
+          "targetRootId": "720575940618008859",
+          "targetType": "MBON30",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 182,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 662000,
+          "targetIndex": 33266,
+          "targetRootId": "720575940618249797",
+          "targetType": "MBON27",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 7,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 748452,
+          "targetIndex": 37684,
+          "targetRootId": "720575940619402576",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 16,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 779673,
+          "targetIndex": 39288,
+          "targetRootId": "720575940619823536",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 12,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 784041,
+          "targetIndex": 39507,
+          "targetRootId": "720575940619875060",
+          "targetType": "CB2736",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 800925,
+          "targetIndex": 40129,
+          "targetRootId": "720575940620012923",
+          "targetType": "LAL141",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 8,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 825507,
+          "targetIndex": 41281,
+          "targetRootId": "720575940620252075",
+          "targetType": "LHPV4m1",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 10,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 830745,
+          "targetIndex": 41553,
+          "targetRootId": "720575940620317564",
+          "targetType": "CB.FB3,4D1",
+          "targetClass": "CX",
+          "targetSide": "right",
+          "synapses": 8,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 834467,
+          "targetIndex": 41675,
+          "targetRootId": "720575940620341931",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 18,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 844170,
+          "targetIndex": 42236,
+          "targetRootId": "720575940620464321",
+          "targetType": "MBON04",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 19,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 889486,
+          "targetIndex": 44717,
+          "targetRootId": "720575940620904614",
+          "targetType": "SMP568",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 9,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 892957,
+          "targetIndex": 44935,
+          "targetRootId": "720575940620938150",
+          "targetType": "PAM13",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 927031,
+          "targetIndex": 46458,
+          "targetRootId": "720575940621216982",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 952470,
+          "targetIndex": 47816,
+          "targetRootId": "720575940621457690",
+          "targetType": "SMP108",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 13,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 987680,
+          "targetIndex": 49595,
+          "targetRootId": "720575940621768385",
+          "targetType": "CB.FB1H0",
+          "targetClass": "CX",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 988962,
+          "targetIndex": 49650,
+          "targetRootId": "720575940621777391",
+          "targetType": "MBON21",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 20,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1013783,
+          "targetIndex": 50875,
+          "targetRootId": "720575940622012073",
+          "targetType": "CRE006",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1034535,
+          "targetIndex": 51910,
+          "targetRootId": "720575940622189448",
+          "targetType": "LAL034",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1111952,
+          "targetIndex": 55935,
+          "targetRootId": "720575940622930200",
+          "targetType": "CB3369",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1113610,
+          "targetIndex": 56017,
+          "targetRootId": "720575940622944403",
+          "targetType": "PAM13",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 6,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1115973,
+          "targetIndex": 56160,
+          "targetRootId": "720575940622971911",
+          "targetType": "SMP558",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 10,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1119906,
+          "targetIndex": 56325,
+          "targetRootId": "720575940622999688",
+          "targetType": "LHPV5e1",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 21,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1120896,
+          "targetIndex": 56337,
+          "targetRootId": "720575940623001480",
+          "targetType": "MBON12",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1145482,
+          "targetIndex": 57540,
+          "targetRootId": "720575940623199070",
+          "targetType": "CB.FB1H0",
+          "targetClass": "CX",
+          "targetSide": "right",
+          "synapses": 13,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1153769,
+          "targetIndex": 57895,
+          "targetRootId": "720575940623264809",
+          "targetType": "CRE020",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 9,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1168667,
+          "targetIndex": 58632,
+          "targetRootId": "720575940623398524",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1207058,
+          "targetIndex": 60494,
+          "targetRootId": "720575940623750325",
+          "targetType": "MBON25,MBON34",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 10,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1223323,
+          "targetIndex": 61287,
+          "targetRootId": "720575940623905719",
+          "targetType": "MBON12",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 17,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1250464,
+          "targetIndex": 62787,
+          "targetRootId": "720575940624169255",
+          "targetType": "SMP031",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 36,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1265322,
+          "targetIndex": 63500,
+          "targetRootId": "720575940624294143",
+          "targetType": "CRE001",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 43,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1277454,
+          "targetIndex": 64090,
+          "targetRootId": "720575940624392328",
+          "targetType": "CRE043",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 11,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1281261,
+          "targetIndex": 64274,
+          "targetRootId": "720575940624430060",
+          "targetType": "CB1079",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 7,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1303563,
+          "targetIndex": 65332,
+          "targetRootId": "720575940624659943",
+          "targetType": "MBON25,MBON34",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 16,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1305932,
+          "targetIndex": 65457,
+          "targetRootId": "720575940624685290",
+          "targetType": "CB1079",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 7,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1307531,
+          "targetIndex": 65508,
+          "targetRootId": "720575940624695566",
+          "targetType": "CB1031",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 13,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1316686,
+          "targetIndex": 66042,
+          "targetRootId": "720575940624803511",
+          "targetType": "CB2860",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 25,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1327571,
+          "targetIndex": 66643,
+          "targetRootId": "720575940624915435",
+          "targetType": "SMP568",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 11,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1401362,
+          "targetIndex": 70284,
+          "targetRootId": "720575940625666964",
+          "targetType": "CRE105",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 21,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1427682,
+          "targetIndex": 71637,
+          "targetRootId": "720575940625934094",
+          "targetType": "DPM",
+          "targetClass": "MBIN",
+          "targetSide": "right",
+          "synapses": 37,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1466249,
+          "targetIndex": 73383,
+          "targetRootId": "720575940626294397",
+          "targetType": "CRE001",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 22,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1548269,
+          "targetIndex": 77469,
+          "targetRootId": "720575940627047185",
+          "targetType": "SMP030",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 35,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1553133,
+          "targetIndex": 77719,
+          "targetRootId": "720575940627087364",
+          "targetType": "SIP069",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 10,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1556890,
+          "targetIndex": 77877,
+          "targetRootId": "720575940627110931",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 6,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1568587,
+          "targetIndex": 78448,
+          "targetRootId": "720575940627194501",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 16,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1618727,
+          "targetIndex": 80882,
+          "targetRootId": "720575940627619057",
+          "targetType": "SMPp&v1A_S02",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 6,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1619825,
+          "targetIndex": 80949,
+          "targetRootId": "720575940627632745",
+          "targetType": "SIP069",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 7,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1620852,
+          "targetIndex": 81007,
+          "targetRootId": "720575940627644584",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 7,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1717380,
+          "targetIndex": 85664,
+          "targetRootId": "720575940628455942",
+          "targetType": "CRE011",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 198,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1731958,
+          "targetIndex": 86416,
+          "targetRootId": "720575940628602471",
+          "targetType": "CB3554",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 8,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1810071,
+          "targetIndex": 90141,
+          "targetRootId": "720575940629332730",
+          "targetType": "CRE080c",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1841642,
+          "targetIndex": 91412,
+          "targetRootId": "720575940629585602",
+          "targetType": "MBON10",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 10,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1877259,
+          "targetIndex": 93187,
+          "targetRootId": "720575940629947964",
+          "targetType": "CB1079",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 11,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1895597,
+          "targetIndex": 94040,
+          "targetRootId": "720575940630119900",
+          "targetType": "CRE020",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 14,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1944749,
+          "targetIndex": 96538,
+          "targetRootId": "720575940630622250",
+          "targetType": "SMP011b",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 7,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1959704,
+          "targetIndex": 97328,
+          "targetRootId": "720575940630765253",
+          "targetType": "CB1079",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 15,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1970892,
+          "targetIndex": 97844,
+          "targetRootId": "720575940630864847",
+          "targetType": "MBON09",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 45,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1994278,
+          "targetIndex": 99099,
+          "targetRootId": "720575940631103744",
+          "targetType": "SMP108",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 8,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 1998964,
+          "targetIndex": 99301,
+          "targetRootId": "720575940631142956",
+          "targetType": "CRE048",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 60,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2001030,
+          "targetIndex": 99359,
+          "targetRootId": "720575940631154396",
+          "targetType": "LHPV7c1",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 127,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2041481,
+          "targetIndex": 101414,
+          "targetRootId": "720575940631576903",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 23,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2168068,
+          "targetIndex": 107880,
+          "targetRootId": "720575940633145903",
+          "targetType": "ExR6",
+          "targetClass": "CX",
+          "targetSide": "right",
+          "synapses": 7,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2185758,
+          "targetIndex": 108596,
+          "targetRootId": "720575940633333916",
+          "targetType": "CB2018",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 29,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2329918,
+          "targetIndex": 115576,
+          "targetRootId": "720575940636008366",
+          "targetType": "CRE007",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 12,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2352312,
+          "targetIndex": 116769,
+          "targetRootId": "720575940636574388",
+          "targetType": "OA-VPM4",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2369494,
+          "targetIndex": 117670,
+          "targetRootId": "720575940636992368",
+          "targetType": "MBON31",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 14,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2413083,
+          "targetIndex": 119718,
+          "targetRootId": "720575940637934308",
+          "targetType": "MBON30",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 502,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2460547,
+          "targetIndex": 122251,
+          "targetRootId": "720575940639069493",
+          "targetType": "KCg-m",
+          "targetClass": "Kenyon_Cell",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2482856,
+          "targetIndex": 123306,
+          "targetRootId": "720575940639556467",
+          "targetType": "MBON10",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 9,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2487415,
+          "targetIndex": 123580,
+          "targetRootId": "720575940639684515",
+          "targetType": "KCg-s1",
+          "targetClass": "Kenyon_Cell",
+          "targetSide": "right",
+          "synapses": 11,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2498434,
+          "targetIndex": 124167,
+          "targetRootId": "720575940639939712",
+          "targetType": "LHPV7c1",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 139,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2539371,
+          "targetIndex": 126037,
+          "targetRootId": "720575940640891736",
+          "targetType": "CRE005",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 20,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2578447,
+          "targetIndex": 128004,
+          "targetRootId": "720575940643309197",
+          "targetType": "MBON01",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 27,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2582205,
+          "targetIndex": 128182,
+          "targetRootId": "720575940643576224",
+          "targetType": "LCNOpm",
+          "targetClass": "CX",
+          "targetSide": "right",
+          "synapses": 6,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2583851,
+          "targetIndex": 128253,
+          "targetRootId": "720575940643700640",
+          "targetType": "MBON29",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2587660,
+          "targetIndex": 128466,
+          "targetRootId": "720575940643950190",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 24,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2634774,
+          "targetIndex": 130964,
+          "targetRootId": "720575940646582836",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 6,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2642070,
+          "targetIndex": 131367,
+          "targetRootId": "720575940647165828",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 23,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2644034,
+          "targetIndex": 131450,
+          "targetRootId": "720575940647328900",
+          "targetType": "MBON10",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 6,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2653880,
+          "targetIndex": 132023,
+          "targetRootId": "720575940648564612",
+          "targetType": "LHCENT5",
+          "targetClass": "LHCENT",
+          "targetSide": "right",
+          "synapses": 24,
+          "storedSign": 1
+        },
+        {
+          "edgeIndex": 2675312,
+          "targetIndex": 132879,
+          "targetRootId": "720575940652734625",
+          "targetType": "CB1171",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 12,
+          "storedSign": 1
+        }
+      ]
+    },
+    {
+      "rootId": "720575940630496374",
+      "graphIndex": 95882,
+      "somaSide": "right",
+      "annotation": {
+        "root_id": "720575940630496374",
+        "cell_type": "",
+        "hemibrain_type": "MBON05",
+        "cell_class": "MBON",
+        "side": "right",
+        "known_nt": "glutamate",
+        "known_nt_source": "Aso et al. 2014",
+        "top_nt": "glutamate",
+        "top_nt_conf": "0.5672063035300218"
+      },
+      "codexNeuron": {
+        "root_id": "720575940630496374",
+        "group": "MB_ML",
+        "nt_type": "GLUT",
+        "nt_type_score": "0.56",
+        "da_avg": "0.12",
+        "ser_avg": "0.01",
+        "gaba_avg": "0.17",
+        "glut_avg": "0.56",
+        "ach_avg": "0.13",
+        "oct_avg": "0.0"
+      },
+      "assignmentMethod": "explicit-neuron-label",
+      "weightedEdgeLabelTally": {
+        "DA": 262,
+        "GLUT": 2711,
+        "ACH": 39,
+        "GABA": 33
+      },
+      "resolvedTransmitter": "GLUT",
+      "storedTransmitter": "GLUT",
+      "storedOutgoingSign": -1,
+      "outgoingEdges": 112,
+      "outgoingSynapses": 3045,
+      "targetClassSynapses": {
+        "DAN": 387,
+        "Kenyon_Cell": 36,
+        "unclassified": 1109,
+        "CX": 40,
+        "MBON": 1306,
+        "MBIN": 145,
+        "LHCENT": 22
+      },
+      "targetTypeTotals": {
+        "PAM08": {
+          "edges": 17,
+          "synapses": 141
+        },
+        "KCg-m": {
+          "edges": 6,
+          "synapses": 36
+        },
+        "CB1972": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "CB2860": {
+          "edges": 2,
+          "synapses": 41
+        },
+        "CB.FB3,4D1": {
+          "edges": 1,
+          "synapses": 7
+        },
+        "CRE042": {
+          "edges": 1,
+          "synapses": 10
+        },
+        "CRE005": {
+          "edges": 1,
+          "synapses": 7
+        },
+        "CB2584": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "untyped": {
+          "edges": 1,
+          "synapses": 6
+        },
+        "MBON29": {
+          "edges": 1,
+          "synapses": 14
+        },
+        "CRE022": {
+          "edges": 1,
+          "synapses": 60
+        },
+        "CRE001": {
+          "edges": 2,
+          "synapses": 52
+        },
+        "MBON30": {
+          "edges": 2,
+          "synapses": 696
+        },
+        "CB2018": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "MBON25,MBON34": {
+          "edges": 3,
+          "synapses": 49
+        },
+        "SMPp&v1A_S02": {
+          "edges": 1,
+          "synapses": 9
+        },
+        "MBON21": {
+          "edges": 1,
+          "synapses": 28
+        },
+        "CRE043": {
+          "edges": 3,
+          "synapses": 26
+        },
+        "DPM": {
+          "edges": 1,
+          "synapses": 79
+        },
+        "SMP012": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "CB1870": {
+          "edges": 1,
+          "synapses": 7
+        },
+        "SMP108": {
+          "edges": 2,
+          "synapses": 36
+        },
+        "MBON12": {
+          "edges": 2,
+          "synapses": 11
+        },
+        "CB1031": {
+          "edges": 2,
+          "synapses": 24
+        },
+        "CB1877": {
+          "edges": 1,
+          "synapses": 9
+        },
+        "CB3077": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "MBON27": {
+          "edges": 1,
+          "synapses": 10
+        },
+        "MBON33": {
+          "edges": 1,
+          "synapses": 8
+        },
+        "MBON11": {
+          "edges": 1,
+          "synapses": 109
+        },
+        "CB2730": {
+          "edges": 1,
+          "synapses": 9
+        },
+        "MBON01": {
+          "edges": 1,
+          "synapses": 30
+        },
+        "LHPV5e1": {
+          "edges": 1,
+          "synapses": 23
+        },
+        "CRE048": {
+          "edges": 1,
+          "synapses": 48
+        },
+        "CB2357": {
+          "edges": 1,
+          "synapses": 11
+        },
+        "PAM07": {
+          "edges": 8,
+          "synapses": 227
+        },
+        "APL": {
+          "edges": 1,
+          "synapses": 66
+        },
+        "LHPV7c1": {
+          "edges": 1,
+          "synapses": 252
+        },
+        "CRE069": {
+          "edges": 1,
+          "synapses": 20
+        },
+        "CRE105": {
+          "edges": 2,
+          "synapses": 42
+        },
+        "CB3369": {
+          "edges": 1,
+          "synapses": 11
+        },
+        "LAL037": {
+          "edges": 1,
+          "synapses": 25
+        },
+        "CB.FB1H0": {
+          "edges": 1,
+          "synapses": 19
+        },
+        "CRE019": {
+          "edges": 1,
+          "synapses": 10
+        },
+        "PPL103": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "CB.FBTF0": {
+          "edges": 1,
+          "synapses": 9
+        },
+        "LHPV10b1": {
+          "edges": 1,
+          "synapses": 8
+        },
+        "CRE011": {
+          "edges": 1,
+          "synapses": 169
+        },
+        "MBON04": {
+          "edges": 1,
+          "synapses": 11
+        },
+        "SIP069": {
+          "edges": 1,
+          "synapses": 13
+        },
+        "CB3328": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "MBON09": {
+          "edges": 2,
+          "synapses": 153
+        },
+        "ATL017,ATL018": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "CRE007": {
+          "edges": 1,
+          "synapses": 8
+        },
+        "SMP030": {
+          "edges": 1,
+          "synapses": 32
+        },
+        "AOTU063a": {
+          "edges": 1,
+          "synapses": 11
+        },
+        "SMP384": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "LAL141": {
+          "edges": 1,
+          "synapses": 7
+        },
+        "CB.FB5G0": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "CB1434": {
+          "edges": 1,
+          "synapses": 6
+        },
+        "MBON15": {
+          "edges": 1,
+          "synapses": 6
+        },
+        "MBON35": {
+          "edges": 1,
+          "synapses": 11
+        },
+        "LHPD5a1": {
+          "edges": 1,
+          "synapses": 9
+        },
+        "CRE020": {
+          "edges": 1,
+          "synapses": 6
+        },
+        "MBON10": {
+          "edges": 1,
+          "synapses": 17
+        },
+        "PAM13": {
+          "edges": 1,
+          "synapses": 5
+        },
+        "CB1171": {
+          "edges": 1,
+          "synapses": 7
+        },
+        "MBON20": {
+          "edges": 1,
+          "synapses": 153
+        },
+        "LHCENT5": {
+          "edges": 1,
+          "synapses": 22
+        },
+        "SMP011b": {
+          "edges": 1,
+          "synapses": 22
+        },
+        "LAL002": {
+          "edges": 1,
+          "synapses": 10
+        },
+        "SMP031": {
+          "edges": 1,
+          "synapses": 26
+        },
+        "LHPV5e3": {
+          "edges": 1,
+          "synapses": 6
+        }
+      },
+      "edges": [
+        {
+          "edgeIndex": 13986,
+          "targetIndex": 669,
+          "targetRootId": "720575940604479590",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 8,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 35556,
+          "targetIndex": 1826,
+          "targetRootId": "720575940605551038",
+          "targetType": "KCg-m",
+          "targetClass": "Kenyon_Cell",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 40475,
+          "targetIndex": 2098,
+          "targetRootId": "720575940605733042",
+          "targetType": "CB1972",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 52026,
+          "targetIndex": 2767,
+          "targetRootId": "720575940606139308",
+          "targetType": "CB2860",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 24,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 54138,
+          "targetIndex": 2856,
+          "targetRootId": "720575940606198473",
+          "targetType": "CB.FB3,4D1",
+          "targetClass": "CX",
+          "targetSide": "left",
+          "synapses": 7,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 65372,
+          "targetIndex": 3487,
+          "targetRootId": "720575940606664894",
+          "targetType": "CRE042",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 10,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 121467,
+          "targetIndex": 6241,
+          "targetRootId": "720575940608810453",
+          "targetType": "CRE005",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 7,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 121480,
+          "targetIndex": 6242,
+          "targetRootId": "720575940608810709",
+          "targetType": "KCg-m",
+          "targetClass": "Kenyon_Cell",
+          "targetSide": "left",
+          "synapses": 10,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 176770,
+          "targetIndex": 9114,
+          "targetRootId": "720575940610569028",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 9,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 185146,
+          "targetIndex": 9533,
+          "targetRootId": "720575940610769506",
+          "targetType": "CB2584",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 369603,
+          "targetIndex": 18421,
+          "targetRootId": "720575940613994134",
+          "targetType": "",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 6,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 393331,
+          "targetIndex": 19619,
+          "targetRootId": "720575940614392999",
+          "targetType": "MBON29",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 14,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 431922,
+          "targetIndex": 21550,
+          "targetRootId": "720575940614991221",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 437795,
+          "targetIndex": 21812,
+          "targetRootId": "720575940615068383",
+          "targetType": "KCg-m",
+          "targetClass": "Kenyon_Cell",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 530096,
+          "targetIndex": 26570,
+          "targetRootId": "720575940616481397",
+          "targetType": "CRE022",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 60,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 563498,
+          "targetIndex": 28299,
+          "targetRootId": "720575940616986769",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 7,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 613918,
+          "targetIndex": 30751,
+          "targetRootId": "720575940617651829",
+          "targetType": "CRE001",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 16,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 641708,
+          "targetIndex": 32169,
+          "targetRootId": "720575940618008859",
+          "targetType": "MBON30",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 515,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 684650,
+          "targetIndex": 34373,
+          "targetRootId": "720575940618522673",
+          "targetType": "CB2018",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 740596,
+          "targetIndex": 37194,
+          "targetRootId": "720575940619251416",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 7,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 743356,
+          "targetIndex": 37374,
+          "targetRootId": "720575940619299054",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 6,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 778454,
+          "targetIndex": 39242,
+          "targetRootId": "720575940619810389",
+          "targetType": "MBON25,MBON34",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 14,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 781017,
+          "targetIndex": 39373,
+          "targetRootId": "720575940619844261",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 7,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 793643,
+          "targetIndex": 39964,
+          "targetRootId": "720575940619979387",
+          "targetType": "SMPp&v1A_S02",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 9,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 868844,
+          "targetIndex": 43679,
+          "targetRootId": "720575940620715224",
+          "targetType": "MBON21",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 28,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 891790,
+          "targetIndex": 44835,
+          "targetRootId": "720575940620922534",
+          "targetType": "CRE043",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 9,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 898444,
+          "targetIndex": 45164,
+          "targetRootId": "720575940620975696",
+          "targetType": "DPM",
+          "targetClass": "MBIN",
+          "targetSide": "left",
+          "synapses": 79,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 904496,
+          "targetIndex": 45463,
+          "targetRootId": "720575940621030320",
+          "targetType": "SMP012",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 928213,
+          "targetIndex": 46500,
+          "targetRootId": "720575940621226917",
+          "targetType": "CB1870",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 7,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 952615,
+          "targetIndex": 47816,
+          "targetRootId": "720575940621457690",
+          "targetType": "SMP108",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 18,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 969898,
+          "targetIndex": 48704,
+          "targetRootId": "720575940621617286",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 9,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 998597,
+          "targetIndex": 49989,
+          "targetRootId": "720575940621828443",
+          "targetType": "MBON12",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 6,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1039650,
+          "targetIndex": 52182,
+          "targetRootId": "720575940622229005",
+          "targetType": "CB1031",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 7,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1057876,
+          "targetIndex": 53102,
+          "targetRootId": "720575940622387981",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 9,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1095563,
+          "targetIndex": 55030,
+          "targetRootId": "720575940622752041",
+          "targetType": "CB1877",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 9,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1104774,
+          "targetIndex": 55540,
+          "targetRootId": "720575940622855629",
+          "targetType": "CB3077",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1116971,
+          "targetIndex": 56209,
+          "targetRootId": "720575940622979277",
+          "targetType": "MBON27",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 10,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1144081,
+          "targetIndex": 57445,
+          "targetRootId": "720575940623182847",
+          "targetType": "MBON33",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 8,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1145549,
+          "targetIndex": 57542,
+          "targetRootId": "720575940623199684",
+          "targetType": "CB2860",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 17,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1146287,
+          "targetIndex": 57558,
+          "targetRootId": "720575940623201833",
+          "targetType": "MBON11",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 109,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1168671,
+          "targetIndex": 58632,
+          "targetRootId": "720575940623398524",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "right",
+          "synapses": 6,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1202744,
+          "targetIndex": 60224,
+          "targetRootId": "720575940623696647",
+          "targetType": "CB2730",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 9,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1245183,
+          "targetIndex": 62498,
+          "targetRootId": "720575940624117245",
+          "targetType": "MBON01",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 30,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1249240,
+          "targetIndex": 62699,
+          "targetRootId": "720575940624155672",
+          "targetType": "LHPV5e1",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 23,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1284147,
+          "targetIndex": 64393,
+          "targetRootId": "720575940624452548",
+          "targetType": "CRE048",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 48,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1286185,
+          "targetIndex": 64486,
+          "targetRootId": "720575940624477246",
+          "targetType": "CB2357",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 11,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1287330,
+          "targetIndex": 64561,
+          "targetRootId": "720575940624489964",
+          "targetType": "MBON25,MBON34",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 14,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1292221,
+          "targetIndex": 64803,
+          "targetRootId": "720575940624545940",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 31,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1294314,
+          "targetIndex": 64810,
+          "targetRootId": "720575940624547622",
+          "targetType": "APL",
+          "targetClass": "MBIN",
+          "targetSide": "left",
+          "synapses": 66,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1302127,
+          "targetIndex": 65207,
+          "targetRootId": "720575940624629223",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 33,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1352015,
+          "targetIndex": 67752,
+          "targetRootId": "720575940625110967",
+          "targetType": "LHPV7c1",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 252,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1385617,
+          "targetIndex": 69521,
+          "targetRootId": "720575940625498512",
+          "targetType": "CRE069",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 20,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1392981,
+          "targetIndex": 69833,
+          "targetRootId": "720575940625568186",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 9,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1401388,
+          "targetIndex": 70284,
+          "targetRootId": "720575940625666964",
+          "targetType": "CRE105",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 16,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1423260,
+          "targetIndex": 71465,
+          "targetRootId": "720575940625898633",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 9,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1459842,
+          "targetIndex": 73049,
+          "targetRootId": "720575940626220925",
+          "targetType": "CB3369",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 11,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1507868,
+          "targetIndex": 75617,
+          "targetRootId": "720575940626737937",
+          "targetType": "LAL037",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 25,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1560565,
+          "targetIndex": 78057,
+          "targetRootId": "720575940627144069",
+          "targetType": "MBON25,MBON34",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 21,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1562464,
+          "targetIndex": 78183,
+          "targetRootId": "720575940627159498",
+          "targetType": "CB.FB1H0",
+          "targetClass": "CX",
+          "targetSide": "left",
+          "synapses": 19,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1580733,
+          "targetIndex": 78970,
+          "targetRootId": "720575940627282106",
+          "targetType": "CRE019",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 10,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1616652,
+          "targetIndex": 80782,
+          "targetRootId": "720575940627594568",
+          "targetType": "PPL103",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1624980,
+          "targetIndex": 81211,
+          "targetRootId": "720575940627680516",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 37,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1668327,
+          "targetIndex": 83322,
+          "targetRootId": "720575940628050950",
+          "targetType": "CB.FBTF0",
+          "targetClass": "CX",
+          "targetSide": "left",
+          "synapses": 9,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1674479,
+          "targetIndex": 83570,
+          "targetRootId": "720575940628094663",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 15,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1687585,
+          "targetIndex": 84213,
+          "targetRootId": "720575940628210887",
+          "targetType": "LHPV10b1",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 8,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1740905,
+          "targetIndex": 86891,
+          "targetRootId": "720575940628695043",
+          "targetType": "CRE011",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 169,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1745277,
+          "targetIndex": 87092,
+          "targetRootId": "720575940628734376",
+          "targetType": "MBON04",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 11,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1760729,
+          "targetIndex": 87819,
+          "targetRootId": "720575940628862330",
+          "targetType": "SIP069",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 13,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1800607,
+          "targetIndex": 89659,
+          "targetRootId": "720575940629226204",
+          "targetType": "CB3328",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1820043,
+          "targetIndex": 90572,
+          "targetRootId": "720575940629422086",
+          "targetType": "MBON09",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 84,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1853038,
+          "targetIndex": 91987,
+          "targetRootId": "720575940629714704",
+          "targetType": "ATL017,ATL018",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1867296,
+          "targetIndex": 92679,
+          "targetRootId": "720575940629856515",
+          "targetType": "MBON09",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 69,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1891770,
+          "targetIndex": 93832,
+          "targetRootId": "720575940630075703",
+          "targetType": "MBON12",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1901210,
+          "targetIndex": 94272,
+          "targetRootId": "720575940630168892",
+          "targetType": "CB1031",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 17,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1927815,
+          "targetIndex": 95732,
+          "targetRootId": "720575940630464554",
+          "targetType": "CRE043",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 6,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1927874,
+          "targetIndex": 95736,
+          "targetRootId": "720575940630465398",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 34,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1932121,
+          "targetIndex": 95902,
+          "targetRootId": "720575940630500293",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 12,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1951920,
+          "targetIndex": 96873,
+          "targetRootId": "720575940630684943",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 10,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1957070,
+          "targetIndex": 97174,
+          "targetRootId": "720575940630738463",
+          "targetType": "CRE007",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 8,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1991371,
+          "targetIndex": 98964,
+          "targetRootId": "720575940631082819",
+          "targetType": "SMP030",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 32,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1994399,
+          "targetIndex": 99099,
+          "targetRootId": "720575940631103744",
+          "targetType": "SMP108",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 18,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 1997431,
+          "targetIndex": 99233,
+          "targetRootId": "720575940631129362",
+          "targetType": "AOTU063a",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 11,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2003803,
+          "targetIndex": 99507,
+          "targetRootId": "720575940631184439",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 12,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2005699,
+          "targetIndex": 99593,
+          "targetRootId": "720575940631201079",
+          "targetType": "KCg-m",
+          "targetClass": "Kenyon_Cell",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2010869,
+          "targetIndex": 99912,
+          "targetRootId": "720575940631260716",
+          "targetType": "SMP384",
+          "targetClass": "unclassified",
+          "targetSide": "right",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2046152,
+          "targetIndex": 101622,
+          "targetRootId": "720575940631623417",
+          "targetType": "LAL141",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 7,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2093014,
+          "targetIndex": 103976,
+          "targetRootId": "720575940632186276",
+          "targetType": "CRE043",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 11,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2095766,
+          "targetIndex": 104072,
+          "targetRootId": "720575940632212039",
+          "targetType": "CB.FB5G0",
+          "targetClass": "CX",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2166025,
+          "targetIndex": 107761,
+          "targetRootId": "720575940633107607",
+          "targetType": "CB1434",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 6,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2192098,
+          "targetIndex": 108951,
+          "targetRootId": "720575940633447394",
+          "targetType": "CRE105",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 26,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2305668,
+          "targetIndex": 114361,
+          "targetRootId": "720575940635537271",
+          "targetType": "KCg-m",
+          "targetClass": "Kenyon_Cell",
+          "targetSide": "left",
+          "synapses": 6,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2319894,
+          "targetIndex": 115173,
+          "targetRootId": "720575940635841143",
+          "targetType": "MBON15",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 6,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2349151,
+          "targetIndex": 116630,
+          "targetRootId": "720575940636521646",
+          "targetType": "CRE001",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 36,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2381555,
+          "targetIndex": 118201,
+          "targetRootId": "720575940637255221",
+          "targetType": "KCg-m",
+          "targetClass": "Kenyon_Cell",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2411621,
+          "targetIndex": 119668,
+          "targetRootId": "720575940637902938",
+          "targetType": "MBON35",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 11,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2413155,
+          "targetIndex": 119718,
+          "targetRootId": "720575940637934308",
+          "targetType": "MBON30",
+          "targetClass": "MBON",
+          "targetSide": "right",
+          "synapses": 181,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2437537,
+          "targetIndex": 121080,
+          "targetRootId": "720575940638548021",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 12,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2441458,
+          "targetIndex": 121303,
+          "targetRootId": "720575940638642502",
+          "targetType": "LHPD5a1",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 9,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2464372,
+          "targetIndex": 122421,
+          "targetRootId": "720575940639143256",
+          "targetType": "CRE020",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 6,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2560663,
+          "targetIndex": 127129,
+          "targetRootId": "720575940642142861",
+          "targetType": "MBON10",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 17,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2567833,
+          "targetIndex": 127527,
+          "targetRootId": "720575940642592416",
+          "targetType": "PAM13",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 5,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2570211,
+          "targetIndex": 127657,
+          "targetRootId": "720575940642744264",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 6,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2581002,
+          "targetIndex": 128113,
+          "targetRootId": "720575940643489902",
+          "targetType": "CB1171",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 7,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2581724,
+          "targetIndex": 128158,
+          "targetRootId": "720575940643543200",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 31,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2586279,
+          "targetIndex": 128406,
+          "targetRootId": "720575940643863496",
+          "targetType": "MBON20",
+          "targetClass": "MBON",
+          "targetSide": "left",
+          "synapses": 153,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2586675,
+          "targetIndex": 128421,
+          "targetRootId": "720575940643882184",
+          "targetType": "LHCENT5",
+          "targetClass": "LHCENT",
+          "targetSide": "left",
+          "synapses": 22,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2613662,
+          "targetIndex": 129837,
+          "targetRootId": "720575940645264750",
+          "targetType": "SMP011b",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 22,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2625940,
+          "targetIndex": 130511,
+          "targetRootId": "720575940645990935",
+          "targetType": "LAL002",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 10,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2630648,
+          "targetIndex": 130778,
+          "targetRootId": "720575940646351412",
+          "targetType": "SMP031",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 26,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2634344,
+          "targetIndex": 130952,
+          "targetRootId": "720575940646564916",
+          "targetType": "PAM08",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 10,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2654113,
+          "targetIndex": 132026,
+          "targetRootId": "720575940648570244",
+          "targetType": "LHPV5e3",
+          "targetClass": "unclassified",
+          "targetSide": "left",
+          "synapses": 6,
+          "storedSign": -1
+        },
+        {
+          "edgeIndex": 2658847,
+          "targetIndex": 132228,
+          "targetRootId": "720575940649658745",
+          "targetType": "PAM07",
+          "targetClass": "DAN",
+          "targetSide": "left",
+          "synapses": 34,
+          "storedSign": -1
+        }
+      ]
+    }
+  ],
+  "scope": "Static sparse-edge/transmitter provenance; no model propagation, learning or sign mutation",
+  "sourceCodeReuse": "Only pure original aggregation, transmitter-resolution and sign-table functions",
+  "cpuDuty": 0.5,
+  "elapsedSeconds": 35.91471610000008
+}

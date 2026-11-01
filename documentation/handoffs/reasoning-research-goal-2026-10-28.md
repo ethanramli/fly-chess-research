@@ -1,5 +1,7 @@
 # Reasoning research goal (Claude Code), 2026-10-28
 
+**REPLACED 2026-10-30 by the [approved restart plan](../design/research-goals/restart-plan-2026-10-30.md). Do not follow this file. Its permission to change the cue and the lesson planner no longer applies. It is kept as history.**
+
 Written at the researcher's request on 2026-10-28. It supersedes the stop-and-wait rule S2 of the [Stage 1 outcome-only plan](stage1-outcome-only-plan-2026-10-27.md). That plan's steps and hard rules otherwise still apply. AGENTS.md, frozen protocols and gates, and the [curriculum reasoning goal contract](curriculum-reasoning-goal.md) still apply. This file sets direction only; it is not an experiment registration or evidence.
 
 Short form for recovery: **"Follow documentation/handoffs/reasoning-research-goal-2026-10-28.md: find which component is the weakest link toward transferable reasoning, research it, fix it, test it, repeat."**

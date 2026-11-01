@@ -14,3 +14,4 @@ Run `npm test` from the repository root. Software checks do not establish biolog
 
 - [Assessment cache state/history/task/invalidation checks](assessment-cache.test.mjs).
 - [Assessment cache identity, fresh check and invalidation tests](assessment-cache.test.mjs).
+- [record-neuron-candidates.test.mjs](record-neuron-candidates.test.mjs): actual Eyes/rate-model plumbing on a 17-cell fixture, order invariance, complete declared state preservation and failed-set completion handling.

@@ -2,9 +2,11 @@
 
 Consolidated 2026-10-06. Keep this file focused on stable instructions. Use [current status](documentation/current-status.md) for experiment outcomes and [documentation navigation](documentation/README.md) to locate designs. Historical instructions are preserved in [the journal archive](research/journal/archive/README.md).
 
-## Ponytail default
+## Current direction
 
-For an explicitly activated curriculum reasoning goal, recover after compaction by reading [the goal contract](documentation/handoffs/curriculum-reasoning-goal.md) and [the compact current handoff](documentation/handoffs/curriculum-reasoning-state.md), then verify current processes and raw evidence. These files do not activate a goal, override later user instructions or replace frozen experiment gates. Keep the handoff current during that goal; do not redirect unrelated tasks into it.
+The research restarted on 2026-10-30. Follow [the approved restart plan](documentation/design/research-goals/restart-plan-2026-10-30.md). Old experiments are early-development history in [the archive](archive/early-development/README.md); old curriculum goals, Stage 1 gates, token cues and the lesson planner are not current. Where a section below conflicts with the plan's input or feedback rules, the plan wins. The researcher's definition of reasoning is "being able to apply many unrelated concepts to solve an unfamiliar problem". Several agent sessions may work in this repository at once: re-read a file before editing it and leave changes you did not make alone.
+
+## Ponytail default
 
 This repository operates under ponytail mode by default: use the laziest solution that actually works, prefer the existing codebase over added abstractions, and remove speculative complexity before adding new code. The default intensity is full; do not add dependencies, wrappers, or scaffolding that the task does not require.
 
@@ -106,7 +108,3 @@ Define target rating scale/reference pool. Validate any benchmark-to-Elo predict
 ## Reusable resources
 
 Researcher instruction2026-10-07: use suitable open-source boards, UI components and other reusable resources instead of recreating them. Preserve licenses/attribution and document pinned sources and adaptations. This preference does not authorize replacing the endogenous learner with pretrained or supervised chess components.
-
-## 2026-10-12 live G0 observation
-
-At the latest inspection, curriculum G0 process PID11204 was live under the frozen protocol in runs/curriculum-g0-assay-v1-resumed3, at checkpoint007922, replica0 disabled-plasticity interference, lesson12/frame1. Working set was about155 MiB and free physical memory about1,240 MiB, within the configured resource guards. The informative arm has 8/8 acquisition and 8/8 interference retention; absent and shuffled each have 3/8 interference retention. Disabled interference, reversal, remaining replicas and independent audit are unfinished. This is a point-in-time observation, not a completed gate or chess-trained Fly improvement. Keep current status synchronized with the live run.

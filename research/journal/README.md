@@ -1,5 +1,7 @@
 # Research journal
 
+- [2026-10-31: actual memory goal continues after evidence repair](experiments/2026-10-31-memory-goal-continuation.md).
+
 - [2026-10-30: training cannot resume from a mid-event checkpoint (found by the D8 recovery witness; fails safe; fixed in block v3)](experiments/2026-10-30-mid-event-resume-bug.md)
 - [2026-10-30: research maturity review — fixed training comparator, scientific limitations, corrected software findings and ISEF 2028+ scope](experiments/2026-10-30-research-maturity-review.md)
 
@@ -331,3 +333,4 @@ Follow-up correction, 2026-10-10: changed the untested byte-buffer external-data
 - [2026-10-20: Visual terminal report and lesson-boundary pause](experiments/2026-10-20-terminal-report-and-pause.md)
 
 - [2026-10-22 babysit campaign controller](experiments/2026-10-22-babysit-campaign-controller.md).
+- [2026-10-31 memory fixture capacity and event-audit limits](experiments/2026-10-31-memory-fixture-capacity-and-audit.md).
