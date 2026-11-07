@@ -1,0 +1,5 @@
+# Activity-summary denominator repair, v2
+
+2026-11-01, before the corrected action. The [v1 analysis specification](activity-reliability-spec.md) and all its raw rows/source/config remain preserved. V1 incorrectly included post-feedback gap frames in teacher summary denominators because those frames carry the preceding trial's valence. Its observed choice amplitudes and selected-state endpoint checks are unaffected; its .5 teacher active fractions cannot be interpreted as intermittent responding.
+
+The only analysis change is to exclude rows already labelled `gap` from teacher summaries. Keep every raw row, source phase, candidate, state equation, resource guard and endpoint tolerance. Add an independent schedule assertion: every selected edge has 24 choice observations per candidate per phase and 21 certified teacher observations in each phase across candidates. No new graph pass or exposure occurs. Write to fresh `activity-reliability-v2`, preserving v1. The new script/action use distinct identities; no old pin is rewritten.

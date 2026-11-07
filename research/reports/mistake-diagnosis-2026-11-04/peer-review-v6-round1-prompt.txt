@@ -1,0 +1,7 @@
+/goal Strict review of memory v6 (journal referee standard). Read-only, no brain runs. Be brief and decisive; it is 4 am and the run must finish by morning.
+
+Memory v5 finished (runs/engineered-memory-test-2026-11-05/engineered-memory-test-v5/summary.json): does not pass. K3 selected in development (margins K1 15.2, K2 17.8, K3 79.1). Fresh 150 positions: full−none +13.8/+11.3/+16.1 (bounds 6.3/3.7/7.0), full−shuffled +14.0/+8.6/+19.4 (bounds 4.9/−0.7/9.2), full−quarter +3.7/+2.7/+7.8 (bounds all <0), retention 749/749. Secondary raw-pc 30.4/23.5/28.7, random-pc 21.8/17.7/15.0.
+
+Review documentation/design/neural-learning/memory-v6-proposal-2026-11-05.md: a replication on ~570 never-used positions from new training-bucket games ranked 301-600 (python actions/fetch_restart_game_pgns.py selection), same memory and gate with rescaled margins. Check: is this free of outcome-steering given it was written after v5 results? Is reusing the v5 gate (incl. full−quarter) right, or should the learning-curve test be redefined (and if so, is any redefinition now HARKing)? Data disjointness, board-repeat rule, and the build plan (reuse v5 worker; openRows with extra cache dirs; auditor extension). 
+
+Output: APPROVE / APPROVE WITH REQUIRED CHANGES (numbered, BUILD or LAUNCH, exact fix) / REJECT. Say whether building may start now. Keep it to the items that matter.

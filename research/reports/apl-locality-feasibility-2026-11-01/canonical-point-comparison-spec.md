@@ -1,0 +1,9 @@
+# Resolve the lite point against a fixed canonical endpoint sample
+
+2026-11-01, before coordinate matching. Data quality analysis only; not a learning, confirmatory or mechanism-selection experiment. The fixed first canonical batch was fetched before any pair/coordinate match. It has 65,536 records, including 196 APL-involving records. Do not select another batch based on its results.
+
+For every record whose ordered pair belongs to the complete retained KC/APL inventory, compare the lite-export point with three fixed definitions: canonical presynaptic point, postsynaptic point and component-wise midpoint. Preserve every canonical ID, pair, endpoint, score, all match labels, and matching source-row IDs. Include ambiguous/absent matches and all directions; do not infer full canonical coverage or exclude inconvenient cases. A midpoint match can identify a center proxy within this finite sample, not the exact export script or every contact's APL-side location.
+
+Measure the displacement from each endpoint and the midpoint in canonical nanometres. Distinguish source/export correspondence from skeleton attachment and locality physiology. Any later midpoint-based local model remains an explicitly approximate condition, with attachment/branch uncertainty and sensitivity measured before interpretation; it cannot be called exact APL-side geometry.
+
+Require complete/hash-matching v3 count reconciliation, its CSV, and the prior canonical probe/sample. Stream the subset CSV, preserve 64-bit roots as strings and source rows, use installed PyArrow only for the local sample. No network/graph/plasticity/final-family access. Bound wall time to60s,RSS2048MiB,free256MiB;fresh output,source pins and atomic results. A self-check covers endpoint/midpoint arithmetic and distinct matching labels.

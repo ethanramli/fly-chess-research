@@ -1,0 +1,11 @@
+You are the same very strict peer reviewer of the FlyChess memory experiments (methodology, science, code heavily). Repository: C:/Users/ethan/Documents/fly-chess-research. Read files yourself; do not edit anything; do not run experiments.
+
+New results since your last review:
+1. Memory v6 (v6-r4, resumed) PASSES its frozen gate in all seeds (report: research/reports/engineered-memory-test-v6-2026-11-06/README.md); audit queued.
+2. Memory v7 (v7-r2, resumed after a Windows shutdown; you approved the resume) DOES NOT PASS: 6102 and 6103 pass, 6101 fails (report: research/reports/engineered-memory-test-v7-2026-11-06/README.md; summary in runs/engineered-memory-test-2026-11-05/engineered-memory-test-v7-r2/summary.json). The independent v7 audit is running now.
+
+Please review the new design: documentation/design/neural-learning/memory-v8-proposal-2026-11-07.md (rev 1). Also read the memory goal (documentation/design/research-goals/memory-goal-2026-11-04.md), the v7 proposal and runner/worker/auditor (.codebase/scripts/neural-learning/run-engineered-memory-test-v7.mjs, memory-v7-worker.mjs, audit-engineered-memory-test-v7.mjs) and the v7 task module (.codebase/src/neural-learning/engineered-memory-task-v7.mjs), to judge whether the v7 worker can really be reused unchanged and whether the build contract is complete.
+
+Be strict about: (a) the diagnosis (is "too little capture experience" supported, or are there other explanations, e.g. key quality, k, quiet neighbours, test-set difficulty, seed 6101 specifics?); (b) whether the capture-only ledger is a fair, non-leaking curriculum (selection by move type and certificate status); (c) the confound of dropping quiet entries; (d) whether a full > quarter result would be meaningful when quarter is a prefix of a seeded shuffle; (e) gate and multiplicity (this is the 8th version; garden of forking paths; outcome-informed); (f) the build contract (anything missing for the runner, auditor, data provenance, the exclusion set, the worker reuse); (g) answer the 3 questions in section 7.
+
+Answer: numbered required changes, numbered optional suggestions, then one line: "APPROVE", "APPROVE WITH REQUIRED CHANGES (building allowed)", or "REJECT". Under 900 words.

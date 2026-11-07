@@ -164,14 +164,30 @@ class ActionTests(unittest.TestCase):
         (self.root / "protocol.json").write_text('{}')
         self.assertIn("pin mismatch", str(actions.plan(self.loaded, "train", self.empty)["blockers"]))
 
+    def test_check_label_does_not_skip_safety_checks_for_brain_model_commands(self):
+        # Peer review 2026-11-02: a memory-changing comparison labeled "check" skipped the pause and process checks.
+        self.config["jobs"]["compare"] = {"role": "check", "argv": [
+            "node", "--max-old-space-size=256", ".codebase/scripts/neural-learning/compare.mjs", "--cpu-duty", "0.5"]}
+        self.save()
+        busy = {"freeMiB": 0, "processes": [{"pid": 123, "name": "node.exe", "command": "node .codebase/scripts/run.mjs"}]}
+        blockers = actions.plan(self.loaded, "compare", busy)["blockers"]
+        self.assertTrue(any("research paused" in b for b in blockers))
+        self.assertTrue(any("less than 256 MiB" in b for b in blockers))
+        self.assertTrue(any("PID123" in b for b in blockers))
+        self.assertTrue(actions.plan(self.loaded, "check", busy)["ready"])  # a plain check still runs while paused
+
     def test_required_pacing_and_partial_checkpoint(self):
         self.config["paused"] = False
         self.config["jobs"]["train"]["argv"][-1] = "1.0"
         self.save()
         self.assertIn("required heap/duty flags", str(actions.plan(self.loaded, "train", self.empty)["blockers"]))
-        self.config["jobs"]["train"]["argv"][-1] = "0.75"
+        for duty in ("0.75", "1"):
+            self.config["jobs"]["train"]["argv"][-1] = duty
+            self.save()
+            self.assertNotIn("required heap/duty flags", str(actions.plan(self.loaded, "train", self.empty)["blockers"]))
+        self.config["jobs"]["train"]["argv"][-1] = "0.9"
         self.save()
-        self.assertNotIn("required heap/duty flags", str(actions.plan(self.loaded, "train", self.empty)["blockers"]))
+        self.assertIn("required heap/duty flags", str(actions.plan(self.loaded, "train", self.empty)["blockers"]))
         with self.assertRaisesRegex(ValueError, "Partial"):
             actions.checkpoint(self.root / "checkpoint-123.json.gz.partial")
 

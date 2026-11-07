@@ -1,0 +1,5058 @@
+
+> test
+> node --test --test-concurrency=1 .codebase/tests/runtime/*.test.mjs .codebase/tests/supervised-baselines/*.test.mjs .codebase/tests/neural-learning/*.test.mjs .codebase/tests/chess-input/*.test.mjs .codebase/tests/puzzle-learning/*.test.mjs .codebase/tests/search-and-feedback/*.test.mjs .codebase/tests/evaluation-and-performance/*.test.mjs
+
+TAP version 13
+# Subtest: all-legal C01 input uses the same geometry and current for captures while declaring a distinct identity
+ok 1 - all-legal C01 input uses the same geometry and current for captures while declaring a distinct identity
+  ---
+  duration_ms: 89.5623
+  type: 'test'
+  ...
+# Subtest: every quiet or capturing legal action is public-only, deterministic, bounded and leaves board/history unchanged
+ok 2 - every quiet or capturing legal action is public-only, deterministic, bounded and leaves board/history unchanged
+  ---
+  duration_ms: 1144.1912
+  type: 'test'
+  ...
+# Subtest: bound-ray cue exposes slider and intervening-piece geometry without an outcome label
+ok 3 - bound-ray cue exposes slider and intervening-piece geometry without an outcome label
+  ---
+  duration_ms: 181.2887
+  type: 'test'
+  ...
+# Subtest: bound-ray cue is deterministic, bounded, and rejects task-answer inputs
+ok 4 - bound-ray cue is deterministic, bounded, and rejects task-answer inputs
+  ---
+  duration_ms: 140.3677
+  type: 'test'
+  ...
+# Subtest: fixed chess cues preserve history, use only the mapped pool, and report bounded collisions/drops
+ok 5 - fixed chess cues preserve history, use only the mapped pool, and report bounded collisions/drops
+  ---
+  duration_ms: 263.967
+  type: 'test'
+  ...
+# Subtest: same board-action has the same cue independent of puzzle ID; privileged labels and illegal actions are rejected
+ok 6 - same board-action has the same cue independent of puzzle ID; privileged labels and illegal actions are rejected
+  ---
+  duration_ms: 115.0123
+  type: 'test'
+  ...
+# Subtest: history, en passant, castling and promotion context are public inputs rather than future consequences
+ok 7 - history, en passant, castling and promotion context are public inputs rather than future consequences
+  ---
+  duration_ms: 83.458
+  type: 'test'
+  ...
+# Subtest: oversized histories fail rather than silently dropping context
+ok 8 - oversized histories fail rather than silently dropping context
+  ---
+  duration_ms: 12.0072
+  type: 'test'
+  ...
+# Subtest: factorial inputs preserve exact original baseline and physical dose across every legal candidate
+ok 9 - factorial inputs preserve exact original baseline and physical dose across every legal candidate
+  ---
+  duration_ms: 1946.3929
+  type: 'test'
+  ...
+# Subtest: candidate conjunctions retain relational symmetries and counterfactual context without teacher labels
+ok 10 - candidate conjunctions retain relational symmetries and counterfactual context without teacher labels
+  ---
+  duration_ms: 106.8116
+  type: 'test'
+  ...
+# Subtest: start position, e2e4 as White: marks, own and opponent ink, empty squares absent
+ok 11 - start position, e2e4 as White: marks, own and opponent ink, empty squares absent
+  ---
+  duration_ms: 15.9558
+  type: 'test'
+  ...
+# Subtest: colour mirror: a position and its true mirror (ranks reversed, colours swapped) give the same stimulation
+ok 12 - colour mirror: a position and its true mirror (ranks reversed, colours swapped) give the same stimulation
+  ---
+  duration_ms: 48.1138
+  type: 'test'
+  ...
+# Subtest: capture, en passant, promotion and castling
+ok 13 - capture, en passant, promotion and castling
+  ---
+  duration_ms: 36.1363
+  type: 'test'
+  ...
+# Subtest: illegal action throws; encode is deterministic; result keys are exact
+ok 14 - illegal action throws; encode is deterministic; result keys are exact
+  ---
+  duration_ms: 30.0123
+  type: 'test'
+  ...
+# Subtest: identity changes with one picture digit or one retina_uv value
+ok 15 - identity changes with one picture digit or one retina_uv value
+  ---
+  duration_ms: 18.5375
+  type: 'test'
+  ...
+# Subtest: plumbing: the stimulation raises the target neuron in SparseTrainer
+ok 16 - plumbing: the stimulation raises the target neuron in SparseTrainer
+  ---
+  duration_ms: 11.7806
+  type: 'test'
+  ...
+# Subtest: real retina: 5,543 photoreceptors, every square separated, start position bounded
+ok 17 - real retina: 5,543 photoreceptors, every square separated, start position bounded
+  ---
+  duration_ms: 33.6634
+  type: 'test'
+  ...
+# worst separation 0.05271068112789721
+# Subtest: review example: v1 gives a1a4 the same input with or without the pawn; v2 shows the pawn
+ok 18 - review example: v1 gives a1a4 the same input with or without the pawn; v2 shows the pawn
+  ---
+  duration_ms: 59.6707
+  type: 'test'
+  ...
+# Subtest: non-capture moves: v2 input equals v1 input exactly
+ok 19 - non-capture moves: v2 input equals v1 input exactly
+  ---
+  duration_ms: 38.5986
+  type: 'test'
+  ...
+# Subtest: en passant: the passed pawn is drawn on d5, not on the landing square d6
+ok 20 - en passant: the passed pawn is drawn on d5, not on the landing square d6
+  ---
+  duration_ms: 8.7981
+  type: 'test'
+  ...
+# Subtest: Black capture: a1 is seat 56 for Black, the rook is the mover and the knight is dim
+ok 21 - Black capture: a1 is seat 56 for Black, the rook is the mover and the knight is dim
+  ---
+  duration_ms: 11.6222
+  type: 'test'
+  ...
+# Subtest: inputCollisions: v1 merges the review pair with different answers; v2 does not; same answers never collide
+ok 22 - inputCollisions: v1 merges the review pair with different answers; v2 does not; same answers never collide
+  ---
+  duration_ms: 32.0956
+  type: 'test'
+  ...
+# Subtest: identity: deterministic, different from v1, duplicate photoreceptor indices throw
+ok 23 - identity: deterministic, different from v1, duplicate photoreceptor indices throw
+  ---
+  duration_ms: 8.7742
+  type: 'test'
+  ...
+# Subtest: real retina: the review pair is one input under v1 and two inputs under v2
+ok 24 - real retina: the review pair is one input under v1 and two inputs under v2
+  ---
+  duration_ms: 59.2934
+  type: 'test'
+  ...
+# Subtest: v2 action cues are the v1 action cues
+ok 25 - v2 action cues are the v1 action cues
+  ---
+  duration_ms: 42.8982
+  type: 'test'
+  ...
+# Subtest: child cue after a move is the move cue from the mover side, minus the captured piece
+ok 26 - child cue after a move is the move cue from the mover side, minus the captured piece
+  ---
+  duration_ms: 59.9674
+  type: 'test'
+  ...
+# Subtest: positions without public history keep the v1 own-king cue from the side to move
+ok 27 - positions without public history keep the v1 own-king cue from the side to move
+  ---
+  duration_ms: 3.3754
+  type: 'test'
+  ...
+# Subtest: v3 action tokens are the v2 relative pieces and vector conjoined with the action tag
+ok 28 - v3 action tokens are the v2 relative pieces and vector conjoined with the action tag
+  ---
+  duration_ms: 32.362
+  type: 'test'
+  ...
+# Subtest: the same relative piece under different actions gives different tokens
+ok 29 - the same relative piece under different actions gives different tokens
+  ---
+  duration_ms: 11.8434
+  type: 'test'
+  ...
+# Subtest: child cue after a move is the move cue from the mover side, minus the captured piece
+ok 30 - child cue after a move is the move cue from the mover side, minus the captured piece
+  ---
+  duration_ms: 40.2718
+  type: 'test'
+  ...
+# Subtest: positions without public history keep the v2 own-king cue
+ok 31 - positions without public history keep the v2 own-king cue
+  ---
+  duration_ms: 6.5552
+  type: 'test'
+  ...
+# Subtest: moves on one board receive mostly distinct cells in both plastic compartments
+ok 32 - moves on one board receive mostly distinct cells in both plastic compartments
+  ---
+  duration_ms: 55.3395
+  type: 'test'
+  ...
+# Subtest: the same local relation on another board reuses the same tokens
+ok 33 - the same local relation on another board reuses the same tokens
+  ---
+  duration_ms: 11.1779
+  type: 'test'
+  ...
+# Subtest: position cues anchor on the last public move and reject labels or illegal actions
+ok 34 - position cues anchor on the last public move and reject labels or illegal actions
+  ---
+  duration_ms: 17.6874
+  type: 'test'
+  ...
+# Subtest: tokens are capture or quiet and the enemy attackers of the landing square after the move
+ok 35 - tokens are capture or quiet and the enemy attackers of the landing square after the move
+  ---
+  duration_ms: 76.1186
+  type: 'test'
+  ...
+# Subtest: an attacker on a clear line with its own king is marked kline
+ok 36 - an attacker on a clear line with its own king is marked kline
+  ---
+  duration_ms: 122.9594
+  type: 'test'
+  ...
+# Subtest: the child cue after a move repeats the move cue from the mover side
+ok 37 - the child cue after a move repeats the move cue from the mover side
+  ---
+  duration_ms: 74.7325
+  type: 'test'
+  ...
+# Subtest: each token drives cellsPerToken hashed cells in every pool within the cell budget
+ok 38 - each token drives cellsPerToken hashed cells in every pool within the cell budget
+  ---
+  duration_ms: 31.1251
+  type: 'test'
+  ...
+# Subtest: rejects teacher labels, illegal actions, positions without a public move and bad budgets
+ok 39 - rejects teacher labels, illegal actions, positions without a public move and bad budgets
+  ---
+  duration_ms: 2.8264
+  type: 'test'
+  ...
+# Subtest: attack tokens are conjoined with the capture or quiet tag
+ok 40 - attack tokens are conjoined with the capture or quiet tag
+  ---
+  duration_ms: 70.1844
+  type: 'test'
+  ...
+# Subtest: a pin by the mover's slider behind the attacker is marked pin, created or broken by the move
+ok 41 - a pin by the mover's slider behind the attacker is marked pin, created or broken by the move
+  ---
+  duration_ms: 223.4744
+  type: 'test'
+  ...
+# Subtest: v2 carries the v1 facts: removing the tag prefix and folding pin into kline gives the v1 tokens
+ok 42 - v2 carries the v1 facts: removing the tag prefix and folding pin into kline gives the v1 tokens
+  ---
+  duration_ms: 2065.8629
+  type: 'test'
+  ...
+# Subtest: the child cue after a move repeats the move cue from the mover side
+ok 43 - the child cue after a move repeats the move cue from the mover side
+  ---
+  duration_ms: 94.3803
+  type: 'test'
+  ...
+# Subtest: each token drives cellsPerToken hashed cells in every pool within the cell budget
+ok 44 - each token drives cellsPerToken hashed cells in every pool within the cell budget
+  ---
+  duration_ms: 29.7509
+  type: 'test'
+  ...
+# Subtest: rejects teacher labels, illegal actions, positions without a public move and bad budgets
+ok 45 - rejects teacher labels, illegal actions, positions without a public move and bad budgets
+  ---
+  duration_ms: 3.2629
+  type: 'test'
+  ...
+# Subtest: folding back the v3 tokens (removing chk:, ekz:, okz:) gives exactly the v2 tokens
+ok 46 - folding back the v3 tokens (removing chk:, ekz:, okz:) gives exactly the v2 tokens
+  ---
+  duration_ms: 359.4286
+  type: 'test'
+  ...
+# Subtest: the v2 part of the stimulation equals v2 exactly (index and current) for many legal moves
+ok 47 - the v2 part of the stimulation equals v2 exactly (index and current) for many legal moves
+  ---
+  duration_ms: 7027.7554
+  type: 'test'
+  ...
+# Subtest: extraMaxCells 0 gives stimulation deep-equal to v2
+ok 48 - extraMaxCells 0 gives stimulation deep-equal to v2
+  ---
+  duration_ms: 119.9099
+  type: 'test'
+  ...
+# Subtest: extra cells never overlap v2 cells; total and extra budgets hold
+ok 49 - extra cells never overlap v2 cells; total and extra budgets hold
+  ---
+  duration_ms: 4937.3685
+  type: 'test'
+  ...
+# Subtest: the check token is chk:yes for a checking move and chk:no for a quiet non-checking move
+ok 50 - the check token is chk:yes for a checking move and chk:no for a quiet non-checking move
+  ---
+  duration_ms: 116.3257
+  type: 'test'
+  ...
+# Subtest: enemy and own king-zone tokens on the corner black king and the white king
+ok 51 - enemy and own king-zone tokens on the corner black king and the white king
+  ---
+  duration_ms: 50.0431
+  type: 'test'
+  ...
+# Subtest: king-zone tokens use the mover orientation for a Black mover (dy negated)
+ok 52 - king-zone tokens use the mover orientation for a Black mover (dy negated)
+  ---
+  duration_ms: 19.3896
+  type: 'test'
+  ...
+# Subtest: king-zone cells use kingZoneCellsPerToken and the extra budget stays bounded
+ok 53 - king-zone cells use kingZoneCellsPerToken and the extra budget stays bounded
+  ---
+  duration_ms: 36.6639
+  type: 'test'
+  ...
+# Subtest: policy: no token states a mate or escape verdict or counts safe squares
+ok 54 - policy: no token states a mate or escape verdict or counts safe squares
+  ---
+  duration_ms: 84.9385
+  type: 'test'
+  ...
+# Subtest: budget: v2 part keeps v2 currents, extra part keeps its own currents, both within bounds
+ok 55 - budget: v2 part keeps v2 currents, extra part keeps its own currents, both within bounds
+  ---
+  duration_ms: 76.69
+  type: 'test'
+  ...
+# Subtest: the mover-perspective cue after a move equals the action cue
+ok 56 - the mover-perspective cue after a move equals the action cue
+  ---
+  duration_ms: 46.0453
+  type: 'test'
+  ...
+# Subtest: frames with an unsupported objective or plies throw
+ok 57 - frames with an unsupported objective or plies throw
+  ---
+  duration_ms: 71.9062
+  type: 'test'
+  ...
+# Subtest: Stage 2 rehearsal preserves the Stage 1 input projection and accepts bounded mate tasks
+ok 58 - Stage 2 rehearsal preserves the Stage 1 input projection and accepts bounded mate tasks
+  ---
+  duration_ms: 33.4509
+  type: 'test'
+  ...
+# Subtest: terminal endpoint encodes without a dummy action; teacher labels and mismatched history rejected
+ok 59 - terminal endpoint encodes without a dummy action; teacher labels and mismatched history rejected
+  ---
+  duration_ms: 7.391
+  type: 'test'
+  ...
+# Subtest: Stage 2 encoder accepts its two declared mate task contracts and rejects other horizons
+ok 60 - Stage 2 encoder accepts its two declared mate task contracts and rejects other horizons
+  ---
+  duration_ms: 11.9311
+  type: 'test'
+  ...
+# Subtest: actual checked failure and survival endpoints differ at both feature and projected-cue levels
+ok 61 - actual checked failure and survival endpoints differ at both feature and projected-cue levels
+  ---
+  duration_ms: 117.3537
+  type: 'test'
+  ...
+# Subtest: V2 canonicalizes actor-relative castling rights under colour/rank exchange
+ok 62 - V2 canonicalizes actor-relative castling rights under colour/rank exchange
+  ---
+  duration_ms: 74.6045
+  type: 'test'
+  ...
+# Subtest: fixed cell cap matches physical cue count/amplitude for both encoders on every training legal move
+ok 63 - fixed cell cap matches physical cue count/amplitude for both encoders on every training legal move
+  ---
+  duration_ms: 507.5048
+  type: 'test'
+  ...
+# Subtest: V3 adds the public capture-retention task while preserving forced-mate cue behavior
+ok 64 - V3 adds the public capture-retention task while preserving forced-mate cue behavior
+  ---
+  duration_ms: 28.2006
+  type: 'test'
+  ...
+# Subtest: V3 can encode both legal candidate captures without exposing their checked outcome
+ok 65 - V3 can encode both legal candidate captures without exposing their checked outcome
+  ---
+  duration_ms: 14.525
+  type: 'test'
+  ...
+# Subtest: relative input preserves a file-reflected mating net and colour/rank exchange without outcome labels
+ok 66 - relative input preserves a file-reflected mating net and colour/rank exchange without outcome labels
+  ---
+  duration_ms: 55.1994
+  type: 'test'
+  ...
+# Subtest: counterfactual king geometry and different candidates remain visible under the invariances
+ok 67 - counterfactual king geometry and different candidates remain visible under the invariances
+  ---
+  duration_ms: 51.2537
+  type: 'test'
+  ...
+# Subtest: relational encoding preserves draw context, special moves, bounds and teacher isolation
+ok 68 - relational encoding preserves draw context, special moves, bounds and teacher isolation
+  ---
+  duration_ms: 45.5542
+  type: 'test'
+  ...
+# Subtest: Glicko published example and rating uncertainty
+ok 69 - Glicko published example and rating uncertainty
+  ---
+  duration_ms: 2.7009
+  type: 'test'
+  ...
+# Subtest: Outcome perspective, legal history and interruption stay distinct
+ok 70 - Outcome perspective, legal history and interruption stay distinct
+  ---
+  duration_ms: 24.6602
+  type: 'test'
+  ...
+# Subtest: Adaptive opponents and honest one-sided report
+ok 71 - Adaptive opponents and honest one-sided report
+  ---
+  duration_ms: 1.0605
+  type: 'test'
+  ...
+# Subtest: UCI handshake, limits, complete history and abrupt process failure
+ok 72 - UCI handshake, limits, complete history and abrupt process failure
+  ---
+  duration_ms: 136.2118
+  type: 'test'
+  ...
+# Subtest: Real Stockfish complete runner, prefix recovery, audit and tamper rejection (synthetic player)
+ok 73 - Real Stockfish complete runner, prefix recovery, audit and tamper rejection (synthetic player)
+  ---
+  duration_ms: 13226.9512
+  type: 'test'
+  ...
+# Subtest: alpha1 depresses only with PAM11 and alpha3 only with PPL106, each on active KCs; wiring stays fixed
+ok 74 - alpha1 depresses only with PAM11 and alpha3 only with PPL106, each on active KCs; wiring stays fixed
+  ---
+  duration_ms: 24.3293
+  type: 'test'
+  ...
+# Subtest: without PPL106 activity the restrained and alpha1 parts match the pinned AlphaOneMemory exactly
+ok 75 - without PPL106 activity the restrained and alpha1 parts match the pinned AlphaOneMemory exactly
+  ---
+  duration_ms: 10.8552
+  type: 'test'
+  ...
+# Subtest: an alpha3 trace is not recovered by later PPL106 pulses on other KCs; repeats reach the floor
+ok 76 - an alpha3 trace is not recovered by later PPL106 pulses on other KCs; repeats reach the floor
+  ---
+  duration_ms: 3.7874
+  type: 'test'
+  ...
+# Subtest: snapshot restore reproduces the next update; corrupt or unstable input changes nothing
+ok 77 - snapshot restore reproduces the next update; corrupt or unstable input changes nothing
+  ---
+  duration_ms: 10.8742
+  type: 'test'
+  ...
+# Subtest: alpha3 mapping keeps same-side alpha/beta KC inputs to MBON14 with PPL106; combine rejects bad input
+ok 78 - alpha3 mapping keeps same-side alpha/beta KC inputs to MBON14 with PPL106; combine rejects bad input
+  ---
+  duration_ms: 83.3832
+  type: 'test'
+  ...
+# Subtest: alpha-lobe readout subtracts MBON07 and adds MBON14
+ok 79 - alpha-lobe readout subtracts MBON07 and adds MBON14
+  ---
+  duration_ms: 3.4709
+  type: 'test'
+  ...
+# Subtest: restrained part is exactly ReversalMemory on the restrained groups; alpha1 depresses only active KCs with PAM11
+ok 80 - restrained part is exactly ReversalMemory on the restrained groups; alpha1 depresses only active KCs with PAM11
+  ---
+  duration_ms: 197.7471
+  type: 'test'
+  ...
+# Subtest: later PAM11 pulses on other KCs leave an alpha1 trace intact while the restrained trace recovers
+ok 81 - later PAM11 pulses on other KCs leave an alpha1 trace intact while the restrained trace recovers
+  ---
+  duration_ms: 8.3727
+  type: 'test'
+  ...
+# Subtest: without PAM11 activity alpha1 does not change, even when PAM02 teaches
+ok 82 - without PAM11 activity alpha1 does not change, even when PAM02 teaches
+  ---
+  duration_ms: 8.5965
+  type: 'test'
+  ...
+# Subtest: snapshot restore reproduces the next update; corrupt or unstable input changes nothing
+ok 83 - snapshot restore reproduces the next update; corrupt or unstable input changes nothing
+  ---
+  duration_ms: 17.6673
+  type: 'test'
+  ...
+# Subtest: mapping keeps same-side alpha/beta KC inputs to MBON07 with PAM11; combine rejects duplicates
+ok 84 - mapping keeps same-side alpha/beta KC inputs to MBON07 with PAM11; combine rejects duplicates
+  ---
+  duration_ms: 276.1813
+  type: 'test'
+  ...
+# Subtest: alpha1 readout subtracts the reward-depressed MBON07 drive
+ok 85 - alpha1 readout subtracts the reward-depressed MBON07 drive
+  ---
+  duration_ms: 2.7226
+  type: 'test'
+  ...
+# Subtest: computational tree filter agrees with independent path enumeration and source superposition
+ok 86 - computational tree filter agrees with independent path enumeration and source superposition
+  ---
+  duration_ms: 13.4903
+  type: 'test'
+  ...
+# Subtest: choice depends on response and exploration, independent of teacher target
+ok 87 - choice depends on response and exploration, independent of teacher target
+  ---
+  duration_ms: 6.8986
+  type: 'test'
+  ...
+# Subtest: cue draws are reproducible and disjoint; shuffled feedback preserves pulse count
+ok 88 - cue draws are reproducible and disjoint; shuffled feedback preserves pulse count
+  ---
+  duration_ms: 10.9381
+  type: 'test'
+  ...
+# Subtest: exact sign test matches independent binomial probabilities and reports ties
+ok 89 - exact sign test matches independent binomial probabilities and reports ties
+  ---
+  duration_ms: 2.2475
+  type: 'test'
+  ...
+# Subtest: balanced sampling visits both cues without a teacher label, then restores free choice
+ok 90 - balanced sampling visits both cues without a teacher label, then restores free choice
+  ---
+  duration_ms: 1.1552
+  type: 'test'
+  ...
+# Subtest: acceptance rejects apparent learning when shuffled feedback performs equally well
+ok 91 - acceptance rejects apparent learning when shuffled feedback performs equally well
+  ---
+  duration_ms: 15.0548
+  type: 'test'
+  ...
+# Subtest: V2 shuffled feedback has zero cue-valence imbalance and preserves both population counts
+ok 92 - V2 shuffled feedback has zero cue-valence imbalance and preserves both population counts
+  ---
+  duration_ms: 43.185
+  type: 'test'
+  ...
+# Subtest: V2 leaves informative, punishment-only, absent and disabled exposures unchanged
+ok 93 - V2 leaves informative, punishment-only, absent and disabled exposures unchanged
+  ---
+  duration_ms: 3.7634
+  type: 'test'
+  ...
+# Subtest: tests leave rule.snapshot() unchanged
+ok 94 - tests leave rule.snapshot() unchanged
+  ---
+  duration_ms: 1010.6355
+  type: 'test'
+  ...
+# Subtest: same seed gives an identical record
+ok 95 - same seed gives an identical record
+  ---
+  duration_ms: 614.6813
+  type: 'test'
+  ...
+# Subtest: vGood minus vBad equals the margin at every item and test
+ok 96 - vGood minus vBad equals the margin at every item and test
+  ---
+  duration_ms: 225.9013
+  type: 'test'
+  ...
+# Subtest: jitter 0 leaves gains identical across the delay, and jitter 0.1 does not
+ok 97 - jitter 0 leaves gains identical across the delay, and jitter 0.1 does not
+  ---
+  duration_ms: 616.9735
+  type: 'test'
+  ...
+# Subtest: reversal flips item 0 good image and teaches on item 0 only
+ok 98 - reversal flips item 0 good image and teaches on item 0 only
+  ---
+  duration_ms: 536.6909
+  type: 'test'
+  ...
+# Subtest: every eighth trial is unknown and sends no pulse
+ok 99 - every eighth trial is unknown and sends no pulse
+  ---
+  duration_ms: 75.7494
+  type: 'test'
+  ...
+# Subtest: informative trial frames match v1 at the same seed and size
+ok 100 - informative trial frames match v1 at the same seed and size
+  ---
+  duration_ms: 308.961
+  type: 'test'
+  ...
+# Subtest: summary smoke: one seed, small sizes, all three parts
+ok 101 - summary smoke: one seed, small sizes, all three parts
+  ---
+  duration_ms: 1186.5237
+  type: 'test'
+  ...
+# Subtest: same seed gives an identical record
+ok 102 - same seed gives an identical record
+  ---
+  duration_ms: 1275.3099
+  type: 'test'
+  ...
+# Subtest: pair focal sets are disjoint, 20 cells each, with h in range on focal cells only
+ok 103 - pair focal sets are disjoint, 20 cells each, with h in range on focal cells only
+  ---
+  duration_ms: 2.0742
+  type: 'test'
+  ...
+# Subtest: every eighth trial is unknown and sends no pulse
+ok 104 - every eighth trial is unknown and sends no pulse
+  ---
+  duration_ms: 543.0382
+  type: 'test'
+  ...
+# Subtest: value reads leave rule state unchanged
+ok 105 - value reads leave rule state unchanged
+  ---
+  duration_ms: 4.3553
+  type: 'test'
+  ...
+# Subtest: disabled sends no pulses and leaves the state hash unchanged
+ok 106 - disabled sends no pulses and leaves the state hash unchanged
+  ---
+  duration_ms: 13.9449
+  type: 'test'
+  ...
+# Subtest: absent with noise off leaves gains unchanged (no DAN pulse, no delay noise)
+ok 107 - absent with noise off leaves gains unchanged (no DAN pulse, no delay noise)
+  ---
+  duration_ms: 83.0081
+  type: 'test'
+  ...
+# Subtest: delay noise changes nothing before the delay stage
+ok 108 - delay noise changes nothing before the delay stage
+  ---
+  duration_ms: 601.5451
+  type: 'test'
+  ...
+# Subtest: item 0 has its good image flipped in the reversal test only
+ok 109 - item 0 has its good image flipped in the reversal test only
+  ---
+  duration_ms: 515.2627
+  type: 'test'
+  ...
+# Subtest: runCapacitySeed returns the four arms only when controls are requested
+ok 110 - runCapacitySeed returns the four arms only when controls are requested
+  ---
+  duration_ms: 2329.9794
+  type: 'test'
+  ...
+# Subtest: evaluateCapacity passes hand-made records that meet every mark
+ok 111 - evaluateCapacity passes hand-made records that meet every mark
+  ---
+  duration_ms: 9.2635
+  type: 'test'
+  ...
+# Subtest: evaluateCapacity fails C1margin when that mark is violated
+ok 112 - evaluateCapacity fails C1margin when that mark is violated
+  ---
+  duration_ms: 6.2755
+  type: 'test'
+  ...
+# Subtest: evaluateCapacity fails C1greedy when that mark is violated
+ok 113 - evaluateCapacity fails C1greedy when that mark is violated
+  ---
+  duration_ms: 3.2052
+  type: 'test'
+  ...
+# Subtest: evaluateCapacity fails C2 when that mark is violated
+ok 114 - evaluateCapacity fails C2 when that mark is violated
+  ---
+  duration_ms: 5.7917
+  type: 'test'
+  ...
+# Subtest: evaluateCapacity fails C3 when that mark is violated
+ok 115 - evaluateCapacity fails C3 when that mark is violated
+  ---
+  duration_ms: 5.0209
+  type: 'test'
+  ...
+# Subtest: evaluateCapacity fails C4share when that mark is violated
+ok 116 - evaluateCapacity fails C4share when that mark is violated
+  ---
+  duration_ms: 3.2311
+  type: 'test'
+  ...
+# Subtest: evaluateCapacity fails C4ratio when that mark is violated
+ok 117 - evaluateCapacity fails C4ratio when that mark is violated
+  ---
+  duration_ms: 6.272
+  type: 'test'
+  ...
+# Subtest: evaluateCapacity fails C5 when that mark is violated
+ok 118 - evaluateCapacity fails C5 when that mark is violated
+  ---
+  duration_ms: 4.1028
+  type: 'test'
+  ...
+# Subtest: evaluateCapacity fails C6 when that mark is violated
+ok 119 - evaluateCapacity fails C6 when that mark is violated
+  ---
+  duration_ms: 4.6035
+  type: 'test'
+  ...
+# Subtest: evaluateCapacity fails C7absent when that mark is violated
+ok 120 - evaluateCapacity fails C7absent when that mark is violated
+  ---
+  duration_ms: 3.2441
+  type: 'test'
+  ...
+# Subtest: evaluateCapacity fails C7share when that mark is violated
+ok 121 - evaluateCapacity fails C7share when that mark is violated
+  ---
+  duration_ms: 3.3699
+  type: 'test'
+  ...
+# Subtest: evaluateCapacity fails C7gap when that mark is violated
+ok 122 - evaluateCapacity fails C7gap when that mark is violated
+  ---
+  duration_ms: 7.1514
+  type: 'test'
+  ...
+# Subtest: consequence readout removes unconditioned offsets and preserves learned ordering
+ok 123 - consequence readout removes unconditioned offsets and preserves learned ordering
+  ---
+  duration_ms: 3.0449
+  type: 'test'
+  ...
+# Subtest: consequence readout rejects invalid references and scaling without mutating inputs
+ok 124 - consequence readout rejects invalid references and scaling without mutating inputs
+  ---
+  duration_ms: 2.7932
+  type: 'test'
+  ...
+# Subtest: G0 independently rechecks contingencies; changed labels, phases, cues and exhausted proofs cannot teach
+ok 125 - G0 independently rechecks contingencies; changed labels, phases, cues and exhausted proofs cannot teach
+  ---
+  duration_ms: 98.3339
+  type: 'test'
+  ...
+# Subtest: G0 schedule matches 32/16/32 exposures and waveform classes per phase/action in every control
+ok 126 - G0 schedule matches 32/16/32 exposures and waveform classes per phase/action in every control
+  ---
+  duration_ms: 193.4299
+  type: 'test'
+  ...
+# Subtest: G0 rejects stale, incomplete and forged unaided rankings before neural delivery
+ok 127 - G0 rejects stale, incomplete and forged unaided rankings before neural delivery
+  ---
+  duration_ms: 31.3161
+  type: 'test'
+  ...
+# Subtest: G0 published pending frames resume exactly once, reject forged recovery and roll back failed frames
+ok 128 - G0 published pending frames resume exactly once, reject forged recovery and roll back failed frames
+  ---
+  duration_ms: 99.5944
+  type: 'test'
+  ...
+# Subtest: G0 disabled freezes every persistent component and absent removes external teaching only
+ok 129 - G0 disabled freezes every persistent component and absent removes external teaching only
+  ---
+  duration_ms: 57.4571
+  type: 'test'
+  ...
+# Subtest: delayed signal credits earlier active KC rather than endpoint KC; inactive depression can recover
+ok 130 - delayed signal credits earlier active KC rather than endpoint KC; inactive depression can recover
+  ---
+  duration_ms: 7.1947
+  type: 'test'
+  ...
+# Subtest: resumed root trace reproduces next update; zero reinforcement, bad checkpoint and NaN fail safely
+ok 131 - resumed root trace reproduces next update; zero reinforcement, bad checkpoint and NaN fail safely
+  ---
+  duration_ms: 6.3387
+  type: 'test'
+  ...
+# Subtest: positive rate produces onset depression and an opposite offset tail
+ok 132 - positive rate produces onset depression and an opposite offset tail
+  ---
+  duration_ms: 2.5112
+  type: 'test'
+  ...
+# Subtest: constant-rate interval partition and JSON continuation agree
+ok 133 - constant-rate interval partition and JSON continuation agree
+  ---
+  duration_ms: 6.073
+  type: 'test'
+  ...
+# Subtest: bounded nonnegative components and invalid input preserve caller state
+ok 134 - bounded nonnegative components and invalid input preserve caller state
+  ---
+  duration_ms: 1.8185
+  type: 'test'
+  ...
+# Subtest: dual interface stimulates only the selected identified population and preserves cue/mapping
+ok 135 - dual interface stimulates only the selected identified population and preserves cue/mapping
+  ---
+  duration_ms: 9.8139
+  type: 'test'
+  ...
+# Subtest: reversal swaps cue valence, both populations are phase-count matched, and controls preserve exposure
+ok 136 - reversal swaps cue valence, both populations are phase-count matched, and controls preserve exposure
+  ---
+  duration_ms: 2.9721
+  type: 'test'
+  ...
+# Subtest: identified channel activity changes the corresponding local memory and opposite preference directions in a numerical circuit
+ok 137 - identified channel activity changes the corresponding local memory and opposite preference directions in a numerical circuit
+  ---
+  duration_ms: 7.8991
+  type: 'test'
+  ...
+# Subtest: shared neurons do not imply shared episodic addresses; revision preserves unrelated entries
+ok 138 - shared neurons do not imply shared episodic addresses; revision preserves unrelated entries
+  ---
+  duration_ms: 6.1938
+  type: 'test'
+  ...
+# Subtest: unknown, duplicate, corrupt and stale events cannot partially alter memory
+ok 139 - unknown, duplicate, corrupt and stale events cannot partially alter memory
+  ---
+  duration_ms: 2.2892
+  type: 'test'
+  ...
+# Subtest: capacity eviction is explicit, and snapshot publication permits exactly-once resume
+ok 140 - capacity eviction is explicit, and snapshot publication permits exactly-once resume
+  ---
+  duration_ms: 3.332
+  type: 'test'
+  ...
+# Subtest: independent replay follows actual local observations and rejects altered evidence
+ok 141 - independent replay follows actual local observations and rejects altered evidence
+  ---
+  duration_ms: 293.4845
+  type: 'test'
+  ...
+# Subtest: phase recovery validates every prefix update and ignores only the unacknowledged NUL suffix
+ok 142 - phase recovery validates every prefix update and ignores only the unacknowledged NUL suffix
+  ---
+  duration_ms: 659.5315
+  type: 'test'
+  ...
+# Subtest: altered prefix state, wrong checkpoint and a missing complete phase are rejected
+ok 143 - altered prefix state, wrong checkpoint and a missing complete phase are rejected
+  ---
+  duration_ms: 771.4357
+  type: 'test'
+  ...
+# Subtest: the first resumed update exactly matches uninterrupted local state
+ok 144 - the first resumed update exactly matches uninterrupted local state
+  ---
+  duration_ms: 530.2785
+  type: 'test'
+  ...
+# Subtest: identical cues cannot support opposing margins, while disjoint cues can
+ok 145 - identical cues cannot support opposing margins, while disjoint cues can
+  ---
+  duration_ms: 4.7588
+  type: 'test'
+  ...
+# Subtest: common-offset sensitivity follows exact relative-response algebra
+ok 146 - common-offset sensitivity follows exact relative-response algebra
+  ---
+  duration_ms: 2.4605
+  type: 'test'
+  ...
+# Subtest: a common offset can reverse preference and the complete component is identified
+ok 147 - a common offset can reverse preference and the complete component is identified
+  ---
+  duration_ms: 13.535
+  type: 'test'
+  ...
+# Subtest: an active source run is rejected before output creation or graph access
+ok 148 - an active source run is rejected before output creation or graph access
+  ---
+  duration_ms: 303.0092
+  type: 'test'
+  ...
+# Subtest: activity categories partition every edge and preserve duplicated KC-to-different-MBON sites
+ok 149 - activity categories partition every edge and preserve duplicated KC-to-different-MBON sites
+  ---
+  duration_ms: 3.1282
+  type: 'test'
+  ...
+# Subtest: counterfactual replacement copies complete local tuples without changing the source states
+ok 150 - counterfactual replacement copies complete local tuples without changing the source states
+  ---
+  duration_ms: 12.4897
+  type: 'test'
+  ...
+# runEyeTestV2 fake run: 23074 ms
+# Subtest: fitLogistic classifies 20 separable points and shrinks to near zero at tiny C
+ok 151 - fitLogistic classifies 20 separable points and shrinks to near zero at tiny C
+  ---
+  duration_ms: 31.2327
+  type: 'test'
+  ...
+# Subtest: standardize uses training statistics only and maps SD-0 features to 0
+ok 152 - standardize uses training statistics only and maps SD-0 features to 0
+  ---
+  duration_ms: 0.6536
+  type: 'test'
+  ...
+# Subtest: runEyeTestV2 on a fake model: 576 passes, memory unchanged, 48 per-pair rows
+ok 153 - runEyeTestV2 on a fake model: 576 passes, memory unchanged, 48 per-pair rows
+  ---
+  duration_ms: 23078.3419
+  type: 'test'
+  ...
+# Subtest: runEyeTestV2 throws Memory changed when a gain change is not restored
+ok 154 - runEyeTestV2 throws Memory changed when a gain change is not restored
+  ---
+  duration_ms: 55784.4324
+  type: 'test'
+  ...
+# Subtest: gainSettings maps weight signs to reachable gains
+ok 155 - gainSettings maps weight signs to reachable gains
+  ---
+  duration_ms: 10.3906
+  type: 'test'
+  ...
+# Subtest: pairStrength is zero for equal objects and matches a hand-built case
+ok 156 - pairStrength is zero for equal objects and matches a hand-built case
+  ---
+  duration_ms: 2.0627
+  type: 'test'
+  ...
+# Subtest: strengthM averages within games first, then across games
+ok 157 - strengthM averages within games first, then across games
+  ---
+  duration_ms: 6.938
+  type: 'test'
+  ...
+# Subtest: strengthGate applies the 10% rule and reports failed measurements
+ok 158 - strengthGate applies the 10% rule and reports failed measurements
+  ---
+  duration_ms: 4.1465
+  type: 'test'
+  ...
+# Subtest: diagnostic yokes certified public experiences and matches per-action teaching totals
+ok 159 - diagnostic yokes certified public experiences and matches per-action teaching totals
+  ---
+  duration_ms: 936.0378
+  type: 'test'
+  ...
+# Subtest: paired branches have identical teaching, explicit distinct entry states and independent objects
+ok 160 - paired branches have identical teaching, explicit distinct entry states and independent objects
+  ---
+  duration_ms: 766.8339
+  type: 'test'
+  ...
+# Subtest: label-free GF ranges retain differences below rest and preserve out-of-panel evidence
+ok 161 - label-free GF ranges retain differences below rest and preserve out-of-panel evidence
+  ---
+  duration_ms: 14.1415
+  type: 'test'
+  ...
+# Subtest: constant GF responses cannot produce an enabled policy and malformed calibration is rejected
+ok 162 - constant GF responses cannot produce an enabled policy and malformed calibration is rejected
+  ---
+  duration_ms: 2.7265
+  type: 'test'
+  ...
+# Subtest: restrained part is exactly ReversalMemory; LTM potentiates active cues and leaves untouched cues at rest
+ok 163 - restrained part is exactly ReversalMemory; LTM potentiates active cues and leaves untouched cues at rest
+  ---
+  duration_ms: 76.2694
+  type: 'test'
+  ...
+# Subtest: a later lesson on other cues does not lower an earlier LTM trace, unlike restrained recovery
+ok 164 - a later lesson on other cues does not lower an earlier LTM trace, unlike restrained recovery
+  ---
+  duration_ms: 6.6556
+  type: 'test'
+  ...
+# Subtest: absent DAN changes nothing; snapshot restore reproduces the next update and rejects corruption
+ok 165 - absent DAN changes nothing; snapshot restore reproduces the next update and rejects corruption
+  ---
+  duration_ms: 16.562
+  type: 'test'
+  ...
+# Subtest: unstable or nonfinite observations fail before changing either memory
+ok 166 - unstable or nonfinite observations fail before changing either memory
+  ---
+  duration_ms: 12.9683
+  type: 'test'
+  ...
+# Subtest: LTM mapping keeps alpha-prime/beta-prime KC inputs per KC hemisphere and the charging DANs
+ok 167 - LTM mapping keeps alpha-prime/beta-prime KC inputs per KC hemisphere and the charging DANs
+  ---
+  duration_ms: 93.0477
+  type: 'test'
+  ...
+# Subtest: incentive readout adds the LTM attraction-minus-avoidance balance
+ok 168 - incentive readout adds the LTM attraction-minus-avoidance balance
+  ---
+  duration_ms: 2.9724
+  type: 'test'
+  ...
+# Subtest: value reads never change state: frames are only the trial and delay frames
+ok 169 - value reads never change state: frames are only the trial and delay frames
+  ---
+  duration_ms: 977.4024
+  type: 'test'
+  ...
+# Subtest: same seed gives an identical trajectory
+ok 170 - same seed gives an identical trajectory
+  ---
+  duration_ms: 1313.4297
+  type: 'test'
+  ...
+# Subtest: restored and uninterrupted trajectories match exactly
+ok 171 - restored and uninterrupted trajectories match exactly
+  ---
+  duration_ms: 4016.7392
+  type: 'test'
+  ...
+# Subtest: every eighth trial gets no pulse
+ok 172 - every eighth trial gets no pulse
+  ---
+  duration_ms: 462.7296
+  type: 'test'
+  ...
+# Subtest: new items get no teaching before step 6
+ok 173 - new items get no teaching before step 6
+  ---
+  duration_ms: 431.1038
+  type: 'test'
+  ...
+# Subtest: reversal teaches only item 1
+ok 174 - reversal teaches only item 1
+  ---
+  duration_ms: 414.7054
+  type: 'test'
+  ...
+# Subtest: disabled changes nothing and sends no frames
+ok 175 - disabled changes nothing and sends no frames
+  ---
+  duration_ms: 18.1702
+  type: 'test'
+  ...
+# Subtest: evaluateJoint passes hand-made good records and fails each mark when violated in turn
+ok 176 - evaluateJoint passes hand-made good records and fails each mark when violated in turn
+  ---
+  duration_ms: 73.4381
+  type: 'test'
+  ...
+# Subtest: diagnostic preserves neural arrays and distinguishes repeated edge entries from unique neurons
+ok 177 - diagnostic preserves neural arrays and distinguishes repeated edge entries from unique neurons
+  ---
+  duration_ms: 12.0189
+  type: 'test'
+  ...
+# Subtest: coupled closed form matches an independent small-step integration
+ok 178 - coupled closed form matches an independent small-step integration
+  ---
+  duration_ms: 107.365
+  type: 'test'
+  ...
+# Subtest: zero coupling matches original fast step exactly, with hidden state inert
+ok 179 - zero coupling matches original fast step exactly, with hidden state inert
+  ---
+  duration_ms: 4.5552
+  type: 'test'
+  ...
+# Subtest: coupling obeys semigroup, bounds and finite large/tiny event intervals
+ok 180 - coupling obeys semigroup, bounds and finite large/tiny event intervals
+  ---
+  duration_ms: 2.7806
+  type: 'test'
+  ...
+# Subtest: hidden state affects visible gain and no-event/settled-inactive frames freeze gains
+ok 181 - hidden state affects visible gain and no-event/settled-inactive frames freeze gains
+  ---
+  duration_ms: 8.1341
+  type: 'test'
+  ...
+# Subtest: snapshots restore all state exactly; invalid restore is atomic and identities are enforced
+ok 182 - snapshots restore all state exactly; invalid restore is atomic and identities are enforced
+  ---
+  duration_ms: 73.9952
+  type: 'test'
+  ...
+# Subtest: zero-coupling adapter reproduces original visible states/choices; invalid observations do not mutate
+ok 183 - zero-coupling adapter reproduces original visible states/choices; invalid observations do not mutate
+  ---
+  duration_ms: 120.7095
+  type: 'test'
+  ...
+# Subtest: both coupled conditions replay own-choice feedback and all four causal controls
+ok 184 - both coupled conditions replay own-choice feedback and all four causal controls
+  ---
+  duration_ms: 14832.6657
+  type: 'test'
+  ...
+# Subtest: matches quadratic at d0; attenuates weak exit without a deadband
+ok 185 - matches quadratic at d0; attenuates weak exit without a deadband
+  ---
+  duration_ms: 6.0213
+  type: 'test'
+  ...
+# Subtest: mass, bounds and no-signal storage survive long randomized input
+ok 186 - mass, bounds and no-signal storage survive long randomized input
+  ---
+  duration_ms: 37.1078
+  type: 'test'
+  ...
+# Subtest: strong evidence can change a stabilized store in both directions
+ok 187 - strong evidence can change a stabilized store in both directions
+  ---
+  duration_ms: 1.0576
+  type: 'test'
+  ...
+# Subtest: fresh-model restore matches continuation and rejects another rule/setting
+ok 188 - fresh-model restore matches continuation and rejects another rule/setting
+  ---
+  duration_ms: 24.799
+  type: 'test'
+  ...
+# Subtest: S1 closed form matches independent small-step integration
+ok 189 - S1 closed form matches independent small-step integration
+  ---
+  duration_ms: 220.443
+  type: 'test'
+  ...
+# Subtest: S1 hand-derived values
+ok 190 - S1 hand-derived values
+  ---
+  duration_ms: 0.5154
+  type: 'test'
+  ...
+# Subtest: S1 stays finite and in bounds on adversarial input
+ok 191 - S1 stays finite and in bounds on adversarial input
+  ---
+  duration_ms: 8.8159
+  type: 'test'
+  ...
+# Subtest: S2 a settled inactive KC does not move under any pulse
+ok 192 - S2 a settled inactive KC does not move under any pulse
+  ---
+  duration_ms: 0.5888
+  type: 'test'
+  ...
+# Subtest: S3 delay lowers update size; target and direction never change
+ok 193 - S3 delay lowers update size; target and direction never change
+  ---
+  duration_ms: 0.5217
+  type: 'test'
+  ...
+# Subtest: S4 a stale trace after the declared gap moves a gain by under 1e-3 per pulse
+ok 194 - S4 a stale trace after the declared gap moves a gain by under 1e-3 per pulse
+  ---
+  duration_ms: 0.3278
+  type: 'test'
+  ...
+# Subtest: gain stays inside bounds and can travel the full range both ways
+ok 195 - gain stays inside bounds and can travel the full range both ways
+  ---
+  duration_ms: 0.8685
+  type: 'test'
+  ...
+# Subtest: mean-field transition agrees with independently simulated microscopic transitions
+ok 196 - mean-field transition agrees with independently simulated microscopic transitions
+  ---
+  duration_ms: 34.6445
+  type: 'test'
+  ...
+# Subtest: coherent practice stores history at a saturated gain and reduces subsequent susceptibility
+ok 197 - coherent practice stores history at a saturated gain and reduces subsequent susceptibility
+  ---
+  duration_ms: 1.0343
+  type: 'test'
+  ...
+# Subtest: probability mass stays finite, normalized, bounded and reversible
+ok 198 - probability mass stays finite, normalized, bounded and reversible
+  ---
+  duration_ms: 2.635
+  type: 'test'
+  ...
+# Subtest: unknown/no-signal and settled inactive observations preserve all efficacy probabilities
+ok 199 - unknown/no-signal and settled inactive observations preserve all efficacy probabilities
+  ---
+  duration_ms: 0.905
+  type: 'test'
+  ...
+# Subtest: persistence includes hidden state and invalid restore leaves the learner unchanged
+ok 200 - persistence includes hidden state and invalid restore leaves the learner unchanged
+  ---
+  duration_ms: 36.7477
+  type: 'test'
+  ...
+# Subtest: all four own-choice arms replay with verified complete phase snapshots
+ok 201 - all four own-choice arms replay with verified complete phase snapshots
+  ---
+  duration_ms: 5465.7926
+  type: 'test'
+  ...
+# Subtest: mean-field transition agrees with independently simulated microscopic transitions
+ok 202 - mean-field transition agrees with independently simulated microscopic transitions
+  ---
+  duration_ms: 36.4428
+  type: 'test'
+  ...
+# Subtest: coherent practice stores history at a saturated gain and reduces subsequent susceptibility
+ok 203 - coherent practice stores history at a saturated gain and reduces subsequent susceptibility
+  ---
+  duration_ms: 1.5034
+  type: 'test'
+  ...
+# Subtest: opposite feedback first unmasks a reservoir, then switches into the opposite reservoir
+ok 204 - opposite feedback first unmasks a reservoir, then switches into the opposite reservoir
+  ---
+  duration_ms: 1.9824
+  type: 'test'
+  ...
+# Subtest: probability mass stays finite, normalized, bounded and reversible
+ok 205 - probability mass stays finite, normalized, bounded and reversible
+  ---
+  duration_ms: 3.9153
+  type: 'test'
+  ...
+# Subtest: unknown/no-signal and settled inactive observations preserve all efficacy probabilities
+ok 206 - unknown/no-signal and settled inactive observations preserve all efficacy probabilities
+  ---
+  duration_ms: 0.6523
+  type: 'test'
+  ...
+# Subtest: persistence includes hidden state and invalid restore leaves the learner unchanged
+ok 207 - persistence includes hidden state and invalid restore leaves the learner unchanged
+  ---
+  duration_ms: 43.1806
+  type: 'test'
+  ...
+# Subtest: all four own-choice arms replay with verified complete phase snapshots
+ok 208 - all four own-choice arms replay with verified complete phase snapshots
+  ---
+  duration_ms: 8457.0049
+  type: 'test'
+  ...
+# Subtest: slow step matches independent small-step integration with fast held
+ok 209 - slow step matches independent small-step integration with fast held
+  ---
+  duration_ms: 52.2508
+  type: 'test'
+  ...
+# Subtest: zero rate leaves slow state exactly unchanged
+ok 210 - zero rate leaves slow state exactly unchanged
+  ---
+  duration_ms: 0.7675
+  type: 'test'
+  ...
+# Subtest: slow state stays between its old value and fast, and can travel back
+ok 211 - slow state stays between its old value and fast, and can travel back
+  ---
+  duration_ms: 1.3236
+  type: 'test'
+  ...
+# Subtest: slower rho lags more after the same pulses
+ok 212 - slower rho lags more after the same pulses
+  ---
+  duration_ms: 0.4951
+  type: 'test'
+  ...
+# Subtest: at drive d0 the step equals the linear reservoir
+ok 213 - at drive d0 the step equals the linear reservoir
+  ---
+  duration_ms: 3.412
+  type: 'test'
+  ...
+# Subtest: reservoir exit is smaller below d0 and larger above; buffer entry is unchanged
+ok 214 - reservoir exit is smaller below d0 and larger above; buffer entry is unchanged
+  ---
+  duration_ms: 0.944
+  type: 'test'
+  ...
+# Subtest: mean-field transition agrees with independently simulated particles
+ok 215 - mean-field transition agrees with independently simulated particles
+  ---
+  duration_ms: 40.8544
+  type: 'test'
+  ...
+# Subtest: mass and gain stay valid across random inputs
+ok 216 - mass and gain stay valid across random inputs
+  ---
+  duration_ms: 46.5385
+  type: 'test'
+  ...
+# Subtest: no signal or settled inactive cell leaves masses and gain unchanged
+ok 217 - no signal or settled inactive cell leaves masses and gain unchanged
+  ---
+  duration_ms: 1.2848
+  type: 'test'
+  ...
+# Subtest: weak repeated signals release at least five times less from a reservoir than the linear rule
+ok 218 - weak repeated signals release at least five times less from a reservoir than the linear rule
+  ---
+  duration_ms: 2.2114
+  type: 'test'
+  ...
+# Subtest: strong pulses still cross efficacy in both directions
+ok 219 - strong pulses still cross efficacy in both directions
+  ---
+  duration_ms: 2.0356
+  type: 'test'
+  ...
+# Subtest: a snapshot from the linear rule is refused, in both directions
+ok 220 - a snapshot from the linear rule is refused, in both directions
+  ---
+  duration_ms: 18.2624
+  type: 'test'
+  ...
+# Subtest: all four arms replay through the recorded audit; no-event controls leave gains unchanged
+ok 221 - all four arms replay through the recorded audit; no-event controls leave gains unchanged
+  ---
+  duration_ms: 20624.8928
+  type: 'test'
+  ...
+# Subtest: fixed population means preserve coefficient and polarity under unequal populations
+ok 222 - fixed population means preserve coefficient and polarity under unequal populations
+  ---
+  duration_ms: 20.3842
+  type: 'test'
+  ...
+# Subtest: invalid population or score cannot silently become a tied choice
+ok 223 - invalid population or score cannot silently become a tied choice
+  ---
+  duration_ms: 3.5812
+  type: 'test'
+  ...
+# Subtest: ReversalMemory: P pulse depresses active KC 0 to 0.75; inactive pulse recovers it to 0.8125
+ok 224 - ReversalMemory: P pulse depresses active KC 0 to 0.75; inactive pulse recovers it to 0.8125
+  ---
+  duration_ms: 62.9791
+  type: 'test'
+  ...
+# Subtest: AlphaLobeMemory: same first pulse; inactive pulse does not recover
+ok 225 - AlphaLobeMemory: same first pulse; inactive pulse does not recover
+  ---
+  duration_ms: 22.6829
+  type: 'test'
+  ...
+# Subtest: repeated active pulses fall to the 0.2 floor and never rise
+ok 226 - repeated active pulses fall to the 0.2 floor and never rise
+  ---
+  duration_ms: 26.2466
+  type: 'test'
+  ...
+# Subtest: DAN below rest changes no gain or value for either old rule
+ok 227 - DAN below rest changes no gain or value for either old rule
+  ---
+  duration_ms: 23.7896
+  type: 'test'
+  ...
+# Subtest: value is (1/s) sum (kcH/1.5)(P - R) and follows the real magnitudes
+ok 228 - value is (1/s) sum (kcH/1.5)(P - R) and follows the real magnitudes
+  ---
+  duration_ms: 3.4337
+  type: 'test'
+  ...
+# Subtest: SeparateTable: noteEvent moves the image value by 0.25 (r - v); frame is a no-op; value keyed by image
+ok 229 - SeparateTable: noteEvent moves the image value by 0.25 (r - v); frame is a no-op; value keyed by image
+  ---
+  duration_ms: 3.8209
+  type: 'test'
+  ...
+# Subtest: stateHash: moves on a real update, returns on restore; a rest frame moves only the event count
+ok 230 - stateHash: moves on a real update, returns on restore; a rest frame moves only the event count
+  ---
+  duration_ms: 20.0559
+  type: 'test'
+  ...
+# Subtest: rules built from one fixture share no mutable state
+ok 231 - rules built from one fixture share no mutable state
+  ---
+  duration_ms: 2.2469
+  type: 'test'
+  ...
+# Subtest: graph signs stay +1 and base magnitudes stay in the fixture
+ok 232 - graph signs stay +1 and base magnitudes stay in the fixture
+  ---
+  duration_ms: 6.5354
+  type: 'test'
+  ...
+# Subtest: registerRule adds a factory; createRule rejects unknown names and duplicates
+ok 233 - registerRule adds a factory; createRule rejects unknown names and duplicates
+  ---
+  duration_ms: 8.2511
+  type: 'test'
+  ...
+# Subtest: a valid certificate is accepted, and a wrong choice is recorded as bad
+ok 234 - a valid certificate is accepted, and a wrong choice is recorded as bad
+  ---
+  duration_ms: 28.3019
+  type: 'test'
+  ...
+# Subtest: tampering with fixtureId, scheduleHash or prevHash is rejected, with and without recomputing the hash
+ok 235 - tampering with fixtureId, scheduleHash or prevHash is rejected, with and without recomputing the hash
+  ---
+  duration_ms: 3.9493
+  type: 'test'
+  ...
+# Subtest: tampering with chosen is rejected
+ok 236 - tampering with chosen is rejected
+  ---
+  duration_ms: 4.5527
+  type: 'test'
+  ...
+# Subtest: tampering with consequence is rejected
+ok 237 - tampering with consequence is rejected
+  ---
+  duration_ms: 8.5007
+  type: 'test'
+  ...
+# Subtest: tampering with scores is rejected when the hash is stale, or when scores are missing or nonfinite
+ok 238 - tampering with scores is rejected when the hash is stale, or when scores are missing or nonfinite
+  ---
+  duration_ms: 2.7027
+  type: 'test'
+  ...
+# Subtest: unknown trials accept only the unknown consequence, and known trials reject it
+ok 239 - unknown trials accept only the unknown consequence, and known trials reject it
+  ---
+  duration_ms: 3.4248
+  type: 'test'
+  ...
+# Subtest: goodImage and the checker agree for every phase, trial and image
+ok 240 - goodImage and the checker agree for every phase, trial and image
+  ---
+  duration_ms: 171.9064
+  type: 'test'
+  ...
+# Subtest: the checker imports only node:crypto
+ok 241 - the checker imports only node:crypto
+  ---
+  duration_ms: 3.1363
+  type: 'test'
+  ...
+# Subtest: v=0 at naive gains: a reward frame moves gains exactly as local-gated-v1
+ok 242 - v=0 at naive gains: a reward frame moves gains exactly as local-gated-v1
+  ---
+  duration_ms: 41.6655
+  type: 'test'
+  ...
+# Subtest: reward pulses on one image: per-pulse gain change is smaller once its value is large
+ok 243 - reward pulses on one image: per-pulse gain change is smaller once its value is large
+  ---
+  duration_ms: 160.566
+  type: 'test'
+  ...
+# Subtest: rest frame: gains unchanged and equal to local-gated-v1
+ok 244 - rest frame: gains unchanged and equal to local-gated-v1
+  ---
+  duration_ms: 18.885
+  type: 'test'
+  ...
+# Subtest: runTrajectory informative completes and repeats exactly
+ok 245 - runTrajectory informative completes and repeats exactly
+  ---
+  duration_ms: 1227.341
+  type: 'test'
+  ...
+# Subtest: inactive edges: ACQ_BC drift below 1e-3 (q=0, w=0, bg=0, seed 1001)
+ok 246 - inactive edges: ACQ_BC drift below 1e-3 (q=0, w=0, bg=0, seed 1001)
+  ---
+  duration_ms: 309.196
+  type: 'test'
+  ...
+# Subtest: same seed gives the same id and another seed a different id
+ok 247 - same seed gives the same id and another seed a different id
+  ---
+  duration_ms: 53.9142
+  type: 'test'
+  ...
+# Subtest: actual focal q and w match the pinned levels within 1/s
+ok 248 - actual focal q and w match the pinned levels within 1/s
+  ---
+  duration_ms: 88.484
+  type: 'test'
+  ...
+# Subtest: C and E use KCs disjoint from A and B
+ok 249 - C and E use KCs disjoint from A and B
+  ---
+  duration_ms: 7.6473
+  type: 'test'
+  ...
+# Subtest: every image has exactly s distinct focal KCs in ascending order
+ok 250 - every image has exactly s distinct focal KCs in ascending order
+  ---
+  duration_ms: 26.3402
+  type: 'test'
+  ...
+# Subtest: B shares its focal KCs with the source image its relation names, and within-item overlap is w
+ok 251 - B shares its focal KCs with the source image its relation names, and within-item overlap is w
+  ---
+  duration_ms: 41.4947
+  type: 'test'
+  ...
+# Subtest: background is 1.5*bg off focus and focal activity lies in [0.9, 1.5]
+ok 252 - background is 1.5*bg off focus and focal activity lies in [0.9, 1.5]
+  ---
+  duration_ms: 58.208
+  type: 'test'
+  ...
+# Subtest: schedule has five phases, 24 B and 24 C in ACQ_BC, unknown every 8th trial, and a stable hash
+ok 253 - schedule has five phases, 24 B and 24 C in ACQ_BC, unknown every 8th trial, and a stable hash
+  ---
+  duration_ms: 59.9979
+  type: 'test'
+  ...
+# Subtest: conflict schedule has 48 E trials, 24 per situation, no unknowns
+ok 254 - conflict schedule has 48 E trials, 24 per situation, no unknowns
+  ---
+  duration_ms: 6.5692
+  type: 'test'
+  ...
+# Subtest: gridCells lists 108 cells in q, relation, w, bg order
+ok 255 - gridCells lists 108 cells in q, relation, w, bg order
+  ---
+  duration_ms: 15.4998
+  type: 'test'
+  ...
+# Subtest: 28 of 108 cells are gated
+ok 256 - 28 of 108 cells are gated
+  ---
+  duration_ms: 15.1266
+  type: 'test'
+  ...
+# Subtest: seed sets have the planned sizes and do not overlap
+ok 257 - seed sets have the planned sizes and do not overlap
+  ---
+  duration_ms: 3.117
+  type: 'test'
+  ...
+# inactiveDrift ACQ_BC: P=2.4424906541753444e-15 R=2.4702462297909733e-15
+# Subtest: S5 snapshot: JSON round trip mid-trajectory reproduces the rest bit-exactly
+ok 258 - S5 snapshot: JSON round trip mid-trajectory reproduces the rest bit-exactly
+  ---
+  duration_ms: 224.5223
+  type: 'test'
+  ...
+# Subtest: S5 snapshot taken mid-trace restores the trace
+ok 259 - S5 snapshot taken mid-trace restores the trace
+  ---
+  duration_ms: 21.6191
+  type: 'test'
+  ...
+# Subtest: S5 restore rejects bad snapshots and leaves the state hash unchanged
+ok 260 - S5 restore rejects bad snapshots and leaves the state hash unchanged
+  ---
+  duration_ms: 110.6218
+  type: 'test'
+  ...
+# Subtest: S6 disabled: plasticity off leaves state and gains hashes unchanged
+ok 261 - S6 disabled: plasticity off leaves state and gains hashes unchanged
+  ---
+  duration_ms: 581.7296
+  type: 'test'
+  ...
+# Subtest: absent arm: gains hash unchanged (trace and time may still move, since frames are applied with no pulse)
+ok 262 - absent arm: gains hash unchanged (trace and time may still move, since frames are applied with no pulse)
+  ---
+  duration_ms: 332.2827
+  type: 'test'
+  ...
+# Subtest: S7 isolation: two rules from one fixture share no mutable state
+ok 263 - S7 isolation: two rules from one fixture share no mutable state
+  ---
+  duration_ms: 53.8256
+  type: 'test'
+  ...
+# Subtest: S8 unknown: pulses plus unknown trials equal trials per phase; a rest frame changes no gain
+ok 264 - S8 unknown: pulses plus unknown trials equal trials per phase; a rest frame changes no gain
+  ---
+  duration_ms: 257.6573
+  type: 'test'
+  ...
+# Subtest: S9 signs: after an informative trajectory only mapped edges changed magnitude
+ok 265 - S9 signs: after an informative trajectory only mapped edges changed magnitude
+  ---
+  duration_ms: 279.5046
+  type: 'test'
+  ...
+# Subtest: determinism: same fixture and schedule give deep-equal records
+ok 266 - determinism: same fixture and schedule give deep-equal records
+  ---
+  duration_ms: 527.8818
+  type: 'test'
+  ...
+# Subtest: inactive protection: q=0 w=0 bg=0, seed 1001, ACQ_BC drift on inactive KCs and A margin
+ok 267 - inactive protection: q=0 w=0 bg=0, seed 1001, ACQ_BC drift on inactive KCs and A margin
+  ---
+  duration_ms: 1008.0469
+  type: 'test'
+  ...
+# q=0 A margin: T1=0.5066650930966254 T2=0.5066650930966254 |T2-T1|=0
+# Subtest: S5 snapshot: JSON round trip reproduces later frames exactly, slow state included
+ok 268 - S5 snapshot: JSON round trip reproduces later frames exactly, slow state included
+  ---
+  duration_ms: 242.1361
+  type: 'test'
+  ...
+# Subtest: S5 snapshot taken mid-trace restores the trace and the slow state
+ok 269 - S5 snapshot taken mid-trace restores the trace and the slow state
+  ---
+  duration_ms: 60.7259
+  type: 'test'
+  ...
+# Subtest: S5 restore rejects bad snapshots and leaves the state hash unchanged
+ok 270 - S5 restore rejects bad snapshots and leaves the state hash unchanged
+  ---
+  duration_ms: 133.2671
+  type: 'test'
+  ...
+# Subtest: S6 disabled: plasticity off leaves state and gains hashes unchanged
+ok 271 - S6 disabled: plasticity off leaves state and gains hashes unchanged
+  ---
+  duration_ms: 704.2864
+  type: 'test'
+  ...
+# Subtest: absent arm: gains hash unchanged (trace and time may still move, since frames are applied with no pulse)
+ok 272 - absent arm: gains hash unchanged (trace and time may still move, since frames are applied with no pulse)
+  ---
+  duration_ms: 700.1498
+  type: 'test'
+  ...
+# Subtest: S7 isolation: two rules from one fixture share no mutable state, slow included
+ok 273 - S7 isolation: two rules from one fixture share no mutable state, slow included
+  ---
+  duration_ms: 52.797
+  type: 'test'
+  ...
+# Subtest: S8 rest frames: neither fast nor slow gain changes on an active image; a pulse on the same state does
+ok 274 - S8 rest frames: neither fast nor slow gain changes on an active image; a pulse on the same state does
+  ---
+  duration_ms: 14.587
+  type: 'test'
+  ...
+# Subtest: S9 signs: after an informative trajectory only mapped edges changed; magnitude = fround(base * (fast + slow) / 2)
+ok 275 - S9 signs: after an informative trajectory only mapped edges changed; magnitude = fround(base * (fast + slow) / 2)
+  ---
+  duration_ms: 500.6292
+  type: 'test'
+  ...
+# Subtest: determinism: same fixture and schedule give deep-equal records
+ok 276 - determinism: same fixture and schedule give deep-equal records
+  ---
+  duration_ms: 816.5112
+  type: 'test'
+  ...
+# Subtest: constructor without rho throws
+ok 277 - constructor without rho throws
+  ---
+  duration_ms: 19.5982
+  type: 'test'
+  ...
+# Subtest: inactive protection: q=0 w=0 bg=0, seed 1001: A margin at T2 equals T1 within 1e-3
+ok 278 - inactive protection: q=0 w=0 bg=0, seed 1001: A margin at T2 equals T1 within 1e-3
+  ---
+  duration_ms: 1852.0839
+  type: 'test'
+  ...
+# Subtest: S5 snapshot: JSON round trip mid-trajectory reproduces the rest bit-exactly
+ok 279 - S5 snapshot: JSON round trip mid-trajectory reproduces the rest bit-exactly
+  ---
+  duration_ms: 326.2976
+  type: 'test'
+  ...
+# Subtest: S5 snapshot taken mid-trace restores the trace
+ok 280 - S5 snapshot taken mid-trace restores the trace
+  ---
+  duration_ms: 63.439
+  type: 'test'
+  ...
+# Subtest: S5 restore rejects corrupt snapshots and leaves the state hash unchanged
+ok 281 - S5 restore rejects corrupt snapshots and leaves the state hash unchanged
+  ---
+  duration_ms: 159.7821
+  type: 'test'
+  ...
+# Subtest: S5 restore rejects a snapshot from a different-identity rule or fixture before any change
+ok 282 - S5 restore rejects a snapshot from a different-identity rule or fixture before any change
+  ---
+  duration_ms: 128.6804
+  type: 'test'
+  ...
+# Subtest: S5 identity covers the frozen prediction scale: a snapshot with another V0 is rejected
+ok 283 - S5 identity covers the frozen prediction scale: a snapshot with another V0 is rejected
+  ---
+  duration_ms: 52.4011
+  type: 'test'
+  ...
+# Subtest: S6 disabled: plasticity off leaves state and gains hashes unchanged
+ok 284 - S6 disabled: plasticity off leaves state and gains hashes unchanged
+  ---
+  duration_ms: 1147.1066
+  type: 'test'
+  ...
+# Subtest: absent arm: gains hash unchanged (trace and time may still move, since frames are applied with no pulse)
+ok 285 - absent arm: gains hash unchanged (trace and time may still move, since frames are applied with no pulse)
+  ---
+  duration_ms: 786.9798
+  type: 'test'
+  ...
+# Subtest: S7 isolation: two rules from one fixture share no mutable state
+ok 286 - S7 isolation: two rules from one fixture share no mutable state
+  ---
+  duration_ms: 31.9305
+  type: 'test'
+  ...
+# Subtest: S8 unknown: pulses plus unknown trials equal trials per phase; a rest frame changes no gain
+ok 287 - S8 unknown: pulses plus unknown trials equal trials per phase; a rest frame changes no gain
+  ---
+  duration_ms: 708.9979
+  type: 'test'
+  ...
+# Subtest: S9 signs: after an informative trajectory only mapped edges changed magnitude
+ok 288 - S9 signs: after an informative trajectory only mapped edges changed magnitude
+  ---
+  duration_ms: 763.8556
+  type: 'test'
+  ...
+# Subtest: predictionScale: f in [0, 1] for v in [-5, 5] and any larger size; scaled DAN lies between pulse and rest
+ok 289 - predictionScale: f in [0, 1] for v in [-5, 5] and any larger size; scaled DAN lies between pulse and rest
+  ---
+  duration_ms: 39.0414
+  type: 'test'
+  ...
+# Subtest: DAN values reaching the inner rule stay in [0, 1.5] on pulse frames, for activity of any size
+ok 290 - DAN values reaching the inner rule stay in [0, 1.5] on pulse frames, for activity of any size
+  ---
+  duration_ms: 58.2151
+  type: 'test'
+  ...
+# Subtest: predictionScale is 0.5 at zero prediction and follows the signed error
+ok 291 - predictionScale is 0.5 at zero prediction and follows the signed error
+  ---
+  duration_ms: 5.3957
+  type: 'test'
+  ...
+# Subtest: V0 at 1e9 halves each DAN deviation, so it matches the reservoir rule at half eta
+ok 292 - V0 at 1e9 halves each DAN deviation, so it matches the reservoir rule at half eta
+  ---
+  duration_ms: 92.8916
+  type: 'test'
+  ...
+# Subtest: a rest frame leaves the state identical to the plain reservoir rule at the same eta
+ok 293 - a rest frame leaves the state identical to the plain reservoir rule at the same eta
+  ---
+  duration_ms: 57.934
+  type: 'test'
+  ...
+# Subtest: a punish pulse after confident reward training moves A+ more than at V0 1e9 from the same state
+ok 294 - a punish pulse after confident reward training moves A+ more than at V0 1e9 from the same state
+  ---
+  duration_ms: 78.8631
+  type: 'test'
+  ...
+# Subtest: a prediction-scaled rule replays through the recorded audit with no-event controls inert
+ok 295 - a prediction-scaled rule replays through the recorded audit with no-event controls inert
+  ---
+  duration_ms: 28180.05
+  type: 'test'
+  ...
+# Subtest: S5 snapshot: JSON round trip mid-trajectory reproduces the rest bit-exactly
+ok 296 - S5 snapshot: JSON round trip mid-trajectory reproduces the rest bit-exactly
+  ---
+  duration_ms: 273.6186
+  type: 'test'
+  ...
+# Subtest: S5 snapshot taken mid-trace restores the trace
+ok 297 - S5 snapshot taken mid-trace restores the trace
+  ---
+  duration_ms: 56.0068
+  type: 'test'
+  ...
+# Subtest: S5 restore rejects corrupt snapshots and leaves the state hash unchanged
+ok 298 - S5 restore rejects corrupt snapshots and leaves the state hash unchanged
+  ---
+  duration_ms: 269.7723
+  type: 'test'
+  ...
+# Subtest: S5 restore rejects a snapshot from a different-identity rule or fixture before any change
+ok 299 - S5 restore rejects a snapshot from a different-identity rule or fixture before any change
+  ---
+  duration_ms: 185.218
+  type: 'test'
+  ...
+# Subtest: S5 identity covers the frozen prediction scale: a snapshot with another V0 is rejected
+ok 300 - S5 identity covers the frozen prediction scale: a snapshot with another V0 is rejected
+  ---
+  duration_ms: 114.0502
+  type: 'test'
+  ...
+# Subtest: S6 disabled: plasticity off leaves state and gains hashes unchanged
+ok 301 - S6 disabled: plasticity off leaves state and gains hashes unchanged
+  ---
+  duration_ms: 1299.2106
+  type: 'test'
+  ...
+# Subtest: absent arm: gains hash unchanged (trace and time may still move, since frames are applied with no pulse)
+ok 302 - absent arm: gains hash unchanged (trace and time may still move, since frames are applied with no pulse)
+  ---
+  duration_ms: 985.3938
+  type: 'test'
+  ...
+# Subtest: S7 isolation: two rules from one fixture share no mutable state
+ok 303 - S7 isolation: two rules from one fixture share no mutable state
+  ---
+  duration_ms: 48.3117
+  type: 'test'
+  ...
+# Subtest: S8 unknown: pulses plus unknown trials equal trials per phase; a rest frame changes no gain
+ok 304 - S8 unknown: pulses plus unknown trials equal trials per phase; a rest frame changes no gain
+  ---
+  duration_ms: 827.8692
+  type: 'test'
+  ...
+# Subtest: S9 signs: after an informative trajectory only mapped edges changed magnitude
+ok 305 - S9 signs: after an informative trajectory only mapped edges changed magnitude
+  ---
+  duration_ms: 1032.3342
+  type: 'test'
+  ...
+# Subtest: predictionScale: f in [0, 1] for v in [-5, 5] and any larger size; scaled DAN lies between pulse and rest
+ok 306 - predictionScale: f in [0, 1] for v in [-5, 5] and any larger size; scaled DAN lies between pulse and rest
+  ---
+  duration_ms: 79.8323
+  type: 'test'
+  ...
+# Subtest: DAN values reaching the inner rule stay in [0, 1.5] on pulse frames, for activity of any size
+ok 307 - DAN values reaching the inner rule stay in [0, 1.5] on pulse frames, for activity of any size
+  ---
+  duration_ms: 187.372
+  type: 'test'
+  ...
+# Subtest: dual upper bound agrees with independently enumerated two-dimensional vertices
+ok 308 - dual upper bound agrees with independently enumerated two-dimensional vertices
+  ---
+  duration_ms: 53.52
+  type: 'test'
+  ...
+# Subtest: exactly opposing requirements cannot both have a positive margin
+ok 309 - exactly opposing requirements cannot both have a positive margin
+  ---
+  duration_ms: 3.4945
+  type: 'test'
+  ...
+# Subtest: fixture binding and generous Float32 range are deterministic
+ok 310 - fixture binding and generous Float32 range are deterministic
+  ---
+  duration_ms: 77.2548
+  type: 'test'
+  ...
+# Subtest: aggregate bound allows the full seed failure budget before declaring incompatibility
+ok 311 - aggregate bound allows the full seed failure budget before declaring incompatibility
+  ---
+  duration_ms: 4.5023
+  type: 'test'
+  ...
+# Subtest: certificate bounds the actual adapter readout with Float32 magnitudes
+ok 312 - certificate bounds the actual adapter readout with Float32 magnitudes
+  ---
+  duration_ms: 315.7706
+  type: 'test'
+  ...
+# Subtest: development grid capacity diagnostic preserves every original cell
+ok 313 - development grid capacity diagnostic preserves every original cell
+  ---
+  duration_ms: 28414.3223
+  type: 'test'
+  ...
+# {"cellsEvaluated":108,"incompatibleGated":[{"cell":{"q":0.5,"relation":"congruent","w":0.5,"bg":0},"optimisticMedian":0.2761631013770442},{"cell":{"q":0.5,"relation":"congruent","w":0.5,"bg":0.1},"optimisticMedian":0.2742570497291468}],"resources":{"wallSeconds":28.3988431,"cpuSeconds":8.688,"processHighWaterRssMiB":56.85546875,"cpuDuty":0.5}}
+# Subtest: a rehashed certificate for an out-of-schedule trial must be rejected
+ok 314 - a rehashed certificate for an out-of-schedule trial must be rejected
+  ---
+  duration_ms: 48.1046
+  type: 'test'
+  ...
+# Subtest: strict checking binds scores, action, phase, item and unknown timing
+ok 315 - strict checking binds scores, action, phase, item and unknown timing
+  ---
+  duration_ms: 14.0718
+  type: 'test'
+  ...
+# Subtest: recording is behavior-identical to the original loop on two distinct development fixtures
+ok 316 - recording is behavior-identical to the original loop on two distinct development fixtures
+  ---
+  duration_ms: 18012.1128
+  type: 'test'
+  ...
+# Subtest: separate replay verifies choices, state, controls, unknown timing and terminal summaries
+ok 317 - separate replay verifies choices, state, controls, unknown timing and terminal summaries
+  ---
+  duration_ms: 16573.3022
+  type: 'test'
+  ...
+# Subtest: rehashed trial, score, choice, valence, state and consequence mutations fail replay
+ok 318 - rehashed trial, score, choice, valence, state and consequence mutations fail replay
+  ---
+  duration_ms: 15372.9477
+  type: 'test'
+  ...
+# Subtest: removed, duplicated, reordered, truncated and extra evidence fails replay
+ok 319 - removed, duplicated, reordered, truncated and extra evidence fails replay
+  ---
+  duration_ms: 25596.1132
+  type: 'test'
+  ...
+# Subtest: sink failure stops before certificate creation or any teaching pulse
+ok 320 - sink failure stops before certificate creation or any teaching pulse
+  ---
+  duration_ms: 59.8172
+  type: 'test'
+  ...
+# Subtest: rejected certificates emit no pulse and change no gain
+ok 321 - rejected certificates emit no pulse and change no gain
+  ---
+  duration_ms: 2464.7403
+  type: 'test'
+  ...
+# Subtest: disk-level CLI audit pins source, registration and record files; existing output is preserved
+ok 322 - disk-level CLI audit pins source, registration and record files; existing output is preserved
+  ---
+  duration_ms: 289869.1765
+  type: 'test'
+  ...
+# Subtest: rate comparison preserves verified own-choice replay, no-event controls and hidden-state persistence
+ok 323 - rate comparison preserves verified own-choice replay, no-event controls and hidden-state persistence
+  ---
+  duration_ms: 23612.665
+  type: 'test'
+  ...
+# Subtest: same inputs give an identical record
+ok 324 - same inputs give an identical record
+  ---
+  duration_ms: 1902.0309
+  type: 'test'
+  ...
+# Subtest: absent arm leaves gains unchanged: ReversalMemory
+ok 325 - absent arm leaves gains unchanged: ReversalMemory
+  ---
+  duration_ms: 571.311
+  type: 'test'
+  ...
+# Subtest: absent arm leaves gains unchanged: AlphaLobeMemory
+ok 326 - absent arm leaves gains unchanged: AlphaLobeMemory
+  ---
+  duration_ms: 1629.8342
+  type: 'test'
+  ...
+# Subtest: disabled arm leaves both hashes unchanged: ReversalMemory
+ok 327 - disabled arm leaves both hashes unchanged: ReversalMemory
+  ---
+  duration_ms: 554.8641
+  type: 'test'
+  ...
+# Subtest: disabled arm leaves both hashes unchanged: AlphaLobeMemory
+ok 328 - disabled arm leaves both hashes unchanged: AlphaLobeMemory
+  ---
+  duration_ms: 727.3635
+  type: 'test'
+  ...
+# Subtest: disabled arm leaves both hashes unchanged: SeparateTable
+ok 329 - disabled arm leaves both hashes unchanged: SeparateTable
+  ---
+  duration_ms: 316.5381
+  type: 'test'
+  ...
+# Subtest: unknown trials produce no pulse
+ok 330 - unknown trials produce no pulse
+  ---
+  duration_ms: 1096.6612
+  type: 'test'
+  ...
+# Subtest: no certificate is rejected and every trial is checked
+ok 331 - no certificate is rejected and every trial is checked
+  ---
+  duration_ms: 848.4553
+  type: 'test'
+  ...
+# Subtest: shuffled arm: agreement below 1 and per-phase valence counts match the informative run
+ok 332 - shuffled arm: agreement below 1 and per-phase valence counts match the informative run
+  ---
+  duration_ms: 445.1506
+  type: 'test'
+  ...
+# Subtest: SeparateTable acquires A (m > 0 at T1)
+ok 333 - SeparateTable acquires A (m > 0 at T1)
+  ---
+  duration_ms: 120.781
+  type: 'test'
+  ...
+# Subtest: ReversalMemory: A margin falls from T1 to T2 at q=0
+ok 334 - ReversalMemory: A margin falls from T1 to T2 at q=0
+  ---
+  duration_ms: 542.9337
+  type: 'test'
+  ...
+# Subtest: AlphaLobeMemory: no gain rises between tests
+ok 335 - AlphaLobeMemory: no gain rises between tests
+  ---
+  duration_ms: 854.085
+  type: 'test'
+  ...
+# Subtest: evaluateCell: G1 at the boundaries (median mNorm 0.40, greedy in 90% of seeds)
+ok 336 - evaluateCell: G1 at the boundaries (median mNorm 0.40, greedy in 90% of seeds)
+  ---
+  duration_ms: 70.7164
+  type: 'test'
+  ...
+# Subtest: evaluateCell: G3 at the boundaries, and a null R fails
+ok 337 - evaluateCell: G3 at the boundaries, and a null R fails
+  ---
+  duration_ms: 11.6644
+  type: 'test'
+  ...
+# Subtest: runConflict accuracy is 0.5: ReversalMemory, seed 1001
+ok 338 - runConflict accuracy is 0.5: ReversalMemory, seed 1001
+  ---
+  duration_ms: 129.4988
+  type: 'test'
+  ...
+# Subtest: runConflict accuracy is 0.5: ReversalMemory, seed 1002
+ok 339 - runConflict accuracy is 0.5: ReversalMemory, seed 1002
+  ---
+  duration_ms: 187.4713
+  type: 'test'
+  ...
+# Subtest: runConflict accuracy is 0.5: AlphaLobeMemory, seed 1001
+ok 340 - runConflict accuracy is 0.5: AlphaLobeMemory, seed 1001
+  ---
+  duration_ms: 178.3609
+  type: 'test'
+  ...
+# Subtest: runConflict accuracy is 0.5: AlphaLobeMemory, seed 1002
+ok 341 - runConflict accuracy is 0.5: AlphaLobeMemory, seed 1002
+  ---
+  duration_ms: 150.0851
+  type: 'test'
+  ...
+# Subtest: runConflict accuracy is 0.5: SeparateTable, seed 1001
+ok 342 - runConflict accuracy is 0.5: SeparateTable, seed 1001
+  ---
+  duration_ms: 20.346
+  type: 'test'
+  ...
+# Subtest: runConflict accuracy is 0.5: SeparateTable, seed 1002
+ok 343 - runConflict accuracy is 0.5: SeparateTable, seed 1002
+  ---
+  duration_ms: 86.3103
+  type: 'test'
+  ...
+# Subtest: fixed arbitration uses known evidence, neural fallback and explicit ablations
+ok 344 - fixed arbitration uses known evidence, neural fallback and explicit ablations
+  ---
+  duration_ms: 5.1116
+  type: 'test'
+  ...
+# Subtest: closed-loop chosen feedback changes subsequent choices and survives a boundary restore
+ok 345 - closed-loop chosen feedback changes subsequent choices and survives a boundary restore
+  ---
+  duration_ms: 14.6318
+  type: 'test'
+  ...
+# Subtest: choiceTemperature is 0.1 times the population sd and rejects bad input
+ok 346 - choiceTemperature is 0.1 times the population sd and rejects bad input
+  ---
+  duration_ms: 7.5534
+  type: 'test'
+  ...
+# Subtest: chooseMove sorts moves and keeps scores aligned with them
+ok 347 - chooseMove sorts moves and keeps scores aligned with them
+  ---
+  duration_ms: 7.3746
+  type: 'test'
+  ...
+# Subtest: probabilities sum to 1 and a clearly better move dominates at low temperature
+ok 348 - probabilities sum to 1 and a clearly better move dominates at low temperature
+  ---
+  duration_ms: 1.7535
+  type: 'test'
+  ...
+# Subtest: same seed and trial give the same move; equal scores are both chosen across trials
+ok 349 - same seed and trial give the same move; equal scores are both chosen across trials
+  ---
+  duration_ms: 11.677
+  type: 'test'
+  ...
+# Subtest: scoring rejects memory changes and call-order dependence
+ok 350 - scoring rejects memory changes and call-order dependence
+  ---
+  duration_ms: 2.3776
+  type: 'test'
+  ...
+# Subtest: invalid inputs throw
+ok 351 - invalid inputs throw
+  ---
+  duration_ms: 2.0639
+  type: 'test'
+  ...
+# Subtest: move-score contract matches the decision and the pinned MBON05 cells
+ok 352 - move-score contract matches the decision and the pinned MBON05 cells
+  ---
+  duration_ms: 9.689
+  type: 'test'
+  ...
+# Subtest: move-score contract stays switched off until memory compatibility is recorded
+ok 353 - move-score contract stays switched off until memory compatibility is recorded
+  ---
+  duration_ms: 1.4066
+  type: 'test'
+  ...
+# Subtest: local timing association, retention and reversal; fixed wiring and other parameters
+ok 354 - local timing association, retention and reversal; fixed wiring and other parameters
+  ---
+  duration_ms: 68.4739
+  type: 'test'
+  ...
+# Subtest: no dopamine and long unpaired timing do not create an association
+ok 355 - no dopamine and long unpaired timing do not create an association
+  ---
+  duration_ms: 7.1765
+  type: 'test'
+  ...
+# Subtest: checkpoint resumes mid-pairing exactly and rejects corrupt memory without mutation
+ok 356 - checkpoint resumes mid-pairing exactly and rejects corrupt memory without mutation
+  ---
+  duration_ms: 8.8956
+  type: 'test'
+  ...
+# Subtest: bounded positive efficacy and invalid events do not corrupt memory
+ok 357 - bounded positive efficacy and invalid events do not corrupt memory
+  ---
+  duration_ms: 8.3297
+  type: 'test'
+  ...
+# Subtest: sparse experimental drive changes activity without modifying parameters
+ok 358 - sparse experimental drive changes activity without modifying parameters
+  ---
+  duration_ms: 9.3652
+  type: 'test'
+  ...
+# Subtest: annotation mapping uses exact 64-bit IDs and contralateral MBON soma
+ok 359 - annotation mapping uses exact 64-bit IDs and contralateral MBON soma
+  ---
+  duration_ms: 88.8015
+  type: 'test'
+  ...
+# Subtest: NPZ int64 root IDs never round through Number
+ok 360 - NPZ int64 root IDs never round through Number
+  ---
+  duration_ms: 70.5564
+  type: 'test'
+  ...
+# Subtest: two continuous frames equal one longer unroll; ordinary forward still resets
+ok 361 - two continuous frames equal one longer unroll; ordinary forward still resets
+  ---
+  duration_ms: 27.5951
+  type: 'test'
+  ...
+# Subtest: checkpoint resumes the next frame exactly; incompatible restore and invalid input preserve episode
+ok 362 - checkpoint resumes the next frame exactly; incompatible restore and invalid input preserve episode
+  ---
+  duration_ms: 14.744
+  type: 'test'
+  ...
+# Subtest: endpoint readings are copied, type means are population-balanced, and no implicit score exists
+ok 363 - endpoint readings are copied, type means are population-balanced, and no implicit score exists
+  ---
+  duration_ms: 84.1167
+  type: 'test'
+  ...
+# Subtest: released cell selection stays exact and carries transmitter disagreements without inferring signs
+ok 364 - released cell selection stays exact and carries transmitter disagreements without inferring signs
+  ---
+  duration_ms: 22.8826
+  type: 'test'
+  ...
+# Subtest: malformed, duplicate, missing, rehashed wrong-scope rosters and numerical errors fail closed
+ok 365 - malformed, duplicate, missing, rehashed wrong-scope rosters and numerical errors fail closed
+  ---
+  duration_ms: 118.3924
+  type: 'test'
+  ...
+# Subtest: fixed scoring uses type means, accepts a negative-only ranking, and labels synthetic evidence
+ok 366 - fixed scoring uses type means, accepts a negative-only ranking, and labels synthetic evidence
+  ---
+  duration_ms: 23.819
+  type: 'test'
+  ...
+# Subtest: score contracts reject missing evidence, unknown signs, all-zero tables and identity/scope mismatches
+ok 367 - score contracts reject missing evidence, unknown signs, all-zero tables and identity/scope mismatches
+  ---
+  duration_ms: 27.5486
+  type: 'test'
+  ...
+# Subtest: trajectory updates only mapped active histories; traces persist and resume exactly
+ok 368 - trajectory updates only mapped active histories; traces persist and resume exactly
+  ---
+  duration_ms: 116.4392
+  type: 'test'
+  ...
+# Subtest: disabled processing freezes gains and every trace; malformed late frame cannot partially update
+ok 369 - disabled processing freezes gains and every trace; malformed late frame cannot partially update
+  ---
+  duration_ms: 9.567
+  type: 'test'
+  ...
+# Subtest: scope and timing are required; fixed reference is part of checkpoint identity
+ok 370 - scope and timing are required; fixed reference is part of checkpoint identity
+  ---
+  duration_ms: 7.5541
+  type: 'test'
+  ...
+# Subtest: whole interval equals subdivisions including an internal signal reversal
+ok 371 - whole interval equals subdivisions including an internal signal reversal
+  ---
+  duration_ms: 520.4551
+  type: 'test'
+  ...
+# Subtest: local onset/offset can move gain both ways, and no KC history prevents change
+ok 372 - local onset/offset can move gain both ways, and no KC history prevents change
+  ---
+  duration_ms: 6.214
+  type: 'test'
+  ...
+# Subtest: checkpoint continuation preserves all local state and inputs remain unchanged
+ok 373 - checkpoint continuation preserves all local state and inputs remain unchanged
+  ---
+  duration_ms: 9.1485
+  type: 'test'
+  ...
+# Subtest: candidate depression and inactive-cue recovery match independent Euler recurrence with fixed wiring
+ok 374 - candidate depression and inactive-cue recovery match independent Euler recurrence with fixed wiring
+  ---
+  duration_ms: 130.744
+  type: 'test'
+  ...
+# Subtest: absent DAN has no recovery; restored memory reproduces the next update and rejects corruption
+ok 375 - absent DAN has no recovery; restored memory reproduces the next update and rejects corruption
+  ---
+  duration_ms: 10.6762
+  type: 'test'
+  ...
+# Subtest: unstable and invalid local observations fail before changing persistent state
+ok 376 - unstable and invalid local observations fail before changing persistent state
+  ---
+  duration_ms: 15.5664
+  type: 'test'
+  ...
+# Subtest: candidate mapping recognizes released alpha-prime notation and excludes gamma inputs from PAM beta-prime mask
+ok 377 - candidate mapping recognizes released alpha-prime notation and excludes gamma inputs from PAM beta-prime mask
+  ---
+  duration_ms: 249.9245
+  type: 'test'
+  ...
+# Subtest: isolated local event order controls direction; delay attenuates either direction
+ok 378 - isolated local event order controls direction; delay attenuates either direction
+  ---
+  duration_ms: 46.1484
+  type: 'test'
+  ...
+# Subtest: both numerical bounds remain escapable and gains reverse without freezing
+ok 379 - both numerical bounds remain escapable and gains reverse without freezing
+  ---
+  duration_ms: 66.8104
+  type: 'test'
+  ...
+# Subtest: quiet intervals decay traces without changing gain; stale KC credit can still interfere
+ok 380 - quiet intervals decay traces without changing gain; stale KC credit can still interfere
+  ---
+  duration_ms: 1.6884
+  type: 'test'
+  ...
+# Subtest: serialized state/config reproduce the next event; invalid input does not mutate state
+ok 381 - serialized state/config reproduce the next event; invalid input does not mutate state
+  ---
+  duration_ms: 46.0166
+  type: 'test'
+  ...
+# Subtest: frozenScores returns forward scores for an unchanged memory
+ok 382 - frozenScores returns forward scores for an unchanged memory
+  ---
+  duration_ms: 9.6898
+  type: 'test'
+  ...
+# Subtest: frozenScores rejects a scorer that changes the memory
+ok 383 - frozenScores rejects a scorer that changes the memory
+  ---
+  duration_ms: 47.5007
+  type: 'test'
+  ...
+# Subtest: frozenScores rejects a call-count-dependent scorer with an unchanged memory
+ok 384 - frozenScores rejects a call-count-dependent scorer with an unchanged memory
+  ---
+  duration_ms: 2.4345
+  type: 'test'
+  ...
+# Subtest: frozenScores rejects empty candidates and NaN scores
+ok 385 - frozenScores rejects empty candidates and NaN scores
+  ---
+  duration_ms: 4.6792
+  type: 'test'
+  ...
+# Subtest: exactRepeats finds exact matches regardless of entry order
+ok 386 - exactRepeats finds exact matches regardless of entry order
+  ---
+  duration_ms: 3.0647
+  type: 'test'
+  ...
+# Subtest: exactRepeats does not count a 1e-6 change in one current as a repeat
+ok 387 - exactRepeats does not count a 1e-6 change in one current as a repeat
+  ---
+  duration_ms: 9.6563
+  type: 'test'
+  ...
+# Subtest: similarBoardRecall returns the value of the most similar stored cue
+ok 388 - similarBoardRecall returns the value of the most similar stored cue
+  ---
+  duration_ms: 8.1695
+  type: 'test'
+  ...
+# Subtest: similarBoardRecall returns zero from an empty store
+ok 389 - similarBoardRecall returns zero from an empty store
+  ---
+  duration_ms: 7.1509
+  type: 'test'
+  ...
+# Subtest: similarBoardRecall returns zero for disjoint indices
+ok 390 - similarBoardRecall returns zero for disjoint indices
+  ---
+  duration_ms: 4.9274
+  type: 'test'
+  ...
+# Subtest: similarBoardRecall keeps the earliest entry on a tie
+ok 391 - similarBoardRecall keeps the earliest entry on a tie
+  ---
+  duration_ms: 8.0718
+  type: 'test'
+  ...
+# Subtest: similarBoardRecall rejects a stored value other than -1 or +1
+ok 392 - similarBoardRecall rejects a stored value other than -1 or +1
+  ---
+  duration_ms: 4.4238
+  type: 'test'
+  ...
+# Subtest: pairGate passes a clear primary win and is deterministic
+ok 393 - pairGate passes a clear primary win and is deterministic
+  ---
+  duration_ms: 268.8861
+  type: 'test'
+  ...
+# Subtest: pairGate fails a comparator tied with the primary
+ok 394 - pairGate fails a comparator tied with the primary
+  ---
+  duration_ms: 73.7864
+  type: 'test'
+  ...
+# Subtest: pairGate fails when primary is below minCorrect
+ok 395 - pairGate fails when primary is below minCorrect
+  ---
+  duration_ms: 98.7278
+  type: 'test'
+  ...
+# Subtest: pairGate throws on empty games, mismatched lengths and a missing arm
+ok 396 - pairGate throws on empty games, mismatched lengths and a missing arm
+  ---
+  duration_ms: 1.1762
+  type: 'test'
+  ...
+# Subtest: adaptive experiment resumes pending updates exactly once and matches control experiences
+ok 397 - adaptive experiment resumes pending updates exactly once and matches control experiences
+  ---
+  duration_ms: 6278.6788
+  type: 'test'
+  ...
+# Subtest: feedback follows replacement errors, stops at correct/tied choices, and rejects stale evidence
+ok 398 - feedback follows replacement errors, stops at correct/tied choices, and rejects stale evidence
+  ---
+  duration_ms: 1543.9006
+  type: 'test'
+  ...
+# Subtest: alpha-lobe valence is MBON14 minus MBON07
+ok 399 - alpha-lobe valence is MBON14 minus MBON07
+  ---
+  duration_ms: 6.1011
+  type: 'test'
+  ...
+# Subtest: negative valence gives sign -1
+ok 400 - negative valence gives sign -1
+  ---
+  duration_ms: 0.9582
+  type: 'test'
+  ...
+# Subtest: zero valence gives sign 0 (not -0)
+ok 401 - zero valence gives sign 0 (not -0)
+  ---
+  duration_ms: 4.7846
+  type: 'test'
+  ...
+# Subtest: invalid rows throw
+ok 402 - invalid rows throw
+  ---
+  duration_ms: 3.3563
+  type: 'test'
+  ...
+# Subtest: Cache returns independent exact summaries and invalidates after teaching, restoration or fixed-state changes
+ok 403 - Cache returns independent exact summaries and invalidates after teaching, restoration or fixed-state changes
+  ---
+  duration_ms: 60.4223
+  type: 'test'
+  ...
+# Subtest: Cache distinguishes move order, task horizon and actual history at the same FEN
+ok 404 - Cache distinguishes move order, task horizon and actual history at the same FEN
+  ---
+  duration_ms: 68.713
+  type: 'test'
+  ...
+# Subtest: Guard runs on cache hits and failed/mutating assessments are never cached
+ok 405 - Guard runs on cache hits and failed/mutating assessments are never cached
+  ---
+  duration_ms: 23.1977
+  type: 'test'
+  ...
+# Subtest: Fresh checks always run the graph and prime only their unchanged result for the following search
+ok 406 - Fresh checks always run the graph and prime only their unchanged result for the following search
+  ---
+  duration_ms: 15.6726
+  type: 'test'
+  ...
+# Subtest: quiet and capture evidence independently bind to all-legal C01 assessments and temporal frames
+ok 407 - quiet and capture evidence independently bind to all-legal C01 assessments and temporal frames
+  ---
+  duration_ms: 543.6563
+  type: 'test'
+  ...
+# Subtest: unknown proof produces no plan, and mismatched or subset assessments cannot bind
+ok 408 - unknown proof produces no plan, and mismatched or subset assessments cannot bind
+  ---
+  duration_ms: 98.696
+  type: 'test'
+  ...
+# Subtest: C01 session inherits shared frame transactions and resumes the all-legal domain without duplicate updates
+ok 409 - C01 session inherits shared frame transactions and resumes the all-legal domain without duplicate updates
+  ---
+  duration_ms: 1027.3413
+  type: 'test'
+  ...
+# Subtest: provisional channel is constant-sign and fails
+ok 410 - provisional channel is constant-sign and fails
+  ---
+  duration_ms: 6.8534
+  type: 'test'
+  ...
+# Subtest: score channel with mixed signs and perfect ordering passes
+ok 411 - score channel with mixed signs and perfect ordering passes
+  ---
+  duration_ms: 1.9382
+  type: 'test'
+  ...
+# Subtest: value function reversing score order fails
+ok 412 - value function reversing score order fails
+  ---
+  duration_ms: 1.0396
+  type: 'test'
+  ...
+# Subtest: all-null values are constant-sign and fail
+ok 413 - all-null values are constant-sign and fail
+  ---
+  duration_ms: 0.9386
+  type: 'test'
+  ...
+# Subtest: equal scores only give no usable pair and fail
+ok 414 - equal scores only give no usable pair and fail
+  ---
+  duration_ms: 1.4444
+  type: 'test'
+  ...
+# Subtest: current all-legal failures are reviewed in paired feedback and controls replay the exact adaptive sequence
+ok 415 - current all-legal failures are reviewed in paired feedback and controls replay the exact adaptive sequence
+  ---
+  duration_ms: 4253.2778
+  type: 'test'
+  ...
+# Subtest: unknown current-choice verification stops without supplying any teaching event
+ok 416 - unknown current-choice verification stops without supplying any teaching event
+  ---
+  duration_ms: 786.6709
+  type: 'test'
+  ...
+# Subtest: bounded plan targets an actual error and protects the least-confident correct choice
+ok 417 - bounded plan targets an actual error and protects the least-confident correct choice
+  ---
+  duration_ms: 1683.5429
+  type: 'test'
+  ...
+# Subtest: unknown target and tied choices cannot be turned into corrective reinforcement
+ok 418 - unknown target and tied choices cannot be turned into corrective reinforcement
+  ---
+  duration_ms: 667.8815
+  type: 'test'
+  ...
+# Subtest: stale memory, forged certificate, validation/final selection and duplicate panels are rejected
+ok 419 - stale memory, forged certificate, validation/final selection and duplicate panels are rejected
+  ---
+  duration_ms: 298.7037
+  type: 'test'
+  ...
+# Subtest: no sentinel gives an explicit unready result; priorities have deterministic ties
+ok 420 - no sentinel gives an explicit unready result; priorities have deterministic ties
+  ---
+  duration_ms: 912.5906
+  type: 'test'
+  ...
+# Subtest: counterfactual record binds an unaided error, certified refutation, alternative, and declared learner prediction
+ok 421 - counterfactual record binds an unaided error, certified refutation, alternative, and declared learner prediction
+  ---
+  duration_ms: 232.2145
+  type: 'test'
+  ...
+# Subtest: unknown, teacher-origin predictions, stale state, missing refutation, and nonchosen attempts are rejected
+ok 422 - unknown, teacher-origin predictions, stale state, missing refutation, and nonchosen attempts are rejected
+  ---
+  duration_ms: 253.5383
+  type: 'test'
+  ...
+# Subtest: perspective helpers: a mover cue keeps the root sign; side-to-move flips for the opponent
+ok 423 - perspective helpers: a mover cue keeps the root sign; side-to-move flips for the opponent
+  ---
+  duration_ms: 9.0907
+  type: 'test'
+  ...
+# Subtest: black mover: v3 predicts and teaches in the mover perspective; v2 behaviour is preserved for side-to-move cues
+ok 424 - black mover: v3 predicts and teaches in the mover perspective; v2 behaviour is preserved for side-to-move cues
+  ---
+  duration_ms: 1940.5669
+  type: 'test'
+  ...
+# Subtest: shuffled control reverses the mover-perspective error
+ok 425 - shuffled control reverses the mover-perspective error
+  ---
+  duration_ms: 1095.1689
+  type: 'test'
+  ...
+# Subtest: search value stays in the side-to-move perspective
+ok 426 - search value stays in the side-to-move perspective
+  ---
+  duration_ms: 15.409
+  type: 'test'
+  ...
+# Subtest: all six modes evaluate the same planned root/child and deliver two separate controlled pulses
+ok 427 - all six modes evaluate the same planned root/child and deliver two separate controlled pulses
+  ---
+  duration_ms: 1370.0039
+  type: 'test'
+  ...
+# Subtest: a planned alternative is kept distinct from the own choice and from a tie
+ok 428 - a planned alternative is kept distinct from the own choice and from a tie
+  ---
+  duration_ms: 213.0116
+  type: 'test'
+  ...
+# Subtest: disk recovery after the task pulse continues only the second pulse
+ok 429 - disk recovery after the task pulse continues only the second pulse
+  ---
+  duration_ms: 907.8966
+  type: 'test'
+  ...
+# Subtest: terminal state has a measured prediction; only silent value gets a neutral engine slot
+ok 430 - terminal state has a measured prediction; only silent value gets a neutral engine slot
+  ---
+  duration_ms: 7515.0669
+  type: 'test'
+  ...
+# Subtest: black actor perspective is preserved and whole-event capacity is checked before preparation
+ok 431 - black actor perspective is preserved and whole-event capacity is checked before preparation
+  ---
+  duration_ms: 1654.1004
+  type: 'test'
+  ...
+# Subtest: unknown proofs and rehashed error tampering are rejected before another pulse
+ok 432 - unknown proofs and rehashed error tampering are rejected before another pulse
+  ---
+  duration_ms: 928.9868
+  type: 'test'
+  ...
+# Subtest: pending and appended task-pulse receipts recover without duplicating either update
+ok 433 - pending and appended task-pulse receipts recover without duplicating either update
+  ---
+  duration_ms: 22108.8217
+  type: 'test'
+  ...
+# Subtest: a complete coupled block persists and independently replays preparation and both teaching pulses
+ok 434 - a complete coupled block persists and independently replays preparation and both teaching pulses
+  ---
+  duration_ms: 7495.9256
+  type: 'test'
+  ...
+# Coupled fixture: C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\coupled-feedback-fixture-3fe39738-9334-4f7e-be75-d53ac0a8191e
+# Subtest: four-event learning block commits exposure counts only on completion
+ok 435 - four-event learning block commits exposure counts only on completion
+  ---
+  duration_ms: 2766.3025
+  type: 'test'
+  ...
+# Subtest: Lichess panels feed fresh choices into the planner and temporal block runner
+ok 436 - Lichess panels feed fresh choices into the planner and temporal block runner
+  ---
+  duration_ms: 7435.5239
+  type: 'test'
+  ...
+# Subtest: stage runner completes registered blocks and restores the final stage checkpoint
+ok 437 - stage runner completes registered blocks and restores the final stage checkpoint
+  ---
+  duration_ms: 13458.6232
+  type: 'test'
+  ...
+# Subtest: condition matrix yokes controls to informative plans and audits every memory lineage
+ok 438 - condition matrix yokes controls to informative plans and audits every memory lineage
+  ---
+  duration_ms: 19619.1541
+  type: 'test'
+  ...
+# Subtest: readiness-blocked stage atomically publishes the campaign result
+ok 439 - readiness-blocked stage atomically publishes the campaign result
+  ---
+  duration_ms: 156.1731
+  type: 'test'
+  ...
+# Subtest: JSON checkpoint prefixes resume identical receipts without repeating neural frames
+ok 440 - JSON checkpoint prefixes resume identical receipts without repeating neural frames
+  ---
+  duration_ms: 6040.672
+  type: 'test'
+  ...
+# Subtest: stale ranking, changed plans, incomplete events and failed frames preserve state
+ok 441 - stale ranking, changed plans, incomplete events and failed frames preserve state
+  ---
+  duration_ms: 476.1267
+  type: 'test'
+  ...
+# Subtest: corrupt checkpoint histories and incompatible identities reject transactionally
+ok 442 - corrupt checkpoint histories and incompatible identities reject transactionally
+  ---
+  duration_ms: 769.3563
+  type: 'test'
+  ...
+# Subtest: controls replay the informative plan with their own fresh memory assessments
+ok 443 - controls replay the informative plan with their own fresh memory assessments
+  ---
+  duration_ms: 1431.9543
+  type: 'test'
+  ...
+# Subtest: shuffled feedback is pinned, resumable and does not change verified outcomes
+ok 444 - shuffled feedback is pinned, resumable and does not change verified outcomes
+  ---
+  duration_ms: 1423.7203
+  type: 'test'
+  ...
+# Subtest: async lesson transactions recover and independently replay without a duplicate update
+ok 445 - async lesson transactions recover and independently replay without a duplicate update
+  ---
+  duration_ms: 3061.8817
+  type: 'test'
+  ...
+# Subtest: disk publications recover pending and already appended receipts exactly once
+ok 446 - disk publications recover pending and already appended receipts exactly once
+  ---
+  duration_ms: 30058.2736
+  type: 'test'
+  ...
+# Subtest: disk recovery refuses partial logs, changed identity and incomplete publications
+ok 447 - disk recovery refuses partial logs, changed identity and incomplete publications
+  ---
+  duration_ms: 1030.1542
+  type: 'test'
+  ...
+# Subtest: disk record budget follows the pinned temporal frame schedule
+ok 448 - disk record budget follows the pinned temporal frame schedule
+  ---
+  duration_ms: 3239.4435
+  type: 'test'
+  ...
+# Subtest: separate replay rejects rehashed false neural records and false unaided rankings
+ok 449 - separate replay rejects rehashed false neural records and false unaided rankings
+  ---
+  duration_ms: 2786.2246
+  type: 'test'
+  ...
+# Subtest: separate replay checks absent, disabled and registered shuffled conditions
+ok 450 - separate replay checks absent, disabled and registered shuffled conditions
+  ---
+  duration_ms: 9141.161
+  type: 'test'
+  ...
+# Subtest: a later block preserves earlier exposure counts and the event chain in replay
+ok 451 - a later block preserves earlier exposure counts and the event chain in replay
+  ---
+  duration_ms: 4666.3575
+  type: 'test'
+  ...
+# Subtest: earliest passing published checkpoint wins even when a later one scores higher
+ok 452 - earliest passing published checkpoint wins even when a later one scores higher
+  ---
+  duration_ms: 69.6475
+  type: 'test'
+  ...
+# Subtest: aggregate accuracy cannot override a failed stratum or unaided-choice gate
+ok 453 - aggregate accuracy cannot override a failed stratum or unaided-choice gate
+  ---
+  duration_ms: 1.6423
+  type: 'test'
+  ...
+# Subtest: every-block selection, skipped publications and changed validation identities are unknown
+ok 454 - every-block selection, skipped publications and changed validation identities are unknown
+  ---
+  duration_ms: 1.7112
+  type: 'test'
+  ...
+# Subtest: later stages need complete earlier retention observations; a regression excludes a candidate
+ok 455 - later stages need complete earlier retention observations; a regression excludes a candidate
+  ---
+  duration_ms: 3.191
+  type: 'test'
+  ...
+# Subtest: handoff loads validation-selected memory, preserves new stage counters and supports production slash keys
+ok 456 - handoff loads validation-selected memory, preserves new stage counters and supports production slash keys
+  ---
+  duration_ms: 113.9202
+  type: 'test'
+  ...
+# Subtest: handoff keeps causal controls on their own predecessor memory
+ok 457 - handoff keeps causal controls on their own predecessor memory
+  ---
+  duration_ms: 43.255
+  type: 'test'
+  ...
+# Subtest: a resumed predecessor lineage supplies its selected checkpoint through its result history
+ok 458 - a resumed predecessor lineage supplies its selected checkpoint through its result history
+  ---
+  duration_ms: 107.1711
+  type: 'test'
+  ...
+# Subtest: later stages cannot silently start from scratch or skip a stage
+ok 459 - later stages cannot silently start from scratch or skip a stage
+  ---
+  duration_ms: 35.3109
+  type: 'test'
+  ...
+# Subtest: failed, unknown and incomplete independent audits cannot supply memory
+ok 460 - failed, unknown and incomplete independent audits cannot supply memory
+  ---
+  duration_ms: 135.5157
+  type: 'test'
+  ...
+# Subtest: changed result, frozen selection or checkpoint is rejected before memory changes
+ok 461 - changed result, frozen selection or checkpoint is rejected before memory changes
+  ---
+  duration_ms: 124.7432
+  type: 'test'
+  ...
+# Subtest: unknown lineage and paths outside repository are rejected
+ok 462 - unknown lineage and paths outside repository are rejected
+  ---
+  duration_ms: 42.9137
+  type: 'test'
+  ...
+# Subtest: a guard failure after restoration rolls back persistent memory
+ok 463 - a guard failure after restoration rolls back persistent memory
+  ---
+  duration_ms: 54.4917
+  type: 'test'
+  ...
+# Subtest: handoff rejects changed graph, physiology, replica seed and earlier input projection
+ok 464 - handoff rejects changed graph, physiology, replica seed and earlier input projection
+  ---
+  duration_ms: 55.184
+  type: 'test'
+  ...
+# Subtest: below the cap the v2 plan selects exactly what v1 selects and records the cap
+ok 465 - below the cap the v2 plan selects exactly what v1 selects and records the cap
+  ---
+  duration_ms: 2688.3422
+  type: 'test'
+  ...
+# Subtest: a panel targeted in each of the last M blocks yields to the oldest other current panel
+ok 466 - a panel targeted in each of the last M blocks yields to the oldest other current panel
+  ---
+  duration_ms: 1181.2757
+  type: 'test'
+  ...
+# Subtest: the cap needs a registered M and the target of every completed block
+ok 467 - the cap needs a registered M and the target of every completed block
+  ---
+  duration_ms: 433.4822
+  type: 'test'
+  ...
+# Subtest: four-event block targets the current error, rehearses another panel and stays balanced
+ok 468 - four-event block targets the current error, rehearses another panel and stays balanced
+  ---
+  duration_ms: 497.1679
+  type: 'test'
+  ...
+# Subtest: mastered/tied panels use honest practice fallback and never invent a current error
+ok 469 - mastered/tied panels use honest practice fallback and never invent a current error
+  ---
+  duration_ms: 470.7325
+  type: 'test'
+  ...
+# Subtest: selection uses current training scores and deterministic saved exposure counts
+ok 470 - selection uses current training scores and deterministic saved exposure counts
+  ---
+  duration_ms: 344.0235
+  type: 'test'
+  ...
+# Subtest: validation/final rows, changed stages, stale memory and subset coverage are rejected
+ok 471 - validation/final rows, changed stages, stale memory and subset coverage are rejected
+  ---
+  duration_ms: 901.1629
+  type: 'test'
+  ...
+# Subtest: unknown required proof or missing balance stops before any event
+ok 472 - unknown required proof or missing balance stops before any event
+  ---
+  duration_ms: 598.8565
+  type: 'test'
+  ...
+# Subtest: later stages require earlier rehearsal and the registered budget cannot auto-extend
+ok 473 - later stages require earlier rehearsal and the registered budget cannot auto-extend
+  ---
+  duration_ms: 362.8714
+  type: 'test'
+  ...
+# Subtest: post-interference observations measure all required positions and retain the actual tested memory
+ok 474 - post-interference observations measure all required positions and retain the actual tested memory
+  ---
+  duration_ms: 22209.6364
+  type: 'test'
+  ...
+# Subtest: forgotten earlier foundations and lost current validation fail the measured gate
+ok 475 - forgotten earlier foundations and lost current validation fail the measured gate
+  ---
+  duration_ms: 51586.5929
+  type: 'test'
+  ...
+# Subtest: changed certificates, stale memory bindings and missing sentinel coverage are unknown
+ok 476 - changed certificates, stale memory bindings and missing sentinel coverage are unknown
+  ---
+  duration_ms: 16866.5437
+  type: 'test'
+  ...
+# Subtest: unknown consequence evidence rejects observation and restores the original memory/counter
+ok 477 - unknown consequence evidence rejects observation and restores the original memory/counter
+  ---
+  duration_ms: 872.6996
+  type: 'test'
+  ...
+# Subtest: final-set positions cannot be used as retention validation or training sentinels
+ok 478 - final-set positions cannot be used as retention validation or training sentinels
+  ---
+  duration_ms: 18.0666
+  type: 'test'
+  ...
+# Subtest: promotion binds the actual post-challenge memory and publication is idempotent
+ok 479 - promotion binds the actual post-challenge memory and publication is idempotent
+  ---
+  duration_ms: 286.2633
+  type: 'test'
+  ...
+# Subtest: a passed-looking summary cannot override measured sentinel loss
+ok 480 - a passed-looking summary cannot override measured sentinel loss
+  ---
+  duration_ms: 162.5736
+  type: 'test'
+  ...
+# Subtest: missing replay, stale selection, and changed checkpoint bytes cannot promote
+ok 481 - missing replay, stale selection, and changed checkpoint bytes cannot promote
+  ---
+  duration_ms: 226.3974
+  type: 'test'
+  ...
+# Subtest: the next stage restores the post-interference checkpoint rather than the selected or last acquisition memory
+ok 482 - the next stage restores the post-interference checkpoint rather than the selected or last acquisition memory
+  ---
+  duration_ms: 227.3503
+  type: 'test'
+  ...
+# Subtest: accepts Stage 1 only when frozen D1-D8 thresholds and prerequisites pass
+ok 483 - accepts Stage 1 only when frozen D1-D8 thresholds and prerequisites pass
+  ---
+  duration_ms: 101.7153
+  type: 'test'
+  ...
+# Subtest: missing or overlapping audit evidence stays unknown, while a measured prerequisite failure fails closed
+ok 484 - missing or overlapping audit evidence stays unknown, while a measured prerequisite failure fails closed
+  ---
+  duration_ms: 58.1138
+  type: 'test'
+  ...
+# Subtest: policy B defers only the registered Stage 1 D7; other missing retention stays unknown
+ok 485 - policy B defers only the registered Stage 1 D7; other missing retention stays unknown
+  ---
+  duration_ms: 133.5954
+  type: 'test'
+  ...
+# Subtest: ties and zero consequence predictions count as incorrect rather than missing
+ok 486 - ties and zero consequence predictions count as incorrect rather than missing
+  ---
+  duration_ms: 63.5379
+  type: 'test'
+  ...
+# Subtest: fails causal gate when any matched control erases the required advantage
+ok 487 - fails causal gate when any matched control erases the required advantage
+  ---
+  duration_ms: 43.2303
+  type: 'test'
+  ...
+# Subtest: rejects mismatched control records and counterfactuals without reversal
+ok 488 - rejects mismatched control records and counterfactuals without reversal
+  ---
+  duration_ms: 45.1195
+  type: 'test'
+  ...
+# Subtest: replica acceptance requires the pinned count and every replica to pass
+ok 489 - replica acceptance requires the pinned count and every replica to pass
+  ---
+  duration_ms: 148.3417
+  type: 'test'
+  ...
+# Subtest: D9 requires the informative arm to beat both outcome-only and shuffled-Stockfish controls
+ok 490 - D9 requires the informative arm to beat both outcome-only and shuffled-Stockfish controls
+  ---
+  duration_ms: 129.3936
+  type: 'test'
+  ...
+# Subtest: result publication waits for explicit additional training; acquisition is immutable
+ok 491 - result publication waits for explicit additional training; acquisition is immutable
+  ---
+  duration_ms: 94.9375
+  type: 'test'
+  ...
+# Subtest: an interruption resumes phase progress without rerunning acquisition or acknowledging completion
+ok 492 - an interruption resumes phase progress without rerunning acquisition or acknowledging completion
+  ---
+  duration_ms: 70.8424
+  type: 'test'
+  ...
+# Subtest: measured phase failure stops before audit and preserves its diagnosis
+ok 493 - measured phase failure stops before audit and preserves its diagnosis
+  ---
+  duration_ms: 41.2348
+  type: 'test'
+  ...
+# Subtest: phase identity changes and acquisition mutation fail without a completion publication
+ok 494 - phase identity changes and acquisition mutation fail without a completion publication
+  ---
+  duration_ms: 19.5224
+  type: 'test'
+  ...
+# Subtest: certified sequence records prior all-legal ordinal ranking, delayed activity, controls and fixed wiring
+ok 495 - certified sequence records prior all-legal ordinal ranking, delayed activity, controls and fixed wiring
+  ---
+  duration_ms: 461.831
+  type: 'test'
+  ...
+# Subtest: unknown, forged proof and exhausted complete budget cause zero neural presentations
+ok 496 - unknown, forged proof and exhausted complete budget cause zero neural presentations
+  ---
+  duration_ms: 48.7249
+  type: 'test'
+  ...
+# Subtest: every legal move has a checked bounded-mate criterion, including quiet/king moves; endpoints encode
+ok 497 - every legal move has a checked bounded-mate criterion, including quiet/king moves; endpoints encode
+  ---
+  duration_ms: 1494.1455
+  type: 'test'
+  ...
+# Subtest: bounded multi-ply failure branch is legal; incomplete/unknown proof never supplies frames
+ok 498 - bounded multi-ply failure branch is legal; incomplete/unknown proof never supplies frames
+  ---
+  duration_ms: 248.3048
+  type: 'test'
+  ...
+# Subtest: complete mate receiver assesses all legal moves before terminal consequence and updates local memory
+ok 499 - complete mate receiver assesses all legal moves before terminal consequence and updates local memory
+  ---
+  duration_ms: 358.9469
+  type: 'test'
+  ...
+# Subtest: dose measurements restore learned and initial memories and reproduce learned assessments
+ok 500 - dose measurements restore learned and initial memories and reproduce learned assessments
+  ---
+  duration_ms: 5.1833
+  type: 'test'
+  ...
+# Subtest: persistent changes during assessment invalidate measurement
+ok 501 - persistent changes during assessment invalidate measurement
+  ---
+  duration_ms: 6.1056
+  type: 'test'
+  ...
+# Subtest: checked success/failure select opposite channels and causal memory survives restoration
+ok 502 - checked success/failure select opposite channels and causal memory survives restoration
+  ---
+  duration_ms: 306.3543
+  type: 'test'
+  ...
+# Subtest: unknown and forged consequences fail before stimulation; controls freeze or omit explicitly
+ok 503 - unknown and forged consequences fail before stimulation; controls freeze or omit explicitly
+  ---
+  duration_ms: 126.7204
+  type: 'test'
+  ...
+# Subtest: capture-retention certificates enter the existing dual-valence adapter in the matching channel
+ok 504 - capture-retention certificates enter the existing dual-valence adapter in the matching channel
+  ---
+  duration_ms: 82.6704
+  type: 'test'
+  ...
+# Subtest: feedback identifies the selected error and verified alternative without claiming full legal coverage
+ok 505 - feedback identifies the selected error and verified alternative without claiming full legal coverage
+  ---
+  duration_ms: 118.4251
+  type: 'test'
+  ...
+# Subtest: stale memory, forged rankings, mismatched context and incomplete evidence cannot bind a teaching event
+ok 506 - stale memory, forged rankings, mismatched context and incomplete evidence cannot bind a teaching event
+  ---
+  duration_ms: 62.2579
+  type: 'test'
+  ...
+# Subtest: ties and unknown consequences are explicit and unknown supplies no teaching channel
+ok 507 - ties and unknown consequences are explicit and unknown supplies no teaching channel
+  ---
+  duration_ms: 6.4054
+  type: 'test'
+  ...
+# Subtest: no-channel control cannot silently receive informative reinforcement
+ok 508 - no-channel control cannot silently receive informative reinforcement
+  ---
+  duration_ms: 0.9824
+  type: 'test'
+  ...
+# Subtest: independent derivation checker accepts strict pairs and rejects forged outcomes/history/actions
+ok 509 - independent derivation checker accepts strict pairs and rejects forged outcomes/history/actions
+  ---
+  duration_ms: 1070.7287
+  type: 'test'
+  ...
+# Subtest: legal king-guard branches invert two capture choices with identical legal options
+ok 510 - legal king-guard branches invert two capture choices with identical legal options
+  ---
+  duration_ms: 504.3122
+  type: 'test'
+  ...
+# Subtest: bounded branch exhaustion and guard failure retain exact source history
+ok 511 - bounded branch exhaustion and guard failure retain exact source history
+  ---
+  duration_ms: 119.0206
+  type: 'test'
+  ...
+# Subtest: expanded search accepts the registered 4096 branch ceiling
+ok 512 - expanded search accepts the registered 4096 branch ceiling
+  ---
+  duration_ms: 418.7944
+  type: 'test'
+  ...
+# Subtest: a common quiet piece move can create the capture geometry absent from king-only branches
+ok 513 - a common quiet piece move can create the capture geometry absent from king-only branches
+  ---
+  duration_ms: 1415.0201
+  type: 'test'
+  ...
+# Subtest: legal king-guard branches invert two capture choices with identical legal options
+ok 514 - legal king-guard branches invert two capture choices with identical legal options
+  ---
+  duration_ms: 1729.1051
+  type: 'test'
+  ...
+# Subtest: bounded branch exhaustion and guard failure retain exact source history
+ok 515 - bounded branch exhaustion and guard failure retain exact source history
+  ---
+  duration_ms: 167.916
+  type: 'test'
+  ...
+# Subtest: expanded search accepts the registered 4096 branch ceiling
+ok 516 - expanded search accepts the registered 4096 branch ceiling
+  ---
+  duration_ms: 510.7741
+  type: 'test'
+  ...
+# Subtest: a non-king quiet reply can create a one-piece counterfactual pair
+ok 517 - a non-king quiet reply can create a one-piece counterfactual pair
+  ---
+  duration_ms: 797.2569
+  type: 'test'
+  ...
+# Subtest: a common quiet piece move can create the capture geometry absent from king-only branches
+ok 518 - a common quiet piece move can create the capture geometry absent from king-only branches
+  ---
+  duration_ms: 531.5271
+  type: 'test'
+  ...
+# Subtest: legal king-guard branches invert two capture choices with identical legal options
+ok 519 - legal king-guard branches invert two capture choices with identical legal options
+  ---
+  duration_ms: 629.5346
+  type: 'test'
+  ...
+# Subtest: bounded branch exhaustion and guard failure retain exact source history
+ok 520 - bounded branch exhaustion and guard failure retain exact source history
+  ---
+  duration_ms: 104.7469
+  type: 'test'
+  ...
+# Subtest: a common quiet piece move can create the capture geometry absent from king-only branches
+ok 521 - a common quiet piece move can create the capture geometry absent from king-only branches
+  ---
+  duration_ms: 434.0476
+  type: 'test'
+  ...
+# Subtest: same two captures exchange certified outcomes across a legal one-piece counterfactual
+ok 522 - same two captures exchange certified outcomes across a legal one-piece counterfactual
+  ---
+  duration_ms: 1271.127
+  type: 'test'
+  ...
+# Subtest: branch bound and unknown source are not converted into families
+ok 523 - branch bound and unknown source are not converted into families
+  ---
+  duration_ms: 119.155
+  type: 'test'
+  ...
+# Subtest: a probe must remain a certified capture in both counterfactual positions
+ok 524 - a probe must remain a certified capture in both counterfactual positions
+  ---
+  duration_ms: 26406.6291
+  type: 'test'
+  ...
+# Subtest: early-stop rule: stop when the best count has not risen within the window
+ok 525 - early-stop rule: stop when the best count has not risen within the window
+  ---
+  duration_ms: 3.5304
+  type: 'test'
+  ...
+# Subtest: stage v2: registered early stop publishes gate-failed with counts; cap alternates targets
+ok 526 - stage v2: registered early stop publishes gate-failed with counts; cap alternates targets
+  ---
+  duration_ms: 2974.3328
+  type: 'test'
+  ...
+# Subtest: stage v2: pause at a block boundary, then resume to the same audited result
+ok 527 - stage v2: pause at a block boundary, then resume to the same audited result
+  ---
+  duration_ms: 7323.479
+  type: 'test'
+  ...
+# Subtest: matrix v2: a pause leaves a resumable state without result.json; resume completes every arm
+ok 528 - matrix v2: a pause leaves a resumable state without result.json; resume completes every arm
+  ---
+  duration_ms: 5748.8754
+  type: 'test'
+  ...
+# Subtest: runner v2 controls and pause requests are validated
+ok 529 - runner v2 controls and pause requests are validated
+  ---
+  duration_ms: 98.2086
+  type: 'test'
+  ...
+# Subtest: block v3: resume from a mid-event block checkpoint matches the uninterrupted run; v2 throws
+ok 530 - block v3: resume from a mid-event block checkpoint matches the uninterrupted run; v2 throws
+  ---
+  duration_ms: 3969.3685
+  type: 'test'
+  ...
+# Subtest: (a) saved pointer at block 8 and attempt at block 16: the attempt checkpoint and its block checkpoint win
+ok 531 - (a) saved pointer at block 8 and attempt at block 16: the attempt checkpoint and its block checkpoint win
+  ---
+  duration_ms: 10.9426
+  type: 'test'
+  ...
+# Subtest: (b) saved pointer newer than the attempt (attempt has none): the saved pointer and its saved block checkpoint
+ok 532 - (b) saved pointer newer than the attempt (attempt has none): the saved pointer and its saved block checkpoint
+  ---
+  duration_ms: 1.295
+  type: 'test'
+  ...
+# Subtest: (c) no saved active state: the lineage directory scan is used with no block checkpoint
+ok 533 - (c) no saved active state: the lineage directory scan is used with no block checkpoint
+  ---
+  duration_ms: 1.0186
+  type: 'test'
+  ...
+# Subtest: (d) saved pointer missing on disk: the attempt checkpoint and its block checkpoint are used
+ok 534 - (d) saved pointer missing on disk: the attempt checkpoint and its block checkpoint are used
+  ---
+  duration_ms: 0.9556
+  type: 'test'
+  ...
+# Subtest: (e) tie between saved pointer and attempt at block 16: the attempt checkpoint wins
+ok 535 - (e) tie between saved pointer and attempt at block 16: the attempt checkpoint wins
+  ---
+  duration_ms: 0.704
+  type: 'test'
+  ...
+# Subtest: importing matrix v3 runs nothing and exports the v2 surface plus selectResume
+ok 536 - importing matrix v3 runs nothing and exports the v2 surface plus selectResume
+  ---
+  duration_ms: 607.7508
+  type: 'test'
+  ...
+# Subtest: binds a training family to the checked all-legal Lichess lesson
+ok 537 - binds a training family to the checked all-legal Lichess lesson
+  ---
+  duration_ms: 245.8513
+  type: 'test'
+  ...
+# Subtest: training binding refuses reserved splits, missing actions and forged certificates
+ok 538 - training binding refuses reserved splits, missing actions and forged certificates
+  ---
+  duration_ms: 95.6804
+  type: 'test'
+  ...
+# Subtest: captures a fresh all-legal unaided choice and records ties without changing memory
+ok 539 - captures a fresh all-legal unaided choice and records ties without changing memory
+  ---
+  duration_ms: 386.4071
+  type: 'test'
+  ...
+# Subtest: binds all-legal Stockfish child estimates to the training panel and fresh Fly choice
+ok 540 - binds all-legal Stockfish child estimates to the training panel and fresh Fly choice
+  ---
+  duration_ms: 822.6691
+  type: 'test'
+  ...
+# Subtest: Stockfish review refuses incomplete all-legal budgets and tied or stale Fly rankings
+ok 541 - Stockfish review refuses incomplete all-legal budgets and tied or stale Fly rankings
+  ---
+  duration_ms: 908.3802
+  type: 'test'
+  ...
+# Subtest: collects pinned matched-budget Stockfish estimates for every legal child and binds the review
+ok 542 - collects pinned matched-budget Stockfish estimates for every legal child and binds the review
+  ---
+  duration_ms: 8390.1186
+  type: 'test'
+  ...
+# Subtest: API history keeps real move counters and source setup while isolating the solution
+ok 543 - API history keeps real move counters and source setup while isolating the solution
+  ---
+  duration_ms: 70.0258
+  type: 'test'
+  ...
+# Subtest: CSV history matches full FEN and trims later source-game moves
+ok 544 - CSV history matches full FEN and trims later source-game moves
+  ---
+  duration_ms: 39.5095
+  type: 'test'
+  ...
+# Subtest: API rejects inconsistent history, HTML, setup index, board and solution
+ok 545 - API rejects inconsistent history, HTML, setup index, board and solution
+  ---
+  duration_ms: 86.6081
+  type: 'test'
+  ...
+# Subtest: prepared proof candidates cover every legal action without neural delivery or stage admission
+ok 546 - prepared proof candidates cover every legal action without neural delivery or stage admission
+  ---
+  duration_ms: 450.8171
+  type: 'test'
+  ...
+# Subtest: changed bound history is rejected before certificate preparation
+ok 547 - changed bound history is rejected before certificate preparation
+  ---
+  duration_ms: 18.454
+  type: 'test'
+  ...
+# Subtest: preparation CLI and separate API audit agree on a bounded fixture
+ok 548 - preparation CLI and separate API audit agree on a bounded fixture
+  ---
+  duration_ms: 2201.4758
+  type: 'test'
+  ...
+# Subtest: publication failure exits without a completed manifest or source-rejection substitution
+ok 549 - publication failure exits without a completed manifest or source-rejection substitution
+  ---
+  duration_ms: 677.4132
+  type: 'test'
+  ...
+# Subtest: invalid source is quarantined with a nonzero CLI exit and no lessons
+ok 550 - invalid source is quarantined with a nonzero CLI exit and no lessons
+  ---
+  duration_ms: 459.0028
+  type: 'test'
+  ...
+# Subtest: stream curator filters the solver position but keeps a seven-to-six setup capture
+ok 551 - stream curator filters the solver position but keeps a seven-to-six setup capture
+  ---
+  duration_ms: 654.2203
+  type: 'test'
+  ...
+# Subtest: source replay retains castling/en-passant/promotion legality and rejects malformed promotion or pin moves
+ok 552 - source replay retains castling/en-passant/promotion legality and rejects malformed promotion or pin moves
+  ---
+  duration_ms: 631.686
+  type: 'test'
+  ...
+# Subtest: source audit verifies independent CSV membership and never opens reserved final rows
+ok 553 - source audit verifies independent CSV membership and never opens reserved final rows
+  ---
+  duration_ms: 1786.3447
+  type: 'test'
+  ...
+# Subtest: source audit rejects rehashed candidate fabrication and consequence promotion
+ok 554 - source audit rejects rehashed candidate fabrication and consequence promotion
+  ---
+  duration_ms: 2543.8454
+  type: 'test'
+  ...
+# Subtest: failed validation checkpoint selection never opens final rows or families
+ok 555 - failed validation checkpoint selection never opens final rows or families
+  ---
+  duration_ms: 5789.1823
+  type: 'test'
+  ...
+# Subtest: controls use the informative selected block even when every control fails its own validation
+ok 556 - controls use the informative selected block even when every control fails its own validation
+  ---
+  duration_ms: 4732.0365
+  type: 'test'
+  ...
+# Subtest: evaluator v2 refuses a matrix that registered Stockfish arms
+ok 557 - evaluator v2 refuses a matrix that registered Stockfish arms
+  ---
+  duration_ms: 3466.3238
+  type: 'test'
+  ...
+# Subtest: failed validation checkpoint selection never opens final rows or families
+ok 558 - failed validation checkpoint selection never opens final rows or families
+  ---
+  duration_ms: 4231.9518
+  type: 'test'
+  ...
+# Subtest: controls use the informative selected block even when every control fails its own validation
+ok 559 - controls use the informative selected block even when every control fails its own validation
+  ---
+  duration_ms: 5077.8714
+  type: 'test'
+  ...
+# Subtest: factory v6 accepts only the attack-map cue and is selected by registration r12
+ok 560 - factory v6 accepts only the attack-map cue and is selected by registration r12
+  ---
+  duration_ms: 67.2954
+  type: 'test'
+  ...
+# Subtest: Stage 2 freezes the earliest retained checkpoint and yokes every control without reading final
+ok 561 - Stage 2 freezes the earliest retained checkpoint and yokes every control without reading final
+  ---
+  duration_ms: 29786.1074
+  type: 'test'
+  ...
+# Subtest: better current accuracy cannot override forgotten earlier validation or a failed incoming foundation
+ok 562 - better current accuracy cannot override forgotten earlier validation or a failed incoming foundation
+  ---
+  duration_ms: 29215.4857
+  type: 'test'
+  ...
+# Subtest: failed validation preserves failure and never opens final; changed data pins fail before evaluation
+ok 563 - failed validation preserves failure and never opens final; changed data pins fail before evaluation
+  ---
+  duration_ms: 16920.3854
+  type: 'test'
+  ...
+# Subtest: missing scheduled checkpoint evidence is unknown rather than a measured learning failure
+ok 564 - missing scheduled checkpoint evidence is unknown rather than a measured learning failure
+  ---
+  duration_ms: 20511.1093
+  type: 'test'
+  ...
+# Subtest: mapped assessment records an unresolved top-score tie instead of inventing a move choice
+ok 565 - mapped assessment records an unresolved top-score tie instead of inventing a move choice
+  ---
+  duration_ms: 45.6329
+  type: 'test'
+  ...
+# Subtest: mapped replay changes only permitted local efficacy, then restored memory reproduces the next event
+ok 566 - mapped replay changes only permitted local efficacy, then restored memory reproduces the next event
+  ---
+  duration_ms: 136.0856
+  type: 'test'
+  ...
+# Subtest: mapped Lichess replay sends the complete neural frame to RateTimingMemory
+ok 567 - mapped Lichess replay sends the complete neural frame to RateTimingMemory
+  ---
+  duration_ms: 36.2432
+  type: 'test'
+  ...
+# Subtest: assessment freezes learning; disabled and absent controls preserve their explicit semantics
+ok 568 - assessment freezes learning; disabled and absent controls preserve their explicit semantics
+  ---
+  duration_ms: 73.4802
+  type: 'test'
+  ...
+# Subtest: unknown, altered proof/context and missing reinforcement maps cannot cause a neural teaching event
+ok 569 - unknown, altered proof/context and missing reinforcement maps cannot cause a neural teaching event
+  ---
+  duration_ms: 138.3464
+  type: 'test'
+  ...
+# Subtest: presentation budget stops before another model call or persistent update
+ok 570 - presentation budget stops before another model call or persistent update
+  ---
+  duration_ms: 86.918
+  type: 'test'
+  ...
+# Subtest: matched source filter requires one safe and one guarded same-mover same-type capture
+ok 571 - matched source filter requires one safe and one guarded same-mover same-type capture
+  ---
+  duration_ms: 104.636
+  type: 'test'
+  ...
+# Subtest: training-only source filter skips reserved-split semantics and has independent audit rejection
+ok 572 - training-only source filter skips reserved-split semantics and has independent audit rejection
+  ---
+  duration_ms: 1311.767
+  type: 'test'
+  ...
+# Subtest: shared memory learns two contexts, retains the first, and resumes second-context update exactly once
+ok 573 - shared memory learns two contexts, retains the first, and resumes second-context update exactly once
+  ---
+  duration_ms: 3465.706
+  type: 'test'
+  ...
+# Subtest: an unresolved context supplies no teaching event
+ok 574 - an unresolved context supplies no teaching event
+  ---
+  duration_ms: 710.4591
+  type: 'test'
+  ...
+# Subtest: repairing the latest context while forgetting the earlier one never reports joint success
+ok 575 - repairing the latest context while forgetting the earlier one never reports joint success
+  ---
+  duration_ms: 4717.0712
+  type: 'test'
+  ...
+# Subtest: shared memory learns two contexts, retains the first, and resumes second-context update exactly once
+ok 576 - shared memory learns two contexts, retains the first, and resumes second-context update exactly once
+  ---
+  duration_ms: 3285.198
+  type: 'test'
+  ...
+# Subtest: an unresolved context supplies no teaching event
+ok 577 - an unresolved context supplies no teaching event
+  ---
+  duration_ms: 709.2527
+  type: 'test'
+  ...
+# Subtest: repairing the latest context while forgetting the earlier one never reports joint success
+ok 578 - repairing the latest context while forgetting the earlier one never reports joint success
+  ---
+  duration_ms: 4864.7736
+  type: 'test'
+  ...
+# Subtest: exact stateful recovery after assess interruption
+ok 579 - exact stateful recovery after assess interruption
+  ---
+  duration_ms: 1745.0972
+  type: 'test'
+  ...
+# Subtest: exact stateful recovery after deliver interruption
+ok 580 - exact stateful recovery after deliver interruption
+  ---
+  duration_ms: 1596.9206
+  type: 'test'
+  ...
+# Subtest: exact stateful recovery after readout interruption
+ok 581 - exact stateful recovery after readout interruption
+  ---
+  duration_ms: 1487.1009
+  type: 'test'
+  ...
+# Subtest: disabled physiology mutation rejected during assess
+ok 582 - disabled physiology mutation rejected during assess
+  ---
+  duration_ms: 714.586
+  type: 'test'
+  ...
+# Subtest: disabled physiology mutation rejected during deliver
+ok 583 - disabled physiology mutation rejected during deliver
+  ---
+  duration_ms: 737.8656
+  type: 'test'
+  ...
+# Subtest: disabled physiology mutation rejected during readout
+ok 584 - disabled physiology mutation rejected during readout
+  ---
+  duration_ms: 629.1334
+  type: 'test'
+  ...
+# Subtest: independent audit rejects altered margins, even with a replacement receipt digest
+ok 585 - independent audit rejects altered margins, even with a replacement receipt digest
+  ---
+  duration_ms: 732.1084
+  type: 'test'
+  ...
+# Subtest: same action in two boards cannot hide a regressing criterion
+ok 586 - same action in two boards cannot hide a regressing criterion
+  ---
+  duration_ms: 0.9997
+  type: 'test'
+  ...
+# Subtest: reviewed adapter loader executes the real import path and checks hashes
+ok 587 - reviewed adapter loader executes the real import path and checks hashes
+  ---
+  duration_ms: 8.9438
+  type: 'test'
+  ...
+# Subtest: real run CLI refuses blocked biology before importing any adapter
+ok 588 - real run CLI refuses blocked biology before importing any adapter # SKIP archived input: the 2026-10-30 restart moved research/data/capture-retention-transfer-v2 into archive/early-development; old code keeps the old path, so run this test at tag early-development-final
+  ---
+  duration_ms: 1.0467
+  type: 'test'
+  ...
+# Subtest: resume ignores a truncated unacknowledged log tail, but rejects a changed acknowledged prefix
+ok 589 - resume ignores a truncated unacknowledged log tail, but rejects a changed acknowledged prefix
+  ---
+  duration_ms: 811.6077
+  type: 'test'
+  ...
+# Subtest: work is bounded and cue dose must match across controls
+ok 590 - work is bounded and cue dose must match across controls
+  ---
+  duration_ms: 743.7753
+  type: 'test'
+  ...
+# Subtest: reversal requires registered distinct contexts, measured common cue, pins and both bounded directions
+ok 591 - reversal requires registered distinct contexts, measured common cue, pins and both bounded directions
+  ---
+  duration_ms: 1.976
+  type: 'test'
+  ...
+# PASS controlAssignments
+# PASS certificateReceipt
+# PASS checkpointIdentity
+# PASS atomicPublication
+# PASS resourceGuards
+# SKIP protocolPreflight: archived input; run at tag early-development-final
+# PASS gatesDoNotHideCriterionFailures
+# PASS localDynamicsContract
+# PASS candidateKernelMathFixture
+# PASS checkpointRecovery
+# Subtest: .codebase\\tests\\puzzle-learning\\plasticity-mechanism-assay.test.mjs
+ok 119 - .codebase\\tests\\puzzle-learning\\plasticity-mechanism-assay.test.mjs
+  ---
+  duration_ms: 4554.3315
+  type: 'test'
+  ...
+# Subtest: plans use public task only and provide independently checked experiences after commitment
+ok 593 - plans use public task only and provide independently checked experiences after commitment
+  ---
+  duration_ms: 483.338
+  type: 'test'
+  ...
+# Subtest: planning rejects persistent learning and board mutation inside the policy
+ok 594 - planning rejects persistent learning and board mutation inside the policy
+  ---
+  duration_ms: 60.2815
+  type: 'test'
+  ...
+# Subtest: training/fixture boundary, full task history and bounded traces are enforced
+ok 595 - training/fixture boundary, full task history and bounded traces are enforced
+  ---
+  duration_ms: 16.1937
+  type: 'test'
+  ...
+# Subtest: unresolved consequences produce no replay teaching events
+ok 596 - unresolved consequences produce no replay teaching events
+  ---
+  duration_ms: 139.4475
+  type: 'test'
+  ...
+# Subtest: mate feedback distinguishes success, bounded failure, and unknown without changing the board
+ok 597 - mate feedback distinguishes success, bounded failure, and unknown without changing the board
+  ---
+  duration_ms: 99.4597
+  type: 'test'
+  ...
+# Subtest: mate proof agrees with an independent exhaustive mate-in-one check for each legal successor
+ok 598 - mate proof agrees with an independent exhaustive mate-in-one check for each legal successor
+  ---
+  duration_ms: 243.3414
+  type: 'test'
+  ...
+# Subtest: search backs up terminal wins in the right direction for either color
+ok 599 - search backs up terminal wins in the right direction for either color
+  ---
+  duration_ms: 99.6004
+  type: 'test'
+  ...
+# Subtest: search enforces evaluation/node budgets and labels depth cutoffs as unknown
+ok 600 - search enforces evaluation/node budgets and labels depth cutoffs as unknown
+  ---
+  duration_ms: 75.7526
+  type: 'test'
+  ...
+# Subtest: hypothetical board preserves repetition history and leaves real board intact on evaluator errors
+ok 601 - hypothetical board preserves repetition history and leaves real board intact on evaluator errors
+  ---
+  duration_ms: 40.3048
+  type: 'test'
+  ...
+# Subtest: one round delivers feedback without changing any graph array or parameter; backprop is never called
+ok 602 - one round delivers feedback without changing any graph array or parameter; backprop is never called
+  ---
+  duration_ms: 213.5368
+  type: 'test'
+  ...
+# Subtest: feedback records resume exactly and reject inconsistent reward/status pairs
+ok 603 - feedback records resume exactly and reject inconsistent reward/status pairs
+  ---
+  duration_ms: 5.4995
+  type: 'test'
+  ...
+# Subtest: Eyes → actual rate-model inference → copied endpoint receipts; memory and history stay unchanged
+ok 604 - Eyes → actual rate-model inference → copied endpoint receipts; memory and history stay unchanged
+  ---
+  duration_ms: 121.2513
+  type: 'test'
+  ...
+# Subtest: any change in gains, traces, slow state, clocks, pending receipts or neural parameters invalidates the set
+ok 605 - any change in gains, traces, slow state, clocks, pending receipts or neural parameters invalidates the set
+  ---
+  duration_ms: 193.5788
+  type: 'test'
+  ...
+# Subtest: a failure after one receipt cannot publish a completion record or silently restore memory
+ok 606 - a failure after one receipt cannot publish a completion record or silently restore memory
+  ---
+  duration_ms: 19.6089
+  type: 'test'
+  ...
+# Subtest: illegal/duplicate candidates, changed wiring/config, missing guards and incomplete memory identities are rejected
+ok 607 - illegal/duplicate candidates, changed wiring/config, missing guards and incomplete memory identities are rejected
+  ---
+  duration_ms: 54.8434
+  type: 'test'
+  ...
+# Subtest: mutations by pacing, caller or a failed encoder are detected before further receipts
+ok 608 - mutations by pacing, caller or a failed encoder are detected before further receipts
+  ---
+  duration_ms: 51.5363
+  type: 'test'
+  ...
+# Subtest: accepted fixture prints overall acceptance and per-gate passes
+ok 609 - accepted fixture prints overall acceptance and per-gate passes
+  ---
+  duration_ms: 180.83
+  type: 'test'
+  ...
+# Subtest: selection failure at D2 shows the validation blocks and leaves sealed gates not stated
+ok 610 - selection failure at D2 shows the validation blocks and leaves sealed gates not stated
+  ---
+  duration_ms: 156.2324
+  type: 'test'
+  ...
+# Subtest: D6 failure reports control advantages and bootstrap lower bounds
+ok 611 - D6 failure reports control advantages and bootstrap lower bounds
+  ---
+  duration_ms: 169.6242
+  type: 'test'
+  ...
+# Subtest: unknown fixture reports missing prerequisites and the unknown reason
+ok 612 - unknown fixture reports missing prerequisites and the unknown reason
+  ---
+  duration_ms: 173.3937
+  type: 'test'
+  ...
+# Subtest: --json prints the same verdicts as the text report
+ok 613 - --json prints the same verdicts as the text report
+  ---
+  duration_ms: 141.4095
+  type: 'test'
+  ...
+# Subtest: formatReport prints the diagnosis verbatim
+ok 614 - formatReport prints the diagnosis verbatim
+  ---
+  duration_ms: 2.9479
+  type: 'test'
+  ...
+# {"status":"readiness-blocked","stage":1,"reason":"Pinned data/evaluator prerequisites do not authorize graph teaching","unsatisfiedDataGates":["coupledFeedbackProtocolPinned","outcomeShuffleSchedulePinned","stageAcceptanceEvaluatorPinned"],"result":"C:\\\\Users\\\\ethan\\\\Documents\\\\fly-chess-research\\\\runs\\\\stage-matrix-preflight-WKBWFO\\\\out\\\\result.json"}
+# {"status":"readiness-blocked","stage":1,"reason":"Pinned data/evaluator prerequisites do not authorize graph teaching","unsatisfiedDataGates":["coupledFeedbackProtocolPinned","outcomeShuffleSchedulePinned","stageAcceptanceEvaluatorPinned"],"result":"C:\\\\Users\\\\ethan\\\\Documents\\\\fly-chess-research\\\\runs\\\\stage-matrix-preflight-pQdcjp\\\\unaccepted-out\\\\result.json"}
+# {"status":"readiness-blocked","stage":1,"reason":"Pinned data/evaluator prerequisites do not authorize graph teaching","unsatisfiedDataGates":["coupledFeedbackProtocolPinned","outcomeShuffleSchedulePinned","stageAcceptanceEvaluatorPinned","receiverAcceptanceStated"],"result":"C:\\\\Users\\\\ethan\\\\Documents\\\\fly-chess-research\\\\runs\\\\stage-matrix-preflight-pQdcjp\\\\unstated-out\\\\result.json"}
+# Subtest: matrix preflight refuses graph training before runtime load without a pinned acceptance evaluator
+ok 615 - matrix preflight refuses graph training before runtime load without a pinned acceptance evaluator
+  ---
+  duration_ms: 181.1555
+  type: 'test'
+  ...
+# Subtest: an unaccepted receiver gates stage acceptance, not training, but must be stated
+ok 616 - an unaccepted receiver gates stage acceptance, not training, but must be stated
+  ---
+  duration_ms: 77.8951
+  type: 'test'
+  ...
+# Subtest: a normal step rests elapsed*(1/duty-1) in slices of at most 250 ms
+ok 617 - a normal step rests elapsed*(1/duty-1) in slices of at most 250 ms
+  ---
+  duration_ms: 3.0079
+  type: 'test'
+  ...
+# Subtest: a normal step at duty 0.75 rests a third of its elapsed time
+ok 618 - a normal step at duty 0.75 rests a third of its elapsed time
+  ---
+  duration_ms: 0.4487
+  type: 'test'
+  ...
+# Subtest: a suspended step is clamped to MAX_PACED_STEP_MS before pacing
+ok 619 - a suspended step is clamped to MAX_PACED_STEP_MS before pacing
+  ---
+  duration_ms: 7.1057
+  type: 'test'
+  ...
+# Subtest: a duty change during a rest takes effect in the remaining slices
+ok 620 - a duty change during a rest takes effect in the remaining slices
+  ---
+  duration_ms: 0.8535
+  type: 'test'
+  ...
+# Subtest: a zero or negative step sleeps not at all
+ok 621 - a zero or negative step sleeps not at all
+  ---
+  duration_ms: 2.8125
+  type: 'test'
+  ...
+# Subtest: pending receipt resumes without duplicate update and controls share exact experiences/start
+ok 622 - pending receipt resumes without duplicate update and controls share exact experiences/start
+  ---
+  duration_ms: 69.0125
+  type: 'test'
+  ...
+# Subtest: unknown experience is rejected before any teaching or memory update
+ok 623 - unknown experience is rejected before any teaching or memory update
+  ---
+  duration_ms: 12.2016
+  type: 'test'
+  ...
+# Subtest: event budget preserves dose publication and resumes the remaining schedule
+ok 624 - event budget preserves dose publication and resumes the remaining schedule
+  ---
+  duration_ms: 54.9122
+  type: 'test'
+  ...
+# Subtest: the informative arm is taught exactly as outcome-only; controls keep their modes
+ok 625 - the informative arm is taught exactly as outcome-only; controls keep their modes
+  ---
+  duration_ms: 6.5169
+  type: 'test'
+  ...
+# Subtest: the runner, runtime factory and learner factory refuse Stockfish arms and protocols
+ok 626 - the runner, runtime factory and learner factory refuse Stockfish arms and protocols
+  ---
+  duration_ms: 57.285
+  type: 'test'
+  ...
+# Subtest: spaced schedule teaches A before each gap and uses every other board once, in order
+ok 627 - spaced schedule teaches A before each gap and uses every other board once, in order
+  ---
+  duration_ms: 5.1928
+  type: 'test'
+  ...
+# Subtest: spaced schedule rejects a board count that does not match the gaps, repeats or A among others
+ok 628 - spaced schedule rejects a board count that does not match the gaps, repeats or A among others
+  ---
+  duration_ms: 16.2021
+  type: 'test'
+  ...
+# Subtest: its first 10 interfering boards are the one-shot probe boards in the same order
+ok 629 - its first 10 interfering boards are the one-shot probe boards in the same order
+  ---
+  duration_ms: 42.426
+  type: 'test'
+  ...
+# Subtest: success rank counts strictly higher scores and needs a unique top choice
+ok 630 - success rank counts strictly higher scores and needs a unique top choice
+  ---
+  duration_ms: 7.626
+  type: 'test'
+  ...
+# Subtest: lesson pair follows the planner: highest-scored failure then success, ties by move
+ok 631 - lesson pair follows the planner: highest-scored failure then success, ties by move
+  ---
+  duration_ms: 23.6833
+  type: 'test'
+  ...
+# Subtest: A boards: first incorrect panel per stratum, flagged fallback when all correct
+ok 632 - A boards: first incorrect panel per stratum, flagged fallback when all correct
+  ---
+  duration_ms: 1.0202
+  type: 'test'
+  ...
+# Subtest: interference order excludes A, is seeded and identical across calls
+ok 633 - interference order excludes A, is seeded and identical across calls
+  ---
+  duration_ms: 10.9282
+  type: 'test'
+  ...
+# Subtest: eta choice is the largest eta meeting the retained-probe threshold
+ok 634 - eta choice is the largest eta meeting the retained-probe threshold
+  ---
+  duration_ms: 0.5848
+  type: 'test'
+  ...
+# Subtest: value feedback scales signed error into bounded current and preserves fixed wiring
+ok 635 - value feedback scales signed error into bounded current and preserves fixed wiring
+  ---
+  duration_ms: 1179.7698
+  type: 'test'
+  ...
+# Subtest: value controls match presentation exposure while freezing or omitting the channel
+ok 636 - value controls match presentation exposure while freezing or omitting the channel
+  ---
+  duration_ms: 502.6201
+  type: 'test'
+  ...
+# Subtest: unknown target cannot adapt memory; own evaluation is read-only and bounded
+ok 637 - unknown target cannot adapt memory; own evaluation is read-only and bounded
+  ---
+  duration_ms: 102.4229
+  type: 'test'
+  ...
+# Subtest: value prediction is bound to the post-move child and converted to root-actor perspective
+ok 638 - value prediction is bound to the post-move child and converted to root-actor perspective
+  ---
+  duration_ms: 166.0138
+  type: 'test'
+  ...
+# Subtest: engine assistance consumes the recorded fresh all-legal choice and exact certificate
+ok 639 - engine assistance consumes the recorded fresh all-legal choice and exact certificate
+  ---
+  duration_ms: 220.6589
+  type: 'test'
+  ...
+# Subtest: engine assistance rejects a stale pre-feedback ranking before adapting
+ok 640 - engine assistance rejects a stale pre-feedback ranking before adapting
+  ---
+  duration_ms: 146.492
+  type: 'test'
+  ...
+# Subtest: engine assistance rejects a ranking that changed before feedback replay
+ok 641 - engine assistance rejects a ranking that changed before feedback replay
+  ---
+  duration_ms: 225.1009
+  type: 'test'
+  ...
+# Subtest: terminal child has no fabricated value and spends no neural presentations
+ok 642 - terminal child has no fabricated value and spends no neural presentations
+  ---
+  duration_ms: 189.3578
+  type: 'test'
+  ...
+# Subtest: unknown independent task consequence prevents Stockfish-only teaching
+ok 643 - unknown independent task consequence prevents Stockfish-only teaching
+  ---
+  duration_ms: 84.3175
+  type: 'test'
+  ...
+# Subtest: outcome-only uses checked task valence and ignores missing engine targets
+ok 644 - outcome-only uses checked task valence and ignores missing engine targets
+  ---
+  duration_ms: 111.1854
+  type: 'test'
+  ...
+# Subtest: shared endpoint verification accepts exact prepared quiet-action task failures
+ok 645 - shared endpoint verification accepts exact prepared quiet-action task failures
+  ---
+  duration_ms: 11.8634
+  type: 'test'
+  ...
+# Subtest: task-outcome shuffle changes only delivered valence and retains the true consequence certificate
+ok 646 - task-outcome shuffle changes only delivered valence and retains the true consequence certificate
+  ---
+  duration_ms: 30.0709
+  type: 'test'
+  ...
+# Subtest: quiet-action unknown and forged proof do not trigger graph presentations or adaptation
+ok 647 - quiet-action unknown and forged proof do not trigger graph presentations or adaptation
+  ---
+  duration_ms: 6.389
+  type: 'test'
+  ...
+# Subtest: adapter capture verification remains identical to the frozen capture-only helper
+ok 648 - adapter capture verification remains identical to the frozen capture-only helper
+  ---
+  duration_ms: 33.4685
+  type: 'test'
+  ...
+# Subtest: matched value shuffle reverses sign at the same nonzero magnitude
+ok 649 - matched value shuffle reverses sign at the same nonzero magnitude
+  ---
+  duration_ms: 345.4454
+  type: 'test'
+  ...
+# Subtest: registered error-sign schedule derives the matched opposite error inside the receiver
+ok 650 - registered error-sign schedule derives the matched opposite error inside the receiver
+  ---
+  duration_ms: 328.8677
+  type: 'test'
+  ...
+# Subtest: outcome-only teaches certified terminal success on the root cue without engine or child prediction
+ok 651 - outcome-only teaches certified terminal success on the root cue without engine or child prediction
+  ---
+  duration_ms: 131.6136
+  type: 'test'
+  ...
+# Subtest: outcome-only presentation exhaustion and actor mismatch fail before adaptation
+ok 652 - outcome-only presentation exhaustion and actor mismatch fail before adaptation
+  ---
+  duration_ms: 121.3572
+  type: 'test'
+  ...
+# Subtest: shuffled condition rejects an unbound or sign-aligned caller value
+ok 653 - shuffled condition rejects an unbound or sign-aligned caller value
+  ---
+  duration_ms: 692.4058
+  type: 'test'
+  ...
+# Subtest: no-channel preserves matched exposure when neural value is silent
+ok 654 - no-channel preserves matched exposure when neural value is silent
+  ---
+  duration_ms: 152.6949
+  type: 'test'
+  ...
+# Subtest: opt-in feedback receipt records bounded mapped KC and DAN rates at every recurrent state
+ok 655 - opt-in feedback receipt records bounded mapped KC and DAN rates at every recurrent state
+  ---
+  duration_ms: 382.2413
+  type: 'test'
+  ...
+# Subtest: eight-block retention matrix teaches all six matched arms, resumes stored memory and independently replays
+ok 656 - eight-block retention matrix teaches all six matched arms, resumes stored memory and independently replays
+  ---
+  duration_ms: 101440.0389
+  type: 'test'
+  ...
+# Synthetic retention fixture: C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\retention-matrix-fixture-7d658426-8610-46d6-b508-242a305d0295
+# Subtest: Stage 2 block teaches current mate tasks and rehearses Stage 1 through the same resumable session
+ok 657 - Stage 2 block teaches current mate tasks and rehearses Stage 1 through the same resumable session
+  ---
+  duration_ms: 6628.9272
+  type: 'test'
+  ...
+# Subtest: Stockfish value event restores and replays one async teaching update exactly once
+ok 658 - Stockfish value event restores and replays one async teaching update exactly once
+  ---
+  duration_ms: 250.1934
+  type: 'test'
+  ...
+# Subtest: curriculum stockfish-shuffled condition carries its pinned error-sign schedule
+ok 659 - curriculum stockfish-shuffled condition carries its pinned error-sign schedule
+  ---
+  duration_ms: 211.9875
+  type: 'test'
+  ...
+# Subtest: Lichess block runner and independent audit accept the async Stockfish value session
+ok 660 - Lichess block runner and independent audit accept the async Stockfish value session
+  ---
+  duration_ms: 4516.5543
+  type: 'test'
+  ...
+# Subtest: independent success/failure evidence controls timing with equal cue and pulse dose
+ok 661 - independent success/failure evidence controls timing with equal cue and pulse dose
+  ---
+  duration_ms: 123.342
+  type: 'test'
+  ...
+# Subtest: controls preserve cue/time exposure, disable explicitly and swap all known labels
+ok 662 - controls preserve cue/time exposure, disable explicitly and swap all known labels
+  ---
+  duration_ms: 94.6056
+  type: 'test'
+  ...
+# Subtest: unknown evidence supplies no presentation and forged evidence fails before encoding
+ok 663 - unknown evidence supplies no presentation and forged evidence fails before encoding
+  ---
+  duration_ms: 59.317
+  type: 'test'
+  ...
+# Subtest: published frame prefixes resume without duplicating a frame or losing physiological state
+ok 664 - published frame prefixes resume without duplicating a frame or losing physiological state
+  ---
+  duration_ms: 406.8165
+  type: 'test'
+  ...
+# Subtest: failed frames roll back both states and retry; disabled condition holds all memory fixed
+ok 665 - failed frames roll back both states and retry; disabled condition holds all memory fixed
+  ---
+  duration_ms: 265.4946
+  type: 'test'
+  ...
+# Subtest: stale assessment, changed proof and incompatible checkpoint fail without state mutation
+ok 666 - stale assessment, changed proof and incompatible checkpoint fail without state mutation
+  ---
+  duration_ms: 138.7415
+  type: 'test'
+  ...
+# Subtest: splits match the old formula and restart buckets
+ok 667 - splits match the old formula and restart buckets
+  ---
+  duration_ms: 33.6677
+  type: 'test'
+  ...
+# Subtest: eligibleRestartGame excludes non-train and already-used train games
+ok 668 - eligibleRestartGame excludes non-train and already-used train games
+  ---
+  duration_ms: 2.2635
+  type: 'test'
+  ...
+# Subtest: replayGame returns per-move positions and rejects non-standard starts
+ok 669 - replayGame returns per-move positions and rejects non-standard starts
+  ---
+  duration_ms: 30.6426
+  type: 'test'
+  ...
+# Subtest: pin pair: good is the original, bad has the blocking pawn
+ok 670 - pin pair: good is the original, bad has the blocking pawn
+  ---
+  duration_ms: 47.737
+  type: 'test'
+  ...
+# Subtest: recapture pair: good is the original
+ok 671 - recapture pair: good is the original
+  ---
+  duration_ms: 24.2344
+  type: 'test'
+  ...
+# Subtest: value pair: good is the twin with the rook, bad is the original
+ok 672 - value pair: good is the twin with the rook, bad is the original
+  ---
+  duration_ms: 25.9435
+  type: 'test'
+  ...
+# Subtest: rejections carry the stated reason
+ok 673 - rejections carry the stated reason
+  ---
+  duration_ms: 63.0164
+  type: 'test'
+  ...
+# Subtest: trainingFilter applies the protocol rules to the pin-pair original
+ok 674 - trainingFilter applies the protocol rules to the pin-pair original
+  ---
+  duration_ms: 6.4263
+  type: 'test'
+  ...
+# Subtest: capture task rejects a quiet move and unknown tasks throw
+ok 675 - capture task rejects a quiet move and unknown tasks throw
+  ---
+  duration_ms: 12.1718
+  type: 'test'
+  ...
+# Subtest: findTwinPairs finds accepted pin pairs on the pin board
+ok 676 - findTwinPairs finds accepted pin pairs on the pin board
+  ---
+  duration_ms: 8141.7428
+  type: 'test'
+  ...
+# Subtest: findTwinPairs finds recapture and value pairs on the combined board
+ok 677 - findTwinPairs finds recapture and value pairs on the combined board
+  ---
+  duration_ms: 7556.8303
+  type: 'test'
+  ...
+# Subtest: CLI writes pairs and a manifest for one train bucket
+ok 678 - CLI writes pairs and a manifest for one train bucket
+  ---
+  duration_ms: 11845.0169
+  type: 'test'
+  ...
+# Subtest: CLI refuses locked buckets and existing output folders without writing
+ok 679 - CLI refuses locked buckets and existing output folders without writing
+  ---
+  duration_ms: 384.1408
+  type: 'test'
+  ...
+# Subtest: verified refutation and surviving line replay exact history without altering real task
+ok 680 - verified refutation and surviving line replay exact history without altering real task
+  ---
+  duration_ms: 101.1063
+  type: 'test'
+  ...
+# Subtest: neural delivery excludes teacher labels; forged and unknown evidence produce no frames
+ok 681 - neural delivery excludes teacher labels; forged and unknown evidence produce no frames
+  ---
+  duration_ms: 63.8197
+  type: 'test'
+  ...
+# Subtest: binary checkpoint preserves full neural state and pending acknowledgement without mutating input
+ok 682 - binary checkpoint preserves full neural state and pending acknowledgement without mutating input
+  ---
+  duration_ms: 354.0717
+  type: 'test'
+  ...
+# Subtest: binary checkpoint rejects corrupt, oversized and malformed state instead of resuming it
+ok 683 - binary checkpoint rejects corrupt, oversized and malformed state instead of resuming it
+  ---
+  duration_ms: 171.5702
+  type: 'test'
+  ...
+# Subtest: native pending checkpoint resumes in a fresh process at both receipt acknowledgement crash boundaries
+ok 684 - native pending checkpoint resumes in a fresh process at both receipt acknowledgement crash boundaries
+  ---
+  duration_ms: 700.3875
+  type: 'test'
+  ...
+# Subtest: boundary adjoints recover exact anchor gradients including paths leaving and re-entering a block
+ok 685 - boundary adjoints recover exact anchor gradients including paths leaving and re-entering a block
+  ---
+  duration_ms: 12.3442
+  type: 'test'
+  ...
+# Subtest: local derivative matches finite differences of the surrogate away from anchor
+ok 686 - local derivative matches finite differences of the surrogate away from anchor
+  ---
+  duration_ms: 2.0385
+  type: 'test'
+  ...
+# Subtest: dropping boundary error signals fails to recover the true upstream gradient
+ok 687 - dropping boundary error signals fails to recover the true upstream gradient
+  ---
+  duration_ms: 0.6202
+  type: 'test'
+  ...
+# Subtest: failed full-model verification restores every block parameter and invalidates cache
+ok 688 - failed full-model verification restores every block parameter and invalidates cache
+  ---
+  duration_ms: 1.9354
+  type: 'test'
+  ...
+# Subtest: paired loss accumulation agrees with numerical derivatives of both examples
+ok 689 - paired loss accumulation agrees with numerical derivatives of both examples
+  ---
+  duration_ms: 3.6629
+  type: 'test'
+  ...
+# Subtest: actual pipeline replays original six-neuron lessons exactly in every control and both informative valences
+ok 690 - actual pipeline replays original six-neuron lessons exactly in every control and both informative valences # SKIP local fixture run lacks checkpoint-000005.json.gz (runs/ is not in git); regenerate the fixture run to replay
+  ---
+  duration_ms: 1.1436
+  type: 'test'
+  ...
+# Subtest: benchmark baseline preserves original save order, durable calls and exact gzip JSON
+ok 691 - benchmark baseline preserves original save order, durable calls and exact gzip JSON
+  ---
+  duration_ms: 10.1181
+  type: 'test'
+  ...
+# Subtest: size and compression failures do not publish a checkpoint; open descriptors always close
+ok 692 - size and compression failures do not publish a checkpoint; open descriptors always close
+  ---
+  duration_ms: 13.7872
+  type: 'test'
+  ...
+# Subtest: independent runtime timing arithmetic reports seconds, experience throughput and elapsed reduction
+ok 693 - independent runtime timing arithmetic reports seconds, experience throughput and elapsed reduction
+  ---
+  duration_ms: 4.9895
+  type: 'test'
+  ...
+# Subtest: a strong pooled number cannot hide a regressed control condition
+ok 694 - a strong pooled number cannot hide a regressed control condition
+  ---
+  duration_ms: 0.6704
+  type: 'test'
+  ...
+# Subtest: warm lesson success does not imply a cold invocation improvement
+ok 695 - warm lesson success does not imply a cold invocation improvement
+  ---
+  duration_ms: 0.565
+  type: 'test'
+  ...
+# Subtest: missing pairs, duplicate samples and unequal states are rejected
+ok 696 - missing pairs, duplicate samples and unequal states are rejected
+  ---
+  duration_ms: 16.5813
+  type: 'test'
+  ...
+# Subtest: closure follows static, re-exported and dynamic relative imports only
+ok 697 - closure follows static, re-exported and dynamic relative imports only
+  ---
+  duration_ms: 27.0879
+  type: 'test'
+  ...
+# Subtest: a changed byte in a dependency changes the manifest hash
+ok 698 - a changed byte in a dependency changes the manifest hash
+  ---
+  duration_ms: 22.3839
+  type: 'test'
+  ...
+# Subtest: an import that escapes the repository root throws
+ok 699 - an import that escapes the repository root throws
+  ---
+  duration_ms: 18.8348
+  type: 'test'
+  ...
+# Subtest: WASM sums preserve serial f64 order, empty rows and refreshed inputs in both precisions
+ok 700 - WASM sums preserve serial f64 order, empty rows and refreshed inputs in both precisions
+  ---
+  duration_ms: 4.184
+  type: 'test'
+  ...
+# Subtest: disk checkpoints restore recurrent inference and the next SGD/Adam update in both precisions
+ok 701 - disk checkpoints restore recurrent inference and the next SGD/Adam update in both precisions
+  ---
+  duration_ms: 152.0043
+  type: 'test'
+  ...
+# Preserved synthetic checkpoints: C:\\Users\\ethan\\AppData\\Local\\Temp\\fly-checkpoint-sync-USZM1o
+# Subtest: committed-choice review binds success and failure without changing the real board
+ok 702 - committed-choice review binds success and failure without changing the real board
+  ---
+  duration_ms: 153.5593
+  type: 'test'
+  ...
+# Subtest: verification exhaustion stays unknown and cannot become a teaching event
+ok 703 - verification exhaustion stays unknown and cannot become a teaching event
+  ---
+  duration_ms: 11.4416
+  type: 'test'
+  ...
+# Subtest: v2 checker agrees with v1 checker on v1-produced avoid-mate proofs
+ok 704 - v2 checker agrees with v1 checker on v1-produced avoid-mate proofs
+  ---
+  duration_ms: 4202.2602
+  type: 'test'
+  ...
+# Subtest: repeated identical calls give identical results
+ok 705 - repeated identical calls give identical results
+  ---
+  duration_ms: 89.0827
+  type: 'test'
+  ...
+# Subtest: tiny node budget yields unknown identically across calls
+ok 706 - tiny node budget yields unknown identically across calls
+  ---
+  duration_ms: 198.4969
+  type: 'test'
+  ...
+# Subtest: milliseconds option throws
+ok 707 - milliseconds option throws
+  ---
+  duration_ms: 44.1533
+  type: 'test'
+  ...
+# Subtest: result does not change when the clock jumps forward
+ok 708 - result does not change when the clock jumps forward
+  ---
+  duration_ms: 55.7336
+  type: 'test'
+  ...
+# Subtest: v2 agrees with v1 for every legal action on v1 fixtures where v1 succeeds
+ok 709 - v2 agrees with v1 for every legal action on v1 fixtures where v1 succeeds
+  ---
+  duration_ms: 4778.1957
+  type: 'test'
+  ...
+# Subtest: repeated identical calls give identical results
+ok 710 - repeated identical calls give identical results
+  ---
+  duration_ms: 138.6448
+  type: 'test'
+  ...
+# Subtest: tiny node budget yields unknown with no teaching event, identically across calls
+ok 711 - tiny node budget yields unknown with no teaching event, identically across calls
+  ---
+  duration_ms: 154.0114
+  type: 'test'
+  ...
+# Subtest: milliseconds option throws
+ok 712 - milliseconds option throws
+  ---
+  duration_ms: 10.6037
+  type: 'test'
+  ...
+# Subtest: result does not change when the clock jumps forward
+ok 713 - result does not change when the clock jumps forward
+  ---
+  duration_ms: 47.349
+  type: 'test'
+  ...
+# Subtest: batch certificates and checks exactly equal individual full-history calls
+ok 714 - batch certificates and checks exactly equal individual full-history calls
+  ---
+  duration_ms: 525.145
+  type: 'test'
+  ...
+# Subtest: batch checker rejects omitted, duplicated, reordered and rehashed mismatched actions
+ok 715 - batch checker rejects omitted, duplicated, reordered and rehashed mismatched actions
+  ---
+  duration_ms: 70.4268
+  type: 'test'
+  ...
+# Subtest: bounded batch unknowns cannot teach and retain root history
+ok 716 - bounded batch unknowns cannot teach and retain root history
+  ---
+  duration_ms: 46.809
+  type: 'test'
+  ...
+# Subtest: C01 domain independently checks every legal action, preserving legacy capture proofs and the real board
+ok 717 - C01 domain independently checks every legal action, preserving legacy capture proofs and the real board
+  ---
+  duration_ms: 279.2502
+  type: 'test'
+  ...
+# Subtest: forged quiet/capture classes, mismatched history/task, illegal actions and false success are rejected
+ok 718 - forged quiet/capture classes, mismatched history/task, illegal actions and false success are rejected
+  ---
+  duration_ms: 18.2134
+  type: 'test'
+  ...
+# Subtest: exhausted capture proof and unknown quiet proof permit no event; quiet legality needs no opponent search
+ok 719 - exhausted capture proof and unknown quiet proof permit no event; quiet legality needs no opponent search
+  ---
+  duration_ms: 16.0811
+  type: 'test'
+  ...
+# Subtest: en passant, both actors, capture promotions and quiet promotions keep exact task semantics
+ok 720 - en passant, both actors, capture promotions and quiet promotions keep exact task semantics
+  ---
+  duration_ms: 40.3747
+  type: 'test'
+  ...
+# Subtest: identical FEN with different move/repetition history cannot reuse a teaching certificate
+ok 721 - identical FEN with different move/repetition history cannot reuse a teaching certificate
+  ---
+  duration_ms: 148.6075
+  type: 'test'
+  ...
+# Subtest: teacher certificate distinguishes an immediate recapture from the same ray blocked by a pawn
+ok 722 - teacher certificate distinguishes an immediate recapture from the same ray blocked by a pawn
+  ---
+  duration_ms: 87.7138
+  type: 'test'
+  ...
+# Subtest: two-candidate fixtures reverse which rook capture survives when the blocker relation changes
+ok 723 - two-candidate fixtures reverse which rook capture survives when the blocker relation changes
+  ---
+  duration_ms: 60.2
+  type: 'test'
+  ...
+# Subtest: certificate checker rejects omitted, fabricated and modified reply evidence
+ok 724 - certificate checker rejects omitted, fabricated and modified reply evidence
+  ---
+  duration_ms: 42.7262
+  type: 'test'
+  ...
+# Subtest: unknown capture consequence is not taught; non-captures and wrong horizons are rejected
+ok 725 - unknown capture consequence is not taught; non-captures and wrong horizons are rejected
+  ---
+  duration_ms: 13.5485
+  type: 'test'
+  ...
+# Subtest: upstream PUCT keeps quiet moves, backs up mate correctly and preserves task/history/memory
+ok 726 - upstream PUCT keeps quiet moves, backs up mate correctly and preserves task/history/memory
+  ---
+  duration_ms: 280.1619
+  type: 'test'
+  ...
+# Subtest: bounded adapter matches unmodified archived upstream search when bounds do not bind
+ok 727 - bounded adapter matches unmodified archived upstream search when bounds do not bind
+  ---
+  duration_ms: 1222.6661
+  type: 'test'
+  ...
+# Subtest: evaluation/depth cutoffs discard unfinished hypothetical work and reject mutable memory
+ok 728 - evaluation/depth cutoffs discard unfinished hypothetical work and reject mutable memory
+  ---
+  duration_ms: 1316.6875
+  type: 'test'
+  ...
+# Subtest: checked lesson distinguishes refutation, transition, task scope and information actually delivered
+ok 729 - checked lesson distinguishes refutation, transition, task scope and information actually delivered
+  ---
+  duration_ms: 219.2937
+  type: 'test'
+  ...
+# Subtest: unknown is retained in coverage but cannot be scheduled as a teaching event
+ok 730 - unknown is retained in coverage but cannot be scheduled as a teaching event
+  ---
+  duration_ms: 124.2549
+  type: 'test'
+  ...
+# Subtest: forged defense proof, stale ranking memory, repeated action and budget excess are rejected
+ok 731 - forged defense proof, stale ranking memory, repeated action and budget excess are rejected
+  ---
+  duration_ms: 55.7391
+  type: 'test'
+  ...
+# Subtest: full legal ranking coverage is explicit and cannot be inferred from reviewed actions
+ok 732 - full legal ranking coverage is explicit and cannot be inferred from reviewed actions
+  ---
+  duration_ms: 84.9868
+  type: 'test'
+  ...
+# Subtest: packages a verified failed choice with a verified successful alternative after commitment
+ok 733 - packages a verified failed choice with a verified successful alternative after commitment
+  ---
+  duration_ms: 129.42
+  type: 'test'
+  ...
+# Subtest: does not invent a contrast when the committed choice is already successful
+ok 734 - does not invent a contrast when the committed choice is already successful
+  ---
+  duration_ms: 68.6105
+  type: 'test'
+  ...
+# Subtest: verification exhaustion remains unknown and is omitted from teaching experiences
+ok 735 - verification exhaustion remains unknown and is omitted from teaching experiences
+  ---
+  duration_ms: 62.9119
+  type: 'test'
+  ...
+# Subtest: rejects duplicate, chosen-as-counterfactual, or oversized alternative sets
+ok 736 - rejects duplicate, chosen-as-counterfactual, or oversized alternative sets
+  ---
+  duration_ms: 0.7515
+  type: 'test'
+  ...
+# Subtest: reported task identity cannot be overwritten by extra caller properties
+ok 737 - reported task identity cannot be overwritten by extra caller properties
+  ---
+  duration_ms: 69.2833
+  type: 'test'
+  ...
+# Subtest: delta records opponent changes and ranks the legal check-evasion capture
+ok 738 - delta records opponent changes and ranks the legal check-evasion capture
+  ---
+  duration_ms: 18.6819
+  type: 'test'
+  ...
+# Subtest: delta identifies an actual capture square and excludes the moving piece origin
+ok 739 - delta identifies an actual capture square and excludes the moving piece origin
+  ---
+  duration_ms: 2.5306
+  type: 'test'
+  ...
+# Subtest: candidate omission is measurable instead of hidden
+ok 740 - candidate omission is measurable instead of hidden
+  ---
+  duration_ms: 45.7994
+  type: 'test'
+  ...
+# Subtest: newly attacked enemy pieces are prioritized while a quiet reserve remains
+ok 741 - newly attacked enemy pieces are prioritized while a quiet reserve remains
+  ---
+  duration_ms: 12.2505
+  type: 'test'
+  ...
+# Subtest: checks rank ahead of other forcing candidates and quiet moves
+ok 742 - checks rank ahead of other forcing candidates and quiet moves
+  ---
+  duration_ms: 21.2826
+  type: 'test'
+  ...
+# Subtest: newly created double attacks receive a fork priority tag
+ok 743 - newly created double attacks receive a fork priority tag
+  ---
+  duration_ms: 10.04
+  type: 'test'
+  ...
+# Subtest: en-passant capture is recaptured by an ordinary pawn capture after real history
+ok 744 - en-passant capture is recaptured by an ordinary pawn capture after real history
+  ---
+  duration_ms: 31.3154
+  type: 'test'
+  ...
+# Subtest: safe twin: the same en-passant capture has no recapture without the c7 pawn
+ok 745 - safe twin: the same en-passant capture has no recapture without the c7 pawn
+  ---
+  duration_ms: 6.8873
+  type: 'test'
+  ...
+# Subtest: certificate leaves the source board FEN and PGN unchanged
+ok 746 - certificate leaves the source board FEN and PGN unchanged
+  ---
+  duration_ms: 12.8015
+  type: 'test'
+  ...
+# Subtest: no reply to an en-passant capture is itself en passant
+ok 747 - no reply to an en-passant capture is itself en passant
+  ---
+  duration_ms: 14.4375
+  type: 'test'
+  ...
+# Subtest: seeded random games: no reply to any capture is en passant
+ok 748 - seeded random games: no reply to any capture is en passant
+  ---
+  duration_ms: 17884.559
+  type: 'test'
+  ...
+# checked 266 captures
+# Subtest: review establishes avoidable objective miss for both colours, preserves history and avoids invented root cause
+ok 749 - review establishes avoidable objective miss for both colours, preserves history and avoids invented root cause
+  ---
+  duration_ms: 121.5915
+  type: 'test'
+  ...
+# Subtest: exhausted verifier budget supplies no unknown training events or fabricated avoidability
+ok 750 - exhausted verifier budget supplies no unknown training events or fabricated avoidability
+  ---
+  duration_ms: 21.4363
+  type: 'test'
+  ...
+# Subtest: incomplete root generation remains explicit and does not invent proof for an unreviewed move
+ok 751 - incomplete root generation remains explicit and does not invent proof for an unreviewed move
+  ---
+  duration_ms: 17.3551
+  type: 'test'
+  ...
+# Subtest: async policy is awaited, terminal perspective is correct, and real task history is preserved
+ok 752 - async policy is awaited, terminal perspective is correct, and real task history is preserved
+  ---
+  duration_ms: 99.0964
+  type: 'test'
+  ...
+# Subtest: an asynchronous evaluator failure unwinds hypothetical moves without losing repetition context
+ok 753 - an asynchronous evaluator failure unwinds hypothetical moves without losing repetition context
+  ---
+  duration_ms: 20.4815
+  type: 'test'
+  ...
+# Subtest: pinned attacker is not a recapture
+ok 754 - pinned attacker is not a recapture
+  ---
+  duration_ms: 28.3123
+  type: 'test'
+  ...
+# Subtest: unpinned twin is a recapture
+ok 755 - unpinned twin is a recapture
+  ---
+  duration_ms: 10.649
+  type: 'test'
+  ...
+# Subtest: quiet move with no attacker
+ok 756 - quiet move with no attacker
+  ---
+  duration_ms: 16.7541
+  type: 'test'
+  ...
+# Subtest: queen takes defended pawn is bad exchange
+ok 757 - queen takes defended pawn is bad exchange
+  ---
+  duration_ms: 6.7162
+  type: 'test'
+  ...
+# Subtest: pawn takes defended queen is good exchange
+ok 758 - pawn takes defended queen is good exchange
+  ---
+  duration_ms: 3.5688
+  type: 'test'
+  ...
+# Subtest: king moves and illegal moves throw
+ok 759 - king moves and illegal moves throw
+  ---
+  duration_ms: 35.7721
+  type: 'test'
+  ...
+# Subtest: board is unchanged after each call
+ok 760 - board is unchanged after each call
+  ---
+  duration_ms: 12.0389
+  type: 'test'
+  ...
+# Subtest: opponent in check after the move has no pinned attackers
+ok 761 - opponent in check after the move has no pinned attackers
+  ---
+  duration_ms: 6.664
+  type: 'test'
+  ...
+# Subtest: combinedAnswer rejects null certificate
+ok 762 - combinedAnswer rejects null certificate
+  ---
+  duration_ms: 1.359
+  type: 'test'
+  ...
+# Subtest: v2 checker agrees with v1 on v1 fixtures where v1 succeeds
+ok 763 - v2 checker agrees with v1 on v1 fixtures where v1 succeeds
+  ---
+  duration_ms: 196.8487
+  type: 'test'
+  ...
+# Subtest: repeated identical calls give identical results
+ok 764 - repeated identical calls give identical results
+  ---
+  duration_ms: 82.2858
+  type: 'test'
+  ...
+# Subtest: tiny node budget is unknown and identical across repeated calls
+ok 765 - tiny node budget is unknown and identical across repeated calls
+  ---
+  duration_ms: 49.9331
+  type: 'test'
+  ...
+# Subtest: milliseconds option throws
+ok 766 - milliseconds option throws
+  ---
+  duration_ms: 23.4167
+  type: 'test'
+  ...
+# Subtest: result does not change when the clock jumps forward
+ok 767 - result does not change when the clock jumps forward
+  ---
+  duration_ms: 40.8483
+  type: 'test'
+  ...
+# Subtest: v2 construction agrees with v1 on v1 fixtures where v1 succeeds
+ok 768 - v2 construction agrees with v1 on v1 fixtures where v1 succeeds
+  ---
+  duration_ms: 254.2596
+  type: 'test'
+  ...
+# Subtest: repeated identical calls give identical results
+ok 769 - repeated identical calls give identical results
+  ---
+  duration_ms: 192.6817
+  type: 'test'
+  ...
+# Subtest: tiny node budget is unknown and identical across repeated calls
+ok 770 - tiny node budget is unknown and identical across repeated calls
+  ---
+  duration_ms: 34.8327
+  type: 'test'
+  ...
+# Subtest: milliseconds option throws
+ok 771 - milliseconds option throws
+  ---
+  duration_ms: 1.3005
+  type: 'test'
+  ...
+# Subtest: result does not change when the clock jumps forward
+ok 772 - result does not change when the clock jumps forward
+  ---
+  duration_ms: 41.4388
+  type: 'test'
+  ...
+# Subtest: certificates agree with existing exhaustive verifier for both actors and legal successor consequences
+ok 773 - certificates agree with existing exhaustive verifier for both actors and legal successor consequences
+  ---
+  duration_ms: 360.8662
+  type: 'test'
+  ...
+# Subtest: independent checker rejects changed leaves, illegal moves, missing and duplicate universal branches
+ok 774 - independent checker rejects changed leaves, illegal moves, missing and duplicate universal branches
+  ---
+  duration_ms: 64.3808
+  type: 'test'
+  ...
+# Subtest: proofs bind actor, horizon and complete repetition history and do not mutate the task
+ok 775 - proofs bind actor, horizon and complete repetition history and do not mutate the task
+  ---
+  duration_ms: 18.289
+  type: 'test'
+  ...
+# Subtest: construction or checking exhaustion remains unknown without reward
+ok 776 - construction or checking exhaustion remains unknown without reward
+  ---
+  duration_ms: 43.13
+  type: 'test'
+  ...
+# Subtest: seeded sampling reproduces trajectories and different seeds explore different paths
+ok 777 - seeded sampling reproduces trajectories and different seeds explore different paths
+  ---
+  duration_ms: 293.4081
+  type: 'test'
+  ...
+# Subtest: depth-limited continuations are unknown rather than backed-up draws
+ok 778 - depth-limited continuations are unknown rather than backed-up draws
+  ---
+  duration_ms: 8.2301
+  type: 'test'
+  ...
+# Subtest: mate backups preserve actor perspective for both colors
+ok 779 - mate backups preserve actor perspective for both colors
+  ---
+  duration_ms: 45.4976
+  type: 'test'
+  ...
+# Subtest: bounded workspace keeps repetition history and real board intact on evaluator failure
+ok 780 - bounded workspace keeps repetition history and real board intact on evaluator failure
+  ---
+  duration_ms: 48.3891
+  type: 'test'
+  ...
+# Subtest: forcing candidate mode limits neural action presentations and reports omissions
+ok 781 - forcing candidate mode limits neural action presentations and reports omissions
+  ---
+  duration_ms: 55.2587
+  type: 'test'
+  ...
+# Subtest: all-legal remains the default candidate mode
+ok 782 - all-legal remains the default candidate mode
+  ---
+  duration_ms: 10.3482
+  type: 'test'
+  ...
+# Subtest: the declared puzzle objective and horizon reach every neural position evaluation and trace
+ok 783 - the declared puzzle objective and horizon reach every neural position evaluation and trace
+  ---
+  duration_ms: 14.4181
+  type: 'test'
+  ...
+# Subtest: optional forcing prior raises forcing-action exploration without changing default policy
+ok 784 - optional forcing prior raises forcing-action exploration without changing default policy
+  ---
+  duration_ms: 79.5222
+  type: 'test'
+  ...
+# Subtest: paired assessment freezes memory and reports omission and choice agreement
+ok 785 - paired assessment freezes memory and reports omission and choice agreement
+  ---
+  duration_ms: 24.813
+  type: 'test'
+  ...
+# Subtest: fixtures are legal and the chess truth matches the claimed outcomes
+ok 786 - fixtures are legal and the chess truth matches the claimed outcomes
+  ---
+  duration_ms: 17.2711
+  type: 'test'
+  ...
+# Subtest: verified forced-mate pair: adding a king escape square flips mate-in-one to not-mate
+ok 787 - verified forced-mate pair: adding a king escape square flips mate-in-one to not-mate
+  ---
+  duration_ms: 45.2964
+  type: 'test'
+  ...
+# Subtest: verified avoid-mate pair: moving a supporting rook off the back rank flips the outcome
+ok 788 - verified avoid-mate pair: moving a supporting rook off the back rank flips the outcome
+  ---
+  duration_ms: 316.6539
+  type: 'test'
+  ...
+# Subtest: rejected: certified outcomes are equal
+ok 789 - rejected: certified outcomes are equal
+  ---
+  duration_ms: 16.5983
+  type: 'test'
+  ...
+# Subtest: rejected: positions differ by two edits
+ok 790 - rejected: positions differ by two edits
+  ---
+  duration_ms: 0.5445
+  type: 'test'
+  ...
+# Subtest: rejected: move is illegal in the first position
+ok 791 - rejected: move is illegal in the first position
+  ---
+  duration_ms: 8.2675
+  type: 'test'
+  ...
+# Subtest: unknown: a tiny node budget exhausts the avoid-mate certificate
+ok 792 - unknown: a tiny node budget exhausts the avoid-mate certificate
+  ---
+  duration_ms: 25.0052
+  type: 'test'
+  ...
+# Subtest: deterministic: repeated calls give identical output
+ok 793 - deterministic: repeated calls give identical output
+  ---
+  duration_ms: 78.7183
+  type: 'test'
+  ...
+# Subtest: unsupported task or budget throws instead of deciding
+ok 794 - unsupported task or budget throws instead of deciding
+  ---
+  duration_ms: 2.2585
+  type: 'test'
+  ...
+# Subtest: fixtures load as legal positions and respect the six-piece limit
+ok 795 - fixtures load as legal positions and respect the six-piece limit
+  ---
+  duration_ms: 10.2533
+  type: 'test'
+  ...
+# Subtest: actual-mate: positive back-rank mate and queen mate match chess truth
+ok 796 - actual-mate: positive back-rank mate and queen mate match chess truth
+  ---
+  duration_ms: 317.7048
+  type: 'test'
+  ...
+# Subtest: actual-mate: negative is a certified rejection, not unknown
+ok 797 - actual-mate: negative is a certified rejection, not unknown
+  ---
+  duration_ms: 71.8221
+  type: 'test'
+  ...
+# Subtest: actual-mate: tiny node budget is unknown, never rejected
+ok 798 - actual-mate: tiny node budget is unknown, never rejected
+  ---
+  duration_ms: 10.7252
+  type: 'test'
+  ...
+# Subtest: escapable-check: positive lists every reply, each certificate matches chess truth
+ok 799 - escapable-check: positive lists every reply, each certificate matches chess truth
+  ---
+  duration_ms: 206.3029
+  type: 'test'
+  ...
+# Subtest: escapable-check: interposition and capture-of-checker reply types are classified
+ok 800 - escapable-check: interposition and capture-of-checker reply types are classified
+  ---
+  duration_ms: 241.8406
+  type: 'test'
+  ...
+# Subtest: escapable-check: negatives (not in check, checkmated) are rejected; tiny budget is unknown
+ok 801 - escapable-check: negatives (not in check, checkmated) are rejected; tiny budget is unknown
+  ---
+  duration_ms: 22.7143
+  type: 'test'
+  ...
+# Subtest: mandatory-defense: per-move avoid-mate statuses match chess truth; both kinds present
+ok 802 - mandatory-defense: per-move avoid-mate statuses match chess truth; both kinds present
+  ---
+  duration_ms: 996.7827
+  type: 'test'
+  ...
+# Subtest: mandatory-defense: in check, bare kings (no threat) are rejected; tiny budget is unknown
+ok 803 - mandatory-defense: in check, bare kings (no threat) are rejected; tiny budget is unknown
+  ---
+  duration_ms: 81.4545
+  type: 'test'
+  ...
+# Subtest: misleading-improving-move: quiet failing move is not attractive (negative)
+ok 804 - misleading-improving-move: quiet failing move is not attractive (negative)
+  ---
+  duration_ms: 873.9225
+  type: 'test'
+  ...
+# Subtest: misleading-improving-move: precondition failure is rejected; unknown attractive definition throws
+ok 805 - misleading-improving-move: precondition failure is rejected; unknown attractive definition throws
+  ---
+  duration_ms: 17.8662
+  type: 'test'
+  ...
+# Subtest: misleading-improving-move: positive lure matches chess truth
+ok 806 - misleading-improving-move: positive lure matches chess truth
+  ---
+  duration_ms: 576.5517
+  type: 'test'
+  ...
+# Subtest: misleading-improving-move: tiny budget is unknown
+ok 807 - misleading-improving-move: tiny budget is unknown
+  ---
+  duration_ms: 35.2227
+  type: 'test'
+  ...
+# Subtest: determinism: repeated calls give identical output
+ok 808 - determinism: repeated calls give identical output
+  ---
+  duration_ms: 16042.7496
+  type: 'test'
+  ...
+# Subtest: no wall-clock dependence: a jumping performance.now leaves output identical
+ok 809 - no wall-clock dependence: a jumping performance.now leaves output identical
+  ---
+  duration_ms: 3197.8068
+  type: 'test'
+  ...
+# Subtest: classifyStage2 returns all four strata keyed by name, and CLASSIFIERS covers them
+ok 810 - classifyStage2 returns all four strata keyed by name, and CLASSIFIERS covers them
+  ---
+  duration_ms: 7554.1894
+  type: 'test'
+  ...
+# Subtest: graded feedback distinguishes tied best, inaccuracy and blunder with actor perspective
+ok 811 - graded feedback distinguishes tied best, inaccuracy and blunder with actor perspective
+  ---
+  duration_ms: 164.9681
+  type: 'test'
+  ...
+# Subtest: missing coverage and latest bounded estimates cannot teach
+ok 812 - missing coverage and latest bounded estimates cannot teach
+  ---
+  duration_ms: 67.1824
+  type: 'test'
+  ...
+# Subtest: budget disagreement withholds directional error and forged identities fail
+ok 813 - budget disagreement withholds directional error and forged identities fail
+  ---
+  duration_ms: 78.0963
+  type: 'test'
+  ...
+# Subtest: Stockfish child-side score is inverted for the actor, including mates
+ok 814 - Stockfish child-side score is inverted for the actor, including mates
+  ---
+  duration_ms: 2.6337
+  type: 'test'
+  ...
+# Subtest: Incomplete, nonfinite, bounded and stale scores cannot teach
+ok 815 - Incomplete, nonfinite, bounded and stale scores cannot teach
+  ---
+  duration_ms: 0.389
+  type: 'test'
+  ...
+# Subtest: Fixed value transform preserves ranking, rejects invalid activity and marks silence unavailable
+ok 816 - Fixed value transform preserves ranking, rejects invalid activity and marks silence unavailable
+  ---
+  duration_ms: 0.6781
+  type: 'test'
+  ...
+# Subtest: complete replay locates truncated investigations and independently verified unsampled defenses
+ok 817 - complete replay locates truncated investigations and independently verified unsampled defenses
+  ---
+  duration_ms: 224.2607
+  type: 'test'
+  ...
+# Subtest: trace truncation, changed leaves, invented visits and cutoff rewards cannot create diagnostics
+ok 818 - trace truncation, changed leaves, invented visits and cutoff rewards cannot create diagnostics
+  ---
+  duration_ms: 32.2133
+  type: 'test'
+  ...
+# Subtest: proof exhaustion remains unknown despite complete investigation traces
+ok 819 - proof exhaustion remains unknown despite complete investigation traces
+  ---
+  duration_ms: 33.4928
+  type: 'test'
+  ...
+# Subtest: consequence clips independently bind earlier concession and later payoff to separate actor contexts
+ok 820 - consequence clips independently bind earlier concession and later payoff to separate actor contexts
+  ---
+  duration_ms: 677.3221
+  type: 'test'
+  ...
+# Subtest: unknown supplies no clips and a changed support position cannot reuse a successful certificate
+ok 821 - unknown supplies no clips and a changed support position cannot reuse a successful certificate
+  ---
+  duration_ms: 321.8554
+  type: 'test'
+  ...
+# Subtest: v2 feedback agrees with v1 on v1 forced-mate fixtures where v1 succeeds
+ok 822 - v2 feedback agrees with v1 on v1 forced-mate fixtures where v1 succeeds
+  ---
+  duration_ms: 151.1094
+  type: 'test'
+  ...
+# Subtest: repeated identical calls give identical results
+ok 823 - repeated identical calls give identical results
+  ---
+  duration_ms: 57.4103
+  type: 'test'
+  ...
+# Subtest: tiny node budget in construction yields unknown with no teaching pulse, identically across calls
+ok 824 - tiny node budget in construction yields unknown with no teaching pulse, identically across calls
+  ---
+  duration_ms: 22.8836
+  type: 'test'
+  ...
+# Subtest: result does not change when the clock jumps forward
+ok 825 - result does not change when the clock jumps forward
+  ---
+  duration_ms: 21.966
+  type: 'test'
+  ...
+# Subtest: verified consequence uses acting side and task horizon; unknown supplies no teaching pulse
+ok 826 - verified consequence uses acting side and task horizon; unknown supplies no teaching pulse
+  ---
+  duration_ms: 162.4593
+  type: 'test'
+  ...
+# Subtest: a claimed known outcome cannot bypass proof replay with a success flag
+ok 827 - a claimed known outcome cannot bypass proof replay with a success flag
+  ---
+  duration_ms: 14.6393
+  type: 'test'
+  ...
+# Subtest: verified rook concession and later forced mate are tied to their actual choices and sole defensive reply
+ok 828 - verified rook concession and later forced mate are tied to their actual choices and sole defensive reply
+  ---
+  duration_ms: 127.0499
+  type: 'test'
+  ...
+# Subtest: changed support makes the apparent sacrifice fail the same bounded objective
+ok 829 - changed support makes the apparent sacrifice fail the same bounded objective
+  ---
+  duration_ms: 137.7934
+  type: 'test'
+  ...
+# Subtest: unknown and forged certificates cannot invent a delayed payoff
+ok 830 - unknown and forged certificates cannot invent a delayed payoff
+  ---
+  duration_ms: 82.0045
+  type: 'test'
+  ...
+# Subtest: sequence replays replace root reviews within the same fixed experience budget
+ok 831 - sequence replays replace root reviews within the same fixed experience budget
+  ---
+  duration_ms: 688.2378
+  type: 'test'
+  ...
+# Subtest: no avoidable verified contrast, unknowns, or malformed bounds produce sequence teaching
+ok 832 - no avoidable verified contrast, unknowns, or malformed bounds produce sequence teaching
+  ---
+  duration_ms: 268.5793
+  type: 'test'
+  ...
+# Subtest: every parameter derivative agrees with independent central differences
+ok 833 - every parameter derivative agrees with independent central differences
+  ---
+  duration_ms: 8.7251
+  type: 'test'
+  ...
+# Subtest: sequential accumulation equals the average objective derivative
+ok 834 - sequential accumulation equals the average objective derivative
+  ---
+  duration_ms: 1.03
+  type: 'test'
+  ...
+# Subtest: updates learn inside the graph, keep its signs and reduce training loss
+ok 835 - updates learn inside the graph, keep its signs and reduce training loss
+  ---
+  duration_ms: 3.799
+  type: 'test'
+  ...
+# Subtest: memory is reused across updates and invalid numerical inputs fail
+ok 836 - memory is reused across updates and invalid numerical inputs fail
+  ---
+  duration_ms: 2.0209
+  type: 'test'
+  ...
+# Subtest: frozen core control does not accidentally update core parameters
+ok 837 - frozen core control does not accidentally update core parameters
+  ---
+  duration_ms: 0.7674
+  type: 'test'
+  ...
+1..837
+# tests 837
+# suites 0
+# pass 835
+# fail 0
+# cancelled 0
+# skipped 2
+# todo 0
+# duration_ms 1497521.1902

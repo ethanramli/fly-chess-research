@@ -1,0 +1,12 @@
+/goal You are now a very strict peer reviewer for this research (journal referee standard). Critique the methodology, the science, and especially the code plan. Read-only; change no files; run no node simulations (memory v3 r2 is still running).
+
+Review the new proposal: documentation/design/neural-learning/memory-v4-proposal-2026-11-04.md. It answers your diagnosis (saved at research/reports/mistake-diagnosis-2026-11-04/README.md). Check it against AGENTS.md, the restart plan, the feedback quality gate, and the actual v3 code it reuses (.codebase/scripts/neural-learning/run-engineered-memory-test-v3.mjs as now modified, .codebase/src/neural-learning/engineered-memory-task-v3.mjs, engineered-memory-task-v2.mjs, kc-episodic-memory-v2.mjs, transfer-evaluation-v1.mjs pairGate, eyes-v2.mjs, capture-choice-positions-v1.mjs, python actions/curriculum.py:329).
+
+Check hard:
+1. Does each change actually fix the diagnosed defect, or move it? (ties s/c; identical schedule; permuted outcomes; positive-count stop rule; certificate recheck; blank-baseline + top-5% sparse arm; collision preflight; cache save; duty line.)
+2. Statistics: expected-score bootstrap, Bonferroni for two graph arms, threshold 96/184 under expected scoring, power with ~59 positives, multiple comparisons, reuse of the 184 v3 test positions.
+3. Science: is the sparse arm a fair, disclosed approximation or a forking path? Does the random schedule remove anything the restart plan requires? Any hint or leakage (labels used in schedule, scaler, preflight exclusion)?
+4. Code plan: interfaces, determinism, memory/time estimates (verify against the code), what tests must exist, what can break. Name exact file:line risks in the reused code.
+5. Citations: are the cited sources used for claims they support?
+
+Output: verdict APPROVE, APPROVE WITH REQUIRED CHANGES, or REJECT. Then a numbered list of required changes (each: problem, evidence file:line, exact fix), then optional suggestions (max 5). Approve only if a careful referee would accept the design after the listed required changes, and say which required changes block building versus block launching.

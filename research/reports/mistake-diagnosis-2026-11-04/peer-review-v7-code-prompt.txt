@@ -1,0 +1,10 @@
+Strict pre-launch CODE review of memory v7 (journal referee standard, heavy on code). Read-only: no edits, no brain/graph runs (memory v6-r3 is running). Be decisive and brief.
+
+v7 is built per documentation/design/neural-learning/memory-v7-proposal-2026-11-05.md (rev 2, which applied your round-1 changes [r1-1] candidates separate from the key, [r1-2] capture-only shuffled permutation, [r1-3] provenance and claim wording). Review the actual code against that spec:
+- .codebase/src/neural-learning/engineered-memory-task-v7.mjs (captureCandidates, permuteCaptureValues, judgeV7, pieceValueChoice) and its test
+- .codebase/scripts/neural-learning/run-engineered-memory-test-v7.mjs and memory-v7-worker.mjs (copies of the v6 runner/worker)
+- .codebase/scripts/neural-learning/audit-engineered-memory-test-v7.mjs and its test (independent auditor)
+- registration python actions/engineered-memory-test-v7-step.json; data runs/restart-data-2026-11-05/games-train-601-900 and capture-choice-positions-601-900-v1 (569 positions, 299 games)
+Check hard: does K3 still centre over ALL legal moves while scoring uses only known-certificate captures; is the capture-only permutation correct and saved; any label leakage into keys, calibration or candidates; exclusion of earlier boards (v5 practice, v4 test, v5 fresh, v6 test); does the auditor really recompute independently and agree with the runner's file layout (past runs had layout mismatches: exclusion reason labels, certificate block order, none-arm null counts); resource and time risks; anything that makes a v7 pass or fail uninterpretable.
+
+Output: LAUNCH OK / LAUNCH AFTER REQUIRED FIXES (numbered: file:line, problem, exact fix) / DO NOT LAUNCH. Keep it to items that matter.

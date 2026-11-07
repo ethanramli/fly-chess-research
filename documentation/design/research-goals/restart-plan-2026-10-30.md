@@ -6,6 +6,8 @@ Numbers marked [choice] are engineering choices fixed before any data. They do n
 
 **Researcher-directed revision, 2026-10-31:** replace the conversational name “Readout v1” with `neuron-reader` and follow section 4A below. Build and verify passive recording first; specify the move score jointly with the separately approved memory mechanism. The [design review](../../../research/reports/neuron-reader-design-review-2026-10-31/README.md) supplies the reasons. The [exact plan before this revision](../../../research/reports/neuron-reader-design-review-2026-10-31/restart-plan-before-neuron-reader-update.md) is preserved. This revision changes the reader work order and contracts, not the numerical experiment gates, Eyes v1, memory selection or experiment permissions. The unresolved F03/F04 corrections remain separate pre-data decisions.
 
+**Researcher-directed revision, 2026-11-03:** the [peer-review fixes](restart-plan-revision-2026-11-03.md) record decisions for five problems: new tests use Eyes v2 with a required input-collision check; every move is scored from unchanged memory; section 7 is blocked as written and Eye test v2 replaces it with reachable strengths and an exact strength measure; the en-passant group is replaced; and the separate answer file is a comparison system only. Phases B and C now have a [complete protocol](transfer-and-combination-protocol-2026-11-03.md). No frozen number in this plan changed; the text below is unchanged.
+
 ## 1. Research question
 
 Can a model built on the real fly wiring (134,209 neurons, 2,700,513 edges) see a chess board through its modelled eyes, get feedback only on its own choices, and learn a chess fact that its input does not state? Can it then use that fact on new kinds of position?
@@ -155,6 +157,8 @@ Arms 2-4 test feedback. Arms 5-6 test the connectome. Arm 7 tests shortcuts. A f
 
 At chance, 36/48 has a 0.04% chance. If the true rate is 80%, 36/48 passes 85% of the time.
 
+**Addendum 2026-11-03:** this section cannot run as written, because no inspected learning rule reaches a strength of 1.8. It stays preserved. Future use goes through Eye test v2 in the [2026-11-03 revision](restart-plan-revision-2026-11-03.md), problem 5, which keeps every count rule above.
+
 After a stop, we may not change the rendering and retest without your approval. Any new try gets a new version number and a record, and we report it as a further attempt.
 
 ## 8. Locked test design and training phases
@@ -165,6 +169,8 @@ After a stop, we may not change the rendering and retest without your approval. 
 2. 60 twin pairs from 60 unrelated games: 30 use old pair kinds; 30 use **new kinds**, listed publicly now: a defender revealed by the capture; a defender that the capture itself blocks or removes; en passant recapture; a recapture only by the king; a recapture only by a promotion move.
 3. Code generates the set and the checker certifies it. It prints only counts and a hash. **Nobody reads it, including me.** You keep the file outside the project and hand it over once, for the final run.
 4. One final run only. If a bug appears after it opens, that set is spent and we make a new one.
+
+**Addendum 2026-11-03:** the new kind "en passant recapture" cannot occur (see the [2026-11-03 revision](restart-plan-revision-2026-11-03.md), problem 6). It is replaced by "the fly captures en passant; the opponent may recapture the capturing pawn with an ordinary capture". Phases B and C below are completed by the [transfer and combination protocol](transfer-and-combination-protocol-2026-11-03.md).
 
 **Phase A (principle):** train with own-choice feedback on training-pool puzzles. Choose the snapshot using a separate development set only. Then freeze everything and run the locked test.
 

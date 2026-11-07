@@ -1,0 +1,9 @@
+/goal Strict peer review (journal referee standard; heavy on code and methodology) of memory v5. Read-only; no brain/graph runs (memory v4 is running now).
+
+Context since your last review: the researcher set a goal (documentation/design/research-goals/memory-goal-2026-11-04.md): show the fly's content-addressed episodic memory learns (beats no-memory and shuffled on new positions, improves with experience, keeps memories), Volume 2 only. Memory v4 was launched tonight with a zero-RMS mask added after the first dry run (proposal addendum in §4 of memory-v4-proposal-2026-11-04.md; masked dry run audited 8/8). Your round-3 v4 review never completed (usage limit).
+
+Review documentation/design/neural-learning/memory-v5-proposal-2026-11-04.md against the memory goal, AGENTS.md, the v4 code it reuses (.codebase/src/neural-learning/engineered-memory-v4-ledger.mjs, engineered-memory-task-v4.mjs, transfer-evaluation-v2.mjs, kc-episodic-memory-v2.mjs, .codebase/scripts/neural-learning/run-engineered-memory-test-v4.mjs, audit-engineered-memory-test-v4.mjs) and the data generator (.codebase/scripts/data/generate-capture-choice-positions.mjs, .codebase/src/puzzle-learning/capture-choice-positions-v1.mjs). Check especially: fresh-position selection (leakage, game overlap, ply spacing, label use), the dev screen (forking paths, leakage into fresh test), position-centred keys, the ridge-weighted key as a labeled aid, the learning-curve and retention claims (is "kept" meaningful?), gates and power, parallel worker scoring determinism, and what the result could and could not show for Volume 2.
+
+Also: name any v4 bug you can see that would invalidate the running v4 run (file:line), in at most 5 lines.
+
+Output: verdict APPROVE, APPROVE WITH REQUIRED CHANGES (numbered: problem, evidence file:line, exact fix, BUILD or LAUNCH), or REJECT. Say whether building may start.

@@ -1,0 +1,7 @@
+# Bounded audit performance repair, v2
+
+2026-11-01, before the replacement audit. The original standalone auditor, its resource-bound failure JSON, stdout/error evidence and review remain immutable. It reached a terminal 300-second guard without a prior data assertion failure; this is still an incomplete audit.
+
+The v2 keeps the same 300-second offline wall bound and every scientific/provenance/receipt assertion. No learner code, graph run, source experiment, mask definition or pass condition changes. Only repeated computation/allocation inside independent arithmetic replay is reduced: cache the immutable allowed-KC set per mapping; compute the identical held-frame eligibility exponential once per frame; replace four-element temporary arrays/reductions with scalar expressions in the same floating-point operation order. These are prospective performance hypotheses, not measured speedup claims.
+
+Before a full audit, compare original and v2 arithmetic on every one of the 168 recorded reversal frames from the saved Delay snapshot. Require bit-identical whole state after every frame and matching existing before/after hashes; a deliberately corrupted initial state must be rejected by both versions. Run the full v2 only after this check, through a fresh registered Python action. It must finish under the unchanged bound and publish to a fresh result; no silent retries or raised limits. Any failure remains preserved. Independent arithmetic/role does not mean independent full neural propagation or biological verification.

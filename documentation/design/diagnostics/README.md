@@ -9,4 +9,6 @@ Read-only or isolated interventions explain measured sensitivities. They do not 
 - [Positive-puzzle memory probe: nearly common candidate offsets](positive-puzzle-memory.md)
 - [Recovery causality: single-event memory replay](recovery-causality.md)
 
+- [Memory interference: actual eligibility and stored-state intervention, 2026-11-01](../../../research/reports/memory-interference-diagnosis-2026-11-01/README.md): frozen-memory diagnostics with declared feedback-enabled next steps; no oracle allocation enters a learner.
+
 [Current status](../../current-status.md) · [All design topics](../README.md)

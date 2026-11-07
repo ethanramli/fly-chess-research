@@ -4,7 +4,9 @@
 
 [Design and scientific boundaries](../../../documentation/design/chess-input/README.md)
 
-**Current input (2026-10-31):** [eyes-v1.mjs](eyes-v1.mjs), with [frozen pictures](eyes-v1-pictures.json) and [their licence](eyes-v1-pictures-LICENSE.txt). It renders the board onto the modelled photoreceptors, using Carlo Esposito's placement. [Design](../../../documentation/design/chess-input/eyes-v1.md). The cue modules below are the pre-restart line; frozen code still imports them, so keep them unchanged and do not use them for new work.
+**Current input for new tests (2026-11-03):** [eyes-v2.mjs](eyes-v2.mjs), Eyes v1 plus a dim picture of any captured piece, and `inputCollisions`, the check that no two items with different answers get identical input. [Design](../../../documentation/design/chess-input/eyes-v2.md).
+
+**Earlier input (2026-10-31), frozen:** [eyes-v1.mjs](eyes-v1.mjs), with [frozen pictures](eyes-v1-pictures.json) and [their licence](eyes-v1-pictures-LICENSE.txt). It renders the board onto the modelled photoreceptors, using Carlo Esposito's placement. [Design](../../../documentation/design/chess-input/eyes-v1.md). The cue modules below are the pre-restart line; frozen code still imports them, so keep them unchanged and do not use them for new work.
 
 - [chess-cue.mjs](chess-cue.mjs)
 - [compartment-chess-cue.mjs](compartment-chess-cue.mjs)

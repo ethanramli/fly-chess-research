@@ -1,0 +1,3 @@
+# 2026-11-01 ? Five-volume writing workspace
+
+The researcher clarified the intended use across competitions and possible journal submissions, requested separate writing folders under literature, and retained The Limits of Biology. Earlier advice to replace that title did not match the researcher?s preference; retain it while keeping model-specific evidence boundaries. Created five manuscript folders and a shared index. Approximately 50 pages is a possible personal target, not a minimum or publication requirement. No research or experiment was launched. Next: draft a selected volume using preserved evidence and check each destination before adapting a submission.

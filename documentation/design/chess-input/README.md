@@ -1,5 +1,7 @@
 # Chess input representations
 
+**Current input for new tests (2026-11-03): [Eyes v2](eyes-v2.md)**, Eyes v1 plus a dim picture of any captured piece. Reason: under Eyes v1 a capture and a quiet move could give identical input with opposite answers. Eyes v1 stays frozen for earlier runs.
+
 **Current input (2026-10-31): [Eyes v1](eyes-v1.md)**, a fixed, engineered rendering of the board onto the modelled photoreceptors. It is not natural vision and has not run on the full graph. Correction 2026-10-31: the sentence below described all encoders until now, and it still describes every pre-restart encoder listed here.
 
 All pre-restart encoders use symbolic input and mapped stimulation, bypassing modeled eyes. Engineered representation changes do not establish natural perception or reasoning.

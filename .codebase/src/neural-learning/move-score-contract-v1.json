@@ -1,0 +1,30 @@
+{
+  "schema": "neuron-reader-score-v1",
+  "scope": "released-graph",
+  "decision": "documentation/design/research-goals/restart-plan-revision-2026-11-03.md, problem 5",
+  "manifestIdentity": null,
+  "memoryIdentity": null,
+  "review": {
+    "status": "awaiting-memory-compatibility",
+    "reviewer": "",
+    "evidenceSha256": null,
+    "compatibilitySha256": null,
+    "toActivate": "Run the separately approved memory test (restart plan section 4A point 2). If informative feedback moves MBON05-based margins in both directions against absent, shuffled and plasticity-off controls, copy this file into the run folder, fill manifestIdentity, memoryIdentity, the reviewer and both SHA256 values, and set status to reviewed. If it does not, no chooser exists and training does not start."
+  },
+  "coefficients": {
+    "MBON05": {
+      "value": -1,
+      "evidence": {
+        "source": "https://elifesciences.org/articles/04580",
+        "assay": "Aso et al. 2014, Results and Figures 2-3: activating MBON05 (MBON-gamma4>gamma1gamma2) alone drives avoidance.",
+        "scope": "Single-type activation in a fly behavior assay; supports a negative contribution of MBON05 activity to move preference. It does not establish an innate chess value.",
+        "assumptions": "Higher MBON05 mean final activity means a less preferred move. Both MBON05 cells are pooled by their mean. The left and right cells have different graph signs (see the MBON05 sign provenance report); this is recorded, not corrected here.",
+        "targets": ["720575940621164720", "720575940630496374"]
+      }
+    },
+    "MBON27": { "value": 0, "evidence": null },
+    "MBON09": { "value": 0, "evidence": null },
+    "MBON07": { "value": 0, "evidence": null },
+    "MBON06": { "value": 0, "evidence": null }
+  }
+}

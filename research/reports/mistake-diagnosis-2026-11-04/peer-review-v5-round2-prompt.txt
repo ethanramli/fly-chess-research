@@ -1,0 +1,5 @@
+/goal Round 2 strict review of memory v5. Read-only; no brain/graph runs (v4 is still scoring).
+
+documentation/design/neural-learning/memory-v5-proposal-2026-11-04.md is now rev 2. It answers your R1-R9 and removes K4 (ridge key) entirely; it discloses that rev 2 was written after partial v4 results were seen. Verify each answer strictly against the reused code. Be concrete: is the spec now complete enough that two independent builders would implement the same experiment? Check the K3 position-centring, calibration-set rule, development screen, retention probes, judgeV5, the parallel launcher and the auditor scope.
+
+Output: verdict APPROVE (building may start), APPROVE WITH REQUIRED CHANGES, or REJECT. For R1-R9: RESOLVED / NOT RESOLVED (one line). Any new required changes: problem, file:line, exact fix, BUILD or LAUNCH. Be brief; only list items that truly matter.

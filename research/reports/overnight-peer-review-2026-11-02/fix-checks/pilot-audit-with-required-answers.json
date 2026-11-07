@@ -1,0 +1,633 @@
+{
+  "status": "passed",
+  "scope": "separate local-memory, policy, feedback and episodic arithmetic replay; full graph responses recorded, not independently regenerated",
+  "conditions": 6,
+  "trials": 720,
+  "replayedLocalFrames": 4280,
+  "itemEvaluations": 144,
+  "plannedItemEvaluations": 144,
+  "graphForwardsReported": 3318,
+  "publications": {
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/frames-fly-memory-informative.jsonl": "0e1e4bca108fc7ae0e2732bbcf632687fe5bbe9a6eada2e1286f310ed556ee9b",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-informative-T0.json": "c9c91410cee855fc0abcd27af87970603ab0d43ca4325f25a54f86510c444f6f",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-informative-T1.json": "465313ce461bb49e94e583eb1de89d0b971eedfbf245659c99779d20e394024b",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-informative-T2.json": "cd5c2038e0f7ffbce7a795ab0d8aaa76cd8367f42f646b655468305107801374",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-informative-T3.json": "510203872cd2eb3ce81d580782acb11f03d786036356fabc58e341ef326cc10e",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-informative-Delay.json": "f2055dfbda1c22331b56d10227f09a4f23badd640978f51a3e3f1e4bb1ef4cb4",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-informative-Rev.json": "620a658a61ea2c48beb432ae543c202cb908b8981945a7246f328f69a8211c15",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/frames-memory-only-informative.jsonl": "cbf44ec7782349ccb8fc8c5947dd53715b573dd3aa86f5ff3102259d7856a4a9",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-memory-only-informative-T0.json": "2475cf0756630ae66f1c4440ed96a09e2010d7c4813b1cac520d1e055c905b95",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-memory-only-informative-T1.json": "371e42c380f7c357c0a950afee3385679301f786ed05e9f0098a259005994cb3",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-memory-only-informative-T2.json": "5dc017f08962b3f9117bfb2791ead200b5299dc6745a327136f9767324783e4e",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-memory-only-informative-T3.json": "358f018745bec093e1504b10b084b1283a1bf996890ea4930e00fa5d58bf2efb",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-memory-only-informative-Delay.json": "610ac49f76b2039393dcb5c781e51f9e2ffb7c9c85aa332d398d6d16588fd4ee",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-memory-only-informative-Rev.json": "548063bc831ea43641eb1276003a565809229f5ff067adcc35f708cd593f46fc",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/frames-fly-only-informative.jsonl": "d7649d3a797923ce7cbdc03a2d635fc323a422adf7f407033a800436d437d366",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-only-informative-T0.json": "428f0f8dcfc526256e4bdbef2fa09db15965abda947cbffdee191a15663d5bb7",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-only-informative-T1.json": "f7edc072b1c9e0bac72319e8d1784a34755d4a5dd2719157e2024d863607bf1e",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-only-informative-T2.json": "ad33186b07ab434a83286665b8ec85c02beb72ba536d49b32ea27b6ebf0572ba",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-only-informative-T3.json": "61df6f235c1e640f46b1ec57efbca286105edc9545d947e0a24f204837d8a717",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-only-informative-Delay.json": "8d14a4d525348d6b05c048b09f69c78553e849a21391028d1815b81587d1631e",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-only-informative-Rev.json": "ffd91ee4af4fb13e8f4953df417691a639139601a077a4504483e4a3ceb0a060",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/frames-fly-memory-absent.jsonl": "3daa9fa55674b8d164d52981a99aaa73d5e25e52ac18f073c14316dd56335a2d",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-absent-T0.json": "0ce7e488d1305579563819a28c24f9809ecc0fefe0113beccf4f783c5ebd0fdb",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-absent-T1.json": "feba643e3a53cfd3da650d45b208db683a992b424ef1e31942d90e026868c15d",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-absent-T2.json": "5b0425142b9f4a135cb756c64575ccf4c3479e5b0c878bd09c8dd738dcd3c685",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-absent-T3.json": "474eb1c1715c0cbc9c4c97af43a1041921395b7bd4b218dbce03b140ae97fc31",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-absent-Delay.json": "0c0fb562942d8026736e533a0635f496ff2614afa70b9feb7aa24252c10d16f7",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-absent-Rev.json": "80960ba93077361db5d678e777d55ffeb6b91ba9efc1b3a997464b43b8c350f2",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/frames-fly-memory-shuffled.jsonl": "288ab9440cd4a89e88ad3ba5ec3df75ef8ca8db0539b7d8c2e62221d642e4e75",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-shuffled-T0.json": "09063eae776241697f693118b6b96b86a7f9fbdeeedc9eb93f8c960786906f5d",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-shuffled-T1.json": "d896e13b0d86564aed9ee8ce8c4b71add03f04cbbfab5803b2dfb2b3c5a0f04d",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-shuffled-T2.json": "3c78491954adb7096254828fa135b504c010bbfa0d6e77d7c7fb22676a607e06",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-shuffled-T3.json": "a893509844a41a4782a26610219a5757205c67b79894739faf131e530c810484",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-shuffled-Delay.json": "9849063fb78ccef5f6d6addd324e99360186da76ba4412ebac569a77d15dde69",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-shuffled-Rev.json": "d63cb7337d72e248d8a34c8beac50af371a0ec6d8a00969449a0d4b6abd95b94",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/frames-fly-memory-disabled.jsonl": "e8eeecaba922f46e3d39081306fa5e5ce5bac2089299b2f4aef3d8ae71fe9531",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-disabled-T0.json": "dc6e5a080c3b2d045ab63059f5971c613124532de7931558731ac3f864641eed",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-disabled-T1.json": "84288cb16b62d0c2e2503a7a5211802a2b52ce5af9b686d34ce99b77b17c7ffb",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-disabled-T2.json": "d30dcfab7da9160be016b0ceb09e1381fa584fa51b5166311a5705f05ddee6a5",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-disabled-T3.json": "ca52da71cb1f1f561008a56ea1b5c76bc93edf2397dcaa9e6055514f61391f5b",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-disabled-Delay.json": "238befbdbcb602ddcaec17c4f8b37c671c1b76b7e93c589b7300184f3054bc5e",
+    "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/snapshot-fly-memory-disabled-Rev.json": "6275deeee89d65ef20a76873b06270784fa7dbe852dd98d26c47099ff3310adc"
+  },
+  "resources": [
+    {
+      "rssMiB": 47.5,
+      "freeMiB": 4959.82421875
+    },
+    {
+      "rssMiB": 45.89453125,
+      "freeMiB": 4964.0078125
+    },
+    {
+      "rssMiB": 46.82421875,
+      "freeMiB": 4911.45703125
+    },
+    {
+      "rssMiB": 47.86328125,
+      "freeMiB": 4911.40234375
+    },
+    {
+      "rssMiB": 46.3046875,
+      "freeMiB": 5171.5546875
+    },
+    {
+      "rssMiB": 46.96875,
+      "freeMiB": 5118.0390625
+    },
+    {
+      "rssMiB": 55.23046875,
+      "freeMiB": 5104.7265625
+    },
+    {
+      "rssMiB": 53.9921875,
+      "freeMiB": 5139.0546875
+    },
+    {
+      "rssMiB": 55.26171875,
+      "freeMiB": 5098.58984375
+    },
+    {
+      "rssMiB": 55.671875,
+      "freeMiB": 5082.51171875
+    },
+    {
+      "rssMiB": 61.34765625,
+      "freeMiB": 5064.9921875
+    },
+    {
+      "rssMiB": 55.8671875,
+      "freeMiB": 5072.734375
+    },
+    {
+      "rssMiB": 56.85546875,
+      "freeMiB": 5073.29296875
+    },
+    {
+      "rssMiB": 57.54296875,
+      "freeMiB": 5059.546875
+    },
+    {
+      "rssMiB": 58.60546875,
+      "freeMiB": 5070.34765625
+    },
+    {
+      "rssMiB": 60.60546875,
+      "freeMiB": 5082.2734375
+    },
+    {
+      "rssMiB": 61.2578125,
+      "freeMiB": 5042.0625
+    },
+    {
+      "rssMiB": 61.99609375,
+      "freeMiB": 5058.39453125
+    },
+    {
+      "rssMiB": 56.05078125,
+      "freeMiB": 4994.31640625
+    },
+    {
+      "rssMiB": 57.13671875,
+      "freeMiB": 4981.171875
+    },
+    {
+      "rssMiB": 57.77734375,
+      "freeMiB": 5073.8359375
+    },
+    {
+      "rssMiB": 60.94921875,
+      "freeMiB": 5058.84765625
+    },
+    {
+      "rssMiB": 62.1171875,
+      "freeMiB": 5054.4609375
+    },
+    {
+      "rssMiB": 56.828125,
+      "freeMiB": 5045.84375
+    },
+    {
+      "rssMiB": 57.80859375,
+      "freeMiB": 5018.03125
+    },
+    {
+      "rssMiB": 59.29296875,
+      "freeMiB": 5032.9609375
+    },
+    {
+      "rssMiB": 58.3203125,
+      "freeMiB": 5060.71875
+    },
+    {
+      "rssMiB": 60.05078125,
+      "freeMiB": 5253.171875
+    },
+    {
+      "rssMiB": 61.33984375,
+      "freeMiB": 5209.8671875
+    },
+    {
+      "rssMiB": 62.05078125,
+      "freeMiB": 5209.38671875
+    },
+    {
+      "rssMiB": 63.12890625,
+      "freeMiB": 5199.92578125
+    },
+    {
+      "rssMiB": 64.2265625,
+      "freeMiB": 5198.37109375
+    },
+    {
+      "rssMiB": 60.75390625,
+      "freeMiB": 5189.2734375
+    },
+    {
+      "rssMiB": 69.109375,
+      "freeMiB": 5183.01171875
+    },
+    {
+      "rssMiB": 75.71484375,
+      "freeMiB": 5177.265625
+    },
+    {
+      "rssMiB": 77.25,
+      "freeMiB": 5140.7265625
+    },
+    {
+      "rssMiB": 78.3828125,
+      "freeMiB": 5159.48828125
+    },
+    {
+      "rssMiB": 80.5859375,
+      "freeMiB": 5110.796875
+    },
+    {
+      "rssMiB": 81.125,
+      "freeMiB": 5096.171875
+    },
+    {
+      "rssMiB": 83.1953125,
+      "freeMiB": 5127.62890625
+    },
+    {
+      "rssMiB": 83.83203125,
+      "freeMiB": 5106.20703125
+    },
+    {
+      "rssMiB": 84.90234375,
+      "freeMiB": 5105.61328125
+    },
+    {
+      "rssMiB": 72.66015625,
+      "freeMiB": 5140.64453125
+    },
+    {
+      "rssMiB": 72.96875,
+      "freeMiB": 5114.36328125
+    },
+    {
+      "rssMiB": 74.04296875,
+      "freeMiB": 5224.9921875
+    },
+    {
+      "rssMiB": 75.25390625,
+      "freeMiB": 5209.62109375
+    },
+    {
+      "rssMiB": 75.8828125,
+      "freeMiB": 5199.83203125
+    },
+    {
+      "rssMiB": 76.71484375,
+      "freeMiB": 5195.70703125
+    },
+    {
+      "rssMiB": 79.54296875,
+      "freeMiB": 5170.7890625
+    },
+    {
+      "rssMiB": 81.015625,
+      "freeMiB": 5184.76953125
+    },
+    {
+      "rssMiB": 82.28515625,
+      "freeMiB": 5213.24609375
+    },
+    {
+      "rssMiB": 83.05859375,
+      "freeMiB": 5142.3984375
+    },
+    {
+      "rssMiB": 83.91015625,
+      "freeMiB": 5127.22265625
+    },
+    {
+      "rssMiB": 73.0234375,
+      "freeMiB": 5104.12890625
+    },
+    {
+      "rssMiB": 74.375,
+      "freeMiB": 5033.625
+    },
+    {
+      "rssMiB": 76.109375,
+      "freeMiB": 5124.3359375
+    },
+    {
+      "rssMiB": 76.96875,
+      "freeMiB": 5092.75390625
+    },
+    {
+      "rssMiB": 77.94921875,
+      "freeMiB": 5004.68359375
+    },
+    {
+      "rssMiB": 78.6953125,
+      "freeMiB": 5001.328125
+    },
+    {
+      "rssMiB": 80.8671875,
+      "freeMiB": 5061.9140625
+    },
+    {
+      "rssMiB": 82.3515625,
+      "freeMiB": 5184.66796875
+    },
+    {
+      "rssMiB": 83.41796875,
+      "freeMiB": 5176.98828125
+    },
+    {
+      "rssMiB": 84.46484375,
+      "freeMiB": 5172.3046875
+    },
+    {
+      "rssMiB": 85.32421875,
+      "freeMiB": 5160.8671875
+    },
+    {
+      "rssMiB": 73.85546875,
+      "freeMiB": 5197.60546875
+    },
+    {
+      "rssMiB": 74.9765625,
+      "freeMiB": 5193.2109375
+    },
+    {
+      "rssMiB": 76.03515625,
+      "freeMiB": 5174.84765625
+    },
+    {
+      "rssMiB": 76.9609375,
+      "freeMiB": 5123.3203125
+    },
+    {
+      "rssMiB": 77.73046875,
+      "freeMiB": 5119.5
+    },
+    {
+      "rssMiB": 85.4375,
+      "freeMiB": 5092.62890625
+    },
+    {
+      "rssMiB": 80.30078125,
+      "freeMiB": 5134.2578125
+    },
+    {
+      "rssMiB": 81.7109375,
+      "freeMiB": 5095.9140625
+    },
+    {
+      "rssMiB": 82.42578125,
+      "freeMiB": 5087.5625
+    },
+    {
+      "rssMiB": 85.24609375,
+      "freeMiB": 5077.7421875
+    },
+    {
+      "rssMiB": 84.2578125,
+      "freeMiB": 5070.265625
+    },
+    {
+      "rssMiB": 84.9609375,
+      "freeMiB": 5074.984375
+    },
+    {
+      "rssMiB": 85.77734375,
+      "freeMiB": 5083.04296875
+    },
+    {
+      "rssMiB": 87.7265625,
+      "freeMiB": 5070.95703125
+    },
+    {
+      "rssMiB": 88.5078125,
+      "freeMiB": 5154.73046875
+    },
+    {
+      "rssMiB": 87.6796875,
+      "freeMiB": 5164.8359375
+    },
+    {
+      "rssMiB": 88.21875,
+      "freeMiB": 5160.49609375
+    },
+    {
+      "rssMiB": 74.85546875,
+      "freeMiB": 5169.27734375
+    },
+    {
+      "rssMiB": 86.4375,
+      "freeMiB": 5130.41015625
+    },
+    {
+      "rssMiB": 77.109375,
+      "freeMiB": 5189.80859375
+    },
+    {
+      "rssMiB": 86.79296875,
+      "freeMiB": 5197.48828125
+    },
+    {
+      "rssMiB": 86.48828125,
+      "freeMiB": 5192.8984375
+    },
+    {
+      "rssMiB": 86.7109375,
+      "freeMiB": 5182.5
+    },
+    {
+      "rssMiB": 86.953125,
+      "freeMiB": 5188.1015625
+    },
+    {
+      "rssMiB": 84.01953125,
+      "freeMiB": 5183.3984375
+    },
+    {
+      "rssMiB": 86.82421875,
+      "freeMiB": 5182.46875
+    },
+    {
+      "rssMiB": 87.05078125,
+      "freeMiB": 5160.21875
+    },
+    {
+      "rssMiB": 87.984375,
+      "freeMiB": 5140.6953125
+    },
+    {
+      "rssMiB": 76.171875,
+      "freeMiB": 5118.078125
+    },
+    {
+      "rssMiB": 77.28515625,
+      "freeMiB": 5136.53125
+    },
+    {
+      "rssMiB": 87.95703125,
+      "freeMiB": 5251.39453125
+    },
+    {
+      "rssMiB": 87.95703125,
+      "freeMiB": 5248.328125
+    },
+    {
+      "rssMiB": 88.29296875,
+      "freeMiB": 5257.70703125
+    },
+    {
+      "rssMiB": 81.90625,
+      "freeMiB": 5238.765625
+    },
+    {
+      "rssMiB": 88.109375,
+      "freeMiB": 5210.85546875
+    },
+    {
+      "rssMiB": 88.20703125,
+      "freeMiB": 5199.2890625
+    },
+    {
+      "rssMiB": 87.546875,
+      "freeMiB": 5186.56640625
+    },
+    {
+      "rssMiB": 87.15625,
+      "freeMiB": 5178.01953125
+    },
+    {
+      "rssMiB": 87.640625,
+      "freeMiB": 5171.94140625
+    },
+    {
+      "rssMiB": 88.34765625,
+      "freeMiB": 5171.921875
+    },
+    {
+      "rssMiB": 88.67578125,
+      "freeMiB": 5168.2109375
+    },
+    {
+      "rssMiB": 88.9609375,
+      "freeMiB": 5165.390625
+    },
+    {
+      "rssMiB": 78.51171875,
+      "freeMiB": 5165.8125
+    },
+    {
+      "rssMiB": 88.84375,
+      "freeMiB": 5147.59375
+    },
+    {
+      "rssMiB": 89.75,
+      "freeMiB": 5140.6484375
+    },
+    {
+      "rssMiB": 89.78515625,
+      "freeMiB": 5257.75390625
+    },
+    {
+      "rssMiB": 80.48828125,
+      "freeMiB": 5259.05859375
+    },
+    {
+      "rssMiB": 89.2734375,
+      "freeMiB": 5238.22265625
+    },
+    {
+      "rssMiB": 89.30078125,
+      "freeMiB": 5228.64453125
+    },
+    {
+      "rssMiB": 89.54296875,
+      "freeMiB": 5221.109375
+    },
+    {
+      "rssMiB": 89.61328125,
+      "freeMiB": 5218.62890625
+    },
+    {
+      "rssMiB": 86.51171875,
+      "freeMiB": 5205.65625
+    },
+    {
+      "rssMiB": 89.484375,
+      "freeMiB": 5187.97265625
+    },
+    {
+      "rssMiB": 89.484375,
+      "freeMiB": 5178.44140625
+    },
+    {
+      "rssMiB": 80.73046875,
+      "freeMiB": 5183.6171875
+    },
+    {
+      "rssMiB": 81.4609375,
+      "freeMiB": 5169.19140625
+    },
+    {
+      "rssMiB": 87.51953125,
+      "freeMiB": 5175.09375
+    },
+    {
+      "rssMiB": 87.82421875,
+      "freeMiB": 5154.3984375
+    },
+    {
+      "rssMiB": 87.82421875,
+      "freeMiB": 5274.46875
+    },
+    {
+      "rssMiB": 88.18359375,
+      "freeMiB": 5264.6953125
+    },
+    {
+      "rssMiB": 87.40234375,
+      "freeMiB": 5266.52734375
+    },
+    {
+      "rssMiB": 87.8359375,
+      "freeMiB": 5255.99609375
+    },
+    {
+      "rssMiB": 87.8359375,
+      "freeMiB": 5245.8046875
+    },
+    {
+      "rssMiB": 87.8359375,
+      "freeMiB": 5234.03125
+    },
+    {
+      "rssMiB": 77.609375,
+      "freeMiB": 5245.6875
+    },
+    {
+      "rssMiB": 79.47265625,
+      "freeMiB": 5236.796875
+    },
+    {
+      "rssMiB": 87.35546875,
+      "freeMiB": 5209.6953125
+    },
+    {
+      "rssMiB": 88.09765625,
+      "freeMiB": 5205.66015625
+    },
+    {
+      "rssMiB": 88.1015625,
+      "freeMiB": 5202.46875
+    },
+    {
+      "rssMiB": 84.27734375,
+      "freeMiB": 5250.875
+    },
+    {
+      "rssMiB": 88.30078125,
+      "freeMiB": 5247.51953125
+    },
+    {
+      "rssMiB": 106.01171875,
+      "freeMiB": 5203.9609375
+    },
+    {
+      "rssMiB": 90.1953125,
+      "freeMiB": 5316.88671875
+    }
+  ],
+  "elapsedSeconds": 55.326533500000004,
+  "auditorSha256": "bfdf9c1df81511c068562af4cf3ac37093d96f54084457877f4602e2b08d3c52",
+  "pins": {
+    ".codebase/scripts/neural-learning/compare-long-term-memory-v1.mjs": "b1aa1bc85d0cffff46cf90f069fd3e3588f6af6b351e24e8f36e66264b3476b5",
+    ".codebase/src/neural-learning/memory-backed-policy-v1.mjs": "cf26e992ec94d020d97faf978f6bd04fb39fc46961afe4d44dbcb8b8a65c734f",
+    ".codebase/src/neural-learning/episodic-consequence-memory.mjs": "d9ed21e315812889477ee7be6f2a6cde205216954be9e73fabdf9258b3602e2d",
+    ".codebase/src/neural-learning/local-cubic-reservoir-memory.mjs": "240ea6b4a7e57bfe62673c816ce7909788882e7ef88dbb6bde6c0bd448c9e317",
+    ".codebase/src/neural-learning/local-reservoir-memory.mjs": "568aa12079141b0d0203594c1ef4a03716beeef2ca16c149a1f5f558c8de7588",
+    ".codebase/src/neural-learning/local-gated-memory.mjs": "ae5351bf885db4fe5dfd7467bc9e0059255f14ced4a1210d8d80cde80a2dc49b",
+    ".codebase/src/neural-learning/local-supralinear-reservoir-memory.mjs": "559513d57acbd5603fd27a8afc3747f1964027f1a948172e5e195713136511d0",
+    ".codebase/src/neural-learning/mushroom-body.mjs": "335b7e2066b26b8a139358ddaa1888304b17d6c77681426c9749b979006760c5",
+    ".codebase/src/neural-learning/neuron-reader.mjs": "c26434fb5f9d13cae1d200878773d3f878749315156b2dc0d81eba2006e60874",
+    ".codebase/src/neural-learning/neuron-reader-cells.json": "e979eae031781a606c983bf6c41b54e22a3b544a8f5ce3bd26c4e86198d4c0ec",
+    ".codebase/src/neural-learning/memory-assay-fixture.mjs": "6bc348bc34a1e41e4185a5e14701612cf1c1b5117b1fc1c6289cff43a9c2d4a6",
+    ".codebase/src/supervised-baselines/trainer.mjs": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+    ".codebase/src/runtime/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+    ".codebase/src/runtime/sparse-accumulator.mjs": "7a578b92a215aabf612d0c74899e9bff92054fe5d7d5b8e8f35f57ba0fd2ade9",
+    ".codebase/tests/neural-learning/memory-backed-policy-v1.test.mjs": "ef13f5a8bf3ab4ba9510c0c6026ead0fa885a324102cf658fdd3c17524e20384",
+    ".codebase/tests/neural-learning/episodic-consequence-memory.test.mjs": "24b2ab826d2b473cab3f1ab1ab2f9ecf91b19a1d97c59ec374d4d3e279fea6ea",
+    "python actions/curriculum.py": "f084dd00fe3976948b2a96dbb79c65c74c07c80392361d273192b3496bf4cb52",
+    "python actions/fly_controls.py": "05e1121f2be288c9d86b0c31493181c582c7f5bb9d24a9bc1e26ae3d2ed1300c",
+    "python actions/long_term_memory_live_status.py": "1e6fbccaf6aea2ebfc637b3f730a39b6462d0604a70d197c690aae1015caf3ff",
+    ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    "package-lock.json": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+    "research/reports/long-term-memory-v1-live-comparison-2026-11-01/protocol-v1.md": "faba15d2746f08aea0511d39c051ba7ee6174595e89e1c50035f1d5456e9d8c6",
+    "runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1/frames-4102-informative.jsonl": "f12e50341161d49a8a5bbf73098ee6a7a28482aa0ebc50f2bfb3cc69b668e263",
+    "research/reports/memory-retention-continuation-2026-11-01/cubic-v1-recovery1-audit.json": "37d997bc3552fe7f950c9f8e9ec5a03aba05919b7b9ddfe6dd610781cf287fc0"
+  }
+}

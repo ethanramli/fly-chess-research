@@ -1,0 +1,14 @@
+You are the same very strict peer reviewer of the FlyChess memory experiments; this is the CODE review of memory v8 before its dry run (review the code heavily). Repository: C:/Users/ethan/Documents/fly-chess-research. Read the files yourself; do not edit anything; do not run experiments or anything that writes under runs/ (unit tests are fine).
+
+Design: documentation/design/neural-learning/memory-v8-proposal-2026-11-07.md (rev 2, written after your round-1 review: research/reports/mistake-diagnosis-2026-11-04/peer-review-v8-round1.md).
+New code (built by Haiku agents from my specs, reviewed by me):
+1. .codebase/src/neural-learning/engineered-memory-task-v8.mjs (+ .codebase/tests/neural-learning/engineered-memory-task-v8.test.mjs)
+2. .codebase/scripts/neural-learning/run-engineered-memory-test-v8.mjs (a copy of the v7 runner; diff it against run-engineered-memory-test-v7.mjs). Reuses .codebase/scripts/neural-learning/memory-v7-worker.mjs unchanged.
+3. .codebase/scripts/neural-learning/audit-engineered-memory-test-v8.mjs (a copy of the v7 auditor; diff it against audit-engineered-memory-test-v7.mjs) (+ .codebase/tests/neural-learning/audit-engineered-memory-test-v8.test.mjs, 30 tests)
+4. Registrations: python actions/engineered-memory-test-v8-step.json (paused) and engineered-memory-test-v8-dryrun-step.json (47 pins).
+
+Builder-reported deviations to judge: (a) the v7 margin-floor flip test could not be reproduced on the small fixture (no fixture seed passes), replaced by a test that a recorded pass for a failing seed is rejected and that M=1 for N=3; (b) the v5 partition is pinned only through config v5Files (same as v7); (c) the cache check does not verify v8 test keys are disjoint from the v7 cache (different games by construction).
+
+Check especially: ledger equality between runner (captureLedger: practice order, [...capturesOf(id)].sort()) and auditor (legalOf order filtered by capturesOn) — same base order? same treatment of en passant, promotions-with-capture, king captures (unknown)?; the shuffle (permuteCaptureValues(ledger, () => true, seed)) vs the auditor's capturePermOf; that the v7 worker works with an all-capture ledger (prefix sizes, retention probes, shuffled values alignment, CAPACITY); that ledgers are written before any brain pass and after the certificate recheck; the earlier-board exclusion (v4, v5, v6, v7); pins; the resume path; summary storeCounts; anything that could make the audit pass on a wrong run.
+
+Answer: numbered required fixes (file:line), optional notes, then one line: "LAUNCH OK (after the dry run and its audit)" or "DO NOT LAUNCH: <reason>". Under 800 words.

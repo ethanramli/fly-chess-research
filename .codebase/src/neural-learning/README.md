@@ -38,3 +38,14 @@
 - [neuron-reader.mjs](neuron-reader.mjs), [pinned cells](neuron-reader-cells.json): pure endpoint observations and an explicit, evidence-reviewed fixed-score contract; no default biological signs or learning. [Interface](../../../documentation/design/neural-learning/neuron-reader.md).
 
 - [local-cubic-reservoir-memory.mjs](local-cubic-reservoir-memory.mjs): one fixed weak-drive protection hypothesis; preserves the quadratic parent. No calibrated receptor mechanism, biological timescale or approved chess learning. [Protocol and scope](../../../research/reports/memory-retention-continuation-2026-11-01/cubic-exit-spec.md).
+
+- [eye-test-v2.mjs](eye-test-v2.mjs) (2026-11-03): arithmetic for Eye test v2: reachable strength settings (0.2 and 1.0), the strength measure M and the 10% gate. It runs no model.
+- [move-chooser-v1.mjs](move-chooser-v1.mjs) and [move-score-contract-v1.json](move-score-contract-v1.json) (2026-11-03): the fly's choice over all legal moves, scored from unchanged memory, and the MBON05 coefficient contract. The contract stays switched off until the separately approved memory test passes. [Decision](../../../documentation/design/research-goals/restart-plan-revision-2026-11-03.md).
+- [transfer-evaluation-v1.mjs](transfer-evaluation-v1.mjs) (2026-11-03): checks for the later transfer and combination tests: scoring every move from unchanged memory in both orders, exact-repeat detection, similar-board recall as a comparison system, and the locked-set pass rule. Nothing here learns. [Protocol](../../../documentation/design/research-goals/transfer-and-combination-protocol-2026-11-03.md).
+- [long-term-memory v1](episodic-consequence-memory.mjs) (implementation: `EpisodicConsequenceMemory`): bounded external exact-cue store with revisable consequence values, idempotent events and validated snapshots. No graph mutation or biological memory claim. [Component identity, replay and evidence](../../../research/reports/engineered-episodic-memory-2026-11-01/README.md).
+
+
+- [memory-backed-policy-v1.mjs](memory-backed-policy-v1.mjs): fixed long-term-memory v1 lookup precedence, neural fallback and explicit score ablations; no fitted mixing coefficient. [Live pilot protocol](../../../research/reports/long-term-memory-v1-live-comparison-2026-11-01/README.md).
+
+
+- Memory v4 (2026-11-04): [engineered-memory-v4-ledger.mjs](engineered-memory-v4-ledger.mjs) (history replay, committed schedules, certificates, ledger, permutation), [engineered-memory-task-v4.mjs](engineered-memory-task-v4.mjs) (arms, transforms, s / c scoring, judge), [transfer-evaluation-v2.mjs](transfer-evaluation-v2.mjs) (numeric game-bootstrap gate). [Proposal](../../../documentation/design/neural-learning/memory-v4-proposal-2026-11-04.md).

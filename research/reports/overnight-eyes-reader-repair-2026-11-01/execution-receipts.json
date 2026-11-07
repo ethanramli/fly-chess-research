@@ -1,0 +1,616 @@
+[
+  {
+    "invocation": "runs\\python-actions\\20261101T150049-29323268",
+    "config": {
+      "schema": 1,
+      "name": "overnight-mbon05-released-v1",
+      "paused": false,
+      "paths": {
+        "run": "runs/overnight-eyes-reader-2026-11-01/mbon05-released-v1",
+        "protocol": "research/reports/mbon05-sign-conditioning-2026-11-01/protocol.json",
+        "registration": "python actions/overnight-mbon05-released-v1-step.json"
+      },
+      "pins": {
+        ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+        ".codebase/scripts/neural-learning/run-eye-graph-memory-cubic.mjs": "25534f91afbcc5da13241abf42d65b2b4fbc1c1e6d51dc84f05b2138790660d2",
+        ".codebase/src/neural-learning/local-cubic-reservoir-memory.mjs": "240ea6b4a7e57bfe62673c816ce7909788882e7ef88dbb6bde6c0bd448c9e317",
+        ".codebase/src/neural-learning/local-reservoir-memory.mjs": "568aa12079141b0d0203594c1ef4a03716beeef2ca16c149a1f5f558c8de7588",
+        ".codebase/src/neural-learning/local-gated-memory.mjs": "ae5351bf885db4fe5dfd7467bc9e0059255f14ced4a1210d8d80cde80a2dc49b",
+        ".codebase/src/neural-learning/local-supralinear-reservoir-memory.mjs": "559513d57acbd5603fd27a8afc3747f1964027f1a948172e5e195713136511d0",
+        ".codebase/src/neural-learning/memory-assay-rule-prediction-scaled.mjs": "216f3cd8f555589f93fd69b29fc3eb96eb8dd39ae2636f3df3eb94cb93ae8b5b",
+        ".codebase/src/neural-learning/memory-assay-fixture.mjs": "6bc348bc34a1e41e4185a5e14701612cf1c1b5117b1fc1c6289cff43a9c2d4a6",
+        ".codebase/src/neural-learning/neuron-reader.mjs": "c26434fb5f9d13cae1d200878773d3f878749315156b2dc0d81eba2006e60874",
+        ".codebase/src/neural-learning/neuron-reader-cells.json": "e979eae031781a606c983bf6c41b54e22a3b544a8f5ce3bd26c4e86198d4c0ec",
+        ".codebase/src/supervised-baselines/trainer.mjs": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+        "research/reports/mbon05-sign-provenance-2026-11-01/proposed-variant.json": "ecbf1156e44181b0f6eb58e5a556ae6e6f957895579070aa6a3182c7e045f0b2",
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\pilot.mjs": "47688523d22557e36dbdae41e99fa47668b10d86b09767bf646979a72add548a",
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\audit.mjs": "df651dfdb0572327818378d6dea672bcf0354fb760f6039856610f243997421d",
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\README.md": "a7daaffba46dc687ec6d8bf8c4fce0b50bcfd6c299e8f17465506140b6f7962c"
+      },
+      "state_file": "runs/python-actions/overnight-mbon05-released-v1.json",
+      "resourceLimits": {
+        "rssMiB": 2048,
+        "freeMiB": 256
+      },
+      "jobs": {
+        "compare": {
+          "role": "check",
+          "argv": [
+            "node",
+            "--max-old-space-size=256",
+            "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\pilot.mjs",
+            "--out",
+            "runs/overnight-eyes-reader-2026-11-01/mbon05-released-v1",
+            "--seeds",
+            "1",
+            "--first",
+            "4101",
+            "--items",
+            "2",
+            "--delay-steps",
+            "400",
+            "--cpu-duty",
+            "0.5",
+            "--variant",
+            "released"
+          ],
+          "refuse_existing": [
+            "runs/overnight-eyes-reader-2026-11-01/mbon05-released-v1"
+          ]
+        },
+        "audit": {
+          "role": "check",
+          "argv": [
+            "node",
+            "--max-old-space-size=256",
+            "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\audit.mjs",
+            "--run",
+            "runs/overnight-eyes-reader-2026-11-01/mbon05-released-v1",
+            "--out",
+            "runs/overnight-eyes-reader-2026-11-01/mbon05-released-v1/audit.json"
+          ]
+        }
+      },
+      "artifacts": {
+        "summary": "{run}/summary.json",
+        "progress": "{run}/progress.json"
+      },
+      "report_fields": []
+    },
+    "completion": {
+      "job": "compare",
+      "role": "check",
+      "run": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\mbon05-released-v1",
+      "pid": 14604,
+      "configHash": "10e6a43ed5e4e2d227fd1bd76fdf439bb9b3d7a826e6205fcde16815dd334064",
+      "stdout": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T150049-29323268\\stdout.txt",
+      "stderr": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T150049-29323268\\stderr.txt",
+      "argv": [
+        "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+        "--max-old-space-size=256",
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\pilot.mjs",
+        "--out",
+        "runs/overnight-eyes-reader-2026-11-01/mbon05-released-v1",
+        "--seeds",
+        "1",
+        "--first",
+        "4101",
+        "--items",
+        "2",
+        "--delay-steps",
+        "400",
+        "--cpu-duty",
+        "0.5",
+        "--variant",
+        "released"
+      ],
+      "exitCode": 0,
+      "artifacts": {
+        "summary": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\mbon05-released-v1\\summary.json",
+        "progress": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\mbon05-released-v1\\progress.json"
+      },
+      "created": null,
+      "command": null
+    }
+  },
+  {
+    "invocation": "runs\\python-actions\\20261101T150232-f2928744",
+    "config": {
+      "schema": 1,
+      "name": "overnight-reader-software",
+      "paused": false,
+      "paths": {
+        "run": "runs/overnight-eyes-reader-2026-11-01/software",
+        "protocol": "research/reports/mbon05-sign-conditioning-2026-11-01/protocol.json",
+        "registration": "python actions/overnight-mbon05-released-v1-step.json"
+      },
+      "pins": {},
+      "state_file": "runs/python-actions/overnight-reader-software.json",
+      "resourceLimits": {
+        "rssMiB": 2048,
+        "freeMiB": 256
+      },
+      "jobs": {
+        "regression": {
+          "role": "check",
+          "argv": [
+            "npm",
+            "test"
+          ]
+        },
+        "focused": {
+          "role": "check",
+          "argv": [
+            "node",
+            "--max-old-space-size=256",
+            "--test",
+            "--test-concurrency=1",
+            "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\adapter.test.mjs",
+            ".codebase/tests/neural-learning/neuron-reader.test.mjs",
+            ".codebase/tests/puzzle-learning/record-neuron-candidates.test.mjs"
+          ]
+        }
+      },
+      "artifacts": {
+        "summary": "{run}/summary.json",
+        "progress": "{run}/progress.json"
+      },
+      "report_fields": []
+    },
+    "completion": {
+      "job": "regression",
+      "role": "check",
+      "run": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\software",
+      "pid": 11788,
+      "configHash": "a09af38168672d26eceb67fd91ebd45066d1068624987838eb05bdeba9ec709b",
+      "stdout": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T150232-f2928744\\stdout.txt",
+      "stderr": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T150232-f2928744\\stderr.txt",
+      "argv": [
+        "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+        "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node_modules\\npm\\bin\\npm-cli.js",
+        "test"
+      ],
+      "exitCode": 1,
+      "artifacts": {
+        "summary": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\software\\summary.json",
+        "progress": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\software\\progress.json"
+      },
+      "created": null,
+      "command": null
+    }
+  },
+  {
+    "invocation": "runs\\python-actions\\20261101T150319-8e43b637",
+    "config": {
+      "schema": 1,
+      "name": "overnight-reader-software",
+      "paused": false,
+      "paths": {
+        "run": "runs/overnight-eyes-reader-2026-11-01/software",
+        "protocol": "research/reports/mbon05-sign-conditioning-2026-11-01/protocol.json",
+        "registration": "python actions/overnight-mbon05-released-v1-step.json"
+      },
+      "pins": {},
+      "state_file": "runs/python-actions/overnight-reader-software.json",
+      "resourceLimits": {
+        "rssMiB": 2048,
+        "freeMiB": 256
+      },
+      "jobs": {
+        "regression": {
+          "role": "check",
+          "argv": [
+            "npm",
+            "test"
+          ]
+        },
+        "focused": {
+          "role": "check",
+          "argv": [
+            "node",
+            "--max-old-space-size=256",
+            "--test",
+            "--test-concurrency=1",
+            "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\adapter.test.mjs",
+            ".codebase/tests/neural-learning/neuron-reader.test.mjs",
+            ".codebase/tests/puzzle-learning/record-neuron-candidates.test.mjs"
+          ]
+        }
+      },
+      "artifacts": {
+        "summary": "{run}/summary.json",
+        "progress": "{run}/progress.json"
+      },
+      "report_fields": []
+    },
+    "completion": {
+      "job": "focused",
+      "role": "check",
+      "run": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\software",
+      "pid": 16104,
+      "configHash": "a09af38168672d26eceb67fd91ebd45066d1068624987838eb05bdeba9ec709b",
+      "stdout": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T150319-8e43b637\\stdout.txt",
+      "stderr": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T150319-8e43b637\\stderr.txt",
+      "argv": [
+        "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+        "--max-old-space-size=256",
+        "--test",
+        "--test-concurrency=1",
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\adapter.test.mjs",
+        ".codebase/tests/neural-learning/neuron-reader.test.mjs",
+        ".codebase/tests/puzzle-learning/record-neuron-candidates.test.mjs"
+      ],
+      "exitCode": 0,
+      "artifacts": {
+        "summary": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\software\\summary.json",
+        "progress": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\software\\progress.json"
+      },
+      "created": null,
+      "command": null
+    }
+  },
+  {
+    "invocation": "runs\\python-actions\\20261101T151410-ffd9176e",
+    "config": {
+      "schema": 1,
+      "name": "overnight-mbon05-released-v1-audit-v2",
+      "paused": false,
+      "paths": {
+        "run": "runs/overnight-eyes-reader-2026-11-01/mbon05-released-v1",
+        "protocol": "research/reports/mbon05-sign-conditioning-2026-11-01/protocol.json",
+        "registration": "python actions/overnight-mbon05-released-v1-step.json"
+      },
+      "pins": {
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\audit-v2.mjs": "31c3712b724baea501a64c739a56eb6022260da60571bc8408f4bdfb37cf9908"
+      },
+      "state_file": "runs/python-actions/overnight-mbon05-released-audit-v2.json",
+      "resourceLimits": {
+        "rssMiB": 2048,
+        "freeMiB": 256
+      },
+      "jobs": {
+        "audit": {
+          "role": "check",
+          "argv": [
+            "node",
+            "--max-old-space-size=256",
+            "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\audit-v2.mjs",
+            "--run",
+            "runs/overnight-eyes-reader-2026-11-01/mbon05-released-v1",
+            "--out",
+            "runs/overnight-eyes-reader-2026-11-01/mbon05-released-v1/audit-v2.json"
+          ]
+        }
+      },
+      "artifacts": {
+        "summary": "{run}/summary.json",
+        "progress": "{run}/progress.json"
+      },
+      "report_fields": []
+    },
+    "completion": {
+      "job": "audit",
+      "role": "check",
+      "run": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\mbon05-released-v1",
+      "pid": 12836,
+      "configHash": "3911c64e90bdc3aa4da0730368ce77ddbaab72f8ff2e7b25af8d908d96253ace",
+      "stdout": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T151410-ffd9176e\\stdout.txt",
+      "stderr": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T151410-ffd9176e\\stderr.txt",
+      "argv": [
+        "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+        "--max-old-space-size=256",
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\audit-v2.mjs",
+        "--run",
+        "runs/overnight-eyes-reader-2026-11-01/mbon05-released-v1",
+        "--out",
+        "runs/overnight-eyes-reader-2026-11-01/mbon05-released-v1/audit-v2.json"
+      ],
+      "exitCode": 0,
+      "artifacts": {
+        "summary": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\mbon05-released-v1\\summary.json",
+        "progress": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\mbon05-released-v1\\progress.json"
+      },
+      "created": null,
+      "command": null
+    }
+  },
+  {
+    "invocation": "runs\\python-actions\\20261101T151421-7b418b46",
+    "config": {
+      "schema": 1,
+      "name": "overnight-full-reader",
+      "paused": false,
+      "paths": {
+        "run": "runs/overnight-eyes-reader-2026-11-01/full-reader-v1",
+        "protocol": "research/reports/mbon05-sign-conditioning-2026-11-01/protocol.json",
+        "registration": "python actions/overnight-mbon05-curated-v1-step.json"
+      },
+      "pins": {
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\check-full-reader.mjs": "c530f1def4804eab75a6d405defac2bd95bde347793f29c94c442fd940d30914"
+      },
+      "state_file": "runs/python-actions/overnight-full-reader.json",
+      "resourceLimits": {
+        "rssMiB": 2048,
+        "freeMiB": 256
+      },
+      "jobs": {
+        "check": {
+          "role": "check",
+          "argv": [
+            "node",
+            "--max-old-space-size=256",
+            "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\check-full-reader.mjs",
+            "runs/overnight-eyes-reader-2026-11-01/full-reader-v1"
+          ]
+        }
+      },
+      "artifacts": {
+        "summary": "{run}/summary.json",
+        "progress": "{run}/progress.json"
+      },
+      "report_fields": []
+    },
+    "completion": {
+      "job": "check",
+      "role": "check",
+      "run": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\full-reader-v1",
+      "pid": 8364,
+      "configHash": "58e7718503e0516af21165f99a1656b7274ee93065ae980bca585c555752001b",
+      "stdout": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T151421-7b418b46\\stdout.txt",
+      "stderr": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T151421-7b418b46\\stderr.txt",
+      "argv": [
+        "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+        "--max-old-space-size=256",
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\check-full-reader.mjs",
+        "runs/overnight-eyes-reader-2026-11-01/full-reader-v1"
+      ],
+      "exitCode": 0,
+      "artifacts": {
+        "summary": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\full-reader-v1\\summary.json",
+        "progress": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\full-reader-v1\\progress.json"
+      },
+      "created": null,
+      "command": null
+    }
+  },
+  {
+    "invocation": "runs\\python-actions\\20261101T151439-e87628ae",
+    "config": {
+      "schema": 1,
+      "name": "overnight-mbon05-curated-v1",
+      "paused": false,
+      "paths": {
+        "run": "runs/overnight-eyes-reader-2026-11-01/mbon05-curated-v1",
+        "protocol": "research/reports/mbon05-sign-conditioning-2026-11-01/protocol.json",
+        "registration": "python actions/overnight-mbon05-curated-v1-step.json"
+      },
+      "pins": {
+        ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+        ".codebase/scripts/neural-learning/run-eye-graph-memory-cubic.mjs": "25534f91afbcc5da13241abf42d65b2b4fbc1c1e6d51dc84f05b2138790660d2",
+        ".codebase/src/neural-learning/local-cubic-reservoir-memory.mjs": "240ea6b4a7e57bfe62673c816ce7909788882e7ef88dbb6bde6c0bd448c9e317",
+        ".codebase/src/neural-learning/local-reservoir-memory.mjs": "568aa12079141b0d0203594c1ef4a03716beeef2ca16c149a1f5f558c8de7588",
+        ".codebase/src/neural-learning/local-gated-memory.mjs": "ae5351bf885db4fe5dfd7467bc9e0059255f14ced4a1210d8d80cde80a2dc49b",
+        ".codebase/src/neural-learning/local-supralinear-reservoir-memory.mjs": "559513d57acbd5603fd27a8afc3747f1964027f1a948172e5e195713136511d0",
+        ".codebase/src/neural-learning/memory-assay-rule-prediction-scaled.mjs": "216f3cd8f555589f93fd69b29fc3eb96eb8dd39ae2636f3df3eb94cb93ae8b5b",
+        ".codebase/src/neural-learning/memory-assay-fixture.mjs": "6bc348bc34a1e41e4185a5e14701612cf1c1b5117b1fc1c6289cff43a9c2d4a6",
+        ".codebase/src/neural-learning/neuron-reader.mjs": "c26434fb5f9d13cae1d200878773d3f878749315156b2dc0d81eba2006e60874",
+        ".codebase/src/neural-learning/neuron-reader-cells.json": "e979eae031781a606c983bf6c41b54e22a3b544a8f5ce3bd26c4e86198d4c0ec",
+        ".codebase/src/supervised-baselines/trainer.mjs": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+        "research/reports/mbon05-sign-provenance-2026-11-01/proposed-variant.json": "ecbf1156e44181b0f6eb58e5a556ae6e6f957895579070aa6a3182c7e045f0b2",
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\pilot.mjs": "47688523d22557e36dbdae41e99fa47668b10d86b09767bf646979a72add548a",
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\audit.mjs": "df651dfdb0572327818378d6dea672bcf0354fb760f6039856610f243997421d",
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\README.md": "a7daaffba46dc687ec6d8bf8c4fce0b50bcfd6c299e8f17465506140b6f7962c"
+      },
+      "state_file": "runs/python-actions/overnight-mbon05-curated-v1.json",
+      "resourceLimits": {
+        "rssMiB": 2048,
+        "freeMiB": 256
+      },
+      "jobs": {
+        "compare": {
+          "role": "check",
+          "argv": [
+            "node",
+            "--max-old-space-size=256",
+            "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\pilot.mjs",
+            "--out",
+            "runs/overnight-eyes-reader-2026-11-01/mbon05-curated-v1",
+            "--seeds",
+            "1",
+            "--first",
+            "4101",
+            "--items",
+            "2",
+            "--delay-steps",
+            "400",
+            "--cpu-duty",
+            "0.5",
+            "--variant",
+            "curated",
+            "--stimuli",
+            "runs/overnight-eyes-reader-2026-11-01/mbon05-released-v1/stimuli.json"
+          ],
+          "refuse_existing": [
+            "runs/overnight-eyes-reader-2026-11-01/mbon05-curated-v1"
+          ]
+        },
+        "audit": {
+          "role": "check",
+          "argv": [
+            "node",
+            "--max-old-space-size=256",
+            "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\audit.mjs",
+            "--run",
+            "runs/overnight-eyes-reader-2026-11-01/mbon05-curated-v1",
+            "--out",
+            "runs/overnight-eyes-reader-2026-11-01/mbon05-curated-v1/audit.json"
+          ]
+        }
+      },
+      "artifacts": {
+        "summary": "{run}/summary.json",
+        "progress": "{run}/progress.json"
+      },
+      "report_fields": []
+    },
+    "completion": {
+      "job": "compare",
+      "role": "check",
+      "run": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\mbon05-curated-v1",
+      "pid": 16084,
+      "configHash": "25a39da404006886b2d2706a0ea0cfbfc0d74ee5107322dc83bb810add01e828",
+      "stdout": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T151439-e87628ae\\stdout.txt",
+      "stderr": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T151439-e87628ae\\stderr.txt",
+      "argv": [
+        "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+        "--max-old-space-size=256",
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\pilot.mjs",
+        "--out",
+        "runs/overnight-eyes-reader-2026-11-01/mbon05-curated-v1",
+        "--seeds",
+        "1",
+        "--first",
+        "4101",
+        "--items",
+        "2",
+        "--delay-steps",
+        "400",
+        "--cpu-duty",
+        "0.5",
+        "--variant",
+        "curated",
+        "--stimuli",
+        "runs/overnight-eyes-reader-2026-11-01/mbon05-released-v1/stimuli.json"
+      ],
+      "exitCode": 0,
+      "artifacts": {
+        "summary": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\mbon05-curated-v1\\summary.json",
+        "progress": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\mbon05-curated-v1\\progress.json"
+      },
+      "created": null,
+      "command": null
+    }
+  },
+  {
+    "invocation": "runs\\python-actions\\20261101T152815-6db87045",
+    "config": {
+      "schema": 1,
+      "name": "overnight-mbon05-curated-v1-audit-v2",
+      "paused": false,
+      "paths": {
+        "run": "runs/overnight-eyes-reader-2026-11-01/mbon05-curated-v1",
+        "protocol": "research/reports/mbon05-sign-conditioning-2026-11-01/protocol.json",
+        "registration": "python actions/overnight-mbon05-curated-v1-step.json"
+      },
+      "pins": {
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\audit-v2.mjs": "31c3712b724baea501a64c739a56eb6022260da60571bc8408f4bdfb37cf9908"
+      },
+      "state_file": "runs/python-actions/overnight-mbon05-curated-audit-v2.json",
+      "resourceLimits": {
+        "rssMiB": 2048,
+        "freeMiB": 256
+      },
+      "jobs": {
+        "audit": {
+          "role": "check",
+          "argv": [
+            "node",
+            "--max-old-space-size=256",
+            "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\audit-v2.mjs",
+            "--run",
+            "runs/overnight-eyes-reader-2026-11-01/mbon05-curated-v1",
+            "--out",
+            "runs/overnight-eyes-reader-2026-11-01/mbon05-curated-v1/audit-v2.json"
+          ]
+        }
+      },
+      "artifacts": {
+        "summary": "{run}/summary.json",
+        "progress": "{run}/progress.json"
+      },
+      "report_fields": []
+    },
+    "completion": {
+      "job": "audit",
+      "role": "check",
+      "run": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\mbon05-curated-v1",
+      "pid": 17228,
+      "configHash": "9b841f348fcb76dda01ed2b74333508505d506aa203a65d2c45f6892b997dfdc",
+      "stdout": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T152815-6db87045\\stdout.txt",
+      "stderr": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T152815-6db87045\\stderr.txt",
+      "argv": [
+        "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+        "--max-old-space-size=256",
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\audit-v2.mjs",
+        "--run",
+        "runs/overnight-eyes-reader-2026-11-01/mbon05-curated-v1",
+        "--out",
+        "runs/overnight-eyes-reader-2026-11-01/mbon05-curated-v1/audit-v2.json"
+      ],
+      "exitCode": 0,
+      "artifacts": {
+        "summary": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\mbon05-curated-v1\\summary.json",
+        "progress": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\mbon05-curated-v1\\progress.json"
+      },
+      "created": null,
+      "command": null
+    }
+  },
+  {
+    "invocation": "runs\\python-actions\\20261101T152825-0d46d85c",
+    "config": {
+      "schema": 1,
+      "name": "overnight-raw-score-audit",
+      "paused": false,
+      "paths": {
+        "run": "runs/overnight-eyes-reader-2026-11-01",
+        "protocol": "research/reports/mbon05-sign-conditioning-2026-11-01/protocol.json",
+        "registration": "python actions/overnight-mbon05-curated-v1-step.json"
+      },
+      "pins": {
+        "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\audit-raw-scores.mjs": "86c71b53c8bb1eacad73572e8e41189c1a502e457dd7b10775231541f15e3c8e"
+      },
+      "state_file": "runs/python-actions/overnight-raw-score-audit.json",
+      "resourceLimits": {
+        "rssMiB": 2048,
+        "freeMiB": 256
+      },
+      "jobs": {
+        "audit": {
+          "role": "check",
+          "argv": [
+            "node",
+            "--max-old-space-size=256",
+            "research/reports/overnight-eyes-reader-repair-2026-11-01/audit-raw-scores.mjs"
+          ]
+        }
+      },
+      "artifacts": {
+        "summary": "{run}/summary.json",
+        "progress": "{run}/progress.json"
+      },
+      "report_fields": []
+    },
+    "completion": {
+      "job": "audit",
+      "role": "check",
+      "run": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01",
+      "pid": 6672,
+      "configHash": "490bdb3f9ee48da906c08da8ff28414415fe24ed74476076fe53d5f1087cd5ce",
+      "stdout": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T152825-0d46d85c\\stdout.txt",
+      "stderr": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\python-actions\\20261101T152825-0d46d85c\\stderr.txt",
+      "argv": [
+        "C:\\Users\\ethan\\AppData\\Local\\hermes\\node\\node.EXE",
+        "--max-old-space-size=256",
+        "research/reports/overnight-eyes-reader-repair-2026-11-01/audit-raw-scores.mjs"
+      ],
+      "exitCode": 0,
+      "artifacts": {
+        "summary": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\summary.json",
+        "progress": "C:\\Users\\ethan\\Documents\\fly-chess-research\\runs\\overnight-eyes-reader-2026-11-01\\progress.json"
+      },
+      "created": null,
+      "command": null
+    }
+  }
+]

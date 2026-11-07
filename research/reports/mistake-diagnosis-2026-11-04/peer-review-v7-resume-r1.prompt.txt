@@ -1,0 +1,71 @@
+You are the same very strict peer reviewer of the FlyChess memory experiments (methodology, science, code heavily). Repository: C:/Users/ethan/Documents/fly-chess-research. Read the files yourself; do not edit anything; do not run experiments.
+
+New event: the full memory v7 run (runs/engineered-memory-test-2026-11-05/engineered-memory-test-v7, started 2026-11-06 13:18 local) FAILED at 15:00: "Worker confirm-random-pc---6102-random-pc exited 1073807364" (0x40010004, the code Windows gives processes ended by a shutdown or log-off; the machine's last boot is 16:47, and the separately queued detached audit chain died at the same time without writing anything). 12 of 24 job outputs are complete (K3 6101 and 6102 eighth/half/none/quarter/shuffled; random-pc 6101; raw-pc 6101). No summary or verdict exists, and nobody has read any score from these 12 outputs.
+
+Proposed fix (in the working tree, NOT launched): the same resume patch you approved for the v6 runner (peer-review-v6-resume-r1.md), applied to .codebase/scripts/neural-learning/run-engineered-memory-test-v7.mjs. Diff:
+42a43
+>     'resume-from': { type: 'string' },
+52a54,55
+> // Resume (added 2026-11-06 after the first v7 launch was killed by a Windows shutdown at 12/24 jobs; same patch as the v6 runner): finished job outputs of a failed run with the same partition and cache are copied byte for byte; the audit rebuilds every job.
+> const resumeDir = args['resume-from'] ?? null;
+134a138,144
+>   const copied = [];
+>   if (resumeDir) {
+>     const old = readJson(`${resumeDir}/manifest.json`);
+>     assert.equal(old.status, 'failed', 'Only a failed run can be resumed');
+>     assert.equal(old.partitionSha256, manifest.partitionSha256, 'Resumed run has a different partition');
+>     assert.equal(old.cacheSha256, manifest.cacheSha256, 'Resumed run has a different cache');
+>   }
+145a156,162
+>       const done = resumeDir && queue.length > 0 ? `${resumeDir}/jobs/${jobName(queue[0])}.json` : null;
+>       if (done && existsSync(done)) {
+>         const bytes = readFileSync(done);
+>         writeAtomic(`${jobsDir}/${jobName(queue.shift())}.json`, bytes);
+>         copied.push({ file: done, sha256: sha(bytes) });
+>         continue;
+>       }
+160c177,178
+<   console.log(`${phase}: ${jobs.length} jobs complete`);
+---
+>   if (resumeDir) writeManifest({ resumedFrom: { run: resumeDir, copiedJobs: copied } });
+>   console.log(`${phase}: ${jobs.length} jobs complete (${copied.length} copied)`);
+Registration python actions/engineered-memory-test-v7-step.json: run -> engineered-memory-test-v7-r2, argv adds --resume-from engineered-memory-test-v7, runner pin regenerated. Diff:
+diff --git a/C:/Users/ethan/AppData/Local/Temp/claude/21cf7314503add0d/a3594ae5-4b2d-4b84-ba96-091c293b2e18/scratchpad/v7-step-r1.json b/python actions/engineered-memory-test-v7-step.json
+index 948e731..0caeec4 100644
+--- a/C:/Users/ethan/AppData/Local/Temp/claude/21cf7314503add0d/a3594ae5-4b2d-4b84-ba96-091c293b2e18/scratchpad/v7-step-r1.json
++++ b/python actions/engineered-memory-test-v7-step.json	
+@@ -2,9 +2,9 @@
+   "schema": 1,
+   "name": "engineered-memory-test-v7",
+   "paused": false,
+-  "note": "Memory v7 (proposal rev 2): does the memory choose the safe capture among known-certificate captures. Reviewed round 1; building allowed. Launch after v6-r2 ends, dry run and audit.",
++  "note": "Memory v7 (proposal rev 2): does the memory choose the safe capture among known-certificate captures. Code reviewed LAUNCH OK; dry run r2 audited PASS. Launch 1 (engineered-memory-test-v7, 13:18) was killed by a Windows shutdown at 15:00 with 12/24 jobs. Launch 2 (v7-r2) resumes it: rebuilds partition and cache, asserts both equal launch 1, copies the 12 finished outputs byte for byte, runs the other 12. The audit rebuilds all 24.",
+   "paths": {
+-    "run": "runs/engineered-memory-test-2026-11-05/engineered-memory-test-v7",
++    "run": "runs/engineered-memory-test-2026-11-05/engineered-memory-test-v7-r2",
+     "protocol": "documentation/design/neural-learning/memory-v7-proposal-2026-11-05.md",
+     "registration": "python actions/engineered-memory-test-v7-step.json",
+     "v4Run": "runs/engineered-memory-test-2026-11-04/engineered-memory-test-v4",
+@@ -43,7 +43,7 @@
+     "positions": "b65ecd1f236d520e264af2819253ec2152b3f11818a00027f5fb72680ef25afc"
+   },
+   "pins": {
+-    ".codebase/scripts/neural-learning/run-engineered-memory-test-v7.mjs": "052f1e25d5680205894a54ecaab03b5a43c9c3e552fda5eb33c59b027adf288c",
++    ".codebase/scripts/neural-learning/run-engineered-memory-test-v7.mjs": "bc950e65b29a8458e653d4ea45074fbe6df65a839c784071db68c9d94492f3ef",
+     ".codebase/scripts/neural-learning/memory-v7-worker.mjs": "15f7366a3ac726014953d036c4e865ca0f0a4b88b447ae43ec947f934511dc46",
+     ".codebase/scripts/neural-learning/audit-engineered-memory-test-v7.mjs": "5c9e0da8bbd0ad2daf40aa633349f074800bfbda9861c007fa69762640a0325a",
+     ".codebase/src/neural-learning/engineered-memory-task-v7.mjs": "049c41eb5995841d86bbd55fb9306ddfe6441936435dba0dffcd979b2df9cb82",
+@@ -97,6 +97,8 @@
+         "python actions/engineered-memory-test-v7-step.json",
+         "--workers",
+         "4",
++        "--resume-from",
++        "runs/engineered-memory-test-2026-11-05/engineered-memory-test-v7",
+         "--cpu-duty",
+         "1"
+       ],
+The v7 auditor (unchanged) rebuilds all 24 jobs and recomputes the verdict.
+
+Questions: (a) Is the patch correct in the v7 runner's context (check the v7 runBatch, worker atomic writes, partition/cache recomputation before runBatch, the capture permutation files, and anything v7-specific that the v6 patch would not cover)? (b) Does the v7 auditor accept the r2 folder (manifest fields, argv, pinned checks)? (c) Any disclosure needed beyond what v6 needed?
+
+Answer with numbered required changes (if any), then one line: "LAUNCH OK" or "DO NOT LAUNCH: <reason>". Under 500 words.

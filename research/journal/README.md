@@ -1,5 +1,9 @@
 # Research journal
 
+- [2026-11-04: memory v3 review proposal and quantified practice/tie concerns](experiments/2026-11-04-memory-v3-review-proposal.md).
+
+- [2026-11-03: fixes for the eight peer-review problems, with mistakes and pivots](experiments/2026-11-03-peer-review-fixes.md).
+
 - [2026-10-31: actual memory goal continues after evidence repair](experiments/2026-10-31-memory-goal-continuation.md).
 
 - [2026-10-30: training cannot resume from a mid-event checkpoint (found by the D8 recovery witness; fails safe; fixed in block v3)](experiments/2026-10-30-mid-event-resume-bug.md)
@@ -334,3 +338,19 @@ Follow-up correction, 2026-10-10: changed the untested byte-buffer external-data
 
 - [2026-10-22 babysit campaign controller](experiments/2026-10-22-babysit-campaign-controller.md).
 - [2026-10-31 memory fixture capacity and event-audit limits](experiments/2026-10-31-memory-fixture-capacity-and-audit.md).
+
+- [2026-11-01: memory proposal and correction of overlap/retention interpretations](experiments/2026-11-01-memory-proposal-interpretation-correction.md).
+
+- [2026-11-01: memory-only causal diagnosis, current-rest rejection and shared-synapse reversal trade-off](experiments/2026-11-01-memory-interference-causal-diagnosis.md).
+
+- [2026-11-01 overnight Eyes/reader execution](experiments/2026-11-01-overnight-eyes-reader-repair.md); [evidence report](../reports/overnight-eyes-reader-repair-2026-11-01/REPORT.md).
+
+
+- [2026-11-02: interference cell/edge trace, exact baseline contradiction, feasible counterexample and mistakes](experiments/2026-11-02-interference-limits-and-certificates.md).
+
+- [2026-11-02: overnight code/methodology review, mistakes and run blockers](experiments/2026-11-02-overnight-peer-review.md)
+
+- [2026-11-04: memory v3 run, heap crash, direct launch and result](experiments/2026-11-04-memory-v3-run.md)
+- [2026-11-05: memory v4 run and memory v5 build](experiments/2026-11-05-memory-v4-v5.md)
+
+- [2026-11-07: P1-P3 fly connections memory, authority, source gate and inspection corrections](experiments/2026-11-07-fly-connections-memory.md)

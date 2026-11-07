@@ -1,0 +1,20 @@
+/goal Diagnose everything that went wrong in the FlyChess research since the restart on 2026-10-30, why it went wrong, and the root cause of each. You are a strict, independent research auditor. Read-only: change no files, run no node simulations (a graph experiment is running; graph work must stay serial). Reading files, grep, git log/show and tiny read-only one-liners are fine.
+
+Read first: AGENTS.md, documentation/next-checkpoint.md, documentation/current-status.md, documentation/design/research-goals/restart-plan-2026-10-30.md, documentation/design/puzzle-learning/feedback-quality-gate.md, research/project/decision_log.md (entries from 2026-10-30 on).
+
+Then audit these, reading the reports AND the code that produced them:
+1. Memory test v1: research/reports/memory-test-2026-11-03/
+2. Memory test v2 + pathway trace: research/reports/engineered-memory-test-v2-2026-11-03/, runs/engineered-memory-test-2026-11-03/
+3. Seeing test: research/reports/seeing-test-2026-11-03/
+4. Memory retention cubic v1 interruption (manifest left "running"), recovery1, memory interference diagnosis and interference limits reports (research/reports/memory-interference-diagnosis-2026-11-01/, research/reports/interference-limits-2026-11-02/)
+5. Memory v3 design and code: documentation/design/neural-learning/engineered-memory-test-v3.md, documentation/design/neural-learning/memory-v3-review-proposal-2026-11-04.md, .codebase/scripts/neural-learning/run-engineered-memory-test-v3.mjs, .codebase/src/neural-learning/engineered-memory-task-v3.mjs, kc-episodic-memory-v2.mjs, eyes-v2.mjs, the data generator .codebase/scripts/data/generate-capture-choice-positions.mjs and src/puzzle-learning/capture-choice-positions-v1.mjs, and their tests.
+6. Process: python actions launcher (python actions/curriculum.py guard on --cpu-duty), manifests missing start/end times, runners without failure handlers.
+
+Be heavy on code: look for real bugs (off-by-one, tie handling, seeds, leakage between practice/test, wrong perspective of reward, label leakage, scaling computed on test data, nondeterminism, unchecked asserts, eviction, shuffled-control exposure mismatch, missing certificate binding/recheck), and cite file:line for each.
+
+Output (your final message, markdown):
+A. A ranked table of mistakes, most severe first: id, category (design / code / control / analysis / interpretation / process), what went wrong, evidence (file:line or report path), why it went wrong (root cause; mark HYPOTHESIS where not proven), severity (critical/major/minor), and whether it invalidates a stated conclusion.
+B. Cross-cutting root causes (at most 5) that explain several mistakes.
+C. What the evidence actually supports so far, in 5 lines, and what it does not.
+D. Open questions that only a new measurement can settle.
+Be concrete and short per row. No praise.

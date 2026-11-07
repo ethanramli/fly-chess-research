@@ -1,0 +1,10 @@
+Round 2 of your strict pre-launch code review of memory v7. Read-only; no edits; no brain/graph runs (v6-r3 is running). Brief and decisive.
+
+Your round-1 items (research/reports/mistake-diagnosis-2026-11-04/peer-review-v7-code.md) were addressed:
+1. Auditor reads config.paths.positionsV6 and the worker's allLegalScores/pieceValue; test writer uses the worker layout; integration test added (.codebase/scripts/neural-learning/audit-engineered-memory-test-v7.mjs, its test).
+2. Spec clarified to match the code: capture permutation = partialFisherYates([0..K-1], K, mulberry32((seed ^ 0x7ca7) >>> 0)), no 0x5eed (documentation/design/neural-learning/memory-v7-proposal-2026-11-05.md §3); auditor reproduces it and rejects a 0x5eed variant.
+3. Runner rechecks every copied practice certificate with certifyPositions and every ledger slot's value and hash before any brain pass (.codebase/scripts/neural-learning/run-engineered-memory-test-v7.mjs); auditor replays every practice proof with the separate checker and checks ledger slots.
+4. Auditor NEW_PINS = registered data digests; CLI accepts a full run only when pass and pinned.
+Registration re-pinned: python actions/engineered-memory-test-v7-step.json.
+
+Verify each fix in the code. Output: LAUNCH OK (after the required dry run and its audit) / LAUNCH AFTER REQUIRED FIXES (numbered file:line, exact fix). Only items that matter.

@@ -1,0 +1,9 @@
+# Bounded acquisition of the public v783 contact-coordinate export
+
+2026-11-01, before full acquisition. Primary metadata/prefix evidence is in [source-evidence](source-evidence/); the [data-access review](primary-data-access.md) distinguishes provider, release and coordinate semantics. No learner or graph run occurs.
+
+Acquire only `https://storage.googleapis.com/flywire-data/codex/data/fafb/783/synapse_coordinates.csv.gz?generation=1733428450553759`. Pin generation `1733428450553759`, compressed size 316,819,225 bytes, ETag/MD5 `9ca493e2314cc03aaf8b03e80f1643e8`, and the separately obtained first-65,536-byte prefix. Require matching response generation/ETag/length, full body MD5 and SHA-256 receipt, and complete gzip CRC/EOF before atomic publication. This replaces no existing raw artifact.
+
+Bound each explicit invocation to 180 seconds, socket reads to 20 seconds, RSS 2048 MiB, free system memory 256 MiB and disk transfer to the declared source size. Stream 1-MiB chunks to a preserved `.partial`; do not silently restart or delete failures. Explicit resume may append only from the existing length with the same generation/ETag and exact Content-Range; reject a server ignoring the range. Preserve each failed attempt's receipt and raw partial. A completed file is never reacquired by this action.
+
+The first downstream gate is **all** retained KC/APL root-pair count reconciliation, not only the six old-failure cells. Matching counts can support export compatibility. It does not establish whether the single `x,y,z` vector denotes a presynaptic point, postsynaptic point or center, and does not substitute for exact contact-side semantics/arbor registration needed for a faithful local-inhibition model. Keep any geometry approximation out of learner evaluation until separately specified and justified. Prefer canonical provenance over assuming that the newer Princeton table is interchangeable.

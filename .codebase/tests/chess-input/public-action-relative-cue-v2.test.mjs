@@ -5,7 +5,7 @@ import {Chess} from 'chess.js';
 import {createPublicActionRelativeEncoder} from '../../src/chess-input/public-action-relative-cue.mjs';
 import {createPublicActionRelativeEncoderV2} from '../../src/chess-input/public-action-relative-cue-v2.mjs';
 
-const mapping=JSON.parse(readFileSync('research/reports/reversal-candidate-2026-10-05/mapping.json','utf8')).mapping;
+const mapping=JSON.parse(readFileSync('archive/early-development/research/reports/reversal-candidate-2026-10-05/mapping.json','utf8')).mapping;
 const task={objective:'capture-retention',plies:1};
 const v1=createPublicActionRelativeEncoder(mapping,{seed:20261101}),v2=createPublicActionRelativeEncoderV2(mapping,{seed:20261101});
 const childOf=(fen,move)=>{const board=new Chess(fen),child=new Chess();child.loadPgn(board.pgn());

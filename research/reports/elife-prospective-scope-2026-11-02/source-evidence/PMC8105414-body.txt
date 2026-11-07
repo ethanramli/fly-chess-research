@@ -1,0 +1,1148 @@
+SECTION: 
+IntroductionEffective decision making benefits from an organism’s ability to accurately predict the rewarding and punishing outcomes of each decision, so that it can meaningfully compare the available options and act to bring about the greatest reward. In many scenarios, an organism must learn to associate the valence of each outcome with the sensory cues predicting it. A broadly successful theory of reinforcement learning is the delta rule1,2, whereby reinforcement predictions (RPs) are updated in proportion to reinforcement prediction errors (RPEs): the difference between predicted and received reinforcements. RPEs are more effective as a learning signal than absolute reinforcement signals because RPEs diminish as the prediction becomes more accurate, adding stability to the learning process. In mammals, RPEs related to rewards are signalled by dopamine neurons (DANs) in the ventral tegmental area and substantia nigra, enabling the brain to implement approximations to the delta rule3,4. In Drosophila melanogaster, DANs that project to the mushroom body (MB) (Fig. 1a) provide both reward and punishment modulated signals that are required for associative learning5. However, to date, MB DAN activity is typically interpreted as signalling absolute reinforcements (either positive or negative) for two reasons: (i) a lack of direct evidence for RPE signals in DANs, and (ii) limited evidence in insects for the blocking phenomenon, in which conditioning of one stimulus can be impaired if it is presented alongside a previously conditioned stimulus, an effect that is indicative of RPE-dependent learning2,6,7. Here, we incorporate anatomical and functional data from recent experiments into a computational model of the MB, in which MB DANs do compute RPEs. The model provides a circuit-level description for delta rule learning in the MB, which we use to demonstrate why the absence of blocking does not necessarily imply the absence of RPEs.Fig. 1Valence-specific model of the mushroom body.a Schematic of several neuropils that comprise the brain of Drosophila melanogaster. The green region highlights the MB in the right hemisphere. Labels: MB mushroom body, AL antennal lobe, SOG suboesophogeal ganglion, ME medulla. b Outlines of the multiple compartments that tile the lobes of the MB, colour-coded by a broad classification of cell function. Blue: approach MBONs (mushroom body output neurons); orange: avoidance MBONs; purple: aversive DANs (dopamine neurons); green: appetitive DANs; black: KCs. Inset: schematic of the three MB lobes and their compartmentalisation. Top: \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\alpha }^{\prime}$$\end{document}α′/\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\beta }^{\prime}$$\end{document}β′ lobes; middle: α/β lobes; bottom: γ lobe. MBON functions (approach or avoidance) are as determined in15. Pale colours in the inset correspond to MBONs that exhibit a non-significant bias on behaviour in15. c Schematic of the VS model. Units are colour-coded according to the cell types in (b). KCs connect to MBONs through plastic synapses, and connect to DANs through fixed synapses. Labels: M+—approach MBON; M−, avoidance MBON; D−, aversive DAN, D+, appetitive DAN, K, Kenyon cells, R−, negative reinforcement, R+, positive reinforcement. Lines with arrows: excitatory synapse. Lines with filled circles: synapse releasing dopamine. Downward white arrows: dopamine enhances synaptic long term depression (LTD). d Schematic of a single trial for the experimental paradigm in which the model is examined. Panel 1: the model is exposed to some number of cues that are evaluated to yield a cue-specific RP. Panel 2: using the relative RPs, the model makes a decision over which cue to choose. Panel 3: the model receives a reinforcement signal that is associated with the chosen cue, and its RPs for that cue are updated.The MB is organised into lateral and medial lobes of neuropil in which sensory encoding Kenyon cells (KCs) innervate the dendrites of MB output neurons (MBONs), which modulate behaviour (Fig. 1b). Consistent with its role in associative learning, DAN signals modulate MBON activity via synaptic plasticity at KC → MBON synapses8–10. Current models of MB function posit that the MB lobes encode either positive or negative valences of reinforcement signals and actions10–16. Most DANs in the protocerebral anterior medial (PAM) cluster (called D+ in the model presented here, Fig. 1c) are activated by rewards, or positive reinforcement (R+), and their activation results in depression at synapses between coactive KCs (K) and MBONs that are thought to induce avoidance behaviours (M−). DANs in the protocerebral posterior lateral 1 (PPL1) cluster (D−) are activated by punishments, i.e. negative reinforcement (R−), and their activation results in depression at synapses between coactive KCs and MBONs that induce approach behaviours (M+). A fly can therefore learn to approach rewarding cues or avoid punishing cues as a result of synaptic depression at KC inputs to avoidance or approach MBONs, respectively.To date, there is only indirect evidence for RPE signals in MB DANs. DAN activity is modulated by feedforward reinforcement signals, but some DANs also receive excitatory feedback from MBONs17–20, and it is likely this extends to all MBONs whose axons are proximal to DAN dendrites21. We interpret the difference between approach and avoidance MBON firing rates as a RP that motivates behaviour, consistent with the observation that behavioural valence scales with the difference between approach and avoidance MBON firing rates15. As such, DANs that integrate feedforward reinforcement signals and feedback RPs from MBONs are primed to signal RPEs for learning. To the best of our knowledge, these latter two features have yet to be incorporated in computational models of the MB22–24.Here, we incorporate the experimental data described above to formulate a reduced computational model of the MB circuitry, demonstrate how DANs may compute RPEs, derive a plasticity rule for KC → MBON synapses that minimises RPEs, and verify in simulations that our MB model learns accurate RPs. We identify a limitation to the model that imposes an upper bound on RP magnitudes, and demonstrate how putative connections between DANs, KCs and MBONs25,26 help circumvent this limitation. Introducing these additional connections yields testable predictions for future experiments as well as explaining a broader range of existing experimental observations that connect DAN and MBON stimulus responses to learning. Lastly, we show that both incarnations of the model—with and without additional connections—capture a wide range of observations from classical conditioning and blocking experiments in Drosophila. Different behavioural outcomes in the two models for specific experiments provide further strong experimental predictions.
+
+SECTION: 
+ResultsA model of the mushroom body that minimises reinforcement prediction errorsThe MB lobes comprise multiple compartments, each innervated by a different set of MBONs and DANs (Fig. 1b), and each encoding memories for different forms of reinforcement27, with different longevities28, and for different stages of memory formation29. Nevertheless, compartments appear to contribute to learning by similar mechanisms9,10,30, and it is reasonable to assume that the process of learning RPs is similar for different forms of reinforcement. We therefore reduce the multicompartmental MB into two compartments, and assign a single, rate-based unit to each class of MBON and DAN (colour-coded in Fig. 1b, c). KCs, however, are modelled as a population, in which each sensory cue selectively activates a unique subset of ten cells. Given that activity in approach and avoidance MBONs—denoted M+ and M− in our model—respectively bias flies to approach or avoid a cue, i, we interpret the difference in their firing rates, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{m}}^{i}\,=\,{m}_{+}^{i}\,-\,{m}_{-}^{i}$$\end{document}m^i=m+i−m−i, as the fly’s RP for that cue.For the purpose of this work, we assume that the MB has only a single objective: to form RPs that are as accurate as possible, i.e. that minimise the RPE. We do this within a multiple-alternative forced choice (MAFC) paradigm (Fig. 1d; also known as a multi-armed bandit) in which a fly is exposed to one or more sensory cues in a given trial, and is forced to choose one. The fly then receives a reinforcement signal, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{r}}^{i}\,=\,{r}_{+}^{i}\,-\,{r}_{-}^{i}$$\end{document}r^i=r+i−r−i, which has both rewarding and punishing components (coming from sources R+ and R−, respectively), and which is specific to the chosen cue. Over several trials, the fly must learn to predict the reinforcements for each cue, and use these predictions to reliably choose the most rewarding cue. We formalise this objective with a cost function that penalises differences between RPs and reinforcements 1\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${C}^{{\rm{RPE}}}\,=\,\frac{1}{2}\mathop{\sum}\limits_{i}{\left({\hat{r}}^{i}\,-\,{\hat{m}}^{i}\right)}^{2},$$\end{document}CRPE=12∑ir^i−m^i2,where the sum is over all cues, i. To minimise CRPE through learning, we derived a plasticity rule, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\mathcal{P}}}^{{\rm{RPE}}}$$\end{document}PRPE (full derivation in Methods: Synaptic plasticity): 2\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\mathcal{P}}}_{\pm }^{{\rm{RPE}}}\,=\,\eta {\bf{k}}\left({d}_{\pm }\,-\,{d}_{\mp }\right).$$\end{document}P±RPE=ηkd±−d∓.whereby synaptic weights are updated according to \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{\pm }\left(t\,+\,1\right)\,=\,{{\bf{w}}}_{\pm }\left(t\right)\,+\,{{\mathcal{P}}}_{\pm }^{{\rm{RPE}}}$$\end{document}w±t+1=w±t+P±RPE. Here, k is a vector of KC firing rates, and we use subscripts ‘±’ to denote the valence of the neuron: if + (−) is considered in ±, then ∓ refers to − (+), and vice versa. As such, d± refers to the firing rate of either D+ or D−. The learning rate, η, must be small (see Methods: Synaptic plasticity) to allow the plasticity rule to average over multiple stimuli as well as stochasticity in the reinforcement schedule (see Methods: Reinforcement schedule). Note that a single DAN, D±, only has access to half of the reinforcement and RP information, and by itself does not compute the full RPE. However, the difference between D+ and D− firing rates does yield the full RPE (see Methods: DAN firing rates): 3\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${d}_{+}^{i}\,-\,{d}_{-}^{i}\,=\,{\hat{r}}^{i}\,-\,{\hat{m}}^{i}.$$\end{document}d+i−d−i=r^i−m^i.Three features of Eq. (2) are worth highlighting here. First, elevations in d± increase the net amount of synaptic depression at active synapses that impinge on M∓, which encodes the opposite valence to D±, in agreement with experimental data9,10,30. Second, the postsynaptic MBON firing rate is not a factor in the plasticity rule, unlike in reinforcement-modulated Hebbian rules31, yet nevertheless in accordance with experiments9. Third, and most problematic, is that Eq. (2) requires synapses to receive dopamine signals from both D+ and D−, conflicting with current experimental findings in which appetitive DANs only modulate plasticity at avoidance MBONs, and similarly for aversive DANs and approach MBONs8–10,27,32,33. In what follows, we consider two solutions to this problem. First, we formulate a different cost function to satisfy the valence specificity of the MB anatomy. Second, to avoid shortcomings that arise in the valence-specific model, we propose the existence of additional connectivity in the MB circuit.A valence-specific mushroom body model exhibits limited learningTo accommodate the constraints from experimental data, in which DANs and MBONs of opposite valence are paired in subcompartments of the MB15,21, we consider an alternative cost function, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${C}_{\pm }^{\,{\text{VS}}\,}$$\end{document}C±VS, that satisfies this valence specificity: 4\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${C}_{\pm }^{\,{\text{VS}}\,}\,=\,\frac{1}{2}\mathop{\sum}\limits_{i}{\left({r}_{\mp }^{i}\,+\,{m}_{\pm }^{i}\right)}^{2}.$$\end{document}C±VS=12∑ir∓i+m±i2.We refer to model circuits that adhere to this valence specificity as valence-specific (VS) models. The VS cost function can be minimised by the corresponding VS plasticity rule (see Methods: Synaptic plasticity):5\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathcal{P}}_{\pm }^{{\text{VS}}}\,=\,\eta {\bf{k}}\left({\bf{w}}_{\rm{K}}^{\rm{T}}{\bf{k}}\,-\,{d}_{\mp }\right),$$\end{document}P±VS=ηkwKTk−d∓,where \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{\bf{k}}$$\end{document}wKTk models the direct excitatory current from KCs to DANs (Methods, Eq. (13)). As required, Eq. (5) maintains the relationship between increased DAN activity and enhanced synaptic depression.Equation (5) exposes a problem for learning according to our assumed objective in the VS model. The problem arises because D± receives only excitatory inputs. Thus, whenever a cue is present, KC inputs34 prescribe D± with a minimum, cue-specific firing rate, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${d}_{\pm }^{i}\,=\,{{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{{\bf{k}}}^{i}\,+\,{r}_{\pm }^{i}\,+\,{m}_{\mp }^{i}\,\ge\, {{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{{\bf{k}}}^{i}$$\end{document}d±i=wKTki+r±i+m∓i≥wKTki. As such, synapses will be depressed (\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathcal{P}}_{\mp }^{{\text{VS}}}\,<\, 0$$\end{document}P∓VS<0) whenever \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${r}_{\pm }^{i}\,+\,{m}_{\mp }^{i}\,> \,0$$\end{document}r±i+m∓i>0. Once \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{\pm }^{{\rm{T}}}{{\bf{k}}}^{i}\,=\,0$$\end{document}w±Tki=0, the VS model can no longer learn the valence of cue i as synaptic weights cannot become negative. Eventually, RPs for all cues become equal with \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{m}}^{i}\,=\,0$$\end{document}m^i=0, such that choices become random (Supplementary Fig. 1a, b). In this case, D+ and D− firing rates become equal to the positive and negative reinforcements, respectively, such that the RPE equals the net reinforcement (Supplementary Fig. 1c, d).A heuristic solution is to add a constant source of potentiation, which acts to restore synaptic weights to a constant, non-zero value. We therefore replace \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{\bf{k}}$$\end{document}wKTk in Eq. (5) with a constant, free parameter, λ:6\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathcal{P}}_{\pm }^{{{\text{VS}}\,\lambda }} = \eta {\bf{k}} \left(\lambda - {d}_{{\mp} }\right).$$\end{document}P±VSλ=ηkλ−d∓.If \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\lambda \,> \,| {r}_{+}-{r}_{-}| +{{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{\bf{k}}$$\end{document}λ>∣r+−r−∣+wKTk, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathcal{P}}^{{{\rm{VS}} \lambda }}_{\pm}$$\end{document}P±VSλ can take both positive and negative values, preventing synaptic weights from being held at zero. This defines a new baseline firing rate for D± that is greater than \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\bf{w}}^{\rm{T}}_{\rm{K}}{\bf{k}}$$\end{document}wKTk. Hereafter, we refer to the VS model with plasticity governed by \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathcal{P}}^{{\text{VS}}\, \lambda }_{\pm }$$\end{document}P±VSλ as the VSλ model.The VSλ model provides only a partial solution, as it is restricted by an upper bound to the magnitude of RPs that can be learned: \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$| {\hat{m}}|_{\max}=\max \left(0,\lambda -{\bf{w}}_{\rm{K}}^{\rm{T}}{\bf{k}}\right)$$\end{document}∣m^∣max=max0,λ−wKTk. This becomes problematic when multiple choices provide reinforcements of the same valence that exceed \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$| \hat{m}{| }_{\max }$$\end{document}∣m^∣max, as the MB will not be able to differentiate their relative values. In addition to increasing λ, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$| \hat{m}{| }_{\max }$$\end{document}∣m^∣max may be increased by reducing KC → DAN synaptic transmission. In Fig. 2a, we set wK = γ1, with 1 a vector of ones, and show RPs for several values of γ, with λ = 11.5 (corresponding DAN and MBON firing rates are in Supplementary Fig. 2). The upper bound is reached when w+ or w−, and thus the corresponding MBON firing rates, go to zero (an example when γ = 1 is shown in Fig. 2b, c). These results appear to contradict recent experimental work in which learning was impaired, rather than enhanced, by blocking KC → DAN synaptic transmission34 (note, the block may have also affected other DAN inputs that impaired learning).Fig. 2RPs in the valence-specific model track reinforcements but only within specified bounds.Data is shown from 10 runs of the simulation. a Reinforcement schedule (excluding the Gaussian white noise; thick, light blue) and RPs (reinforcement predictions; thin, various dark blues). Each shade of dark blue corresponds to simulations using a specific KC (Kenyon cell) → DAN (dopamine neuron) synaptic weight, which is determined by γ: dark blue through to very dark blue corresponds to γ = 0.9, 1.0, 1.1, and γ > 1.15. Dashed lines correspond to \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{m}}_{\max }$$\end{document}m^max, the theoretical maximum to the RP magnitude, for each value of γ. b–e Behaviour of the VSλ model when γ = 1.0. b Synaptic weights, w±, from KCs to MBONs (mushroom body output neurons). All updated weights undergo the same change, hence their reduced spread after they are all pushed to zero. The remaining spread in weights is due to independent noise that is added to the reinforcement schedules in each of the 10 runs. c Firing rates of the M+ (blue) and the M− MBONs (orange) for 10 runs of the model, with the same reinforcement schedule as in (a). MBON firing rates are a good proxy for the mean synaptic weights, as MBONs only receive inputs via those weights. d Firing rates for the D+ (green) and the D− (purple) DANs in response to the reinforcement schedule in (a). e RPEs (reinforcement prediction errors) given by the difference in firing rates of D+ and D−.In the VSλ model, DAN firing rates begin to exhibit RPE signals. A sudden increase in positive reinforcements, for example at trial 20 in Fig. 2d, results in a sudden increase in d+, which then decays as the excitatory feedback from M− diminishes as a result of synaptic depression in w− (Fig. 2c–e). Similarly, sudden decrements in positive reinforcements, for example at trial 80, are signalled by reductions in d+. However, when the reinforcement magnitude exceeds the upper bound, as in trials 40–60 and 120–140 in Fig. 2, D± exhibits sustained elevations in firing rate from baseline by an amount \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\max \left(0,{r}_{\pm }\,-\,| \hat{m}{| }_{\max }\right)$$\end{document}max0,r±−∣m^∣max (Fig. 2d, Supplementary Fig. 2). This constitutes a major prediction from our model.A mushroom body circuit with unbounded learningIn the VSλ model, excitatory reinforcement signals can only be partially offset by decrements to w+ and w−, resulting in the upper bound to RP magnitudes. To overcome this problem, DANs must receive a source of inhibition. A candidate solution is a circuit in which positive reinforcements, R+, inhibit D−, and similarly, R− inhibits D+ (illustrated in Fig. 3a). Such inhibitory reinforcement signals have been observed in the γ2, γ3, γ4 and γ5 compartments of the MB8,35. Using the derived plasticity rule, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathcal{P}}_{\pm }^{{\text{VS}}}$$\end{document}P±VS in Eq. (5), this circuit learns accurate RPs with no upper bound to the RP magnitude (Supplementary Fig. 3b). Hereafter, we refer to the VS model with unbounded learning as the VSu model. Learning is now possible because, when the synaptic weights w± are weak, or when D∓ is inhibited, Eq. (5) specifies that \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{\bf{k}}\,-\,{d}_{\mp }\,> \,0$$\end{document}wKTk−d∓>0, i.e. synaptic weights will potentiate until the excitatory feedback from M± equals the reinforcement-induced feedforward inhibition. Similarly, synapses are depressed in the absence of reinforcement because the excitatory feedback from M± to D∓ ensures that \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{\bf{k}}\,-\,{d}_{\mp }\,<\,0$$\end{document}wKTk−d∓<0 (Supplementary Fig. 3c). Consequently, step changes in reinforcement yield RPE signals in D∓ that always decay to a baseline set by \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{\bf{k}}$$\end{document}wKTk (Supplementary Fig. 3d, e). Despite the prevalence in reports of long term synaptic depression in the MB, there exist several lines of evidence for potentiation (or depression of inhibition) as well10,16,19,36. However, when reinforcement signals are inhibitory, D+, for example, is excited only by the removal of R−, and not by the appearance of R+ (similarly for D−), counter to the experimental classification of DANs as appetitive (or aversive)12–14,37.Fig. 3Dual versions of unbounded valence-specific (VSu) models can be combined to create the mixed-valence (MV) model, which also learns unbounded RPs.a–c Schematics of different circuit models. Colours and line styles as in Fig. 1c. a One of the dual, VSu models that requires D− and D+ to be inhibited by positive and negative reinforcements, respectively. Lines with flat ends correspond to inhibitory synapses. b The second of the dual VSu models, in which MBONs (mushroom body output neurons) provide inhibitory feedback to DANs of the same valence. Upward arrows in the dopamine synapses denote that dopamine induces long term potentiation (LTP). c The MV model, which combines the dual VSu models. Grey units are inhibitory interneurons. d–g Each panel exhibits the behaviour from 10 independent runs of the model. d RPs are unbounded and accurately track the reinforcements, but the learning speed depends on γ, the KC (Kenyon cell) → DAN (dopamine neuron) synaptic weights. Thick, light blue: reinforcement schedule; thin, dark blue: γ = 0; thin, very dark blue: γ ≥ 0.3. Inset: magnified view of the region highlighted by the dashed square, showing how learning is slower when γ = 0. e M+ (blue) and M− firing rates, respectively m+ and m−, when γ = 1. f D+ and D− firing rates, respectively d+ and d−, when γ = 1. g RPEs (reinforcement prediction errors) as given by the difference between D+ and D− firing rates when γ = 1.To ensure that D± is also excited by R±, we could simply add these excitatory inputs to the model. This is unsatisfactory, however, as such inputs would not contribute to learning: they would recapitulate the circuitry of the original VS model, which we have shown cannot learn. We therefore asked whether other variations of the VSu model could learn without an upper bound, and identified three criteria (tabulated in Supplementary Table 1) that must be satisfied to achieve this: (i) learning must be effective, such that positive reinforcement either potentiates excitation of approach behaviours (inhibition of avoidance), or depresses inhibition of approach behaviours (excitation of avoidance), and similarly for negative reinforcement, (ii) learning must be stable, such that excitatory reinforcement signals are offset via learning, either by synaptic depression of feedback excitation, or by potentiation of feedback inhibition, and similarly for inhibitory reinforcement signals, (iii) to be unbounded, learning must involve synaptic potentiation, whether reinforcement signals excite DANs that induce potentiation, or inhibit DANs that induce depression. By following these criteria, we identified a dual version of the VSu circuit in Fig. 3a, which is illustrated in Fig. 3b. In this circuit, R+ excites D+, and R− excites D−. However, DANs induce synaptic potentiation when activated above baseline, while M+ and M− are inhibitory, so are interpreted as inducing avoidance and approach behaviours, respectively. Despite their different configurations, RPs are identical in each of the dual MB circuits (Supplementary Fig. 3g–k).Neither dual model, by itself, captures all of the experimentally established anatomical and physiological properties of the MB. However, by combining them into one (Fig. 3c), we obtain a model that is consistent with the circuit properties observed in experiments, but necessitates additional features that constitute major predictions. First, DANs receive both positive and negative reinforcement signals, which are either excitatory or inhibitory, depending on the valences of the reinforcement and the DAN. Second, in addition to the excitatory feedback from MBONs to DANs of the opposite valence, MBONs also provide feedback to DANs of the same valence via inhibitory interneurons, which we propose innervate areas targeted by MBON axons and DAN dendrites21. We refer to this circuit as the mixed-valence (MV) model, as DANs receive a mixture of both positive and negative valences in both the feedforward reinforcement and feedback RPs, consistent with recent findings in Drosophila larvae26. Importantly, each DAN in this hybrid model now has access to the full reinforcement signal, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\hat{r}$$\end{document}r^, and the full RP, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\hat{m}$$\end{document}m^, or \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$-\hat{r}$$\end{document}−r^ and \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$-\hat{m}$$\end{document}−m^, depending on the valence of the DAN. Deriving a plasticity rule (Methods: Synaptic plasticity) to minimise \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${C}_{\pm }^{{\rm{RPE}}}$$\end{document}C±RPE yields 7\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathcal{P}}_{\pm }^{\rm{MV}}\,= \, \eta {\bf{k}} \left({\bf{w}}_{{\rm{K}}}^{{\rm{T}}} {\bf{k}}\,-\, {d}_{\mp }\right),$$\end{document}P±MV=ηkwKTk−d∓,which takes the same form as Eq. (5) (except that d± depends on more synaptic inputs; see Methods: DAN firing rates), and adheres to our current understanding that plasticity at MBONs is modulated by DANs of the opposite valence. However, Eq. (7) incurs several problems (outlined in Supplementary Discussion), and fails a crucial test: stimulating D+ (D−) as a proxy for reinforcement induces a weak appetitive (aversive) memory only briefly, which then disappears with repeated cue-stimulation pairings (Supplementary Fig. 4), contradicting experiments in which strong, lasting memories are induced by this method13–15,27,28,32,33,38,39. One can derive an alternative plasticity rule (Methods: Synaptic plasticity) to minimise \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${C}_{\pm }^{{\rm{RPE}}}$$\end{document}C±RPE, which takes a form similar to Eq. (2): 8\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\mathcal{P}}}_{\pm }^{{\rm{MV}}}\,=\,\frac{\eta }{2}{\bf{k}}\left({d}_{\pm }\,-\,{d}_{\mp }\right).$$\end{document}P±MV=η2kd±−d∓.Although Eq. (8) requires that synapses receive information from DANs of both valences, it does yield strong, lasting memories when D± is stimulated as a proxy for reinforcement (Supplementary Fig. 4). We therefore use Eq. (8) for the MV model hereafter, introducing a third major prediction: plasticity at synapses impinging on either approach or avoidance MBONs may be modulated by DANs of both valences.Figure 3d demonstrates that the MV model accurately tracks changing reinforcements, just as with the dual versions of the VSu model. However, a number of differences from the VSu models can also be seen. First, changing RPs result from changes in the firing rates of both M+ and M− (Fig. 3e). Although MBON firing rates show an increasing trend, they eventually stabilise (Supplementary Fig. 5j). Moreover, when w± reach zero, the changes in w∓ compensate, resulting in larger changes in the firing rate of M∓, as seen between trials 40–60 in Fig. 3e. Second, DANs respond to RPEs, irrespective of the reinforcement’s valence: d+ and d− increase with positive and negative RPEs, respectively, and decrease with negative and positive RPEs (Fig. 3f, g). Third, blocking KC → DAN synaptic transmission (by setting γ = 0) slows down learning, but does not abolish it entirely (Fig. 3d). With input from KCs blocked, the baseline firing rate of D± is zero, and because any given RPE excites one DAN type and inhibits the other, only one of either D+ or D− can signal the RPE, reducing the magnitude of d± − d∓ in Eq. (8), and therefore the speed of learning (Supplementary Fig. 5). To avoid any slowing down to learning, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{\bf{k}}$$\end{document}wKTk must be greater than or equal to the RPE. This may explain the 25% reduction in learning performance in experiments that blocked KC → DAN inputs34, although the block may have also affected other DAN inputs.Decision making in a multiple-alternative forced choice taskWe next tested the VSλ and MV models on a task with multiple cues from which to choose. Choices are made using the softmax function (Eq. (11)), such that the model more reliably chooses one cue over another when cue-specific RPs are more dissimilar. Throughout the task, the cue-specific reinforcements slowly change (see example reinforcement schedules in Fig. 4), and the model must continually update RPs (Fig. 4), according to its plasticity rule, in order to choose the most positively reinforcing cues as possible. Specifically, we update only those synaptic weights that correspond to the chosen cue (see Methods, Eqs. (21, 22)).Fig. 4Learning RPs in tasks with multiple cues.RPs are shown for the MV model, but the VSλ model exhibits almost identical behaviour. a Reinforcement schedules (lines) and RPs (circles, shown only for the cue chosen on each trial) for two cues (blue: cue 1; yellow: cue 2). RPs are shown for ten independent runs of a simulation using the same reinforcement schedule. b Reinforcement schedules (lines) and RPs (circles, shown only for the cue chosen on each trial) for a single run of the model in a task involving 5 cues. Each colour corresponds to reinforcements and predictions for a different cue.In a task with two alternatives, switches in cue choice almost always occur after the actual switch in the reinforcement schedule because of the slow learning rate and the probabilistic nature of decision making (Fig. 4a). The model continues to choose the more rewarding cues when there are as many as 200 (Supplementary Fig. 6a; Fig. 4b shows an example simulation with five cues). Up to ten cues, the trial averaged obtained reinforcement (TAR) becomes more positive with the number of cues (coloured lines in Supplementary Fig. 6a), consistent with the fact that increasing the number of cues increases the maximum TAR for an individual that always selects the most rewarding cue (black solid line, Supplementary Fig. 6a). Increasing the number of cues beyond ten reduces the TAR, which corresponds with choosing the maximally rewarding cue less often (Supplementary Fig. 6b), and a decreasing ability to maintain accurate RPs when synaptic weights are updated for the chosen cue only (Supplementary Fig. 6c; and see Methods: Synaptic plasticity). Despite this latter degradation in performance, the VSλ and MV models are only marginally outperformed by a model with perfect plasticity, whereby RPs for the chosen cue are set to equal the last obtained reinforcement (Supplementary Fig. 6a). Furthermore, when Gaussian white noise is added to the reinforcement schedule, the performance of the perfect plasticity model drops below that of the other models, for which slow learning helps to average over the noise (Supplementary Fig. 6d). The model suffers no noticeable decrement in performance when KC responses to different cues overlap, e.g. when a random 5% of 2000 KCs are assigned to each cue (Supplementary Fig. 6a, e–g).Both models capture learned fly behaviours in a variety of conditioning experimentsTo determine how well the VSλ and the MV models capture decision making in flies, we applied them to an experimental paradigm (illustrated in Fig. 5a) in which flies are conditioned to approach or avoid one of two odours. We set λ in the VSλ model to be large enough so as not to limit learning. In each experiment, flies undergo a training stage, during which they are exposed to a conditioned stimulus (CS+) concomitantly with an unconditioned stimulus (US), for example sugar (appetitive training) or electric shock (aversive training). Flies are next exposed to a different stimulus (CS−) without any US. Following training, flies are tested for their behavioural valence with respect to the two odours. The CS+ and CS− are released at opposite ends of a tube. Flies are free to approach or avoid the stimuli by walking towards one end of the tube or the other. In our model, we do not simulate the spatial extent of the tube, nor specific fly actions, but model choice behaviour in a simple manner by applying the softmax function to the current RPs.Fig. 5Both the modified valence-specific (VSλ) and mixed-valence (MV) models produce choice behaviour that corresponds well with experiments under a broad range of experimental manipulations.a Schematic of the experimental protocol used to simulate appetitive, aversive and neutral conditioning experiments. b, c The protocol was extended to simulate genetic interventions used in experiments. b Interventions were applied at different stages of a simulation, either (1) during CS+ exposure in training, (2) during CS+ and CS− exposure in training, (3) during testing, or (4) throughout both training and testing. c Seven examples of the interventions simulated, each corresponding to encircled data in (d, e). Red crosses denote interventions that simulate activation of a shibire blockade; yellow stars denote interventions that simulate activation of an excitatory current through the dTrpA1 channel. The picture at the top of each panel denotes the reinforcement type, and the encircled number the activation schedule as specified in (b). d Comparison of Δf measured from the VSλ model and from experiments. e Comparison of Δf measured from the MV model and from experiments. Solid grey lines in (d, e) are weighted least square linear fits with correlation coefficients R = 0.68 (0.64, 0.73) and R = 0.65 (0.60, 0.69) respectively (p < 10−4 for both models using a permutation test; 95% confidence intervals in parentheses using bootstrapping; n = 92). Each data point corresponds to a single Δf computed for a batch of 50 simulation runs, and for one pool of experiments using the same intervention from a single study. Dashed grey lines denote Δf = 0. The size of each data point scales with its weight in the linear fit. Source data are provided in the Supplementary Data 1 file.In addition to these control experiments, we simulated a variety of interventions frequently used in experiments (Fig. 5a–c). These experiments are determined by four features: (1) US valence (Fig. 5a): appetitive, aversive, or neutral, (2) intervention type (Fig. 5c): inhibition of neuronal output, e.g. by expression of shibire, or activation, e.g. by expression of dTrpA1, both of which are controlled by temperature, (3) the intervention schedule (Fig. 5b): during the CS+ only, throughout CS+ and CS−, during test only, or throughout all stages, (4) the target neuron (Fig. 5c): either M+, M−, D+, or D−. Further details of these simulations are provided in Methods: Experimental data and model comparisons.We compared the models to behavioural results from 439 experiments (including 235 controls), which tested 27 unique combinations of the above four parameters in 14 previous studies10,13–18,27,28,32,35,36,38,39 (the Source data and experimental details for each experimental intervention used here is provided in Supplementary Data 1). In Fig. 5d, e, we plot a test statistic, Δf, that compares behavioural performance indices (PIs) between a specific intervention experiment and its corresponding control, where the PI is +1 if all flies approached the CS+, and −1 if all flies approached the CS−. When Δf > 0, more flies approached the CS+ in the intervention than in the control experiment, and when Δf < 0, fewer flies approached the CS+ in the intervention than in the control. Interventions in both models correspond well with those in the experiments: Δf from the VSλ model and experiments are correlated with R = 0.68, and Δf from the MV model and experiments are correlated with R = 0.65 (p < 10−4 for both models). The smaller range in Δf scores from the experimental data are likely a result of the greater difficulty in controlling extraneous variables, resulting in smaller effect sizes.Four cases of inhibitory interventions exemplify the correspondence of both the VSλ and MV model with experiments, and are highlighted in Fig. 5d, e (light green, purple, blue and orange rings). Also highlighted are two examples of excitatory interventions, in which artificial stimulation of either D+ or M− during CS+ exposure, without any US, was used to induce an appetitive memory and approach behaviour. The two models yield very similar Δf scores, but not always (Supplementary Fig. 7e). The example highlighted in dark blue in Fig. 5d, e, in which M+ was inhibited throughout appetitive training but not during the test, shows that this intervention had little effect in the MV model, in agreement with experiments36, but resulted in a strong reduction in the appetitiveness of the CS+ in the VSλ model (Δf ≈ −4.5). In the Supplementary Note, we analyse the underlying synaptic weight dynamics that lead to this difference in model behaviours. The analyses show that not only does this intervention amplify the difference between CS+ and CS− RPs in the MV model, it also results in faster memory decay in the VSλ model. Hence, the preference for the CS+ is maintained in the MV model, but is diminished in the VSλ model.The alternative plasticity rule (Eq. (7)) for the MV model yields Δf scores that correspond less well with the experiments (R = 0.55, Supplementary Fig. 7a), in part because associations cannot be induced by pairing a cue with D± stimulation (Supplementary Fig. 4). This conditioning protocol, plus one other (Supplementary Fig. 7c), helps distinguish the two plasticity rules in the MV model, and can be tested experimentally. Lastly, both the VSλ and MV models provide a good fit to re-evaluation experiments18,19 in which the CS+ or CS− is exposed a second time, without the US, before the test phase (Supplementary Fig. 8, Supplementary Data 2).The absence of blocking does not refute the use of reinforcement prediction errors for learningWhen training a subject to associate a compound stimulus, XY, with reinforcement, R, the resulting association between Y and R can be blocked if the subject were previously trained to associate X with R6,7. The Rescorla–Wagner model2 provides an explanation: if X already predicts R during training with XY, there will be no RPE with which to learn associations between Y and R. However, numerous experiments in insects have reported only partial blocking, suggesting that insects may not utilise RPEs for learning40–43. This conclusion overlooks a strong assumption in the Rescorla–Wagner model, namely, that neural responses to X and Y are independent. In the insect MB, KC responses to stimuli X and Y may overlap, and the response to the compound XY does not equal the sum of responses to X and Y44–46. Thus, if the MB initially learns that X predicts R, but the ensemble of KCs that respond to X is different to the ensemble that responds to XY, then some of the synapses that encode the learned RP will not be recruited. Consequently, the accuracy of the prediction will be diminished, such that training with XY elicits a RPE and an association between Y and R can be learned. We tested this hypothesis, which constitutes a neural implementation of previous theories47,48, by simulating the blocking paradigm using the MV model (Fig. 6a).Fig. 6The absence of blocking does not imply the absence of reinforcement prediction errors.a Schematic of the protocol used to simulate blocking experiments. b Schematic of KC responses to the two conditioned stimuli, X and Y, when presented alone or as a compound. c, d Reinforcement predictions (RPs) for the two stimuli, averaged over the two test trials. Bars and whiskers: mean ± standard deviation. Circles: RPs from individual simulation runs, n = 50. Source data provided in Source data file. c Stimuli elicit independent KC responses during compound training. d Y gains a positive RP when KC responses to each stimulus are corrupted (\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${p}_{{\rm{cor}}}^{{\rm{X}}}\,=\,0.8$$\end{document}pcorX=0.8, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${p}_{{\rm{cor}}}^{{\rm{Y}}}\,=\,0.2$$\end{document}pcorY=0.2). e Performance indices during the test phase. When stimuli elicit independent KC responses (ind.), the weak RP for Y results in little choice preference for Y over the null option. When KC responses are corrupted (non-ind.), the positive RP for Y results in a relative strong preference for Y over the null option. Bars and whiskers: mean ± standard deviation, n = 20. Circles: PIs from batches of 50 simulation runs. Source data provided in Source data file. f Gradations in the blocking effect result from varying degrees of corruptions to X or Y during the compound stimulus training phase.Two stimuli, X and Y, elicited non-overlapping responses in the KCs (Fig. 6b). When stimuli are encoded independently—that is, the KC response to XY is the sum of responses to X and Y—previously learned X-R associations block the learning of Y-R associations during the XY training phase (Fig. 6c, e), as expected.To simulate non-independent KC responses during the XY training phase, the KC response to each stimulus was corrupted: some KCs that responded to stimulus X in isolation were silenced, and previously silent KCs were activated (similarly for Y; see Methods: blocking paradigm). This captured, in a controlled manner, non-linear processing that may result, for example, from recurrent inhibition within and upstream of the MB. The average severity of the corruption to stimulus i was determined by \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${p}_{cor}^{i}$$\end{document}pcori, where \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${p}_{cor}^{i}\,=\,0.0$$\end{document}pcori=0.0 yields no corruption, and \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${p}_{cor}^{i}\,=\,1.0$$\end{document}pcori=1.0 yields full corruption. Corrupting the KC response to X allows a weak Y-R association to be learned (Fig. 6d), which translates into a behavioural preference for Y during the test (Fig. 6e). Varying the degree of corruption to stimulus X and Y results in variable degrees of blocking (Fig. 6f). The blocking effect was maximal when \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${p}_{cor}^{X}\,=\,0$$\end{document}pcorX=0, and absent when \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${p}_{cor}^{X}\,=\,1$$\end{document}pcorX=1. However, even in the absence of blocking, corruption to Y during compound training prevents learned associations being carried over to the test phase, giving the appearance of blocking. These results provide a unifying framework with which to understand inconsistencies between blocking experiments in insects. Importantly, the variability in blocking can be explained without refuting the RPE hypothesis.
+
+SECTION: 
+DiscussionOverviewSuccessful decision making relies on the ability to accurately predict, and thus reliably compare, the outcomes of choices that are available to an agent. The delta rule, as developed by Rescorla and Wagner2, updates beliefs in proportion to a prediction error, providing a method to learn accurate and stable predictions. In this work, we have investigated the hypothesis that, in Drosophila melanogaster, the MB implements the delta rule. We posit that approach and avoidance MBONs together encode RPs, and that feedback from MBONs to DANs, if subtracted from feedforward reinforcement signals, endows DANs with the ability to compute RPEs, which are used to modulate synaptic plasticity. We formulated a plasticity rule that minimises RPEs, and verified the effectiveness of the rule in simulations of MAFC tasks. We demonstrated how the established valence-specific circuitry of the MB restricted the learned RPs to within a given range, and postulated cross-compartmental connections, from MBONs to DANs, that could overcome this restriction. Such cross-compartmental connections are found in Drosophila larvae, but their functional relevance is unknown25,26. We have thus presented two MB models that yield RPEs in DAN activity and that learn accurate RPs: (i) the VSλ model, in which plasticity incorporates a constant source of synaptic potentiation; (ii) the MV model, in which we propose mixed-valence connectivity between DANs, MBONs and KC → MBON synapses. Both the VSλ and the MV models receive equally good support from behavioural experiments in which different genetic interventions impaired learning, while the MV model provides a mechanistic account for a greater variety of physiological changes that occur in individual neurons after learning. It is plausible, and can be beneficial, for both the VSλ and MV models to operate in parallel in the MB, as separately learning positive and negative aspects of decision outcomes, if they arise from independent sources, is important for context-dependent modulation of behaviour. Such learning has been proposed for the mammalian basal ganglia49. We have also demonstrated why the absence of strong blocking effects in insect experiments does not necessarily imply that insects do not utilise RPEs for learning.PredictionsThe models yield predictions that can be tested using established experimental protocols. Below, we specify which model supports each prediction.Prediction 1—both modelsResponses in single DANs to the unconditioned stimulus (US), when paired with a CS+, should decay towards a baseline over successive CS ± US pairings, as a result of the learned changes in MBON firing rates. To the best of our knowledge, only one study has measured DAN responses throughout several CS–US pairings in Drosophila50. Consistent with DAN responses in our model, Dylla et al.50 reported such decaying responses in DANs in the γ- and \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\beta }^{\prime}$$\end{document}β′-lobes during paired CS+ and US stimulation. However, they reported similar decaying responses when the CS+ and US were unpaired (separated by 90 s) that were not significantly different from the paired condition. The authors concluded that DANs do not exhibit RPEs, and that the decaying DAN responses were a result of non-associative plasticity. An alternative interpretation is that a 90 s gap between CS+ and US does not induce DAN responses that are significantly different from the paired condition, and that additional processes prevent the behavioural expression of learning. Ultimately, the evidence for either effect is insufficient. Furthermore, Dylla et al. observed increased CS+ responses in DANs after training. Conversely, after training in our models—i.e. when the US was set to zero—DAN responses to the CS+ decreased. Interpreting post-training activity in DANs as responses to the CS+ alone, or alternatively as responses to an omitted US, are equally valid in our model because the CS+ and US always occurred together. Resolving time within trials in our models would allow us to better address this conflict with experiments. The Dylla et al. results are, however, consistent with the temporal difference (TD) learning rule51,52 (as are studies on second order conditioning in Drosophila53,54), of which the Rescorla–Wagner rule used in our work is a simplified case. We discuss this further in the Supplementary Discussion, as well as features of the TD learning rule, and experimental factors, which may explain why the expected changes in DAN responses to the CS and US were not observed in previous studies12,37.Prediction 2—VSλ modelAfter repeated CS ± US pairings, a sufficiently large reinforcement will prevent the DAN firing rate from decaying back to its baseline response to the CS+ in isolation. Here, sufficiently large means that the inequality required for learning accurate RPs, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\lambda \,> \,| {r}_{+}-{r}_{-}| +{{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{\bf{k}}$$\end{document}λ>∣r+−r−∣+wKTk, is not satisfied. Because KC → DAN input, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{\bf{k}}$$\end{document}wKTk, may be difficult to isolate in experiments, sufficiency could be guaranteed by ensuring the reinforcement satisfies ∣r+ − r−∣ > λ. That is, pairing a CS + with a novel reward (punishment) that would more than double the stabilised D+ (D−) firing rate, where the stabilised firing rate is achieved after repeated exposure to the CS+ in isolation. Note that, if λ were to adapt to the reinforcement magnitude, this would be a difficult prediction to falsify.Prediction 3—MV modelThe valence of a DAN is defined by its response to RPEs, rather than to reinforcements per se. Thus, DANs previously thought to be excited by positive (negative) reinforcement are in fact excited by positive (negative) RPEs. For example, a reduction in electric shock magnitude, after an initial period of training, would elicit an excitatory (inhibitory) response in appetitive (aversive) DANs. Felsenberg et al.18,19 provide indirect evidence for this. The authors trained flies on a CS+, then re-exposed the fly to the CS+ without the US. For an appetitive (aversive) US, CS+ re-exposure would have yielded a negative (positive) RPE. By blocking synaptic transmission from aversive (appetitive) DANs during CS+ re-exposure, the authors prevented the extinction of learned approach (avoidance). Such responses are consistent with those of mammalian midbrain DANs, which are excited (inhibited) by unexpected appetitive (aversive) reinforcements3,55–57.Prediction 4—both modelsIn the MV model, learning is mediated by simultaneous plasticity at both approach and avoidance MBON inputs. The converse, that plasticity at approach and avoidance MBONs is independent, would support the VSλ model. Appetitive conditioning does indeed potentiate responses in MB-V3/α3 and MVP2/γ1-pedc approach MBONs16,36, and depress responses in M4\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\beta }^{\prime}$$\end{document}β′/\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\beta }^{\prime}$$\end{document}β′2mp and M6/\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\gamma 5{\beta }^{\prime}$$\end{document}γ5β′2a avoidance MBONs10. Similarly, removal of an expected aversive stimulus, which constitutes a positive RPE, depresses M6/\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\gamma 5{\beta }^{\prime}$$\end{document}γ5β′2a avoidance MBONs19. In addition, aversive conditioning depresses responses in MPV2/γ1-pedc and MB-V2/\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha 2{\alpha }^{\prime}2$$\end{document}α2α′2 approach MBONs9,30, and potentiates responses in M4\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\beta }^{\prime}$$\end{document}β′/\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\beta }^{\prime}$$\end{document}β′2mp and M6/\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\gamma 5{\beta }^{\prime}$$\end{document}γ5β′2a avoidance MBONs10,29. However, the potentiation of M4\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\beta }^{\prime}$$\end{document}β′ and M6 MBONs is at least partially a result of depressed feedforward inhibition from the MVP2 MBON16,19. To the best of our knowledge, simultaneous changes in approach and avoidance MBON activity has not yet been observed. A consequence of this coordinated plasticity is that, if plasticity onto one MBON type is blocked (e.g. the synaptic weights cannot be depressed any further), plasticity at the other MBON type should compensate.Prediction 5—MV modelDANs of both valence modulate plasticity at MBONs of a single valence. This is a result of using the plasticity rule specified by Eq. (8), which better explains the experimental data than Eq. (7) (Fig. 5d, e, Supplementary Fig. 7a). In contrast, anatomical and functional experimental data suggest that, in each MB compartment, the DANs and MBONs have opposite valences21,58. However, the GAL4 lines used to label DANs in the PAM cluster often include as many as 20–30 cells each, and it has not yet been determined whether all labelled DANs exhibit the same valence preference. Similarly, the valence encoded by MBONs is not always obvious. In15, for example, it is not clear whether optogenetically activated MBONs biased flies to approach the light stimulus, or to exhibit no-go behaviour that kept them within the light. In larval Drosophila, there are several examples of cross-compartmental DANs and MBONs25,59, but a full account of the valence encoded by these neurons is yet to be provided. In adult Drosophila, γ1-pedc MBONs deliver cross-compartmental inhibition, such that M4/6 MBONs are effectively modulated by both aversive PPL1-γ1-pedc DANs and appetitive PAM DANs16,19.Other models of learning in the mushroom bodyWe are not the first to present a MB model that makes effective decisions after learning about multiple reinforced cues22–24. However, these models utilise absolute reinforcement signals, as well as bounded synapses that cannot strengthen indefinitely with continued reinforcements. Thus, given enough training, these models would not differentiate between two cues that were associated with reinforcements of the same sign, but different magnitudes. Carefully designed mechanisms are therefore required to promote stability as well as differentiability of same sign, different magnitude reinforcements. Our model builds upon these studies by incorporating feedback from MBONs to DANs, which allows KC → MBON synapses to accurately encode the reinforcement magnitude and sign with stable fixed points that are reached when the RPE signalled by DANs decays to zero. Alternative mechanisms that may promote stability and differentiability are forgetting60 (e.g. by synaptic weight decay), or adaptation in DAN responses61. Exploring these possibilities in a MB model for comparison with the RPE hypothesis is well worth while, but goes beyond the scope of this work.Model limitationsCentral to this work is the assumption that the MB has only a single objective: to minimise the RPE. In reality, an organism must satisfy multiple objectives that may be mutually opposed. In Drosophila, anatomically segregated DANs in the γ-lobe encode water rewards, sugar rewards, and motor activity8,13,14,27, suggesting that Drosophila do indeed learn to satisfy multiple objectives. Multi-objective optimisation is a challenging problem, and goes beyond the scope of this work. Nevertheless, for many objectives, the principle that accurate predictions aid decision making, which forms the basis of this work, still applies.For simplicity, our simulations compress all events within a trial to a single point in time, and are therefore unable to address some time-dependent features of learning. For example, activating DANs either before or after cue exposure can induce memories with opposite valences28,62,63; in locusts, the relative timing of KC and MBON spikes is important64,65, though not necessarily in Drosophila9. Nor have we addressed the credit assignment problem: how to associate a cue with reinforcement when they do not occur simultaneously. A candidate solution is TD learning51,52, whereby reinforcement information is back-propagated in time to all cues that predict it. While DAN responses in the MB hint at TD learning50, it is not yet clear how the MB circuity could implement it. An alternative solution is an eligibility trace52,66, which enables synaptic weights to be updated upon reinforcement even after presynaptic activity has ceased.Lastly, our work here addresses memory acquisition, but not memory consolidation, which is supported by distinct circuits within the MB67. Incorporating memory stabilising mechanisms may help to better align our simulations of genetic interventions with fly behaviour in conditioning experiments.Blocking experimentsBy incorporating the fact that KC responses to compound stimuli are non-linear combinations of their responses to the components44–46, we used our model to demonstrate why the lack of evidence for blocking in insects40–43 cannot be taken as evidence against RPE-dependent learning in insects. Our model provides a neural circuit instantiation of similar arguments in the literature, whereby variable degrees of blocking can be explained if the brain utilises representations of stimulus configurations, or latent causes, which allow learned associations to be generalised between a compound stimulus and its individual elements by varying amounts47,48,68,69. The effects of such configural representations on blocking are more likely when the component stimuli are similar, for example, if they engage the same sensory modality, as was the case in40–43. By using component stimuli that do engage different sensory modalities, experiments with locusts have indeed uncovered strong blocking effects70.SummaryWe have developed a model of the MB that goes beyond previous models by incorporating feedback from MBONs to DANs, and shown how such a MB circuit can learn accurate RPs through DAN mediated RPE signals. The model provides a basis for understanding a broad range of behavioural experiments, and reveals limitations to learning given the anatomical data currently available from the MB. Those limitations may be overcome with additional connectivity between DANs, MBONs and KCs, which provide five strong predictions from our work.
+
+SECTION: 
+MethodsExperimental paradigmIn all but the last two results sections, we apply our model to a multi-armed bandit paradigm52,71 comprising a sequence of trials, in which the model is forced to choose between a number of cues, each cue being associated with its own reinforcement schedule. In each trial, the reinforcement signal may have either positive valence (reward) or negative valence (punishment), which changes over trials. Initially, the fly is naive to the cue-specific reinforcements. Thus, in order to reliably choose the most rewarding cue, it must learn, over successive trials, to accurately predict the reinforcements for each cue. Individual trials comprise three stages in the following order (illustrated in Fig. 1d): (i) the model is exposed to and computes RPs for all cues, (ii) a choice probability is assigned to each cue using a softmax function (described below), with the largest probability assigned to the cue that predicts the most positive reinforcement, (iii) a single cue is chosen probabilistically, according to the choice probabilities, and the model receives reinforcement with magnitude r+ (positive reinforcement, or reward) or r− (negative reinforcement, or punishment). The fly uses this reinforcement signal to update its cue-specific RP.SimulationsConnectivity and synaptic weightsKC → MBON: KCs (K in Fig. 1c) constitute the sensory inputs (described below) in our models. Sensory information is transmitted from the KCs, of which there are NK, to two MBONs, M+ and M−, through excitatory, feedforward synapses. For simplicity, we use a subscript '+' to label positive valence (e.g. reward or approach) and '−' to label negative valence (e.g. punishment or avoidance). Ki synapses onto M± with a synaptic weight w±i, which is initialised with w±i = 0.1ξ±i for each run of the model, where ξ±i is a uniform random variable in the range 0–1.KC → DAN: KCs drive excitatory responses in DANs from the PPL1 cluster34. In our model, we assume that KCs also provide input to appetitive DANs in the PAM cluster. Thus, Ki drives D± through unmodifiable, excitatory synapses with weights, wK = γ1, where \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathbf{1}}\,=\,{\left[1,1,\ldots ,1\right]}^{{\rm{T}}}$$\end{document}1=1,1,…,1T is a vector of ones of length NK.MBON → DAN: MBONs provide excitatory feedback to their respective DANs17–19. In both the valence-specific (VS) and mixed-valence (MV) models, M± synapses onto D∓ with unit synaptic weight. In the mixed-valence (MV) model, M± also provides inhibitory feedback to D± via an inhibitory interneuron, but we do not model the interneuron explicitly. Thus, we describe the feedback weight simply as wM = 1, and specify whether the input is excitatory or inhibitory in the firing rate equation for D± (Eqs. (13) and (14)).Inputs and KC sensory representationProjection neurons from the antennal lobe and optic lobes provide a substantial majority of inputs to KCs in the MB. These inputs carry olfactory and visual information and, together with recurrent inhibition from the anterior paired lateral neuron, drive a sparse representation of sensory information in ~5–10% of the KCs72–74. For simplicity, we bypass the computations performed in nuclei upstream of the KCs, and assign a unique population of 10 KCs to each cue. Thus, for Nc cues, we simulate NK = 10Nc KCs. Each KC is always activated by its assigned cue, and each active KC, j, is given the same firing rate, kj = 1 Hz. In a subset of simulations used for Supplementary Fig. 6a, c–e, we simulate 2000 KCs, where each KC is assigned to a cue with probability p = 0.05, so that 5% of KCs, on average, are active for a given cue. In these simulations, we normalised the total KC firing rates for each cue, i, such that \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\sum}_{j}{k}_{j}^{i}\,=\,10$$\end{document}∑jkji=10 Hz. This ensured that the multiplicative effect of KC firing rates on the speed of learning (Eqs. (2) and (5)) does not confound the interpretation of our results.MBON firing rates and reinforcement predictionsNeurons are modelled as linear–non-linear (LN) units that output a firing rate, y, equal to the rectified linear sum of their inputs, x: 9\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y\,=\,f\left(\mathop{\sum}\limits_{j}{w}_{j}{x}_{j}\right)$$\end{document}y=f∑jwjxjwhere \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f(z)\,=\,\max (0,z)$$\end{document}f(z)=max(0,z) is the rectifying nonlinearity. Equation (9) can be written more concisely in vector notation: \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y\,=\,f\left({{\bf{w}}}^{{\rm{T}}}{\bf{x}}\right)$$\end{document}y=fwTx, where wT = [w1, …, wN] for N presynaptic neurons, and superscript T denotes the transpose. Throughout this text, bold fonts denote vectors.At the beginning of each trial, MBON firing rates, and thus RPs, are computed for each cue. The firing rate, m±, of MBON M±, signals the amount of positive (or negative) reinforcement associated with a given cue, labelled i, according to 10\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${m}_{\pm }^{i}\,=\,f\left({{\bf{w}}}_{\pm }^{{\rm{T}}}{{\bf{k}}}^{i}\right),$$\end{document}m±i=fw±Tki,where ki is the vector of KC responses to stimulus i, and w± are plastic, excitatory synaptic weights. The net reinforcement predicted by sensory cue i is then determined by \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{m}}^{i}\,=\,{m}_{+}^{i}\,-\,{m}_{-}^{i}$$\end{document}m^i=m+i−m−i.Decision makingIn each trial, RPs for all cues are compared, and the model is forced to decide which cue should be chosen. Decisions are made probabilistically using a softmax function, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p\left(i\right)$$\end{document}pi, which specifies the probability of choosing cue i as a function of the differences between its RP and the RPs of every other cue:11\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p\left(i\right)\, =\,\frac{\exp \left(\beta {\hat{m}}^{i}\right)}{\sum\limits_{j}\exp \left(\beta {\hat{m}}^{j}\right)}\\ \, =\,{\left(1\,+\,\mathop{\sum}\limits_{j\ne i}\exp \left(\beta \left({\hat{m}}^{j}\,-\,{\hat{m}}^{i}\right)\right)\right)}^{-1},$$\end{document}pi=expβm^i ∑jexpβm^j=1+∑j≠iexpβm^j−m^i−1,where β is a constant (analogous to the inverse temperature in thermodynamics) and modulates the extent to which \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p\left(i\right)$$\end{document}pi increases or decreases with respect to \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{m}}^{j}\,-\,{\hat{m}}^{i}$$\end{document}m^j−m^i. When β = 0, choices are independent of the learned valence, and each of the M available options are chosen with equal probability, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p\left(i\right)\,=\,{M}^{-1}$$\end{document}pi=M−1. When β = ∞, decisions are made deterministically, such that the cue with the most positive RP is always chosen. For the MAFC task, the cue that is ultimately chosen on a given trial is determined by drawing a single, random sample, ξ, from a uniform distribution in the range 0–1, and selecting a cue, q, such that 12\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q\,=\,\max \left\{x\,\in\, {\mathbb{N}}\ \left|\right.\mathop{\sum}\limits_{i\,=\,1}^{x}p\left(i\right)\,\le\, \xi ,\ 1\,\le\, x\,\le\, M\right\}.$$\end{document}q=maxx∈N∑i=1xpi≤ξ,1≤x≤M.DAN firing ratesOnce a cue has been chosen, the RP specific to that cue is fed back to the DANs where they are compared against the actual reinforcement, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{r}}^{i}\,=\,{r}_{+}^{i}\,-\,{r}_{-}^{i}$$\end{document}r^i=r+i−r−i, received in that trial, where r± is the magnitude of reinforcement signal R±. Given the chosen cue, q, D± firing rates in the VS models are given by 13\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${d}_{\pm }^{q}\,=\,f\left({r}_{\pm }^{q}\,+\,{w}_{{\rm{M}}}{m}_{\mp }^{q}\,+\,{{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{{\bf{k}}}^{q}\right),$$\end{document}d±q=fr±q+wMm∓q+wKTkq,whereas, in the MV model, D± is given by 14\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${d}_{\pm }^{q}\,=\,f\left({r}_{\pm }^{q}\,-\,{r}_{\mp }^{q}\,-\,{w}_{{\rm{M}}}\left({m}_{\pm }^{q}\,-\,{m}_{\mp }^{q}\right)\,+\,{{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{{\bf{k}}}^{q}\right).$$\end{document}d±q=fr±q−r∓q−wMm±q−m∓q+wKTkq.We set wM = 1, such that the difference in DAN firing rates yields the RPE for cue q: 15\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{d}}^{q}\,	= \, \,{d}_{+}^{q}\,-\,{d}_{-}^{q}\\ 	= \, \left\{\begin{array}{ll}{\hat{r}}^{q}\,-\,{\hat{m}}^{q},&\,\text{for} \,{\text{VS}}\, \text{models}\,\\ 2\left({\hat{r}}^{q}\,-\,{\hat{m}}^{q}\right),&\,\text{for}\, \text{MV}\, \text{model}\,\end{array}\right.$$\end{document}d^q=d+q−d−q=r^q−m^q,forVSmodels2r^q−m^q,forMVmodelwhere \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{d}}^{q}$$\end{document}d^q for the MV model is valid when \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{{\bf{k}}}^{q}\,> \,| {\hat{r}}^{q}\,-\,{\hat{m}}^{q}|$$\end{document}wKTkq>∣r^q−m^q∣. When the inequality is not satisfied, the precise expression for \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{d}}^{q}$$\end{document}d^q in the MV model, taking into consideration the non-linear rectification in d+ and d−, is 16\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{d}}^{q}\,=\,\left({\hat{r}}^{q}\,-\,{\hat{m}}^{q}\right)\,+\,{\rm{sgn}}\left({\hat{r}}^{q}\,-\,{\hat{m}}^{q}\right)\min \left(| {\hat{r}}^{q}\,-\,{\hat{m}}^{q}| ,{{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{{\bf{k}}}^{q}\right).$$\end{document}d^q=r^q−m^q+sgnr^q−m^qmin∣r^q−m^q∣,wKTkq.Synaptic plasticityWe assume that the objective of the MB is to form accurate RPs, which minimise RPEs. This objective can be formulated as17\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${C}^{{\rm{RPE}}}\,	= \,\frac{1}{2}\mathop{\sum}\limits_{i}{\left({\hat{r}}^{i}\,-\,{\hat{m}}^{i}\right)}^{2}\\ 	= \frac{1}{2}\mathop{\sum}\limits_{i}{\left({r}_{+}^{i}\,-\,{r}_{-}^{i}\,-\,\left({{\bf{w}}}_{+}^{{\rm{T}}}{{\bf{k}}}^{i}\,-\,{{\bf{w}}}_{-}^{{\rm{T}}}{{\bf{k}}}^{i}\right)\right)}^{2},$$\end{document}CRPE=12∑ir^i−m^i2=12∑ir+i−r−i−w+Tki−w−Tki2,where the sum is over all cues, i, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{+}^{{\rm{T}}}{{\bf{k}}}^{i}$$\end{document}w+Tki is the firing rate of M+, expressed as the weighted input from the KC population response, ki, through synapses with strength w+, and similarly for \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{-}^{{\rm{T}}}{{\bf{k}}}^{i}$$\end{document}w−Tki. Learning an accurate RP amounts to minimising CRPE by modifying the synaptic weights. Assuming that inputs onto approach and avoidance MBONs are modified independently9, we perform gradient descent on CRPE with respect to w+ and w− separately. The plasticity rule, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\mathcal{P}}}_{\pm }^{{\rm{RPE}}}$$\end{document}P±RPE, is then defined by the negative gradient:18\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\mathcal{P}}}_{\pm }^{{\rm{RPE}}}\, 	=\,-\eta \frac{\partial {C}^{{\rm{RPE}}}}{\partial {{\bf{w}}}_{\pm }}\\ 	\approx \eta {\bf{k}}\left({r}_{\pm }-{r}_{\mp }\,-\,\left({{\bf{w}}}_{\pm }^{{\rm{T}}}{\bf{k}}\,-\,{{\bf{w}}}_{\mp }^{{\rm{T}}}{\bf{k}}\right)\right)\\ 	=\eta {\bf{k}}\left({d}_{\pm }\,-\,{d}_{\mp }\right),$$\end{document}P±RPE=−η∂CRPE∂w±≈ηkr±−r∓−w±Tk−w∓Tk=ηkd±−d∓,where η is the learning rate, and the last line is reached by substituting in the DAN firing rates, d±, for the VS model. If instead d± is used from the MV model, it is possible to write plasticity rules that minimise CRPE in two ways (respectively Eq. (7) and Eq. (8) in Results), either:\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\mathcal{P}}}_{\pm }^{{\rm{MV}}}\,	=\,\eta {\bf{k}}\left({{\bf{w}}}_{{\rm{K}}}{\bf{k}}\,-\,{d}_{\mp }\right),\ {\rm{or}}\\ {{\mathcal{P}}}_{\pm }^{{\rm{MV}}}\,	=\,\frac{\eta }{2}{\bf{k}}\left({d}_{\pm }\,-\,{d}_{\mp }\right),$$\end{document}P±MV=ηkwKk−d∓,orP±MV=η2kd±−d∓,where the factor 1/2 in Eq. (8) accommodates the factor of 2 in Eq. (15). The two equations are equivalent when DAN firing rates are not clipped by rectification, but behave differently when the rates are rectified (Supplementary Fig. 4). We use Eq. (8) throughout the main text, and compare model behaviours for both Eqs. (8) and (7) in Supplementary Fig. 7.We take a similar approach to derive the VS plasticity rule, but use a valence-specific cost function 19\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${C}_{\pm }^{\,{\text{VS}}\,}\,	= \,\frac{1}{2}\mathop{\sum}\limits_{i}{\left({r}_{\mp }^{i}\,+\,{m}_{\pm }^{i}\right)}^{2}\\ \,	= \,\frac{1}{2}\mathop{\sum}\limits_{i}{\left({r}_{\mp }^{i}\,+\,{{\bf{w}}}_{\pm }^{{\rm{T}}}{{\bf{k}}}^{i}\right)}^{2}.$$\end{document}C±VS=12∑ir∓i+m±i2=12∑ir∓i+w±Tki2.We derive the plasticity rule, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathcal{P}}_{\pm }^{\,{\text{VS}}\,}$$\end{document}P±VS, by gradient descent on \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${C}_{\pm }^{\,{\text{VS}}\,}$$\end{document}C±VS: 20\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\mathcal{P}}}_{\pm }^{\,{\text{VS}}\,}\, 	=\,-\eta \frac{\partial {C}^{{\text{VS}}}}{\partial {{\bf{w}}}_{\pm }}\\ 	\approx-\eta {\bf{k}}\left({r}_{\mp }\,+\,{{\bf{w}}}_{\pm }^{{\rm{T}}}{\bf{k}}\right)\\ 	=\eta {\bf{k}}\left({{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}{\bf{k}}\,-\,{d}_{\mp }\right),$$\end{document}P±VS=−η∂CVS∂w±≈−ηkr∓+w±Tk=ηkwKTk−d∓,where d± are computed according to the VS model. These plasticity rules are in fact only an approximation to gradient descent, and hold true only when: (i) the DAN firing rates are not clipped by the non-linear rectification; (ii) the learning rate, η, is sufficiently small, which allows us to dispense of the sum over cues, assuming instead that plasticity minimises a running average of the cost. Here, sufficiently small means that \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\eta \,<\,{\left(2{\sum}_{j}{k}_{j}^{i}\right)}^{-1}$$\end{document}η<2∑jkji−1 for all cues, i, which ensures that learning does not result in unstable oscillations in RPs. The plasticity rule therefore describes the mean drift in synaptic weights over several trials. This need not be at odds with rapid learning in insects, as small synaptic weight changes may yield large behavioural changes in our model, depending on the softmax parameter β in Eq. (11). For Figs. 2, 3, we use η = 2.5 × 10−2; for Fig. 4, we use η = 10−1; for Fig. 5, we use η = 5 × 10−2. We set η → η/2 for the MV model, because each DAN in the MV model encodes the full RPE, as opposed to half the RPE in the VS model. This ensures that synaptic weight updates have the same magnitude for a given RPE in both models. In the simulations, we use Eqs. (19) and (20) to specify discrete updates to the synaptic weights at the end of each trial, t, conditioned on the chosen cue, q. Specifically, the update for the VS model is given by 21\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}\!_{\pm }\left(t\,+\,1\right)\,	= \,{{\bf{w}}}\!_{\pm }\left(t\right)\,+\,{{\mathcal{P}}}_{\pm }^{\,{\text{VS}}\,}\\ \,	= \,{{\bf{w}}}\!_{\pm }\left(t\right)\,+\,\eta {{\bf{k}}}^{q}\left(t\right)\left({{\bf{w}}}_{{\rm{K}}}^{{\rm{T}}}\left(t\right){{\bf{k}}}^{q}\left(t\right)\,-\,{d}_{\mp }^{q}\left(t\right)\right),$$\end{document}w±t+1=w±t+P±VS=w±t+ηkqtwKTtkqt−d∓qt,and for the MV model by 22\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}\!_{\pm }\left(t\,+\,1\right)\,	= \,{{\bf{w}}}\!_{\pm }\left(t\right)\,+\,{{\mathcal{P}}}_{\pm }^{{\rm{MV}}}\\ \,	= \,{{\bf{w}}}\!_{\pm }\left(t\right)\,+\,\eta {{\bf{k}}}^{q}\left(t\right)\left({d}_{\pm }^{q}\left(t\right)\,-\,{d}_{\mp }^{q}\left(t\right)\right).$$\end{document}w±t+1=w±t+P±MV=w±t+ηkqtd±qt−d∓qt.where the superscript q specifies the firing rate of each neuron in the presence of cue q alone, under the assumption that this cue dominates the neural activity at the point of receiving its corresponding reinforcement signal. The update equation for the VS model with the modified plasticity rule (which we call the VSλ model) is23\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{\pm }\left(t\,+\,1\right)\,	= \,{{\bf{w}}}_{\pm }\left(t\right)\,+\,{\mathcal{P}}_{\pm }^{\,{\text{VS}}\,\lambda }\\ \,	= \,{{\bf{w}}}_{\pm }\left(t\right)\,+\,\eta {{\bf{k}}}^{q}\left(t\right)\left(\lambda \,-\,{d}_{\mp }^{q}\left(t\right)\right).$$\end{document}w±t+1=w±t+P±VSλ=w±t+ηkqtλ−d∓qt.Note that the plasticity rule is not a function of the postsynaptic MBON firing rate (except indirectly through the DAN firing rate). This is possible because a separate plasticity rule exists for synapses impinging on each MBON, negating the need to label the postsynaptic neuron via its firing rate, as would be the case in three-factor Hebbian rules that are typically used in models of reinforcement-modulated learning31.Reinforcement scheduleAt the end of each trial, a reinforcement signal specific to sensory cue i is provided. Reinforcements, ri, take continuous values, and are drawn on each trial, t, from a normal distribution, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${r}^{i}(t) \,\sim\, {\mathcal{N}}\left({\mu }_{i}(t),{\sigma }_{{\rm{R}}}\right)$$\end{document}ri(t)~Nμi(t),σR, with mean μi(t), and standard deviation σR. The reinforcement signals that arrive at DANs, R+ and R− in Fig. 1d, have amplitudes \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${r}_{+}^{i}\,=\,\max \left(0,{r}^{i}\right)$$\end{document}r+i=max0,ri and \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${r}_{-}^{i}\,=\,\min \left(0,{r}^{i}\right)$$\end{document}r−i=min0,ri, respectively. Over the course of a simulation run, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mu }_{i}\left(t\right)$$\end{document}μit is varied according to a predetermined schedule, and σR is fixed. Thus, at different stages throughout each experiment, the most rewarding cue may switch between the multiple alternatives. Unless otherwise stated, σR = 0.1. The reinforcement schedules were as follows. For Figs. 2, 3, and Supplementary Figs. 1–3, 5, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mu }_{1}\left(t\,=\,1\right)\,=\,0$$\end{document}μ1t=1=0, and was held fixed for 20 trials, then underwent a step change of +1 at trials 21, 41, 141, and 161, and a step change of −1 at trials 61, 81, 101, and 121. For Fig. 4 and Supplementary Fig. 6, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mu }_{i}\left(t\right)\,=\,Ag({\xi }_{\mu }(t))\,+\,{\sigma }_{{\rm{R}}}{\xi }_{\sigma }\left(t\right)$$\end{document}μit=Ag(ξμ(t))+σRξσt, where \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\xi }_{\mu }\left(t\right)$$\end{document}ξμt and \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\xi }_{\sigma }\left(t\right)$$\end{document}ξσt are Gaussian white noise processes with zero mean and unit variance, such that ξμ determines the mean reinforcement, and \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\xi }_{\sigma }\left(t\right)$$\end{document}ξσt determines the additive noise on trial t. A low pass filter, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$g({\xi }_{\mu })\,=\,{F}^{-1}\left\{\right.F\{{\xi }_{\mu }\}F\{G\left(0,\tau \right)\}\left\}\right.$$\end{document}g(ξμ)=F−1F{ξμ}F{G0,τ}, is applied to ξμ, where \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$G\left(0,\tau \right)$$\end{document}G0,τ is a Gaussian function with unit area, centred on 0, and with standard deviation τ = 10 trials, F{⋅} is the Fourier transform, and F−1{⋅} is the inverse Fourier transform. Because the Fourier transform method of filtering assumes \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\xi }_{\mu }\left(1\right)\,=\,{\xi }_{\mu }\left({N}_{t}\,+\,1\right)$$\end{document}ξμ1=ξμNt+1, where Nt is the number of trials, we generate ξμ for 250 trials, then delete the first 50 trials after filtering. Finally, the reinforcement amplitude is determined by \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$A\,=\,2/\mathop{\max }\limits_{t}(\, g({\xi }_{\mu }(t)))$$\end{document}A=2/maxt(g(ξμ(t))).Experimental data and model comparisonsThe VSλ and MV models were compared to experimental data by simulating an often used conditioning protocol. To align with experiments, each simulation utilised the following procedure (Fig. 5a): (i) in the first stage of training, the model is exposed to a single cue by itself, the CS+, for ten trials, with reinforcements drawn from a normal distribution, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathcal{N}}\left(\mu ,0.1\right)$$\end{document}Nμ,0.1, where μ was chosen according to whether appetitive (μ = 1), aversive (μ = −1), or neutral (μ = 0) conditioning was simulated, (ii) during the next 10 trials, the model is exposed to a second cue by itself, the CS−, with reinforcements drawn from a distribution with μ = 0 and the same variance as for the CS+, (iii) the final two trials comprise the test stage, in which the model is exposed to both cue 1 and cue 2, as in the MAFC task with two alternatives, with μ = 0 for both cues. On each test trial, the model is forced to choose either cue 1 or cue 2, using Eq. (12). We used 10 trials per training stage as, given the parameters for η (learning rate) and β (inverse temperature), it took this many trials for the mean performance (see below for how performance is measured) across multiple runs of the simulation to plateau at, or near, the maximum possible value. The test was run for only two trials as synaptic plasticity was allowed to continue during the test stage, under the assumption that the formation of new CS+ related short term memories18,19 might alter the behaviour of flies in the test stage of experiments.For each simulation, we applied one of many possible additional protocol features, in which neuronal activity was manipulated. We therefore define a protocol as a unique combination of four features:US valence (Fig. 5a): (i) appetitive (μ = 1), (ii) aversive (μ = −1), (iii) neutral (μ = 0). To ensure the VSλ model was not limited in learning RPs as large as ±1, we set λ = 12.Intervention type (Fig. 5c), which modified the target neuron’s output firing rate from \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${y}_{{\rm{targ}}}$$\end{document}ytarg to \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\tilde{y}}_{{\rm{targ}}}$$\end{document}y~targ: (i) block of neuronal output (e.g. by shibire), which was simulated by multiplicatively scaling the manipulated neuron’s firing rate, such that \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\tilde{y}}_{{\rm{targ}}}\,=\,0.1{y}_{{\rm{targ}}}$$\end{document}y~targ=0.1ytarg, (ii) neuronal activation (e.g. by dTrpA1), which was simulated by adding a constant current, such that \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\tilde{y}}_{{\rm{targ}}}\,=\,{y}_{{\rm{targ}}}\,+\,5$$\end{document}y~targ=ytarg+5.The intervention type was applied following one of four activation schedules (Fig. 5b): (i) during the CS+ only, (ii) throughout training (CS+ and CS−), (iii) during test only, (iv) throughout all stages.The target neuron to which the intervention type was applied (Fig. 5c): (i) M+, (ii) M−, (iii) D+, (iv) or D−.We compared behavioural data from experiments with that of our model for 27 of the 96 possible variations of these four features. These data were obtained from 14 published studies10,13–18,27,28,32,35,36,38,39, comprised of 439 experiments that followed conditioning protocols similar to that used in our simulations (235 controls with no intervention, 204 experiments with one of the 27 interventions).Simulations were run in batches of 50, each batch yielding 100 choices from the two test trials. From these choices, we computed a performance index (PI\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\,}_{{\rm{mod}}}$$\end{document}mod) given by 24\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\rm{PI}}}_{{\rm{mod}}}\,=\,\left(\frac{{n}_{+}\,-\,{n}_{-}}{{n}_{+}\,+\,{n}_{-}}\right),$$\end{document}PImod=n+−n−n++n−,where n+ is the number of choices for the CS+ and n− for the CS−. A distribution of PIs for each protocol was obtained by running 20 such batches. PIs from the experimental data were extracted by eye from the 14 published papers. These PIs are computed in a similar way as for the model, but where n+ and n− correspond to the number of flies that approached the CS+ or CS−, respectively. We averaged across PIs from experiments that used the same intervention in the same study, reducing the number of intervention samples from 204 to 92, against which PIs from the simulations were compared.To measure the effect strength of each intervention in both the model and the experiments, we converted PIs into fractions of flies (or model runs) that chose the CS+, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f\,=\,\left({\rm{PI}}\,+\,1\right)/2$$\end{document}f=PI+1/2, then computed a test statistic, Δf, which compares fc from control to fi from intervention experiments, given that the underlying data is binomially distributed, as follows:25\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{{\Delta }}}_{f}\,=\,\frac{{f}_{{\rm{i}}}\,-\,{f}_{{\rm{c}}}}{\sqrt{\frac{1}{{N}_{{\rm{fly}}}}\left({f}_{{\rm{i}}}\,+\,{f}_{{\rm{c}}}\right)\left(1\,-\,\frac{1}{2}\left({f}_{{\rm{i}}}\,+\,{f}_{{\rm{c}}}\right)\right)}},$$\end{document}Δf=fi−fc1Nflyfi+fc1−12fi+fc,where Nfly is the number of flies used in that experiment. The binomial distribution adjustment to fi − fc accounts for the bounded nature of f between 0 and 1. As such, for a given absolute difference, fi − fc, Δf is larger when fc is near to 1 than when it is near to 0.5. That is, small changes to excellent memory performance imply a stronger effect than small changes to mediocre performance. Because Nfly was rarely stated in the studies we assessed, we set Nfly = 50, which is typical for experiments of this nature, and corresponds to the number of runs in each batch of simulations from which a single PI was computed from the model.To examine the correspondence between PIs from the model and experiments, we fit a weighted linear regression to the experimental versus model Δf data using the MATLAB R2012a function robustfit, which computes iteratively reweighted least square fits with a bisquare weighting function. We then computed the Pearson correlation coefficient, R, of the weighted data using the weights, wr, provided by robustfit, according to 26\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$R\,=\,\frac{{\rm{cov}}\left({{\bf{w}}}_{{\rm{r}}}{{\boldsymbol{\Delta }}}_{f}^{{\rm{mod}}},{{\bf{w}}}_{{\rm{r}}}{{\boldsymbol{\Delta }}}_{f}^{\exp }\right)}{{\sigma }_{{\rm{mod}}}{\sigma }_{\exp }},$$\end{document}R=covwrΔfmod,wrΔfexpσmodσexp,where \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\sigma }_{{\rm{mod}}}$$\end{document}σmod and \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\sigma }_{\exp }$$\end{document}σexp are the standard deviations of \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{{\rm{r}}}{{\boldsymbol{\Delta }}}_{f}^{{\rm{mod}}}$$\end{document}wrΔfmod and \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\bf{w}}}_{{\rm{r}}}{{\boldsymbol{\Delta }}}_{f}^{\exp }$$\end{document}wrΔfexp, respectively, and bold fonts denote vectors for all data points in either the model or experimental data sets. We determined the probability with which R comes from a distribution with zero mean by reshuffling the weighted data.Blocking paradigmBlocking experiments were simulated by pairing a CS, X, with rewards drawn from a Gaussian distribution, \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathcal{N}}\left(1,0.1\right)$$\end{document}N1,0.1 for 10 trials, followed by 10 trials in which a compound stimulus, XY, was paired with rewards drawn from the same distribution. After conditioning, a test phase comprised two trials in which the two available options were Y or null, whereby the null option elicited a RP equal to zero. Rewards drawn from \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathcal{N}}\left(0,0.1\right)$$\end{document}N0,0.1 were provided in each test trial. Performance indices (PIs) were computed in the same way as for the comparison between models and experimental data, using 20 batches of 50 simulation runs, yielding 20 PIs. Here, however, n+ denotes the number of choices for cue Y and n− for the null option. The two stimuli, X and Y, were represented by responses in two, non-overlapping subsets of 20 KCs each. When either stimulus was presented alone (X during the first conditioning phase, Y during the test phase), 10 KCs in each subset were activated. During the compound training phase, each stimulus, i, was independently corrupted by silencing each active KC with a probability \documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${p}_{{\rm{cor}}}^{i}$$\end{document}pcori. For each KC silenced, a previously silent KC was activated, but only within the subpopulation corresponding to that stimulus, thus ensuring that both stimuli remained non-overlapping. The KC responses to each individual stimulus were then added for the compound XY stimulus.Reporting summaryFurther information on research design is available in the Nature Research Reporting Summary linked to this article.
+
+SECTION: 
+Supplementary informationSupplementary InformationDescription of Additional Supplementary FilesPeer Review FileSupplementary Data 1Supplementary Data 2Reporting Summary

@@ -2,13 +2,13 @@
 
 Current direction: [approved restart plan](design/research-goals/restart-plan-2026-10-30.md). Old experiments are history in [the early-development archive](../archive/early-development/README.md).
 
-Start with [current status](current-status.md), then [research goals](design/research-goals/README.md). Choose one topic below; dated discussion and raw evidence live in [research](../research/README.md).
+Start with [the next checkpoint](next-checkpoint.md) (goal, last checkpoint, next step), then [current status](current-status.md), then [research goals](design/research-goals/README.md). Choose one topic below; dated discussion and raw evidence live in [research](../research/README.md).
 
 For recurring curriculum work, use the [Python command guide](design/puzzle-learning/python-curriculum-actions.md) and `fly.cmd`; configure a registered step once and keep raw logs on disk.
 
 | Section | Read it for |
 |---|---|
-| [Research goals](design/research-goals/README.md) | Intended contribution, feedback-learning boundary and learning-efficiency hypothesis |
+| [Research goals](design/research-goals/README.md) | Intended contribution, five-volume series plan, feedback-learning boundary and learning-efficiency hypothesis |
 | [Neural learning](design/neural-learning/README.md) | Mapped plasticity, association controls and reversal mechanisms |
 | [Chess input](design/chess-input/README.md) | Symbolic board/action representations and compartment comparison |
 | [Puzzle learning](design/puzzle-learning/README.md) | Learning pilots, failed useful-choice gates and volume experiment |
@@ -31,3 +31,8 @@ Filenames use descriptive kebab-case; journal filenames begin with the Asia/Jaka
 - [2026-10-09 temporal plasticity hypothesis result](../archive/early-development/research/reports/gamma2-temporal-hypothesis-v2-2026-10-09/README.md): local effect verified; full plasticity solution unproved.
 
 - [Adaptive feedback on current top error](../archive/early-development/research/reports/gamma2-adaptive-target-v1-2026-10-09/README.md): verified cue separation and targeted learning, while the top wrong all-legal move remains unchanged.
+
+- [Overnight Eyes / graph / neuron-reader verification](../research/reports/overnight-eyes-reader-repair-2026-11-01/REPORT.md): sign alternatives retained; passive recording verified; full eye-test prerequisites still blocked.
+
+
+- [Exact interference evidence and restricted proof certificates](../research/reports/interference-limits-2026-11-02/README.md): standalone stored-state analysis, primary-source limits and prospective causal localization.

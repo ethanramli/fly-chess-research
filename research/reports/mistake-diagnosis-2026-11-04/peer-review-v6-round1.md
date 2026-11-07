@@ -1,0 +1,17 @@
+# Peer review of memory v6 proposal, round 1 (2026-11-05)
+
+Same reviewer and session. Prompt: `peer-review-v6-round1-prompt.txt`.
+
+**APPROVE WITH REQUIRED CHANGES. Building may start now**, incorporating the BUILD fixes below.
+
+Keep full−quarter: it directly tests the memory goal. Replacing it after its failure would change the hypothesis; a prospective alternative cannot repair v5’s result. Post-result planning is acceptable, but “no outcome steering” overstates it. The selected game lists have **zero overlap**, with matching CSV and exclusion hashes.
+
+1. **BUILD — Implement a v6 judge.** The proposal’s rescaled margin and bootstrap seed cannot come from unchanged `judgeV5`: [task-v5:20](../../../.codebase/src/neural-learning/engineered-memory-task-v5.mjs:20), [task-v5:153](../../../.codebase/src/neural-learning/engineered-memory-task-v5.mjs:153). Use `M = ceil(7*N/150)` after exclusions, seed `20261106`, and the specified comparator order. Preserve v5; test the rescaling and strict positive-bound requirements.
+
+2. **BUILD — Correct the worker and arm plan.** An `eighth` job currently receives the **full ledger**, because [worker:16](../../../.codebase/scripts/neural-learning/memory-v5-worker.mjs:16) recognizes only quarter/half. Add divisor 8. Forward extra cache directories at [worker:67](../../../.codebase/scripts/neural-learning/memory-v5-worker.mjs:67), reject duplicate keys across every cache, and provide a position map containing practice plus new test. Restore **raw-pc/random-pc on the new test**, required by [memory goal:17](../../../documentation/design/research-goals/memory-goal-2026-11-04.md:17): **24 confirmation jobs**, not 18.
+
+3. **BUILD — Specify a versioned v6 auditor.** “Extended in the same way” ([proposal:34](../../../documentation/design/neural-learning/memory-v6-proposal-2026-11-05.md:34)) is insufficient. Existing logic reconstructs v5 development selection and its partition: [auditor:136](../../../.codebase/scripts/neural-learning/audit-engineered-memory-test-v5.mjs:136), [auditor:511](../../../.codebase/scripts/neural-learning/audit-engineered-memory-test-v5.mjs:511). Independently verify the new selection, board exclusions, frozen practice/calibration/ledgers/permutations, all three caches, 24 jobs and complete v6 verdict. Add corruption tests for extra-cache substitution, wrong eighth prefix and wrong margin.
+
+4. **LAUNCH — Freeze the dataset and repetition policy.** At [proposal:17–19](../../../documentation/design/neural-learning/memory-v6-proposal-2026-11-05.md:17), pin selection/source hashes, exact ordered retained IDs and exclusions before scoring. Use the existing piece-placement board comparison explicitly. Check/report repeats against earlier test boards too; either exclude them prospectively or qualify “never-used positions.” Fix the sample once—no topping up after results.
+
+5. **LAUNCH — Correct the scientific wording and precision claim.** [Proposal:28](../../../documentation/design/neural-learning/memory-v6-proposal-2026-11-05.md:28): failure to detect full−quarter **does not establish a plateau**. Also, paired scores give differences in `[-1,1]`; variance ≤0.5 needs justification. Remove the unsupported MDE or calculate power using declared paired/game-cluster assumptions. Describe v6 as a prospectively frozen replication **motivated by v5**, and report both outcomes regardless of passage.

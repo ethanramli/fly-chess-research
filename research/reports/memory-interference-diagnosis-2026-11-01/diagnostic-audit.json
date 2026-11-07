@@ -1,0 +1,424 @@
+{
+  "schema": "independent-eye-diagnostic-audit-v1",
+  "status": "audit-resource-bound-failed",
+  "createdAt": "2026-11-01T11:05:03.544Z",
+  "verdict": "No data mismatch was raised through all offline arithmetic/hash/category/annotation/contact checks, but the final 300-second guard failed. Do not label this a completed passing audit.",
+  "execution": {
+    "command": "node --max-old-space-size=256 research/reports/memory-interference-diagnosis-2026-11-01/audit-diagnostic.mjs",
+    "exitCode": 1,
+    "failedAt": "audit-diagnostic.mjs:355",
+    "wallLimitSeconds": 300,
+    "failureArtifact": "diagnostic-audit-failure.txt",
+    "rerun": false
+  },
+  "completedBeforeGuard": {
+    "sourceRecords": 24,
+    "savedStates": 144,
+    "sourceReceiptFiles": 25,
+    "localFrames": 23560,
+    "sourceItemPhaseMarginCrossChecks": 576,
+    "diagnosticPasses": 54,
+    "earlierPasses": 27,
+    "diagnosticConditions": 5,
+    "independentlyRecomputedConditionItems": 20,
+    "primaryReversalFrames": 168,
+    "wholeTupleHybridHashesMatched": true,
+    "allInputAndReceiptManifestHashesMatched": true,
+    "originalPooledMarksMatched": true
+  },
+  "unfinished": [
+    "Final resource acceptance and normal successful publication",
+    "Automated learner-reference scan located after the final guard; earlier separate rg search found only diagnostic definitions/callers"
+  ],
+  "categoryByGroup": [
+    {
+      "mbonType": "MBON05",
+      "danType": "PAM08",
+      "shared": 6,
+      "oldOnly": 15,
+      "notOldActive": 2083
+    },
+    {
+      "mbonType": "MBON07",
+      "danType": "PAM11",
+      "shared": 0,
+      "oldOnly": 4,
+      "notOldActive": 2546
+    }
+  ],
+  "sharedSubtype": "All six shared edges originate in six distinct KCg-d cells and terminate in MBON05/PAM08 group.",
+  "staticContacts": {
+    "scope": "Directed retained graph edges involving the six shared KCs; annotation crosswalk is local released graph root_ids plus pinned v2.1.0 TSV",
+    "sharedKcCells": 6,
+    "kcToShared": 0,
+    "sharedToKc": 0,
+    "sharedToShared": 0,
+    "aplToShared": 6,
+    "sharedToApl": 6,
+    "positive": 6,
+    "negative": 6
+  },
+  "informativeSeedItems": [
+    {
+      "seed": 4101,
+      "items": [
+        {
+          "item": 0,
+          "acquisition": 0.3213078656346395,
+          "delay": 0.18763715146671567,
+          "postReversal": 0.30338373431222304,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 1,
+          "acquisition": 0.34561325835481355,
+          "delay": 0.14828200741978761,
+          "postReversal": 0.12544805054368632,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 2,
+          "acquisition": 0.2974537092417813,
+          "delay": 0.22687712351733713,
+          "postReversal": 0.17023745527610398,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 3,
+          "acquisition": 0.3459713921321241,
+          "delay": 0.29814776083054634,
+          "postReversal": 0.2865602034186787,
+          "postReversalCorrect": true
+        }
+      ]
+    },
+    {
+      "seed": 4102,
+      "items": [
+        {
+          "item": 0,
+          "acquisition": 0.40600901640073306,
+          "delay": 0.23673512022579477,
+          "postReversal": 0.20828263599946334,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 1,
+          "acquisition": 0.45410904450555134,
+          "delay": 0.28340532067898344,
+          "postReversal": 0.05857228493058586,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 2,
+          "acquisition": 0.35892673129108776,
+          "delay": 0.2407278251725968,
+          "postReversal": 0.1822570185154743,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 3,
+          "acquisition": 0.39588936910622746,
+          "delay": 0.14013015205119944,
+          "postReversal": -0.020324988383732152,
+          "postReversalCorrect": false
+        }
+      ]
+    },
+    {
+      "seed": 4103,
+      "items": [
+        {
+          "item": 0,
+          "acquisition": 0.33347209728194216,
+          "delay": 0.1663456958296042,
+          "postReversal": 0.31925021796113395,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 1,
+          "acquisition": 0.41402098345159016,
+          "delay": 0.2713531229992045,
+          "postReversal": 0.2303056960747868,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 2,
+          "acquisition": 0.3193656485005916,
+          "delay": 0.23736731236832662,
+          "postReversal": 0.2566165638947619,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 3,
+          "acquisition": 0.3235669682514016,
+          "delay": 0.16996471795611623,
+          "postReversal": 0.15201478504141225,
+          "postReversalCorrect": true
+        }
+      ]
+    },
+    {
+      "seed": 4104,
+      "items": [
+        {
+          "item": 0,
+          "acquisition": 0.26732047575263734,
+          "delay": 0.18553595682316237,
+          "postReversal": 0.19204813821469602,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 1,
+          "acquisition": 0.3325734700412548,
+          "delay": 0.26368480453317084,
+          "postReversal": 0.23831843315873266,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 2,
+          "acquisition": 0.2790525293236899,
+          "delay": 0.11459927481489905,
+          "postReversal": 0.05103245220730031,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 3,
+          "acquisition": 0.32817580593947165,
+          "delay": 0.25079980645125877,
+          "postReversal": 0.11408924808362995,
+          "postReversalCorrect": true
+        }
+      ]
+    },
+    {
+      "seed": 4105,
+      "items": [
+        {
+          "item": 0,
+          "acquisition": 0.41253069924943775,
+          "delay": 0.23048526825684576,
+          "postReversal": 0.3347226631942817,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 1,
+          "acquisition": 0.3943931151739605,
+          "delay": 0.3289682267447708,
+          "postReversal": 0.3646491618437229,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 2,
+          "acquisition": 0.301156753648618,
+          "delay": 0.2209211036878825,
+          "postReversal": 0.24455087595012975,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 3,
+          "acquisition": 0.2912288551401117,
+          "delay": 0.274540217129741,
+          "postReversal": -0.007489244232249809,
+          "postReversalCorrect": false
+        }
+      ]
+    },
+    {
+      "seed": 4106,
+      "items": [
+        {
+          "item": 0,
+          "acquisition": 0.3241108541405472,
+          "delay": 0.12002376433607416,
+          "postReversal": 0.27429296901846295,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 1,
+          "acquisition": 0.3229729814305306,
+          "delay": 0.02469226151013741,
+          "postReversal": -0.03088870460310488,
+          "postReversalCorrect": false
+        },
+        {
+          "item": 2,
+          "acquisition": 0.36043139859785567,
+          "delay": 0.23542139536749682,
+          "postReversal": 0.25106538921020854,
+          "postReversalCorrect": true
+        },
+        {
+          "item": 3,
+          "acquisition": 0.2428526764927605,
+          "delay": 0.11443885531681852,
+          "postReversal": 0.10246841286955351,
+          "postReversalCorrect": true
+        }
+      ]
+    }
+  ],
+  "primaryMetrics": {
+    "presentation": {
+      "shared": {
+        "frames": 72,
+        "activeEdgeFrames": 180,
+        "eligibleEdgeFrames": 432,
+        "eligibleAboveTolerance": 432,
+        "changedEdgeFrames": 432,
+        "changedAboveTolerance": 324,
+        "oppositeToOldLearning": 324,
+        "gainL1": 0.0013751034656939165,
+        "stateL1": 0.020567036257002413,
+        "eligibilitySum": 134.54973285389454
+      },
+      "oldOnly": {
+        "frames": 72,
+        "activeEdgeFrames": 0,
+        "eligibleEdgeFrames": 1185,
+        "eligibleAboveTolerance": 14,
+        "changedEdgeFrames": 11,
+        "changedAboveTolerance": 7,
+        "oppositeToOldLearning": 2,
+        "gainL1": 1.808071335707151e-7,
+        "stateL1": 0.000001267697819300553,
+        "eligibilitySum": 0.26743840999677904
+      },
+      "notOldActive": {
+        "frames": 72,
+        "activeEdgeFrames": 1146,
+        "eligibleEdgeFrames": 6193,
+        "eligibleAboveTolerance": 2119,
+        "changedEdgeFrames": 2066,
+        "changedAboveTolerance": 1842,
+        "oppositeToOldLearning": 10,
+        "gainL1": 0.007218676191389994,
+        "stateL1": 0.2968698258362322,
+        "eligibilitySum": 738.2593857156056
+      }
+    },
+    "gap": {
+      "shared": {
+        "frames": 72,
+        "activeEdgeFrames": 0,
+        "eligibleEdgeFrames": 432,
+        "eligibleAboveTolerance": 324,
+        "changedEdgeFrames": 0,
+        "changedAboveTolerance": 0,
+        "oppositeToOldLearning": 0,
+        "gainL1": 0,
+        "stateL1": 0,
+        "eligibilitySum": 0.04635868549503413
+      },
+      "oldOnly": {
+        "frames": 72,
+        "activeEdgeFrames": 0,
+        "eligibleEdgeFrames": 1170,
+        "eligibleAboveTolerance": 8,
+        "changedEdgeFrames": 0,
+        "changedAboveTolerance": 0,
+        "oppositeToOldLearning": 0,
+        "gainL1": 0,
+        "stateL1": 0,
+        "eligibilitySum": 0.00008971559165970442
+      },
+      "notOldActive": {
+        "frames": 72,
+        "activeEdgeFrames": 0,
+        "eligibleEdgeFrames": 6139,
+        "eligibleAboveTolerance": 1856,
+        "changedEdgeFrames": 0,
+        "changedAboveTolerance": 0,
+        "oppositeToOldLearning": 0,
+        "gainL1": 0,
+        "stateL1": 0,
+        "eligibilitySum": 0.26099079951930026
+      }
+    },
+    "teacher": {
+      "shared": {
+        "frames": 21,
+        "activeEdgeFrames": 36,
+        "eligibleEdgeFrames": 126,
+        "eligibleAboveTolerance": 126,
+        "changedEdgeFrames": 126,
+        "changedAboveTolerance": 36,
+        "oppositeToOldLearning": 36,
+        "gainL1": 3.803434977027709,
+        "stateL1": 16.496548803214935,
+        "eligibilitySum": 30.552255720051388
+      },
+      "oldOnly": {
+        "frames": 21,
+        "activeEdgeFrames": 0,
+        "eligibleEdgeFrames": 352,
+        "eligibleAboveTolerance": 3,
+        "changedEdgeFrames": 4,
+        "changedAboveTolerance": 0,
+        "oppositeToOldLearning": 0,
+        "gainL1": 2.0020096691553135e-13,
+        "stateL1": 8.386605646060197e-11,
+        "eligibilitySum": 7.45977042650699e-11
+      },
+      "notOldActive": {
+        "frames": 21,
+        "activeEdgeFrames": 381,
+        "eligibleEdgeFrames": 1840,
+        "eligibleAboveTolerance": 619,
+        "changedEdgeFrames": 621,
+        "changedAboveTolerance": 519,
+        "oppositeToOldLearning": 6,
+        "gainL1": 11.130669554936961,
+        "stateL1": 43.905338325987536,
+        "eligibilitySum": 281.62572857750376
+      }
+    },
+    "unknownExposure": {
+      "shared": {
+        "frames": 3,
+        "activeEdgeFrames": 0,
+        "eligibleEdgeFrames": 18,
+        "eligibleAboveTolerance": 18,
+        "changedEdgeFrames": 18,
+        "changedAboveTolerance": 0,
+        "oppositeToOldLearning": 0,
+        "gainL1": 2.2870594307278225e-14,
+        "stateL1": 2.0927075431034043e-13,
+        "eligibilitySum": 3.753111071768505e-9
+      },
+      "oldOnly": {
+        "frames": 3,
+        "activeEdgeFrames": 0,
+        "eligibleEdgeFrames": 37,
+        "eligibleAboveTolerance": 0,
+        "changedEdgeFrames": 0,
+        "changedAboveTolerance": 0,
+        "oppositeToOldLearning": 0,
+        "gainL1": 0,
+        "stateL1": 0,
+        "eligibilitySum": 3.897279167234281e-108
+      },
+      "notOldActive": {
+        "frames": 3,
+        "activeEdgeFrames": 69,
+        "eligibleEdgeFrames": 212,
+        "eligibleAboveTolerance": 87,
+        "changedEdgeFrames": 87,
+        "changedAboveTolerance": 69,
+        "oppositeToOldLearning": 0,
+        "gainL1": 0.00032530557136797866,
+        "stateL1": 0.02226459622775116,
+        "eligibilitySum": 51.94766102243546
+      }
+    }
+  },
+  "limitations": [
+    "No second implementation of full neural propagation was run; source tests lack all raw response/calibration values, so their 576 margins are cross-checked copies rather than independently generated neural values.",
+    "Instrument parameter hashes are asserted internally but not published; per-pass memory hashes are published and were verified.",
+    "Exact positive eligibility includes floating-point tails; above-threshold activity and above-1e-12 gain changes are distinct.",
+    "Analyst historical masks are diagnostic interventions, not biologically available allocation or learned repair.",
+    "No confirmed CPU bottleneck was measured. Repeated full-state hashing, per-frame allowed-set construction, and local replay are candidate costs, not established causes."
+  ],
+  "auditorSha256": "e883d728d45ba5722ce6e85bbcaec30447598d8c30fae815619352b893c6ca4c",
+  "aiDisclosure": "Separate same-provider audit role; no outside AI provider; role separation is not statistical independence."
+}

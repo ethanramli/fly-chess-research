@@ -1,0 +1,74 @@
+[
+  {
+    "id": "SI-01",
+    "severity": "blocking before any relevant chess run",
+    "path": ".codebase/src/chess-input/eyes-v1.mjs",
+    "line": 89,
+    "claim": "Candidate-only after-state input cannot distinguish quiet failure from safe-capture success",
+    "evidence": "check.mjs real-retina reproduction: same a1a4 cue SHA256, opposite producer/checker-verified labels",
+    "status": "confirmed representation/task mismatch",
+    "affected": "all-legal safe-capture training/evaluation",
+    "confidence": "high",
+    "closure": "Frozen actual learner-visible observation contract distinguishes counterexample, with cross-component check; or scoped task amendment",
+    "sourceSha256": "74ae9ac4fa4e9fc5432099ffd662661632aab9aa89e69f6df7e100b59f6813a2",
+    "sourcePins": {
+      ".codebase/src/chess-input/eyes-v1.mjs": "74ae9ac4fa4e9fc5432099ffd662661632aab9aa89e69f6df7e100b59f6813a2",
+      ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+      ".codebase/src/search-and-feedback/capture-retention-certificate.mjs": "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+      "documentation/design/research-goals/restart-plan-2026-10-30.md": "0ade537454688d26f0cc20413876971f7eebe162ca8a322d38154bafa5023655",
+      ".codebase/scripts/neural-learning/run-eye-graph-memory.mjs": "58753488dac336eaf45d7db6cfdb2ed39c7a1174f6617df3822c52a1f7e22654",
+      ".codebase/src/neural-learning/local-gated-memory.mjs": "ae5351bf885db4fe5dfd7467bc9e0059255f14ced4a1210d8d80cde80a2dc49b",
+      ".codebase/src/neural-learning/local-cubic-reservoir-memory.mjs": "240ea6b4a7e57bfe62673c816ce7909788882e7ef88dbb6bde6c0bd448c9e317"
+    },
+    "checks": "See checks.json and report.md",
+    "whyChecksMiss": "See individual finding in report.md"
+  },
+  {
+    "id": "SI-02",
+    "severity": "blocking before any relevant chess run",
+    "path": "documentation/design/research-goals/restart-plan-2026-10-30.md",
+    "line": 144,
+    "claim": "Complete eye-test corner 1.8 is outside inspected default memory range",
+    "evidence": "local-gated defaults maxGain=1; cubic conserved state gain formula; historical correction receipt inspected",
+    "status": "disclosed methodological blocker",
+    "affected": "complete registered eye test and advancement based on usable-strength gate",
+    "confidence": "high for default range",
+    "closure": "Prospectively frozen attainable-state and score contract with reachability evidence",
+    "sourceSha256": "0ade537454688d26f0cc20413876971f7eebe162ca8a322d38154bafa5023655",
+    "sourcePins": {
+      ".codebase/src/chess-input/eyes-v1.mjs": "74ae9ac4fa4e9fc5432099ffd662661632aab9aa89e69f6df7e100b59f6813a2",
+      ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+      ".codebase/src/search-and-feedback/capture-retention-certificate.mjs": "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+      "documentation/design/research-goals/restart-plan-2026-10-30.md": "0ade537454688d26f0cc20413876971f7eebe162ca8a322d38154bafa5023655",
+      ".codebase/scripts/neural-learning/run-eye-graph-memory.mjs": "58753488dac336eaf45d7db6cfdb2ed39c7a1174f6617df3822c52a1f7e22654",
+      ".codebase/src/neural-learning/local-gated-memory.mjs": "ae5351bf885db4fe5dfd7467bc9e0059255f14ced4a1210d8d80cde80a2dc49b",
+      ".codebase/src/neural-learning/local-cubic-reservoir-memory.mjs": "240ea6b4a7e57bfe62673c816ce7909788882e7ef88dbb6bde6c0bd448c9e317"
+    },
+    "checks": "See checks.json and report.md",
+    "whyChecksMiss": "See individual finding in report.md"
+  },
+  {
+    "id": "SI-03",
+    "severity": "blocking before any relevant chess run",
+    "path": "documentation/design/research-goals/restart-plan-2026-10-30.md",
+    "line": 165,
+    "claim": "En-passant recapture family after initial capture is impossible",
+    "evidence": "FIDE 3.7.3.1-2; current capture-required producer and target-square reply filter",
+    "status": "disclosed unresolved specification defect",
+    "affected": "promised locked Phase-A new-kind family generation/sealing",
+    "confidence": "high",
+    "closure": "Accepted precise family contract and real-history generator/checker development receipts",
+    "sourceSha256": "0ade537454688d26f0cc20413876971f7eebe162ca8a322d38154bafa5023655",
+    "sourcePins": {
+      ".codebase/src/chess-input/eyes-v1.mjs": "74ae9ac4fa4e9fc5432099ffd662661632aab9aa89e69f6df7e100b59f6813a2",
+      ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+      ".codebase/src/search-and-feedback/capture-retention-certificate.mjs": "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+      "documentation/design/research-goals/restart-plan-2026-10-30.md": "0ade537454688d26f0cc20413876971f7eebe162ca8a322d38154bafa5023655",
+      ".codebase/scripts/neural-learning/run-eye-graph-memory.mjs": "58753488dac336eaf45d7db6cfdb2ed39c7a1174f6617df3822c52a1f7e22654",
+      ".codebase/src/neural-learning/local-gated-memory.mjs": "ae5351bf885db4fe5dfd7467bc9e0059255f14ced4a1210d8d80cde80a2dc49b",
+      ".codebase/src/neural-learning/local-cubic-reservoir-memory.mjs": "240ea6b4a7e57bfe62673c816ce7909788882e7ef88dbb6bde6c0bd448c9e317"
+    },
+    "checks": "See checks.json and report.md",
+    "whyChecksMiss": "See individual finding in report.md"
+  }
+]

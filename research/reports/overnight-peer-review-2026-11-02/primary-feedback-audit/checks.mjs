@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {readFileSync,writeFileSync} from 'node:fs';
+import {runInNewContext} from 'node:vm';
+const path='.codebase/scripts/neural-learning/audit-long-term-memory-v1-live.mjs';
+const source=readFileSync(path,'utf8');
+const block=source.slice(source.indexOf('      r.tests.forEach('),source.indexOf('      assert.equal(r.localHash',source.indexOf('      r.tests.forEach(')));
+let validations=0;
+runInNewContext(block,{r:{tests:[],phase:'Rev'},assert,validateScore(){validations++;}});
+assert.equal(validations,0);
+const expression=source.match(/assert.equal\(record.jointPass, (.*)\);/)[1];
+assert.equal(runInNewContext(expression,{tests:{T3:[],Delay:[],Rev:[]}}),true);
+const result={command:'node --max-old-space-size=256 research/reports/overnight-peer-review-2026-11-02/primary-feedback-audit/checks.mjs',status:'passed',emptyTestsAccepted:true,zeroScoreValidations:validations,emptyJointPass:true,scope:'literal auditor predicate extraction; no whole-run forgery or graph execution'};
+writeFileSync(new URL('checks-result.json',import.meta.url),JSON.stringify(result,null,2));
+console.log(JSON.stringify(result));

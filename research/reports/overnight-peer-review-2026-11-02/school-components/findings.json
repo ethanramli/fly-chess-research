@@ -1,0 +1,26 @@
+[
+  {
+    "ID": "SC-01",
+    "severity": "blocking before any relevant chess run",
+    "status": "methodological blocker for frozen reuse; not a demonstrated violation of the pilot protocol",
+    "path": ".codebase/scripts/neural-learning/compare-long-term-memory-v1.mjs",
+    "line": 146,
+    "sourceHash": "b1aa1bc85d0cffff46cf90f069fd3e3588f6af6b351e24e8f36e66264b3476b5",
+    "claim": "Unaided candidate rankings share a frozen persistent snapshot",
+    "evidence": "block maps peek -> observe(1) -> gap (observe(4)) for each candidate, so candidate 2 sees changed traces/time and potentially gains. Pure cubic counterexample changes gain 1 to .872955216483345 before candidate 2.",
+    "confidence": "high for path; actual graph order-effect magnitude not checked",
+    "closure": "Bounded caller-level evidence that frozen candidate inference preserves complete state and rankings when enumeration reverses; separately report any intentionally learning-enabled preview condition."
+  },
+  {
+    "ID": "SC-02",
+    "severity": "major claim threat",
+    "status": "disclosed scope limitation / methodological blocker for reasoning attribution",
+    "path": ".codebase/src/neural-learning/memory-backed-policy-v1.mjs",
+    "line": 7,
+    "sourceHash": "cf26e992ec94d020d97faf978f6bd04fb39fc46961afe4d44dbcb8b8a65c734f",
+    "claim": "Successful memory-backed choice demonstrates learned cross-key inference or a neural contribution to retrieval",
+    "evidence": "Known recall returns recalled.value regardless of neuralValue; exact serialized cue matching includes every amplitude. 1 -> 1.000001 yields unknown. Live caller naive Map is keyed by array object, populated only for eight saved codes; fresh equivalent arrays have no baseline.",
+    "confidence": "high",
+    "closure": "Evidence on unfamiliar keys with a declared cross-key path, matched retrieval baseline and graph/relay/readout ablations; known-key recall cannot close this concern."
+  }
+]

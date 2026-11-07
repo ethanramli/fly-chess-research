@@ -1,0 +1,1916 @@
+{
+  "released": {
+    "summary": {
+      "schema": "mbon05-sign-conditioning-pilot-v1",
+      "seeds": [
+        4101
+      ],
+      "items": 2,
+      "marks": {
+        "R1": {
+          "pass": true,
+          "observed": [
+            {
+              "m": 0.3213078656346395,
+              "g": 1
+            },
+            {
+              "m": 0.34561325835481355,
+              "g": 1
+            }
+          ]
+        },
+        "R2": {
+          "pass": true,
+          "observed": {
+            "share": 1,
+            "ratio": 0.925790713133542
+          }
+        },
+        "R3": {
+          "pass": true,
+          "observed": {
+            "item": 0.30388563973105925,
+            "greedy": 1,
+            "others": 0.8958727546608369
+          }
+        },
+        "R4": {
+          "pass": false,
+          "observed": {
+            "share": 1,
+            "ratio": 0.6909841071057141
+          }
+        },
+        "R5": {
+          "pass": true,
+          "observed": {
+            "disabledUnchanged": true,
+            "absentUnchanged": false,
+            "shuffled": 0.5,
+            "informative": 1,
+            "absentShare": 0.5
+          }
+        }
+      },
+      "wall": 791.4248047,
+      "maxRssMiB": 315.359375,
+      "eyes": "5ec27466a30d29208afb431f48ebc7ab4bcbfe29cb31296a4b556abb75290cff",
+      "spec": "2e0bbec44703773b5a40b44c2b6c8ed200708a12032fadea0a2d42b51ee0fd8a",
+      "self": "47688523d22557e36dbdae41e99fa47668b10d86b09767bf646979a72add548a"
+    },
+    "rows": [
+      {
+        "seed": 4101,
+        "arm": "informative",
+        "tests": {
+          "T0": [
+            {
+              "mNorm": 0.3213078656346395,
+              "greedy": true
+            },
+            {
+              "mNorm": 0.02423949495538813,
+              "greedy": true
+            }
+          ],
+          "T1": [
+            {
+              "mNorm": 0.29746383806130916,
+              "greedy": true
+            },
+            {
+              "mNorm": 0.34561325835481355,
+              "greedy": true
+            }
+          ],
+          "Delay": [
+            {
+              "mNorm": 0.2182832428472986,
+              "greedy": true
+            },
+            {
+              "mNorm": 0.22401055745562248,
+              "greedy": true
+            }
+          ],
+          "Rev": [
+            {
+              "mNorm": 0.30388563973105925,
+              "greedy": true
+            },
+            {
+              "mNorm": 0.2006849551808782,
+              "greedy": true
+            }
+          ]
+        },
+        "pulses": {
+          "B0": {
+            "reward": 18,
+            "punish": 3,
+            "none": 3
+          },
+          "B1": {
+            "reward": 21,
+            "punish": 0,
+            "none": 3
+          },
+          "REV": {
+            "reward": 13,
+            "punish": 8,
+            "none": 3
+          }
+        },
+        "realized": {
+          "B0": [
+            "punish",
+            "punish",
+            "punish",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward"
+          ],
+          "B1": [
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward"
+          ],
+          "REV": [
+            "punish",
+            "punish",
+            "punish",
+            "punish",
+            "punish",
+            "punish",
+            "punish",
+            "reward",
+            "punish",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward"
+          ]
+        },
+        "initialGains": "fad13c71b29b293306f5da4c613361deb6b8f048d220a650712f70dec89db237",
+        "gainsBefore": "756237710743c8e5fb7aa529acfdc49828559454e044c8a65e5138c3682fb037",
+        "frames": 904,
+        "finalLocalState": "557209a188ae7a1ac05a67ac86cdd26cf6a950fb18bf892ef71c585525ac8a18",
+        "finalState": "d1cda6ea655aa7dc19af523726293b8dabe4ac2d2ee6687ab23cd3d59154d3d6",
+        "readerZero": 0,
+        "readerCeiling": 0,
+        "kcEdges": 4654,
+        "fixtures": [
+          {
+            "fen": "r1bqk1n1/p3b3/3p1p1r/2p2P1p/1pPpQN2/PP6/R2NP1PP/2B1KB1R b K - 7 20",
+            "moves": [
+              "c8b7",
+              "e8f8"
+            ]
+          },
+          {
+            "fen": "rnbqk1n1/p1pNppB1/1p1p3r/6pp/PPP4b/N2P3P/4PPP1/2RQKB1R w Kq - 4 13",
+            "moves": [
+              "g7f6",
+              "g7h6"
+            ]
+          }
+        ]
+      },
+      {
+        "seed": 4101,
+        "arm": "absent",
+        "tests": {
+          "T0": [
+            {
+              "mNorm": -0.08191822362475988,
+              "greedy": false
+            },
+            {
+              "mNorm": 0.010838886039648034,
+              "greedy": true
+            }
+          ],
+          "T1": [
+            {
+              "mNorm": -0.08189090762303496,
+              "greedy": false
+            },
+            {
+              "mNorm": 0.008968409350344451,
+              "greedy": true
+            }
+          ],
+          "Delay": [
+            {
+              "mNorm": -0.07314712773127709,
+              "greedy": false
+            },
+            {
+              "mNorm": 0.019966815740279538,
+              "greedy": true
+            }
+          ],
+          "Rev": [
+            {
+              "mNorm": 0.07414489204272297,
+              "greedy": true
+            },
+            {
+              "mNorm": 0.02005903649090774,
+              "greedy": true
+            }
+          ]
+        },
+        "pulses": {
+          "B0": {
+            "reward": 0,
+            "punish": 0,
+            "none": 24
+          },
+          "B1": {
+            "reward": 0,
+            "punish": 0,
+            "none": 24
+          },
+          "REV": {
+            "reward": 0,
+            "punish": 0,
+            "none": 24
+          }
+        },
+        "realized": {
+          "B0": [],
+          "B1": [],
+          "REV": []
+        },
+        "initialGains": "fad13c71b29b293306f5da4c613361deb6b8f048d220a650712f70dec89db237",
+        "gainsBefore": "2166cd84aedca5bd9739f40b696e7b765783de7d437ff21ee4b888e12cbe7339",
+        "frames": 904,
+        "finalLocalState": "b238d8c9c837f76701384dd60113592586d68c12c1f369b94fe7a1bbad051964",
+        "finalState": "43e6f04b7dfd4ea869af5f27127a9d6309c1f5117b52276a41436be235a7ad2b",
+        "readerZero": 0,
+        "readerCeiling": 0,
+        "kcEdges": 4654,
+        "fixtures": [
+          {
+            "fen": "r1bqk1n1/p3b3/3p1p1r/2p2P1p/1pPpQN2/PP6/R2NP1PP/2B1KB1R b K - 7 20",
+            "moves": [
+              "c8b7",
+              "e8f8"
+            ]
+          },
+          {
+            "fen": "rnbqk1n1/p1pNppB1/1p1p3r/6pp/PPP4b/N2P3P/4PPP1/2RQKB1R w Kq - 4 13",
+            "moves": [
+              "g7f6",
+              "g7h6"
+            ]
+          }
+        ]
+      },
+      {
+        "seed": 4101,
+        "arm": "shuffled",
+        "tests": {
+          "T0": [
+            {
+              "mNorm": -0.3602598520808876,
+              "greedy": false
+            },
+            {
+              "mNorm": 0.038262840819625055,
+              "greedy": true
+            }
+          ],
+          "T1": [
+            {
+              "mNorm": -0.3330530238165919,
+              "greedy": false
+            },
+            {
+              "mNorm": 0.38690690508132564,
+              "greedy": true
+            }
+          ],
+          "Delay": [
+            {
+              "mNorm": -0.1392154977545508,
+              "greedy": false
+            },
+            {
+              "mNorm": 0.24305470999562434,
+              "greedy": true
+            }
+          ],
+          "Rev": [
+            {
+              "mNorm": 0.07992312052789048,
+              "greedy": true
+            },
+            {
+              "mNorm": 0.2235885427551848,
+              "greedy": true
+            }
+          ]
+        },
+        "pulses": {
+          "B0": {
+            "reward": 18,
+            "punish": 3,
+            "none": 3
+          },
+          "B1": {
+            "reward": 21,
+            "punish": 0,
+            "none": 3
+          },
+          "REV": {
+            "reward": 13,
+            "punish": 8,
+            "none": 3
+          }
+        },
+        "realized": {
+          "B0": [
+            "reward",
+            "reward",
+            "punish",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "punish",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "punish",
+            "reward",
+            "reward"
+          ],
+          "B1": [
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward"
+          ],
+          "REV": [
+            "punish",
+            "punish",
+            "reward",
+            "reward",
+            "reward",
+            "punish",
+            "reward",
+            "punish",
+            "reward",
+            "reward",
+            "punish",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "punish",
+            "reward",
+            "punish",
+            "punish"
+          ]
+        },
+        "initialGains": "fad13c71b29b293306f5da4c613361deb6b8f048d220a650712f70dec89db237",
+        "gainsBefore": "a508e81ea362898aa9c1bd38e77dda42ed00780a78c084722194cd7d0602e52e",
+        "frames": 904,
+        "finalLocalState": "ea06aeb48962de89cdba24ceb5ba5dc9589e1de1f9c02d7524d64dfde4e377a3",
+        "finalState": "8096cf470b103509edf9a56e6f4835d6634aeac4e78031e22e6181b2cdc8bd6c",
+        "readerZero": 0,
+        "readerCeiling": 0,
+        "kcEdges": 4654,
+        "fixtures": [
+          {
+            "fen": "r1bqk1n1/p3b3/3p1p1r/2p2P1p/1pPpQN2/PP6/R2NP1PP/2B1KB1R b K - 7 20",
+            "moves": [
+              "c8b7",
+              "e8f8"
+            ]
+          },
+          {
+            "fen": "rnbqk1n1/p1pNppB1/1p1p3r/6pp/PPP4b/N2P3P/4PPP1/2RQKB1R w Kq - 4 13",
+            "moves": [
+              "g7f6",
+              "g7h6"
+            ]
+          }
+        ]
+      },
+      {
+        "seed": 4101,
+        "arm": "disabled",
+        "tests": {
+          "T0": [
+            {
+              "mNorm": 0,
+              "greedy": false
+            },
+            {
+              "mNorm": 0,
+              "greedy": false
+            }
+          ],
+          "T1": [
+            {
+              "mNorm": 0,
+              "greedy": false
+            },
+            {
+              "mNorm": 0,
+              "greedy": false
+            }
+          ],
+          "Delay": [
+            {
+              "mNorm": 0,
+              "greedy": false
+            },
+            {
+              "mNorm": 0,
+              "greedy": false
+            }
+          ],
+          "Rev": [
+            {
+              "mNorm": 0,
+              "greedy": false
+            },
+            {
+              "mNorm": 0,
+              "greedy": false
+            }
+          ]
+        },
+        "pulses": {
+          "B0": {
+            "reward": 0,
+            "punish": 0,
+            "none": 24
+          },
+          "B1": {
+            "reward": 0,
+            "punish": 0,
+            "none": 24
+          },
+          "REV": {
+            "reward": 0,
+            "punish": 0,
+            "none": 24
+          }
+        },
+        "realized": {
+          "B0": [],
+          "B1": [],
+          "REV": []
+        },
+        "initialGains": "fad13c71b29b293306f5da4c613361deb6b8f048d220a650712f70dec89db237",
+        "gainsBefore": "fad13c71b29b293306f5da4c613361deb6b8f048d220a650712f70dec89db237",
+        "frames": 0,
+        "finalLocalState": "308fa6362ac52c03f35166a7b1533ee2124ec1f431fea0ef957b013b94b8e453",
+        "finalState": "1e976d0e1ad11bdf6fe1839d37b7d85e219bdaa74fa2c60b1ecc2f4f852b19e9",
+        "readerZero": 0,
+        "readerCeiling": 0,
+        "kcEdges": 4654,
+        "fixtures": [
+          {
+            "fen": "r1bqk1n1/p3b3/3p1p1r/2p2P1p/1pPpQN2/PP6/R2NP1PP/2B1KB1R b K - 7 20",
+            "moves": [
+              "c8b7",
+              "e8f8"
+            ]
+          },
+          {
+            "fen": "rnbqk1n1/p1pNppB1/1p1p3r/6pp/PPP4b/N2P3P/4PPP1/2RQKB1R w Kq - 4 13",
+            "moves": [
+              "g7f6",
+              "g7h6"
+            ]
+          }
+        ]
+      }
+    ],
+    "audit": {
+      "status": "audit-passed",
+      "scope": "independent local-frame replay, saved-state and synthetic-feedback checks; full graph activity not independently replayed",
+      "jointPass": false,
+      "marks": {
+        "R1": {
+          "pass": true,
+          "observed": [
+            {
+              "m": 0.3213078656346395,
+              "g": 1
+            },
+            {
+              "m": 0.34561325835481355,
+              "g": 1
+            }
+          ]
+        },
+        "R2": {
+          "pass": true,
+          "observed": {
+            "share": 1,
+            "ratio": 0.925790713133542
+          }
+        },
+        "R3": {
+          "pass": true,
+          "observed": {
+            "item": 0.30388563973105925,
+            "greedy": 1,
+            "others": 0.8958727546608369
+          }
+        },
+        "R4": {
+          "pass": false,
+          "observed": {
+            "share": 1,
+            "ratio": 0.6909841071057141
+          }
+        },
+        "R5": {
+          "pass": true,
+          "observed": {
+            "disabledUnchanged": true,
+            "absentUnchanged": false,
+            "shuffled": 0.5,
+            "informative": 1,
+            "absentShare": 0.5
+          }
+        }
+      },
+      "perSeed": [
+        {
+          "seed": 4101,
+          "delayRatios": [
+            0.7338143831866685,
+            0.6481538310247599
+          ],
+          "delayCorrect": 2,
+          "postReversalCorrect": 2
+        }
+      ],
+      "replay": [
+        {
+          "seed": 4101,
+          "arm": "absent",
+          "frames": 904,
+          "trials": 72,
+          "restored": false,
+          "valences": {},
+          "drive": {
+            "presentation": {
+              "count": 720,
+              "max": 0.004780639772829803,
+              "mean": 0.0007589916584656341
+            },
+            "feedback": {
+              "count": 288,
+              "max": 0.004777257857115373,
+              "mean": 0.0007086159052528242
+            },
+            "delay": {
+              "count": 800,
+              "max": 0.050269565720489066,
+              "mean": 0.02521379605016632
+            }
+          },
+          "finalState": "b238d8c9c837f76701384dd60113592586d68c12c1f369b94fe7a1bbad051964"
+        },
+        {
+          "seed": 4101,
+          "arm": "disabled",
+          "frames": 0,
+          "trials": 72,
+          "restored": false,
+          "valences": {},
+          "drive": {},
+          "finalState": "308fa6362ac52c03f35166a7b1533ee2124ec1f431fea0ef957b013b94b8e453"
+        },
+        {
+          "seed": 4101,
+          "arm": "informative",
+          "frames": 904,
+          "trials": 72,
+          "restored": true,
+          "valences": {
+            "B0": [
+              "punish",
+              "punish",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward"
+            ],
+            "B1": [
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward"
+            ],
+            "REV": [
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "reward",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward"
+            ]
+          },
+          "drive": {
+            "presentation": {
+              "count": 720,
+              "max": 0.004780639772829803,
+              "mean": 0.0006643580655220916
+            },
+            "feedback": {
+              "count": 288,
+              "max": 0.3122957020566084,
+              "mean": 0.09410928657590363
+            },
+            "delay": {
+              "count": 800,
+              "max": 0.05031207765358083,
+              "mean": 0.02521501981369827
+            }
+          },
+          "finalState": "557209a188ae7a1ac05a67ac86cdd26cf6a950fb18bf892ef71c585525ac8a18"
+        },
+        {
+          "seed": 4101,
+          "arm": "informative",
+          "frames": 904,
+          "trials": 72,
+          "restored": false,
+          "valences": {
+            "B0": [
+              "punish",
+              "punish",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward"
+            ],
+            "B1": [
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward"
+            ],
+            "REV": [
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "reward",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward"
+            ]
+          },
+          "drive": {
+            "presentation": {
+              "count": 720,
+              "max": 0.004780639772829803,
+              "mean": 0.0006643580655220916
+            },
+            "feedback": {
+              "count": 288,
+              "max": 0.3122957020566084,
+              "mean": 0.09410928657590363
+            },
+            "delay": {
+              "count": 800,
+              "max": 0.05031207765358083,
+              "mean": 0.02521501981369827
+            }
+          },
+          "finalState": "557209a188ae7a1ac05a67ac86cdd26cf6a950fb18bf892ef71c585525ac8a18"
+        },
+        {
+          "seed": 4101,
+          "arm": "shuffled",
+          "frames": 904,
+          "trials": 72,
+          "restored": false,
+          "valences": {
+            "B0": [
+              "reward",
+              "reward",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "punish",
+              "reward",
+              "reward"
+            ],
+            "B1": [
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward"
+            ],
+            "REV": [
+              "punish",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "punish",
+              "reward",
+              "punish",
+              "reward",
+              "reward",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "punish",
+              "reward",
+              "punish",
+              "punish"
+            ]
+          },
+          "drive": {
+            "presentation": {
+              "count": 720,
+              "max": 0.004780639772829803,
+              "mean": 0.0007848145395229404
+            },
+            "feedback": {
+              "count": 288,
+              "max": 0.31601279973983765,
+              "mean": 0.09684826307213938
+            },
+            "delay": {
+              "count": 800,
+              "max": 0.05025565624237063,
+              "mean": 0.02521386649297629
+            }
+          },
+          "finalState": "ea06aeb48962de89cdba24ceb5ba5dc9589e1de1f9c02d7524d64dfde4e377a3"
+        }
+      ],
+      "sources": {
+        "records": "ea3ba11e3cf545da36f496ac40ea010942e96edaf818b17da529e1275123c663",
+        "summary": "00a08b13ea8437d6375d4eeb560abfd4fd6459adb8cbeaf20fac204f298e4237"
+      }
+    },
+    "stimuliSha256": "06760d612ba96320490c2a95c814f7975fd7fe65113d2c391ca7229ec51322eb"
+  },
+  "curated": {
+    "summary": {
+      "schema": "mbon05-sign-conditioning-pilot-v1",
+      "seeds": [
+        4101
+      ],
+      "items": 2,
+      "marks": {
+        "R1": {
+          "pass": true,
+          "observed": [
+            {
+              "m": 0.3219480627357557,
+              "g": 1
+            },
+            {
+              "m": 0.34707737509628744,
+              "g": 1
+            }
+          ]
+        },
+        "R2": {
+          "pass": true,
+          "observed": {
+            "share": 1,
+            "ratio": 0.9261206628693308
+          }
+        },
+        "R3": {
+          "pass": true,
+          "observed": {
+            "item": 0.3035484912052568,
+            "greedy": 1,
+            "others": 0.896229180437682
+          }
+        },
+        "R4": {
+          "pass": false,
+          "observed": {
+            "share": 1,
+            "ratio": 0.6929449459526316
+          }
+        },
+        "R5": {
+          "pass": true,
+          "observed": {
+            "disabledUnchanged": true,
+            "absentUnchanged": false,
+            "shuffled": 0.5,
+            "informative": 1,
+            "absentShare": 0.5
+          }
+        }
+      },
+      "wall": 785.9542186,
+      "maxRssMiB": 315.3828125,
+      "eyes": "5ec27466a30d29208afb431f48ebc7ab4bcbfe29cb31296a4b556abb75290cff",
+      "spec": "2e0bbec44703773b5a40b44c2b6c8ed200708a12032fadea0a2d42b51ee0fd8a",
+      "self": "47688523d22557e36dbdae41e99fa47668b10d86b09767bf646979a72add548a"
+    },
+    "rows": [
+      {
+        "seed": 4101,
+        "arm": "informative",
+        "tests": {
+          "T0": [
+            {
+              "mNorm": 0.3219480627357557,
+              "greedy": true
+            },
+            {
+              "mNorm": 0.024154536102133257,
+              "greedy": true
+            }
+          ],
+          "T1": [
+            {
+              "mNorm": 0.298162753270335,
+              "greedy": true
+            },
+            {
+              "mNorm": 0.34707737509628744,
+              "greedy": true
+            }
+          ],
+          "Delay": [
+            {
+              "mNorm": 0.21908790420983265,
+              "greedy": true
+            },
+            {
+              "mNorm": 0.22598099988939901,
+              "greedy": true
+            }
+          ],
+          "Rev": [
+            {
+              "mNorm": 0.3035484912052568,
+              "greedy": true
+            },
+            {
+              "mNorm": 0.202530766325364,
+              "greedy": true
+            }
+          ]
+        },
+        "pulses": {
+          "B0": {
+            "reward": 18,
+            "punish": 3,
+            "none": 3
+          },
+          "B1": {
+            "reward": 21,
+            "punish": 0,
+            "none": 3
+          },
+          "REV": {
+            "reward": 13,
+            "punish": 8,
+            "none": 3
+          }
+        },
+        "realized": {
+          "B0": [
+            "punish",
+            "punish",
+            "punish",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward"
+          ],
+          "B1": [
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward"
+          ],
+          "REV": [
+            "punish",
+            "punish",
+            "punish",
+            "punish",
+            "punish",
+            "punish",
+            "punish",
+            "reward",
+            "punish",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward"
+          ]
+        },
+        "initialGains": "fad13c71b29b293306f5da4c613361deb6b8f048d220a650712f70dec89db237",
+        "gainsBefore": "6db3b9a9857fc14fa00b75a044dce03e1e0881946a6e8abf340ba46f72309e38",
+        "frames": 904,
+        "finalLocalState": "a938414fe006cdf9028451df8023182a1604ebcc45d0e91f25dbc5a50a97af27",
+        "finalState": "0d1732cab1bcb53c51d43e953532cba7ac9dd4bfb0ba6e5594d11d61f426a326",
+        "readerZero": 0,
+        "readerCeiling": 0,
+        "kcEdges": 4654,
+        "fixtures": [
+          {
+            "fen": "r1bqk1n1/p3b3/3p1p1r/2p2P1p/1pPpQN2/PP6/R2NP1PP/2B1KB1R b K - 7 20",
+            "moves": [
+              "c8b7",
+              "e8f8"
+            ]
+          },
+          {
+            "fen": "rnbqk1n1/p1pNppB1/1p1p3r/6pp/PPP4b/N2P3P/4PPP1/2RQKB1R w Kq - 4 13",
+            "moves": [
+              "g7f6",
+              "g7h6"
+            ]
+          }
+        ]
+      },
+      {
+        "seed": 4101,
+        "arm": "absent",
+        "tests": {
+          "T0": [
+            {
+              "mNorm": -0.07963521115504728,
+              "greedy": false
+            },
+            {
+              "mNorm": 0.010540458644862326,
+              "greedy": true
+            }
+          ],
+          "T1": [
+            {
+              "mNorm": -0.0795680652228063,
+              "greedy": false
+            },
+            {
+              "mNorm": 0.010572297592404897,
+              "greedy": true
+            }
+          ],
+          "Delay": [
+            {
+              "mNorm": -0.07061957973680848,
+              "greedy": false
+            },
+            {
+              "mNorm": 0.021915679949157385,
+              "greedy": true
+            }
+          ],
+          "Rev": [
+            {
+              "mNorm": 0.0716030798132826,
+              "greedy": true
+            },
+            {
+              "mNorm": 0.022006860820334758,
+              "greedy": true
+            }
+          ]
+        },
+        "pulses": {
+          "B0": {
+            "reward": 0,
+            "punish": 0,
+            "none": 24
+          },
+          "B1": {
+            "reward": 0,
+            "punish": 0,
+            "none": 24
+          },
+          "REV": {
+            "reward": 0,
+            "punish": 0,
+            "none": 24
+          }
+        },
+        "realized": {
+          "B0": [],
+          "B1": [],
+          "REV": []
+        },
+        "initialGains": "fad13c71b29b293306f5da4c613361deb6b8f048d220a650712f70dec89db237",
+        "gainsBefore": "20b5422a0a30e8306349c48a08c55c2a61b56f9cceb99a629a050f42b1e9036f",
+        "frames": 904,
+        "finalLocalState": "b71331260f9322ba308e12db3e807860d35f755fd1c50b3840c0367fd52ec5f2",
+        "finalState": "e1c9574140cb498ce0f49d72bae927953c60fc0e96b339ddb4964c010b54666f",
+        "readerZero": 0,
+        "readerCeiling": 0,
+        "kcEdges": 4654,
+        "fixtures": [
+          {
+            "fen": "r1bqk1n1/p3b3/3p1p1r/2p2P1p/1pPpQN2/PP6/R2NP1PP/2B1KB1R b K - 7 20",
+            "moves": [
+              "c8b7",
+              "e8f8"
+            ]
+          },
+          {
+            "fen": "rnbqk1n1/p1pNppB1/1p1p3r/6pp/PPP4b/N2P3P/4PPP1/2RQKB1R w Kq - 4 13",
+            "moves": [
+              "g7f6",
+              "g7h6"
+            ]
+          }
+        ]
+      },
+      {
+        "seed": 4101,
+        "arm": "shuffled",
+        "tests": {
+          "T0": [
+            {
+              "mNorm": -0.3601017345830329,
+              "greedy": false
+            },
+            {
+              "mNorm": 0.03809538074101008,
+              "greedy": true
+            }
+          ],
+          "T1": [
+            {
+              "mNorm": -0.3329526938962741,
+              "greedy": false
+            },
+            {
+              "mNorm": 0.38875757262262445,
+              "greedy": true
+            }
+          ],
+          "Delay": [
+            {
+              "mNorm": -0.13927578069969535,
+              "greedy": false
+            },
+            {
+              "mNorm": 0.24527258735418755,
+              "greedy": true
+            }
+          ],
+          "Rev": [
+            {
+              "mNorm": 0.0801561800431292,
+              "greedy": true
+            },
+            {
+              "mNorm": 0.2258528389749452,
+              "greedy": true
+            }
+          ]
+        },
+        "pulses": {
+          "B0": {
+            "reward": 18,
+            "punish": 3,
+            "none": 3
+          },
+          "B1": {
+            "reward": 21,
+            "punish": 0,
+            "none": 3
+          },
+          "REV": {
+            "reward": 13,
+            "punish": 8,
+            "none": 3
+          }
+        },
+        "realized": {
+          "B0": [
+            "reward",
+            "reward",
+            "punish",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "punish",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "punish",
+            "reward",
+            "reward"
+          ],
+          "B1": [
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward"
+          ],
+          "REV": [
+            "punish",
+            "punish",
+            "reward",
+            "reward",
+            "reward",
+            "punish",
+            "reward",
+            "punish",
+            "reward",
+            "reward",
+            "punish",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "reward",
+            "punish",
+            "reward",
+            "punish",
+            "punish"
+          ]
+        },
+        "initialGains": "fad13c71b29b293306f5da4c613361deb6b8f048d220a650712f70dec89db237",
+        "gainsBefore": "6f1758b9e9424c0cc058ac5d21df9ef8d7759eca99d248f6696609b61dbcf342",
+        "frames": 904,
+        "finalLocalState": "ed2b213ab1106a7840613c8051b1aa538acc407387827459af1921e8f45c74cd",
+        "finalState": "efd489ade273bc219227d783b588cf87e42f33b6435ae22f6e4bbeaaee627b05",
+        "readerZero": 0,
+        "readerCeiling": 0,
+        "kcEdges": 4654,
+        "fixtures": [
+          {
+            "fen": "r1bqk1n1/p3b3/3p1p1r/2p2P1p/1pPpQN2/PP6/R2NP1PP/2B1KB1R b K - 7 20",
+            "moves": [
+              "c8b7",
+              "e8f8"
+            ]
+          },
+          {
+            "fen": "rnbqk1n1/p1pNppB1/1p1p3r/6pp/PPP4b/N2P3P/4PPP1/2RQKB1R w Kq - 4 13",
+            "moves": [
+              "g7f6",
+              "g7h6"
+            ]
+          }
+        ]
+      },
+      {
+        "seed": 4101,
+        "arm": "disabled",
+        "tests": {
+          "T0": [
+            {
+              "mNorm": 0,
+              "greedy": false
+            },
+            {
+              "mNorm": 0,
+              "greedy": false
+            }
+          ],
+          "T1": [
+            {
+              "mNorm": 0,
+              "greedy": false
+            },
+            {
+              "mNorm": 0,
+              "greedy": false
+            }
+          ],
+          "Delay": [
+            {
+              "mNorm": 0,
+              "greedy": false
+            },
+            {
+              "mNorm": 0,
+              "greedy": false
+            }
+          ],
+          "Rev": [
+            {
+              "mNorm": 0,
+              "greedy": false
+            },
+            {
+              "mNorm": 0,
+              "greedy": false
+            }
+          ]
+        },
+        "pulses": {
+          "B0": {
+            "reward": 0,
+            "punish": 0,
+            "none": 24
+          },
+          "B1": {
+            "reward": 0,
+            "punish": 0,
+            "none": 24
+          },
+          "REV": {
+            "reward": 0,
+            "punish": 0,
+            "none": 24
+          }
+        },
+        "realized": {
+          "B0": [],
+          "B1": [],
+          "REV": []
+        },
+        "initialGains": "fad13c71b29b293306f5da4c613361deb6b8f048d220a650712f70dec89db237",
+        "gainsBefore": "fad13c71b29b293306f5da4c613361deb6b8f048d220a650712f70dec89db237",
+        "frames": 0,
+        "finalLocalState": "308fa6362ac52c03f35166a7b1533ee2124ec1f431fea0ef957b013b94b8e453",
+        "finalState": "1e976d0e1ad11bdf6fe1839d37b7d85e219bdaa74fa2c60b1ecc2f4f852b19e9",
+        "readerZero": 0,
+        "readerCeiling": 0,
+        "kcEdges": 4654,
+        "fixtures": [
+          {
+            "fen": "r1bqk1n1/p3b3/3p1p1r/2p2P1p/1pPpQN2/PP6/R2NP1PP/2B1KB1R b K - 7 20",
+            "moves": [
+              "c8b7",
+              "e8f8"
+            ]
+          },
+          {
+            "fen": "rnbqk1n1/p1pNppB1/1p1p3r/6pp/PPP4b/N2P3P/4PPP1/2RQKB1R w Kq - 4 13",
+            "moves": [
+              "g7f6",
+              "g7h6"
+            ]
+          }
+        ]
+      }
+    ],
+    "audit": {
+      "status": "audit-passed",
+      "scope": "independent local-frame replay, saved-state and synthetic-feedback checks; full graph activity not independently replayed",
+      "jointPass": false,
+      "marks": {
+        "R1": {
+          "pass": true,
+          "observed": [
+            {
+              "m": 0.3219480627357557,
+              "g": 1
+            },
+            {
+              "m": 0.34707737509628744,
+              "g": 1
+            }
+          ]
+        },
+        "R2": {
+          "pass": true,
+          "observed": {
+            "share": 1,
+            "ratio": 0.9261206628693308
+          }
+        },
+        "R3": {
+          "pass": true,
+          "observed": {
+            "item": 0.3035484912052568,
+            "greedy": 1,
+            "others": 0.896229180437682
+          }
+        },
+        "R4": {
+          "pass": false,
+          "observed": {
+            "share": 1,
+            "ratio": 0.6929449459526316
+          }
+        },
+        "R5": {
+          "pass": true,
+          "observed": {
+            "disabledUnchanged": true,
+            "absentUnchanged": false,
+            "shuffled": 0.5,
+            "informative": 1,
+            "absentShare": 0.5
+          }
+        }
+      },
+      "perSeed": [
+        {
+          "seed": 4101,
+          "delayRatios": [
+            0.7347930008252654,
+            0.6510968910799978
+          ],
+          "delayCorrect": 2,
+          "postReversalCorrect": 2
+        }
+      ],
+      "replay": [
+        {
+          "seed": 4101,
+          "arm": "absent",
+          "frames": 904,
+          "trials": 72,
+          "restored": false,
+          "valences": {},
+          "drive": {
+            "presentation": {
+              "count": 720,
+              "max": 0.004800505396248637,
+              "mean": 0.0007623037452331107
+            },
+            "feedback": {
+              "count": 288,
+              "max": 0.00479736189911331,
+              "mean": 0.0007118423613337213
+            },
+            "delay": {
+              "count": 800,
+              "max": 0.049976376519686935,
+              "mean": 0.025193350999683516
+            }
+          },
+          "finalState": "b71331260f9322ba308e12db3e807860d35f755fd1c50b3840c0367fd52ec5f2"
+        },
+        {
+          "seed": 4101,
+          "arm": "disabled",
+          "frames": 0,
+          "trials": 72,
+          "restored": false,
+          "valences": {},
+          "drive": {},
+          "finalState": "308fa6362ac52c03f35166a7b1533ee2124ec1f431fea0ef957b013b94b8e453"
+        },
+        {
+          "seed": 4101,
+          "arm": "informative",
+          "frames": 904,
+          "trials": 72,
+          "restored": true,
+          "valences": {
+            "B0": [
+              "punish",
+              "punish",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward"
+            ],
+            "B1": [
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward"
+            ],
+            "REV": [
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "reward",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward"
+            ]
+          },
+          "drive": {
+            "presentation": {
+              "count": 720,
+              "max": 0.004800505396248637,
+              "mean": 0.0006664560156935844
+            },
+            "feedback": {
+              "count": 288,
+              "max": 0.31163420193437225,
+              "mean": 0.09404060444284693
+            },
+            "delay": {
+              "count": 800,
+              "max": 0.05000341716020003,
+              "mean": 0.025192089532029574
+            }
+          },
+          "finalState": "a938414fe006cdf9028451df8023182a1604ebcc45d0e91f25dbc5a50a97af27"
+        },
+        {
+          "seed": 4101,
+          "arm": "informative",
+          "frames": 904,
+          "trials": 72,
+          "restored": false,
+          "valences": {
+            "B0": [
+              "punish",
+              "punish",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward"
+            ],
+            "B1": [
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward"
+            ],
+            "REV": [
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "punish",
+              "reward",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward"
+            ]
+          },
+          "drive": {
+            "presentation": {
+              "count": 720,
+              "max": 0.004800505396248637,
+              "mean": 0.0006664560156935844
+            },
+            "feedback": {
+              "count": 288,
+              "max": 0.31163420193437225,
+              "mean": 0.09404060444284693
+            },
+            "delay": {
+              "count": 800,
+              "max": 0.05000341716020003,
+              "mean": 0.025192089532029574
+            }
+          },
+          "finalState": "a938414fe006cdf9028451df8023182a1604ebcc45d0e91f25dbc5a50a97af27"
+        },
+        {
+          "seed": 4101,
+          "arm": "shuffled",
+          "frames": 904,
+          "trials": 72,
+          "restored": false,
+          "valences": {
+            "B0": [
+              "reward",
+              "reward",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "punish",
+              "reward",
+              "reward"
+            ],
+            "B1": [
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward"
+            ],
+            "REV": [
+              "punish",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "punish",
+              "reward",
+              "punish",
+              "reward",
+              "reward",
+              "punish",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "reward",
+              "punish",
+              "reward",
+              "punish",
+              "punish"
+            ]
+          },
+          "drive": {
+            "presentation": {
+              "count": 720,
+              "max": 0.004800505396248637,
+              "mean": 0.0007870707264988895
+            },
+            "feedback": {
+              "count": 288,
+              "max": 0.3151374882546025,
+              "mean": 0.0967669230415268
+            },
+            "delay": {
+              "count": 800,
+              "max": 0.04999343035877617,
+              "mean": 0.025191788323817462
+            }
+          },
+          "finalState": "ed2b213ab1106a7840613c8051b1aa538acc407387827459af1921e8f45c74cd"
+        }
+      ],
+      "sources": {
+        "records": "4a29ba396e7f4b909e77cd0518e863cd194e788ddec32978e9eb72cafede6f63",
+        "summary": "07f56061e4c446570d8de4793635e95543c9ffb96dce00c0da483f5d102dba4d"
+      }
+    },
+    "stimuliSha256": "06760d612ba96320490c2a95c814f7975fd7fe65113d2c391ca7229ec51322eb"
+  }
+}

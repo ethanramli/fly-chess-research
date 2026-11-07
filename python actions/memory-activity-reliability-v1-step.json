@@ -1,0 +1,63 @@
+﻿{
+    "schema":  1,
+    "name":  "memory-activity-reliability-v1",
+    "paused":  false,
+    "paths":  {
+                  "run":  "runs/memory-retention-2026-11-01/activity-reliability-v1",
+                  "protocol":  "research/reports/memory-interference-diagnosis-2026-11-01/activity-reliability-spec.md",
+                  "registration":  "python actions/memory-activity-reliability-v1-step.json"
+              },
+    "pins":  {
+                 "python actions/inspect_memory_activity.py":  "71337c53b88c143a1996061a73e4876fbc0845675d0ab7d066620927960e66fa",
+                 "python actions/curriculum.py":  "f084dd00fe3976948b2a96dbb79c65c74c07c80392361d273192b3496bf4cb52",
+                 "python actions/fly_controls.py":  "05e1121f2be288c9d86b0c31493181c582c7f5bb9d24a9bc1e26ae3d2ed1300c",
+                 "research/reports/memory-interference-diagnosis-2026-11-01/activity-reliability-spec.md":  "5a7345c782534ed69bbc1192194607bbc8f89d5e4457f7a69b59fdb93191d80b",
+                 "runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1/frames-4102-informative.jsonl":  "f12e50341161d49a8a5bbf73098ee6a7a28482aa0ebc50f2bfb3cc69b668e263",
+                 "runs/memory-retention-2026-11-01/synaptic-conflict-v1/manifest.json":  "fc3507cfaff49c0b6d4c4dcfcc0befcbba5545532ccae606dd6410bf5a887f76",
+                 "runs/memory-retention-2026-11-01/synaptic-conflict-v1/result.json":  "595c9e8ee74a7b754ee0cd4ad56205740d6deb02a903767235469671b23969da",
+                 "research/reports/memory-retention-continuation-2026-11-01/cubic-v1-recovery1-audit.json":  "37d997bc3552fe7f950c9f8e9ec5a03aba05919b7b9ddfe6dd610781cf287fc0"
+             },
+    "state_file":  "runs/python-actions/current-memory-activity-reliability-v1.json",
+    "resourceLimits":  {
+                           "freeMiB":  256,
+                           "rssMiB":  2048
+                       },
+    "jobs":  {
+                 "check":  {
+                               "requires":  [
+                                                "runs/memory-retention-2026-11-01/synaptic-conflict-v1/result.json"
+                                            ],
+                               "argv":  [
+                                            "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+                                            "python actions/inspect_memory_activity.py",
+                                            "--run",
+                                            "runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1",
+                                            "--diagnostic",
+                                            "runs/memory-retention-2026-11-01/synaptic-conflict-v1",
+                                            "--audit",
+                                            "research/reports/memory-retention-continuation-2026-11-01/cubic-v1-recovery1-audit.json",
+                                            "--out",
+                                            "runs/memory-retention-2026-11-01/activity-reliability-v1"
+                                        ],
+                               "refuse_existing":  [
+                                                       "runs/memory-retention-2026-11-01/activity-reliability-v1"
+                                                   ],
+                               "role":  "check"
+                           },
+                 "tests":  {
+                               "role":  "check",
+                               "argv":  [
+                                            "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+                                            "python actions/inspect_memory_activity.py",
+                                            "--self-test"
+                                        ]
+                           }
+             },
+    "artifacts":  {
+                      "result":  "{run}/result.json",
+                      "manifest":  "{run}/manifest.json"
+                  },
+    "report_fields":  [
+
+                      ]
+}

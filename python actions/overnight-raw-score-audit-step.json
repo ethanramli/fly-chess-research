@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "name": "overnight-raw-score-audit",
+  "paused": false,
+  "paths": {
+    "run": "runs/overnight-eyes-reader-2026-11-01",
+    "protocol": "research/reports/mbon05-sign-conditioning-2026-11-01/protocol.json",
+    "registration": "python actions/overnight-mbon05-curated-v1-step.json"
+  },
+  "pins": {
+    "research\\reports\\overnight-eyes-reader-repair-2026-11-01\\audit-raw-scores.mjs": "86c71b53c8bb1eacad73572e8e41189c1a502e457dd7b10775231541f15e3c8e"
+  },
+  "state_file": "runs/python-actions/overnight-raw-score-audit.json",
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256
+  },
+  "jobs": {
+    "audit": {
+      "role": "check",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        "research/reports/overnight-eyes-reader-repair-2026-11-01/audit-raw-scores.mjs"
+      ]
+    }
+  },
+  "artifacts": {
+    "summary": "{run}/summary.json",
+    "progress": "{run}/progress.json"
+  },
+  "report_fields": []
+}

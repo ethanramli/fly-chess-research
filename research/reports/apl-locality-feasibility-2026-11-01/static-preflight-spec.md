@@ -1,0 +1,9 @@
+# Exact retained APL loop: static prerequisite
+
+2026-11-01. Continue the active memory goal from the [causal diagnosis](../memory-interference-diagnosis-2026-11-01/README.md). This analysis loads sparse arrays and public annotation tables, never neural propagation or plasticity. No confirmation data are opened.
+
+Inventory every retained KC→APL and APL→KC aggregate edge for **both** released APL identities, not only the six KCs implicated by the old failure. Pin the graph, builder/loader provenance and annotation sources. Verify root/index joins, counts, positive KC outputs and inhibitory APL outputs without changing any sign. Reconcile every retained KC/APL root pair with its aggregate count in the cached source connections table; publish all pairs and mismatches rather than selecting convenient ones. Preserve source annotation disagreements rather than silently resolving them.
+
+Distinguish one per-neuron coordinate from contact-resolved synapse locations and an APL arbor skeleton. Record exact archive members and loader coordinate semantics; do not construct a local-inhibition distance matrix from neuron centroids. The previously implicated six KCs may be described separately to connect the diagnosis, but their historical identity cannot allocate learner synapses. Any prospective mechanism must use the full anatomically defined circuit.
+
+Use the existing Python launcher/actions and installed NumPy; no new dependencies. Stream TSV/gzip CSV and output JSONL, retaining sparse arrays only. Fresh output only; atomic manifest/result; source hashes checked before and after; elapsed <=180 s, RSS <=2048 MiB, free system memory >=256 MiB. A small self-check verifies CSR edge-to-postsynaptic mapping at repeated row boundaries. Reject missing/duplicate roots, source-pair mismatch, invalid signs, resource failure or overwritten evidence. No biological-memory performance claim follows from a static pass.

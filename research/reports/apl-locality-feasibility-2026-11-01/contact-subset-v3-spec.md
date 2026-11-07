@@ -1,0 +1,7 @@
+# Compact-root scan v3: bounded column parsing, unchanged meaning
+
+2026-11-01, before v3. V2 tested a global forward-fill hypothesis but exceeded its 180-second elapsed guard. Preserve its source/config/partial CSV/failed manifest; it yields no complete compatibility verdict. V1's literal-empty-root rejection remains an analysis mistake.
+
+V3 changes the parser implementation to installed PyArrow 26.0.0's single-thread, 1-MiB streaming CSV batches over gzip. Force all fields to strings; only empty fields are null. Forward-fill each root column independently, carrying prior state across batch boundaries. Validate every populated identifier as an ASCII integer string. Preserve every selected logical source-row index and exact xyz string. Loop in Python only over APL-involving rows, then apply the same fixed retained-pair set/counts. No source cleaning, data-selection, graph/sign, anatomical, coordinate-semantic or success criterion changes.
+
+Before full scanning, compare all decoded fields against the preserved row-by-row v2 function for the first 10,000 source rows, including any batch boundaries. Synthetic checks cover leading nulls, cross-batch carry and both-empty markers. Require exact equality, not just total count agreement. Keep the same 180-second full-scan limit and other resource bounds. A fresh v3 result may be accepted only if all 10,343 retained pairs and 215,419 contacts reconcile without a mismatch. No geometry or memory claim follows from this software repair.

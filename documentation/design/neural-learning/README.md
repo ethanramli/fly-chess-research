@@ -51,3 +51,20 @@ Computational association prerequisites are distinct from biological validation 
 
 - [neuron-reader design review, 2026-10-31](../../../research/reports/neuron-reader-design-review-2026-10-31/README.md): researcher-chosen name for Readout v1; passive-recording specification recommended, signed chooser unresolved; no implementation or experiment.
 - [neuron-reader repair plan](neuron-reader.md): each critique mapped to a concrete module change/check; exact cell roster, two-function interface, fixed observable/pooling and explicit unresolved scoring decisions.
+- [Overnight Eyes/reader repair goal](overnight-eyes-reader-repair-goal.md): bounded execution brief for MBON05 sign verification and Eyes/reader checks, with blocker-first repairs and three iterations per workstream.
+
+- [Executed overnight Eyes/reader goal](../../../research/reports/overnight-eyes-reader-repair-2026-11-01/REPORT.md): comparison, contract checks, audits and unresolved scientific prerequisites.
+- [Engineered memory test v2](engineered-memory-test-v2.md): built, not run. Disclosed nearest-neighbour store over Kenyon-cell patterns, scored on new boards against raw-eye, random-feature, mismatched and no-memory arms; pass rule fixed in advance.
+- [Engineered memory test v3](engineered-memory-test-v3.md): episodic memory without hints. Real positions, every legal move scored, feedback on the chosen move only; built, not run.
+
+- [Memory v3 review proposal, 2026-11-04](memory-v3-review-proposal-2026-11-04.md): positive-experience coverage, fair tie choices and a proposed development screen; proposal only, no launch.
+
+- [Memory v4 proposal, 2026-11-04](memory-v4-proposal-2026-11-04.md): externally scheduled representation assay; reviewed, built, dry-run; launch needs researcher approval.
+- [Memory v4 file formats](memory-v4-file-formats.md): run-folder contract between the v4 runner and its independent audit.
+- [Memory v5 proposal](memory-v5-proposal-2026-11-04.md) and [build contract](memory-v5-file-formats.md): does the fly's episodic memory learn; reviewed rounds 1-2.
+- [Memory v6 proposal](memory-v6-proposal-2026-11-05.md): frozen replication of v5 on 574 positions from 300 new games.
+- [Memory v7 proposal](memory-v7-proposal-2026-11-05.md): scores the choice among captures only, so a random capture is the floor; draft, not reviewed.
+
+- [Fly connections memory v1 proposal](fly-connections-memory-v1-proposal-2026-11-07.md): P1-P3, local APL and dopamine-driven synaptic learning; draft for strict source/design review, no build or run yet.
+
+- [Fly connections memory v1 revision 2](fly-connections-memory-v1-revision-2-2026-11-07.md): response to SOURCE NO-GO; actual local PAM07 activity, strength-matched APL control and revised memory/correction definitions; strict review pending, no build.

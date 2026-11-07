@@ -1,0 +1,9 @@
+# Complete lite-export reconciliation of retained APL contacts
+
+2026-11-01, before extraction. Input is the completed generation-pinned 316,819,225-byte gzip object, MD5 `9ca493e2314cc03aaf8b03e80f1643e8`, SHA-256 `dfcb423d9f685d56c81160e50ca158c9ab589871cb01922af2a5b8c4442216b1`. Its raw acquisition receipt records full gzip CRC/EOF and 864,439,236 decompressed bytes.
+
+Stream every CSV row, preserving exact root strings and original `x,y,z` fields. Extract **all** contacts for every one of the 10,343 retained KC/APL ordered root pairs from the static v2 inventory. Keep source-row numbers so repeated equal points remain separate observations. Count every APL-involving row, including those outside the retained pair set, but do not add those edges to the model. Reconcile every expected pair and direction against the pinned aggregate counts (98,592 APL→KC, 116,827 KC→APL contacts). Publish the entire mismatch list if any; no selected six-cell-only comparison can pass this gate.
+
+The output is a source subset, not a learner allocation or a graph experiment. Count agreement supports compatibility, not single-point coordinate-side/unit semantics, complete canonical cleaning provenance, or local physiology. Leave those gates explicit. Do not fit, deduplicate, threshold coordinates, resolve unknowns or change graph topology/signs.
+
+Use the existing Python actions, fresh output, streamed raw CSV, immutable source pins and atomic manifest/result. Bound elapsed time to 180 s, RSS 2048 MiB and free system memory 256 MiB; retain failure evidence without restart. Recheck source hashes after processing. The self-check covers exact 64-bit root strings and signed coordinate retention, not neural learning. A completed count mismatch is preserved as a negative data-compatibility result and blocks geometric adaptation.

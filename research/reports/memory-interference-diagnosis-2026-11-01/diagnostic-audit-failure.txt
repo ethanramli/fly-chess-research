@@ -1,0 +1,3 @@
+First standalone audit execution: node --max-old-space-size=256 research/reports/memory-interference-diagnosis-2026-11-01/audit-diagnostic.mjs
+Terminated with exit code 1: AssertionError [ERR_ASSERTION]: Offline resource bound
+At audit-diagnostic.mjs:355:1, final guard after static contact derivation; 300-second wall cap. No arithmetic/hash assertion failed before that guard. This is a resource-failed audit, not a completed pass.

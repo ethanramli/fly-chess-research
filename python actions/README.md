@@ -159,3 +159,23 @@ The active registration is `eye-memory-cubic-v1-recovery1-step.json`; preserve t
 ### Frozen-memory decoder diagnosis
 
 `eye-readout-offset-v1-step.json` registers tests and one bounded diagnostic. Its `run check` must wait for the current six-seed source summary and matching passed full replay audit. It does not start training or modify memory. Inspect authoritative graph processes before launch, keep this graph check serial, and preserve its fresh output. The static capacity analysis is a separate surrogate, not a substitute for this measurement.
+
+### Actual-synapse interference diagnosis
+
+`eye-synaptic-conflict-v1-step.json` registers two focused checks and one 54-pass frozen-memory state decomposition after the completed, audited recovery and current-rest diagnostic. Both diagnostic output directories are now complete and must not be rerun or overwritten. [Report and scope](../research/reports/memory-interference-diagnosis-2026-11-01/README.md). The historical masks identify causal contributions; they never allocate learner memory. Future informative/control learning comparisons require their own prospective source-supported registration.
+
+`memory-activity-reliability-v2-step.json` records the corrected offline amplitude/repetition action (`inspect_memory_activity_v2.py`), with gaps excluded from teacher denominators and fixed schedule/endpoint assertions. The v1 source/config/output preserve the denominator error. `memory-diagnostic-audit-v2-step.json` registers the original-versus-performance-derivative bit-equivalence check and completed standalone audit. No graph passes or training occur in these two actions. Completed outputs are evidence, not jobs to relaunch.
+
+## APL attachment arithmetic continuation
+The original apl-contact-attachment-v1 output is complete and must not be relaunched. [Registered arithmetic audit](apl-attachment-audit-v1-step.json) completed with exit 0; it verifies all 252 canonical sample projections by exhaustive segment comparison, all 126 tree paths and complete residual summaries, without importing producer geometry code. [Evidence and scope](../research/reports/apl-locality-feasibility-2026-11-01/attachment-result-and-next-gate.md). It is a separate implementation by the continuing agent, not an independent reviewer. No learner run is registered by this audit.
+
+
+## Engineered exact-cue memory replay
+[Replay registration](engineered-episodic-memory-v1-step.json) and [separate Python audit](engineered-episodic-memory-audit-v1-step.json) are complete. Do not relaunch or overwrite them. They bind the same preserved six development exposure streams; the external controller does not change source choices or graph weights. [Full scope and results](../research/reports/engineered-episodic-memory-2026-11-01/README.md). The audit independently reconstructs every score/update/snapshot without importing JavaScript producer code. No closed-loop learner or crash-recovery workflow is authorized by these registrations.
+
+
+## long-term-memory v1 live integration
+[Live pilot](long-term-memory-v1-live-pilot-v1-step.json), [separate audit](long-term-memory-v1-live-audit-v1-step.json) and [report publication](long-term-memory-v1-live-report-v1-step.json) are complete. Do not rerun completed outputs. The read-only observer job is bounded to 50 seconds and checks process birth identity; it never restarts work. [Results, scope and persistence limitation](../research/reports/long-term-memory-v1-live-comparison-2026-11-01/README.md). Automatic interrupted-run recovery is not implemented.
+
+
+- Overnight Eyes/reader execution: `overnight-mbon05-{released,curated}-v1-step.json`, corresponding `audit-v2` registrations, `overnight-full-reader-step.json` and `overnight-raw-score-audit-step.json`. Completed runs must not be overwritten. `overnight_reader_status.py --run PATH --seconds 45` is bounded read-only observation and never restarts work. [Exact commands and evidence](../research/reports/overnight-eyes-reader-repair-2026-11-01/REPORT.md).

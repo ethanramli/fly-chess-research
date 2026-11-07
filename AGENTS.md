@@ -6,6 +6,23 @@ Consolidated 2026-10-06. Keep this file focused on stable instructions. Use [cur
 
 The research restarted on 2026-10-30. Follow [the approved restart plan](documentation/design/research-goals/restart-plan-2026-10-30.md). Old experiments are early-development history in [the archive](archive/early-development/README.md); old curriculum goals, Stage 1 gates, token cues and the lesson planner are not current. Where a section below conflicts with the plan's input or feedback rules, the plan wins. The researcher's definition of reasoning is "being able to apply many unrelated concepts to solve an unfamiliar problem". Several agent sessions may work in this repository at once: re-read a file before editing it and leave changes you did not make alone.
 
+## Goal: the five-volume series
+
+The research goal is to complete the five-volume series **Can a Fly Play Chess?**: 1 Methodology, 2 The Classroom, 3 Reasoning, 4 The Limits of Biology, 5 Chess. Every experiment, calculation, proof and tool exists to supply evidence for a named chapter; name the volume and chapter before proposing work. The confirmed chapters and their required content are in [the writings workspace](research/literature/writings/README.md); each volume's question and evidence boundaries are in [the series plan](documentation/design/research-goals/five-volume-series.md). Volume 3 tests the connectome with disclosed computational aids, and either outcome is evidence. Volume 4 proves bounded limits of the raw connectome model, not the living fly.
+
+## Continuing the research
+
+When the researcher says "let's continue our research" or similar:
+
+1. Read [the next checkpoint](documentation/next-checkpoint.md): last checkpoint, next step, required approval, evidence map.
+2. Check the artifacts against it: the newest `runs/**/manifest.json` by modification time, live `node`/`python` processes, `python actions/*-step.json` pause flags, and `git log -5`. Artifacts outrank documents. A manifest newer than the checkpoint file, or with a different status, means the documents are stale; a `running` status with no live process means interrupted.
+3. If stale, reconstruct the outcome from that run's `manifest.json`, `summary.json` and `records.jsonl`, record it as a dated addendum in the checkpoint file, and continue from there.
+4. Tell the researcher the volume and chapter, the last checkpoint, the next step, and whether it needs approval.
+
+Done when the researcher has those four facts and the checkpoint file matches the artifacts. Launch nothing the checkpoint marks as awaiting approval.
+
+**Checkpoint metadata.** Every evidence-bearing run directory holds a `manifest.json`, written before work starts and rewritten when it ends, with `status` (`running`, `complete`, `failed`, `interrupted`), `pid`, `argv`, code and input `pins`, start and end times, and `volume` and `chapter` naming the chapter it serves (older runs may lack the last three). Results sit beside it in `summary.json` and `records.jsonl`. This lets the latest checkpoint and its evidence be found from artifacts alone. When a run ends or the direction changes, update `documentation/next-checkpoint.md` in the same session.
+
 ## Ponytail default
 
 This repository operates under ponytail mode by default: use the laziest solution that actually works, prefer the existing codebase over added abstractions, and remove speculative complexity before adding new code. The default intensity is full; do not add dependencies, wrappers, or scaffolding that the task does not require.

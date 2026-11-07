@@ -1,0 +1,17 @@
+/goal Round 3, final pre-launch review. Same strict standard, heavy on code. Read-only; you may run read-only node one-liners on the dry-run folder but no brain/graph runs.
+
+Memory v4 is now built. Review the actual code against proposal rev 3 (documentation/design/neural-learning/memory-v4-proposal-2026-11-04.md) and the formats contract (documentation/design/neural-learning/memory-v4-file-formats.md):
+- .codebase/src/neural-learning/transfer-evaluation-v2.mjs, engineered-memory-v4-ledger.mjs, engineered-memory-task-v4.mjs
+- .codebase/scripts/neural-learning/run-engineered-memory-test-v4.mjs, audit-engineered-memory-test-v4.mjs, benchmark-engineered-memory-v4-scoring.mjs
+- their tests in .codebase/tests/neural-learning/ (transfer-evaluation-v2, engineered-memory-v4-ledger, engineered-memory-task-v4, audit-engineered-memory-test-v4, rms-scaler-zero-rms-v4)
+- python actions/curriculum.py:329 duty change and its test; registrations python actions/engineered-memory-test-v4-step.json (paused) and -dryrun-step.json.
+Evidence: the 24-position dry run runs/engineered-memory-test-2026-11-04/v4-dry-run-limit24/ (summary.json, audit.json: all 8 checks pass with --dry-run yes). npm test: 932 pass, 0 fail. Action tests 47/47. Benchmark: 176 min projected scoring at duty 1, about 4 h total.
+Also: the v3 r2 result is now in (research/reports/engineered-memory-test-v3-2026-11-04/README.md). Proposal §8 line 97 was edited after reading partial v3 results (wording only, marked).
+
+Decide specifically:
+1. Dry run found sparseZeroRmsTestCoords = 10,807: graph-sparse coordinates with practice RMS 0 become x/1e-6 under the pinned rmsScaler. Should v4 add an explicit mask (zero-RMS coordinates -> 0, for every feature) as a declared post-cutoff change justified by a label-free count, or keep the pinned behaviour and report it? Note the dry run already scored 24 test positions.
+2. Is reconciliation (your round-2 change 5) required before launch, given the run now launches through fly.cmd with a state handle?
+3. Is ~4 h acceptable or must scoring be sped up first?
+4. Any real bug in the built code (file:line), any mismatch between runner and auditor, anything the dry run cannot catch at full scale (heap: certificates held in memory before writing; 256 MiB heap).
+
+Output: verdict APPROVE FOR LAUNCH (pending researcher approval), APPROVE WITH REQUIRED CHANGES, or REJECT; then numbered required changes (file:line, exact fix), then at most 3 optional notes.

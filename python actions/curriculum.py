@@ -318,13 +318,15 @@ def plan(config, name, live=None):
             blockers.append("preserve existing artifact: " + expand(config, path))
     if job.get("fresh_output") and local(expand(config, job["fresh_output"])).exists():
         blockers.append("output must be a new directory")
-    if job["role"] != "check":
+    # Peer-review fix 2026-11-03: a job that runs the brain model gets every safety check before
+    # training starts, whatever its label; only commands that cannot run the model skip them.
+    if job["role"] != "check" or GRAPH_COMMAND.search(" ".join(argv)):
         if job["role"] in ("train", "resume") and expand(config, job.get("fresh_output", "")) != config["paths"]["run"]:
             blockers.append("fresh_output must match paths.run; never report parent artifacts as new-run evidence")
         if config["paused"]:
             blockers.append("research paused; configuration is not authorization to resume")
-        # CPU duty 0.75 allowed for new registrations (researcher instruction 2026-10-29).
-        if "--max-old-space-size=256" not in argv or argv[-2:] not in (["--cpu-duty", "0.5"], ["--cpu-duty", "0.75"]):
+        # CPU duty 0.75 allowed for new registrations (researcher instruction 2026-10-29); duty 1 approved 2026-11-04.
+        if "--max-old-space-size=256" not in argv or argv[-2:] not in (["--cpu-duty", "0.5"], ["--cpu-duty", "0.75"], ["--cpu-duty", "1"]):
             blockers.append("required heap/duty flags missing or changed")
         if config.get("recovery", {}).get("kind") == "lichess-stage-matrix-v1":
             matrix_limits = config.get("resourceLimits", {})

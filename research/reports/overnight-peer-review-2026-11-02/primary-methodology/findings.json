@@ -1,0 +1,38 @@
+﻿[
+    {
+        "line":  146,
+        "confidence":  "high",
+        "id":  "PM-01",
+        "status":  "confirmed behavior; common-snapshot methodology violation",
+        "severity":  "major claim threat",
+        "closure":  "See report.md for bounded closure evidence, objections and affected runs",
+        "path":  ".codebase/scripts/neural-learning/compare-long-term-memory-v1.mjs",
+        "evidence":  "First saved informative trial changes choice-stage memory state; see checks.json. Calls peek -\u003e observe -\u003e gap before next candidate.",
+        "claim":  "Online ranking compares candidates across changed persistent snapshots",
+        "sourceHash":  "b1aa1bc85d0cffff46cf90f069fd3e3588f6af6b351e24e8f36e66264b3476b5"
+    },
+    {
+        "line":  31,
+        "confidence":  "high",
+        "id":  "PM-02",
+        "status":  "disclosed limitation; future transfer-run blocker",
+        "severity":  "blocking before any relevant chess run",
+        "closure":  "See report.md for bounded closure evidence, objections and affected runs",
+        "path":  ".codebase/src/neural-learning/episodic-consequence-memory.mjs",
+        "evidence":  "query exact serialized cue; policy uses fixed neural fallback on miss; proposed nearest-neighbour version is a different mechanism.",
+        "claim":  "Exact-key recall cannot cause cross-key transfer with frozen neural state",
+        "sourceHash":  "d9ed21e315812889477ee7be6f2a6cde205216954be9e73fabdf9258b3602e2d"
+    },
+    {
+        "line":  173,
+        "confidence":  "high",
+        "id":  "PM-03",
+        "status":  "acknowledged specification gap",
+        "severity":  "blocking before any relevant chess run",
+        "closure":  "See report.md for bounded closure evidence, objections and affected runs",
+        "path":  "documentation/design/research-goals/restart-plan-2026-10-30.md",
+        "evidence":  "Phase C requires later addendum; two concepts explicitly not many; pilot implements arbitrary association only.",
+        "claim":  "Reasoning B/C endpoint remains an outline without executable numerical registration",
+        "sourceHash":  "0ade537454688d26f0cc20413876971f7eebe162ca8a322d38154bafa5023655"
+    }
+]

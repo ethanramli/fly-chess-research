@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {writeFileSync,readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {Chess} from 'chess.js';
+import {createEyesV1,loadRetina} from '../../../../.codebase/src/chess-input/eyes-v1.mjs';
+import {certifyCaptureRetentionAction,checkCaptureRetentionAction} from '../../../../.codebase/src/search-and-feedback/capture-retention-action-domain.mjs';
+const eyes=createEyesV1(loadRetina('.cache/full.npz'));
+const task={objective:'capture-retention',plies:1}, action='a1a4';
+const fens=['4k3/8/8/8/p7/8/8/R3K3 w - - 0 1','4k3/8/8/8/8/8/8/R3K3 w - - 0 1'];
+const rows=fens.map(fen=>{const b=new Chess(fen);const p=certifyCaptureRetentionAction(b,action,task);const checked=checkCaptureRetentionAction(b,action,task,p);const cue=eyes.encode(b,action);return {fen,action,status:p.status,verified:checked.verified,hash:createHash('sha256').update(JSON.stringify(cue.stimulation)).digest('hex'),n:cue.stimulation.length};});
+assert.equal(rows[0].status,'success');assert.equal(rows[1].status,'failure');assert(rows.every(r=>r.verified));assert.equal(rows[0].hash,rows[1].hash);
+const paths=['.codebase/src/chess-input/eyes-v1.mjs','.codebase/src/search-and-feedback/capture-retention-action-domain.mjs','.codebase/src/search-and-feedback/capture-retention-certificate.mjs','documentation/design/research-goals/restart-plan-2026-10-30.md','.codebase/scripts/neural-learning/run-eye-graph-memory.mjs','.codebase/src/neural-learning/local-gated-memory.mjs','.codebase/src/neural-learning/local-cubic-reservoir-memory.mjs'];
+const pins=Object.fromEntries(paths.map(p=>[p,createHash('sha256').update(readFileSync(p)).digest('hex')]));
+const receipt={command:'node --max-old-space-size=256 research/reports/overnight-peer-review-2026-11-02/school-input/check.mjs',rows,pins,rss:process.memoryUsage().rss,scope:'static encoding and certificates only; no propagation'};
+writeFileSync(new URL('./checks.json',import.meta.url),JSON.stringify(receipt,null,2));console.log(JSON.stringify({pass:true,rows,rss:receipt.rss}));

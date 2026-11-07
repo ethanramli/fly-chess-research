@@ -33,3 +33,13 @@ Run from the repository root. Use the documented resource guards for experiments
 - [inspect-eye-readout-capacity.mjs](inspect-eye-readout-capacity.mjs): static direct-input surrogate bounds using saved visual KC codes and the existing fixed-readout bound instrument; no neural dynamics, fitted gains or full-graph incapacity claim. [Diagnostic scope](../../../research/reports/memory-retention-continuation-2026-11-01/readout-interference-diagnostic.md).
 
 - [inspect-eye-readout-offset.mjs](inspect-eye-readout-offset.mjs): one preregistered 27-pass diagnostic of exact saved memory, with original-score reproduction and memory/parameter invariance checks. Requires complete controlled-run data and its matching passed audit; no teaching or learned-state change.
+
+- [inspect-eye-synaptic-conflict.mjs](inspect-eye-synaptic-conflict.mjs): prospective 54-pass causal decomposition of a saved reversal failure, actual activity/eligibility and all seed/item accounting. Historical masks are diagnostic only. [Scope and rejection rules](../../../research/reports/memory-interference-diagnosis-2026-11-01/synaptic-conflict-diagnostic-spec.md).
+
+- [replay-episodic-consequence-memory.mjs](replay-episodic-consequence-memory.mjs): registered off-policy replay of preserved development choices into a bounded external memory; no graph execution or transfer claim. [Protocol/results](../../../research/reports/engineered-episodic-memory-2026-11-01/README.md). Completed output is immutable.
+
+
+- [compare-long-term-memory-v1.mjs](compare-long-term-memory-v1.mjs) and [separate auditor](audit-long-term-memory-v1-live.mjs): isolated serial live readout comparison, with fixed graph-derived cues, exposure slots and feedback controls. [Protocol and owned status](../../../research/reports/long-term-memory-v1-live-comparison-2026-11-01/README.md). Do not relaunch a live or completed output.
+
+
+- Memory v4 (2026-11-04): [run-engineered-memory-test-v4.mjs](run-engineered-memory-test-v4.mjs) (supports `--limit-positions N` dry runs), [independent auditor](audit-engineered-memory-test-v4.mjs) (`--dry-run yes` for dry runs), [scoring benchmark](benchmark-engineered-memory-v4-scoring.mjs). [Proposal](../../../documentation/design/neural-learning/memory-v4-proposal-2026-11-04.md). Registered paused.

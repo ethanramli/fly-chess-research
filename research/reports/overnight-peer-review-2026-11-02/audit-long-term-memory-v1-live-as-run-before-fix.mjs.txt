@@ -1,0 +1,167 @@
+// Separate receipt arithmetic; no imports of learner, policy, trainer or graph runtime.
+import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
+import { createReadStream, existsSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
+import { createInterface } from 'node:readline';
+import { parseArgs } from 'node:util';
+import os from 'node:os';
+import { replayFrame } from './audit-eye-memory.mjs';
+
+const { values: args } = parseArgs({ options: { run: { type: 'string' }, out: { type: 'string' } } });
+assert(args.run && args.out && !existsSync(args.out));
+const sha = value => createHash('sha256').update(typeof value === 'string' || Buffer.isBuffer(value) ? value : JSON.stringify(value)).digest('hex');
+const fileHash = async path => { const h = createHash('sha256'); for await (const b of createReadStream(path)) h.update(b); return h.digest('hex'); };
+const localHash = s => { const h = createHash('sha256'); for (const name of ['gains', 'traces', 'states']) h.update(Buffer.from(Float64Array.from(s[name]).buffer)); return h.update(JSON.stringify([s.time, s.pulses])).digest('hex'); };
+const started = performance.now(), cpu = process.cpuUsage(), sleeper = new Int32Array(new SharedArrayBuffer(4)), resources = [];
+function guard() {
+  const use = process.cpuUsage(cpu), delay = 2 * (use.user + use.system) / 1000 - (performance.now() - started);
+  if (delay > 0) Atomics.wait(sleeper, 0, 0, Math.min(delay, 1000));
+  const rssMiB = process.memoryUsage().rss / 2 ** 20, freeMiB = os.freemem() / 2 ** 20;
+  assert(rssMiB <= 2048 && freeMiB >= 256 && performance.now() - started <= 900000, 'Audit resource guard');
+  resources.push({ rssMiB, freeMiB });
+}
+function rng(seed) {
+  let a = seed >>> 0;
+  return () => { a = (a + 0x6d2b79f5) >>> 0; let t = Math.imul(a ^ a >>> 15, a | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+}
+const cue = code => code.map(x => [x.index, x.current]).sort((a, b) => a[0] - b[0]);
+const score = (system, neural, recalled) => system === 'fly-only' ? Math.max(-1, Math.min(1, neural / .32))
+  : recalled.known ? recalled.value : system === 'memory-only' ? 0 : Math.max(-1, Math.min(1, neural / .32));
+const manifest = JSON.parse(readFileSync(`${args.run}/manifest.json`)), summary = JSON.parse(readFileSync(`${args.run}/summary.json`));
+const registrationPath = 'python actions/long-term-memory-v1-live-pilot-v1-step.json';
+const registration = JSON.parse(readFileSync(registrationPath, 'utf8'));
+assert.equal(await fileHash(registrationPath), manifest.registrationSha256);
+assert.deepEqual(registration.pins, manifest.pins); assert.equal(args.run, registration.paths.run);
+let sourceItems;
+for await (const line of createInterface({ input: createReadStream(registration.paths.fixtures), crlfDelay: Infinity })) {
+  const r = JSON.parse(line); assert.equal(r.kind, 'start'); assert.equal(r.seed, 4102); sourceItems = r.items; break;
+}
+assert.equal(manifest.fixtureHash, sha(sourceItems));
+assert.equal(manifest.status, 'complete'); assert.equal(summary.status, 'complete'); assert.equal(summary.forwards, 3318);
+assert.equal(await fileHash(`${args.run}/summary.json`), manifest.summarySha256);
+assert.equal(await fileHash(`${args.run}/records.jsonl`), manifest.recordsSha256);
+const records = readFileSync(`${args.run}/records.jsonl`, 'utf8').trim().split('\n').map(JSON.parse);
+assert.deepEqual(records, summary.rows); assert.equal(records.length, 6);
+for (const [path, expected] of Object.entries(manifest.pins)) assert.equal(await fileHash(path), expected, path);
+const conditions = [['fly-memory', 'informative'], ['memory-only', 'informative'], ['fly-only', 'informative'],
+  ['fly-memory', 'absent'], ['fly-memory', 'shuffled'], ['fly-memory', 'disabled']];
+assert.deepEqual(records.map(r => [r.system, r.arm]), conditions);
+let informative, totalFrames = 0, totalTrials = 0; const publications = {};
+for (const record of records) {
+  const { system, arm } = record, key = `${system}-${arm}`;
+  let start, state, frames = 0, trials = 0, ended = false, sequence = 0, lastEvent = null;
+  const table = new Map(), valences = {}, tests = {}, online = {}, cursors = {};
+  const externalState = () => {
+    const body = { schema: 'episodic-consequence-memory-v1', config: { capacity: 128, dimensions: 134209, maxFeatures: 64, versions: 2 },
+      sequence, lastEvent, entries: [...table.values()] };
+    return { ...body, checksum: sha(body) };
+  };
+  const recall = code => { const e = table.get(JSON.stringify(cue(code)))?.events.at(-1); return e ? { known: true, ...e } : { known: false, value: 0 }; };
+  const validateScore = (observed, item, candidate) => {
+    assert.deepEqual(observed.baseline, start.naive[item][candidate]);
+    assert.equal(observed.response.length, 2);
+    const avg = x => x.reduce((a, b) => a + b, 0) / x.length;
+    assert.deepEqual(observed.response.map(x => x.length), observed.baseline.map(x => x.length));
+    assert(observed.response.flat().every(Number.isFinite));
+    const baseline = observed.baseline.map(avg), response = observed.response.map(avg);
+    const value = .8 * (1 - (response[0] + response[1]) / (baseline[0] + baseline[1])) - .32;
+    assert.equal(observed.neuralValue, value);
+    const expected = recall(start.items[item].images[candidate]); assert.deepEqual(observed.recalled, expected);
+    assert.equal(observed.score, score(system, value, expected));
+  };
+  const shuffled = {};
+  if (arm === 'shuffled') for (const [phase, values] of Object.entries(informative)) {
+    const copy = [...values], random = rng((4102 ^ 0x77 ^ (phase === 'REV' ? 4 : Number(phase.slice(1)))) >>> 0);
+    for (let i = copy.length - 1; i > 0; i--) { const j = Math.floor(random() * (i + 1)); [copy[i], copy[j]] = [copy[j], copy[i]]; }
+    shuffled[phase] = copy;
+  }
+  const framePath = `${args.run}/frames-${key}.jsonl`;
+  publications[framePath] = await fileHash(framePath);
+  for await (const line of createInterface({ input: createReadStream(framePath), crlfDelay: Infinity })) {
+    const r = JSON.parse(line); assert(!ended);
+    if (r.kind === 'start') {
+      assert(!start); start = r; assert.equal(r.system, system); assert.equal(r.arm, arm); assert.equal(r.seed, 4102);
+      assert.equal(sha(r.items), manifest.fixtureHash); assert.equal(r.fixtureHash, manifest.fixtureHash);
+      state = structuredClone(r.initial); assert.equal(localHash(state), r.localHash);
+      assert(state.gains.every(x => x === 1) && state.traces.every(x => x === 0));
+      assert.deepEqual(r.episodic, externalState());
+    } else if (r.kind === 'frame') {
+      assert(start && arm !== 'disabled'); assert.equal(r.frame, frames++);
+      replayFrame(state, start.config, start.mapping, r); totalFrames++;
+      if (frames % 32 === 0) guard();
+    } else if (r.kind === 'trial') {
+      assert(start); assert.equal(r.trial, ++trials); assert.equal(r.unknown, trials % 8 === 0);
+      assert.equal(r.phase, trials <= 96 ? `B${Math.floor((trials - 1) / 24)}` : 'REV');
+      assert.equal(r.item, trials <= 96 ? Math.floor((trials - 1) / 24) : 0);
+      assert.equal(r.draw, rng((4102 ^ 0x7919 ^ trials) >>> 0)());
+      r.candidates.forEach((c, i) => validateScore(c, r.item, i));
+      const threshold = 1 / (1 + Math.exp((r.candidates[1].score - r.candidates[0].score) / .1));
+      assert.equal(r.choice, r.draw < threshold ? 0 : 1); validateScore(r.chosen, r.item, r.choice);
+      const good = r.phase === 'REV' ? 1 : 0, item = start.items[r.item], actual = r.choice === good ? 1 : -1;
+      assert.equal(r.actual, actual);
+      assert.deepEqual(r.certificate, { criterion: 'assigned-action-association-v1', scope: 'arbitrary association only; no chess consequence',
+        fen: item.fen, moves: item.moves, chosenMove: item.moves[r.choice], known: !r.unknown, goodMove: item.moves[good] });
+      assert.equal(r.evidenceHash, sha(r.certificate));
+      let delivered = r.unknown || arm === 'absent' ? null : actual;
+      if (delivered !== null && arm === 'shuffled') { const cursor = cursors[r.phase] ?? 0; delivered = shuffled[r.phase][cursor]; cursors[r.phase] = cursor + 1; }
+      assert.equal(r.delivered, delivered);
+      const scale = delivered === null ? 0 : Math.max(0, Math.min(1, (1.2 - delivered * r.chosen.neuralValue) / 2.4));
+      assert.equal(r.scale, scale); assert.equal(r.level, .75 + (delivered ?? 0) * .75 * scale);
+      if (delivered !== null) (valences[r.phase] ??= []).push(delivered);
+      else valences[r.phase] ??= [];
+      const enabled = delivered !== null && arm !== 'disabled' && system !== 'fly-only';
+      assert.equal(r.externalStatus, enabled ? 'verified' : 'unknown');
+      if (enabled) {
+        const address = cue(item.images[r.choice]), addressKey = JSON.stringify(address), previous = table.get(addressKey);
+        const event = { sequence: trials, value: delivered, evidenceHash: r.evidenceHash };
+        table.delete(addressKey); table.set(addressKey, { cue: address, events: [...(previous?.events ?? []), event].slice(-2) });
+        assert(table.size <= 128);
+        sequence = trials; lastEvent = sha({ cue: address, ...event });
+        assert.deepEqual(r.receipt, { accepted: true, cueHash: sha(address), sequence: trials, evicted: null });
+      } else assert.deepEqual(r.receipt, { accepted: false, reason: 'unknown' });
+      assert.equal(r.episodicChecksum, externalState().checksum); assert.equal(r.localHash, localHash(state));
+      const o = online[r.phase] ??= { choices: [], correct: 0, knownTrials: 0 };
+      o.choices.push(r.choice); o.correct += Number(r.choice === good); o.knownTrials += Number(!r.unknown);
+      totalTrials++;
+    } else if (r.kind === 'test') {
+      r.tests.forEach((item, j) => {
+        assert.equal(item.item, j); item.candidates.forEach((candidate, i) => validateScore(candidate, j, i));
+        const good = r.phase === 'Rev' && j === 0 ? 1 : 0;
+        const margin = item.candidates[good].score - item.candidates[1 - good].score;
+        assert.equal(item.margin, margin); assert.equal(item.correct, margin > 0);
+      });
+      assert.equal(r.localHash, localHash(state)); assert.equal(r.episodicChecksum, externalState().checksum);
+      const path = `${args.run}/snapshot-${key}-${r.phase}.json`, snapshot = JSON.parse(readFileSync(path));
+      publications[path] = await fileHash(path);
+      assert.deepEqual([snapshot.system, snapshot.arm, snapshot.phase], [system, arm, r.phase]);
+      assert.deepEqual(snapshot.tests, r.tests); assert.deepEqual(snapshot.neural, state); assert.deepEqual(snapshot.episodic, externalState());
+      tests[r.phase] = r.tests;
+    } else if (r.kind === 'end') {
+      assert.equal(r.frames, frames); assert.equal(r.neural, localHash(state)); assert.equal(r.episodic, externalState().checksum);
+      assert.equal(r.forwards, 553); assert.deepEqual(r.finalParams, start.initialParams); ended = true;
+    } else assert.fail('Unexpected receipt');
+  }
+  assert(ended && trials === 120); assert.equal(frames, arm === 'disabled' ? 0 : 856);
+  assert.deepEqual(Object.keys(tests), ['T0', 'T1', 'T2', 'T3', 'Delay', 'Rev']);
+  assert.deepEqual(record.tests, tests); assert.deepEqual(record.online, online); assert.deepEqual(record.realized, valences);
+  assert.equal(record.jointPass, ['T3', 'Delay', 'Rev'].every(p => tests[p].every(x => x.correct)));
+  assert.equal(record.neuralUnchanged, localHash(state) === start.localHash);
+  assert.equal(record.finalNeuralHash, localHash(state)); assert.equal(record.finalEpisodicHash, externalState().checksum);
+  assert.equal(record.externalEntries, table.size); assert.equal(record.frames, frames); assert.equal(record.forwards, 553);
+  if (arm === 'disabled') assert.deepEqual(state, start.initial);
+  if (arm === 'absent' || system === 'fly-only' || arm === 'disabled') assert.equal(table.size, 0);
+  if (system === 'fly-memory' && arm === 'informative') informative = valences;
+  guard();
+}
+for (const [path, expected] of Object.entries(manifest.pins)) assert.equal(await fileHash(path), expected, path);
+for (const [path, expected] of Object.entries(publications)) assert.equal(await fileHash(path), expected, path);
+assert.equal(await fileHash(`${args.run}/summary.json`), manifest.summarySha256);
+assert.equal(await fileHash(`${args.run}/records.jsonl`), manifest.recordsSha256);
+assert.equal(await fileHash(registrationPath), manifest.registrationSha256);
+guard();
+const output = { status: 'passed', scope: 'separate local-memory, policy, feedback and episodic arithmetic replay; full graph responses recorded, not independently regenerated',
+  conditions: records.length, trials: totalTrials, replayedLocalFrames: totalFrames, itemEvaluations: 6 * 6 * 4,
+  graphForwardsReported: summary.forwards, publications, resources, elapsedSeconds: (performance.now() - started) / 1000,
+  auditorSha256: await fileHash(process.argv[1]), pins: manifest.pins };
+writeFileSync(args.out + '.partial', JSON.stringify(output, null, 2) + '\n'); renameSync(args.out + '.partial', args.out);
+console.log(JSON.stringify({ status: output.status, conditions: records.length, trials: totalTrials, replayedLocalFrames: totalFrames, elapsedSeconds: output.elapsedSeconds }));

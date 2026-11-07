@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync, mkdirSync, copyFileSync, writeFileSync, renameSync, openSync, closeSync,
-  fsyncSync, writeSync, statSync, truncateSync, mkdtempSync, rmSync} from 'node:fs';
+  fsyncSync, writeSync, statSync, truncateSync, mkdtempSync, rmSync, existsSync} from 'node:fs';
 import {join, dirname, resolve, basename} from 'node:path';
 import {tmpdir, freemem} from 'node:os';
 import {createHash} from 'node:crypto';
@@ -20,11 +20,14 @@ import {encodeNativeCheckpoint, decodeCheckpoint} from '../../src/runtime/checkp
 import {verifyLessonPair} from '../../scripts/evaluation-and-performance/audit-training-latency.mjs';
 
 test('actual pipeline replays original six-neuron lessons exactly in every control and both informative valences',
-  {skip: freemem() < 896 * 2 ** 20 ? 'Keep headroom for the parallel curriculum session' : false}, async () => {
+  {skip: freemem() < 896 * 2 ** 20 ? 'Keep headroom for the parallel curriculum session'
+    // Added 2026-11-03: this laptop's local fixture run no longer holds the lesson checkpoints the test replays.
+    : !existsSync('runs/g0-history-fixture-v1-uninterrupted/checkpoint-000005.json.gz') ? 'local fixture run lacks checkpoint-000005.json.gz (runs/ is not in git); regenerate the fixture run to replay'
+    : false}, async () => {
   const fixtureRun = 'runs/g0-history-fixture-v1-uninterrupted';
   const p = JSON.parse(readFileSync(join(fixtureRun, 'protocol.json'), 'utf8'));
   assert.equal(p.fixture, true); assert.equal(p.fixtureGraph.row.length - 1, 6);
-  const mapping = JSON.parse(readFileSync(p.mappingPath, 'utf8'));
+  const mapping = JSON.parse(readFileSync(join('archive/early-development', p.mappingPath), 'utf8')); // moved by the 2026-10-30 restart archive
   const graph = validateGraph(Object.fromEntries(Object.entries(p.fixtureGraph).map(([key, value]) =>
     [key, key === 'initial' ? Float32Array.from(value) : key === 'sign' ? Int8Array.from(value) : Int32Array.from(value)])));
   const model = new SparseTrainer(graph, p.model); model.forward([0]);

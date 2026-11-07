@@ -26,3 +26,8 @@ Register externally sourced solutions before experimental use. Preserve source a
 
 - [V8 runtime candidate: canonical state-hash measurement and compatibility](../../archive/early-development/research/reports/training-latency-2026-10-19/neural-hash-runtime-v1/README.md)
 - [Novelty search 2026-10-29](novelty-search-2026-10-29/README.md): scoping search for whole-connectome plasticity learning with transfer tests; none found combining all elements (bounded by coverage).
+
+- [Researcher writings: five-volume series](writings/README.md)
+
+
+- [Interference/linear-limit/connectome prior-work ledger (2026-11-02)](../reports/interference-limits-2026-11-02/sources.md): verified primary sources, exact coverage and novelty limits.

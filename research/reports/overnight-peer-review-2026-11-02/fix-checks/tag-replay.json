@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-03",
+  "purpose": "Show that the two tests now skipped for archived data still pass with the original paths at tag early-development-final.",
+  "tag": "early-development-final",
+  "commit": "d17bb46",
+  "method": "temporary partial checkout (.codebase, package.json, research/data/capture-retention-transfer-v2, research/data/bidirectional-plasticity-assay-v4, research/reports/plasticity-signal-anatomy-preflight-v2-2026-10-08.json, research/reports/reversal-candidate-2026-10-05) in the session scratchpad, with the project's node_modules linked; removed afterwards",
+  "command": "node --max-old-space-size=256 --test --test-concurrency=1 .codebase/tests/puzzle-learning/plasticity-mechanism-assay.test.mjs .codebase/tests/puzzle-learning/plasticity-assay-repair.test.mjs",
+  "result": { "tests": 14, "pass": 14, "fail": 0 },
+  "includes": ["protocolPreflight", "real run CLI refuses blocked biology before importing any adapter"],
+  "notCovered": "actual pipeline replays original six-neuron lessons exactly in every control and both informative valences: it replays checkpoints of the local run runs/g0-history-fixture-v1-uninterrupted, which is not in git and no longer holds checkpoint-000005.json.gz on this laptop"
+}
