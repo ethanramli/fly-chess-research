@@ -18,37 +18,41 @@ Move the user's goal forward with the smallest amount of work that can resolve t
 
 Honor an explicit level or mode. Otherwise choose the lowest level that addresses the stakes, uncertainty, reversibility, and cost of error. Escalate when a check exposes a consequential unknown or invalidates the plan. Step down once the critical uncertainty is resolved. Treat these as workflow choices and use runtime reasoning settings only when the host supports them and the request authorizes them.
 
-## Light — keep the goal in view
+## Light — filter actions by the goal
 
-1. State the desired outcome, the relevant constraints, and what would show the task is done.
-2. Before a meaningful step, ask what it advances or what decision its result could change. Set aside work that serves neither.
-3. Take the smallest authorized useful action. Check its result against the outcome and explain what the check established.
+Start with an obvious next action. Keep the goal, constraints, and definition of done in view.
 
-## Medium — make the problem tractable
+1. Name the deliverable and what will show it is complete.
+2. Ask what the proposed action will change for the user. If it serves no requirement or decision, drop it and pick the smallest action that does.
+3. Do the action within scope. Check the observable result and say what the check established.
 
-Run the Light checks throughout.
+## Medium — trace the known path
 
-1. Restate the problem in terms you can observe. Identify what you know, what you assume, and which unknown could change the next move.
-2. Break the work into dependent steps. Trace the actual behavior, reproduce the problem, derive a small case, or inspect the relevant source. Start with the step that can settle the most important unknown cheaply.
-3. Pick a path that fits the evidence. Check the assumption most likely to break it and decide what result would make you change course.
-4. Execute within scope and verify through the normal entry point or against the original criteria. Revise if the check fails. Escalate if the diagnosis remains ambiguous and the ambiguity matters.
+Start with a defined target and a path that can be followed. Use Light's scope check at consequential steps.
 
-## Heavy — diagnose, compare, and challenge
+1. Write the expected result and the observed result, or the current state and the target state for new work.
+2. Trace the actual path from input to output. For a failure, reproduce the smallest case and check intermediate outputs until you find the first consequential difference. For new work, work backward from the target to the prerequisites, then execute them in dependency order.
+3. Resolve the first failing step or missing prerequisite at its source. Keep the surrounding behavior stable and rerun the original case through the normal entry point.
+4. Escalate to Heavy if the path admits materially different explanations or approaches that tracing alone cannot distinguish.
 
-1. Define success and constraints. Identify the main plausible causes or approaches, including the current baseline when useful. Write what each predicts or what would make it fail.
-2. Read existing evidence and use Deep Research for outside claims that could change the design. Choose a check that distinguishes between the leading possibilities. Draft a proposal with its assumptions, tradeoffs, and verification.
-3. In group mode, ask reviewers to work independently on different risks. Give them the task and evidence before showing the preferred answer when practical. In solo mode, check the risks in separate passes. Reconcile the findings with the proposal. Follow decisive objections to a source, test, proof, or counterexample.
-4. Revise and recheck the affected claims. Record unresolved disagreements and why they matter. Deliver the decision or carry out the authorized work, with verification matched to the consequence.
+## Heavy — compare rivals and try to rule them out
 
-## Deep-in-thought — unblock the project
+Start with a stable goal and more than one live explanation or design.
 
-Start with the Heavy workflow and apply Deep Research to material evidence gaps.
+1. Specify the success criteria and constraints. Identify the serious rivals, including the baseline where useful. For a diagnosis, write what each cause predicts. For a design, write what each option must accomplish and where it could fail.
+2. Use Deep Research for material evidence gaps. Select a check whose possible outcomes distinguish the rivals. Compare on matching inputs, conditions, and measures where relevant. If the evidence is inconclusive, keep the relevant rivals open.
+3. Propose a choice with the evidence for it and the strongest objection to it. In Group mode, give reviewers distinct questions and let them form their first assessments before seeing your preferred choice when practical. In Solo mode, challenge the evidence and the implementation in separate passes.
+4. Resolve decisive objections with a source, test, proof, or counterexample. Revise the proposal or change the choice. Report the deciding evidence and any tradeoff or unresolved uncertainty that could reverse it.
 
-1. Map the bottleneck. Trace which dependency blocks the goal, distinguish symptoms from prerequisites, and name the smallest outcome that unlocks progress. Check whether reframing or bypassing the obstacle would still satisfy the goal.
-2. Develop competing explanations or designs. For each, record the assumptions, predicted observations, the observation that would overturn it, and the cheapest decisive test. Start with the check that would most change the decision. When no single check can settle it, choose checks whose evidence can accumulate.
-3. Review the framing, evidence, and execution plan using the selected mode. In group mode, seek independent criticism of each material risk. Revisit your strongest assumption from an outsider's perspective. Compare the critics' reasoning to the evidence and rerun only the parts affected by a substantive objection.
-4. Produce a concrete plan with the first action, prerequisites, success and failure criteria, and what to do under each result. Identify any remaining decision that needs the user. Run useful checks already authorized. When an active goal or explicit freedom authorizes further work, follow through within its scope and approval boundaries.
-5. Finish when the plan can be acted on and its decisive risks have a check, or when a specific missing fact, access restriction, or approval blocks further progress. State what would resolve the blocker. Continue checking while another feasible step could materially change the plan.
+## Deep-in-thought — find a problem you can actually solve
+
+Start with the original goal and a blocker whose current framing or evidence may be hiding the way forward.
+
+1. **Work backward from success.** Write what would have to be true for the original goal to advance. Trace its dependencies to the earliest unresolved prerequisite. Separate requirements from assumptions about how to satisfy them.
+2. **Find a better way to represent the blocker.** Keep the original framing available. Try another useful view, such as a causal diagram, a minimal case, a quantity that stays unchanged, or a split into independently testable questions. Keep a new framing only if it preserves the goal and exposes a check or solution the original framing obscures. If the original framing already does this, use it.
+3. **Prove or test the narrowest useful claim.** Use Deep Research on material evidence gaps. Find the smallest example, counterexample, bound, or controlled test that resolves the prerequisite. State the expected outcomes and what each would imply. Check that solving the small case would change the original decision, and identify what still needs to be shown at full scope.
+4. **Attack the framing and the plan.** In Group mode, have independent reviewers propose or challenge the framing, evidence, and execution plan. In Solo mode, revisit the strongest assumption from an outsider's perspective and check it against evidence. If a challenge breaks the framing, return to step 1 or 2. If it breaks a test, redesign that test.
+5. **Hand off a concrete plan.** Name the first action, its prerequisites, the result that permits progress, and the next action for success, failure, or ambiguity. Run useful checks already authorized. When an active goal or explicit freedom authorizes further work, follow through within its scope and approval boundaries. Finish when the plan is actionable and its decisive risks have checks, or a specific missing fact, access restriction, or approval blocks progress. State what would resolve the blocker.
 
 ## Solo and group
 
