@@ -7,6 +7,8 @@ description: "Choose clear names and write technical ideas so the intended reade
 
 Make the reader's job easy. A name should tell them what a thing is. A paragraph should tell them what happened, why it matters, or what to do.
 
+Use [README Maestro](../readme-maestro/SKILL.md) for repository landing pages, directory trees, and documentation navigation.
+
 ## Name things
 
 - Use the real concept or action. Name a function for what it does and a file for what it contains. Prefer `extract_metrics.py` over `data_extraction_pipeline_final_v4_processed.py` and `client_relationships` over `usr_clnt_rel_mttr_v2`.

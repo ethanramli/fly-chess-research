@@ -1,6 +1,19 @@
-﻿# Dated experiment history
+# Dated experiment history
 
-Chronological implementation and experiment history. Pending statements are historical; use current status for latest audited conclusions.
+Chronological implementation and experiment history. Pending statements are historical; use [current status](../../../documentation/current-status.md) for latest audited conclusions.
+
+## Recent entries
+
+These dated notes are the latest journal additions; their findings and proposals remain historical records.
+
+- [2026-11-07: memory v8 continuation](2026-11-07-memory-v8.md)
+- [2026-11-07: fly-connections memory, authority and source-gate corrections](2026-11-07-fly-connections-memory.md)
+- [2026-11-05: memory v4 results and memory v5 build](2026-11-05-memory-v4-v5.md)
+- [2026-11-04: memory v3 run, heap crash and result](2026-11-04-memory-v3-run.md)
+- [2026-11-04: memory v3 review proposal](2026-11-04-memory-v3-review-proposal.md)
+- [2026-11-03: peer-review fixes and preserved mistakes](2026-11-03-peer-review-fixes.md)
+- [2026-11-02: interference limits and certificates](2026-11-02-interference-limits-and-certificates.md)
+- [2026-11-02: overnight peer review and run blockers](2026-11-02-overnight-peer-review.md)
 
 - [2026-10-22: full babysit goal resumption, integration and recovery](2026-10-22-babysit-integration.md)
 - [2026-10-22: babysit scope correction](2026-10-22-babysit-scope-correction.md)

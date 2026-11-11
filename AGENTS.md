@@ -47,6 +47,14 @@ The [Please no more slop skill](.agents/skills/please-no-more-slop/SKILL.md) has
 
 Use Problem Solving to route tasks by stakes and uncertainty, with Light as the baseline for scoped work. Honor the researcher's explicit level or mode. Use Deep Research for material external evidence. Use Ponytail to keep implementation small and Please No More Slop to make names, claims, and verification clear. Follow the existing approval, experiment, and evidence rules when executing a plan.
 
+## Keep README navigation current
+
+Use [README Maestro](.agents/skills/readme-maestro/SKILL.md), the README and navigation variant of Please No More Slop, when writing or reviewing folder maps, onboarding routes, or documentation indexes.
+
+When a change adds, moves, renames, removes, or repurposes an item covered by a README map or index, update that README and affected links in the **same change**. The person changing the item owns the update. List each major folder in its nearest maintained map with a plain description. Add each new design page and experiment report to its owning index. A new file inside an already indexed experiment only needs a new index link if a reader needs it to understand the report.
+
+Run `python .github/scripts/check-readme-navigation.py` from the repository root after staging any new navigation paths. The same check runs on GitHub. It verifies that the maintained maps cover their declared folders and that supported local README links point to tracked paths. The [check guide](.github/scripts/README.md) lists the coverage and syntax. Walk the affected reader routes to verify link wording and scientific meaning. Keep frozen files and machine-local outputs at their recorded paths.
+
 ## Python actions for recurring CLI work
 
 The repository's `python actions/README.md` defines the workflow for repeated or looping CLI tasks. Put reusable Python actions in `python actions/` and use them for curriculum training, audit monitoring, and other work that is repeated. A terminal action is allowed when diagnosing a training problem, but repeated diagnosis or polling should use a Python action. Keep raw command output and receipts in their existing log files; return only concise structured milestones, terminal state, and errors to the agent context. Actions must preserve the exact pinned command, run identity, resource guards, and recovery behavior; they must not silently restart work or suppress errors. If no usable Python runtime/action facility is available, state that constraint and use a minimal, compact fallback only for necessary one-off checks.

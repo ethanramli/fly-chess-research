@@ -1,183 +1,25 @@
-This folder contains reusable Python actions for repeated command-line work. Use them for recurring tasks so terminal receipts do not fill the agent context. Actions should return only the information needed for the next decision.
+# Python actions
 
-This matters for training runs, which use the command line and can produce costly, bulky logs. Use a terminal command for one-off checks and troubleshooting. For recurring work, use a Python action and keep raw output in its log.
+This folder contains Python command-line actions, their registration files and dated records; use the read-only commands below to inspect registered work. The research is currently paused, so read the [current handoff](../documentation/next-checkpoint.md) before considering any job command; the [status page](../documentation/current-status.md) summarizes why it stopped.
 
+## Before using the commands
 
-## Verified local Python runtime
+These examples are for PowerShell from the repository root on the Windows machine where the Python environment is installed. [`fly.cmd`](../fly.cmd) calls [`curriculum.py`](curriculum.py) with the project Python at `%USERPROFILE%\.venv-class\Scripts\python.exe`; that environment must exist. Run the launcher from the repository root so its paths resolve. It can inspect a configured registration without starting its job.
 
-2026-10-19 09:17 Asia/Jakarta: Python 3.14.7 is already available at `C:\Users\ethan\.venv-class\Scripts\python.exe`. Its base runtime is `C:\Users\ethan\AppData\Roaming\uv\python\cpython-3.14-windows-x86_64-none`. File access, a child Python process, and the audit action help/syntax checks succeeded without requesting elevation or firewall changes. Use the explicit executable path; the bare `python` command resolves to the Windows Store alias. No installation or security-setting change was needed.
+## Inspect a registered job
 
-PowerShell invocation: `& "C:\Users\ethan\.venv-class\Scripts\python.exe" "python actions\audit_status.py" --help`
+| Read-only command | What it tells you |
+| --- | --- |
+| `.\fly.cmd status` | Campaign registration and readiness state. This is not the project research status; use the handoff above for that. |
+| `.\fly.cmd --config "python actions\curriculum-step.json" status` | Status for one selected registration, including its recorded job/process state. |
+| `.\fly.cmd --config "python actions\curriculum-step.json" watch --seconds 60 --interval 30` | Samples the selected registration for up to 60 seconds, every 30 seconds. Expiry only ends observation. |
+| `.\fly.cmd --config "python actions\curriculum-step.json" logs` | Reads the bounded tail of the selected job's stderr log. Use `logs --stream stdout --bytes 4000` for a bounded stdout excerpt. |
+| `.\fly.cmd --config "python actions\curriculum-step.json" plan audit` | Previews the registered audit command and blockers; it does not run the audit. |
 
-## Reusable curriculum interface
+Choose the registration named by the handoff or the relevant record. The example `curriculum-step.json` is a legacy single-step configuration, not an instruction to resume or launch its job. Status, watch, logs and plan only inspect or preview; they do not restart work or change research state.
 
-The bare `fly` command is registered in the Windows user PATH. Close and reopen the terminal application once after installation, then run `fly babysit` from any folder. The launcher enters the repository and preserves its exit code. To register it again after moving the repository, use [install-fly-command.ps1](install-fly-command.ps1).
+## Starting or changing work
 
-- `fly report`: visual progress and performance changes compared with the previous completed comparable evaluation. Incomplete measurements and unmatched tests/seeds do not produce an improvement claim. `--json` retains machine-readable artifact output.
-- `fly status`: the twelve-stage campaign's registered/readiness state and accepted-stage count. It does not display the legacy one-step config's historical G0 fields. Use `fly --config PATH status` for an explicitly selected one-off action config.
-- `fly pause`: finish the current lesson, save and stop. Wait for **PAUSED - progress saved. Safe to close.** Resume with `fly babysit`. An audit can pause too; its read-only replay restarts on resume.
+Commands such as `start train`, `start resume`, `start audit`, `run NAME`, `babysit`, and `detach` can start work. Do not use them while the current research pause is in force. The handoff is the route to the next decision and identifies any later authorization.
 
-The [registered operational pause version](../archive/early-development/research/data/lesson-pause-control-v1/README.md) preserves frozen code and adds separately archived execution identities. Checks: 20/20 action regression cases, 9/9 report/control cases, exact six-neuron pause/resume comparison and independent replay over 2 lessons and 44 receipts. This is bounded software evidence, not a full curriculum audit or power-loss guarantee.
-
-From the repository root, use `.\fly.cmd status`, `.\fly.cmd plan audit`, or `.\fly.cmd run action-tests`. These use [curriculum.py](curriculum.py) and the editable [step file](curriculum-step.json). Change the few registered paths/pins in that file for the next authorized step. Raw output stays in `runs/python-actions/`; the command returns compact JSON. The earlier `audit_status.py` remains available for old one-off invocations; prefer the unified interface for new work.
-
-The [complete command guide](../documentation/design/puzzle-learning/python-curriculum-actions.md) covers launch/resume/audit, status/waiting, checkpoint inspection, evidence summaries, tests, failure handling, and pause/resource boundaries. Reading or configuring these files does not start research.
-
-Bare `fly.cmd babysit` now selects the full curriculum campaign registration; when it is absent, the command reports `readiness_blocked` and starts no experiment. For one explicitly selected registered experiment, use `fly.cmd --config PATH babysit [train] [audit]`. That mode checks every five minutes by default, emits only changed progress, starts its independent audit after `result.json` appears, and stops after the audit. If invoked again after interruption, it selects the newest complete checkpoint from the same protocol and resumes into a fresh directory; the runner verifies the receipt chain and applies a pending receipt exactly once. It refuses missing/corrupt checkpoints, mismatched protocols or pins, unknown process state, and any run with no complete checkpoint.
-
-To select a campaign registration explicitly, use `fly.cmd babysit --curriculum PATH`. The campaign form requires all twelve ordered stages, a pinned stage config and prerequisite evidence for each stage, and explicit independent-audit booleans to promote each one. It records each stage result in `runs/python-actions/curriculum-campaign-<id>.json`, stops on a failed, missing or changed gate, and resumes the same in-progress stage when rerun. A passed stage must now include validation-selected `promotionMemoryHashes`; the supervisor separately checks the training-final memory against replay and passes only the selected checkpoint hashes to the next stage. A campaign registration is not an experiment approval: its stage configs must already bind the appropriate Lichess data, causal feedback arms, learner, resource guards, rehearsal/retention checks and independent auditor. Status 2026-10-24: Stage 1 campaigns are generated by `.codebase/scripts/puzzle-learning/build-lichess-stage1-registration-v1.mjs` and `build-lichess-campaign-v1.mjs` (`--mode smoke|full --revision N`; revision 6+ uses policy B and the action-centred input), and have run end to end (train, resume, independent replay audit, evaluator, gate, diagnosis). Stages 2-12 are registered as readiness-blocked with their specific reasons. No default campaign is installed: the full-r5 default was renamed `curriculum-campaign-full-r5-superseded.json` because its input encoding could not support learning; use `--curriculum` with a smoke revision until a fixed full registration is built. From registration revision 8 (fix goal task 2, 2026-10-24) the matrix runner v2 supports `fly pause` (`fly pause --curriculum PATH` targets the campaign's running stage; it stops at the next block boundary and the campaign records the stage as paused, not terminal), registered early stop and a rehearsal-planner cap. Older revisions keep the v1 runner without pause. Long runs started inside an agent session die with it; start them with `fly detach --curriculum PATH`, which launches the same `fly babysit` outside the session (job breakaway, own hidden console) with a log under `runs/python-actions/detached/`. Checks: `test_detached.py` (including a closed-session-job test), `test_fly_controls.py`. Use `--interval SECONDS` to change the 10-3600 second polling interval. The power-loss path is not runtime-tested, and the frozen protocol does not guarantee filesystem survival after sudden power loss.
-
-## Lichess source preparation
-
-22 October follow-up: use [v4 source preparation/audit](lichess-curation-recovery-v4-step.json) for the newly registered direct-legal-replay scan. Its `source-tests` pass 22/22; `curate-stage1-v4` and `audit-source-v4` are separate named jobs. Preserve v1–v3 attempts/configs. The source-PGN fetcher now publishes through an inherited-access partial directory; [offline publication check](lichess-pgn-publication-check.json) `run verify` passes without network. Do not use the old one-game development config for production retrieval: its fetcher hash is historical. Pin audited source manifests, actual train/validation rows and updated fetcher in a fresh batch config first. [Exact current source/G0 handles](../documentation/handoffs/curriculum-reasoning-state.md).
-
-The separate [preparation config](lichess-preparation-step.json) registers source acquisition, extraction, curation and bounded checks; [one explicit range continuation](lichess-preparation-resume-step.json) preserves the timed-out original. `run tests` checks 19 source/history/certificate/rehearsal cases; `run archive-tests` checks 8 publication/multi-frame/truncation cases. [Archive verification](verify_lichess_archive.py) publishes only a complete matching transfer; [standard-library extraction](extract_lichess_archive.py) handles all frames without Node 22's metadata-first limitation. Use the selected config after `fly.cmd --config "python actions/lichess-preparation-step.json"`. Raw outputs stay in action logs. These are data/software actions, not graph training or curriculum-wide progression. Never repeat an observation-expired job or overwrite a partial publication; reconcile its same handle and completion first. See [source evidence and acquisition state](../archive/early-development/research/reports/lichess-foundations-pilot-2026-10-21/README.md).
-
-## Curriculum block checks
-
-For bounded block-session and disk/replay checks, use `fly.cmd --config "python actions/curriculum-block-checks.json" run tests`. The [separate check configuration](curriculum-block-checks.json) preserves active experiment/source configurations and raw action logs. 21 checks pass on four-cell mechanical fixtures, including pending/append interruption recovery and independently reconstructed replay. They do not run the connectome, accept a stage or implement full `fly babysit` progression.
-
-The same check configuration registers `run source-tests` for the source/history/planner fixtures and `run audit-source` for the completed candidate corpus. The latter refuses a missing manifest or an existing audit output. It checks training/validation against the full pinned CSV and extraction/archive bytes without opening reserved final rows. Its source-integrity result does not grant neural teaching permission or establish disjoint relational families. Wait for the owned curator's completion before running it.
-
-## Source-game PGN retrieval
-
-[fetch_lichess_game_pgns.py](fetch_lichess_game_pgns.py) is registered in [lichess-history-fetch-step.json](lichess-history-fetch-step.json). Its `fetch-probe` job retrieves one known development fixture; the output already exists at `research/data/lichess-source-pgn-probe-v1`, so the fresh-output guard prevents replay. The run log records child success, but the first wrapper invocation exited 1 because this new config omitted the action CLI's required `paths.run`; that field is now present. See the [pilot report](../archive/early-development/research/reports/lichess-foundations-pilot-2026-10-21/README.md). Do not point the development config at learning data. After candidate curation and source audit, create a fresh config that pins only train or validation rows plus the audit/manifest identities and a new output path. The fetcher accepts up to 300 unique IDs per request and refuses missing, extra, duplicate, mismatched or non-standard PGN responses. Its manifest confirms transport identity, not history binding, consequence proof or teaching eligibility.
-
-The first Stage 1 candidate scan exceeded the registered one-hour bound before publishing output. Its failed invocation and original script snapshot are preserved. The recovery registration raises the bound to 4,200 seconds without changing selection, pacing or memory parameters; it is now running under `runs/python-actions/20261021T131707-015ad3c6/`. The existing `audit-source` job in `curriculum-block-checks.json` is pinned to the old curator and v1 output, so it is not valid for this recovery. The separate [v2 source-audit action](lichess-source-audit-v2.json) pins the current curator/auditor and targets v2; its plan is correctly blocked only by the not-yet-published manifest. Run it only after curator completion and manifest review. Raw output stays under `runs/python-actions/`.
-
-## Latency investigation
-
-The researcher closed the optimization search, then separately authorized three exact consistency repetitions through [repeat_training_latency.py](repeat_training_latency.py). Those repetitions and independent audits are complete: **58.1%, 59.9%, 59.5% less elapsed time**, mean 59.2%, on the selected workload after the RAM upgrade. The historical 69.1% result did not meet its predeclared repeatability band. See [three-repeat results](../archive/early-development/research/reports/training-latency-2026-10-19/repeatability-v1/README.md), [historical accepted result](../archive/early-development/research/reports/training-latency-2026-10-19/accepted-result.md) and [closed handoff](../documentation/handoffs/training-latency-state.md). Keep the runtime/codec checks and winning campaign for reproduction; no further optimization is pending. Unused candidates remain in the [source archive](../archive/early-development/research/source-archives/training-latency-abandoned-2026-10-19/README.md). The curriculum configuration was not changed or launched; its `paused` flag was false at closeout, correcting earlier unverified prose describing that flag as paused.
-
-### Stage 1 source scan recovery v3
-
-The v1 and v2 full-CSV scans both hit their registered elapsed bounds and published no corpus. Their invocations and source versions are preserved. V3 uses a fast `split(',')` path only on unquoted rows, retains the full parser for quoted rows, and emits sparse progress records; curation criteria, selection, seed, split, resource limits and CPU duty remain unchanged. The [registered v3 run](lichess-curation-recovery-v3-step.json) is currently active. Its [matching source audit](lichess-source-audit-v3.json) must run only after the v3 manifest appears and is reviewed. No source or neural gate pass is implied.
-
-## Serial lesson preparation and independent CSV audit (22 October)
-
-[prepare_lichess_lesson_batches.py](prepare_lichess_lesson_batches.py) reuses the action executor for registered bounded row ranges. Production [v5 configuration](lichess-lesson-batches-v5-step.json) defines eight 32-row chunks over the same 128 training and 128 validation source rows. Its job failed at the third chunk; the archived [checkpoint](../archive/early-development/research/data/lichess-stage1-prepared-batches-v5/checkpoint.json) records the two completed chunks. Do not restart this historical job.
-
-**Status correction, 2026-11-09:** the earlier instruction to treat the v5 job as live was stale. The checkpoint records two completed chunks and does not authorize restarting the failed job; use the separate v6 registration below for a new Stage 1-only preparation.
-
-Recovery requires an explicitly new output directory and `--resume PATH_TO_CHECKPOINT`; preserve completed chunk files and source/config pins. Live or unknown pending owners, changed cached publications and failed jobs stop recovery. The helper does not silently retry. [Offline recovery checks](lichess-lesson-batches-checks.json) pass 3/3; shared action checks pass 23/23.
-
-The [independent CSV lesson audit](lichess-csv-lesson-audit-v5-step.json) registers `run audit-lessons` only after the complete v5 batch manifest exists. It independently rebuilds actual source-game prefixes, checks the exact displayed FEN/history and replays every legal-action consequence certificate. [Offline adversarial checks](lichess-csv-audit-checks.json) pass 4/4: acceptance plus rehashed wrong history, consequence and displayed-FEN rejection. Fixture upstream source assertions do not establish actual CSV membership. The production audit result is still pending. Neither preparation nor audit grants graph launch, relational-family disjointness, general move quality or neural-learning claims; the task remains immediate capture retention.
-
-### Follow-up for preparation limited to Stage 1
-
-For a separate Stage 1-only preparation, use [v6 configuration](lichess-lesson-batches-v6-step.json) and its separately registered [CSV audit](lichess-csv-lesson-audit-v6-step.json). The explicit `--stage1-only` option retains source histories but emits no action certificates for boards exceeding six pieces. Its absence preserves development preparation behavior. Source/history checks 23/23, CSV audit checks 6/6 and recovery checks 3/3 pass. Production completion remains pending.
-
-For compact repeated observation, run `& "$env:USERPROFILE\.venv-class\Scripts\python.exe" "python actions/lesson_batch_status.py" --checkpoint research/data/lichess-stage1-prepared-batches-v6/checkpoint.json`. [This read-only action](lesson_batch_status.py) checks the actual pending process identity and reports completed publications, bounded stderr and failure state. A complete manifest still needs the separate independent audit. It never restarts work or accepts a stage.
-
-### Current v7 batch certificate preparation
-
-V6 was stopped after its hypothesis was refuted: every production source row already satisfies the six-piece limit. The abandoned filter implementation is archived/removed; do not use v6. [V7 configuration](lichess-lesson-batches-v7-step.json) uses bounded all-legal batch root validation, preserving full histories and exact certificate/check results. 25 source/equivalence checks and 4 CSV auditor checks pass. [Production audit configuration](lichess-csv-lesson-audit-v7-step.json) registers audit-lessons and verify-equivalence (against 64 preserved v5 rows); both await the completed package. Observe only the current checkpoint with lesson_batch_status.py. No graph/family/learning acceptance follows from preparation.
-
-## Training-only matched capture source scan
-
-[Current configuration](lichess-matched-capture-train-v1-step.json) registers curate and independent audit-source. The curate job is already live; preserve its owned supervisor/PID in the handoff. Do not relaunch. It scans the existing pinned CSV, routes excluded source-game splits out before semantic chess/rating/theme inspection, and samples at most 64 training candidates with unique retained capture versus recapturable same-mover/same-target-type alternatives. Capture-promotion roots are excluded. The filter is FEN-only candidate selection; actual PGNs, independent histories/certificates and family/receiver gates remain required.
-
-27 source/filter/audit checks pass in [lichess-mixed-capture-source-checks.json](lichess-mixed-capture-source-checks.json). `run audit-source` needs the completed fresh manifest and refuses an existing audit output. Old curator/auditor sources are archived; do not rerun old configs against changed live source identities. [Data design, bounded negative branch studies and current evidence](../documentation/design/puzzle-learning/lichess-capture-comparisons.md).
-
-## Automatic source audit handoff
-
-[finish_lichess_source.py](finish_lichess_source.py) now observes the already-owned matched-capture scan and runs only its unchanged registered audit-source after a matching clean completion receipt and published manifest. It never launches/restarts curation, fetches PGNs or advances a neural stage. Unknown ownership, changed config, unacknowledged exit, wait expiry or failed audit stop with preserved state. Five mocked mechanics checks pass; the real handoff is currently waiting and has not yet completed the audit.
-
-The active [v2 driver](lichess-source-completion-v2-step.json) is already running under the owned tool handle in the handoff. **Do not launch audit-source manually while it owns this step.** Its compact state is research/reports/lichess-foundations-pilot-2026-10-21/source-completion-watch-v2/state.json. The original source run identity is unchanged. [Read-only source observer](lichess-matched-capture-source-observer.json) attaches the existing PID and supplies ordinary status/watch commands without creating a source process. V1's attach-receipt-shape failure and source snapshots are preserved; use the corrected v2 driver.
-
-## Matched-capture lessons: current training-only package
-
-[Registered preparation/audit](lichess-matched-capture-lessons-v1-step.json) completed 44/44 actual-history lessons and independent `audit-lessons`; do not rerun completed output. [Seven bounded auditor checks](lichess-training-contrast-csv-audit-checks.json) include explicit train-only handling and rejection of a consistent full-history package falsely declaring mixed captures. Source-audit/PGN/preparation are terminal; older waiting prose is historical.
-
-[New continuation configuration](lichess-matched-capture-legal-branches-v1-step.json) changes only the training corpus for the existing fixed-rule, bounded legal-continuation study. Observe its existing owned session; no implicit retry. Every generated family requires separate derivation/consequence audit. No source/data action qualifies G0, neural teaching or curriculum advancement.
-
-The [validation-only candidate expansion](lichess-validation-candidates-v1-step.json) is a bounded source action, not a learner run. Its 1,022 selected rows passed independent CSV membership/split audit; final puzzle contents were not read. Full source-history, consequence, family and teaching audits remain required before a graph campaign.
-## Current babysit validation source path
-
-The completed validation-only source retrieval uses [v3 history fetch](lichess-validation-source-history-v3-step.json); its failed v1/v2 attempts are preserved in their own action logs/registrations. [v2 preparation](lichess-validation-lesson-preparation-v2-step.json) and [independent v2 audit](lichess-validation-lessons-audit-v2-step.json) passed 192 source histories and 1,909 known one-reply action outcomes. These are teacher-data artifacts, not graph training. The separately registered [v2 validation-family search](lichess-validation-branch-families-v2-step.json) is currently owned by its live process; inspect that exact handle and do not relaunch it.
-The corrected training-family search is registered at [v6](lichess-training-counterfactual-families-v6-step.json); it pins the v7 prepared training rows and the v2 counterfactual matcher. Its independent audit is a separate registered job. The failed v5 family and audit are preserved; do not use them. The matching [validation-family v5 config](lichess-validation-counterfactual-families-v5-step.json) uses the corrected matcher. These data jobs do not grant neural-teaching authorization or complete `fly babysit`.
-
-
-Current Stage 1 pin-theme candidate preparation is registered in [v2](lichess-training-pin-theme-v2-step.json); its train-only source audit passed for 1,024 rows/unique games, with final unopened. The separate [training PGN fetch action](lichess-training-pin-theme-pgn-v1-step.json) uses the pinned batched v5 fetcher. Neither action qualifies histories or teaching; independent replay and family gates remain required.
-
-The pinned [train-only pin-theme PGN fetch](lichess-training-pin-theme-pgn-v1-step.json) was attempted after its source audit passed, but the environment refused the first Lichess API connection (WinError 10061); the preserved failure record shows zero completed batches. No history package was published. Do not retry automatically or use FEN-only candidates for teaching.
-
-History retrieval is now complete for the audited pin-theme training pool: [PGN batch manifest](../archive/early-development/research/data/lichess-stage1-training-pin-theme-v2-pgn/train/manifest.json) records 1,024 train games across four batches, with final unopened. The first lesson chunk used the old v1 `/game/<id>`-incompatible binder and failed 0/32; preserve it. Reprepare through the v2 history parser, then independently audit every lesson before use.
-## Matrix recovery registration
-
-For Lichess matrix registrations, set `recovery.kind` to `lichess-stage-matrix-v1`. Include `--protocol {protocol}` in train, resume and audit argv. The resume job must include `--resume-state {resume_state}`. Python babysit validates the saved matrix and complete active-lineage checkpoint, then starts the registered resume job in a fresh `paths.run`. Do not use the single-run `checkpoint` placeholder for this matrix recovery mode.
-
-Stage matrices also emit small JSON milestones when a lineage starts, completes, or stops. The Python babysitter surfaces only changed milestones while keeping full stdout/stderr in the registered run logs; it does not need an agent to watch each condition manually.
-
-Python matrix registrations must set `resourceLimits` to `rssMiB: 2048` and `freeMiB: 256`, matching the Node matrix guard. Legacy/frozen jobs without explicit limits retain the existing 768 MiB status ceiling. A mismatch is a launch preflight blocker rather than a mid-run pause.
-
-## Derived Stage 1 family candidate audit
-
-[Registered preparation/audit](lichess-derived-capture-families-v1-step.json) consumes only the already-audited training-only static counterfactual report. Its independent replay passed all 1,653 pairs, but the proposed exact focal-geometry grouping produced 1,650 signatures and only 3 repeated across source games. This does not meet structural-family diversity or authorize Stage 1 teaching. See the [candidate package](../archive/early-development/research/data/lichess-stage1-derived-family-candidates-v1/README.md); do not loosen frozen family quotas based on this result.
-
-## Validation-side capture counterfactual audit
-
-The [v1 action](lichess-validation-v3-stage1-capture-counterfactuals-step.json) preserves the initial overstrict auditor failure. The [v2 replay action](lichess-validation-v3-stage1-capture-counterfactuals-v2-step.json) corrected the legal-check predicate and replayed its report. The [v2 producer/auditor action](lichess-validation-v3-stage1-capture-counterfactuals-v2-probe-step.json) ran the corrected mutation filter and separate replay. It produced 822 validation-only candidate flips; the package README explains why they remain synthetic-history candidates and why Stage 1 is still unauthorized. Never rerun a completed action into its existing output or final split.
-
-The [v3 king-inclusive producer/auditor action](lichess-validation-v3-stage1-capture-counterfactuals-v3-step.json) hit its 1,800-second elapsed guard and published no output; preserve its receipt. The follow-up narrowed mutation generation to king relocations only because v2 already covered other piece moves. Both attempts are terminal; do not restart either identity.
-
-The [king-only v4 action](lichess-validation-v3-stage1-capture-counterfactuals-king-only-v4-step.json) completed under receipt `runs/python-actions/20261023T061157-e89378d5`; its independent v5 audit passed under `runs/python-actions/20261023T062205-7034517f`. It produced 1,277 validation-only candidates, but no classified pinned or blocked transition; 770 check-state cases remain unknown. The Stage 1 gate is still unmet. Do not rerun into its output path or treat the count as teaching evidence.
-
-Synthetic task plumbing now binds a hypothetical FEN to its authentic source PGN, replays all legal task certificates and routes Stockfish from the task FEN. There is still no synthetic lesson producer or independent family/split audit, and the current four-stratum Stage 1 data gate remains unmet. No experiment is authorized by this plumbing.
-
-- [State-cue feedback software checks v4](babysit-state-cue-feedback-checks-v4.json): pinned prospective v2 correction, matched controls and recovery; no production training.
-
-- [Training phase publication and recovery checks v5](babysit-training-phases-checks-v5.json): completion boundary, interruption recovery and yoked matrix regressions; numerical/software evidence only.
-
-- [Stage 2 checkpoint selection checks v6](babysit-stage2-checkpoint-selection-checks-v6.json): selector final sealing, retention and Stage 1/shared-phase compatibility; no production training.
-
-- [Stage 2 selection checks v7](babysit-stage2-checkpoint-selection-checks-v7.json): preserves unknown missing-evidence status, measured failure, matched controls and shared helper compatibility.
-
-## Restart memory-fixture evidence repair
-
-[V12 recording/audit registration](memory-assay-v12-step.json) completed fresh from-scratch development evidence and separate replay for the original q=.25 conflicting,w=0,bg=0 cell. Its output paths are complete: do not rerun into them. [Streamed equivalence action](check_memory_receipt_equivalence.py) and [V13 registration](memory-assay-v13-step.json) verify all 48 trajectory summaries match the original failed learner exactly. No held-out data or graph training.
-
-[V14 verification](memory-assay-v14-step.json) runs the required npm suite with the concurrency option in the shared test command **before** file paths; appending the option after paths did not serialize this installed Node runtime. Raw receipts preserve both the earlier timeout failure and corrected run. [Report and scientific limits](../research/reports/overnight-memory-plasticity-2026-10-31/MORNING-REPORT.md). Recording/replay supports an auditable retention experiment; it adds no consolidation or improved memory.
-
-## Memory-retention continuation, 2026-10-31
-
-Completed synthetic registrations: [coupled/control](memory-coupled-v1-step.json), [cascade](memory-metaplastic-v1-step.json), [reservoir](memory-reservoir-v1-step.json) and [fixed latency](memory-reservoir-rate-v1-step.json). All main conditions pass separate replay but none passes the joint memory requirements. Output directories and pinned source/protocol identities remain preserved. Do not launch two jobs concurrently through the same registration's launch lock or rerun completed outputs.
-
-Read-only evidence: [coupled state inspection](memory-coupled-v1-inspection-step.json), [five-condition analysis](memory-continuation-analysis-v3-step.json), [phase reconstruction](memory-phase-state-analysis-v1-step.json) and [static signed anatomy](memory-feedback-paths-v1-step.json). Earlier analysis-wrapper failures remain preserved. [Long-term-memory scope and next test](../research/reports/memory-retention-continuation-2026-10-31/long-term-memory-scope-and-next-test.md). Static anatomy runs no neural activity.
-
-
-## Visual-input memory development, 2026-11-01
-
-The separate `eye-memory-cubic-v1-step.json` registers one fixed informative/control comparison and its independent local-frame replay. Use `fly.cmd --config "python actions/eye-memory-cubic-v1-step.json" status`, bounded `watch`, and `run audit` after completion. Preserve its single `paths.run` identity; never relaunch an existing or live run. Graph activity and scalar choices are development approximations, not an approved biological memory rule or chess training.
-
-
-### Exact eye-memory continuation after interruption
-
-The recovery registration is `eye-memory-cubic-v1-recovery1-step.json`; preserve the original interrupted output. `eye_memory_status.py` defaults to this continuation and accepts bounded `--seconds 0..55`. `fly.cmd --config "python actions/eye-memory-cubic-v1-recovery1-step.json" status` reports its owned handle; `run audit` is available only after its summary exists. `launch_eye_memory_recovery.py` already launched this run outside the session job and refuses existing handles/output, so do not invoke it again. Recovery uses the verified 48-trial T1 boundary, preserves completed arm records, and checks actual overlapping observations/choices before further interpretation. It never silently retries.
-
-**Status correction, 2026-11-09:** the recovered run is complete: its manifest is `complete`, and its summary covers seeds 4101–4106 across 24 arm records. The original parent manifest remains `running` because it records the interrupted first invocation; no matching process was live at inspection. No `audit.json` exists, so the full independent audit is pending. This registration documents the recovered run; do not relaunch it.
-
-
-### Frozen-memory decoder diagnosis
-
-`eye-readout-offset-v1-step.json` registers tests and one bounded diagnostic. Its `run check` must wait for the current six-seed source summary and matching passed full replay audit. It does not start training or modify memory. Inspect authoritative graph processes before launch, keep this graph check serial, and preserve its fresh output. The static capacity analysis is a separate surrogate, not a substitute for this measurement.
-
-### Actual-synapse interference diagnosis
-
-`eye-synaptic-conflict-v1-step.json` registers two focused checks and one 54-pass frozen-memory state decomposition after the completed, audited recovery and current-rest diagnostic. Both diagnostic output directories are now complete and must not be rerun or overwritten. [Report and scope](../research/reports/memory-interference-diagnosis-2026-11-01/README.md). The historical masks identify causal contributions; they never allocate learner memory. Future informative/control learning comparisons require their own prospective source-supported registration.
-
-`memory-activity-reliability-v2-step.json` records the corrected offline amplitude/repetition action (`inspect_memory_activity_v2.py`), with gaps excluded from teacher denominators and fixed schedule/endpoint assertions. The v1 source/config/output preserve the denominator error. `memory-diagnostic-audit-v2-step.json` registers the original-versus-performance-derivative bit-equivalence check and completed standalone audit. No graph passes or training occur in these two actions. Completed outputs are evidence, not jobs to relaunch.
-
-## APL attachment arithmetic continuation
-The original apl-contact-attachment-v1 output is complete and must not be relaunched. [Registered arithmetic audit](apl-attachment-audit-v1-step.json) completed with exit 0; it verifies all 252 canonical sample projections by exhaustive segment comparison, all 126 tree paths and complete residual summaries, without importing producer geometry code. [Evidence and scope](../research/reports/apl-locality-feasibility-2026-11-01/attachment-result-and-next-gate.md). It is a separate implementation by the continuing agent, not an independent reviewer. No learner run is registered by this audit.
-
-
-## Engineered exact-cue memory replay
-[Replay registration](engineered-episodic-memory-v1-step.json) and [separate Python audit](engineered-episodic-memory-audit-v1-step.json) are complete. Do not relaunch or overwrite them. They bind the same preserved six development exposure streams; the external controller does not change source choices or graph weights. [Full scope and results](../research/reports/engineered-episodic-memory-2026-11-01/README.md). The audit independently reconstructs every score/update/snapshot without importing JavaScript producer code. No closed-loop learner or crash-recovery workflow is authorized by these registrations.
-
-
-## long-term-memory v1 live integration
-[Live pilot](long-term-memory-v1-live-pilot-v1-step.json), [separate audit](long-term-memory-v1-live-audit-v1-step.json) and [report publication](long-term-memory-v1-live-report-v1-step.json) are complete. Do not rerun completed outputs. The read-only observer job is bounded to 50 seconds and checks process birth identity; it never restarts work. [Results, scope and persistence limitation](../research/reports/long-term-memory-v1-live-comparison-2026-11-01/README.md). Automatic interrupted-run recovery is not implemented.
-
-
-- Overnight Eyes/reader execution: `overnight-mbon05-{released,curated}-v1-step.json`, corresponding `audit-v2` registrations, `overnight-full-reader-step.json` and `overnight-raw-score-audit-step.json`. Completed runs must not be overwritten. `overnight_reader_status.py --run PATH --seconds 45` is bounded read-only observation and never restarts work. [Exact commands and evidence](../research/reports/overnight-eyes-reader-repair-2026-11-01/REPORT.md).
+The [command guide](../documentation/design/puzzle-learning/python-curriculum-actions.md) explains command behavior, registration prerequisites, logs, recovery and resource limits. The [dated action history](https://github.com/ethanramli/fly-chess-research/blob/3262856e24edf3cda34bd3170a72ee88f8de4334/python%20actions/README.md) preserves the former landing page for context; its commands and status notes are historical, not ready-to-run instructions.

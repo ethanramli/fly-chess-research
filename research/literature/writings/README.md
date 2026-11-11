@@ -1,6 +1,18 @@
 # Can a Fly Play Chess? — Writings
 
-Researcher's five-volume writing workspace, created 2026-11-01. These are planned manuscripts, not completed studies. Keep source-reading notes in the parent literature folder.
+This is the researcher's five-volume manuscript-planning workspace, created 2026-11-01. The chapter files are planning documents, not finished chapter drafts or completed studies. Read the full [series plan](../../../documentation/design/research-goals/five-volume-series.md) for the project-wide structure; keep source-reading notes in the parent [literature folder](../README.md).
+
+## Volume map
+
+<!-- directory-map -->
+- [Volume 1: Methodology](01-methodology/README.md): project choices, experimental process and disclosure plans.
+- [Volume 2: The Classroom](02-the-classroom/README.md): teaching, learning and evidence; chapter plans include [To Learn](02-the-classroom/03-to-learn.md) and [Evidence for Learning](02-the-classroom/05-evidence-for-learning.md).
+- [Volume 3: Reasoning](03-reasoning/README.md): operational definition, transfer tests and current reasoning evidence boundary.
+- [Volume 4: The Limits of Biology](04-the-limits-of-biology/README.md): model limits, assumptions and bounded conclusions.
+- [Volume 5: Chess](05-chess/README.md): chess as the public test and playing experience.
+<!-- /directory-map -->
+
+The map covers the five immediate volume directories. Update it and affected links when a volume directory is added, moved, removed, renamed or repurposed.
 
 - [Volume 1: Methodology](01-methodology/README.md)
 - [Volume 2: The Classroom](02-the-classroom/README.md)
@@ -24,6 +36,4 @@ Volume 4 retains the researcher's chosen title, **The Limits of Biology**. Its c
 
 [Full series plan](../../../documentation/design/research-goals/five-volume-series.md)
 
-## Chapter files
-
-Each volume README links to a separate planning file for every chapter. Chapter files distinguish planned content from results and include evidence boundaries.
+Each volume README links to a separate planning file for every confirmed chapter. Files currently contain plans and evidence boundaries; they are not manuscript drafts. Existing experiments and reviews may support specific claims, but they do not establish every planned claim. Follow the linked evidence boundary in each chapter and the [current research status](../../../documentation/current-status.md) before presenting a result.

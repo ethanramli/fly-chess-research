@@ -1,15 +1,19 @@
 # Next checkpoint
 
-The single handoff file. Read it first when continuing the research; update it in the same session whenever a run ends or the direction changes. Artifacts outrank this file: if a newer `runs/*/manifest.json` disagrees, this file is stale (see `AGENTS.md`, "Continuing the research").
+This is the handoff for continuing the research: read the current checkpoint first, then consult its linked evidence. The latest checkpoint below is dated 2026-11-09. Everything after the “Background and dated history” heading is retained chronology; old “Next” instructions there are historical and superseded. Artifacts outrank this file: if a newer `runs/*/manifest.json` disagrees, this file is stale (see `AGENTS.md`, "Continuing the research").
 
 **Last updated:** 2026-11-09.
 
 ## Current checkpoint: 2026-11-09
 
-- **Volume 2, chapters 3 and 5.** The revision-4 predeclared single-shot capacity gate on the widened 6,046-gain mask failed: one of three boards had an exact win. A later sequential exact search found safe-capture settings on all three, but it was chosen after the gate failure and has not had independent review. The earlier 2,096-gain result is only a linear-surrogate bound; exact-network capacity for that mask remains unresolved. The reward-only and valence probes still left the safe capture below the best other move on all three boards. See the [stop report](../research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md) and [dated journal](../research/journal/experiments/2026-11-07-fly-connections-memory.md).
+- **Volume 2, chapters 3 and 5.** The revision-4 predeclared single-shot capacity gate on the widened 6,046-gain mask failed: one of three boards had an exact win. A later sequential exact search found safe-capture settings on all three (3/3), but it was chosen after the gate failure and has not had independent review. It does not change the predeclared 1/3 failure. The earlier 2,096-gain result is only a linear-surrogate bound; exact-network capacity for that mask remains unresolved. The reward-only and valence probes still left the safe capture below the best other move on all three boards; the reward-only probe included an absent arm, while the valence probe was one arm with baseline scores only, and neither was independently audited. See the [stop report](../research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md) and [dated journal](../research/journal/experiments/2026-11-07-fly-connections-memory.md).
 - **No full revision-4 learning run is recorded.** The latest manifested run is the completed development dry run, which did not pass. The sealed test games remain unused. Properties 1–3 remain unmet; no reasoning result follows from these probes.
-- **Next:** the researcher must choose whether to request independent review of the post-gate evidence or close these as bounded development results. Do not launch another run before that decision.
-- The dry-run step is spent and now paused. The exact as-run registration is preserved at [`registration-as-run.json`](../runs/fly-connections-memory-2026-11-08/fly-connections-memory-v1-dryrun/registration-as-run.json); its hash matches the dry-run manifest. Do not reuse the same run directory.
+- **Decision awaiting the researcher:** choose whether to request independent review of the post-gate evidence or close these as bounded development results. No full revision-4 learning run is recorded; no transfer result exists, and no further run should begin before this decision.
+- The dry-run step is spent and now paused. The exact as-run registration is preserved at `runs/fly-connections-memory-2026-11-08/fly-connections-memory-v1-dryrun/registration-as-run.json` (local run artifact; not tracked); its hash matches the dry-run manifest. Do not reuse the same run directory.
+
+## Background and dated history (not current instructions)
+
+The notes below preserve earlier project state and action plans for provenance. Their dated “Next” items are not current directions; use only the current checkpoint above for the present handoff.
 
 **Addendum 2026-11-05 11:55:** a missing control found: a random-capture rule scores 250.1 on the v6 test, above the interrupted full arm (130.9); see [journal](../research/journal/experiments/2026-11-05-memory-v4-v5.md). Report it beside the v6 result; do not change the v6 gate.
 

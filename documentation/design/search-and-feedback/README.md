@@ -1,6 +1,6 @@
 # Search and teacher feedback
 
-Bounded investigation runs on a separate board. Independently verified teacher consequences are distinct from learned neural evaluation. Unknown outcomes produce no teaching event.
+This topic covers how FlyChess investigates candidate moves and how a teacher supplies verified consequences. Read [Forcing investigation and positional learning](forcing-and-positional-curriculum.md) first for the overall proposal. Bounded investigation uses a separate board; teacher evidence is distinct from learned neural evaluation, and unknown outcomes produce no teaching event.
 
 - [Teacher replay clips: independently verified consequence contexts](consequence-clips.md)
 - [Fixed-budget sequence replay: planning mechanism tested; neural effect unknown](fixed-budget-sequence-replay.md)
