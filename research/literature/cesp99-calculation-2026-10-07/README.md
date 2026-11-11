@@ -1,20 +1,20 @@
 # cesp99 calculation review
 
-Accessed2026-10-07, Asia/Jakarta. User called the author cesp6; search located cesp99/fly-chess, matching the previously discussed fly/Lichess project. Identity match is an inference. Static source review, no upstream code execution, model download, speed benchmark or learner change.
+Accessed 2026-10-07, Asia/Jakarta. User called the author cesp6; search located cesp99/fly-chess, matching the previously discussed fly/Lichess project. Identity match is an inference. Static source review, no upstream code execution, model download, speed benchmark or learner change.
 
-Pinned commit:3c83567dfb6fa71cecc1556c75f17c8bb38fd5cf. Five full source files are archived below this directory; manifest.json records URLs and byte hashes. Reviewed play/engine.py, train/mcts.py, web/engine/mcts.js, web/engine/flybrain.js and model/flybrain.py. Browser/Python paths differ in batching and tie-breaking; do not assume identical full search trajectories.
+Pinned commit: 3c83567dfb6fa71cecc1556c75f17c8bb38fd5cf. Five full source files are archived below this directory; manifest.json records URLs and byte hashes. Reviewed play/engine.py, train/mcts.py, web/engine/mcts.js, web/engine/flybrain.js and model/flybrain.py. Browser/Python paths differ in batching and tie-breaking; do not assume identical full search trajectories.
 
 ## How calculation works
 
 The neural input is a board, rather than a separate board-action cue for each move. A recurrent sparse brain pass produces a full policy vector and a position value. The legal mask restricts that vector to available moves. Thus ranking all legal actions does not require one graph pass per action. The learned policy/value heads and input projections are trainable engineering interfaces.
 
-Python play/engine.py has three modes: larva samples the legal policy without search; fly takes the top3 policy candidates, plays each on a scratch board, and evaluates nonterminal resulting boards in a batch, choosing the lowest opponent value; superfly uses PUCT, default200 simulations. Browser mcts.js accepts a simulation budget (default200 in this module; website configuration may override it).
+Python play/engine.py has three modes: larva samples the legal policy without search; fly takes the top 3 policy candidates, plays each on a scratch board, and evaluates nonterminal resulting boards in a batch, choosing the lowest opponent value; superfly uses PUCT, default 200 simulations. Browser mcts.js accepts a simulation budget (default 200 in this module; website configuration may override it).
 
 Each nonterminal MCTS expansion calls brain.forward once for the current board, creates children for ALL legal moves, and stores policy priors/value. Selection maximizes Q plus cPuct*prior*sqrt(parent visits)/(1+child visits). Backup alternates player perspective. Terminal game outcomes bypass the network; visits select the final move. The search does not restrict candidates to checks/captures/attacks. It explores unevenly through policy priors and accumulated outcomes. A poor learned prior/value can still miss a tactic; this is not verified best-defense proof.
 
 Python training search batches one leaf from each active game per simulation step and supports subtree reuse. Browser forwardBatched loops over inputs; it is not equivalent to GPU parallel batching. Browser recurrence uses sparse CSR loops and reused typed-array buffers. Forward produces the whole policy/value from a shared neural feature vector.
 
-The live README and model card describe supervised imitation, later self-play, and learned neural projections/readouts. Dataset descriptions vary across versions (README about58M positions for2014; model card229M human positions plus30M engine-evaluated positions). These are positions, not a verified52M-game count. Training dataset size does not by itself reduce inference cost.
+The live README and model card describe supervised imitation, later self-play, and learned neural projections/readouts. Dataset descriptions vary across versions (README about 58M positions for 2014; model card 229M human positions plus 30M engine-evaluated positions). These are positions, not a verified 52M-game count. Training dataset size does not by itself reduce inference cost.
 
 ## Implications for this project
 

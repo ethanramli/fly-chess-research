@@ -1,6 +1,6 @@
 # Long-term memory proposal: scoping checkpoint
 
-2026-11-01. Researcher requested deep-research plus academic-pipeline and approved proposal-only research, approximately 15,000–25,000 tokens / 20–30 minutes. No experiment launches or external AI providers are authorized by this task.
+2026-11-01. Researcher requested deep-research plus academic-pipeline and approved proposal-only research, approximately 15,000 to 25,000 tokens / 20 to 30 minutes. No experiment launches or external AI providers are authorized by this task.
 
 **Status: Phase 1 scoping.** This is a concrete research design for confirmation, not a verified final mechanism recommendation or an executable experimental protocol. Fresh literature investigation remains behind the skill's question/methodology checkpoint. Existing project evidence was inspected; no new primary-source verification is claimed.
 

@@ -5,7 +5,7 @@
 
 ## Purpose
 
-State the researcher?s meaning of reasoning and translate it into testable evidence.
+State the researcher's meaning of reasoning and translate it into testable evidence.
 
 ## Planned content
 

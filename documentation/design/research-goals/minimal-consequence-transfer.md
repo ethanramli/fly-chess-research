@@ -4,7 +4,7 @@
 
 ## Diagnosis from current code
 
-The current system can learn board/action preferences. The existing relational encoder already normalizes actor direction and some file reflections, so adding a generically named relational encoder again would repeat prior work. It hashes candidate-relative geometry tokens into a limited KC stimulation set; the current experiment uses14 cells. Token overlap is not evidence that a useful relational variable is preserved in evoked neural activity.
+The current system can learn board/action preferences. The existing relational encoder already normalizes actor direction and some file reflections, so adding a generically named relational encoder again would repeat prior work. It hashes candidate-relative geometry tokens into a limited KC stimulation set; the current experiment uses 14 cells. Token overlap is not evidence that a useful relational variable is preserved in evoked neural activity.
 
 In `mapped-puzzle-brain.mjs`, `evaluate` supplies move priors but returns position `value: 0`. This specifically prevents learned position values from influencing search backups; it does not prove that all reasoning or transfer is impossible through a policy. In `dual-valence-puzzle-brain.mjs`, `replay` verifies an experience, encodes the original board/action and supplies a teaching channel. Recorded line explanations are not encoded into a transition sequence. The local rule samples endpoint KC/DAN excess activity. There is no validated long-delay credit mechanism or learned consequence output.
 
@@ -32,9 +32,9 @@ Passing would support **narrow learned consequence transfer**, consistent with a
 
 ## Sources and boundaries
 
-- [Battaglia et al., 2018](https://arxiv.org/abs/1806.01261), accessed2026-10-07, abstract/landing-page coverage: motivates explicit entities, relations and shared computation for combinatorial generalization. It does not validate this fly model or authorize replacing its graph with a trained graph network. Adaptation here is a design requirement, not an imported architecture.
-- [Brembs and Wiener, 2006](https://pmc.ncbi.nlm.nih.gov/articles/PMC1783616/), accessed2026-10-07, article text available: context generalization and occasion-setting are distinct experimental concerns. This does not demonstrate chess reasoning or prescribe our circuit.
-- [Jiang and Litwin-Kumar, 2021](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009205), previously reviewed and page re-accessed2026-10-07: retain prior documented limitations, including optimized nonplastic model parameters and timing/feedback assumptions. No new equation is adopted here.
+- [Battaglia et al., 2018](https://arxiv.org/abs/1806.01261), accessed 2026-10-07, abstract/landing-page coverage: motivates explicit entities, relations and shared computation for combinatorial generalization. It does not validate this fly model or authorize replacing its graph with a trained graph network. Adaptation here is a design requirement, not an imported architecture.
+- [Brembs and Wiener, 2006](https://pmc.ncbi.nlm.nih.gov/articles/PMC1783616/), accessed 2026-10-07, article text available: context generalization and occasion-setting are distinct experimental concerns. This does not demonstrate chess reasoning or prescribe our circuit.
+- [Jiang and Litwin-Kumar, 2021](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009205), previously reviewed and page re-accessed 2026-10-07: retain prior documented limitations, including optimized nonplastic model parameters and timing/feedback assumptions. No new equation is adopted here.
 
 The capture-and-recapture assay and staged bridge remain project hypotheses. A one-reply recapturability certificate/checker, verified-feedback route and versioned public cue are now implemented; see [the task interface](../puzzle-learning/capture-retention-task.md). No disjoint dataset, released-graph training, transfer pass or guaranteed cure is claimed.
 

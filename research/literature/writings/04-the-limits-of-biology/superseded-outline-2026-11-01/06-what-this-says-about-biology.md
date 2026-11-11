@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Explain what the combined formal, computational and literature evidence implies?and leaves open.
+Explain what the combined formal, computational and literature evidence implies and leaves open.
 
 ## Planned content
 

@@ -241,11 +241,11 @@ The registered seed-3 status action failed because its shared `inventory()` help
 
 ## 2026-10-21T13:34Z - registered status/watch now observes G0
 
-The targeted registered status command succeeded after replacing WMI inventory, then a bounded60-second Python-action watch observed the same G0 process advance from checkpoint012574/6286 receipts to012596/6297 receipts without a pending receipt or resource guard. Fresh status at13:34 reports checkpoint012620/6309, stage12 lesson11, pendingReceipt=false, zero stderr/no guard, and no result/audit. The independent audit is still required; parsed checkpoint advancement is not G0 passage. The separate source curator session46462/PID5524 remains live with no published v2 manifest.
+The targeted registered status command succeeded after replacing WMI inventory, then a bounded60-second Python-action watch observed the same G0 process advance from checkpoint012574/6286 receipts to012596/6297 receipts without a pending receipt or resource guard. Fresh status at13:34 reports checkpoint012620/6309, stage12 lesson11, pendingReceipt=false, zero stderr/no guard, and no result/audit. The independent audit is still required; parsed checkpoint advancement is not G0 passage. The separate source curator session 46462/PID 5524 remains live with no published v2 manifest.
 
 ## 2026-10-21T13:38Z - G0 status/wait advances
 
-The registered60-second watch sampled the same G0 recovery at checkpoints012680,012698 and012714; receipt counts6339,6348 and6356; it advanced to stage12 lesson13 and remained within its reported guards with no pending receipt at the final sample. Result and independent audit remain absent. The exact v2 curation session46462/PID5524 remains live without a manifest, CPU425s at the latest direct sample. No restart or gate reclassification.
+The registered 60-second watch sampled the same G0 recovery at checkpoints 012680, 012698 and 012714; receipt counts 6339, 6348 and 6356; it advanced to stage 12 lesson 13 and remained within its reported guards with no pending receipt at the final sample. Result and independent audit remain absent. The exact v2 curation session 46462/PID 5524 remains live without a manifest, CPU 425 s at the latest direct sample. No restart or gate reclassification.
 
 ## 2026-10-21T13:39Z - active-run recheck
 

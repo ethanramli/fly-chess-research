@@ -5,9 +5,9 @@
 
 ## Planned content
 
-- A proof by contradiction that the raw connectome, even with reinforcement learning, could never reason in theory.
+- A proof by contradiction for a bounded claim about the raw-connectome model, if its stated assumptions support that claim.
 - The claim is about the raw connectome model, not the living fly.
-- The raw connectome cannot hold the pillars that reasoning needs.
+- Which capacities the raw-connectome model lacks under the stated assumptions.
 
 ## Evidence boundary
 

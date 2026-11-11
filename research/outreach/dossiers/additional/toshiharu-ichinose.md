@@ -35,7 +35,7 @@ The current saved state persists because software retains it. His work supplies 
 
 **Bounded question:** What minimal acquisition-versus-post-training comparison would test whether persistent memory needs a recurrent reward process?
 
-**Possible next diagnostic, proposed only:** Proposed prospective condition: selectively interrupt a justified recurrent pathway during training versus afterward, and test retention later. Mapping α1 in our released graph and specifying permitted state changes would precede implementation.
+**Possible next diagnostic, proposed only:** Selectively interrupt a justified recurrent pathway during training versus afterward, and test retention later. Mapping α1 in our released graph and specifying permitted state changes would precede implementation.
 
 **Limits and reasons this may be the wrong contact:** The α1 result cannot be silently transferred to gamma4. Protein translation measurements should not be translated into invented molecular state variables without a justified reduction.
 

@@ -2,7 +2,7 @@
 
 ## 2026-10-19 21:43 Jakarta: interrupted wait-capable audit reconciled
 
-Python `fly.cmd status` confirms tracked PID14548 missing, stdout ending at9,500/14,161 receipts (8,563 frames/450 lessons), stderr empty, and no audit publication. Exit cause is unknown; absence of stderr does not establish success. Initial sandboxed process inspection was denied; the same Python status action succeeded with elevation. `plan audit` then found no competing graph work, all four pins matching and about8.9GiB free memory. Preserve `runs/python-actions/20261019T033542-110acf21/` unchanged. Restart only the registered read-only full replay into a fresh Python-action log directory; no training restart, gate change or adoption of latency candidates. Next inspect the resulting full audit before selecting a feedback-enabled experiment.
+Python `fly.cmd status` confirms tracked PID 14548 missing, stdout ending at 9,500/14,161 receipts (8,563 frames/450 lessons), stderr empty, and no audit publication. Exit cause is unknown; absence of stderr does not establish success. Initial sandboxed process inspection was denied; the same Python status action succeeded with elevation. `plan audit` then found no competing graph work, all four pins matching and about 8.9 GiB free memory. Preserve `runs/python-actions/20261019T033542-110acf21/` unchanged. Restart only the registered read-only full replay into a fresh Python-action log directory; no training restart, gate change or adoption of latency candidates. Next inspect the resulting full audit before selecting a feedback-enabled experiment.
 
 2026-10-19, Asia/Jakarta. This read-only full replay concerns the completed one-projection diagnostic `runs/g0-reversal-history-diagnostic-v1-resumed2`. It cannot pass G0 or authorize C01. The original diagnostic result, frozen protocol and frozen auditor are unchanged.
 
@@ -25,41 +25,41 @@ Run the registered read-only audit with `fly.cmd start audit`; monitor the exact
 
 ## Wait-capable replay started
 
-At 10:43 Jakarta, the registered audit started as PID14548 after `fly.cmd plan audit` reported ready and all four configured hashes matched. The process is still live at500/14,161 receipts,451 frames,23 lessons; RSS about168MiB, free memory about1.0GiB, stderr empty, audit artifact absent. Tracked logs are `runs/python-actions/20261019T033542-110acf21/{stdout,stderr}.txt`. Continue monitoring this handle; do not duplicate it.
+At 10:43 Jakarta, the registered audit started as PID 14548 after `fly.cmd plan audit` reported ready and all four configured hashes matched. The process is still live at 500/14,161 receipts, 451 frames, and 23 lessons; RSS about 168 MiB, free memory about 1.0 GiB, stderr empty, audit artifact absent. Tracked logs are `runs/python-actions/20261019T033542-110acf21/{stdout,stderr}.txt`. Continue monitoring this handle; do not duplicate it.
 
 
-At 10:48 Jakarta, the same wait-capable auditor PID14548 advanced to1,000/14,161 receipts,901 frames,47 lessons. It remains live, RSS about160MiB, free memory about1.3GiB, stderr empty, no audit publication. No restart or duplicate process.
+At 10:48 Jakarta, the same wait-capable auditor PID 14548 advanced to 1,000/14,161 receipts, 901 frames, and 47 lessons. It remains live, RSS about 160 MiB, free memory about 1.3 GiB, stderr empty, no audit publication. No restart or duplicate process.
 
 
-At 10:52 Jakarta, PID14548 reached1,500/14,161 receipts,1,351 frames,71 lessons. RSS about166MiB, free memory about1.5GiB, stderr empty; no audit publication yet. The same tracked process is live.
+At 10:52 Jakarta, PID 14548 reached 1,500/14,161 receipts, 1,351 frames, and 71 lessons. RSS about 166 MiB, free memory about 1.5 GiB, stderr empty; no audit publication yet. The same tracked process is live.
 
 
-At 10:55 Jakarta, PID14548 reached2,000/14,161 receipts,1,805 frames,94 lessons. RSS about172MiB, free memory about1.4GiB; stderr empty and no audit publication. It remains the only tracked graph/audit process.
+At 10:55 Jakarta, PID 14548 reached 2,000/14,161 receipts, 1,805 frames, and 94 lessons. RSS about 172 MiB, free memory about 1.4 GiB; stderr empty and no audit publication. It remains the only tracked graph/audit process.
 
 21:48 Jakarta: restart confirmed live as PID10596, logs runs/python-actions/20261019T144353-4650f6bd/. Handoff patch initially failed to match existing text; no patch applied. Replaced only the mutable compact handoff using native text output; raw evidence unchanged. Next bounded monitoring, then full audit classification.
 
-21:47 Jakarta: restarted PID10596 passed startup/hash phase; Python watch observed500/14,161 receipts,451 frames,23 lessons; RSS176MiB, free8.7GiB, stderr empty, audit absent. This establishes replay is progressing; continue same handle.
+21:47 Jakarta: restarted PID 10596 passed startup/hash phase; Python watch observed 500/14,161 receipts, 451 frames, and 23 lessons; RSS 176 MiB, free memory 8.7 GiB, stderr empty, audit absent. This establishes replay is progressing; continue same handle.
 
 
-21:51 Jakarta: resumed PID10596 advanced to1,000/14,161 receipts,901 frames,47 lessons; RSS177MiB, free8.7GiB, stderr empty, no audit publication. Same run remains live.
+21:51 Jakarta: resumed PID 10596 advanced to 1,000/14,161 receipts, 901 frames, and 47 lessons; RSS 177 MiB, free memory 8.7 GiB, stderr empty, no audit publication. Same run remains live.
 
-21:56 Jakarta: PID10596 at1,500/14,161 receipts,1,351 frames,71 lessons; RSS177MiB, free8.4GiB, stderr empty, no audit publication. Still live under frozen guards.
+21:56 Jakarta: PID 10596 at 1,500/14,161 receipts, 1,351 frames, and 71 lessons; RSS 177 MiB, free memory 8.4 GiB, stderr empty, no audit publication. Still live under frozen guards.
 
-21:57 Jakarta: PID10596 advanced to2,000/14,161 receipts,1,805 frames,94 lessons; RSS179MiB, free7.7GiB, stderr empty, audit unpublished. Continue same handle.
+21:57 Jakarta: PID 10596 advanced to 2,000/14,161 receipts, 1,805 frames, and 94 lessons; RSS 179 MiB, free memory 7.7 GiB, stderr empty, audit unpublished. Continue same handle.
 
-22:01 Jakarta: PID10596 advanced to2,500/14,161 receipts,2,255 frames,118 lessons; RSS177MiB, free7.9GiB, stderr empty, audit unpublished. Same handle remains live.
+22:01 Jakarta: PID 10596 advanced to 2,500/14,161 receipts, 2,255 frames, and 118 lessons; RSS 177 MiB, free memory 7.9 GiB, stderr empty, audit unpublished. Same handle remains live.
 
-22:05 Jakarta: PID10596 advanced to3,000/14,161 receipts,2,705 frames,142 lessons; RSS177MiB, free8.0GiB, stderr empty, audit unpublished. Diagnostic inspection of receipt rows2495-2510 showed ordinary frame replay in shuffled acquisition; later watch advanced, so the apparent 2,500 plateau was a slow replay segment, not evidence of a stall.
+22:05 Jakarta: PID 10596 advanced to 3,000/14,161 receipts, 2,705 frames, and 142 lessons; RSS 177 MiB, free memory 8.0 GiB, stderr empty, audit unpublished. Diagnostic inspection of receipt rows 2495–2510 showed ordinary frame replay in shuffled acquisition; later watch advanced, so the apparent 2,500 plateau was a slow replay segment, not evidence of a stall.
 
-22:07 Jakarta: PID10596 advanced to3,500/14,161 receipts,3,155 frames,166 lessons; RSS167MiB, free7.9GiB, stderr empty, audit unpublished. Same handle live.
+22:07 Jakarta: PID 10596 advanced to 3,500/14,161 receipts, 3,155 frames, and 166 lessons; RSS 167 MiB, free memory 7.9 GiB, stderr empty, audit unpublished. Same handle live.
 
-22:11 Jakarta: PID10596 advanced to4,000/14,161 receipts,3,609 frames,189 lessons; RSS181MiB, free7.2GiB, stderr empty, audit unpublished. Same handle live.
+22:11 Jakarta: PID 10596 advanced to 4,000/14,161 receipts, 3,609 frames, and 189 lessons; RSS 181 MiB, free memory 7.2 GiB, stderr empty, audit unpublished. Same handle live.
 
-22:19 Jakarta: PID10596 advanced to4,500/14,161 receipts,4,057 frames,213 lessons; RSS172MiB, free3.7GiB, stderr empty, audit unpublished. Same handle live; resource guards clear.
+22:19 Jakarta: PID 10596 advanced to 4,500/14,161 receipts, 4,057 frames, and 213 lessons; RSS 172 MiB, free memory 3.7 GiB, stderr empty, audit unpublished. Same handle live; resource guards clear.
 
-22:24 Jakarta: PID10596 advanced to5,000/14,161 receipts,4,507 frames,237 lessons; RSS168MiB, free8.2GiB, stderr empty, audit unpublished. Same handle live.
+22:24 Jakarta: PID 10596 advanced to 5,000/14,161 receipts, 4,507 frames, and 237 lessons; RSS 168 MiB, free memory 8.2 GiB, stderr empty, audit unpublished. Same handle live.
 
-22:29 Jakarta: PID10596 advanced to5,500/14,161 receipts,4,957 frames,260 lessons; RSS169MiB, free5.8GiB, stderr empty, audit unpublished. This is audit replay progress only, not learner growth.
+22:29 Jakarta: PID 10596 advanced to 5,500/14,161 receipts, 4,957 frames, and 260 lessons; RSS 169 MiB, free memory 5.8 GiB, stderr empty, audit unpublished. This is audit replay progress only, not learner growth.
 
 ## 2026-10-20 11:29 Jakarta: wait-capable audit completed; branch result
 

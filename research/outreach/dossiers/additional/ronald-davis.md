@@ -22,7 +22,7 @@ Coverage: current profile, author list and abstract/selected accessible introduc
 
 Reciprocal reward circuitry and active forgetting. Which control separates missing cue-to-dopamine feedback from persistent memory that is temporarily difficult to express? This fit is an inference from the cited work and the project's current requirements. The teacher must supply experience and feedback; the physiological memory mechanism and required graph identities remain to be justified.
 
-**Proposed bounded diagnostic:** Proposed: measure cue-evoked dopamine activity alongside output and choice; prospectively compare identified reciprocal-pathway perturbation with a matched noninformative-feedback condition. Do not add unsupported omission-driven negative updates.
+**Proposed bounded diagnostic:** Measure cue-evoked dopamine activity alongside output and choice; prospectively compare identified reciprocal-pathway perturbation with a matched noninformative-feedback condition. Do not add unsupported omission-driven negative updates.
 
 **Limits and reasons to deprioritize:** Reciprocal-feedback evidence does not supply a chess reward mapping or prove all dopamine populations use the same mechanism. Current UF affiliation and address supersede old Scripps-only addresses. No availability, endorsement or commitment is established. Publishing in eLife does not establish special access or predict acceptance for FlyChess.
 

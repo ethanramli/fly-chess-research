@@ -11,6 +11,8 @@
 
 **Question:** if the memory stores every known-certificate capture of the 750 practice positions once (2,509 experiences, 991 safe), does it choose the safe capture on new positions more often than chance, shuffled outcomes and a quarter store?
 
+The position-centred Kenyon-cell key is named K3 in the run records.
+
 ## How the run was made (disclosure)
 
 - Run folder: `runs/engineered-memory-test-2026-11-07/engineered-memory-test-v8/` (`manifest.json` `complete`; 02:44-04:54 local, 2026-11-07; 24/24 jobs, 0 copied, no resume). Detached chain `runs/python-actions/detached/v8-chain-20261107T0135/`, after the dry run on 5 positions and its audit (PASS 10/10).

@@ -5,7 +5,7 @@
 
 ## Planned content
 
-- How reasoning happens in humans: the psychology.
+- Describe psychological accounts of human reasoning that inform the volume's research question.
 
 ## Evidence boundary
 

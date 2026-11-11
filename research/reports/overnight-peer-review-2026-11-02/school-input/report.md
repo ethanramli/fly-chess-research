@@ -49,7 +49,7 @@ Do not use this input for the full task yet. First change or justify the input s
 
 **What happens**
 
-The planned eye-signal test sets a gain (a number that scales a effect of a connection) to 1.8. The learning rule inspected by the reviewer allows a maximum gain of 1.
+The planned eye-signal test sets a gain (a number that scales the effect of a connection) to 1.8. The learning rule inspected by the reviewer allows a maximum gain of 1.
 
 The plan also does not fully state how the fly's score for each move will be calculated.
 

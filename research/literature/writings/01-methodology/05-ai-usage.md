@@ -5,8 +5,7 @@
 
 ## Planned content
 
-- A full and transparent account of how AI was used across the research.
-- The researcher is extremely transparent about this: AI was used all across the research.
+- A full account of the researcher's use of AI throughout the project.
 
 ## Working notes
 

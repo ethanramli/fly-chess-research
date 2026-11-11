@@ -45,7 +45,7 @@ recorded feedback/exposure defects remain unfinished.
 ## Completed verification
 
 `fly.cmd --config "python actions/babysit-post-interference-checks-v2.json" run tests`
-completed with **71/71 passing**, exit0, 643024.3448 ms. Raw argv/config, handle,
+completed with **71/71 passing**, exit 0, 643024.3448 ms. Raw argv/config, handle,
 stdout/stderr and completion receipt are preserved in
 `runs/python-actions/20261023T123349-bdeeae22`; unified-exec session3991 is terminal.
 The Stage 2 runtime factory also passes syntax checking. `fly status` still

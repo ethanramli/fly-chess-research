@@ -42,3 +42,7 @@ Not brain-only learning, not own-choice exploration (fixed schedule), not reason
 ## Next
 
 [Memory v6](../../../documentation/design/neural-learning/memory-v6-proposal-2026-11-05.md): a frozen replication with the same memory and gate on 574 positions from 300 never-used games.
+
+## Addendum 2026-11-08: full audit interrupted, not rerun
+
+The second full audit started on 2026-11-07 at 09:33:09 in the detached chain `runs/python-actions/detached/v8audit-first-20261107T0510/`. Its log holds only the start line, and no `audit.json` exists. No audit process is live, so the audit was interrupted (cause not recorded; likely the session or laptop stopped). **v5 stays unaudited.** It is not rerun now: v5 is a failed engineered-store result that does not bear on the Properties 1–3 goal, and a 6–7 h audit would delay the serial graph work for that goal. It can be rerun later with the same command from `chain.py`.

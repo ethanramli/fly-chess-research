@@ -28,10 +28,10 @@ Records feedback without neural learning. [Round contract](../documentation/desi
 ## Supervised comparison
 
 ```powershell
-node --max-old-space-size=256 .codebase/scripts/supervised-baselines/train-pilot.mjs --dataset research/data/coverage-pilot-v2 --optimizer adam --learning-rate 0.001 --cpu-duty 0.5 --shuffle-buffer 24 --out runs/my-training-run --epochs 1 --max-pairs 169
+node --max-old-space-size=256 .codebase/scripts/supervised-baselines/train-pilot.mjs --dataset archive/early-development/research/data/coverage-pilot-v2 --optimizer adam --learning-rate 0.001 --cpu-duty 0.5 --shuffle-buffer 24 --out runs/my-training-run --epochs 1 --max-pairs 169
 ```
 
-This is an Adam engineering baseline, not endogenous biological learning. Resume into a new directory with --resume PATH and unchanged identities/settings. [Memory and baseline design](../documentation/design/supervised-baselines/low-memory-training.md).
+This is an Adam engineering baseline, not endogenous biological learning. It uses a historical dataset with the current trainer; it does not reproduce the archived run. Resume into a new directory with --resume PATH and unchanged identities/settings. [Memory and baseline design](../documentation/design/supervised-baselines/low-memory-training.md).
 
 ## Other entry points
 
@@ -39,7 +39,7 @@ This is an Adam engineering baseline, not endogenous biological learning. Resume
 - npm run evaluate -- --checkpoint DIRECTORY --fen "FEN": criterion predictions, without move search.
 - validate-compartment-input.mjs / audit-compartment-input.mjs: frozen association comparison and independent receipt/recovery audit; use [the pinned protocol](../archive/early-development/research/data/compartment-input-association-v1/protocol.json), not improvised settings.
 
-Maintain sparse one-position execution, 768 MiB RSS / 256 MiB free-memory guards, atomic resumability and serial full-graph experiments. Numerical/software passes are distinct from biological validation and reasoning.
+For new unfrozen work, keep RSS at or below 2048 MiB and leave at least 256 MiB free; preserve stricter limits registered for frozen experiments. Keep sparse one-position processing and atomic resumability, and run full-graph experiments serially. Numerical/software passes are distinct from biological validation and reasoning.
 
 ## Topic navigation and frozen sources
 

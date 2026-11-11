@@ -1,4 +1,4 @@
-# Can a Fly Play Chess? ? Writings
+# Can a Fly Play Chess? — Writings
 
 Researcher's five-volume writing workspace, created 2026-11-01. These are planned manuscripts, not completed studies. Keep source-reading notes in the parent literature folder.
 

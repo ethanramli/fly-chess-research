@@ -137,7 +137,7 @@ The following journals are selected based on fit with the cognitive-science fram
 - Manuscript writing: 4–8 weeks.
 - First submission to first decision: 4–8 months (desk review + peer review).
 - If revisions required: 4–12 additional weeks.
-- **Realistic overall: 8–16 months from now**, assuming no major setbacks.
+- **Realistic overall: 8–16 months after the 2026-09-28 decision date**, assuming no major setbacks.
 
 ---
 
@@ -206,7 +206,7 @@ The following journals are selected based on fit with the cognitive-science fram
 - **Rejection is possible.** Even well-designed experiments can receive desk rejections or negative peer reviews. Have a backup plan to revise and resubmit elsewhere.
 - **Peer review is slow.** Budget 6–16 months for the full cycle, not weeks. Plan accordingly.
 - **Reviewers will scrutinize claims.** They will ask: Is the result really about the connectome constraint? How much of the performance is search vs. evaluation? Does the rubric drive the result, or is it just a label? Have evidence and ablations ready.
-- **Transparency is rewarded.** Journals like eLife and Cognitive Science value honest scope, clear methods, thorough ablations, and modest conclusions. This is where your project's careful design shines.
+- **Transparency matters.** These journals value honest scope, clear methods, thorough ablations, and modest conclusions. State what each result supports and what it does not.
 - **Reproducibility matters.** Release code and data (or a protocol for reproducibility) with the accepted paper. This increases impact and credibility.
 
 ---

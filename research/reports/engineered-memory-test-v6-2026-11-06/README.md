@@ -46,3 +46,7 @@ Descriptive comparison (post hoc, not part of the gate; computed from the positi
 2. Not brain-only learning: an engineered nearest-episode memory stores the verified labels; the brain's connections never change.
 3. Not own-choice exploration (fixed schedule), reasoning, or transfer beyond this task.
 4. Not audited yet.
+
+## Addendum 2026-11-08: independent audit PASS
+
+The full independent audit of v6-r4 finished on 2026-11-07 at 09:33: **AUDIT PASS, pinned**, 8 of 8 checks (data, test set, v5 inputs, certificates, cache, jobs, scores, gate). It rebuilt all 24 jobs exactly. Raw: `runs/engineered-memory-test-2026-11-05/engineered-memory-test-v6-r4/audit.json`; log `runs/python-actions/detached/v8audit-first-20261107T0510/v6-audit.stdout.txt`. Item 4 of "What this does not show" no longer applies. The other limits stand: this is an engineered store, below the random-capture rule (250.1), and the fly's connections never change.

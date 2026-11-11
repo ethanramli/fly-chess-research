@@ -1,0 +1,32 @@
+Read .agents/skills/ponytail/SKILL.md first and follow it at ultra intensity. Repo root: C:/Users/ethan/Documents/fly-chess-research.
+
+One small, fully scoped task: graph-free engineered-store comparison arms for fly connections memory v1 (revision 2, section 6: "Raw Eyes and fixed random-feature external stores receive the identical scheduled training-board/action tape and its positive/zero delivered external stimulation code"). These arms are engineered comparisons, never the fly. Read documentation/design/neural-learning/fly-connections-memory-v1-revision-2-2026-11-07.md section 6 only.
+
+Assigned new files (create only these two; edit no existing file):
+.codebase/src/neural-learning/fly-connections-baselines-v1.mjs
+.codebase/tests/neural-learning/fly-connections-baselines-v1.test.mjs
+
+Reuse UNCHANGED (read them; do not copy their logic):
+- .codebase/src/neural-learning/engineered-memory-task-v5.mjs: transformFor (keys 'raw-pc' and 'random-pc'), calibrationKeys, fitPipeline, buildStore (capacity 4096, k 3).
+- .codebase/src/neural-learning/kc-episodic-memory-v2.mjs: makeRandomExpansion, NearestEpisodeMemory.
+- .codebase/scripts/neural-learning/memory-v5-worker.mjs lines 98-113: the exact rawOf/randomOf construction (dense vector over retina.retina_idx from eyes.encode(fen, uci).stimulation; randomOf = expand(raw, 0.05) with makeRandomExpansion({inputs: retinaIdx.length, units: 5177, fanIn: 6, seed: 20261103})). Rebuild that same construction inside your module as a function of a caller-supplied eyes object and retina index array (no file loading in the module).
+- .codebase/src/neural-learning/fly-connections-metrics-v1.mjs: scoreAllLegal(board, ranked, outcomes) for all-legal s/c and margin.
+- .codebase/src/neural-learning/fly-connections-packet-v1.mjs (being written now by another worker): replayPacketBoard(record). Board record shape: {schema:'fly-connections-board-v1', boardId, gameId, ply, fen, history:[uci], group:'A'|'B'|'R'|'testA'|'testB', legal:[sorted uci], outcomes:{uci:boolean}, ...}. Tape shape: {seed, events:[{sequence,eventId,phase:'A'|'R1'|'B'|'R2',group,boardId,move,pulse:boolean,...}], shuffledPulses:[boolean per event], probeAfter:[{cursor,phase}]}. If that module is not there yet, your tests may build records directly in this shape with a real chess.js board.
+
+Export exactly:
+runStoreBaseline({ key, records, tape, eyes, retinaIdx, evaluate, shuffled = false })
+- key: 'raw-pc' or 'random-pc' (anything else throws).
+- records: Map boardId -> board record (all groups).
+- tape: one seed's tape. Write events in tape order; the stored value is 1 when the delivered pulse is true and 0 otherwise. Delivered pulse = event.pulse, or tape.shuffledPulses[i] when shuffled is true. Never read outcomes, proofs or certificates to build the store: only the delivered pulse code.
+- calibration (label-free scaler) = calibrationKeys over the training boards in first-appearance tape order (A then B then R boards), never test boards; legalOf(id) = record.legal.
+- evaluate: list of boardIds to score after the whole tape. For each, rank EVERY legal move (record.legal, sorted UCI) by memory.score(apply(id,uci)), then call scoreAllLegal(replayPacketBoard(record), ranked, outcomesFor(record)) where outcomes are the safe-nonking-capture criterion booleans in record.outcomes (for R boards, skip: they are not chess-criterion boards; throw if asked).
+- Return { key, shuffled, counts (from buildStore), rmsSha256, perBoard:[{boardId, gameId, group, s, c, success, margin}] } with no mutable store exposed.
+Also export uniformBaselines(record): exact expected all-legal success for uniform random over (a) all legal moves, (b) all captures including legal king captures, (c) non-king captures; for a board with no move in the policy's domain use the uniform all-legal fallback and say so with a flag. Use chess.js move flags from replayPacketBoard(record), not string guesses.
+
+Rules: deterministic; no randomness except the fixed expansion seed; no filesystem, network, graph propagation or neural model; validate inputs (unknown key, missing record, tape event board not in records, nonboolean pulse) and throw. Keep it small.
+
+Tests (node:test, synthetic and explicit): a tiny fake eyes object (stimulation pairs derived deterministically from fen+uci; mark it synthetic) and a tiny retinaIdx; 2-3 real chess boards from a short real move history (use chess.js); show that (1) a store taught pulse=1 on a cue ranks that same cue top on the same board; (2) shuffled=true uses shuffledPulses, not event.pulse; (3) store values never come from outcomes (mutating outcomes does not change perBoard scores); (4) all legal moves are scored including quiet and king moves; (5) uniformBaselines on a hand-counted board gives the exact fractions, including the fallback flag; (6) invalid inputs throw.
+
+You MAY run exactly: node --test .codebase/tests/neural-learning/fly-connections-baselines-v1.test.mjs (from the repo root), as often as needed, and make it pass. No other commands, no git, no graph loading, no runs.
+
+End with: files changed, final test pass/fail counts, exact API, and every contract point you could not meet.

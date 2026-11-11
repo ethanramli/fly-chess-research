@@ -8,7 +8,7 @@ Draft chapters here as they are developed. Keep claims tied to preserved evidenc
 
 ## Volume note (researcher, 2026-11-04)
 
-- The least novel volume: it deals with knowledge we already know.
+- The least novel volume: it deals with knowledge we already have.
 - It reproduces pivotal earlier research in a computational model.
 - The researcher wants explanations so simple that readers with no neuroscience and no computer science can follow.
 

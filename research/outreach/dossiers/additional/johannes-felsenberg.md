@@ -35,7 +35,7 @@ The prototype's persistent old choice could arise from trace competition or expr
 
 **Bounded question:** What observation would distinguish a persisting old memory that competes with a new one from a failure to form the new association?
 
-**Possible next diagnostic, proposed only:** Proposed diagnostic: retain separate cue-evoked neural contrasts and behavior across acquisition, reversal and a later probe; include a control that never receives informative feedback. Any new neural mechanism would need identified circuits and a frozen prospective test.
+**Possible next diagnostic, proposed only:** Retain separate cue-evoked neural contrasts and behavior across acquisition, reversal and a later probe; include a control that never receives informative feedback. Any new neural mechanism would need identified circuits and a frozen prospective test.
 
 **Limits and reasons this may be the wrong contact:** Extinction, reward devaluation and contingency reversal are distinct protocols. Neither cited result supplies a gamma4 reversal rule or a natural chess reward pathway.
 

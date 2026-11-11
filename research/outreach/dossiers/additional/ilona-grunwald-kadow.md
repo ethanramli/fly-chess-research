@@ -35,7 +35,7 @@ Choosing the old option can reflect state-dependent persistence as well as defic
 
 **Bounded question:** What comparison would separate failure to update a learned association from persistence caused by motivational state?
 
-**Possible next diagnostic, proposed only:** Proposed diagnostic: compare learned choice and a separate engagement/persistence measure, while independently controlling internal state in a biologically justified model. Merely adding a parameter called hunger would not validate it.
+**Possible next diagnostic, proposed only:** Compare learned choice and a separate engagement/persistence measure, while independently controlling internal state in a biologically justified model. Merely adding a parameter called hunger would not validate it.
 
 **Limits and reasons this may be the wrong contact:** The prototype has no reconstructed natural motivational state. Food tracking and reproductive preference are different tasks from chess and from our engineered two-cue choice.
 

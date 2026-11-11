@@ -1,0 +1,16 @@
+Read .agents/skills/ponytail/SKILL.md first and follow it at ultra intensity. Repo root: C:/Users/ethan/Documents/fly-chess-research.
+
+Task: one small diagnostic script (journal item 22). Question: can ANY setting of the registered KC-to-MBON05 mask gains, inside the rule's bounds [0.2, 1.8], make a safe non-king capture the top choice over all legal moves on a development board? This separates "the synapses cannot do it" (a Volume 4 limit) from "the rule or teaching fails to find it". It is an oracle construction, not learning: label it so in the output.
+
+Create only: .codebase/scripts/neural-learning/probe-oracle-gains-v1.mjs (under 100 lines; no test file). Edit no existing file.
+
+Read: .codebase/scripts/neural-learning/probe-zero-drive-learning-v1.mjs (same construction: config, graph, mapping, model, bias set before createFlyCondition, eyes, APL package, condition, guard), .codebase/src/neural-learning/fly-connections-condition-v1.mjs (rankBoard; snapshot()/restore() of memory gains), .codebase/src/neural-learning/reversal-memory.mjs (memory.gains, memory.edges, mapping groups' kc arrays aligned with edges, apply()), fly-connections-teaching-v1.mjs (actualTeachingInputs gives per-group kcRates aligned with group.kc).
+
+CLI: node --max-old-space-size=512 probe-oracle-gains-v1.mjs --config CONFIG --boards 3 --bias B --iterations 6 --out DIR
+For arm 'informative-local' (gains are set by the script, never by teaching):
+For each of the first --boards A-group records (boards.jsonl order):
+1. Reset gains to all 1 via condition.restore of the initial snapshot. r = condition.rankBoard(record). Let S = legal moves with record.outcomes[move] === true.
+2. Repeat up to --iterations: let s* = the highest-scoring move in S, f* = the highest-scoring move not in S. If s*'s score exceeds f*'s by more than the ranking tolerance, stop: SUCCESS. Otherwise run one forward for s* and one for f* (model.forward(new Float32Array(1), eyes.encode(fen, move).stimulation, null), then actualTeachingInputs(model, mapping)) to get per-edge presynaptic KC rates a_e (for s*) and b_e (for f*), aligned with memory.edges (group order, then group.kc order). Set gain_e = 0.2 where a_e > b_e (weakens the safe move's MBON05 drive more, which raises its score), 1.8 where a_e < b_e, and keep the current gain where equal. Write those gains via condition.restore({...snapshot, memory: {...snapshot.memory, gains}}) so all identity checks still run (keep events unchanged). Then r = condition.rankBoard(record).
+3. Report per board and iteration: s*, f*, their scores, margin (scoreAllLegal margin from the ranking), success s/c, number of gains at 0.2 / 1.8 / unchanged, and passes.
+Write DIR/oracle.json atomically {schema:'oracle-gains-probe-v1', note:'oracle construction, not learning', bias, boards, rows}, print one line per (board, iteration). Guard RSS <= 2048 MiB and free >= 256 MiB.
+You may run only: node --check on your script. Do NOT run it. No git. End with: file, exact CLI, anything not met.

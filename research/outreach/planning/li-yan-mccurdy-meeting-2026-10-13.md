@@ -2,7 +2,7 @@
 
 ## 13 October status update
 
-Use the [plain-English curriculum and current-status explanation](../../../documentation/design/puzzle-learning/principles-curriculum-plain-english.md) for today's call. It supersedes the 12 October G0 pending observation below: the first replica completed acquisition and retention at8/8, then failed reversal's required control advantage at7/8 informative versus7/8 shuffled. The full replay audit passed and reproduced the failure. Remaining replicas were not run; C01 remains gated. The follow-up diagnostic has no completed result. Keep the earlier preparation as a dated record.
+Use the [plain-English curriculum and current-status explanation](../../../documentation/design/puzzle-learning/principles-curriculum-plain-english.md) for today's call. It supersedes the 12 October G0 pending observation below: the first replica completed acquisition and retention at 8/8, then failed reversal's required control advantage at 7/8 informative versus 7/8 shuffled. The full replay audit passed and reproduced the failure. Remaining replicas were not run; C01 remains gated. The follow-up diagnostic has no completed result. Keep the earlier preparation as a dated record.
 
 Prepared 12 October 2026, Asia/Jakarta. Discussion notes, not a submitted research proposal. Suggested 30-minute agenda; the email does not specify a duration.
 

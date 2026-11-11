@@ -12,7 +12,7 @@ Xu's current work is described as neuromodulation research, and the lab's recent
 
 - **2026:** Xu et al., “Contextualized phenovectors reveal a Drosophila serotonergic circuit controlling satiety,” bioRxiv preprint. [Lab paper record](https://claridgechang.com/papers/)
 - **2024:** Mohammad et al., “Dopamine neurons that inform Drosophila olfactory memory have distinct, acute functions driving attraction and aversion,” *PLOS Biology*; Xu is a coauthor. [Paper](https://doi.org/10.1371/journal.pbio.3002843)
-- **2022:** Zhang et al., “A mushroom-body output neuron that mediates octopamine-driven and hunger-motivated feeding in Drosophila,” a 2026 preprint listed by the lab; the date here refers to preprint publication, not a peer-reviewed article. [Preprint](https://doi.org/10.64898/2026.03.13.711740)
+- **2026:** Zhang et al., “A mushroom-body output neuron that mediates octopamine-driven and hunger-motivated feeding in Drosophila,” a preprint listed by the lab; the date here refers to preprint publication, not a peer-reviewed article. [Preprint](https://doi.org/10.64898/2026.03.13.711740)
 
 ## Specific overlap with this project
 

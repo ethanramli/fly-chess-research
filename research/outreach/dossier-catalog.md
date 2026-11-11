@@ -1,6 +1,6 @@
 # Expert dossier catalog
 
-## 13 October2026 referral addendum
+## 13 October 2026 referral addendum
 
 [Damon Clark](dossiers/additional/damon-clark.md): personally referred by McCurdy according to the researcher's meeting account; source-checked neural-computation reading brief. Introduction delivery and mentoring are unconfirmed. This is an addition to the historical inventory below, not a sent-email claim.
 

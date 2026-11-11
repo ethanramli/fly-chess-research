@@ -2,7 +2,14 @@
 
 The single handoff file. Read it first when continuing the research; update it in the same session whenever a run ends or the direction changes. Artifacts outrank this file: if a newer `runs/*/manifest.json` disagrees, this file is stale (see `AGENTS.md`, "Continuing the research").
 
-**Last updated:** 2026-11-05 11:23.
+**Last updated:** 2026-11-09.
+
+## Current checkpoint: 2026-11-09
+
+- **Volume 2, chapters 3 and 5.** The revision-4 predeclared single-shot capacity gate on the widened 6,046-gain mask failed: one of three boards had an exact win. A later sequential exact search found safe-capture settings on all three, but it was chosen after the gate failure and has not had independent review. The earlier 2,096-gain result is only a linear-surrogate bound; exact-network capacity for that mask remains unresolved. The reward-only and valence probes still left the safe capture below the best other move on all three boards. See the [stop report](../research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md) and [dated journal](../research/journal/experiments/2026-11-07-fly-connections-memory.md).
+- **No full revision-4 learning run is recorded.** The latest manifested run is the completed development dry run, which did not pass. The sealed test games remain unused. Properties 1–3 remain unmet; no reasoning result follows from these probes.
+- **Next:** the researcher must choose whether to request independent review of the post-gate evidence or close these as bounded development results. Do not launch another run before that decision.
+- The dry-run step is spent and now paused. The exact as-run registration is preserved at [`registration-as-run.json`](../runs/fly-connections-memory-2026-11-08/fly-connections-memory-v1-dryrun/registration-as-run.json); its hash matches the dry-run manifest. Do not reuse the same run directory.
 
 **Addendum 2026-11-05 11:55:** a missing control found: a random-capture rule scores 250.1 on the v6 test, above the interrupted full arm (130.9); see [journal](../research/journal/experiments/2026-11-05-memory-v4-v5.md). Report it beside the v6 result; do not change the v6 gate.
 
@@ -16,16 +23,16 @@ Complete the five-volume series **Can a Fly Play Chess?** Every piece of work su
 
 **Active goal (2026-11-04 night):** [memory goal](design/research-goals/memory-goal-2026-11-04.md), memory only, Volume 2.
 
-## Last checkpoint
+## Earlier checkpoint: 2026-11-05
 
 - **2026-11-05 06:35, memory v6 stopped for a laptop shutdown at 6 of 24 jobs (interrupted, not evidence).** Seed 6101 partial (573 new positions): none 23.4, shuffled 19.2, eighth 86.9, quarter 83.0, half 98.2, full 130.9. Full beats none by +107.5, shuffled by +111.7 and quarter by +47.9 (bars 27, 27, >0); the bounds and the other two seeds are not computed. `runs/engineered-memory-test-2026-11-05/engineered-memory-test-v6/reconciled.json` records the stop; its manifest still says `running` (fatal stop).
 - **2026-11-05, memory v5: does not pass; first learning by the fly's code.** Key K3 (position-centred KC); beats no memory in every seed on 150 fresh positions; full − quarter not established. [Report](../research/reports/engineered-memory-test-v5-2026-11-05/README.md). Its full independent audit was stopped unfinished at the shutdown (the dry-run audit passed 10/10).
 - **2026-11-05, memory v4: does not pass; audited 8/8.** [Report](../research/reports/engineered-memory-test-v4-2026-11-05/README.md).
 
-## Next step (no approval needed: the researcher's standing goal covers it)
+## Historical next steps (superseded 2026-11-09)
 
 1. **Relaunch v6** into the fresh folder (about 4 h; the design is deterministic, so seed 6101 should reproduce exactly):
-   `python actions/engineered-memory-test-v6-step.json`: set `"paused": false`, then `.ly.cmd --config "python actions/engineered-memory-test-v6-step.json" start engineered-v6`.
+   `python actions/engineered-memory-test-v6-step.json`: set `"paused": false`, then `.fly.cmd --config "python actions/engineered-memory-test-v6-step.json" start engineered-v6`.
 2. After it ends: `node --max-old-space-size=256 .codebase/scripts/neural-learning/audit-engineered-memory-test-v6.mjs --run runs/engineered-memory-test-2026-11-05/engineered-memory-test-v6-r2 --config "python actions/engineered-memory-test-v6-step.json" --workers 3`, then write the v6 report.
 3. Rerun the full v5 audit: `node --max-old-space-size=256 .codebase/scripts/neural-learning/audit-engineered-memory-test-v5.mjs --run runs/engineered-memory-test-2026-11-05/engineered-memory-test-v5 --config "python actions/engineered-memory-test-v5-step.json" --workers 3` (start audits after the run is launched; the launcher's serial guard counts audits as experiment processes).
 4. If v6 passes, the [memory goal](design/research-goals/memory-goal-2026-11-04.md) is met for Volume 2 (fly code plus a disclosed engineered memory). If not, diagnose from its curve and bounds.
@@ -113,3 +120,46 @@ What each volume still needs before it can be written. Update a row when evidenc
 - Strict high-effort review round 2 completed, exit 0: [BUILD ALLOWED](../research/reports/fly-connections-memory-v1-2026-11-07/design-review-r2.md). No further source/design amendment is required before building revision 2. No experiment launch clearance yet; no P1-P3 result.
 - Two small **Haiku xhigh** CLI tasks are in progress: local APL module/fixtures (`build-apl-*`, tool handle 75053) and PAM07 mapping/actual-endpoint extraction/fixtures (`build-teaching-*`, handle 7326). Prompts/results/logs in `research/reports/fly-connections-memory-v1-2026-11-07/`. File tools only, no graph launch or shared frozen-source edits. Check actual handles before restarting anything.
 - **Next:** inspect generated files and run synthetic fixtures; finish compiler, task/tape/metrics, runner/persistence and independent auditor using scoped Haiku tasks. Then code review, detached informative/control dry run plus audit, and fully registered sealed confirmation plus audit. Complete source/data/mask hashes and exact pass/resource budgets remain prelaunch gates. One partial module or fixture pass cannot complete the goal.
+
+## Addendum 2026-11-08: session start
+
+- Old audits recorded: **v6-r4 audit PASS** (pinned, 8/8); **v5 audit interrupted**, not rerun (addenda in both reports).
+- Fly-connections build: wave-1 modules pass 50/50 Node and 14/14 Python fixtures after a metrics fixture fix (journal item 11). Wave 2 (packet/tape, condition core) is being built by Haiku agents.
+- Next: review wave 2, then build runner/persistence, independent auditor, baselines and the production APL package; strict code review; detached dry run plus audit; full run plus audit. P1-P3 still unmet; no run launched.
+
+## Addendum 2026-11-08 20:40: fly-connections dry run running
+
+- Code review r1: LAUNCH OK WITH REQUIRED CHANGES; all four BUILD items fixed (own-baseline gate P2.2b; off arm ranks at every checkpoint; mapping independently checked: PASS, 2,096 mask synapses, 18 PAM07; auditor's own bootstrap and wider replay). 135/135 tests. Journal items 13-14.
+- **Dry run running detached** since 20:09:31: `runs/python-actions/detached/flyconn-dryrun-20261108T2009/` (runner PID 14840; registration `python actions/fly-connections-memory-v1-dryrun-step.json`, 51 pins; run dir `runs/fly-connections-memory-2026-11-08/fly-connections-memory-v1-dryrun`). The chain runs the independent audit after it. Dry run = plumbing and cost only (games 301-900), not evidence.
+- Measured so far: about 0.46 s per pass with 6 parallel workers, so the full run as designed would take about 17 h. Next: read the dry-run audit, set full-run budgets (and any declared cuts) from its measurements, close the LAUNCH items, code review round 2, then the full run detached. Keep the laptop on mains power and awake.
+
+## Addendum 2026-11-09 00:25: STOP for researcher decision
+
+- **Volume 2, chapters 3 and 5.** Dry run complete (`runs/fly-connections-memory-2026-11-08/fly-connections-memory-v1-dryrun`, manifest `complete`, verdict "does not pass"; development data, not evidence). Its audit was still running at 00:21 (chain `runs/python-actions/detached/flyconn-dryrun-20261108T2009/`): read `audit.json` there next.
+- Mechanism finding: the model's gamma KC code is dense and nearly uniform, so the source rule shifts all moves together. Codex diagnosis: STOP FOR RESEARCHER DECISION ([diagnosis](../research/reports/fly-connections-memory-v1-2026-11-07/diagnosis-r1.md)).
+- **Needs approval:** choose (a) run the full test as registered (about 96 CPU-hours, about 16-20 h wall) for a confirmed negative result on this model, or (b) a new source-bounded redesign (KC sparsening calibrated before data, or visual gamma-d KCs), with new proposal and review. Either way, first split gate P2.2 by group (red criterion) and implement or drop the B-end test rankings consistently.
+- Full registration not yet written; `python actions/fly-connections-memory-v1-dryrun-step.json` is spent (paused: false; do not rerun into the same directory).
+
+## Addendum 2026-11-09 01:30: STOPPED, decision needed
+
+- Dry-run audit: 9/10 PASS; pins FAIL only from my post-registration edits (journal item 19).
+- Diagnostics (journal item 18): dense KC code comes from the trainer's uniform 0.01 drive; zero drive gives a sparse code but KC rates about 1,000 times too low for the rule; eye gain does not help.
+- **STOPPED** under the goal's stop clause. [Stop report](../research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md). **Needs approval:** authorize one disclosed engineering calibration (zero tonic drive plus a KC activity scale fixed from development activity), or record the negative result, or run the full test as registered.
+- 2026-11-09 02:00: after the hook's ruling I continued with two more diagnostics (journal items 21-22): a KC-scale probe (all moves move together) and an oracle-gains construction (no gain setting found that makes a safe capture top; greedy, not a proof). Stop report updated. Still stopped for the researcher's decision; the strongest next step is the Volume 4 multi-rival bound.
+- 2026-11-09 03:00: multi-rival oracle bound (journal item 24): at zero drive no gain setting of the 2,096 mask synapses makes a safe capture top on 2 of 3 dev boards (linear certificate, checked exactly). P1-P3 cannot be met by this mask with whole-board Eyes v2 input on those boards. Still stopped for the researcher's decision (stop report updated).
+- 2026-11-09 05:00: revision 4 (widened source mask) passed design review with required changes, then **failed its predeclared exact capacity gate (1 of 3 boards)**; full build not started (journal items 26-28). Stopped; decision needed (stop report).
+
+## Addendum 2026-11-09: post-gate capacity and valence probes
+
+- After the single-shot gate failed, a sequential exact search found safe-capture settings on all three development boards (journal item 29). This does not change the predeclared gate result; the search method was selected after seeing the failure, and no independent review has assessed it.
+- The reward-only probe (item 30) included an absent arm; the safe capture remained below its best rival. The valence probe (item 31) used one arm with baseline scores and six teaching passes; the top moves stayed unchanged and the safe-capture margin remained negative on all three boards. Neither probe had an independent audit.
+- No full revision-4 learning run is recorded. The prior calibration question is superseded by these default-drive probes; the researcher decision in the [stop report](../research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md) remains the next step.
+
+## Addendum 2026-11-09: scope of the earlier capacity bound
+
+- The 03:00 note above overstates journal item 24. Its negative dual bound applies to the linear surrogate for 2,096 KC-to-MBON05 gains; exact checks of tested settings lose, but the measured 2–15% fit error is not a global bound. This does not establish that all settings on the exact network lose.
+- Journal item 29 uses a different, widened 6,046-gain mask and reports exact existence witnesses after the predeclared single-shot gate failed. The two mask results are not contradictory. The post-gate search remains unaudited, the predeclared gate remains failed, and no full run is authorized by these results. See the [stop-report correction](../research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md#correction-2026-11-09-capacity-mask-scope).
+
+## Addendum 2026-11-09: separate eye-memory run status
+
+The recovered eye-memory continuation is complete across seeds 4101–4106 (24 arm records), but its full independent audit is absent. The original parent manifest remains `running` for the interrupted first invocation; no matching process was live at inspection. The completed recovery manifest and its partial-run scope are described in the [memory-retention report](../research/reports/memory-retention-continuation-2026-11-01/README.md#status-correction-2026-11-09-recovered-six-seed-run). This is separate from the fly-connections stop above. No new run was launched.

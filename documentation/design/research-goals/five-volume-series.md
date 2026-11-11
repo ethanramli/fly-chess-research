@@ -103,6 +103,6 @@ Each volume should state its question, evidence, limitations, and relationship t
 
 The volumes are not assumed to be five successive proof steps. In particular, chess strength in Volume 5 is a separate performance outcome from the transfer evidence in Volume 3, and the limits investigated in Volume 4 are not a pre-decided conclusion that reasoning is impossible.
 
-## Writing workspace ? researcher clarification, 2026-11-01
+## Writing workspace: researcher clarification, 2026-11-01
 
-The researcher retains **The Limits of Biology** as Volume 4?s title and intends to adapt volumes for different competitions and possible journal submissions. The [separate writing workspace](../../../research/literature/writings/README.md) holds all five volumes. No hundreds-of-pages requirement is imposed; around 50 pages is a possible personal target, subject to evidence and destination requirements.
+The researcher retains **The Limits of Biology** as the Volume 4 title and intends to adapt volumes for different competitions and possible journal submissions. The [separate writing workspace](../../../research/literature/writings/README.md) holds all five volumes. No hundreds-of-pages requirement is imposed; around 50 pages is a possible personal target, subject to evidence and destination requirements.

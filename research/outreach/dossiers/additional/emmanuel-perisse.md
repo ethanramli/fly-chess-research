@@ -35,7 +35,7 @@ The project needs to distinguish an absolute teacher score from a comparison bet
 
 **Bounded question:** What small behavioral comparison would show that a model uses relative outcome value instead of merely preferring the option with a positive score?
 
-**Possible next diagnostic, proposed only:** Proposed task: compare two aversive outcomes and independently test each against a neutral cue, with balanced exposure and a matched uninformative-feedback control. Establish specific pathways before interpreting it as a fly value mechanism.
+**Possible next diagnostic, proposed only:** Compare two aversive outcomes and independently test each against a neutral cue, with balanced exposure and a matched uninformative-feedback control. Establish specific pathways before interpreting it as a fly value mechanism.
 
 **Limits and reasons this may be the wrong contact:** Electric-shock and olfactory valuation experiments do not identify a pathway for chess scores. Our prototype cannot currently reproduce the full interacting appetitive/aversive network.
 

@@ -41,7 +41,7 @@ Registered software checks v5 pending. Preserve all raw results and errors.
 
 ### Verification completed
 
-Registered v5 checks passed27/27, exit0, 86521.865 ms. Raw receipt:
+Registered v5 checks passed 27/27, exit 0, 86521.865 ms. Raw receipt:
 `runs/python-actions/20261023T134917-3f0d5223/completion.json`; raw stdout/stderr
 are adjacent. Includes four isolated phase transaction tests plus actual block/
 yoked-matrix recovery, retention delivery/replay and preflight regressions.

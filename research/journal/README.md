@@ -104,7 +104,7 @@ For outreach interviews, first read existing notes and the [researcher profile](
 
 ## 2026-10-09: Gamma2 timing-dependent plasticity candidate
 
-Primary Handler 2019 results include gamma2 bidirectional KC-MBON modulation under forward/backward pairing; receptor perturbations are chiefly gamma4 evidence. A new static annotation join identifies 122 existing gamma-KC/MBON12 candidate edges (72 left, 50 right), excluding 664 alpha-prime/beta-prime edges and all PAM02 edges from this scoped hypothesis. This provides a timing-based alternative to the unestablished signed-baseline branch, not a working learner. Exact biochemical rule, encoder reachability, timing calibration, coexistence and behavioral reversal remain unresolved. No learner dynamics, simulation or training ran; frozen v4 is unchanged. Source access 2026-10-09, targeted primary text excerpts only; sources, raw responses, assumptions, inspection errors and next test are preserved in [the candidate report](../../archive/early-development/research/reports/plasticity-timing-candidate-2026-10-09/README.md). Primary source: https://pmc.ncbi.nlm.nih.gov/articles/PMC9012144/ . Engineering adaptation: separate local KC/DAN traces and explicitly declared temporal stimulus coding, not teacher parameter updates or biological validation.
+Primary Handler 2019 results include gamma2 bidirectional KC-MBON modulation under forward/backward pairing; receptor perturbations are chiefly gamma4 evidence. A new static annotation join identifies 122 existing gamma-KC/MBON12 candidate edges (72 left, 50 right), excluding 664 alpha-prime/beta-prime edges and all PAM02 edges from this scoped hypothesis. This provides a timing-based alternative to the unestablished signed-baseline branch, not a working learner. Exact biochemical rule, encoder reachability, timing calibration, coexistence and behavioral reversal remain unresolved. No learner dynamics, simulation or training ran; frozen v4 is unchanged. Source access 2026-10-09, targeted primary text excerpts only; sources, raw responses, assumptions, inspection errors and next test are preserved in [the candidate report](../../archive/early-development/research/reports/plasticity-timing-candidate-2026-10-09/README.md). Primary source: https://pmc.ncbi.nlm.nih.gov/articles/PMC9012144/. Engineering adaptation: separate local KC/DAN traces and explicitly declared temporal stimulus coding, not teacher parameter updates or biological validation.
 
 ## 2026-10-09: Plastic-site input coverage pivot
 
@@ -228,7 +228,7 @@ Documentation correction, 2026-10-09: the feedback-learning append command quote
 
 ## 2026-10-09: Gamma2 cue-capacity comparison registered
 
-The audited cap-8 adaptive timing run selects f7g8 as each arm's unique verified top error, then teaches it with the verified f7h7 solution. Informative Qh7-minus-error margin change is +0.00032014166936278343, yet every arm still chooses the wrong f7g8. The static all-legal encoder sweep finds total cue current 12 at both caps; cap 10 uses 8?10 cells. Maximum pairwise cue cosine falls 0.375 to 0.3535533905932738, but mean rises 0.07576923076923077 to 0.08168387202779266. Thus input geometry is mixed and cannot be described as uniformly improved.
+The audited cap-8 adaptive timing run selects f7g8 as each arm's unique verified top error, then teaches it with the verified f7h7 solution. Informative Qh7-minus-error margin change is +0.00032014166936278343, yet every arm still chooses the wrong f7g8. The static all-legal encoder sweep finds total cue current 12 at both caps; cap 10 uses 8, 9, or 10 cells. Maximum pairwise cue cosine falls 0.375 to 0.3535533905932738, but mean rises 0.07576923076923077 to 0.08168387202779266. Thus input geometry is mixed and cannot be described as uniformly improved.
 
 Registered [cap-10 protocol](../../archive/early-development/research/data/gamma2-adaptive-target-cue10-v1/protocol.json) and [report](../../archive/early-development/research/reports/gamma2-adaptive-cue10-2026-10-09/README.md) before graph execution. It compares against the existing independently audited cap-8 run; only maxCells changes, with total current 12, same model/seed, adaptive current-error schedule, verified lesson pair, controls, timing, memory and readout. The frozen prediction is unique all-legal Qh7 in informative cap 10; margin and all controls are secondary evidence. If the choice gate fails, useful acquisition fails this test. No training has started. The first one-off static command failed because PowerShell stripped its JavaScript quotes; it ran no computation or write. A here-string rerun completed the sweep and recorded the encoder identities in the protocol.
 
@@ -236,7 +236,7 @@ Registered [cap-10 protocol](../../archive/early-development/research/data/gamma
 ## 2026-10-09: Cap-10 cue result audited
 
 The cap-10 adaptive timing run completed (269.41 s, peak RSS 189.57 MiB) and its independent auditor passed 152 frame replays, certificates, direction/specificity gates and disabled-state isolation. Informative cue gains depressed for verified f7g8 failure (-0.0192439) and potentiated for f7h7 success (+0.0101386); swapped feedback reversed the signs. Informative margin change +0.00029704 is below the audited cap-8 +0.00032014. The informative all-legal top changed from f7g8 to f7d7, but both are certified failures. The preregistered unique-correct-choice prediction therefore fails; swapped/absent/disabled still select f7g8. Width changed the leading wrong action in one arm without improving the target margin or producing the solution. Treat any competition effect as a hypothesis, not a conclusion from one puzzle/seed. Comparison audit and raw receipts are linked in the [report](../../archive/early-development/research/reports/gamma2-adaptive-cue10-2026-10-09/README.md). Mistakes: first static sweep command lost quoted JS during PowerShell parsing; corrected read-only here-string succeeded. One checkpoint-monitor command had a syntax error and no effect; corrected monitor observed progress. Neither changed the run.
-# 2026-10-09: Plasticity output-path pivot
+## 2026-10-09: Plasticity output-path pivot
 
 The cap-10 adaptive run reproduced local timing direction and specificity but
 still selected a verified failure. A raw-rate check across the audited receipts
@@ -258,7 +258,7 @@ direction but still fails all-legal choice, the remaining blocker is downstream
 action routing; if it does not, the plasticity scope or cue eligibility remains
 the blocker. Existing cap-8/cap-10 and relative-decoder artifacts remain
 unchanged.
-# 2026-10-09 correction: initial PAM probe used the gamma-only map
+## 2026-10-09 correction: initial PAM probe used the gamma-only map
 
 The first causal probe passed the gamma2 timing map into the PAM02 interface.
 That map intentionally contains only MBON12/PPL103 groups, so the resulting
@@ -280,22 +280,22 @@ Implemented repeated current-error selection, exact informative-sequence control
 
 [Full dated implementation/mistake record](../../archive/early-development/research/reports/flybench-software-2026-10-10/README.md): provisional rather than decimal-accurate ratings, unsupported 700 setting, untrained default adapter, sandbox subprocess failures, documentation encoding failure and game-boundary rather than exact midgame recovery. Initial and final synthetic checks are separate from fly strength and learning evidence.
 
-## 2026-10-10: Researcher requests all50 PGNs
+## 2026-10-10: Researcher requests all 50 PGNs
 
-After implementation, the researcher explicitly requested playing the current fly against Stockfish and receiving all50 PGNs. Registered and launched the default untrained seed47 complete-game policy with frozen protocol, no learning and serial resource bounds. [Run registration](../../archive/early-development/research/reports/flybench-current-fly-50-2026-10-10/README.md). No graph-result claim before completion.
+After implementation, the researcher explicitly requested playing the current fly against Stockfish and receiving all 50 PGNs. Registered and launched the default untrained seed 47 complete-game policy with frozen protocol, no learning and serial resource bounds. [Run registration](../../archive/early-development/research/reports/flybench-current-fly-50-2026-10-10/README.md). No graph-result claim before completion.
 
 - [2026-10-10 move latency: staged zero-reset optimization, exact synthetic checks and active-run guard](experiments/2026-10-10-move-latency-zero-reset.md)
 
 
 ## 2026-10-10: FlyBench early stop and result correction
 
-Stopped at researcher request after13 complete games when the 1320 floor ceased to gauge strength. The 13th loss is unpaired for Glicko; rating includes12 games. Game14 is saved unscored. Thirteen PGNs and replay audit retained. Corrected prior mistaken chat interpretation that game2 was a fly win; both first games were losses. See [full terminal report](../../archive/early-development/research/reports/flybench-current-fly-50-2026-10-10/README.md).
+Stopped at researcher request after 13 complete games when the 1320 floor ceased to gauge strength. The 13th loss is unpaired for Glicko; rating includes 12 games. Game 14 is saved unscored. Thirteen PGNs and replay audit retained. Corrected prior mistaken chat interpretation that game 2 was a fly win; both first games were losses. See [full terminal report](../../archive/early-development/research/reports/flybench-current-fly-50-2026-10-10/README.md).
 
 
-- [2026-10-10 weaker-opponent source check](../documentation/design/evaluation-and-performance/flybench.md): corrected Skill Level0 assumption; no alternative engine run.
+- [2026-10-10 weaker-opponent source check](../../documentation/design/evaluation-and-performance/flybench.md): corrected Skill Level 0 assumption; no alternative engine run.
 
-- [2026-10-10 Phalanx weaker-engine candidate](../documentation/design/evaluation-and-performance/flybench.md): sourced easy-strength control and UCI port found; no Elo claim or run.
-- [2026-10-10 low-rating calibration candidate review](../documentation/design/evaluation-and-performance/flybench.md): Nova hosted500 is a candidate, not independently validated; calibration layer not released.
+- [2026-10-10 Phalanx weaker-engine candidate](../../documentation/design/evaluation-and-performance/flybench.md): sourced easy-strength control and UCI port found; no Elo claim or run.
+- [2026-10-10 low-rating calibration candidate review](../../documentation/design/evaluation-and-performance/flybench.md): Nova hosted 500 is a candidate, not independently validated; calibration layer not released.
 
 ## 2026-10-10: Nova FlyBench integration and unverified runtime pivot
 
@@ -308,7 +308,7 @@ The user reserved CPU for another agent. No graph loaded, Nova inference, game, 
 Static-review correction, 2026-10-10: initial Nova draft placed raw conditioning inputs directly into the Glicko reference ladder. That was a scale error. No run used it. Runner now rejects Nova unless a measured reference pool is declared, and it labels the supplied scale. This prevents an unsupported Elo implication; no Nova calibration has been performed.
 
 
-Static-review memory gate, 2026-10-10: Nova's roughly399 MB external model data could exceed the 768 MiB RSS guard after WASM initialization. Added conservative 420 MiB RSS-headroom and 256 MiB free-memory preflights before session creation; this is not a measured peak guarantee. No runtime or games were started while CPU is reserved for another agent.
+Static-review memory gate, 2026-10-10: Nova's roughly 399 MB external model data could exceed the 768 MiB RSS guard after WASM initialization. Added conservative 420 MiB RSS-headroom and 256 MiB free-memory preflights before session creation; this is not a measured peak guarantee. No runtime or games were started while CPU is reserved for another agent.
 
 
 Static-review calibration separation, 2026-10-10: Glicko reference ratings and Nova policy-conditioning inputs are now stored as separate values. The report protocol records the mapping; games/PGNs label both, and rating updates strip conditioning fields before Glicko. Ladder rows can specify conditioningInput; absent that, an in-range reference Elo supplies only a starting raw-policy input, not an asserted conversion. Out-of-range rows require an explicit supported input. This does not calibrate Nova and remains untested pending available CPU.

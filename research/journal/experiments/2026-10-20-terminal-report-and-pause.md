@@ -14,7 +14,7 @@ The frozen learner has no cooperative stop interface. A separately registered ex
 
 - Initial report/pause unit test invocation hit Windows temporary-directory permission failures inside the sandbox; no useful software verdict. Approved rerun passed9/9 synthetic saved-data/control tests.
 - Existing action regression first rerun passed18/19; its dynamic-import bootstrap could not find the new sibling module. Updated only the bootstrap's import path/module registration to reproduce normal script loading. Rerun pending at this entry.
-- Full six-neuron end-to-end fixture verification was launched serially with a240s per-process bound. Outcome remains pending here; raw test outputs stay under `runs/python-actions/lesson-pause-verification-*`. No full research graph has been loaded for this task.
+- Full six-neuron end-to-end fixture verification was launched serially with a 240 s per-process bound. Outcome remains pending here; raw test outputs stay under `runs/python-actions/lesson-pause-verification-*`. No full research graph has been loaded for this task.
 
 No new learning, retention, G0, transfer or reasoning result is claimed by these software changes. Later entries record completed validation and limits.
 

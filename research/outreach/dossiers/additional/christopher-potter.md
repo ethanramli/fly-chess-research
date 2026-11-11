@@ -22,7 +22,7 @@ Coverage: current profile, author list and abstract/selected accessible introduc
 
 Verified sensory neuron identities and functional annotation. What minimal functional evidence should accompany an annotation-based assignment of synthetic cues to sensory neurons? This fit is an inference from the cited work and the project's current requirements. The teacher must supply experience and feedback; the physiological memory mechanism and required graph identities remain to be justified.
 
-**Proposed bounded diagnostic:** Proposed: document actual released-graph annotations, distinguish anatomical identity from receptor expression/function, and validate cue selectivity against independent evidence before assigning a sensory interface.
+**Proposed bounded diagnostic:** Document actual released-graph annotations, distinguish anatomical identity from receptor expression/function, and validate cue selectivity against independent evidence before assigning a sensory interface.
 
 **Limits and reasons to deprioritize:** His current emphasis is mosquitoes and sensory entry rather than gamma4 reversal. Receptor identities do not justify arbitrary chess-feature-to-neuron mappings. No availability, endorsement or commitment is established. Publishing in eLife does not establish special access or predict acceptance for FlyChess.
 

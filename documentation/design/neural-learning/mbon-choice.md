@@ -6,7 +6,7 @@ Completed [raw report, independent audits and recovery diagnostics](../../../arc
 
 The [frozen protocol](../../../archive/early-development/research/data/mbon-choice-v1/protocol.json) uses new encoder seeds 12011, 12037, 12049, 12071, 12101 and 12143. The graph initialization, eight-update kernel, board/action encoder, two actions, stimulation amplitudes, four acquisition/twelve reversal exposures and 870-edge local efficacy rule match the failed GF condition. Same board/actions with fresh projections is not unfamiliar-position transfer. No whole-model adaptation is added.
 
-The new [readout](../../../.codebase/src/lowram/mbon-readout.mjs) is exactly:
+The new [readout](../../../archive/early-development/research/source-archives/codebase-before-2026-10-07/.codebase/src/lowram/mbon-readout.mjs) is exactly:
 
 `V(s,a) = mean(MBON12 | s,a) - mean(MBON01 | s,a)`
 
@@ -18,7 +18,7 @@ Each candidate is presented separately without reinforcement or plasticity. Pref
 
 Counterbalanced experimental punishment labels deliberately are not chess consequence labels. Informative direct pulses reach identified PPL103 cells; absent has no external pulse, shuffled has independently permuted phase-wise pulse-count-matched feedback, and disabled gets informative pulses without plasticity. Measured local activity drives the same persistent gains; the teacher computes no parameter deltas. Unknown puzzle outcomes are not consumed because no puzzle-verifier integration occurs in this assay.
 
-All six informative seeds must have correct strict acquired and reversed margins and cross the ranking boundary between phases. Each target-signed improvement must exceed the unchanged numerical tolerance 1e-7. Both acquisition and reversal effects must exceed absent/shuffled controls under one-sided sign tests p<0.05. Exact persistence/reset/restoration, disabled invariance, matched pulse counts and fixed graph/nonplastic hashes are also required. All seven gates must pass; changing rates or a favorable average cannot override failure.
+All six informative seeds must have correct strict acquired and reversed margins and cross the ranking boundary between phases. Each target-signed improvement must exceed the unchanged numerical tolerance 1e-7. Both acquisition and reversal effects must exceed absent/shuffled controls under one-sided sign tests p < 0.05. Exact persistence/reset/restoration, disabled invariance, matched pulse counts and fixed graph/nonplastic hashes are also required. All seven gates must pass; changing rates or a favorable average cannot override failure.
 
 Per-trial efficacy means are recorded for each MBON type and A-only/B-only/shared/neither directly stimulated KC category. These test the researcher's predicted recovery sequence without assuming it from a final choice: does previously punished action-specific efficacy recover, does its V rise, and does M cross the boundary? Membership does not classify every recurrently activated KC. Recovery is a mechanistic observation, not an outcome-fitted gate. Trials also retain measured responses, local factors, update counts and gain hashes; per-event checkpoints allow an independent recurrence audit.
 

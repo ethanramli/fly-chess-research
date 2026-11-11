@@ -20,7 +20,7 @@ Pilot useful-choice acceptance requires both informative fixtures to end with ve
 
 ## Implementation and commands
 
-The separate [adapter](../../../.codebase/src/lowram/dual-valence-puzzle-brain.mjs) rechecks context-bound certificates before stimulation and records the actual identified channel, stimulus population, KC/DAN activity and local update. Existing frozen adapters/runners are unchanged. The [runner](../../../.codebase/scripts/train-positive-puzzle-pipeline.mjs) atomically publishes updated memory and pending receipt before acknowledging the event. Maximum 40 teaching events and 1,600 neural presentations per condition; sparse serial full graph, 256 MiB V8 heap, RSS/free-memory guards and CPU duty 0.5.
+The separate [adapter](../../../archive/early-development/research/source-archives/codebase-before-2026-10-07/.codebase/src/lowram/dual-valence-puzzle-brain.mjs) rechecks context-bound certificates before stimulation and records the actual identified channel, stimulus population, KC/DAN activity and local update. Existing frozen adapters/runners are unchanged. The [runner](../../../archive/early-development/research/source-archives/codebase-before-2026-10-07/.codebase/scripts/train-positive-puzzle-pipeline.mjs) atomically publishes updated memory and pending receipt before acknowledging the event. Maximum 40 teaching events and 1,600 neural presentations per condition; sparse serial full graph, 256 MiB V8 heap, RSS/free-memory guards and CPU duty 0.5.
 
 ```powershell
 node --max-old-space-size=256 .codebase/scripts/train-positive-puzzle-pipeline.mjs --out research/reports/positive-puzzle-pipeline-v1-2026-10-06 --cpu-duty 0.5

@@ -8,7 +8,7 @@ Experience-dependent plasticity and transferable reasoning in a fly-connectome-c
 
 ## Abstract
 
-State the question of whether a simple organism-derived computational architecture can acquire reasoning, why chess tests transferable consequence-sensitive evaluation, the experience-dependent learning mechanism, matched conditions, held-out transfer measures and the narrow conclusion supported by evidence. Distinguish simulated-model capability from cognition in a living fly and chess transfer from reasoning across domains. Report rating separately from the reasoning evidence.
+Describe whether a simple organism-derived computational model can acquire reasoning. Explain why chess tests transfer of consequence-sensitive evaluation, then summarize the learning mechanism, matched conditions, held-out measures, and conclusion supported by the evidence. Distinguish model capability from cognition in a living fly, and chess transfer from reasoning across domains. Report playing strength separately.
 
 ## Introduction
 
@@ -21,15 +21,15 @@ State the question of whether a simple organism-derived computational architectu
 ## Methods
 
 - Connectome, simulator, input encoding, readout, trainable parameters, and engineered components.
-- Verified experiences/consequences, any engine-assisted value condition, signal limitations and evidence provenance; distinguish these from direct criterion supervision.
+- Describe verified experiences and consequences, any engine-assisted value condition, signal limits, and evidence sources. Distinguish these from direct criterion supervision.
 - Data sources, licenses, leakage-safe splits, and held-out unfamiliar/counterfactual position families.
 - Matched training conditions and search ablations.
-- Outcomes: causal learning, retention/reversal, consequence-sensitive transfer, unaided/fixed-search choices, and separately calibrated playing strength, compute, memory, and latency.
+- Report causal learning, retention and reversal, consequence-sensitive transfer, unaided choices, choices with a fixed search budget, calibrated playing strength, compute, memory, and latency.
 - Seeds, stopping rules, analysis, ethics/access, and reproducibility materials.
 
 ## Results / findings
 
-Report planned outcomes, including null and unexpected findings. Separate neural evaluation/unaided choices from model-plus-search performance. Show whether informative experience changes behavior causally and whether it transfers beyond training families under matched controls.
+Report planned outcomes, including null and unexpected findings. Separate neural evaluation and unaided choices from model-plus-search performance. Test whether informative experience changes behavior causally and transfers to positions outside the training families under matched controls.
 
 ## Discussion
 

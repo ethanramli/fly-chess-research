@@ -1,0 +1,39 @@
+Read .agents/skills/ponytail/SKILL.md first and follow it at ultra intensity. Repo root: C:/Users/ethan/Documents/fly-chess-research.
+
+Task: the pure judge for fly connections memory v1. It turns finished job files into the per-seed gate verdict. Read fully:
+1. documentation/design/neural-learning/fly-connections-memory-v1-gates-2026-11-08.md (section 4 is the exact gate list; implement every numbered gate, nothing more).
+2. documentation/design/neural-learning/fly-connections-memory-v1-file-formats-2026-11-08.md (job files you read).
+3. .codebase/src/neural-learning/fly-connections-metrics-v1.mjs (scoreAllLegal, judgeRetention, summarizePressure, compareByGame) — reuse these unchanged.
+4. .codebase/src/neural-learning/fly-connections-packet-v1.mjs (replayPacketBoard; record fields rTargets, outcomes, group).
+5. .codebase/src/neural-learning/fly-connections-condition-v1.mjs (receipt fields: phase, pulse, deliveredPulse, teaching[].factor, writes[], update).
+
+Create only:
+.codebase/src/neural-learning/fly-connections-judge-v1.mjs
+.codebase/tests/neural-learning/fly-connections-judge-v1.test.mjs
+
+Export:
+1. readJob(dir): parse dir/records.jsonl (stream line by line), dir/result.json and dir/snapshots/*.json into { result, rankings: Map(label -> Map(boardId -> ranking)), events: [receipt] }. A "ranking-reused" line resolves to the T0 ranking of that board after checking its fingerprint equals the T0 ranking line's fingerprint. Throw on duplicates, gaps in event sequence, or a missing T0.
+2. judgeSeed({ seed, jobs /* {arm: readJob output} */, records /* Map boardId->record */, gates /* registration.gates */ }) returning { seed, P1, P2, P3, fair, pass, report } where each P has { pass, checks:[{name, pass, detail/values}] }. Primary arm 'informative-local'.
+   P1.1 only mask state changes: every ranking/receipt fingerprint chain is consistent (receipt.fingerprintBefore of event i equals fingerprintAfter of event i-1 or the probe fingerprint in between) and result.describe shows learns true; the deep invariant check is the condition's assertFixed and the auditor's job — just record describe.identities.
+   P1.2 is the auditor's recomputation; here record "deferred to audit".
+   P1.3 mean over A and B events of the event's D (mean of teaching[].factor over the two sides) for pulse events minus that for no-pulse events < -1e-6 (more depressing with the pulse). Use deliveredPulse.
+   P1.4 record "code review + audit".
+   P2.1 judgeRetention with a0 = A rankings at T0, aAfterA = A-end, aAfterB = B-end, aFinal = R2-end, bBefore = R1-end, bAfter = B-end, bFinal = R2-end (each a list of {boardId, gameId, success, margin, tolerance} in boardId order), minAcquired gates.minAcquired, retention gates.retention, epsilon gates.epsilon.
+   P2.2 per-board success over A and B at B-end: compareByGame({ arms: {informative, absent, off, shuffled}, games, primary 'informative', comparators ['absent','off','shuffled'], seed: gates.bootstrapSeed }); pass when every comparator's lower > 0.
+   P2.3 pressure: aWrittenEdges = edges with effectiveChanged true in any phase-A receipt write; bPressureEdges = edges with pressureWrite true in any phase-B receipt write; finalMagnitude at B-end = last afterMagnitude per edge from receipts up to and including the last B event, else the base magnitude; base = the naive magnitude (first beforeMagnitude seen for that edge, else take it from the receipt of any event: every receipt write carries before/after; for never-written edges base = final, so they do not count). edgeIds: all mask edges — take them from snapshots (snapshot.memory has the edge list or gains length; read the actual snapshot shape in reversal-memory.mjs snapshot()). Call summarizePressure. Also report per-load (after 8, 16, 32 boards of each group) counts of pressure writes and A boards lost.
+   P2.4 R correction per R board, scores from the R rankings: target0 metrics = scoreAllLegal(replayPacketBoard(record), ranked, {each legal: move === rTargets[0]}); target1 likewise. After R1-end: target0 success >= gates.success, margin > tolerance, margin - margin(A-end, target0) > gates.epsilon. At B-end: target0 success >= gates.success and margin > tolerance. At R2-end: target1 success >= gates.success and margin > 0, and NOT (topMoves is exactly [rTargets[0]]). Pass when every R board passes every part.
+   P2.5 report only: mask size, every effective overwrite (edgeId, phase, sequence, before/after magnitudes), counts per phase.
+   P3.1 test boards (testA and testB together, boardId order), success at R2-end, compareByGame primary informative vs off and shuffled, lower > 0 for both.
+   P3.2 paired change from informative's own T0: compareByGame with arms {final: R2-end successes, naive: T0 successes}, primary 'final', comparators ['naive'], lower > 0.
+   P3 report: the same comparisons separately for testA and testB, plus absent, matched, global arms (report only).
+   fair: every job's tapeSha256 equals the tape's sha256; every job peakRssMiB <= 2048 and minFreeMiB >= 256.
+   pass = P1 (checks 1 and 3) && P2 (1-4) && P3 (1-2) && fair.
+3. judgeRun({ runDir, registration, records, tapes, baselines }) -> { perSeed: [judgeSeed per seed], baselines, pass: every seed passes, verdict: pass ? 'passes' : 'does not pass' }.
+
+Rules: pure except reading job files; deterministic; no graph, no neural code; throw on any missing arm, label or board. Reuse the metrics functions; do not re-implement s/c or the bootstrap.
+
+Tests: synthetic job directories written to a temp dir with hand-made rankings and receipts (no neural model): a passing seed; then one case per gate that flips exactly that gate to fail (retention ratio 0.69, B not acquired, comparator lower bound <= 0, no pressure, R target0 still sole top at R2-end, D not lower with pulse, a reused off ranking with a changed fingerprint throws, RSS 2049 fails fair).
+
+You MAY run only: node --test .codebase/tests/neural-learning/fly-connections-judge-v1.test.mjs (repo root), as often as needed; make it pass. No other commands, no git, no graph.
+
+End with: files created, test pass/fail counts, exact API and output shape, and every contract point you could not meet.

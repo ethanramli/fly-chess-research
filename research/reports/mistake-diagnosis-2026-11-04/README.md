@@ -4,11 +4,11 @@ Independent read-only audit by Codex (gpt-6.1-sol, effort high), requested by th
 
 **Treat the running v3 result as diagnostic only.** Its comparison and feedback defects remain present.
 
-This audit read reports, producing code, tests and saved artifacts. No files changed; no Node commands, tests or simulations ran. The artifacts supersede the handoff: v3’s first launch exhausted its JavaScript heap; `v3-r2` was running when inspected. Its registration records researcher approval.
+This audit read reports, producing code, tests and saved artifacts. No files changed; no Node commands, tests or simulations ran. The artifacts supersede the handoff: v3's first launch exhausted its JavaScript heap; `v3-r2` was running when inspected. Its registration records researcher approval.
 
 ## A. Ranked mistakes
 
-“Invalidates” distinguishes an unsupported interpretation from an accurately reported failed experiment. Corrected historical defects remain listed.
+"Invalidates" distinguishes an unsupported interpretation from an accurately reported failed experiment. Corrected historical defects remain listed.
 
 | ID | Category | What went wrong | Evidence | Why: root cause | Severity | Invalidates a stated conclusion? |
 |---|---|---|---|---|---|---|
@@ -55,11 +55,11 @@ Checks that **did not** establish defects: main v2/v3 scaling uses practice data
 4. **Proxy measurements were promoted to explanations.** Anatomical overlap, nonzero rates, one-square decoding and relative distances were treated as stronger causal or biological evidence than they provide.
 5. **Operational truth was duplicated.** Runner, launcher, registration, manifest and status documents disagreed about limits, permissions and terminal state.
 
-## C. What the evidence supports—five lines
+## C. What the evidence supports in five lines
 
 1. Knight/bishop identity on e4 is linearly readable across the 48 tested backgrounds; broad visual competence and deployed use are unproved.
 2. Memory v1 fails its registered reversal test; its acquisition design cannot demonstrate learning.
-3. Engineered v2 reaches 20–22/38 new pairs and fails its gates; this does not establish universal memory or representation incapacity.
+3. Engineered v2 reaches 20 to 22 of 38 new pairs and fails its gates; this does not establish universal memory or representation incapacity.
 4. Six shared local states causally contribute to one interference failure; the baseline theorem excludes only a fixed-response shared-baseline repair family.
 5. No audited reasoning result or connectome-specific learning advantage is established; v3 remains diagnostic pending its outcome and the defects above.
 

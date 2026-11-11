@@ -1,0 +1,18 @@
+You are a strict methods reviewer (same reviewer as the fly-connections design and code reviews). Read-only; do not edit files or run any graph.
+
+Context: fly connections memory v1 (revision 2, gates 2026-11-08, code review r1). The dry run (development data, seed 7300, 8 A + 8 B + 2 R + 20 test boards, 6 arms) completed: runs/fly-connections-memory-2026-11-08/fly-connections-memory-v1-dryrun/ (summary.json, jobs/*/result.json and records.jsonl). Its independent audit may still be running (audit.json there when done). Dry-run scores are development evidence, not confirmation.
+
+Observed (my read-only trace, reproduce it from records.jsonl):
+1. P1.1 and P1.3 pass: only mask gains change; mean D with the external pulse -0.468 vs -0.0087 without.
+2. Every P2/P3 gate fails: 0/8 A boards acquired, 0/8 B; test success 1/20 in informative = off = shuffled; pressure: 1809/2096 mask synapses change >= 1% by T_AB but 0 B-phase pressure writes on A-written edges.
+3. Scores of all legal moves on a board lie within 5e-5 to 9e-5 of each other (MBON05 rate about 0.023). Learning shifts every move's score on a board by about +1.4e-4 together; the top move never changes. Median per-write relative change 5e-5.
+4. In teaching replays ALL 1040 + 1056 gamma KCs are active, k = rate/1.5 about 0.011-0.015; KC rate mean 0.0165, sd 0.0015. KC patterns of two different practised moves on the same board differ by a median 2.6% (relative L2), different boards by 3.5%.
+
+My hypothesis: the model's gamma KC code is dense and nearly uniform (tonic activity everywhere), unlike the sparse KC coding reported in flies, so the source rule, which is gated by KC activity, depresses almost all synapses equally, and no within-board discrimination can be learned. This would make the full run (about 96 CPU-hours) a predictable failure of P2/P3.
+
+Answer with file:line or record evidence, and mark hypotheses:
+A. Ranked list of mistakes (design, implementation, control, analysis, interpretation) that explain the dry-run result. Is the dense-KC hypothesis supported? What else could produce identical rankings across arms (e.g., MBON05 readout dominated by non-KC input, 8 steps too short, eyes input not reaching gamma KCs, APL adapter not sparsifying, score scale/tie tolerance)?
+B. Should the registered full run proceed unchanged as a confirmatory test (its failure would be evidence), or is it predictably uninformative? What would it add to Volume 2 or Volume 4?
+C. Which fixes have primary-source support and keep P1 (fly synapses, identified DANs, published rule, no engineered store)? Candidates: (1) calibrate KC sparseness (APL gain or KC threshold) to a sourced active fraction (for example Honegger et al. 2011; Lin et al. 2014; Turner et al. 2008), (2) a fixed resting baseline in the rule (ReversalMemory.observe already takes `rest`), (3) restrict to visually driven KC subtypes (gamma-dorsal) if a source supports visual input to them, (4) others. For each: source, whether it is an extra-circuit computation (as the rejected cross-trial subtraction was), and what it would and would not show.
+D. Is there a bounded-limit result here for Volume 4 (the raw connectome model with this rule cannot change a within-board ranking by more than X), and what exact quantity would prove it?
+End with a one-line recommendation: RUN FULL AS REGISTERED, REDESIGN (name the fix), or STOP FOR RESEARCHER DECISION (name the decision).

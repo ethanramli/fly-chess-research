@@ -1,4 +1,4 @@
-﻿# Overnight report — working conclusion, pending curated publication and final audits
+﻿# Overnight report. Working conclusion, pending curated publication and final audits
 
 Execution window: 2026-11-01 21:59 to no later than 2026-11-02 05:59 Asia/Jakarta. The active goal, not a second goal, governs this work. Stop when the registered comparison/audits finish and the eye prerequisite is precisely blocked; the budget is a ceiling.
 

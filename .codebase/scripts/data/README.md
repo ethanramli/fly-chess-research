@@ -15,7 +15,7 @@ The curator creates **candidate source data only**. It does not retrieve full ga
 
 Full source games are retrieved with the registered Python action [fetch_lichess_game_pgns.py](../../../python%20actions/fetch_lichess_game_pgns.py). The development probe has verified one public game ID only. For training or validation, first complete the independent candidate-source audit, then pin the selected split and audit identities in a fresh action config. The final split is not accepted by the fetcher. The output manifest checks exact response-ID coverage; lesson preparation still binds each PGN to its puzzle position and history.
 
-The complete source archive is scanned as a stream. Memory use is bounded by at most `limit-per-split` rows per split plus one input/decompression buffer; the default is128 rows per split. The curator's output directories must be new and empty by construction; each JSONL file and the final manifest are published with rename.
+The complete source archive is scanned as a stream. Memory use is bounded by at most `limit-per-split` rows per split plus one input/decompression buffer; the default is 128 rows per split. The curator's output directories must be new and empty by construction; each JSONL file and the final manifest are published with rename.
 
 Example after obtaining the Lichess archive:
 
@@ -23,7 +23,7 @@ Example after obtaining the Lichess archive:
 node --max-old-space-size=256 .codebase/scripts/data/curate-lichess-puzzles.mjs --input .cache/lichess-puzzles-2026-10-21.csv --extraction-receipt research/reports/lichess-foundations-pilot-2026-10-21/extraction.json --out research/data/lichess-puzzle-candidates-v1 --limit-per-split 128 --min-rating 1200 --max-rating 2000 --themes fork
 ```
 
-The filter above is only a sampling choice. `--max-pieces 6` restricts the post-setup solver position to the frozen Stage 1 piece budget; the default32 preserves earlier sampling behavior. A setup capture from seven to six pieces remains eligible. This limit does not resolve source history, supply a consequence, or establish relational-family separation. Puzzle ratings/themes are not consequence quality labels or calibrated neural feedback. Freeze a separate experiment protocol, source bytes, task verifier, resource bounds, matched feedback controls and recovery audits before any graph run.
+The filter above is only a sampling choice. `--max-pieces 6` restricts the post-setup solver position to the frozen Stage 1 piece budget; the default 32 preserves earlier sampling behavior. A setup capture from seven to six pieces remains eligible. This limit does not resolve source history, supply a consequence, or establish relational-family separation. Puzzle ratings/themes are not consequence quality labels or calibrated neural feedback. Freeze a separate experiment protocol, source bytes, task verifier, resource bounds, matched feedback controls and recovery audits before any graph run.
 
 - [Independent CSV batch lesson audit](audit-lichess-csv-lessons.mjs) reconstructs original source-game prefixes, verifies displayed FEN/history, checks registered piece-domain exclusions and replays every in-domain legal-action certificate. It requires a completed, pinned preparation package; no final rows, graph launch or family/learning acceptance. [Current registrations and evidence](../../../archive/early-development/research/reports/lichess-foundations-pilot-2026-10-21/README.md).
 

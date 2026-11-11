@@ -1,0 +1,19 @@
+Read .agents/skills/ponytail/SKILL.md first and follow it at ultra intensity. Repo root: C:/Users/ethan/Documents/fly-chess-research.
+
+Code review r1 BUILD item (research/reports/fly-connections-memory-v1-2026-11-07/code-review-r1.md section A; design-review-r2.md pre-launch condition 1): independently authenticate and pin the receiving-side masks, PAM07 roots/groups, graph signs and source mapping before graph use.
+
+Create only:
+.codebase/scripts/neural-learning/check-fly-connections-mapping-v1.mjs
+.codebase/tests/neural-learning/check-fly-connections-mapping-v1.test.mjs
+and edit .codebase/scripts/neural-learning/fly-connections-memory-v1-worker.mjs only to add the identity check described below (a few lines).
+
+Read: .codebase/src/neural-learning/fly-connections-teaching-v1.mjs (mapFlyConnectionsMemory: the producer), .codebase/src/neural-learning/neuron-reader.mjs and neuron-reader-cells.json (MBON05 cells with receivingSide), .codebase/src/runtime/graph.mjs (loadGraph, readNpz), research/reports/fly-connections-memory-v1-2026-11-07/source-evidence/pam07-static-root-check-r2.json (18 PAM07 roots, 10 right, 8 left), and revision 2 section 1 (documentation/design/neural-learning/fly-connections-memory-v1-revision-2-2026-11-07.md).
+
+The script: node --max-old-space-size=512 check-fly-connections-mapping-v1.mjs --graph .cache/full.npz --annotations .cache/flywire-annotations-v2.1.0.tsv --out DIR
+- Producer side: mapping = await mapFlyConnectionsMemory(graph, rootIds, annotations, MBON05 reader cells) exactly as the worker builds it.
+- Independent side, your own code (do NOT call mapFlyConnectionsMemory or ReversalMemory): stream the annotation TSV yourself; for each of the two MBON05 reader cells (receivingSide left/right; the MBON05 soma-side annotation is the opposite side), list every incoming edge e of that MBON05 row in graph CSR (graph.row/col) whose presynaptic neuron is annotated cell_class Kenyon_Cell with hemibrain_type starting 'KCg' and side equal to the receiving side, and graph.sign[e] === 1; list PAM07 DANs (cell_class DAN, hemibrain_type PAM07) on that side, by root id. Read the producer to confirm these are its exact rules; if the producer's rule differs from this description, report the difference rather than copying it.
+- Compare: same edge list (sorted), same KC indices, same PAM07 indices and root ids per side, all mask signs +1, PAM07 total 18 (10 right, 8 left) matching the static check file, and every root id maps to the graph index used. Record the graph and annotation SHA-256.
+- Write DIR/mapping-check.json atomically: { schema:'fly-connections-mapping-check-v1', pass, graphSha256, annotationSha256, mappingIdentity (SHA-256 of JSON.stringify(mapping)), perSide:[{side, mbonIndex, mbonRootId, edgeCount, edges, kc, pam07:[{index, rootId}], signsAllPositive}], mismatches:[] }. Exit 0 if pass else 1. No propagation, no learning.
+- Worker edit: if config.paths.mappingCheck is set, read that JSON, require pass === true and mappingIdentity === SHA-256 of JSON.stringify(mapping) built in the worker, else throw before creating the condition.
+Tests: a tiny synthetic graph and annotation TSV in a temp dir (pattern: fly-connections-teaching-v1.test.mjs) showing pass, and failure when (a) a KC edge has sign -1 is present in the producer's mask (or show both sides exclude it consistently, whichever the producer rule implies), (b) a PAM07 row is relabelled to another side, (c) an extra non-gamma KC edge is present (must be excluded by both sides and still pass), (d) producer and independent disagree (pass a tampered mapping into your compare function).
+You MAY run only: node --test .codebase/tests/neural-learning/check-fly-connections-mapping-v1.test.mjs. Do not run the script on .cache/full.npz. No git. End with: files, test counts, CLI, anything not met.

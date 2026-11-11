@@ -1,6 +1,6 @@
 ﻿# FlyChess
 
-A from-scratch, connectome-constrained simulation investigating whether experience and verified feedback can produce transferable chess reasoning within an 8 GB laptop budget.
+FlyChess tests whether experience and verified feedback can produce transferable chess reasoning in a from-scratch model constrained by the Drosophila connectome. New, unfrozen experiments are capped at 2 GiB of process memory.
 
 **Current boundary:** controlled association prerequisites have passed in some conditions, but useful puzzle learning and unfamiliar/counterfactual reasoning remain unproved. A successful search, recorded reward or changed memory is not proof of reasoning.
 

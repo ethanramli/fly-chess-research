@@ -40,7 +40,7 @@ node --max-old-space-size=256 .codebase/scripts/validate-learning.mjs `
   --out runs/association-validation-001 --cpu-duty 0.5
 ```
 
-`--max-trials N` intentionally stops after N additional training trials. Resume from a published `checkpoint-XXXXX/state.json` into a new directory, preserving the protocol and duty. Checkpoints contain the active phase/trial cursor, gains/traces, committed choices and feedback, probe results and completed conditions. Publishing each checkpoint directory by rename makes complete trial state visible atomically. A interrupted trial is replayed from the previous checkpoint; no partial feedback event is published.
+`--max-trials N` intentionally stops after N additional training trials. Resume from a published `checkpoint-XXXXX/state.json` into a new directory, preserving the protocol and duty. Checkpoints contain the active phase/trial cursor, gains/traces, committed choices and feedback, probe results and completed conditions. Publishing each checkpoint directory by rename makes complete trial state visible atomically. An interrupted trial is replayed from the previous checkpoint; no partial feedback event is published.
 
 The identity pins graph, annotation, protocol, mapping and source hashes. The runner loads one sparse graph and model and processes conditions serially. RSS/free-memory guards and duty pacing match the existing experiment requirements. Raw condition histories and every checkpoint are retained, including failed gates. `report.json` separates this invocation's resource measurements from any prior invocation used for resume.
 

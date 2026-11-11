@@ -8,8 +8,8 @@ replays every bound consequence, checks train/validation family identity
 separation and requires the four Stage 2 semantic strata. Final rows/families are
 hash references only and are never opened by selection.
 
-For each informative published checkpoint (8/16/24/32), measure16 current
-validation choices,16 previous-foundation validation choices and4 previous
+For each informative published checkpoint (8/16/24/32), measure 16 current
+validation choices, 16 previous-foundation validation choices and 4 previous
 training sentinels. Reproduce incoming earlier mastery (14/16 and4/4), reject
 regression, choose the earliest passing checkpoint and yoke every control to that
 block without requiring controls to pass. Freeze an acquisition-bound artifact
@@ -36,7 +36,7 @@ An rg search repeated an unsupported Windows wildcard path and a guessed module
 name was absent. Corrected with rg --files. An inline node diagnostic lost quotes
 through Windows argument transport; a subsequent diagnostic guessed the wrong
 node_modules location. The corrected stdin script imported chess.js normally and
-confirmed the avoid-mate fixture has11 failing and2 successful legal actions.
+confirmed the avoid-mate fixture has 11 failing and 2 successful legal actions.
 Those failed commands changed no experiment or data conclusion.
 
 ## Verification
@@ -45,7 +45,7 @@ Focused checks currently running under unified-exec session16986. No production
 neural, Stockfish or G0 experiment launched. Preserve actual result before claim.
 
 
-Focused selector checks passed3/3 (43441.698 ms). Then removed unnecessary
+Focused selector checks passed 3/3 (43441.698 ms). Then removed unnecessary
 control-baseline evaluation when the informative arm has no selectable checkpoint;
 controls cannot be selected independently. Registered v6 checks include that
 change plus Stage 1 helper compatibility and phase/selection regressions. No
@@ -62,7 +62,7 @@ measured informative failure has no selected block must not change that measured
 failure to unknown. Add a missing-candidate test. No production decision used
 this initial status mapping.
 
-V6 completed13/13, exit0, 53324.4846 ms; raw action runs/python-actions/20261023T135800-9632fe8f. Exact pinned sources preserved in the v6 source archive before the status correction.
+V6 completed 13/13, exit 0, 53324.4846 ms; raw action runs/python-actions/20261023T135800-9632fe8f. Exact pinned sources preserved in the v6 source archive before the status correction.
 
 
 Status correction implemented after v6 archive: unresolved informative selection

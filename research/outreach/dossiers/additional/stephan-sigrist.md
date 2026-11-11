@@ -35,7 +35,7 @@ Stored physiological state can change while neuron identity and wiring remain fi
 
 **Bounded question:** Which acquisition-versus-maintenance result would be most informative when deciding whether one efficacy variable is an adequate memory approximation?
 
-**Possible next diagnostic, proposed only:** Proposed future prediction: separate initial choice change, intermediate retention and later retention. Any protein-related state would need independent evidence and bounded parameters, and must preserve the released graph.
+**Possible next diagnostic, proposed only:** Separate initial choice change, intermediate retention and later retention. Any protein-related state would need independent evidence and bounded parameters, and must preserve the released graph.
 
 **Limits and reasons this may be the wrong contact:** Much active-zone physiology is measured at neuromuscular junctions; mushroom-body behavioral results must be identified separately. This research does not validate our gain formula or permit arbitrary structural rewiring.
 

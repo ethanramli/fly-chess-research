@@ -1,4 +1,4 @@
-# Memory-plasticity development report — 2026-10-31
+﻿# Memory-plasticity development report. 2026-10-31
 
 ## 1. Outcome: failed candidates, and a diagnosed test limitation
 

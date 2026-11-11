@@ -42,7 +42,7 @@ Run from the repository root. Use the documented resource guards for experiments
 
 - [Pending-receipt recovery verifier](audit-contrastive-coverage-recovery.mjs): graph-free exact receipt/ranking/count checks for a one-event resume prefix.
 
-- [Training variation generator](prepare-smothered-training-variations.mjs) · [all-legal certificate auditor](audit-smothered-training-variations.mjs)
+- [Training variation generator](prepare-smothered-training-variations.mjs) Â· [all-legal certificate auditor](audit-smothered-training-variations.mjs)
 
 - [Stockfish target collector](probe-stockfish-targets.mjs) and [independent auditor](audit-stockfish-targets.mjs): [record-only protocol](../../../archive/early-development/research/data/stockfish-target-feasibility-v1/README.md).
 

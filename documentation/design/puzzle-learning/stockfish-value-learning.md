@@ -36,7 +36,7 @@ The old terminal-skip discussion above remains historical for outcome-only and s
 
 ## 22 October: complete task-action domain at the endpoint boundary
 
-The isolated endpoint/Stockfish adapters now accept certified quiet-action failures under the exact capture-retention task through a shared adapter verifier. Their earlier generic capture-only verifier is frozen in live G0 and remains unchanged.34 software checks pass; [evidence and limits](../../../archive/early-development/research/reports/task-outcome-adapter-2026-10-22/quiet-action-integration/README.md). This does not resolve the engine-value branch's prediction/update cue mismatch, combined delivery, temporal receiver integration, persistence or efficacy.
+The isolated endpoint/Stockfish adapters now accept certified quiet-action failures under the exact capture-retention task through a shared adapter verifier. Their earlier generic capture-only verifier is frozen in live G0 and remains unchanged. 34 software checks pass; [evidence and limits](../../../archive/early-development/research/reports/task-outcome-adapter-2026-10-22/quiet-action-integration/README.md). This does not resolve the engine-value branch's prediction/update cue mismatch, combined delivery, temporal receiver integration, persistence or efficacy.
 
 ## 27 October: set aside for Stage 1
 

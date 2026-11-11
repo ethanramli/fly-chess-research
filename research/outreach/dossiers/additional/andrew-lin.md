@@ -35,7 +35,7 @@ An adult connectome model can preserve edges yet distort cue selectivity through
 
 **Bounded question:** Which representation measurement would separate poor cue selectivity from an incorrect plasticity rule?
 
-**Possible next diagnostic, proposed only:** Proposed diagnostic: record per-cue KC activity distributions and overlap before learning, alongside lifetime sparseness across a prospectively selected cue set. Do not alter completed experiment gates or replace fixed wiring to force sparsity.
+**Possible next diagnostic, proposed only:** Record per-cue KC activity distributions and overlap before learning, alongside lifetime sparseness across a prospectively selected cue set. Do not alter completed experiment gates or replace fixed wiring to force sparsity.
 
 **Limits and reasons this may be the wrong contact:** The PNAS compensation models contain modeling choices, not a unique measured biological update rule. Spatial inhibition may require a more detailed physiological representation than our neuron-level state.
 

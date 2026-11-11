@@ -24,7 +24,7 @@ Review/parent command mistakes were limited to read-only path guesses, a mocked 
 
 Final verification correction: UTF-8-only decoding failed on two Windows-encoded reviewer Markdown files; explicit read-only cp1252 fallback preserves originals. Initial link scan preceded its own receipt publication; final rescan passes all 52 links and 28 source hash comparisons. A no-op adjudication patch failed context and made no change. No scientific conclusion depended on these tooling errors.
 
-## 2026-11-03 ? Rewrite for clear reading
+## 2026-11-03: Rewrite for clear reading
 
 The researcher could not understand the technical wording. They requested ASD-STE100-style simple English and inline definitions, including linked review files. The first reports did not meet that communication need. Rewrote all 12 report/source-note Markdown files, added a word list, and preserved exact originals in a ZIP file with fingerprints. Findings, priorities, uncertainty, raw evidence and code remain unchanged. All 95 current local links pass; all 17 earlier code/evidence files retain their fingerprints; all 12 original text files pass saved-copy checks. The original verification record is preserved; simple-english-verification.json records the new checks. No full ASD approved-word dictionary certification is claimed.
 

@@ -1,4 +1,4 @@
-# Memory-plasticity development report — 2026-10-31
+﻿# Memory-plasticity development report. 2026-10-31
 
 Updated after the researcher authorized the lead-written evidence repair. [The earlier report](MORNING-REPORT-before-receipt-repair.md) is preserved. Fresh per-trial recording/replay now works; the memory result has not improved.
 

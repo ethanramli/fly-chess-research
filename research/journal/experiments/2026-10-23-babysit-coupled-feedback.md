@@ -1,7 +1,7 @@
 # Babysit coupled outcome/Stockfish feedback — 23 October 2026
 
 The previous goal turn made implementation progress: registered post-interference
-checks passed71/71. Current handoff/raw evidence is consistent; bare `fly status`
+checks passed 71/71. Current handoff/raw evidence is consistent; bare `fly status`
 still reports `not_registered`, 0/12 accepted. This continuation targets the
 feedback execution path, with G0 and stopped source expansion excluded.
 
@@ -35,7 +35,7 @@ duplicate it. Neural adaptation remains the existing local memory mechanism;
 the teacher supplies no parameter deltas. This is an engineering hypothesis,
 not newly validated biology or a graded-dose receiver qualification.
 
-Old pinned71-check sources were copied after hash verification to
+The earlier 71-check run's pinned sources were copied after hash verification to
 `research/source-archives/babysit-post-interference-software-v2-2026-10-23`;
 the unpinned transitive review binder/brain constructors were additionally captured.
 Original raw results and isolated prototype remain preserved. Implementation,
@@ -61,8 +61,8 @@ model parameters or neural equations are changed by these fixture repairs.
 Also bind the protocol to its fixed model/readouts and verify that identity
 before preparation/pulses, reusing the factory's existing fixed-state hash.
 
-The expanded focused suite passed8/8, and registered compatibility action v3
-passed79/79 (exit0), raw artifacts
+The expanded focused suite passed 8/8, and registered compatibility action v3
+passed 79/79 (exit 0), raw artifacts
 `runs/python-actions/20261023T132459-bd73fef7`. This proves engineering mechanics,
 not that the teaching target is scientifically correct. A later semantic review
 found an inherited target/cue error: predicting value on child-board action cues
@@ -104,7 +104,7 @@ fixture: runs/coupled-feedback-fixture-d7b0c019-c4eb-46a2-878f-e46c941ec234.
 These checks do not establish biological dose validity, calibration, learning or
 transfer. Broader v4 action is pinned separately; no production training started.
 
-Recovery inspection: v3 completion.json confirms exit0. CIM process listing was
+Recovery inspection: v3 completion.json confirms exit 0. CIM process listing was
 access-denied; Get-Process showed an unrelated node PID12268, distinct from v3
 PID13916. No process was killed/restarted and no graph work was launched.
 Two rg invocations used unsupported Windows glob paths; corrected to directory
@@ -112,7 +112,7 @@ searches. No data or experiment conclusions depend on those failed searches.
 
 ### v4 verification completed
 
-Registered action runs/python-actions/20261023T134210-be916566 completed exit0:
+Registered action runs/python-actions/20261023T134210-be916566 completed with exit 0:
 79/79 checks, 123284.3376 ms. This covers the corrected cue/perspective path,
 control matching, checkpoint selection, memory handoff, post-interference
 promotion and independent replay with numeric/mock models. Pinned sources copied
@@ -121,6 +121,6 @@ research/source-archives/babysit-state-cue-feedback-software-v4-2026-10-23.
 No production graph, Stockfish or G0 run occurred. Complete stage orchestration,
 eligible data and campaign registration remain missing. Goal stays active.
 
-The compact handoff had grown to746 lines, contrary to its120-line target.
+The compact handoff had grown to 746 lines, contrary to its 120-line target.
 Preserved the previous file as a linked dated handoff history and replaced the
 active file with current evidence, exact remaining work and operational limits.

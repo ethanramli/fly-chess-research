@@ -10,7 +10,7 @@ Define the limits under study and distinguish biological, model and hardware con
 ## Planned content
 
 - Specific questions about capacity, retention, forgetting, interference or resource dependence.
-- Why each limit matters to the model?s behavior.
+- Why each limit matters to the model's behavior.
 - How biological claims will be grounded in literature.
 
 ## Evidence boundary

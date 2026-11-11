@@ -1,6 +1,6 @@
 # neuron-reader design review, 2026-10-31
 
-**Name:** `neuron-reader`, chosen by the researcher as the replacement name for the conversational proposal “Readout v1”. **Status:** proposed component, not implemented or validated.
+**Name:** `neuron-reader`, chosen by the researcher as the replacement name for the conversational proposal "Readout v1". **Status:** proposed component, not implemented or validated.
 
 Requested reviewer: GPT-6.1 Sol, reasoning effort xhigh. This is one delegated AI review, not an independent experimental audit or a claim of independent error processes. Primary-source reading and code inspection are reported below. The parent checked the wiring-count denominator, legacy v5 readout, restart-plan wording and Eyes v1 status directly.
 
@@ -18,7 +18,7 @@ The full review below preserves all nine findings. Local evidence links have bee
 
 **Verified defects in the stated rationale**
 
-1. **High — The previous comparison omits MBON07 and turns anatomy into a performance claim.**
+1. **High. The previous comparison omits MBON07 and turns anatomy into a performance claim.**
 
    [Wiring output:10](../../../research/reports/restart-wiring-2026-10-30/wiring-count-output.txt) supports:
    - `(1632 + 1461 + 1115) / 5495 = 76.6%` for MBON05/27/09.
@@ -28,11 +28,11 @@ The full review below preserves all nine findings. Local evidence links have bee
 
    MBON07 already appears in [brain v4:6](../../../.codebase/src/puzzle-learning/coupled-stockfish-brain-v4.mjs) and [brain v5:8](../../../.codebase/src/puzzle-learning/coupled-stockfish-brain-v5.mjs). MBON07 plus MBON14 already accounts for `1903/3793 = 50.2%` of the counted KCab-p→MBON synapses.
 
-   **Why it matters:** “~86% versus ~6%” misdescribes the later old readout. Recorded coverage also overstates *scored* coverage whenever unknown-valence types are excluded.
+    **Why it matters:** "~86% versus ~6%" misdescribes the later old readout. Recorded coverage also overstates *scored* coverage whenever unknown-valence types are excluded.
 
-   **Smallest correction:** describe the proposal as **greater direct anatomical coverage**, name the exact legacy comparator, and reserve “improves” for a matched functional comparison.
+    **Smallest correction:** describe the proposal as **greater direct anatomical coverage**, name the exact legacy comparator, and reserve "improves" for a matched functional comparison.
 
-2. **High — The existing usable-strength gate cannot validate this chooser as currently written.**
+2. **High. The existing usable-strength gate cannot validate this chooser as currently written.**
 
    [Restart plan:109](../../../documentation/design/research-goals/restart-plan-2026-10-30.md) uses checker-supervised decoder signs and gain corners of 0.2/1.8. [ReversalMemory:74](../../../.codebase/src/neural-learning/reversal-memory.mjs) initializes gains at 1; its negative-D update at [line 83](../../../.codebase/src/neural-learning/reversal-memory.mjs) cannot raise them above 1. [AlphaLobeMemory:111](../../../.codebase/src/neural-learning/alpha-lobe-memory.mjs) only depresses its alpha gains.
 
@@ -44,7 +44,7 @@ The full review below preserves all nine findings. Local evidence links have bee
 
 **Underspecified choices**
 
-3. **High — A complete source-resolved behavioral sign table is missing.**
+3. **High. A complete source-resolved behavioral sign table is missing.**
 
    Existing code illustrates the distinction: [ReversalMemory:98](../../../.codebase/src/neural-learning/reversal-memory.mjs) explicitly separates negative modulatory polarity from negative reward. The [source register:444](../../../research/literature/source-solution-register.md) describes −MBON07 as an engineered depression-based readout convention.
 
@@ -62,7 +62,7 @@ The full review below preserves all nine findings. Local evidence links have bee
 
    **Smallest fix:** attach the exact assay, manipulation, cell group and evidence strength to each proposed coefficient. Keep unresolved cells recorded and unscored. These findings do not establish that stronger evidence is absent from all later literature.
 
-4. **High — “Individual activity” lacks a numerical measurement contract.**
+ 4. **High. "Individual activity" lacks a numerical measurement contract.**
 
    [SparseTrainer:74](../../../.codebase/src/supervised-baselines/trainer.mjs) implements finite-step rate dynamics. It can reset initial activity, uses a rectified saturating activation at [line 108](../../../.codebase/src/supervised-baselines/trainer.mjs), and returns head predictions at [line 119](../../../.codebase/src/supervised-baselines/trainer.mjs). The old reader instead samples endpoint `h[steps]` in [brain v5:53](../../../.codebase/src/puzzle-learning/coupled-stockfish-brain-v5.mjs).
 
@@ -70,7 +70,7 @@ The full review below preserves all nine findings. Local evidence links have bee
 
    **Smallest fix:** specify the sampled array/window, initialization, baseline treatment, precision, step count and finite-value rules. Pin normalization, recurrent scale, bias, leak and saturation. Call the result **model rate activity in declared units**, not spikes, Hz or biological duration without calibration.
 
-5. **High — Candidate evaluation needs an explicit boundary between transient activity and lasting memory.**
+5. **High. Candidate evaluation needs an explicit boundary between transient activity and lasting memory.**
 
    [MappedPuzzleBrain:59](../../../.codebase/src/puzzle-learning/mapped-puzzle-brain.mjs) fingerprints memory before candidate assessment and checks it afterward. [SparseTrainer:87](../../../.codebase/src/supervised-baselines/trainer.mjs) resets activity when no initial state is supplied. Meanwhile, [Gamma4Memory:59](../../../.codebase/src/neural-learning/mushroom-body.mjs) advances persistent traces and time.
 
@@ -78,7 +78,7 @@ The full review below preserves all nine findings. Local evidence links have bee
 
    **Smallest fix:** define a common transient starting state for candidate comparisons, preserve the complete lasting state, copy measurements before reused arrays change, and prohibit observation/update/clock advancement during recording unless separately specified. Later verification should check unchanged fingerprints and candidate-order invariance.
 
-6. **Medium — Five type names do not identify the observation population.**
+6. **Medium. Five type names do not identify the observation population.**
 
    The existing [cell-resolved report:12](../../../research/reports/memory-retention-continuation-2026-10-31/feedback-path-feasibility-v1.json) reports **14 cells**: 2/2/4/4/2 for MBON05/27/09/07/06. Static annotation inspection agrees.
 
@@ -88,7 +88,7 @@ The full review below preserves all nine findings. Local evidence links have bee
 
    **Smallest fix:** freeze a root-ID roster with graph indices, annotation revision, soma side and anatomical receiving side where established. Preserve uncertain labels; do not silently drop cells or rewrite graph signs.
 
-7. **Medium — “No fitted weights” does not specify aggregation or selection.**
+ 7. **Medium. "No fitted weights" does not specify aggregation or selection.**
 
    [mbon-readout.mjs:2](../../../.codebase/src/neural-learning/mbon-readout.mjs) averages populations; [AlphaLobeMemory:151](../../../.codebase/src/neural-learning/alpha-lobe-memory.mjs) applies equal coefficients to type means. Summing individual cells would instead give four-cell types twice the representation of two-cell types. The [restart plan:51](../../../documentation/design/research-goals/restart-plan-2026-10-30.md) additionally requires seeded stochastic choice at fixed temperature.
 
@@ -98,7 +98,7 @@ The full review below preserves all nine findings. Local evidence links have bee
 
 **Untested risks**
 
-8. **High — Compatibility with the separate memory mechanism is unproved.**
+8. **High. Compatibility with the separate memory mechanism is unproved.**
 
    The memory anatomy proposal names MBON32/35 as its approach side at [visual-pathway.md:38](../../../research/reports/overnight-memory-plasticity-2026-10-31/anatomy/visual-pathway.md), while [line 49](../../../research/reports/overnight-memory-plasticity-2026-10-31/anatomy/visual-pathway.md) explicitly leaves their valence unresolved. Neither is in this five-type reader.
 
@@ -106,7 +106,7 @@ The full review below preserves all nine findings. Local evidence links have bee
 
    **Smallest prospective check:** reconcile observed cells with the separately approved memory targets. Then test whether supported feedback pathways produce both appropriate directions of candidate-margin change within reachable states. Do not change the fixed observation set or the other session’s mechanism silently.
 
-9. **Medium — Useful signal and an end-to-end Eyes chooser remain untested.**
+9. **Medium. Useful signal and an end-to-end Eyes chooser remain untested.**
 
    [Eyes v1:40](../../../documentation/design/chess-input/eyes-v1.md) states that the frozen renderer has not run through the full graph. Earlier weak/saturating signals used another rendering. More direct synapses do not establish candidate discrimination under normalized recurrent dynamics.
 
@@ -116,7 +116,7 @@ The full review below preserves all nine findings. Local evidence links have bee
 
 **Scope and verdict:** inspected the requested instructions, restart/Eyes documents, readout and memory implementations, relevant caller/factory paths, current status, weakness review, decoder code/results, wiring scripts/results, source register, archived memory report and current static anatomy evidence. Browsed selected primary text and legends from Aso 2014, Li 2020, Aso 2023 and Shuai 2025. No files changed; no tests, training, graph propagation or graph recount ran. One metadata query failed from shell quoting and succeeded via stdin. An initial PDF screenshot request timed out; figure panels were not visually audited.
 
-**Recording-only specification: ready to write with the explicit contracts above. Scalar chooser: not ready.** Parent’s smallest next action: record the passive-reader scope and the corrected anatomical comparison.
+**Recording-only specification: ready to write with the explicit contracts above. Scalar chooser: not ready.** Parent's smallest next action: record the passive-reader scope and the corrected anatomical comparison.
 
 
 ## Parent correction and next design task

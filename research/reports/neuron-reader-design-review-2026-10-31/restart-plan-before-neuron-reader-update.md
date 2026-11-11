@@ -1,6 +1,6 @@
 # Restart plan (approved by the researcher, 2026-10-30)
 
-**Status: APPROVED 2026-10-30, with the researcher's definition of reasoning (section 2). The read-only eye test (section 7) may run after the decoder check below. Training may not start until the memory rule (section 5) has separate approval. The numbers in section 7 may change only from the decoder check, before any graph data exists.** Old runs stay as "early development" history. Their results do not count as evidence for this plan. Background: [restart handoff](../../handoffs/restart-handoff-2026-10-30.md).
+**Status: APPROVED 2026-10-30, with the researcher's definition of reasoning (section 2). The read-only eye test (section 7) may run after the decoder check below. Training may not start until the memory rule (section 5) has separate approval. The numbers in section 7 may change only from the decoder check, before any graph data exists.** Old runs stay as "early development" history. Their results do not count as evidence for this plan. Background: [restart handoff](../../../documentation/handoffs/restart-handoff-2026-10-30.md).
 
 Numbers marked [choice] are engineering choices fixed before any data. They do not come from a source.
 
@@ -43,7 +43,7 @@ What follows from this definition:
    - The move mark is an external pointer.
    - The picture is not a measured model of fly vision.
 
-Addendum 2026-10-31: [Eyes v1](../chess-input/eyes-v1.md) implements and freezes this section before any test. One correction to point 2: point sampling gave identical input for some piece pairs on some squares, so each photoreceptor reads the mean ink over a small viewing cell. Thresholds and gates are unchanged.
+Addendum 2026-10-31: [Eyes v1](../../../documentation/design/chess-input/eyes-v1.md) implements and freezes this section before any test. One correction to point 2: point sampling gave identical input for some piece pairs on some squares, so each photoreceptor reads the mean ink over a small viewing cell. Thresholds and gates are unchanged.
 
 ## 4. Feedback rule
 

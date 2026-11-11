@@ -8,7 +8,7 @@ For today's conclusions, read [current research status](../documentation/current
 | [literature](literature/README.md) | Source evidence, search history and source-to-solution register |
 | [journal](journal/README.md) | Dated discussions, experiments and outreach history |
 | [data](../archive/early-development/research/data/README.md) | Frozen protocols, manifests, streamed datasets and declared fixtures |
-| [reports](../archive/early-development/research/reports/README.md) | Raw measurements, receipts, checkpoints and independent audits |
+| [reports](reports/README.md) | Raw measurements, receipts, checkpoints and independent audits |
 | [runs](runs/README.md) | Historical supervised baseline checkpoints |
 | [outreach](outreach/README.md) | Expert dossiers, campaign logs and individual drafts |
 

@@ -5,9 +5,8 @@
 
 ## Planned content
 
-- Empirical evidence that the assisted model can, or cannot, reason. Either result is evidence.
-- Empirical evidence from this constrained model.
-- This is genuine novelty: the volume's new result.
+- Evidence from this constrained model that the assisted system can or cannot reason; either outcome answers the research question.
+- State the volume's contribution and distinguish it from prior work.
 
 ## Evidence boundary
 

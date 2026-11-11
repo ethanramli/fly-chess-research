@@ -1,0 +1,17 @@
+Read .agents/skills/ponytail/SKILL.md first and follow it at ultra intensity. Repo root: C:/Users/ethan/Documents/fly-chess-research.
+
+Task: one small read-only diagnostic script (no learning, no gains changed). Question it answers (journal item 18): does a Kenyon-cell firing threshold (a negative per-neuron bias on KCs) make the gamma-KC code sparse and move-specific, and how do sparseness and within-board separation change with the threshold?
+
+Create only: .codebase/scripts/neural-learning/diagnose-kc-sparseness-v1.mjs (no test file needed: it is a measurement script; keep it under 90 lines). Edit no existing file.
+
+Read for the exact setup: .codebase/scripts/neural-learning/fly-connections-memory-v1-worker.mjs (how graph, mapping, model, eyes, APL package and condition are built from a registration), .codebase/src/neural-learning/fly-connections-teaching-v1.mjs (actualTeachingInputs: per-group kcRates), .codebase/src/supervised-baselines/trainer.mjs (params.bias is the per-neuron drive offset, zero by default), and .codebase/src/neural-learning/fly-connections-packet-v1.mjs (board records).
+
+CLI: node --max-old-space-size=512 diagnose-kc-sparseness-v1.mjs --config "python actions/fly-connections-memory-v1-dryrun-step.json" --boards 3 --thresholds 0,0.005,0.01,0.015,0.02,0.03 --out DIR
+Steps:
+1. Build graph, mapping, SparseTrainer(config.model), eyes, APL package exactly as the worker does, with arm 'off-local' (no learning) via createFlyCondition; verify the mapping-check gate the same way the worker does.
+2. KC cohort = every neuron annotated cell_class Kenyon_Cell (read the annotation TSV like mapFlyConnectionsMemory does; take the indices of all KCs, not only gamma). Record its size.
+3. Take the first --boards A-group records from boards.jsonl (file order). For each threshold θ: set model.params.bias[kc] = -θ for every KC index (all other biases stay 0); then for every legal move of each board, run one forward via the condition's own path: use condition.rankBoard(record) for scores, and separately, for KC rates, call model.forward(new Float32Array(1), eyes.encode(record.fen, move).stimulation, null) followed by actualTeachingInputs(model, mapping) to read the mapped gamma KC rates. (rankBoard's internal fixed-state check covers params.bias: if rankBoard throws because bias changed, catch that, and instead compute scores yourself as -(mean of the two MBON05 endpoint rates), exactly as the condition does; say which path you used.)
+4. Per θ report: fraction of mapped gamma KCs with rate > 1e-6 (mean over moves and boards); mean rate of active KCs; per board, the median over move pairs of the relative L2 difference between gamma-KC rate vectors; the same restricted to the union of active cells; the fraction of mapped gamma KCs active for at least one move but not all moves of a board (move-specific cells); MBON05 score spread (max-min over legal moves) per board; and the number of passes.
+5. Write DIR/kc-sparseness.json atomically {schema:'kc-sparseness-diagnostic-v1', config sha256, boards:[ids], cohortSize, rows:[{theta, ...}]}. Print one line per θ. Reset bias to 0 at the end. Guard: RSS <= 2048 MiB, free >= 256 MiB.
+
+You may run only: node --check on your script. Do NOT run it (the parent runs it). No git. End with: file created, exact CLI, which scoring path you used, and anything not met.

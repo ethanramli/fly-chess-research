@@ -55,7 +55,7 @@ Public sources were retrieved through connected Exa; direct web opens/finds were
 
 ## 3. Primary scientific source verifications
 
-All sources below were checked on 2026-10-30 to the scope stated. “Verified” means the stated narrow source claim was found, not that the paper's results were independently replicated or that its adaptation is validated.
+All sources below were checked on 2026-10-30 to the scope stated. "Verified" means the stated narrow source claim was found, not that the paper's results were independently replicated or that its adaptation is validated.
 
 | ID / primary source | Species/model and exact locator/read scope | Verified claim and boundary | FlyChess transfer disposition |
 |---|---|---|---|

@@ -1,6 +1,6 @@
 # Engineered memory test v2 result, 2026-11-03
 
-**Result: does not pass.** The store remembers seen boards, but the fly's Kenyon-cell pattern does not help on new boards. Graph 20 to 22 of 38 new-board pairs (chance 19). Raw eyes and random features did better, partly through a brightness shortcut in how the twin boards were made.
+**Result: does not pass.** The store remembers seen boards, but the fly's Kenyon-cell pattern does not help on new boards. The graph scored 20 to 22 of 38 new-board pairs (chance 19). Raw eyes and random features did better, partly through a brightness shortcut in how the twin boards were made.
 
 Researcher approval for this run, in the researcher's own words: "run teh memory test" (2026-11-03). One run, read-only brain passes, brain connections unchanged (hash checked).
 

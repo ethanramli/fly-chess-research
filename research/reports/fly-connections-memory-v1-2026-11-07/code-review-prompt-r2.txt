@@ -1,0 +1,12 @@
+Round 2 of your code review of fly connections memory v1 (you returned LAUNCH OK WITH REQUIRED CHANGES in round 1). Read-only; do not run any graph.
+
+Read:
+1. research/journal/experiments/2026-11-07-fly-connections-memory.md items 14 onward (what changed after your round 1, and the dry run).
+2. The changed files: .codebase/src/neural-learning/fly-connections-job-v1.mjs (off arm now ranks at every checkpoint), fly-connections-judge-v1.mjs (P2.2b), fly-connections-audit-v1.mjs and .codebase/scripts/neural-learning/audit-fly-connections-memory-v1.mjs (own bootstrap, P2.2b, per-phase replay, ranking-reused rejected), .codebase/scripts/neural-learning/check-fly-connections-mapping-v1.mjs and its real output runs/fly-connections-memory-2026-11-08/mapping-check-v1/mapping-check.json, the worker's mapping gate, and their tests.
+3. documentation/design/neural-learning/fly-connections-memory-v1-gates-2026-11-08.md (gate 2b, section 3, section 4b scope changes, and any budget section added after the dry run).
+4. The dry run: runs/fly-connections-memory-2026-11-08/fly-connections-memory-v1-dryrun/ (manifest.json, summary.json, jobs/*/result.json, audit.json) and its chain logs in runs/python-actions/detached/flyconn-dryrun-20261108T2009/.
+5. The full-run registration python actions/fly-connections-memory-v1-full-step.json and packet runs/fly-connections-memory-2026-11-08/packet-full/ (packet.json, summary.json).
+
+Run: node --test --test-concurrency=1 .codebase/tests/neural-learning/fly-connections-*.test.mjs .codebase/tests/neural-learning/audit-fly-connections-memory-v1.test.mjs .codebase/tests/neural-learning/check-fly-connections-mapping-v1.test.mjs
+
+Answer: (1) Are your round-1 BUILD and LAUNCH items resolved? (2) Did the dry run and its audit exercise every path the full run uses (including the graph replay), and do they show any defect? Treat dry-run scores as plumbing only. (3) Are the full-run budgets and any declared cuts justified by the dry-run measurements, declared before data, and free of effects on any gate? (4) Any remaining red criterion. Label each required change BUILD or LAUNCH. End with exactly one of: LAUNCH OK (full run may start), LAUNCH OK WITH REQUIRED CHANGES, or DO NOT LAUNCH.

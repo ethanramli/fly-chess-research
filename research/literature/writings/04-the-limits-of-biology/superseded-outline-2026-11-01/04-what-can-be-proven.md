@@ -11,7 +11,7 @@ Present precise mathematical claims about the defined model where a proof is use
 
 - Formal propositions and definitions.
 - Step-by-step proofs with assumptions stated.
-- Examples or counterexamples showing the claim?s scope.
+- Examples or counterexamples showing the claim's scope.
 - Predictions that can be checked in simulation.
 
 ## Evidence boundary

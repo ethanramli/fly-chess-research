@@ -1,0 +1,15 @@
+Read .agents/skills/ponytail/SKILL.md first and follow it at ultra intensity. Repo root: C:/Users/ethan/Documents/fly-chess-research.
+
+Task: one diagnostic script (journal item 30): can the source rule, applied to the widened revision-4 mask, learn to make a safe capture top on a development board? A learning probe, no registration.
+
+Create only: .codebase/scripts/neural-learning/probe-wide-learning-v1.mjs (under 130 lines). Edit no existing file.
+Start from a copy of the setup in .codebase/scripts/neural-learning/probe-wide-capacity-v1.mjs (config, graph, SparseTrainer, optional --bias, installLocalApl local, eyes, annotation stream, mask edges onto the six MBON types, base magnitudes, valence score, guard, setMagnitude). Also read documentation/design/neural-learning/fly-connections-memory-v1-revision-4-2026-11-09.md (addendum item 1: the 10-entry modulation matrix) and .cache/incentive-circuit-1610c800/models_base.py lines 262-300 and 424-450 (the source rule: D = max(v,0) . w_d2k; dw = eta * D * (k + w - w_rest), w_rest = 1).
+
+Add:
+1. DAN cells by hemibrain_type from the same annotation stream: PAM07, PAM02, PAM03, PPL101, PPL103 (cell_class DAN). Throw if any type has no cells.
+2. Modulation W[danType][mbonType] = sum of these entries (PPL103 plays both cav and fat): PAM07->MBON05 -1; PPL101->MBON11 -1; PAM02->MBON01 -1; PAM02->MBON02 +0.3; PPL103->MBON12 -1 and -0.3 (total -1.3); PPL103->MBON15 +0.3 and -1 (total -0.7); PAM03->MBON02 -1; PAM03->MBON01 -0.3.
+3. Teaching event (record, experience, pulse): h = forward(cue = eyes.encode(fen, move).stimulation, plus {index, current: 0.75} for every PAM07 and PAM02 cell when pulse is true). danMean[t] = mean over that type's cells of max(0, h_end[cell]) / 1.5. For each MBON cell c: D_c = sum_t W[t][type(c)] * danMean[t]. If any 0.5 * |D_c| > 1 throw before changing anything. For each mask edge e (MBON cell c, KC pre): k = max(0, h_end[pre]) / 1.5; g_e = clamp(g_e + 0.5 * D_c * (k + g_e - 1), 0.2, 1.8); then setMagnitude(e, base_e * g_e).
+4. Run, for arm in ['informative', 'absent'] (fresh model per arm; absent = pulse always false), for each of the first --boards A-group boards (boards.jsonl order): rank all legal moves (score each with a plain forward, no pulse) -> pass 0; then --repeats times: teach the board's record.experiences in listed order (pulse = experience.pulse for informative), then rank again. Report per (arm, board, pass): best safe move and score, best other move and score, margin, number of legal moves above the best safe move, the practised pulse/no-pulse moves' scores, mean D over MBON05 and MBON01 cells (the reward targets) for pulse and no-pulse events, number of gains at a bound, and mean |g-1|.
+5. Write DIR/probe.json atomically {schema:'wide-learning-probe-v1', note:'learning probe on development boards', ...rows}; print one line per (arm, board, pass). Guard RSS <= 2048 MiB, free >= 256 MiB around each forward.
+CLI: node --max-old-space-size=512 probe-wide-learning-v1.mjs --config CONFIG --boards 3 --repeats 6 --out DIR [--bias B]
+You may run only node --check. Do NOT run it. No git. End with: file, exact CLI, anything not met.

@@ -1,9 +1,9 @@
-# Fly connections memory: P1-P3, 2026-11-07
+# Fly connections memory: Properties 1–3, 2026-11-07
 
-**P1-P3 is unmet. Revision 2: BUILD ALLOWED; first scoped builds in progress, no dry/full run.** Volume 2, chapters 3 and 5. The first draft's SOURCE NO-GO remains valid; a numerical pass under that rejected design could not establish P1. No biological limit has been proved by its rejection.
+**Properties 1–3 remain unmet. Revision 2: BUILD ALLOWED; first scoped builds in progress, no dry/full run.** Volume 2, chapters 3 and 5. The first draft's SOURCE NO-GO remains valid; a numerical pass under that rejected design could not establish Property 1. No biological limit has been proved by its rejection.
 
 1. [Prospective proposal, first draft](../../../documentation/design/neural-learning/fly-connections-memory-v1-proposal-2026-11-07.md).
-2. [Independent strict Codex review, high effort](design-review-r1-retry.md): cross-trial dopamine subtraction is extra-circuit; APL locality is confounded with inhibition strength; PAM08 applicability is unsupported by a source naming PAM07; pressure, correction, seed roles and runtime need revision.
+2. [Independent strict Codex review, high effort](design-review-r1-retry.md): cross-trial dopamine subtraction is extra-circuit; APL locality is confounded with inhibition strength; PAM08 applicability is unsupported by a source naming PAM07; Property 2, seed roles and runtime need revision.
 3. [Huang author-code source check](huang-source-applicability.md): exact primary code acquired and pinned; its effective negative weights and last-training decay switch prevent unqualified transplantation. No source model imported or executed.
 4. [Journal and mistakes](../../journal/experiments/2026-11-07-fly-connections-memory.md); [next checkpoint](../../../documentation/next-checkpoint.md).
 
@@ -16,3 +16,7 @@ The first review invocation failed before starting its app-server client. Its lo
 Two Haiku xhigh CLI tasks are in progress: isolated local APL adapter/fixtures and PAM07 mapping/actual-endpoint teaching extraction/fixtures. Tools are limited to file reads/edits/search, with no MCP tools, shell, installation, delegation or graph launch. The main agent will review and run fixtures. Compiler, task/metrics, runner, registration, independent auditor, code review and detached dry/full runs remain required; no partial module is a finished pipeline.
 
 Next: review the generated modules and run the small synthetic checks, then complete the approved pipeline. Preserve the first draft and frozen sources.
+
+## Addendum 2026-11-09: built, dry run, stop for decision
+
+**Properties 1-3 remain unmet. No full run.** The pipeline was built and reviewed ([code review r1](code-review-r1.md): LAUNCH OK WITH REQUIRED CHANGES, all fixed). The dry run (development data, one seed, 8+8 boards) passed the P1 checks and failed every P2/P3 gate: the model's gamma Kenyon cells are all tonically active, moves on one board share about 97% of their KC pattern, and learning shifts all moves together. [Diagnosis](diagnosis-r1.md): STOP FOR RESEARCHER DECISION. Records: [journal items 11-17](../../journal/experiments/2026-11-07-fly-connections-memory.md).

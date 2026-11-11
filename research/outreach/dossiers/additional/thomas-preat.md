@@ -35,7 +35,7 @@ The researcher wants experience/feedback sequencing rather than a teacher calcul
 
 **Bounded question:** Which comparison between massed and spaced experience would show that a training schedule changes consolidation rather than simply increasing stimulation?
 
-**Possible next diagnostic, proposed only:** Proposed prospective condition: match exposure count and record elapsed intervals, immediate acquisition and delayed retrieval. Existing failed gates remain frozen; a new protocol would be labeled a follow-up.
+**Possible next diagnostic, proposed only:** Match exposure count and record elapsed intervals, immediate acquisition and delayed retrieval. Existing failed gates remain frozen; a new protocol would be labeled a follow-up.
 
 **Limits and reasons this may be the wrong contact:** Changing simulated intervals alone does not reproduce mitochondrial or endocrine consolidation. This does not establish an effective chess curriculum or permit tuning completed acceptance criteria.
 

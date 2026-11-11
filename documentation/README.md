@@ -2,7 +2,7 @@
 
 Current direction: [approved restart plan](design/research-goals/restart-plan-2026-10-30.md). Old experiments are history in [the early-development archive](../archive/early-development/README.md).
 
-Start with [the next checkpoint](next-checkpoint.md) (goal, last checkpoint, next step), then [current status](current-status.md), then [research goals](design/research-goals/README.md). Choose one topic below; dated discussion and raw evidence live in [research](../research/README.md).
+Start with [the next checkpoint](next-checkpoint.md) (goal, last checkpoint, next step), then [current status](current-status.md) and its [post-restart history](current-status-history-2026-10-31-through-2026-11-09.md), then [research goals](design/research-goals/README.md). Choose one topic below; dated discussion and raw evidence live in [research](../research/README.md).
 
 For recurring curriculum work, use the [Python command guide](design/puzzle-learning/python-curriculum-actions.md) and `fly.cmd`; configure a registered step once and keep raw logs on disk.
 
@@ -22,7 +22,7 @@ For recurring curriculum work, use the [Python command guide](design/puzzle-lear
 
 ## Where to put a new note
 
-Put specifications in the matching design topic, source evidence in [literature](../research/literature/README.md), dated discussion in [journal](../research/journal/README.md), and outcomes in [reports](../archive/early-development/research/reports/README.md). Add the note to its folder README. Update [current status](current-status.md) when an audited result changes; preserve earlier failures and historical entries.
+Put specifications in the matching design topic, source evidence in [literature](../research/literature/README.md), dated discussion in [journal](../research/journal/README.md), and outcomes in [reports](../research/reports/README.md). Add the note to its folder README. Update [current status](current-status.md) when an audited result changes; preserve earlier failures and historical entries.
 
 Filenames use descriptive kebab-case; journal filenames begin with the Asia/Jakarta date. Label hypotheses, proposed protocols, frozen protocols, software evidence and measured results explicitly. Keep experiment appendices out of the root README and AGENTS.md.
 

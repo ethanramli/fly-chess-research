@@ -35,7 +35,7 @@ Our per-edge efficacy gain collapses several potential pre- and postsynaptic pro
 
 **Bounded question:** Which experiment would expose a model that reproduces response changes but puts the lasting memory in the wrong physiological mechanism?
 
-**Possible next diagnostic, proposed only:** Proposed comparison: distinguish induction-only and retrieval-only perturbations in a future justified mechanism; measure both stored state and choice. Do not equate a software gain reset with a molecular receptor perturbation.
+**Possible next diagnostic, proposed only:** Distinguish induction-only and retrieval-only perturbations in a future justified mechanism; measure both stored state and choice. Do not equate a software gain reset with a molecular receptor perturbation.
 
 **Limits and reasons this may be the wrong contact:** The receptor experiments do not establish that gamma4 failures result from a missing receptor process. Reading coverage is deeper for the 2022 paper; verify the 2015 full text before using its detailed methods.
 

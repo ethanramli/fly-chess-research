@@ -1,0 +1,357 @@
+// Fly connections memory v1: pure judge. Reads finished job directories and returns the per-seed gate verdict.
+// Reuses fly-connections-metrics-v1 and packet replay unchanged. No graph, no neural code, no writes.
+import { createReadStream } from 'node:fs';
+import { readFile, readdir } from 'node:fs/promises';
+import { createInterface } from 'node:readline';
+import { join } from 'node:path';
+import { compareByGame, judgeRetention, scoreAllLegal, summarizePressure } from './fly-connections-metrics-v1.mjs';
+import { replayPacketBoard } from './fly-connections-packet-v1.mjs';
+
+export const ARMS = Object.freeze(['informative-local', 'absent-local', 'off-local', 'shuffled-local', 'informative-matched', 'informative-global']);
+const PRIMARY = 'informative-local';
+const ARM = Object.freeze({ informative: PRIMARY, absent: 'absent-local', off: 'off-local', shuffled: 'shuffled-local', matched: 'informative-matched', global: 'informative-global' });
+const LEARNING = new Set([PRIMARY, ARM.matched, ARM.global]);
+const RESULT_SCHEMA = 'fly-connections-job-result-v1';
+const RSS_MAX_MIB = 2048;
+const FREE_MIN_MIB = 256;
+// Fixed inside fly-connections-metrics-v1 (SUCCESS, PRESSURE) and in summarizePressure (share 1/4). Gates must agree.
+const SUCCESS = 0.75;
+const PRESSURE = 0.01;
+const PRESSURE_SHARE = 0.25;
+
+const byId = (a, b) => (a.boardId < b.boardId ? -1 : a.boardId > b.boardId ? 1 : 0);
+const mean = xs => xs.reduce((sum, x) => sum + x, 0) / xs.length;
+const uci = m => m.from + m.to + (m.promotion ?? '');
+const summarize = part => Object.fromEntries(Object.entries(part).filter(([key]) => key !== 'items'));
+
+function checkGates(gates) {
+  if (gates?.success !== SUCCESS || gates.pressure !== PRESSURE || gates.pressureShare !== PRESSURE_SHARE) {
+    throw Error('gates.success, gates.pressure and gates.pressureShare must be 0.75, 0.01 and 0.25 (fixed in the metrics module)');
+  }
+  if (!Number.isSafeInteger(gates.minAcquired) || !Number.isSafeInteger(gates.bootstrapSeed)) throw Error('gates.minAcquired and gates.bootstrapSeed must be integers');
+}
+
+// Streams one job directory. rankings: Map(label -> Map(boardId -> ranking)). A ranking-reused line
+// resolves to that board's T0 ranking after its fingerprint is checked against the T0 line.
+export async function readJob(dir) {
+  const result = JSON.parse(await readFile(join(dir, 'result.json'), 'utf8'));
+  if (result?.schema !== RESULT_SCHEMA || result.status !== 'complete') throw Error(`${dir}: result.json is not a complete job result`);
+  const rankings = new Map(), probes = new Map(), events = [], t0 = new Map(), seen = new Set();
+  const lines = createInterface({ input: createReadStream(join(dir, 'records.jsonl')), crlfDelay: Infinity });
+  for await (const line of lines) {
+    const rec = JSON.parse(line);
+    if (rec.type === 'event') {
+      if (rec.cursor !== rec.receipt?.sequence || rec.receipt.sequence !== events.length) {
+        throw Error(`${dir}: event cursor ${rec.cursor} breaks the sequence (expected ${events.length})`);
+      }
+      events.push(rec.receipt);
+      continue;
+    }
+    if (rec.type !== 'ranking' && rec.type !== 'ranking-reused') throw Error(`${dir}: unknown record type ${rec.type}`);
+    const key = `${rec.label}\u0000${rec.boardId}`;
+    if (seen.has(key)) throw Error(`${dir}: duplicate ranking for ${rec.label} ${rec.boardId}`);
+    seen.add(key);
+    let ranking;
+    if (rec.type === 'ranking') {
+      if (!Array.isArray(rec.ranking?.ranked)) throw Error(`${dir}: ${rec.label} ${rec.boardId} has no ranked list`);
+      ranking = rec.ranking;
+      if (rec.label === 'T0') t0.set(rec.boardId, { ranking, fingerprint: rec.fingerprint });
+    } else {
+      if (result.arm !== 'off-local' || rec.from !== 'T0' || rec.label === 'T0') {
+        throw Error(`${dir}: ranking-reused is allowed only in the off arm, from T0, at a later label`);
+      }
+      const base = t0.get(rec.boardId);
+      if (!base) throw Error(`${dir}: reused ${rec.boardId} has no T0 ranking`);
+      if (rec.fingerprint !== base.fingerprint) throw Error(`${dir}: reused ranking ${rec.label} ${rec.boardId} has a fingerprint that differs from T0`);
+      ranking = base.ranking;
+    }
+    if (!rankings.has(rec.label)) rankings.set(rec.label, new Map());
+    rankings.get(rec.label).set(rec.boardId, ranking);
+    const probe = probes.get(rec.label);
+    if (!probe) probes.set(rec.label, { cursor: rec.cursor, fingerprint: rec.fingerprint });
+    else if (probe.cursor !== rec.cursor || probe.fingerprint !== rec.fingerprint) {
+      throw Error(`${dir}: ${rec.label} has lines with different cursor or fingerprint`);
+    }
+  }
+  if (!probes.has('T0')) throw Error(`${dir}: missing T0 probe`);
+  if (probes.get('T0').cursor !== 0) throw Error(`${dir}: T0 must be at cursor 0`);
+  if (events.length !== result.events) throw Error(`${dir}: ${events.length} event lines; result.json says ${result.events}`);
+  const labels = [...probes.keys()].sort();
+  if (JSON.stringify(labels) !== JSON.stringify(Object.keys(result.fingerprints ?? {}).sort())) throw Error(`${dir}: result fingerprints do not cover the probe labels`);
+  for (const label of labels) {
+    if (result.fingerprints[label] !== probes.get(label).fingerprint) throw Error(`${dir}: ${label} fingerprint differs from result.json`);
+  }
+  const snapshots = new Map();
+  for (const name of (await readdir(join(dir, 'snapshots'))).filter(f => f.endsWith('.json')).sort()) {
+    snapshots.set(name.slice(0, -5), JSON.parse(await readFile(join(dir, 'snapshots', name), 'utf8')));
+  }
+  if (JSON.stringify([...snapshots.keys()].sort()) !== JSON.stringify(labels)) throw Error(`${dir}: snapshots do not match the probe labels`);
+  return { result, rankings, probes, events, snapshots };
+}
+
+// Fingerprint chain: each event's before-state is the previous event's after-state, and every probe sits on the chain.
+function chainCheck({ events, probes }) {
+  for (let i = 1; i < events.length; i++) {
+    if (events[i].fingerprintBefore !== events[i - 1].fingerprintAfter) return { ok: false, detail: { brokenAtEvent: i } };
+  }
+  const stateAt = c => (c === 0 ? events[0]?.fingerprintBefore : events[c - 1]?.fingerprintAfter);
+  const mismatchedProbes = [...probes]
+    .filter(([, p]) => p.cursor < 0 || p.cursor > events.length || p.fingerprint !== stateAt(p.cursor))
+    .map(([label]) => label);
+  return { ok: mismatchedProbes.length === 0, detail: { events: events.length, probes: probes.size, mismatchedProbes } };
+}
+
+function p1({ jobs }) {
+  const job = jobs[PRIMARY];
+  const chain = chainCheck(job);
+  const learns = job.result.describe?.learns === true;
+  const pulsed = [], unpulsed = [];
+  for (const e of job.events) {
+    if (e.phase !== 'A' && e.phase !== 'B') continue;
+    if (!Array.isArray(e.teaching) || e.teaching.length !== 2 || typeof e.deliveredPulse !== 'boolean') {
+      throw Error(`event ${e.sequence}: needs two teaching sides and a boolean deliveredPulse`);
+    }
+    (e.deliveredPulse ? pulsed : unpulsed).push(mean(e.teaching.map(t => t.factor)));
+  }
+  const difference = pulsed.length && unpulsed.length ? mean(pulsed) - mean(unpulsed) : null;
+  const checks = [
+    { name: 'P1.1 only mask state changes (fingerprint chain; learns)', pass: chain.ok && learns,
+      detail: { ...chain.detail, learns, identities: job.result.describe?.identities } },
+    { name: 'P1.2 every update recomputed by the auditor', pass: null, detail: 'deferred to audit' },
+    { name: 'P1.3 pulse events more depressing than no-pulse events (mean D difference < -1e-6)',
+      pass: difference !== null && difference < -1e-6,
+      detail: { pulseEvents: pulsed.length, noPulseEvents: unpulsed.length,
+        meanPulseD: pulsed.length ? mean(pulsed) : null, meanNoPulseD: unpulsed.length ? mean(unpulsed) : null, difference } },
+    { name: 'P1.4 no engineered store, label or selected action in primary scores', pass: null, detail: 'code review + audit' },
+  ];
+  return { pass: checks[0].pass === true && checks[2].pass === true, checks };
+}
+
+// Pressure: which mask edges A writes, which edges B pressure, and the magnitudes at B-end.
+// Snapshots hold gains only, so unwritten mask edges enter summarizePressure as placeholders.
+// ponytail: placeholder edge IDs (-1, -2, ...) with base = final = 1; the auditor recomputes with the real mask IDs.
+function pressureCheck(ctx, acquiredA) {
+  const { jobs, gates, A, B, metricsOf } = ctx;
+  const { events, result, snapshots } = jobs[PRIMARY];
+  const n = result.describe?.maskEdges;
+  if (!Number.isSafeInteger(n) || n < 1) throw Error('describe.maskEdges must be a positive integer');
+  for (const [label, snap] of snapshots) {
+    if (snap.memory?.gains?.length !== n) throw Error(`Snapshot ${label} has ${snap.memory?.gains?.length} gains; the mask has ${n}`);
+  }
+  const lastB = events.reduce((last, e) => (e.phase === 'B' ? e.sequence : last), -1);
+  const base = new Map(), finalAfter = new Map(), written = new Set(), pressured = new Set(), overwrites = [];
+  for (const e of events) {
+    if (!Array.isArray(e.writes)) throw Error(`event ${e.sequence}: writes must be a list`);
+    for (const w of e.writes) {
+      if (!base.has(w.edgeId)) base.set(w.edgeId, w.beforeMagnitude);
+      if (e.phase === 'A' && w.effectiveChanged) written.add(w.edgeId);
+      if (e.phase === 'B' && w.pressureWrite) pressured.add(w.edgeId);
+      if (e.sequence <= lastB) finalAfter.set(w.edgeId, w.afterMagnitude);
+      if (w.effectiveChanged) {
+        overwrites.push({ edgeId: w.edgeId, phase: e.phase, sequence: e.sequence, before: w.beforeMagnitude, after: w.afterMagnitude });
+      }
+    }
+  }
+  const edges = [...base.keys()];
+  const mask = { maskEdges: n, writtenEdges: edges.length, aWrittenEdges: written.size, bPressureEdges: pressured.size };
+  let check, summary = null;
+  if (written.size === 0) {
+    check = { name: 'P2.3 pressure was real', pass: false, detail: 'no A-written edges (empty A capacity)' };
+  } else {
+    if (edges.length > n) throw Error('More written edges than mask edges');
+    const edgeIds = [...edges];
+    const naive = edges.map(id => base.get(id));
+    const final = edges.map(id => finalAfter.get(id) ?? base.get(id));
+    for (let k = 1; edgeIds.length < n; k++) { edgeIds.push(-k); naive.push(1); final.push(1); }
+    summary = summarizePressure([...written], [...pressured], naive, Float32Array.from(final), edgeIds);
+    check = { name: 'P2.3 pressure was real (summarizePressure)', pass: summary.pass, detail: summary };
+  }
+
+  // Report only: after the k-th trained board of a group, cumulative pressure writes and A boards acquired at T_A but unsuccessful.
+  const loadsOf = (group, list) => {
+    const ids = new Set(list.map(r => r.boardId));
+    const last = new Map();
+    for (const e of events) if (e.phase === group) last.set(e.boardId, e.sequence);
+    if (last.size !== ids.size || [...last.keys()].some(id => !ids.has(id))) throw Error(`Group ${group}: trained boards differ from its records`);
+    const cutoffs = [...last.values()].sort((x, y) => x - y);
+    const nb = list.length;
+    return [8, 16, 32].filter(k => k < nb).concat(nb).map(k => {
+      const label = k === nb ? `${group}-end` : `${group}-${k}`;
+      if (!jobs[PRIMARY].rankings.has(label)) throw Error(`Missing probe ${label}`);
+      const cutoff = cutoffs[k - 1];
+      const pressureWrites = events
+        .filter(e => e.phase === group && e.sequence <= cutoff)
+        .reduce((count, e) => count + e.writes.filter(w => w.pressureWrite).length, 0);
+      const lostIds = A.filter(r => acquiredA.has(r.boardId) && metricsOf(PRIMARY, label, r).success < gates.success).map(r => r.boardId);
+      return { k, label, cutoffSequence: cutoff, pressureWrites, aBoardsLost: lostIds.length, lostIds };
+    });
+  };
+  return { check, report: { mask, summary, loads: { A: loadsOf('A', A), B: loadsOf('B', B) }, overwrites } };
+}
+
+// Phase-2 correction on every R board. R rankings are phase R1 throughout; target 1 is scored from the same scores.
+function correctionCheck({ R, gates, metricsOf }) {
+  const boards = R.map(record => {
+    const aEnd = metricsOf(PRIMARY, 'A-end', record, 0);
+    const r1 = metricsOf(PRIMARY, 'R1-end', record, 0);
+    const b = metricsOf(PRIMARY, 'B-end', record, 0);
+    const r2 = metricsOf(PRIMARY, 'R2-end', record, 1);
+    const parts = {
+      afterR1: r1.success >= gates.success && r1.margin > r1.tolerance && r1.margin - aEnd.margin > gates.epsilon,
+      atBEnd: b.success >= gates.success && b.margin > b.tolerance,
+      afterR2: r2.success >= gates.success && r2.margin > 0 && !(r2.topMoves.length === 1 && r2.topMoves[0].move === record.rTargets[0]),
+    };
+    return { boardId: record.boardId, pass: Object.values(parts).every(Boolean), parts, values: { aEnd, r1, b, r2 } };
+  });
+  return { name: 'P2.4 phase-1 target acquired, held, and phase-2 target sole correct on every R board', pass: boards.every(b => b.pass), detail: boards };
+}
+
+function p2(ctx) {
+  const { gates, A, B, rows, successes } = ctx;
+  const retention = judgeRetention({
+    a0: rows(PRIMARY, 'T0', A), aAfterA: rows(PRIMARY, 'A-end', A), aAfterB: rows(PRIMARY, 'B-end', A), aFinal: rows(PRIMARY, 'R2-end', A),
+    bBefore: rows(PRIMARY, 'R1-end', B), bAfter: rows(PRIMARY, 'B-end', B), bFinal: rows(PRIMARY, 'R2-end', B),
+    minAcquired: gates.minAcquired, retention: gates.retention, epsilon: gates.epsilon,
+  });
+  const AB = [...A, ...B].sort(byId);
+  const g22 = compareByGame({
+    arms: { informative: successes(PRIMARY, 'B-end', AB), absent: successes(ARM.absent, 'B-end', AB),
+      off: successes(ARM.off, 'B-end', AB), shuffled: successes(ARM.shuffled, 'B-end', AB) },
+    games: AB.map(r => r.gameId), primary: 'informative', comparators: ['absent', 'off', 'shuffled'], seed: gates.bootstrapSeed,
+  });
+  // Gates item 2b: each group's success at T_AB against its own baseline (A: T0; B: T_B0 = R1-end), paired by game.
+  const ownBaseline = (group, baseline) => compareByGame({
+    arms: { after: successes(PRIMARY, 'B-end', group), naive: successes(PRIMARY, baseline, group) },
+    games: group.map(r => r.gameId), primary: 'after', comparators: ['naive'], seed: gates.bootstrapSeed,
+  });
+  const g22bA = ownBaseline(A, 'T0'), g22bB = ownBaseline(B, 'R1-end');
+  const acquiredA = new Set(retention.a.items.filter(x => x.acquired).map(x => x.boardId));
+  const pressure = pressureCheck(ctx, acquiredA);
+  const checks = [
+    { name: 'P2.1 retention, acquisition and minAcquired', pass: retention.pass, detail: { a: summarize(retention.a), b: summarize(retention.b) } },
+    { name: 'P2.2 learning beats absent, off and shuffled (game-clustered lower > 0)',
+      pass: Object.values(g22.comparators).every(c => c.lower > 0), detail: g22 },
+    { name: 'P2.2b own-baseline success improves (A T_AB vs T0, B T_AB vs T_B0)',
+      pass: g22bA.comparators.naive.lower > 0 && g22bB.comparators.naive.lower > 0, detail: { A: g22bA, B: g22bB } },
+    pressure.check,
+    correctionCheck(ctx),
+  ];
+  return { pass: checks.every(c => c.pass === true), checks, report: pressure.report };
+}
+
+function p3(ctx) {
+  const { gates, successes, testA, testB } = ctx;
+  const compare = list => {
+    const games = list.map(r => r.gameId);
+    const p31 = compareByGame({
+      arms: { informative: successes(PRIMARY, 'R2-end', list), off: successes(ARM.off, 'R2-end', list), shuffled: successes(ARM.shuffled, 'R2-end', list) },
+      games, primary: 'informative', comparators: ['off', 'shuffled'], seed: gates.bootstrapSeed,
+    });
+    const p32 = compareByGame({
+      arms: { final: successes(PRIMARY, 'R2-end', list), naive: successes(PRIMARY, 'T0', list) },
+      games, primary: 'final', comparators: ['naive'], seed: gates.bootstrapSeed,
+    });
+    return { p31, p32, pass31: Object.values(p31.comparators).every(c => c.lower > 0), pass32: p32.comparators.naive.lower > 0 };
+  };
+  const testAll = [...testA, ...testB].sort(byId);
+  const all = compare(testAll);
+  const other = compareByGame({
+    arms: { informative: successes(PRIMARY, 'R2-end', testAll), absent: successes(ARM.absent, 'R2-end', testAll),
+      matched: successes(ARM.matched, 'R2-end', testAll), global: successes(ARM.global, 'R2-end', testAll) },
+    games: testAll.map(r => r.gameId), primary: 'informative', comparators: ['absent', 'matched', 'global'], seed: gates.bootstrapSeed,
+  });
+  return {
+    pass: all.pass31 && all.pass32,
+    checks: [
+      { name: 'P3.1 new positions beat off and shuffled (game-clustered lower > 0)', pass: all.pass31, detail: all.p31 },
+      { name: 'P3.2 improves on own T0, paired by game (lower > 0)', pass: all.pass32, detail: all.p32 },
+    ],
+    report: {
+      testA: compare(testA), testB: compare(testB), otherArms: other,
+      meanSuccessAtR2End: Object.fromEntries(Object.entries(ARM).map(([short, arm]) => [short, mean(successes(arm, 'R2-end', testAll))])),
+    },
+  };
+}
+
+function fairCheck(jobs, tapeSha256) {
+  const rows = ARMS.map(arm => {
+    const { tapeSha256: tape, peakRssMiB, minFreeMiB } = jobs[arm].result;
+    return { arm, tapeOk: tape === tapeSha256, peakRssMiB, minFreeMiB,
+      rssOk: Number.isFinite(peakRssMiB) && peakRssMiB <= RSS_MAX_MIB,
+      freeOk: Number.isFinite(minFreeMiB) && minFreeMiB >= FREE_MIN_MIB };
+  });
+  return { pass: rows.every(r => r.tapeOk && r.rssOk && r.freeOk), jobs: rows };
+}
+
+// jobs: { arm: readJob output } for all six arms. tapeSha256: the seed's tape hash (fairness check).
+export function judgeSeed({ seed, jobs, records, gates, tapeSha256 }) {
+  checkGates(gates);
+  if (!Number.isSafeInteger(seed)) throw Error('seed must be a safe integer');
+  if (!(records instanceof Map)) throw Error('records must be a Map of boardId to board record');
+  if (!/^[0-9a-f]{64}$/.test(tapeSha256 ?? '')) throw Error('tapeSha256 must be a SHA-256 hex digest');
+  const missing = ARMS.filter(arm => !jobs?.[arm]);
+  if (missing.length) throw Error(`Missing arms: ${missing.join(', ')}`);
+  const extra = Object.keys(jobs).filter(arm => !ARMS.includes(arm));
+  if (extra.length) throw Error(`Unknown arms: ${extra.join(', ')}`);
+  for (const arm of ARMS) {
+    const { result } = jobs[arm];
+    if (result.seed !== seed || result.arm !== arm) throw Error(`Job ${arm} is seed ${result.seed} ${result.arm}, expected ${seed} ${arm}`);
+  }
+  for (const [id, record] of records) if (record?.boardId !== id) throw Error(`Record key ${id} differs from its boardId`);
+  for (const arm of ARMS) {
+    for (const [label, boards] of jobs[arm].rankings) {
+      for (const id of boards.keys()) if (!records.has(id)) throw Error(`${arm} ${label}: ranking for unknown board ${id}`);
+    }
+  }
+  const groupOf = group => [...records.values()].filter(r => r.group === group).sort(byId);
+  const A = groupOf('A'), B = groupOf('B'), R = groupOf('R'), testA = groupOf('testA'), testB = groupOf('testB');
+  for (const [name, list] of Object.entries({ A, B, R, testA, testB })) if (list.length === 0) throw Error(`No ${name} boards`);
+  for (const record of R) if (record.rTargets?.length !== 2) throw Error(`R board ${record.boardId} needs two rTargets`);
+
+  const replayed = new Map();
+  const boardOf = record => {
+    if (!replayed.has(record.boardId)) replayed.set(record.boardId, replayPacketBoard(record));
+    return replayed.get(record.boardId);
+  };
+  // Chess boards carry verified outcomes. R boards score one contingency target: 0 = phase 1, 1 = phase 2.
+  const outcomesFor = (record, target) => (record.group !== 'R'
+    ? record.outcomes
+    : Object.fromEntries(boardOf(record).moves({ verbose: true }).map(m => [uci(m), uci(m) === record.rTargets[target]])));
+  const metricsOf = (arm, label, record, target) => {
+    const ranking = jobs[arm].rankings.get(label)?.get(record.boardId);
+    if (!ranking) throw Error(`${arm}: no ranking at ${label} for ${record.boardId}`);
+    const m = scoreAllLegal(boardOf(record), ranking.ranked, outcomesFor(record, target));
+    if (m.margin === null) throw Error(`${record.boardId} at ${label}: margin is null (no success or no failure)`);
+    return { boardId: record.boardId, gameId: record.gameId, success: m.success, margin: m.margin, tolerance: m.tolerance, topMoves: m.topMoves };
+  };
+  const rows = (arm, label, list, target) => list.map(r => metricsOf(arm, label, r, target));
+  const successes = (arm, label, list, target) => list.map(r => metricsOf(arm, label, r, target).success);
+  const ctx = { jobs, gates, A, B, R, testA, testB, metricsOf, rows, successes };
+
+  const P1 = p1(ctx);
+  const { report: p25, ...P2 } = p2(ctx);
+  const { report: p3Report, ...P3 } = p3(ctx);
+  const fair = fairCheck(jobs, tapeSha256);
+  const pass = P1.pass && P2.pass && P3.pass && fair.pass;
+  return { seed, P1, P2, P3, fair: fair.pass, pass, report: { P2_5: p25, P3: p3Report, fair: fair.jobs } };
+}
+
+// registration: the registration JSON. tapes: Map(seed -> { sha256 }). records: Map(boardId -> board record).
+export async function judgeRun({ runDir, registration, records, tapes, baselines }) {
+  if (registration?.limits?.rssMiB !== RSS_MAX_MIB || registration.limits.freeMiB !== FREE_MIN_MIB) {
+    throw Error('registration limits differ from the judge constants (2048 MiB RSS, 256 MiB free)');
+  }
+  if (JSON.stringify([...registration.arms].sort()) !== JSON.stringify([...ARMS].sort())) throw Error('registration arms differ from the six judged arms');
+  if (!Array.isArray(registration.seeds) || registration.seeds.length === 0) throw Error('registration needs seeds');
+  if (!(tapes instanceof Map)) throw Error('tapes must be a Map of seed to tape');
+  const perSeed = [];
+  for (const seed of registration.seeds) {
+    const tape = tapes.get(seed);
+    if (!tape) throw Error(`No tape for seed ${seed}`);
+    const jobs = {};
+    for (const arm of ARMS) jobs[arm] = await readJob(join(runDir, 'jobs', `${seed}-${arm}`));
+    perSeed.push(judgeSeed({ seed, jobs, records, gates: registration.gates, tapeSha256: tape.sha256 }));
+  }
+  const pass = perSeed.every(s => s.pass);
+  return { perSeed, baselines, pass, verdict: pass ? 'passes' : 'does not pass' };
+}

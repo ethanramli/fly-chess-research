@@ -35,7 +35,7 @@ Her earlier work links contingency updating with independent neural and behavior
 
 **Bounded question:** What first analysis would distinguish insufficient exposure to the new contingency from a missing memory-updating response?
 
-**Possible next diagnostic, proposed only:** Proposed diagnostic: relate per-trial cue exposure and actual informative feedback to later choice and neural contrasts, retaining failures and matching controls. More trials cannot substitute for a missing supported mechanism.
+**Possible next diagnostic, proposed only:** Relate per-trial cue exposure and actual informative feedback to later choice and neural contrasts, retaining failures and matching controls. More trials cannot substitute for a missing supported mechanism.
 
 **Limits and reasons this may be the wrong contact:** Her current lab is not a fly-learning group. No clinical recovery conclusions, human applications or willingness to mentor are inferred from the fly papers.
 

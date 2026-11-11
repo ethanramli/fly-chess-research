@@ -44,11 +44,11 @@ Statuses: **partial** = relevant positive evidence exists but the criterion is n
 | E07 | Transparent quantitative reporting and available methods/data/code, O8/O9 | **Partial/open.** Extensive local provenance; no new-path clean release verified. F07/F11/F13/F14. | Independent-unit/selection/statistical specification; complete raw records, source data and runnable figure commands, licensing/access statements and bounded reproducibility verification. |
 | E08 | Integrity, provenance and author accountability, O8/O9; full current guide unavailable | **Partial/unassessed.** AI history is disclosed in several notes; consolidated current human contributions, author approvals and submission disclosures unknown. F05/F13/F16. | Accurate human contribution/AI statements and author responsibility; current policies verified at submission. No allegation of fabricated data or misconduct. |
 
-## ISEF science — all official rubric items
+## ISEF science. All official rubric items
 
 The official six scored components sum to 100: **Research Question 10**, **Design and Methodology 15**, **Execution: Data Collection, Analysis and Interpretation 20**, **Creativity & Potential Impact 20**, and **Presentation 35**, split into **Poster 10** and **Interview 25**. Exact official block names are retained; bullet tests below are paraphrased, not newly weighted subcriteria.
 
-### I. Research Question — 10 points
+### I. Research Question (10 points)
 
 | ID | Official bullet, paraphrased | Evidence and assessability | Needed evidence / linked findings |
 |---|---|---|---|
@@ -56,14 +56,14 @@ The official six scored components sum to 100: **Research Question 10**, **Desig
 | S02 | Contribution to the relevant field | **Open.** Novelty explicitly unresolved; primary nearest work already covers fly topology, chess and memory. | Specific incremental contribution and capable comparators. F02/F06/F10/F12. |
 | S03 | Scientific testability | **Partial/open.** A/B/C structure and falsifiable Phase A gates exist; impossible family and diagnostic ambiguity remain. | Legally instantiable families, separate probe/learning hypotheses, source-supported mechanism. F01–F04/F09/F11. |
 
-### II. Design and Methodology — 15 points
+### II. Design and Methodology (15 points)
 
 | ID | Official bullet, paraphrased | Evidence and assessability | Needed evidence / linked findings |
 |---|---|---|---|
 | S04 | Quality of plan and collection methods | **Partial.** Fixed schedule, planned game splits, independent certificates and sealing; no new-path registration or numerical memory assay. | Specify acquisition/interference/reversal/time, independent units, source/state pins and resource-feasible collection. F03/F04/F07/F08/F13/F14. |
 | S05 | Appropriate, defined and complete variables/controls | **Partial/open.** Seven named training arms; local/slow/inhibition alternatives distinguished. | Exact learner/nulls/estimands, own-choice exposure accounting, matched initialization/feedback, mechanistic ablations and shortcut controls. F02/F06/F08–F11. |
 
-### III. Execution: Data Collection, Analysis and Interpretation — 20 points
+### III. Execution: Data Collection, Analysis and Interpretation (20 points)
 
 | ID | Official bullet, paraphrased | Evidence and assessability | Needed evidence / linked findings |
 |---|---|---|---|
@@ -72,14 +72,14 @@ The official six scored components sum to 100: **Research Question 10**, **Desig
 | S08 | Appropriate mathematics and statistics | **Partial/open.** Correct bounded update inspection and grouped decoder scaling; inferential calibration/precision and biological equations unresolved. | Reachable-state diagnostic; joint precision/error plan at correct units; declared physiological assumptions and sensitivity. F02/F04/F07–F09/F14. |
 | S09 | Evidence sufficient for interpretation/conclusions | **Open.** Current status explicitly says no new eye-learning/transfer result. Historical token evidence is excluded from the new claim. | Current acquisition/retention/reversal and controlled transfer; each claim limited to its teacher, interface and population. F01–F04/F06–F11/F14. |
 
-### IV. Creativity & Potential Impact — 20 points
+### IV. Creativity & Potential Impact (20 points)
 
 | ID | Official bullet, paraphrased | Evidence and assessability | Needed evidence / linked findings |
 |---|---|---|---|
 | S10 | Creativity in the question, design or execution | **Partial/unscored.** Ambitious combination of endogenous feedback, connectome and protected transfer; imagination is visible, demonstrated novelty unclear. | A distinctive, useful inference or method versus nearest real work, supported by outcomes and analysis. F01/F06/F10/F12. |
 | S11 | Actual or potential disciplinary/technological/societal impact | **Potential only.** Finite revisable memory and transparent computational benchmarks could be useful. | Identify beneficiaries and testable utility. No evidence for general intelligence, living-fly cognition, environmental benefit or 2000 Elo. F12/F14. |
 
-### V.a. Presentation — Poster, 10 points
+### V.a. Presentation (Poster, 10 points)
 
 | ID | Official bullet, paraphrased | Evidence and assessability | Needed evidence / linked findings |
 |---|---|---|---|
@@ -87,7 +87,7 @@ The official six scored components sum to 100: **Research Question 10**, **Desig
 | S13 | Understandable figures and legends | **Unassessed.** Synthetic output is not a submitted figure set. | Figure-level raw source links; axes/units, N/replicate definition, uncertainty, controls and scope clear. F07/F16. |
 | S14 | Displayed supporting documentation | **Unassessed.** Extensive records exist; exhibit/material selection unavailable. | Relevant current-year notebook, protocol, contribution/support/continuation documents and accessible evidence displayed under actual fair rules. F05/F13/F15/F16. |
 
-### V.b. Presentation — Interview, 25 points
+### V.b. Presentation (Interview, 25 points)
 
 | ID | Official bullet, paraphrased | Evidence and assessability | Needed evidence / linked findings |
 |---|---|---|---|
@@ -101,7 +101,7 @@ The official six scored components sum to 100: **Research Question 10**, **Desig
 
 All 21 science bullets have a disposition. Presentation's 35 points are not awarded, deducted or estimated.
 
-## Engineering alternative — complete coverage without changing the preferred framing
+## Engineering alternative. Complete coverage without changing the preferred framing
 
 Only applicable if the eventual project is an engineering solution to a practical need. The first three blocks are replaced as follows; **Creativity & Potential Impact** and **Presentation** use the same 12 bullets S10–S21 above, at the same block weights.
 
@@ -119,7 +119,7 @@ Only applicable if the eventual project is an engineering solution to a practica
 
 The engineering rubric therefore covers G01–G09 **plus S10–S21**, exactly 21 bullet items. Block weights remain 10+15+20+20+10+25=100. Common presentation items remain unassessed, not implicitly passed.
 
-## Eligibility, support, continuity and ethics — separate from judging points
+## Eligibility, support, continuity and ethics. Separate from judging points
 
 These rows are administrative applicability checks. They are not extra points and are not equivalent to scientific quality.
 

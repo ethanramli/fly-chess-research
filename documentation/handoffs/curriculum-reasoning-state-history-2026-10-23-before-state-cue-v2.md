@@ -258,7 +258,7 @@ Goal remains active and incomplete. No graph run or training began this turn.
 The full `fly babysit` goal remains active; do not work on G0. Bare `fly babysit` was verified to return `readiness_blocked` because `python actions/curriculum-campaign.json` is missing. No experiment was started by that command.
 
 Stage 1 data search v3 completed under its Python action: 44/44 training roots, 1086 branches, two families, zero unknown branches, stopped at `training-roots-exhausted`, peak RSS 84.8 MiB, 316.1 seconds. The independent replay audit verifies both emitted source-bound legal counterfactual families. Its separate semantic/forgery verifier passes. It still declares `relationFamilyDisjointnessEstablished:false`, `graphLaunchAuthorized:false`, 
-euralEventsDelivered:0`, and `finalSplitInspected:false`; do not start neural training from this output.
+`neuralEventsDelivered:0`, and `finalSplitInspected:false`; do not start neural training from this output.
 
 The v2 expanded producer failed immediately because the shared v1 helper still capped each call at 512; its output directory and raw action receipt are preserved. V3 uses a separate helper capped at 4096 and a fresh output path. Audit setup first failed because its newly generated JSON had a UTF-8 BOM, and the old independent verifier then failed because it required exactly one family. Those failures are preserved; the BOM was removed, a separate two-family verifier was registered, and that verifier passed. No graph run or G0 work occurred.
 
@@ -282,7 +282,7 @@ New `.codebase/src/puzzle-learning/lichess-curriculum-block.mjs` connects regist
 
 **Still unfinished:** stage-level repeated-block loop, usable relation-family train/validation/final registration, real graph runner binding, separately tested Stockfish arm in the loop, independent scientific promotion audit, and unfamiliar compositional evaluation. `fly babysit` is not finished. **Next:** build the stage runner around this yoked block API and connect it to the campaign command, while keeping graph execution blocked until the data and scientific registrations exist.
 
-## Current verified handoff ? 2026-10-22 06:21 UTC
+## Current verified handoff - 2026-10-22 06:21 UTC
 
 Previous status-only exchange was no progress; this execution completed the next independent real-data audit. Goal remains active/incomplete. Earlier waiting statements below are historical.
 

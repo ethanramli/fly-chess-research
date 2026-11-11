@@ -8,8 +8,8 @@ Draft chapters here as they are developed. Keep claims tied to preserved evidenc
 
 ## Volume note (researcher, 2026-11-04)
 
-- Reasoning needs pillars that a raw fly connectome simply cannot have.
-- Volume 3 tests the connectome with aids; this volume proves that the raw connectome, without them, cannot reason.
+- This volume asks which capacities for reasoning the raw-connectome model lacks, and under what assumptions.
+- Its conclusions concern the model; they do not establish that living flies cannot reason.
 
 ## Chapter files
 

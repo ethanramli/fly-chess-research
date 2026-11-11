@@ -22,7 +22,7 @@ Coverage: current profile, author list and abstract/selected accessible introduc
 
 Compartment-local physiological memory and independent measurements. Which comparison between release and output responses would most decisively falsify a single stored synaptic gain? This fit is an inference from the cited work and the project's current requirements. The teacher must supply experience and feedback; the physiological memory mechanism and required graph identities remain to be justified.
 
-**Proposed bounded diagnostic:** Proposed: specify independent qualitative predictions for presynaptic release, output activity and choices under appetitive/aversive conditions before changing parameters; initially use a bounded association task and mapped compartments.
+**Proposed bounded diagnostic:** Specify independent qualitative predictions for presynaptic release, output activity and choices under appetitive/aversive conditions before changing parameters; initially use a bounded association task and mapped compartments.
 
 **Limits and reasons to deprioritize:** The cited behavioral output result concerns gamma3, not the prototype's gamma4 compartment. Measured biological release dynamics do not validate deterministic checkpoint persistence. No availability, endorsement or commitment is established. Publishing in eLife does not establish special access or predict acceptance for FlyChess.
 

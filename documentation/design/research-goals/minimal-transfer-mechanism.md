@@ -1,10 +1,10 @@
 # Mechanism contract for elementary transfer
 
-2026-10-07 design work after researcher requested reasoning before further training. This refines [the target](minimal-consequence-transfer.md). No new graph run, plasticity change or assay result is produced. Existing all-dose sibling evaluation is terminal and audited:32 panels/1000 candidate certificate checks; every snapshot0/4.
+2026-10-07 design work after researcher requested reasoning before further training. This refines [the target](minimal-consequence-transfer.md). No new graph run, plasticity change or assay result is produced. Existing all-dose sibling evaluation is terminal and audited: 32 panels/1000 candidate certificate checks; every snapshot 0/4.
 
 ## What the current rule can learn
 
-For one unclipped edge, write c=-eta*D, where the current numerical guard gives0<=c<=1. The implemented equation becomes:
+For one unclipped edge, write c=-eta*D, where the current numerical guard gives 0 <= c <= 1. The implemented equation becomes:
 
 `g_next = (1-c)*g + c*(1-k)`.
 
@@ -46,7 +46,7 @@ Status: causal design and local-rule algebra are complete. The read-only bound-r
 
 Bounded static check completed: [six blocker pairs](../../../archive/early-development/research/reports/minimal-transfer-input-check-2026-10-07/README.md) all preserve outcome-changing distinctions as different stimulation patterns. Coordinate-bearing tokens can retain object/ray binding before projection; loss of binding is a hypothesis, not a demonstrated fact. Projection drops many changed features, but no exact alias occurred here. An encoder replacement is not yet justified by this check. Follow-up implementation now adds a separate [capture-retention task contract](../puzzle-learning/capture-retention-task.md), receiver-checked one-reply certificates and relational cue v3. This resolves task-name plumbing only; cue sufficiency, actual activity/readout coupling and all learning/transfer gates remain open.
 
-The [frozen v2 position family](../../../archive/early-development/research/data/capture-retention-transfer-v2/README.md) now varies the candidate squares and tests an unseen diagonal attacker on final panels. Its independent input audit reports zero exact cue collisions and 3–7 shared KC indices per train/final pair (mean4.33/14). These metrics make shared input coding plausible but do not establish response or compositional binding. The dataset package still lacks a full-connectome assay protocol.
+The [frozen v2 position family](../../../archive/early-development/research/data/capture-retention-transfer-v2/README.md) now varies the candidate squares and tests an unseen diagonal attacker on final panels. Its independent input audit reports zero exact cue collisions and 3–7 shared KC indices per train/final pair (mean 4.33/14). These metrics make shared input coding plausible but do not establish response or compositional binding. The dataset package still lacks a full-connectome assay protocol.
 
 ## New v3 diagnostics: collision and effective variation
 

@@ -19,7 +19,7 @@ A proposal request authorizes documentation, not implementation or a replacement
 
 ## Verified terminal disposition
 
-The command line was rechecked before stopping only PID8204 and its verified Stockfish child. Follow-up process inspection showed both absent. The final saved result contains 3 losses and game4 remains unfinished/unscored. Added a separate run-disposition.json; original state/result/protocol/PGNs remain unchanged. Cached lock ownership is retained with the stopped run after checking the owner is terminal. Documentation changes require no neural/simulation tests. The proposal is complete as a specification; experimental implementations and measurements remain pending.
+The command line was rechecked before stopping only PID 8204 and its verified Stockfish child. Follow-up process inspection showed both absent. The final saved result contains 3 losses and game 4 remains unfinished/unscored. Added a separate run-disposition.json; original state/result/protocol/PGNs remain unchanged. Cached lock ownership is retained with the stopped run after checking the owner is terminal. Documentation changes require no neural/simulation tests. The proposal is complete as a specification; experimental implementations and measurements remain pending.
 
 ## Proposal completion review
 

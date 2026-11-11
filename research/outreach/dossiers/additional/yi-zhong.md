@@ -22,7 +22,7 @@ Coverage: current profile, author list and abstract/selected accessible introduc
 
 Interference, forgetting and training schedule. Which schedule and probe controls distinguish old-memory interference from a failure to learn the new contingency? This fit is an inference from the cited work and the project's current requirements. The teacher must supply experience and feedback; the physiological memory mechanism and required graph identities remain to be justified.
 
-**Proposed bounded diagnostic:** Proposed: freeze total cue/reward counts, vary inter-task interval prospectively, and probe both old/new cues plus a novel cue. The completed V1/V2 gates must remain unchanged; further trials use a new specification.
+**Proposed bounded diagnostic:** Freeze total cue/reward counts, vary inter-task interval prospectively, and probe both old/new cues plus a novel cue. The completed V1/V2 gates must remain unchanged; further trials use a new specification.
 
 **Limits and reasons to deprioritize:** Sequential-task interference and merged aversive memory are not identical to appetitive gamma4 reward reversal. Experimental minutes and molecular manipulations cannot be imported as calibrated software constants. No availability, endorsement or commitment is established. Publishing in eLife does not establish special access or predict acceptance for FlyChess.
 

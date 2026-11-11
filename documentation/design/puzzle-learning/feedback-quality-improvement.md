@@ -30,7 +30,7 @@ Capablanca-derived curriculum: blocked/open activity, competing defensive duties
 
 ## Resource and reporting contract
 
-Sparse graph, serial experiments, one position at a time, heap256, duty0.5, RSS768MiB and free memory256MiB. Pin all graph/model/mapping/readout/encoder/memory/source/dataset/teacher identities. Stream bounded histories. Publish memory and pending receipt atomically; implement exact resume without duplicate updates. Independently replay certificates, neural receipts, recurrence and all-legal scores. Inspect live processes before any graph run.
+Sparse graph, serial experiments, one position at a time, Node heap 256 MiB, CPU duty 0.5, RSS 768 MiB and free memory 256 MiB. Pin all graph/model/mapping/readout/encoder/memory/source/dataset/teacher identities. Stream bounded histories. Publish memory and pending receipt atomically; implement exact resume without duplicate updates. Independently replay certificates, neural receipts, recurrence and all-legal scores. Inspect live processes before any graph run.
 
 Measure setup, teacher proof/engine requests, candidate evaluations, feedback/update, checkpoint publication, controls and audit separately, and report the total. Time-to-quality comparisons must match workloads and budgets. The 0.62s timing replay is not such a comparison.
 

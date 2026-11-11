@@ -7,7 +7,7 @@
 
 - When memory is updated, some neurons overwrite each other, so nearby synapses are also overwritten.
 - Expands the Volume 2 "To Learn" account: exactly which parts and which neurons.
-- Why these memory constraints would never let a real fly do multistep reasoning.
+- How the model's memory constraints affect multistep reasoning, and what they do or do not establish about living flies.
 
 ## Evidence boundary
 

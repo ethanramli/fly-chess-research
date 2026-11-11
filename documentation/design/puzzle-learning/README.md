@@ -1,5 +1,7 @@
 # Puzzle-learning experiments
 
+Most entries below document work from before the 2026-10-30 research restart. Treat their dated results and proposals as historical records, not current experiment status or authorization. For the current direction and stopped status, see [the approved restart plan](../research-goals/restart-plan-2026-10-30.md) and [current status](../../current-status.md).
+
 - [Lichess capture comparisons and data readiness](lichess-capture-comparisons.md): audited source/proof corpus, capture shortcut, preserved negative branch attempts and current training-only source selection; no neural qualification.
 
 - [Lichess foundations and automated teaching loop](lichess-foundations-loop.md): twelve-stage meaning, Stockfish/outcome teaching boundaries, rehearsal and one-command progression contract; partial source/proof software, no neural qualification.

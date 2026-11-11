@@ -1,0 +1,290 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import { createHash } from 'node:crypto';
+import { appendFileSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { Chess } from 'chess.js';
+import { SparseTrainer } from '../../src/supervised-baselines/trainer.mjs';
+import { validateGraph } from '../../src/runtime/graph.mjs';
+import { mapFlyConnectionsMemory } from '../../src/neural-learning/fly-connections-teaching-v1.mjs';
+import { createFlyCondition } from '../../src/neural-learning/fly-connections-condition-v1.mjs';
+import { BOARD_SCHEMA, buildBoardRecord, buildExperienceTape } from '../../src/neural-learning/fly-connections-packet-v1.mjs';
+import { positionsFromGame } from '../../src/puzzle-learning/capture-choice-positions-v1.mjs';
+import { mulberry32 } from '../../src/neural-learning/memory-assay-fixture.mjs';
+import { runJob } from '../../src/neural-learning/fly-connections-job-v1.mjs';
+
+// Toy network and synthetic eyes, as in the condition test. Not a chess or biology result.
+const N = 11, STEPS = 4, KC = [0, 1, 2], APL = [7, 8], DAN = [5, 6], OUT = 10;
+const KC_BIAS = 1, DAN_BIAS = 0.5;
+const NODES = [
+  { type: 'KCg-m', cls: 'Kenyon_Cell', side: 'right' },
+  { type: 'KCg-m', cls: 'Kenyon_Cell', side: 'left' },
+  { type: "KCa'b'-ap1", cls: 'Kenyon_Cell', side: 'right' },
+  { type: 'MBON05', cls: 'MBON', side: 'left' },
+  { type: 'MBON05', cls: 'MBON', side: 'right' },
+  { type: 'PAM07', cls: 'DAN', side: 'right' },
+  { type: 'PAM07', cls: 'DAN', side: 'left' },
+];
+const BASE = 720575940621164720n;
+const rootOf = i => BASE + BigInt(i + 1);
+
+const EYES = {
+  identity: 'synthetic-job-test-eyes-v1',
+  encode(fen, action) {
+    const digest = createHash('sha256').update(`${fen} ${action}`).digest();
+    return { schema: 'synthetic-test-eyes-v1', identity: EYES.identity, action,
+      stimulation: KC.map(k => ({ index: k, current: 0.2 + digest[k] / 512 })) };
+  },
+};
+
+function graphFixture() {
+  const edges = [];
+  const add = (pre, post, sign) => edges.push({ pre, post, sign, initial: 1 + ((pre * 7 + post * 3) % 4) });
+  for (const k of KC) for (const a of APL) { add(k, a, 1); add(a, k, -1); }
+  for (const a of APL) add(a, OUT, -1);
+  add(0, 3, 1); add(1, 4, 1);
+  edges.sort((a, b) => a.post - b.post || a.pre - b.pre);
+  const row = new Int32Array(N + 1);
+  for (const e of edges) row[e.post + 1]++;
+  for (let j = 0; j < N; j++) row[j + 1] += row[j];
+  return validateGraph({ row, col: Int32Array.from(edges, e => e.pre), sign: Int8Array.from(edges, e => e.sign),
+    initial: Float32Array.from(edges, e => e.initial), input: Int32Array.from([9]), output: Int32Array.from([OUT]) });
+}
+
+function aplPackage(g) {
+  const edgeOf = (pre, post) => {
+    for (let k = g.row[post]; k < g.row[post + 1]; k++) if (g.col[k] === pre) return k;
+    throw Error(`missing edge ${pre}->${post}`);
+  };
+  const apl = (index, rootId, offset) => ({
+    rootId, index, parent: [-1, 0, 0], lengthNm: [0, 1000, 2000],
+    inputSite: KC.map(k => (k + offset) % 3), inputKC: [...KC], inputEdge: KC.map(k => edgeOf(k, index)),
+    outputSite: KC.map(k => (k + 2 * offset) % 3), outputKC: [...KC], outputEdge: KC.map(k => edgeOf(index, k)),
+  });
+  return { schema: 'fly-apl-sites-v1', identity: 'ab'.repeat(32), kcIndices: [...KC],
+    apls: [apl(APL[0], 'apl-right-fixture', 0), apl(APL[1], 'apl-left-fixture', 1)] };
+}
+
+const annotationRows = () => NODES.map((node, i) => `${rootOf(i)}\t${node.type}\t${node.cls}\t${node.side}`);
+const ROOTS = BigInt64Array.from({ length: N }, (_, i) => rootOf(i));
+const READERS = [
+  { type: 'MBON05', index: 3, rootId: String(rootOf(3)), receivingSide: 'right' },
+  { type: 'MBON05', index: 4, rootId: String(rootOf(4)), receivingSide: 'left' },
+];
+const MAPPING = await (async () => {
+  const folder = mkdtempSync(join(tmpdir(), 'fly-job-map-'));
+  try {
+    const annotationPath = join(folder, 'annotation.tsv');
+    writeFileSync(annotationPath, ['root_id\themibrain_type\tcell_class\tside', ...annotationRows()].join('\n') + '\n');
+    return await mapFlyConnectionsMemory(graphFixture(), ROOTS, annotationPath, READERS);
+  } finally { rmSync(folder, { recursive: true, force: true }); }
+})();
+const MASK = MAPPING.groups.flatMap(g => g.edges);
+
+function world(arm) {
+  const graph = graphFixture();
+  const model = new SparseTrainer(graph, { steps: STEPS, inputDim: 1, outputs: 1, seed: 11, precision: 'float32' });
+  const bias = new Float32Array(N);
+  for (const k of KC) bias[k] = KC_BIAS;
+  for (const d of DAN) bias[d] = DAN_BIAS;
+  model.params.bias.set(bias);
+  const condition = createFlyCondition({ model, mapping: MAPPING, eyes: EYES, aplPackage: aplPackage(graph), arm });
+  return { model, condition };
+}
+
+// Real chess boards: seeded standard-start games, one scanned position per game (as in the packet test).
+function randomPgn(id, seed, maxPlies = 140) {
+  const rng = mulberry32(seed);
+  const game = new Chess();
+  while (!game.isGameOver() && game.history().length < maxPlies) {
+    const moves = game.moves();
+    game.move(moves[Math.floor(rng() * moves.length)]);
+  }
+  return `[Event "fixture ${id}"]\n[GameId "${id}"]\n\n${game.pgn()}\n`;
+}
+function pool(count) {
+  const rows = [];
+  for (let seed = 1; rows.length < count && seed < 400; seed++) {
+    const pgn = randomPgn(`jx${seed}`, seed);
+    for (const { gameId, ply, fen, history } of positionsFromGame(pgn, { minPly: 6, maxPerGame: 1, minGap: 1 })) {
+      rows.push({ row: { gameId, ply, fen, history }, pgn });
+    }
+  }
+  if (rows.length < count) throw Error(`fixture pool has ${rows.length} rows, need ${count}`);
+  return rows;
+}
+// A 9-board A group makes the A-8 probe appear and A-16 absent; the other groups are kept small.
+const PLAN = { A: 9, B: 2, R: 2, testA: 1, testB: 1 };
+const ROWS = pool(24);
+let nextRow = 0;
+function boardsFor(group, count) {
+  const out = [];
+  while (out.length < count) {
+    if (nextRow >= ROWS.length) throw Error(`fixture pool exhausted for ${group}`);
+    const { row, pgn } = ROWS[nextRow++];
+    const record = buildBoardRecord(row, { group, pgn, eyes: EYES });
+    if (record.schema === BOARD_SCHEMA) out.push(record);
+  }
+  return out;
+}
+const BOARDS = Object.fromEntries(Object.entries(PLAN).map(([group, count]) => [group, boardsFor(group, count)]));
+const RECORDS = new Map(Object.values(BOARDS).flat().map(record => [record.boardId, record]));
+const TAPE = buildExperienceTape(BOARDS, 7101);
+
+const LABELS = ['T0', 'A-8', 'A-end', 'R1-end', 'B-end', 'R2-end'];
+const GROUPS_OF = {
+  T0: ['A', 'B', 'R', 'testA', 'testB'], 'A-8': ['A'], 'A-end': ['A', 'R'], 'R1-end': ['A', 'B', 'R'],
+  'B-end': ['A', 'B', 'R', 'testA', 'testB'], 'R2-end': ['A', 'B', 'R', 'testA', 'testB'],
+};
+const boardsIn = groups => groups.reduce((total, g) => total + PLAN[g], 0);
+
+// Delegates to a real condition. before(event, options) may throw; after(event) runs once teach has returned.
+function spy(condition, { before, after } = {}) {
+  return {
+    rankBoard: (record, options) => condition.rankBoard(record, options),
+    teach(record, event, options) {
+      before?.(event, options);
+      const out = condition.teach(record, event, options);
+      after?.(event);
+      return out;
+    },
+    snapshot: () => condition.snapshot(),
+    restore: snapshot => condition.restore(snapshot),
+    fingerprint: () => condition.fingerprint(),
+    describe: () => condition.describe(),
+  };
+}
+
+async function withDir(run) {
+  const dir = mkdtempSync(join(tmpdir(), 'fly-job-'));
+  try { return await run(dir); } finally { rmSync(dir, { recursive: true, force: true }); }
+}
+const linesOf = path => readFileSync(path, 'utf8').split('\n').filter(Boolean).map(line => JSON.parse(line));
+const jobArgs = (condition, dir, arm) => ({ condition, records: RECORDS, tape: TAPE, arm, dir });
+const withoutTiming = ({ wallSeconds, cpuSeconds, secondsPerPass, peakRssMiB, minFreeMiB, ...rest }) => rest;
+
+test('probes follow the tape: T0 first, table groups in order, boardId order, skipped labels absent', async () => {
+  await withDir(async dir => {
+    const result = await runJob(jobArgs(world('informative-local').condition, dir, 'informative-local'));
+    const lines = linesOf(join(dir, 'records.jsonl'));
+    const cursorOf = { T0: 0, ...Object.fromEntries(TAPE.probeAfter.map(p => [p.phase, p.cursor])) };
+    assert.deepEqual(TAPE.probeAfter.map(p => p.phase), ['A-8', 'A-end', 'R1-end', 'B-end', 'R2-end']);
+    let taught = 0;
+    for (const line of lines) {
+      if (line.type === 'event') {
+        assert.equal(line.cursor, taught, 'event line carries its sequence');
+        taught++;
+      } else {
+        assert.equal(line.cursor, cursorOf[line.label], `${line.label} cursor`);
+        assert.equal(line.cursor, taught, `${line.label} runs after ${taught} events`);
+      }
+    }
+    assert.equal(taught, TAPE.events.length);
+    const labels = [...new Set(lines.filter(l => l.type === 'ranking').map(l => l.label))];
+    assert.deepEqual(labels, LABELS);
+    for (const skipped of ['A-16', 'B-8', 'B-16']) assert.ok(!labels.includes(skipped), skipped);
+    assert.deepEqual(Object.keys(result.fingerprints), LABELS);
+    for (const label of LABELS) {
+      const mine = lines.filter(l => l.type === 'ranking' && l.label === label);
+      assert.deepEqual([...new Set(mine.map(l => l.group))], GROUPS_OF[label], `${label} group order`);
+      assert.equal(mine.length, boardsIn(GROUPS_OF[label]), `${label} board count`);
+      for (const group of GROUPS_OF[label]) {
+        const rows = mine.filter(l => l.group === group);
+        const ids = rows.map(l => l.boardId);
+        assert.deepEqual(ids, [...ids].sort(), `${label} ${group} boardId order`);
+        for (const row of rows) assert.equal(row.phase, group === 'R' ? 'R1' : 'chess');
+      }
+    }
+  });
+});
+
+test('off-local ranks at every checkpoint like every other arm (code review r1) and its state never changes', async () => {
+  await withDir(async dir => {
+    const result = await runJob(jobArgs(world('off-local').condition, dir, 'off-local'));
+    const lines = linesOf(join(dir, 'records.jsonl'));
+    assert.equal(lines.filter(l => l.type === 'ranking-reused').length, 0);
+    assert.deepEqual([...new Set(lines.filter(l => l.type === 'ranking').map(l => l.label))], ['T0', 'A-8', 'A-end', 'R1-end', 'B-end', 'R2-end']);
+    for (const fp of Object.values(result.fingerprints)) assert.equal(fp, result.fingerprints.T0);
+  });
+});
+
+test('off-local stops with an error, and writes no result, when its persistent state changes', async () => {
+  await withDir(async dir => {
+    const w = world('off-local');
+    const edge = MASK[0];
+    const tampered = spy(w.condition, { after: event => { if (event.sequence === 0) w.model.params.magnitude[edge] *= 2; } });
+    await assert.rejects(runJob(jobArgs(tampered, dir, 'off-local')), /off-local persistent state changed before A-8/);
+    assert.equal(existsSync(join(dir, 'result.json')), false);
+  });
+});
+
+test('shuffled-local receives the tape shuffled pulses; informative-local receives no delivered-pulse override', async () => {
+  await withDir(async dir => {
+    const seen = [];
+    const w = world('shuffled-local');
+    await runJob(jobArgs(spy(w.condition, { before: (event, options) => seen.push(options) }), dir, 'shuffled-local'));
+    assert.equal(seen.length, TAPE.events.length);
+    seen.forEach((options, i) => assert.deepEqual(options, { deliveredPulse: TAPE.shuffledPulses[i] }, `event ${i}`));
+    assert.notDeepEqual(TAPE.shuffledPulses, TAPE.events.map(e => e.pulse), 'the shuffle must change the arrangement');
+  });
+  await withDir(async dir => {
+    const seen = [];
+    await runJob(jobArgs(spy(world('informative-local').condition, { before: (event, options) => seen.push(options) }), dir, 'informative-local'));
+    assert.equal(seen.length, TAPE.events.length);
+    assert.ok(seen.every(options => Object.keys(options).length === 0));
+  });
+});
+
+test('an interrupted job resumes exactly once: records truncated, state restored, output identical to an uninterrupted run', async () => {
+  await withDir(async full => {
+    const uninterrupted = await runJob(jobArgs(world('informative-local').condition, full, 'informative-local'));
+    const fullText = readFileSync(join(full, 'records.jsonl'), 'utf8');
+    const fullLines = fullText.split('\n').filter(Boolean);
+    // 5: mid-group. 36: just after the A-end probe, so a completed probe must not run again.
+    for (const crashAt of [5, 36]) {
+      await withDir(async dir => {
+        const crashing = spy(world('informative-local').condition, {
+          before: event => { if (event.sequence === crashAt) throw Error('simulated crash'); },
+        });
+        await assert.rejects(runJob(jobArgs(crashing, dir, 'informative-local')), /simulated crash/);
+        // Crash between the append of event crashAt and its state.json write: that line is on disk but unacknowledged,
+        // and a torn line follows it.
+        const taken = fullLines.find(line => { const entry = JSON.parse(line); return entry.type === 'event' && entry.cursor === crashAt; });
+        appendFileSync(join(dir, 'records.jsonl'), `${taken}\n{"type":"ran`);
+        const resumed = await runJob(jobArgs(world('informative-local').condition, dir, 'informative-local'));
+        assert.equal(readFileSync(join(dir, 'records.jsonl'), 'utf8'), fullText, `records after a crash at ${crashAt}`);
+        assert.ok(readFileSync(join(dir, 'state.json')).equals(readFileSync(join(full, 'state.json'))), 'state.json');
+        for (const label of LABELS) {
+          const snapshot = join('snapshots', `${label}.json`);
+          assert.ok(readFileSync(join(dir, snapshot)).equals(readFileSync(join(full, snapshot))), `snapshot ${label}`);
+        }
+        assert.deepEqual(withoutTiming(resumed), withoutTiming(uninterrupted), `result after a crash at ${crashAt}`);
+      });
+    }
+  });
+});
+
+test('a job directory with result.json is returned unchanged without touching the condition', async () => {
+  await withDir(async dir => {
+    const first = await runJob(jobArgs(world('informative-local').condition, dir, 'informative-local'));
+    const bytes = readFileSync(join(dir, 'result.json'));
+    const untouchable = new Proxy({}, { get() { throw Error('condition touched'); } });
+    const again = await runJob(jobArgs(untouchable, dir, 'informative-local'));
+    assert.deepEqual(again, first);
+    assert.ok(readFileSync(join(dir, 'result.json')).equals(bytes));
+  });
+});
+
+test('pass counts equal the sums of the ranking and teaching passes in the records', async () => {
+  await withDir(async dir => {
+    const result = await runJob(jobArgs(world('informative-local').condition, dir, 'informative-local'));
+    const lines = linesOf(join(dir, 'records.jsonl'));
+    const sum = lines.reduce((total, l) => total + (l.type === 'ranking' ? l.ranking.passes : l.type === 'event' ? l.receipt.passes : 0), 0);
+    assert.equal(result.passes, sum);
+    assert.equal(result.events, TAPE.events.length);
+    for (const line of lines.filter(l => l.type === 'ranking')) assert.equal(line.ranking.passes, RECORDS.get(line.boardId).legal.length, line.boardId);
+    for (const line of lines.filter(l => l.type === 'event')) assert.equal(line.receipt.passes, RECORDS.get(line.receipt.boardId).legal.length + 1);
+    assert.equal(result.secondsPerPass, result.wallSeconds / result.passes);
+  });
+});

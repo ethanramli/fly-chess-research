@@ -39,7 +39,7 @@ Correction: The first static audit then reported a false upstream hash mismatch 
 
 - Updating the v2 fixture test after preflight then exposed an incomplete in-memory test protocol: it lacked the now-required fixed search-budget object. The coordinator failed before the intended injected interruption. This was a fixture-contract failure, not a learner or persistence result; I am completing the fixture and asserting the fixed budget is passed to all adapter stages.
 
-- The fixture resume test next failed before its injected interruption because its verifier stub returned a meaning label but omitted the required explicit erifiedScope field. The production verifier returns that field. Updated the test stub to exercise the same contract; no learner adapter was used.
+- The fixture resume test next failed before its injected interruption because its verifier stub returned a meaning label but omitted the required explicit verifiedScope field. The production verifier returns that field. Updated the test stub to exercise the same contract; no learner adapter was used.
 
 - Gate-review mistake: the first auditor excluded all skipped records from control separation, which wrongly removed the absent-feedback arm even though its certificate was verified and only delivery was absent. It also read a top-level saturation array absent from the validated receipt schema, forcing saturation to be unknown. These are code-path defects, not assay outcomes. Correcting the control filter to retain verified absent-arm observations and deriving saturation from per-compartment gain rows; fixtures will set absent skipped=true and use the actual schema.
 
@@ -52,7 +52,7 @@ The inherited callback/reset/replay-only orchestrator was not retained. Added a 
 The first gate implementation incorrectly filtered verified absent-feedback observations and queried an undefined top-level saturation field; corrected both and added fixtures. Resource gate reads the pinned runtime limits. A separate run-gate inspection found missing rechecks in prospective mode; corrected to share complete preflight. V1 protocol was preserved; v2 adds fixed per-assessment evaluation budget, actual Node v22.23.2 identity, and the final coordinator/entrypoint hashes. V2 self-hash is set after these protocol changes.
 
 Nine standalone fixture groups and four 
-ode --check validations pass. Static preflight returns exit 1 by design with all registered file hashes and evidence matching, while model identity remains unresolved and the feasibility gate is blocked. Static audit: 139255 annotation rows, 14 mapped DAN identities joined; 786 PPL103 and 84 PAM02 existing mapped edges inspected, all fixed positive signs. This does not establish local bidirectional signals, receptor/target compartment, stabilization timescale or biological interpretation. No graph forward pass, neural learner, training or prospective simulation ran.
+Node --check validations pass. Static preflight returns exit 1 by design with all registered file hashes and evidence matching, while model identity remains unresolved and the feasibility gate is blocked. Static audit: 139,255 annotation rows, 14 mapped DAN identities joined; 786 PPL103 and 84 PAM02 existing mapped edges inspected, all fixed positive signs. This does not establish local bidirectional signals, receptor/target compartment, stabilization timescale or biological interpretation. No graph forward pass, neural learner, training or prospective simulation ran.
 
 Unresolved required work: source-supported local signal and defensible target compartments; pinned model/encoder/readout/policy identities; reviewed graph adapter; independently certified contradictory contexts and a balanced, matched reversal schedule; and protocol/gate review after those inputs exist. The v2 run command in its README is a placeholder form and is explicitly not run. No claim of mechanism validation or learning.
 
@@ -60,35 +60,41 @@ Unresolved required work: source-supported local signal and defensible target co
 
 - Retention-probe fixture extension first failed because a new per-cue regression assertion referenced the test's protocol variable before its later const declaration. The coordinator and probe code were not implicated. I am moving that assertion below the fixture protocol initialization.
 
-- V3 protocol correction: v1/v2 remain byte-preserved. Added 16 seeded alternating slots (eight cue cycles, delays 0–3) and two verified, no-teaching retention probes. The planner excludes probes from signal-dose balancing and assigns them null channels in every arm; fixture recovery includes a probe publication. The preservation gate now requires both coexistence and unaided retention-probe margins. For registered seed 20261008 the shuffle is identifiable with 12/28 correct-label agreement and preserves the 14/14 dose balance. No contradictory consequence was fabricated; reversal remains an explicit blocked gate.
+- V3 protocol correction: v1/v2 remain byte-preserved. Added 16 seeded alternating slots (eight cue cycles, delays 0â€“3) and two verified, no-teaching retention probes. The planner excludes probes from signal-dose balancing and assigns them null channels in every arm; fixture recovery includes a probe publication. The preservation gate now requires both coexistence and unaided retention-probe margins. For registered seed 20261008 the shuffle is identifiable with 12/28 correct-label agreement and preserves the 14/14 dose balance. No contradictory consequence was fabricated; reversal remains an explicit blocked gate.
 
-- Bounded-memory review found checkpoint snapshots duplicated all physiological/neural/eligibility arrays in both egisteredState, dapterStates, and the cloned coordinator state. This could exceed the 256 MiB heap despite each adapter snapshot being individually bounded. Refactor to store full per-arm snapshots once, retain explicit state-location descriptors/randomization, omit redundant adapter-state copies from coordinator metadata, and enforce aggregate checkpoint bytes before publication.
+- Bounded-memory review found checkpoint snapshots duplicated all physiological/neural/eligibility arrays in both
+`registeredState`, `adapterStates`, and the cloned coordinator state. This could exceed the 256 MiB heap despite each adapter snapshot being individually bounded. Refactor to store full per-arm snapshots once, retain explicit state-location descriptors and randomization, omit redundant adapter-state copies from coordinator metadata, and enforce aggregate checkpoint bytes before publication.
 
 - Final fixture extension: added a protocol-digest mutation assertion and a pure numerical fixture for the documented candidate equation. The candidate kernel remains disconnected from any learner adapter; this checks its math only, not a mechanism. Suite now contains ten fixture groups.
 
-- Documentation-editing mistake: an ancillary PowerShell command targeted esearch/current-status.md instead of the authoritative documentation/current-status.md, creating a one-line blank stray file. It was not historical or linked; verified it was created by this command, then removed. The authoritative status was separately updated at its correct path.
+- Documentation-editing mistake: an ancillary PowerShell command targeted
+esearch/current-status.md instead of the authoritative documentation/current-status.md, creating a one-line blank stray file. It was not historical or linked; verified it was created by this command, then removed. The authoritative status was separately updated at its correct path.
 
 The final static feasibility blocker details were checked against the pinned v2 report: (1) learner uses rectified above-rest DAN excess despite upstream signed-D source equation; (2) no pinned unrectified per-cell DAN trace/justified tonic baseline; (3) no receptor/synapse-coordinate compartment identity to assign distinct drives; (4) no mapped source-backed stabilization timescale. These are gaps, not evidence that a future mechanism is impossible. The report is static and performs no activity simulation.
 
 - Documentation patch attempt used a stale 
 ine fixture groups context after the README count had already been corrected to ten; the patch made no changes. Re-read the current section and applied the blocker clarification against its actual text.
 
-## Final verification — 2026-10-08
+## Final verification: 2026-10-08
 
 Ten standalone fixture groups passed: control assignment/dose, certificate and ranking binding, identity/split checks, atomic hash publication, resource guard, protocol/certificate preflight and digest mutation, per-criterion and saturation gates, local-drive/state-isolation contract, candidate-kernel numerical fixture, and interruption/resource/idempotent resume including unknown and retention-probe no-delivery cases. 
-ode --check passed for coordinator, runner, anatomy audit, and fixture file. Static preflight intentionally exited 1: all 20 pinned file hashes matched, mapping validation passed, exact success/failure source certificates matched, unknown was nonteachable, feasibility report hash matched but gate was blocked; protocol also reports unresolved model identity and missing certified reversal schedule. No training, graph experiment, or prospective learner simulation ran. Final process inspection still showed Node PIDs 1076, 16336, 17564 with command-line ownership unavailable earlier; none was touched. The only run folder observed was the old 2026-09-30 puzzle-round artifact.
+Node --check passed for coordinator, runner, anatomy audit, and fixture file. Static preflight intentionally exited 1: all 20 pinned file hashes matched, mapping validation passed, exact success/failure source certificates matched, unknown was nonteachable, feasibility report hash matched but gate was blocked; protocol also reports unresolved model identity and missing certified reversal schedule. No training, graph experiment, or prospective learner simulation ran. Final process inspection still showed Node PIDs 1076, 16336, 17564 with command-line ownership unavailable earlier; none was touched. The only run folder observed was the old 2026-09-30 puzzle-round artifact.
 
 - Adding the auditor exposed an import-side-effect issue: the runner parsed CLI arguments even when imported by another script. The first entrypoint guard introduced a misplaced semicolon in the conditional expression; 
-ode --check caught it before execution. I am fixing the declaration and rerunning syntax checks; no run or audit was started.
+Node --check caught it before execution. I am fixing the declaration and rerunning syntax checks; no run or audit was started.
 
 - Independent-auditor fixture integration first exposed that the compact resume-test protocol had no registered gate table, while production v3 does. The audit correctly refused to compute behavior gates from an incomplete fixture. I am adding explicit fixture thresholds; no auditor or learner run started.
 
 - Added the independently invoked post-run auditor after review of the existing capture-retention auditor. It re-verifies source certificates and exact context, checks signal/control assignment and per-slot exposure parity, validates checkpoint identity and behavioral/resource records, then computes pre-registered per-criterion gates. It never opens the graph. Fixture tests include normal, unknown/exhausted and retention-probe receipts. The auditor is pinned in protocol v3 but cannot run until complete preflight passes.
 
-## Final verification correction — 2026-10-08
+## Final verification correction: 2026-10-08
 
-Added and pinned udit-bidirectional-plasticity-assay.mjs after the first final check to meet the independent post-run certificate audit requirement. The runner is import-safe; the audit command refuses before reading a run unless complete preflight passes. Fixture suite still passes all ten groups, including read-only audit of fake records produced by inert adapters for known, unknown/exhausted and probe cases. Four source/test modules pass 
-ode --check. Repeated static preflight: 21/21 pinned hashes match, map and success/failure certificates pass, unknown remains nonteachable and the exact feasibility-report hash matches. Expected exit 1 is due to missing model identity, blocked anatomy report and no certified two-direction reversal schedule. No learner graph, training or audit of a real run was executed.
+Added and pinned Audit-bidirectional-plasticity-assay.mjs after the first final check to meet the independent post-run certificate audit requirement. The runner is import-safe; the audit command refuses before reading a run unless complete preflight passes. Fixture suite still passes all ten groups, including read-only audit of fake records produced by inert adapters for known, unknown/exhausted and probe cases. Four source/test modules pass
+Node --check. Repeated static preflight: 21/21 pinned hashes match, map and success/failure certificates pass, unknown remains nonteachable and the exact feasibility-report hash matches. Expected exit 1 is due to missing model identity, blocked anatomy report and no certified two-direction reversal schedule. No learner graph, training or audit of a real run was executed.
 
-Verification count correction: the final 
-ode --check batch covered five files (coordinator, runner, independent auditor, anatomy audit and fixture test), not four as stated in the preceding entry.
+Verification count correction: the final
+Node --check batch covered five files (coordinator, runner, independent auditor, anatomy audit and fixture test), not four as stated in the preceding entry.
+
+## Text correction: 2026-11-09
+
+Restored the V3 delay range from its pinned protocol, corrected the `registeredState` spelling against the source, and repaired damaged separators in this journal. The recorded `esearch/current-status.md` command target remains unchanged because it documents the original path error. No protocol, source or experiment result changed.

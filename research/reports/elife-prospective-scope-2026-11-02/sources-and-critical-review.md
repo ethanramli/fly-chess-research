@@ -54,7 +54,7 @@ Read the starting report, current-status (including later closeout), full five-v
 
 Some initial combined terminal reads exceeded output limits. Re-read the operative restart/input/gates, complete correction draft, live protocol/report, closeout, engineered protocol, five-volume/authorization and policy/memory files in smaller bounded commands. Source read coverage remains selected sections where stated, never inferred from downloaded bytes. No claim to have independently re-audited all 767 tests, full graph trajectories, source proofs or five manuscripts.
 
-Authority order: latest explicit researcher authorization → approved restart requirements for unchanged scope → prospective drafts → historical reports. Current-status contains older “active” and memory-prerequisite paragraphs alongside newer completed/superseding statements; they do not establish a current live process. No graph dependency was changed here, so no live-process check or experimental authorization was inferred. Before any future graph work inspect authoritative processes anew.
+Authority order: latest explicit researcher authorization → approved restart requirements for unchanged scope → prospective drafts → historical reports. Current-status contains older "active" and memory-prerequisite paragraphs alongside newer completed/superseding statements; they do not establish a current live process. No graph dependency was changed here, so no live-process check or experimental authorization was inferred. Before any future graph work inspect authoritative processes anew.
 
 ## Critical checkpoints and unresolved objections
 

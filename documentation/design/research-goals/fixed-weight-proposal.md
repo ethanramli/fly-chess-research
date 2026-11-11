@@ -4,13 +4,13 @@
 
 ## What is already fixed
 
-Graph identities, topology, sign conventions and nonplastic parameters are fixed in the biological-learning experiments. Baseline efficacy values are stored; only explicitly mapped local gains change effective KC-to-MBON strengths. In [reversal-memory.mjs](../../../.codebase/src/lowram/reversal-memory.mjs), effective magnitude is baseline magnitude multiplied by persistent gain. Moving that gain into a separately named array does not make effective synaptic strengths frozen.
+Graph identities, topology, sign conventions and nonplastic parameters are fixed in the biological-learning experiments. Baseline efficacy values are stored; only explicitly mapped local gains change effective KC-to-MBON strengths. In [reversal-memory.mjs](../../../archive/early-development/research/source-archives/codebase-before-2026-10-07/.codebase/src/lowram/reversal-memory.mjs), effective magnitude is baseline magnitude multiplied by persistent gain. Moving that gain into a separately named array does not make effective synaptic strengths frozen.
 
 Evaluation already freezes learning: assessment does not call the local adaptation rule and checks the persistent memory fingerprint. Freezing a successfully trained snapshot for unfamiliar-position evaluation remains part of the original goal. It does not eliminate the need to demonstrate how useful memory was acquired.
 
 ## Freezing effective strengths before teaching
 
-The disabled-plasticity comparison presents the same experimental cues and reinforcement without changing local efficacy. It is already a fixed-strength control. In the current [trainer](../../../.codebase/src/lowram/trainer.mjs), each forward call initializes neural activity to zero. With identical board/history/task inputs and all effective parameters fixed, the deterministic assessment repeats the same response. Search can still investigate and find a correct move; that is calculation evidence, not lasting improvement from previous feedback.
+The disabled-plasticity comparison presents the same experimental cues and reinforcement without changing local efficacy. It is already a fixed-strength control. In the current [trainer](../../../archive/early-development/research/source-archives/codebase-before-2026-10-07/.codebase/src/lowram/trainer.mjs), each forward call initializes neural activity to zero. With identical board/history/task inputs and all effective parameters fixed, the deterministic assessment repeats the same response. Search can still investigate and find a correct move; that is calculation evidence, not lasting improvement from previous feedback.
 
 The completed [puzzle-pipeline control](../../../archive/early-development/research/reports/puzzle-pipeline-v1-2026-10-06/README.md) illustrates this distinction: searched choices succeed before and after exposure, while its disabled unaided choices stay unchanged. The current positive-channel association includes a disabled condition as well; complete results and audits are pending. Neither condition establishes persistent fixed-weight learning.
 

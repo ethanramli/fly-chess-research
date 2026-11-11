@@ -4,6 +4,8 @@
 
 **Question:** among the legal captures with a known certificate (safe or unsafe), does the memory choose the safe one more often than chance, shuffled outcomes and a quarter store? This removes v6's shortcut (capture versus quiet move).
 
+The position-centred Kenyon-cell key is named K3 in the run records.
+
 ## How the run was made (disclosure)
 
 - Run folder: `runs/engineered-memory-test-2026-11-05/engineered-memory-test-v7-r2/` (`manifest.json` `complete`; 21:34-23:55 local, 2026-11-06).

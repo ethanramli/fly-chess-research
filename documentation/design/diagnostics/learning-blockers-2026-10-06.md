@@ -10,7 +10,7 @@ Completed addendum: the new MBON condition passes all computational gates, inclu
 
 The target remains experience-driven puzzle investigation, independently verified consequences, supported persistent neural adaptation and improved unfamiliar/counterfactual decisions. More turns, stored gains or successful external search do not prove this.
 
-**The puzzle loop has no neural feedback delivery.** `FeedbackRecorder.receive` in [puzzle-round.mjs](../../../.codebase/src/lowram/puzzle-round.mjs) records an event and returns `appliedToNeurons: false`, `learningApplied: false`. The verifier checks bounded mate consequences, but the receiver cannot learn from them. This is missing integration, not a connected learner failing chess.
+**The puzzle loop has no neural feedback delivery.** `FeedbackRecorder.receive` in [puzzle-round.mjs](../../../archive/early-development/research/source-archives/codebase-before-2026-10-07/.codebase/src/lowram/puzzle-round.mjs) records an event and returns `appliedToNeurons: false`, `learningApplied: false`. The verifier checks bounded mate consequences, but the receiver cannot learn from them. This is missing integration, not a connected learner failing chess.
 
 **The isolated association learner changes memory but not its GF choices on board/action cues.** The [frozen experiment](../chess-input/board-action-association.md) changes existing KC-to-MBON efficacy; reset/restoration changes responses causally. Acquisition and reversal nevertheless each yield only 3/6 correct choices. None of the six informative seeds changes its choice from baseline. These are counterbalanced experimental punishment contingencies, not verified chess consequences; six encoder seeds are not six different puzzle families.
 
@@ -34,7 +34,7 @@ The puzzle path stops at a recorded consequence. The association path reaches pe
 
 ## The readout problem in exact terms
 
-[gf-readout.mjs](../../../.codebase/src/lowram/gf-readout.mjs) calculates, for each GF cell i:
+[gf-readout.mjs](../../../archive/early-development/research/source-archives/codebase-before-2026-10-07/.codebase/src/lowram/gf-readout.mjs) calculates, for each GF cell i:
 
 `normalized_i = (rate_i - naive_panel_min_i) / naive_panel_range_i`
 
@@ -48,7 +48,7 @@ Unclipped diagnostics still yield 3/6 correct acquisition and reversal choices i
 
 ## What the memory rule actually does
 
-[reversal-memory.mjs](../../../.codebase/src/lowram/reversal-memory.mjs) stores a gain g on each selected existing edge. Effective magnitude is `initial_magnitude * g`; neuron identities, topology and signs remain fixed. Coarse groups use MBON12/PPL103 and MBON01/PAM02 annotations, without exact synapse-coordinate compartment/receptor masks.
+[reversal-memory.mjs](../../../archive/early-development/research/source-archives/codebase-before-2026-10-07/.codebase/src/lowram/reversal-memory.mjs) stores a gain g on each selected existing edge. Effective magnitude is `initial_magnitude * g`; neuron identities, topology and signs remain fixed. Coarse groups use MBON12/PPL103 and MBON01/PAM02 annotations, without exact synapse-coordinate compartment/receptor masks.
 
 The current approximation uses endpoint excess activity relative to a resting probe:
 
@@ -66,7 +66,7 @@ The [synthetic recovery comparison](../neural-learning/recovery-comparison.md) p
 
 ## What the neural dynamics assume
 
-[trainer.mjs](../../../.codebase/src/lowram/trainer.mjs) uses:
+[trainer.mjs](../../../archive/early-development/research/source-archives/codebase-before-2026-10-07/.codebase/src/lowram/trainer.mjs) uses:
 
 `h[t+1] = (1-alpha) * h[t] + alpha * positive_saturated(W_signed * h[t] + drive)`.
 

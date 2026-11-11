@@ -12,7 +12,7 @@ The assertion that a system without reasoning would necessarily score0/8 on unfa
 
 An initial broad search included FEN-bearing JSON and buried relevant scores under board strings; targeted Markdown searches and direct raw-result parsing recovered actual task identities. Combined source output truncated, so targeted receiver/report reads supplied the scope. The assistant's undefined jargon made the task difficult to understand; explanations and the brief now use plain signal/choice language. [Full internal evidence notes](../../outreach/planning/damon-clark-brief-evidence-2026-10-14.md) preserve claim-to-source links and these corrections.
 
-Raw G0 result and replay audit reproduce acquisition8/8, interference retention8/8, reversal7/8 tied with shuffled7/8, and G0Passed=false. The diagnostic had no terminal result/audit in the inspected original directory; the draft says its comparison is unfinished without claiming current process state. No graph run, recovery, source archive, gate or learning mechanism was changed.
+Raw G0 result and replay audit reproduce acquisition 8/8, interference retention 8/8, reversal 7/8 tied with shuffled 7/8, and G0Passed=false. The diagnostic had no terminal result/audit in the inspected original directory; the draft says its comparison is unfinished without claiming current process state. No graph run, recovery, source archive, gate or learning mechanism was changed.
 
 ## Deliverables and next step
 

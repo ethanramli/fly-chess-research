@@ -24,3 +24,11 @@ The 27-pass frozen-memory decoder diagnostic is now implemented and [registered]
 
 
 [Latest partial chart: all three available informative seeds](retention-partial-three-seeds.html), [numeric source](retention-partial-three-seeds.json), [third-seed local replay](third-informative-arm-audit.json). The remaining three seeds and full controlled-run audit are pending. The earlier first-seed chart is a dated narrower snapshot, not the cohort result.
+
+## Status correction 2026-11-09: recovered six-seed run
+
+The statements above that the full six-seed run continues and that three seeds remain predate its recovered completion. The original manifest remains `running` and has no matching live process; its original `records.jsonl` has five entries and no summary. The recovery run manifest is `complete`, its summary covers seeds 4101–4106, and its records contain 24 arm rows. The full independent `audit.json` is still absent, so the run is complete but not fully audited. Recovery-invocation timing and memory use are not whole-run measurements. No new training or audit was launched for this correction.
+
+## Correction 2026-11-09: readout-offset diagnostic completed
+
+The 27-pass frozen-memory decoder diagnostic described above as not yet run completed on 2026-11-01. Its [manifest](../../../runs/memory-retention-2026-11-01/readout-offset-v1/manifest.json) is complete; the [result](../../../runs/memory-retention-2026-11-01/readout-offset-v1/result.json) records 27 passes, no teaching events or persistent updates, unchanged memory and parameters, 7.87 seconds, and 177.44 MiB peak RSS. It reproduces all eight original margins within 1e-10. Seed 4102's post-reversal margin remains negative: -0.02032499 with the original rest and -0.01335925 with the current rest. This does not rescue the lost association or establish a memory improvement. The later [interference diagnosis](../memory-interference-diagnosis-2026-11-01/README.md#deliverables-and-interpretation-boundary) reports the same result. The earlier pending statement is preserved as a dated snapshot; no experiment code or gate changed.

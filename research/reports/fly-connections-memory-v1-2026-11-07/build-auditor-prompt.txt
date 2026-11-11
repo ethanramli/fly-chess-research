@@ -1,0 +1,35 @@
+Read .agents/skills/ponytail/SKILL.md first and follow it at ultra intensity. Repo root: C:/Users/ethan/Documents/fly-chess-research.
+
+Task: the INDEPENDENT auditor for fly connections memory v1. It must not trust the producer: recompute everything it can with its own code, and use producer modules only where listed as allowed. Read fully:
+1. documentation/design/neural-learning/fly-connections-memory-v1-gates-2026-11-08.md
+2. documentation/design/neural-learning/fly-connections-memory-v1-file-formats-2026-11-08.md
+3. .codebase/src/neural-learning/reversal-memory.mjs (ReversalMemory.observe: the exact update arithmetic) and .codebase/src/neural-learning/fly-connections-teaching-v1.mjs actualTeachingInputs (what receipt.teaching[].kc, dan, k, factor contain and their order relative to mapping edges).
+4. .codebase/src/neural-learning/fly-connections-condition-v1.mjs (receipt and ranking shapes; arm pulse rules).
+5. .codebase/scripts/neural-learning/audit-engineered-memory-test-v8.mjs (house style for an auditor: checks list, PASS/FAIL lines, audit.json with pass, pinned, checks).
+
+Create only:
+.codebase/scripts/neural-learning/audit-fly-connections-memory-v1.mjs
+.codebase/tests/neural-learning/audit-fly-connections-memory-v1.test.mjs
+(plus, if needed, .codebase/src/neural-learning/fly-connections-audit-v1.mjs for the pure check functions the test exercises).
+
+CLI: node --max-old-space-size=256 audit-fly-connections-memory-v1.mjs --run RUNDIR --config REG [--replay N] . Writes RUNDIR/audit.json atomically: { schema:'fly-connections-memory-v1-audit', pass, pinned, checks:[{name, pass, detail}], verdictMatches }. Prints one PASS/FAIL line per check and AUDIT PASS or AUDIT FAIL. Exit 0 either way after writing audit.json; exit 1 only on a crash.
+
+Allowed producer imports: replayPacketBoard and verifyPacketBoard and buildExperienceTape (packet module), numericPairGate (transfer-evaluation-v2.mjs), and, for the replay check only, the full neural stack (graph loader, SparseTrainer, mapping, APL loader, eyes, createFlyCondition). NOT allowed: fly-connections-metrics-v1.mjs, fly-connections-judge-v1.mjs, fly-connections-job-v1.mjs. Write your own s/c, margin, tie rule (abs(diff) <= 1e-9 + 1e-7 * max(abs(scores)) over the ranking's scores — confirm the exact rule in fly-connections-metrics-v1.mjs by reading it, then implement it yourself), retention ratios, pressure counts and R checks.
+
+Checks (each one named, all must pass):
+1. pins: every registration pin matches the file's SHA-256 now; manifest.registrationSha256 equals the registration file's SHA-256; manifest status complete.
+2. packet: every boards.jsonl record passes verifyPacketBoard (R boards for both R1 and R2); groups disjoint by board and game; group counts equal packet.json; test boards share no board key (FEN without move counters) and no inputHashes value with any training board; each tape rebuilt with buildExperienceTape(boards by group in boards.jsonl order, seed) has the same sha256 as tapes/<seed>.json and packet.json.
+3. jobs: exactly seeds x arms job dirs, each with result.json; every job's tapeSha256 equals its tape.
+4. events: each job's event lines are sequence 0..N-1 exactly once, in order; each receipt's boardId, move, phase, pulse, proofSha, eventId equal the tape event; deliveredPulse follows the arm rule (informative/off/matched/global = pulse; absent = false; shuffled = tape.shuffledPulses[i]); pulseCurrent is 0.75 when delivered else 0; pulseCells equal the mapping's PAM07 indices (same in every job).
+5. updates: own recomputation of every gain update from the receipts, starting from all gains 1 (Float64), using factor_g = -(sum over that group's DANs of max(0, dan rate) / 1.5) / count and k = max(0, KC rate) / 1.5, eta 0.5, clip to [0.2, 1.8]; check receipt factors equal yours; check every receipt write's afterGain equals your gain bit for bit and your list of changed edges equals the receipt's; check the job's final snapshot gains equal yours exactly. Off arm: no update ever, gains stay 1. Euler bound never exceeded.
+6. fingerprints: event i fingerprintBefore equals the previous fingerprintAfter (or the intervening probe's fingerprint); off arm fingerprint constant; "ranking-reused" lines only in the off arm and only with the T0 fingerprint.
+7. rankings: every ranking line lists every legal move of its board exactly once in sorted UCI order with finite scores; your own s, c, success and margin from the scores (chess criterion from record.outcomes; R boards with target0) equal the stored values.
+8. gates: your own recomputation of every gate in the gates file section 4 for every seed (use numericPairGate for the bootstrap: arms keyed by name, games by gameId, primary, comparators, minCorrect 0, minMargin 0, resamples 10000, seed registration.gates.bootstrapSeed, lowerQuantile 0.025), giving your own pass/fail per gate and per seed; verdictMatches = your overall verdict equals summary.json verdict and every per-gate pass equals summary's. A mismatch fails this check.
+9. resources: every result peakRssMiB <= 2048 and minFreeMiB >= 256.
+10. replay (graph): for each job, rebuild the condition from the pinned graph exactly as the worker does, restore the T0 state (fresh condition, no restore needed), re-execute the first N tape events (default --replay 4) with teach and compare every receipt field except timing bit for bit; then restore the job's final snapshot (snapshots/R2-end.json) and re-rank the first 2 test boards (boardId order) and compare scores bit for bit. This is the only check that loads the graph; run it last and run jobs one at a time.
+
+Tests: build a tiny synthetic run directory in a temp dir (reuse the tiny-graph pattern from the condition test to produce genuine receipts and rankings from a real tiny condition) and show: a clean run passes checks 3-9; and each of these corruptions fails the right check and only it: a changed receipt afterGain (5), a missing event line (4), a wrong shuffled deliveredPulse (4), a ranking with a dropped legal move (7), a summary verdict flipped (8), RSS 2049 (9). Pins and replay may be skipped in the unit test via exported pure functions; say so.
+
+You MAY run only: node --test .codebase/tests/neural-learning/audit-fly-connections-memory-v1.test.mjs (repo root), as often as needed; make it pass. Do not run the CLI, load .cache/full.npz or run any graph. No git. No other commands.
+
+End with: files created, test pass/fail counts, exact CLI usage, check names, and every contract point you could not meet.

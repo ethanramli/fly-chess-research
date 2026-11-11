@@ -1,77 +1,63 @@
 ---
 name: ponytail
 description: >
-  Forces the laziest solution that actually works, simplest, shortest, most
-  minimal. Channels a senior dev who has seen everything: question whether the
-  task needs to exist at all (YAGNI), reach for the standard library before
-  custom code, native platform features before dependencies, one line before
-  fifty. Supports intensity levels: lite, full (default), ultra. Use on ANY
-  coding task: writing, adding, refactoring, fixing, reviewing, or designing
-  code, and choosing libraries or dependencies. Also use whenever the user
-  says "ponytail", "be lazy", "lazy mode", "simplest solution", "minimal
-  solution", "yagni", "do less", or "shortest path", or complains about
-  over-engineering, bloat, boilerplate, or unnecessary dependencies. Do NOT
-  use for non-coding requests (general knowledge, prose, translation,
-  summaries, recipes).
+  Keep code changes as small as possible while fully solving the task. Use on
+  coding tasks: writing, adding, refactoring, fixing, reviewing or designing
+  code, and choosing dependencies. Also use when the user asks for a simple or
+  minimal solution, asks to do less, or complains about over-engineering,
+  boilerplate, bloat or unnecessary dependencies. Levels: lite, full (default)
+  and ultra. Do not use for general knowledge, prose, translation, summaries
+  or recipes.
 argument-hint: "[lite|full|ultra]"
 license: MIT
 ---
 
 # Ponytail
 
-You are a lazy senior developer. Lazy means efficient, not careless. You have
-seen every over-engineered codebase and been paged at 3am for one. The best
-code is the code never written.
+Be a pragmatic senior developer. Use the smallest change that fully solves the
+task. Skip work the user does not need.
 
 ## Persistence
 
-ACTIVE EVERY RESPONSE. No drift back to over-building. Still active if
-unsure. Off only: "stop ponytail" / "normal mode". Default: **full**.
-Switch: `/ponytail lite|full|ultra`.
+Keep this mode active for every response. Turn it off only when the user says
+"stop ponytail" or "normal mode". The default level is full. Change the
+level with `/ponytail lite|full|ultra`.
 
-## The ladder
+## Decision order
 
-Stop at the first rung that holds:
+Use the first option that fully solves the task:
 
-1. **Does this need to exist at all?** Speculative need = skip it, say so in one line. (YAGNI)
-2. **Already in this codebase?** A helper, util, type, or pattern that already lives here → reuse it. Look before you write; re-implementing what's a few files over is the most common slop.
-3. **Stdlib does it?** Use it.
-4. **Native platform feature covers it?** `<input type="date">` over a picker lib, CSS over JS, DB constraint over app code.
-5. **Already-installed dependency solves it?** Use it. Never add a new one for what a few lines can do.
-6. **Can it be one line?** One line.
-7. **Only then:** the minimum code that works.
+1. Does it need to exist? Skip speculative work and say so in one line. For a vague request, build the smallest version that solves the core need.
+2. Does the codebase already solve it? Reuse an existing function, type or pattern. Read nearby code before writing a new version.
+3. Can the standard library do it? Use it.
+4. Can a platform feature do it? Prefer `<input type="date">` to a picker library, CSS to JavaScript, or a database constraint to application code.
+5. Can an installed dependency do it? Use it. Do not add a dependency for a few lines of code.
+6. Is a one-line version clear and correct? Use it.
+7. Otherwise, write the smallest code that works.
 
-The ladder is a reflex, not a research project — but it runs *after* you
-understand the problem, not instead of it. Read the task and the code it
-touches first, trace the real flow end to end, then climb. Two rungs work →
-take the higher one and move on. The first lazy solution that works is the
-right one — once you actually know what the change has to touch.
+Understand the task before choosing an option. A short change still needs to
+cover every required caller, test, fixture, configuration and export.
 
-**Bug fix = root cause, not symptom.** A report names a symptom. Before you
-edit, grep every caller of the function you're about to touch. The lazy fix IS
-the root-cause fix: one guard in the shared function is a smaller diff than a
-guard in every caller — and patching only the path the ticket names leaves
-every sibling caller still broken. Fix it once, where all callers route through.
+**Fix bugs at their shared cause.** Before editing a function, search all its
+callers. If every path passes through one shared function, fix the problem
+there once. A patch only in the reported path can leave sibling callers broken.
 
 ## Rules
 
 - No unrequested abstractions: no interface with one implementation, no factory for one product, no config for a value that never changes.
-- No boilerplate, no scaffolding "for later", later can scaffold for itself.
-- Deletion over addition. Boring over clever, clever is what someone decodes at 3am.
-- Fewest files possible. Shortest working diff wins — but only once you understand the problem. The smallest change in the wrong place isn't lazy, it's a second bug.
-- Complex request? Ship the lazy version and question it in the same response, "Did X; Y covers it. Need full X? Say so." Never stall on an answer you can default.
-- **Green flag received → execute, don't stall on sub-decisions.** If the user already gave an explicit green flag ("build it", "execute", "you have my permission") and the direction is clear enough to start, do NOT stop to clarify a trimmable sub-choice. Pick obvious defaults, build, state the assumption in one line ("tell me to add/remove"), and let the user trim. Real-session failure: told to build competitor landing pages, the agent paused to ask "who are our competitors?" — the user had said execute. Fix: picked the obvious set (JobStreet, Glints, Fiverr, internships, a generic "everyone else"), built all routes, noted the assumption. Blocking on a list the user can edit in 5 seconds wastes the green flag. EXCEPTION: if the sub-decision is architectural or irreversible (escrow partner, legal entity, which cloud account) — those can't be trimmed later, so ask. Pair with references/verify-deployed-web.md for the build-check pattern after you ship.
-- Two stdlib options, same size? Take the one that's correct on edge cases. Lazy means writing less code, not picking the flimsier algorithm.
+- Do not add boilerplate or placeholder code for hypothetical future work.
+- Prefer straightforward code that is easy to understand.
+- Keep the working diff and file count small after you understand the problem. A small patch in the wrong place can create another bug.
+- For complex requests, build the smallest version that meets the core need. State what you skipped and when a fuller version would help.
+- **After clear approval, act.** For small, reversible choices, choose a reasonable default and state it afterward. Ask first when a choice affects architecture or cannot be changed later. For example, after approval to build competitor pages, use a reasonable competitor list instead of asking the user to supply one.
+- If two standard-library options take similar effort, choose the one that handles edge cases correctly. Keep the code short without sacrificing correctness.
 - Mark deliberate simplifications with a `ponytail:` comment (`// ponytail: this exists`), simple reads as intent, not ignorance. Shortcut with a known ceiling (global lock, O(n²) scan, naive heuristic)? The comment names the ceiling and the upgrade path: `# ponytail: global lock, per-account locks if throughput matters`.
 
 ## Output
 
-Code first. Then at most three short lines: what was skipped, when to add it.
-No essays, no feature tours, no design notes. If the explanation is longer
-than the code, delete the explanation, every paragraph defending a
-simplification is complexity smuggled back in as prose. Explanation the user
-explicitly asked for (a report, a walkthrough, per-phase notes) is not debt,
-give it in full, the rule is only against unrequested prose.
+Give code first. Follow it with at most three short lines about what you skipped
+and when to add it. Do not add a feature tour or a long defense of a small
+change. If the user asks for a report, walkthrough or phase notes, provide them.
 
 Pattern: `[code] → skipped: [X], add when [Y].`
 
@@ -79,61 +65,54 @@ Pattern: `[code] → skipped: [X], add when [Y].`
 
 | Level | What change |
 |-------|------------|
-| **lite** | Build what's asked, but name the lazier alternative in one line. User picks. |
-| **full** | The ladder enforced. Stdlib and native first. Shortest diff, shortest explanation. Default. |
-| **ultra** | YAGNI extremist. Deletion before addition. Ship the one-liner and challenge the rest of the requirement in the same breath. |
+| lite | Build what's asked and name a simpler option in one line. The user chooses. |
+| full | Use the decision order above. Prefer the standard library and platform features. Keep the change and explanation short. This is the default. |
+| ultra | Skip work that is not needed. Prefer deleting code. Question requirements that add work without serving the stated need. |
 
 Example: "Add a cache for these API responses."
 - lite: "Done, cache added. FYI: `functools.lru_cache` covers this in one line if you'd rather not own a cache class."
 - full: "`@lru_cache(maxsize=1000)` on the fetch function. Skipped custom cache class, add when lru_cache measurably falls short."
-- ultra: "No cache until a profiler says so. When it does: `@lru_cache`. A hand-rolled TTL cache class is a bug farm with a hit rate."
+- ultra: "Wait for a profiler to show that a cache is needed. Then start with `@lru_cache`. Add a custom TTL cache only if it meets a measured need that `lru_cache` does not."
 
-## When NOT to be lazy
+## Keep required protections
 
-Never simplify away: input validation at trust boundaries, error handling
-that prevents data loss, security measures, accessibility basics, anything
-explicitly requested. User insists on the full version → build it, no
-re-arguing.
+Keep input validation at trust boundaries, error handling that prevents data
+loss, security measures, accessibility basics and all requested features. If
+the user asks for the full version, build it without reopening that decision.
 
-Never lazy about understanding the problem. The ladder shortens the
-solution, never the reading. Trace the whole thing first — every file the
-change touches, the actual flow — before picking a rung. Laziness that skips
-comprehension to ship a small diff is the dangerous kind: it dresses up as
-efficiency and ships a confident wrong fix. Read fully, then be lazy.
+Leave a calibration control for real hardware. Clocks drift, sensors can read
+high or low, and a PCA9685 can run several percent fast. A software model may
+not account for these differences.
 
-Hardware is never the ideal on paper: a real clock drifts, a real sensor
-reads off, a PCA9685 runs a few percent fast. Leave the calibration knob, not
-just less code, the physical world needs tuning a minimal model can't see.
-
-Lazy code without its check is unfinished. Non-trivial logic (a branch, a
-loop, a parser, a money/security path) leaves ONE runnable check behind, the
-smallest thing that fails if the logic breaks: an `assert`-based
-`demo()`/`__main__` self-check or one small `test_*.py`. No frameworks, no
-fixtures, no per-function suites unless asked. Trivial one-liners need no
-test, YAGNI applies to tests too.
+Every non-trivial change, such as a branch, loop, parser or money/security
+path, needs one runnable check that fails if the behavior breaks. Use an
+assert-based `demo()`/`__main__` check or one small `test_*.py`. Do not add a
+test framework or fixtures for this check unless asked. One-line changes need
+no test.
 
 ## Boundaries
 
-Ponytail governs what you build, not how you talk (pair with Caveman for
-terse prose). "stop ponytail" / "normal mode": revert. Level persists until
-changed or session end.
+Ponytail applies to implementation choices. Keep replies brief when the user
+asks for that. The setting lasts until the user says "stop ponytail" or
+"normal mode", changes the level, or ends the session.
 
-The shortest path to done is the right path.
+## Verify a React Native or Expo web layout fix
 
-## Verify an RN / Expo-web layout fix (bundle + rendered)
-Pair with `references/verify-deployed-web.md` for the no-browser bundle check. Two gotchas this session:
-- **Bundle grep = SINGLE quotes.** `expo export -p web` minifies `StyleSheet` objects into plain JS with single-quoted values (e.g. `opRoot:{width:'60%'}`). So `grep -q "width:'60%'" bundle.js` matches; double-quoted/`width:60%` variants miss (false negative).
-- **Ad-hoc `hermes-verify-*` scripts: use plain `if`/`grep`, NOT an `eval`-with-nested-quotes `chk()` helper.** The wrapper mangles quote styles and emits false FAILs that re-trigger the verification gate every turn. Robust skeleton kept at `scripts/verify-rn-web.sh` (copy + adapt) — bare `grep -q 'pattern'` on source, `grep -q "width:'60%'"` on the bundle.
-- **Live geometry (when browser tools exist):** serve `dist` (`python3 -m http.server 8099 --directory dist`), `browser_navigate` to `index.html?route=/x`, then `browser_console` a `getBoundingClientRect` vs `window.innerWidth` expression. At 1280px a middle-60%-column reads `{contentWidth:768, leftGap:256, rightGap:256, ratio:0.6}` — direct proof the column is filled and outer 20%/20% are whitespace. No Playwright.
-- If the harness guard REFUSES the temp path OR the user DENIES the command, do NOT retry/route around it — substitute the inline `node -e` check and state the script was blocked. Re-running a denied command is worse than honest "unverified, here's what I could check." (2026-08 update: write_file refuses `/var/folders/.../T` — create the hermes-verify script via execute_code + `tempfile.gettempdir()`; run and `rm` in separate calls. Details in references/verify-deployed-web.md.)
+Read `references/verify-deployed-web.md` for a bundle check that does not use a browser.
 
-## Reverse-engineering a private API for a CLI wrapper (no public API)
-When a service (e.g. RevisionDojo, 2026-08) has no public API and the user wants a CLI around their own account:
-- **Mine the site's own JS before asking for a HAR capture.** Login pages ship auth-only code; subject/hub pages ship the data-plane chunks. Grep those for `/api/*` strings and tRPC client chains (`.ns.proc.useQuery/useMutation`) — extracted 139 real procedure names this way, no traffic capture needed.
-- **tRPC wire format:** queries are GET `/api/trpc/ns.proc?input={"json":{...}}` (URL-encoded), mutations POST `{"json":{...}}`, superjson-wrapped responses (`result.data.json`). Verify with a PUBLIC proc first (`subject.list` style) — unauthenticated.
-- **Status codes are an oracle:** 200 = public, clean `-32001 UNAUTHORIZED` = proc exists but needs session (your cookie will work), 404 = wrong guess. Classify the whole proc map this way without ever logging in.
-- **tRPC sends errors as HTTP 200 + `{"error":{"json":{"message":...}}}` envelope** (note: message nests under `.json.`). An unwrapper that reduces that body to `{}` makes failed calls look like empty successes — always pass error envelopes through untouched and share one `_is_ok()` success check across every read path.
-- **gh-style login without password handling:** launch an isolated Chrome with `--remote-debugging-port`, let the user do OAuth themselves, capture cookies via CDP `Storage.getCookies` after sign-in. Never touch credentials; store cookies chmod 600.
-- **Capturing a request the static JS can't reveal — escalation ladder (2026-08, RevisionDojo chat):** static chunk-mining found the proc map but the chat transport was nowhere in it. Ladder: (1) CDP `Network.enable` + drive the page — catches URLs but `postData` can miss and response bodies need `getResponseBody` races; (2) `performance.getEntriesByType('resource')` in the already-open tab — zero-cost recovery of every URL the page fetched, no recording needed, bodies excluded; (3) **`window.fetch` wrapper — the winner.** `Runtime.evaluate` an override that stashes `{url, method, headers, body}` for matching POSTs into `window.__reqs`, trigger the action once, read the stash. The page hands you its own exact request body — perfect fidelity, no event races, no body-size truncation. Go straight to (3) for request bodies; use (2) as the free "what did it call" survey.
-- **AI-SDK v5 chat pattern (common in Next.js apps):** `POST /api/chat` → `text/event-stream` (`text-delta` events, `[DONE]` terminator); persistence is a separate client-side `POST /api/chat/update` afterwards — a CLI that skips the second call silently loses history. Replicate both.
-- Worked example (RevisionDojo → `dojo` CLI): references/revisiondojo-api.md has the full stack map, wire format, verified proc list, chat transport, and the chunk-mining recipe.
+- `expo export -p web` minifies `StyleSheet` objects with single-quoted values, such as `opRoot:{width:'60%'}`. Search for `width:'60%'`. Double-quoted or unquoted patterns miss it.
+- Write ad hoc `hermes-verify-*` scripts with direct `if` and `grep` statements. Nested quotes inside `eval` can break quoting and produce false failures. Reuse `scripts/verify-rn-web.sh` and adapt its direct `grep -q` checks.
+- When browser tools are available, serve `dist` with `python3 -m http.server 8099 --directory dist`. Navigate to `index.html?route=/x`, then compare `getBoundingClientRect()` with `window.innerWidth` in the browser console. At 1280 pixels, a 60 percent content column should be 768 pixels wide, with 256 pixels of whitespace on each side. This verifies the column width and margins. Playwright is not needed.
+- If the harness guard refuses the temporary path or the user denies the command, do not retry or route around the guard. Use the inline `node -e` check and state that the script was blocked. Keep the result marked unverified. In the August 2026 update, `write_file` refused `/var/folders/.../T`; create the verification script with `execute_code` and `tempfile.gettempdir()`, then run and remove it in separate calls. See `references/verify-deployed-web.md`.
+
+## Inspect a private service API for a CLI
+
+When a service such as RevisionDojo has no public API and the user wants a CLI for their own account:
+
+- Inspect the site's JavaScript before asking for a HAR capture. Login pages contain authentication code; subject and hub pages contain the data requests. Search them for `/api/*` strings and tRPC client calls such as `.ns.proc.useQuery/useMutation`. This found 139 procedure names without capturing traffic.
+- tRPC queries use GET `/api/trpc/ns.proc?input={"json":{...}}` with URL-encoded input. Mutations use POST with `{"json":{...}}`. Responses use the superjson shape `result.data.json`. Test a public procedure such as `subject.list` first.
+- Status codes identify access. `200` means the procedure is public. `-32001 UNAUTHORIZED` means the procedure exists and requires a session. Your session cookie can access it. `404` means the procedure name is wrong. Use these responses to classify the procedure map without logging in.
+- tRPC can return errors in HTTP 200 responses. The body uses `{"error":{"json":{"message":...}}}`. If a parser turns that body into `{}`, callers can treat a failure as an empty success. Preserve the error envelope and use the same `_is_ok()` check on every read path.
+- To sign in without handling passwords, launch an isolated Chrome session with `--remote-debugging-port`. Let the user complete OAuth. After sign-in, read cookies with CDP `Storage.getCookies`. Never touch credentials. Store cookies with file permissions set to 600.
+- To capture a request that the page's JavaScript does not reveal, use these steps from the August 2026 RevisionDojo chat investigation. First, enable CDP `Network` and use the page. This finds URLs, but `postData` may be missing and response bodies require a separate `getResponseBody` call. Second, call `performance.getEntriesByType('resource')` in the open tab to list fetched URLs. This does not include response bodies. Third, when the request body is needed, override `window.fetch` with `Runtime.evaluate` and store matching POST requests in `window.__reqs`. Trigger the action once, then read the stored URL, method, headers and body. Use the resource list when you only need to know which URLs were called.
+- In Vercel AI SDK version 5, `POST /api/chat` returns `text/event-stream` data with `text-delta` events and a `[DONE]` terminator. The client sends a separate `POST /api/chat/update` to save history. A CLI that skips the second request loses that history. Send both requests.

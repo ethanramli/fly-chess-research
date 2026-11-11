@@ -2,9 +2,9 @@
 
 Strict reviewer: Codex gpt-6.1-sol, effort high, same session as the diagnosis. Prompt: `peer-review-v4-round1-prompt.txt`.
 
-**APPROVE WITH REQUIRED CHANGES — as an exploratory representation-and-memory benchmark.**
+**APPROVE WITH REQUIRED CHANGES. This is an exploratory representation-and-memory benchmark.**
 
-It is not ready for implementation as specified. **Items 1–6 and 9 block building; all items block launching.** A pass would not establish own-choice learning, transferable reasoning or a benefit caused specifically by the released wiring.
+It is not ready for implementation as specified. **Items 1 to 6 and 9 block building; all items block launching.** A pass would not establish own-choice learning, transferable reasoning or a benefit caused specifically by the released wiring.
 
 No files changed; no simulations or tests ran.
 
@@ -15,13 +15,15 @@ No files changed; no simulations or tests ran.
 
 2. **Store and independently check complete certificates. [BUILD]**  
    **Evidence:** proposal:20; [certificate producer:21](../../../.codebase/src/search-and-feedback/capture-retention-certificate.mjs:21); feedback gate:11–19.  
-   **Problem:** FEN, hashes and a recomputed verdict still omit the actual consequence proof. Calling the producer again is not an independent checker. The capture-only checker also rejects quiet moves—which dominate this schedule.  
+   **Problem:** FEN, hashes and a recomputed verdict still omit the actual consequence proof. Calling the producer again is not an independent checker. The capture-only checker also rejects quiet moves, which dominate this schedule.
+
    **Exact fix:** save the complete proof, certificate hash, actor, criterion/horizon, reply bound, resource status and verifier identity. Replay history and require the resulting FEN to match. Use the existing [action-domain interface:28](../../../.codebase/src/search-and-feedback/capture-retention-action-domain.mjs:28) for captures **and quiet moves**, with its separate checker. Preserve king-capture unknowns unless explicitly revising that scope.
 
 3. **Freeze one event ledger before creating any arm. [BUILD]**  
    **Evidence:** proposal:18–20; [task-v3:85](../../../.codebase/src/neural-learning/engineered-memory-task-v3.mjs:85).  
-   **Problem:** “Same schedule” remains underspecified; silently skipping mismatches can change exposure. Reusing modulo indexing can repeat shuffled labels rather than preserve their multiset.  
-   **Exact fix:** sort legal UCIs, name the PRNG and sampling algorithm, draw four without replacement, and hash the schedule before consulting outcomes. A certificate/data mismatch must stop integrity preflight. Legitimate unknowns retain identical slots across arms and produce no write. Permute verified labels once over the common known-event mask; require equal lengths and positive/negative totals—**no modulo cycling**. If any seed has fewer than 40 verified positives, stop the whole registered study without selecting another seed.
+   **Problem:** "Same schedule" remains underspecified; silently skipping mismatches can change exposure. Reusing modulo indexing can repeat shuffled labels rather than preserve their multiset.
+
+   **Exact fix:** sort legal UCIs, name the PRNG and sampling algorithm, draw four without replacement, and hash the schedule before consulting outcomes. A certificate/data mismatch must stop integrity preflight. Legitimate unknowns retain identical slots across arms and produce no write. Permute verified labels once over the common known-event mask; require equal lengths and positive/negative totals. **Do not use modulo cycling.** If any seed has fewer than 40 verified positives, stop the whole registered study without selecting another seed.
 
 4. **Do not delete test positions because their labels reveal collisions. [BUILD]**  
    **Evidence:** proposal:22,44–45; [collision helper:56](../../../.codebase/src/chess-input/eyes-v2.mjs:56).  
@@ -38,7 +40,7 @@ No files changed; no simulations or tests ran.
 6. **Give the sparse arm its own matched shuffled control and explicit interface. [BUILD]**  
    **Evidence:** proposal:38,59; [shared ARMS:8](../../../.codebase/src/neural-learning/engineered-memory-task-v2.mjs:8); v3 runner:147.  
    **Problem:** sparse-versus-dense-mismatched changes representation and label alignment together. The reused arm enumeration contains only five arms.  
-   **Exact fix:** define local `V4_ARMS`, including `graph-sparse-mismatched`, with explicit feature/control mappings. Each graph candidate must beat its **representation-matched** shuffled control. Pass capacity 2048 explicitly; do not inherit v3’s 512 default. Preserve shared v2/v3 files. Test identical event order, unknown masks and transformed inputs within each matched pair. Count exact-pattern replacements separately from evictions.
+    **Exact fix:** define local `V4_ARMS`, including `graph-sparse-mismatched`, with explicit feature/control mappings. Each graph candidate must beat its **representation-matched** shuffled control. Pass capacity 2048 explicitly; do not inherit v3's 512 default. Preserve shared v2/v3 files. Test identical event order, unknown masks and transformed inputs within each matched pair. Count exact-pattern replacements separately from evictions.
 
 7. **Register the changed scientific question. [LAUNCH]**  
    **Evidence:** proposal:11,18,33; [restart feedback rule:54](../../../documentation/design/research-goals/restart-plan-2026-10-30.md:54).  
@@ -47,7 +49,7 @@ No files changed; no simulations or tests ran.
 
 8. **Separate exposure sufficiency, power and confirmation. [LAUNCH]**  
    **Evidence:** proposal:19,32,44–47.  
-   **Problem:** 40 positives is not a power calculation. `96/184` now means **52.17% expected safe-choice accuracy**, a different metric from v3’s unique-top success. The 184 positions represent **99 games**, and are reused development data.  
+   **Problem:** 40 positives is not a power calculation. `96/184` now means **52.17% expected safe-choice accuracy**, a different metric from v3's unique-top success. The 184 positions represent **99 games**, and are reused development data.
    **Exact fix:** retain 96 only as an explicitly chosen *new engineering threshold*. Provide a prospective game-cluster power/precision analysis for the nine-position advantage, without using v3 test performance to choose settings. Freeze the proposal hash and result-reading cutoff. Any confirmatory transfer claim needs fresh disjoint games and a frozen selected representation. My read-only calculation gives **61.372 expected positives**, not approximately 59; this remains exposure arithmetic, not learning power.
 
 9. **Specify a replayable cache and independent audit contract. [BUILD]**  

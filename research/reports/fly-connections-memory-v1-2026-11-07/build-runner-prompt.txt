@@ -1,0 +1,38 @@
+Read .agents/skills/ponytail/SKILL.md first and follow it at ultra intensity. Repo root: C:/Users/ethan/Documents/fly-chess-research.
+
+Task: the job loop, worker and runner for fly connections memory v1. Read fully, in order:
+1. documentation/design/neural-learning/fly-connections-memory-v1-file-formats-2026-11-08.md (the binding file contract; follow it exactly).
+2. documentation/design/neural-learning/fly-connections-memory-v1-gates-2026-11-08.md (sections 2, 3, 4 "Fair and checked", 6).
+3. .codebase/src/neural-learning/fly-connections-condition-v1.mjs (createFlyCondition: rankBoard, teach, snapshot, restore, fingerprint, describe) and its test for how a tiny SparseTrainer, mapping, APL package and packet records are built.
+4. .codebase/src/neural-learning/fly-connections-packet-v1.mjs (record and tape shapes; buildExperienceTape output: events, shuffledPulses, initialProbe, probeAfter).
+5. .codebase/src/neural-learning/fly-connections-baselines-v1.mjs (runStoreBaseline, uniformBaselines).
+6. .codebase/scripts/neural-learning/run-memory-test-v1.mjs lines 1-80 (house style: pins check, fresh dir, manifest, guard) and .codebase/scripts/neural-learning/run-engineered-memory-test-v8.mjs (how workers are spawned, how --resume-from copies finished jobs byte for byte after hash checks). Reuse those patterns.
+7. .codebase/src/neural-learning/neuron-reader.mjs (neuronReaderCells: MBON05 cells carry index, rootId, receivingSide) and fly-connections-teaching-v1.mjs mapFlyConnectionsMemory(graph, rootIds, annotationPath, readerCells).
+
+Create only these files (edit no existing file):
+A. .codebase/src/neural-learning/fly-connections-job-v1.mjs
+   export async function runJob({ condition, records /*Map boardId->record*/, tape, arm, dir, now = () => performance.now() })
+   - The probe-set table and label order from the file-formats doc. Probe at T0 (cursor 0) first, then events in tape order; after event index i, run every probeAfter entry whose cursor === i + 1, in tape order.
+   - Ranking: condition.rankBoard(record, {phase: record.group === 'R' ? 'R1' : 'chess'}). Write one "ranking" line per board, boards in boardId order within each group, groups in the table's order.
+   - Off arm ('off-local'): at labels other than T0 and R2-end, if condition.fingerprint() equals the T0 fingerprint, write "ranking-reused" lines instead of ranking; if it differs, throw (the off arm must never change).
+   - Teaching: condition.teach(record, event, arm === 'shuffled-local' ? { deliveredPulse: tape.shuffledPulses[i] } : {}). Write the "event" line, then state.json.
+   - After each probe: write snapshots/<label>.json (condition.snapshot()) then state.json.
+   - Exactly-once resume as in the doc: if dir/state.json exists, truncate records.jsonl to recordsBytes, restore, check fingerprint, skip completed probes/events. If dir/result.json exists, return it unchanged.
+   - Return and write result.json (fields in the doc; passes = sum of ranking.passes and receipt.passes; seconds per pass = wall / passes).
+   - Pure of graph loading: it receives a ready condition. Guard calls happen inside the condition.
+B. .codebase/scripts/neural-learning/fly-connections-memory-v1-worker.mjs
+   args: --config REG --seed S --arm A --dir JOBDIR. Check every pin. loadGraph(paths.graph); root ids via readNpz(paths.graph, ['root_ids']).root_ids; readerCells = neuronReaderCells.cells.filter(c => c.type === 'MBON05'); mapping = await mapFlyConnectionsMemory(graph, rootIds, paths.annotations, readerCells); model = new SparseTrainer(graph, config.model); eyes = createEyesV2(loadRetina(paths.graph)); aplPackage = await loadLocalAplPackage(paths.aplPackage); condition = createFlyCondition({ model, mapping, eyes, aplPackage, arm, guard }). Records from packet boards.jsonl; tape from packet tapes/<seed>.json; check the tape's sha256 field against packet.json.
+   guard(): count forwards on when==='before'; throw if passes > limits.passesPerJob (when > 0), RSS > limits.rssMiB, os.freemem() < limits.freeMiB, or wall > limits.wallSecondsPerJob (when > 0). Track peak RSS and minimum free MiB and pass them into result.json (runJob takes an optional `extra()` callback returning these; add it).
+   Exit 0 on success; on any error write the message to stderr and exit 1 (state.json stays for resume).
+C. .codebase/scripts/neural-learning/run-fly-connections-memory-v1.mjs
+   args: --config REG --cpu-duty 1 [--resume-from OLDRUN]. Refuse a registration with paused true. Check every pin; fresh paths.run (must not exist); manifest.json status running with pid, argv, registrationSha256, pins, volume, chapter, startedAt. With --resume-from: check OLDRUN's manifest registrationSha256 equals this registration's, then copy every finished job directory (has result.json) byte for byte and verify the copies' SHA-256; list them in manifest.resumedFrom; unfinished job dirs are copied too so that the worker resumes them from state.json (list those separately).
+   Jobs: every seed x arm; order: for each seed, arms in registration order; run at most `workers` worker processes at once (node --max-old-space-size=256 worker ...), each with stdout/stderr files in the job dir. If any worker exits nonzero, start no new workers, wait for the running ones, set status failed with each job's exit code, and exit 1. Never retry.
+   After all jobs succeed: baselines per seed (graph-free, in this process): for key in raw-pc, random-pc and shuffled in false, true: runStoreBaseline({ key, records, tape, eyes, retinaIdx: loadRetina(paths.graph).retina_idx, evaluate: [all A, B, testA, testB boardIds], shuffled }); plus uniformBaselines for every A, B, testA, testB board. Then call judgeRun from .codebase/src/neural-learning/fly-connections-judge-v1.mjs (being written by another worker now; signature: judgeRun({ runDir, registration, records, tapes, baselines }) returns { perSeed, pass, verdict }). Write summary.json, records.jsonl index, then manifest status complete with endedAt and verdict.
+   Use the existing curriculum/house atomic-write pattern. No CPU pacing beyond --cpu-duty 1 (assert it equals '1').
+
+D. .codebase/tests/neural-learning/fly-connections-job-v1.test.mjs
+   node:test with the tiny synthetic graph/condition pattern from the condition test (real chess records from buildBoardRecord with a short real PGN, synthetic eyes). Cover: probe order and label sets, including skipped labels; off-arm reuse lines and the throw if its fingerprint changes; shuffled arm gets tape.shuffledPulses; exactly-once resume after a simulated crash between the record append and state.json (truncate works, results identical to an uninterrupted run, byte for byte for records.jsonl); result.json short-circuit; pass counts equal the sum of passes.
+
+You MAY run only: node --test .codebase/tests/neural-learning/fly-connections-job-v1.test.mjs (repo root), as often as needed; make it pass. You must NOT run the worker or runner, load .cache/full.npz, or run any graph. No git. No other commands.
+
+End with: files created, test pass/fail counts, exact CLI usage, and every contract point you could not meet.

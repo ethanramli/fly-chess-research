@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Explain why chess is the project?s testbed and what kinds of behavior it lets the study measure.
+Explain why chess is the project's testbed and what kinds of behavior it lets the study measure.
 
 ## Planned content
 

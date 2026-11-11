@@ -1,6 +1,6 @@
 # All-legal mate choice mechanism screen
 
-2026-10-08. Previous user clarification correctly distinguished181 software checks from learning evidence. Reporting had overemphasized the count; now lead with measured choices. The first source-count search also included ordinary RegExp.test calls; anchored test declarations gave17input/30neural/64pipeline/5runtime/60verification/5baseline=181, matching the executed suite. No test count is a learning grade.
+2026-10-08. Previous user clarification correctly distinguished 181 software checks from learning evidence. Reporting had overemphasized the count; now lead with measured choices. The first source-count search also included ordinary RegExp.test calls; anchored test declarations gave 17 input/30 neural/64 pipeline/5 runtime/60 verification/5 baseline = 181, matching the executed suite. No test count is a learning grade.
 
 Freeze a new separate four-condition, one historically inspected taught mate-in-one board screen. Every legal successor receives an independently checked bounded mate consequence. Baseline and final full legal rankings are measured at the same respective frozen memory, with no inference updates. Four teacher-scheduled certified experiences (failure/success/failure/success), existing delayed source-rule memory, fixed readout and public mate encoder. Mixed permutation[0,2,1,3] preserves channel counts/magnitudes; no-channel excludes injected feedback, disabled freezes gain updates. No neural calibration, supervised criterion fit or changed completed gate.
 
@@ -16,4 +16,4 @@ Terminal training invocation2026-10-08:672 graph presentations, four conditions1
 
 2026-10-08 coverage update:3/26 legal action features reach both declared masks; Qe6/Qf6/Qh7# each right PPL-only. Preserve as hypothesis, not neural causality. Plan next informative experiment around verified actual Qe6 mistake with current encoder to isolate targeting, then consider shared-mask projection separately if needed. No active dependencies or frozen gates changed.
 
-Terminal audit2026-10-08:16/16receipts and8/8rankings reproduced exactly,168presentations/arm. Confirm wrong Qe6 remains all arms. Next isolate selected initial-error targeting, keeping other algorithm identities unchanged. See2026-10-08-chosen-error-targeting-protocol.md.
+Terminal audit 2026-10-08: 16/16 receipts and 8/8 rankings reproduced exactly, 168 presentations/arm. Confirm wrong Qe6 remains all arms. Next isolate selected initial-error targeting, keeping other algorithm identities unchanged. See 2026-10-08-chosen-error-targeting-protocol.md.

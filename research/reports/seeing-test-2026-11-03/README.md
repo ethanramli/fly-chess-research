@@ -29,3 +29,7 @@ Researcher instruction: "just make a simple test that tell you whethe ror not th
 1. One square (e4), one shape pair (knight versus bishop), one colour. Other squares, piece pairs and positions were not tested.
 2. The decoder is fitted from the brain's response with labels. This shows the information is present and linearly readable, not that the fly uses it to choose moves.
 3. The model is deterministic, so there is no noise. A real fly's response is noisy.
+
+## Correction 2026-11-09: Eye test v2 failure cause
+
+The statement above that Eye test v2 failed at the chess-judgment step is unsupported. Eye test v2's own token control failed its pipeline threshold, so the frozen rule says that run does not count as evidence either way. This separate seeing test shows that one piece pair on e4 is linearly readable from memory-cell activity; it does not establish why Eye test v2 scored 26/48 or prove that the failure was due to chess judgment. The earlier interpretation is preserved here as a dated correction. See the [Eye test v2 report](../eye-test-v2-2026-11-03/README.md).

@@ -5,8 +5,7 @@
 
 ## Planned content
 
-- How the model copies the human process: master the pillars first, then build knowledge to fill in the gaps.
-- Mastered pillars are the concepts that later get combined.
+- Describe the planned sequence: learn individual concepts first, then test whether the model can combine them on unfamiliar positions.
 
 ## Working notes
 

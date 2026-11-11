@@ -35,7 +35,7 @@ Before treating injected PAM activity as feedback, we need evidence that the tar
 
 **Bounded question:** What minimum combination of natural-stimulus and stimulation controls would justify calling an identified population a teaching pathway?
 
-**Possible next diagnostic, proposed only:** Proposed evidence checklist: mapped identity, cue/stimulus responsiveness, reinforcement-substitution sufficiency and selective training-stage necessity. These are requirements for a future mechanism, not tests already passed by FlyChess.
+**Possible next diagnostic, proposed only:** Mapped identity, cue/stimulus responsiveness, reinforcement-substitution sufficiency and selective training-stage necessity. These are requirements for a future mechanism, not tests already passed by FlyChess.
 
 **Limits and reasons this may be the wrong contact:** Larval DL1/pPAM cells are not interchangeable with adult FlyWire populations. Reviewed-preprint version/year differences must remain visible when citing the salt study.
 

@@ -1,0 +1,14 @@
+Read .agents/skills/ponytail/SKILL.md first and follow it at ultra intensity. Repo root: C:/Users/ethan/Documents/fly-chess-research.
+
+Task: one diagnostic script with two modes (journal item 24: multi-rival oracle bound). Oracle construction, not learning; label outputs so.
+
+Create only: .codebase/scripts/neural-learning/probe-oracle-lp-v1.mjs (under 110 lines). Edit no existing file. Copy the stack construction from .codebase/scripts/neural-learning/probe-oracle-gains-v1.mjs (config, graph, mapping + mapping-check gate, SparseTrainer, bias set before createFlyCondition, eyes, APL package, condition arm 'informative-local', guard, restore of gains through condition.restore({...initial, memory: {...initial.memory, gains}})).
+
+Mode dump: --mode dump --config C --bias B --board BOARDID --out DIR
+1. Gains all 1. r0 = condition.rankBoard(record): save every legal move's score (UCI order) and record.outcomes.
+2. For every legal move m (UCI order): one forward (model.forward(new Float32Array(1), eyes.encode(record.fen, m).stimulation, null)) and actualTeachingInputs(model, mapping) -> per-edge presynaptic KC rate aligned with memory.edges (group order, then group.kc order). Also save memory.base (base efficacy per edge).
+3. Sensitivity scale: set all gains to 0.9, rank again (scores s09), restore gains 1. Save s09.
+4. Write DIR/dump.json: { schema:'oracle-lp-dump-v1', note:'oracle construction, not learning', bias, boardId, moves:[uci], outcomes:{uci:bool}, scores:[...], scores09:[...], base:[...], rates:[[per edge] per move], tolerance from r0 }. Use plain arrays; numbers as JS doubles.
+Mode verify: --mode verify --config C --bias B --board BOARDID --gains FILE --out DIR
+FILE is JSON {gains:[2096 numbers in memory.edges order]}. Clamp-check every gain is within [0.2, 1.8] (throw otherwise), set them via condition.restore, r = condition.rankBoard(record), and write DIR/verify.json {schema:'oracle-lp-verify-v1', boardId, bias, success: r.success, s: r.s, c: r.c, margin: r.margin, tolerance: r.tolerance, topMoves: r.topMoves, scores:[UCI order]}. Print one summary line.
+Guard RSS <= 2048 MiB, free >= 256 MiB. You may run only node --check. Do NOT run it. No git. End with: file, exact CLIs, anything not met.

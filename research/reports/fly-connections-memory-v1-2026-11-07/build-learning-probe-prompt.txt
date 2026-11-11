@@ -1,0 +1,15 @@
+Read .agents/skills/ponytail/SKILL.md first and follow it at ultra intensity. Repo root: C:/Users/ethan/Documents/fly-chess-research.
+
+Task: one small diagnostic script (journal item 18, question 2: with zero tonic drive, can the source rule change a within-board ranking at all?). Development boards only; writes only its own output dir; no registration.
+
+Create only: .codebase/scripts/neural-learning/probe-zero-drive-learning-v1.mjs (under 90 lines; no test file). Edit no existing file.
+
+Read: .codebase/scripts/neural-learning/fly-connections-memory-v1-worker.mjs (how graph, mapping, model, eyes, APL package and condition are built; copy that construction), .codebase/src/neural-learning/fly-connections-condition-v1.mjs (rankBoard, teach; its fixed-state digest includes params.bias, so set the bias BEFORE createFlyCondition), .codebase/src/neural-learning/fly-connections-packet-v1.mjs (record.experiences: the 4 teacher-selected events per A board with move, pulse, proofSha).
+
+CLI: node --max-old-space-size=512 probe-zero-drive-learning-v1.mjs --config CONFIG --boards 2 --repeats 4 --bias 0 --out DIR
+Steps, for each arm in ['informative-local', 'off-local'] (fresh model and condition per arm):
+1. Build everything as the worker does, but after `new SparseTrainer(...)` set model.params.bias.fill(Number(args.bias)) and then create the condition (arm as above).
+2. Take the first --boards A-group records (boards.jsonl order). For each: r0 = condition.rankBoard(record). Then teach its record.experiences in their listed order, repeated --repeats times (sequence numbers 0,1,2,...; eventId any unique string; phase 'A'; criterion record.criterion; pulse and proofSha from the experience), via condition.teach(record, experience). After each full pass over the 4 experiences, r = condition.rankBoard(record).
+3. Report per arm, board and pass: s, c, success, margin (from the ranking), the score and rank of each practised move (pulse true and false separately), the max-min score spread over legal moves, the mean D (receipt.teaching[].factor mean) for pulse and no-pulse events, and the mean and max k over active KCs in the receipts.
+4. Write DIR/probe.json atomically and print one line per (arm, board, pass). Guard RSS <= 2048 MiB and free >= 256 MiB around each forward (pass a guard to createFlyCondition).
+You may run only: node --check on your script. Do NOT run it. No git. End with: file, exact CLI, anything not met.

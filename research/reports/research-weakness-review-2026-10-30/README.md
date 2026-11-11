@@ -1,4 +1,4 @@
-# FlyChess research weaknesses review — 2026-10-30
+# FlyChess research weaknesses review dated 2026-10-30
 
 **Read the five priorities below before authorizing the next experiment.** The restart is an honest, substantially stronger design than the archived token experiments. It has not yet demonstrated eye-driven learning, a validated new memory mechanism, transfer, or concept combination. Current status says this explicitly; this review finds no concealed success.
 
@@ -6,11 +6,11 @@ This is an advisory review of the research package, by one Codex gpt-6.1-sol age
 
 ## Five highest priorities
 
-1. **F01 — The reasoning ambition still exceeds the specified test.** Phase A is one relation; Phase C is an outline involving as few as two chess concepts. Neither currently operationalizes “many unrelated concepts,” and no current result passes even the prerequisites. Define the bounded claim and the later discriminating combination test before claiming reasoning.
-2. **F02 — The proposed memory mechanism lacks a verified visual-compartment implementation and validation target.** Local protection and slow memory are plausible leads, not a ready biological rule. Identify the actual KC–MBON–DAN–receptor pathway, timing and revisability before choosing a mechanism.
-3. **F03 — One promised locked-test family is impossible under the declared task.** An en passant recapture cannot immediately follow a capture. Correct the public family specification before generating or sealing the new test.
-4. **F04 — The eye gate can confuse decoder failure with missing information, and its gain test uses unreachable states under the existing rule.** The saved synthetic check already demonstrates the first problem. Separate linear accessibility, attainable readout strength and endogenous learning.
-5. **F05 — ISEF student ownership and AI restrictions require a documented resolution.** Current official guidance permits disclosed AI code assistance but restricts AI-authored research plans, papers and conclusions. Existing records show extensive AI assistance; actual submitted materials and current student understanding are unassessed. Disclosure alone does not establish compliance.
+1. **F01. The reasoning ambition still exceeds the specified test.** Phase A is one relation; Phase C is an outline involving as few as two chess concepts. Neither currently operationalizes "many unrelated concepts," and no current result passes even the prerequisites. Define the bounded claim and the later discriminating combination test before claiming reasoning.
+2. **F02. The proposed memory mechanism lacks a verified visual-compartment implementation and validation target.** Local protection and slow memory are plausible leads, not a ready biological rule. Identify the actual KC–MBON–DAN–receptor pathway, timing and revisability before choosing a mechanism.
+3. **F03. One promised locked-test family is impossible under the declared task.** An en passant recapture cannot immediately follow a capture. Correct the public family specification before generating or sealing the new test.
+4. **F04. The eye gate can confuse decoder failure with missing information, and its gain test uses unreachable states under the existing rule.** The saved synthetic check already demonstrates the first problem. Separate linear accessibility, attainable readout strength and endogenous learning.
+5. **F05. ISEF student ownership and AI restrictions require a documented resolution.** Current official guidance permits disclosed AI code assistance but restricts AI-authored research plans, papers and conclusions. Existing records show extensive AI assistance; actual submitted materials and current student understanding are unassessed. Disclosure alone does not establish compliance.
 
 These priorities combine consequence and dependency, not estimated probabilities. All repairs below are proposals for later authorization; this review changed no protocol.
 
@@ -20,7 +20,7 @@ These priorities combine consequence and dependency, not estimated probabilities
 - **SUPPORTED RISK:** a concrete failure route remains open; its occurrence or magnitude is unmeasured.
 - **UNASSESSED:** the necessary material or authorized observation was unavailable.
 
-High severity means a primary claim, confirmatory design or entry route could be undermined. Medium means the conclusion or reproducibility would need material qualification. “Planning gap” is different from an implemented bug. Official criterion IDs E01–E08, S01–S21 and A01–A10 are defined in [the complete matrix](criteria-and-evidence.md). Primary-source scope and contrary evidence are in [source and claim checks](source-and-claim-checks.md). Key local bytes are bound in the [26-file manifest](source-evidence/local-artifact-manifest.json).
+High severity means a primary claim, confirmatory design or entry route could be undermined. Medium means the conclusion or reproducibility would need material qualification. "Planning gap" is different from an implemented bug. Official criterion IDs E01–E08, S01–S21 and A01–A10 are defined in [the complete matrix](criteria-and-evidence.md). Primary-source scope and contrary evidence are in [source and claim checks](source-and-claim-checks.md). Key local bytes are bound in the [26-file manifest](source-evidence/local-artifact-manifest.json).
 
 ## Ranked findings
 
@@ -43,11 +43,11 @@ High severity means a primary claim, confirmatory design or entry route could be
 | 15 | F15 | High, conditional | UNASSESSED | Entry-year eligibility and approval route |
 | 16 | F16 | Unrated | UNASSESSED | Actual manuscript, poster and interview |
 
-### F01 — The intended reasoning construct has no completed discriminating test
+### F01. The intended reasoning construct has no completed discriminating test
 
 **Evidence:** [current status](../../../documentation/current-status.md), lines 7–20; [restart plan](../../../documentation/design/research-goals/restart-plan-2026-10-30.md), lines 15–31 and 130–159, sections 2, 8–9. The plan explicitly limits Phase A to one concept, requires a separate Phase B/C addendum, says two concepts are not “many,” and confines claims to chess. Phase C specifies comparison groups but not tasks, budgets, numerical gates or an independently checkable necessity of combining the concepts.
 
-**Failure / affected claim:** Separate familiarity with two motifs, a general capture preference, or one component that solves every test could produce success without the intended combination. Better performance than a weak “simple” learner is neither a definition nor proof of reasoning. Conversely, a capable simple learner matching the Fly would defeat a topology-advantage claim, not logically demonstrate the absence of reasoning in both. Applying “many unrelated concepts” to a two-concept chess result would exceed the declared construct.
+**Failure / affected claim:** Separate familiarity with two motifs, a general capture preference, or one component that solves every test could produce success without the intended combination. Better performance than a weak "simple" learner is neither a definition nor proof of reasoning. Conversely, a capable simple learner matching the Fly would defeat a topology-advantage claim, not logically demonstrate the absence of reasoning in both. Applying "many unrelated concepts" to a two-concept chess result would exceed the declared construct.
 
 **Criteria:** E01/E04/E05/E06; S01–S03, S05, S09, S10.
 
@@ -55,7 +55,7 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Contrary evidence / limit:** The current plan already makes the Phase A/C distinction and avoids living-fly or cross-domain claims. This is a gap in future evidence, not a present false result. Phase B benefit could also reflect general training or optimization of shared sensory/readout pathways; matched unrelated pretraining and component-specific interventions would be needed for a concept-specific benefit claim.
 
-### F02 — A source-backed memory lead is not yet a specified visual learner
+### F02. A source-backed memory lead is not yet a specified visual learner
 
 **Evidence:** [memory recommendation](../../../research/literature/memory-interference-2026-10-30/recommendation-and-test-plan.md), lines 7–17, 35–41 and 59–69; restart plan section 5, lines 57–75; [wiring output](../restart-wiring-2026-10-30/wiring-count-output.txt), lines 1–21. The current code's coarse masks explicitly lack synapse-coordinate/receptor identities: [ReversalMemory](../../../.codebase/src/neural-learning/reversal-memory.mjs), lines 30–53; [AlphaLobeMemory](../../../.codebase/src/neural-learning/alpha-lobe-memory.mjs), lines 42–63.
 
@@ -69,7 +69,7 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Contrary evidence / limit:** The recommendation expressly calls this unimplemented and proposes one change at a time. It does not recommend flipping fast cholinergic edge signs; preserve that distinction. No claim is made that the missing mapping cannot be established.
 
-### F03 — “En passant recapture” cannot instantiate this one-reply capture task
+### F03. "En passant recapture" cannot instantiate this one-reply capture task
 
 **Evidence:** Restart plan section 8, line 126, includes “en passant recapture” among new test kinds. The [producer](../../../.codebase/src/search-and-feedback/capture-retention-certificate.mjs), lines 13–20, requires the initial action to be a capture and defines a recapture as a legal capturing reply onto its destination. The [checker](../../../.codebase/src/search-and-feedback/capture-retention-certificate-check.mjs), lines 13–14 and 29–33, independently repeats that definition.
 
@@ -83,11 +83,11 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Contrary evidence / limit:** Initial en passant captures can belong to a valid capture task. The criticism concerns the explicitly promised **recapture by en passant**, not all en passant examples.
 
-### F04 — The eye gate measures a narrower property than its question, with an unattainable gain corner
+### F04. The eye gate measures a narrower property than its question, with an unattainable gain corner
 
 **Evidence:** Restart plan section 7, lines 102–117, uses linear L2 logistic decoding and then sets KC–MBON gains to 0.2/1.8 from decoder signs. [Saved decoder output](../restart-decoder-check-2026-10-30/output.json) records strong-linear self-tests, chance-level relational rows and 1/40 null passes at N=48. [check.py](../restart-decoder-check-2026-10-30/check.py), lines 102–151, constructs context-dependent signals, leaves pairs out together and fits scaling on training rows. Ledger L125 explicitly acknowledges the nonlinear blind spot.
 
-**Failure / affected claim:** “No linear decoder succeeded” does not establish no task information, no possible learning, or no useful nonlinear readout. Conversely, checker-supervised decoder signs and extreme gains are oracle interventions, not evidence of endogenous acquisition. Gains above baseline are also unreachable from g=1 under the existing negative-D recovery rule: writing a=-ηdtD in [0,1], its unclipped update is g'=(1-a)g+a(1-k), with k≥0. Thus g≤1 remains invariant. Alpha's update only decreases g. The configured upper clamp of 1.8 is not evidence that 1.8 can be learned. See ReversalMemory lines 74 and 83–91; AlphaLobeMemory lines 103 and 111–119; restart section 5 itself acknowledges recovery cannot pass 1.
+**Failure / affected claim:** "No linear decoder succeeded" does not establish no task information, no possible learning, or no useful nonlinear readout. Conversely, checker-supervised decoder signs and extreme gains are oracle interventions, not evidence of endogenous acquisition. Gains above baseline are also unreachable from g=1 under the existing negative-D recovery rule: writing a=-ηdtD in [0,1], its unclipped update is g'=(1-a)g+a(1-k), with k≥0. Thus g≤1 remains invariant. Alpha's update only decreases g. The configured upper clamp of 1.8 is not evidence that 1.8 can be learned. See ReversalMemory lines 74 and 83–91; AlphaLobeMemory lines 103 and 111–119; restart section 5 itself acknowledges recovery cannot pass 1.
 
 **Criteria:** E05/E06; S03–S05, S08–S09.
 
@@ -95,11 +95,11 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Contrary evidence / limit:** A linear decoder can be an appropriate diagnostic if that is the only admissible readout. The failure then concerns that architecture. A future justified bidirectional rule could change the reachable-state argument; none is approved or implemented. The 40 null datasets do not calibrate a precise false-pass rate or prove a decoder bug.
 
-### F05 — AI assistance creates a real ISEF ownership risk that acknowledgment alone does not settle
+### F05. AI assistance creates a real ISEF ownership risk that acknowledgment alone does not settle
 
 **Evidence:** [Researcher vision](../../../research/project/researcher_vision_2026-10-01.md), line 13, records that AI wrote most code and that the researcher then could not independently explain the math/code. This is dated self-report, **not a current competence assessment**. The memory memo, line 107, discloses Codex drafting. [Submission checklist](../../../documentation/writing/submission-checklist.md) leaves authorship and review items open.
 
-**Official locator:** [2027 rules](https://www.societyforscience.org/isef/international-rules/rules-for-all-projects/), Eligibility 8 and Documentation/Approval 1–5; [official AI table](https://sspcdn.blob.core.windows.net/files/Documents/SEP/ISEF/2026/Rules/Generative-AI-Use-Table.pdf), October 2025, pages 1–2; [2027 Form 2A](https://sspcdn.blob.core.windows.net/files/Documents/SEP/ISEF/2027/Forms/2A-Student-Support-Disclosure-Form.pdf), AI Usage Disclosure. The currently linked table distinguishes allowed disclosed code assistance from prohibited initial drafting of student submission documents and generation of student conclusions. Its “paper” scope is broader than the short rule-8 list. Prompt records, support attribution and the student's own interpretation matter.
+**Official locator:** [2027 rules](https://www.societyforscience.org/isef/international-rules/rules-for-all-projects/), Eligibility 8 and Documentation/Approval 1–5; [official AI table](https://sspcdn.blob.core.windows.net/files/Documents/SEP/ISEF/2026/Rules/Generative-AI-Use-Table.pdf), October 2025, pages 1–2; [2027 Form 2A](https://sspcdn.blob.core.windows.net/files/Documents/SEP/ISEF/2027/Forms/2A-Student-Support-Disclosure-Form.pdf), AI Usage Disclosure. The currently linked table distinguishes allowed disclosed code assistance from prohibited initial drafting of student submission documents and generation of student conclusions. Its "paper" scope is broader than the short rule-8 list. Prompt records, support attribution and the student's own interpretation matter.
 
 **Failure / affected claim:** Treating an assistant's plan, bibliography, conclusion or this repair plan as the student's independent submission could conflict with current guidance. Understanding AI-written code does not retroactively establish independent document authorship. A generic AI acknowledgment does not show who made each substantive decision.
 
@@ -109,7 +109,7 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Contrary evidence / limit:** Disclosed AI code assistance is not categorically forbidden. This commissioned review is an advisory artifact, not a declaration of student authorship or an ISEF submission. Actual later materials, current understanding and future rules were unavailable; no violation or disqualification is determined.
 
-### F06 — The comparators are named but do not yet define an identifiable causal contrast
+### F06. The comparators are named but do not yet define an identifiable causal contrast
 
 **Evidence:** Restart sections 4 and 6, lines 48–53 and 88–98, require own-choice feedback and matched arms but do not specify the simple learner, eye-to-KC map, rewire constraints, initialization matching, search budget or feedback-shuffle construction. The [memory recommendation](../../../research/literature/memory-interference-2026-10-30/recommendation-and-test-plan.md), lines 73–89, correctly notes that choices, known outcomes and pulses can differ despite equal presentations.
 
@@ -123,7 +123,7 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Contrary evidence / limit:** Seven arms and frozen schedules are substantial improvements over the old design. Perfectly equal actions and equally autonomous policies are not both required; the experiment must specify which question it answers.
 
-### F07 — Confirmatory error and precision are not established by the nominal pair counts
+### F07. Confirmatory error and precision are not established by the nominal pair counts
 
 **Evidence:** Restart sections 7 and 9, lines 105–117 and 144–151, state binomial-style chance/power numbers, 48/60 pair counts, three computational repetitions and game-bootstrap lower limits. The decoder's folds share training rows; its synthetic null reports 1/40 passes at N=48 despite the plan's much smaller idealized chance calculation. New-kind templates and all-legal boards can also induce dependence. The memory memo, lines 73 and 89, correctly defers numerical registration.
 
@@ -135,9 +135,9 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Smallest remedy and success criterion:** Before confirmation, fix independent units, paired contrasts, cluster hierarchy, family weights, bootstrap implementation/ties, missing/unknown rules, exclusions, selection frequency and stopping. Calibrate any learned-probe null with the entire fit/selection procedure on development/synthetic material under separate authorization. Give a joint precision/power rationale for the actual minimum effect and report per-seed/per-family effects with uncertainty. Distinguish a descriptive gate from a calibrated significance test.
 
-**Contrary evidence / limit:** Pair-held-out folds and training-only standardization are sound. One null pass in 40 is too imprecise to diagnose the cause or estimate an exact false-positive rate. Conjunctive “all contrasts must pass” hypotheses do **not** automatically require Bonferroni; correct multiplicity handling depends on which conclusions and adaptive choices are made.
+**Contrary evidence / limit:** Pair-held-out folds and training-only standardization are sound. One null pass in 40 is too imprecise to diagnose the cause or estimate an exact false-positive rate. Conjunctive "all contrasts must pass" hypotheses do **not** automatically require Bonferroni; correct multiplicity handling depends on which conclusions and adaptive choices are made.
 
-### F08 — Frozen rescores do not yet define interference-resistant or biological retention
+### F08. Frozen rescores do not yet define interference-resistant or biological retention
 
 **Evidence:** Restart section 9, line 150, asks for a frozen snapshot rescore after other training with at most a 10% loss, without an explicit reference timepoint or old-to-new training trajectory. Section 11, lines 186 and 201, acknowledges the missing clock. ReversalMemory snapshot, lines 101–104, stores gains/event count; the proposed additional eligibility/slow state is not implemented. The memory memo, lines 75–91, supplies a stronger A→B/C→A→reversal outline, fixed-exposure/acquisition-matched distinction and model-time warning.
 
@@ -151,7 +151,7 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Contrary evidence / limit:** The new memo already proposes these repairs. The remaining gap is approval, numerical specification and evidence, not failure to recognize the problem. Silent traces and retrieval failure are alternative hypotheses, not established FlyChess mechanisms.
 
-### F09 — Anatomical feedback signs do not establish a self-limiting teaching signal
+### F09. Anatomical feedback signs do not establish a self-limiting teaching signal
 
 **Evidence:** Restart line 73 infers regulation from 480 MBON→DAN edges and notes possible pulse saturation. The wiring output records mixed MBON05→PAM08 signs (81 positive, 141 negative synapses), not a resolved effective loop. ReversalMemory line 83 rectifies excess DAN activity and fixes the modulatory factor nonpositive; AlphaLobeMemory line 111 does likewise.
 
@@ -165,11 +165,11 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Contrary evidence / limit:** Real feedback anatomy is useful evidence for candidate circuits, and the plan labels saturation a hypothesis. This review does not infer that a particular pulse setting caused past forgetting.
 
-### F10 — A rendered board and legal-candidate list still leave important shortcuts and engineered contributions
+### F10. A rendered board and legal-candidate list still leave important shortcuts and engineered contributions
 
 **Evidence:** Restart section 3, lines 37–44, uses a square-specific Esposito map, fixed piece pictures, successor boards, bright move pointers and externally supplied legal moves. The [pinned retina record](../../../research/literature/cesp99-retina-2026-10-28/README.md), lines 5–24, distinguishes the engineered board placement from fitted upstream projections. The new rendering's invariances have no saved results.
 
-**Failure / affected claim:** Square position, pointer brightness, capture-related image changes, king/check geometry, color or constructor artifacts can correlate with safe/unsafe outcomes. A linear raw-eye baseline can fail while a small nonlinear image classifier succeeds. A deterministic graph transforms pixel information; superior decodability does not show it created information absent from the pixels. “Hidden” should mean the deciding relation is not explicitly supplied, not that the answer is mathematically independent of the board. Listing legal moves also supplies chess-rule computation and restricts the action problem.
+**Failure / affected claim:** Square position, pointer brightness, capture-related image changes, king/check geometry, color or constructor artifacts can correlate with safe/unsafe outcomes. A linear raw-eye baseline can fail while a small nonlinear image classifier succeeds. A deterministic graph transforms pixel information; superior decodability does not show it created information absent from the pixels. "Hidden" should mean the deciding relation is not explicitly supplied, not that the answer is mathematically independent of the board. Listing legal moves also supplies chess-rule computation and restricts the action problem.
 
 **Primary locator:** [Esposito's pinned RETINA.md](https://raw.githubusercontent.com/cesp99/fly-chess/3c83567dfb6fa71cecc1556c75f17c8bb38fd5cf/docs/RETINA.md), sections 1–3, shows square binning and learned plane-to-photoreceptor weights in the original system. The reuse here is a declared engineered interface.
 
@@ -179,7 +179,7 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Contrary evidence / limit:** The restart explicitly discloses all three interface limitations and removes answer-rich attack tokens. It does not have to reconstruct natural optics to support a bounded computational result.
 
-### F11 — Certificates establish one specific consequence and share a rules-engine failure mode
+### F11. Certificates establish one specific consequence and share a rules-engine failure mode
 
 **Evidence:** Certificate producer lines 6–24 and checker lines 7–47 enumerate one legal reply and bind FEN, PGN, actor, move, reply set and hash. Unknown is rejected as a teaching event. [Action-domain code](../../../.codebase/src/search-and-feedback/capture-retention-action-domain.mjs), lines 27–55, classifies quiet moves as failing this capture objective. Both producer and checker rely on the same board object's legal-move semantics; the feedback adapter imports chess.js.
 
@@ -193,7 +193,7 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Contrary evidence / limit:** Exact binding, full bounded reply lists, source-position restoration and conservative unknown handling are real strengths. No presently observed certificate error is alleged.
 
-### F12 — “Connectome plus chess” is already occupied; the incremental biological contribution is unresolved
+### F12. "Connectome plus chess" is already occupied; the incremental biological contribution is unresolved
 
 **Evidence:** Restart section 11, line 204, still calls for a proper novelty search; [memory README](../../../research/literature/memory-interference-2026-10-30/README.md), line 23, marks novelty unresolved. The working manuscript is an [outline](../../../documentation/writing/manuscript-outline.md), lines 3–28, not a demonstrated contribution.
 
@@ -207,7 +207,7 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Contrary evidence / limit:** The endogenous own-choice learning and source-constrained mechanism could be a meaningful distinction from supervised encoders/search. This review does not conclude the project lacks novelty; novelty and demonstrated significance remain unestablished.
 
-### F13 — Old replay successes do not validate the forthcoming pathway or its new state contract
+### F13. Old replay successes do not validate the forthcoming pathway or its new state contract
 
 **Evidence:** [Ledger](../../../documentation/handoffs/fix-goal-ledger-2026-10-24.md), lines 809–814 (L103–L108), documents improved data auditing, source closure and three-replica pending-receipt witnesses, plus the limitation that the old registered stage path could not resume mid-event. L104 still leaves runtime/package versions outside the step-file pins. Line 827 (L121) notes old code paths affected by archive relocation. Restart sections 5/11, especially lines 199 and 202–203, call for a new clean learner and one-command-per-figure release. No new-rule checkpoint, protocol or reproduction was located in the inspected current package.
 
@@ -219,7 +219,7 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Contrary evidence / limit:** Prior weaknesses were repaired or explicitly bounded; this report does not reissue them as seven unfixed current bugs. No code, test suite or end-to-end recovery was executed during this review.
 
-### F14 — Feasibility and biological sensitivity remain unmeasured for the new workload
+### F14. Feasibility and biological sensitivity remain unmeasured for the new workload
 
 **Evidence:** [AGENTS.md](../../../AGENTS.md), lines 61–67, authorizes at most 2048 MiB RSS for new unfrozen work, preserves legacy budgets, and requires sparse serial execution. Restart sections 4/6 require scoring every legal candidate and multiple arms/seed schedules; section 11, lines 200–203, requires uncertain-label sensitivity and clean reproducibility. [SparseTrainer](../../../.codebase/src/supervised-baselines/trainer.mjs), lines 10–45 and 74–109, shows engineered normalization, bias, bounded rate dynamics and optionally reset activity. Those choices are not reconstructed physiology.
 
@@ -231,7 +231,7 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Contrary evidence / limit:** Sparse serial execution, streamed receipts and resource guards are established engineering strengths. No graph was loaded or workload benchmarked here; infeasibility and sensitivity are unknown. More RAM is not itself a memory-mechanism repair.
 
-### F15 — Eventual eligibility cannot be certified from today's rules or this repository
+### F15. Eventual eligibility cannot be certified from today's rules or this repository
 
 **Evidence:** [Archived maturity review](../../../archive/early-development/research/reports/research-maturity-review-2026-10-30/README.md), line 3, records an ISEF target of 2028 or later. [Venue record](../../../documentation/writing/multi-venue-eligibility-2026-10-18.md), lines 7–19, reports Singapore citizenship, Indonesian schooling and expected 2028 graduation; an affiliated nomination route remains unresolved. [Ethics record](../../../research/project/ethics_and_permissions.md), lines 17–21, is an empty approval-reference table.
 
@@ -245,7 +245,7 @@ High severity means a primary claim, confirmatory design or entry route could be
 
 **Contrary evidence / limit:** No submitted entry or human experiment was found in the inspected records. Future rules may differ. No confirmed ineligibility, missing mandatory past approval, or human-subject violation is inferred.
 
-### F16 — Submission and presentation quality are unassessed
+### F16. Submission and presentation quality are unassessed
 
 **Evidence:** File-name inventory across active documentation/research and direct inspection of writing/project folders located a [working outline](../../../documentation/writing/manuscript-outline.md), lines 1–44, [blank submission checklist](../../../documentation/writing/submission-checklist.md), lines 1–20, planning documents and dated contribution self-report. A further active documentation/research filename search found no PDF/DOCX/PPTX/TeX/Keynote/ODT submission artifacts outside source-evidence paths. No completed current restart manuscript, poster, slides, interview transcript or consolidated current student-contribution audit was located in that bounded search. This is not a claim about files outside the workspace.
 

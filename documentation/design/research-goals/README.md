@@ -28,5 +28,5 @@ Researcher intent and evidence requirements. These notes do not claim reasoning 
 - [Active memory-only goal: causal diagnosis and mechanism decision, 2026-11-01](../../../research/reports/memory-interference-diagnosis-2026-11-01/README.md): later authorization, independently replayed development evidence and prospective discriminators; no selected biological rule.
 
 - [Memory goal, 2026-11-04](memory-goal-2026-11-04.md): strict memory-only goal for Volume 2 (chapters To Learn, Evidence for Learning) and its done criteria.
-- [Memory handoff, 2026-11-07](memory-handoff-2026-11-07.md): **read first.** The memory the claims need (P1-P4), what exists, the gap, mistakes and rules; supersedes the 2026-11-04 goal as the requirement.
-- [Memory /goal prompt, 2026-11-07](memory-goal-prompt-2026-11-07.md): paste-ready goal for a new chat to meet P1-P3.
+- [Memory handoff, 2026-11-07](memory-handoff-2026-11-07.md): **read first.** The memory the claims need (Properties 1 through 4), what exists, the gap, mistakes and rules; supersedes the 2026-11-04 goal as the requirement.
+- [Memory /goal prompt, 2026-11-07](memory-goal-prompt-2026-11-07.md): paste-ready goal for a new chat to meet Properties 1 through 3.

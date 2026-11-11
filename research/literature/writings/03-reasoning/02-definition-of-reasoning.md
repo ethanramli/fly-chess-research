@@ -5,8 +5,7 @@
 
 ## Planned content
 
-- Being able to apply many unrelated concepts to solve an unfamiliar problem (project wording).
-- Also stated as: being able to generalize unrelated concepts to unfamiliar problems.
+- Apply many unrelated concepts to solve an unfamiliar problem (project wording).
 
 ## Working notes
 

@@ -18,7 +18,7 @@ I'm Ethan Ramli, a 16-year-old Singaporean grade 11 student in Jakarta. Chess an
 
 Your lab's work linking mushroom-body synaptic plasticity to action selection is relevant to two connected questions: which identified reinforcement pathways should carry feedback, and how should training experiences be sequenced and spaced? I hope to begin with simple associations before introducing chess puzzles.
 
-The current engineered gamma4 prototype strengthened rewarded preference in six of six seeds, but only three chose correctly after reversal, which indicates that the full acceptance test failed. Its biological mechanism is still unclear, and the current feedback just makes the fly memorize answers, not think better next time. 
+The current engineered gamma4 prototype strengthened rewarded preference in six of six seeds, but only three chose correctly after reversal, which indicates that the full acceptance test failed. Its biological mechanism is still unclear, and the current feedback just makes the fly memorize answers, not think better next time.
 
 I define the research question and training rubric, AI makes most of the code, and I am still learning the underlying methods. I have no research adviser and hope to develop a scientifically sound study (to one day publish this to eLife).
 

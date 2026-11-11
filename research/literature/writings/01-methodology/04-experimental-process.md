@@ -6,13 +6,14 @@
 ## Planned content
 
 - How the work was done on a nine-year-old ThinkBook.
-- How an estimated 64 GB requirement for Monte Carlo simulations was compressed into about 250 MB of graph simulations.
+- The historical 64 GB Monte Carlo estimate, the sparse graph memory calculation, and what remains unknown about the approximately 250 MB claim.
 
 ## Evidence boundary
 
-The 64 GB figure is an estimate: show its calculation. The 250 MB figure needs a measured peak RSS with the exact command.
+The 64 GB figure is an unverified historical estimate; distinguish any reconstructed calculation from its provenance. The approximately 250 MB figure needs a measured peak RSS tied to the exact command.
 
 ## Working notes
 
 - [Memory estimate calculation and measurement limits](04-memory-estimate-calculation.md).
+
 Add interview answers, sources, figures, and evidence links here as the chapter develops.

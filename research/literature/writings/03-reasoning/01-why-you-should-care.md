@@ -6,8 +6,8 @@
 ## Planned content
 
 - About 130,000 neurons and 54 million parameters make a tiny model.
-- If biology this small can reason, with help from memory, working memory and specialized reinforcement learning, this opens the door for future science and connectomics.
-- It would also show that reasoning may not need very large data centres or a large brain.
+- If a connectome-constrained model this small can reason with support from memory, working memory and specialized reinforcement learning, this would open new directions for science and connectomics.
+- It could also show that a small connectome-constrained model can reason without a very large data centre or brain.
 
 ## Evidence boundary
 

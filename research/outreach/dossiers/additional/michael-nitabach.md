@@ -35,7 +35,7 @@ The most direct new lead for a missing circuit-generated signal when contingenci
 
 **Bounded question:** Which neural response would distinguish omission-driven circuit feedback from a software rule that simply reverses the previous update?
 
-**Possible next diagnostic, proposed only:** Proposed investigation: first verify the named adult cell identities and relay edges in our pinned graph, then prospectively predict cue-specific DAN/MBON responses across a matched reversal protocol. An appetitive omission mechanism would need its own evidence.
+**Possible next diagnostic, proposed only:** First verify the named adult cell identities and relay edges in our pinned graph, then prospectively predict cue-specific DAN/MBON responses across a matched reversal protocol. An appetitive omission mechanism would need its own evidence.
 
 **Limits and reasons this may be the wrong contact:** Omission of punishment is not omission of reward; their signs and natural pathways cannot be interchanged. The paper does not directly diagnose our gamma4 appetitive failures, and the modeled circuit is not the entire adult FlyWire graph.
 

@@ -4,7 +4,7 @@
 
 ## Evidence motivating selection
 
-The frozen16-event pass leaves both encoders at4/8 training choices. Relational-v3 informative validation loses one correct panel. Bound-ray informative repairs two validation choices and loses two others, remaining2/4. Higher mean margin therefore does not establish useful retained improvement. Existing uniform teaching reviews every candidate regardless of whether the current decision needs correction or protection.
+The frozen 16-event pass leaves both encoders at 4/8 training choices. Relational-v3 informative validation loses one correct panel. Bound-ray informative repairs two validation choices and loses two others, remaining 2/4. Higher mean margin therefore does not establish useful retained improvement. Existing uniform teaching reviews every candidate regardless of whether the current decision needs correction or protection.
 
 MiMo/Gagar's correctness-before-quality distinction and pass-to-pass verification motivate recording both repair and preserved behavior. SCoRe motivates separating wrong-to-right and right-to-wrong revision. These are teacher-side engineering adaptations, not imported GRPO, gradient fitting or biological mechanisms. Sources/access limits: [registered review](../../../research/literature/feedback-quality-deep-review-2026-10-08/README.md).
 

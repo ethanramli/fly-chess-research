@@ -8,22 +8,22 @@ const near = (actual, expected, tol = 1e-12) => assert.ok(Math.abs(actual - expe
 // Test-side Float32 bit reader, independent of the producer helper.
 const float32Bits = x => new Uint32Array(Float32Array.of(x).buffer)[0];
 
-// White Ka1 and Rh1, black Ka8. Hand count: king a2, b2 (b1 is attacked by the rook);
-// rook b1..g1 (6) and h2..h8 (7). Total 15.
+// White Ka1 and Rh1, black Ka8. Hand count: king a2, b1, b2 (3; only black attacks restrict the king);
+// rook b1..g1 (6) and h2..h8 (7). Total 16.
 const KR = 'k7/8/8/8/8/8/8/K6R w - - 0 1';
-const KR_LEGAL = ['a1a2', 'a1b2', 'h1b1', 'h1c1', 'h1d1', 'h1e1', 'h1f1', 'h1g1', 'h1h2', 'h1h3', 'h1h4', 'h1h5', 'h1h6', 'h1h7', 'h1h8'];
+const KR_LEGAL = ['a1a2', 'a1b1', 'a1b2', 'h1b1', 'h1c1', 'h1d1', 'h1e1', 'h1f1', 'h1g1', 'h1h2', 'h1h3', 'h1h4', 'h1h5', 'h1h6', 'h1h7', 'h1h8'];
 const ranked = (scores = {}) => KR_LEGAL.map(move => ({ move, score: scores[move] ?? 0.1 }));
 const outcomesFor = (wins = []) => Object.fromEntries(KR_LEGAL.map(move => [move, wins.includes(move)]));
 
 test('scoreAllLegal enumerates the hand-counted legal domain, king and quiet moves included', () => {
   const r = scoreAllLegal(new Chess(KR), ranked({ a1a2: 0.5 }), outcomesFor(['a1a2']));
-  assert.equal(r.counts.legal, 15);
+  assert.equal(r.counts.legal, 16);
   assert.deepEqual(r.topMoves, [{ move: 'a1a2', score: 0.5 }]);
   assert.equal(r.s, 1);
   assert.equal(r.c, 1);
   assert.equal(r.success, 1);
   assert.equal(r.counts.successes, 1);
-  assert.equal(r.counts.failures, 14);
+  assert.equal(r.counts.failures, 15);
   near(r.margin, 0.4); // 0.5 best success minus 0.1 best failure
 });
 
@@ -74,7 +74,7 @@ test('scoreAllLegal rejects incomplete, unknown, duplicate, nonlegal and nonfini
   assert.throws(() => scoreAllLegal(new Chess(KR), ranked(), missingOutcome), /Missing outcome for h1h8/);
   assert.throws(() => scoreAllLegal(new Chess(KR), ranked(), { ...ok, e2e4: true }), /Unknown outcome key e2e4/);
   assert.throws(() => scoreAllLegal(new Chess(KR), ranked(), { ...ok, a1a2: 1 }), /must be boolean/);
-  assert.throws(() => scoreAllLegal(new Chess(KR), ranked().slice(1), ok), /Ranking has 14 moves/);
+  assert.throws(() => scoreAllLegal(new Chess(KR), ranked().slice(1), ok), /Ranking has 15 moves/);
   const dup = ranked();
   dup[1] = { ...dup[0] };
   assert.throws(() => scoreAllLegal(new Chess(KR), dup, ok), /Duplicate ranked move a1a2/);

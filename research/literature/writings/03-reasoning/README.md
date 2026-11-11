@@ -6,7 +6,7 @@
 
 ## Researcher clarification, 2026-11-01
 
-This volume pushes the limits of biology and computer science to investigate whether a fly-connectome-derived model can reason under computational constraints. The researcher's operational meaning of reasoning is applying multiple unrelated concepts to solve an unfamiliar problem.
+This volume tests whether a fly-connectome-derived model can reason under computational constraints. The researcher's operational definition of reasoning is applying multiple unrelated concepts to solve an unfamiliar problem.
 
 Engineered memory and other explicitly disclosed computational aids are permitted in this investigation. A biologically faithful long-term-memory mechanism is not a prerequisite for the engineered condition. Describe exactly what the connectome, memory, retrieval, policy and any search each contribute, including which components can select or rank actions. The tested subject is the declared complete computational system; component controls determine what can be attributed specifically to the connectome.
 

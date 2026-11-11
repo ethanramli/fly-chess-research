@@ -2,7 +2,7 @@
 
 Previous goal turn made progress: real Stockfish targets failed task-discrimination on inspected short-mate boards, changing the next teacher-design decision. This turn retains the full puzzle/verified-feedback/endogenous-memory/transfer objective while addressing the researcher's iteration-latency concern.
 
-Existing profiles already isolate graph evocation as the largest cost. Added a bounded summary cache keyed by complete caller identity and board/history/task/ordered candidates. It stores no neural activity and never supplies replay rates. Frozen legacy sources remain untouched. All119 tests pass, including invalidation after teaching, restoration/fixed-state changes and history/task separation.
+Existing profiles already isolate graph evocation as the largest cost. Added a bounded summary cache keyed by complete caller identity and board/history/task/ordered candidates. It stores no neural activity and never supplies replay rates. Frozen legacy sources remain untouched. All 119 tests pass, including invalidation after teaching, restoration/fixed-state changes and history/task separation.
 
 Matched full-graph benchmark on one 32-candidate fixture: uncached129 presentations/46.93s/24.23CPU vs cached65/22.90s/11.89CPU. Eight panels and two receipts/memories equal exactly, one teaching invalidation. Independent audit passes1740 local recurrences and one certificate. Same heap256/duty0.5/resource guards. Single-order development workload only; no general training speed, time-to-learning, retention or transfer result. Fresh scientific repeat/reset/retention checks must bypass cache.
 

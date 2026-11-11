@@ -22,7 +22,7 @@ Coverage: current profile, author list and abstract/selected accessible introduc
 
 Action readout, feedback and task/circuit separation. Which readout ablation distinguishes a choice produced by the simulated circuit from one imposed by the software decoder? This fit is an inference from the cited work and the project's current requirements. The teacher must supply experience and feedback; the physiological memory mechanism and required graph identities remain to be justified.
 
-**Proposed bounded diagnostic:** Proposed: report unaided circuit-driven choices under a frozen decoder, compare decoder-only and neural-state perturbation controls, and measure sensitivity to the simulated state independently of external chess search.
+**Proposed bounded diagnostic:** Report unaided circuit-driven choices under a frozen decoder, compare decoder-only and neural-state perturbation controls, and measure sensitivity to the simulated state independently of external chess search.
 
 **Limits and reasons to deprioritize:** A chess move is not a leg motor command. Proprioceptive feedback differs from reinforcement feedback, and the brain-only graph cannot silently be treated as a complete embodied walking circuit. No availability, endorsement or commitment is established. Publishing in eLife does not establish special access or predict acceptance for FlyChess.
 

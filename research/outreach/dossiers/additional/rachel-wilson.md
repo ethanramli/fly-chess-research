@@ -22,7 +22,7 @@ Coverage: current profile, author list and abstract/selected accessible introduc
 
 Physiological assumptions beyond fixed wiring and sensory coding. Which physiological check should come before interpreting graph-preserving cue activity as a plausible sensory representation? This fit is an inference from the cited work and the project's current requirements. The teacher must supply experience and feedback; the physiological memory mechanism and required graph identities remain to be justified.
 
-**Proposed bounded diagnostic:** Proposed: measure sparsity, excitation/inhibition balance and cue separation under a preregistered input protocol, while keeping wiring fixed and documenting uncertainties in synapse-to-conductance conversion.
+**Proposed bounded diagnostic:** Measure sparsity, excitation/inhibition balance and cue separation under a preregistered input protocol, while keeping wiring fixed and documenting uncertainties in synapse-to-conductance conversion.
 
 **Limits and reasons to deprioritize:** Olfactory glomerular physiology is not a validated representation of chess boards or reward reversal. This is an interface/physiology consultation, secondary to fixing biological learning. No availability, endorsement or commitment is established. Publishing in eLife does not establish special access or predict acceptance for FlyChess.
 

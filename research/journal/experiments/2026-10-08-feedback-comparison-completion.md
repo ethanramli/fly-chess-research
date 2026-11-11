@@ -25,7 +25,7 @@ Raw evidence and commands: [continuation package](../../../archive/early-develop
 
 ## Pending update recovery
 
-Created a clearly labeled simulated-interruption prefix through published checkpoint00015 of the original informative condition. This copied prefix's latest publication contains memory plus pending receipt for event0; the historical complete invocation and lineage remain unchanged. Resume into a fresh directory acknowledges the receipt with zero new presentations and no duplicate update, then completes remaining informative teaching. Its independent graph audit passes. Final memory, all rankings and all16 receipt hashes match the original exactly. [Recovery audit](../../../archive/early-development/research/reports/bound-ray-feedback-development-completion-2026-10-08/recovery-audit.json). This is a controlled recovery fixture, not an actual historical crash or whole-run timing result.
+Created a clearly labeled simulated-interruption prefix through published checkpoint 00015 of the original informative condition. This copied prefix's latest publication contains memory plus pending receipt for event 0; the historical complete invocation and lineage remain unchanged. Resume into a fresh directory acknowledges the receipt with zero new presentations and no duplicate update, then completes remaining informative teaching. Its independent graph audit passes. Final memory, all rankings and all 16 receipt hashes match the original exactly. [Recovery audit](../../../archive/early-development/research/reports/bound-ray-feedback-development-completion-2026-10-08/recovery-audit.json). This is a controlled recovery fixture, not an actual historical crash or whole-run timing result.
 
 ## Next feedback hypothesis implemented, not graph-tested
 

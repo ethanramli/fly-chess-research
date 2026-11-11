@@ -6,6 +6,10 @@ Consolidated 2026-10-06. Keep this file focused on stable instructions. Use [cur
 
 The research restarted on 2026-10-30. Follow [the approved restart plan](documentation/design/research-goals/restart-plan-2026-10-30.md). Old experiments are early-development history in [the archive](archive/early-development/README.md); old curriculum goals, Stage 1 gates, token cues and the lesson planner are not current. Where a section below conflicts with the plan's input or feedback rules, the plan wins. The researcher's definition of reasoning is "being able to apply many unrelated concepts to solve an unfamiliar problem". Several agent sessions may work in this repository at once: re-read a file before editing it and leave changes you did not make alone.
 
+## Writing style: plain words only
+
+Write every label in plain words. Do not use codes such as P1, P2, G0, Q3 or A/B/C tags for requirements, goals, arms or results. Write "Property 1", "Property 2" and so on, or a short plain name such as "in the brain". Same rule for chat replies to the researcher. Old files keep their codes as history; new text uses words.
+
 ## Goal: the five-volume series
 
 The research goal is to complete the five-volume series **Can a Fly Play Chess?**: 1 Methodology, 2 The Classroom, 3 Reasoning, 4 The Limits of Biology, 5 Chess. Every experiment, calculation, proof and tool exists to supply evidence for a named chapter; name the volume and chapter before proposing work. The confirmed chapters and their required content are in [the writings workspace](research/literature/writings/README.md); each volume's question and evidence boundaries are in [the series plan](documentation/design/research-goals/five-volume-series.md). Volume 3 tests the connectome with disclosed computational aids, and either outcome is evidence. Volume 4 proves bounded limits of the raw connectome model, not the living fly.
@@ -32,6 +36,10 @@ This repository operates under ponytail mode by default: use the laziest solutio
 - Delete speculative code and unnecessary abstraction before adding anything new.
 - The smallest correct patch wins, but not at the cost of a wrong root-cause fix.
 - If a change is not needed for the active experiment or bug, do not add it.
+
+## Naming default
+
+The [Please no more slop skill](.agents/skills/please-no-more-slop/SKILL.md) has the same priority as ponytail. Load and apply it whenever creating or renaming variables, functions, database keys, files, API endpoints, project folders, or user-facing labels. Ponytail governs implementation size; this skill governs names.
 
 ## Python actions for recurring CLI work
 
@@ -124,4 +132,4 @@ Define target rating scale/reference pool. Validate any benchmark-to-Elo predict
 
 ## Reusable resources
 
-Researcher instruction2026-10-07: use suitable open-source boards, UI components and other reusable resources instead of recreating them. Preserve licenses/attribution and document pinned sources and adaptations. This preference does not authorize replacing the endogenous learner with pretrained or supervised chess components.
+Researcher instruction from 2026-10-07: use suitable open-source boards, UI components and other reusable resources instead of recreating them. Preserve licenses/attribution and document pinned sources and adaptations. This preference does not authorize replacing the endogenous learner with pretrained or supervised chess components.

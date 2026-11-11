@@ -54,8 +54,8 @@ Before any draft is sent:
 - `dossier-catalog.md`: linked inventory of all expert files.
 - `outreach-index.md`: final ranked contact plan and verification status.
 - `project-one-page-summary.md`: compact evidence-bounded project background for researchers who request it.
-- `audit-report.md`: structural, evidence, contact-route, and draft-length review of the complete package.
+- [`campaigns/audit-report.md`](campaigns/audit-report.md): structural, evidence, contact-route, and draft-length review of the complete package.
 - `drafts/`: historical drafts and dated final individual copies. Consult [the current contact log](campaigns/sent-2026-10-04.md) for send and routing status.
 - `campaign-2026-10-04.json`: authoritative final campaign, exact message bodies, research/contact sources and Gmail send/readback records.
 - `verification/2026-10-04/`: current research fetches, Gmail readback and the blocked Allen contact-form evidence.
-- `ethan_interview_profile_2026-10-01.md`: self-reported background, outreach preferences, and open interview questions for future messages.
+- [`planning/ethan-interview-profile-2026-10-01.md`](planning/ethan-interview-profile-2026-10-01.md): self-reported background, outreach preferences, and open interview questions for future messages.

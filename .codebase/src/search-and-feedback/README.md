@@ -19,7 +19,7 @@
 - [verified-feedback.mjs](verified-feedback.mjs)
 - [verified-line-explanation.mjs](verified-line-explanation.mjs)
 
-- [Licensed cesp99 bounded search adapter](cesp99-search-adapter.mjs) · [upstream attribution and changes](vendor/cesp99/README.md)
+- [Licensed cesp99 bounded search adapter](cesp99-search-adapter.mjs) Â· [upstream attribution and changes](vendor/cesp99/README.md)
 
 - [Stockfish target and provisional fixed value interface](stockfish-target.mjs): engine estimates, never mate certificates.
 

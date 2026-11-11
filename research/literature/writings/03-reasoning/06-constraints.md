@@ -5,7 +5,7 @@
 
 ## Planned content
 
-- The limits of the claims, and where they fail.
+- State which conclusions the evidence can support and where those conclusions stop.
 
 ## Working notes
 

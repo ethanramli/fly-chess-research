@@ -79,14 +79,14 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 
 **Definition:** Whether an opponent can legally recapture the moved capturing piece depends on defenders, blockers and king constraints.
 
-**Learning target:** Predict immediate recapturability and prefer retention when retention is the declared task. Maximum 6 pieces; consequence horizon up to 1 plies. Tasks: capture-retention. Feedback: F0.
+**Learning target:** Predict immediate recapturability and prefer retention when retention is the declared task. Maximum 6 pieces; consequence horizon up to 1 ply. Tasks: capture-retention. Feedback: F0.
 
 - Positive experience: Same capture survives every legal immediate reply because the defender is absent, its line is blocked, or an apparent defender is pinned and cannot legally recapture.
 - Negative experience: The otherwise similar capture allows a legal recapture by an available, unblocked and unpinned defender.
 - Changed-question/counterfactual experience: Change one blocker or defender while retaining the capture identity and material, reversing recapturability.
 - Opponent coverage: Enumerate the exact legal next replies; distinguish an available recapture from an obligation to recapture.
 
-**Definition of done:** D1-D8 plus At least 12/16 on each of four strata: open defender, blocked defender, absent defender, pinned apparent defender; never interpret retention as universal move quality. Status: specified, not trained; machine data lists required capabilities.
+**Definition of done:** D1-D8 plus at least 12/16 on each of four strata: open defender, blocked defender, absent defender, pinned apparent defender; never interpret retention as universal move quality. Status: specified, not trained; machine data lists required capabilities.
 
 ### Stage 2: King safety, check and mate
 
@@ -99,7 +99,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 - Changed-question/counterfactual experience: Change one escape square, supporting piece or interposition route so the same check or defense changes outcome.
 - Opponent coverage: Include king escapes, captures of the checker, interpositions and quiet mating threats.
 
-**Definition of done:** D1-D8 plus At least 12/16 in each stratum: actual mate, escapable check, mandatory defense, misleading improving move; all success claims cover every required escape. Status: specified, not trained; machine data lists required capabilities.
+**Definition of done:** D1-D8 plus at least 12/16 in each stratum: actual mate, escapable check, mandatory defense, misleading improving move; all success claims cover every required escape. Status: specified, not trained; machine data lists required capabilities.
 
 ### Stage 3: Sound forcing moves and reply awareness
 
@@ -112,7 +112,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 - Changed-question/counterfactual experience: Preserve the surface forcing move while adding or removing a specific defensive resource.
 - Opponent coverage: Include counterchecks, recaptures, queen trades and quiet refutations. Do not filter opponent moves to only forcing tags.
 
-**Definition of done:** D1-D8 plus At least 12/16 in each stratum: sound check, sound capture/threat, forcing refutation, quiet refutation; no check-priority score may supply the final answer. Status: specified, not trained; machine data lists required capabilities.
+**Definition of done:** D1-D8 plus at least 12/16 in each stratum: sound check, sound capture/threat, forcing refutation, quiet refutation; no check-priority score may supply the final answer. Status: specified, not trained; machine data lists required capabilities.
 
 ### Stage 4: Double threats and overloaded defense
 
@@ -125,7 +125,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 - Changed-question/counterfactual experience: Add one defensive option or remove an overloaded duty so the double threat no longer wins.
 - Opponent coverage: Look for combined defenses and counterattacks, not merely retreating one target.
 
-**Definition of done:** D1-D8 plus At least 12/16 separately for real forks, apparent forks, overloaded defenders and defensive counterattacks; a count of attacked pieces cannot pass. Status: specified, not trained; machine data lists required capabilities.
+**Definition of done:** D1-D8 plus at least 12/16 separately for real forks, apparent forks, overloaded defenders and defensive counterattacks; a count of attacked pieces cannot pass. Status: specified, not trained; machine data lists required capabilities.
 
 ### Stage 5: Lines, blockers and removal of defenders
 
@@ -138,7 +138,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 - Changed-question/counterfactual experience: Move one blocker or substitute a defensive resource while preserving the candidate's local appearance.
 - Opponent coverage: Include interposition, replacement defense, countercheck and recapture after defender removal.
 
-**Definition of done:** D1-D8 plus At least 12/16 for opening a line, discovered attack, defender removal and replacement defense; removal of a piece is not sufficient evidence of causal usefulness. Status: specified, not trained; machine data lists required capabilities.
+**Definition of done:** D1-D8 plus at least 12/16 for opening a line, discovered attack, defender removal and replacement defense; removal of a piece is not sufficient evidence of causal usefulness. Status: specified, not trained; machine data lists required capabilities.
 
 ### Stage 6: Move order, intermediate moves and sacrifices
 
@@ -151,7 +151,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 - Changed-question/counterfactual experience: Remove payoff support or change move order so the same concession fails at the same horizon.
 - Opponent coverage: Search intermediate checks, declined sacrifices and defensive alternatives; accepting a sacrifice is not assumed.
 
-**Definition of done:** D1-D8 plus At least 12/16 for necessary preparation, sound concession, unsound concession and opponent intermediate move. Credit root and later choices only with independent state/action certificates. Status: specified, not trained; machine data lists required capabilities.
+**Definition of done:** D1-D8 plus at least 12/16 for necessary preparation, sound concession, unsound concession and opponent intermediate move. Credit root and later choices only with independent state/action certificates. Status: specified, not trained; machine data lists required capabilities.
 
 ### Stage 7: Piece effectiveness and improving an ineffective piece
 
@@ -164,7 +164,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 - Changed-question/counterfactual experience: Change the relevant target or defensive duty so the same activation ceases to help.
 - Opponent coverage: Include a timely attack on the abandoned duty and interference with the intended route.
 
-**Definition of done:** D1-D8 plus At least 12/16 for freeing a blocker, rerouting a piece, useless mobility and abandoned duty; include successful actions by a piece other than the ineffective piece. Status: specified, not trained; machine data lists required capabilities.
+**Definition of done:** D1-D8 plus at least 12/16 for freeing a blocker, rerouting a piece, useless mobility and abandoned duty; include successful actions by a piece other than the ineffective piece. Status: specified, not trained; machine data lists required capabilities.
 
 ### Stage 8: Coordination and shared duties
 
@@ -177,7 +177,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 - Changed-question/counterfactual experience: Remove one supporting relationship or change its legal availability so the coordinated plan fails.
 - Opponent coverage: Include exchanges of supporters, interference and exploitation of overloaded own defenders.
 
-**Definition of done:** D1-D8 plus At least 12/16 for shared targets, support preparation, interference and redundant/unsafe coordination; supply paired support interventions, not only co-occurring activity. Status: specified, not trained; machine data lists required capabilities.
+**Definition of done:** D1-D8 plus at least 12/16 for shared targets, support preparation, interference and redundant/unsafe coordination; supply paired support interventions, not only co-occurring activity. Status: specified, not trained; machine data lists required capabilities.
 
 ### Stage 9: Weaknesses, pawn structure and weak squares
 
@@ -190,7 +190,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 - Changed-question/counterfactual experience: Change access to the weak square or supporting route while leaving the superficial pawn classification unchanged.
 - Opponent coverage: Include pawn breaks, exchanges of attackers and switching pressure to another target.
 
-**Definition of done:** D1-D8 plus At least 12/16 for repair, exploitation, compensation and unexploitable apparent weakness; the extended positional value gate is required in addition to bounded task gates. Status: specified, not trained; machine data lists required capabilities.
+**Definition of done:** D1-D8 plus at least 12/16 for repair, exploitation, compensation and unexploitable apparent weakness; the extended positional value gate is required in addition to bounded task gates. Status: specified, not trained; machine data lists required capabilities.
 
 ### Stage 10: Restriction, prophylaxis and the opponent's plan
 
@@ -203,7 +203,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 - Changed-question/counterfactual experience: Remove the opponent plan's prerequisite so the preventative move becomes unnecessary or wrong.
 - Opponent coverage: Model future pawn breaks, activation routes, exchanges and quiet preparation in the actual legal child positions.
 
-**Definition of done:** D1-D8 plus At least 12/16 for preventing a break, restricting a piece, unnecessary prophylaxis and competing threats; include changed-plan pairs where the preferred response reverses. Status: specified, not trained; machine data lists required capabilities.
+**Definition of done:** D1-D8 plus at least 12/16 for preventing a break, restricting a piece, unnecessary prophylaxis and competing threats; include changed-plan pairs where the preferred response reverses. Status: specified, not trained; machine data lists required capabilities.
 
 ### Stage 11: Pawn breaks, exchanges and endgame transitions
 
@@ -216,7 +216,7 @@ Every lesson requires its predecessor, through G0. Positive/negative description
 - Changed-question/counterfactual experience: Change king activity, pawn support or an exchange partner so the same transition changes outcome.
 - Opponent coverage: Include blockade, counterbreak, refusal of an exchange and promotion races.
 
-**Definition of done:** D1-D8 plus At least 12/16 for prepared breaks, premature breaks, exchanges and king/pawn endings; favorable endgame labels require exact bounded evidence or an explicitly labeled estimate. Status: specified, not trained; machine data lists required capabilities.
+**Definition of done:** D1-D8 plus at least 12/16 for prepared breaks, premature breaks, exchanges and king/pawn endings; favorable endgame labels require exact bounded evidence or an explicitly labeled estimate. Status: specified, not trained; machine data lists required capabilities.
 
 ### Stage 12: Compositional plans and selective adversarial investigation
 
@@ -288,7 +288,7 @@ Current TemporalFeedbackSession asserts all-legal pre-teaching binding. Preserve
 
 Use the current sparse model, encoders, forcing tags, independent mate/capture checkers, temporal session, local receiver and checkpoint helpers. The following remain prerequisites: source/identity review and G0; an explicit noncapture task wrapper; independent material/safety/promotion certificates; candidate-free position input/readout; validated sequence/episode credit; task-aware quiet candidate coverage; and fresh disjoint data/replicas/auditor. The [machine specification](../../../archive/early-development/research/data/principles-curriculum-v1/curriculum.json) marks each capability's current status and actual path. The old capture-transfer and unfamiliar-value failures remain failures.
 
-Bound each decision to 256 total neural presentations, reserving planned feedback/reference work before allocating search calls; count every assessment/reference/teaching presentation. Individual sequence sessions allow at most 32 frames. Search caps: 32 simulations,16 evaluations,9 plies,4096 nodes,10000ms. Proof caps: 20000 nodes/5000ms per action,256 replies. Soft deadlines cannot interrupt a running evaluation. Unknown bounds produce no teaching; publish pending state before interruption acknowledgment. Stream records, process one board at a time, and use node --max-old-space-size=256 with cpu-duty0.5, RSS at most768MiB and free memory at least256MiB. Check authoritative processes before graph use; the earlier access-denied process inspection was not evidence that no run was active.
+Bound each decision to 256 total neural presentations, reserving planned feedback/reference work before allocating search calls; count every assessment/reference/teaching presentation. Individual sequence sessions allow at most 32 frames. Search caps: 32 simulations, 16 evaluations, 9 plies, 4096 nodes, 10000 ms. Proof caps: 20000 nodes/5000 ms per action, 256 replies. Soft deadlines cannot interrupt a running evaluation. Unknown bounds produce no teaching; publish pending state before interruption acknowledgment. Stream records, process one board at a time, and use node --max-old-space-size=256 with cpu-duty 0.5, RSS at most 768 MiB and free memory at least 256 MiB. Check authoritative processes before graph use; the earlier access-denied process inspection was not evidence that no run was active.
 
 ## Receipts, launch checklist and completion boundary
 

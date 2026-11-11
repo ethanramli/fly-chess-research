@@ -1,4 +1,4 @@
-﻿# Research scope and eLife readiness audit — 2026-11-02
+# Research scope and eLife readiness audit dated 2026-11-02
 
 ## Status and method
 

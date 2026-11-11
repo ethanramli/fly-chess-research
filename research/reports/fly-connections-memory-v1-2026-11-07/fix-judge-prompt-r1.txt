@@ -1,0 +1,9 @@
+Read .agents/skills/ponytail/SKILL.md first and follow it at ultra intensity. Repo root: C:/Users/ethan/Documents/fly-chess-research.
+
+Code review r1 (research/reports/fly-connections-memory-v1-2026-11-07/code-review-r1.md, section D) found a red criterion. Read that section and gate P2.2b in documentation/design/neural-learning/fly-connections-memory-v1-gates-2026-11-08.md (line starting "2b.").
+
+Edit only .codebase/src/neural-learning/fly-connections-judge-v1.mjs and .codebase/tests/neural-learning/fly-connections-judge-v1.test.mjs.
+Add a P2 check named exactly 'P2.2b own-baseline success improves (A T_AB vs T0, B T_AB vs T_B0)': using the informative-local arm only, compareByGame({ arms: { after: A success at B-end, naive: A success at T0 }, games: A gameIds (boardId order), primary: 'after', comparators: ['naive'], seed: gates.bootstrapSeed }) and the same for B with naive = B success at R1-end. pass when both lower > 0; detail holds both results. Include it in P2.pass. Keep all existing checks unchanged.
+Tests: the passing synthetic seed must still pass (adjust its fixture so success genuinely rises from baseline if needed); add one case where margins improve but success at B-end equals success at T0 for A, so P2.2b fails and only it.
+The off arm no longer writes 'ranking-reused' lines (job loop changed); keep readJob's support for them unchanged.
+You MAY run only: node --test .codebase/tests/neural-learning/fly-connections-judge-v1.test.mjs. No other commands, no git. End with: changes, test counts, anything not met.

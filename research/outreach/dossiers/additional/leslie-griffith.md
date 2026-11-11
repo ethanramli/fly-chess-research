@@ -22,7 +22,7 @@ Coverage: current profile, author list and abstract/selected accessible introduc
 
 Consolidation, physiological state and testable dopamine hypotheses. What post-training manipulation would distinguish consolidation from simple persistence of a saved efficacy value? This fit is an inference from the cited work and the project's current requirements. The teacher must supply experience and feedback; the physiological memory mechanism and required graph identities remain to be justified.
 
-**Proposed bounded diagnostic:** Proposed: distinguish acquisition, post-training processing and later retrieval in a prospective protocol with equal initial performance and matched state/control conditions. A biological consolidation mechanism would require additional evidence before implementation.
+**Proposed bounded diagnostic:** Distinguish acquisition, post-training processing and later retrieval in a prospective protocol with equal initial performance and matched state/control conditions. A biological consolidation mechanism would require additional evidence before implementation.
 
 **Limits and reasons to deprioritize:** DPM sleep circuitry and a review's reward-prediction proposal are distinct evidence levels. The study does not identify the prototype's reward target or establish biological retention. No availability, endorsement or commitment is established. Publishing in eLife does not establish special access or predict acceptance for FlyChess.
 

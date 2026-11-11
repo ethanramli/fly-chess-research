@@ -1,6 +1,6 @@
 # Training latency investigation
 
-Target: more than40% less elapsed training time than the current implementation, with identical experiences, neural trajectories, feedback, rankings, controls and recovery. The competitor's raw benchmark is unavailable, so any comparison must name the baseline actually measured.
+Target: more than 40% less elapsed training time than the current implementation, with identical experiences, neural trajectories, feedback, rankings, controls and recovery. The competitor's raw benchmark is unavailable, so any comparison must name the baseline actually measured.
 
 [Registration and mistakes](../../../research/journal/experiments/2026-10-19-training-latency.md) · [Raw evidence](../../../archive/early-development/research/reports/training-latency-2026-10-19/README.md)
 
@@ -8,16 +8,16 @@ Target: more than40% less elapsed training time than the current implementation,
 |---|---|---|
 | Teacher and assessment | Certificate verification, unaided rankings, exact memory binding | Repeated cue encoding and deterministic assessment work; cache only under complete state validity. |
 | Neural simulation | Full sparse graph, signs, eight steps, precision and summation order | Already uses serial WASM; measure recurrence, activation and data copies independently. |
-| Local learning |122 eligible edges, full local trajectories, equation and timing | Snapshot/rollback allocations and unnecessary repeated plan construction. |
+| Local learning | 122 eligible edges, full local trajectories, equation and timing | Snapshot/rollback allocations and unnecessary repeated plan construction. |
 | Evidence | Memory, state, local trajectory and receipt hashes | Cost of expanding full numeric arrays; retain evidence compatibility and independent replay. |
 | Persistence | Pending publication before acknowledgement, then durable acknowledged publication | Lossless binary state and native codecs; retain fsync/rename and both recovery barriers. |
-| Pacing | Duty0.5, heap256MiB, RSS768MiB, free256MiB | Existing callback pacing omits subsequent checkpoint CPU. Report whole-process duty as well as requested pacing. |
-| Recovery and audit | Exact continuation, no duplicate updates, full independent replay | Audit restarts from receipt0 after interruption; future resumable independent audit can avoid repeated work. Preserve the current live audit. |
+| Pacing | Duty 0.5, heap 256 MiB, RSS 768 MiB, free 256 MiB | Existing callback pacing omits subsequent checkpoint CPU. Report whole-process duty as well as requested pacing. |
+| Recovery and audit | Exact continuation, no duplicate updates, full independent replay | Audit restarts from receipt 0 after interruption; future resumable independent audit can avoid repeated work. Preserve the current live audit. |
 | Learning effectiveness | Frozen per-criterion gates, controls, disjoint transfer | Faster execution does not repair failed learning gates. Time to equivalent quality must accompany speed. |
 
 First measure existing-state persistence without loading a graph. Next select a representation after testing encode, durable publication, decode, bytes and equality. Preserve each source snapshot. Then, when authoritative process state permits serial graph work, profile complete informative lessons and matched controls: assessment, encoding, forward, plasticity, snapshots, hashing, both publications and pacing. Use identical parents and experiences in a new pinned engineering comparison; include interrupted/resumed pending-update recovery and independent replay. No production adoption or whole-training claim before that comparison.
 
-Measurements alongside the live audit are provisional. Report raw paired samples, conventional medians, CPU, peak RSS, exact commands and identities. A40% elapsed reduction differs from a40% throughput increase. No G0, chess transfer or biological gate follows from an engineering pass.
+Measurements alongside the live audit are provisional. Report raw paired samples, conventional medians, CPU, peak RSS, exact commands and identities. A 40% elapsed reduction differs from a 40% throughput increase. No G0, chess transfer or biological gate follows from an engineering pass.
 
 
 ## 2026-10-19 source-backed next candidates
@@ -38,4 +38,4 @@ The researcher requested first-principles investigation rather than stopping aft
 
 ## 2026-10-19 causal reuse feasibility
 
-The all-phase archived-state screen is complete. Cross-lesson corresponding states have median19.03% changed neurons; adjacent states have59.59%. Next measure exact causal rows using every retained intermediate state, current drive/alpha and permitted signed weights; equal outputs alone are insufficient. The registered trajectory-reuse-v1 observer still computes every row, verifies every claimed clean activity/next value and replays actual informative feedback plus controls with both durable publications. Timings include observation overhead and are not performance evidence. First validate the six-neuron integration, then execute the same72 selected lessons on the full graph. Whole-run timings and production adoption remain separate required work.
+The all-phase archived-state screen is complete. Cross-lesson corresponding states have median 19.03% changed neurons; adjacent states have 59.59%. Next measure exact causal rows using every retained intermediate state, current drive/alpha and permitted signed weights; equal outputs alone are insufficient. The registered trajectory-reuse-v1 observer still computes every row, verifies every claimed clean activity/next value and replays actual informative feedback plus controls with both durable publications. Timings include observation overhead and are not performance evidence. First validate the six-neuron integration, then execute the same 72 selected lessons on the full graph. Whole-run timings and production adoption remain separate required work.

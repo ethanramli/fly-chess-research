@@ -126,7 +126,7 @@ Do not describe this loop as frozen scoring (scoring while saved memory stays un
 
 **What happens**
 
-The planned eye-signal test sets a gain (a number that scales a effect of a connection) to 1.8. The learning rule inspected by the reviewer allows a maximum gain of 1.
+The planned eye-signal test sets a gain (a number that scales the effect of a connection) to 1.8. The learning rule inspected by the reviewer allows a maximum gain of 1.
 
 The plan also does not fully state how the fly's score for each move will be calculated.
 
@@ -196,7 +196,7 @@ Different boards could share a useful input pattern. Changes in neural memory co
 
 **Before this test can run**
 
-The separate answer file only helps when a board exactly matches one it has stored. That does not show how the fly will use training on a new board. Before testing new-board learning, specify how training changes the fly?s stored brain values and compare it with fair alternatives. We do not need to solve memory in living flies first.
+The separate answer file only helps when a board exactly matches one it has stored. That does not show how the fly will use training on a new board. Before testing new-board learning, specify how training changes the fly's stored brain values and compare it with fair alternatives. We do not need to solve memory in living flies first.
 
 [Saved evidence](school-components/findings.json). [Exact code or plan](../../../.codebase/src/neural-learning/episodic-consequence-memory.mjs:31).
 

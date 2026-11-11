@@ -50,6 +50,7 @@ The zero-reset candidate fails its frozen latency gate: black-after-e4 median 79
 
 Pivot: measured per-move forward recurrence still dominates (seconds, versus tens of milliseconds for encoding/ranking/administration). The prior archived phase profile also places almost all synchronous forward time in sparse recurrence; leak coefficient caching targets only about one millisecond per pass and is unlikely to resolve this bottleneck. Check existing local native/WASM tooling before proposing one bounded exact sparse-accumulation kernel, preserving edge order, topology/signs, complete state and pacing. No new dependency, backend implementation or graph run is authorized by this evidence alone beyond the researcher's existing speed request and resource limits; first define a small checked kernel and its memory bound, then register a new matched comparison without changing v1 gates.
 
+
 ### WASM staging newline mistake
 
 The first candidate-staging command assumed CRLF when replacing the recurrence block. Its uniqueness guard rejected the pattern before writing any source/candidate file; a following test invocation consequently found no test file. Only the empty destination directory was created. Inspect actual newline bytes, normalize the new candidate string for replacement, and preserve the original oracle bytes unchanged. No active trainer or frozen result was modified.
@@ -63,6 +64,7 @@ The saved prefix pins FlyBench runner SHA-256 `37b356fdebafa08f13896d53fbb578b4e
 ### WASM graph comparison launch
 
 The new candidate and fixed comparison are registered in [the WASM report](../../../archive/early-development/research/reports/move-latency-wasm-2026-10-10/README.md), with helper/candidate/oracle hashes and the unchanged four-fixture median/p95 gates. Synthetic f32/f64/full-buffer/derivative/choice checks and 221 full candidate checks pass. Authoritative process inspection finds no active graph/experiment process after tests completed. Launch exactly `node --max-old-space-size=256 research/reports/move-latency-wasm-2026-10-10/benchmark.mjs --out runs/move-latency-wasm-v1 --cpu-duty 0.5`, serially, with 768 MiB RSS / 256 MiB free-memory guards. Raw output and report are required before adoption; learning/transfer gates remain unmet.
+
 ## 2026-10-10: WASM comparison passes; audit before adoption
 
 The serial comparison is terminal. Independently recomputed all 32 recorded sample summaries, legal candidate coverage (92 successor positions), equal candidate scores/choices, source hashes and resource bounds; the audit passes. Every fixture improves its median with no worse p95 (four samples means this p95 is the observed maximum). Median reductions are 11.25% white-start, 23.18% black-after-e4, 21.45% six-ply opening and 16.52% rook endgame. Peak RSS is 135.39 MiB, elapsed 465.392 s, CPU 222.344 s, duty 0.5; end free memory 991.86 MiB. This small, variable host sample does not establish a universal latency guarantee or learning speedup.
@@ -72,6 +74,7 @@ The staged candidate remains frozen. Verify the existing HTTP server with the ca
 ### HTTP staging and production relocation
 
 Staged HTTP verification passes both colours: exact expected legal move, score, resulting board, PGN replay, history and wrong-turn rejection; the existing page is served. These fresh-server requests took 17.396 s (black after e4) and 11.001 s (white start), slower than warmed benchmark samples; no cold-request speed guarantee is inferred. The owned server was stopped after PID/start-time verification. Production trainer now contains the exact staged candidate with only its import relocated; oracle/candidate/report hashes are unchanged and the production source manifest pins the relocated hash. Unfiltered production regression and loader-free HTTP verification remain due before reporting completion.
+
 ### Completion collector encoding mistake
 
 Loader-free production HTTP checks pass both colours, exact move/score/FEN/history/PGN and wrong-turn rejection; requests took 7.209 s and 10.007 s, and the owned server was stopped after PID/start-time verification. The completion collector then incorrectly decoded PowerShell-redirected TAP as UTF-8. Its assertion failed because the preserved file is UTF-16LE with BOM; no completion file was published. This is an evidence-reading mistake, not a failed regression or neural computation. Read the actual BOM/encoding and recheck the existing output; do not rerun or rewrite the successful raw tests. The source and loader-free server identity checks had already passed.

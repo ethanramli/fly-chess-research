@@ -35,7 +35,7 @@ A bare cue/reward schedule omits state and post-training conditions that can det
 
 **Bounded question:** Which post-training state control would expose a model that mistakes software persistence for consolidation?
 
-**Possible next diagnostic, proposed only:** Proposed methodological comparison: separate the cue/reward schedule from a justified post-training-state intervention, and measure later retrieval with identical test conditions. No new metabolic mechanism is adopted by this dossier.
+**Possible next diagnostic, proposed only:** Separate the cue/reward schedule from a justified post-training-state intervention, and measure later retrieval with identical test conditions. No new metabolic mechanism is adopted by this dossier.
 
 **Limits and reasons this may be the wrong contact:** These experiments include biological metabolic and endocrine machinery absent from our simulation. They do not justify renaming a scalar energy or translating simulated time into measured retention.
 

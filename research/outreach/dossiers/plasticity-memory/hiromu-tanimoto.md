@@ -18,7 +18,7 @@ The Neuroethology lab studies Drosophila learning and memory, including memory f
 ## Current and relevant work
 
 - **2026 — “Presynaptic computation of reward intensities through the dual autoreceptor system,” Current Biology.** The paper reports opposing roles for Dop1R1 and Dop2R in gain control of reward signals in Drosophila dopaminergic neurons, including responses to different reward intensities. [S4]
-- **2024 — “Synaptic enrichment and dynamic regulation of the two opposing dopamine receptors within the same neurons,” eLife.** This study examines localization and regulation of opposing dopamine receptors within the same neurons, offering a concrete cellular mechanism beyond a scalar reward input. [S5]
+- **2024 reviewed preprint; 2025 version of record — “Synaptic enrichment and dynamic regulation of the two opposing dopamine receptors within the same neurons,” eLife.** This study examines localization and regulation of opposing dopamine receptors within the same neurons, offering a concrete cellular mechanism beyond a scalar reward input. [S5]
 - **2022 — “Nutrient responding peptide hormone CCHa2 consolidates appetitive memory,” Frontiers in Behavioral Neuroscience.** The study links nutrient signals to reward dopamine neurons in appetitive long-term memory consolidation. [S1, S6]
 
 ## Specific overlap with FlyChess

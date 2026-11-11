@@ -34,7 +34,7 @@ Lesson preparation lacked CPU/RSS/time guards for a larger batch. Added bounded 
 
 The first prepare-train invocation (runs/python-actions/20261022T030437-2b955012/) failed ENOENT before creating its output because the new batch's parent directory did not exist and the existing producer requires a prepared parent. Correct the orchestration by creating that intended fresh batch container, then explicitly rerun the registered check after confirming no train output exists. No existing publication, source, scientific setting or failure receipt is overwritten.
 
-## 2026-10-22 04:34 UTC — interrupted jobs, bounded chunk recovery and CSV audit
+## 2026-10-22 04:34 UTC : interrupted jobs, bounded chunk recovery and CSV audit
 
 Resume-0003 G0 stopped without stderr/result/audit; supervisor handle was missing. Cause remains unknown. Unchanged babysit resumed complete checkpoint018958 (9477 receipts, pending=true; SHA256 e3cc5170a2cf2d9d977fb8d4b9678d13bd9461c9c4b413231c45e068303a2250) into resume-0004/PID6516, invocation runs/python-actions/20261022T042323-d2e5b668/. Native process and supervisor confirm live advancement through checkpoint019588/9792 receipts. No scientific gate change or identified interruption cause.
 
@@ -48,7 +48,7 @@ Independent CSV lesson audit now reconstructs source prefixes without importing 
 
 Offline CSV auditor checks pass4/4 in runs/python-actions/20261022T043707-d9a48c46/. An additional displayed-FEN tamper case covers the explicit equality guard. Initial3-check success is preserved in20261022T043516-18ceacf3. Fresh production audit registration/config pins all prior source inputs and the preparation config; plan has only the not-yet-published complete batch manifest as blocker. Its result is pending, not a source/learning pass. The check-only chunk helper saves pending identities in its checkpoint, not the outer main state handle: root status can report untracked while its owned tool/child is live. This was confirmed against the actual checkpoint/PID; no duplicate restart was attempted.
 
-## 2026-10-22 — v5 chunk timeout and domain-filter pivot
+## 2026-10-22 : v5 chunk timeout and domain-filter pivot
 
 Production v5 terminated exit1, supervisor49665 terminal, at prepare-train-002 with Lesson preparation elapsed bound. First two32-row chunks remain published (64 total); the failed third partial and all logs are preserved. Second chunk took296.62s, so the prior assumption that every32-row group fits300s was wrong. No graph or source gate changed. G0 PID6516 remains live at checkpoint019774 at discovery.
 
@@ -70,7 +70,7 @@ Compatibility check stage1-filter-compatibility.json finds the first32 v5/v6 row
 
 ### Measured bottleneck and removal of irrelevant branch
 
-Bounded training-row80 profile lesson-profile-row80.json: source binding224ms, lesson2118ms;35 history calls (~670ms inclusive),70 PGN calls (~1368ms inclusive),35 legal-move calls (~134ms),17 candidate actions. Installed chess.js source confirms history()/pgn() rewind and replay the entire source prefix. These inclusive single-row times do not prove whole-corpus attribution, but identify repeated expensive operations on the actual call path. The next minimal patch will validate root/history/options and enumerate all legal actions once per batch, preserve exact individual certificate schemas and independently recheck consequences. No altered labels or FEN-only/history reset.
+Bounded training-row80 profile lesson-profile-row80.json: source binding224 ms, lesson 2118 ms; 35 history calls (~670 ms inclusive), 70 PGN calls (~1368 ms inclusive), 35 legal-move calls (~134 ms), 17 candidate actions. Installed chess.js source confirms history()/pgn() rewind and replay the entire source prefix. These inclusive single-row times do not prove whole-corpus attribution, but identify repeated expensive operations on the actual call path. The next minimal patch will validate root/history/options and enumerate all legal actions once per batch, preserve exact individual certificate schemas and independently recheck consequences. No altered labels or FEN-only/history reset.
 
 Removed the irrelevant stage1-filter branch from live code by restoring before-sources; archived every changed implementation/test in *-abandoned-stage1-filter files, preserved v6 registration/run/operator-stop record. Its data-specific hypothesis was refuted, and it is not a retained production solution. The four normal CSV auditor checks remain the intended baseline. New batch preparation/checking must pass equivalence and malformed-certificate tests before registration.
 
@@ -80,7 +80,7 @@ Refactored the existing capture-retention action domain to expose bounded all-le
 
 25 source/history/equivalence checks pass (20261022T045221-bbddeb35): individual-versus-batch proof/check equality on full-history and small-board fixtures, unchanged board/history, omitted/duplicate/reordered/bad-context rejection and bounded unknown/no teaching. Four independent CSV corruption checks pass (20261022T045229-e25d8b88). The same instrumented row80 after patch takes150ms binding/162ms lesson, versus224/2118ms before; PGN calls70->4, history35->3, moves35->2. This is a single-row development profile, not a matched whole-corpus resource/performance claim.
 
-Registered v7 same256 source rows/eight32-row chunks with unchanged300s/resource bounds and no stage1-only flag. Sources/protocol in lesson-batches-v7-registration.json; supervisor71572. At latest compact native observation all128 training rows published (20 producer-domain-eligible) and validation chunk000/PID6016 live. G0 unchanged PID6516 live, checkpoint021006/10501 receipts/stage18, no result/audit. Next complete package -> registered independent audit-lessons plus verify-equivalence in python actions/lichess-csv-lesson-audit-v7-step.json. The latter compares exact lesson bytes of the64 prior completed v5 training rows; neither check grants family or neural-learning acceptance.
+Registered v7 same 256 source rows/eight 32-row chunks with unchanged 300 s/resource bounds and no stage1-only flag. Sources/protocol in lesson-batches-v7-registration.json; supervisor 71572. At latest compact native observation all 128 training rows published (20 producer-domain-eligible) and validation chunk 000/PID 6016 live. G0 unchanged PID 6516 live, checkpoint 021006/10501 receipts/stage 18, no result/audit. Next complete package -> registered independent audit-lessons plus verify-equivalence in python actions/lichess-csv-lesson-audit-v7-step.json. The latter compares exact lesson bytes of the 64 prior completed v5 training rows; neither check grants family or neural-learning acceptance.
 
 ### Training-only feedback contrast audit
 
@@ -96,7 +96,7 @@ Registered verify-equivalence completed exit0 in20261022T045545-2bc29ec5; lesson
 
 The training-only contrast limitation remains the next data-design blocker: no within-root mix of successful and failed captures, so admitted rows can reward a capture shortcut. Preserve all current data and design a separately registered matched-counterfactual/comparator condition rather than reinterpret current task failures as generally bad moves. Finish ongoing frozen G0/independent audit before selecting receiver changes. Full curriculum command/learning/transfer objective remains active and incomplete.
 
-## 2026-10-22 — legal-branch capture contrast feasibility design
+## 2026-10-22 : legal-branch capture contrast feasibility design
 
 Current source/certificate pipeline is complete, but training-only review found no root with both successful and failed captures. Next data-only study asks whether the existing128 training histories admit a strict guarded/unguarded comparison through legal continuations. No validation/final lesson content may guide this construction; no graph or new biological mechanism.
 
@@ -130,7 +130,7 @@ Use the existing streaming curator/reservoir/source auditor, add an explicit tra
 
 Registration generation hashes the large existing archive/CSV and outlived the initial terminal observation. I prematurely invoked the dependent curate command before the config existed; it failed FileNotFoundError before any source job/run output. No curation or graph launch occurred from that failed invocation. Wait for the SAME registration-generation handle89748 to finish, inspect the fresh config, then explicitly launch the registered scan. Do not treat an observation timeout as readiness.
 
-## 2026-10-22 — prepared quiet-action feedback integration gap
+## 2026-10-22 : prepared quiet-action feedback integration gap
 
 While the source scan/G0 continue, traced StockfishValueBrain -> DualValencePuzzleBrain -> MappedPuzzleBrain replay. All three call frozen verifiedExperience, whose capture-retention branch requires a capture and rejects the new declared noncapture certificate. The temporal capture-specific session already supports those exact all-legal task failures. Thus the isolated endpoint/Stockfish outcome adapter cannot yet consume a whole prepared lesson. This is an implementation mismatch, not evidence that a quiet move is a chess error or that biological learning fails.
 
@@ -144,19 +144,19 @@ The registered source-completion driver invocation20261022T054457-d7e06e9b exite
 
 Archive failed driver/test source, consume the existing native command parser when an attached receipt has no argv, normalize the same Windows path/case representation as attach, and update the fixture to the real attached-receipt shape. Preserve failed registration/logs; run revised tests and use a fresh v2 handoff registration. No source restart or scientific gate change.
 
-## 2026-10-22 — quiet-action endpoint fix verified
+## 2026-10-22 : quiet-action endpoint fix verified
 
 The shared adapter verification method routes exact capture-retention tasks through the existing capture-or-quiet checker and preserves the frozen generic verifier for other tasks. Mapped, two-valence and isolated Stockfish adapters reuse it; no duplicated per-caller certificate rules.34/34 related software checks pass in runs/python-actions/20261022T053053-1b4d8e11/: certified quiet task failure through outcome-only and base replay, unknown/forged quiet proof before any presentations, and unchanged old capture verification. Existing reward perspective, fixed wiring, actor, bounded current and absent/disabled controls pass. These are eight-cell/interface fixtures, not a connectome learning result. Before sources/identities preserved in the task-outcome report's quiet-action-integration folder. Frozen verified-feedback.mjs and all G0 dependencies remain unchanged.
 
 Initial resource search used an incorrectly escaped Python-actions path; corrected quoting found the existing Stockfish review config. Native Stockfish19 is already vendored and historical target probes exist, so no install or replacement engine is needed. Those old probes use FEN-reset positions and are not a registered history-preserving curriculum feedback pipeline. Combined verified-outcome-plus-engine delivery, same-cue prediction/update alignment, controls and a full independent campaign remain unfinished. No speculative replacement value hypothesis was adopted.
 
-## 2026-10-22 — autonomous source completion handoff v2 live
+## 2026-10-22 : autonomous source completion handoff v2 live
 
 The existing source process was attached read-only through python actions/lichess-matched-capture-source-observer.json. Corrected v2 driver tests pass5/5 in20261022T054603-c7c2f6e8, now using the actual attach receipt's command-string shape. Fresh v2 handoff launched under supervisor85558 via python actions/lichess-source-completion-v2-step.json. It observes the SAME source PID11060/registration and will run only registered audit-source after matching clean completion plus complete manifest. It stops on changed/unknown ownership, expired observation, bad/missing completion or failed audit; never restarts source work, fetches PGNs or launches a graph.
 
 Actual state research/reports/lichess-foundations-pilot-2026-10-21/source-completion-watch-v2/state.json is waiting with3,000,000 scanned lines/123 preliminary legal matches/zero rejected at the most recent sparse milestone. This exceeds64 reservoir slots but the full pinned scan must still finish and audit; no premature corpus publication or feedback claim. **The driver now owns the next independent source audit: do not launch it manually in parallel.** Same source run identity is preserved. Driver output is milestone/terminal only; raw logs remain in action invocations. No source audit has passed yet.
 
-## 2026-10-22 — training-only lesson audit prerequisite
+## 2026-10-22 : training-only lesson audit prerequisite
 
 The matched-capture source scan and automatic source-audit handoff are live; last sparse milestone4,000,000 rows/172 preliminary matches. No source manifest or audit yet. Next actual-PGN/lesson preparation will have training rows only. The existing CSV lesson auditor unconditionally opens a validation PGN manifest even when the declared source-onlySplit=train has zero validation rows; the fetcher correctly does not request zero games. This would block the legitimate new pipeline.
 
@@ -172,7 +172,7 @@ Automatic source-to-audit handoff v2 completed cleanly:44 selected training rows
 
 Next registered study changes only the input to the same bounded legal continuation constructor: the newly certified44 mixed-capture roots replace the former128 roots with zero within-root mixed captures. Hypothesis: useful king-guard counterfactuals may be more available. All acceptance rules and bounds remain unchanged (512 branches/16 families/300s/duty0.5/RSS2048/minfree256). Zero yield remains negative evidence; no automatic relaxation or repeat. Registration legal-branch-matched-capture-v1-registration.json and action lichess-matched-capture-legal-branches-v1-step.json pin source/audit/inputs. No graph launch.
 
-Live G0 owner PID6516 independently confirmed at checkpoint025902/12949 receipts/stage22,182MiB, no stderr/result/audit. Continue frozen run. A guessed old branch config filename was absent; rg located the actual v2 config before registration.
+Live G0 owner PID 6516 independently confirmed at checkpoint 025902/12949 receipts/stage 22, 182 MiB, no stderr/result/audit. Continue frozen run. A guessed old branch config filename was absent; rg located the actual v2 config before registration.
 
 Verified exact seven-check invocation name from filesystem:20261022T060535-8eaebeba. An attempted capture-retention-temporal-session.mjs read was absent; rg confirmed the actual shared file temporal-feedback-session.mjs. No inference relies on a guessed path. Documentation/current handoff now distinguishes completed source/audit/PGN/lesson work from the owned continuation job and live G0.
 

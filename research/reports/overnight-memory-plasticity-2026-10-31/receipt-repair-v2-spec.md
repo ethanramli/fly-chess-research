@@ -1,4 +1,4 @@
-# Receipt/checker repair v2 — authorized 2026-10-31
+﻿# Receipt/checker repair v2. Authorized 2026-10-31
 
 The researcher explicitly approved lead-authored fixture/adapter/test repair after the required Haiku provider was rate-limited. This changes authorship authorization only: no deadline, original results/gates preserved, two mechanism families and six repair loops maximum. This evidence-plumbing repair uses loop6. It does not introduce a third memory family or alter any learning equation, stimulus, feedback schedule, readout, exposure or acceptance threshold.
 

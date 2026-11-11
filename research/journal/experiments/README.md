@@ -88,9 +88,7 @@ Chronological implementation and experiment history. Pending statements are hist
 - [Bidirectional assay repair: stateful recovery, independent behavioral evidence and frozen v4](2026-10-08-bidirectional-assay-repair.md)
 
 
-- [2026-10-09 cue width at matched total current](experiments/2026-10-09-cue-width-dose-hypothesis.md)
-
-- [2026-10-09 cue width at matched total current](experiments/2026-10-09-cue-width-dose-hypothesis.md)
+- [2026-10-09 cue width at matched total current](2026-10-09-cue-width-dose-hypothesis.md)
 
 - [2026-10-09 gamma2 adaptive cue-capacity test](2026-10-09-gamma2-adaptive-cue-capacity.md)
 
@@ -111,7 +109,7 @@ Chronological implementation and experiment history. Pending statements are hist
 - [2026-10-23 Stage 1 synthetic microfamily feasibility](2026-10-23-babysit-synthetic-microfamilies.md): found candidate four-stratum layouts from train/validation roots; concrete tasks and independent audit remain absent.
 - [2026-10-23 first-solution microfamily correction](2026-10-23-babysit-synthetic-microfamilies-v2.md): requires the Lichess first solution move; current pool has only 4 suitable train roots and 5 validation roots.
 - [2026-10-23 expanded first-solution source corpus](2026-10-23-babysit-first-solution-source-corpus.md): separate train-only/validation-only curated jobs are registered; train curation is in progress, final remains excluded.
-# Active babysit implementation notes
+## Active babysit implementation notes
 
 - [Stage 2 bounded avoid-mate verifier](2026-10-23-stage2-avoid-mate-domain.md): narrow opponent-mate certificate semantics; primitive only, no Stage 2 runtime or launch authorization.
 
