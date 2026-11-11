@@ -26,11 +26,15 @@ Honor an explicit level or mode. Otherwise choose the lowest level that addresse
 
 ## Medium — choose an approach and reflect
 
-1. Define the result you need and the evidence you have. Choose an approach that fits the problem. For example, trace a failure from input to output, work backward through dependencies, or solve a smaller case before generalizing. State why that approach fits.
+**Understand the goal.** Translate the request into a concrete deliverable and a check the user would recognize as success. Name any constraint or assumption that could change the approach.
+
+1. Choose an approach that fits the problem. For example, trace a failure from input to output, work backward through dependencies, or solve a smaller case before generalizing. State why that approach fits.
 2. Carry it out in a sensible order. At a checkpoint, ask what you expected, what actually happened, and which assumption the result strengthens or weakens.
 3. Use that reflection to keep, revise, or replace the approach. Verify the result against the original task. Check whether the chosen approach left a meaningful part unaddressed.
 
 ## Heavy — diagnose, research, propose, critique, iterate
+
+**Understand the goal.** Identify the decision this work must support. Define what each viable option must achieve, which tradeoffs the user cares about, and what evidence would change the choice. Resolve material ambiguity about those priorities before ranking options.
 
 1. **Diagnose.** Identify plausible causes or designs, the current baseline, and the evidence that would distinguish them.
 2. **Research.** Use Deep Research to check claims that could change the choice. Verify the relevant sources and compare alternatives under matching conditions where possible.
@@ -41,6 +45,8 @@ Honor an explicit level or mode. Otherwise choose the lowest level that addresse
 ## deep-in-thought — investigate from first principles
 
 Use this when the diagnosis, the question, or the evidence needed to make progress may itself be wrong. The goal is to produce a defensible new result when the available evidence and authorization allow it.
+
+**Understand the goal.** Trace the immediate request back to the larger project aim. Separate that aim from the current hypothesis, method, and metric. State what the project actually needs to learn, what evidence would count as progress, and which constraints must hold. Revisit the framing if the diagnosis or critique exposes a mismatch. Preserve the user's goal unless they authorize a change.
 
 1. **Diagnose.** Reconstruct the observation from original evidence and trace the project blocker. Write the best current explanation and credible alternatives.
 2. **Evaluate the diagnosis.** Check whether the measurement can detect the effect, whether the observation supports the diagnosis, and whether a rival explanation fits the same evidence. Separate established results from interpretations.
