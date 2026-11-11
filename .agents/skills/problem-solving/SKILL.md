@@ -11,10 +11,12 @@ Move the user's goal forward with the smallest amount of work that can resolve t
 
 | Level | Use it when | Default mode |
 | --- | --- | --- |
-| **Light** | The next action is clear and the main risk is drifting from the goal. | Solo |
-| **Medium** | The goal is clear, but diagnosis or execution needs several dependent steps. | Solo |
-| **Heavy** | Multiple plausible causes or designs could change the result, or a wrong choice would cause substantial rework. | Group |
-| **deep-in-thought** | A project-critical roadblock threatens the goal and the problem framing, evidence, or solution remains materially uncertain. | Group |
+| **Light** | The task needs structured, practical thinking focused on action and scope. Step back and ask whether the current action, feature, or optimization actually helps the overall goal. Use Ponytail to stop scope creep. | Solo |
+| **Medium** | The task needs a deliberate approach and sequential thinking within a defined scope. Choose how to tackle it, reflect on your own work as you go, and adjust the approach when the results call for it. | Solo |
+| **Heavy** | A harder problem has several plausible causes, designs, or solutions. Diagnose it, research the relevant evidence, propose a solution, and have two independent models with different points of view find flaws. Iterate on the proposal. Use this for most hard problems. | Group |
+| **deep-in-thought** | Reserve this for the hardest, make-or-break problems, such as a roadblock that prevents the project from advancing. Evaluate the diagnosis, question why, what, and how from first principles, and identify what is unknown. Deep-research and evaluate the evidence, form hypotheses, propose a test, and iterate with three independent models applying peer-review, scientific, and foundational skepticism. Work toward a concrete plan that can produce new scientific evidence. | Group |
+
+Apply Light's focus and scope check at every level.
 
 Honor an explicit level or mode. Otherwise choose the lowest level that addresses the stakes, uncertainty, reversibility, and cost of error. Escalate when a check exposes a consequential unknown or invalidates the plan. Step down once the critical uncertainty is resolved. Treat these as workflow choices and use runtime reasoning settings only when the host supports them and the request authorizes them.
 
