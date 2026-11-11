@@ -4,17 +4,25 @@ Read the relevant section when using [Problem Solving](SKILL.md). The workflow a
 
 ## Review the proposal
 
-Give each reviewer the goal, constraints, raw evidence where available, and enough of the proposal to challenge it. Keep first reviews independent. Ask each reviewer to identify the most consequential failure they can substantiate, the evidence it conflicts with, and a check or revision that would resolve it. A reviewer may find no material flaw after testing the main assumptions.
+Use the same three reviewer roles across effort levels. In Heavy Group mode, choose two that cover the proposal's most serious risks. The scientific skeptic and peer reviewer are a useful default. Choose the foundational skeptic when the definition, measurement, or premise is in doubt. In deep-in-thought Group mode, use all three.
 
-| Level and reviewer | Brief |
-| --- | --- |
-| Heavy · Diagnosis and evidence | Try to overturn the diagnosis. Find a credible rival that explains the observations, an unsupported source claim, or a comparison that fails to separate causes. Give a specific check. |
-| Heavy · Design and implementation | Assume the proposal ships. Find a realistic condition where it fails, changes existing behavior, or misses the goal. Give a minimal failing case and say what would make the plan viable. |
-| deep-in-thought · Peer-review skepticism | Review the proposed claim as a demanding referee. Check whether figures and sources support it, whether the method is reproducible, and where scope or novelty is overstated. Identify the most serious issue before approval. |
-| deep-in-thought · Scientific skepticism | Try to falsify the hypothesis and break the test. Look for competing mechanisms, confounds, leakage, controls that all rivals would pass, and outcomes that remain ambiguous. Propose the sharpest discriminating check. |
-| deep-in-thought · Foundational skepticism | Challenge why the mechanism is expected, what the variables and success criterion mean, and how the proposed evidence can establish the claim. Find a faulty premise, counterexample, or framing that changes what can be learned. |
+Give each reviewer the same proposal, goal, constraints, and relevant raw evidence. Add their own brief. Collect their first assessments independently, then compare objections. Reuse reviewers for follow-up on revisions when their previous work is relevant.
 
-Record each material objection, the step it affects, the check or evidence that resolves it, and the resulting revision or remaining uncertainty. Ask for another review when the revision changes a decisive claim. Record the actual reviewer setup if model selection or delegation was limited.
+| Reviewer | Question to own | How to challenge the proposal |
+| --- | --- | --- |
+| **Peer reviewer** | Could someone reproduce this result and defend the wording? | Pick the strongest claim. Trace it to the exact data, methods, and sources. Look for missing details, selective reporting, and claims beyond the cases tested. Return the strongest claim the evidence supports. For implementation work, check whether the change and its verification cover real inputs, existing behavior, and failure cases. |
+| **Scientific skeptic** | Could a different mechanism produce the same result? | Name a credible rival. State what each explanation predicts. Check for leakage, unequal conditions, and controls both explanations would pass. Propose a check where the rivals predict different outcomes. |
+| **Foundational skeptic** | If the proposal succeeds exactly as planned, will it answer the right question? | Challenge the premises, definitions, and measurement. Construct a case where the test passes without the intended behavior. Identify what must change in the question or measurement if the counterexample holds. |
+
+Each reviewer returns the exact claim or assumption they challenge, a concrete way it could fail, and the smallest check or revision that could settle the objection. They may report that no material flaw survived their checks. Record what each objection changed. An objection to the measurement can reopen the outcome definition. A rival mechanism can reopen the experimental design. A problem with reproducibility or scope can narrow the claim. Ask for another review when a revision changes a decisive claim.
+
+### Example — a claim about transfer in FlyChess
+
+Suppose a proposal says, "FlyChess learned a transferable concept because it scored higher on unseen boards."
+
+- The **peer reviewer** asks which boards were unseen, how they were selected, and whether another team could reproduce the result from the saved runs and scoring procedure. The evidence may support a narrower claim about performance on the evaluated boards.
+- The **scientific skeptic** asks whether more search could explain the gain. Compare trained and untrained conditions on the same positions under the same search budget.
+- The **foundational skeptic** asks whether unseen boards actually test concept transfer. A familiar tactical template can recur on a new board. Test positions where the concept still applies and the familiar template would lead to the wrong move.
 
 ## Choose a check
 
