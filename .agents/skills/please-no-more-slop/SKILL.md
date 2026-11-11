@@ -32,6 +32,6 @@ Make the reader's job easy. A name should tell them what a thing is. A paragraph
 
 Dense: "The single-shot capacity gate failed. A later sequential exact search found settings on all three boards."
 
-Clear: "The planned check required success on all three chess positions. It succeeded on one. A later search found settings that worked for each position, but that search came after the planned check failed and has yet to receive independent review."
+Clear: "The planned test required a safe capture to score highest in at least two of three chess positions. That happened in one position. A more extensive search later found settings that made a safe capture score highest in each of the three positions. That search came after the planned test failed and has yet to receive independent review."
 
 For a specialist who needs the method, add the exact test name and how the search differed once you verify those details.
