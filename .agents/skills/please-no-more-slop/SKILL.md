@@ -48,39 +48,9 @@ Use these bands to sanity-check the score. **1–2** reads cleanly with minor fr
 
 Report the score, the five category scores, and the top one or two problems with exact quotes. Say what the intended reader would misunderstand or have to look up. Offer a short rewrite when it helps. When comparing drafts, list the clearest first and allow ties. Flag a material accuracy error separately even when the total score is low. If sources are missing, mark source accuracy unverified. Score any visible scope problem. Use 0 provisionally if none is visible and label the total provisional.
 
-## FlyChess examples from Git history
+## Examples
 
-Scores below use the category order above. Treat the excerpts as historical writing samples.
-
-### Clear writing
-
-**1/10 (0, 0, 0, 0, 0).** For a new teammate checking the research goal.
-
-> 2. **Reasoning, as the researcher defines it:** "being able to apply many unrelated concepts to solve an unfamiliar problem". No result so far meets this.
-
-The definition makes an abstract word usable. The next sentence gives the evidence status immediately. [November 1 status](https://github.com/ethanramli/fly-chess-research/blob/82af13ff69e3d5b707711ede9b3fbf02093f34cb/documentation/current-status.md#L8)
-
-**1/10 (0, 1, 0, 0, 0).** For a new teammate checking where the run stopped.
-
-> v6 (frozen replication on 573 positions from 300 new games) was stopped at 6 of 24 jobs for a shutdown; relaunch is the next step.
-
-The sentence gives the run size, how far it got, why it stopped, and the next step. "Frozen replication" is the one phrase a newcomer may need explained. [November 5 status](https://github.com/ethanramli/fly-chess-research/blob/c1ce57bc0fea3ab52c5c66e4d1ed12ae1eb3d75a/documentation/current-status.md#L5)
-
-### Writing that makes the reader decode the point
-
-**5/10 (0, 2, 2, 1, 0).** For a new reader of the historical README.
-
-> Can a connectome-constrained model acquire task-relevant strategic evaluation from explicit position-assessment supervision and use it to generalize to previously unseen chess positions?
-
-The question is easy to locate. The reader still has to unpack "task-relevant strategic evaluation" and guess what supervision the model receives. The nested phrasing adds work to a single question. [Early README](https://github.com/ethanramli/fly-chess-research/blob/f830ada349805b807d4628c3f9c7646d7329683e/README.md#L7)
-
-One rewrite for that historical plan: "Can a model built around a map of a fly's brain connections learn to judge chess positions from examples of how those positions are assessed, then judge new positions?" The early plan used explicit assessment as supervision.
-
-**7/10 (1, 2, 2, 2, 0).** For a researcher in a related field reading the status update.
-
-> The revision-4 predeclared single-shot capacity gate on the widened 6,046-gain mask found one exact win out of three and failed. A later sequential exact search found settings on all three boards, but it followed gate failure and has not had independent review. The earlier 2,096-gain result is a negative bound for a linear surrogate, not an exact-network impossibility proof.
-
-The result follows a long test label. The passage leaves "exact win" and the passing threshold undefined. It compresses three different checks into three sentences without giving the reader a way to connect each check to the question it answered. It does preserve the order of the tests and the limits of the evidence. [November 9 status](https://github.com/ethanramli/fly-chess-research/blob/6275c9ce87c3e4a04450b1b293234077c1ac4737/documentation/current-status.md#L7)
+Use [the 30 scored examples](writing-slop-examples.md) when calibrating a rating or when asked to show examples. The reference has three examples for each score from 1 to 10.
 
 ### Source-checked rewrite of the planned test and later search
 
