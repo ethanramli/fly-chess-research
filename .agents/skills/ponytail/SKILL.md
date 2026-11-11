@@ -1,100 +1,50 @@
 ---
 name: ponytail
-description: >
-  Keep code changes as small as possible while fully solving the task. Use on
-  coding tasks: writing, adding, refactoring, fixing, reviewing or designing
-  code, and choosing dependencies. Also use when the user asks for a simple or
-  minimal solution, asks to do less, or complains about over-engineering,
-  boilerplate, bloat or unnecessary dependencies. Levels: lite, full (default)
-  and ultra. Do not use for general knowledge, prose, translation, summaries
-  or recipes.
-argument-hint: "[lite|full|ultra]"
+description: >-
+  Make the smallest complete change to write, fix, review, or refactor code.
+  Use for coding tasks, dependency decisions, and requests for a simpler
+  implementation or less complexity. Levels are lite, full (default), and
+  ultra. Use off to return to normal mode.
+argument-hint: "[lite|full|ultra|off]"
 license: MIT
 ---
 
 # Ponytail
 
-Be a pragmatic senior developer. Use the smallest change that fully solves the
-task. Skip work the user does not need.
+Make the smallest change that fully solves the user's problem and preserves the behavior callers rely on. Based on [Ponytail v5.3.3 by DietrichGebert](https://github.com/DietrichGebert/ponytail/releases/tag/v5.3.3).
 
-## Persistence
+## Understand what must work
 
-Keep this mode active for every response. Turn it off only when the user says
-"stop ponytail" or "normal mode". The default level is full. Change the
-level with `/ponytail lite|full|ultra`.
+- Read the current behavior through its normal entry points. Trace the affected callers, data, tests, fixtures, configuration, and exports as far as the change reaches.
+- For a bug, find the common cause. Fix it once where the affected callers share the same requirement. Check that other callers of that code retain their existing behavior.
+- Account for existing data, partial failures, retries, and concurrent calls when they affect the change. Make reversible implementation choices and keep working when the request already authorizes them.
 
-## Decision order
+## Choose the first complete solution
 
-Use the first option that fully solves the task:
+1. Remove work that serves no current requirement.
+2. Reuse the repository's existing behavior, components, and conventions.
+3. Use the standard library or a native platform feature.
+4. Use a dependency the project already has.
+5. Write the smallest readable implementation that covers the required cases.
 
-1. Does it need to exist? Skip speculative work and say so in one line. For a vague request, build the smallest version that solves the core need.
-2. Does the codebase already solve it? Reuse an existing function, type or pattern. Read nearby code before writing a new version.
-3. Can the standard library do it? Use it.
-4. Can a platform feature do it? Prefer `<input type="date">` to a picker library, CSS to JavaScript, or a database constraint to application code.
-5. Can an installed dependency do it? Use it. Do not add a dependency for a few lines of code.
-6. Is a one-line version clear and correct? Use it.
-7. Otherwise, write the smallest code that works.
+Keep the diff small and easy to read. Keep code in the project's existing layers. Add a dependency or abstraction when an actual requirement justifies it. Keep validation, permissions, accessibility, recovery from data loss, and hardware calibration wherever they matter. When a deliberate shortcut has a real limit, use a short `ponytail:` comment that names the limit and what would require revisiting it.
 
-Understand the task before choosing an option. A short change still needs to
-cover every required caller, test, fixture, configuration and export.
+## Verify and report
 
-**Fix bugs at their shared cause.** Before editing a function, search all its
-callers. If every path passes through one shared function, fix the problem
-there once. A patch only in the reported path can leave sibling callers broken.
+Run the smallest existing check that exercises the changed behavior through its normal entry point. For nontrivial behavior, add a focused regression check when existing coverage would miss the failure. Use the repo's usual test setup. A trivial change can use an appropriate lightweight check.
 
-## Rules
+Say what changed and what the verification established. For example, "The restart test passed. The saved job resumed once and preserved its previous results." State material verification gaps briefly. Give the detail the user asked for.
 
-- No unrequested abstractions: no interface with one implementation, no factory for one product, no config for a value that never changes.
-- Do not add boilerplate or placeholder code for hypothetical future work.
-- Prefer straightforward code that is easy to understand.
-- Keep the working diff and file count small after you understand the problem. A small patch in the wrong place can create another bug.
-- For complex requests, build the smallest version that meets the core need. State what you skipped and when a fuller version would help.
-- **After clear approval, act.** For small, reversible choices, choose a reasonable default and state it afterward. Ask first when a choice affects architecture or cannot be changed later. For example, after approval to build competitor pages, use a reasonable competitor list instead of asking the user to supply one.
-- If two standard-library options take similar effort, choose the one that handles edge cases correctly. Keep the code short without sacrificing correctness.
-- Mark deliberate simplifications with a `ponytail:` comment (`// ponytail: this exists`), simple reads as intent, not ignorance. Shortcut with a known ceiling (global lock, O(n²) scan, naive heuristic)? The comment names the ceiling and the upgrade path: `# ponytail: global lock, per-account locks if throughput matters`.
+## Modes
 
-## Output
+Use `/ponytail lite|full|ultra|off` where slash commands are supported, or accept the same mode in plain language. Keep the selected mode for coding work in this session until the user changes it, says "stop ponytail" or "normal mode", or ends the session.
 
-Give code first. Follow it with at most three short lines about what you skipped
-and when to add it. Do not add a feature tour or a long defense of a small
-change. If the user asks for a report, walkthrough or phase notes, provide them.
-
-Pattern: `[code] → skipped: [X], add when [Y].`
-
-## Intensity
-
-| Level | What change |
-|-------|------------|
-| lite | Build what's asked and name a simpler option in one line. The user chooses. |
-| full | Use the decision order above. Prefer the standard library and platform features. Keep the change and explanation short. This is the default. |
-| ultra | Skip work that is not needed. Prefer deleting code. Question requirements that add work without serving the stated need. |
-
-Example: "Add a cache for these API responses."
-- lite: "Done, cache added. FYI: `functools.lru_cache` covers this in one line if you'd rather not own a cache class."
-- full: "`@lru_cache(maxsize=1000)` on the fetch function. Skipped custom cache class, add when lru_cache measurably falls short."
-- ultra: "Wait for a profiler to show that a cache is needed. Then start with `@lru_cache`. Add a custom TTL cache only if it meets a measured need that `lru_cache` does not."
-
-## Keep required protections
-
-Keep input validation at trust boundaries, error handling that prevents data
-loss, security measures, accessibility basics and all requested features. If
-the user asks for the full version, build it without reopening that decision.
-
-Leave a calibration control for real hardware. Clocks drift, sensors can read
-high or low, and a PCA9685 can run several percent fast. A software model may
-not account for these differences.
-
-Every non-trivial change, such as a branch, loop, parser or money/security
-path, needs one runnable check that fails if the behavior breaks. Use an
-assert-based `demo()`/`__main__` check or one small `test_*.py`. Do not add a
-test framework or fixtures for this check unless asked. One-line changes need
-no test.
-
-## Boundaries
-
-Ponytail applies to implementation choices. Keep replies brief when the user
-asks for that. The setting lasts until the user says "stop ponytail" or
-"normal mode", changes the level, or ends the session.
+| Level | Behavior |
+| --- | --- |
+| **lite** | Implement the requested scope. Mention a materially simpler option when the user has a real choice to make. |
+| **full** | Default. Use the first solution that satisfies the whole request. |
+| **ultra** | Remove or reuse more aggressively. Challenge speculative options while delivering every required behavior. |
+| **off** | Return to normal mode. |
 
 ## Verify a React Native or Expo web layout fix
 
