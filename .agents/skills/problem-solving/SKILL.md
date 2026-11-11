@@ -14,51 +14,50 @@ Move the user's goal forward with the smallest amount of work that can resolve t
 | **Light** | The next action is clear and the main risk is drifting from the goal. | Solo |
 | **Medium** | The goal is clear, but diagnosis or execution needs several dependent steps. | Solo |
 | **Heavy** | Multiple plausible causes or designs could change the result, or a wrong choice would cause substantial rework. | Group |
-| **Deep-in-thought** | A project-critical roadblock threatens the goal and the problem framing, evidence, or solution remains materially uncertain. | Group |
+| **deep-in-thought** | A project-critical roadblock threatens the goal and the problem framing, evidence, or solution remains materially uncertain. | Group |
 
 Honor an explicit level or mode. Otherwise choose the lowest level that addresses the stakes, uncertainty, reversibility, and cost of error. Escalate when a check exposes a consequential unknown or invalidates the plan. Step down once the critical uncertainty is resolved. Treat these as workflow choices and use runtime reasoning settings only when the host supports them and the request authorizes them.
 
-## Light — filter actions by the goal
+## Light — stay focused
 
-Start with an obvious next action. Keep the goal, constraints, and definition of done in view.
+1. State the user's goal, the boundary of the task, and the observable result that means it is done.
+2. Before a meaningful action, ask what it contributes to the goal. Drop tangents and optimizations that change no required outcome or decision.
+3. Take the smallest useful action within scope. Check the result. If the task changes, recheck the goal before continuing.
 
-1. Name the deliverable and what will show it is complete.
-2. Ask what the proposed action will change for the user. If it serves no requirement or decision, drop it and pick the smallest action that does.
-3. Do the action within scope. Check the observable result and say what the check established.
+## Medium — choose an approach and reflect
 
-## Medium — trace the known path
+1. Define the result you need and the evidence you have. Choose an approach that fits the problem. For example, trace a failure from input to output, work backward through dependencies, or solve a smaller case before generalizing. State why that approach fits.
+2. Carry it out in a sensible order. At a checkpoint, ask what you expected, what actually happened, and which assumption the result strengthens or weakens.
+3. Use that reflection to keep, revise, or replace the approach. Verify the result against the original task. Check whether the chosen approach left a meaningful part unaddressed.
 
-Start with a defined target and a path that can be followed. Use Light's scope check at consequential steps.
+## Heavy — diagnose, research, propose, critique, iterate
 
-1. Write the expected result and the observed result, or the current state and the target state for new work.
-2. Trace the actual path from input to output. For a failure, reproduce the smallest case and check intermediate outputs until you find the first consequential difference. For new work, work backward from the target to the prerequisites, then execute them in dependency order.
-3. Resolve the first failing step or missing prerequisite at its source. Keep the surrounding behavior stable and rerun the original case through the normal entry point.
-4. Escalate to Heavy if the path admits materially different explanations or approaches that tracing alone cannot distinguish.
+1. **Diagnose.** Identify plausible causes or designs, the current baseline, and the evidence that would distinguish them.
+2. **Research.** Use Deep Research to check claims that could change the choice. Verify the relevant sources and compare alternatives under matching conditions where possible.
+3. **Propose.** State the recommended action, its assumptions, what it should achieve, and how to check it. Name the strongest reason it could fail.
+4. **Critique.** In Group mode, use two independent reviewer models. Assign one to challenge the diagnosis and evidence and the other to challenge the design and implementation. Use the [review prompts](playbook.md#review-the-proposal).
+5. **Iterate.** Resolve material objections with evidence. Return to the earliest step an objection invalidates, revise the proposal, and recheck the changed claims. Finish when the proposal meets the goal and remaining uncertainty is explicit.
 
-## Heavy — compare rivals and try to rule them out
+## deep-in-thought — investigate from first principles
 
-Start with a stable goal and more than one live explanation or design.
+Use this when the diagnosis, the question, or the evidence needed to make progress may itself be wrong. The goal is to produce a defensible new result when the available evidence and authorization allow it.
 
-1. Specify the success criteria and constraints. Identify the serious rivals, including the baseline where useful. For a diagnosis, write what each cause predicts. For a design, write what each option must accomplish and where it could fail.
-2. Use Deep Research for material evidence gaps. Select a check whose possible outcomes distinguish the rivals. Compare on matching inputs, conditions, and measures where relevant. If the evidence is inconclusive, keep the relevant rivals open.
-3. Propose a choice with the evidence for it and the strongest objection to it. In Group mode, give reviewers distinct questions and let them form their first assessments before seeing your preferred choice when practical. In Solo mode, challenge the evidence and the implementation in separate passes.
-4. Resolve decisive objections with a source, test, proof, or counterexample. Revise the proposal or change the choice. Report the deciding evidence and any tradeoff or unresolved uncertainty that could reverse it.
-
-## Deep-in-thought — find a problem you can actually solve
-
-Start with the original goal and a blocker whose current framing or evidence may be hiding the way forward.
-
-1. **Work backward from success.** Write what would have to be true for the original goal to advance. Trace its dependencies to the earliest unresolved prerequisite. Separate requirements from assumptions about how to satisfy them.
-2. **Find a better way to represent the blocker.** Keep the original framing available. Try another useful view, such as a causal diagram, a minimal case, a quantity that stays unchanged, or a split into independently testable questions. Keep a new framing only if it preserves the goal and exposes a check or solution the original framing obscures. If the original framing already does this, use it.
-3. **Prove or test the narrowest useful claim.** Use Deep Research on material evidence gaps. Find the smallest example, counterexample, bound, or controlled test that resolves the prerequisite. State the expected outcomes and what each would imply. Check that solving the small case would change the original decision, and identify what still needs to be shown at full scope.
-4. **Attack the framing and the plan.** In Group mode, have independent reviewers propose or challenge the framing, evidence, and execution plan. In Solo mode, revisit the strongest assumption from an outsider's perspective and check it against evidence. If a challenge breaks the framing, return to step 1 or 2. If it breaks a test, redesign that test.
-5. **Hand off a concrete plan.** Name the first action, its prerequisites, the result that permits progress, and the next action for success, failure, or ambiguity. Run useful checks already authorized. When an active goal or explicit freedom authorizes further work, follow through within its scope and approval boundaries. Finish when the plan is actionable and its decisive risks have checks, or a specific missing fact, access restriction, or approval blocks progress. State what would resolve the blocker.
+1. **Diagnose.** Reconstruct the observation from original evidence and trace the project blocker. Write the best current explanation and credible alternatives.
+2. **Evaluate the diagnosis.** Check whether the measurement can detect the effect, whether the observation supports the diagnosis, and whether a rival explanation fits the same evidence. Separate established results from interpretations.
+3. **Question the first principles.** Ask **why** the proposed mechanism should work, **what** is actually being measured or assumed, and **how** the result could arise. Work from definitions, causal constraints, or necessary conditions. Question inherited assumptions and problem framing while preserving the user's goal and hard constraints.
+4. **Identify the unknown.** Name the unanswered question whose resolution would most change the project. Specify what evidence would resolve it and the scope it would cover.
+5. **Deep-research.** Trace the literature to original evidence. Seek conflicting results, known limits, existing answers, and useful methods from adjacent work.
+6. **Evaluate the evidence.** Check methods, assumptions, independence, and applicability. Decide what the evidence settles and what remains genuinely open. If the unknown changes, revisit steps 3 and 4.
+7. **Form hypotheses.** State the leading explanation and credible rivals. Derive distinct predictions and what would count against each. If the claim is mathematical, give the assumptions and look for a proof, bound, or counterexample.
+8. **Propose a decisive investigation.** Choose a test or derivation whose outcome would change the conclusion. Specify comparison, controls, measurement, success criteria, and branches for a negative or inconclusive result. Separate hypotheses generated from existing data from checks that can test them prospectively.
+9. **Critique.** In Group mode, use three independent reviewer models with distinct briefs: **peer-review skepticism** about claims and reproducibility, **scientific skepticism** about inference and the proposed test, and **foundational skepticism** about premises, definitions, and framing. Require each to try to break the proposal and show how to check the objection. Use the [review prompts](playbook.md#review-the-proposal).
+10. **Iterate.** Follow objections to evidence and return to the earliest step they invalidate. Run the checks already authorized, including within an active goal or explicit freedom to proceed. Update the hypothesis or proposal from results. End with a concrete, critiqued plan when execution is outside scope or blocked. Report any verified new finding at the scope the evidence supports, with its basis and unresolved limits.
 
 ## Solo and group
 
-- **Solo.** Solve directly. At a consequential choice, independently reconstruct a small example, check a primary source, seek a counterexample, or try to disprove the leading explanation. Keep work proportional to what is at stake.
-- **Group.** Use available subagents when authorized. Assign distinct questions and provide the minimum evidence each needs. Ask for an objection, its consequence, and the cheapest way to verify it. Resolve disagreement with evidence. Record material dissent. If delegation is unavailable or disallowed, make separate review passes yourself and disclose the limitation when it matters.
+- **Solo.** Perform the steps yourself. Make separate critique passes using the level's reviewer briefs. Label them as your own review.
+- **Group.** Use independent model sessions when delegation is authorized. Heavy uses two reviewers and deep-in-thought uses three. Use distinct available models where the host supports selection. Give each the relevant evidence and their own brief. Collect first reviews independently before sharing conclusions between reviewers. If the host limits model choice or delegation, use the closest available review setup and state what was available. Judge objections on evidence and retain unresolved dissent.
 
 ## Report the result
 
-For Light and Medium, lead with the result and the check that supports it. For Heavy and Deep-in-thought, also show the assumptions that mattered, the serious alternatives, what critique changed, and the remaining decision or next test. Give a concise rationale grounded in evidence the reader can inspect. Distinguish a plan, a completed action, and a verified outcome.
+For Light and Medium, lead with the result and the check that supports it. For Medium, give the approach and any reflection that changed it. For Heavy and deep-in-thought, also show the assumptions that mattered, the serious alternatives, what critique changed, and the remaining decision or next test. Give a concise rationale grounded in evidence the reader can inspect. Distinguish a plan, a completed action, and a verified outcome.
