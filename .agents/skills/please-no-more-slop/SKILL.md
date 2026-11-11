@@ -22,6 +22,11 @@ Make the reader's job easy. A name should tell them what a thing is. A paragraph
 4. **Translate terms by meaning.** Replace project shorthand, jargon, and stacked nouns with familiar words when they carry the same meaning. Keep a standard term when the reader needs its precision or needs to look it up. Explain what it means here at first use if it is unfamiliar. Skip acronyms used only once and keep required identifiers exact when referring to them.
 5. **Keep the claim intact.** Preserve scope, baselines, denominators, units, and uncertainty wherever they change the interpretation. Keep observations, interpretations, and plans distinct. Distinguish exploratory checks from planned tests, a model from the thing it represents, and an unrun test from a failed test. Verify important claims against the source. If a term or result is unclear, flag the gap and keep any useful exact wording until its meaning is confirmed.
 
+6. **Explain what passed.** Name the kind of check, what it measured, the result, and the passing rule when one was defined. Say what the result lets the reader conclude and name any adjacent outcome they might assume was tested. A software test checks specified behavior of the code. A training run finishing means the procedure ran. A learning evaluation measures how the trained model performed under stated conditions. An audit checks only the records or procedures it covers. Use "one round of training" when "training pass" means going through the data once. If the source only says "passed," state which details are missing.
+
+   - Software example. "All 12 tests passed. They checked whether the program saves and reloads the same move scores. Model learning was outside the test's scope."
+   - Learning example. "On 10 new chess positions, the trained model chose the correct first move in 8. The test required at least 8 to pass. This measures performance on those positions. The test included no comparison with an untrained model, so the cause of that performance remains open."
+
 ## Check the result
 
 - Read from the intended reader's position. Can they say in their own words what happened, what the evidence supports, and what happens next if a next step is relevant? Can they tell which sentence answers their question?
@@ -34,7 +39,7 @@ Score from 1 to 10, where **1 is clear and 10 is the most slop**. Judge what the
 
 Pick the audience, the purpose, and the text being scored. Use the same audience and purpose for competing drafts. When judging unrelated passages, state the audience and purpose for each. For a long document, judge the whole piece and quote representative passages. Score individual passages only when asked or when identifying where to revise first.
 
-Give each category 0, 1, or 2 points. Count each flaw under the category that best explains its effect. Sum the five numbers and report a minimum of 1.
+Give each category 0, 1, or 2 points. Count each flaw under the category that best explains its effect. An unexplained pass usually belongs under Concrete detail. Claiming a pass proves more than was measured belongs under Accuracy and scope. Sum the five numbers and report a minimum of 1.
 
 | Category | 0 points | 1 point | 2 points |
 | --- | --- | --- | --- |
