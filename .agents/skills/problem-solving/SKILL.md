@@ -35,7 +35,7 @@ Honor an explicit level or mode. Otherwise choose the lowest level that addresse
 1. **Diagnose.** Identify plausible causes or designs, the current baseline, and the evidence that would distinguish them.
 2. **Research.** Use Deep Research to check claims that could change the choice. Verify the relevant sources and compare alternatives under matching conditions where possible.
 3. **Propose.** State the recommended action, its assumptions, what it should achieve, and how to check it. Name the strongest reason it could fail.
-4. **Critique.** In Group mode, use two independent reviewer models. Assign one to challenge the diagnosis and evidence and the other to challenge the design and implementation. Use the [review prompts](playbook.md#review-the-proposal).
+4. **Critique.** In Group mode, use two independent reviewer models. Choose two of the three [reviewer roles](playbook.md#review-the-proposal) based on the proposal's biggest risks. The scientific skeptic and peer reviewer are a useful default. Choose the foundational skeptic when the premise or measurement is in doubt.
 5. **Iterate.** Resolve material objections with evidence. Return to the earliest step an objection invalidates, revise the proposal, and recheck the changed claims. Finish when the proposal meets the goal and remaining uncertainty is explicit.
 
 ## deep-in-thought — investigate from first principles
