@@ -37,9 +37,9 @@ This repository operates under ponytail mode by default: use the laziest solutio
 - The smallest correct patch wins, but not at the cost of a wrong root-cause fix.
 - If a change is not needed for the active experiment or bug, do not add it.
 
-## Naming default
+## Naming and communication default
 
-The [Please no more slop skill](.agents/skills/please-no-more-slop/SKILL.md) has the same priority as ponytail. Load and apply it whenever creating or renaming variables, functions, database keys, files, API endpoints, project folders, or user-facing labels. Ponytail governs implementation size; this skill governs names.
+The [Please no more slop skill](.agents/skills/please-no-more-slop/SKILL.md) has the same priority as ponytail. Load and apply it when creating or renaming variables, functions, database keys, files, API endpoints, project folders, or user-facing labels. Also apply it when drafting, editing, or explaining technical and research material in replies, emails, documentation, reports, and handoffs. Ponytail governs implementation size. This skill governs naming and how we explain the work.
 
 ## Python actions for recurring CLI work
 
