@@ -41,6 +41,12 @@ This repository operates under ponytail mode by default: use the laziest solutio
 
 The [Please no more slop skill](.agents/skills/please-no-more-slop/SKILL.md) has the same priority as ponytail. Load and apply it when creating or renaming variables, functions, database keys, files, API endpoints, project folders, or user-facing labels. Also apply it when drafting, editing, or explaining technical and research material in replies, emails, documentation, reports, and handoffs. Ponytail governs implementation size. This skill governs naming and how we explain the work.
 
+## Problem solving and research defaults
+
+[Problem Solving](.agents/skills/problem-solving/SKILL.md), [Deep Research](.agents/skills/deep-research/SKILL.md), [Ponytail](.agents/skills/ponytail/SKILL.md), and [Please No More Slop](.agents/skills/please-no-more-slop/SKILL.md) have equal priority in this repository. Apply each when its scope is relevant.
+
+Use Problem Solving to route tasks by stakes and uncertainty, with Light as the baseline for scoped work. Honor the researcher's explicit level or mode. Use Deep Research for material external evidence. Use Ponytail to keep implementation small and Please No More Slop to make names, claims, and verification clear. Follow the existing approval, experiment, and evidence rules when executing a plan.
+
 ## Python actions for recurring CLI work
 
 The repository's `python actions/README.md` defines the workflow for repeated or looping CLI tasks. Put reusable Python actions in `python actions/` and use them for curriculum training, audit monitoring, and other work that is repeated. A terminal action is allowed when diagnosing a training problem, but repeated diagnosis or polling should use a Python action. Keep raw command output and receipts in their existing log files; return only concise structured milestones, terminal state, and errors to the agent context. Actions must preserve the exact pinned command, run identity, resource guards, and recovery behavior; they must not silently restart work or suppress errors. If no usable Python runtime/action facility is available, state that constraint and use a minimal, compact fallback only for necessary one-off checks.
