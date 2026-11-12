@@ -130,7 +130,7 @@ export function main(){
         requires:['{registration}','{protocol}','{run}/result.json']}},
     artifacts:{result:'{run}/result.json',audit:'{run}/audit.json'},
     report_fields:['status','stage','stageAccepted','fullNeuralReplay','memoryContinuityVerified','diagnosis','reason','scope']};
-  const stepPath=`python actions/lichess-stage1-synthetic-v1-${id}-step.json`;
+  const stepPath=`python actions/curriculum/lichess-stage1-synthetic-v1-${id}-step.json`;
   const stepText=JSON.stringify(step,null,2)+'\n';
   atomicWrite(resolve(root,stepPath),stepText);
   const initialMemoryHashes={};
@@ -148,7 +148,7 @@ export function main(){
       requiredAuditTrue:['audit.fullNeuralReplay','audit.memoryContinuityVerified','audit.stageAccepted'],
       initialMemoryHashes,prerequisites:audits.map(([path,requiredTrue])=>({path,sha256:fileSha(path),requiredTrue}))},
       ...Object.entries(BLOCKED).map(([stage,reason])=>({stage:Number(stage),readinessBlockedReason:reason}))]};
-  const campaignPath=args.mode==='full'?'python actions/curriculum-campaign.json':`python actions/curriculum-campaign-${id}.json`;
+  const campaignPath=args.mode==='full'?'python actions/curriculum-campaign.json':`python actions/curriculum/curriculum-campaign-${id}.json`;
   atomicWrite(resolve(root,campaignPath),JSON.stringify(campaign,null,2)+'\n');
   process.stdout.write(JSON.stringify({step:stepPath,campaign:campaignPath,replicas:registration.replicas.length})+'\n');
 }

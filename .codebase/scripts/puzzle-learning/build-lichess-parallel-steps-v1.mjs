@@ -3,7 +3,7 @@
 // Launch: `fly --config REPLICA_STEP detach train --train-only` per replica (detach prepends babysit and, since 2026-10-30,
 // forwards --config); after all three publish
 // result.json, `fly --config MERGE_STEP detach merge audit`. Each replica keeps its own resume lineage.
-// Usage (repo root): node build-lichess-parallel-steps-v1.mjs --step "python actions/NAME-step.json" [--out-dir DIR]
+// Usage (repo root): node build-lichess-parallel-steps-v1.mjs --step "python actions/curriculum/NAME-step.json" [--out-dir DIR]
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {existsSync,readFileSync,writeFileSync} from 'node:fs';
@@ -12,7 +12,7 @@ import {parseArgs} from 'node:util';
 
 const RUNNER_V5='.codebase/scripts/puzzle-learning/run-lichess-curriculum-matrix-v5.mjs';
 const sha=path=>createHash('sha256').update(readFileSync(path)).digest('hex');
-const {values:args}=parseArgs({options:{step:{type:'string'},'out-dir':{type:'string',default:'python actions'}}});
+const {values:args}=parseArgs({options:{step:{type:'string'},'out-dir':{type:'string',default:'python actions/curriculum'}}});
 assert(args.step,'Usage: --step STEP_JSON [--out-dir DIR]');
 const serial=JSON.parse(readFileSync(args.step,'utf8')),registration=JSON.parse(readFileSync(serial.paths.registration,'utf8'));
 assert.equal(serial.recovery?.kind,'lichess-stage-matrix-v1');assert.equal(registration.stage,1,'Parallel merge covers stage 1 only');

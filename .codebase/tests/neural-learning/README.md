@@ -15,7 +15,7 @@
 Run `npm test` from the repository root. Software checks do not establish biological validation or useful learning.
 
 - [curriculum-g0.test.mjs](curriculum-g0.test.mjs): neutral evidence, cue isolation, matched controls and inert pending-frame recovery.
-- [Restart memory-fixture focused checks](../../../python%20actions/memory-assay-v10-step.json): 93 passing tests for candidate math, state contracts, fixture controls and the [readout-capacity checks](memory-assay-readout-bound.test.mjs); fixture success does not imply useful graph learning.
+- [Restart memory-fixture focused checks](https://github.com/ethanramli/fly-chess-research/blob/8d9bc9ed87c4f38bfb5d2ca07a7eb59f4875f746/python%20actions/memory-assay-v10-step.json): 93 passing tests for candidate math, state contracts, fixture controls and the [readout-capacity checks](memory-assay-readout-bound.test.mjs); fixture success does not imply useful graph learning.
 - [Recorded-feedback repair checks](memory-assay-recorded.test.mjs): schedule/choice binding, replay corruption, unknown/rejected events, sink failure, disk-level source/config identity and overwrite protection. The CLI retains its 300s guard; the harness leaves that guard time to return a result. Failed temporary fixtures are preserved.
 
 - [Coupled](local-coupled-memory.test.mjs), [cascade](local-metaplastic-memory.test.mjs), [reservoir](local-reservoir-memory.test.mjs) and [fixed-rate integration](memory-assay-reservoir-rate.test.mjs): candidate math, bounded state, persistence and all-arm replay checks. [Continuation evidence and limits](../../../research/reports/memory-retention-continuation-2026-10-31/README.md). Passing implementation checks is not a joint memory pass.
