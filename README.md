@@ -1,87 +1,93 @@
 # FlyChess
 
-## 1. Why I’m doing this
+**Can a model built from a fruit fly’s wiring learn to play chess?**
 
-I’m Ethan Ramli. I like chess, and when I saw that researchers had mapped the connections in a fruit fly’s brain, I wondered what a computer model built from that map could learn on its own. Could it learn from the consequences of its moves, then put several lessons together to solve a position it had never seen?
+I’m Ethan Ramli. I play chess, and I wanted to find out what a model built from real brain wiring could learn by making moves and seeing what happens. A published map of a fruit fly’s brain gave me a place to start.
 
-I want to find out how far that approach can go and where it breaks. My long-term ambition is to play against a FlyChess model that has developed its own style, and eventually see whether it can reach a measured rating of 2000 Elo. The research comes first. Even if the model hits a limit early, I want to be able to show which limit it hit and how we know. [Researcher’s vision](research/project/researcher_vision_2026-10-01.md)
+I’d love to play a match against a model that has developed a style of its own. **2000 Elo is my stretch goal.** I started the project to find out what the model can learn and where it hits a limit. [Research motivation](research/project/researcher_vision_2026-10-01.md)
+
+[Current research status](documentation/current-status.md) · [Experiment reports](research/reports/README.md) · [Run the demo](#run-it-yourself)
 
 <a id="start-here"></a>
 
-## 2. What FlyChess is
+## What FlyChess is
 
-FlyChess is an independent research project that tests learning in a simulation of a fruit fly’s neural wiring. The wiring map, called a **connectome**, tells us which neurons connect to which. The simulation adds rules for how activity spreads and how experience might change the strength of selected connections. Software turns chess positions into input for the model and reads its activity back out as scores for moves.
+FlyChess is a research project and a chess simulator. It uses a fruit fly’s **connectome**, a map of which neurons connect to which, as the wiring for a computer model. The software shows the model a chess position, reads its activity to score legal moves, and can teach it about the move it chose.
 
-The main question is whether the model can acquire useful chess concepts from experience. In this project, **reasoning** means combining concepts learned separately to solve an unfamiliar problem. A successful test would tell us something about this model under the tested conditions. What a living fly can learn is a separate question.
+The first lesson is small enough to check exactly. Can the model tell when taking a pawn leaves its bishop open to recapture?
 
-## 3. How the research works
+![Two illustrative chessboards. The white bishop can take the pawn on e5 on both boards. When the black rook is on a8, it cannot recapture. When the rook is on e8, it can take the bishop on e5.](documentation/readme-capture-example.png)
 
-1. **Teach one concept.** Show the model a position and let it choose a move. An independent checker verifies the consequence of that move. The teaching procedure uses that consequence as feedback. If the checker cannot establish it, the model gets no teaching signal.
-2. **Check what caused the change.** Compare informative feedback with conditions such as no feedback, shuffled feedback, and learning disabled. Compare the fly model with simpler systems that get comparable input and practice.
-3. **Test on new positions.** Keep the final positions out of practice and development. Check whether the model can apply the concept when the board changes, then whether it can combine concepts it learned separately. Include simple lookup systems to see how much remembering similar boards can explain.
-4. **Keep the evidence.** Record the settings, input versions, and results. Preserve failed tests and make it possible to audit the checker, feedback events, and reported scores.
+## How I test it
 
-The [research plan](documentation/design/research-goals/restart-plan-2026-10-30.md) explains the first learning experiment. The [transfer and combination protocol](documentation/design/research-goals/transfer-and-combination-protocol-2026-11-03.md) explains the later tests and their comparisons. The [five-volume plan](research/literature/writings/README.md) follows the work from methodology and teaching through reasoning, model limits, and chess.
+1. **Teach a single idea.** The model chooses a move. A separate checker works out the consequence using the rules of chess. During practice, a verified consequence can become feedback.
+2. **Find out what did the learning.** Compare the model with versions that get shuffled feedback or have learning disabled. Give simpler systems comparable input and practice to see how much they can explain.
+3. **Change the problem.** Keep final test positions out of practice and development. First test whether the model can apply one lesson on unfamiliar boards. Then test whether it can combine lessons that were taught separately.
+
+The [learning plan](documentation/design/research-goals/restart-plan-2026-10-30.md) defines the first test. The [transfer protocol](documentation/design/research-goals/transfer-and-combination-protocol-2026-11-03.md) spells out what would count as passing the later ones.
 
 <a id="repository-tree"></a>
 
-### How that maps to the repository
+### Follow the work in the repo
 
 <!-- directory-map -->
-- [`documentation/`](documentation/README.md) — What each experiment is designed to test, the current findings, and the decisions still open.
-- [`research/`](research/README.md) — [Experiment reports](research/reports/README.md), literature, the research journal, and chapter plans.
-- [`.codebase/`](.codebase/README.md) — The simulation, experiment runners, and checks that test the software.
-- [`python actions/`](python%20actions/README.md) — Tools for inspecting and managing registered research runs.
+- [`documentation/`](documentation/README.md) — Research questions, experiment designs, and current decisions.
+- [`research/`](research/README.md) — Run reports, failed attempts, source notes, and the [five-volume research plan](research/literature/writings/README.md).
+- [`.codebase/`](.codebase/README.md) — The simulator, chess tools, experiment runners, and software tests.
+- [`python actions/`](python%20actions/README.md) — Commands for inspecting and managing registered runs.
 - [`archive/`](archive/early-development/README.md) — Earlier approaches and the evidence they produced.
-- [`.agents/`](.agents/skills/) — Instructions and skills used by the research and coding assistants.
-- [`.github/`](.github/workflows/) — Automated repository checks.
+- [`.agents/`](.agents/skills/) — Research and coding assistant instructions.
+- [`.github/`](.github/workflows/) — Automated checks.
 - [`.vscode/`](.vscode/) — Editor settings.
 <!-- /directory-map -->
 
-## 4. The science
+## The science · Can the circuit keep a lesson?
 
-The fly’s **mushroom body**, a group of brain structures involved in learning, motivates the memory experiments. One approach tests whether a modeled dopamine signal can change selected connection strengths after a move. The question is whether those changes can help the model remember an earlier lesson after learning another, and whether the memory changes which move it picks. The project also checks the sensory input. If the input itself gives away the answer, a correct move tells us less about what the circuit learned. [Learning mechanisms](documentation/design/neural-learning/README.md) · [Board input](documentation/design/chess-input/README.md)
+The fly’s **mushroom body**, a brain structure involved in learning, motivates the memory experiments. The model tests rules in which a simulated dopamine signal changes selected connection strengths after a choice. To count as useful memory, a change has to affect a later decision and survive further practice. [Learning mechanisms](documentation/design/neural-learning/README.md)
 
-One independently audited test found that an added memory store could choose safe captures from a restricted set of moves. The same store performed better with board features taken directly from the input than with features from simulated neural activity. In a later study of memory in the model’s own connections, the planned capacity test succeeded on one of three boards, below the required two. A broader search found settings for all three boards after that test ended. Whether feedback can produce those settings remains open, and the later search is awaiting independent review. [Memory store result](research/reports/engineered-memory-test-v8-2026-11-07/README.md) · [Connection-memory stop report](research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md) · [Current research status](documentation/current-status.md)
-
-## 5. The computation
-
-The model uses a **sparse graph**. It stores the links that exist and follows those links when updating neural activity. Separate parts of the software translate the board, update the network, read move scores, and verify chess consequences. Keeping these parts separate lets us ask whether a result came from the network, the input, an added memory, or chess software doing the checking.
-
-A search program can explore replies on a separate copy of the board. Tests distinguish how the model scores a move on its own from how it does with a fixed amount of search. This matters because a better answer can come from looking farther ahead even when the model has learned nothing new. [Simulation code](.codebase/src/README.md) · [Search and feedback](documentation/design/search-and-feedback/README.md)
-
-## 6. The mathematics
-
-**Why store only the connections that exist?** The graph loaded by FlyChess has 134,209 neurons and 2,700,513 directed connections. A table with one row for every possible sender and one column for every possible receiver would need about 18 billion entries.
-
-| Step | What it counts |
+| Experiment | What happened |
 | --- | --- |
-| `134,209 × 134,209 = 18,012,055,681` entries | One slot for each ordered pair of neurons, including pairs with no connection. |
-| `18,012,055,681 × 4 = 72,048,222,724` bytes | Give each slot four bytes. The table alone would take about 72 GB. |
+| [An added memory store](research/reports/engineered-memory-test-v8-2026-11-07/README.md) | It passed an audited test where the choices were restricted to captures. The same store scored higher when it read board features directly than when it used simulated neural activity. |
+| [Memory in the model’s own connections](research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md) | A planned test found connection settings that ranked a safe capture first on one of three boards. It needed two. A more extensive search later found settings for all three. That search awaits independent review, and it remains open whether feedback could teach the model to reach those settings. |
 
-That is a storage calculation. The sparse representation still needs memory for its recorded connections, neuron activity, and the rest of the running program. [Memory calculation and measured examples](research/literature/writings/01-methodology/04-memory-estimate-calculation.md)
+## The computation · What runs on the laptop
 
-The project also uses mathematics to test whether a proposed repair can work. In one saved model state, two earlier associations placed incompatible requirements on the same scoring setting. One required the value to be above 0.08425, while the other required it to be below 0.08394. No single value can satisfy both. That rules out changing that one setting as a repair for those saved responses. [Proof and scope](research/reports/interference-limits-2026-11-02/README.md)
+**Board → simulated circuit → move scores.** Code supplies the list of legal moves and turns each candidate board into input. The simulator updates neuron activity along the connections in the wiring map. A separate readout turns that activity into a score for each move.
 
-## 7. The chess
+The teacher checks consequences separately. The project also keeps scores produced by the model alone distinct from scores produced with extra chess search. Looking ahead can improve a move even if the underlying model has learned nothing new. [Code guide](.codebase/README.md) · [Search and feedback](documentation/design/search-and-feedback/README.md)
 
-Start with a capture. On one board, your bishop takes a piece and the opponent cannot take it back. Move a defending rook onto the same file in an otherwise similar position, and that capture might now lose the bishop. The task is to choose based on the reply that is possible on this board.
+## The mathematics · What fits, and what can work
 
-The first experiments use narrow tasks like this because we can check the answer using the rules of chess. Later tests ask whether the model can bring together several ideas it practiced separately. Full games ask a different question about playing strength. Measuring that will require games against a defined group of opponents under agreed conditions. [Chess volume](research/literature/writings/05-chess/README.md) · [Rating plan](documentation/design/evaluation-and-performance/elo-calibration.md)
+The graph used here has **134,209 neurons** and **2,700,513 directed connections**. A table with a slot for every possible connection would need far more space:
 
-## 8. FAQ
+| Calculation | What it means |
+| --- | --- |
+| `134,209 × 134,209 = 18,012,055,681` entries | One row for every sender and one column for every receiver. |
+| `18,012,055,681 × 4 = 72,048,222,724` bytes | At four bytes per entry, that table alone would take about 72 GB. |
 
-**Is there a real fly playing?** The player is software built using a map of fruit fly wiring. The chess experiments run on a computer.
+The simulator stores the connections that exist. The calculation measures the size of a hypothetical table. Actual process memory depends on the experiment. [Memory calculation](research/literature/writings/01-methodology/04-memory-estimate-calculation.md)
 
-**Does it train on human games?** Game records can supply positions. In the main experiment, the teaching signal comes from the verified consequence of the model’s own move. The repo also keeps separate baselines that use labeled examples for comparison.
+Math also tells us which repairs to drop. In one saved model state, two earlier lessons required the same scoring setting to be on opposite sides of a gap. One required a value above about 0.08425. The other required a value below about 0.08394. No setting satisfies both, so changing that setting alone cannot repair those saved responses. [Proof and assumptions](research/reports/interference-limits-2026-11-02/README.md)
 
-**Is Stockfish making the moves?** The browser demo uses the untrained FlyChess model to score legal moves. The project has separate designs and comparisons that use chess engines for teaching or evaluation. Those roles are declared in the relevant experiment.
+## The chess · From one tactic to a game
 
-**Can it reason yet?** The published project records do not show that the model can combine learned concepts to solve unfamiliar positions. The [current status](documentation/current-status.md) explains which earlier steps have evidence.
+The first question is whether the opponent can legally capture back. The later tests add two ideas. A defender may be pinned, and a recapture may still leave you ahead if you took a more valuable piece. The protocol calls for teaching each idea separately before testing whether the model can put them together on a new board.
 
-## 9. Run it yourself
+Playing strength takes a separate test. The [rating plan](documentation/design/evaluation-and-performance/elo-calibration.md) uses full games against a defined pool of opponents under fixed conditions. The [chess volume](research/literature/writings/05-chess/README.md) covers that goal and the kind of player I’d like FlyChess to become.
 
-Install Git and **Node.js 22 or newer**. Then open a terminal and run:
+## FAQ
+
+**Is there a living fly playing?** The player is a simulation. Its wiring comes from a published brain map.
+
+**Does it copy human moves?** Human games can supply positions. In the main research plan, feedback comes from the consequence of the model’s own choice. Supervised baselines are recorded separately.
+
+**Does Stockfish pick the moves?** The local demo picks moves using the untrained FlyChess model. A separate checker verifies move consequences. The future rating plan uses Stockfish as a reference opponent.
+
+**Has FlyChess shown reasoning yet?** That result is still open. The [current status](documentation/current-status.md) explains what has been tested and what remains.
+
+## Run it yourself
+
+Install Git and **Node.js 22 or newer**, then run:
 
 ```sh
 git clone https://github.com/ethanramli/fly-chess-research.git
@@ -91,6 +97,4 @@ npm run fetch:graph
 npm run play
 ```
 
-Open the address the program prints, usually `http://127.0.0.1:4173`. You can play against an **untrained** model that evaluates one move ahead. Run `npm test` from the same folder to check the software. Use the [code guide](.codebase/README.md) to find the demo and test commands, and the [research handoff](documentation/next-checkpoint.md) for the status of registered experiments.
-
-[Contributor instructions](AGENTS.md)
+Open the address printed in the terminal, usually `http://127.0.0.1:4173`. You’ll play against an **untrained** model that evaluates one move ahead. Run `npm test` to check the software. For reproducing research runs, start with the [experiment handoff](documentation/next-checkpoint.md) and [contributor instructions](AGENTS.md).
