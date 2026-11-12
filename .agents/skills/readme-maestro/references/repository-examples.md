@@ -13,3 +13,19 @@ Examples inspected on 12 November 2026. These show existing navigation designs. 
 ## Small acceptance test
 
 From the root, find what the project does, the latest confirmed result, the record behind that result, and where to start contributing. Record which links a newcomer chose and what they understood. Then add an unlisted tracked child under a maintained map. The automated check should fail and name the owning page. Add the map entry and confirm the check passes. Repeat with a renamed path and an ordinary file added inside an already indexed report.
+
+## FlyChess walkthrough
+
+The original root map linked every top-level folder. Its descriptions still left a reader guessing where to find the planned test, the code that ran it, the result, and the history of the failed launch. A folder link and a valid destination are only the beginning of that route. [Earlier root README](https://github.com/ethanramli/fly-chess-research/blob/4aa952f3e53b4a13ba8d3f72ec69efd426f84f1b/README.md#repository-map)
+
+In the updated map, a reader can see that experiment designs give the task, controls, and passing rule. Reports give the measured outcome and available audits. The journal explains the changes between attempts. The root links an actual engineered-memory test through its design, registered run, runner, failed result, and crash notes. The research guide gives separate entry points to versions since the October 30 restart and the frozen archive from before it. These links are a snapshot of the layout at the time of the edit. [Updated root README](https://github.com/ethanramli/fly-chess-research/blob/8d9bc9ed87c4f38bfb5d2ca07a7eb59f4875f746/README.md#repository-map) · [Research guide](https://github.com/ethanramli/fly-chess-research/blob/8d9bc9ed87c4f38bfb5d2ca07a7eb59f4875f746/research/README.md#finding-earlier-versions-and-failures)
+
+For a tooling folder, explain the repeated problem it solves and what a caller gets back. In FlyChess, the Python tooling owns repeated run operations and keeps raw receipts on disk. The caller gets compact progress, errors, and the terminal outcome. That is more informative than labeling it “Python scripts and configs.” Confirm which file defines the command, which one specifies an individual run, and where the raw output lives before writing the guide.
+
+### Reader tasks to try
+
+Give a reader these prompts without naming the folders. Ask for their first link, what they found, and where they would go next.
+
+- Find a failed experiment and explain the difference between why its first launch stopped and why the test ultimately failed.
+- Find the latest research status and show which report supports it. Explain how to locate experiments from before the restart.
+- Find the command guide for inspecting an existing run and explain where to look when the short status lacks enough detail.
