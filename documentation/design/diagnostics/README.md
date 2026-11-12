@@ -1,5 +1,7 @@
 # Learning diagnostics and memory probes
 
+These pages test whether stored state affects scores and identify conditions linked to learning failures. Start with the [memory interference diagnosis](../../../research/reports/memory-interference-diagnosis-2026-11-01/README.md) for the latest integrated diagnostic; individual probes below cover narrower questions.
+
 Read-only or isolated interventions explain measured sensitivities. They do not establish a unique biological cause or validate a repair.
 
 - [Efficacy floor: numerical sensitivity diagnostic](efficacy-floor.md)

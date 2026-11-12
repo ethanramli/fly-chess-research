@@ -7,11 +7,11 @@
 
 - The memory component: content-addressed episodic memory.
 - Why the normal memory did not work: some neurons overwrite each other.
-- Why this was the only solution that worked. The researcher's exact view: it is the most direct and simplest solution.
+- Where the engineered memory worked, how it compared with earlier approaches, and what those comparisons can establish. The researcher considers it the most direct and simplest solution.
 
 ## Evidence boundary
 
-The episodic memory is an engineered component. Disclose it as such.
+The episodic memory is an engineered component. The [version 8 report](../../../reports/engineered-memory-test-v8-2026-11-07/README.md) records what passed in that test. A claim that this was the only workable approach would need evidence ruling out the alternatives.
 
 ## Working notes
 

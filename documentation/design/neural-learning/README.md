@@ -1,6 +1,8 @@
 ﻿# Neural learning mechanisms and association tests
 
-Computational association prerequisites are distinct from biological validation and useful chess learning. Original gamma4 and positive-channel V1 failures remain part of the record.
+This topic records candidate neural learning rules and tests of association, retention, and reversal. Read [Gamma4 association and reversal tests](gamma4-association-tests.md) first for the early benchmark and its failures. Passing a computational prerequisite does not establish biological validation or useful chess learning; earlier failures remain part of the record.
+
+## Association prerequisites
 
 - [Gamma4 association and reversal tests: V1 and V2 failed](gamma4-association-tests.md)
 - [Gamma4 plasticity prototype: mechanism and limitations](gamma4-plasticity.md)
@@ -12,6 +14,8 @@ Computational association prerequisites are distinct from biological validation 
 - [Compartment memory: proposed preservation, recovery and timing diagnostics](compartment-memory-diagnostics.md)
 
 [Current status](../../current-status.md) · [All design topics](../README.md)
+
+## Mechanisms and assay infrastructure
 
 - [Delayed source-rule eligibility candidate and remaining interference](delayed-reversal-credit.md)
 
@@ -53,6 +57,8 @@ Computational association prerequisites are distinct from biological validation 
 - [neuron-reader repair plan](neuron-reader.md): each critique mapped to a concrete module change/check; exact cell roster, two-function interface, fixed observable/pooling and explicit unresolved scoring decisions.
 - [Overnight Eyes/reader repair goal](overnight-eyes-reader-repair-goal.md): bounded execution brief for MBON05 sign verification and Eyes/reader checks, with blocker-first repairs and three iterations per workstream.
 
+## Memory tests and recent proposals
+
 - [Executed overnight Eyes/reader goal](../../../research/reports/overnight-eyes-reader-repair-2026-11-01/REPORT.md): comparison, contract checks, audits and unresolved scientific prerequisites.
 - [Engineered memory test v2](engineered-memory-test-v2.md): built, not run. Disclosed nearest-neighbour store over Kenyon-cell patterns, scored on new boards against raw-eye, random-feature, mismatched and no-memory arms; pass rule fixed in advance.
 - [Engineered memory test v3](engineered-memory-test-v3.md): episodic memory without hints. Real positions, every legal move scored, feedback on the chosen move only; built, not run.
@@ -64,8 +70,11 @@ Computational association prerequisites are distinct from biological validation 
 - [Memory v5 proposal](memory-v5-proposal-2026-11-04.md) and [build contract](memory-v5-file-formats.md): does the fly's episodic memory learn; reviewed rounds 1-2.
 - [Memory v6 proposal](memory-v6-proposal-2026-11-05.md): frozen replication of v5 on 574 positions from 300 new games.
 - [Memory v7 proposal](memory-v7-proposal-2026-11-05.md): scores the choice among captures only, so a random capture is the floor; draft, not reviewed.
+- [Memory v8 proposal, 2026-11-07](memory-v8-proposal-2026-11-07.md): outcome-informed exploratory redesign of the capture curriculum; building allowed, but not confirmatory.
 
 - [Fly connections memory v1 proposal](fly-connections-memory-v1-proposal-2026-11-07.md): historical first draft for Properties 1–3; strict source review rejected it before building. See the later revisions and [stop report](../../../research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md).
 
 - [Fly connections memory v1 revision 2](fly-connections-memory-v1-revision-2-2026-11-07.md): revised source-based candidate; its implementation and development dry run completed, but the learning gates did not pass. See the [run report](../../../research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md) and [journal](../../../research/journal/experiments/2026-11-07-fly-connections-memory.md).
 - [Fly connections memory v1 revision 4](fly-connections-memory-v1-revision-4-2026-11-09.md): widened circuit candidate. The predeclared single-shot capacity gate failed; a later exact search found settings after that failure, while reward-only and valence probes left safe captures below their best rivals. No full learning run is recorded; the research is stopped pending review and the researcher's decision. See the [stop report](../../../research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md).
+- [Fly connections memory v1 run gates, 2026-11-08](fly-connections-memory-v1-gates-2026-11-08.md): frozen protocol and pass rules for a dated proposal; historical design, not current authorization.
+- [Fly connections memory v1 run file formats, 2026-11-08](fly-connections-memory-v1-file-formats-2026-11-08.md): data contract for the runner, job loop, judge, and independent auditor.

@@ -1,16 +1,12 @@
 # Outreach planning and templates
 
-Researcher profile, project summary, source-checking guidance and mentor planning. Historical contact details need fresh verification before use.
+Use these files to prepare a short, evidence-based request for scientific guidance. Start with the writing guide and check the project summary against current research status before adapting it.
 
-- [[Expert name]](dossier-template.md)
-- [Cold-emailing researchers for bounded scientific feedback](cold-email-guide.md)
-- [Ethan's outreach email template — 2026-10-03](email-template-ethan.md)
-- [Ethan Ramli — outreach interview profile (2026-10-01)](ethan-interview-profile-2026-10-01.md)
-- [Extended mentor network: English-language contacts and timezone diversity](extended-mentor-network.md)
-- [Potential mentors and research hubs](mentor-contacts-and-research-hubs.md)
-- [FlyChess: one-page outreach summary](project-one-page-summary.md)
-- [13 October 2026: Meeting with Li Yan McCurdy](li-yan-mccurdy-meeting-2026-10-13.md)
-- [14 October 2026: One-page project draft for Damon Clark](damon-clark-one-page-brief-2026-10-14.md)
-- [Clark draft: source checks and evidence corrections](damon-clark-brief-evidence-2026-10-14.md)
+- [Guide to writing a request](cold-email-guide.md) — How to choose a question and check the sources.
+- [Dossier template](dossier-template.md) — A reusable structure for background research.
+- [Project one-page summary](project-one-page-summary.md) — Background and the scope of the evidence.
+- [Current research status](../../../documentation/current-status.md) — Findings and limits to use in a new request.
 
-[Current research status](../../../documentation/current-status.md) · [Documentation guide](../../../documentation/README.md)
+See [individual drafts](../drafts/README.md) for past draft sets and the [outreach journal](../../journal/outreach/README.md) for dated planning notes. The [previous planning index](https://github.com/ethanramli/fly-chess-research/blob/3262856e24edf3cda34bd3170a72ee88f8de4334/research/outreach/planning/README.md) preserves older routes.
+
+[Outreach overview](../README.md)

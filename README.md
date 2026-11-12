@@ -1,57 +1,33 @@
-﻿# FlyChess
+# FlyChess
 
-FlyChess tests whether experience and verified feedback can produce transferable chess reasoning in a from-scratch model constrained by the Drosophila connectome. New, unfrozen experiments are capped at 2 GiB of process memory.
-
-**Current boundary:** controlled association prerequisites have passed in some conditions, but useful puzzle learning and unfamiliar/counterfactual reasoning remain unproved. A successful search, recorded reward or changed memory is not proof of reasoning.
+Could a simple brain learn to reason from experience? FlyChess explores that question with chess. The team builds a computer model based on the wiring of a fruit fly's brain, gives it chess positions and checked feedback, and tests whether what it learns helps it make choices in unfamiliar positions. Transferable chess reasoning remains an open research goal. The experiments measure the computer model.
 
 ## Start here
 
-- [Documentation guide](documentation/README.md): research goals, mechanisms, experiments and future plans.
-- [Current research status](documentation/current-status.md): latest verified outcomes and next unresolved gate.
-- [Research records](research/README.md): literature, dated discussions, decisions, protocols and raw results.
-- [Code guide](.codebase/README.md): entry points and commands.
-- [Project instructions](AGENTS.md): stable scientific, resource and change rules.
+| If you want to… | Go to |
+| --- | --- |
+| See what the team has found so far | [Current research status](documentation/current-status.md) |
+| See where the work stopped and what comes next | [Latest research handoff](documentation/next-checkpoint.md) |
+| Find the tests, results, and independent checks behind a finding | [Experiment reports](research/reports/README.md) |
+| Understand the question and how the team is testing it | [Research goals and design](documentation/README.md) |
+| Explore the five-volume book and its chapter plans | [Can a Fly Play Chess?](research/literature/writings/README.md) |
+| Set up the software or find the browser demo | [Software setup and commands](.codebase/README.md) |
 
-## Research aim
+## Repository tree
 
-The researcher's overarching question is: **Could a simple organism achieve reasoning?** The project studies a Drosophila-connectome-constrained computational model and uses chess to test whether experience-dependent plasticity produces consequence-sensitive evaluation that transfers across unfamiliar chess positions and counterfactuals.
+This map lists the top-level folders tracked in Git. Follow a folder link for its more detailed map.
 
-The model must learn through its own experiences and verified consequences; it is not trained to imitate human-game move labels. Puzzles are the first bounded learning stage. The research aim is transferable reasoning, not merely a puzzle score or a chess-playing demonstration. Chess transfer is evidence about reasoning in chess, not by itself about other domains or a living fly.
+<!-- directory-map -->
+- [`documentation/`](documentation/README.md) — Research questions, designs, current status, and handoffs.
+- [`research/`](research/README.md) — Experiment reports, sources, journal entries, outreach, and book plans.
+- [`.codebase/`](.codebase/README.md) — Simulation code, commands, and software tests.
+- [`python actions/`](python%20actions/README.md) — Reusable commands for checking and managing local research jobs.
+- [`archive/`](archive/early-development/README.md) — Early work and its preserved evidence.
+- [`.agents/`](.agents/skills/) — Skills used by the coding and research assistants.
+- [`.github/`](.github/workflows/) — Checks that run on GitHub.
+- [`.vscode/`](.vscode/) — Editor settings.
+<!-- /directory-map -->
 
-The researcher's longer-term performance aspiration is for the model to develop its own evaluation and playing style and reach 2000 Elo. That requires a defined rating scale and separate calibrated playing-strength evidence; it is not yet achieved and rating alone cannot establish reasoning. A fair comparison with humans may support a later comparative claim. Current symbolic encoders stimulate mapped Kenyon cells directly; natural visual perception is unimplemented.
+The root [project instructions](AGENTS.md) explain the research and repository rules. The [main command definitions](package.json) and [Windows launcher](fly.cmd) are also at the root. Local experiment outputs go under `runs/`; downloaded graph files and temporary data can live under `.cache/`.
 
-Read [the scientific contribution and evidence gates](documentation/design/research-goals/scientific-contribution.md) and [the teacher/brain boundary](documentation/design/research-goals/feedback-learning.md). Earlier supervised training remains a comparison baseline.
-
-## Run the software
-
-Node 22 or newer is required. From the repository root:
-
-```powershell
-npm install
-npm run fetch:graph
-npm test
-```
-
-The record-only engineering fixture can be run in a new output directory:
-
-```powershell
-node --max-old-space-size=256 .codebase/scripts/puzzle-learning/puzzle-round.mjs --out runs/my-record-only-round --cpu-duty 0.5
-```
-
-This records independently checked feedback without neural learning. [Commands and limits](documentation/design/puzzle-learning/record-only-round.md). Check for active graph experiments before launching another. Training commands and the separate untrained browser player are explained in the [code guide](.codebase/README.md).
-
-## Accepted future work
-
-After the useful-learning milestone, the researcher wants latency optimization and scaling, bounded opponent-turn [pondering](documentation/design/evaluation-and-performance/pondering.md), and snapshot tracking with a [Stockfish-calibrated Elo evaluator](documentation/design/evaluation-and-performance/elo-calibration.md). These are future designs; no calibrated predictor or Stockfish pipeline currently exists. They do not extend the present learning completion gate. The [implementation roadmap](documentation/design/evaluation-and-performance/implementation-roadmap.md) records the proposed build order.
-
-## Folder map
-
-| Folder | What belongs here |
-|---|---|
-| [documentation](documentation/README.md) | Readable specifications, hypotheses, writing plans and current status |
-| [research](research/README.md) | Literature, dated history, decisions, outreach, datasets and evidence |
-| [.codebase](.codebase/README.md) | Simulation code, runners, tests and vendored assets |
-| [runs](runs/README.md) | Local engineering-run outputs |
-| .cache | Downloaded graph and temporary local artifacts; excluded from Git |
-
-Historical root README/instruction text is preserved in the [journal archive](research/journal/archive/README.md). Use the current status page for today's conclusions rather than historical pending statements.
+[How to keep this map current](AGENTS.md#keep-readme-navigation-current)

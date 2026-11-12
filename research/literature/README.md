@@ -1,6 +1,22 @@
 # Literature and source evidence
 
-Register externally sourced solutions before experimental use. Preserve source access/coverage, supported claims, approximations and failed implementations.
+This folder holds source reviews, biology notes, implementation comparisons and evidence registers. Start with the source-to-solution register for how published work maps to candidate mechanisms; dated review folders preserve their own access limits and conclusions. Register externally sourced solutions before experimental use, and preserve source access/coverage, supported claims, approximations and failed implementations.
+
+## Folder map
+
+<!-- directory-map -->
+- [cesp99 calculation review](cesp99-calculation-2026-10-07/README.md): archived source review of a fly-chess implementation's calculation and search.
+- [cesp99 retina review](cesp99-retina-2026-10-28/README.md): source, citation and scope for the photoreceptor-to-square map.
+- [Feedback quality deep review](feedback-quality-deep-review-2026-10-08/README.md): literature and proposed interventions; no learning claim.
+- [Feedback specificity review](feedback-specificity-2026-10-08/README.md): saved-receipt analysis and an untested repair candidate.
+- [Graded feedback review](graded-feedback-2026-10-08/README.md): sources and implementation evidence for graded feedback.
+- [Kenyon cell sparse coding review](kc-sparse-coding-2026-10-29/README.md): literature check on mushroom-body coding sparsity.
+- [Memory interference review](memory-interference-2026-10-30/README.md): research scope and untested staged memory plan.
+- [Novelty search](novelty-search-2026-10-29/README.md): bounded search for related connectome-learning work.
+- [Five-volume writings](writings/README.md): manuscript plans, chapter files and evidence boundaries.
+<!-- /directory-map -->
+
+The map covers immediate child directories. Update it and affected links when a child directory is added, moved, removed, renamed or repurposed.
 
 - [Memory interference: recommendation, sources and test plan, 2026-10-30](memory-interference-2026-10-30/recommendation-and-test-plan.md): local protection, revisable fast/slow memory, overlap/representation diagnostics and matched tests. [Package and scope](memory-interference-2026-10-30/README.md). Research complete; mechanisms remain untested.
 

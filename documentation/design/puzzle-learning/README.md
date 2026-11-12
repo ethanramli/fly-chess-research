@@ -1,6 +1,8 @@
 # Puzzle-learning experiments
 
-Most entries below document work from before the 2026-10-30 research restart. Treat their dated results and proposals as historical records, not current experiment status or authorization. For the current direction and stopped status, see [the approved restart plan](../research-goals/restart-plan-2026-10-30.md) and [current status](../../current-status.md).
+This topic follows puzzle-based feedback from task design through training and evaluation. Start with [Plain-English curriculum and current status](principles-curriculum-plain-english.md) for the G0 result and remaining gate, then consult [current status](../../current-status.md) and [the approved restart plan](../research-goals/restart-plan-2026-10-30.md) for the active direction. Most entries below describe work before the 2026-10-30 restart; their dates and proposals are historical evidence, not current authorization.
+
+## Data and curriculum foundations
 
 - [Lichess capture comparisons and data readiness](lichess-capture-comparisons.md): audited source/proof corpus, capture shortcut, preserved negative branch attempts and current training-only source selection; no neural qualification.
 
@@ -19,6 +21,8 @@ Most entries below document work from before the 2026-10-30 research restart. Tr
 - [Completed adaptive-loop result and independent audit](../../../archive/early-development/research/reports/adaptive-temporal-loop-2026-10-09/result.md)
 
 - [Baseline-relative readout hypothesis: decoder prediction reproduces; seed replication invalidated](../../../archive/early-development/research/reports/gamma2-relative-readout-2026-10-09/README.md)
+
+## Earlier feedback and transfer experiments
 
 - [Feedback quality gate: consequence evidence and neural delivery](feedback-quality-gate.md)
 
@@ -58,6 +62,8 @@ One inspected development fixture now passes audited acquired repair under adapt
 - [Adaptive near-transfer repair v1: warm-start protocol](../../../archive/early-development/research/data/adaptive-near-transfer-repair-v1/README.md)
 
 [Current status](../../current-status.md) · [All design topics](../README.md)
+
+## Puzzle acquisition and feedback results
 
 - [Shared-memory multi-context acquisition: orchestration tested; graph outcome pending](shared-memory-multi-context-acquisition.md)
 
@@ -110,7 +116,10 @@ One inspected development fixture now passes audited acquired repair under adapt
 - [Stage 1 all-legal capture-retention teacher domain](capture-retention-all-legal-domain.md): new quiet-action evidence plus unchanged capture replay; receiver/datasets/training pending.
 
 - [Stage 1 all-legal bound-ray cue preflight](../../../archive/early-development/research/data/c01-input-domain-preflight-v1/README.md): static 207-action/seed projection audit; bounded cue loss recorded; no neural delivery or Stage 1 split generation.
-# Curriculum subdomains
+
+## Later curriculum and teacher-feedback designs
+
+### Curriculum subdomains
 
 - [Stage 2 bounded avoid-mate feedback primitive](stage2-avoid-mate-domain.md): checked opponent-mate certificates for one narrow defensive task; not a production stage runtime or launch authorization.
 

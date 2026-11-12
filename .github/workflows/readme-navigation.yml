@@ -1,0 +1,25 @@
+name: README navigation
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check-readme-navigation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            README.md
+            /AGENTS.md
+            /.github/scripts/
+      - name: Check the maps and local links
+        run: python3 .github/scripts/check-readme-navigation.py

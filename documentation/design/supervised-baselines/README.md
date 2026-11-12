@@ -1,6 +1,6 @@
 # Supervised baselines and historical protocol drafts
 
-Gradient/Adam training is engineering or comparison evidence. These drafts do not replace the feedback-driven endogenous-learning objective.
+This folder contains gradient/Adam-trained systems used as engineering work or comparison baselines, plus historical study drafts. Read [the cached-circuit training hypothesis](cached-circuit-training.md) first for the baseline design. Such training does not replace the project's feedback-driven endogenous-learning objective.
 
 - [Supervised baseline: cached-circuit training hypothesis](cached-circuit-training.md)
 - [Supervised baseline dataset: streaming and split contract](dataset-format.md)

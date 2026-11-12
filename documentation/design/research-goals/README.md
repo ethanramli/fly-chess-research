@@ -1,5 +1,7 @@
 # Research goals and hypotheses
 
+This folder explains what the project aims to establish and what evidence each claim requires. Read the [memory handoff](memory-handoff-2026-11-07.md) first for the active claim and gap; older goals and proposals are dated and retain their original approval status.
+
 - [Restart plan revision, 2026-11-03](restart-plan-revision-2026-11-03.md): researcher-directed decisions fixing the peer-review problems (input, unchanged-memory scoring, Eye test v2, en-passant group, answer file).
 - [Three proposals awaiting approval, 2026-11-03](approval-proposals-2026-11-03.md): the game source and split, the two fly simulations (Eye test v2 and the MBON05 memory test) with commands, times and memory limits, and the memory formula with its sources. Not approved; nothing has run.
 - [Transfer and combination tests, 2026-11-03](transfer-and-combination-protocol-2026-11-03.md): complete tasks, comparison systems, pass scores and stopping rules for Phases B and C.

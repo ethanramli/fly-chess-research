@@ -18,9 +18,9 @@ Confirmed by the researcher, 2026-11-04.
 
 1. [Rome](01-rome.md)
 2. [To Teach](02-to-teach.md)
-3. [To Learn](03-to-learn.md)
+3. [To Learn](03-to-learn.md) — planning file exists; the engineered episodic-memory component and preserved development tests are described in [long-term-memory v1](../../../reports/engineered-episodic-memory-2026-11-01/README.md). The chapter draft and evidence that this component establishes biological memory or transferable reasoning remain to be written; the memory is engineered and must be disclosed.
 4. [Prefrontal Cortex](04-prefrontal-cortex.md)
-5. [Evidence for Learning](05-evidence-for-learning.md)
+5. [Evidence for Learning](05-evidence-for-learning.md) — planning file exists. Some controlled association prerequisites have passed, but useful puzzle learning and unfamiliar/counterfactual reasoning remain unproved; see [current research status](../../../../documentation/current-status.md). The chapter draft and evidence for any broader learning claim remain to be assembled.
 6. [Constraints](06-constraints.md)
 7. [Conclusion](07-conclusion.md)
 

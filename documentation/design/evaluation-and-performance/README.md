@@ -1,5 +1,7 @@
 # Evaluation and performance
 
+This topic covers search implementation, runtime measurements, and plans for measuring playing strength. Read the [FlyBench overview](flybench.md) first for the evaluation harness and its limits; the findings below remain bounded to the named probes and dates.
+
 The first equivalent sparse-forward optimization, full-graph Monte Carlo profiles, and a paired forcing-shortlist probe have been measured. A matched one-position ablation changes a verified failure to a verified success when a fixed structural forcing prior is mixed into the nearly uniform neural priors; this is search engineering, not learning. A separate neural-only support-shift profile misses a known success. Broader time-to-quality and multi-position evaluation remain open. No calibrated Elo predictor, Stockfish evaluation pipeline or pondering speedup is established.
 
 - [Future evaluation: Stockfish reference-pool Elo calibration](elo-calibration.md)
