@@ -1,33 +1,44 @@
 # FlyChess
 
-Could a simple brain learn to reason from experience? FlyChess explores that question with chess. The team builds a computer model based on the wiring of a fruit fly's brain, gives it chess positions and checked feedback, and tests whether what it learns helps it make choices in unfamiliar positions. Transferable chess reasoning remains an open research goal. The experiments measure the computer model.
+**Could a model of a fruit fly’s brain learn to play chess?**
 
-## Start here
+FlyChess is an independent research project led by Ethan Ramli. It uses a map of how neurons in a fruit fly’s brain are connected to build a computer model. We test what the model can learn from the consequences of its own moves.
 
-| If you want to… | Go to |
-| --- | --- |
-| See what the team has found so far | [Current research status](documentation/current-status.md) |
-| See where the work stopped and what comes next | [Latest research handoff](documentation/next-checkpoint.md) |
-| Find the tests, results, and independent checks behind a finding | [Experiment reports](research/reports/README.md) |
-| Understand the question and how the team is testing it | [Research goals and design](documentation/README.md) |
-| Explore the five-volume book and its chapter plans | [Can a Fly Play Chess?](research/literature/writings/README.md) |
-| Set up the software or find the browser demo | [Software setup and commands](.codebase/README.md) |
+## Why chess?
 
-## Repository tree
+Imagine taking a piece. On one board, you win it. On another, your opponent can take back. The board shows where the pieces are. The model has to work out what the opponent can do next.
 
-This map lists the top-level folders tracked in Git. Follow a folder link for its more detailed map.
+That gives us a test we can score. Show the model a position, let it choose, and check what happens. Then give it an unfamiliar position and see if the lesson carries over. That tests one idea at a time. To show reasoning, the model would have to combine ideas it learned separately to solve a new kind of problem.
+
+## What we’ve found
+
+A memory system added to the model passed a test where it chose among captures. The same memory system performed better when it took its input directly from the board. The project still has to show that the model can learn through its own connections and combine what it learns on unfamiliar boards. [Read the memory experiment and its limits](research/reports/engineered-memory-test-v8-2026-11-07/README.md)
+
+<a id="start-here"></a>
+
+## Explore FlyChess
+
+- [Where the research stands today](documentation/current-status.md)
+- [How the experiments are designed](documentation/design/research-goals/restart-plan-2026-10-30.md) and [what the experiments found](research/reports/README.md)
+- [Can a Fly Play Chess? The five-volume research plan](research/literature/writings/README.md)
+- [Run the browser demo or browse the code](.codebase/README.md)
+
+<a id="repository-tree"></a>
+
+<details>
+<summary>Repository map</summary>
 
 <!-- directory-map -->
-- [`documentation/`](documentation/README.md) — Research questions, designs, current status, and handoffs.
-- [`research/`](research/README.md) — Experiment reports, sources, journal entries, outreach, and book plans.
-- [`.codebase/`](.codebase/README.md) — Simulation code, commands, and software tests.
-- [`python actions/`](python%20actions/README.md) — Reusable commands for checking and managing local research jobs.
-- [`archive/`](archive/early-development/README.md) — Early work and its preserved evidence.
-- [`.agents/`](.agents/skills/) — Skills used by the coding and research assistants.
-- [`.github/`](.github/workflows/) — Checks that run on GitHub.
+- [`documentation/`](documentation/README.md) — Research plans, designs, and handoffs.
+- [`research/`](research/README.md) — Results, sources, journal, and chapter plans.
+- [`.codebase/`](.codebase/README.md) — Simulation code, commands, and tests.
+- [`python actions/`](python%20actions/README.md) — Commands for inspecting and managing research runs.
+- [`archive/`](archive/early-development/README.md) — Earlier work and its evidence.
+- [`.agents/`](.agents/skills/) — Skills for the research and coding assistants.
+- [`.github/`](.github/workflows/) — Automated checks.
 - [`.vscode/`](.vscode/) — Editor settings.
 <!-- /directory-map -->
 
-The root [project instructions](AGENTS.md) explain the research and repository rules. The [main command definitions](package.json) and [Windows launcher](fly.cmd) are also at the root. Local experiment outputs go under `runs/`; downloaded graph files and temporary data can live under `.cache/`.
+[Project instructions for contributors](AGENTS.md)
 
-[How to keep this map current](AGENTS.md#keep-readme-navigation-current)
+</details>
