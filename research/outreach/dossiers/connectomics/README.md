@@ -1,4 +1,4 @@
-# Expert dossiers: connectomics
+# Researchers in connectomics
 
 Historical research/contact material. Verify current sources before reuse; drafts and dossiers are not proof of delivery or endorsement.
 

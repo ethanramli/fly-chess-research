@@ -1,4 +1,4 @@
-# Puzzle Learning scripts
+# Puzzle training and evaluation commands
 
 [Scripts guide](../README.md) · [Code guide](../../README.md)
 

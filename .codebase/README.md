@@ -1,4 +1,4 @@
-# Code guide
+# FlyChess setup and commands
 
 This folder contains the code that runs FlyChess, the commands that use it, and the software tests. Start with setup below or use the [code map](#code-map) to find a folder. The [project README](../README.md) explains the research question.
 

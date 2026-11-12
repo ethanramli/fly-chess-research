@@ -1,4 +1,4 @@
-# Python actions
+# Research run commands
 
 This folder contains Python command-line actions, their registration files and dated records; use the read-only commands below to inspect registered work. The research is currently paused, so read the [current handoff](../documentation/next-checkpoint.md) before considering any job command; the [status page](../documentation/current-status.md) summarizes why it stopped.
 

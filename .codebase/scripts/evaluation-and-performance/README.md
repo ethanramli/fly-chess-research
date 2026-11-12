@@ -1,4 +1,4 @@
-# Evaluation And Performance scripts
+# Evaluation and benchmarking commands
 
 [Scripts guide](../README.md) · [Code guide](../../README.md)
 

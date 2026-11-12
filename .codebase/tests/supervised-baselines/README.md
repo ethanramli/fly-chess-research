@@ -1,4 +1,4 @@
-# Supervised Baselines tests
+# Supervised training tests
 
 [Tests guide](../README.md) · [Code guide](../../README.md)
 

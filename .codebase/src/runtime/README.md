@@ -1,4 +1,4 @@
-# Runtime src
+# Graph simulation and storage
 
 [Src guide](../README.md) · [Code guide](../../README.md)
 

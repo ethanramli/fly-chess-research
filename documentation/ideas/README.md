@@ -1,4 +1,4 @@
-# Idea notebook
+# Early research proposals
 
 Early proposals, preserved for context. The rubric-supervision brief is historical and superseded for the primary question; use the [current research goals](../design/research-goals/README.md) for the active framing.
 

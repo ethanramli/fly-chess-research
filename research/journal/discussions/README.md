@@ -1,4 +1,4 @@
-# Dated researcher discussions
+# Research discussions
 
 This index covers researcher intent, untested hypotheses, scope decisions, and documentation choices. Read the [journal guide](../README.md) for the folder map and the [current research status](../../../documentation/current-status.md) for audited conclusions; discussion notes record what was said or considered at the time.
 

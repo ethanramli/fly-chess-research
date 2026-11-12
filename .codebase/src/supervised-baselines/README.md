@@ -1,4 +1,4 @@
-# Supervised Baselines src
+# Supervised training code
 
 [Src guide](../README.md) · [Code guide](../../README.md)
 

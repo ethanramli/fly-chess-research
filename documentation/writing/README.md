@@ -1,4 +1,4 @@
-# Writing and publication planning
+# Manuscript and publication plans
 
 Draft manuscript organization, submission checks and venue planning. These are not completed experiments.
 

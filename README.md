@@ -10,7 +10,9 @@ I’d love to play a match against a model that has developed a style of its own
 
 <a id="start-here"></a>
 
-## What FlyChess is
+<a id="what-flychess-is"></a>
+
+## The FlyChess model
 
 FlyChess is a research project and a chess simulator. It uses a fruit fly’s **connectome**, a map of which neurons connect to which, as the wiring for a computer model. The software shows the model a chess position, reads its activity to score legal moves, and can teach it about the move it chose.
 
@@ -18,7 +20,9 @@ The first lesson is small enough to check exactly. Can the model tell when takin
 
 ![Two illustrative chessboards. The white bishop can take the pawn on e5 on both boards. When the black rook is on a8, it cannot recapture. When the rook is on e8, it can take the bishop on e5.](documentation/readme-capture-example.png)
 
-## How I test it
+<a id="how-i-test-it"></a>
+
+## Experimental method
 
 1. **Teach a single idea.** The model chooses a move. A separate checker works out the consequence using the rules of chess. During practice, a verified consequence can become feedback.
 2. **Find out what did the learning.** Compare the model with versions that get shuffled feedback or have learning disabled. Give simpler systems comparable input and practice to see how much they can explain.
@@ -28,7 +32,9 @@ The [learning plan](documentation/design/research-goals/restart-plan-2026-10-30.
 
 <a id="repository-tree"></a>
 
-### Follow the work in the repo
+<a id="follow-the-work-in-the-repo"></a>
+
+### Repository map
 
 <!-- directory-map -->
 - [`documentation/`](documentation/README.md) — Research questions, experiment designs, and current decisions.
@@ -41,7 +47,9 @@ The [learning plan](documentation/design/research-goals/restart-plan-2026-10-30.
 - [`.vscode/`](.vscode/) — Editor settings.
 <!-- /directory-map -->
 
-## The science · Can the circuit keep a lesson?
+<a id="the-science--can-the-circuit-keep-a-lesson"></a>
+
+## Learning and memory
 
 The fly’s **mushroom body**, a brain structure involved in learning, motivates the memory experiments. The model tests rules in which a simulated dopamine signal changes selected connection strengths after a choice. To count as useful memory, a change has to affect a later decision and survive further practice. [Learning mechanisms](documentation/design/neural-learning/README.md)
 
@@ -50,13 +58,17 @@ The fly’s **mushroom body**, a brain structure involved in learning, motivates
 | [An added memory store](research/reports/engineered-memory-test-v8-2026-11-07/README.md) | It passed an audited test where the choices were restricted to captures. The same store scored higher when it read board features directly than when it used simulated neural activity. |
 | [Memory in the model’s own connections](research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md) | A planned test found connection settings that ranked a safe capture first on one of three boards. It needed two. A more extensive search later found settings for all three. That search awaits independent review, and it remains open whether feedback could teach the model to reach those settings. |
 
-## The computation · What runs on the laptop
+<a id="the-computation--what-runs-on-the-laptop"></a>
+
+## Simulation and move selection
 
 **Board → simulated circuit → move scores.** Code supplies the list of legal moves and turns each candidate board into input. The simulator updates neuron activity along the connections in the wiring map. A separate readout turns that activity into a score for each move.
 
 The teacher checks consequences separately. The project also keeps scores produced by the model alone distinct from scores produced with extra chess search. Looking ahead can improve a move even if the underlying model has learned nothing new. [Code guide](.codebase/README.md) · [Search and feedback](documentation/design/search-and-feedback/README.md)
 
-## The mathematics · What fits, and what can work
+<a id="the-mathematics--what-fits-and-what-can-work"></a>
+
+## Graph storage and model limits
 
 The graph used here has **134,209 neurons** and **2,700,513 directed connections**. A table with a slot for every possible connection would need far more space:
 
@@ -69,7 +81,9 @@ The simulator stores the connections that exist. The calculation measures the si
 
 Math also tells us which repairs to drop. In one saved model state, two earlier lessons required the same scoring setting to be on opposite sides of a gap. One required a value above about 0.08425. The other required a value below about 0.08394. No setting satisfies both, so changing that setting alone cannot repair those saved responses. [Proof and assumptions](research/reports/interference-limits-2026-11-02/README.md)
 
-## The chess · From one tactic to a game
+<a id="the-chess--from-one-tactic-to-a-game"></a>
+
+## Chess concepts and playing strength
 
 The first question is whether the opponent can legally capture back. The later tests add two ideas. A defender may be pinned, and a recapture may still leave you ahead if you took a more valuable piece. The protocol calls for teaching each idea separately before testing whether the model can put them together on a new board.
 

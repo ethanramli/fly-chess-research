@@ -1,4 +1,4 @@
-# Test guide
+# Software tests
 
 This folder contains software checks grouped by the code they exercise, plus a small set of data-integrity checks. Read the topic overview before relying on a test result; these checks establish only the behavior they cover. Return to the [code guide](../README.md) for project-wide navigation.
 

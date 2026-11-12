@@ -1,4 +1,4 @@
-# Expert dossiers: computational
+# Researchers in computational neuroscience
 
 Historical research/contact material. Verify current sources before reuse; drafts and dossiers are not proof of delivery or endorsement.
 

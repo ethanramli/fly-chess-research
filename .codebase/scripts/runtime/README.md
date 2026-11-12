@@ -1,4 +1,4 @@
-# Runtime scripts
+# Graph setup and run controls
 
 [Scripts guide](../README.md) · [Code guide](../../README.md)
 

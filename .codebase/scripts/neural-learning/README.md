@@ -1,4 +1,4 @@
-# Neural Learning scripts
+# Neural learning experiments and audits
 
 [Scripts guide](../README.md) · [Code guide](../../README.md)
 

@@ -1,4 +1,4 @@
-# Neural Learning src
+# Neural feedback and memory code
 
 [Src guide](../README.md) · [Code guide](../../README.md)
 

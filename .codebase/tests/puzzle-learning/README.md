@@ -1,4 +1,4 @@
-# Puzzle Learning tests
+# Puzzle training tests
 
 [Tests guide](../README.md) · [Code guide](../../README.md)
 

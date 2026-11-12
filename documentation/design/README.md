@@ -1,4 +1,4 @@
-# Design topics
+# Experiment designs
 
 This directory holds the research questions, input designs, learning mechanisms, feedback plans, diagnostics, and evaluation proposals for FlyChess. Start with [current status](../current-status.md) for what has actually been tested; then choose a topic below. These design notes describe proposals and evidence with different dates and status, so follow each page's status labels.
 

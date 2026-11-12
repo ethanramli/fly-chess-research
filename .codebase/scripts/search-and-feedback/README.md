@@ -1,4 +1,4 @@
-# Search And Feedback scripts
+# Move search and feedback checks
 
 [Scripts guide](../README.md) · [Code guide](../../README.md)
 

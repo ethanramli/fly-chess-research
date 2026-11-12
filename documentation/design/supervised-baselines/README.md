@@ -1,4 +1,4 @@
-# Supervised baselines and historical protocol drafts
+# Supervised training baselines
 
 This folder contains gradient/Adam-trained systems used as engineering work or comparison baselines, plus historical study drafts. Read [the cached-circuit training hypothesis](cached-circuit-training.md) first for the baseline design. Such training does not replace the project's feedback-driven endogenous-learning objective.
 

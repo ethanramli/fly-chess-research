@@ -1,4 +1,4 @@
-# Search And Feedback tests
+# Move search and feedback tests
 
 [Tests guide](../README.md) · [Code guide](../../README.md)
 

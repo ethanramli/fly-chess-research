@@ -1,4 +1,4 @@
-# Chess Input scripts
+# Board input checks and audits
 
 [Scripts guide](../README.md) · [Code guide](../../README.md)
 

@@ -1,4 +1,4 @@
-# Evaluation and performance
+# Playing strength and runtime
 
 This topic covers search implementation, runtime measurements, and plans for measuring playing strength. Read the [FlyBench overview](flybench.md) first for the evaluation harness and its limits; the findings below remain bounded to the named probes and dates.
 

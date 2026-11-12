@@ -1,4 +1,4 @@
-# Diagnostics scripts
+# Memory and simulation diagnostics
 
 [Scripts guide](../README.md) · [Code guide](../../README.md)
 

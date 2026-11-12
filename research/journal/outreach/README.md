@@ -1,4 +1,4 @@
-# Dated outreach history
+# Outreach journal
 
 Historical research and contact records. Do not infer current replies, roles or endorsement from these notes.
 

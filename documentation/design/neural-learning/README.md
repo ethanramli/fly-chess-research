@@ -1,4 +1,4 @@
-﻿# Neural learning mechanisms and association tests
+﻿# Neural learning and memory experiments
 
 This topic records candidate neural learning rules and tests of association, retention, and reversal. Read [Gamma4 association and reversal tests](gamma4-association-tests.md) first for the early benchmark and its failures. Passing a computational prerequisite does not establish biological validation or useful chess learning; earlier failures remain part of the record.
 

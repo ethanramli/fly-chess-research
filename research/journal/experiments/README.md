@@ -1,4 +1,4 @@
-# Dated experiment history
+# Experiment journal
 
 Chronological implementation and experiment history. Pending statements are historical; use [current status](../../../documentation/current-status.md) for latest audited conclusions.
 

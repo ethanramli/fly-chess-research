@@ -1,4 +1,4 @@
-# Puzzle Learning src
+# Puzzle lessons and training code
 
 [Src guide](../README.md) · [Code guide](../../README.md)
 

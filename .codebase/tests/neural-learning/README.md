@@ -1,4 +1,4 @@
-# Neural Learning tests
+# Neural feedback and memory tests
 
 [Tests guide](../README.md) · [Code guide](../../README.md)
 

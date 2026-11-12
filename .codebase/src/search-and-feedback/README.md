@@ -1,4 +1,4 @@
-# Search And Feedback src
+# Move search and consequence checking
 
 [Src guide](../README.md) · [Code guide](../../README.md)
 

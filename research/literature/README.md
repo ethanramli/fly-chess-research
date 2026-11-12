@@ -1,4 +1,4 @@
-# Literature and source evidence
+# Literature and source notes
 
 This folder holds source reviews, biology notes, implementation comparisons and evidence registers. Start with the source-to-solution register for how published work maps to candidate mechanisms; dated review folders preserve their own access limits and conclusions. Register externally sourced solutions before experimental use, and preserve source access/coverage, supported claims, approximations and failed implementations.
 

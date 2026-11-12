@@ -1,4 +1,4 @@
-# Chess Input tests
+# Board and move encoding tests
 
 [Tests guide](../README.md) · [Code guide](../../README.md)
 

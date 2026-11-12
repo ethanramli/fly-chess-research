@@ -1,4 +1,4 @@
-# Browser scripts
+# Browser demo server
 
 [Scripts guide](../README.md) · [Code guide](../../README.md)
 

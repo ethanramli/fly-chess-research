@@ -1,4 +1,4 @@
-# Chess input representations
+# How the model sees the board
 
 This topic documents how a board and candidate move become model input. Read [Eyes v2](eyes-v2.md) first for the current input used by new tests; the dated entries below preserve earlier encoders and their limits.
 

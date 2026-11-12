@@ -1,4 +1,4 @@
-# Browser src
+# Browser chess interface
 
 [Src guide](../README.md) · [Code guide](../../README.md)
 

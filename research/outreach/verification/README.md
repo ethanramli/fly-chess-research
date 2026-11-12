@@ -1,4 +1,4 @@
-# Outreach verification folders
+# Outreach source and routing checks
 
 These folders hold dated records used to check the sources and routing for earlier campaigns. Use the [campaign index](../campaigns/README.md) for summaries.
 

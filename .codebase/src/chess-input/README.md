@@ -1,4 +1,4 @@
-# Chess Input src
+# Board and move encoding
 
 [Src guide](../README.md) · [Code guide](../../README.md)
 

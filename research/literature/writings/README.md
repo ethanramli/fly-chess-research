@@ -1,4 +1,4 @@
-# Can a Fly Play Chess? — Writings
+# Can a Fly Play Chess?
 
 This is the researcher's five-volume manuscript-planning workspace, created 2026-11-01. The chapter files are planning documents, not finished chapter drafts or completed studies. Read the full [series plan](../../../documentation/design/research-goals/five-volume-series.md) for the project-wide structure; keep source-reading notes in the parent [literature folder](../README.md).
 

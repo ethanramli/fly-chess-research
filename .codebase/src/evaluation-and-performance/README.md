@@ -1,4 +1,4 @@
-# Evaluation And Performance src
+# Move policies, benchmarks, and opponents
 
 [Src guide](../README.md) · [Code guide](../../README.md)
 

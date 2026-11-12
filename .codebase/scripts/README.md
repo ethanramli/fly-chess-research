@@ -1,4 +1,4 @@
-# Scripts guide
+# Command-line tools
 
 Scripts are executable tools for setup, software checks, demos, and research tasks. Start with the [code guide](../README.md) for prerequisites and command boundaries; choose a topic below to find its commands and the design or protocol they follow.
 

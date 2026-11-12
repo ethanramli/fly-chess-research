@@ -1,4 +1,4 @@
-# Supervised Baselines scripts
+# Supervised training and dataset checks
 
 [Scripts guide](../README.md) · [Code guide](../../README.md)
 

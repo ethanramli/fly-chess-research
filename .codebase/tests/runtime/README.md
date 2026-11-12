@@ -1,4 +1,4 @@
-# Runtime tests
+# Graph simulation and storage tests
 
 [Tests guide](../README.md) · [Code guide](../../README.md)
 

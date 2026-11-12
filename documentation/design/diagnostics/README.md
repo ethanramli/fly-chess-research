@@ -1,4 +1,4 @@
-# Learning diagnostics and memory probes
+# Investigating learning and memory failures
 
 These pages test whether stored state affects scores and identify conditions linked to learning failures. Start with the [memory interference diagnosis](../../../research/reports/memory-interference-diagnosis-2026-11-01/README.md) for the latest integrated diagnostic; individual probes below cover narrower questions.
 
