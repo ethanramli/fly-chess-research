@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "name": "eye-test-v2-v1",
+  "paused": false,
+  "note": "Researcher instruction 2026-11-03 (\"i want you to test the eyes too. see if the fly can actually see teh fucking board\"): run Eye test v2 once. Memory test not approved.",
+  "paths": {
+    "run": "runs/eye-test-v2-2026-11-03/eye-test-v2-v1",
+    "protocol": "documentation/design/research-goals/restart-plan-revision-2026-11-03.md",
+    "registration": "python actions/memory/eye-test-v2-step.json",
+    "pairs": "runs/restart-data-2026-11-03/eye-test-pairs-train/pairs.jsonl"
+  },
+  "pins": {
+    ".codebase/scripts/neural-learning/run-eye-test-v2.mjs": "132389e2b925b0a2efde61b3a228a1c76b36e09853094c32917b1041d09759db",
+    ".codebase/src/neural-learning/eye-test-v2-runner.mjs": "2b8b04c463cabc7d3a19a674ceaab1c724371111b13ce1cbc0f2f4b0a9920559",
+    ".codebase/src/neural-learning/eye-test-v2.mjs": "6610a1a6f3b3789f362e0ab74931d2f9c3bb7d1770b8973a0c77ec8c97135a6c",
+    ".codebase/src/chess-input/eyes-v2.mjs": "99a4f1b78f2a5d9fa5d0b3d3f376f13066f7c11bb06a0b71d54df9bd8c799fdb",
+    ".codebase/src/chess-input/eyes-v1.mjs": "74ae9ac4fa4e9fc5432099ffd662661632aab9aa89e69f6df7e100b59f6813a2",
+    ".codebase/src/chess-input/eyes-v1-pictures.json": "13ebfce66fd0ded3accf60d37d4f5250c8fe66b8f50264f85211e62f320ae30c",
+    ".codebase/src/chess-input/public-attack-map-cue-v2.mjs": "4765e6b8e7d4672b9b6f1a2eb31803edbe8018373542b6f6cf3d94eb946a257f",
+    ".codebase/src/neural-learning/neuron-reader.mjs": "c26434fb5f9d13cae1d200878773d3f878749315156b2dc0d81eba2006e60874",
+    ".codebase/src/neural-learning/neuron-reader-cells.json": "e979eae031781a606c983bf6c41b54e22a3b544a8f5ce3bd26c4e86198d4c0ec",
+    ".codebase/src/supervised-baselines/trainer.mjs": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+    ".codebase/src/runtime/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+    ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    "python actions/curriculum.py": "6f0709c499a4694c9388b9f35a22a797078e1cfe8be37a99f941049d7069a638",
+    "documentation/design/research-goals/restart-plan-revision-2026-11-03.md": "3007595408768a5688695290ee106e73c2ebcdb4e17ff24a5544d92e13d7523c",
+    "package-lock.json": "58bc77878c646de4a92d764f957eb9f3a5e0420ef96a1e883e1c11042e67b7a9",
+    "runs/restart-data-2026-11-03/eye-test-pairs-train/pairs.jsonl": "4316f1bddc22f35ab28eb6ff0984dfa379781aee6074535ff09cbc173a79b811",
+    "runs/restart-data-2026-11-03/old-game-exclusion/report.json": "c63d15256a58585b890f191b8c5416a6755a9028dc75e2cf0b31ded3e2bbf23d",
+    ".codebase/scripts/data/generate-twin-pairs.mjs": "18e86488f738f9f225c91b6ca58b811707f5f48a91e46494cbf450e6e89a0a88",
+    ".codebase/src/puzzle-learning/twin-pair-generator-v1.mjs": "da1d779fee16345f524766c9f501266624f7d21916bd301613de38ed369108bb",
+    ".codebase/src/puzzle-learning/twin-pair-search-v1.mjs": "a4e933b2f84a9c5cd53b3eefa32e7b0a77896e28df259bd42ec6e3d5d426f88d"
+  },
+  "state_file": "runs/python-actions/current-eye-test-v2-v1.json",
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256,
+    "wallSeconds": 3600,
+    "passes": 576
+  },
+  "jobs": {
+    "eye-test": {
+      "role": "train",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/neural-learning/run-eye-test-v2.mjs",
+        "--config",
+        "python actions/memory/eye-test-v2-step.json",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "fresh_output": "{run}",
+      "requires": [
+        "runs/restart-data-2026-11-03/eye-test-pairs-train/pairs.jsonl"
+      ]
+    }
+  },
+  "artifacts": {
+    "manifest": "{run}/manifest.json",
+    "summary": "{run}/summary.json"
+  },
+  "report_fields": []
+}

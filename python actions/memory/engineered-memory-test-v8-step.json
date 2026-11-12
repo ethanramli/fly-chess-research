@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "name": "engineered-memory-test-v8",
+  "paused": false,
+  "note": "Memory v8 (proposal rev 2): practise on every known capture of the 750 practice positions; choice among known-certificate captures on games 901-1200. Design review: approve with required changes (building allowed). Launch after Codex code review, dry run and its audit.",
+  "paths": {
+    "run": "runs/engineered-memory-test-2026-11-07/engineered-memory-test-v8",
+    "protocol": "documentation/design/neural-learning/memory-v8-proposal-2026-11-07.md",
+    "registration": "python actions/memory/engineered-memory-test-v8-step.json",
+    "v4Run": "runs/engineered-memory-test-2026-11-04/engineered-memory-test-v4",
+    "v5Run": "runs/engineered-memory-test-2026-11-05/engineered-memory-test-v5",
+    "v6Run": "runs/engineered-memory-test-2026-11-05/engineered-memory-test-v6-r4",
+    "v7Run": "runs/engineered-memory-test-2026-11-05/engineered-memory-test-v7-r2",
+    "positionsAll": "runs/restart-data-2026-11-04/capture-choice-positions-max50-v1/positions.jsonl",
+    "positionsV4": "runs/restart-data-2026-11-03/capture-choice-positions-v1/positions.jsonl",
+    "positionsV6": "runs/restart-data-2026-11-05/capture-choice-positions-301-600-v1/positions.jsonl",
+    "positionsV7": "runs/restart-data-2026-11-05/capture-choice-positions-601-900-v1/positions.jsonl",
+    "positionsNew": "runs/restart-data-2026-11-06/capture-choice-positions-901-1200-v1/positions.jsonl",
+    "newPositions": "runs/restart-data-2026-11-06/capture-choice-positions-901-1200-v1/positions.jsonl",
+    "priorSelections": [
+      "runs/restart-data-2026-11-03/games-train/selection.json",
+      "runs/restart-data-2026-11-05/games-train-301-600/selection.json",
+      "runs/restart-data-2026-11-05/games-train-601-900/selection.json"
+    ],
+    "newSelection": "runs/restart-data-2026-11-06/games-train-901-1200/selection.json",
+    "newGamesPgn": "runs/restart-data-2026-11-06/games-train-901-1200/games.pgn"
+  },
+  "v4CacheSha256": "699ec93b0fa7b0cd335c31bdf57930949721b41c186cc9afc81f447a4f4a20e5",
+  "v5CacheSha256": "0239bd6c71e8e62091aa6d58c85f4dd14b7498968572cc9787e8434f6bdf970b",
+  "v5Files": {
+    "partition.json": "32c54bb977c83524bb36d2d81356030751d1c13e53d1e77a6549b9ab23c6d80c"
+  },
+  "newSha256": {
+    "selection": "109685dea3c521ff2e80c91149b37c0da3117149bcd282fb115b67c90b93457d",
+    "gamesPgn": "ab1f8f588a50e3e03557712ba75e04f328a8cd11976170289d673132ef3656b2",
+    "positions": "be6abf395045c92cbaa1ea8a68d85d3e7c0c0df45bafb13eabb51a7302136059"
+  },
+  "pins": {
+    ".codebase/scripts/neural-learning/run-engineered-memory-test-v8.mjs": "ec43befe8e870fcb3fc2ccc1e1f965625fdf8cbd1ad6244d350f3a27634b1c5e",
+    ".codebase/scripts/neural-learning/memory-v7-worker.mjs": "15f7366a3ac726014953d036c4e865ca0f0a4b88b447ae43ec947f934511dc46",
+    ".codebase/scripts/neural-learning/audit-engineered-memory-test-v8.mjs": "28f3edf8390d50022fd6d6a2a8e9d64c6d53f43056a3d88459f2f01b48b1c3bd",
+    ".codebase/src/neural-learning/engineered-memory-task-v8.mjs": "817ba2a6b4fc896ee2a0dcd20980b39556b986b84f8c514da6c52803d5371aac",
+    ".codebase/src/neural-learning/engineered-memory-task-v7.mjs": "049c41eb5995841d86bbd55fb9306ddfe6441936435dba0dffcd979b2df9cb82",
+    ".codebase/src/neural-learning/memory-v6-data.mjs": "36effc54766e50c1eb4196a2d484cd0e97e14c041ee3aa4c86a6561526b2d5ca",
+    ".codebase/src/neural-learning/engineered-memory-task-v6.mjs": "959763ce4db235035599defebfde3021b9f0317eb668c711f9b86df7d95abfb4",
+    ".codebase/src/neural-learning/memory-v5-data.mjs": "1f0b201c7552752c364fa4325092e017b510dba149e698d03d61451c65fc53e1",
+    ".codebase/src/neural-learning/engineered-memory-task-v5.mjs": "0ba9aad95c7e3ec9f2957205f90cf7f44f214393f96e472630635ee51b0e8c1b",
+    ".codebase/src/neural-learning/engineered-memory-task-v4.mjs": "68f71a56dd2cd151fbd3d8ec96e4dcfc490163e10735f6917191e9f79493b9af",
+    ".codebase/src/neural-learning/engineered-memory-v4-ledger.mjs": "e8632aa642d2269f195d2aa7a6e67897053009ced741f26dbba27ec273ce7561",
+    ".codebase/src/neural-learning/engineered-memory-task-v3.mjs": "6e73107f4fce4258b0fdc134fc8dff3acade1a0d5566b652a6afed1fb5158710",
+    ".codebase/src/neural-learning/engineered-memory-task-v2.mjs": "073535743fd004fb384151977d5a567d2fca68c07537923d23516ff342a2ea64",
+    ".codebase/src/neural-learning/move-chooser-v1.mjs": "106fc676598f32823bf64d624cb8962d1caacf075bddcff667e77493739b2b1e",
+    ".codebase/src/neural-learning/transfer-evaluation-v2.mjs": "ac43b138931aadd6a09ff30d985b3f1904c60c952d7c8d61d5d5773b31bcf2b2",
+    ".codebase/src/neural-learning/transfer-evaluation-v1.mjs": "59f50e924e966d822802fe034bce19c8fcf0f06a5e3047298257b1aa21cd4141",
+    ".codebase/src/neural-learning/kc-episodic-memory-v2.mjs": "66e781b81df7599ff778947c6f832a0cb9c292a17ab90f1dea6e838d8babeefb",
+    ".codebase/src/neural-learning/memory-assay-fixture.mjs": "6bc348bc34a1e41e4185a5e14701612cf1c1b5117b1fc1c6289cff43a9c2d4a6",
+    ".codebase/src/chess-input/eyes-v2.mjs": "99a4f1b78f2a5d9fa5d0b3d3f376f13066f7c11bb06a0b71d54df9bd8c799fdb",
+    ".codebase/src/chess-input/eyes-v1.mjs": "74ae9ac4fa4e9fc5432099ffd662661632aab9aa89e69f6df7e100b59f6813a2",
+    ".codebase/src/chess-input/eyes-v1-pictures.json": "13ebfce66fd0ded3accf60d37d4f5250c8fe66b8f50264f85211e62f320ae30c",
+    ".codebase/src/supervised-baselines/trainer.mjs": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+    ".codebase/src/runtime/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+    ".codebase/src/puzzle-learning/twin-pair-generator-v1.mjs": "da1d779fee16345f524766c9f501266624f7d21916bd301613de38ed369108bb",
+    ".codebase/src/puzzle-learning/capture-choice-positions-v1.mjs": "19727345758e24bb36cb81a8d4d144ee9a5ce669e1a9413df35b0daf690ffa51",
+    ".codebase/scripts/data/generate-capture-choice-positions.mjs": "75d2a1c36d718580794f625af4190bfc6acf086a91a09d12e018b901e76a9495",
+    ".codebase/src/search-and-feedback/capture-retention-action-domain.mjs": "b2c681158f6579af91a2ed6ed63a0506633b1b891bce194596f0342e2b1bab83",
+    ".codebase/src/search-and-feedback/capture-retention-certificate.mjs": "a74e15922345a51f912bd8cfa64d4087883aeb13269c8a89ea9ff93123e4cee5",
+    ".codebase/src/search-and-feedback/capture-retention-certificate-check.mjs": "61afad654a2d7ae6a023fd98fd9a2bc079dea48e5d2596adaaf7e07941f86e46",
+    ".codebase/src/search-and-feedback/puzzle-search.mjs": "eddbb0005899d53d84a13b63eab0bbbc376e172bdd18790fb6db4a76279e9a86",
+    ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    "runs/restart-data-2026-11-04/capture-choice-positions-max50-v1/positions.jsonl": "4483226c1df8fc216e363ed9e6003460bb808399ef3b8b4543fcbea77174fa36",
+    "runs/restart-data-2026-11-03/capture-choice-positions-v1/positions.jsonl": "de35528115e22710672bfa12e8b3bb0440cd7b3c1803d875108df4490a8e4a35",
+    "runs/restart-data-2026-11-05/capture-choice-positions-301-600-v1/positions.jsonl": "e78cbb24d5253b612528cf7e810aaef9ff59342bb02406e86f1e49972fdb0128",
+    "runs/restart-data-2026-11-05/capture-choice-positions-601-900-v1/positions.jsonl": "b65ecd1f236d520e264af2819253ec2152b3f11818a00027f5fb72680ef25afc",
+    "runs/restart-data-2026-11-06/capture-choice-positions-901-1200-v1/positions.jsonl": "be6abf395045c92cbaa1ea8a68d85d3e7c0c0df45bafb13eabb51a7302136059",
+    "runs/restart-data-2026-11-06/games-train-901-1200/selection.json": "109685dea3c521ff2e80c91149b37c0da3117149bcd282fb115b67c90b93457d",
+    "runs/restart-data-2026-11-06/games-train-901-1200/games.pgn": "ab1f8f588a50e3e03557712ba75e04f328a8cd11976170289d673132ef3656b2",
+    "runs/restart-data-2026-11-03/games-train/selection.json": "5c212e69f6e5bd99f67b02abb8b6b90c86b4327e23a7b64023d11980f93f4bdd",
+    "runs/restart-data-2026-11-05/games-train-301-600/selection.json": "af0ce4c715392b31786035292a9aa15d02941b0438665b3db41df3960f127101",
+    "runs/restart-data-2026-11-05/games-train-601-900/selection.json": "54f70ed4cf886d5b36f905028a8c3a44637bedcdb48885aff22591656773fa7b",
+    "runs/engineered-memory-test-2026-11-05/engineered-memory-test-v6-r4/partition.json": "c594dbb68189b6ebb6e0ba5ec5011cf4ad4c24393d5b9fa79cca21c0ce683211",
+    "runs/engineered-memory-test-2026-11-05/engineered-memory-test-v7-r2/partition.json": "3428656f4896c6697655651ba0484935c848a65fb7c9c87011427cf59d39af8e",
+    "runs/engineered-memory-test-2026-11-05/engineered-memory-test-v5/certificates.jsonl": "a8948c1c55e1163ebeb8efc5d9f73614e8d0f76aeb5b5322098d37a44173e1df",
+    "documentation/design/neural-learning/memory-v8-proposal-2026-11-07.md": "bbff36eefbade8f8eaf44d14342889ae1d46ff0f50400ada669db698383487d2",
+    "python actions/curriculum.py": "cd2f034e0555ea42bb0ba1b01c82ae94b64258df0c9d46dd29ee43805a1a9b18"
+  },
+  "state_file": "runs/python-actions/current-engineered-memory-test-v8.json",
+  "jobs": {
+    "engineered-v8": {
+      "role": "train",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/neural-learning/run-engineered-memory-test-v8.mjs",
+        "--config",
+        "python actions/memory/engineered-memory-test-v8-step.json",
+        "--workers",
+        "4",
+        "--cpu-duty",
+        "1"
+      ],
+      "fresh_output": "{run}"
+    }
+  },
+  "artifacts": {
+    "manifest": "{run}/manifest.json",
+    "summary": "{run}/summary.json"
+  },
+  "report_fields": []
+}

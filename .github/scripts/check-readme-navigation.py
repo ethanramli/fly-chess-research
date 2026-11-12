@@ -10,6 +10,7 @@ from urllib.parse import unquote, urlsplit
 
 DIRECTORY_MAPS = {
     "README.md",
+    "python actions/README.md",
     ".codebase/README.md",
     ".codebase/scripts/README.md",
     ".codebase/src/README.md",

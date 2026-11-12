@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "name": "engineered-memory-test-v1",
+  "paused": true,
+  "note": "Built 2026-11-03 after memory test v1 failed (researcher instruction: build, do not run). Needs the researcher's own approval to unpause.",
+  "paths": {
+    "run": "runs/engineered-memory-test-2026-11-03/engineered-memory-test-v1",
+    "protocol": "research/reports/memory-test-2026-11-03/README.md",
+    "registration": "python actions/memory/engineered-memory-test-v1-step.json",
+    "pairs": "runs/seeing-test-2026-11-03/seeing-test-v1/pairs.jsonl"
+  },
+  "pins": {
+    ".codebase/scripts/neural-learning/run-engineered-memory-test-v1.mjs": "d1b98ad18236feb11eb14466638f8a18881a30394b54adbb9ae0252f463d6d58",
+    ".codebase/src/neural-learning/kc-episodic-memory-v1.mjs": "758fb12dd58f92f1ab8637524bdbb92ab385994ea5f918e412a24129d7ea253a",
+    ".codebase/src/neural-learning/transfer-evaluation-v1.mjs": "59f50e924e966d822802fe034bce19c8fcf0f06a5e3047298257b1aa21cd4141",
+    ".codebase/src/neural-learning/move-chooser-v1.mjs": "106fc676598f32823bf64d624cb8962d1caacf075bddcff667e77493739b2b1e",
+    ".codebase/src/chess-input/eyes-v2.mjs": "99a4f1b78f2a5d9fa5d0b3d3f376f13066f7c11bb06a0b71d54df9bd8c799fdb",
+    ".codebase/src/supervised-baselines/trainer.mjs": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+    ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    "runs/seeing-test-2026-11-03/seeing-test-v1/pairs.jsonl": "15240663e99538dbf050ee933df77d0faa1badb20f1bb7eda83979322b2b3650",
+    "python actions/curriculum.py": "6f0709c499a4694c9388b9f35a22a797078e1cfe8be37a99f941049d7069a638",
+    "research/reports/memory-test-2026-11-03/README.md": "850ce4e2997f22bbc83fb7bd7ea9e4b91b25014ec83bb546273aea2bfcad3b82"
+  },
+  "state_file": "runs/python-actions/current-engineered-memory-test-v1.json",
+  "jobs": {
+    "engineered": {
+      "role": "train",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/neural-learning/run-engineered-memory-test-v1.mjs",
+        "--config",
+        "python actions/memory/engineered-memory-test-v1-step.json",
+        "--cpu-duty",
+        "0.5"
+      ],
+      "fresh_output": "{run}"
+    }
+  },
+  "artifacts": {
+    "manifest": "{run}/manifest.json",
+    "summary": "{run}/summary.json"
+  },
+  "report_fields": []
+}

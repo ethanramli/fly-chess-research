@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "long-term-memory-v1-live-audit-v1",
+  "paused": false,
+  "paths": {
+    "run": "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1",
+    "registration": "python actions/memory/long-term-memory-v1-live-audit-v1-step.json",
+    "protocol": "research/reports/long-term-memory-v1-live-comparison-2026-11-01/protocol-v1.md"
+  },
+  "pins": {
+    ".codebase/scripts/neural-learning/audit-long-term-memory-v1-live.mjs": "39cdc4b7c197f4d7fcfa7b0e67ba92b360358b4e9bc3924f4a59a0c5d6fb627b",
+    ".codebase/scripts/neural-learning/audit-eye-memory.mjs": "f3697af9d2cdce333dbad9bf16de84fbbcd064006ff1e2e1112cd5fcf1fe97ba",
+    "python actions/long-term-memory-v1-live-pilot-v1-step.json": "3efcdb7846d69f5c1d242e682ac742f8a66f181cca56915f186667e8d812e7c7",
+    "research/reports/long-term-memory-v1-live-comparison-2026-11-01/protocol-v1.md": "faba15d2746f08aea0511d39c051ba7ee6174595e89e1c50035f1d5456e9d8c6",
+    "python actions/curriculum.py": "f084dd00fe3976948b2a96dbb79c65c74c07c80392361d273192b3496bf4cb52",
+    "python actions/fly_controls.py": "05e1121f2be288c9d86b0c31493181c582c7f5bb9d24a9bc1e26ae3d2ed1300c"
+  },
+  "state_file": "runs/python-actions/current-long-term-memory-v1-live-audit-v1.json",
+  "resourceLimits": {
+    "rssMiB": 2048,
+    "freeMiB": 256
+  },
+  "jobs": {
+    "audit": {
+      "role": "check",
+      "requires": [
+        "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1/summary.json"
+      ],
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/neural-learning/audit-long-term-memory-v1-live.mjs",
+        "--run",
+        "runs/memory-retention-2026-11-01/long-term-memory-v1-live-pilot-v1",
+        "--out",
+        "research/reports/long-term-memory-v1-live-comparison-2026-11-01/audit-v1.json"
+      ],
+      "refuse_existing": [
+        "research/reports/long-term-memory-v1-live-comparison-2026-11-01/audit-v1.json"
+      ]
+    }
+  },
+  "artifacts": {},
+  "report_fields": []
+}

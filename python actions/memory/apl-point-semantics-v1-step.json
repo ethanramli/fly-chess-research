@@ -1,0 +1,55 @@
+﻿{
+    "schema":  1,
+    "name":  "apl-point-semantics-v1",
+    "paused":  false,
+    "paths":  {
+                  "run":  "runs/memory-retention-2026-11-01/apl-point-semantics-v1",
+                  "protocol":  "research/reports/apl-locality-feasibility-2026-11-01/canonical-point-comparison-spec.md",
+                  "registration":  "python actions/memory/apl-point-semantics-v1-step.json"
+              },
+    "pins":  {
+                 "python actions/memory/compare_apl_contact_points.py":  "6a8b878366f21294cc754955bcde2b675af473f089eb655d11f60fdcc437ae77",
+                 "python actions/curriculum.py":  "f084dd00fe3976948b2a96dbb79c65c74c07c80392361d273192b3496bf4cb52",
+                 "python actions/fly_controls.py":  "05e1121f2be288c9d86b0c31493181c582c7f5bb9d24a9bc1e26ae3d2ed1300c",
+                 "research/reports/apl-locality-feasibility-2026-11-01/canonical-point-comparison-spec.md":  "f0cff35192e7f20a681cf3f0246f6600fdcfa3ad46fec367ae0f39dba0f530a3",
+                 "runs/memory-retention-2026-11-01/apl-contact-subset-v3/result.json":  "3fb08e15cccb8133091e71dfbbb48626dd8d6e59b7ddc010eb627e2c6bc27bd4",
+                 "runs/memory-retention-2026-11-01/apl-contact-subset-v3/manifest.json":  "0b8033b5adb153623f8cd6a1938fefcf59ed29e96371b20485904cdac39d91c8",
+                 "runs/memory-retention-2026-11-01/apl-contact-subset-v3/contacts.csv":  "b483cca7b938e948101eff11f12d360dd7b1c3f56ed18d6c4f0a7816bbd844c2",
+                 "runs/memory-retention-2026-11-01/canonical-synapse-probe-v1/result.json":  "f378475344ee2b97f33dc358510f5ee29ee6995f2cb23bf9d2c2f3a1c3d7eedd",
+                 "runs/memory-retention-2026-11-01/canonical-synapse-probe-v1/first-batch.feather":  "64f83a36b05ce7a36b988a1f089b45dec49f1d16ceb64ca7d25ced5e611fe1d2"
+             },
+    "state_file":  "runs/python-actions/current-apl-point-semantics-v1.json",
+    "resourceLimits":  {
+                           "freeMiB":  256,
+                           "rssMiB":  2048
+                       },
+    "jobs":  {
+                 "check":  {
+                               "argv":  [
+                                            "C:\\Users\\ethan\\.t3\\scratch\\2026-10-31-review-this-proposal-critically-against-c96c5e5c\\.venv\\Scripts\\python.exe",
+                                            "python actions/memory/compare_apl_contact_points.py",
+                                            "--out",
+                                            "runs/memory-retention-2026-11-01/apl-point-semantics-v1"
+                                        ],
+                               "refuse_existing":  [
+                                                       "runs/memory-retention-2026-11-01/apl-point-semantics-v1"
+                                                   ],
+                               "role":  "check"
+                           },
+                 "tests":  {
+                               "role":  "check",
+                               "argv":  [
+                                            "C:\\Users\\ethan\\.t3\\scratch\\2026-10-31-review-this-proposal-critically-against-c96c5e5c\\.venv\\Scripts\\python.exe",
+                                            "python actions/memory/compare_apl_contact_points.py",
+                                            "--self-test"
+                                        ]
+                           }
+             },
+    "artifacts":  {
+                      "result":  "{run}/result.json",
+                      "manifest":  "{run}/manifest.json"
+                  },
+    "report_fields":  [
+
+                      ]
+}

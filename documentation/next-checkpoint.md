@@ -13,6 +13,8 @@ This is the handoff for continuing the research: read the current checkpoint fir
 
 ## Background and dated history (not current instructions)
 
+The dated notes use the Python action paths recorded at the time. Use the [Python actions guide](../python%20actions/README.md) to find the current folders and the original tree for replay.
+
 The notes below preserve earlier project state and action plans for provenance. Their dated “Next” items are not current directions; use only the current checkpoint above for the present handoff.
 
 **Addendum 2026-11-05 11:55:** a missing control found: a random-capture rule scores 250.1 on the v6 test, above the interrupted full arm (130.9); see [journal](../research/journal/experiments/2026-11-05-memory-v4-v5.md). Report it beside the v6 result; do not change the v6 gate.

@@ -1,0 +1,53 @@
+﻿{
+    "schema":  1,
+    "name":  "memory-diagnostic-independent-audit-v2",
+    "paused":  false,
+    "paths":  {
+                  "run":  "research/reports/memory-interference-diagnosis-2026-11-01",
+                  "protocol":  "research/reports/memory-interference-diagnosis-2026-11-01/audit-v2-spec.md",
+                  "registration":  "python actions/memory/memory-diagnostic-audit-v2-step.json"
+              },
+    "pins":  {
+                 "research/reports/memory-interference-diagnosis-2026-11-01/audit-diagnostic.mjs":  "e883d728d45ba5722ce6e85bbcaec30447598d8c30fae815619352b893c6ca4c",
+                 "research/reports/memory-interference-diagnosis-2026-11-01/audit-diagnostic-v2.mjs":  "21a09aaed24472b8e870fae811e0c7bc1ee9de715930b0cf8961c85185c9448b",
+                 "research/reports/memory-interference-diagnosis-2026-11-01/audit-v2-equivalence.test.mjs":  "94962ede67bb79d784630570eda417418bf166228bc4eb91ec2143631c77ba52",
+                 "research/reports/memory-interference-diagnosis-2026-11-01/audit-v2-spec.md":  "b4da545a4b359ec82178ed52f4fbb83435f872cb273e37f532656a0282fd23d0",
+                 "research/reports/memory-interference-diagnosis-2026-11-01/diagnostic-audit.json":  "fca4b4f742eacff8e5107acafc30e2914efa2aef240aafb4c91209cb9b1914df",
+                 "runs/memory-retention-2026-11-01/synaptic-conflict-v1/manifest.json":  "fc3507cfaff49c0b6d4c4dcfcc0befcbba5545532ccae606dd6410bf5a887f76",
+                 "runs/memory-retention-2026-11-01/synaptic-conflict-v1/result.json":  "595c9e8ee74a7b754ee0cd4ad56205740d6deb02a903767235469671b23969da"
+             },
+    "state_file":  "runs/python-actions/current-memory-diagnostic-audit-v2.json",
+    "resourceLimits":  {
+                           "freeMiB":  256,
+                           "rssMiB":  2048
+                       },
+    "jobs":  {
+                 "audit":  {
+                               "argv":  [
+                                            "node",
+                                            "--max-old-space-size=256",
+                                            "research/reports/memory-interference-diagnosis-2026-11-01/audit-diagnostic-v2.mjs",
+                                            "research/reports/memory-interference-diagnosis-2026-11-01/diagnostic-audit-v2.json"
+                                        ],
+                               "refuse_existing":  [
+                                                       "research/reports/memory-interference-diagnosis-2026-11-01/diagnostic-audit-v2.json"
+                                                   ],
+                               "role":  "check"
+                           },
+                 "tests":  {
+                               "role":  "check",
+                               "argv":  [
+                                            "node",
+                                            "--max-old-space-size=256",
+                                            "--test",
+                                            "research/reports/memory-interference-diagnosis-2026-11-01/audit-v2-equivalence.test.mjs"
+                                        ]
+                           }
+             },
+    "artifacts":  {
+                      "audit":  "research/reports/memory-interference-diagnosis-2026-11-01/diagnostic-audit-v2.json"
+                  },
+    "report_fields":  [
+
+                      ]
+}

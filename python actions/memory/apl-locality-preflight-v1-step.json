@@ -1,0 +1,57 @@
+﻿{
+    "schema":  1,
+    "name":  "apl-locality-static-v1",
+    "paused":  false,
+    "paths":  {
+                  "run":  "runs/memory-retention-2026-11-01/apl-locality-static-v1",
+                  "protocol":  "research/reports/apl-locality-feasibility-2026-11-01/static-preflight-spec.md",
+                  "registration":  "python actions/memory/apl-locality-preflight-v1-step.json"
+              },
+    "pins":  {
+                 "python actions/memory/apl_locality_preflight.py":  "cdc2b01c0d72d59308c56ed68570a38d0dcdc11c67a20baa8ba240d09882edf2",
+                 "python actions/curriculum.py":  "f084dd00fe3976948b2a96dbb79c65c74c07c80392361d273192b3496bf4cb52",
+                 "python actions/fly_controls.py":  "05e1121f2be288c9d86b0c31493181c582c7f5bb9d24a9bc1e26ae3d2ed1300c",
+                 "research/reports/apl-locality-feasibility-2026-11-01/static-preflight-spec.md":  "1152c967c9a80b2e4ebf164cb6f7714ca233b574c95d0c4a0218c3eed690c81d",
+                 ".cache/full.npz":  "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+                 ".cache/flywire-annotations-v2.1.0.tsv":  "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+                 ".cache/flywire-codex-783-verify/classification.csv.gz":  "e946b552f4056dfc977707be0674609832c3f64332a22d69dc0d9615e7aae663",
+                 ".cache/flywire-codex-783-verify/consolidated_cell_types.csv.gz":  "8aba246d71dc40361677493629972ce3883048c3d02010adc42bda22962a1a2d",
+                 ".cache/flywire-codex-783-verify/connections.csv.gz":  "d49dd692e59e153aa3c83f5257bfc0eff51247b86d7bb183386c6d1622c70fc9",
+                 ".cache/upstream/provenance.json":  "1657a99437190d56bee9541bcea256272998e4a98143426e8672d13c4f7b4d39",
+                 "research/literature/cesp99-retina-2026-10-28/flychess/connectome/load.py":  "d5d127620c994161ae112f0b6cb92bfe4d28989bb5c93e222737c27d9ca67cd2"
+             },
+    "state_file":  "runs/python-actions/current-apl-locality-static-v1.json",
+    "resourceLimits":  {
+                           "freeMiB":  256,
+                           "rssMiB":  2048
+                       },
+    "jobs":  {
+                 "check":  {
+                               "argv":  [
+                                            "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+                                            "python actions/memory/apl_locality_preflight.py",
+                                            "--out",
+                                            "runs/memory-retention-2026-11-01/apl-locality-static-v1"
+                                        ],
+                               "refuse_existing":  [
+                                                       "runs/memory-retention-2026-11-01/apl-locality-static-v1"
+                                                   ],
+                               "role":  "check"
+                           },
+                 "tests":  {
+                               "role":  "check",
+                               "argv":  [
+                                            "C:\\Users\\ethan\\.venv-class\\Scripts\\python.exe",
+                                            "python actions/memory/apl_locality_preflight.py",
+                                            "--self-test"
+                                        ]
+                           }
+             },
+    "artifacts":  {
+                      "result":  "{run}/result.json",
+                      "manifest":  "{run}/manifest.json"
+                  },
+    "report_fields":  [
+
+                      ]
+}

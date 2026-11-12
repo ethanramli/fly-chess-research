@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "name": "engineered-memory-test-v3",
+  "paused": false,
+  "note": "Built 2026-11-03 under the researcher goal \"figure out memory v3 ... episodic memory without the hints\". Researcher approved the run 2026-11-04 (\"continue on testing out the fly. use a little more CPU, finish it in 1.5 hours\"), run as built with the known pre-run audit defects (tie rule, certificates, shuffled exposure) to feed the diagnosis. Only change: runner accepts --cpu-duty 1 (pacing only; same arithmetic at 0.5); runner pin updated. First launch 2026-11-04 (output engineered-memory-test-v3, preserved) died after 47 s: JS heap out of memory at 256 MiB while holding 21,053 eye inputs as object lists; manifest left running. Fix: eye inputs stored as Int32/Float64 typed arrays (values unchanged, round-trip asserted); rerun into engineered-memory-test-v3-r2. Design and fixed pass rule: documentation/design/neural-learning/engineered-memory-test-v3.md",
+  "paths": {
+    "run": "runs/engineered-memory-test-2026-11-03/engineered-memory-test-v3-r2",
+    "protocol": "documentation/design/neural-learning/engineered-memory-test-v3.md",
+    "registration": "python actions/memory/engineered-memory-test-v3-step.json",
+    "positions": "runs/restart-data-2026-11-03/capture-choice-positions-v1/positions.jsonl",
+    "positionsManifest": "runs/restart-data-2026-11-03/capture-choice-positions-v1/manifest.json"
+  },
+  "pins": {
+    ".codebase/scripts/neural-learning/run-engineered-memory-test-v3.mjs": "7a451c30fbc377cafc1794ca4fcc6fad02806a29dadc6f9d51479453d7a5ca14",
+    ".codebase/src/neural-learning/engineered-memory-task-v3.mjs": "6e73107f4fce4258b0fdc134fc8dff3acade1a0d5566b652a6afed1fb5158710",
+    ".codebase/src/neural-learning/engineered-memory-task-v2.mjs": "073535743fd004fb384151977d5a567d2fca68c07537923d23516ff342a2ea64",
+    ".codebase/src/neural-learning/kc-episodic-memory-v2.mjs": "66e781b81df7599ff778947c6f832a0cb9c292a17ab90f1dea6e838d8babeefb",
+    ".codebase/src/neural-learning/transfer-evaluation-v1.mjs": "59f50e924e966d822802fe034bce19c8fcf0f06a5e3047298257b1aa21cd4141",
+    ".codebase/src/neural-learning/move-chooser-v1.mjs": "106fc676598f32823bf64d624cb8962d1caacf075bddcff667e77493739b2b1e",
+    ".codebase/src/neural-learning/memory-assay-fixture.mjs": "6bc348bc34a1e41e4185a5e14701612cf1c1b5117b1fc1c6289cff43a9c2d4a6",
+    ".codebase/src/chess-input/eyes-v2.mjs": "99a4f1b78f2a5d9fa5d0b3d3f376f13066f7c11bb06a0b71d54df9bd8c799fdb",
+    ".codebase/src/chess-input/eyes-v1.mjs": "74ae9ac4fa4e9fc5432099ffd662661632aab9aa89e69f6df7e100b59f6813a2",
+    ".codebase/src/chess-input/eyes-v1-pictures.json": "13ebfce66fd0ded3accf60d37d4f5250c8fe66b8f50264f85211e62f320ae30c",
+    ".codebase/src/supervised-baselines/trainer.mjs": "7e33661943ccdf45ee7ac1a34f04f40259af27a982d8c3fb79684ba26a979044",
+    ".codebase/src/runtime/graph.mjs": "08ca4f392df9ee82d6cec803b7775e6edbfaf5bea56c807630cdebf0420ba595",
+    ".codebase/src/puzzle-learning/twin-pair-generator-v1.mjs": "da1d779fee16345f524766c9f501266624f7d21916bd301613de38ed369108bb",
+    ".codebase/src/puzzle-learning/capture-choice-positions-v1.mjs": "19727345758e24bb36cb81a8d4d144ee9a5ce669e1a9413df35b0daf690ffa51",
+    ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    "runs/restart-data-2026-11-03/capture-choice-positions-v1/positions.jsonl": "de35528115e22710672bfa12e8b3bb0440cd7b3c1803d875108df4490a8e4a35",
+    "runs/restart-data-2026-11-03/capture-choice-positions-v1/manifest.json": "bfa2782b20df27c96a2e8fa82d951b3ff765e5bdaf71abbdf0009a087a519c17",
+    "documentation/design/neural-learning/engineered-memory-test-v3.md": "d7dfc3eee752f0d1fcdb3bc7ae45f29cfec0d3d81535e31dd8521f3ccc0926d7",
+    "python actions/curriculum.py": "6f0709c499a4694c9388b9f35a22a797078e1cfe8be37a99f941049d7069a638"
+  },
+  "state_file": "runs/python-actions/current-engineered-memory-test-v3.json",
+  "jobs": {
+    "engineered-v3": {
+      "role": "train",
+      "argv": [
+        "node",
+        "--max-old-space-size=256",
+        ".codebase/scripts/neural-learning/run-engineered-memory-test-v3.mjs",
+        "--config",
+        "python actions/memory/engineered-memory-test-v3-step.json",
+        "--cpu-duty",
+        "1"
+      ],
+      "fresh_output": "{run}"
+    }
+  },
+  "artifacts": {
+    "manifest": "{run}/manifest.json",
+    "summary": "{run}/summary.json"
+  },
+  "report_fields": []
+}
