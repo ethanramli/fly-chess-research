@@ -1,27 +1,18 @@
 # Experiment designs
 
-This directory holds the research questions, input designs, learning mechanisms, feedback plans, diagnostics, and evaluation proposals for FlyChess. Start with [current status](../current-status.md) for what has actually been tested; then choose a topic below. These design notes describe proposals and evidence with different dates and status, so follow each page's status labels.
+Start with [current status](../current-status.md) to see which designs have been tested. Each topic below explains a part of the experiment, from presenting a chess position to deciding what the resulting scores mean. Individual pages identify proposals, approved protocols, and earlier designs.
 
 <!-- directory-map -->
-- [Chess input](chess-input/README.md) — how board positions and candidate moves are represented to the model.
-- [Learning diagnostics](diagnostics/README.md) — probes of memory, sensitivity, and causes of observed behavior.
-- [Evaluation and performance](evaluation-and-performance/README.md) — search speed, strength measurement, and future evaluation plans.
-- [Neural learning](neural-learning/README.md) — association, memory, retention, and reversal mechanisms.
-- [Puzzle learning](puzzle-learning/README.md) — puzzle tasks, teaching feedback, and curriculum experiments.
-- [Research goals](research-goals/README.md) — project aims, hypotheses, and approved or proposed protocols.
-- [Search and feedback](search-and-feedback/README.md) — bounded investigation and teacher-provided consequences.
-- [Supervised baselines](supervised-baselines/README.md) — gradient-trained comparison systems and historical drafts.
+| Directory | Question it answers |
+| --- | --- |
+| [`research-goals/`](research-goals/README.md) | What is FlyChess trying to establish? Find the restart plan, the five-volume scope, and the criteria for applying or combining lessons on unfamiliar boards. |
+| [`chess-input/`](chess-input/README.md) | What information does the model receive? Find the designs for encoding pieces, squares, and candidate moves, including earlier inputs that supplied chess cues. |
+| [`search-and-feedback/`](search-and-feedback/README.md) | How does the teacher check what a move leads to? Find the search limits and the records the checker uses to verify a consequence before delivering feedback. |
+| [`neural-learning/`](neural-learning/README.md) | What can change inside the model after feedback? Find candidate memory rules and tests of whether associations persist or adapt when feedback changes. |
+| [`puzzle-learning/`](puzzle-learning/README.md) | How is an experiment staged? Find task definitions, practice schedules, feedback requirements, and the rules for keeping evaluation positions separate. |
+| [`diagnostics/`](diagnostics/README.md) | How do we find out why a test behaved as it did? Find probes for what the model responds to and when it loses earlier learning. |
+| [`supervised-baselines/`](supervised-baselines/README.md) | What can comparison models learn from labeled positions? Find trainer designs, their data requirements, and the limits of what those comparisons can establish. |
+| [`evaluation-and-performance/`](evaluation-and-performance/README.md) | How do we measure playing strength and compute cost? Find rating plans, latency benchmarks, and run-time measurement designs. |
 <!-- /directory-map -->
 
-Specifications are grouped by their role in the experiment. Read [current status](../current-status.md) before interpreting older execution notes.
-
-- [Research goals and hypotheses](research-goals/README.md)
-- [Neural learning mechanisms and association tests](neural-learning/README.md)
-- [Chess input representations](chess-input/README.md)
-- [Puzzle-learning experiments](puzzle-learning/README.md)
-- [Search and teacher feedback](search-and-feedback/README.md)
-- [Learning diagnostics and memory probes](diagnostics/README.md)
-- [Future evaluation and performance](evaluation-and-performance/README.md)
-- [Supervised baselines and historical protocol drafts](supervised-baselines/README.md)
-
-[Documentation guide](../README.md) · [Research records](../../research/README.md)
+[Documentation guide](../README.md) · [Experiment reports](../../research/reports/README.md)
