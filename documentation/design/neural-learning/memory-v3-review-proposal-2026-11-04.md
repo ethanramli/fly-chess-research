@@ -103,6 +103,6 @@ Requested decision: approve preparing this revised screening study for review. E
 
 ## Local sources and reading coverage
 
-Read in full: the memory v3 design, its task code, and the current added-memory implementation. Read the memory v2 results, pathway investigation, and recorded failed repair attempts in [the journal](../../../research/journal/experiments/2026-11-03-peer-review-fixes.md). Practice counts were calculated from [the existing position file](../../../runs/restart-data-2026-11-03/capture-choice-positions-v1/positions.jsonl), using the game split from the task code. Its pinned file identity is in [the paused v3 registration](../../../python%20actions/engineered-memory-test-v3-step.json).
+Read in full: the memory v3 design, its task code, and the current added-memory implementation. Read the memory v2 results, pathway investigation, and recorded failed repair attempts in [the journal](../../../research/journal/experiments/2026-11-03-peer-review-fixes.md). Practice counts were calculated from [the existing position file](../../../runs/restart-data-2026-11-03/capture-choice-positions-v1/positions.jsonl), using the game split from the task code. Its pinned file identity is in [the paused v3 registration](https://github.com/ethanramli/fly-chess-research/blob/8d9bc9ed87c4f38bfb5d2ca07a7eb59f4875f746/python%20actions/engineered-memory-test-v3-step.json).
 
 This is a proposal from local code and evidence. No new biological or literature novelty claim is made, and no new external solution is introduced.

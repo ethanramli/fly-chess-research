@@ -23,18 +23,15 @@ Bare `status` shows the default campaign's readiness. The example with `--config
 <!-- directory-map -->
 | Folder | What it holds |
 | --- | --- |
-| [`chess-data/`](chess-data/) | Lichess archive extraction, game downloads, lesson preparation and independent data checks. |
-| [`curriculum/`](curriculum/) | Lesson and campaign registrations, including staged training, audits, and synthetic data preparation. |
-| [`memory/`](memory/) | Memory and circuit experiment registrations, analysis scripts, and experiment-specific checks. |
-| [`performance/`](performance/) | Timing, resource profiling and benchmark registrations. |
+| [`chess-data/`](chess-data/) | Extract and verify Lichess archives, fetch source games, prepare lesson batches, and report batch progress. |
+| [`curriculum/`](curriculum/README.md) | Where the curriculum builders write registrations for new steps. |
+| [`memory/`](memory/) | [Compile](memory/build_fly_connections_apl.py) and test the contact-site packages the memory model reads. |
 <!-- /directory-map -->
 
-The root keeps the shared runner, its tests and its default single-step registration. The original long-term-memory pilot registration and its status script also keep their recorded paths for the [independent auditor](../.codebase/scripts/neural-learning/audit-long-term-memory-v1-live.mjs), which checks their hashes.
-
-The older campaign registrations in `curriculum/` are paused. Moving a campaign changes the path the runner uses to find its saved state. Keep the original checkout and registration path to recover a saved campaign.
+The root keeps the shared runner, its tests and the default single-step registration used by the launcher.
 
 ## When an action earns its place
 
 For recurring work, start with the existing runner and register the underlying command once. Write Python when it removes a repeated workflow, such as polling a process, checking for a published checkpoint, or collecting a bounded result across many jobs. A one-off terminal check or edit can stay a terminal check or edit. For long runs, save full logs and receipts to disk and return only the changed milestones, terminal state, and errors.
 
-The [previous tree](https://github.com/ethanramli/fly-chess-research/tree/8d9bc9ed87c4f38bfb5d2ca07a7eb59f4875f746/python%20actions) holds the original paths and bytes for older reports and the removed one-off scripts. For an audit or resume tied to a saved registration hash, use the revision or invocation snapshot recorded by that run. Moving a registration can change its hash when paths inside it are updated.
+Use the [archive](../archive/README.md#retired-python-actions) for past run registrations, fixed-run monitors, experiment analyses and benchmark campaigns. For replay, use the revision and registration recorded by the run.

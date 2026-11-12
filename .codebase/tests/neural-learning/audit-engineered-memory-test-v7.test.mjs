@@ -29,7 +29,7 @@ const NEW_SELECTION = join(DATA_301_600, 'games-train-301-600', 'selection.json'
 const NEW_GAMES = join(DATA_301_600, 'games-train-301-600', 'games.pgn');
 const PRIOR_SELECTION = join(ROOT, 'runs', 'restart-data-2026-11-03', 'games-train', 'selection.json');
 // The registered games 601-900 files (the digests in NEW_PINS). Read only: the registration and the hashes are checked, nothing is run.
-const REGISTRATION = join(ROOT, 'python actions', 'memory', 'engineered-memory-test-v7-step.json');
+const REGISTRATION = join(ROOT, 'archive', 'python-actions', 'engineered-memory-test-v7-step.json');
 const REGISTERED_601_900 = {
   selection: join(DATA_301_600, 'games-train-601-900', 'selection.json'),
   gamesPgn: join(DATA_301_600, 'games-train-601-900', 'games.pgn'),

@@ -45,7 +45,7 @@ Implemented so far: [history binding](../../../.codebase/src/puzzle-learning/lic
 
 Static counterfactuals derived from those roots need a separate provenance mode; they must not inherit the authentic PGN as though the changed board were played. See the [synthetic-position contract](synthetic-position-provenance.md). It is a proposal only; the current panel binder still requires an authentic standard-start prefix.
 
-The [registered Python source-PGN fetcher](../../../python%20actions/fetch_lichess_game_pgns.py) uses Lichess's documented batch export endpoint, checks requested versus returned game IDs, and writes per-game PGNs plus an atomic manifest. Its one-game development probe is preserved; no train/validation corpus fetch has run. A stage corpus must first pass the independent candidate-source audit; then pin the exact selected split file, audit receipt, fetcher and output path in a new action config. The source-game binder still validates every PGN before lesson/certificate preparation.
+The [registered Python source-PGN fetcher](https://github.com/ethanramli/fly-chess-research/blob/8d9bc9ed87c4f38bfb5d2ca07a7eb59f4875f746/python%20actions/fetch_lichess_game_pgns.py) uses Lichess's documented batch export endpoint, checks requested versus returned game IDs, and writes per-game PGNs plus an atomic manifest. Its one-game development probe is preserved; no train/validation corpus fetch has run. A stage corpus must first pass the independent candidate-source audit; then pin the exact selected split file, audit receipt, fetcher and output path in a new action config. The source-game binder still validates every PGN before lesson/certificate preparation.
 
 ## Feedback and the model's own evaluation
 

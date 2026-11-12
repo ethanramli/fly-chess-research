@@ -13,7 +13,7 @@ This is the handoff for continuing the research: read the current checkpoint fir
 
 ## Background and dated history (not current instructions)
 
-The dated notes use the Python action paths recorded at the time. Use the [Python actions guide](../python%20actions/README.md) to find the current folders and the original tree for replay.
+The dated notes use the Python action paths recorded at the time. The [archive](../archive/README.md#retired-python-actions) links to the original tree for replay.
 
 The notes below preserve earlier project state and action plans for provenance. Their dated “Next” items are not current directions; use only the current checkpoint above for the present handoff.
 
