@@ -6,7 +6,7 @@ I’m Ethan Ramli. I play chess, and I wanted to find out what a model built fro
 
 I’d love to play a match against a model that has developed a style of its own. **2000 Elo is my stretch goal.** I started the project to find out what the model can learn and where it hits a limit. [Research motivation](research/project/researcher_vision_2026-10-01.md)
 
-[Current research status](documentation/current-status.md) · [Experiment reports](research/reports/README.md) · [Run the demo](#run-it-yourself)
+[Current research status](documentation/current-status.md) · [Experiment reports](research/reports/README.md) · [Repository map](#repository-map) · [Run the demo](#run-it-yourself)
 
 <a id="start-here"></a>
 
@@ -36,16 +36,24 @@ The [learning plan](documentation/design/research-goals/restart-plan-2026-10-30.
 
 ### Repository map
 
+Start in [`documentation/`](documentation/README.md) to see what a test was meant to measure. Follow the implementation in [`.codebase/`](.codebase/README.md), then read the report and any audit in [`research/`](research/README.md) to see what the test actually showed.
+
 <!-- directory-map -->
-- [`documentation/`](documentation/README.md) — Research questions, experiment designs, and current decisions.
-- [`research/`](research/README.md) — Run reports, failed attempts, source notes, and the [five-volume research plan](research/literature/writings/README.md).
-- [`.codebase/`](.codebase/README.md) — The simulator, chess tools, experiment runners, and software tests.
-- [`python actions/`](python%20actions/README.md) — Commands for inspecting and managing registered runs.
-- [`archive/`](archive/early-development/README.md) — Earlier approaches and the evidence they produced.
-- [`.agents/`](.agents/skills/) — Research and coding assistant instructions.
-- [`.github/`](.github/workflows/) — Automated checks.
-- [`.vscode/`](.vscode/) — Editor settings.
+| Directory | What lives there and where to start |
+| --- | --- |
+| [`documentation/`](documentation/README.md) | The [current findings](documentation/current-status.md), [next research decision](documentation/next-checkpoint.md), and [experiment designs](documentation/design/README.md). Go to `design/` for the task, controls, and passing rule. The other folders hold [dated handoffs](documentation/handoffs/README.md), [early ideas](documentation/ideas/README.md), and [plans for turning the research into a paper](documentation/writing/README.md). |
+| [`research/`](research/README.md) | [`reports/`](research/reports/README.md) holds experiment outcomes, measurements, and available audits. [`journal/`](research/journal/README.md) records mistakes, fixes, and pivots in date order. [`literature/`](research/literature/README.md) holds source notes and the [five-volume chapter plans](research/literature/writings/README.md). [`project/`](research/project/README.md) holds decisions and permissions. [`outreach/`](research/outreach/README.md) holds expert research and correspondence preparation. |
+| [`.codebase/`](.codebase/README.md) | [`src/`](.codebase/src/README.md) holds the fly circuit simulator, chess input, memory rules, move scoring, and browser demo. [`scripts/`](.codebase/scripts/README.md) has the commands that fetch the graph, run experiments, and audit results. [`tests/`](.codebase/tests/README.md) checks the software behavior those commands depend on. |
+| [`python actions/`](python%20actions/README.md) | Python tools and JSON files that record which command and inputs a particular run uses. The guide shows how to inspect a run’s status, logs, or planned audit from Windows. |
+| [`archive/`](archive/early-development/README.md) | Work from before the October 30 restart. Browse the [old reports](archive/early-development/research/reports/README.md), [datasets and protocols](archive/early-development/research/data/README.md), or [frozen source copies](archive/early-development/research/source-archives/README.md) to reconstruct an earlier experiment. |
+| [`.agents/`](.agents/skills/) | Instructions for AI assistants working on FlyChess, including how to review evidence, write documentation, and divide work. The [project instructions](AGENTS.md) define the research and evidence rules those assistants follow. |
+| [`.github/`](.github/) | The [workflow](.github/workflows/readme-navigation.yml) and [checker](.github/scripts/README.md) that catch broken README links and missing folder entries. |
+| [`.vscode/`](.vscode/) | The workspace setting that suppresses VS Code’s Git change-limit warning. |
 <!-- /directory-map -->
+
+**Follow one experiment.** The [original design](documentation/design/neural-learning/engineered-memory-test-v3.md) for the third engineered-memory test says what it tried to measure. The [run configuration](python%20actions/engineered-memory-test-v3-step.json) records the inputs and identifies the [script that ran the test](.codebase/scripts/neural-learning/run-engineered-memory-test-v3.mjs). The [report](research/reports/engineered-memory-test-v3-2026-11-04/README.md) explains why the test failed. The [journal entry](research/journal/experiments/2026-11-04-memory-v3-run.md) records why the first launch crashed and how the rerun was handled.
+
+For other old versions, start with the [guide to earlier attempts](research/README.md#finding-earlier-versions-and-failures). Some raw logs and checkpoints are machine-local under `runs/`. Use the report to find the recorded paths and any evidence saved in Git.
 
 <a id="the-science--can-the-circuit-keep-a-lesson"></a>
 

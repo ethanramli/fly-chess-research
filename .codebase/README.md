@@ -1,6 +1,6 @@
 # FlyChess setup and commands
 
-This folder contains the code that runs FlyChess, the commands that use it, and the software tests. Start with setup below or use the [code map](#code-map) to find a folder. The [project README](../README.md) explains the research question.
+This folder contains FlyChess’s JavaScript implementation, executable commands, and software tests. Start with setup below to play the demo, or use the [code map](#code-map) to trace a model component or experiment command. The [project README](../README.md#repository-map) shows where designs and results live.
 
 ## Set up
 
@@ -38,9 +38,11 @@ The supervised training runner is an engineering baseline, not endogenous biolog
 ## Code map
 
 <!-- directory-map -->
-- [scripts](scripts/README.md) — command-line entry points, grouped by purpose.
-- [src](src/README.md) — implementation modules, grouped by topic.
-- [tests](tests/README.md) — software checks, grouped by topic.
+| Directory | What it contains |
+| --- | --- |
+| [`src/`](src/README.md) | The implementation. Start in [`runtime/`](src/runtime/README.md) for the circuit and graph, [`chess-input/`](src/chess-input/README.md) for how a board becomes input, or [`neural-learning/`](src/neural-learning/README.md) for memory and how activity becomes move scores. [`browser/`](src/browser/README.md) holds the demo page. |
+| [`scripts/`](scripts/README.md) | The entry points that call the implementation. Use the topic guides to find graph downloads, puzzle preparation, experiment runners, benchmarks, and independent audit commands. For registered runs managed through Python, use the [run command guide](../python%20actions/README.md). |
+| [`tests/`](tests/README.md) | Automated checks for expected code behavior, such as saving and restoring a checkpoint or verifying a feedback record. Test directories follow the topics in the source tree. For measured learning outcomes, use the [research reports](../research/reports/README.md). |
 <!-- /directory-map -->
 
 The [relocation map](relocation-map.json) connects previous code paths to their current locations. Vendored CESP99 search code and its license are under `src/search-and-feedback/vendor/cesp99/`, not in a top-level vendor folder; read its [license and provenance](src/search-and-feedback/vendor/cesp99/README.md).
