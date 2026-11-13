@@ -47,6 +47,8 @@ The [Please no more slop skill](.agents/skills/please-no-more-slop/SKILL.md) has
 
 Use Problem Solving to route tasks by stakes and uncertainty, with Light as the baseline for scoped work. Honor the researcher's explicit level or mode. Use Deep Research for material external evidence. Use Ponytail to keep implementation small and Please No More Slop to make names, claims, and verification clear. Follow the existing approval, experiment, and evidence rules when executing a plan.
 
+Use [Science Review](.agents/skills/science-review/SKILL.md) to judge research against the ISEF Grand Award rubric. Follow its milestone triggers for focused and full reviews. In Heavy and deep-in-thought, use it in the existing reviewer passes when the work meets a review trigger. Follow the [Build Skills protocol](.agents/skills/build-skills/SKILL.md) to design, test, and revise repository skills.
+
 ## Keep README navigation current
 
 Use [README Maestro](.agents/skills/readme-maestro/SKILL.md), the README and navigation variant of Please No More Slop, when writing or reviewing folder maps, onboarding routes, or documentation indexes.
