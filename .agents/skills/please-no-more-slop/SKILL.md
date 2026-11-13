@@ -9,7 +9,7 @@ description: >-
 
 # Please no more slop
 
-Make the answer easy to find and the evidence easy to understand. Give replies and standalone documents the same care.
+Use the five-year-old test for both replies and documents. A child with no project background should be able to read the main explanation and tell you what happened, why it matters, and what happens next when a decision is open.
 
 ## Choose the deliverable before writing
 
@@ -23,11 +23,12 @@ Make the answer easy to find and the evidence easy to understand. Give replies a
 
 Use [README Maestro](../readme-maestro/SKILL.md) for navigation and reader routes. Apply the wording checks here to the resulting text.
 
-## Write for the reader
+## Write so a five-year-old can follow the main idea
 
-- **Replies and handoffs:** Lead with the answer, outcome, or request. Explain the immediate consequence and give the next action when it matters. Use the requested length and return only the text when asked.
-- **Documents and reports:** Make the document stand on its own. Put the decision or main finding first. Give the reader the relevant method or evidence, limits, and decision condition where they need them. Use headings to separate distinct reader questions. On a scoped edit, do this inside the requested section using the document's existing structure.
-- **Both:** Use familiar words where they preserve the same meaning. Keep standard terms the reader needs for precision or lookup, and define unfamiliar terms where they first matter. Use one term for each concept. Remove padding and repeated conclusions.
+- If the reader has to act, make the first sentence say what to do. Otherwise start with the answer or result. Use familiar words, name who or what did the action, and keep one main thought per sentence. Put causes and events in the order they happened. Repeat a name where “it” or “they” could point to two things.
+- Use a concrete action in place of an abstract phrase in the main explanation. “Two people tried to get the last seat, and the site gave both a ticket” is easier to picture than “the simultaneous booking check failed.” Explain technical terms through what they do or what someone can see. For example, “the job wrote a second copy after midnight” says what happened. Replace words that make the main idea depend on specialist knowledge. If an exact term matters, put the plain meaning first. For example, “the scanner stopped talking to the library computer” explains a lost network connection.
+- Show what a number means. “The move had to come first on two of the three boards. It came first on only one.” Give the group, the result, and the cutoff when they change the meaning. Say what a check actually did, even in the last sentence. Replace “once the test passes” with what the reader should see happen.
+- Apply this to the main explanation in a reply and to the opening explanation of each important section of a document. Give the full technical detail the intended reader needs nearby. Use the requested format. For a one-paragraph reply or a caption, put the plain explanation directly in that text.
 
 ## Keep the measurement and claim intact
 
@@ -41,11 +42,20 @@ Use a verb for an action and a concrete noun for a value. Name a measure for its
 
 ## Check the result
 
-Check the finished text against the source. Can the intended reader state the decision and recover the success condition and result without guessing? Check any consequential quantity, qualifier, or limitation that changed during rewriting. For an edit, verify the requested section and confirm the final diff stays within scope. For a reply, return it in the requested form.
+Read the draft once as someone who knows none of the project terms. Try to answer, in everyday words, the questions that apply:
+
+1. What happened or what is the answer?
+2. How do we know? If a number matters, what was counted and what would have passed?
+3. What is still unknown, if it changes how we should use the result?
+4. What happens next, or what would change the decision?
+
+Scan the opening and the next-step sentence for words such as “passes,” “rehearsal,” or “connection” used without explaining the action or result. If a reader needs to know what that word means to act, say what someone should do or see. Rewrite any sentence that still makes the reader guess. Recheck the meaning against the source. When an independent reader is available, give them only the finished text and ask them to explain it back. Treat your own check as an estimate of clarity. For an edit, confirm the diff stays within scope. For a reply, return the requested text.
 
 ## Score and rank writing
 
-Score from 1 to 10, where **1 is clear and 10 is the most slop**. Judge what the writing does to the reader. Style alone gives no basis for identifying who or what wrote it.
+When asked how clear the writing is, count how many applicable read-back questions a reader could answer correctly from the draft alone. Give replies and documents equal weight when both are being graded. Keep file handling and activation out of this clarity score.
+
+When asked for the repository writing rubric, score from 1 to 10, where **1 is clear and 10 is the most slop**. Judge what the writing does to the reader. Style alone gives no basis for identifying who or what wrote it.
 
 Pick the audience, the purpose, and the text being scored. Use the same audience and purpose for competing drafts. When judging unrelated passages, state the audience and purpose for each. For a long document, judge the whole piece and quote representative passages. Score individual passages only when asked or when identifying where to revise first.
 
@@ -69,6 +79,6 @@ Use [the 30 scored examples](writing-slop-examples.md) only when asked for examp
 
 ### Source-checked rewrite of the planned test and later search
 
-"The planned test required a safe capture to score highest in at least two of three chess positions. That happened in one position. A more extensive search later found settings that made a safe capture score highest in each of the three positions. That search came after the planned test failed and has yet to receive independent review." [Stop report](https://github.com/ethanramli/fly-chess-research/blob/6275c9ce87c3e4a04450b1b293234077c1ac4737/research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md#L31)
+"We tested the program on three chess boards. To pass, it had to put a safe move that takes a piece first on at least two boards. It did that on only one, so the test failed. We tried more settings and found one that worked on all three of the same boards. No one outside the team has checked that result yet." [Stop report](https://github.com/ethanramli/fly-chess-research/blob/6275c9ce87c3e4a04450b1b293234077c1ac4737/research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md#L31)
 
 For a specialist who needs the method, add the exact test name and how the search differed once you verify those details.
