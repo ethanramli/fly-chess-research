@@ -13,7 +13,7 @@ Read the relevant repository instructions, nearby skills, and a real task the sk
 
 Record the user's goal, the skill's exact triggers and closest near miss, authorized inputs and actions, the deliverable, the decision rules, and the checks that show it is done. For each failure branch, specify the verdict or current state to report, the evidence behind it, and the next useful action. Ask only about unresolved decisions that would materially change the build.
 
-List the source inputs and allowed output paths before writing. Choose a handoff location distinct from any input receipt or fixture. Preserve the source evidence and keep the answer key outside the candidate's test context.
+Before writing, list the existing inputs and the exact paths the task allows you to create or change. Treat input receipts, prompts, and fixtures as read-only. If no separate handoff file was requested, report in chat. Check the diff or compare the inputs at the end to confirm they stayed intact. Keep the answer key outside the candidate's test context.
 
 ## 2. Set the checks before drafting
 
@@ -25,9 +25,9 @@ For a narrow edit, rerun the changed behavior, the nearest adjacent behavior, an
 
 ## 3. Write and connect the skill
 
-Write `.agents/skills/<name>/SKILL.md` with concrete trigger boundaries in the description, including a common near miss when routing could be ambiguous. Put the workflow in action order. Give a decision rule at each consequential fork, including what to return when a check fails and what work can continue. Keep reusable detail in directly linked references. Wire the normal caller or repository instructions only where needed.
+Write `.agents/skills/<name>/SKILL.md` with concrete trigger boundaries in the description, including a common near miss when routing could be ambiguous. Compare the description with the intended trigger before handoff. When the user supplies an excluded request, put the exclusion in the description itself. Test in-scope and excluded requests against that description. Put the workflow in action order. Give a decision rule at each consequential fork. If a current record conflicts with a stale result, say which current state can be reported, which outcome remains unknown, and what exact record would resolve it. Keep reusable detail in directly linked references. Wire the normal caller or repository instructions only where needed.
 
-Verify the frontmatter and links. Check the candidate's exact path and each required dependency separately before reporting a blocker. Run executable resources through their actual entry points in the allowed environment. Inspect the diff for changes to source evidence or files outside the requested write scope.
+Verify the frontmatter and links. Check the candidate entry point by its exact path, including hidden folders. Record separately whether the entry point exists, which dependency is missing, and which check is blocked. A missing dependency does not make a readable candidate absent. Run executable resources through their actual entry points in the allowed environment. Inspect the diff for changes to source evidence or files outside the requested write scope.
 
 ## 4. Run, score, and improve
 
