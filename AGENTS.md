@@ -39,13 +39,13 @@ This repository operates under ponytail mode by default: use the laziest solutio
 
 ## Naming and communication default
 
-The [Please no more slop skill](.agents/skills/please-no-more-slop/SKILL.md) has the same priority as ponytail. Load and apply it when creating or renaming variables, functions, database keys, files, API endpoints, project folders, or user-facing labels. Also apply it when drafting, editing, or explaining technical and research material in replies, emails, documentation, reports, and handoffs. Ponytail governs implementation size. This skill governs naming and how we explain the work.
+The [Please no more slop skill](.agents/skills/please-no-more-slop/SKILL.md) has the same priority as ponytail. Load and apply it when creating or renaming variables, functions, database keys, files, API endpoints, project folders, or user-facing labels. Apply it with equal priority to technical and research communication in chat replies, emails, and handoffs and to writing or editing documents and reports. Ponytail governs implementation size. Use its five-year-old test for the main explanation in both.
 
 ## Problem solving and research defaults
 
 [Problem Solving](.agents/skills/problem-solving/SKILL.md), [Deep Research](.agents/skills/deep-research/SKILL.md), [Ponytail](.agents/skills/ponytail/SKILL.md), and [Please No More Slop](.agents/skills/please-no-more-slop/SKILL.md) have equal priority in this repository. Apply each when its scope is relevant.
 
-Use Problem Solving when a task calls for diagnosis, reconciliation of evidence, or a choice between plausible approaches. Use the skill description to decide whether a task is in scope. Honor the researcher's explicit level or mode. Use Deep Research for material external evidence. Use Ponytail to keep implementation small and Please No More Slop to make names, claims, and verification clear. Follow the existing approval, experiment, and evidence rules when executing a plan.
+Use Problem Solving when a task calls for diagnosis, reconciliation of evidence, or a choice between plausible approaches. Use the skill description to decide whether a task is in scope. Honor the researcher's explicit level or mode. Use Deep Research when the answer depends on verifying or combining evidence, including supplied records. Use Ponytail to keep implementation small and Please No More Slop to make names, claims, and verification clear. Follow the existing approval, experiment, and evidence rules when executing a plan.
 
 Use [Science Review](.agents/skills/science-review/SKILL.md) to judge research against the ISEF Grand Award rubric. Follow its milestone triggers for focused and full reviews. In Heavy and deep-in-thought, use it in the existing reviewer passes when the work meets a review trigger. Follow the [Build Skills protocol](.agents/skills/build-skills/SKILL.md) to design, test, and revise repository skills.
 
