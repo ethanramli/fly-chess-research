@@ -1,39 +1,47 @@
 ---
 name: please-no-more-slop
-description: "Choose clear names and write technical ideas so the intended reader can explain them back. Use when creating or renaming code identifiers, files, folders, APIs, database keys, or labels, and when drafting, reviewing, editing, or explaining technical or research material in replies, emails, documentation, reports, and handoffs. Use when asked to remove jargon, make something easier to understand, score AI slop, or rank drafts by writing quality."
+description: >-
+  Write and review clear technical and research replies, emails, handoffs,
+  documents, reports, and captions. Use when drafting, editing, explaining,
+  simplifying, scoring, comparing drafts, or choosing names for code, files,
+  APIs, or labels. Skip requests that only quote or return exact text.
 ---
 
 # Please no more slop
 
-Make the reader's job easy. A name should tell them what a thing is. A paragraph should tell them what happened, why it matters, or what to do.
+Make the answer easy to find and the evidence easy to understand. Give replies and standalone documents the same care.
 
-Use [README Maestro](../readme-maestro/SKILL.md) for repository landing pages, directory trees, and documentation navigation.
+## Choose the deliverable before writing
 
-## Name things
+| Request | What to deliver |
+| --- | --- |
+| Return, show, suggest, review, or score | Give the requested text or findings in the reply. Read referenced files as inputs. |
+| Draft a new file or document | Write to the requested destination, or choose a separate new destination if unspecified. |
+| Edit or update a named file in place | Change the authorized part of that file. Preserve surrounding text, identifiers, and links. |
 
-- Use the real concept or action. Name a function for what it does and a file for what it contains. Prefer `extract_metrics.py` over `data_extraction_pipeline_final_v4_processed.py` and `client_relationships` over `usr_clnt_rel_mttr_v2`.
-- Drop vague words such as `handler`, `manager`, `wrapper`, `processor`, `helper`, and `util` when a specific name tells the reader more. Keep framework-required roles and standard domain terms that convey a real distinction.
-- Spell out unfamiliar shorthand. Use one name for each concept across code, documentation, and replies. Keep distinct concepts distinct. Preserve public interfaces and unrelated names unless the task calls for renaming them.
-- Apply the normie test. Could someone who understands the task but has never seen this project guess what the name refers to?
+**Before any file write, identify the user's instruction to persist the result and the destination it authorizes.** Merely naming a file after “rewrite” or “improve” identifies the source. For “Rewrite draft.md. Return only the update,” read draft.md and produce the update in the reply. “Update draft.md in place” authorizes editing it. “Write the update to review.md” authorizes writing review.md. Use the reply when the destination is ambiguous. For a return-only or no-edit request, finish in the reply without patching or creating files.
 
-## Write and explain
+Use [README Maestro](../readme-maestro/SKILL.md) for navigation and reader routes. Apply the wording checks here to the resulting text.
 
-1. **Start where the reader is.** Identify what they already know about the field and about this project. A professor in a related field may know the science and still need an explanation of a local test or label.
-2. **Lead with what they came for.** In an update, give the outcome and its immediate consequence. In an email, make the reason for writing and any specific request easy to find. In an explanation, give the idea first and add the mechanism in the order the reader needs it. Keep necessary detail nearby or link to the source.
-3. **Say what happened.** Name who or what did what, under which conditions, and with what result. Replace vague evaluations with the measurement or observable change when the source provides one. Split a sentence where the reader would have to backtrack. Use headings that help readers find an answer in a long document.
-4. **Translate terms by meaning.** Replace project shorthand, jargon, and stacked nouns with familiar words when they carry the same meaning. Keep a standard term when the reader needs its precision or needs to look it up. Explain what it means here at first use if it is unfamiliar. Skip acronyms used only once and keep required identifiers exact when referring to them.
-5. **Keep the claim intact.** Preserve scope, baselines, denominators, units, and uncertainty wherever they change the interpretation. Keep observations, interpretations, and plans distinct. Distinguish exploratory checks from planned tests, a model from the thing it represents, and an unrun test from a failed test. Verify important claims against the source. If a term or result is unclear, flag the gap and keep any useful exact wording until its meaning is confirmed.
+## Write for the reader
 
-6. **Explain what passed.** Name the kind of check, what it measured, the result, and the passing rule when one was defined. Say what the result lets the reader conclude and name any adjacent outcome they might assume was tested. A software test checks specified behavior of the code. A training run finishing means the procedure ran. A learning evaluation measures how the trained model performed under stated conditions. An audit checks only the records or procedures it covers. Use "one round of training" when "training pass" means going through the data once. If the source only says "passed," state which details are missing.
+- **Replies and handoffs:** Lead with the answer, outcome, or request. Explain the immediate consequence and give the next action when it matters. Use the requested length and return only the text when asked.
+- **Documents and reports:** Make the document stand on its own. Put the decision or main finding first. Give the reader the relevant method or evidence, limits, and decision condition where they need them. Use headings to separate distinct reader questions. On a scoped edit, do this inside the requested section using the document's existing structure.
+- **Both:** Use familiar words where they preserve the same meaning. Keep standard terms the reader needs for precision or lookup, and define unfamiliar terms where they first matter. Use one term for each concept. Remove padding and repeated conclusions.
 
-   - Software example. "All 12 tests passed. They checked whether the program saves and reloads the same move scores. Model learning was outside the test's scope."
-   - Learning example. "On 10 new chess positions, the trained model chose the correct first move in 8. The test required at least 8 to pass. This measures performance on those positions. The test included no comparison with an untrained model, so the cause of that performance remains open."
+## Keep the measurement and claim intact
+
+Before simplifying a material result, identify what was tested, what counted as success, the threshold if given, the result and denominator, and any comparison or condition that changes the conclusion. Keep exact operators and units. For a rank outcome, say what had to rank where. If a short name or caption cannot carry the full definition, put the rest in its adjacent definition or sentence.
+
+Keep a planned result separate from a later exploratory check. Keep a completed process, a software check, and an outcome for a trained model distinct. Preserve the population, comparator, and strength of the claim. Report missing evidence where it affects the decision, and make the next check specific when one is known.
+
+## Name things by what they do
+
+Use a verb for an action and a concrete noun for a value. Name a measure for its recorded outcome, such as `safe_capture_first_rate` when a safe capture must rank first. Use established terminology when its meaning is precise. Preserve public names verbatim unless a rename is authorized. For a proposal, distinguish internal names from public identifiers and explain which one stores what.
 
 ## Check the result
 
-- Read from the intended reader's position. Can they say in their own words what happened, what the evidence supports, and what happens next if a next step is relevant? Can they tell which sentence answers their question?
-- Compare the rewrite against the source. Check that every consequential claim keeps its original meaning and level of certainty. Check that a definition explains something the reader can picture or verify.
-- When testing with a reader, ask for a paraphrase before explaining what you meant. Revise the part they misread. Treat a self-check as an editorial check.
+Check the finished text against the source. Can the intended reader state the decision and recover the success condition and result without guessing? Check any consequential quantity, qualifier, or limitation that changed during rewriting. For an edit, verify the requested section and confirm the final diff stays within scope. For a reply, return it in the requested form.
 
 ## Score and rank writing
 
@@ -57,7 +65,7 @@ Report the score, the five category scores, and the top one or two problems with
 
 ## Examples
 
-Use [the 30 scored examples](writing-slop-examples.md) when calibrating a rating or when asked to show examples. The reference has three examples for each score from 1 to 10.
+Use [the 30 scored examples](writing-slop-examples.md) only when asked for examples, requested to calibrate against them, or when a specific score boundary is unclear. Read the relevant score bands. If the reference is missing, use the rubric above and say that example-based calibration could not be checked.
 
 ### Source-checked rewrite of the planned test and later search
 
