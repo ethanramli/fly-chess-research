@@ -7,6 +7,18 @@ Evidence checked: 2026-11-04. This is a calculation note, not a new experiment.
 
 The basic sparse graph needs **23.691 MiB** of array data. Neuron state adds to this size. Whole-process RSS is larger. Several runs have recorded RSS values, but the run behind the chapter's **about 250 MB** claim is not identified.
 
+## What one simulated fly costs
+
+Added 2026-11-13 for Volume 1, Chapter 4.
+
+A dense connection table is like a spreadsheet with one row per sending neuron and one column per receiving neuron. A cell holds the connection strength, with zero for an absent connection. A single table covers the wiring of the entire model. With **134,209 neurons**, it has **18,012,055,681 cells**. At **4 bytes per cell** (float32), one table alone would occupy **72,048,222,724 bytes, or 72.05 GB (67.10 GiB)**. That estimate covers the wiring before any neuron activity, training state, or runtime overhead. See [the dense calculation](#4-calculate-a-dense-matrix).
+
+FlyChess stores only the **2,700,513 directed connections present in the model**. Its core sparse graph arrays occupy **24,841,457 bytes, or 24.84 MB (23.69 MiB)**. That is about **1/2,900 as much storage for the wiring** under these assumptions. See [the sparse calculation](#5-calculate-sparse-storage-and-neuron-state).
+
+In the **November 8 Fly Connections Memory dry run**, each of six concurrent workers ran a separate model and made **8,922 full-network passes**. Recorded peak resident memory was **274–281 MiB per worker**, including the wiring, model state, and process overhead. The range describes individual workers' peaks. If six workers each held a private dense table, those tables alone would total **432.29 GB**. This is a hypothetical allocation, while the reported worker peaks come from the actual sparse dry run. [Dry-run journal](../../../journal/experiments/2026-11-07-fly-connections-memory.md#16-2026-11-08-2341-dry-run-complete-does-not-pass-mechanism-level-failure-found)
+
+The researcher recalls estimating about **64 GB** during early Monte Carlo planning and considering a command-line tool for Google Colab because local hardware was limited. The original estimate's assumptions remain unknown. The 72.05 GB calculation gives a reproducible figure for a specified dense design. Sequential Monte Carlo rollouts can reuse one model's wiring, so the rollout count alone gives no RAM requirement. See [the Monte Carlo assumptions](#6-state-the-monte-carlo-copy-assumptions) and [the archived sparse-graph search profile](../../../../archive/early-development/research/reports/monte-carlo-neural-profile-v2-2026-10-07/README.md).
+
 ## 1. Read the labels and units
 
 1. **ESTIMATE** means bytes calculated from stated assumptions. It is not a process measurement.
