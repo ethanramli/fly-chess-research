@@ -1,58 +1,46 @@
 ---
 name: build-skills
-description: Build or improve a reusable repository skill. Use for requests to create a skill, turn a recurring workflow into instructions, fix a skill that misfires, or reproduce the design and tests for an existing skill.
+description: Build, fix, or reproduce a repository skill and verify it against FlyChess’s skill review rubric. Use for new skills, recurring workflows turned into skills, and changes to skill behavior or routing. Skip requests that only explain an existing skill or use it for its normal job.
 ---
 
 # Build skills
 
-Follow this protocol from the user's request through a verified change. Each step produces an input the next step can use. Follow [Ponytail](../ponytail/SKILL.md) for scope and [Please No More Slop](../please-no-more-slop/SKILL.md) for wording.
+Use the [skill review rubric](references/skill-review-rubric.md) to design, test, and score the candidate. Aim for **95/100** on new skills and substantial changes. Routine readiness requires at least **90 verified points** and the release checks below. Use [Ponytail](../ponytail/SKILL.md) for scope and [Please No More Slop](../please-no-more-slop/SKILL.md) for wording.
 
 ## 1. Define the behavior
 
-Read the relevant repository instructions, the nearest skills, and a real task the skill should handle. For a revision, inspect what the existing skill actually did and find the first decision or action that went wrong. For a new skill, find how the task is done today.
+Read the relevant repository instructions, nearby skills, and a real task the skill should handle. For a revision, reproduce the reported failure when possible and identify the first decision that went wrong. For a new skill, see how the task is handled today. Decide whether to extend an existing skill or create a new entry point. Assign shared steps to one owner.
 
-Write a brief with:
+Record the user's goal, the skill's exact triggers and closest near miss, authorized inputs and actions, the deliverable, the decision rules, and the checks that show it is done. For each failure branch, specify the verdict or current state to report, the evidence behind it, and the next useful action. Ask only about unresolved decisions that would materially change the build.
 
-- **Goal and user:** Who uses the skill, what recurring job it does, and why the current workflow falls short.
-- **Use and skip:** A realistic request that should trigger it and a similar one that should go elsewhere.
-- **Inputs and authority:** What evidence, tools, permissions, and user decisions it needs. Define what to do when any of those are missing.
-- **Output and done:** What the user receives, what observable behavior earns a pass, and when to stop or return a blocker.
+List the source inputs and allowed output paths before writing. Choose a handoff location distinct from any input receipt or fixture. Preserve the source evidence and keep the answer key outside the candidate's test context.
 
-Ask the user about decisions that materially change the brief. Ask the questions they requested and use their answers. Record reversible defaults when the request leaves choices open. Move on when you can write a case someone else can judge.
+## 2. Set the checks before drafting
 
-## 2. Design the workflow
+Map each rubric item to an observable check or a structural inspection. For new skills and substantial changes, prepare the rubric's six cases before drafting. Cover two realistic core tasks, a hard case, a near miss, overlap or repeat use, and a failure case. Include a fresh case that the author cannot tune against. If a hard case doubles as the held-out case, keep its inputs and answer key with the evaluator until the normal cases pass.
 
-Decide whether the behavior belongs in an existing skill or needs its own entry point. Identify who owns shared steps and which existing skills to call. Use [Problem Solving](../problem-solving/SKILL.md) at the requested level. For a consequential design with competing approaches, use Heavy and follow its critique and revision loop. Use [Deep Research](../deep-research/SKILL.md) when a source, field standard, or tool behavior could change the design. Record the exact source and decision it affected.
+Write the prompts, expected outputs or actions, source locators, material failure conditions, and what counts as a useful improvement. Check the expected result against the actual fixture values before running each case. Pin the baseline. For the two core cases use the same model, starting context, inputs, tools and budget with the target skill disabled. Add a hard-case comparison if the core results tie. For revisions, also replay the reported failure against the prior revision when available.
 
-Work through the normal case and the closest failure case before writing. Identify which decisions the agent must make, in what order, and what evidence each decision needs. Specify a next action for a failed check, a missing prerequisite, and a material revision. Use repository skills of comparable complexity as the quality bar. Check that another agent can tell when to load this skill, which related skill owns the next step, and what counts as done.
+For a narrow edit, rerun the changed behavior, the nearest adjacent behavior, and any newly affected rubric checks. Carry forward earlier scores only where the recorded evidence and its dependencies still apply. Use the full suite when the scope, routing, or dependencies change materially, or when seeking a new readiness verdict without enough prior evidence.
 
-## 3. Prepare the tests
+## 3. Write and connect the skill
 
-Write the user prompts, input artifacts, expected behavior, and pass conditions before drafting the candidate. For a substantial build or change, cover:
+Write `.agents/skills/<name>/SKILL.md` with concrete trigger boundaries in the description, including a common near miss when routing could be ambiguous. Put the workflow in action order. Give a decision rule at each consequential fork, including what to return when a check fails and what work can continue. Keep reusable detail in directly linked references. Wire the normal caller or repository instructions only where needed.
 
-| Case | What the test must show |
-| --- | --- |
-| Normal request | The skill runs through its usual entry point and delivers what the user asked for. |
-| Near miss | A similar request routes elsewhere without unnecessary work or side effects. |
-| Failure or boundary | The workflow handles a realistic problem, such as missing evidence, a failed check, or a material change after review. |
-| Fresh case | The behavior works on a case that was kept out of drafting and tuning. |
+Verify the frontmatter and links. Check the candidate's exact path and each required dependency separately before reporting a blocker. Run executable resources through their actual entry points in the allowed environment. Inspect the diff for changes to source evidence or files outside the requested write scope.
 
-Pin the current skill or workflow as the baseline when claiming an improvement. Record the candidate revision, shared inputs, available tools, model and settings when exposed, budget, and scoring rules. Match conditions across versions. Keep the expected outcomes with the evaluator. For a narrow edit, test the affected behavior and one adjacent behavior it could break.
+## 4. Run, score, and improve
 
-## 4. Write and connect the skill
+Run each case in a fresh context containing the natural request, relevant artifacts, and tools a real user would have. Use [Delegate](../delegate/SKILL.md) for independent passes when authorized. Test natural routing with the candidate discoverable. Use explicit invocation to test the workflow directly. Record which ran. Keep manual walkthroughs and static checks labeled as such.
 
-Write `.agents/skills/<name>/SKILL.md` using the repository's conventions. Give it a lowercase name and a description with concrete triggers. Write the essential steps in action order, with the inputs, decisions, outputs, and return paths defined above. Link supporting material at the step that needs it. Keep detailed rubrics, reference data, or reusable examples in linked files. Put project history in its owning record. Add a script only if it removes recurring work or makes a check deterministic.
+For each case, record the exact input locator, expected result, observed result, and verdict. Recheck a result against its source before counting it as passed. If the test runner is unavailable, continue the authorized build, run the checks you can, and leave the missing behavioral checks unverified.
 
-Wire the skill into its normal caller or repository instructions where needed. Check its header, paths, links, and routing against adjacent skills. Check scripts or other executable resources using their actual entry point.
+Score the actual output and side effects against every rubric item. Give each deduction its observed cause, evidence locator, user consequence, and smallest fix. Track measurable overhead and whether the candidate materially improves the baseline. Record unknown cost or unavailable checks as unknown. Apply the rubric's caps and reconcile earned, lost, and unverified points.
 
-## 5. Run, revise, and rerun
+Fix the earliest decision behind each material failure. Rerun the failed case and affected neighboring cases, then run the held-out case against the stable revision. If a held-out failure causes a material edit, reserve a fresh held-out case. Stop iterating when readiness is demonstrated, or when further improvement requires evidence, tools, or authorization outside the task. If a candidate consistently ties the baseline and adds overhead, reconsider whether it belongs in a separate skill.
 
-Run the cases in fresh contexts with only the prompt, tools, and artifacts available to a real user. Use [Delegate](../delegate/SKILL.md) for independent passes when authorized. For routing, leave the skill available and use a natural request. An explicit invocation tests the workflow itself. Record which test ran and what it can establish.
+## 5. Release or hand off
 
-Score the observed output or action against the prepared conditions. When a check fails, identify the earliest failed step, revise it, and rerun the failed case and any affected neighboring case. Repeat while a material gap can be fixed within scope. Use the held-out case once the tuned cases pass. If it drives another edit, use a new held-out case to check generalization.
+Call the revision ready for routine use only when the verified score is at least 90/100, no rubric cap applies, and the routing, core deliverables, important failure paths, and dependencies have been checked with no unresolved material failures. Use the score range when checks are unverified and label the verdict provisional. A blocked check can leave a useful draft to hand off with the exact rerun still needed.
 
-## 6. Release or hand off
-
-Call the skill ready when its intended route works, the output meets the brief, the important failure paths are handled, and the supporting files and links pass. Name any test the environment prevented and qualify claims accordingly. Save a short receipt with the exact revision, inputs or stable links, material choices, checks and outcomes, and open gaps. Use the repository's existing record or pull request. Leave the procedure in the skill so someone can build the next one without this conversation.
-
-When user feedback changes the requirements or exposes a failure, return to the first affected step and make the feedback a regression case if it can recur.
+Record the pinned revision and baseline, case prompts or stable input links, actual results, verified score, any unverified points, deductions, and remaining work. Use the agreed handoff path or the repository's existing review record. Check that the original evidence is still intact. When feedback exposes a recurring failure, add it to the next regression check.
