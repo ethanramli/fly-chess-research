@@ -4,9 +4,7 @@ Read the relevant section when using [Problem Solving](SKILL.md). The workflow a
 
 ## Review the proposal
 
-Use the same three reviewer roles across effort levels. In Heavy Group mode, choose two that cover the proposal's most serious risks. The scientific skeptic and peer reviewer are a useful default. Choose the foundational skeptic when the definition, measurement, or premise is in doubt. In deep-in-thought Group mode, use all three.
-
-Give each reviewer the same proposal, goal, constraints, and relevant raw evidence. Add their own brief. Collect their first assessments independently, then compare objections. Reuse reviewers for follow-up on revisions when their previous work is relevant.
+Choose roles by the assumptions in the proposal. For a scheduled retry, one reviewer might check whether the verified entry point represents the supported scheduled route while another checks whether the date normalization preserves the original job identity. Give each the relevant source locator and an observation that would invalidate their assigned assumption.
 
 | Reviewer | Question to own | How to challenge the proposal |
 | --- | --- | --- |
@@ -14,7 +12,7 @@ Give each reviewer the same proposal, goal, constraints, and relevant raw eviden
 | **Scientific skeptic** | Could a different mechanism produce the same result? | Name a credible rival. State what each explanation predicts. Check for leakage, unequal conditions, and controls both explanations would pass. Propose a check where the rivals predict different outcomes. |
 | **Foundational skeptic** | If the proposal succeeds exactly as planned, will it answer the right question? | Challenge the premises, definitions, and measurement. Construct a case where the test passes without the intended behavior. Identify what must change in the question or measurement if the counterexample holds. |
 
-Each reviewer returns the exact claim or assumption they challenge, a concrete way it could fail, and the smallest check or revision that could settle the objection. They may report that no material flaw survived their checks. Record what each objection changed. An objection to the measurement can reopen the outcome definition. A rival mechanism can reopen the experimental design. A problem with reproducibility or scope can narrow the claim. Use the [review loop](SKILL.md#run-the-review-loop) after the first critique. Review the new version when a revision changes a material claim, method, or dependency. Use [Science Review](../science-review/SKILL.md) to choose the checks for a scientific claim.
+Ask each reviewer for the assumption tested, the evidence and what it establishes, and the smallest check or revision if an objection remains. Use the [review loop](SKILL.md#run-the-review-loop) to record and recheck the lead's response.
 
 ### Example — a claim about transfer in FlyChess
 

@@ -1,78 +1,58 @@
 ---
 name: problem-solving
-description: Solve scoped tasks, diagnose failures, compare approaches, and unblock difficult projects. Use light, medium, heavy, or deep-in-thought effort in solo or group mode. Route automatically when the user leaves the choice open.
+description: >-
+  Diagnose an unexpected result, reconcile conflicting evidence, choose between
+  plausible approaches, or unblock a hard problem. Use when the user asks for
+  Problem Solving, an effort level (Light, Medium, Heavy, or deep-in-thought),
+  or a check that requires judgment about evidence or what to do next. Skip
+  direct translation, formatting, copying, and routine edits with a settled
+  procedure unless the user asks for diagnosis or an explicit effort level.
 ---
 
 # Problem Solving
 
-Move the user's goal forward with the smallest amount of work that can resolve the important uncertainty. Use [Ponytail](../ponytail/SKILL.md) for implementation scope, [Deep Research](../deep-research/SKILL.md) for evidence gathering, and [Please No More Slop](../please-no-more-slop/SKILL.md) to communicate findings and verification. Use the [playbook](playbook.md) for reviewer prompts, examples, and research behind the design.
+Identify the deliverable or decision, the constraints on the work, and the observation that would let you stop. On a follow-up, start from the open objections and changed evidence. Reuse earlier checks whose inputs, path, and claim still match.
 
-## Route the task
-
-| Level | Use it when | Default mode |
+| Level | Choose when | Default mode |
 | --- | --- | --- |
-| **Light** | The task needs structured, practical thinking focused on action and scope. Step back and ask whether the current action, feature, or optimization actually helps the overall goal. Use Ponytail to stop scope creep. | Solo |
-| **Medium** | The task needs a deliberate approach and sequential thinking within a defined scope. Choose how to tackle it, reflect on your own work as you go, and adjust the approach when the results call for it. | Solo |
-| **Heavy** | A harder problem has several plausible causes, designs, or solutions. Diagnose it, research the relevant evidence, propose a solution, and have two independent models with different points of view find flaws. Iterate on the proposal. Use this for most hard problems. | Group |
-| **deep-in-thought** | Reserve this for the hardest, make-or-break problems, such as a roadblock that prevents the project from advancing. Evaluate the diagnosis, question why, what, and how from first principles, and identify what is unknown. Deep-research and evaluate the evidence, form hypotheses, propose a test, and iterate with three independent models applying peer-review, scientific, and foundational skepticism. Work toward a concrete plan that can produce new scientific evidence. | Group |
+| Light | One authoritative record or small check can settle a bounded question. | Solo |
+| Medium | A defined problem needs a trace, derivation, or controlled replay. | Solo |
+| Heavy | Several plausible causes or approaches could change an important decision. | Group |
+| deep-in-thought | The project is blocked and the premise, measurement, or design may be wrong. | Group |
 
-Apply Light's focus and scope check at every level.
+Honor explicit levels and modes. Otherwise choose the lowest sufficient level. Escalate when a check exposes uncertainty that could change the decision. Step down once it is resolved. An effort level sets the workflow. Use runtime reasoning settings only when supported and authorized.
 
-Honor an explicit level or mode. Otherwise choose the lowest level that addresses the stakes, uncertainty, reversibility, and cost of error. Escalate when a check exposes a consequential unknown or invalidates the plan. Step down once the critical uncertainty is resolved. Treat these as workflow choices and use runtime reasoning settings only when the host supports them and the request authorizes them.
+## Light
 
-## Light — stay focused
+Use the smallest authoritative input that can settle the request. For a factual correction, read the text to correct and the designated source. Open older or secondary material only if the primary record is missing, ambiguous, or in conflict. Check the result and return it in the requested format.
 
-1. State the user's goal, the boundary of the task, and the observable result that means it is done.
-2. Before a meaningful action, ask what it contributes to the goal. Drop tangents and optimizations that change no required outcome or decision.
-3. Take the smallest useful action within scope and check the result. If it misses the observable goal, adjust the action and check again while a useful step remains. If the task changes, recheck the goal.
+## Medium
 
-## Medium — choose an approach and reflect
+Trace the real path from input to output, work backward from the failure, or solve a smaller case. Choose the approach that can locate the first wrong result. Compare expected with observed behavior at the relevant boundary. Use a control that bypasses the suspected step when two components could produce the symptom.
 
-**Understand the goal.** Translate the request into a concrete deliverable and a check the user would recognize as success. Name any constraint or assumption that could change the approach.
+Verify through the normal entry point with a failing example and any adjacent behavior the fix must preserve. Before running a read-only replay, check for writes by imports and by the entry point itself. For Python imports use `python -B`; keep any required outputs in memory. Give the smallest supported fix or result and name any check still blocked.
 
-1. Choose an approach that fits the problem. For example, trace a failure from input to output, work backward through dependencies, or solve a smaller case before generalizing. State why that approach fits.
-2. Carry it out in a sensible order. At a checkpoint, ask what you expected, what actually happened, and which assumption the result strengthens or weakens.
-3. Use that reflection to keep, revise, or replace the approach. Repeat the work and checkpoint when the result leaves a meaningful part unaddressed. Verify against the original task before stopping. If a required check is blocked, name the missing prerequisite.
+## Heavy
 
-## Heavy — diagnose, research, propose, critique, iterate
+1. Name the decision, live alternatives, baseline, and evidence that would change the choice. Start with primary evidence already in scope. Distinguish the observed representation from the outcome it summarizes. For example, a change in scores need not change their ordering, and a changed ordering need not change the top choice. If evidence is missing, retain alternatives consistent with the observations and identify the missing record or smallest discriminating check.
+2. Write a concrete proposal. Include the action or claim, decisive assumptions, expected result, and a check whose possible outcomes lead to different decisions. Keep planned work within the user's scope and authority.
+3. Run the review loop with two distinct critique briefs.
 
-**Understand the goal.** Identify the decision this work must support. Define what each viable option must achieve, which tradeoffs the user cares about, and what evidence would change the choice. Resolve material ambiguity about those priorities before ranking options.
+## deep-in-thought
 
-1. **Diagnose.** Identify plausible causes or designs, the current baseline, and the evidence that would distinguish them.
-2. **Research.** Use Deep Research to check claims that could change the choice. Verify the relevant sources and compare alternatives under matching conditions where possible.
-3. **Propose.** State the recommended action, its assumptions, what it should achieve, and how to check it. Name the strongest reason it could fail.
-4. **Critique.** In Group mode, use two independent reviewer models. Choose two of the three [reviewer roles](playbook.md#review-the-proposal) based on the proposal's biggest risks. The scientific skeptic and peer reviewer are a useful default. Choose the foundational skeptic when the premise or measurement is in doubt. Use [Science Review](../science-review/SKILL.md#decide-when-to-review) in these passes when a research milestone or decision meets its review triggers.
-5. **Iterate.** Follow the [review loop](#run-the-review-loop). Return to the earliest invalidated step, carry its consequences through the proposal, and review the new version.
+Use Heavy's diagnosis and review loop with three distinct critique briefs. Before review, reconstruct the observation from the original evidence. For a numerical claim that drives the decision, show or compute the comparison from the raw values. Check the boundary rows against the written rule, including units and any rounding. Trace the immediate decision back to what the project needs to learn. Try a counterexample that passes the current test without doing what the user cares about. State the strongest remaining hypothesis, a credible rival, and predictions that distinguish them.
 
-## deep-in-thought — investigate from first principles
-
-Use this when the diagnosis, the question, or the evidence needed to make progress may itself be wrong. The goal is to produce a defensible new result when the available evidence and authorization allow it.
-
-**Understand the goal.** Trace the immediate request back to the larger project aim. Separate that aim from the current hypothesis, method, and metric. State what the project actually needs to learn, what evidence would count as progress, and which constraints must hold. Revisit the framing if the diagnosis or critique exposes a mismatch. Preserve the user's goal unless they authorize a change.
-
-1. **Diagnose.** Reconstruct the observation from original evidence and trace the project blocker. Write the best current explanation and credible alternatives.
-2. **Evaluate the diagnosis.** Check whether the measurement can detect the effect, whether the observation supports the diagnosis, and whether a rival explanation fits the same evidence. Separate established results from interpretations.
-3. **Question the first principles.** Ask **why** the proposed mechanism should work, **what** is actually being measured or assumed, and **how** the result could arise. Work from definitions, causal constraints, or necessary conditions. Question inherited assumptions and problem framing while preserving the user's goal and hard constraints.
-4. **Identify the unknown.** Name the unanswered question whose resolution would most change the project. Specify what evidence would resolve it and the scope it would cover.
-5. **Deep-research.** Trace the literature to original evidence. Seek conflicting results, known limits, existing answers, and useful methods from adjacent work.
-6. **Evaluate the evidence.** Check methods, assumptions, independence, and applicability. Decide what the evidence settles and what remains genuinely open. If the unknown changes, revisit steps 3 and 4.
-7. **Form hypotheses.** State the leading explanation and credible rivals. Derive distinct predictions and what would count against each. If the claim is mathematical, give the assumptions and look for a proof, bound, or counterexample.
-8. **Propose a decisive investigation.** Choose a test or derivation whose outcome would change the conclusion. Specify comparison, controls, measurement, success criteria, and branches for a negative or inconclusive result. Separate hypotheses generated from existing data from checks that can test them prospectively.
-9. **Critique.** In Group mode, use three independent reviewer models with distinct briefs: **peer-review skepticism** about claims and reproducibility, **scientific skepticism** about inference and the proposed test, and **foundational skepticism** about premises, definitions, and framing. Require each to try to break the proposal and show how to check the objection. Use the [review prompts](playbook.md#review-the-proposal) and apply [Science Review](../science-review/SKILL.md#decide-when-to-review) within these passes when a research milestone or decision meets its review triggers.
-10. **Iterate.** Follow the [review loop](#run-the-review-loop). Run authorized checks and update the diagnosis, unknown, hypotheses or investigation from their results. Revisit the framing when the evidence or critique changes the question the investigation can answer.
+For a prospective evaluation, specify the unit, eligibility, denominator, measurement and horizon before seeing outcomes. Account for every eligible unit, including early exits, abstentions and missing evidence. Tie each disposition to the endpoint. For a successful-action endpoint, an observed decision to take no action fails the endpoint. A missing action record or a recorded action with unknown validity stays unknown. Give a bound, coverage requirement, or explicit inconclusive branch when unknowns could change the decision. For a causal claim, specify the matched intervention and control, hold competing drivers fixed, and state what result would change the decision. Treat a comparison of existing snapshots as descriptive unless the design identifies the claimed cause. For proofs or design decisions, use the corresponding assumptions, counterexamples and failure branches.
 
 ## Run the review loop
 
-1. Start with the critique of the current proposal. Record each material objection, the proposal revision and exact claim or assumption it challenges, the evidence or missing check, and the earliest step it affects. An objection is material when it could change the decision, method, interpretation, or supported claim.
-2. Run the smallest authorized check that could change the decision. Return to the earliest invalidated step. For example, an incorrect premise reopens the goal, a rival cause reopens diagnosis, a missing source reopens research, and an unequal comparison reopens the proposal. Carry the change through the affected downstream steps.
-3. Review the revised proposal. Recheck changed claims, affected dependencies and prior objections. Keep prior reviews for unchanged claims whose supporting methods and evidence still match. Mark each material objection settled by cited evidence, addressed by a specific narrowing, or open. Return to step 2 while an authorized check or revision could resolve a material issue.
-4. Stop when the current revision meets the goal, its material objections are addressed, and additional checks are unlikely to change the decision. A clean first review can meet that rule if it checks the decisive claims. A material revision always gets a new review. When no feasible in-scope check or revision can resolve or narrow the remaining material objections within the available budget, give the latest reviewed result or plan, open objections, and the evidence, access or decision needed next. State separately what is verified, planned or inconclusive.
+1. Pin one version of the proposal. Assign each pass a **different decision-critical assumption**, an evidence locator, and a check that could overturn it. Give every reviewer the same proposal, goal, constraints, and relevant raw evidence. Choose the assumptions to suit the proposal. The [playbook](playbook.md#review-the-proposal) has briefs for reproducibility, rival explanations, and the premise or measure.
+2. **Group:** use independent sessions when authorized and available. Read their first findings before sharing conclusions. **Solo:** perform the same distinct checks yourself. If Group or the playbook is unavailable, run the applicable checks yourself and disclose any material loss of independence or coverage.
+3. For each assigned check, record the assumption, evidence or missing check, and disposition: confirmed for the tested scope, changed with the resulting revision, or open with the next check. If reviews repeat one objection, run or request the uncovered check. Judge objections on evidence and retain unresolved dissent.
+4. Return to the earliest invalidated step, update the affected proposal, and recheck the changed part against the objection and any newly affected assumption before reporting. In Group, return the changed part to the relevant reviewer when available. Carry forward checks that still apply. A clean first round can finish when the decisive assumptions have been tested. If a material objection cannot be resolved within scope, narrow the claim or give a conditional decision and the smallest authorized next step or missing prerequisite.
 
-## Solo and group
+## Companion skills and reporting
 
-- **Solo.** Perform the steps yourself. Make separate critique passes using the level's reviewer briefs. Label them as your own review.
-- **Group.** Use independent model sessions when delegation is authorized. Heavy uses two reviewers and deep-in-thought uses three. Use distinct available models where the host supports selection. Give each the relevant evidence and their own brief. Collect first reviews independently before sharing conclusions between reviewers. If the host limits model choice or delegation, use the closest available review setup and state what was available. Judge objections on evidence and retain unresolved dissent.
+Open a companion only when it answers a live question. Use [Ponytail](../ponytail/SKILL.md) for implementation choices, [Deep Research](../deep-research/SKILL.md) when permitted external evidence could change a decision, and [Science Review](../science-review/SKILL.md#decide-when-to-review) when one of its research review triggers applies. Use [Please No More Slop](../please-no-more-slop/SKILL.md) for substantive naming or writing decisions.
 
-## Report the result
-
-For Light and Medium, lead with the result and the check that supports it. For Medium, give the approach and any reflection that changed it. For Heavy and deep-in-thought, also show the assumptions that mattered, the serious alternatives, what changed between rounds, which objections remain open, and the remaining decision or next test. Give a concise rationale grounded in evidence the reader can inspect. Distinguish a plan, a completed action, and a verified outcome.
+Lead with the requested result. Give the check and the evidence behind consequential conclusions. For Heavy and deep-in-thought, show what changed after review, what remains open, and what would permit the next decision. Keep the record as short as the task allows.
