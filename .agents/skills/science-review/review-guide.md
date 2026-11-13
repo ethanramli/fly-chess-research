@@ -1,6 +1,6 @@
 # Science review guide
 
-Read the rows that can change the decision. Start with the highest-consequence claim and follow the evidence far enough to decide it.
+Use these evidence checks alongside the [ISEF Grand Award scoring worksheet](references/isef-grand-award-rubric.md). Read the rows that can change the decision. Start with the highest-consequence claim and follow the evidence far enough to decide it.
 
 | Claim or decision | Check |
 | --- | --- |
@@ -11,6 +11,10 @@ Read the rows that can change the decision. Start with the highest-consequence c
 | The simulation supports a biological statement | Distinguish verification that the code implements the specified model, a result within that model, and validation for a particular biological claim. Trace model assumptions and the roles of engineered interfaces. Identify the evidence needed to extend the claim beyond the simulation. |
 | A mathematical bound applies | List the domain, assumptions, pinned model state, scoring rule, and any approximation. Recheck a decisive derivation or seek a counterexample. A surrogate bound extends to the exact model only with a justified error bound for the relevant domain. |
 | The finding is reproducible or ready to cite | Trace protocol, version and inputs through run records, analysis, uncertainty, audit and reporting. Keep the primary result, deviations, exploratory analyses and missing artifacts visible. Match the manuscript wording to the test actually run. |
+
+## Apply the field's standards
+
+Use Deep Research to check methods and novelty when they could change the score. In an engineering project, verify requirements under realistic conditions and compare credible alternatives on the same criteria. In a chemistry study, check measurements, controls, independent samples, and the precision required to support the claim. In a biological study, check the experimental unit, measurement validity, and how far the result generalizes across organisms or conditions. In mathematical or computational work, check proof assumptions, data independence, fair baselines, and reproducibility as relevant. Choose checks that bear on the stated contribution.
 
 ## FlyChess examples
 

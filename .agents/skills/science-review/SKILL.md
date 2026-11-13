@@ -1,11 +1,24 @@
 ---
 name: science-review
-description: Review scientific protocols, model and benchmark results, mathematical bounds, and manuscript claims. Use when a research decision depends on what an experiment can distinguish, what a result supports, or whether a proposed explanation survives a credible alternative.
+description: Judge science or engineering research against the Regeneron ISEF Grand Award rubric. Use for research quality scores, award or submission readiness, and focused review of a decisive study or prototype test, evidence, proof, or research claim.
 ---
 
 # Science review
 
 Find the strongest claim the evidence supports and the smallest check that could change it. Use this on its own for a scoped review. In [Problem Solving](../problem-solving/SKILL.md), use it to sharpen the existing reviewers' briefs. The lead owns iteration and adjudicates objections against evidence. Use [Deep Research](../deep-research/SKILL.md) when a consequential claim depends on outside evidence.
+
+## Decide when to review
+
+Use the [ISEF Grand Award rubric and strict scoring worksheet](references/isef-grand-award-rubric.md) as the common standard. Choose the science or engineering track based on what the main contribution is meant to establish. Apply the field's own standards to judge the evidence behind each criterion.
+
+| When | Review |
+| --- | --- |
+| Before committing to a decisive protocol, measure, control, or prototype test | Focus on the design and the criteria the decision could affect. Give the points at risk and the check that would settle the issue. |
+| After a result or revision could change a substantive conclusion | Recheck the affected rows and their dependencies. In Heavy or deep-in-thought, use the existing reviewer passes and update the affected findings each round. |
+| When the first evidence for the main claim is ready, after a major change to the main question or design, before submission, or on explicit request for an overall score | Run the full review. Score the whole project and explain every point lost. Reopen any material flaw through the [review loop](../problem-solving/SKILL.md#run-the-review-loop). |
+| Routine implementation, copy edits, or reruns that leave the evidence and decision unchanged | Keep working without a rubric review. |
+
+Use a full review when both a full and focused trigger apply. After a full review, carry forward unchanged evidence and rescore affected criteria on each material revision. Keep a fixed time schedule only if the researcher asks for one.
 
 ## Frame the decision
 
@@ -19,3 +32,7 @@ Identify the proposal revision, the decision it informs, the exact claim, the sy
 4. **Return a review the lead can act on.** Give the strongest supported sentence, the decision it permits, and the material objections in priority order. For each objection give the revision and challenged claim, evidence locator or missing artifact, consequence if true, smallest check and how to interpret it, and the step to reopen. Keep missing evidence and reviewer dissent visible. Say what you checked when no material objection survives.
 
 For a revised proposal, recheck materially changed claims and the earlier objections they affect. Keep prior reviews only where the claim, method, and evidence dependencies still match. Preserve frozen criteria and label outcome-informed analyses as exploratory. Follow project rules for recording mistakes and pivots. A review informs a research decision and carries its own evidence scope. Execution and independent run audits follow their existing rules.
+
+## Report the score and next decision
+
+Pin the reviewed revision and list the supplied evidence. Give the track, scope, and scored criteria, with evidence and a route to earn each lost point. For a full review, reconcile every row and total using the worksheet. Show which points are unearned because work or artifacts are pending. Keep an unsupported central claim or failed core design requirement open even if other rows score highly. Give a short, evidence-based judgment about the work's readiness and lead with the fixes that matter to the research decision. For a paper, apply the ISEF research criteria and evaluate the target venue's requirements separately when relevant.
