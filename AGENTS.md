@@ -27,27 +27,24 @@ Done when the researcher has those four facts and the checkpoint file matches th
 
 **Checkpoint metadata.** Every evidence-bearing run directory holds a `manifest.json`, written before work starts and rewritten when it ends, with `status` (`running`, `complete`, `failed`, `interrupted`), `pid`, `argv`, code and input `pins`, start and end times, and `volume` and `chapter` naming the chapter it serves (older runs may lack the last three). Results sit beside it in `summary.json` and `records.jsonl`. This lets the latest checkpoint and its evidence be found from artifacts alone. When a run ends or the direction changes, update `documentation/next-checkpoint.md` in the same session.
 
-## Ponytail default
+## Skill routing: mandatory for relevant work
 
-This repository operates under ponytail mode by default: use the laziest solution that actually works, prefer the existing codebase over added abstractions, and remove speculative complexity before adding new code. The default intensity is full; do not add dependencies, wrappers, or scaffolding that the task does not require.
+Before acting, match the request against the triggers below, including ordinary language, not just explicit skill names. Read each applicable repository `SKILL.md` and follow its workflow; mentioning a skill is not a substitute for using it. Reassess when the task changes. Combine skills when their scopes overlap. Honor explicit skill levels, modes, source limits and task boundaries. Higher-priority instructions and the research approval, experiment and evidence rules still apply.
 
-- Read the actual call path before patching; fix it at the shared root cause, not in each caller.
-- Prefer existing helpers, stdlib functions, and native patterns before custom implementations.
-- Delete speculative code and unnecessary abstraction before adding anything new.
-- The smallest correct patch wins, but not at the cost of a wrong root-cause fix.
-- If a change is not needed for the active experiment or bug, do not add it.
+| Skill | Load and apply when |
+| --- | --- |
+| [Problem Solving](.agents/skills/problem-solving/SKILL.md) | Diagnosing unexpected results, reconciling evidence, choosing among plausible approaches, unblocking work, or an explicit effort-level request. Choose the lowest sufficient level and escalate when needed. |
+| [Deep Research](.agents/skills/deep-research/SKILL.md) | Verifying a claim or answering a research question from evidence, including supplied records, comparisons and literature. Follow the allowed source boundary. |
+| [Ponytail](.agents/skills/ponytail/SKILL.md) | Writing, fixing, reviewing or refactoring code, or deciding on dependencies or implementation complexity. Full is the default; honor a requested level or off mode. |
+| [Please No More Slop](.agents/skills/please-no-more-slop/SKILL.md) | Drafting, editing, explaining or reviewing research and technical communication, or choosing names for code, files, APIs or labels. Apply the five-year-old test to the main explanation and preserve the evidence and claim. |
+| [Science Review](.agents/skills/science-review/SKILL.md) | Reviewing research quality or readiness, or when its milestone triggers apply: focused review before a decisive protocol, measure, control or test; recheck affected criteria after a substantive result or revision; full review for first evidence of the main claim, a major change to the main question or design, submission, or an overall score. Respect an explicitly narrower review. |
+| [README Maestro](.agents/skills/readme-maestro/SKILL.md) | Writing or repairing READMEs, folder maps, documentation indexes, onboarding or reader navigation, including when a change affects a maintained reader route. |
+| [Build Skills](.agents/skills/build-skills/SKILL.md) | Creating, fixing or reproducing a repository skill, turning a recurring workflow into a skill, or changing skill behavior or routing. Follow its testing and review protocol and report unverified checks. |
+| [Delegate](.agents/skills/delegate/SKILL.md) | Asked to delegate, scope worker prompts, use parallel agents, or improve multi-agent cost or coordination; also use when deciding how to split authorized multi-agent work. The lead verifies and integrates results. |
 
-## Naming and communication default
+For overlapping work, load every applicable skill. For example, a coding diagnosis can require Problem Solving, Ponytail and Please No More Slop; an evidence-based research decision can also require Deep Research and Science Review. In Heavy and deep-in-thought, incorporate Science Review into the existing review passes when its trigger applies. Delegate only when the user and runtime authorize agent use; otherwise do the applicable checks directly and disclose any material loss of independence.
 
-The [Please no more slop skill](.agents/skills/please-no-more-slop/SKILL.md) has the same priority as ponytail. Load and apply it when creating or renaming variables, functions, database keys, files, API endpoints, project folders, or user-facing labels. Apply it with equal priority to technical and research communication in chat replies, emails, and handoffs and to writing or editing documents and reports. Ponytail governs implementation size. Use its five-year-old test for the main explanation in both.
-
-## Problem solving and research defaults
-
-[Problem Solving](.agents/skills/problem-solving/SKILL.md), [Deep Research](.agents/skills/deep-research/SKILL.md), [Ponytail](.agents/skills/ponytail/SKILL.md), and [Please No More Slop](.agents/skills/please-no-more-slop/SKILL.md) have equal priority in this repository. Apply each when its scope is relevant.
-
-Use Problem Solving when a task calls for diagnosis, reconciliation of evidence, or a choice between plausible approaches. Use the skill description to decide whether a task is in scope. Honor the researcher's explicit level or mode. Use Deep Research when the answer depends on verifying or combining evidence, including supplied records. Use Ponytail to keep implementation small and Please No More Slop to make names, claims, and verification clear. Follow the existing approval, experiment, and evidence rules when executing a plan.
-
-Use [Science Review](.agents/skills/science-review/SKILL.md) to judge research against the ISEF Grand Award rubric. Follow its milestone triggers for focused and full reviews. In Heavy and deep-in-thought, use it in the existing reviewer passes when the work meets a review trigger. Follow the [Build Skills protocol](.agents/skills/build-skills/SKILL.md) to design, test, and revise repository skills.
+Keep the work proportional. Do not trigger research, scoring, delegation or file writes solely for a copyedit, exact transformation, quotation or return-only request. Apply the relevant skill's own near misses and stopping rules; explicit requests still take precedence within the allowed scope. Open supporting references when a live decision needs them. If a required skill or dependency cannot be read, say what is unavailable, continue using the applicable repository rules, and identify any material check that remains unverified.
 
 ## Keep README navigation current
 
