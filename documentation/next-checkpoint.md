@@ -6,16 +6,14 @@ This is the handoff for continuing the research: read the current checkpoint fir
 
 ## Current checkpoint: 2026-11-14
 
-- **Volume 2, chapters 3 and 5.** A three-board feedback test is proposed. It compares the current circuit with a quiet, rescaled circuit: zero drive, with Kenyon-cell activity read as `min(1, rate / 0.014047)`. It runs correct, swapped-label and learning-off conditions, with fresh memory per board. [Protocol](design/neural-learning/three-board-feedback-test-2026-11-14.md).
-- **Newest run: the calibration replay.** It is complete, made no learner updates, and used no sealed games. Its manifest is dated 2026-11-14 12:04–12:05 UTC, and its local output is `runs/recreated-kc-calibration-2026-11-14` on the replay machine. It regenerated the item-25 cell readings. In the [check](../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/README.md), the scale 0.014047 caps one cell on one move per board. The worst move pair keeps 99.0003%. The exact 6,046-connection weighting still needs rechecking on a machine with the graph.
+- **Volume 2, chapters 3 and 5.** A three-board feedback test is built and checked; its run awaits approval. It compares the current circuit with a quiet, rescaled circuit: zero drive, with Kenyon-cell activity read as `min(1, rate / 0.014047)`. It runs correct, swapped-label and learning-off conditions, with fresh memory per board. [Protocol](design/neural-learning/three-board-feedback-test-2026-11-14.md).
+- **Newest run: the calibration replay.** It is complete, made no learner updates, and used no sealed games. Its manifest is dated 2026-11-14 12:04–12:05 UTC, and its local output is `runs/recreated-kc-calibration-2026-11-14` on the replay machine. It regenerated the item-25 cell readings. In the [check](../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/README.md), the scale 0.014047 caps one cell on two moves in total, across two boards (corrected from "one move per board"). The worst move pair keeps 99.0003%. Codex reports rerunning the exact 6,046-connection weighting on the graph machine: at least 99% kept, and all three boards clear the starting-gap cutoff in both circuits.
 - **Corrections recorded** in [journal item 33](../research/journal/experiments/2026-11-07-fly-connections-memory.md#33-2026-11-14-three-board-feedback-test-protocol-and-corrections-found):
   - item 26 swapped its drive labels
   - items 30–31 carried learned changes across boards
   - item 31's dopamine summary mixed rewards and punishments
-- **Next step, needs the researcher's approval:**
-  1. Recheck the scale on the graph machine.
-  2. Run a baseline-only check with no new code.
-  3. Build `probe-wide-learning-v3.mjs` and run the test (about 20 minutes on six workers).
+- **Built 2026-11-14, not run:** `probe-wide-learning-v3.mjs`, the shared rules in `three-board-feedback-v1.mjs`, the rules script `apply-three-board-rules-v1.mjs`, and 16 focused tests. The decision rules now give one answer; the cutoff numbers are unchanged ([journal item 35](../research/journal/experiments/2026-11-07-fly-connections-memory.md#35-2026-11-14-three-board-feedback-test-built-rules-made-single-answer)).
+- **Next step, needs the researcher's approval:** run the six circuit-and-condition runs on the graph machine, serially (about two hours) or, with explicit approval, in parallel (about 20 minutes). Then apply the rules script. The commands are in the [protocol](design/neural-learning/three-board-feedback-test-2026-11-14.md#how-to-run-it-after-approval).
 - **The 2026-11-09 decision is still open:** request independent review of the post-gate evidence, or close it as bounded development results. The proposal recommends closing it; the test does not depend on that evidence. No run should begin before the researcher decides. Properties 1–3 remain unmet. No full revision-4 run is recorded, and the sealed test games remain unused.
 
 ## Previous checkpoint: 2026-11-09

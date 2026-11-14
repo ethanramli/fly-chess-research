@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { loadGraph, readNpz } from '../../.codebase/src/runtime/graph.mjs';
+import { loadGraph, readNpz } from '../../../../../../.codebase/src/runtime/graph.mjs';
 
 const dump = JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const graphPath = '.cache/full.npz';

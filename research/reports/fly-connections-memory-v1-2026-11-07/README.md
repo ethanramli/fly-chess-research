@@ -23,4 +23,4 @@ Next: review the generated modules and run the small synthetic checks, then comp
 
 ## Addendum 2026-11-14: scale check for a proposed three-board test
 
-A replay regenerated the zero-drive cell readings. The [scale check](calibration-replay-2026-11-14/README.md) finds that capping at 0.014047 touches one cell on one move per board, and keeps at least 99% of every move pair's activity difference. The [three-board feedback test](../../../documentation/design/neural-learning/three-board-feedback-test-2026-11-14.md) is proposed and awaits approval. No run launched. Properties 1–3 remain unmet.
+A replay regenerated the zero-drive cell readings. The [scale check](calibration-replay-2026-11-14/README.md) finds that capping at 0.014047 touches one cell on two moves in total, across two boards, and keeps at least 99% of every move pair's activity difference. The [three-board feedback test](../../../documentation/design/neural-learning/three-board-feedback-test-2026-11-14.md) is built and checked; its run awaits approval. No run launched. Properties 1–3 remain unmet.

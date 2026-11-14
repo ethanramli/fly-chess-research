@@ -2,14 +2,17 @@
 
 Volume 2, *The Classroom*, chapters 3 (*To Learn*) and 5 (*Evidence for Learning*). This is development evidence that sets one number for the [three-board feedback test](../../../../documentation/design/neural-learning/three-board-feedback-test-2026-11-14.md). It is not a learning result.
 
-**Result.** The proposed Kenyon-cell scale, **0.014047**, can be locked. Capping each cell's rate at this value changes almost nothing on the three development boards. Across all 5,177 Kenyon cells at zero background drive, only one cell (dump position 1336) reaches the cap, and only on one move per board. Neither move is a lesson move or a safe capture. I could not recompute the exact value, because the 6,046-connection map needs the graph and annotation files, which are not in the replay package or this checkout. Every check I could make agrees with `scale.json`.
+**Result.** The proposed Kenyon-cell scale, **0.014047**, can be locked. Capping each cell's rate at this value changes almost nothing on the three development boards. Across all 5,177 Kenyon cells at zero background drive, only one cell (dump position 1336) reaches the cap, on two moves in total: one on `SjmcbcGu:16` and one on `5XRGyGSj:13`. No cell reaches it on `Q04sIPQ5:13`. Neither move is a lesson move or a safe capture. I could not recompute the exact value, because the 6,046-connection map needs the graph and annotation files, which are not in the replay package or this checkout. Every check I could make agrees with `scale.json`.
+
+**Correction and update, 2026-11-14 (later the same day).** The first version of this paragraph said the cap was reached "on one move per board". That was wrong: it is two moves across two boards, as the table below always showed. Codex then reran the full 6,046-connection calculation on the graph machine. Codex reports that 0.014047 keeps at least 99% of every measured difference before teaching, and that all three boards clear the starting-gap cutoff in both circuits. Codex's output files are not in this repository.
 
 ## What the replay is
 
 The researcher made a replay to recover the cell readings that journal item 25 had used. The original dump existed only on the Windows laptop. The replay reran the tracked diagnostic `diagnose-kc-sparseness-v1.mjs --scope all --thresholds 0,0.01 --dump-all` on the three known development boards, at commit `4a2c3964`. It made no learner updates and used no sealed games ([manifest](replay-files/manifest.json), [replay notes](replay-files/replay-readme.md)).
 
 - **Package:** `~/Downloads/flychess-memory-calibration-replay.zip`, SHA-256 `349cb83bce5e2065e515ae0fc6aa8b2c339ed76fa36cef025c21097fe95bbe72`.
-- **The dump:** `all-kc.json` (15.7 MB), SHA-256 `59859482b1358bd2dfdb77203f4081dc027a6bccc02c8d5f362cba16faef783c`. It is not committed because of its size. Every other file in the package is copied unchanged into [replay-files](replay-files/). The replay's `README.md` is renamed to `replay-readme.md` so it is not mistaken for a folder guide.
+- **The dump:** `all-kc.json` (15.7 MB), SHA-256 `59859482b1358bd2dfdb77203f4081dc027a6bccc02c8d5f362cba16faef783c`. It is not committed because of its size. Every other file in the package is copied into [replay-files](replay-files/). The replay's `README.md` is renamed to `replay-readme.md` so it is not mistaken for a folder guide.
+- **One copied file was edited.** `inputs/check_scale.mjs` found the graph code by a path that only worked from its original folder. After the copy moved it deeper into this report, it could not start. On 2026-11-14 its import line was repointed from `../../.codebase/src/runtime/graph.mjs` to `../../../../../../.codebase/src/runtime/graph.mjs`. Nothing else changed. The package's original is SHA-256 `4de708afff88a56473ce4bcceaf8ab6ad00cc6cc84c218d71ef8d84f0a29434c`; the edited copy is `69f869e774763aa89206dc1a155d1a6618ec272e51dfc3ed4f0276a57ed7a660`. Run it from the repository root: `node research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/replay-files/inputs/check_scale.mjs PATH/TO/all-kc.json`. On this Mac it now loads the dump and stops only because `.cache/full.npz` is absent.
 - In the dump, `theta 0` rows are the default drive (0.01 to every neuron) and `theta 0.01` rows are zero drive.
 
 ## Checks and results
@@ -71,6 +74,6 @@ The two scripts in [checks](checks/) only read data. Each takes the extracted pa
 
 - It does not show the scale works during feedback. These readings come from forward passes without dopamine pulses, so the test checks the cap again during lessons.
 - It does not show the quiet circuit can learn.
-- It does not reproduce the 6,046-connection weighting. That needs `.cache/full.npz` and `.cache/flywire-annotations-v2.1.0.tsv`. The test's first step reruns [check_scale.mjs](replay-files/inputs/check_scale.mjs) on a machine that has them, and it must reproduce `scale.json`.
+- This check does not reproduce the 6,046-connection weighting itself. That needs `.cache/full.npz` and `.cache/flywire-annotations-v2.1.0.tsv`. Codex's rerun of [check_scale.mjs](replay-files/inputs/check_scale.mjs) on the graph machine covers it, as reported above.
 
 Back to the [fly connections memory report](../README.md).

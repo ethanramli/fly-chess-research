@@ -6,7 +6,7 @@ The Fly Connections Memory investigation is paused while the researcher decides 
 
 ## Update: 2026-11-14
 
-A three-board feedback test is proposed and awaits the researcher's approval; nothing is built or run. It asks whether lessons move the safe capture toward the top more than wrong lessons do, in a quieter version of the circuit. The activity scale for that circuit (0.014047) was checked against a replay of the earlier cell readings: on these boards it caps one cell on one move per board. See the [protocol](design/neural-learning/three-board-feedback-test-2026-11-14.md) and the [scale check](../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/README.md). The status below is unchanged.
+A three-board feedback test is built and checked, and its run awaits the researcher's approval; nothing has run on the real circuit. It asks whether lessons move the safe capture toward the top more than wrong lessons do, in a quieter version of the circuit. The activity scale for that circuit (0.014047) was checked against a replay of the earlier cell readings: on these boards it caps one cell on two moves in total, across two of the three boards. Codex reports that the full 6,046-connection recheck keeps at least 99% of every move difference. See the [protocol](design/neural-learning/three-board-feedback-test-2026-11-14.md) and the [scale check](../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/README.md). The status below is unchanged.
 
 ## Current status: 2026-11-09
 

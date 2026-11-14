@@ -1,6 +1,6 @@
 # Three-board feedback test: current circuit against the quiet, rescaled circuit (2026-11-14)
 
-**Proposal awaiting the researcher's approval. Nothing is built or launched.** Volume 2, *The Classroom*, chapters 3 (*To Learn*) and 5 (*Evidence for Learning*). This is a development screen on three development boards. It is not evidence for Properties 1–3, and the sealed test games stay untouched.
+**Built and checked on 2026-11-14; the run awaits the researcher's approval. Nothing has been launched on the real circuit.** Volume 2, *The Classroom*, chapters 3 (*To Learn*) and 5 (*Evidence for Learning*). This is a development screen on three development boards. It is not evidence for Properties 1–3, and the sealed test games stay untouched.
 
 ## The question in plain words
 
@@ -18,7 +18,7 @@ Both circuits use the revision-4 learning rule on the 6,046 learnable Kenyon-cel
 | How a Kenyon cell's activity enters the rule | `k = max(0, rate) / 1.5` | `k = min(1, max(0, rate) / 0.014047)` |
 | Dopamine factor | unchanged: the mean of `max(0, rate) / 1.5` per dopamine-neuron type, times the fixed 10-entry matrix | the same |
 
-**The scale 0.014047 is fixed from activity alone.** It is the smallest scale that keeps at least 99% of the measured cell-activity difference between every pair of legal moves on the three boards before teaching. No scores or outcomes were used to choose it. Evidence and checks are in the [calibration replay check](../../../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/README.md). On these boards the cap touches one cell on one move per board. In practice it is almost no cap at all: the real change in the quiet circuit is zero drive plus a cell reading about 107 times stronger (1.5 / 0.014047).
+**The scale 0.014047 is fixed from activity alone.** It is the smallest scale that keeps at least 99% of the measured cell-activity difference between every pair of legal moves on the three boards before teaching. No scores or outcomes were used to choose it. Evidence and checks are in the [calibration replay check](../../../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/README.md). On these boards the cap touches one cell on two moves in total: one move on `SjmcbcGu:16` and one on `5XRGyGSj:13`, and none on `Q04sIPQ5:13`. Codex reran the full 6,046-connection calculation on the graph machine and reports that 0.014047 keeps at least 99% of every measured difference before teaching. In practice it is almost no cap at all: the real change in the quiet circuit is zero drive plus a cell reading about 107 times stronger (1.5 / 0.014047).
 
 ## Boards, lessons and conditions
 
@@ -49,7 +49,7 @@ Each board gets 6 passes of its 4 lessons: 24 lessons, 12 reward pulses and 12 p
   1. Take the lesson's rates on the learnable connections, with each cell counted once per connection, as in `check_scale.mjs`.
   2. Compare them with every legal move's rates before teaching, and with the other lesson moves' rates in the same pass.
   3. For each comparison, compute the share of the summed difference that survives the cap.
-  4. Also record the share of active readings at the cap, and whether a capped cell feeds the current rival.
+  4. Also record the share of active readings at the cap, and how many of the capped cells were also active for the current rival at the start of that pass. A capped cell that the rival also uses is where the cap could hide a difference that matters.
 - **Run record:** a `manifest.json` with status, pid, command, pinned input hashes, start and end times, and volume and chapter, written before the run starts and again when it ends.
 
 ## Definitions
@@ -63,48 +63,80 @@ Each board gets 6 passes of its 4 lessons: 24 lessons, 12 reward pulses and 12 p
 
 **Why percentages decide across circuits.** Raw scores are in different units in the two circuits: zero-drive scores are much smaller. So the only fair common measure is the share of each circuit's own gap. To show that a percentage is not hiding a tiny change, also report the gap as a share of the board's score range and the number of moves above the best safe capture.
 
-## Validity checks
+## Required checks
 
-If any one fails, that circuit's result is **inconclusive**:
+Each check makes sure the comparison measures what it claims to. If any one fails, the whole result is **inconclusive** and the thresholds are not read.
 
-1. Learning-off scores are bit-identical to the before-teaching scores at every checkpoint.
-2. No lesson triggers the step-size guard (`0.5 × |learning signal| > 1`).
-3. Quiet circuit: every cap comparison during feedback keeps at least 99%.
-4. Current circuit: the before-teaching scores on `Q04sIPQ5:13` equal [the replay baseline](../../../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/replay-files/valence-baseline/probe.json) exactly (f6e4 0.0038446924882009625, b8d7 0.003851270070299506).
+1. **Learning off changes nothing.** Learning-off scores are bit-identical to the before-teaching scores at every checkpoint, and no connection changes. If they moved, something other than learning moves scores, and the correct-lesson change could not be credited to learning.
+2. **No oversized step.** No lesson triggers the step-size guard (`0.5 × |learning signal| > 1`). A step that large would overshoot the rule's intended update. At the configured saturation of 1.5, each dopamine mean is at most 1, so the largest possible step is 0.65 and this check cannot fail on the real circuit. It is kept as a guard against a changed configuration.
+3. **The cap still keeps move differences during lessons.** Quiet circuit: every cap comparison during feedback keeps at least 99%. The scale was chosen on forward passes without dopamine pulses. If lessons push cells above the cap, the quiet circuit could no longer tell moves apart, and a failure would say nothing about the idea.
+4. **The current circuit is the one that already failed.** Its before-teaching scores on `Q04sIPQ5:13` equal [the replay baseline](../../../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/replay-files/valence-baseline/probe.json) exactly (f6e4 0.0038446924882009625, b8d7 0.003851270070299506). Otherwise the comparison circuit is not the one the earlier probes used.
+5. **The runs are complete and match their condition.** All six runs ended with status `complete`, cover the three boards in order with 7 checkpoints and 24 lessons each, and delivered the labels their condition requires. Within each circuit, the three conditions start from identical scores, which shows the memory was fresh.
 
 ## Decision rules, fixed before data
 
-| Outcome | Rule |
-|---|---|
-| **Expand to 12 boards** | On at least 2 boards eligible in **both** circuits, the quiet circuit has (a) closure with correct lessons of at least 20%, (b) an advantage over swapped of at least 20 points, and (c) an advantage at least 10 points larger than the current circuit's advantage on that board. |
-| **Drop the quiet, rescaled approach** | The quiet circuit's validity checks hold, at least 2 boards are eligible in it, and its advantage over swapped is under 5 points on every eligible board. |
-| **Inconclusive** | Any other result, including fewer than 2 boards eligible in both circuits. |
+**In plain words.** The quiet circuit is worth more boards only if correct lessons pull the safe capture clearly closer to first place, wrong lessons do not, and the old circuit could not do the same. If correct lessons do barely better than wrong ones, we stop pursuing the quiet circuit. Anything else, or too little data to compare, leaves the question open.
+
+Apply the steps in order. The first one that matches gives the answer.
+
+1. **Inconclusive** if a required check fails, or if fewer than 2 boards are eligible in both circuits. Rule (c) below compares the two circuits on the same board, so a board counts only if it is eligible in both.
+2. **Expand to 12 boards** if, on at least 2 boards eligible in both circuits, the quiet circuit has:
+   - (a) closure with correct lessons of at least 20%. This rules out a change too small to matter.
+   - (b) an advantage over swapped of at least 20 points. This rules out lessons that lift every move together: swapped lessons would then close the gap about as much.
+   - (c) an advantage at least 10 points larger than the current circuit's advantage on that board. This rules out an effect that the old circuit already shows, so the change to the circuit gets the credit.
+3. **Drop the quiet, rescaled circuit** if its advantage over swapped is under 5 points on every board eligible in the quiet circuit. We would stop testing zero drive with the 0.014047 reading, because correct lessons barely beat wrong ones.
+4. **Inconclusive** otherwise: the result falls between the expansion and drop cutoffs.
+
+The two cutoffs cannot both hold: expansion needs an advantage of at least 20 points on two boards, and dropping needs under 5 points on every board.
+
+**Worked example.** Suppose the quiet circuit, on two boards eligible in both circuits, closes 50% of the gap with correct lessons and 10% with swapped labels: an advantage of 40 points. On those boards the current circuit closes 5% and 0%: an advantage of 5 points. All three cutoffs hold (50 ≥ 20, 40 ≥ 20, 40 − 5 ≥ 10), so the test expands. If the current circuit's advantage were 35 points, (c) would fail. The quiet advantage of 40 is above the drop line, so the answer would be inconclusive. If only one board were eligible in both circuits, step 1 would give inconclusive before any threshold is read.
 
 **Where the thresholds come from.**
 
 - **The 5-point drop line:** the current circuit closed about 1.2% of the gap on its one fresh board (journal item 31: −6.58e-6 to −6.50e-6). A result under 5 points is little better than what already failed.
 - **The 20% lines:** the earlier rescaled gamma-only probe closed about 19% in 16 lessons, but the unrewarded lesson move rose almost as much (journal item 21: −1.684e-5 to −1.365e-5). A pass must beat that movement *and* be selective.
 - **Changes from the 2026-11-14 draft:** no numbers changed. Two points were clarified before data. "Eligible" means eligible in both circuits for the expansion rule, because rule (c) needs both values. Closure is judged after all 24 lessons, with every pass reported.
+- **Second change, made at the build on 2026-11-14 and still before data:** the rules now give exactly one answer. Before, the drop rule needed only the quiet circuit's own checks and 2 boards eligible in it. So one result could read as both "drop" and "inconclusive": all checks passing in the quiet circuit, a failed check in the current circuit, or only one board eligible in both. Now any failed check, or fewer than 2 boards eligible in both circuits, gives inconclusive first. The cutoff numbers are unchanged.
 - **Not required here:** becoming the top move is reported only.
 
 **If it expands:** the 12-board test uses the first 12, in file order, of the 13 practice boards from the dry-run development packet that this test does not use. Its gates are written down before data, and an absent-pulse condition is added. A later test lets the fly choose its own moves. Sealed games remain untouched.
 
-## Build plan (smallest version)
+## What is built (2026-11-14)
 
-1. **Scale recheck.** On a machine with `.cache/full.npz` and `.cache/flywire-annotations-v2.1.0.tsv`, rerun the replay's `check_scale.mjs` on its `all-kc.json`. It must reproduce `scale.json`. If it does not, stop.
-2. **Baseline check, no new code.** Run the existing `probe-wide-learning-v2.mjs --boards 3 --repeats 0` once at default drive and once with `--bias 0`. This gives both circuits' starting gaps and must reproduce validity check 4. If fewer than 2 boards are eligible in both circuits, stop: the expansion rule could not be met.
-3. **New probe.** Write `probe-wide-learning-v3.mjs` as a copy of v2 (v2 stays unchanged as item-31 evidence). It adds:
-   - a condition option (Correct, Swapped, Learning off)
-   - a `--kc-scale` option
-   - a fresh model for every board
-   - full score lists at every checkpoint
+1. **Scale recheck: done by Codex.** Codex reports rerunning the replay's `check_scale.mjs` with the graph and annotations: 0.014047 keeps at least 99% of every measured difference before teaching. The checker's import had to be repointed first, because the copy now sits in a different folder ([scale check](../../../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/README.md)). Codex's output file is not in the repository.
+2. **Baseline check: done by Codex.** Codex reports that all three boards clear the starting-gap cutoff in both circuits. The real run measures its own starting gaps and applies the cutoff again, so the verdict does not rest on this report.
+3. **The probe:** [`probe-wide-learning-v3.mjs`](../../../.codebase/scripts/neural-learning/probe-wide-learning-v3.mjs). One process runs one circuit and one condition on the three boards. v2 stays unchanged as item-31 evidence. Compared with v2, it adds:
+   - `--circuit current|quiet`. The quiet circuit's drive (0) and scale (0.014047) are fixed in code, so they cannot be mistyped.
+   - `--condition correct|swapped|off`
+   - fresh memory for every board: the 6,046 learnable connections are restored to their exact starting values, and nothing else ever changes
+   - every legal move's score at every checkpoint
    - the per-lesson dopamine and cap records
-   - the manifest
-4. **Rules script.** A short separate script reads the six result files and applies the rules above.
-5. **Inputs to pin:** graph, annotations, the replay's rebuilt local-inhibition package (`package.json` `034ba699…`, `sites.npz` `cb83c177…`), `boards.jsonl` and both scripts.
-6. **Cost:** about 4,900 network passes, roughly 20 minutes on six workers. Each worker needs about 280 MiB, within the 2,048 MiB process limit.
+   - the manifest, which also checks every input hash in the config before loading the graph
+   - a refusal to start in a folder that already holds a run
+   - only the three development boards, by name: no other board is read
+4. **The shared rules:** [`three-board-feedback-v1.mjs`](../../../.codebase/src/neural-learning/three-board-feedback-v1.mjs) holds the learning step, the cap check and the decision rules, so the probe and the rules script use one copy.
+5. **The rules script:** [`apply-three-board-rules-v1.mjs`](../../../.codebase/scripts/neural-learning/apply-three-board-rules-v1.mjs) reads the six run folders, applies the required checks and the decision rules, and prints the raw changes and percentages per board.
+6. **Tests:** [`three-board-feedback-v1.test.mjs`](../../../.codebase/tests/neural-learning/three-board-feedback-v1.test.mjs) (16 tests). A tiny made-up circuit checks the lesson loop. Made-up results check every verdict, including the case where only one board is eligible in both circuits.
 
-Steps 1–2 run the simulator, so they need the researcher's approval, as does the run itself.
+**Inputs pinned by the config.** The run uses the replay's config, `runs/replay-calibration-inputs/calibration-config.json`. Its tracked copy hashes to `dcfceb3a…`. The config pins the graph, the annotations, the three games, `boards.jsonl`, the mapping check and the replay's rebuilt local-inhibition package (`package.json` `034ba699…`, `sites.npz` `cb83c177…`). The probe stops if any hash differs, and records the hashes of the config, itself and the shared rules in each manifest.
+
+## How to run it (after approval)
+
+From the repository root on the graph machine, one run per circuit and condition:
+
+```
+node --max-old-space-size=512 .codebase/scripts/neural-learning/probe-wide-learning-v3.mjs --config runs/replay-calibration-inputs/calibration-config.json --circuit current --condition correct --out runs/three-board-feedback-2026-11-14/current-correct
+```
+
+Repeat for `current swapped`, `current off`, `quiet correct`, `quiet swapped` and `quiet off`, each into its own `CIRCUIT-CONDITION` folder. Then:
+
+```
+node .codebase/scripts/neural-learning/apply-three-board-rules-v1.mjs --runs runs/three-board-feedback-2026-11-14 --baseline research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/replay-files/valence-baseline/probe.json --out runs/three-board-feedback-2026-11-14/decision.json
+```
+
+- **Cost:** about 814 network passes per run, 4,884 in all. Each run needs about 280 MiB.
+- **Serial or parallel:** AGENTS.md keeps graph experiments serial, which takes roughly two hours. Six runs at once would take roughly 20 minutes and stay within the memory limits, but needs the researcher's explicit approval.
+- The 512 MiB heap matches v2's usage line. CPU duty pacing is not implemented, as in v2.
 
 ## Biggest uncertainty
 

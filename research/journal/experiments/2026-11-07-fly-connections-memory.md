@@ -286,3 +286,28 @@ The researcher supplied a replay package that regenerated the missing readings (
 - **Prediction recorded before feedback data.** At zero drive, each safe capture shares 97–99% of its active cells with its rival.
 
 **Pivot proposed, not yet approved:** lock the quiet circuit's reading as `k = min(1, max(0, rate) / 0.014047)` and build the three-board test. The build begins with a scale recheck on the graph machine and a no-new-code baseline run, either of which can stop it. No decision-rule numbers changed. Two points were clarified before data (eligibility in both circuits; closure judged after 24 lessons). Next: the researcher's approval. No run launched.
+
+## 35. 2026-11-14: three-board feedback test built; rules made single-answer
+
+**What happened.** The researcher asked for the test to be built, with two problems in the proposal fixed first. Codex checked the proposal at commit `47bd467`.
+
+**Mistakes found.**
+
+- **Wrong summary of the cap.** Item 34 and its tables were right: exactly two readings reach 0.014047, one on `SjmcbcGu:16` and one on `5XRGyGSj:13`. But the report's opening paragraph, the protocol, the current status, the checkpoint and the report index said "one move per board". That would mean three moves, including one on `Q04sIPQ5:13`, where nothing reaches the cap. All five were corrected. The decision-log entry of the same day keeps the old wording as history, and the new entry below corrects it.
+- **The copied checker could not start.** `check_scale.mjs` imports the graph code by a path relative to its own folder. Copying it into the report (commit `8acce773`) broke that path. Its import line is now repointed. The report records both hashes. Nothing else in the file changed.
+- **The rules could give two answers.** The drop rule needed only the quiet circuit's checks and 2 boards eligible in it, while "inconclusive" covered fewer than 2 boards eligible in both circuits. A run with one board eligible in both circuits and a small quiet advantage met both. The rules now apply in order: any failed check, or fewer than 2 boards eligible in both circuits, gives inconclusive first; then expand; then drop; then inconclusive. The cutoff numbers are unchanged. No data existed when this changed.
+
+**Evidence from Codex, not reproduced here.** Codex reports rerunning the full 6,046-connection scale check on the graph machine: 0.014047 keeps at least 99% of every measured difference before teaching. It also reports that all three boards clear the starting-gap cutoff in both circuits. Its output files are not in the repository. The run measures its own starting gaps and applies the cutoff again.
+
+**What was built.**
+
+- `probe-wide-learning-v3.mjs` runs one circuit and one condition on the three boards.
+- `three-board-feedback-v1.mjs` holds the learning step, the cap check and the decision rules.
+- `apply-three-board-rules-v1.mjs` applies the rules to the six runs.
+- `three-board-feedback-v1.test.mjs` has 16 tests. A tiny made-up circuit checks the lesson loop: learning off leaves scores bit-identical, swapped labels reverse every pulse, memory is fresh for each board, the cap record works and the step guard stops a board. Made-up results check each verdict. They include one board eligible in both circuits, which gives inconclusive even when the quiet circuit would otherwise expand or drop.
+
+**Found while testing.** At the configured saturation of 1.5, each dopamine mean is at most 1, so the largest possible step is 0.65, below the bound of 1. The step-size check therefore cannot fail on the real circuit. It stays as a guard, and the protocol now says so.
+
+**Not checked.** The probe has not run on the real graph, because the graph is not on this Mac. It copies v2's graph loading, connection map, pulses and scoring. On the Mac, only its argument, pin-mismatch and run-folder refusals were run.
+
+**Next.** The researcher approves the six runs, or not. No run launched; the sealed games are untouched.
