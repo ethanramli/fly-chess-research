@@ -338,3 +338,28 @@ The researcher supplied a replay package that regenerated the missing readings (
 - **The rules script end to end.** Synthetic runs built from the real packet gave expand, drop and between-cutoffs inconclusive as designed. Cutting one run to six lessons turned expand into inconclusive.
 
 **Next.** Unchanged: the six runs await the researcher's approval. No run launched; the sealed games are untouched.
+
+## 37. 2026-11-15: check 3 failed in the quiet learning-off run
+
+**What happened (reported by the researcher).** The quiet circuit's learning-off run of the three-board feedback test ran on the graph machine. Required check 3 failed on all 72 lessons (3 boards × 6 passes × 4 lessons). Check 3 asks the cap at 0.014047 to keep at least 99% of each lesson's activity difference from every legal move before teaching and from the earlier lessons in the same pass. The worst comparison kept 22.35%. By the protocol's rules, a failed required check makes the result inconclusive, so no cutoff is read. The other five runs are paused. The raw run files are on the graph machine, not in this repository; this entry rests on the researcher's report.
+
+**The mistake.** The scale was calibrated on forward passes without a pulse (item 34). Check 3 compares pulsed lessons. The protocol named this risk ("if lessons push cells above the cap"), but the calibration never measured pulsed activity, so the risk was not checked before the run.
+
+**Diagnosis (hypothesis, not measured).** The 0.75 current into the reward or punishment dopamine cells spreads through the connectome to Kenyon cells. It pushes some of them well above the highest no-pulse rate (0.0151506). The 22.35% does not say whether the lost difference is between moves, or between a pulsed and an unpulsed reading of the same move: check 3 counts both.
+
+**What changes.** Nothing in the protocol, its cutoffs or the paused runs. Item 38 builds a tool that measures the pulsed activity and what a larger scale would cost.
+
+## 38. 2026-11-15: pulse scale check built (synthetic tests only)
+
+**Why.** A larger scale flattens fewer cells. But the learning rule's reading is `rate / scale`, so a larger scale also shrinks every update. The question is which scale keeps at least 99% of move differences during pulses, and what it costs in update size. That question blocks the feedback test, because every quiet-circuit result stays inconclusive while check 3 fails. The [design page](../../../documentation/design/neural-learning/pulse-scale-check-2026-11-15.md) gives the next feedback-enabled step.
+
+**What was built.**
+- `record-pulse-readings-v1.mjs` (graph machine). Zero drive, weights fixed. Every legal move on the three boards with no pulse, a reward pulse and a punishment pulse (318 forward passes). It records cell rates, dopamine means, learning signals and the 6,046-connection mapping. Graph setup, pins and the resource guard are copied from v3, which is unchanged. A fingerprint of every weight the forward pass reads must match before and after capture.
+- `report-pulse-scale-v1.mjs` (offline). For each set of comparisons, it gives the worst share kept at 0.014047 and the smallest scale, in steps of 0.000001, that keeps at least 99%. The sets are check 3 as run (correct labels), check 3 with swapped labels, and different moves under the same pulse (none, reward, punishment). It then replays the update arithmetic for correct and swapped lessons at the old and candidate scales from the fixed readings. It reports gain change, how far apart the correct and swapped gains end up, and the share of each reading that the pulse adds.
+- `pulse-readings-v1.mjs` holds the shared code; 8 focused tests are in `pulse-readings-v1.test.mjs`.
+
+**Checked.** All 8 tests pass. Removing each guard in turn made its test fail. The report took 2.3 s and 116 MiB on a synthetic recording of the real size.
+
+**Not checked.** Nothing ran on the real graph. The recorder's graph path was exercised only up to its pin check. The replay holds readings fixed, so it estimates update size only. Actual learning is unmeasured.
+
+**Next.** With the researcher's approval, run the recording and the report on the graph machine (commands on the design page). The scale choice stays open.

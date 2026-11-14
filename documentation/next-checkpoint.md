@@ -1,10 +1,17 @@
 # Next checkpoint
 
-This is the handoff for continuing the research: read the current checkpoint first, then consult its linked evidence. The latest checkpoint below is dated 2026-11-14. Everything after the “Background and dated history” heading is retained chronology; old “Next” instructions there are historical and superseded. Artifacts outrank this file: if a newer `runs/*/manifest.json` disagrees, this file is stale (see `AGENTS.md`, "Continuing the research").
+This is the handoff for continuing the research: read the current checkpoint first, then consult its linked evidence. The latest checkpoint below is dated 2026-11-15. Everything after the “Background and dated history” heading is retained chronology; old “Next” instructions there are historical and superseded. Artifacts outrank this file: if a newer `runs/*/manifest.json` disagrees, this file is stale (see `AGENTS.md`, "Continuing the research").
 
-**Last updated:** 2026-11-14.
+**Last updated:** 2026-11-15.
 
-## Current checkpoint: 2026-11-14
+## Current checkpoint: 2026-11-15
+
+- **Volume 2, chapters 3 and 5.** The three-board feedback test is inconclusive: the quiet circuit's learning-off run failed required check 3 on all 72 lessons. During pulses, the cap at 0.014047 kept as little as 22.35% of a lesson's activity difference, below the 99% required. This is the researcher's report; the raw files are on the graph machine. **The other five runs are paused.** See [journal item 37](../research/journal/experiments/2026-11-07-fly-connections-memory.md#37-2026-11-15-check-3-failed-in-the-quiet-learning-off-run).
+- **Built and tested on synthetic inputs:** the [pulse scale check](design/neural-learning/pulse-scale-check-2026-11-15.md). On the graph machine, a recorder captures every legal move with no pulse, a reward pulse and a punishment pulse, with weights fixed. An offline report then finds the smallest scale that keeps 99% for each set of comparisons, and replays how much smaller updates become at that scale. 8 focused tests pass. Nothing has run on the real graph.
+- **Next step, needs the researcher's approval:** run the recorder and the report on the graph machine (commands on the design page). Then the researcher chooses a scale or a different fix, written as a dated protocol revision, before rerunning the six runs. The cutoffs stay unchanged.
+- Unchanged: the 2026-11-09 decision about the post-gate evidence is still open. Properties 1–3 remain unmet. The sealed test games remain unused.
+
+## Previous checkpoint: 2026-11-14
 
 - **Volume 2, chapters 3 and 5.** A three-board feedback test is built and checked; its run awaits approval. It compares the current circuit with a quiet, rescaled circuit: zero drive, with Kenyon-cell activity read as `min(1, rate / 0.014047)`. It runs correct, swapped-label and learning-off conditions, with fresh memory per board. [Protocol](design/neural-learning/three-board-feedback-test-2026-11-14.md).
 - **Newest run: the calibration replay.** It is complete, made no learner updates, and used no sealed games. Its manifest is dated 2026-11-14 12:04–12:05 UTC, and its local output is `runs/recreated-kc-calibration-2026-11-14` on the replay machine. It regenerated the item-25 cell readings. In the [check](../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/README.md), the scale 0.014047 caps one cell on two moves in total, across two boards (corrected from "one move per board"). The worst move pair keeps 99.0003%. Codex reports rerunning the exact 6,046-connection weighting on the graph machine: at least 99% kept, and all three boards clear the starting-gap cutoff in both circuits.
@@ -13,7 +20,7 @@ This is the handoff for continuing the research: read the current checkpoint fir
   - items 30–31 carried learned changes across boards
   - item 31's dopamine summary mixed rewards and punishments
 - **Built 2026-11-14, not run:** `probe-wide-learning-v3.mjs`, the shared rules in `three-board-feedback-v1.mjs`, the rules script `apply-three-board-rules-v1.mjs`, and its focused tests. The decision rules now give one answer; the cutoff numbers are unchanged ([journal item 35](../research/journal/experiments/2026-11-07-fly-connections-memory.md#35-2026-11-14-three-board-feedback-test-built-rules-made-single-answer)). After Codex's review, values exactly on a cutoff are judged as written, and lesson records are checked against the board packet; 24 focused tests pass ([journal item 36](../research/journal/experiments/2026-11-07-fly-connections-memory.md#36-2026-11-14-two-bugs-in-the-tests-rules-code-fixed-after-codexs-review)).
-- **Next step, needs the researcher's approval:** run the six circuit-and-condition runs on the graph machine, serially (about two hours) or, with explicit approval, in parallel (about 20 minutes). Then apply the rules script. The commands are in the [protocol](design/neural-learning/three-board-feedback-test-2026-11-14.md#how-to-run-it-after-approval).
+- **Next step (superseded 2026-11-15), needed the researcher's approval:** run the six circuit-and-condition runs on the graph machine, serially (about two hours) or, with explicit approval, in parallel (about 20 minutes). Then apply the rules script. The commands are in the [protocol](design/neural-learning/three-board-feedback-test-2026-11-14.md#how-to-run-it-after-approval).
 - **The 2026-11-09 decision is still open:** request independent review of the post-gate evidence, or close it as bounded development results. The proposal recommends closing it; the test does not depend on that evidence. No run should begin before the researcher decides. Properties 1–3 remain unmet. No full revision-4 run is recorded, and the sealed test games remain unused.
 
 ## Previous checkpoint: 2026-11-09

@@ -2,6 +2,8 @@
 
 **Built and checked on 2026-11-14; the run awaits the researcher's approval. Nothing has been launched on the real circuit.** Volume 2, *The Classroom*, chapters 3 (*To Learn*) and 5 (*Evidence for Learning*). This is a development screen on three development boards. It is not evidence for Properties 1–3, and the sealed test games stay untouched.
 
+**Addendum 2026-11-15.** The researcher reports that the quiet learning-off run failed required check 3 on all 72 lessons: the worst comparison kept 22.35%, below 99%. By the rules below, the result is inconclusive; the other five runs are paused. Nothing below is changed. The [pulse scale check](pulse-scale-check-2026-11-15.md) measures pulsed activity before any revision ([journal item 37](../../../research/journal/experiments/2026-11-07-fly-connections-memory.md#37-2026-11-15-check-3-failed-in-the-quiet-learning-off-run)).
+
 ## The question in plain words
 
 On each of three chess boards, the fly's model ranks a safe capture below some other move. Earlier tries at teaching it lifted every move together, so the safe capture never caught up (journal items 21, 30 and 31). This test asks whether a quieter version of the circuit lets lessons move the safe capture toward the top more than wrong lessons do. In the quiet circuit, background drive is switched off and cell activity is read on a calibrated scale. To count, the effect has to beat the current circuit too.

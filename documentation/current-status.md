@@ -4,6 +4,10 @@ In the planned test, the researchers looked for settings that made the model ran
 
 The Fly Connections Memory investigation is paused while the researcher decides whether to request that review or close the work as a limited development result. See the [latest research handoff](next-checkpoint.md) for the decision and chronology.
 
+## Update: 2026-11-15
+
+The quiet circuit's learning-off run failed one of the test's required checks, so the three-board test is inconclusive and its other five runs are paused. The check asks that capping cell activity at 0.014047 keep at least 99% of each lesson's activity difference from the other moves. During reward and punishment pulses, the worst lesson kept only 22.35% (researcher's report; raw files on the graph machine). The scale had been chosen without pulses. A tool to measure the trade-off is built and tested on synthetic inputs: a larger scale flattens less but makes every learning update smaller. Its recording on the graph machine awaits approval, and the scale choice is open. See the [pulse scale check](design/neural-learning/pulse-scale-check-2026-11-15.md).
+
 ## Update: 2026-11-14
 
 A three-board feedback test is built and checked, and its run awaits the researcher's approval; nothing has run on the real circuit. It asks whether lessons move the safe capture toward the top more than wrong lessons do, in a quieter version of the circuit. The activity scale for that circuit (0.014047) was checked against a replay of the earlier cell readings: on these boards it caps one cell on two moves in total, across two of the three boards. Codex reports that the full 6,046-connection recheck keeps at least 99% of every move difference. See the [protocol](design/neural-learning/three-board-feedback-test-2026-11-14.md) and the [scale check](../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/README.md). The status below is unchanged.
