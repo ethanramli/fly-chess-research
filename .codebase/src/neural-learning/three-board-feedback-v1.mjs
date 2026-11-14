@@ -9,6 +9,14 @@ export const VALENCE = new Map([['MBON11', 1], ['MBON12', 1], ['MBON02', 1], ['M
 export const DAN_TYPES = ['PAM07', 'PAM02', 'PAM03', 'PPL101', 'PPL103'], REWARD_TYPES = ['PAM07', 'PAM02'], PUNISH_TYPES = ['PPL101', 'PPL103'];
 export const W = { PAM07: { MBON05: -1 }, PPL101: { MBON11: -1 }, PAM02: { MBON01: -1, MBON02: 0.3 }, PPL103: { MBON12: -1 - 0.3, MBON15: 0.3 - 1 }, PAM03: { MBON02: -1, MBON01: -0.3 } };
 export const RULES = { closure: 0.20, advantage: 0.20, overCurrent: 0.10, drop: 0.05, eligibleTolerances: 100 };
+export const LESSONS_PER_PASS = 4;
+// Closures are ratios of score differences, so a result meant to sit exactly on a cutoff can land a hair either side
+// (with the real first board's gap, scores built to close 20% compute as 0.19999999999994725). That rounding is about 1e-13;
+// 1e-9 (a billionth of the gap) is far above it and far below any difference that matters, so a value within 1e-9 of a cutoff
+// counts as on it. The cutoffs are unchanged.
+export const CUTOFF_SLACK = 1e-9;
+export const atLeast = (value, cutoff) => value >= cutoff - CUTOFF_SLACK; // "at least 20%": exactly 20% meets it
+export const under = (value, cutoff) => value < cutoff - CUTOFF_SLACK; // "under 5 points": exactly 5 points does not
 
 const avg = xs => xs.reduce((sum, x) => sum + x, 0) / xs.length;
 
@@ -102,19 +110,35 @@ export function runBoard({ record, condition, kcScale, forward, setMagnitude, ba
 }
 
 // Decision rules, fixed before data. results[circuit][condition] is a result.json object or { failed: reason };
-// baseline is { boardId, scores: { move: score } } from the replay's valence-baseline/probe.json.
-export function decide(results, baseline) {
+// baseline is { boardId, scores: { move: score } } from the replay's valence-baseline/probe.json;
+// packet is the verified board records (boards.jsonl). Lessons, legal moves and safe captures are checked against the packet, not the run.
+export function decide(results, baseline, packet) {
   const failures = [];
   const fail = reason => failures.push(reason);
+  const expected = new Map(BOARD_IDS.map(id => {
+    const r = packet.find(x => x.boardId === id);
+    if (!r) { fail(`packet: board ${id} missing`); return [id, null]; }
+    if (r.experiences.length !== LESSONS_PER_PASS) fail(`packet ${id}: ${r.experiences.length} lessons, expected ${LESSONS_PER_PASS}`);
+    return [id, { legal: [...r.legal].sort(), safeMoves: r.legal.filter(m => r.outcomes[m] === true), experiences: r.experiences.map(e => ({ move: e.move, pulse: e.pulse })) }];
+  }));
+  if (failures.length) return { verdict: 'inconclusive', reason: 'a required check failed', failures, boards: [] };
+  const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
   for (const circuit of Object.keys(CIRCUITS)) for (const condition of CONDITIONS) {
     const r = results[circuit]?.[condition];
     if (!r || r.failed) { fail(`${circuit} ${condition}: run missing or failed${r?.failed ? ` (${r.failed})` : ''}`); continue; }
     if (r.circuit !== circuit || r.condition !== condition) fail(`${circuit} ${condition}: file says ${r.circuit} ${r.condition}`);
     if (JSON.stringify(r.boards.map(b => b.boardId)) !== JSON.stringify(BOARD_IDS)) fail(`${circuit} ${condition}: wrong boards`);
     for (const b of r.boards) {
-      if (b.checkpoints.length !== PASSES + 1 || b.lessons.length !== PASSES * b.experiences.length) fail(`${circuit} ${condition} ${b.boardId}: incomplete record`);
-      const labels = lessonLabels(b.experiences, condition);
-      if (b.lessons.some(l => l.label !== labels[l.index].label || l.move !== labels[l.index].move)) fail(`${circuit} ${condition} ${b.boardId}: delivered labels do not match the condition`);
+      const want = expected.get(b.boardId);
+      if (!want) continue; // wrong boards, reported above
+      const name = `${circuit} ${condition} ${b.boardId}`;
+      if (!same(b.experiences, want.experiences) || !same(b.safeMoves, want.safeMoves)) fail(`${name}: lesson list or safe captures differ from the board packet`);
+      // Every pass must hold the packet's four lessons, in order, with the labels the condition assigns: 24 in all.
+      const labels = lessonLabels(want.experiences, condition), n = labels.length;
+      if (b.lessons.length !== PASSES * n || b.lessons.some((l, k) => l.pass !== Math.floor(k / n) + 1 || l.index !== k % n || l.move !== labels[k % n].move || l.label !== labels[k % n].label))
+        fail(`${name}: lessons missing, repeated, out of order or wrongly labelled (${b.lessons.length} recorded, ${PASSES * n} expected)`);
+      if (b.checkpoints.length !== PASSES + 1 || b.checkpoints.some((c, i) => c.pass !== i || !same(Object.keys(c.scores).sort(), want.legal)))
+        fail(`${name}: checkpoints missing, out of order, or not scoring every legal move`);
       // Check 2: the step-size guard (the probe stops on it; this rechecks the records).
       if (b.lessons.some(l => Object.values(l.D).some(d => ETA * Math.abs(d) > 1))) fail(`${circuit} ${condition} ${b.boardId}: a lesson exceeds the step-size guard`);
       // Check 1: learning off changes nothing.
@@ -138,12 +162,13 @@ export function decide(results, baseline) {
   if (failures.length) return { verdict: 'inconclusive', reason: 'a required check failed', failures, boards: [] };
 
   const boards = BOARD_IDS.map((boardId, i) => {
-    const row = { boardId };
+    const row = { boardId }, { safeMoves } = expected.get(boardId);
     for (const circuit of Object.keys(CIRCUITS)) {
-      const of = c => results[circuit][c].boards[i], first = of('correct').checkpoints[0];
+      // Best safe capture, rival and gap are recomputed from the recorded scores and the packet's safe captures.
+      const ranks = c => results[circuit][c].boards[i].checkpoints.map(cp => rankMoves(cp.scores, safeMoves)), first = ranks('correct')[0];
       const tolerance = 1e-9 + 1e-7 * first.maxAbs, eligible = first.gap >= RULES.eligibleTolerances * tolerance;
       const conditions = Object.fromEntries(CONDITIONS.map(c => {
-        const cps = of(c).checkpoints, a = cps[0], z = cps[PASSES];
+        const cps = ranks(c), a = cps[0], z = cps[PASSES];
         return [c, { closure: (a.gap - z.gap) / a.gap, closureByPass: cps.map(cp => (a.gap - cp.gap) / a.gap),
           safe: { from: a.bestSafe, to: z.bestSafe, change: z.bestSafe.score - a.bestSafe.score },
           rival: { from: a.rival, to: z.rival, change: z.rival.score - a.rival.score }, gapChange: z.gap - a.gap, safeOnTop: z.above === 0 }];
@@ -152,13 +177,13 @@ export function decide(results, baseline) {
         conditions, advantage: conditions.correct.closure - conditions.swapped.closure };
     }
     row.eligibleInBoth = row.current.eligible && row.quiet.eligible;
-    row.expandPass = row.eligibleInBoth && row.quiet.conditions.correct.closure >= RULES.closure && row.quiet.advantage >= RULES.advantage
-      && row.quiet.advantage - row.current.advantage >= RULES.overCurrent;
+    row.expandPass = row.eligibleInBoth && atLeast(row.quiet.conditions.correct.closure, RULES.closure) && atLeast(row.quiet.advantage, RULES.advantage)
+      && atLeast(row.quiet.advantage - row.current.advantage, RULES.overCurrent);
     return row;
   });
   const both = boards.filter(b => b.eligibleInBoth), quietEligible = boards.filter(b => b.quiet.eligible);
   if (both.length < 2) return { verdict: 'inconclusive', reason: `only ${both.length} board(s) qualify in both circuits; at least 2 are needed`, failures, boards };
   if (boards.filter(b => b.expandPass).length >= 2) return { verdict: 'expand to 12 boards', reason: `${boards.filter(b => b.expandPass).length} boards meet all three expansion cutoffs`, failures, boards };
-  if (quietEligible.every(b => b.quiet.advantage < RULES.drop)) return { verdict: 'drop the quiet, rescaled circuit', reason: 'the quiet circuit beats swapped labels by under 5 points on every board that qualifies in it', failures, boards };
+  if (quietEligible.every(b => under(b.quiet.advantage, RULES.drop))) return { verdict: 'drop the quiet, rescaled circuit', reason: 'the quiet circuit beats swapped labels by under 5 points on every board that qualifies in it', failures, boards };
   return { verdict: 'inconclusive', reason: 'the result falls between the expansion and drop cutoffs', failures, boards };
 }

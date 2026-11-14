@@ -311,3 +311,30 @@ The researcher supplied a replay package that regenerated the missing readings (
 **Not checked.** The probe has not run on the real graph, because the graph is not on this Mac. It copies v2's graph loading, connection map, pulses and scoring. On the Mac, only its argument, pin-mismatch and run-folder refusals were run.
 
 **Next.** The researcher approves the six runs, or not. No run launched; the sealed games are untouched.
+
+## 36. 2026-11-14: two bugs in the test's rules code fixed after Codex's review
+
+**What happened.** Codex reviewed commit `5c0f6fe3` and found two bugs in the decision rules code. Neither affects data: no run has happened.
+
+**Bug 1: values exactly on a cutoff were judged wrongly.** Closures are ratios of score differences, so a value meant to sit exactly on a cutoff computes a hair to one side. With the real first board's gap (6.5776e-6), a 20% closure computes as 0.19999999999994725, which failed "at least 20%". A 5-point advantage computes as 0.0499999999999868, which wrongly counted as "under 5 points" and triggered drop.
+- **Fix:** a value within 1e-9 of a cutoff counts as on it. "At least" cutoffs (20% closure, 20 points over swapped, 10 points over the current circuit) are met there; "under 5 points" is not. The cutoff numbers are unchanged.
+- **Why 1e-9:** the rounding is about 1e-13. A billionth of the gap is far above that and far below any difference that matters.
+
+**Bug 2: the rules trusted the run's own lesson list.** The completeness check compared the number of lessons with the run's own list of experiences, and the label check used each record's own `index`. So these all passed and could trigger expand:
+- a run that recorded one lesson per pass, 6 in all
+- 24 lessons where a repeated lesson hid a missing one
+- two lessons swapped within a pass
+
+**Fix.** The rules now take the verified board packet (`boards.jsonl`, hash pinned in the rules script). For each board they require 24 lessons: the packet's four, in order, in each of six passes, with the labels the condition assigns. They also require every checkpoint, in order, to score every legal move in the packet. The best safe capture, rival and gap are recomputed from the recorded scores and the packet's safe captures, and are no longer read from the run.
+
+**Evidence.**
+- **New tests on the old code.** The new tests were run against the `5c0f6fe3` rules, and 9 failed with a wrong verdict:
+  - inconclusive where a 20% closure, a 20-point advantage or a 10-point margin over the current circuit should expand
+  - drop at exactly 5 points
+  - expand for the six-lesson run, the hidden duplicate and the swapped lessons
+  - expand for wrong safe captures, a checkpoint missing a legal move, and checkpoints out of order
+  - no error for a short packet
+- **New tests on the fixed code.** All 24 focused tests pass.
+- **The rules script end to end.** Synthetic runs built from the real packet gave expand, drop and between-cutoffs inconclusive as designed. Cutting one run to six lessons turned expand into inconclusive.
+
+**Next.** Unchanged: the six runs await the researcher's approval. No run launched; the sealed games are untouched.

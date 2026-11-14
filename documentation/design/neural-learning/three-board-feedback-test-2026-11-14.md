@@ -71,13 +71,20 @@ Each check makes sure the comparison measures what it claims to. If any one fail
 2. **No oversized step.** No lesson triggers the step-size guard (`0.5 × |learning signal| > 1`). A step that large would overshoot the rule's intended update. At the configured saturation of 1.5, each dopamine mean is at most 1, so the largest possible step is 0.65 and this check cannot fail on the real circuit. It is kept as a guard against a changed configuration.
 3. **The cap still keeps move differences during lessons.** Quiet circuit: every cap comparison during feedback keeps at least 99%. The scale was chosen on forward passes without dopamine pulses. If lessons push cells above the cap, the quiet circuit could no longer tell moves apart, and a failure would say nothing about the idea.
 4. **The current circuit is the one that already failed.** Its before-teaching scores on `Q04sIPQ5:13` equal [the replay baseline](../../../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/replay-files/valence-baseline/probe.json) exactly (f6e4 0.0038446924882009625, b8d7 0.003851270070299506). Otherwise the comparison circuit is not the one the earlier probes used.
-5. **The runs are complete and match their condition.** All six runs ended with status `complete`, cover the three boards in order with 7 checkpoints and 24 lessons each, and delivered the labels their condition requires. Within each circuit, the three conditions start from identical scores, which shows the memory was fresh.
+5. **The runs are complete and match their condition.** All six runs ended with status `complete` and cover the three boards in order. The rules don't trust a run's own record of what it taught. They check it against the verified board packet (`boards.jsonl`, SHA-256 `fc058e1e…`):
+   - Each board has exactly 24 lessons: the packet's four, in packet order, in each of the six passes, with the labels the run's condition assigns. A missing, repeated, extra or out-of-order lesson fails the check, even when the total is still 24.
+   - Each board has 7 checkpoints in order, and each one scores every legal move in the packet.
+   - The best safe capture, the rival and the gap are recomputed from the recorded scores and the packet's verified safe captures.
+
+   Within each circuit, the three conditions start from identical scores, which shows the memory was fresh. Without these checks, a run that taught six lessons could still be read as a full test and trigger "expand".
 
 ## Decision rules, fixed before data
 
 **In plain words.** The quiet circuit is worth more boards only if correct lessons pull the safe capture clearly closer to first place, wrong lessons do not, and the old circuit could not do the same. If correct lessons do barely better than wrong ones, we stop pursuing the quiet circuit. Anything else, or too little data to compare, leaves the question open.
 
 Apply the steps in order. The first one that matches gives the answer.
+
+**Values exactly on a cutoff.** Exactly 20% closure, exactly 20 points over swapped and exactly 10 points over the current circuit each meet their requirement. Exactly 5 points over swapped is not "under 5 points", so it does not trigger drop. Closures are ratios of score differences, so a value meant to sit on a cutoff can be computed a hair to either side. With the real first board's gap, a 20% closure computes as 0.19999999999994725. So a value within 1e-9 of a cutoff counts as being on it. That is a billionth of the gap, far below any difference that matters. The cutoff numbers are unchanged.
 
 1. **Inconclusive** if a required check fails, or if fewer than 2 boards are eligible in both circuits. Rule (c) below compares the two circuits on the same board, so a board counts only if it is eligible in both.
 2. **Expand to 12 boards** if, on at least 2 boards eligible in both circuits, the quiet circuit has:
@@ -97,6 +104,7 @@ The two cutoffs cannot both hold: expansion needs an advantage of at least 20 po
 - **The 20% lines:** the earlier rescaled gamma-only probe closed about 19% in 16 lessons, but the unrewarded lesson move rose almost as much (journal item 21: −1.684e-5 to −1.365e-5). A pass must beat that movement *and* be selective.
 - **Changes from the 2026-11-14 draft:** no numbers changed. Two points were clarified before data. "Eligible" means eligible in both circuits for the expansion rule, because rule (c) needs both values. Closure is judged after all 24 lessons, with every pass reported.
 - **Second change, made at the build on 2026-11-14 and still before data:** the rules now give exactly one answer. Before, the drop rule needed only the quiet circuit's own checks and 2 boards eligible in it. So one result could read as both "drop" and "inconclusive": all checks passing in the quiet circuit, a failed check in the current circuit, or only one board eligible in both. Now any failed check, or fewer than 2 boards eligible in both circuits, gives inconclusive first. The cutoff numbers are unchanged.
+- **Third change, after Codex's review of `5c0f6fe3`, still before data:** two bugs in the rules code were fixed. Values exactly on a cutoff are now counted as described above; the cutoff numbers are unchanged. Lesson records are now checked against the board packet, because a run with six lessons could otherwise trigger "expand".
 - **Not required here:** becoming the top move is reported only.
 
 **If it expands:** the 12-board test uses the first 12, in file order, of the 13 practice boards from the dry-run development packet that this test does not use. Its gates are written down before data, and an absent-pulse condition is added. A later test lets the fly choose its own moves. Sealed games remain untouched.
@@ -115,8 +123,8 @@ The two cutoffs cannot both hold: expansion needs an advantage of at least 20 po
    - a refusal to start in a folder that already holds a run
    - only the three development boards, by name: no other board is read
 4. **The shared rules:** [`three-board-feedback-v1.mjs`](../../../.codebase/src/neural-learning/three-board-feedback-v1.mjs) holds the learning step, the cap check and the decision rules, so the probe and the rules script use one copy.
-5. **The rules script:** [`apply-three-board-rules-v1.mjs`](../../../.codebase/scripts/neural-learning/apply-three-board-rules-v1.mjs) reads the six run folders, applies the required checks and the decision rules, and prints the raw changes and percentages per board.
-6. **Tests:** [`three-board-feedback-v1.test.mjs`](../../../.codebase/tests/neural-learning/three-board-feedback-v1.test.mjs) (16 tests). A tiny made-up circuit checks the lesson loop. Made-up results check every verdict, including the case where only one board is eligible in both circuits.
+5. **The rules script:** [`apply-three-board-rules-v1.mjs`](../../../.codebase/scripts/neural-learning/apply-three-board-rules-v1.mjs) reads the six run folders and the verified board packet (it stops if the packet hash differs), applies the required checks and the decision rules, and prints the raw changes and percentages per board.
+6. **Tests:** [`three-board-feedback-v1.test.mjs`](../../../.codebase/tests/neural-learning/three-board-feedback-v1.test.mjs) (24 tests). A tiny made-up circuit checks the lesson loop. Made-up results check every verdict, including the case where only one board is eligible in both circuits. They also check values exactly at, just below and just above each cutoff, and runs with missing, repeated or reordered lessons.
 
 **Inputs pinned by the config.** The run uses the replay's config, `runs/replay-calibration-inputs/calibration-config.json`. Its tracked copy hashes to `dcfceb3a…`. The config pins the graph, the annotations, the three games, `boards.jsonl`, the mapping check and the replay's rebuilt local-inhibition package (`package.json` `034ba699…`, `sites.npz` `cb83c177…`). The probe stops if any hash differs, and records the hashes of the config, itself and the shared rules in each manifest.
 
@@ -131,7 +139,7 @@ node --max-old-space-size=512 .codebase/scripts/neural-learning/probe-wide-learn
 Repeat for `current swapped`, `current off`, `quiet correct`, `quiet swapped` and `quiet off`, each into its own `CIRCUIT-CONDITION` folder. Then:
 
 ```
-node .codebase/scripts/neural-learning/apply-three-board-rules-v1.mjs --runs runs/three-board-feedback-2026-11-14 --baseline research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/replay-files/valence-baseline/probe.json --out runs/three-board-feedback-2026-11-14/decision.json
+node .codebase/scripts/neural-learning/apply-three-board-rules-v1.mjs --runs runs/three-board-feedback-2026-11-14 --baseline research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/replay-files/valence-baseline/probe.json --packet runs/replay-calibration-inputs/boards.jsonl --out runs/three-board-feedback-2026-11-14/decision.json
 ```
 
 - **Cost:** about 814 network passes per run, 4,884 in all. Each run needs about 280 MiB.
