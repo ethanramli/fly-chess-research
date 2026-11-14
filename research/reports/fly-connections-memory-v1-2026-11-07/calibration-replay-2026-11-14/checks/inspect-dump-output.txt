@@ -1,0 +1,17 @@
+schema all-kc-dump-v1 dumps 0:Q04sIPQ5:13:46 0:SjmcbcGu:16:37 0:5XRGyGSj:13:23 0.01:Q04sIPQ5:13:46 0.01:SjmcbcGu:16:37 0.01:5XRGyGSj:13:23
+sparseness cohortSize 5177 mappedGammaKc 2096 boards [ 'Q04sIPQ5:13', 'SjmcbcGu:16', '5XRGyGSj:13' ]
+ theta 0 activeFrac 1 meanActive 0.016526910383629877 perBoard Q04sIPQ5:13 n=46 rel=0.0067 spread=5.32e-5; SjmcbcGu:16 n=37 rel=0.0051 spread=8.38e-5; 5XRGyGSj:13 n=23 rel=0.0061 spread=9.37e-5
+ theta 0.01 activeFrac 0.143516851505113 meanActive 0.000475000714977296 perBoard Q04sIPQ5:13 n=46 rel=0.1577 spread=3.43e-5; SjmcbcGu:16 n=37 rel=0.1141 spread=8.86e-5; 5XRGyGSj:13 n=23 rel=0.1180 spread=8.04e-5
+structure ok: every row has 5177 finite non-negative rates
+zero drive Q04sIPQ5:13: entries >= 0.014047: 0 on KC positions [] []
+zero drive SjmcbcGu:16: entries >= 0.014047: 1 on KC positions [1336] [{"move":"a1b1","kc":1336,"rate":0.015150622464716434}]
+   KC 1336: top rates 1.5151e-2,1.0380e-2,9.0231e-3,4.7683e-3, moves with rate > 0: 37/37
+zero drive 5XRGyGSj:13: entries >= 0.014047: 1 on KC positions [1336] [{"move":"a8b8","kc":1336,"rate":0.015145020559430122}]
+   KC 1336: top rates 1.5145e-2,1.0374e-2,1.6897e-5,1.7418e-7, moves with rate > 0: 23/23
+zero-drive max over all KCs 0.015150622464716434 {"board":"SjmcbcGu:16","move":"a1b1","kc":1336} entries >= 0.022: 0
+all-KC unweighted Q04sIPQ5:13: worst retained at 0.014047 = {"r":1}
+all-KC unweighted SjmcbcGu:16: worst retained at 0.014047 = {"r":0.9892175100884835,"pair":["a1b1","c3b1"],"original":0.10235321097195554}
+all-KC unweighted 5XRGyGSj:13: worst retained at 0.014047 = {"r":0.9892705078600743,"pair":["a8b8","c6b8"],"original":0.10233667587529705}
+board Q04sIPQ5:13 group A legal 46 safe [d6c5,e5c5,e5e4,f6e4] lessons [["d6c5",true],["e5e4",true],["e5h2",false],["e5b2",false]]
+board SjmcbcGu:16 group A legal 37 safe [f2e3] lessons [["f2e3",true],["f2e3",true],["c3d5",false],["c3d5",false]]
+board 5XRGyGSj:13 group A legal 23 safe [g8g7] lessons [["g8g7",true],["g8g7",true],["c6d4",false],["c6d4",false]]

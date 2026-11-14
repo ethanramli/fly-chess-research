@@ -1,0 +1,89 @@
+{
+  "schema": "kc-sparseness-diagnostic-v1",
+  "configSha256": "dcfceb3a84b6aa8a825d39757c86e667955eb7ae1d3406d5ee29567f0bc96576",
+  "boards": [
+    "Q04sIPQ5:13",
+    "SjmcbcGu:16",
+    "5XRGyGSj:13"
+  ],
+  "cohortSize": 5177,
+  "mappedGammaKc": 2096,
+  "rows": [
+    {
+      "theta": 0,
+      "passes": 212,
+      "scorePath": "condition.rankBoard",
+      "fracActiveKc": 1,
+      "meanActiveRate": 0.016526910383629877,
+      "moveSpecificFrac": 0,
+      "medianRelDiff": 0.006097178558824509,
+      "perBoard": [
+        {
+          "boardId": "Q04sIPQ5:13",
+          "legalMoves": 46,
+          "medianRelDiff": 0.006672814552429883,
+          "unionCells": 2096,
+          "medianRelDiffUnion": 0.006672814552429883,
+          "moveSpecificFrac": 0,
+          "scoreSpread": 0.00005322694778442383
+        },
+        {
+          "boardId": "SjmcbcGu:16",
+          "legalMoves": 37,
+          "medianRelDiff": 0.005057864413245641,
+          "unionCells": 2096,
+          "medianRelDiffUnion": 0.005057864413245641,
+          "moveSpecificFrac": 0,
+          "scoreSpread": 0.00008379947394132614
+        },
+        {
+          "boardId": "5XRGyGSj:13",
+          "legalMoves": 23,
+          "medianRelDiff": 0.006097178558824509,
+          "unionCells": 2096,
+          "medianRelDiffUnion": 0.006097178558824509,
+          "moveSpecificFrac": 0,
+          "scoreSpread": 0.00009367428719997406
+        }
+      ]
+    },
+    {
+      "theta": 0.01,
+      "passes": 106,
+      "scorePath": "endpoint-mean",
+      "fracActiveKc": 0.143516851505113,
+      "meanActiveRate": 0.000475000714977296,
+      "moveSpecificFrac": 0.05454834605597964,
+      "medianRelDiff": 0.11795086635169467,
+      "perBoard": [
+        {
+          "boardId": "Q04sIPQ5:13",
+          "legalMoves": 46,
+          "medianRelDiff": 0.15771841246979065,
+          "unionCells": 359,
+          "medianRelDiffUnion": 0.15771841327238814,
+          "moveSpecificFrac": 0.03148854961832061,
+          "scoreSpread": 0.000034317708923481405
+        },
+        {
+          "boardId": "SjmcbcGu:16",
+          "legalMoves": 37,
+          "medianRelDiff": 0.11406414902411655,
+          "unionCells": 372,
+          "medianRelDiffUnion": 0.11406414591273599,
+          "moveSpecificFrac": 0.08110687022900763,
+          "scoreSpread": 0.000088577826772962
+        },
+        {
+          "boardId": "5XRGyGSj:13",
+          "legalMoves": 23,
+          "medianRelDiff": 0.11795086635169467,
+          "unionCells": 366,
+          "medianRelDiffUnion": 0.11795086726353313,
+          "moveSpecificFrac": 0.05104961832061069,
+          "scoreSpread": 0.00008038888017836143
+        }
+      ]
+    }
+  ]
+}

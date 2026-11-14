@@ -1,10 +1,24 @@
 # Next checkpoint
 
-This is the handoff for continuing the research: read the current checkpoint first, then consult its linked evidence. The latest checkpoint below is dated 2026-11-09. Everything after the “Background and dated history” heading is retained chronology; old “Next” instructions there are historical and superseded. Artifacts outrank this file: if a newer `runs/*/manifest.json` disagrees, this file is stale (see `AGENTS.md`, "Continuing the research").
+This is the handoff for continuing the research: read the current checkpoint first, then consult its linked evidence. The latest checkpoint below is dated 2026-11-14. Everything after the “Background and dated history” heading is retained chronology; old “Next” instructions there are historical and superseded. Artifacts outrank this file: if a newer `runs/*/manifest.json` disagrees, this file is stale (see `AGENTS.md`, "Continuing the research").
 
-**Last updated:** 2026-11-09.
+**Last updated:** 2026-11-14.
 
-## Current checkpoint: 2026-11-09
+## Current checkpoint: 2026-11-14
+
+- **Volume 2, chapters 3 and 5.** A three-board feedback test is proposed. It compares the current circuit with a quiet, rescaled circuit: zero drive, with Kenyon-cell activity read as `min(1, rate / 0.014047)`. It runs correct, swapped-label and learning-off conditions, with fresh memory per board. [Protocol](design/neural-learning/three-board-feedback-test-2026-11-14.md).
+- **Newest run: the calibration replay.** It is complete, made no learner updates, and used no sealed games. Its manifest is dated 2026-11-14 12:04–12:05 UTC, and its local output is `runs/recreated-kc-calibration-2026-11-14` on the replay machine. It regenerated the item-25 cell readings. In the [check](../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/README.md), the scale 0.014047 caps one cell on one move per board. The worst move pair keeps 99.0003%. The exact 6,046-connection weighting still needs rechecking on a machine with the graph.
+- **Corrections recorded** in [journal item 33](../research/journal/experiments/2026-11-07-fly-connections-memory.md#33-2026-11-14-three-board-feedback-test-protocol-and-corrections-found):
+  - item 26 swapped its drive labels
+  - items 30–31 carried learned changes across boards
+  - item 31's dopamine summary mixed rewards and punishments
+- **Next step, needs the researcher's approval:**
+  1. Recheck the scale on the graph machine.
+  2. Run a baseline-only check with no new code.
+  3. Build `probe-wide-learning-v3.mjs` and run the test (about 20 minutes on six workers).
+- **The 2026-11-09 decision is still open:** request independent review of the post-gate evidence, or close it as bounded development results. The proposal recommends closing it; the test does not depend on that evidence. No run should begin before the researcher decides. Properties 1–3 remain unmet. No full revision-4 run is recorded, and the sealed test games remain unused.
+
+## Previous checkpoint: 2026-11-09
 
 - **Volume 2, chapters 3 and 5.** The revision-4 predeclared single-shot capacity gate on the widened 6,046-gain mask failed: one of three boards had an exact win. A later sequential exact search found safe-capture settings on all three (3/3), but it was chosen after the gate failure and has not had independent review. It does not change the predeclared 1/3 failure. The earlier 2,096-gain result is only a linear-surrogate bound; exact-network capacity for that mask remains unresolved. The reward-only and valence probes still left the safe capture below the best other move on all three boards; the reward-only probe included an absent arm, while the valence probe was one arm with baseline scores only, and neither was independently audited. See the [stop report](../research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md) and [dated journal](../research/journal/experiments/2026-11-07-fly-connections-memory.md).
 - **No full revision-4 learning run is recorded.** The latest manifested run is the completed development dry run, which did not pass. The sealed test games remain unused. Properties 1–3 remain unmet; no reasoning result follows from these probes.

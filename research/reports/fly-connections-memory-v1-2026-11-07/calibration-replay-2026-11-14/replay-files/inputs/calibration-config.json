@@ -1,0 +1,32 @@
+{
+  "purpose": "three known development boards only, no learning",
+  "paths": {
+    "graph": ".cache/full.npz",
+    "annotations": ".cache/flywire-annotations-v2.1.0.tsv",
+    "packet": "runs/replay-calibration-inputs",
+    "mappingCheck": "runs/replay-calibration-inputs/mapping-check/mapping-check.json",
+    "aplPackage": "runs/replay-calibration-inputs/apl-midpoint"
+  },
+  "model": {
+    "steps": 8,
+    "inputDim": 1,
+    "outputs": 1,
+    "seed": 47,
+    "precision": "float32",
+    "saturation": 1.5,
+    "recurrentScale": 0.9,
+    "normalization": "row"
+  },
+  "pins": {
+    ".cache/full.npz": "4d63295f5e0d9b9ca7b4cf7802f975c2fc9fad87f29ee451305ccab5de02abe2",
+    ".cache/flywire-annotations-v2.1.0.tsv": "30be6c73975a70c56d930e27911f36455d3886e15abf383b78edd2a5d679e0b6",
+    "runs/replay-calibration-inputs/Q04sIPQ5.pgn": "380714346cd5b7e6e6f5e812e2889188a17d5fce57e348f50cdd7b7a23da54af",
+    "runs/replay-calibration-inputs/SjmcbcGu.pgn": "6e0a1a5d06e7f5e69837d54ef7e6a025a9f2eedcc5221f6b1b007ce156a4f4c7",
+    "runs/replay-calibration-inputs/5XRGyGSj.pgn": "2db57c2836bd2b17c36c877ef8d50c7a80a3ccdd3df2c03cd860cdd9d061cb88",
+    "runs/replay-calibration-inputs/boards.jsonl": "fc058e1eda3604c7dc74db625778f1645f0ad350ce23c438b44017079487f429",
+    ".codebase/scripts/neural-learning/diagnose-kc-sparseness-v1.mjs": "b415079499a1eed0b7d145897ad0782cf0272a10cb54d69d8ee65e182386111d",
+    "runs/replay-calibration-inputs/mapping-check/mapping-check.json": "3be788dfee35c32941f139a824edafad1e0a58b4c41d5a2c3797267e75228564",
+    "runs/replay-calibration-inputs/apl-midpoint/package.json": "034ba699fc005bdcb6631e382e07ff6e141ecc0cbbfac56d19c4db3ae7e800d1",
+    "runs/replay-calibration-inputs/apl-midpoint/sites.npz": "cb83c177084a4b6c084e15a675b57c258379f68942df21de8176eab8531c7a01"
+  }
+}

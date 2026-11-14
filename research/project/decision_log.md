@@ -1863,3 +1863,9 @@ Several historical table rows had their evidence cells split across lines, leavi
 ## 2026-11-09 - Restore damaged separators in copied history
 
 Restored the `32–64 MiB` range and the `6–12/14` and `12–21/23` overlap counts in copied entries. These match the calibration design and the clean multi-context journal entry; no research result changed.
+
+## 2026-11-14 - Propose locking the Kenyon-cell scale and a three-board feedback test
+
+Proposal, not yet approved. A replay regenerated the zero-drive cell readings that journal item 25 had used. At scale 0.014047, capping keeps at least 99% of the activity difference for every pair of legal moves on the three development boards. Only one cell on one move per board reaches the cap. The proposed test compares the current circuit with a quiet, rescaled circuit (zero drive, `k = min(1, rate / 0.014047)`, dopamine formula unchanged). It uses correct, swapped-label and learning-off conditions, fresh memory per board, and fixed rules for expanding to 12 boards, dropping the approach, or calling the result inconclusive. Corrections found on the way: item 26's drive labels were swapped; items 30–31 carried learned changes across boards; item 31's dopamine summary mixed rewards and punishments. Evidence: [protocol](../../documentation/design/neural-learning/three-board-feedback-test-2026-11-14.md), [scale check](../reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/README.md), [journal items 33–34](../journal/experiments/2026-11-07-fly-connections-memory.md#33-2026-11-14-three-board-feedback-test-protocol-and-corrections-found).
+
+Decision: none yet. The researcher must approve the scale recheck, the baseline check and the run. The 2026-11-09 choice about the post-gate evidence also remains open. No run launched.
