@@ -27,8 +27,17 @@ Use [README Maestro](../readme-maestro/SKILL.md) for navigation and reader route
 
 - If the reader has to act, make the first sentence say what to do. Otherwise start with the answer or result. Use familiar words, name who or what did the action, and keep one main thought per sentence. Put causes and events in the order they happened. Repeat a name where “it” or “they” could point to two things.
 - Use a concrete action in place of an abstract phrase in the main explanation. “Two people tried to get the last seat, and the site gave both a ticket” is easier to picture than “the simultaneous booking check failed.” Explain technical terms through what they do or what someone can see. For example, “the job wrote a second copy after midnight” says what happened. Replace words that make the main idea depend on specialist knowledge. If an exact term matters, put the plain meaning first. For example, “the scanner stopped talking to the library computer” explains a lost network connection.
-- Show what a number means. “The move had to come first on two of the three boards. It came first on only one.” Give the group, the result, and the cutoff when they change the meaning. Say what a check actually did, even in the last sentence. Replace “once the test passes” with what the reader should see happen.
+- Put the reason before the details if the details would make the reader ask why. For a proposed test, explain the problem, what changes, what we look for, and how the result changes the next action. Use a short example when the reader would otherwise have to work out how a value affects the result. Explain each step of a calculation the reader needs to follow.
 - Apply this to the main explanation in a reply and to the opening explanation of each important section of a document. Give the full technical detail the intended reader needs nearby. Use the requested format. For a one-paragraph reply or a caption, put the plain explanation directly in that text.
+
+## Explain why a number or rule matters
+
+- **Setting or cutoff:** Say what it changes, why it has that value, and what would happen if it were higher or lower when that matters. Distinguish a value measured or calculated from data from a threshold chosen for a practical decision. If the source gives no reason for the exact value, say so.
+- **Check or measurement:** Say what two things were compared, what the result lets us conclude, and which condition it covers. “At least 99% survived” needs to say what survived and why preserving it matters. If the next check is in different conditions, name what changes and why it calls for another check.
+- **Decision rule:** Explain the action in ordinary words before listing cutoffs. For each material comparison, say what it helps rule out and why that matters to the decision. Give one worked example if several cutoffs interact. Explain “drop” by naming the change we would stop pursuing. Explain “inconclusive” by saying what prevented a decision, such as a failed check, too few comparable cases, or a result between the cutoffs. Give the next check if it is known. If the written rules overlap, flag the overlap and label any proposed priority as a recommendation.
+- **Implementation detail:** Mention it when it affects what the reader can do. Give the cause and effect in one plain sentence. “After the checker moved folders, it kept looking in the old place for the code it needs, so it can’t start.” Keep that explanation with the build step it affects.
+
+Apply only the checks the reader needs. When a reader says they are lost, rewrite from the first idea they need to understand. Answer their “why?” and “what does that tell me?” before restating names or values.
 
 ## Keep the measurement and claim intact
 
@@ -45,9 +54,9 @@ Use a verb for an action and a concrete noun for a value. Name a measure for its
 Read the draft once as someone who knows none of the project terms. Try to answer, in everyday words, the questions that apply:
 
 1. What happened or what is the answer?
-2. How do we know? If a number matters, what was counted and what would have passed?
-3. What is still unknown, if it changes how we should use the result?
-4. What happens next, or what would change the decision?
+2. How do we know? If a number matters, what was counted or chosen, and why that value?
+3. What does the result let us conclude? What remains open that affects how we use it?
+4. What happens next? If there is a decision rule, can the reader explain why each outcome leads to its action?
 
 Scan the opening and the next-step sentence for words such as “passes,” “rehearsal,” or “connection” used without explaining the action or result. If a reader needs to know what that word means to act, say what someone should do or see. Rewrite any sentence that still makes the reader guess. Recheck the meaning against the source. When an independent reader is available, give them only the finished text and ask them to explain it back. Treat your own check as an estimate of clarity. For an edit, confirm the diff stays within scope. For a reply, return the requested text.
 
