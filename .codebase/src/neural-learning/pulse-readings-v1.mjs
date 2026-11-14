@@ -175,7 +175,8 @@ export function buildReport({ manifest, summary, mapping, records, packet, expec
       };
       return { boardId, correct: changeOf(correct.gains), swapped: changeOf(swapped.gains), divergence: divergenceOf(correct.gains, swapped.gains),
         divergenceByPass: correct.byPass.map((g, p) => divergenceOf(g, swapped.byPass[p]).meanAbs), guardTrips: correct.guardTrips + swapped.guardTrips,
-        pulseShareOfReading: avg(lessonLabels(entry.board.experiences, 'correct').map(pulseShare)) };
+        pulseShareOfReading: avg(lessonLabels(entry.board.experiences, 'correct').map(pulseShare)),
+        lessonShareAtCap: capShare(lessonLabels(entry.board.experiences, 'correct').map(({ move, label }) => entry.reading(move, label).rates), weights, scale) };
     });
     const passes = Object.fromEntries(Object.entries(sets).map(([name, s]) => [name, worstKeptOverBoards(s, entries, scale, weights) >= CAP_KEEP]));
     return { scale, passes99: passes, boards: perBoard };
@@ -184,6 +185,10 @@ export function buildReport({ manifest, summary, mapping, records, packet, expec
     note: 'Readings were recorded with fixed weights. The replay estimates update size from those fixed readings; actual learning, where readings change as gains change, is not measured.',
     differences, sets, replay };
 }
+// Edge-weighted share of active readings at or above the scale. Zero means the scale caps nothing, so passing 99% is automatic there.
+const capShare = (rateSets, weights, scale) => { let active = 0, atCap = 0;
+  for (const rates of rateSets) rates.forEach((r, k) => { if (r > 0) { active += weights[k]; if (r >= scale) atCap += weights[k]; } });
+  return active ? atCap / active : 0; };
 // A set's result over all boards: worst kept at the old scale, total failing comparisons, and the smallest scale that passes every board.
 function combine(perBoard) {
   const passing = perBoard.map(b => b.all.smallestPassing).filter(Boolean);

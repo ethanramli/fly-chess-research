@@ -8,7 +8,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SparseTrainer } from '../../src/supervised-baselines/trainer.mjs';
 import { BOARD_IDS, ETA, PASSES, VALENCE, runBoard } from '../../src/neural-learning/three-board-feedback-v1.mjs';
-import { OLD_SCALE, PULSES, buildReport, captureReadings, protocolLessons, replayGains, smallestPassingScale, validateRecording, worstKept } from '../../src/neural-learning/pulse-readings-v1.mjs';
+import { OLD_SCALE, PULSES, buildReport, captureReadings, differingPairs, protocolLessons, replayGains, smallestPassingScale, validateRecording, worstKept } from '../../src/neural-learning/pulse-readings-v1.mjs';
 
 const root = fileURLToPath(new URL('../../../', import.meta.url));
 const PACKET_PATH = join(root, 'research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/replay-files/inputs/boards.jsonl');
@@ -64,9 +64,12 @@ test('protocol comparisons reproduce the probe\'s own learning-off cap check exa
   const mask = [0, 1, 2, 3];
   const probe = runBoard({ record: board, condition: 'off', kcScale: scale, forward, setMagnitude: (e, v) => model.setMagnitude(e, v), base: Float64Array.from(mask, e => model.params.magnitude[e]),
     mask, maskType: ['MBON11', 'MBON11', 'MBON05', 'MBON05'], maskPre: [0, 1, 0, 2], cells, weights, danCells: DAN, scoreOf });
-  const mine = protocolLessons(entry, 'correct').map(l => worstKept(l.pairs, weights, scale));
+  const lessons = protocolLessons(entry, 'correct'), mine = lessons.map(l => worstKept(l.pairs, weights, scale));
   assert(mine.some(x => x < 0.99), 'the cap bites in this check');
-  for (const lesson of probe.lessons) assert.equal(mine[lesson.index], lesson.cap.worstKept);
+  for (const lesson of probe.lessons) {
+    assert.equal(mine[lesson.index], lesson.cap.worstKept);
+    assert.equal(differingPairs(lessons[lesson.index].pairs, weights).length, lesson.cap.comparisons, 'same comparisons, including earlier lessons in the pass');
+  }
 });
 
 test('scale boundary: smallest passing scale in 0.000001 steps, edge-weighted, checked from both sides', () => {
@@ -81,13 +84,26 @@ test('scale boundary: smallest passing scale in 0.000001 steps, edge-weighted, c
   assert.equal(smallestPassingScale([{ a: [0.01], b: [0.01] }], [1]), null); // identical moves give nothing to keep
 });
 
-test('replay: one lesson changes each gain by 0.5 x signal x reading, the probe\'s rule', () => {
+test('scale boundary: the binary search agrees with checking every step on random readings', () => {
+  let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  for (let trial = 0; trial < 20; trial++) {
+    const weights = Array.from({ length: 5 }, () => 1 + Math.floor(rnd() * 4)), vec = () => weights.map(() => (rnd() < 0.3 ? 0 : rnd() * 0.004));
+    const pairs = Array.from({ length: 4 }, () => ({ a: vec(), b: vec() }));
+    let brute = null;
+    for (let n = 1; n <= 4000 && brute === null; n++) if (worstKept(pairs, weights, n / 1e6) >= 0.99) brute = n / 1e6;
+    assert.equal(smallestPassingScale(pairs, weights)?.scale ?? null, brute, `trial ${trial}`);
+  }
+});
+
+test('replay: each lesson changes each gain by 0.5 x signal x (reading + gain - 1), the probe\'s rule', () => {
   const mapping = { edge: [10, 11], type: ['MBON05', 'MBON11'], cell: [0, 1] };
   const D = Object.fromEntries([...VALENCE.keys()].map(m => [m, 0])); D.MBON05 = -0.4; D.MBON11 = 0.2;
   const { byPass } = replayGains([{ rates: [0.007, 0.05], D }], mapping, 0.014);
   assert.equal(byPass.length, PASSES);
   assert.equal(byPass[0][0], 1 + ETA * -0.4 * 0.5); // reading 0.007 / 0.014
   assert.equal(byPass[0][1], 1 + ETA * 0.2 * 1); // reading capped at 1
+  const g = byPass[0][0]; // second pass: the gain's own offset from 1 enters the step
+  assert.equal(byPass[1][0], g + ETA * -0.4 * (0.5 + g - 1));
 });
 
 // A synthetic recording on the real board packet: 4 learnable cells with edge weights 2, 1, 2, 1 across the six output types.
@@ -148,6 +164,7 @@ test('a larger scale can pass 99% while producing smaller and less different upd
   for (let b = 0; b < BOARD_IDS.length; b++) {
     assert(next.boards[b].correct.meanAbsChange < old.boards[b].correct.meanAbsChange, 'smaller updates');
     assert(next.boards[b].divergence.meanAbs < old.boards[b].divergence.meanAbs, 'correct and swapped gains diverge less');
+    assert(old.boards[b].lessonShareAtCap > 0 && next.boards[b].lessonShareAtCap < old.boards[b].lessonShareAtCap, 'the candidate still caps less than the old scale');
   }
 });
 

@@ -69,6 +69,6 @@ console.log('\nUpdate replay from fixed readings, 24 lessons per board (estimate
 for (const r of report.replay) {
   console.log(`  scale ${r.scale}: passes 99% for ${Object.entries(r.passes99).filter(([, ok]) => ok).map(([n]) => n).join('; ') || 'no set'}`);
   for (const b of r.boards) console.log(`    ${b.boardId}: mean |gain - 1| correct ${e(b.correct.meanAbsChange)}, swapped ${e(b.swapped.meanAbsChange)}; `
-    + `correct vs swapped mean |difference| ${e(b.divergence.meanAbs)}, max ${e(b.divergence.maxAbs)}; at limit ${b.correct.atLimit}/${b.swapped.atLimit}; pulse share of reading ${pct(b.pulseShareOfReading)}${b.guardTrips ? `; step guard ${b.guardTrips}` : ''}`);
+    + `correct vs swapped mean |difference| ${e(b.divergence.meanAbs)}, max ${e(b.divergence.maxAbs)}; at limit ${b.correct.atLimit}/${b.swapped.atLimit}; pulse share of reading ${pct(b.pulseShareOfReading)}; lesson readings at cap ${pct(b.lessonShareAtCap)}${b.guardTrips ? `; step guard ${b.guardTrips}` : ''}`);
 }
 console.log(`\nWrote ${args.out}`);

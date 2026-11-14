@@ -356,9 +356,13 @@ The researcher supplied a replay package that regenerated the missing readings (
 **What was built.**
 - `record-pulse-readings-v1.mjs` (graph machine). Zero drive, weights fixed. Every legal move on the three boards with no pulse, a reward pulse and a punishment pulse (318 forward passes). It records cell rates, dopamine means, learning signals and the 6,046-connection mapping. Graph setup, pins and the resource guard are copied from v3, which is unchanged. A fingerprint of every weight the forward pass reads must match before and after capture.
 - `report-pulse-scale-v1.mjs` (offline). For each set of comparisons, it gives the worst share kept at 0.014047 and the smallest scale, in steps of 0.000001, that keeps at least 99%. The sets are check 3 as run (correct labels), check 3 with swapped labels, and different moves under the same pulse (none, reward, punishment). It then replays the update arithmetic for correct and swapped lessons at the old and candidate scales from the fixed readings. It reports gain change, how far apart the correct and swapped gains end up, and the share of each reading that the pulse adds.
-- `pulse-readings-v1.mjs` holds the shared code; 8 focused tests are in `pulse-readings-v1.test.mjs`.
+- `pulse-readings-v1.mjs` holds the shared code; 9 focused tests are in `pulse-readings-v1.test.mjs`.
 
-**Checked.** All 8 tests pass. Removing each guard in turn made its test fail. The report took 2.3 s and 116 MiB on a synthetic recording of the real size.
+**Checked.** All 9 focused tests pass, and the 24 existing three-board tests still pass. Ten deliberate breaks, one aimed at each test, were all caught. The first sweep missed two of them (earlier lessons left out of the protocol comparisons; the gain term dropped from the rule), so those two tests were strengthened. The report took 2.3 s and 116 MiB on a synthetic recording of the real size. The full `npm test` on this Mac shows 93 failures in 12 unrelated files. The same tests fail on a clean checkout of `c240b058`: they need `runs/` data this clone lacks, or more free memory than the Mac had.
+
+**Correction, same day.** The first summary to the researcher said every test had been shown to fail when its guard was removed. At that point only three of eight had been. The sweep above replaces that claim.
+
+**Focused science review.** Solo, so not independent. One finding is open until real data: check 3 counts the pulse's own push as a move difference, so a scale could pass it while capping almost nothing. The report now shows the share of lesson readings each scale still caps, next to the same-pulse comparisons. Recommendation: decide which comparison set governs check 3 before reading the replay. The full review table is on the design page.
 
 **Not checked.** Nothing ran on the real graph. The recorder's graph path was exercised only up to its pin check. The replay holds readings fixed, so it estimates update size only. Actual learning is unmeasured.
 
