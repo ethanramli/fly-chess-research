@@ -367,3 +367,11 @@ The researcher supplied a replay package that regenerated the missing readings (
 **Not checked.** Nothing ran on the real graph. The recorder's graph path was exercised only up to its pin check. The replay holds readings fixed, so it estimates update size only. Actual learning is unmeasured.
 
 **Next.** With the researcher's approval, run the recording and the report on the graph machine (commands on the design page). The scale choice stays open.
+
+## 39. 2026-11-15: Independent review of the pulse scale report
+
+Codex and Fable checked commit `2ef46114`. Both reproduced a false match on empty reference data. Fable also reproduced false matches with repeated lessons, wrong lesson identities, a missing starting score and repeated boards. The report counted only what the saved run contained. It now compares the expected board, pass, lesson, move and label from the packet, as well as every starting move score. It saves the report and exits with status 1 if the exact comparison differs. A report built without the saved run says the comparison was skipped.
+
+The report previously suggested that when a pulse supplied most of the activity, it supplied most of the weight changes. The reviewers reproduced a case where the pulse added over 99% of the reading on connections receiving zero learning signal. The replayed gains stayed identical after removing that extra activity. Fable also found the reverse: a small share of added reading can drive most of the weight change if it reaches the connections that receive a signal. The report now describes the share as a property of the readings, and replays both label orders with each move's unpulsed readings and its original learning signal. This comparison estimates gain changes with fixed readings and signals.
+
+The regression tests use synthetic recordings. Real-data checks remain open. Once the researcher approves, make one recording with fixed weights and compare it against the saved quiet learning-off run. [Design and commands](../../../documentation/design/neural-learning/pulse-scale-check-2026-11-15.md).

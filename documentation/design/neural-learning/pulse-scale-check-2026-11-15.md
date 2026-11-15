@@ -44,18 +44,20 @@ With weights fixed, all six passes repeat, so one pass gives all 72 lessons of t
 - how far the correct and swapped gain sets end up apart (mean, largest and root-mean-square difference per connection, and the mean after each pass)
 - how many gains reach their limits
 - whether each set passes 99% at that scale
-- the share of each lesson's reading that the pulse adds on top of the same move without a pulse
+- the share of each lesson's capped cell reading added by the pulse, averaged across the four correct-label lessons
 
-That last number tests the strongest rival explanation. If the pulse supplies most of the reading, then updates follow the pulse rather than the move. That is the pattern that lifted every move together in journal items 21, 30 and 31.
+The added share counts a cell once per learnable connection and sums only positive increases over the same move without a pulse. A cell can contribute to this share even if its connection receives zero learning signal in that lesson.
+
+**Replay with unpulsed cell readings.** For each scale, board and label order, run the same 24 updates from fresh gains with the same recorded learning signals. Use each move's unpulsed cell readings in place of its pulsed readings. Report how far gains move from 1, how far correct and swapped gains end up apart, and the reduction in mean absolute gain change relative to the replay with pulsed readings. A negative reduction means the gain change grew. The fraction is unavailable if the pulsed replay had zero mean gain change. This comparison estimates what the recorded pulses contributed through the cell readings at fixed signals.
 
 **What the replay cannot say.** It estimates update size with the readings held fixed. In a real run, the readings change as the gains change: the output cells feed back to the dopamine cells. So actual learning, and any change in the safe capture's rank, remains unmeasured. A larger gap between correct and swapped gains is not a closure result.
 
 **Cross-checks printed first.** The report compares its own numbers with earlier results:
 - the calibration's no-pulse worst shares (100%, 99.0003%, 99.0054%) and its scale 0.014047
 - the researcher's 22.35% and 72 of 72 failing lessons
-- optionally, with `--learning-off-run`, the real learning-off run's `result.json`. Every lesson's worst share and every starting move score must be bit-identical, because the recorder runs the probe's own forward with the same fixed weights.
+- with `--learning-off-run`, the saved learning-off run's `result.json`. The report requires the three expected boards in order, all 72 lesson identities and worst shares, and all 106 starting move identities and scores. It compares values bit for bit.
 
-A mismatch is printed as `DIFFERS` and is not corrected. It would mean the calibration, the probe and the recorder did not read the same cells.
+The published figures provide context. The exact comparison uses the saved run. If that comparison differs, the report saves its findings and exits with status 1. With no saved run supplied, it prints `NOT CHECKED`.
 
 ## What stays fixed
 
@@ -85,7 +87,7 @@ node --max-old-space-size=256 .codebase/scripts/neural-learning/report-pulse-sca
 
 ## Tests (2026-11-15, synthetic inputs)
 
-[`pulse-readings-v1.test.mjs`](../../../.codebase/tests/neural-learning/pulse-readings-v1.test.mjs) has 9 tests:
+[`pulse-readings-v1.test.mjs`](../../../.codebase/tests/neural-learning/pulse-readings-v1.test.mjs) has 10 tests:
 
 - **Unchanged weights.** Capture on a tiny made-up circuit leaves every weight bit-identical, and each pulse reaches only its own dopamine cells. A forward pass that changes one weight is caught.
 - **Same check as the probe.** The report's protocol comparisons equal the probe's own learning-off cap records exactly: the same worst share, and the same number of comparisons.
@@ -93,9 +95,10 @@ node --max-old-space-size=256 .codebase/scripts/neural-learning/report-pulse-sca
 - **Replay arithmetic.** Each replayed lesson changes a gain by 0.5 × learning signal × (reading + gain − 1), as the probe's rule does. This is checked on the first and second passes, because the gain term is zero on the first.
 - **Incomplete input rejection.** Recordings are rejected when a reading is missing or repeated, the run is unfinished, the packet differs, fixed weights are unconfirmed, the record count is wrong, the mapping is short or its weights are wrong, the rates are malformed, the feedback signals are missing, or a move is not legal.
 - **Larger scale, smaller updates.** In one constructed case, the old scale fails every one of the 72 lessons. The smallest passing scale is larger and passes 99%. Yet on every board it gives smaller gain changes, less difference between correct and swapped gains, and fewer capped readings.
-- **End to end.** The report script runs on synthetic files. It refuses a mapping without 6,046 connections, matches a learning-off run that agrees, flags one that differs by 1e-12 in one lesson, and refuses a run from the wrong condition. The recorder stops at a wrong input pin before reading the graph, marks its manifest `failed`, and refuses a used folder.
+- **Unpulsed reading replay.** Removing pulse-added readings leaves gains unchanged when those connections receive zero learning signal. Removing a small activity increase on the only connections that receive a signal removes more than 95% of the mean gain change.
+- **End to end.** The report script runs on synthetic files. It refuses a mapping without 6,046 connections. It matches a complete learning-off run and exits with status 1 for incomplete, misidentified, or numerically different data while saving the report. It prints `NOT CHECKED` when a saved run is omitted. The recorder stops at a wrong input pin before reading the graph, marks its manifest `failed`, and refuses a used folder.
 
-**Each test was shown to fail when its code is broken.** Ten deliberate breaks were made, one at a time, and every one was caught:
+**Tests of the first version.** Ten deliberate breaks were made, one at a time, and every one was caught:
 - a pulse sent to the wrong cells
 - no weight check
 - earlier lessons left out of the protocol comparisons
@@ -115,7 +118,7 @@ Science track, solo review by the builder, so it is not independent. It covers t
 
 | Row (points) | Objection | Check | Disposition |
 |---|---|---|---|
-| Variables and controls (8) | Check 3 compares a pulsed lesson with unpulsed moves, so it also counts the pulse's own push as a "difference". A scale can pass it just by keeping that push, or by capping nothing at all, while saying nothing about telling moves apart. | The report shows same-pulse comparisons next to the protocol ones. For each replayed scale, it also shows the share of the reading added by the pulse, and the share of lesson readings still capped. | Addressed in the design; **open until real data**. If the protocol set needs a scale near the highest pulsed rate (almost nothing capped), but the same-pulse sets pass far lower, then the check as written measures pulse preservation. Which set should govern check 3 is then a protocol question for the researcher. |
+| Variables and controls (8) | Check 3 compares a pulsed lesson with unpulsed moves, so it also counts the pulse's own push as a "difference". A scale can pass it just by keeping that push, or by capping nothing at all, while saying nothing about telling moves apart. | The report shows same-pulse comparisons next to the protocol ones. The unpulsed reading replay keeps the lesson's learning signal fixed and changes only the cell reading. | **Open until real data.** If the protocol set needs a scale near the highest pulsed rate (almost nothing capped), but the same-pulse sets pass far lower, then the check as written measures pulse preservation. Which set should govern check 3 is then a protocol question for the researcher. |
 | Mathematics and statistics (5) | The binary search assumes the kept share never falls as the scale rises. | Derivation: each term `|min(a, s) − min(b, s)|` cannot fall as `s` rises, and the denominator is fixed. Test: the search agrees with checking every step on 20 random cases. Both sides of each boundary are reported. | Confirmed for the tested scope. |
 | Sufficiency for the conclusion (5) | Gain change from fixed readings could be read as learning. In a real run, the readings move as gains change. | The report and this page say the replay estimates update size only. No closure, rank or score change is computed. | Disclosed limit. A larger correct-vs-swapped gap is not evidence that the safe capture moves up. |
 | Systematic collection (5) | The 22.35% and 72-of-72 rest on the researcher's report; the raw files are not in the repository. | `--learning-off-run` requires every lesson's share kept and every starting score to match the real run bit for bit. | Open until the recording runs. |
@@ -124,11 +127,11 @@ Science track, solo review by the builder, so it is not independent. It covers t
 **Review passes (solo, distinct assumptions, 2026-11-15).** Each pass tested one assumption the decision rests on, with a check that could have overturned it.
 
 1. **Reproducibility.** *Assumption:* the recorder reads what the probe read. *Check:* a diff of the graph setup and forward pass against `probe-wide-learning-v3.mjs`. The only differences are intended: the list of pinned files, the circuit fixed to quiet (drive 0, the value v3 also sets), and writing the mapping. *Disposition:* confirmed for the code; bit-for-bit agreement on real data is the `--learning-off-run` check.
-2. **Rival explanation.** *Assumption:* the pulse share and capped share report what they claim. *Check:* an independent Python calculation on the constructed recording matches the report to 12 digits at all three scales. *Finding:* in that recording, the larger scale *raised* the pulse's share of the reading, from 0.04% to 0.15%, because the pulse's push is no longer flattened. *Disposition:* confirmed as a measurement. The direction is a synthetic illustration, not a prediction, but it shows that a larger scale can make updates follow the pulse more, which is the risk named above.
+2. **Rival explanation.** *Assumption:* the added and capped shares report what their formulas specify. *Check:* an independent Python calculation on the constructed recording matches the report to 12 digits at all three scales. *Finding:* in that recording, the larger scale raised the pulse's share of the reading from 0.04% to 0.15%. This result describes the readings in that fixture. Journal item 39 records why the gain comparison requires a separate measurement.
 3. **Measure.** *Assumption:* a reader can tell whether a passing scale still caps anything. *Check:* the report on the real-sized synthetic recording. At the candidate 0.056522 it shows the highest pulsed rate (0.073), the share of lesson readings still capped (1.7%, against 20.5% at the old scale) and the pulse share (59%, against 36%). *Disposition:* confirmed for the tested scope.
 
-No objection changed the code in these passes. The earlier mutation sweep had already strengthened two tests. An independent review needs the researcher's go-ahead to start another session.
+No objection changed the code in these passes. The earlier mutation sweep had already strengthened two tests. A later independent review reproduced two problems and led to the checks in [journal item 39](../../../research/journal/experiments/2026-11-07-fly-connections-memory.md#39-2026-11-15-independent-review-of-the-pulse-scale-report).
 
 **What the review lets us say.** Once it runs on the graph machine, the tool can say which scale keeps 99% for each kind of comparison, and how much smaller fixed-reading updates become there. It cannot say whether any scale lets the fly learn.
 
-Evidence and history: [journal items 37–38](../../../research/journal/experiments/2026-11-07-fly-connections-memory.md#37-2026-11-15-check-3-failed-in-the-quiet-learning-off-run); [three-board protocol](three-board-feedback-test-2026-11-14.md); [calibration scale check](../../../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/README.md).
+Evidence and history: [journal items 37–39](../../../research/journal/experiments/2026-11-07-fly-connections-memory.md#37-2026-11-15-check-3-failed-in-the-quiet-learning-off-run); [three-board protocol](three-board-feedback-test-2026-11-14.md); [calibration scale check](../../../research/reports/fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/README.md).

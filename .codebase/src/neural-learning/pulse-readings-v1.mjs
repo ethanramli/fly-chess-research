@@ -122,6 +122,8 @@ export function replayGains(lessons, mapping, scale) {
 }
 const changeOf = g => { const d = Array.from(g, x => Math.abs(x - 1)); return { meanAbsChange: avg(d), maxAbsChange: Math.max(...d), changed: d.filter(x => x > 0).length, atLimit: g.filter(x => x === MIN_GAIN || x === MAX_GAIN).length }; };
 const divergenceOf = (a, b) => { const d = Array.from(a, (x, i) => Math.abs(x - b[i])); return { meanAbs: avg(d), maxAbs: Math.max(...d), rms: Math.sqrt(avg(d.map(x => x * x))), differing: d.filter(x => x > 0).length }; };
+const fractionOfChangeRemoved = (withPulse, withoutPulse) =>
+  withPulse.meanAbsChange > 0 ? 1 - withoutPulse.meanAbsChange / withPulse.meanAbsChange : null;
 
 // The whole offline report. Scales replayed: the old one, each comparison set's smallest passing scale, and any extra scales asked for.
 export function buildReport({ manifest, summary, mapping, records, packet, expectedPacketHash, maskEdges = MASK_EDGES, extraScales = [] }) {
@@ -163,20 +165,38 @@ export function buildReport({ manifest, summary, mapping, records, packet, expec
   const scales = [...new Set([OLD_SCALE, ...Object.values(sets).map(s => s.smallestPassing?.scale).filter(x => x != null), ...extraScales])].sort((a, b) => a - b);
   const replay = scales.map(scale => {
     const perBoard = entries.map(([boardId, entry]) => {
-      const run = condition => replayGains(lessonLabels(entry.board.experiences, condition).map(({ move, label }) => entry.reading(move, label)), mapping, scale);
-      const correct = run('correct'), swapped = run('swapped');
-      // Share of a lesson's reading, over the learnable connections, that the pulse adds on top of the same move without a pulse.
-      // A high share means updates follow the pulse more than the move, the pattern that lifted every move together before.
-      const pulseShare = ({ move, label }) => {
+      const correctLabels = lessonLabels(entry.board.experiences, 'correct');
+      const swappedLabels = lessonLabels(entry.board.experiences, 'swapped');
+      const run = (labels, useUnpulsedRates = false) => replayGains(labels.map(({ move, label }) => {
+        const lesson = entry.reading(move, label);
+        return useUnpulsedRates ? { rates: entry.reading(move, 'none').rates, D: lesson.D } : lesson;
+      }), mapping, scale);
+      const correct = run(correctLabels), swapped = run(swappedLabels);
+      // Substitute only the cell rates. Keep each lesson's pulse-delivered learning signal.
+      const correctUnpulsed = run(correctLabels, true), swappedUnpulsed = run(swappedLabels, true);
+      const correctChange = changeOf(correct.gains), swappedChange = changeOf(swapped.gains);
+      const correctUnpulsedChange = changeOf(correctUnpulsed.gains), swappedUnpulsedChange = changeOf(swappedUnpulsed.gains);
+      // Positive additions to cell readings, counted once per connection and independent of the learning signal.
+      const addedReadingShare = ({ move, label }) => {
         const pulsed = entry.reading(move, label).rates, unpulsed = entry.reading(move, 'none').rates;
         let added = 0, total = 0;
         for (const c of mapping.cell) { const k = kcReading(pulsed[c], scale); total += k; added += Math.max(0, k - kcReading(unpulsed[c], scale)); }
         return total ? added / total : 0;
       };
-      return { boardId, correct: changeOf(correct.gains), swapped: changeOf(swapped.gains), divergence: divergenceOf(correct.gains, swapped.gains),
+      return { boardId, correct: correctChange, swapped: swappedChange, divergence: divergenceOf(correct.gains, swapped.gains),
         divergenceByPass: correct.byPass.map((g, p) => divergenceOf(g, swapped.byPass[p]).meanAbs), guardTrips: correct.guardTrips + swapped.guardTrips,
-        pulseShareOfReading: avg(lessonLabels(entry.board.experiences, 'correct').map(pulseShare)),
-        lessonShareAtCap: capShare(lessonLabels(entry.board.experiences, 'correct').map(({ move, label }) => entry.reading(move, label).rates), weights, scale) };
+        shareOfCappedReadingAddedByPulse: avg(correctLabels.map(addedReadingShare)),
+        lessonShareAtCap: capShare(correctLabels.map(({ move, label }) => entry.reading(move, label).rates), weights, scale),
+        unpulsedReadingReplay: {
+          correct: correctUnpulsedChange,
+          swapped: swappedUnpulsedChange,
+          divergence: divergenceOf(correctUnpulsed.gains, swappedUnpulsed.gains),
+          fractionOfMeanAbsChangeRemoved: {
+            correct: fractionOfChangeRemoved(correctChange, correctUnpulsedChange),
+            swapped: fractionOfChangeRemoved(swappedChange, swappedUnpulsedChange),
+          },
+        },
+      };
     });
     const passes = Object.fromEntries(Object.entries(sets).map(([name, s]) => [name, worstKeptOverBoards(s, entries, scale, weights) >= CAP_KEEP]));
     return { scale, passes99: passes, boards: perBoard };

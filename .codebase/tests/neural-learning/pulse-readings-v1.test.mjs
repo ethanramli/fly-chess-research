@@ -168,6 +168,47 @@ test('a larger scale can pass 99% while producing smaller and less different upd
   }
 });
 
+test('unpulsed reading replay keeps the original signals and isolates the effect of changing the readings', () => {
+  const recording = syntheticRecording();
+  // Only the two edges from cell 0 can update. The other 201 edges receive no learning signal.
+  recording.maskEdges = 203;
+  recording.mapping = {
+    cells: [100, 101], weights: [2, 201],
+    edge: Array.from({ length: 203 }, (_, i) => i),
+    type: ['MBON05', 'MBON11', ...Array(201).fill('MBON15')],
+    cell: [0, 0, ...Array(201).fill(1)],
+  };
+  for (const row of recording.records) {
+    row.D = ZERO_D();
+    if (row.pulse === 'reward') row.D.MBON05 = -0.4;
+    if (row.pulse === 'punish') row.D.MBON11 = -0.4;
+    const moveIndex = PACKET.find(b => b.boardId === row.boardId).legal.indexOf(row.move);
+    row.rates = [0.0001 + moveIndex * 1e-7, row.pulse === 'none' ? 0 : 0.01];
+  }
+  const oldScaleBoards = () => buildReport(recording).replay.find(r => r.scale === OLD_SCALE).boards;
+  for (const board of oldScaleBoards()) {
+    // Most of the measured activity was added by the pulse, yet it went to edges that cannot update.
+    assert(board.shareOfCappedReadingAddedByPulse > 0.99);
+    assert(board.divergence.meanAbs > 0);
+    const unpulsed = board.unpulsedReadingReplay;
+    assert.deepEqual(unpulsed.correct, board.correct);
+    assert.deepEqual(unpulsed.swapped, board.swapped);
+    assert.deepEqual(unpulsed.divergence, board.divergence);
+    assert.deepEqual(unpulsed.fractionOfMeanAbsChangeRemoved, { correct: 0, swapped: 0 });
+  }
+  for (const row of recording.records) row.rates = [row.rates[0] * (row.pulse === 'none' ? 1 : 30), 0.01];
+  for (const board of oldScaleBoards()) {
+    // The pulse now adds very little to the total reading, entirely on edges that can update.
+    assert(board.shareOfCappedReadingAddedByPulse < 0.01);
+    const unpulsed = board.unpulsedReadingReplay;
+    for (const condition of ['correct', 'swapped']) {
+      assert(unpulsed.fractionOfMeanAbsChangeRemoved[condition] > 0.95);
+      assert(unpulsed[condition].meanAbsChange > 0, 'unpulsed readings still use the pulsed learning signals');
+    }
+    assert(unpulsed.divergence.meanAbs > 0 && unpulsed.divergence.meanAbs < board.divergence.meanAbs);
+  }
+});
+
 test('report and recorder scripts: end to end on synthetic files; refusals before any graph work', () => {
   const dir = mkdtempSync(join(tmpdir(), 'pulse-readings-')), rec = join(dir, 'recording');
   try {
@@ -186,24 +227,41 @@ test('report and recorder scripts: end to end on synthetic files; refusals befor
       type: [...m.type, ...Array(pad).fill('MBON15')], cell: [...m.cell, ...Array(pad).fill(3)], base: [...m.base, ...Array(pad).fill(1)] }));
     const stdout = execFileSync(process.execPath, [report, '--recording', rec, '--packet', PACKET_PATH, '--out', join(dir, 'r2.json'), '--scales', '0.03'], { encoding: 'utf8' });
     assert.match(stdout, /protocol, correct labels: .* lessons failing 72 of 72/);
+    assert.match(stdout, /NOT CHECKED: exact learning-off comparison/);
     const out = JSON.parse(readFileSync(join(dir, 'r2.json'), 'utf8'));
+    assert.equal(out.learningOffCheck.status, 'not checked');
     assert(out.replay.some(x => x.scale === 0.03) && out.replay.some(x => x.scale === OLD_SCALE));
     assert.throws(() => execFileSync(process.execPath, [report, '--recording', rec, '--packet', PACKET_PATH, '--out', join(dir, 'r2.json')], { stdio: 'pipe' }), /exists/);
-    assert(out.replay.every(x => x.boards.every(b => b.pulseShareOfReading > 0 && b.pulseShareOfReading < 1)));
+    assert(out.replay.every(x => x.boards.every(b => b.shareOfCappedReadingAddedByPulse > 0 && b.shareOfCappedReadingAddedByPulse < 1)));
     // A learning-off run of the probe: 6 passes repeating the lesson cap records, starting scores equal to the no-pulse readings.
     const offRun = (tweak = () => {}) => {
       const lessons = id => out.sets['protocol, correct labels'].boards.find(b => b.boardId === id).lessons;
       const result = { circuit: 'quiet', condition: 'off', boards: BOARD_IDS.map(id => ({ boardId: id,
-        lessons: Array.from({ length: PASSES }, (_, p) => lessons(id).map(l => ({ pass: p + 1, index: l.index, cap: { worstKept: l.worstKeptAtOldScale } }))).flat(),
+        lessons: Array.from({ length: PASSES }, (_, p) => lessons(id).map(l => ({ pass: p + 1, index: l.index, move: l.move, label: l.label, cap: { worstKept: l.worstKeptAtOldScale } }))).flat(),
         checkpoints: [{ pass: 0, scores: Object.fromEntries(PACKET.find(b => b.boardId === id).legal.map(m => [m, 0])) }] })) };
       tweak(result);
       const runDir = mkdtempSync(join(dir, 'off-')); writeFileSync(join(runDir, 'result.json'), JSON.stringify(result)); return runDir;
     };
     const exact = execFileSync(process.execPath, [report, '--recording', rec, '--packet', PACKET_PATH, '--out', join(dir, 'r3.json'), '--learning-off-run', offRun()], { encoding: 'utf8' });
-    assert.match(exact, /matches: learning-off run: lessons whose worst share kept at 0.014047 is bit-identical: recorded 72, earlier 72/);
-    assert.match(exact, /matches: learning-off run: starting move scores bit-identical .*recorded 106, earlier 106/);
-    const off = execFileSync(process.execPath, [report, '--recording', rec, '--packet', PACKET_PATH, '--out', join(dir, 'r4.json'), '--learning-off-run', offRun(r => { r.boards[1].lessons[7].cap.worstKept += 1e-12; })], { encoding: 'utf8' });
-    assert.match(off, /DIFFERS: learning-off run: lessons .*recorded 71, earlier 72/);
+    assert.match(exact, /matches: learning-off run: lesson identities and worst shares match exactly: recorded 72, expected 72/);
+    assert.match(exact, /matches: learning-off run: starting move identities and scores match exactly: recorded 106, expected 106/);
+    assert.equal(JSON.parse(readFileSync(join(dir, 'r3.json'), 'utf8')).learningOffCheck.status, 'matches');
+    const mismatches = [
+      { name: 'different worst share', spoil: r => { r.boards[1].lessons[7].cap.worstKept += 1e-12; }, check: /lesson identities .*recorded 71, expected 72/ },
+      { name: 'empty boards', spoil: r => { r.boards = []; }, check: /lesson identities .*recorded 0, expected 72/ },
+      { name: 'duplicate lesson', spoil: r => { r.boards[0].lessons[1] = r.boards[0].lessons[0]; }, check: /lesson identities .*recorded 71, expected 72/ },
+      { name: 'wrong move', spoil: r => { r.boards[0].lessons[1].move = 'a1a1'; }, check: /lesson identities .*recorded 71, expected 72/ },
+      { name: 'wrong label', spoil: r => { r.boards[0].lessons[1].label = 'none'; }, check: /lesson identities .*recorded 71, expected 72/ },
+      { name: 'missing starting move', spoil: r => { const scores = r.boards[0].checkpoints[0].scores; delete scores[Object.keys(scores)[0]]; }, check: /starting move identities .*recorded 105, expected 106/ },
+      { name: 'duplicate board', spoil: r => { r.boards[0] = r.boards[2]; r.boards[1] = r.boards[2]; }, check: /boards match in packet order/ },
+    ];
+    for (const { name, spoil, check } of mismatches) {
+      const mismatchPath = join(dir, `${name}.json`);
+      const mismatch = spawnSync(process.execPath, [report, '--recording', rec, '--packet', PACKET_PATH, '--out', mismatchPath, '--learning-off-run', offRun(spoil)], { encoding: 'utf8' });
+      assert.equal(mismatch.status, 1, name);
+      assert.match(mismatch.stdout, new RegExp(`DIFFERS: learning-off run: ${check.source}`), name);
+      assert.equal(JSON.parse(readFileSync(mismatchPath, 'utf8')).learningOffCheck.status, 'differs', name);
+    }
     const wrong = spawnSync(process.execPath, [report, '--recording', rec, '--packet', PACKET_PATH, '--out', join(dir, 'r5.json'), '--learning-off-run', offRun(r => { r.condition = 'correct'; })], { encoding: 'utf8' });
     assert.match(wrong.stderr, /not quiet off/); assert(!existsSync(join(dir, 'r5.json')));
     // Recorder: a wrong pin stops the run before the graph is read, and the manifest says so; a used folder is refused.
