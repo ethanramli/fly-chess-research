@@ -1,0 +1,3882 @@
+{
+  "pairs": [
+    {
+      "id": "pin-file",
+      "group": "pin, as written",
+      "move": "a5d5",
+      "good": "4k3/8/4b3/R2n4/8/8/8/4R1K1 w - - 0 1",
+      "bad": "4k3/8/4b3/R2np3/8/8/8/4R1K1 w - - 0 1",
+      "note": "Rook takes knight; the e6 bishop is pinned on the e-file. Bad twin: a black pawn on e5 blocks the pin.",
+      "samePieces": false,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/4b3/R2n4/8/8/8/4R1K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/4b3/R2n4/8/8/8/4R1K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a5d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [],
+          "attackers": [
+            "e6"
+          ],
+          "pinnedAttackers": [
+            "e6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 3
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/4b3/R2np3/8/8/8/4R1K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/4b3/R2np3/8/8/8/4R1K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a5d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "e5e4",
+            "e6c8",
+            "e6d5",
+            "e6d7",
+            "e6f5",
+            "e6f7",
+            "e6g4",
+            "e6g8",
+            "e6h3",
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [
+            "e6d5"
+          ],
+          "attackers": [
+            "e6"
+          ],
+          "pinnedAttackers": [],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 3
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 5,
+          "capturedValue": 3,
+          "pieces": 6,
+          "ownMaterial": 10,
+          "oppMaterial": 6,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": false,
+          "oppMobility": 3
+        },
+        "bad": {
+          "moverValue": 5,
+          "capturedValue": 3,
+          "pieces": 7,
+          "ownMaterial": 10,
+          "oppMaterial": 7,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 12
+        }
+      },
+      "scores": {
+        "piece value": [
+          -2,
+          -2
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          0,
+          -1
+        ],
+        "attacker count": [
+          -1,
+          -1
+        ],
+        "attackers minus defenders": [
+          -1,
+          -1
+        ],
+        "fewer pieces": [
+          -6,
+          -7
+        ],
+        "material balance": [
+          4,
+          3
+        ],
+        "enemy mobility": [
+          -3,
+          -12
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          -1,
+          -2
+        ],
+        "attackers, moves and value": [
+          -213,
+          -222
+        ],
+        "piece count plus value": [
+          -62,
+          -72
+        ],
+        "oracle: recaptures field": [
+          1,
+          0
+        ],
+        "oracle: pin label field": [
+          1,
+          0
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": false,
+        "recapture only, attacked": false,
+        "recapture only, legal": true,
+        "attacker count": false,
+        "attackers minus defenders": false,
+        "fewer pieces": true,
+        "material balance": true,
+        "enemy mobility": true,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": true,
+        "oracle: recaptures field": true,
+        "oracle: pin label field": true,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "pin-diagonal",
+      "group": "pin, as written",
+      "move": "e2e4",
+      "good": "7k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1",
+      "bad": "7k/8/5n2/8/4p3/2P5/1B2Q3/6K1 w - - 0 1",
+      "note": "Queen takes pawn; the f6 knight is pinned on the long diagonal. Bad twin: a white pawn on c3 blocks the pin.",
+      "samePieces": false,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "7k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "e2e4",
+          "target": "e4",
+          "capture": true,
+          "replies": [
+            "h8g7",
+            "h8g8"
+          ],
+          "recaptures": [],
+          "attackers": [
+            "f6"
+          ],
+          "pinnedAttackers": [
+            "f6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 9,
+          "capturedValue": 1
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "7k/8/5n2/8/4p3/2P5/1B2Q3/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/8/5n2/8/4p3/2P5/1B2Q3/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "e2e4",
+          "target": "e4",
+          "capture": true,
+          "replies": [
+            "f6d5",
+            "f6d7",
+            "f6e4",
+            "f6e8",
+            "f6g4",
+            "f6g8",
+            "f6h5",
+            "f6h7",
+            "h8g7",
+            "h8g8"
+          ],
+          "recaptures": [
+            "f6e4"
+          ],
+          "attackers": [
+            "f6"
+          ],
+          "pinnedAttackers": [],
+          "inCheckAfter": false,
+          "moverValue": 9,
+          "capturedValue": 1
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 9,
+          "capturedValue": 1,
+          "pieces": 6,
+          "ownMaterial": 12,
+          "oppMaterial": 4,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": false,
+          "oppMobility": 2
+        },
+        "bad": {
+          "moverValue": 9,
+          "capturedValue": 1,
+          "pieces": 7,
+          "ownMaterial": 13,
+          "oppMaterial": 4,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 10
+        }
+      },
+      "scores": {
+        "piece value": [
+          -8,
+          -8
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          0,
+          -1
+        ],
+        "attacker count": [
+          -1,
+          -1
+        ],
+        "attackers minus defenders": [
+          -1,
+          -1
+        ],
+        "fewer pieces": [
+          -6,
+          -7
+        ],
+        "material balance": [
+          8,
+          9
+        ],
+        "enemy mobility": [
+          -2,
+          -10
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          -7,
+          -8
+        ],
+        "attackers, moves and value": [
+          -812,
+          -820
+        ],
+        "piece count plus value": [
+          -68,
+          -78
+        ],
+        "oracle: recaptures field": [
+          1,
+          0
+        ],
+        "oracle: pin label field": [
+          1,
+          0
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": false,
+        "recapture only, attacked": false,
+        "recapture only, legal": true,
+        "attacker count": false,
+        "attackers minus defenders": false,
+        "fewer pieces": true,
+        "material balance": false,
+        "enemy mobility": true,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": true,
+        "oracle: recaptures field": true,
+        "oracle: pin label field": true,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "recapture-file",
+      "group": "recapture, as written",
+      "move": "a5d5",
+      "good": "4k3/8/4b3/R2n4/8/8/8/4R1K1 w - - 0 1",
+      "bad": "4k3/8/2p1b3/R2n4/8/8/8/4R1K1 w - - 0 1",
+      "note": "Pinned e6 bishop on both. Bad twin: a black pawn on c6 also attacks d5.",
+      "samePieces": false,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/4b3/R2n4/8/8/8/4R1K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/4b3/R2n4/8/8/8/4R1K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a5d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [],
+          "attackers": [
+            "e6"
+          ],
+          "pinnedAttackers": [
+            "e6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 3
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/2p1b3/R2n4/8/8/8/4R1K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/2p1b3/R2n4/8/8/8/4R1K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a5d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "c6c5",
+            "c6d5",
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [
+            "c6d5"
+          ],
+          "attackers": [
+            "c6",
+            "e6"
+          ],
+          "pinnedAttackers": [
+            "e6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 3
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 5,
+          "capturedValue": 3,
+          "pieces": 6,
+          "ownMaterial": 10,
+          "oppMaterial": 6,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": false,
+          "oppMobility": 3
+        },
+        "bad": {
+          "moverValue": 5,
+          "capturedValue": 3,
+          "pieces": 7,
+          "ownMaterial": 10,
+          "oppMaterial": 7,
+          "attackers": 2,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 5
+        }
+      },
+      "scores": {
+        "piece value": [
+          -2,
+          -2
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          0,
+          -1
+        ],
+        "attacker count": [
+          -1,
+          -2
+        ],
+        "attackers minus defenders": [
+          -1,
+          -2
+        ],
+        "fewer pieces": [
+          -6,
+          -7
+        ],
+        "material balance": [
+          4,
+          3
+        ],
+        "enemy mobility": [
+          -3,
+          -5
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          -1,
+          -2
+        ],
+        "attackers, moves and value": [
+          -213,
+          -225
+        ],
+        "piece count plus value": [
+          -62,
+          -72
+        ],
+        "oracle: recaptures field": [
+          1,
+          0
+        ],
+        "oracle: pin label field": [
+          1,
+          1
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": false,
+        "recapture only, attacked": false,
+        "recapture only, legal": true,
+        "attacker count": true,
+        "attackers minus defenders": true,
+        "fewer pieces": true,
+        "material balance": true,
+        "enemy mobility": true,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": true,
+        "oracle: recaptures field": true,
+        "oracle: pin label field": false,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "recapture-diagonal",
+      "group": "recapture, as written",
+      "move": "e2e4",
+      "good": "7k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1",
+      "bad": "4r2k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1",
+      "note": "Pinned f6 knight on both. Bad twin: a black rook on e8 also attacks e4.",
+      "samePieces": false,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "7k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "e2e4",
+          "target": "e4",
+          "capture": true,
+          "replies": [
+            "h8g7",
+            "h8g8"
+          ],
+          "recaptures": [],
+          "attackers": [
+            "f6"
+          ],
+          "pinnedAttackers": [
+            "f6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 9,
+          "capturedValue": 1
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4r2k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "e2e4",
+          "target": "e4",
+          "capture": true,
+          "replies": [
+            "e8a8",
+            "e8b8",
+            "e8c8",
+            "e8d8",
+            "e8e4",
+            "e8e5",
+            "e8e6",
+            "e8e7",
+            "e8f8",
+            "e8g8",
+            "h8g7",
+            "h8g8"
+          ],
+          "recaptures": [
+            "e8e4"
+          ],
+          "attackers": [
+            "e8",
+            "f6"
+          ],
+          "pinnedAttackers": [
+            "f6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 9,
+          "capturedValue": 1
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 9,
+          "capturedValue": 1,
+          "pieces": 6,
+          "ownMaterial": 12,
+          "oppMaterial": 4,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": false,
+          "oppMobility": 2
+        },
+        "bad": {
+          "moverValue": 9,
+          "capturedValue": 1,
+          "pieces": 7,
+          "ownMaterial": 12,
+          "oppMaterial": 9,
+          "attackers": 2,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 12
+        }
+      },
+      "scores": {
+        "piece value": [
+          -8,
+          -8
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          0,
+          -1
+        ],
+        "attacker count": [
+          -1,
+          -2
+        ],
+        "attackers minus defenders": [
+          -1,
+          -2
+        ],
+        "fewer pieces": [
+          -6,
+          -7
+        ],
+        "material balance": [
+          8,
+          3
+        ],
+        "enemy mobility": [
+          -2,
+          -12
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          -7,
+          -8
+        ],
+        "attackers, moves and value": [
+          -812,
+          -832
+        ],
+        "piece count plus value": [
+          -68,
+          -78
+        ],
+        "oracle: recaptures field": [
+          1,
+          0
+        ],
+        "oracle: pin label field": [
+          1,
+          1
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": false,
+        "recapture only, attacked": false,
+        "recapture only, legal": true,
+        "attacker count": true,
+        "attackers minus defenders": true,
+        "fewer pieces": true,
+        "material balance": true,
+        "enemy mobility": true,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": true,
+        "oracle: recaptures field": true,
+        "oracle: pin label field": false,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "value-file",
+      "group": "value",
+      "move": "a5d5",
+      "good": "4k3/8/2p1b3/R2r4/8/8/8/4R1K1 w - - 0 1",
+      "bad": "4k3/8/2p1b3/R2n4/8/8/8/4R1K1 w - - 0 1",
+      "note": "Rook takes rook (good) or knight (bad); c6 pawn recaptures on both.",
+      "samePieces": false,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/2p1b3/R2r4/8/8/8/4R1K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/2p1b3/R2r4/8/8/8/4R1K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a5d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "c6c5",
+            "c6d5",
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [
+            "c6d5"
+          ],
+          "attackers": [
+            "c6",
+            "e6"
+          ],
+          "pinnedAttackers": [
+            "e6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 5
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/2p1b3/R2n4/8/8/8/4R1K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/2p1b3/R2n4/8/8/8/4R1K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a5d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "c6c5",
+            "c6d5",
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [
+            "c6d5"
+          ],
+          "attackers": [
+            "c6",
+            "e6"
+          ],
+          "pinnedAttackers": [
+            "e6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 3
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 5,
+          "capturedValue": 5,
+          "pieces": 7,
+          "ownMaterial": 10,
+          "oppMaterial": 9,
+          "attackers": 2,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 5
+        },
+        "bad": {
+          "moverValue": 5,
+          "capturedValue": 3,
+          "pieces": 7,
+          "ownMaterial": 10,
+          "oppMaterial": 7,
+          "attackers": 2,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 5
+        }
+      },
+      "scores": {
+        "piece value": [
+          0,
+          -2
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          -1,
+          -1
+        ],
+        "attacker count": [
+          -2,
+          -2
+        ],
+        "attackers minus defenders": [
+          -2,
+          -2
+        ],
+        "fewer pieces": [
+          -7,
+          -7
+        ],
+        "material balance": [
+          1,
+          3
+        ],
+        "enemy mobility": [
+          -5,
+          -5
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          0,
+          -2
+        ],
+        "attackers, moves and value": [
+          -25,
+          -225
+        ],
+        "piece count plus value": [
+          -70,
+          -72
+        ],
+        "oracle: recaptures field": [
+          0,
+          0
+        ],
+        "oracle: pin label field": [
+          1,
+          1
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": true,
+        "recapture only, attacked": false,
+        "recapture only, legal": false,
+        "attacker count": false,
+        "attackers minus defenders": false,
+        "fewer pieces": false,
+        "material balance": false,
+        "enemy mobility": false,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": true,
+        "oracle: recaptures field": false,
+        "oracle: pin label field": false,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "value-diagonal",
+      "group": "value",
+      "move": "e2e4",
+      "good": "4r2k/8/5n2/8/4q3/8/1B2Q3/6K1 w - - 0 1",
+      "bad": "4r2k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1",
+      "note": "Queen takes queen (good) or pawn (bad); e8 rook recaptures on both.",
+      "samePieces": false,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4r2k/8/5n2/8/4q3/8/1B2Q3/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/5n2/8/4q3/8/1B2Q3/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "e2e4",
+          "target": "e4",
+          "capture": true,
+          "replies": [
+            "e8a8",
+            "e8b8",
+            "e8c8",
+            "e8d8",
+            "e8e4",
+            "e8e5",
+            "e8e6",
+            "e8e7",
+            "e8f8",
+            "e8g8",
+            "h8g7",
+            "h8g8"
+          ],
+          "recaptures": [
+            "e8e4"
+          ],
+          "attackers": [
+            "e8",
+            "f6"
+          ],
+          "pinnedAttackers": [
+            "f6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 9,
+          "capturedValue": 9
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4r2k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "e2e4",
+          "target": "e4",
+          "capture": true,
+          "replies": [
+            "e8a8",
+            "e8b8",
+            "e8c8",
+            "e8d8",
+            "e8e4",
+            "e8e5",
+            "e8e6",
+            "e8e7",
+            "e8f8",
+            "e8g8",
+            "h8g7",
+            "h8g8"
+          ],
+          "recaptures": [
+            "e8e4"
+          ],
+          "attackers": [
+            "e8",
+            "f6"
+          ],
+          "pinnedAttackers": [
+            "f6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 9,
+          "capturedValue": 1
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 9,
+          "capturedValue": 9,
+          "pieces": 7,
+          "ownMaterial": 12,
+          "oppMaterial": 17,
+          "attackers": 2,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 12
+        },
+        "bad": {
+          "moverValue": 9,
+          "capturedValue": 1,
+          "pieces": 7,
+          "ownMaterial": 12,
+          "oppMaterial": 9,
+          "attackers": 2,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 12
+        }
+      },
+      "scores": {
+        "piece value": [
+          0,
+          -8
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          -1,
+          -1
+        ],
+        "attacker count": [
+          -2,
+          -2
+        ],
+        "attackers minus defenders": [
+          -2,
+          -2
+        ],
+        "fewer pieces": [
+          -7,
+          -7
+        ],
+        "material balance": [
+          -5,
+          3
+        ],
+        "enemy mobility": [
+          -12,
+          -12
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          0,
+          -8
+        ],
+        "attackers, moves and value": [
+          -32,
+          -832
+        ],
+        "piece count plus value": [
+          -70,
+          -78
+        ],
+        "oracle: recaptures field": [
+          0,
+          0
+        ],
+        "oracle: pin label field": [
+          1,
+          1
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": true,
+        "recapture only, attacked": false,
+        "recapture only, legal": false,
+        "attacker count": false,
+        "attackers minus defenders": false,
+        "fewer pieces": false,
+        "material balance": false,
+        "enemy mobility": false,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": true,
+        "oracle: recaptures field": false,
+        "oracle: pin label field": false,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "pin-file-matched",
+      "group": "pin, matched pieces",
+      "move": "a5d5",
+      "good": "4k3/8/4b3/R2n3p/8/8/8/4R1K1 w - - 0 1",
+      "bad": "4k3/8/4b3/R2np3/8/8/8/4R1K1 w - - 0 1",
+      "note": "The black pawn is on h5 (off the pin line) in the good twin and on e5 in the bad twin.",
+      "samePieces": true,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/4b3/R2n3p/8/8/8/4R1K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/4b3/R2n3p/8/8/8/4R1K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a5d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "e8e7",
+            "e8f7",
+            "e8f8",
+            "h5h4"
+          ],
+          "recaptures": [],
+          "attackers": [
+            "e6"
+          ],
+          "pinnedAttackers": [
+            "e6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 3
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/4b3/R2np3/8/8/8/4R1K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/4b3/R2np3/8/8/8/4R1K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a5d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "e5e4",
+            "e6c8",
+            "e6d5",
+            "e6d7",
+            "e6f5",
+            "e6f7",
+            "e6g4",
+            "e6g8",
+            "e6h3",
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [
+            "e6d5"
+          ],
+          "attackers": [
+            "e6"
+          ],
+          "pinnedAttackers": [],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 3
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 5,
+          "capturedValue": 3,
+          "pieces": 7,
+          "ownMaterial": 10,
+          "oppMaterial": 7,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": false,
+          "oppMobility": 4
+        },
+        "bad": {
+          "moverValue": 5,
+          "capturedValue": 3,
+          "pieces": 7,
+          "ownMaterial": 10,
+          "oppMaterial": 7,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 12
+        }
+      },
+      "scores": {
+        "piece value": [
+          -2,
+          -2
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          0,
+          -1
+        ],
+        "attacker count": [
+          -1,
+          -1
+        ],
+        "attackers minus defenders": [
+          -1,
+          -1
+        ],
+        "fewer pieces": [
+          -7,
+          -7
+        ],
+        "material balance": [
+          3,
+          3
+        ],
+        "enemy mobility": [
+          -4,
+          -12
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          -1,
+          -2
+        ],
+        "attackers, moves and value": [
+          -214,
+          -222
+        ],
+        "piece count plus value": [
+          -72,
+          -72
+        ],
+        "oracle: recaptures field": [
+          1,
+          0
+        ],
+        "oracle: pin label field": [
+          1,
+          0
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": false,
+        "recapture only, attacked": false,
+        "recapture only, legal": true,
+        "attacker count": false,
+        "attackers minus defenders": false,
+        "fewer pieces": false,
+        "material balance": false,
+        "enemy mobility": true,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": false,
+        "oracle: recaptures field": true,
+        "oracle: pin label field": true,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "pin-diagonal-matched",
+      "group": "pin, matched pieces",
+      "move": "e2e4",
+      "good": "7k/8/5n2/8/4p3/P7/1B2Q3/6K1 w - - 0 1",
+      "bad": "7k/8/5n2/8/4p3/2P5/1B2Q3/6K1 w - - 0 1",
+      "note": "The white pawn is on a3 in the good twin and on c3 in the bad twin.",
+      "samePieces": true,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "7k/8/5n2/8/4p3/P7/1B2Q3/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/8/5n2/8/4p3/P7/1B2Q3/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "e2e4",
+          "target": "e4",
+          "capture": true,
+          "replies": [
+            "h8g7",
+            "h8g8"
+          ],
+          "recaptures": [],
+          "attackers": [
+            "f6"
+          ],
+          "pinnedAttackers": [
+            "f6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 9,
+          "capturedValue": 1
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "7k/8/5n2/8/4p3/2P5/1B2Q3/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"7k/8/5n2/8/4p3/2P5/1B2Q3/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "e2e4",
+          "target": "e4",
+          "capture": true,
+          "replies": [
+            "f6d5",
+            "f6d7",
+            "f6e4",
+            "f6e8",
+            "f6g4",
+            "f6g8",
+            "f6h5",
+            "f6h7",
+            "h8g7",
+            "h8g8"
+          ],
+          "recaptures": [
+            "f6e4"
+          ],
+          "attackers": [
+            "f6"
+          ],
+          "pinnedAttackers": [],
+          "inCheckAfter": false,
+          "moverValue": 9,
+          "capturedValue": 1
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 9,
+          "capturedValue": 1,
+          "pieces": 7,
+          "ownMaterial": 13,
+          "oppMaterial": 4,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": false,
+          "oppMobility": 2
+        },
+        "bad": {
+          "moverValue": 9,
+          "capturedValue": 1,
+          "pieces": 7,
+          "ownMaterial": 13,
+          "oppMaterial": 4,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 10
+        }
+      },
+      "scores": {
+        "piece value": [
+          -8,
+          -8
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          0,
+          -1
+        ],
+        "attacker count": [
+          -1,
+          -1
+        ],
+        "attackers minus defenders": [
+          -1,
+          -1
+        ],
+        "fewer pieces": [
+          -7,
+          -7
+        ],
+        "material balance": [
+          9,
+          9
+        ],
+        "enemy mobility": [
+          -2,
+          -10
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          -7,
+          -8
+        ],
+        "attackers, moves and value": [
+          -812,
+          -820
+        ],
+        "piece count plus value": [
+          -78,
+          -78
+        ],
+        "oracle: recaptures field": [
+          1,
+          0
+        ],
+        "oracle: pin label field": [
+          1,
+          0
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": false,
+        "recapture only, attacked": false,
+        "recapture only, legal": true,
+        "attacker count": false,
+        "attackers minus defenders": false,
+        "fewer pieces": false,
+        "material balance": false,
+        "enemy mobility": true,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": false,
+        "oracle: recaptures field": true,
+        "oracle: pin label field": true,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "pin-pawn-moves-reversed",
+      "group": "pin, moves reversed",
+      "move": "a4d4",
+      "good": "4k3/8/8/4p3/R2n4/7r/8/K3R3 w - - 0 1",
+      "bad": "4k3/8/8/4p3/R2n4/4r3/8/K3R3 w - - 0 1",
+      "note": "Rook takes knight; the e5 pawn is pinned on the e-file and cannot take on d4. The black rook stands on h3 (14 moves) in the good twin and blocks the pin on e3 (10 moves) in the bad twin, so the enemy has more moves on the good board.",
+      "samePieces": true,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/8/4p3/R2n4/7r/8/K3R3 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/8/4p3/R2n4/7r/8/K3R3 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a4d4",
+          "target": "d4",
+          "capture": true,
+          "replies": [
+            "e5e4",
+            "e8e7",
+            "e8f7",
+            "e8f8",
+            "h3a3",
+            "h3b3",
+            "h3c3",
+            "h3d3",
+            "h3e3",
+            "h3f3",
+            "h3g3",
+            "h3h1",
+            "h3h2",
+            "h3h4",
+            "h3h5",
+            "h3h6",
+            "h3h7",
+            "h3h8"
+          ],
+          "recaptures": [],
+          "attackers": [
+            "e5"
+          ],
+          "pinnedAttackers": [
+            "e5"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 3
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/8/4p3/R2n4/4r3/8/K3R3 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/8/4p3/R2n4/4r3/8/K3R3 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a4d4",
+          "target": "d4",
+          "capture": true,
+          "replies": [
+            "e3a3",
+            "e3b3",
+            "e3c3",
+            "e3d3",
+            "e3e1",
+            "e3e2",
+            "e3e4",
+            "e3f3",
+            "e3g3",
+            "e3h3",
+            "e5d4",
+            "e5e4",
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [
+            "e5d4"
+          ],
+          "attackers": [
+            "e5"
+          ],
+          "pinnedAttackers": [],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 3
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 5,
+          "capturedValue": 3,
+          "pieces": 7,
+          "ownMaterial": 10,
+          "oppMaterial": 9,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": false,
+          "oppMobility": 18
+        },
+        "bad": {
+          "moverValue": 5,
+          "capturedValue": 3,
+          "pieces": 7,
+          "ownMaterial": 10,
+          "oppMaterial": 9,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 15
+        }
+      },
+      "scores": {
+        "piece value": [
+          -2,
+          -2
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          0,
+          -1
+        ],
+        "attacker count": [
+          -1,
+          -1
+        ],
+        "attackers minus defenders": [
+          -1,
+          -1
+        ],
+        "fewer pieces": [
+          -7,
+          -7
+        ],
+        "material balance": [
+          1,
+          1
+        ],
+        "enemy mobility": [
+          -18,
+          -15
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          -1,
+          -2
+        ],
+        "attackers, moves and value": [
+          -228,
+          -225
+        ],
+        "piece count plus value": [
+          -72,
+          -72
+        ],
+        "oracle: recaptures field": [
+          1,
+          0
+        ],
+        "oracle: pin label field": [
+          1,
+          0
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": false,
+        "recapture only, attacked": false,
+        "recapture only, legal": true,
+        "attacker count": false,
+        "attackers minus defenders": false,
+        "fewer pieces": false,
+        "material balance": false,
+        "enemy mobility": false,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": false,
+        "piece count plus value": false,
+        "oracle: recaptures field": true,
+        "oracle: pin label field": true,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "recapture-file-matched",
+      "group": "recapture, matched pieces",
+      "move": "a5d5",
+      "good": "4k3/2p5/4b3/R2n4/8/8/8/4R1K1 w - - 0 1",
+      "bad": "4k3/8/2p1b3/R2n4/8/8/8/4R1K1 w - - 0 1",
+      "note": "The black pawn is on c7 (attacks d6, not d5) in the good twin and on c6 in the bad twin.",
+      "samePieces": true,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/2p5/4b3/R2n4/8/8/8/4R1K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/2p5/4b3/R2n4/8/8/8/4R1K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a5d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "c7c5",
+            "c7c6",
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [],
+          "attackers": [
+            "e6"
+          ],
+          "pinnedAttackers": [
+            "e6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 3
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/2p1b3/R2n4/8/8/8/4R1K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/2p1b3/R2n4/8/8/8/4R1K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a5d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "c6c5",
+            "c6d5",
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [
+            "c6d5"
+          ],
+          "attackers": [
+            "c6",
+            "e6"
+          ],
+          "pinnedAttackers": [
+            "e6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 3
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 5,
+          "capturedValue": 3,
+          "pieces": 7,
+          "ownMaterial": 10,
+          "oppMaterial": 7,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": false,
+          "oppMobility": 5
+        },
+        "bad": {
+          "moverValue": 5,
+          "capturedValue": 3,
+          "pieces": 7,
+          "ownMaterial": 10,
+          "oppMaterial": 7,
+          "attackers": 2,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 5
+        }
+      },
+      "scores": {
+        "piece value": [
+          -2,
+          -2
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          0,
+          -1
+        ],
+        "attacker count": [
+          -1,
+          -2
+        ],
+        "attackers minus defenders": [
+          -1,
+          -2
+        ],
+        "fewer pieces": [
+          -7,
+          -7
+        ],
+        "material balance": [
+          3,
+          3
+        ],
+        "enemy mobility": [
+          -5,
+          -5
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          -1,
+          -2
+        ],
+        "attackers, moves and value": [
+          -215,
+          -225
+        ],
+        "piece count plus value": [
+          -72,
+          -72
+        ],
+        "oracle: recaptures field": [
+          1,
+          0
+        ],
+        "oracle: pin label field": [
+          1,
+          1
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": false,
+        "recapture only, attacked": false,
+        "recapture only, legal": true,
+        "attacker count": true,
+        "attackers minus defenders": true,
+        "fewer pieces": false,
+        "material balance": false,
+        "enemy mobility": false,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": false,
+        "oracle: recaptures field": true,
+        "oracle: pin label field": false,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "recapture-diagonal-matched",
+      "group": "recapture, matched pieces",
+      "move": "e2e4",
+      "good": "1r5k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1",
+      "bad": "4r2k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1",
+      "note": "The black rook is on b8 in the good twin and on e8 in the bad twin.",
+      "samePieces": true,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "1r5k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"1r5k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "e2e4",
+          "target": "e4",
+          "capture": true,
+          "replies": [
+            "b8a8",
+            "b8b2",
+            "b8b3",
+            "b8b4",
+            "b8b5",
+            "b8b6",
+            "b8b7",
+            "b8c8",
+            "b8d8",
+            "b8e8",
+            "b8f8",
+            "b8g8",
+            "h8g7",
+            "h8g8"
+          ],
+          "recaptures": [],
+          "attackers": [
+            "f6"
+          ],
+          "pinnedAttackers": [
+            "f6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 9,
+          "capturedValue": 1
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4r2k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4r2k/8/5n2/8/4p3/8/1B2Q3/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "e2e4",
+          "target": "e4",
+          "capture": true,
+          "replies": [
+            "e8a8",
+            "e8b8",
+            "e8c8",
+            "e8d8",
+            "e8e4",
+            "e8e5",
+            "e8e6",
+            "e8e7",
+            "e8f8",
+            "e8g8",
+            "h8g7",
+            "h8g8"
+          ],
+          "recaptures": [
+            "e8e4"
+          ],
+          "attackers": [
+            "e8",
+            "f6"
+          ],
+          "pinnedAttackers": [
+            "f6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 9,
+          "capturedValue": 1
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 9,
+          "capturedValue": 1,
+          "pieces": 7,
+          "ownMaterial": 12,
+          "oppMaterial": 9,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": false,
+          "oppMobility": 14
+        },
+        "bad": {
+          "moverValue": 9,
+          "capturedValue": 1,
+          "pieces": 7,
+          "ownMaterial": 12,
+          "oppMaterial": 9,
+          "attackers": 2,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 12
+        }
+      },
+      "scores": {
+        "piece value": [
+          -8,
+          -8
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          0,
+          -1
+        ],
+        "attacker count": [
+          -1,
+          -2
+        ],
+        "attackers minus defenders": [
+          -1,
+          -2
+        ],
+        "fewer pieces": [
+          -7,
+          -7
+        ],
+        "material balance": [
+          3,
+          3
+        ],
+        "enemy mobility": [
+          -14,
+          -12
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          -7,
+          -8
+        ],
+        "attackers, moves and value": [
+          -824,
+          -832
+        ],
+        "piece count plus value": [
+          -78,
+          -78
+        ],
+        "oracle: recaptures field": [
+          1,
+          0
+        ],
+        "oracle: pin label field": [
+          1,
+          1
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": false,
+        "recapture only, attacked": false,
+        "recapture only, legal": true,
+        "attacker count": true,
+        "attackers minus defenders": true,
+        "fewer pieces": false,
+        "material balance": false,
+        "enemy mobility": false,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": false,
+        "oracle: recaptures field": true,
+        "oracle: pin label field": false,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "recapture-king",
+      "group": "recapture, king defence",
+      "move": "b4d5",
+      "good": "8/8/4kn1R/3p4/1N2P3/8/8/6K1 w - - 0 1",
+      "bad": "8/8/4kn1R/3p4/1N6/8/P7/6K1 w - - 0 1",
+      "note": "Knight takes pawn; the f6 knight is pinned by the h6 rook and the e6 king attacks d5 on both. The white pawn defends d5 from e4 (good) or stands on a2 (bad).",
+      "samePieces": true,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "8/8/4kn1R/3p4/1N2P3/8/8/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"8/8/4kn1R/3p4/1N2P3/8/8/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "b4d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "e6d6",
+            "e6d7",
+            "e6e5",
+            "e6f7"
+          ],
+          "recaptures": [],
+          "attackers": [
+            "e6",
+            "f6"
+          ],
+          "pinnedAttackers": [
+            "f6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 3,
+          "capturedValue": 1
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "8/8/4kn1R/3p4/1N6/8/P7/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"8/8/4kn1R/3p4/1N6/8/P7/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "b4d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "e6d5",
+            "e6d6",
+            "e6d7",
+            "e6e5",
+            "e6f5",
+            "e6f7"
+          ],
+          "recaptures": [
+            "e6d5"
+          ],
+          "attackers": [
+            "e6",
+            "f6"
+          ],
+          "pinnedAttackers": [
+            "f6"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 3,
+          "capturedValue": 1
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 3,
+          "capturedValue": 1,
+          "pieces": 7,
+          "ownMaterial": 9,
+          "oppMaterial": 4,
+          "attackers": 2,
+          "defenders": 1,
+          "legalRecapture": false,
+          "oppMobility": 4
+        },
+        "bad": {
+          "moverValue": 3,
+          "capturedValue": 1,
+          "pieces": 7,
+          "ownMaterial": 9,
+          "oppMaterial": 4,
+          "attackers": 2,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 6
+        }
+      },
+      "scores": {
+        "piece value": [
+          -2,
+          -2
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          0,
+          -1
+        ],
+        "attacker count": [
+          -2,
+          -2
+        ],
+        "attackers minus defenders": [
+          -1,
+          -2
+        ],
+        "fewer pieces": [
+          -7,
+          -7
+        ],
+        "material balance": [
+          5,
+          5
+        ],
+        "enemy mobility": [
+          -4,
+          -6
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          -1,
+          -2
+        ],
+        "attackers, moves and value": [
+          -224,
+          -226
+        ],
+        "piece count plus value": [
+          -72,
+          -72
+        ],
+        "oracle: recaptures field": [
+          1,
+          0
+        ],
+        "oracle: pin label field": [
+          1,
+          1
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": false,
+        "recapture only, attacked": false,
+        "recapture only, legal": true,
+        "attacker count": false,
+        "attackers minus defenders": true,
+        "fewer pieces": false,
+        "material balance": false,
+        "enemy mobility": true,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": false,
+        "oracle: recaptures field": true,
+        "oracle: pin label field": false,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "idea1-training",
+      "group": "idea 1 training",
+      "move": "a5d5",
+      "good": "4k3/8/8/R2n4/8/8/8/6K1 w - - 0 1",
+      "bad": "4k3/8/2p5/R2n4/8/8/8/6K1 w - - 0 1",
+      "note": "Rook takes knight; a black pawn on c6 recaptures in the bad twin.",
+      "samePieces": false,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/8/R2n4/8/8/8/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/8/R2n4/8/8/8/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a5d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [],
+          "attackers": [],
+          "pinnedAttackers": [],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 3
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/2p5/R2n4/8/8/8/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/2p5/R2n4/8/8/8/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a5d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "c6c5",
+            "c6d5",
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [
+            "c6d5"
+          ],
+          "attackers": [
+            "c6"
+          ],
+          "pinnedAttackers": [],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 3
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 5,
+          "capturedValue": 3,
+          "pieces": 4,
+          "ownMaterial": 5,
+          "oppMaterial": 3,
+          "attackers": 0,
+          "defenders": 0,
+          "legalRecapture": false,
+          "oppMobility": 3
+        },
+        "bad": {
+          "moverValue": 5,
+          "capturedValue": 3,
+          "pieces": 5,
+          "ownMaterial": 5,
+          "oppMaterial": 4,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 5
+        }
+      },
+      "scores": {
+        "piece value": [
+          -2,
+          -2
+        ],
+        "recapture only, attacked": [
+          0,
+          -1
+        ],
+        "recapture only, legal": [
+          0,
+          -1
+        ],
+        "attacker count": [
+          0,
+          -1
+        ],
+        "attackers minus defenders": [
+          0,
+          -1
+        ],
+        "fewer pieces": [
+          -4,
+          -5
+        ],
+        "material balance": [
+          2,
+          1
+        ],
+        "enemy mobility": [
+          -3,
+          -5
+        ],
+        "fixed sum of concept scores": [
+          2,
+          0
+        ],
+        "fixed sum, graded value": [
+          0,
+          -2
+        ],
+        "attackers, moves and value": [
+          -203,
+          -215
+        ],
+        "piece count plus value": [
+          -42,
+          -52
+        ],
+        "oracle: recaptures field": [
+          1,
+          0
+        ],
+        "oracle: pin label field": [
+          0,
+          0
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": false,
+        "recapture only, attacked": true,
+        "recapture only, legal": true,
+        "attacker count": true,
+        "attackers minus defenders": true,
+        "fewer pieces": true,
+        "material balance": true,
+        "enemy mobility": true,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": true,
+        "oracle: recaptures field": true,
+        "oracle: pin label field": false,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "idea2-training",
+      "group": "idea 2 training, as written",
+      "move": "b4d6",
+      "good": "4k3/4b3/8/8/1B6/8/8/4RK2 w - - 0 1",
+      "bad": "4k3/4b3/8/8/1B6/8/4P3/4RK2 w - - 0 1",
+      "note": "The checker's own test boards: bishop to d6; the e7 bishop is pinned unless a white pawn on e2 blocks the e-file.",
+      "samePieces": false,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/4b3/8/8/1B6/8/8/4RK2 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/4b3/8/8/1B6/8/8/4RK2 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "b4d6",
+          "target": "d6",
+          "capture": false,
+          "replies": [
+            "e8d7",
+            "e8d8",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [],
+          "attackers": [
+            "e7"
+          ],
+          "pinnedAttackers": [
+            "e7"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 3,
+          "capturedValue": 0
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/4b3/8/8/1B6/8/4P3/4RK2 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/4b3/8/8/1B6/8/4P3/4RK2 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "b4d6",
+          "target": "d6",
+          "capture": false,
+          "replies": [
+            "e7d6",
+            "e7d8",
+            "e7f6",
+            "e7f8",
+            "e7g5",
+            "e7h4",
+            "e8d7",
+            "e8d8",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [
+            "e7d6"
+          ],
+          "attackers": [
+            "e7"
+          ],
+          "pinnedAttackers": [],
+          "inCheckAfter": false,
+          "moverValue": 3,
+          "capturedValue": 0
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 3,
+          "capturedValue": 0,
+          "pieces": 5,
+          "ownMaterial": 8,
+          "oppMaterial": 3,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": false,
+          "oppMobility": 4
+        },
+        "bad": {
+          "moverValue": 3,
+          "capturedValue": 0,
+          "pieces": 6,
+          "ownMaterial": 9,
+          "oppMaterial": 3,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 10
+        }
+      },
+      "scores": {
+        "piece value": [
+          -3,
+          -3
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          0,
+          -1
+        ],
+        "attacker count": [
+          -1,
+          -1
+        ],
+        "attackers minus defenders": [
+          -1,
+          -1
+        ],
+        "fewer pieces": [
+          -5,
+          -6
+        ],
+        "material balance": [
+          5,
+          6
+        ],
+        "enemy mobility": [
+          -4,
+          -10
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          -2,
+          -3
+        ],
+        "attackers, moves and value": [
+          -314,
+          -320
+        ],
+        "piece count plus value": [
+          -53,
+          -63
+        ],
+        "oracle: recaptures field": [
+          1,
+          0
+        ],
+        "oracle: pin label field": [
+          1,
+          0
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": false,
+        "recapture only, attacked": false,
+        "recapture only, legal": true,
+        "attacker count": false,
+        "attackers minus defenders": false,
+        "fewer pieces": true,
+        "material balance": false,
+        "enemy mobility": true,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": true,
+        "oracle: recaptures field": true,
+        "oracle: pin label field": true,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "idea2-training-matched",
+      "group": "idea 2 training, matched pieces",
+      "move": "b4d6",
+      "good": "4k3/4b3/8/8/1B6/8/P7/4RK2 w - - 0 1",
+      "bad": "4k3/4b3/8/8/1B6/8/4P3/4RK2 w - - 0 1",
+      "note": "The white pawn is on a2 in the good twin and on e2 in the bad twin.",
+      "samePieces": true,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/4b3/8/8/1B6/8/P7/4RK2 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/4b3/8/8/1B6/8/P7/4RK2 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "b4d6",
+          "target": "d6",
+          "capture": false,
+          "replies": [
+            "e8d7",
+            "e8d8",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [],
+          "attackers": [
+            "e7"
+          ],
+          "pinnedAttackers": [
+            "e7"
+          ],
+          "inCheckAfter": false,
+          "moverValue": 3,
+          "capturedValue": 0
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/4b3/8/8/1B6/8/4P3/4RK2 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/4b3/8/8/1B6/8/4P3/4RK2 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "b4d6",
+          "target": "d6",
+          "capture": false,
+          "replies": [
+            "e7d6",
+            "e7d8",
+            "e7f6",
+            "e7f8",
+            "e7g5",
+            "e7h4",
+            "e8d7",
+            "e8d8",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [
+            "e7d6"
+          ],
+          "attackers": [
+            "e7"
+          ],
+          "pinnedAttackers": [],
+          "inCheckAfter": false,
+          "moverValue": 3,
+          "capturedValue": 0
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 3,
+          "capturedValue": 0,
+          "pieces": 6,
+          "ownMaterial": 9,
+          "oppMaterial": 3,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": false,
+          "oppMobility": 4
+        },
+        "bad": {
+          "moverValue": 3,
+          "capturedValue": 0,
+          "pieces": 6,
+          "ownMaterial": 9,
+          "oppMaterial": 3,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 10
+        }
+      },
+      "scores": {
+        "piece value": [
+          -3,
+          -3
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          0,
+          -1
+        ],
+        "attacker count": [
+          -1,
+          -1
+        ],
+        "attackers minus defenders": [
+          -1,
+          -1
+        ],
+        "fewer pieces": [
+          -6,
+          -6
+        ],
+        "material balance": [
+          6,
+          6
+        ],
+        "enemy mobility": [
+          -4,
+          -10
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          -2,
+          -3
+        ],
+        "attackers, moves and value": [
+          -314,
+          -320
+        ],
+        "piece count plus value": [
+          -63,
+          -63
+        ],
+        "oracle: recaptures field": [
+          1,
+          0
+        ],
+        "oracle: pin label field": [
+          1,
+          0
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": false,
+        "recapture only, attacked": false,
+        "recapture only, legal": true,
+        "attacker count": false,
+        "attackers minus defenders": false,
+        "fewer pieces": false,
+        "material balance": false,
+        "enemy mobility": true,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": false,
+        "oracle: recaptures field": true,
+        "oracle: pin label field": true,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "idea3-training",
+      "group": "idea 3 training",
+      "move": "a5d5",
+      "good": "4k3/8/2p5/R2r4/8/8/8/6K1 w - - 0 1",
+      "bad": "4k3/8/2p5/R2n4/8/8/8/6K1 w - - 0 1",
+      "note": "Rook takes rook (good) or knight (bad); the c6 pawn recaptures on both.",
+      "samePieces": false,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/2p5/R2r4/8/8/8/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/2p5/R2r4/8/8/8/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a5d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "c6c5",
+            "c6d5",
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [
+            "c6d5"
+          ],
+          "attackers": [
+            "c6"
+          ],
+          "pinnedAttackers": [],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 5
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/2p5/R2n4/8/8/8/6K1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/2p5/R2n4/8/8/8/6K1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "a5d5",
+          "target": "d5",
+          "capture": true,
+          "replies": [
+            "c6c5",
+            "c6d5",
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [
+            "c6d5"
+          ],
+          "attackers": [
+            "c6"
+          ],
+          "pinnedAttackers": [],
+          "inCheckAfter": false,
+          "moverValue": 5,
+          "capturedValue": 3
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 5,
+          "capturedValue": 5,
+          "pieces": 5,
+          "ownMaterial": 5,
+          "oppMaterial": 6,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 5
+        },
+        "bad": {
+          "moverValue": 5,
+          "capturedValue": 3,
+          "pieces": 5,
+          "ownMaterial": 5,
+          "oppMaterial": 4,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 5
+        }
+      },
+      "scores": {
+        "piece value": [
+          0,
+          -2
+        ],
+        "recapture only, attacked": [
+          -1,
+          -1
+        ],
+        "recapture only, legal": [
+          -1,
+          -1
+        ],
+        "attacker count": [
+          -1,
+          -1
+        ],
+        "attackers minus defenders": [
+          -1,
+          -1
+        ],
+        "fewer pieces": [
+          -5,
+          -5
+        ],
+        "material balance": [
+          -1,
+          1
+        ],
+        "enemy mobility": [
+          -5,
+          -5
+        ],
+        "fixed sum of concept scores": [
+          1,
+          0
+        ],
+        "fixed sum, graded value": [
+          0,
+          -2
+        ],
+        "attackers, moves and value": [
+          -15,
+          -215
+        ],
+        "piece count plus value": [
+          -50,
+          -52
+        ],
+        "oracle: recaptures field": [
+          0,
+          0
+        ],
+        "oracle: pin label field": [
+          0,
+          0
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": true,
+        "recapture only, attacked": false,
+        "recapture only, legal": false,
+        "attacker count": false,
+        "attackers minus defenders": false,
+        "fewer pieces": false,
+        "material balance": false,
+        "enemy mobility": false,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": true,
+        "oracle: recaptures field": false,
+        "oracle: pin label field": false,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    },
+    {
+      "id": "quiet-pawn-attacker",
+      "group": "quiet safety",
+      "move": "g1f3",
+      "good": "4k3/8/8/8/8/8/8/4K1N1 w - - 0 1",
+      "bad": "4k3/8/8/8/4p3/8/8/4K1N1 w - - 0 1",
+      "note": "Knight to f3; a black pawn on e4 attacks f3 in the bad twin.",
+      "samePieces": false,
+      "checker": {
+        "good": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/8/8/8/8/8/4K1N1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/8/8/8/8/8/4K1N1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "g1f3",
+          "target": "f3",
+          "capture": false,
+          "replies": [
+            "e8d7",
+            "e8d8",
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [],
+          "attackers": [],
+          "pinnedAttackers": [],
+          "inCheckAfter": false,
+          "moverValue": 3,
+          "capturedValue": 0
+        },
+        "bad": {
+          "schema": "landing-square-certificate-v1",
+          "rootFen": "4k3/8/8/8/4p3/8/8/4K1N1 w - - 0 1",
+          "rootPgn": "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n[SetUp \"1\"]\n[FEN \"4k3/8/8/8/4p3/8/8/4K1N1 w - - 0 1\"]\n *",
+          "actor": "w",
+          "move": "g1f3",
+          "target": "f3",
+          "capture": false,
+          "replies": [
+            "e4e3",
+            "e4f3",
+            "e8d7",
+            "e8d8",
+            "e8e7",
+            "e8f7",
+            "e8f8"
+          ],
+          "recaptures": [
+            "e4f3"
+          ],
+          "attackers": [
+            "e4"
+          ],
+          "pinnedAttackers": [],
+          "inCheckAfter": false,
+          "moverValue": 3,
+          "capturedValue": 0
+        }
+      },
+      "features": {
+        "good": {
+          "moverValue": 3,
+          "capturedValue": 0,
+          "pieces": 3,
+          "ownMaterial": 3,
+          "oppMaterial": 0,
+          "attackers": 0,
+          "defenders": 0,
+          "legalRecapture": false,
+          "oppMobility": 5
+        },
+        "bad": {
+          "moverValue": 3,
+          "capturedValue": 0,
+          "pieces": 4,
+          "ownMaterial": 3,
+          "oppMaterial": 1,
+          "attackers": 1,
+          "defenders": 0,
+          "legalRecapture": true,
+          "oppMobility": 7
+        }
+      },
+      "scores": {
+        "piece value": [
+          -3,
+          -3
+        ],
+        "recapture only, attacked": [
+          0,
+          -1
+        ],
+        "recapture only, legal": [
+          0,
+          -1
+        ],
+        "attacker count": [
+          0,
+          -1
+        ],
+        "attackers minus defenders": [
+          0,
+          -1
+        ],
+        "fewer pieces": [
+          -3,
+          -4
+        ],
+        "material balance": [
+          3,
+          2
+        ],
+        "enemy mobility": [
+          -5,
+          -7
+        ],
+        "fixed sum of concept scores": [
+          2,
+          0
+        ],
+        "fixed sum, graded value": [
+          -1,
+          -3
+        ],
+        "attackers, moves and value": [
+          -305,
+          -317
+        ],
+        "piece count plus value": [
+          -33,
+          -43
+        ],
+        "oracle: recaptures field": [
+          1,
+          0
+        ],
+        "oracle: pin label field": [
+          0,
+          0
+        ],
+        "oracle: combined answer": [
+          1,
+          0
+        ],
+        "oracle: fixed sum": [
+          1,
+          0
+        ]
+      },
+      "correct": {
+        "piece value": false,
+        "recapture only, attacked": true,
+        "recapture only, legal": true,
+        "attacker count": true,
+        "attackers minus defenders": true,
+        "fewer pieces": true,
+        "material balance": true,
+        "enemy mobility": true,
+        "fixed sum of concept scores": true,
+        "fixed sum, graded value": true,
+        "attackers, moves and value": true,
+        "piece count plus value": true,
+        "oracle: recaptures field": true,
+        "oracle: pin label field": false,
+        "oracle: combined answer": true,
+        "oracle: fixed sum": true
+      }
+    }
+  ],
+  "groups": [
+    "pin, as written",
+    "recapture, as written",
+    "value",
+    "pin, matched pieces",
+    "pin, moves reversed",
+    "recapture, matched pieces",
+    "recapture, king defence",
+    "idea 1 training",
+    "idea 2 training, as written",
+    "idea 2 training, matched pieces",
+    "idea 3 training",
+    "quiet safety"
+  ],
+  "controls": [
+    "piece value",
+    "recapture only, attacked",
+    "recapture only, legal",
+    "attacker count",
+    "attackers minus defenders",
+    "fewer pieces",
+    "material balance",
+    "enemy mobility",
+    "fixed sum of concept scores",
+    "fixed sum, graded value",
+    "attackers, moves and value",
+    "piece count plus value",
+    "oracle: recaptures field",
+    "oracle: pin label field",
+    "oracle: combined answer",
+    "oracle: fixed sum"
+  ],
+  "table": {
+    "piece value": {
+      "pin, as written": {
+        "correct": 0,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 0,
+        "total": 2
+      },
+      "value": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 0,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 0,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 0,
+        "total": 1
+      }
+    },
+    "recapture only, attacked": {
+      "pin, as written": {
+        "correct": 0,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 0,
+        "total": 2
+      },
+      "value": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 0,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 0,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 0,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "recapture only, legal": {
+      "pin, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "value": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 1,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 0,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "attacker count": {
+      "pin, as written": {
+        "correct": 0,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "value": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 0,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 0,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "attackers minus defenders": {
+      "pin, as written": {
+        "correct": 0,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "value": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 0,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 0,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "fewer pieces": {
+      "pin, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "value": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 0,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 0,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 0,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "material balance": {
+      "pin, as written": {
+        "correct": 1,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "value": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 0,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 0,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 0,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "enemy mobility": {
+      "pin, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "value": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 0,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 0,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 0,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "fixed sum of concept scores": {
+      "pin, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "value": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 1,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "fixed sum, graded value": {
+      "pin, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "value": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 1,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "attackers, moves and value": {
+      "pin, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "value": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 0,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "piece count plus value": {
+      "pin, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "value": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 0,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 0,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "oracle: recaptures field": {
+      "pin, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "value": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 1,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 0,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "oracle: pin label field": {
+      "pin, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 0,
+        "total": 2
+      },
+      "value": {
+        "correct": 0,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 1,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 0,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 0,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 0,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 0,
+        "total": 1
+      }
+    },
+    "oracle: combined answer": {
+      "pin, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "value": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 1,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "oracle: fixed sum": {
+      "pin, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, as written": {
+        "correct": 2,
+        "total": 2
+      },
+      "value": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "pin, moves reversed": {
+        "correct": 1,
+        "total": 1
+      },
+      "recapture, matched pieces": {
+        "correct": 2,
+        "total": 2
+      },
+      "recapture, king defence": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 1 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, as written": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 2 training, matched pieces": {
+        "correct": 1,
+        "total": 1
+      },
+      "idea 3 training": {
+        "correct": 1,
+        "total": 1
+      },
+      "quiet safety": {
+        "correct": 1,
+        "total": 1
+      }
+    }
+  },
+  "override": {
+    "good": {
+      "fen": "4k3/8/8/3p4/8/8/8/3QK3 w - - 0 1",
+      "move": "d1d5",
+      "note": "Queen takes an undefended pawn."
+    },
+    "bad": {
+      "fen": "4k3/8/2p5/R2n4/8/8/8/6K1 w - - 0 1",
+      "move": "a5d5",
+      "note": "Rook takes a knight that a pawn recaptures."
+    },
+    "correct": {
+      "piece value": false,
+      "recapture only, attacked": true,
+      "recapture only, legal": true,
+      "attacker count": true,
+      "attackers minus defenders": true,
+      "fewer pieces": true,
+      "material balance": true,
+      "enemy mobility": true,
+      "fixed sum of concept scores": true,
+      "fixed sum, graded value": false,
+      "attackers, moves and value": false,
+      "piece count plus value": true,
+      "oracle: recaptures field": true,
+      "oracle: pin label field": false,
+      "oracle: combined answer": true,
+      "oracle: fixed sum": true
+    }
+  },
+  "enPassant": {
+    "fen": "4k3/8/8/8/3p4/8/4P3/4K3 w - - 0 1",
+    "move": "e2e4",
+    "checkerStatus": "success",
+    "recaptures": [],
+    "enPassantCaptures": [
+      "d4e3"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+king reply, landing square guarded by a pawn
+  8/8/4k3/3p4/1N2P3/8/8/6K1 w - - 0 1 b4d5
+  checker 1 (legal recaptures []) | extended match step 1 (threats ["e6"], guards ["e4"], checkers [], live []) | if pins cancelled guards: 1 OK
+king reply, landing square not guarded
+  8/8/4k3/3p4/1N6/8/P7/6K1 w - - 0 1 b4d5
+  checker -2 (legal recaptures ["e6d5"]) | extended match step -2 (threats ["e6"], guards [], checkers [], live ["e6"]) | if pins cancelled guards: -2 OK
+king reply, the guard is itself pinned (still guards)
+  8/8/4k3/3p4/1N6/8/8/r2R2K1 w - - 0 1 b4d5
+  checker 1 (legal recaptures []) | extended match step 1 (threats ["e6"], guards ["d1"], checkers [], live []) | if pins cancelled guards: -2 OK
+double check: pawn c7 reaches d6 but may not take
+  4k3/2p5/3p4/8/4N3/8/8/4R1K1 w - - 0 1 e4d6
+  checker 1 (legal recaptures []) | extended match step 1 (threats ["c7"], guards [], checkers ["d6","e1"], live []) | if pins cancelled guards: 1 OK
+same board without the rook: single check by the moved knight
+  4k3/2p5/3p4/8/4N3/8/8/6K1 w - - 0 1 e4d6
+  checker -2 (legal recaptures ["c7d6"]) | extended match step -2 (threats ["c7"], guards [], checkers ["d6"], live ["c7"]) | if pins cancelled guards: -2 OK

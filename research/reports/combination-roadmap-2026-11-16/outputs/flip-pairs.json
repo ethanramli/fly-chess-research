@@ -1,0 +1,1528 @@
+{
+ "schema": "concept-flip-pairs-design-check-v1",
+ "seed": 20261116,
+ "wantedPerType": 30,
+ "types": {
+  "shared defender: pinned or free": {
+   "accepted": 30,
+   "attempts": 6142,
+   "seconds": 161,
+   "rejections": {
+    "construction: line does not fit": 4157,
+    "side not to move is in check": 94,
+    "best moves are not the two intended captures": 7,
+    "an intended capture is not legal": 968,
+    "construction: no square for taker 2": 370,
+    "match step differs from the checker on some move (king reply, discovered or double check)": 122,
+    "the intended captures do not swap order between the boards": 359,
+    "best move is not unique": 23,
+    "single-concept numbers differ between the boards (a fixed sum could separate them)": 8,
+    "construction: defender reaches fewer than two free squares": 4
+   },
+   "pairs": [
+    {
+     "id": "shared-defender-1",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king c2 -> d7",
+     "boards": [
+      {
+       "fen": "7K/8/8/8/3n4/2P5/2k1nQ2/6rR w - - 0 1",
+       "best": "h1g1",
+       "score": 5,
+       "next": 3,
+       "moves": 25
+      },
+      {
+       "fen": "7K/3k4/8/8/3n4/2P5/4nQ2/6rR w - - 0 1",
+       "best": "c3d4",
+       "score": 2,
+       "next": 0,
+       "moves": 25
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-2",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king a6 -> g1",
+     "boards": [
+      {
+       "fen": "8/8/k5K1/r2rb3/5P2/R2R4/8/8 w - - 0 1",
+       "best": "d3d5",
+       "score": 5,
+       "next": 2,
+       "moves": 18
+      },
+      {
+       "fen": "8/8/6K1/r2rb3/5P2/R2R4/8/6k1 w - - 0 1",
+       "best": "f4e5",
+       "score": 2,
+       "next": 0,
+       "moves": 18
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-3",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king f1 -> h5",
+     "boards": [
+      {
+       "fen": "8/2Q2R2/1K6/8/8/r4rq1/1P6/5k2 w - - 0 1",
+       "best": "c7g3",
+       "score": 9,
+       "next": 5,
+       "moves": 29
+      },
+      {
+       "fen": "8/2Q2R2/1K6/7k/8/r4rq1/1P6/8 w - - 0 1",
+       "best": "b2a3",
+       "score": 4,
+       "next": 0,
+       "moves": 29
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-4",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king f3 -> f5",
+     "boards": [
+      {
+       "fen": "5K2/8/8/8/1N6/2n2k2/1P1Qn3/2qQ4 w - - 0 1",
+       "best": "d2c1",
+       "score": 9,
+       "next": 2,
+       "moves": 32
+      },
+      {
+       "fen": "5K2/8/8/5k2/1N6/2n5/1P1Qn3/2qQ4 w - - 0 1",
+       "best": "b2c3",
+       "score": 2,
+       "next": 0,
+       "moves": 32
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-5",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king e4 -> f4",
+     "boards": [
+      {
+       "fen": "3K4/3Q4/8/8/4k1n1/5b1P/8/3q3Q w - - 0 1",
+       "best": "d7d1",
+       "score": 9,
+       "next": 3,
+       "moves": 15
+      },
+      {
+       "fen": "3K4/3Q4/8/8/5kn1/5b1P/8/3q3Q w - - 0 1",
+       "best": "h3g4",
+       "score": 2,
+       "next": 0,
+       "moves": 15
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-6",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king b5 -> a5",
+     "boards": [
+      {
+       "fen": "K7/8/3r4/1k2P3/2n5/3B4/3q4/2Q5 w - - 0 1",
+       "best": "c1d2",
+       "score": 9,
+       "next": 5,
+       "moves": 24
+      },
+      {
+       "fen": "K7/8/3r4/k3P3/2n5/3B4/3q4/2Q5 w - - 0 1",
+       "best": "e5d6",
+       "score": 4,
+       "next": 3,
+       "moves": 24
+      }
+     ],
+     "third": {
+      "boards": [
+       {
+        "fen": "K7/8/3r4/k3P3/2n5/3B4/3q4/2Q5 w - - 0 1",
+        "best": "e5d6",
+        "score": 4,
+        "next": 3,
+        "moves": 24
+       },
+       {
+        "fen": "K7/8/3r4/k3P3/8/n2B4/3q4/2Q5 w - - 0 1",
+        "best": "c1d2",
+        "score": 9,
+        "next": 5,
+        "moves": 30
+       }
+      ]
+     }
+    },
+    {
+     "id": "shared-defender-7",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king d4 -> h4",
+     "boards": [
+      {
+       "fen": "8/K5R1/3Q4/b2r2r1/1P1k4/8/8/8 w - - 0 1",
+       "best": "g7g5",
+       "score": 5,
+       "next": 3,
+       "moves": 30
+      },
+      {
+       "fen": "8/K5R1/3Q4/b2r2r1/1P5k/8/8/8 w - - 0 1",
+       "best": "b4a5",
+       "score": 2,
+       "next": 0,
+       "moves": 30
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-8",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king b3 -> b8",
+     "boards": [
+      {
+       "fen": "8/8/8/3K4/3n4/1kP1r3/2n1Q3/3Q4 w - - 0 1",
+       "best": "e2e3",
+       "score": 5,
+       "next": 3,
+       "moves": 28
+      },
+      {
+       "fen": "1k6/8/8/3K4/3n4/2P1r3/2n1Q3/3Q4 w - - 0 1",
+       "best": "c3d4",
+       "score": 2,
+       "next": 0,
+       "moves": 28
+      }
+     ],
+     "third": {
+      "boards": [
+       {
+        "fen": "1k6/8/8/3K4/3n4/2P1r3/2n1Q3/3Q4 w - - 0 1",
+        "best": "c3d4",
+        "score": 2,
+        "next": 0,
+        "moves": 28
+       },
+       {
+        "fen": "1k6/8/8/3K4/3n4/2P1r3/4Qn2/3Q4 w - - 0 1",
+        "best": "e2e3",
+        "score": 5,
+        "next": 3,
+        "moves": 30
+       }
+      ]
+     }
+    },
+    {
+     "id": "shared-defender-9",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king h1 -> h5",
+     "boards": [
+      {
+       "fen": "8/8/8/4Kn2/4P3/8/1Q3q2/N2R1r1k w - - 0 1",
+       "best": "b2f2",
+       "score": 9,
+       "next": 2,
+       "moves": 30
+      },
+      {
+       "fen": "8/8/8/4Kn1k/4P3/8/1Q3q2/N2R1r2 w - - 0 1",
+       "best": "e4f5",
+       "score": 2,
+       "next": 0,
+       "moves": 30
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-10",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king a6 -> b1",
+     "boards": [
+      {
+       "fen": "8/8/k5K1/2p1Q3/1n3r2/2Pn4/4B3/8 w - - 0 1",
+       "best": "e5f4",
+       "score": 5,
+       "next": 2,
+       "moves": 26
+      },
+      {
+       "fen": "8/8/6K1/2p1Q3/1n3r2/2Pn4/4B3/1k6 w - - 0 1",
+       "best": "c3b4",
+       "score": 2,
+       "next": 0,
+       "moves": 26
+      }
+     ],
+     "third": {
+      "boards": [
+       {
+        "fen": "8/8/6K1/2p1Q3/1n3r2/2Pn4/4B3/1k6 w - - 0 1",
+        "best": "c3b4",
+        "score": 2,
+        "next": 0,
+        "moves": 26
+       },
+       {
+        "fen": "8/8/6K1/2p1Q3/nn3r2/2P5/4B3/1k6 w - - 0 1",
+        "best": "e5f4",
+        "score": 5,
+        "next": 2,
+        "moves": 29
+       }
+      ]
+     }
+    },
+    {
+     "id": "shared-defender-11",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king h5 -> b6",
+     "boards": [
+      {
+       "fen": "8/8/8/7k/8/5n2/1K4Pn/5rRR w - - 0 1",
+       "best": "g1f1",
+       "score": 5,
+       "next": 2,
+       "moves": 5
+      },
+      {
+       "fen": "8/8/1k6/8/8/5n2/1K4Pn/5rRR w - - 0 1",
+       "best": "g2f3",
+       "score": 2,
+       "next": 0,
+       "moves": 5
+      }
+     ],
+     "third": {
+      "boards": [
+       {
+        "fen": "8/8/1k6/8/8/5n2/1K4Pn/5rRR w - - 0 1",
+        "best": "g2f3",
+        "score": 2,
+        "next": 0,
+        "moves": 5
+       },
+       {
+        "fen": "4n3/8/1k6/8/8/5n2/1K4P1/5rRR w - - 0 1",
+        "best": "g1f1",
+        "score": 5,
+        "next": 2,
+        "moves": 11
+       }
+      ]
+     }
+    },
+    {
+     "id": "shared-defender-12",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king a4 -> c7",
+     "boards": [
+      {
+       "fen": "8/8/1n6/P2nr3/k1nR4/8/6K1/4R3 w - - 0 1",
+       "best": "e1e5",
+       "score": 5,
+       "next": 2,
+       "moves": 22
+      },
+      {
+       "fen": "8/2k5/1n6/P2nr3/2nR4/8/6K1/4R3 w - - 0 1",
+       "best": "a5b6",
+       "score": 2,
+       "next": 0,
+       "moves": 22
+      }
+     ],
+     "third": {
+      "boards": [
+       {
+        "fen": "8/2k5/1n6/P2nr3/2nR4/8/6K1/4R3 w - - 0 1",
+        "best": "a5b6",
+        "score": 2,
+        "next": 0,
+        "moves": 22
+       },
+       {
+        "fen": "4n3/2k5/1n6/P2nr3/3R4/8/6K1/4R3 w - - 0 1",
+        "best": "e1e5",
+        "score": 5,
+        "next": 2,
+        "moves": 24
+       }
+      ]
+     }
+    },
+    {
+     "id": "shared-defender-13",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king d6 -> d3",
+     "boards": [
+      {
+       "fen": "8/5rR1/3k1r1Q/5b2/5KP1/8/8/8 w - - 0 1",
+       "best": "g7f7",
+       "score": 5,
+       "next": 3,
+       "moves": 17
+      },
+      {
+       "fen": "8/5rR1/5r1Q/5b2/5KP1/3k4/8/8 w - - 0 1",
+       "best": "g4f5",
+       "score": 2,
+       "next": 0,
+       "moves": 17
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-14",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king a3 -> b2",
+     "boards": [
+      {
+       "fen": "8/3QB3/2q5/5K2/1n6/k1Pr4/4P3/8 w - - 0 1",
+       "best": "d7c6",
+       "score": 9,
+       "next": 5,
+       "moves": 25
+      },
+      {
+       "fen": "8/3QB3/2q5/5K2/1n6/2Pr4/1k2P3/8 w - - 0 1",
+       "best": "e2d3",
+       "score": 4,
+       "next": 3,
+       "moves": 25
+      }
+     ],
+     "third": {
+      "boards": [
+       {
+        "fen": "8/3QB3/2q5/5K2/1n6/2Pr4/1k2P3/8 w - - 0 1",
+        "best": "e2d3",
+        "score": 4,
+        "next": 3,
+        "moves": 25
+       },
+       {
+        "fen": "8/3QB3/2q5/1n3K2/8/2Pr4/1k2P3/8 w - - 0 1",
+        "best": "d7c6",
+        "score": 9,
+        "next": 5,
+        "moves": 25
+       }
+      ]
+     }
+    },
+    {
+     "id": "shared-defender-15",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king d8 -> a8",
+     "boards": [
+      {
+       "fen": "3k4/4n3/5P2/3n4/4Rr2/8/3Q4/7K w - - 0 1",
+       "best": "e4f4",
+       "score": 5,
+       "next": 3,
+       "moves": 31
+      },
+      {
+       "fen": "k7/4n3/5P2/3n4/4Rr2/8/3Q4/7K w - - 0 1",
+       "best": "f6e7",
+       "score": 2,
+       "next": 0,
+       "moves": 31
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-16",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king d7 -> c6",
+     "boards": [
+      {
+       "fen": "8/3k1q2/3n4/8/4rQ2/3R1P2/2K5/5N2 w - - 0 1",
+       "best": "f4f7",
+       "score": 9,
+       "next": 5,
+       "moves": 29
+      },
+      {
+       "fen": "8/5q2/2kn4/8/4rQ2/3R1P2/2K5/5N2 w - - 0 1",
+       "best": "f3e4",
+       "score": 4,
+       "next": 3,
+       "moves": 29
+      }
+     ],
+     "third": {
+      "boards": [
+       {
+        "fen": "8/5q2/2kn4/8/4rQ2/3R1P2/2K5/5N2 w - - 0 1",
+        "best": "f3e4",
+        "score": 4,
+        "next": 3,
+        "moves": 29
+       },
+       {
+        "fen": "8/5q2/2k5/1n6/4rQ2/3R1P2/2K5/5N2 w - - 0 1",
+        "best": "f4f7",
+        "score": 9,
+        "next": 5,
+        "moves": 33
+       }
+      ]
+     }
+    },
+    {
+     "id": "shared-defender-17",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king f7 -> g6",
+     "boards": [
+      {
+       "fen": "2K5/3r1k2/4b3/Q4q2/B7/8/B7/8 w - - 0 1",
+       "best": "a5f5",
+       "score": 9,
+       "next": 5,
+       "moves": 26
+      },
+      {
+       "fen": "2K5/3r4/4b1k1/Q4q2/B7/8/B7/8 w - - 0 1",
+       "best": "a4d7",
+       "score": 2,
+       "next": 0,
+       "moves": 26
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-18",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king f7 -> a7",
+     "boards": [
+      {
+       "fen": "2r4R/5k2/4b3/pK6/8/1B5b/6P1/8 w - - 0 1",
+       "best": "h8c8",
+       "score": 5,
+       "next": 3,
+       "moves": 20
+      },
+      {
+       "fen": "2r4R/k7/4b3/pK6/8/1B5b/6P1/8 w - - 0 1",
+       "best": "g2h3",
+       "score": 2,
+       "next": 0,
+       "moves": 20
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-19",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king h8 -> h1",
+     "boards": [
+      {
+       "fen": "R3n2k/2r5/3n4/4P3/8/2R1K3/8/8 w - - 0 1",
+       "best": "c3c7",
+       "score": 5,
+       "next": 3,
+       "moves": 22
+      },
+      {
+       "fen": "R3n3/2r5/3n4/4P3/8/2R1K3/8/7k w - - 0 1",
+       "best": "e5d6",
+       "score": 2,
+       "next": 0,
+       "moves": 22
+      }
+     ],
+     "third": {
+      "boards": [
+       {
+        "fen": "R3n3/2r5/3n4/4P3/8/2R1K3/8/7k w - - 0 1",
+        "best": "e5d6",
+        "score": 2,
+        "next": 0,
+        "moves": 22
+       },
+       {
+        "fen": "R7/2r5/3n4/4P3/8/2R1K3/8/2n4k w - - 0 1",
+        "best": "c3c7",
+        "score": 5,
+        "next": 3,
+        "moves": 25
+       }
+      ]
+     }
+    },
+    {
+     "id": "shared-defender-20",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king d4 -> h2",
+     "boards": [
+      {
+       "fen": "3R4/1r3R2/8/3b4/3k4/1b6/P7/K7 w - - 0 1",
+       "best": "f7b7",
+       "score": 5,
+       "next": 2,
+       "moves": 26
+      },
+      {
+       "fen": "3R4/1r3R2/8/3b4/8/1b6/P6k/K7 w - - 0 1",
+       "best": "a2b3",
+       "score": 2,
+       "next": 0,
+       "moves": 26
+      }
+     ],
+     "third": {
+      "boards": [
+       {
+        "fen": "3R4/1r3R2/8/3b4/8/1b6/P6k/K7 w - - 0 1",
+        "best": "a2b3",
+        "score": 2,
+        "next": 0,
+        "moves": 26
+       },
+       {
+        "fen": "3R4/1r3R2/8/8/8/1b6/P4b1k/K7 w - - 0 1",
+        "best": "f7b7",
+        "score": 5,
+        "next": 3,
+        "moves": 29
+       }
+      ]
+     }
+    },
+    {
+     "id": "shared-defender-21",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king g8 -> h7",
+     "boards": [
+      {
+       "fen": "2Q1n1k1/2r5/1K1n4/2R1P3/8/8/8/8 w - - 0 1",
+       "best": "c5c7",
+       "score": 5,
+       "next": 3,
+       "moves": 23
+      },
+      {
+       "fen": "2Q1n3/2r4k/1K1n4/2R1P3/8/8/8/8 w - - 0 1",
+       "best": "e5d6",
+       "score": 2,
+       "next": 0,
+       "moves": 23
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-22",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king c8 -> a8",
+     "boards": [
+      {
+       "fen": "2k5/4K3/1rr3b1/5P2/8/2R5/1R6/8 w - - 0 1",
+       "best": "b2b6",
+       "score": 5,
+       "next": 3,
+       "moves": 26
+      },
+      {
+       "fen": "k7/4K3/1rr3b1/5P2/8/2R5/1R6/8 w - - 0 1",
+       "best": "f5g6",
+       "score": 2,
+       "next": 0,
+       "moves": 26
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-23",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king g1 -> f1",
+     "boards": [
+      {
+       "fen": "2K1Q3/8/7P/6Qr/4n3/2nP2n1/8/6k1 w - - 0 1",
+       "best": "e8h5",
+       "score": 5,
+       "next": 2,
+       "moves": 38
+      },
+      {
+       "fen": "2K1Q3/8/7P/6Qr/4n3/2nP2n1/8/5k2 w - - 0 1",
+       "best": "d3e4",
+       "score": 2,
+       "next": 0,
+       "moves": 38
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-24",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king d2 -> d3",
+     "boards": [
+      {
+       "fen": "5K2/8/6p1/4R3/4r1n1/7P/3k1nQ1/8 w - - 0 1",
+       "best": "e5e4",
+       "score": 5,
+       "next": 2,
+       "moves": 22
+      },
+      {
+       "fen": "5K2/8/6p1/4R3/4r1n1/3k3P/5nQ1/8 w - - 0 1",
+       "best": "h3g4",
+       "score": 2,
+       "next": 0,
+       "moves": 22
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-25",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king b1 -> f8",
+     "boards": [
+      {
+       "fen": "8/7B/8/2n5/1P2n3/4Q1qp/8/1k1K4 w - - 0 1",
+       "best": "e3g3",
+       "score": 9,
+       "next": 3,
+       "moves": 24
+      },
+      {
+       "fen": "5k2/7B/8/2n5/1P2n3/4Q1qp/8/3K4 w - - 0 1",
+       "best": "b4c5",
+       "score": 2,
+       "next": 0,
+       "moves": 24
+      }
+     ],
+     "third": {
+      "boards": [
+       {
+        "fen": "5k2/7B/8/2n5/1P2n3/4Q1qp/8/3K4 w - - 0 1",
+        "best": "b4c5",
+        "score": 2,
+        "next": 0,
+        "moves": 24
+       },
+       {
+        "fen": "5k2/7B/8/2n1n3/1P6/4Q1qp/8/3K4 w - - 0 1",
+        "best": "e3g3",
+        "score": 9,
+        "next": 3,
+        "moves": 28
+       }
+      ]
+     }
+    },
+    {
+     "id": "shared-defender-26",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king f8 -> d6",
+     "boards": [
+      {
+       "fen": "1K3k2/Q6q/5n2/5R2/4r3/5P2/4p3/8 w - - 0 1",
+       "best": "a7h7",
+       "score": 9,
+       "next": 5,
+       "moves": 31
+      },
+      {
+       "fen": "1K6/Q6q/3k1n2/5R2/4r3/5P2/4p3/8 w - - 0 1",
+       "best": "f3e4",
+       "score": 4,
+       "next": 3,
+       "moves": 31
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-27",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king b5 -> d7",
+     "boards": [
+      {
+       "fen": "8/8/8/1k1b4/2b1P2N/1rRBK3/5N2/8 w - - 0 1",
+       "best": "c3b3",
+       "score": 5,
+       "next": 3,
+       "moves": 19
+      },
+      {
+       "fen": "8/3k4/8/3b4/2b1P2N/1rRBK3/5N2/8 w - - 0 1",
+       "best": "e4d5",
+       "score": 2,
+       "next": 0,
+       "moves": 19
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-28",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king b8 -> c2",
+     "boards": [
+      {
+       "fen": "1kn2R2/n3r3/1P3Q2/8/8/8/KP6/8 w - - 0 1",
+       "best": "f6e7",
+       "score": 5,
+       "next": 2,
+       "moves": 29
+      },
+      {
+       "fen": "2n2R2/n3r3/1P3Q2/8/8/8/KPk5/8 w - - 0 1",
+       "best": "b6a7",
+       "score": 2,
+       "next": 0,
+       "moves": 29
+      }
+     ],
+     "third": {
+      "boards": [
+       {
+        "fen": "2n2R2/n3r3/1P3Q2/8/8/8/KPk5/8 w - - 0 1",
+        "best": "b6a7",
+        "score": 2,
+        "next": 0,
+        "moves": 29
+       },
+       {
+        "fen": "5R2/n3r3/1P3Q2/8/8/8/KPk2n2/8 w - - 0 1",
+        "best": "f6e7",
+        "score": 5,
+        "next": 3,
+        "moves": 30
+       }
+      ]
+     }
+    },
+    {
+     "id": "shared-defender-29",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king b6 -> g7",
+     "boards": [
+      {
+       "fen": "8/3b4/1k2P3/3r1R2/3r4/8/5Q2/2K5 w - - 0 1",
+       "best": "f5d5",
+       "score": 5,
+       "next": 2,
+       "moves": 27
+      },
+      {
+       "fen": "8/3b2k1/4P3/3r1R2/3r4/8/5Q2/2K5 w - - 0 1",
+       "best": "e6d7",
+       "score": 2,
+       "next": 0,
+       "moves": 27
+      }
+     ],
+     "third": null
+    },
+    {
+     "id": "shared-defender-30",
+     "type": "shared defender: pinned or free",
+     "changedFact": "black king e7 -> h1",
+     "boards": [
+      {
+       "fen": "8/4k3/8/3nprr1/2P2R1B/7K/8/8 w - - 0 1",
+       "best": "f4f5",
+       "score": 5,
+       "next": 3,
+       "moves": 13
+      },
+      {
+       "fen": "8/8/8/3nprr1/2P2R1B/7K/8/7k w - - 0 1",
+       "best": "c4d5",
+       "score": 3,
+       "next": 2,
+       "moves": 13
+      }
+     ],
+     "third": null
+    }
+   ]
+  },
+  "which attacker is pinned": {
+   "accepted": 30,
+   "attempts": 161489,
+   "seconds": 476,
+   "rejections": {
+    "construction: line does not fit": 146354,
+    "construction: lines cross": 3107,
+    "construction: no square for a pawn guard": 4435,
+    "an intended capture is not legal": 2907,
+    "side not to move is in check": 144,
+    "match step differs from the checker on some move (king reply, discovered or double check)": 456,
+    "best move is not unique": 152,
+    "construction: pawn on an end rank": 1080,
+    "construction: second king square is taken": 474,
+    "the intended captures do not swap order between the boards": 2038,
+    "single-concept numbers differ between the boards (a fixed sum could separate them)": 18,
+    "construction: no target reached by one attacker only": 246,
+    "construction: no square for taker 2": 22,
+    "best move is the same on both boards": 7,
+    "construction: no square for taker 1": 17,
+    "best moves are not the two intended captures": 2
+   },
+   "pairs": [
+    {
+     "id": "which-attacker-is-pinned-1",
+     "type": "which attacker is pinned",
+     "changedFact": "black king h5 -> h6",
+     "boards": [
+      {
+       "fen": "5K2/5p2/1Q2r3/5p1k/6b1/5BRn/8/R3n3 w - - 0 1",
+       "best": "g3h3",
+       "score": 3,
+       "next": 0,
+       "moves": 45
+      },
+      {
+       "fen": "5K2/5p2/1Q2r2k/5p2/6b1/5BRn/8/R3n3 w - - 0 1",
+       "best": "a1e1",
+       "score": 3,
+       "next": 0,
+       "moves": 45
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-2",
+     "type": "which attacker is pinned",
+     "changedFact": "black king e2 -> g1",
+     "boards": [
+      {
+       "fen": "5RR1/4R3/5n2/1K2Rn1p/3p2n1/4n3/4k3/8 w - - 0 1",
+       "best": "e5f5",
+       "score": 3,
+       "next": 0,
+       "moves": 27
+      },
+      {
+       "fen": "5RR1/4R3/5n2/1K2Rn1p/3p2n1/4n3/8/6k1 w - - 0 1",
+       "best": "f8f6",
+       "score": 3,
+       "next": 0,
+       "moves": 27
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-3",
+     "type": "which attacker is pinned",
+     "changedFact": "black king d1 -> a3",
+     "boards": [
+      {
+       "fen": "8/2R5/3B4/p7/1b4R1/2n5/3p2nK/3knR2 w - - 0 1",
+       "best": "g4g2",
+       "score": 3,
+       "next": 0,
+       "moves": 41
+      },
+      {
+       "fen": "8/2R5/3B4/p7/1b4R1/k1n5/3p2nK/4nR2 w - - 0 1",
+       "best": "c7c3",
+       "score": 3,
+       "next": 0,
+       "moves": 41
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-4",
+     "type": "which attacker is pinned",
+     "changedFact": "black king e1 -> g6",
+     "boards": [
+      {
+       "fen": "8/8/B6p/K5n1/6R1/3pRp1p/4b3/4kB2 w - - 0 1",
+       "best": "a6d3",
+       "score": 1,
+       "next": 0,
+       "moves": 27
+      },
+      {
+       "fen": "8/8/B5kp/K5n1/6R1/3pRp1p/4b3/5B2 w - - 0 1",
+       "best": "f1h3",
+       "score": 1,
+       "next": 0,
+       "moves": 27
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-5",
+     "type": "which attacker is pinned",
+     "changedFact": "black king f1 -> b1",
+     "boards": [
+      {
+       "fen": "5K2/2R5/5R2/R2np3/1Qn2n2/2p4p/Pn6/5k2 w - - 0 1",
+       "best": "a5d5",
+       "score": 3,
+       "next": 0,
+       "moves": 44
+      },
+      {
+       "fen": "5K2/2R5/5R2/R2np3/1Qn2n2/2p4p/Pn6/1k6 w - - 0 1",
+       "best": "c7c4",
+       "score": 3,
+       "next": 0,
+       "moves": 44
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-6",
+     "type": "which attacker is pinned",
+     "changedFact": "black king b6 -> h3",
+     "boards": [
+      {
+       "fen": "K7/8/1k4pR/p6b/1n6/8/pR1Rp3/R7 w - - 0 1",
+       "best": "a1a2",
+       "score": 1,
+       "next": 0,
+       "moves": 26
+      },
+      {
+       "fen": "K7/8/6pR/p6b/1n6/7k/pR1Rp3/R7 w - - 0 1",
+       "best": "d2e2",
+       "score": 1,
+       "next": 0,
+       "moves": 26
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-7",
+     "type": "which attacker is pinned",
+     "changedFact": "black king g1 -> h6",
+     "boards": [
+      {
+       "fen": "B7/4p3/1R3n2/2K1B3/4p3/p5p1/3Pp3/3R1nk1 w - - 0 1",
+       "best": "e5g3",
+       "score": 1,
+       "next": 0,
+       "moves": 33
+      },
+      {
+       "fen": "B7/4p3/1R3n1k/2K1B3/4p3/p5p1/3Pp3/3R1n2 w - - 0 1",
+       "best": "a8e4",
+       "score": 1,
+       "next": 0,
+       "moves": 33
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-8",
+     "type": "which attacker is pinned",
+     "changedFact": "black king e4 -> a5",
+     "boards": [
+      {
+       "fen": "6Rn/5p1B/6n1/8/1p2k1K1/r2R1n2/Q7/8 w - - 0 1",
+       "best": "g8h8",
+       "score": 3,
+       "next": 0,
+       "moves": 37
+      },
+      {
+       "fen": "6Rn/5p1B/6n1/k7/1p4K1/r2R1n2/Q7/8 w - - 0 1",
+       "best": "d3f3",
+       "score": 3,
+       "next": 0,
+       "moves": 37
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-9",
+     "type": "which attacker is pinned",
+     "changedFact": "black king a7 -> e1",
+     "boards": [
+      {
+       "fen": "8/kp6/n3K3/2p5/4R3/RNp2p2/N3n3/8 w - - 0 1",
+       "best": "b3c5",
+       "score": 1,
+       "next": 0,
+       "moves": 22
+      },
+      {
+       "fen": "8/1p6/n3K3/2p5/4R3/RNp2p2/N3n3/4k3 w - - 0 1",
+       "best": "a2c3",
+       "score": 1,
+       "next": 0,
+       "moves": 22
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-10",
+     "type": "which attacker is pinned",
+     "changedFact": "black king a5 -> h7",
+     "boards": [
+      {
+       "fen": "8/8/8/k2K2p1/n5Qr/4pQ2/3n3R/4Qn2 w - - 0 1",
+       "best": "f3f1",
+       "score": 3,
+       "next": 1,
+       "moves": 50
+      },
+      {
+       "fen": "8/7k/8/3K2p1/n5Qr/4pQ2/3n3R/4Qn2 w - - 0 1",
+       "best": "g4a4",
+       "score": 3,
+       "next": 1,
+       "moves": 50
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-11",
+     "type": "which attacker is pinned",
+     "changedFact": "black king d7 -> c5",
+     "boards": [
+      {
+       "fen": "2n5/3k1p2/2p1n3/Rn4n1/8/n2K3Q/R5R1/8 w - - 0 1",
+       "best": "g2g5",
+       "score": 3,
+       "next": 0,
+       "moves": 36
+      },
+      {
+       "fen": "2n5/5p2/2p1n3/Rnk3n1/8/n2K3Q/R5R1/8 w - - 0 1",
+       "best": "a2a3",
+       "score": 3,
+       "next": 0,
+       "moves": 36
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-12",
+     "type": "which attacker is pinned",
+     "changedFact": "black king f1 -> b5",
+     "boards": [
+      {
+       "fen": "K7/2p4R/2p5/3n3R/8/R2p4/5p2/R3nk2 w - - 0 1",
+       "best": "a3d3",
+       "score": 1,
+       "next": 0,
+       "moves": 29
+      },
+      {
+       "fen": "K7/2p4R/2p5/1k1n3R/8/R2p4/5p2/R3n3 w - - 0 1",
+       "best": "h7c7",
+       "score": 1,
+       "next": 0,
+       "moves": 29
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-13",
+     "type": "which attacker is pinned",
+     "changedFact": "black king a4 -> c2",
+     "boards": [
+      {
+       "fen": "8/RpPR4/b7/7K/k7/2pbb3/3bR2Q/8 w - - 0 1",
+       "best": "d7d3",
+       "score": 3,
+       "next": 0,
+       "moves": 31
+      },
+      {
+       "fen": "8/RpPR4/b7/7K/8/2pbb3/2kbR2Q/8 w - - 0 1",
+       "best": "e2e3",
+       "score": 3,
+       "next": 0,
+       "moves": 31
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-14",
+     "type": "which attacker is pinned",
+     "changedFact": "black king h7 -> c5",
+     "boards": [
+      {
+       "fen": "8/2K4k/4p3/4pb2/3bQ1n1/4B1R1/Rn6/8 w - - 0 1",
+       "best": "g3g4",
+       "score": 3,
+       "next": 0,
+       "moves": 36
+      },
+      {
+       "fen": "8/2K5/4p3/2k1pb2/3bQ1n1/4B1R1/Rn6/8 w - - 0 1",
+       "best": "a2b2",
+       "score": 3,
+       "next": 0,
+       "moves": 36
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-15",
+     "type": "which attacker is pinned",
+     "changedFact": "black king g1 -> d1",
+     "boards": [
+      {
+       "fen": "5K2/5R2/4R3/3Q4/4pp2/4ppR1/3n2n1/6k1 w - - 0 1",
+       "best": "f7f4",
+       "score": 1,
+       "next": 0,
+       "moves": 49
+      },
+      {
+       "fen": "5K2/5R2/4R3/3Q4/4pp2/4ppR1/3n2n1/3k4 w - - 0 1",
+       "best": "e6e4",
+       "score": 1,
+       "next": 0,
+       "moves": 49
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-16",
+     "type": "which attacker is pinned",
+     "changedFact": "black king e1 -> c1",
+     "boards": [
+      {
+       "fen": "5K2/1N3R2/8/8/4Q3/B1pp1n2/Rb2b3/n3k3 w - - 0 1",
+       "best": "f7f3",
+       "score": 3,
+       "next": 0,
+       "moves": 40
+      },
+      {
+       "fen": "5K2/1N3R2/8/8/4Q3/B1pp1n2/Rb2b3/n1k5 w - - 0 1",
+       "best": "a2a1",
+       "score": 3,
+       "next": 0,
+       "moves": 40
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-17",
+     "type": "which attacker is pinned",
+     "changedFact": "black king e1 -> d3",
+     "boards": [
+      {
+       "fen": "8/1R1Q4/2K1p3/3n2R1/1b5B/2n1p3/5b2/4k1b1 w - - 0 1",
+       "best": "g5g1",
+       "score": 3,
+       "next": 1,
+       "moves": 30
+      },
+      {
+       "fen": "8/1R1Q4/2K1p3/3n2R1/1b5B/2nkp3/5b2/6b1 w - - 0 1",
+       "best": "b7b4",
+       "score": 3,
+       "next": 1,
+       "moves": 30
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-18",
+     "type": "which attacker is pinned",
+     "changedFact": "black king c8 -> a8",
+     "boards": [
+      {
+       "fen": "2k1K3/8/1p1pb1R1/b1n5/Rb6/pR6/2R5/8 w - - 0 1",
+       "best": "g6e6",
+       "score": 3,
+       "next": 0,
+       "moves": 34
+      },
+      {
+       "fen": "k3K3/8/1p1pb1R1/b1n5/Rb6/pR6/2R5/8 w - - 0 1",
+       "best": "b3b4",
+       "score": 3,
+       "next": 0,
+       "moves": 34
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-19",
+     "type": "which attacker is pinned",
+     "changedFact": "black king e7 -> c6",
+     "boards": [
+      {
+       "fen": "2K5/4k3/8/3p4/1p2r1p1/2n1R3/p1R4N/2N5 w - - 0 1",
+       "best": "h2g4",
+       "score": 1,
+       "next": 0,
+       "moves": 22
+      },
+      {
+       "fen": "2K5/8/2k5/3p4/1p2r1p1/2n1R3/p1R4N/2N5 w - - 0 1",
+       "best": "c1a2",
+       "score": 1,
+       "next": 0,
+       "moves": 22
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-20",
+     "type": "which attacker is pinned",
+     "changedFact": "black king c3 -> a1",
+     "boards": [
+      {
+       "fen": "8/8/R4B2/2p2R2/1p1r1n2/b1k4p/1n2R3/2K5 w - - 0 1",
+       "best": "f5f4",
+       "score": 3,
+       "next": 2,
+       "moves": 36
+      },
+      {
+       "fen": "8/8/R4B2/2p2R2/1p1r1n2/b6p/1n2R3/k1K5 w - - 0 1",
+       "best": "e2b2",
+       "score": 3,
+       "next": 2,
+       "moves": 36
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-21",
+     "type": "which attacker is pinned",
+     "changedFact": "black king c1 -> h1",
+     "boards": [
+      {
+       "fen": "8/5K2/7p/b1Rp4/2np4/6pQ/R4Rbr/2k5 w - - 0 1",
+       "best": "a2a5",
+       "score": 3,
+       "next": 1,
+       "moves": 36
+      },
+      {
+       "fen": "8/5K2/7p/b1Rp4/2np4/6pQ/R4Rbr/7k w - - 0 1",
+       "best": "f2g2",
+       "score": 3,
+       "next": 1,
+       "moves": 36
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-22",
+     "type": "which attacker is pinned",
+     "changedFact": "black king c3 -> h1",
+     "boards": [
+      {
+       "fen": "8/2R1R2R/1p6/Rpr3p1/4p2r/2k5/8/K7 w - - 0 1",
+       "best": "a5b5",
+       "score": 1,
+       "next": 0,
+       "moves": 26
+      },
+      {
+       "fen": "8/2R1R2R/1p6/Rpr3p1/4p2r/8/8/K6k w - - 0 1",
+       "best": "e7e4",
+       "score": 1,
+       "next": 0,
+       "moves": 26
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-23",
+     "type": "which attacker is pinned",
+     "changedFact": "black king a8 -> d8",
+     "boards": [
+      {
+       "fen": "k7/6p1/1b2pb2/3n4/7B/1R6/7P/b3RK1Q w - - 0 1",
+       "best": "b3b6",
+       "score": 3,
+       "next": 1,
+       "moves": 31
+      },
+      {
+       "fen": "3k4/6p1/1b2pb2/3n4/7B/1R6/7P/b3RK1Q w - - 0 1",
+       "best": "e1a1",
+       "score": 3,
+       "next": 1,
+       "moves": 31
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-24",
+     "type": "which attacker is pinned",
+     "changedFact": "black king a4 -> b6",
+     "boards": [
+      {
+       "fen": "1n3Q2/3p4/2nR4/2n2Q2/k1p3N1/1n6/1K6/3B4 w - - 0 1",
+       "best": "f5c5",
+       "score": 3,
+       "next": 0,
+       "moves": 50
+      },
+      {
+       "fen": "1n3Q2/3p4/1knR4/2n2Q2/2p3N1/1n6/1K6/3B4 w - - 0 1",
+       "best": "f8b8",
+       "score": 3,
+       "next": 0,
+       "moves": 50
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-25",
+     "type": "which attacker is pinned",
+     "changedFact": "black king h7 -> d1",
+     "boards": [
+      {
+       "fen": "8/K4p1k/6b1/7p/4BpB1/3p1B2/4n2B/8 w - - 0 1",
+       "best": "g4h5",
+       "score": 1,
+       "next": 0,
+       "moves": 19
+      },
+      {
+       "fen": "8/K4p2/6b1/7p/4BpB1/3p1B2/4n2B/3k4 w - - 0 1",
+       "best": "h2f4",
+       "score": 1,
+       "next": 0,
+       "moves": 19
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-26",
+     "type": "which attacker is pinned",
+     "changedFact": "black king e6 -> b2",
+     "boards": [
+      {
+       "fen": "8/8/4kp2/4rp2/4RR2/1p1pR3/2b2Q2/5K2 w - - 0 1",
+       "best": "f4f5",
+       "score": 1,
+       "next": 0,
+       "moves": 25
+      },
+      {
+       "fen": "8/8/5p2/4rp2/4RR2/1p1pR3/1kb2Q2/5K2 w - - 0 1",
+       "best": "e3d3",
+       "score": 1,
+       "next": 0,
+       "moves": 25
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-27",
+     "type": "which attacker is pinned",
+     "changedFact": "black king f3 -> h3",
+     "boards": [
+      {
+       "fen": "4R3/2K1bR2/6pR/5np1/R3b2r/5k2/8/8 w - - 0 1",
+       "best": "e8e7",
+       "score": 3,
+       "next": 1,
+       "moves": 30
+      },
+      {
+       "fen": "4R3/2K1bR2/6pR/5np1/R3b2r/7k/8/8 w - - 0 1",
+       "best": "a4e4",
+       "score": 3,
+       "next": 1,
+       "moves": 30
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-28",
+     "type": "which attacker is pinned",
+     "changedFact": "black king f6 -> h1",
+     "boards": [
+      {
+       "fen": "2R1b3/K4p2/2Q1rk2/8/8/2R2B1p/2b3r1/8 w - - 0 1",
+       "best": "c8e8",
+       "score": 3,
+       "next": 2,
+       "moves": 34
+      },
+      {
+       "fen": "2R1b3/K4p2/2Q1r3/8/8/2R2B1p/2b3r1/7k w - - 0 1",
+       "best": "c3c2",
+       "score": 3,
+       "next": 2,
+       "moves": 34
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-29",
+     "type": "which attacker is pinned",
+     "changedFact": "black king f8 -> d4",
+     "boards": [
+      {
+       "fen": "1K3k2/8/1B1p2p1/2b2n2/1p5p/6B1/3B1R2/8 w - - 0 1",
+       "best": "g3h4",
+       "score": 1,
+       "next": 0,
+       "moves": 25
+      },
+      {
+       "fen": "1K6/8/1B1p2p1/2b2n2/1p1k3p/6B1/3B1R2/8 w - - 0 1",
+       "best": "d2b4",
+       "score": 1,
+       "next": 0,
+       "moves": 25
+      }
+     ]
+    },
+    {
+     "id": "which-attacker-is-pinned-30",
+     "type": "which attacker is pinned",
+     "changedFact": "black king e5 -> f1",
+     "boards": [
+      {
+       "fen": "7R/8/1p2p1K1/RR1nk2p/8/8/2p5/2Rb4 w - - 0 1",
+       "best": "b5b6",
+       "score": 1,
+       "next": 0,
+       "moves": 28
+      },
+      {
+       "fen": "7R/8/1p2p1K1/RR1n3p/8/8/2p5/2Rb1k2 w - - 0 1",
+       "best": "h8h5",
+       "score": 1,
+       "next": 0,
+       "moves": 28
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -2,7 +2,7 @@
 
 This is the handoff for continuing the research: read the current checkpoint first, then consult its linked evidence. The latest checkpoint below is dated 2026-11-15 (later the same day). Everything after the “Background and dated history” heading is retained chronology; old “Next” instructions there are historical and superseded. Artifacts outrank this file: if a newer `runs/*/manifest.json` disagrees, this file is stale (see `AGENTS.md`, "Continuing the research").
 
-**Last updated:** 2026-11-15.
+**Last updated:** 2026-11-16 (addendum only; the current checkpoint is still the one dated 2026-11-15).
 
 ## Current checkpoint: 2026-11-15, later the same day
 
@@ -11,6 +11,11 @@ This is the handoff for continuing the research: read the current checkpoint fir
 - **Built and tested on made-up inputs only:** `probe-wide-learning-v4.mjs`, `apply-three-board-rules-v2.mjs`, the shared rules, the offline check and the output-cell count. 16 new focused tests pass. Nothing has run on the real graph.
 - **Next step, needs the researcher's approval:** make the fixed-weight recording, a graph run, and run the offline check against the saved quiet learning-off run. If the check answers "not ruled out", the six runs need a second approval. Commands are on the protocol page.
 - Unchanged: the 2026-11-09 decision about the post-gate evidence is still open. Properties 1–3 remain unmet. The sealed test games remain unused.
+
+## Addendum 2026-11-16: Volume 3 design proposal (no run, direction unchanged)
+
+- **Volume 3, chapters 2, 4, 5 and 6.** A [roadmap](design/research-goals/combination-roadmap-2026-11-16.md) proposes replacing the combination test's twin pairs with flip pairs and building concept records with one match step. It is design only: its [checks](../research/reports/combination-roadmap-2026-11-16/README.md) use hand-built and program-built boards, no graph and no sealed games.
+- **Needs the researcher's decision** before any build. If adopted, the first build is Milestone 1 on that page, which needs no graph run. The current checkpoint above is unchanged.
 
 ## Previous checkpoint: 2026-11-15
 

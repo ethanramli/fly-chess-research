@@ -4,6 +4,7 @@ This index covers researcher intent, untested hypotheses, scope decisions, and d
 
 ## Recent discussions
 
+- [2026-11-16: The combination test could not show combining; a roadmap is proposed](2026-11-16-combination-roadmap.md): four findings against the test, four mistakes in my own drafts, and a proposed change of direction that is not adopted.
 - [2026-11-07: Memory claim gap found by the researcher's questions](2026-11-07-memory-claim-gap.md): five questions, four mistakes, and new claim rules.
 - [2026-11-04: Confirmed chapter names for all five volumes](2026-11-04-confirmed-chapter-names.md)
 - [2026-11-02: eLife scope and prospective protocol](2026-11-02-elife-scope-and-protocol.md): researcher priority, exact-cue transfer gap, F04 correction, and inspection limits.

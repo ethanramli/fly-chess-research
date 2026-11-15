@@ -1,0 +1,14 @@
+positions sampled: 4000 | non-king moves: 117487 | reach labeller mismatches against chess.js attackers(): 0
+match step (reach, pin, worth) equals checker: moves 115961/117487 (98.7%) | captures 17335/17883 (96.9%)
+positions where every non-king move agrees: 2871/4000 (71.8%) | positions where the set of top moves is the same: 3697/4000 (92.4%)
+causes of misses: {
+ "enemy king is an attacker": 740,
+ "check after, fixed by king rule": 682,
+ "check after the move (discovered or double check, or king cannot take)": 104
+}
+with a king rule added (king is an attacker unless the landing square is guarded): moves 117383/117487 (99.9%) | closed positions 3946/4000 (98.7%) | same top set 3990/4000 (99.8%)
+examples: {
+ "enemy king is an attacker": "r1b1kbnr/p4ppp/2p5/1pnPP1q1/6B1/P1P2K2/1P1P3P/RNBQ2NR b kq - 1 14 c5e4 checker -3 match step 0",
+ "check after, fixed by king rule": "r1b1kbnr/p4ppp/2p5/1pnPP1q1/6B1/P1P2K2/1P1P3P/RNBQ2NR b kq - 1 14 g5f4 checker -9 match step 0",
+ "check after the move (discovered or double check, or king cannot take)": "rn3b2/7r/k4Bpp/5pP1/pp1P4/1p1N1b1K/PP3q1P/R7 b - - 0 41 h6g5 checker 1 match step 0"
+}

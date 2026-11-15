@@ -1,0 +1,30 @@
+pairs: 71 (shared defender: pinned or free: 30; shared defender: free or elsewhere: 11; which attacker is pinned: 30)
+boards: 142; non-king moves per board 5-50; yes/no records per board 24-604 (median 186)
+
+match step (reach, pin, worth)                             pairs solved  71/71 | boards right 142.0/142 | by type: shared defender: pinned or free 30/30; shared defender: free or elsewhere 11/11; which attacker is pinned 30/30
+checker itself (legal replies; ceiling)                    pairs solved  71/71 | boards right 142.0/142 | by type: shared defender: pinned or free 30/30; shared defender: free or elsewhere 11/11; which attacker is pinned 30/30
+pin memory removed (every piece free)                      pairs solved  11/71 | boards right 52.0/142 | by type: shared defender: pinned or free 0/30; shared defender: free or elsewhere 11/11; which attacker is pinned 0/30
+reach memory removed (nothing reaches)                     pairs solved   0/71 | boards right 39.2/142 | by type: shared defender: pinned or free 0/30; shared defender: free or elsewhere 0/11; which attacker is pinned 0/30
+worth memory removed (every piece worth 1)                 pairs solved  24/71 | boards right 82.2/142 | by type: shared defender: pinned or free 0/30; shared defender: free or elsewhere 0/11; which attacker is pinned 24/30
+rule: take the most valuable piece                         pairs solved   0/71 | boards right 39.2/142 | by type: shared defender: pinned or free 0/30; shared defender: free or elsewhere 0/11; which attacker is pinned 0/30
+rule: captured worth minus mover worth                     pairs solved   0/71 | boards right 44.1/142 | by type: shared defender: pinned or free 0/30; shared defender: free or elsewhere 0/11; which attacker is pinned 0/30
+rule: fewest enemy pieces reaching the square              pairs solved   0/71 | boards right 7.1/142 | by type: shared defender: pinned or free 0/30; shared defender: free or elsewhere 0/11; which attacker is pinned 0/30
+rule: fewest pieces left on the board                      pairs solved   0/71 | boards right 34.0/142 | by type: shared defender: pinned or free 0/30; shared defender: free or elsewhere 0/11; which attacker is pinned 0/30
+rule: fewest legal enemy replies (uses the full rules)     pairs solved   0/71 | boards right 7.8/142 | by type: shared defender: pinned or free 0/30; shared defender: free or elsewhere 0/11; which attacker is pinned 0/30
+
+best fixed sum of single-concept numbers, 7680 weight settings, fitted on these same boards:
+  most pairs solved: 0/71 (boards right 51.1/142) at {"a":0.25,"b":1,"c":0.5,"d":0}
+  most boards right: 51.1/142 (pairs solved 0/71) at {"a":0.25,"b":1,"c":0.5,"d":0}
+best fixed sum given the checker's own legal-recapture bit: pairs solved 31/71 (boards right 102.0/142) at {"a":2,"c":0.25,"d":0}; by type: shared defender: pinned or free 1/30; shared defender: free or elsewhere 0/11; which attacker is pinned 30/30
+
+family split: 26 families (33 pairs) for development, 34 families (38 pairs) kept back; boards found in both halves: 0
+fixed sum fitted on the development half ({"a":4,"b":0.25,"c":2,"d":0.25}): development pairs solved 0/33, boards right 27.4/66; kept-back pairs solved 0/38, boards right 21.5/76
+match step on the kept-back half: pairs solved 38/38
+
+share of pairs solved when each yes/no record is wrong with the given probability (300 trials):
+  record error  0.5%: all pairs 93% | shared defender: pinned or free 96%; shared defender: free or elsewhere 97%; which attacker is pinned 89%
+  record error  1.0%: all pairs 87% | shared defender: pinned or free 93%; shared defender: free or elsewhere 93%; which attacker is pinned 80%
+  record error  2.0%: all pairs 76% | shared defender: pinned or free 85%; shared defender: free or elsewhere 87%; which attacker is pinned 63%
+  record error  3.0%: all pairs 68% | shared defender: pinned or free 79%; shared defender: free or elsewhere 83%; which attacker is pinned 52%
+  record error  5.0%: all pairs 55% | shared defender: pinned or free 68%; shared defender: free or elsewhere 72%; which attacker is pinned 35%
+  record error 10.0%: all pairs 35% | shared defender: pinned or free 48%; shared defender: free or elsewhere 54%; which attacker is pinned 15%
