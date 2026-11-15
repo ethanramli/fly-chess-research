@@ -2,6 +2,8 @@
 
 **Built and tested on synthetic inputs on 2026-11-15. Nothing has run on the real graph.** The recording needs the researcher's approval. Volume 2, *The Classroom*, chapters 3 (*To Learn*) and 5 (*Evidence for Learning*). This is a development tool for the [three-board feedback test](three-board-feedback-test-2026-11-14.md). It is not a learning result, and the sealed test games stay untouched.
 
+**Addendum, later on 2026-11-15.** A [new protocol](three-board-reading-before-feedback-2026-11-15.md) reads the Kenyon cells in a pulse-free pass before each lesson's pulse. Under that rule the scale stays at 0.014047, so the scale choice below does not block it. This page's recorder still supplies the pulse-free readings for the new protocol's offline check. Nothing below is changed.
+
 ## Why this exists
 
 The quiet circuit reads each Kenyon cell's activity as `min(1, rate / 0.014047)`. Any rate above 0.014047 is flattened to the same reading. The scale was chosen so that flattening keeps at least 99% of the activity difference between any two moves. It was chosen from forward passes **without** a reward or punishment pulse.

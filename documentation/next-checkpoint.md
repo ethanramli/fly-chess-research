@@ -1,14 +1,22 @@
 # Next checkpoint
 
-This is the handoff for continuing the research: read the current checkpoint first, then consult its linked evidence. The latest checkpoint below is dated 2026-11-15. Everything after the “Background and dated history” heading is retained chronology; old “Next” instructions there are historical and superseded. Artifacts outrank this file: if a newer `runs/*/manifest.json` disagrees, this file is stale (see `AGENTS.md`, "Continuing the research").
+This is the handoff for continuing the research: read the current checkpoint first, then consult its linked evidence. The latest checkpoint below is dated 2026-11-15 (later the same day). Everything after the “Background and dated history” heading is retained chronology; old “Next” instructions there are historical and superseded. Artifacts outrank this file: if a newer `runs/*/manifest.json` disagrees, this file is stale (see `AGENTS.md`, "Continuing the research").
 
 **Last updated:** 2026-11-15.
 
-## Current checkpoint: 2026-11-15
+## Current checkpoint: 2026-11-15, later the same day
+
+- **Volume 2, chapters 3 and 5.** The 2026-11-14 three-board test stays inconclusive (check 3 failed on all 72 quiet learning-off lessons), and its five other runs stay paused.
+- **Pivot, protocol written before data:** [three-board test with the reading before feedback](design/neural-learning/three-board-reading-before-feedback-2026-11-15.md). Each lesson reads the Kenyon cells in a pass without the pulse, then takes only the learning signal from the pulsed pass. The scale stays 0.014047. Check 3 is revised, check 5 gains the rule name, and checks 6 and 7 are new. The verdicts and cutoffs are unchanged. [Journal item 40](../research/journal/experiments/2026-11-07-fly-connections-memory.md#40-2026-11-15-pivot-read-the-kenyon-cells-before-feedback).
+- **Built and tested on made-up inputs only:** `probe-wide-learning-v4.mjs`, `apply-three-board-rules-v2.mjs`, the shared rules, the offline check and the output-cell count. 16 new focused tests pass. Nothing has run on the real graph.
+- **Next step, needs the researcher's approval:** make the fixed-weight recording, a graph run, and run the offline check against the saved quiet learning-off run. If the check answers "not ruled out", the six runs need a second approval. Commands are on the protocol page.
+- Unchanged: the 2026-11-09 decision about the post-gate evidence is still open. Properties 1–3 remain unmet. The sealed test games remain unused.
+
+## Previous checkpoint: 2026-11-15
 
 - **Volume 2, chapters 3 and 5.** The three-board feedback test is inconclusive: the quiet circuit's learning-off run failed required check 3 on all 72 lessons. During pulses, the cap at 0.014047 kept as little as 22.35% of a lesson's activity difference, below the 99% required. This is the researcher's report; the raw files are on the graph machine. **The other five runs are paused.** See [journal item 37](../research/journal/experiments/2026-11-07-fly-connections-memory.md#37-2026-11-15-check-3-failed-in-the-quiet-learning-off-run).
 - **Built and tested on synthetic inputs:** the [pulse scale check](design/neural-learning/pulse-scale-check-2026-11-15.md). The recorder captures every legal move with no pulse, a reward pulse and a punishment pulse, with weights fixed. The offline report requires the full learning-off run for an exact match and shows how replacing just the pulsed cell readings changes the replayed gains. All 10 focused tests pass. [Independent review and fixes](../research/journal/experiments/2026-11-07-fly-connections-memory.md#39-2026-11-15-independent-review-of-the-pulse-scale-report).
-- **Next step, needs the researcher's approval:** run the recorder and the report on the graph machine (commands on the design page). Then the researcher chooses a scale or a different fix, written as a dated protocol revision, before rerunning the six runs. The cutoffs stay unchanged.
+- **Next step (superseded later the same day by the pivot above), needed the researcher's approval:** run the recorder and the report on the graph machine (commands on the design page). Then the researcher chooses a scale or a different fix, written as a dated protocol revision, before rerunning the six runs. The cutoffs stay unchanged.
 - Unchanged: the 2026-11-09 decision about the post-gate evidence is still open. Properties 1–3 remain unmet. The sealed test games remain unused.
 
 ## Previous checkpoint: 2026-11-14

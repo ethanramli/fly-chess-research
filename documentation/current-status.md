@@ -4,6 +4,10 @@ In the planned test, the researchers looked for settings that made the model ran
 
 The Fly Connections Memory investigation is paused while the researcher decides whether to request that review or close the work as a limited development result. See the [latest research handoff](next-checkpoint.md) for the decision and chronology.
 
+## Update: 2026-11-15, later
+
+The three-board test has a new protocol. The old rule read the Kenyon cells in the same forward pass as the reward or punishment pulse, so the pulse's own activity got into the reading and broke check 3. In the new rule, each lesson first reads the Kenyon cells with no pulse, then delivers the pulse and takes only its learning signal. The scale stays at 0.014047, which was chosen on pulse-free readings. A check on saved data comes first. It can rule the rule out before six graph runs are spent, but it cannot show learning. The cutoffs are unchanged, everything is tested on made-up inputs only, and every run awaits approval. See the [protocol](design/neural-learning/three-board-reading-before-feedback-2026-11-15.md) and [journal item 40](../research/journal/experiments/2026-11-07-fly-connections-memory.md#40-2026-11-15-pivot-read-the-kenyon-cells-before-feedback).
+
 ## Update: 2026-11-15
 
 The quiet circuit's learning-off run failed one of the test's required checks, so the three-board test is inconclusive and its other five runs are paused. The check asks that capping cell activity at 0.014047 keep at least 99% of each lesson's activity difference from the other moves. During reward and punishment pulses, the worst lesson kept only 22.35% (researcher's report; raw files on the graph machine). The scale had been chosen without pulses. A tool to measure the trade-off is built and tested on synthetic inputs: a larger scale flattens less but makes every learning update smaller. Its recording on the graph machine awaits approval, and the scale choice is open. See the [pulse scale check](design/neural-learning/pulse-scale-check-2026-11-15.md).
