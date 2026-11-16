@@ -23,3 +23,5 @@ Run `npm test` from the repository root. Software checks do not establish biolog
 - [Stockfish score perspective, unavailable targets and fixed value checks](stockfish-target.test.mjs).
 
 - [capture-retention-action-domain.test.mjs](capture-retention-action-domain.test.mjs): every legal action, proof-class/history/task binding, unknown, en passant and promotions.
+
+- [Flip-pair benchmark tests](concept-records-v1.test.mjs) replay the saved scores and controls, check that candidate records cannot query replies, and verify seeded generation.

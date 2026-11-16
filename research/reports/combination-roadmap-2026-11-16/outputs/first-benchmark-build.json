@@ -1,0 +1,1865 @@
+{
+  "hand": {
+    "match": 5,
+    "pinRemoved": 2,
+    "reachRemoved": 2,
+    "worthRemoved": 3.111111111111111,
+    "pinSwapped": 1,
+    "reachSwapped": 3,
+    "fixedSum": {
+      "settings": 4459,
+      "weights": [
+        0,
+        0,
+        0.25,
+        0
+      ],
+      "boardCredit": 2
+    },
+    "fixedSumWithLegalRecapture": {
+      "settings": 343,
+      "weights": [
+        1,
+        0,
+        0.25,
+        0
+      ],
+      "boardCredit": 4
+    },
+    "fewestLegalReplies": 1
+  },
+  "traps": [
+    {
+      "id": "capture along the pin line",
+      "move": "a4e4",
+      "matchScore": -4,
+      "checkerScore": -4,
+      "outsideScope": []
+    },
+    {
+      "id": "king takes on the landing square",
+      "move": "a7d7",
+      "matchScore": 3,
+      "checkerScore": -2,
+      "outsideScope": [
+        "king reply and guard"
+      ]
+    },
+    {
+      "id": "another piece also checks the king",
+      "move": "e4d6",
+      "matchScore": -2,
+      "checkerScore": 1,
+      "outsideScope": [
+        "check answer"
+      ]
+    },
+    {
+      "id": "guard stops the king from taking",
+      "move": "b4d5",
+      "matchScore": 1,
+      "checkerScore": 1,
+      "outsideScope": [
+        "king reply and guard"
+      ]
+    }
+  ],
+  "savedPairs": {
+    "families": 60,
+    "distinctBoards": 131,
+    "match": {
+      "pairs": 71,
+      "solved": 71,
+      "boards": 142,
+      "boardCredit": 142,
+      "byType": {
+        "shared defender: pinned or free": {
+          "pairs": 30,
+          "solved": 30,
+          "boardCredit": 60
+        },
+        "shared defender: free or elsewhere": {
+          "pairs": 11,
+          "solved": 11,
+          "boardCredit": 22
+        },
+        "which attacker is pinned": {
+          "pairs": 30,
+          "solved": 30,
+          "boardCredit": 60
+        }
+      }
+    },
+    "fixedSum": {
+      "settings": 7680,
+      "weights": [
+        0.25,
+        1,
+        0.5,
+        0
+      ],
+      "pairs": 71,
+      "solved": 0,
+      "boards": 142,
+      "boardCredit": 51.066666666666684,
+      "byType": {
+        "shared defender: pinned or free": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 30
+        },
+        "shared defender: free or elsewhere": {
+          "pairs": 11,
+          "solved": 0,
+          "boardCredit": 11
+        },
+        "which attacker is pinned": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 10.066666666666666
+        }
+      }
+    },
+    "fixedSumFitByFamily": {
+      "development": {
+        "settings": 7680,
+        "weights": [
+          4,
+          0.25,
+          2,
+          0.25
+        ],
+        "pairs": 33,
+        "solved": 0,
+        "boards": 66,
+        "boardCredit": 27.416666666666664,
+        "byType": {
+          "shared defender: pinned or free": {
+            "pairs": 15,
+            "solved": 0,
+            "boardCredit": 15
+          },
+          "shared defender: free or elsewhere": {
+            "pairs": 7,
+            "solved": 0,
+            "boardCredit": 7
+          },
+          "which attacker is pinned": {
+            "pairs": 11,
+            "solved": 0,
+            "boardCredit": 5.416666666666666
+          }
+        }
+      },
+      "heldBack": {
+        "pairs": 38,
+        "solved": 0,
+        "boards": 76,
+        "boardCredit": 21.5,
+        "byType": {
+          "shared defender: pinned or free": {
+            "pairs": 15,
+            "solved": 0,
+            "boardCredit": 15
+          },
+          "shared defender: free or elsewhere": {
+            "pairs": 4,
+            "solved": 0,
+            "boardCredit": 4
+          },
+          "which attacker is pinned": {
+            "pairs": 19,
+            "solved": 0,
+            "boardCredit": 2.5
+          }
+        }
+      }
+    },
+    "checkerCeiling": {
+      "pairs": 71,
+      "solved": 71,
+      "boards": 142,
+      "boardCredit": 142,
+      "byType": {
+        "shared defender: pinned or free": {
+          "pairs": 30,
+          "solved": 30,
+          "boardCredit": 60
+        },
+        "shared defender: free or elsewhere": {
+          "pairs": 11,
+          "solved": 11,
+          "boardCredit": 22
+        },
+        "which attacker is pinned": {
+          "pairs": 30,
+          "solved": 30,
+          "boardCredit": 60
+        }
+      }
+    },
+    "fixedSumWithLegalRecapture": {
+      "settings": 512,
+      "weights": [
+        2,
+        0,
+        0.25,
+        0
+      ],
+      "pairs": 71,
+      "solved": 31,
+      "boards": 142,
+      "boardCredit": 102,
+      "byType": {
+        "shared defender: pinned or free": {
+          "pairs": 30,
+          "solved": 1,
+          "boardCredit": 31
+        },
+        "shared defender: free or elsewhere": {
+          "pairs": 11,
+          "solved": 0,
+          "boardCredit": 11
+        },
+        "which attacker is pinned": {
+          "pairs": 30,
+          "solved": 30,
+          "boardCredit": 60
+        }
+      }
+    },
+    "pinRemoved": {
+      "pairs": 71,
+      "solved": 11,
+      "boards": 142,
+      "boardCredit": 52,
+      "byType": {
+        "shared defender: pinned or free": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 30
+        },
+        "shared defender: free or elsewhere": {
+          "pairs": 11,
+          "solved": 11,
+          "boardCredit": 22
+        },
+        "which attacker is pinned": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 0
+        }
+      }
+    },
+    "reachRemoved": {
+      "pairs": 71,
+      "solved": 0,
+      "boards": 142,
+      "boardCredit": 39.166666666666664,
+      "byType": {
+        "shared defender: pinned or free": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 23.5
+        },
+        "shared defender: free or elsewhere": {
+          "pairs": 11,
+          "solved": 0,
+          "boardCredit": 11
+        },
+        "which attacker is pinned": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 4.666666666666667
+        }
+      }
+    },
+    "worthRemoved": {
+      "pairs": 71,
+      "solved": 24,
+      "boards": 142,
+      "boardCredit": 82.19561655664597,
+      "byType": {
+        "shared defender: pinned or free": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 21.4269413592943
+        },
+        "shared defender: free or elsewhere": {
+          "pairs": 11,
+          "solved": 0,
+          "boardCredit": 6.768675197351667
+        },
+        "which attacker is pinned": {
+          "pairs": 30,
+          "solved": 24,
+          "boardCredit": 54
+        }
+      }
+    },
+    "mostValuableCapture": {
+      "pairs": 71,
+      "solved": 0,
+      "boards": 142,
+      "boardCredit": 39.166666666666664,
+      "byType": {
+        "shared defender: pinned or free": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 23.5
+        },
+        "shared defender: free or elsewhere": {
+          "pairs": 11,
+          "solved": 0,
+          "boardCredit": 11
+        },
+        "which attacker is pinned": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 4.666666666666667
+        }
+      }
+    },
+    "materialDifference": {
+      "pairs": 71,
+      "solved": 0,
+      "boards": 142,
+      "boardCredit": 44.06666666666666,
+      "byType": {
+        "shared defender: pinned or free": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 29.5
+        },
+        "shared defender: free or elsewhere": {
+          "pairs": 11,
+          "solved": 0,
+          "boardCredit": 11
+        },
+        "which attacker is pinned": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 3.5666666666666664
+        }
+      }
+    },
+    "fewestReachingPieces": {
+      "pairs": 71,
+      "solved": 0,
+      "boards": 142,
+      "boardCredit": 7.083333333333333,
+      "byType": {
+        "shared defender: pinned or free": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 1
+        },
+        "shared defender: free or elsewhere": {
+          "pairs": 11,
+          "solved": 0,
+          "boardCredit": 6.083333333333333
+        },
+        "which attacker is pinned": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 0
+        }
+      }
+    },
+    "fewestPiecesLeft": {
+      "pairs": 71,
+      "solved": 0,
+      "boards": 142,
+      "boardCredit": 33.98261183261181,
+      "byType": {
+        "shared defender: pinned or free": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 16.366666666666667
+        },
+        "shared defender: free or elsewhere": {
+          "pairs": 11,
+          "solved": 0,
+          "boardCredit": 6.550000000000001
+        },
+        "which attacker is pinned": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 11.065945165945168
+        }
+      }
+    },
+    "fewestLegalReplies": {
+      "pairs": 71,
+      "solved": 0,
+      "boards": 142,
+      "boardCredit": 7.833333333333334,
+      "byType": {
+        "shared defender: pinned or free": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 2.8333333333333335
+        },
+        "shared defender: free or elsewhere": {
+          "pairs": 11,
+          "solved": 0,
+          "boardCredit": 0
+        },
+        "which attacker is pinned": {
+          "pairs": 30,
+          "solved": 0,
+          "boardCredit": 5
+        }
+      }
+    },
+    "exactRecallAcrossFamilies": {
+      "pairs": 71,
+      "solved": 0,
+      "reason": "An exact board from the same family cannot be recalled."
+    },
+    "legacyPinScopeExceptions": [
+      "shared-defender-2",
+      "shared-defender-9",
+      "shared-defender-29",
+      "shared-defender-30"
+    ]
+  },
+  "freshPairs": {
+    "seed": 20261117,
+    "pairsPerType": 20,
+    "maxAttempts": 400000,
+    "counts": {
+      "which attacker is pinned": {
+        "accepted": 20,
+        "attempts": 90809,
+        "rejections": {
+          "construction: line does not fit": 82298,
+          "construction: no square for a pawn guard": 2515,
+          "a king starts in check": 2446,
+          "construction: lines cross": 1696,
+          "the intended move is not uniquely best by a pawn or more": 376,
+          "construction: pawn on an end rank": 605,
+          "the intended captures do not swap order": 216,
+          "construction: second king square is taken": 234,
+          "an intended capture is not legal on both boards": 44,
+          "construction: no target reached by one attacker only": 160,
+          "the match step disagrees with the checker": 159,
+          "the edit changes other reach facts or misses the named fact": 15,
+          "construction: no square for taker 2": 6,
+          "the two best moves have different feature differences": 11,
+          "construction: no square for taker 1": 8
+        }
+      },
+      "shared defender: pinned or free": {
+        "accepted": 20,
+        "attempts": 8846,
+        "rejections": {
+          "construction: line does not fit": 5876,
+          "the match step disagrees with the checker": 99,
+          "a king starts in check": 1897,
+          "construction: no square for taker 2": 507,
+          "an intended capture is not legal on both boards": 90,
+          "the intended move is not uniquely best by a pawn or more": 177,
+          "the intended captures do not swap order": 146,
+          "the two best moves have different feature differences": 4,
+          "the edit changes other reach facts or misses the named fact": 25,
+          "construction: defender reaches fewer than two free squares": 5
+        }
+      },
+      "shared defender: free or elsewhere": {
+        "accepted": 20,
+        "attempts": 3094,
+        "rejections": {
+          "construction: line does not fit": 2083,
+          "a king starts in check": 587,
+          "construction: no square for taker 2": 187,
+          "the intended captures do not swap order": 43,
+          "the intended move is not uniquely best by a pawn or more": 97,
+          "an intended capture is not legal on both boards": 36,
+          "the match step disagrees with the checker": 28,
+          "the edit changes other reach facts or misses the named fact": 11,
+          "construction: defender reaches fewer than two free squares": 2
+        }
+      }
+    },
+    "pairs": [
+      {
+        "id": "20261117:1:4115",
+        "family": "20261117:1:4115",
+        "split": "held-back development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king b5 -> c3",
+        "boards": [
+          {
+            "fen": "8/3K4/1pn3R1/1krR4/2p5/3rR3/8/3n1R2 w - - 0 1",
+            "best": "g6c6"
+          },
+          {
+            "fen": "8/3K4/1pn3R1/2rR4/2p5/2krR3/8/3n1R2 w - - 0 1",
+            "best": "f1d1"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:8896",
+        "family": "20261117:1:8896",
+        "split": "held-back development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king a6 -> g5",
+        "boards": [
+          {
+            "fen": "2RR4/2nn4/k1p5/1n6/8/2p2K2/3rQ3/2B5 w - - 0 1",
+            "best": "c8c7"
+          },
+          {
+            "fen": "2RR4/2nn4/2p5/1n4k1/8/2p2K2/3rQ3/2B5 w - - 0 1",
+            "best": "d8d7"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:10264",
+        "family": "20261117:1:10264",
+        "split": "development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king a3 -> f2",
+        "boards": [
+          {
+            "fen": "8/4B3/1p2R1b1/2bKR3/8/k3b2p/6rR/8 w - - 0 1",
+            "best": "e5e3"
+          },
+          {
+            "fen": "8/4B3/1p2R1b1/2bKR3/8/4b2p/5krR/8 w - - 0 1",
+            "best": "e6g6"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:12198",
+        "family": "20261117:1:12198",
+        "split": "held-back development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king f8 -> e8",
+        "boards": [
+          {
+            "fen": "5k2/2bp2p1/4nn1P/1p1R3b/2R5/4RQ2/8/1K6 w - - 0 1",
+            "best": "d5h5"
+          },
+          {
+            "fen": "4k3/2bp2p1/4nn1P/1p1R3b/2R5/4RQ2/8/1K6 w - - 0 1",
+            "best": "c4c7"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:24051",
+        "family": "20261117:1:24051",
+        "split": "held-back development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king h6 -> f1",
+        "boards": [
+          {
+            "fen": "1R3b2/6p1/2R2r1k/8/2R2R2/4p2K/2b2r2/8 w - - 0 1",
+            "best": "b8f8"
+          },
+          {
+            "fen": "1R3b2/6p1/2R2r2/8/2R2R2/4p2K/2b2r2/5k2 w - - 0 1",
+            "best": "c4c2"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:26679",
+        "family": "20261117:1:26679",
+        "split": "held-back development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king c1 -> a8",
+        "boards": [
+          {
+            "fen": "8/1p6/n3Np1B/2p1p2p/R4n2/6N1/K7/2k5 w - - 0 1",
+            "best": "g3h5"
+          },
+          {
+            "fen": "k7/1p6/n3Np1B/2p1p2p/R4n2/6N1/K7/8 w - - 0 1",
+            "best": "e6c5"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:30117",
+        "family": "20261117:1:30117",
+        "split": "development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king a8 -> b5",
+        "boards": [
+          {
+            "fen": "k7/1p5P/r2R1p2/2p5/1r3pK1/RQ6/5R2/8 w - - 0 1",
+            "best": "d6f6"
+          },
+          {
+            "fen": "8/1p5P/r2R1p2/1kp5/1r3pK1/RQ6/5R2/8 w - - 0 1",
+            "best": "f2f4"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:32592",
+        "family": "20261117:1:32592",
+        "split": "development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king d2 -> c1",
+        "boards": [
+          {
+            "fen": "8/8/2RR4/1pR2R2/1p2p3/2nn4/3k1p2/7K w - - 0 1",
+            "best": "f5f2"
+          },
+          {
+            "fen": "8/8/2RR4/1pR2R2/1p2p3/2nn4/5p2/2k4K w - - 0 1",
+            "best": "c5b5"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:37106",
+        "family": "20261117:1:37106",
+        "split": "held-back development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king f5 -> f6",
+        "boards": [
+          {
+            "fen": "8/2Np4/2R1b3/3p1k1p/6n1/4p2B/2K5/3N4 w - - 0 1",
+            "best": "d1e3"
+          },
+          {
+            "fen": "8/2Np4/2R1bk2/3p3p/6n1/4p2B/2K5/3N4 w - - 0 1",
+            "best": "c7d5"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:43027",
+        "family": "20261117:1:43027",
+        "split": "development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king f3 -> e3",
+        "boards": [
+          {
+            "fen": "R5b1/8/2R5/5p1B/6r1/2bp1k2/4n2K/4R3 w - - 0 1",
+            "best": "a8g8"
+          },
+          {
+            "fen": "R5b1/8/2R5/5p1B/6r1/2bpk3/4n2K/4R3 w - - 0 1",
+            "best": "c6c3"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:47377",
+        "family": "20261117:1:47377",
+        "split": "held-back development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king b5 -> a2",
+        "boards": [
+          {
+            "fen": "2Q5/1prB1K2/2r5/1k6/1r5Q/2p5/1r1R4/8 w - - 0 1",
+            "best": "c8c7"
+          },
+          {
+            "fen": "2Q5/1prB1K2/2r5/8/1r5Q/2p5/kr1R4/8 w - - 0 1",
+            "best": "h4b4"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:54740",
+        "family": "20261117:1:54740",
+        "split": "development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king h7 -> g7",
+        "boards": [
+          {
+            "fen": "8/2Rp3k/3pp3/1p2n1p1/3Bp2r/7R/4R3/1K6 w - - 0 1",
+            "best": "e2e4"
+          },
+          {
+            "fen": "8/2Rp2k1/3pp3/1p2n1p1/3Bp2r/7R/4R3/1K6 w - - 0 1",
+            "best": "c7d7"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:57095",
+        "family": "20261117:1:57095",
+        "split": "development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king c6 -> f6",
+        "boards": [
+          {
+            "fen": "3Rb3/8/2kp4/4r3/6p1/P2R1b2/1B4B1/3b3K w - - 0 1",
+            "best": "d3d1"
+          },
+          {
+            "fen": "3Rb3/8/3p1k2/4r3/6p1/P2R1b2/1B4B1/3b3K w - - 0 1",
+            "best": "d8e8"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:58435",
+        "family": "20261117:1:58435",
+        "split": "development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king h6 -> a8",
+        "boards": [
+          {
+            "fen": "8/2p5/4p2k/BK1n2p1/7b/7R/5p2/6BQ w - - 0 1",
+            "best": "g1f2"
+          },
+          {
+            "fen": "k7/2p5/4p3/BK1n2p1/7b/7R/5p2/6BQ w - - 0 1",
+            "best": "a5c7"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:71714",
+        "family": "20261117:1:71714",
+        "split": "development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king c4 -> a3",
+        "boards": [
+          {
+            "fen": "R7/8/1n4R1/1p2K1p1/n1kp4/2b5/3n2R1/2R5 w - - 0 1",
+            "best": "g2d2"
+          },
+          {
+            "fen": "R7/8/1n4R1/1p2K1p1/n2p4/k1b5/3n2R1/2R5 w - - 0 1",
+            "best": "g6b6"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:76044",
+        "family": "20261117:1:76044",
+        "split": "development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king h1 -> a3",
+        "boards": [
+          {
+            "fen": "2N5/1b5R/Rp5R/n7/8/6p1/2pRb2r/2K4k w - - 0 1",
+            "best": "d2e2"
+          },
+          {
+            "fen": "2N5/1b5R/Rp5R/n7/8/k5p1/2pRb2r/2K5 w - - 0 1",
+            "best": "h7b7"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:83834",
+        "family": "20261117:1:83834",
+        "split": "development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king e6 -> c8",
+        "boards": [
+          {
+            "fen": "8/3p4/1pr1k3/5p2/2R1n3/2p5/4QB2/B3K3 w - - 0 1",
+            "best": "a1c3"
+          },
+          {
+            "fen": "2k5/3p4/1pr5/5p2/2R1n3/2p5/4QB2/B3K3 w - - 0 1",
+            "best": "f2b6"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:88210",
+        "family": "20261117:1:88210",
+        "split": "development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king b7 -> f5",
+        "boards": [
+          {
+            "fen": "8/1k5K/8/2p1p3/pr3b2/1RN1p3/5R2/3N4 w - - 0 1",
+            "best": "c3a4"
+          },
+          {
+            "fen": "8/7K/8/2p1pk2/pr3b2/1RN1p3/5R2/3N4 w - - 0 1",
+            "best": "d1e3"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:88531",
+        "family": "20261117:1:88531",
+        "split": "development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king h6 -> f7",
+        "boards": [
+          {
+            "fen": "8/3p4/4n1pk/K6b/2Qp2p1/8/4NN1Q/8 w - - 0 1",
+            "best": "f2g4"
+          },
+          {
+            "fen": "8/3p1k2/4n1p1/K6b/2Qp2p1/8/4NN1Q/8 w - - 0 1",
+            "best": "e2d4"
+          }
+        ]
+      },
+      {
+        "id": "20261117:1:90809",
+        "family": "20261117:1:90809",
+        "split": "development",
+        "type": "which attacker is pinned",
+        "changedFact": "black king h5 -> h3",
+        "boards": [
+          {
+            "fen": "3R1n2/6p1/4p3/4Rr1k/5p2/2N2Rn1/2K5/3R3n w - - 0 1",
+            "best": "d8f8"
+          },
+          {
+            "fen": "3R1n2/6p1/4p3/4Rr2/5p2/2N2Rnk/2K5/3R3n w - - 0 1",
+            "best": "d1h1"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:12",
+        "family": "20261117:2:12",
+        "split": "development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king e2 -> h4",
+        "boards": [
+          {
+            "fen": "8/8/K7/8/8/4r1p1/R2bkP2/2q3Q1 w - - 0 1",
+            "best": "g1c1"
+          },
+          {
+            "fen": "8/8/K7/8/7k/4r1p1/R2b1P2/2q3Q1 w - - 0 1",
+            "best": "f2e3"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:300",
+        "family": "20261117:2:300",
+        "split": "held-back development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king b6 -> c7",
+        "boards": [
+          {
+            "fen": "5qQ1/8/1k1b3R/4n3/3P4/8/4K3/8 w - - 0 1",
+            "best": "g8f8"
+          },
+          {
+            "fen": "5qQ1/2k5/3b3R/4n3/3P4/8/4K3/8 w - - 0 1",
+            "best": "d4e5"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:351",
+        "family": "20261117:2:351",
+        "split": "held-back development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king d3 -> b3",
+        "boards": [
+          {
+            "fen": "1K6/8/6Bq/5nQN/8/3k2r1/7P/8 w - - 0 1",
+            "best": "g5h6"
+          },
+          {
+            "fen": "1K6/8/6Bq/5nQN/8/1k4r1/7P/8 w - - 0 1",
+            "best": "h2g3"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:553",
+        "family": "20261117:2:553",
+        "split": "development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king b8 -> g7",
+        "boards": [
+          {
+            "fen": "1k6/8/rr5n/6PK/8/8/1R6/R7 w - - 0 1",
+            "best": "a1a6"
+          },
+          {
+            "fen": "8/6k1/rr5n/6PK/8/8/1R6/R7 w - - 0 1",
+            "best": "g5h6"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:1024",
+        "family": "20261117:2:1024",
+        "split": "held-back development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king f4 -> h6",
+        "boards": [
+          {
+            "fen": "8/8/3n4/2P5/R1n2k2/r7/R7/5K2 w - - 0 1",
+            "best": "a2a3"
+          },
+          {
+            "fen": "8/8/3n3k/2P5/R1n5/r7/R7/5K2 w - - 0 1",
+            "best": "c5d6"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:1829",
+        "family": "20261117:2:1829",
+        "split": "held-back development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king a7 -> f6",
+        "boards": [
+          {
+            "fen": "3K4/k7/2q5/n7/8/Rn6/2P5/7Q w - - 0 1",
+            "best": "h1c6"
+          },
+          {
+            "fen": "3K4/8/2q2k2/n7/8/Rn6/2P5/7Q w - - 0 1",
+            "best": "c2b3"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:2050",
+        "family": "20261117:2:2050",
+        "split": "development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king f7 -> d8",
+        "boards": [
+          {
+            "fen": "8/5k2/6b1/1pK2b1P/6r1/7Q/4NQ2/8 w - - 0 1",
+            "best": "h3g4"
+          },
+          {
+            "fen": "3k4/8/6b1/1pK2b1P/6r1/7Q/4NQ2/8 w - - 0 1",
+            "best": "h5g6"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:2568",
+        "family": "20261117:2:2568",
+        "split": "development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king d3 -> d8",
+        "boards": [
+          {
+            "fen": "8/7p/8/2K3n1/5P2/3k1nR1/6p1/R5r1 w - - 0 1",
+            "best": "a1g1"
+          },
+          {
+            "fen": "3k4/7p/8/2K3n1/5P2/5nR1/6p1/R5r1 w - - 0 1",
+            "best": "f4g5"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:2831",
+        "family": "20261117:2:2831",
+        "split": "development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king b1 -> c8",
+        "boards": [
+          {
+            "fen": "8/8/5nB1/6P1/1K2n3/5Qr1/8/1k6 w - - 0 1",
+            "best": "f3g3"
+          },
+          {
+            "fen": "2k5/8/5nB1/6P1/1K2n3/5Qr1/8/8 w - - 0 1",
+            "best": "g5f6"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:3682",
+        "family": "20261117:2:3682",
+        "split": "development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king g7 -> f8",
+        "boards": [
+          {
+            "fen": "6n1/6k1/8/1bp5/P2n3K/1r6/8/BR6 w - - 0 1",
+            "best": "b1b3"
+          },
+          {
+            "fen": "5kn1/8/8/1bp5/P2n3K/1r6/8/BR6 w - - 0 1",
+            "best": "a4b5"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:3720",
+        "family": "20261117:2:3720",
+        "split": "development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king h7 -> f4",
+        "boards": [
+          {
+            "fen": "8/4n2k/3R1P2/5n2/3r4/8/8/1B5K w - - 0 1",
+            "best": "d6d4"
+          },
+          {
+            "fen": "8/4n3/3R1P2/5n2/3r1k2/8/8/1B5K w - - 0 1",
+            "best": "f6e7"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:4161",
+        "family": "20261117:2:4161",
+        "split": "development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king g8 -> a7",
+        "boards": [
+          {
+            "fen": "6k1/5n2/n2rQ3/3R2n1/7P/8/1K6/8 w - - 0 1",
+            "best": "d5d6"
+          },
+          {
+            "fen": "8/k4n2/n2rQ3/3R2n1/7P/8/1K6/8 w - - 0 1",
+            "best": "h4g5"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:4262",
+        "family": "20261117:2:4262",
+        "split": "development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king b8 -> c7",
+        "boards": [
+          {
+            "fen": "1k2K3/1n6/1R1r4/q3P3/1Q2p3/8/8/8 w - - 0 1",
+            "best": "b4a5"
+          },
+          {
+            "fen": "4K3/1nk5/1R1r4/q3P3/1Q2p3/8/8/8 w - - 0 1",
+            "best": "e5d6"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:4389",
+        "family": "20261117:2:4389",
+        "split": "held-back development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king h8 -> a5",
+        "boards": [
+          {
+            "fen": "2R2n1k/3n4/2P1r3/1p6/6K1/4Q3/8/8 w - - 0 1",
+            "best": "e3e6"
+          },
+          {
+            "fen": "2R2n2/3n4/2P1r3/kp6/6K1/4Q3/8/8 w - - 0 1",
+            "best": "c6d7"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:4735",
+        "family": "20261117:2:4735",
+        "split": "development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king b3 -> a8",
+        "boards": [
+          {
+            "fen": "8/5B2/8/q5Q1/2n5/1k2n3/3P1K2/8 w - - 0 1",
+            "best": "g5a5"
+          },
+          {
+            "fen": "k7/5B2/8/q5Q1/2n5/4n3/3P1K2/8 w - - 0 1",
+            "best": "d2e3"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:5225",
+        "family": "20261117:2:5225",
+        "split": "held-back development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king g7 -> g8",
+        "boards": [
+          {
+            "fen": "8/1Q1Rn1k1/2n5/1P1r4/8/8/7K/8 w - - 0 1",
+            "best": "d7d5"
+          },
+          {
+            "fen": "6k1/1Q1Rn3/2n5/1P1r4/8/8/7K/8 w - - 0 1",
+            "best": "b5c6"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:5707",
+        "family": "20261117:2:5707",
+        "split": "held-back development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king g6 -> a5",
+        "boards": [
+          {
+            "fen": "K7/8/6k1/8/1b4rr/2P3QR/8/8 w - - 0 1",
+            "best": "h3h4"
+          },
+          {
+            "fen": "K7/8/8/k7/1b4rr/2P3QR/8/8 w - - 0 1",
+            "best": "c3b4"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:7110",
+        "family": "20261117:2:7110",
+        "split": "development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king d3 -> c2",
+        "boards": [
+          {
+            "fen": "4R3/8/3Qr3/6K1/3n4/1n1k4/P7/8 w - - 0 1",
+            "best": "e8e6"
+          },
+          {
+            "fen": "4R3/8/3Qr3/6K1/3n4/1n6/P1k5/8 w - - 0 1",
+            "best": "a2b3"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:8286",
+        "family": "20261117:2:8286",
+        "split": "held-back development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king d4 -> d6",
+        "boards": [
+          {
+            "fen": "6Q1/1r6/2P5/7p/Qr1k4/1q6/3K4/8 w - - 0 1",
+            "best": "g8b3"
+          },
+          {
+            "fen": "6Q1/1r6/2Pk4/7p/Qr6/1q6/3K4/8 w - - 0 1",
+            "best": "c6b7"
+          }
+        ]
+      },
+      {
+        "id": "20261117:2:8846",
+        "family": "20261117:2:8846",
+        "split": "development",
+        "type": "shared defender: pinned or free",
+        "changedFact": "black king a2 -> c6",
+        "boards": [
+          {
+            "fen": "6B1/8/5n2/3nP3/1r2R3/8/k2K4/8 w - - 0 1",
+            "best": "e4b4"
+          },
+          {
+            "fen": "6B1/8/2k2n2/3nP3/1r2R3/8/3K4/8 w - - 0 1",
+            "best": "e5f6"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:16",
+        "family": "20261117:3:16",
+        "split": "held-back development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n d8 -> e4",
+        "boards": [
+          {
+            "fen": "3n1Q1K/Qq6/4n3/5P2/8/8/8/2k5 w - - 0 1",
+            "best": "f5e6"
+          },
+          {
+            "fen": "5Q1K/Qq6/4n3/5P2/4n3/8/8/2k5 w - - 0 1",
+            "best": "a7b7"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:55",
+        "family": "20261117:3:55",
+        "split": "development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n g6 -> g5",
+        "boards": [
+          {
+            "fen": "1k6/8/6nR/3Kn3/3PRr2/8/8/8 w - - 0 1",
+            "best": "d4e5"
+          },
+          {
+            "fen": "1k6/8/7R/3Kn1n1/3PRr2/8/8/8 w - - 0 1",
+            "best": "e4f4"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:251",
+        "family": "20261117:3:251",
+        "split": "held-back development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n g4 -> a3",
+        "boards": [
+          {
+            "fen": "2k5/8/6Rb/6P1/6n1/8/3K1p1r/7R w - - 0 1",
+            "best": "g5h6"
+          },
+          {
+            "fen": "2k5/8/6Rb/6P1/8/n7/3K1p1r/7R w - - 0 1",
+            "best": "h1h2"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:944",
+        "family": "20261117:3:944",
+        "split": "development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black b f5 -> c4",
+        "boards": [
+          {
+            "fen": "4KN2/3r4/k7/5b2/8/5Q2/8/1q4Q1 w - - 0 1",
+            "best": "f8d7"
+          },
+          {
+            "fen": "4KN2/3r4/k7/8/2b5/5Q2/8/1q4Q1 w - - 0 1",
+            "best": "g1b1"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:1156",
+        "family": "20261117:3:1156",
+        "split": "development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n f8 -> g2",
+        "boards": [
+          {
+            "fen": "3RRn2/3n4/2P1r3/8/1n6/4k3/8/6K1 w - - 0 1",
+            "best": "c6d7"
+          },
+          {
+            "fen": "3RR3/3n4/2P1r3/8/1n6/4k3/6n1/6K1 w - - 0 1",
+            "best": "e8e6"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:1205",
+        "family": "20261117:3:1205",
+        "split": "development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n a4 -> e2",
+        "boards": [
+          {
+            "fen": "8/3P4/1Q1K4/2n5/n2P4/R7/1q5p/3k4 w - - 0 1",
+            "best": "d4c5"
+          },
+          {
+            "fen": "8/3P4/1Q1K4/2n5/3P4/R7/1q2n2p/3k4 w - - 0 1",
+            "best": "b6b2"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:1229",
+        "family": "20261117:3:1229",
+        "split": "development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n e7 -> a7",
+        "boards": [
+          {
+            "fen": "2N3r1/1Q2n3/5K2/5nR1/4P1p1/8/8/3k4 w - - 0 1",
+            "best": "e4f5"
+          },
+          {
+            "fen": "2N3r1/nQ6/5K2/5nR1/4P1p1/8/8/3k4 w - - 0 1",
+            "best": "g5g8"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:1243",
+        "family": "20261117:3:1243",
+        "split": "held-back development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n e5 -> c8",
+        "boards": [
+          {
+            "fen": "k7/8/8/3RnR2/8/3r1n2/K5P1/8 w - - 0 1",
+            "best": "g2f3"
+          },
+          {
+            "fen": "k1n5/8/8/3R1R2/8/3r1n2/K5P1/8 w - - 0 1",
+            "best": "d5d3"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:1415",
+        "family": "20261117:3:1415",
+        "split": "held-back development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n d4 -> f2",
+        "boards": [
+          {
+            "fen": "8/8/2n5/2QP1r1k/3n4/8/2QK4/N7 w - - 0 1",
+            "best": "d5c6"
+          },
+          {
+            "fen": "8/8/2n5/2QP1r1k/8/8/2QK1n2/N7 w - - 0 1",
+            "best": "c2f5"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:1582",
+        "family": "20261117:3:1582",
+        "split": "development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n c2 -> g7",
+        "boards": [
+          {
+            "fen": "8/5p2/8/6K1/3n4/4P1k1/2n5/1B1Qr3 w - - 0 1",
+            "best": "e3d4"
+          },
+          {
+            "fen": "8/5pn1/8/6K1/3n4/4P1k1/8/1B1Qr3 w - - 0 1",
+            "best": "d1e1"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:1669",
+        "family": "20261117:3:1669",
+        "split": "development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n c6 -> e3",
+        "boards": [
+          {
+            "fen": "8/5K2/2nQ4/rB2q3/1P6/7k/8/8 w - - 0 1",
+            "best": "b4a5"
+          },
+          {
+            "fen": "8/5K2/3Q4/rB2q3/1P6/4n2k/8/8 w - - 0 1",
+            "best": "d6e5"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:1805",
+        "family": "20261117:3:1805",
+        "split": "held-back development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n f8 -> h7",
+        "boards": [
+          {
+            "fen": "3RKn2/3r1N2/4P1qQ/2pk4/8/8/8/8 w - - 0 1",
+            "best": "e6d7"
+          },
+          {
+            "fen": "3RK3/3r1N1n/4P1qQ/2pk4/8/8/8/8 w - - 0 1",
+            "best": "h6g6"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:2001",
+        "family": "20261117:3:2001",
+        "split": "held-back development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n g5 -> e2",
+        "boards": [
+          {
+            "fen": "3K4/5P1n/6P1/2P2RnR/1k6/5r2/8/8 w - - 0 1",
+            "best": "g6h7"
+          },
+          {
+            "fen": "3K4/5P1n/6P1/2P2R1R/1k6/5r2/4n3/8 w - - 0 1",
+            "best": "f5f3"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:2011",
+        "family": "20261117:3:2011",
+        "split": "development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black b f5 -> g2",
+        "boards": [
+          {
+            "fen": "2qQ1R2/7r/8/1K3bN1/8/8/4p3/7k w - - 0 1",
+            "best": "g5h7"
+          },
+          {
+            "fen": "2qQ1R2/7r/8/1K4N1/8/8/4p1b1/7k w - - 0 1",
+            "best": "d8c8"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:2017",
+        "family": "20261117:3:2017",
+        "split": "development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n g7 -> f7",
+        "boards": [
+          {
+            "fen": "3Rr3/1K4nk/4n2B/5P2/8/8/8/8 w - - 0 1",
+            "best": "f5e6"
+          },
+          {
+            "fen": "3Rr3/1K3n1k/4n2B/5P2/8/8/8/8 w - - 0 1",
+            "best": "d8e8"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:2067",
+        "family": "20261117:3:2067",
+        "split": "held-back development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n e6 -> c2",
+        "boards": [
+          {
+            "fen": "8/6k1/4n3/6r1/5nQ1/6P1/4RK2/8 w - - 0 1",
+            "best": "g3f4"
+          },
+          {
+            "fen": "8/6k1/8/6r1/5nQ1/6P1/2n1RK2/8 w - - 0 1",
+            "best": "g4g5"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:2350",
+        "family": "20261117:3:2350",
+        "split": "development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n c3 -> h3",
+        "boards": [
+          {
+            "fen": "3n4/3k4/7K/3r4/2P5/2n2Q2/q7/1Q6 w - - 0 1",
+            "best": "c4d5"
+          },
+          {
+            "fen": "3n4/3k4/7K/3r4/2P5/5Q1n/q7/1Q6 w - - 0 1",
+            "best": "b1a2"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:2527",
+        "family": "20261117:3:2527",
+        "split": "held-back development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n a6 -> g6",
+        "boards": [
+          {
+            "fen": "RQ6/8/n7/2r5/1q1P4/3k4/6K1/8 w - - 0 1",
+            "best": "d4c5"
+          },
+          {
+            "fen": "RQ6/8/6n1/2r5/1q1P4/3k4/6K1/8 w - - 0 1",
+            "best": "b8b4"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:2902",
+        "family": "20261117:3:2902",
+        "split": "held-back development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black b g6 -> f8",
+        "boards": [
+          {
+            "fen": "6R1/5b2/1n2P1b1/k7/8/8/2r5/K2Q4 w - - 0 1",
+            "best": "e6f7"
+          },
+          {
+            "fen": "5bR1/5b2/1n2P3/k7/8/8/2r5/K2Q4 w - - 0 1",
+            "best": "d1c2"
+          }
+        ]
+      },
+      {
+        "id": "20261117:3:3094",
+        "family": "20261117:3:3094",
+        "split": "held-back development",
+        "type": "shared defender: free or elsewhere",
+        "changedFact": "black n d8 -> h3",
+        "boards": [
+          {
+            "fen": "3n1RK1/1q1B1n2/2r5/8/1Q6/1n6/8/1k6 w - - 0 1",
+            "best": "d7c6"
+          },
+          {
+            "fen": "5RK1/1q1B1n2/2r5/8/1Q6/1n5n/8/1k6 w - - 0 1",
+            "best": "b4b7"
+          }
+        ]
+      }
+    ],
+    "results": {
+      "families": 60,
+      "distinctBoards": 120,
+      "match": {
+        "pairs": 60,
+        "solved": 60,
+        "boards": 120,
+        "boardCredit": 120,
+        "byType": {
+          "which attacker is pinned": {
+            "pairs": 20,
+            "solved": 20,
+            "boardCredit": 40
+          },
+          "shared defender: pinned or free": {
+            "pairs": 20,
+            "solved": 20,
+            "boardCredit": 40
+          },
+          "shared defender: free or elsewhere": {
+            "pairs": 20,
+            "solved": 20,
+            "boardCredit": 40
+          }
+        }
+      },
+      "fixedSum": {
+        "settings": 7680,
+        "weights": [
+          0.25,
+          0,
+          0.5,
+          2
+        ],
+        "pairs": 60,
+        "solved": 0,
+        "boards": 120,
+        "boardCredit": 45,
+        "byType": {
+          "which attacker is pinned": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 5
+          },
+          "shared defender: pinned or free": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 20
+          },
+          "shared defender: free or elsewhere": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 20
+          }
+        }
+      },
+      "fixedSumFitByFamily": {
+        "development": {
+          "settings": 7680,
+          "weights": [
+            0.25,
+            0,
+            0.5,
+            2
+          ],
+          "pairs": 35,
+          "solved": 0,
+          "boards": 70,
+          "boardCredit": 27,
+          "byType": {
+            "which attacker is pinned": {
+              "pairs": 13,
+              "solved": 0,
+              "boardCredit": 5
+            },
+            "shared defender: pinned or free": {
+              "pairs": 12,
+              "solved": 0,
+              "boardCredit": 12
+            },
+            "shared defender: free or elsewhere": {
+              "pairs": 10,
+              "solved": 0,
+              "boardCredit": 10
+            }
+          }
+        },
+        "heldBack": {
+          "pairs": 25,
+          "solved": 0,
+          "boards": 50,
+          "boardCredit": 18,
+          "byType": {
+            "which attacker is pinned": {
+              "pairs": 7,
+              "solved": 0,
+              "boardCredit": 0
+            },
+            "shared defender: pinned or free": {
+              "pairs": 8,
+              "solved": 0,
+              "boardCredit": 8
+            },
+            "shared defender: free or elsewhere": {
+              "pairs": 10,
+              "solved": 0,
+              "boardCredit": 10
+            }
+          }
+        }
+      },
+      "checkerCeiling": {
+        "pairs": 60,
+        "solved": 60,
+        "boards": 120,
+        "boardCredit": 120,
+        "byType": {
+          "which attacker is pinned": {
+            "pairs": 20,
+            "solved": 20,
+            "boardCredit": 40
+          },
+          "shared defender: pinned or free": {
+            "pairs": 20,
+            "solved": 20,
+            "boardCredit": 40
+          },
+          "shared defender: free or elsewhere": {
+            "pairs": 20,
+            "solved": 20,
+            "boardCredit": 40
+          }
+        }
+      },
+      "fixedSumWithLegalRecapture": {
+        "settings": 512,
+        "weights": [
+          2,
+          0,
+          0.25,
+          0
+        ],
+        "pairs": 60,
+        "solved": 20,
+        "boards": 120,
+        "boardCredit": 80,
+        "byType": {
+          "which attacker is pinned": {
+            "pairs": 20,
+            "solved": 20,
+            "boardCredit": 40
+          },
+          "shared defender: pinned or free": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 20
+          },
+          "shared defender: free or elsewhere": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 20
+          }
+        }
+      },
+      "pinRemoved": {
+        "pairs": 60,
+        "solved": 20,
+        "boards": 120,
+        "boardCredit": 60,
+        "byType": {
+          "which attacker is pinned": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 0
+          },
+          "shared defender: pinned or free": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 20
+          },
+          "shared defender: free or elsewhere": {
+            "pairs": 20,
+            "solved": 20,
+            "boardCredit": 40
+          }
+        }
+      },
+      "reachRemoved": {
+        "pairs": 60,
+        "solved": 0,
+        "boards": 120,
+        "boardCredit": 38.4,
+        "byType": {
+          "which attacker is pinned": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 1.5666666666666667
+          },
+          "shared defender: pinned or free": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 16.833333333333336
+          },
+          "shared defender: free or elsewhere": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 20
+          }
+        }
+      },
+      "worthRemoved": {
+        "pairs": 60,
+        "solved": 14,
+        "boards": 120,
+        "boardCredit": 54.66714744084679,
+        "byType": {
+          "which attacker is pinned": {
+            "pairs": 20,
+            "solved": 14,
+            "boardCredit": 32.733333333333334
+          },
+          "shared defender: pinned or free": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 11.025766205758465
+          },
+          "shared defender: free or elsewhere": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 10.908047901754998
+          }
+        }
+      },
+      "mostValuableCapture": {
+        "pairs": 60,
+        "solved": 0,
+        "boards": 120,
+        "boardCredit": 38.4,
+        "byType": {
+          "which attacker is pinned": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 1.5666666666666667
+          },
+          "shared defender: pinned or free": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 16.833333333333336
+          },
+          "shared defender: free or elsewhere": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 20
+          }
+        }
+      },
+      "materialDifference": {
+        "pairs": 60,
+        "solved": 0,
+        "boards": 120,
+        "boardCredit": 42.166666666666664,
+        "byType": {
+          "which attacker is pinned": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 2.1666666666666665
+          },
+          "shared defender: pinned or free": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 20
+          },
+          "shared defender: free or elsewhere": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 20
+          }
+        }
+      },
+      "fewestReachingPieces": {
+        "pairs": 60,
+        "solved": 0,
+        "boards": 120,
+        "boardCredit": 9.783333333333333,
+        "byType": {
+          "which attacker is pinned": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 0
+          },
+          "shared defender: pinned or free": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 0
+          },
+          "shared defender: free or elsewhere": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 9.783333333333333
+          }
+        }
+      },
+      "fewestPiecesLeft": {
+        "pairs": 60,
+        "solved": 0,
+        "boards": 120,
+        "boardCredit": 30.66904761904761,
+        "byType": {
+          "which attacker is pinned": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 7.952380952380952
+          },
+          "shared defender: pinned or free": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 10.433333333333334
+          },
+          "shared defender: free or elsewhere": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 12.283333333333331
+          }
+        }
+      },
+      "fewestLegalReplies": {
+        "pairs": 60,
+        "solved": 0,
+        "boards": 120,
+        "boardCredit": 12.5,
+        "byType": {
+          "which attacker is pinned": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 7.5
+          },
+          "shared defender: pinned or free": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 1
+          },
+          "shared defender: free or elsewhere": {
+            "pairs": 20,
+            "solved": 0,
+            "boardCredit": 4
+          }
+        }
+      },
+      "exactRecallAcrossFamilies": {
+        "pairs": 60,
+        "solved": 0,
+        "reason": "An exact board from the same family cannot be recalled."
+      }
+    },
+    "reachedQuota": true
+  },
+  "distinctBoardsChecked": 256,
+  "nonKingMovesChecked": 7146
+}

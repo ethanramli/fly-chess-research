@@ -54,6 +54,7 @@ This folder holds dated reports, experiment evidence, reviews, and supporting re
 
 - [Research weaknesses review](research-weakness-review-2026-10-30/README.md): five priorities and evidence review; it reports no demonstrated eye-driven learning, validated new memory mechanism, transfer, or concept combination at that point.
 - [Mistake diagnosis](mistake-diagnosis-2026-11-04/README.md): read-only audit of mistakes since restart and peer reviews of memory v4; running v3 results were excluded.
+- [Combination shortcut audit](combination-shortcut-audit-2026-11-16/README.md) tests which shortcuts pass the original combination task on development boards.
 - [Combination roadmap design checks](combination-roadmap-2026-11-16/README.md): rerunnable checks behind the 2026-11-16 roadmap proposal. On hand-built and program-built boards, a fixed sum of separate concept answers passes the current combination test and fails the proposed flip pairs. No graph, no learning, no sealed games; it establishes no learning or reasoning result.
 - [Overnight peer review](overnight-peer-review-2026-11-02/README.md): simple-English entry point to ranked issues and later software fixes; it establishes no scientific claim.
 <!-- /directory-map -->

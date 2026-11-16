@@ -17,6 +17,11 @@ This is the handoff for continuing the research: read the current checkpoint fir
 - **Volume 3, chapters 2, 4, 5 and 6.** A [roadmap](design/research-goals/combination-roadmap-2026-11-16.md) proposes replacing the combination test's twin pairs with flip pairs and building concept records with one match step. It is design only: its [checks](../research/reports/combination-roadmap-2026-11-16/README.md) use hand-built and program-built boards, no graph and no sealed games.
 - **Needs the researcher's decision** before any build. If adopted, the first build is Milestone 1 on that page, which needs no graph run. The current checkpoint above is unchanged.
 
+## Addendum 2026-11-16: Volume 3 benchmark built
+
+- **Volume 3, chapters 4 and 5.** The researcher authorized the first benchmark build. The [flip-pair benchmark](../research/reports/combination-roadmap-2026-11-16/README.md#first-benchmark-build) compares a hand-written rule given correct reach, pin and material facts with shortcut rules on constructed positions.
+- **Next Volume 3 step:** build the marked-squares view and separate lessons, then check whether the learned reach and pin facts hold on unfamiliar board families.
+
 ## Previous checkpoint: 2026-11-15
 
 - **Volume 2, chapters 3 and 5.** The three-board feedback test is inconclusive: the quiet circuit's learning-off run failed required check 3 on all 72 lessons. During pulses, the cap at 0.014047 kept as little as 22.35% of a lesson's activity difference, below the 99% required. This is the researcher's report; the raw files are on the graph machine. **The other five runs are paused.** See [journal item 37](../research/journal/experiments/2026-11-07-fly-connections-memory.md#37-2026-11-15-check-3-failed-in-the-quiet-learning-off-run).

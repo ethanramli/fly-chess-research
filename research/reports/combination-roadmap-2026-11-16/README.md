@@ -89,3 +89,24 @@ Each yes-or-no record was flipped at random with a fixed probability, 300 times 
 - [outputs/](outputs/): what each command printed.
 
 Related: [roadmap proposal](../../../documentation/design/research-goals/combination-roadmap-2026-11-16.md) · [journal entry](../../journal/discussions/2026-11-16-combination-roadmap.md) · [protocol under review](../../../documentation/design/research-goals/transfer-and-combination-protocol-2026-11-03.md)
+
+## First benchmark build
+
+This software check serves Volume 3, *Reasoning*, chapters 4 (*Process*) and 5 (*Evidence*). The [benchmark command](../../../.codebase/scripts/search-and-feedback/README.md#flip-pair-benchmark) runs the prepared fixture or builds fresh development pairs. It gives the match step correct facts from chess geometry. Learning how to supply those facts is the next step.
+
+Two reviewers checked the chess rules and shortcut controls independently:
+
+- Chess.js 1.4.0 normally searches opponent replies while adding checkmate notation to generated candidates. The benchmark suppresses that notation check and keeps the same candidate coordinates and successor positions. A test observes chess.js's internal move generator to catch searches on the opponent's turn. A separate replay on 220 positions, including 110 with Black to move, verified the candidate list and found no opponent reply search by the matcher.
+- Four saved pairs labelled “shared defender: pinned or free” free the defender for only one of the two candidates. They remain in the historical replay and are marked in the output. The fresh generator requires the same defender to be freed on both landing squares. The hand-built attacker pair caught a reversed pin transition while tightening the check. The corrected direction requires the first defender to be freed and the second defender to be newly pinned.
+
+Equal feature differences force every fixed-weight linear sum of the four raw counts and values to order the two alternatives the same way on both boards. The best move reverses, so a fixed sum cannot uniquely choose both. Pair selection deliberately requires that equality. Nonlinear feature transforms and other untested shortcuts remain outside the proof.
+
+The [saved check](outputs/first-benchmark-build.json) used Node 24.22.1, chess.js 1.4.0, and seed `20261117`. It checked **7,146 legal non-king moves** across 256 distinct benchmark boards. Every move score agreed with the landing-square checker.
+
+| Fresh pair type | Accepted | Candidate attempts | Match step | Fixed sum |
+|---|---:|---:|---:|---:|
+| which attacker is pinned | 20 | 90,809 | 20/20 | 0/20 |
+| shared defender: pinned or free | 20 | 8,846 | 20/20 | 0/20 |
+| shared defender: free or elsewhere | 20 | 3,094 | 20/20 | 0/20 |
+
+The saved 71 pairs reproduce the original match and shortcut results. The four separate traps document a capture along the pin line and where king captures, guards, or a second check require more rules. The generated positions and scores are development evidence for the benchmark.

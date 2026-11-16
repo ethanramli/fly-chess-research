@@ -57,3 +57,5 @@
 - [Post-interference observations](curriculum-retention-observations.mjs): read-only current/earlier validation and training sentinels across accepted baseline, selected and actual post-challenge memories, with independent rule-certificate checks and explicit unknown/failure gates.
 - [Post-interference promotion](curriculum-retention-promotion.mjs): binds the frozen source selection, parent registration/result, replayed eight-block challenge and measured retention to the actual checkpoint carried forward. Generic matrix auditing and memory handoff validate the artifact; full stage acceptance remains separate.
 - [record-neuron-candidates.mjs](record-neuron-candidates.mjs): streamed Eyes inference with copied endpoint observations, full declared state/board fingerprints and a completion receipt; no teaching or policy selection. [Interface](../../../documentation/design/neural-learning/neuron-reader.md).
+
+- [Flip-pair generator](flip-pair-generator-v1.mjs) makes seeded, one-edit development pairs and records why it drops candidates. Run it through the [Volume 3 benchmark](../../scripts/search-and-feedback/README.md#flip-pair-benchmark).

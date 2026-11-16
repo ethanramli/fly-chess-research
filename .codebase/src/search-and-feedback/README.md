@@ -29,3 +29,5 @@
 - [landing-square-certificate.mjs](landing-square-certificate.mjs) (2026-11-03): answer checker for the transfer and combination tests: legal captures of the moved piece, pinned attackers and exchange values for any non-king move. [Protocol](../../../documentation/design/research-goals/transfer-and-combination-protocol-2026-11-03.md).
 
 - [capture-retention-action-domain.mjs](capture-retention-action-domain.mjs): [C01 all-legal teacher preparation](../../../documentation/design/puzzle-learning/capture-retention-all-legal-domain.md), including task-scoped noncaptures.
+
+- [Concept records and same-piece matching](concept-records-v1.mjs) use reach, pins and material values to score a candidate. The [flip-pair fixture](concept-flip-pairs-v1.json) contains constructed development boards and traps for the [Volume 3 benchmark](../../scripts/search-and-feedback/README.md#flip-pair-benchmark).
