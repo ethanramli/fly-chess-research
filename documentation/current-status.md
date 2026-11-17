@@ -4,6 +4,10 @@ In the planned test, the researchers looked for settings that made the model ran
 
 The Fly Connections Memory investigation is paused while the researcher decides whether to request that review or close the work as a limited development result. See the [latest research handoff](next-checkpoint.md) for the decision and chronology.
 
+## Update: 2026-11-17
+
+The learned pin, reach and piece-value stores solved 60/60 open puzzle pairs in three runs. All reach probes used fresh boards and reused a training key at retrieval. The locked test awaits a decision on which inputs the no-repeat rule covers and which controls the gate requires the learner to beat. The matched fly pin test scored 329/648. The approved safe-capture run is blocked by missing pinned calibration files. [Continuation report](../research/reports/combination-roadmap-2026-11-16/continuation-2026-11-17.md).
+
 ## Update: 2026-11-16
 
 A design review found that the planned test of combined ideas could be passed without combining anything: by adding up separate answers, or by counting the pieces on the board. A repaired test and a step-by-step plan are proposed and await the researcher's decision. Nothing ran, and the sealed games stay unused. This changes no result above; the model still has no learning or reasoning result. See the [roadmap proposal](design/research-goals/combination-roadmap-2026-11-16.md) and its [checks](../research/reports/combination-roadmap-2026-11-16/README.md).

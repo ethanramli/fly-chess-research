@@ -2,7 +2,7 @@
 
 This is the handoff for continuing the research: read the current checkpoint first, then consult its linked evidence. The latest checkpoint below is dated 2026-11-15 (later the same day). Everything after the “Background and dated history” heading is retained chronology; old “Next” instructions there are historical and superseded. Artifacts outrank this file: if a newer `runs/*/manifest.json` disagrees, this file is stale (see `AGENTS.md`, "Continuing the research").
 
-**Last updated:** 2026-11-16 (addendum only; the current checkpoint is still the one dated 2026-11-15).
+**Last updated:** 2026-11-17. The latest addendum records progress for Volumes 2 and 3.
 
 ## Current checkpoint: 2026-11-15, later the same day
 
@@ -21,6 +21,12 @@ This is the handoff for continuing the research: read the current checkpoint fir
 
 - **Volume 3, chapters 4 and 5.** The researcher authorized the first benchmark build. The [flip-pair benchmark](../research/reports/combination-roadmap-2026-11-16/README.md#first-benchmark-build) compares a hand-written rule given correct reach, pin and material facts with shortcut rules on constructed positions.
 - **Next Volume 3 step:** build the marked-squares view and separate lessons, then check whether the learned reach and pin facts hold on unfamiliar board families.
+
+## Addendum 2026-11-17: All three stores work on open puzzles
+
+- **Volume 3, chapters 4 and 5.** The [continuation report](../research/reports/combination-roadmap-2026-11-16/continuation-2026-11-17.md) records the graph pin probe (329/648), the three separate lessons, and the open-puzzle replay. The stores solved 60/60 in each run after covering all reach input shapes. A fixed sum of the same learned facts solved 0/60.
+- **Before the locked test:** settle whether a repeated memory key counts as a repeat when the board is new. Record which controls the learner must beat and put the perfect legal-reply reference in the scoring checks. Keep the locked puzzles sealed while that decision is open.
+- **Volume 2, chapters 3 and 5.** Approval for the runs was received. The safe-capture run is blocked by missing pinned calibration files and the quiet learning-off record. The graph and annotation hashes matched.
 
 ## Previous checkpoint: 2026-11-15
 

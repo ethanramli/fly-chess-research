@@ -110,3 +110,7 @@ The [saved check](outputs/first-benchmark-build.json) used Node 24.22.1, chess.j
 | shared defender: free or elsewhere | 20 | 3,094 | 20/20 | 0/20 |
 
 The saved 71 pairs reproduce the original match and shortcut results. The four separate traps document a capture along the pin line and where king captures, guards, or a second check require more rules. The generated positions and scores are development evidence for the benchmark.
+
+## November 17 continuation
+
+The [separate lessons and open-puzzle replay](continuation-2026-11-17.md) report records the graph comparison, the three trained stores, and the decision before opening the locked puzzles.
