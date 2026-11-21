@@ -22,9 +22,9 @@
 
 Dear Professor Eschbach,
 
-I’m an independent student researcher developing a from-scratch simulation constrained by the adult *Drosophila* connectome. Your work on recurrent regulation of dopamine-gated learning and the integration of learned and innate valence is unusually relevant to a design problem I’m trying to keep explicit: the teacher can provide feedback, but the model needs a supported route by which that signal changes persistent state.
+I’m an independent student researcher developing a from-scratch simulation constrained by the adult *Drosophila* connectome. Your work on recurrent regulation of dopamine-gated learning and the integration of learned and innate valence is relevant to a design problem I’m trying to keep explicit: the teacher can provide feedback, but the model needs a biologically supported way for that signal to change its lasting memory.
 
-Our current two-cue conditioning prototype is engineered, not biologically validated. Rewarded preference strengthened in six of six seeds, but only three chose correctly after contingency reversal, so the full gate failed. We have not mapped the puzzle teacher’s feedback onto a natural adult reward pathway. What single measurement or control would you prioritize to distinguish inadequate experience of the new contingency from deficient circuit-level updating?
+Our current two-cue conditioning prototype is engineered, not biologically validated. Rewarded preference strengthened in six of six seeds, but only three chose correctly after contingency reversal. The full acceptance test therefore failed. We have not mapped the puzzle teacher’s feedback onto a natural adult reward pathway. What single measurement or control would you prioritize to tell whether the model saw too few examples of the new contingency or whether its circuit failed to update its lasting memory?
 
 I would value a pointer to a paper or a brief methodological comment. I understand that your group’s work is larval and that translating it to an adult connectome model may not be appropriate.
 

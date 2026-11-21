@@ -5,9 +5,9 @@
 
 ## Planned content
 
-- The name may sound strange at first.
-- The prefrontal cortex belongs to humans, not flies. That is the point of the name.
-- Flies have very poor working memory. Monte Carlo tree search is used to work around that working-memory ("RAM") limit.
+- Why the chapter uses the name "Prefrontal Cortex," even though flies do not have a human prefrontal cortex.
+- The chapter uses the human brain region as a comparison, not as a claim that flies have one.
+- How the chapter describes limits on flies' working memory, and how an external chess search stores its working information in computer memory.
 
 ## Evidence boundary
 

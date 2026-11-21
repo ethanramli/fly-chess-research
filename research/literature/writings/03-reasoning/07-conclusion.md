@@ -5,7 +5,7 @@
 
 ## Planned content
 
-- Summarize what the evidence supports, what remains unresolved, and what follows for the next study.
+- Summarize what the results show, which questions remain open, and what the next study should test.
 
 ## Working notes
 

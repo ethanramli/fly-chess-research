@@ -5,8 +5,8 @@
 
 ## Planned content
 
-- Why the researcher thought about this project in the first place.
+- How the researcher first came up with the project.
 
 ## Working notes
 
-Add interview answers, sources, figures, and evidence links here as the chapter develops.
+As the chapter develops, add interview answers, sources, figures, and links to supporting evidence.

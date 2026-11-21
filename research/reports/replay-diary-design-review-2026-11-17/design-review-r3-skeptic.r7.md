@@ -1,0 +1,5 @@
+**VERDICT: APPROVE**
+
+- **Diff check:** Both blob hashes match. The only changes are the revision number, the tape-source wording, and the review status. [Design:3](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:3)
+- **Tape source:** Each control uses its paired diary fly’s tape. The central attribution test uses the evaluated full diary fly’s tape, preserving the matched comparison. [Design:349](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:349)
+- **Review status:** The update records round 6 approval and distinguishes this confirming review from the researcher’s approval. [Design:491](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:491)

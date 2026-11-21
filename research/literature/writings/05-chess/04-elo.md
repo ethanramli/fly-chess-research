@@ -5,15 +5,14 @@
 
 ## Planned content
 
-- The measurement for a fly: about 50 games against Stockfish at different levels.
-- See how it performs at each level.
-- A radar chart of the fly's skills.
-- A graph of Elo progress across checkpoints over time.
+- Describe the proposed test of about 50 games against Stockfish at different settings, then report the results for each setting.
+- Show a radar chart of the model's skills. Explain each measure and identify the evidence behind it.
+- Show a graph of Elo progress across checkpoints over time once a calibrated method supports those estimates. Explain each estimate's uncertainty and limits.
 
 ## Evidence boundary
 
-A configured Stockfish level is not a calibrated Elo. Follow the Elo calibration design: pinned snapshots, engine settings, openings, colours, time control and rating uncertainty.
+A configured Stockfish level does not give a calibrated Elo rating. Follow the Elo calibration design, including pinned snapshots, engine settings, openings, colours, time control, and rating uncertainty.
 
 ## Working notes
 
-Add interview answers, sources, figures, and evidence links here as the chapter develops.
+As the chapter develops, add interview answers, sources, figures, and links to supporting evidence.

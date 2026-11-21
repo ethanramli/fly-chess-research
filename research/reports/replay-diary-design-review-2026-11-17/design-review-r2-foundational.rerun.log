@@ -1,0 +1,932 @@
+OpenAI Codex v0.170.0
+--------
+workdir: C:\Users\ethan\Documents\fly-chess-research\research\reports\replay-diary-design-review-2026-11-17
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 01a1e9db-72cc-76c1-bd50-bd5b65f179c5
+--------
+user
+Lead's ledger for your round-1 findings (foundational skeptic):
+1. A case classifier in the weights could pass: addressed. Case recall on the full lesson history (not only the final diary) and a learner on random nonlinear features with the same diary and replay are added (7.2); attribution is narrowed to beating the listed controls, with the untested-classifier limit stated (Read first item 6, 7.5, 9).
+2. Twin rankings need not mean solving: fixed. Offset-cancelled pairs (move margin over the best other legal move) and an all-legal measure with a threshold are required in stage 2 and for any stage 3 reasoning claim (7.4, 7.5).
+3. Failed interleaving is not a ceiling: fixed. Mixed order is a feasibility witness; failure means only that the schedule failed; a Volume 4 limit needs a separate bounded proof or exact search (7.2, 7.4).
+4. Assisted retention relabelled as Property 2: fixed. Renamed assisted retention for Volume 3; Properties 1 and 2 stay unmet (Read first item 1, section 9, section 11 item 4).
+5. Removal is not a necessary boundary (optional): adopted. Section 2 now calls removal this design's restriction; other Volume 3 memories may be consulted at decision time with their own lookup control.
+
+Round 2. Same rules as round 1: review only; do not edit, create, delete or commit files; do not start subagents or other reviewers; read-only commands are allowed.
+
+The proposal is now revision 2, git blob 5e22be792b2f49cb69628c702863fdaacef25c84, at the same path:
+  documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md
+Revision 1 (the text you reviewed) is preserved at research/reports/replay-diary-design-review-2026-11-17/design-revision-1.md (blob 62c72ba4). Section 12 of revision 2 maps every round-1 finding from all three reviewers to its change. All required findings were adopted; none was declined. The lead's ledger for YOUR findings is below.
+
+Check only:
+(a) each of your round-1 findings: mark it RESOLVED, or STILL OPEN with the reason and evidence;
+(b) new problems introduced by the changed text (sections 2, 4.1-4.9, 6, 7.2-7.5, 8, 11). Do not re-review unchanged text unless a change makes it wrong.
+
+Return markdown:
+1. VERDICT: APPROVE, APPROVE WITH REQUIRED CHANGES (building allowed after the changes), or REJECT.
+2. One line per round-1 finding: number, RESOLVED or STILL OPEN, reason.
+3. New findings only, most severe first: severity (required-BUILD, required-LAUNCH, optional), claim, evidence (file:line), consequence, smallest fix.
+4. The strongest sentence the current revision, executed as written, could support.
+Be brief.
+
+Update before this round ran: earlier attempts stopped at usage limits on two accounts. Since then the lead has made further edits, all recorded in section 12 of the design and in research/reports/replay-diary-design-review-2026-11-17/lead-recheck-round2.md. Review revision 7, git blob 8d1fc4f2c5b8717d9ad325b06c9ba2a6a51bf991, at the same path. Earlier revisions are preserved in the review folder as design-revision-2.md to design-revision-6.md.
+- Revision 3: four small fixes from the lead's own recheck (event-level shuffle within each block, unknown trials, sawtooth snapshots, named boards and tuning block).
+- Revision 4: adds the section "The design on one page" (picture, module interface, data, practice loop, worked example, files to build). It should restate sections 4.1-4.8 without adding rules: check that it does, and that its interface really has no path from the diary to move scoring.
+- Revision 5: six fixes from the lead's second read (stage 1 arms yoked to the diary arm's choices; supersession disclosure; moved-timing placement after the earlier block's snapshot; replay persistence; stage 3 diary across phases and filler trials; stage 2 arm count).
+- Revision 6: the lead's solo deep-in-thought pass. The replay controls change only replays of old lessons (entries from earlier blocks), so through the first block each is in exactly the diary arm's state; stage 1's delay condition is "not worse", because raw records show delay losses happen with no lessons and so no replays; plus runtime, entry size, bootstrap seed, tie tolerance, disjoint development boards, early-stopped runs, a worked example, order limit.
+- Revision 7: the scientific skeptic's round 2 (design-review-r2-skeptic.md in the review folder): a new "no old replays" arm (the diary arm with old-lesson replays skipped) is the reference for filler damage, the forgetting prerequisite and the benefit conditions; the all-legal measure keeps every eligible board in the denominator and comparisons must survive the worst case for the diary on unknown boards; the simple learners' learning-rate sweep is removed because a rate only rescales scores.
+Check all of these edits too. Your verdict should be on revision 7 as a whole.
+
+warning: Combined user instructions use 50429 bytes, above the 32768-byte `project_doc_max_bytes` setting. The total includes global and thread instructions. The limit applies only to project files.
+hook: UserPromptSubmit
+hook: UserPromptSubmit Completed
+codex
+Revision 7 remains the review target. The remaining checks concern replay-control matching, the all-legal gate and whether the one-page summary agrees with the detailed rules.
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'C:\\Users\\ethan\\.agents\\skills\\README.md' -Encoding utf8" in C:\Users\ethan\Documents\fly-chess-research\research\reports\replay-diary-design-review-2026-11-17
+ succeeded in 267ms:
+# Skill router
+
+Read this entry point at the start of each work request, before opening task skills. Plain conversation needs no routing. Reuse an unchanged copy already in context; re-route when the task changes.
+
+## Select, load, work
+
+1. Identify the requested result, task scope, and any named skill, service, or framework. For a known or named project, consult its row in [project and agent routing](project-routing.md) to select relevant skills and a suitable agent brief. Follow explicit skill requests and mandatory prerequisites.
+2. Choose the matching route below. Consult only its linked catalog when the choice needs more detail; compare neighboring alternatives by their selection criteria.
+3. Load the selected skill's `SKILL.md` and required companions before doing the work. Add a companion when it covers a distinct required part of the task. Similar descriptions alone are not a reason to load several skills.
+4. Follow only the selected skill's relevant branches and references. Stop discovery once the task is covered. State the chosen skills briefly, then complete the work.
+
+Choose by task fit, not familiarity. A recommendation is a scope-based starting point, not a quality benchmark. Reconsider the route when new evidence changes the task.
+
+## Mandatory companions
+
+- Code changes: load `ponytail` before other task skills, after reading this router. Documentation-only changes do not require it.
+- Research requests: load `deep-research` after routing; if the request also changes code, load `ponytail` first. Select the research mode proportional to the request.
+- Academic writing, review, or screening: also select the appropriate academic skill in the research catalog. Send manuscript text to outside AI providers only with consent for that run.
+- Named products and tool prerequisites: use their required skills, such as Supabase, Google Drive, or the appropriate Figma operation. Skill selection does not authorize publishing, messaging, delegation, or other side effects beyond the request.
+
+## Routes
+
+| Requested result | Start here | Choose another route or companion when |
+| --- | --- | --- |
+| Implement or fix code | `ponytail` plus the relevant specialist in [engineering](catalog/engineering.md) | `diagnosing-bugs` for reported failures or regressions; `tdd` for requested test-first development; `write-swift` for Swift. |
+| Review changes or audit a repository | [Engineering review choices](catalog/engineering.md#choose-between-overlapping-skills) | `ponytail-review` for correctness and simplicity of a change; `code-review` for Standards + Spec from a fixed base; `ponytail-audit` for the whole repository. |
+| Design or improve a frontend | [Design choices](catalog/design.md#choose-between-overlapping-skills) | `frontend-design` for new visual direction; `design-taste-frontend` for researched art direction; `impeccable` for an existing interface audit or refinement; `mobile-native` for mobile browser behavior. |
+| Add, investigate, or remove animation | [Motion choices](catalog/design.md#choose-between-overlapping-skills) | Select implementation, performance diagnosis, read-only recommendations, or removal according to the requested result. |
+| Research, verify claims, or find literature | `deep-research` plus [research choices](catalog/research.md) as needed | `research-loop` for the full workflow: diagnose, research fixes, propose, review, delegate, run, audit, report; `research` for a primary-source Markdown deliverable; paper index for literature discovery; choose one search/extraction provider matching the requested source and available tools. |
+| Write, review, or screen academic work | [Academic choices](catalog/research.md#choose-between-overlapping-skills) | `academic-paper` to write/revise; `academic-paper-reviewer` to review; `academic-pipeline` for the full research-to-finalization cycle; `sr-screener` for protocol-driven screening. |
+| Analyze data, experiments, graphs, or mathematics | [Quantitative analysis choices](catalog/research.md#quantitative-analysis-additions) | Statistics and power for experiments; EDA for data quality; NetworkX for bounded graph analysis; SymPy for symbolic checks; Matplotlib or scientific-visualization for figures; `jupyter-notebook` when the deliverable is an `.ipynb`. |
+| Read, create, or review a local document | [Document choices](catalog/documents.md) | The installed PDF skill covers local PDFs; use existing connected Docs/Sheets/Slides skills for those services. Local Word/Excel/PowerPoint candidates remain held for further review. |
+| Edit prose to remove AI writing patterns | `unslop` in [research and writing](catalog/research.md) | Use academic guidance too when the artifact is a paper; ordinary prose edits need no academic pipeline. |
+| Generate images, diagrams, or video | [Media choices](catalog/media.md) | `imagegen` for raster assets; `excalidraw-diagram-generator` for editable Excalidraw; Remotion router for videos; Figma/FigJam output uses integrations. |
+| Work on databases, backend, AI apps, or Vercel | [Platform choices](catalog/platforms.md) | Choose the named database or product specialist; use the Vercel router skills for architecture and their operation-specific companions when needed. |
+| Work in Figma, Google Workspace, Sites, or ChatGPT Pets | [Connected service choices](catalog/integrations.md) | Choose the actual service and operation. Use a connected tool when available and suitable; verify availability before relying on it. |
+| Operate a browser | [Browser choices](catalog/integrations.md#choose-between-overlapping-skills) | Follow the current host's mandated browser first. Use `agent-browser` or `browser-use` when that execution environment is appropriate. |
+| Change agent instructions, skills, or Codex setup | [Agent configuration choices](catalog/engineering.md#choose-between-overlapping-skills) | `writing-for-agents` for instruction documents; `skill-creator` for skill design; `skill-installer` for installation; `openai-docs` for Codex/OpenAI behavior and settings. |
+| Use an explicitly invoked workflow | [Explicit-only catalog](catalog/explicit.md) | Includes planning, tickets, teaching, handoffs, UI prototypes, and session retrospectives. Preserve each skill's explicit-invocation boundary. |
+
+## Availability and fallback
+
+The catalogs inventory 180 local skill manifests on 2026-11-08, including 20 explicit-only skills and 17 project-aligned additions. The [GitHub review catalog](catalog/reviewed-library.md) records the 46 candidates, provenance, NVIDIA scan results, and held alternatives. Held candidates are not approved for automatic installation or invocation. Installed files do not guarantee tools, credentials, dependencies, or exposure in every session. Current session skill metadata and the selected `SKILL.md` are authoritative.
+
+Resolve a selected skill from the session's current path first. Catalog links are installation snapshots; plugin cache versions can change. If a link is stale, locate that skill's current manifest instead of installing a second copy.
+
+For a skill absent from the catalogs, search the current session's skill names/descriptions by task keywords. Read only plausible candidates. If a specialized task still has no match, search `C:/Users/ethan/.agents/skill-library/antigravity-awesome-skills/skills_index.json` and `C:/Users/ethan/.agents/skill-library/gws-cli/skills/`, then read the best-fitting manifest. If none fits, say so briefly and proceed using the available tools.
+
+## Maintenance
+
+When installing, removing, renaming, or changing a skill's routing description or invocation policy, update its catalog entry and any affected route here. Keep this entry point compact; put domain details in the matching catalog. Read frontmatter for inventory maintenance, rather than loading every skill body.
+
+This router controls selection; it does not hide skill metadata that the host already supplies. Follow higher-priority host instructions when they impose additional prerequisites.
+
+Design basis: [OpenAI guidance on skill descriptions and progressive disclosure](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra).
+
+
+
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath '.agents/skills/problem-solving/SKILL.md' -Encoding utf8" in C:\Users\ethan\Documents\fly-chess-research
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath '.agents/skills/deep-research/SKILL.md' -Encoding utf8" in C:\Users\ethan\Documents\fly-chess-research
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath '.agents/skills/please-no-more-slop/SKILL.md' -Encoding utf8" in C:\Users\ethan\Documents\fly-chess-research
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath '.agents/skills/science-review/SKILL.md' -Encoding utf8" in C:\Users\ethan\Documents\fly-chess-research
+ succeeded in 244ms:
+---
+name: deep-research
+description: >-
+  Verify a claim or answer a research question from evidence the reader can
+  check. Use for deep dives, literature reviews, source-backed fact checks,
+  comparisons, and synthesis across references, including supplied records
+  only. Skip copyedits, exact transformations, and questions answerable from
+  supplied text without checking its claims unless the user asks for research.
+metadata:
+  origin: ECC
+---
+
+# Deep Research
+
+Lead with the answer the evidence supports. Make the path from a decisive claim to its source short enough for the reader to check.
+
+## Scope the work
+
+Identify the question, the decision or deliverable, and the dates, versions, population, or other conditions that could change the answer. For a follow-up, carry forward verified facts whose sources and conditions still match. Check what changed and any dependency it affects.
+
+Use the supplied index to select the first decisive records. Read the entries that establish the answer, then open other entries only to resolve a named gap, exception, or dispute. For a supplied-only task, stay within those sources. For external research, search only for gaps that could change the answer. Open a section of the [research playbook](research-playbook.md) or a companion only for a named check the main workflow leaves unresolved. If optional guidance is missing, continue here and report any check it actually prevents.
+
+## Trace the evidence
+
+1. **Find the relevant record.** Prefer original measurements, official dated records, or the version that applies. For each consequential claim, read the precise passage, table row, or method. Record its locator, scope, and access limits. Use summaries to find originals or state what the summary alone supports.
+2. **Check which evidence is independent.** Group reports that reuse the same run, data, or event. Match corrections to the result they replace. Keep useful corroboration separate from evidence that tests the claim again. For an empirical comparison, check whether the proposed cause is the only planned difference, and whether the test outcome and population match the claim.
+3. **Resolve differences that change the decision.** Compare dates, versions, definitions, units, denominators, and controls. Check the closest exception, such as a preview release, different plan, or different analysis group. Recompute the deciding amount or test boundary and retain the exact comparison operator. For uncertain effects, state which of meaningful benefit, no effect, and harm the reported range still allows. An estimate that falls short of a threshold can leave meaningful benefit unresolved. If the evidence still fits materially different conclusions, say so and identify the smallest check that distinguishes them.
+4. **Stop when the scope is covered.** One authoritative record can establish its own dated rule or release. More sources matter when they could change the conclusion or the user requests broader coverage. For a systematic or exhaustive search, record eligibility, where and when you searched, and what you screened. Describe only the coverage you achieved.
+
+## Use the tools that fit
+
+Use available search tools to discover sources, and a reader or the publisher's records to verify important claims. Reuse text already retrieved. Respect access, source, and budget limits. If a primary source or provider is unavailable, try a permitted source that answers the same question. Otherwise narrow the claim to what you could inspect and name the missing record. Poll a pending research job by its existing identifier. Use independent reviewers only when authorized and useful.
+
+## Write an answer the reader can check
+
+- Start with the result, the reason that changes the decision, and what remains open if it matters. Use plain words. Explain what a test actually did before drawing a conclusion from it.
+- Place a direct source locator beside each material claim. Use an exact URL or local file with its section, table, row, or lines. When one sentence draws on different records, attach each to the part it supports or split the sentence. Cite the rule and every material input to a calculation, then show the arithmetic. For a correction or duplicate, cite the source for the updated figure and the record that establishes the shared origin whenever both matter.
+- Before sending, trace each decisive claim back to its cited passage. Check that it supports the same number, scope, and strength of claim. Replace a broad citation with the precise locator, or narrow or qualify a claim if you cannot verify it. Label any proposed follow-up as future work and state what result would change the decision.
+
+ succeeded in 277ms:
+---
+name: problem-solving
+description: >-
+  Diagnose an unexpected result, reconcile conflicting evidence, choose between
+  plausible approaches, or unblock a hard problem. Use when the user asks for
+  Problem Solving, an effort level (Light, Medium, Heavy, or deep-in-thought),
+  or a check that requires judgment about evidence or what to do next. Skip
+  direct translation, formatting, copying, and routine edits with a settled
+  procedure unless the user asks for diagnosis or an explicit effort level.
+---
+
+# Problem Solving
+
+Identify the deliverable or decision, the constraints on the work, and the observation that would let you stop. On a follow-up, start from the open objections and changed evidence. Reuse earlier checks whose inputs, path, and claim still match.
+
+| Level | Choose when | Default mode |
+| --- | --- | --- |
+| Light | One authoritative record or small check can settle a bounded question. | Solo |
+| Medium | A defined problem needs a trace, derivation, or controlled replay. | Solo |
+| Heavy | Several plausible causes or approaches could change an important decision. | Group |
+| deep-in-thought | The project is blocked and the premise, measurement, or design may be wrong. | Group |
+
+Honor explicit levels and modes. Otherwise choose the lowest sufficient level. Escalate when a check exposes uncertainty that could change the decision. Step down once it is resolved. An effort level sets the workflow. Use runtime reasoning settings only when supported and authorized.
+
+## Light
+
+Use the smallest authoritative input that can settle the request. For a factual correction, read the text to correct and the designated source. Open older or secondary material only if the primary record is missing, ambiguous, or in conflict. Check the result and return it in the requested format.
+
+## Medium
+
+Trace the real path from input to output, work backward from the failure, or solve a smaller case. Choose the approach that can locate the first wrong result. Compare expected with observed behavior at the relevant boundary. Use a control that bypasses the suspected step when two components could produce the symptom.
+
+Verify through the normal entry point with a failing example and any adjacent behavior the fix must preserve. Before running a read-only replay, check for writes by imports and by the entry point itself. For Python imports use `python -B`; keep any required outputs in memory. Give the smallest supported fix or result and name any check still blocked.
+
+## Heavy
+
+1. Name the decision, live alternatives, baseline, and evidence that would change the choice. Start with primary evidence already in scope. Distinguish the observed representation from the outcome it summarizes. For example, a change in scores need not change their ordering, and a changed ordering need not change the top choice. If evidence is missing, retain alternatives consistent with the observations and identify the missing record or smallest discriminating check.
+2. Write a concrete proposal. Include the action or claim, decisive assumptions, expected result, and a check whose possible outcomes lead to different decisions. Keep planned work within the user's scope and authority.
+3. Run the review loop with two distinct critique briefs.
+
+## deep-in-thought
+
+Use Heavy's diagnosis and review loop with three distinct critique briefs. Before review, reconstruct the observation from the original evidence. For a numerical claim that drives the decision, show or compute the comparison from the raw values. Check the boundary rows against the written rule, including units and any rounding. Trace the immediate decision back to what the project needs to learn. Try a counterexample that passes the current test without doing what the user cares about. State the strongest remaining hypothesis, a credible rival, and predictions that distinguish them.
+
+For a prospective evaluation, specify the unit, eligibility, denominator, measurement and horizon before seeing outcomes. Account for every eligible unit, including early exits, abstentions and missing evidence. Tie each disposition to the endpoint. For a successful-action endpoint, an observed decision to take no action fails the endpoint. A missing action record or a recorded action with unknown validity stays unknown. Give a bound, coverage requirement, or explicit inconclusive branch when unknowns could change the decision. For a causal claim, specify the matched intervention and control, hold competing drivers fixed, and state what result would change the decision. Treat a comparison of existing snapshots as descriptive unless the design identifies the claimed cause. For proofs or design decisions, use the corresponding assumptions, counterexamples and failure branches.
+
+## Run the review loop
+
+1. Pin one version of the proposal. Assign each pass a **different decision-critical assumption**, an evidence locator, and a check that could overturn it. Give every reviewer the same proposal, goal, constraints, and relevant raw evidence. Choose the assumptions to suit the proposal. The [playbook](playbook.md#review-the-proposal) has briefs for reproducibility, rival explanations, and the premise or measure.
+2. **Group:** use independent sessions when authorized and available. Read their first findings before sharing conclusions. **Solo:** perform the same distinct checks yourself. If Group or the playbook is unavailable, run the applicable checks yourself and disclose any material loss of independence or coverage.
+3. For each assigned check, record the assumption, evidence or missing check, and disposition: confirmed for the tested scope, changed with the resulting revision, or open with the next check. If reviews repeat one objection, run or request the uncovered check. Judge objections on evidence and retain unresolved dissent.
+4. Return to the earliest invalidated step, update the affected proposal, and recheck the changed part against the objection and any newly affected assumption before reporting. In Group, return the changed part to the relevant reviewer when available. Carry forward checks that still apply. A clean first round can finish when the decisive assumptions have been tested. If a material objection cannot be resolved within scope, narrow the claim or give a conditional decision and the smallest authorized next step or missing prerequisite.
+
+## Companion skills and reporting
+
+Open a companion only when it answers a live question. Use [Ponytail](../ponytail/SKILL.md) for implementation choices, [Deep Research](../deep-research/SKILL.md) when permitted external evidence could change a decision, and [Science Review](../science-review/SKILL.md#decide-when-to-review) when one of its research review triggers applies. Use [Please No More Slop](../please-no-more-slop/SKILL.md) for substantive naming or writing decisions.
+
+Lead with the requested result. Give the check and the evidence behind consequential conclusions. For Heavy and deep-in-thought, show what changed after review, what remains open, and what would permit the next decision. Keep the record as short as the task allows.
+
+ succeeded in 256ms:
+---
+name: please-no-more-slop
+description: >-
+  Write and review clear technical and research replies, emails, handoffs,
+  documents, reports, and captions. Use when drafting, editing, explaining,
+  simplifying, scoring, comparing drafts, or choosing names for code, files,
+  APIs, or labels. Skip requests that only quote or return exact text.
+---
+
+# Please no more slop
+
+Use the five-year-old test for both replies and documents. A child with no project background should be able to read the main explanation and tell you what happened, why it matters, and what happens next when a decision is open.
+
+## Choose the deliverable before writing
+
+| Request | What to deliver |
+| --- | --- |
+| Return, show, suggest, review, or score | Give the requested text or findings in the reply. Read referenced files as inputs. |
+| Draft a new file or document | Write to the requested destination, or choose a separate new destination if unspecified. |
+| Edit or update a named file in place | Change the authorized part of that file. Preserve surrounding text, identifiers, and links. |
+
+**Before any file write, identify the user's instruction to persist the result and the destination it authorizes.** Merely naming a file after “rewrite” or “improve” identifies the source. For “Rewrite draft.md. Return only the update,” read draft.md and produce the update in the reply. “Update draft.md in place” authorizes editing it. “Write the update to review.md” authorizes writing review.md. Use the reply when the destination is ambiguous. For a return-only or no-edit request, finish in the reply without patching or creating files.
+
+Use [README Maestro](../readme-maestro/SKILL.md) for navigation and reader routes. Apply the wording checks here to the resulting text.
+
+## Write so a five-year-old can follow the main idea
+
+- If the reader has to act, make the first sentence say what to do. Otherwise start with the answer or result. Use familiar words, name who or what did the action, and keep one main thought per sentence. Put causes and events in the order they happened. Repeat a name where “it” or “they” could point to two things.
+- Use a concrete action in place of an abstract phrase in the main explanation. “Two people tried to get the last seat, and the site gave both a ticket” is easier to picture than “the simultaneous booking check failed.” Explain technical terms through what they do or what someone can see. For example, “the job wrote a second copy after midnight” says what happened. Replace words that make the main idea depend on specialist knowledge. If an exact term matters, put the plain meaning first. For example, “the scanner stopped talking to the library computer” explains a lost network connection.
+- Put the reason before the details if the details would make the reader ask why. For a proposed test, explain the problem, what changes, what we look for, and how the result changes the next action. Use a short example when the reader would otherwise have to work out how a value affects the result. Explain each step of a calculation the reader needs to follow.
+- Apply this to the main explanation in a reply and to the opening explanation of each important section of a document. Give the full technical detail the intended reader needs nearby. Use the requested format. For a one-paragraph reply or a caption, put the plain explanation directly in that text.
+
+## Explain why a number or rule matters
+
+- **Setting or cutoff:** Say what it changes, why it has that value, and what would happen if it were higher or lower when that matters. Distinguish a value measured or calculated from data from a threshold chosen for a practical decision. If the source gives no reason for the exact value, say so.
+- **Check or measurement:** Say what two things were compared, what the result lets us conclude, and which condition it covers. “At least 99% survived” needs to say what survived and why preserving it matters. If the next check is in different conditions, name what changes and why it calls for another check.
+- **Decision rule:** Explain the action in ordinary words before listing cutoffs. For each material comparison, say what it helps rule out and why that matters to the decision. Give one worked example if several cutoffs interact. Explain “drop” by naming the change we would stop pursuing. Explain “inconclusive” by saying what prevented a decision, such as a failed check, too few comparable cases, or a result between the cutoffs. Give the next check if it is known. If the written rules overlap, flag the overlap and label any proposed priority as a recommendation.
+- **Implementation detail:** Mention it when it affects what the reader can do. Give the cause and effect in one plain sentence. “After the checker moved folders, it kept looking in the old place for the code it needs, so it can’t start.” Keep that explanation with the build step it affects.
+
+Apply only the checks the reader needs. When a reader says they are lost, rewrite from the first idea they need to understand. Answer their “why?” and “what does that tell me?” before restating names or values.
+
+## Keep the measurement and claim intact
+
+Before simplifying a material result, identify what was tested, what counted as success, the threshold if given, the result and denominator, and any comparison or condition that changes the conclusion. Keep exact operators and units. For a rank outcome, say what had to rank where. If a short name or caption cannot carry the full definition, put the rest in its adjacent definition or sentence.
+
+Keep a planned result separate from a later exploratory check. Keep a completed process, a software check, and an outcome for a trained model distinct. Preserve the population, comparator, and strength of the claim. Report missing evidence where it affects the decision, and make the next check specific when one is known.
+
+## Name things by what they do
+
+Use a verb for an action and a concrete noun for a value. Name a measure for its recorded outcome, such as `safe_capture_first_rate` when a safe capture must rank first. Use established terminology when its meaning is precise. Preserve public names verbatim unless a rename is authorized. For a proposal, distinguish internal names from public identifiers and explain which one stores what.
+
+## Check the result
+
+Read the draft once as someone who knows none of the project terms. Try to answer, in everyday words, the questions that apply:
+
+1. What happened or what is the answer?
+2. How do we know? If a number matters, what was counted or chosen, and why that value?
+3. What does the result let us conclude? What remains open that affects how we use it?
+4. What happens next? If there is a decision rule, can the reader explain why each outcome leads to its action?
+
+Scan the opening and the next-step sentence for words such as “passes,” “rehearsal,” or “connection” used without explaining the action or result. If a reader needs to know what that word means to act, say what someone should do or see. Rewrite any sentence that still makes the reader guess. Recheck the meaning against the source. When an independent reader is available, give them only the finished text and ask them to explain it back. Treat your own check as an estimate of clarity. For an edit, confirm the diff stays within scope. For a reply, return the requested text.
+
+## Score and rank writing
+
+When asked how clear the writing is, count how many applicable read-back questions a reader could answer correctly from the draft alone. Give replies and documents equal weight when both are being graded. Keep file handling and activation out of this clarity score.
+
+When asked for the repository writing rubric, score from 1 to 10, where **1 is clear and 10 is the most slop**. Judge what the writing does to the reader. Style alone gives no basis for identifying who or what wrote it.
+
+Pick the audience, the purpose, and the text being scored. Use the same audience and purpose for competing drafts. When judging unrelated passages, state the audience and purpose for each. For a long document, judge the whole piece and quote representative passages. Score individual passages only when asked or when identifying where to revise first.
+
+Give each category 0, 1, or 2 points. Count each flaw under the category that best explains its effect. An unexplained pass usually belongs under Concrete detail. Claiming a pass proves more than was measured belongs under Accuracy and scope. Sum the five numbers and report a minimum of 1.
+
+| Category | 0 points | 1 point | 2 points |
+| --- | --- | --- | --- |
+| Main point | The reader quickly finds the answer, result, or request | The point takes some hunting | The main point is missing or buried |
+| Words | The intended reader understands the terms or gets the explanation they need | Some terms or labels take extra work | Key terms rely on unexplained jargon, shorthand, or vague abstractions |
+| Concrete detail | Actions, results, and numbers have enough context for the purpose | One useful comparison, example, or detail is missing | Vague claims or unexplained numbers hide what happened or how to judge it |
+| Flow and filler | The order makes sense and each sentence earns its place | Some repetition, padding, or backtracking | Dense clauses, filler, or scattered facts make the reader reconstruct the message |
+| Accuracy and scope | Claims preserve what the source supports, including limits | A qualification is unclear or easy to miss | Wording materially distorts the evidence, upgrades an untested claim, or blurs what was measured |
+
+Use these bands to sanity-check the score. **1–2** reads cleanly with minor friction at most. **3–4** is usable after targeted edits. **5–6** requires the reader to decode important parts. **7–8** needs a substantial rewrite. **9–10** leaves the reader unable to recover the point reliably or gives them a materially misleading account alongside other major problems.
+
+Report the score, the five category scores, and the top one or two problems with exact quotes. Say what the intended reader would misunderstand or have to look up. Offer a short rewrite when it helps. When comparing drafts, list the clearest first and allow ties. Flag a material accuracy error separately even when the total score is low. If sources are missing, mark source accuracy unverified. Score any visible scope problem. Use 0 provisionally if none is visible and label the total provisional.
+
+## Examples
+
+Use [the 30 scored examples](writing-slop-examples.md) only when asked for examples, requested to calibrate against them, or when a specific score boundary is unclear. Read the relevant score bands. If the reference is missing, use the rubric above and say that example-based calibration could not be checked.
+
+### Source-checked rewrite of the planned test and later search
+
+"We tested the program on three chess boards. To pass, it had to put a safe move that takes a piece first on at least two boards. It did that on only one, so the test failed. We tried more settings and found one that worked on all three of the same boards. No one outside the team has checked that result yet." [Stop report](https://github.com/ethanramli/fly-chess-research/blob/6275c9ce87c3e4a04450b1b293234077c1ac4737/research/reports/fly-connections-memory-v1-2026-11-07/stop-report-2026-11-09.md#L31)
+
+For a specialist who needs the method, add the exact test name and how the search differed once you verify those details.
+
+ succeeded in 285ms:
+---
+name: science-review
+description: Judge science or engineering research against the Regeneron ISEF Grand Award rubric. Use for research quality scores, award or submission readiness, and focused review of a decisive study or prototype test, evidence, proof, or research claim. Skip wording-only edits and routine reruns that do not change evidence or a research decision.
+---
+
+# Science review
+
+Find the strongest claim the evidence supports and the smallest check that could change it. Use this on its own for a scoped review. In [Problem Solving](../problem-solving/SKILL.md), use it to sharpen the existing reviewers' briefs. The lead owns iteration and adjudicates objections against evidence. Open [Deep Research](../deep-research/SKILL.md) only when outside evidence could change the review and outside research is in scope.
+
+## Decide when to review
+
+Choose scope before analyzing the evidence. A request to review the **first evidence for the main claim** is a full project review, even when the question is phrased as “can we say this yet?” A major change to the main question or design, a submission review, or a requested overall score also triggers a full review. Respect an explicit instruction to review only a named part or give only a qualitative judgment.
+
+Use the [ISEF Grand Award rubric and scoring worksheet](references/isef-grand-award-rubric.md). Choose the science or engineering track by what the main contribution is meant to establish. If the worksheet is unavailable within the permitted sources, assess the evidence qualitatively and mark the numerical score unavailable.
+
+| When | Review |
+| --- | --- |
+| Before committing to a decisive protocol, measure, control, or prototype test | Focus on the design and the criteria the decision could affect. Give the points at risk and the check that would settle the issue. |
+| After a result or revision could change a substantive conclusion | Recheck the affected rows and their dependencies. In Heavy or deep-in-thought, use the existing reviewer passes and update the affected findings each round. |
+| When the first evidence for the main claim is ready, after a major change to the main question or design, before submission, or on explicit request for an overall score | Run the full review. Score the whole project and explain every point lost. Reopen any material flaw through the [review loop](../problem-solving/SKILL.md#run-the-review-loop). |
+| Routine implementation, copy edits, or reruns that leave the evidence and decision unchanged | Keep working without a rubric review. |
+
+After a full review, carry forward unchanged evidence and rescore affected criteria on each material revision. Keep a fixed time schedule only if the researcher asks for one.
+
+## Frame the decision
+
+Identify the proposal revision, the decision it informs, the exact claim, the system and conditions it covers, and the evidence needed to support it. For FlyChess, name the volume and chapter and follow the [project's research rules](../../../AGENTS.md). Start from the pinned protocol and relevant run records, analysis, audit or proof. State which records you inspected and which decisive records are missing. Open [the review guide](review-guide.md) for a claim-specific check when the basic trace leaves a material question.
+
+## Try to break the claim
+
+1. **Trace the claim.** Locate the decisive observation or proof. Check the exact comparison, outcome, denominator or unit, uncertainty, deviations from the plan, and what the audit actually covered. Assess how much the finding matters and how strongly the evidence supports it as separate questions.
+2. **Name the strongest rival or counterexample.** Write what the proposed explanation and the rival predict. For a model, check which component supplied the behavior. For a proof, ask which assumption lets the result hold and whether a case outside it could overturn a broader claim.
+3. **Choose a check that changes the decision.** Specify the smallest check, what each plausible outcome would imply, and which stage to reopen. Use already authorized evidence or checks. For a protocol, check whether the design could yield interpretable positive and negative results. For results, distinguish support, evidence against a stated effect within the test's sensitivity, and an inconclusive test. A failed prerequisite, uncontrolled rival, missing artifact, or interval that still allows a meaningful effect can leave the downstream claim open.
+4. **Return a review the lead can act on.** Give the strongest supported sentence, the decision it permits, and the material objections in priority order. For each objection give the revision and challenged claim, evidence locator or missing artifact, consequence if true, smallest check and how to interpret it, and the step to reopen. Keep missing evidence and reviewer dissent visible. Say what you checked when no material objection survives.
+
+For a revised proposal, recheck materially changed claims and the earlier objections they affect. Keep prior reviews only where the claim, method, and evidence dependencies still match. Preserve frozen criteria and label outcome-informed analyses as exploratory. Follow project rules for recording mistakes and pivots. A review informs a research decision and carries its own evidence scope. Execution and independent run audits follow their existing rules.
+
+## Report the score and next decision
+
+Lead with what the evidence lets the reader say and which finding drives the next decision. Name the reviewed revision, track, and evidence available.
+
+- **Focused review.** Name each affected worksheet row and its point exposure or scored deduction, with the exact evidence, why it matters, and the check that would change the finding. Label the row maximum as a ceiling when the rest of the row was outside scope.
+- **Full review.** Score each worksheet row once using a single ledger. Score the engineering Success criteria row on the clarity and justification of the stated thresholds, load, and conditions. If you deduct there, name what is missing from the definition or rationale. Charge missing measurements, untested conditions, or a result below threshold to execution only. Mark evidence that was never supplied as unavailable, and use zero for interview rows when there are no actual answers. An outline can support only the part of display organization it actually shows. Give display graphics zero and mark it unavailable unless you inspected the actual figures. Give display evidence zero and mark it unavailable unless you inspected the supporting records as displayed.
+- **Publish from the ledger.** Follow the [full scorecard instructions](references/isef-grand-award-rubric.md#generate-a-full-scorecard). Include the generated row table verbatim, including what would earn the rest, and its totals in the requested scorecard. Use those tables as the only source for numerical totals. Fix validation errors before publishing. If you cannot verify a score in the available environment, give the qualitative review and say what blocks the score.
+- **Ask what would change the answer.** Keep a failed requirement or unsupported central claim open regardless of the score. Give the smallest in-scope check and say how its possible results would change the decision. For a paper, evaluate any venue-specific requirements separately when relevant.
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$n=0; Get-Content -LiteralPath '"'documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md' -Encoding utf8 | ForEach-Object { "'$n++; if ($n -ge 250 -and $n -le 383) { '"'{0,4}: {1}' -f "'$n, $_ } }' in C:\Users\ethan\Documents\fly-chess-research
+ succeeded in 514ms:
+ 250: 
+ 251: ### 7.1 Stage 0: software checks (no fly graph)
+ 252: 
+ 253: 1. **Write rule:** the diary rebuilt from receipts equals the saved diary byte for byte; a planted certificate field, a validation stimulus or an unknown-event entry is rejected.
+ 254: 2. **Delivery:** replay applies `stimulus` and the teaching input in one forward pass with the unchanged rule, never calls the checker, and the auditor recomputes the delivered input and the resulting update for every replay in development runs.
+ 255: 3. **Invisible details:** two boards differing only in move counters give the same `stimulus_hash`; a run fed either produces the identical replay tape.
+ 256: 4. **Verdict blindness:** two lesson streams identical except for their pulses produce the same admitted entries, the same evictions and the same replay order, under the same seeds.
+ 257: 5. **Reservoir:** 1,000 independent seeds, each a stream of 100,000 synthetic lessons into capacity 100. The share of seeds keeping each stream position, pooled into 100 equal bins, passes a chi-square test of uniformity at the 1% level.
+ 258: 6. **Persistence:** kill and resume at a random point; the resumed run's state, diary, replay tape and choices equal an uninterrupted run's.
+ 259: 7. **Separation:** the test runner refuses to start when given a diary; the diary module imports no chess-rules or certificate code.
+ 260: 
+ 261: ### 7.2 Arms
+ 262: 
+ 263: Every comparison arm receives **identical online lessons** to the diary arm (same inputs, same pulses, same order). The five replay controls (no old replays, filler, moved timing, no pulse, event-shuffled) are copies of the diary arm's replay log that change **only the replays of old lessons**, meaning entries written in an earlier block. Replays of the current block's own lessons stay exactly as in the diary arm. So through the first block every replay control is in exactly the diary arm's state, and after that the only difference is what happened to the old-lesson replays, which is what the main hypothesis is about. The dry run checks that the first-block snapshot of each replay control equals the diary arm's, bit for bit. Stage 2 does this with a fixed tape. In stage 1 the diary arm makes its own choices, as in the original task, and each added arm is **yoked** to them: it receives the diary arm's chosen input and pulse at every trial instead of choosing. The task's four original arms keep their own choices and serve only to reproduce the original marks. The case-recall arms and the two learners are run in stage 2 as descriptive results and are decisive only in stage 3.
+ 264: 
+ 265: | Arm | What it is | What it rules out |
+ 266: |---|---|---|
+ 267: | **Diary** | Online lessons plus one replay per lesson (section 4) | (the system under test) |
+ 268: | **No diary** | Online lessons only. Its first-block learning also lacks the diary's replays, so diary versus no diary mixes better learning with better keeping; the replay controls separate the two | Baseline; the Volume 2 arm |
+ 269: | **No old replays** | Identical to the diary arm, except that every old-lesson replay is skipped: no step at all. It starts each later block in exactly the diary arm's state and gets the same lessons and the same current-block replays | The reference for forgetting and for filler damage: it differs from the diary only by the missing old-lesson replays |
+ 270: | **Filler replay** | Each old-lesson replay is replaced by one step on a non-chess filler pairing (the transfer protocol's filler trials; in stage 1, a fixed set of arbitrary pairings never tested) | Rival 2a |
+ 271: | **Moved timing** | Copies the diary arm's replay log from the same run. Every replay is kept. For each block (stage 1: each item block and the reversal; stage 2: A and B), the replays made during that block of entries from earlier blocks are moved, in the same order, to the end of the block before it, after that block's test snapshot and before the next block starts; replays of the current block's own entries stay where they were | Rival 2b |
+ 272: | **No pulse** | Each old-lesson replay keeps its input and time but delivers no external teaching pulse | Rival 3 |
+ 273: | **Event-shuffled** | Within each block, the pulses of that block's old-lesson replays are randomly permuted across those replays, so each keeps its input and time but gets another old-lesson replay's pulse. Pulse counts, amplitudes and timing per block are unchanged | Re-exposure with wrong verdicts |
+ 274: | **Mixed order** (stage 2 only) | All A and B lessons in one shuffled order, with one filler step per lesson so its update count matches the diary arm, no diary; scored only at the end | A feasibility witness only: success shows a joint setting is reachable; failure means only that this schedule failed |
+ 275: | **Learning off** | Same lessons, no connection changes | Floor |
+ 276: | **Feedback cut** (descriptive) | Diary arm with output-to-dopamine connections silenced during replay passes only | Whether replay amplifies existing preferences |
+ 277: | **Case recall** | At test, scores each candidate from stored lessons (exact specification below), in two versions: the final diary, and the **full history** of every lesson | Rival 5 |
+ 278: | **Raw-feature learner with diary** | Simple learner (below) on raw photoreceptor input, same lessons, same diary and replay | Rival 6 |
+ 279: | **Random-feature learner with diary** | Same learner on fixed random nonlinear features | Rivals 5 and 6 |
+ 280: 
+ 281: **Case recall, exact rule.** Keys, all fixed before data with the `features` stream: (a) raw input vector; (b) Kenyon-cell activity from the fly's untrained state; (c) random features: a fixed random projection of the raw input to as many units as there are Kenyon cells, keeping the k largest, where k is the fly's mean number of active Kenyon cells on development inputs at the untrained state. Each key is scaled to unit length; distance is Euclidean. A candidate's score is the inverse-distance-weighted mean of the pulse signs (+1 reward, −1 punishment) of its 3 nearest stored lessons, weight 1 / (d + 10⁻⁹); if any stored lesson is at distance below 10⁻¹², the score is the mean sign over those exact matches only. Ties and tie tolerance follow the fly's scoring. The bar is the best of the three keys in each version, chosen per stage on the final result: this favours the control.
+ 282: 
+ 283: **Simple learners, exact rule.** Score = w · φ(x), with w starting at zero. On each lesson or replay with pulse sign s: w ← w + s φ(x) / (‖φ(x)‖² + 10⁻⁹). φ is the raw input or the random features above. There is no learning rate to tune: because w starts at zero and every update would be multiplied by the same rate, a rate only rescales all scores and cannot change any ranking.
+ 284: 
+ 285: ### 7.3 Stage 1: the known forgetting failure, outside chess
+ 286: 
+ 287: **Question:** does the diary stop the measured damage to old associations, where this learner is known both to learn and to forget?
+ 288: 
+ 289: **Contract.** Reuse the cubic-exit task's harness (`run-eye-graph-memory-cubic.mjs`; [specification](../../../research/reports/memory-retention-continuation-2026-11-01/cubic-exit-spec.md)) through an adapter. Six seeds, as the original. Four items learned in sequence, each a choice between two injected, normalized Kenyon-cell codes; one unknown trial in eight; then the delay with noise; then reversal of item 0. Teaching level is the task's prediction-scaled function (`TONIC + (pulse − TONIC) × scale`), recomputed at replay from the stored valence and the present prediction. Replay is inserted after each feedback trial in every phase that has feedback; the delay has none. The task's own arms (informative, absent, shuffled, disabled) are kept; the arms of section 7.2 except mixed order, learning off (the task's disabled arm serves), case recall and the learners are added, making 12 arms. Complete state includes the task's slow store. Planning estimate: the original 24 arm runs took 6,157 s at 299 MiB peak; 12 arms × 6 seeds with replays is about 6–7 hours. A stage 1 protocol file freezes the adapter, the exact per-seed formulas below and the seed list before any run.
+ 290: 
+ 291: **Per-seed pass (every seed, diary arm):**
+ 292: 
+ 293: 1. **Acquired:** each item, right after its own block, chosen correctly by the greedy choice and with normalized margin at least 0.20 (the original first mark, per seed).
+ 294: 2. **Old items kept:** at the end of learning, every earlier item still chosen correctly, and the median ratio of its margin to its own post-block margin at least 0.5 (second mark, per seed).
+ 295: 3. **No unrelated loss after reversal:** the reversed item chosen correctly with margin at least 0.15, every other item still chosen correctly, and their median margin ratio to the delay test at least 0.8 (third mark, per seed, with the added every-item condition).
+ 296: 4. **Not worse over the delay:** the diary has no lessons and so no replays during the delay, so it cannot prevent loss from the delay's noise; this is outside its mechanism. Raw records of the original run show that loss is real: per-seed delay ratios 0.7566, 0.5941, 0.6832, 0.8118, 0.8714 and 0.4203, three of six below 0.70. Required instead: in every seed, the diary keeps at least as many items correct after the delay as the no-old-replays arm. The fourth mark is reported per seed for every arm.
+ 297: 5. **Not extra practice:** in every seed, the diary keeps at least as many items correct at each test after new learning as the five replay controls. In every seed where the no-old-replays arm showed damage after new learning (at the end of learning or after the reversal), the diary also beats each of the five replay controls at that test: more items correct, or, with equal counts, a higher median margin ratio. A seed where the no-old-replays arm showed no such damage cannot show a benefit and is not required to. If in a seed the filler arm keeps fewer items than the no-old-replays arm, filler damaged learning there, and the filler comparison is reported as uninformative for that seed.
+ 298: 
+ 299: The original six-seed median marks are reported beside these for every arm. Per-seed rules are stricter than the original medians, so they are a new test, not a change to the old gate.
+ 300: 
+ 301: **Prerequisite:** the no-old-replays arm must show damage after new learning in at least one seed: an item lost, or a ratio below its mark, at the end of learning or after the reversal. The original run's informative arm, which had no replays at all, did: after the reversal, seeds 4102, 4105 and 4106 each lost one unrelated association (raw records rechecked 2026-11-17; seed 4102's item 3 margin went from 0.140130 to -0.020325). If this rerun does not, stage 1 cannot test the diary.
+ 302: 
+ 303: **Reading the result:** all pass → re-living old lessons during new learning, not extra practice, timing or re-exposure, prevents this damage on this learner. Retention passes but the reversed item fails → the diary blocks correction: a design failure. Acquisition fails → uninterpretable. **Limit:** this is the older learner, not the current revision-4 chess learner.
+ 304: 
+ 305: ### 7.4 Stage 2: learn idea A, then idea B, on a fixed chess lesson tape
+ 306: 
+ 307: **Question:** with identical lessons in every arm, does replay keep a chess idea learned first while a second idea is learned?
+ 308: 
+ 309: **Ideas** (from the transfer protocol): **A = legal recapture**; **B = exchange value**. A punishes recapturable captures that lose material; B rewards recapturable captures of a piece worth at least the capturer. They are consistent under the protocol's combined rule, so interference happens only if the fly's connections mix the two features. Whether they do is unknown; the no-diary arm measures it.
+ 310: 
+ 311: **Tape:** before any data, the `tape` stream draws 480 A lessons, then 480 B lessons, from the protocol's training pools under its rejection rules, each a (board, move) whose verdict is verified, with the certificate's pulse. Every arm practises this tape. Teacher-chosen practice is a disclosed clue (Read first, item 5).
+ 312: 
+ 313: **Unit and denominator (twin pairs).** A development twin pair is two boards where the same move has opposite verified answers; 48 pairs per idea, from 48 separate games. A pair is correct when the fly scores the move higher on the good twin; ties, within the three-board test's tolerance (10⁻⁹ + 10⁻⁷ × the largest absolute score on that board), count as wrong. Chance is 24 of 48. A second, **offset-cancelled** version scores each twin by the move's margin over the best other legal move on that board; a pair is correct when that margin is higher on the good twin. This removes any score added equally to every move on a board.
+ 314: 
+ 315: **All-legal measure.** On the 192 development twin boards of the stage (96 per idea) that have at least one verified-good legal move (boards with none are excluded before testing and counted), take the fly's top-scoring moves within the tie tolerance. The same all-move scores give the offset-cancelled pairs. Good means a capture that is good under the protocol's combined rule; a quiet move is not good. King moves and moves the checker cannot certify are unknown. The board scores the share of tied top moves that are good. A board whose tied top set contains an unknown move is an unknown board. **Every eligible board stays in the denominator.** When the diary arm is compared with another arm, the comparison uses the worst case for the diary: the diary arm's unknown boards score 0 and the other arm's unknown boards score 1. The bootstrap lower limit of that worst-case paired difference must be above 0; the version with unknown boards left out is reported beside it. Reason: leaving unknowns out separately in each arm can change the denominators and make an advantage out of nothing (90 of 183 against 90 of 192). If more than 5% of eligible boards are unknown in any arm, the measure is inconclusive and so is the stage.
+ 316: 
+ 317: **Snapshots:** after the last A lesson (before its replay), and after the last B lesson (before its replay). Sawtooth log: during B, every 48 lessons, the A twin pairs are scored just before and just after that lesson's replay.
+ 318: 
+ 319: **Prerequisite (forgetting exists):** the no-old-replays arm, which learned A exactly as the diary arm did, forgets during B: its kept share (condition 2 below) or net retention (condition 3) is below 0.70. Otherwise there is no measured forgetting to repair, and the stage says nothing about the diary. The no-diary arm's forgetting is reported beside it.
+ 320: 
+ 321: **Development boards are unseen.** Development twin boards come from games disjoint from every game on the tape, and no development `stimulus_hash` may appear on the tape or in any diary (checked before the run).
+ 322: 
+ 323: **Pass (every run, diary arm, capacity one quarter):**
+ 324: 
+ 325: 1. **A acquired:** at least 32 of 48 A pairs after A. Chance of 32 or more by guessing: 1.5%.
+ 326: 2. **A kept, pair by pair:** of the A pairs correct after A, at least 70% still correct after B. Reason: the project's 0.70 retention requirement, applied to the pairs actually learned, so gains on other pairs cannot hide losses.
+ 327: 3. **A kept, net:** `(A after B − 24) / (A after A − 24)` at least 0.70, so guessing cannot look like retention.
+ 328: 4. **B learned:** at least 32 of 48 B pairs after B.
+ 329: 5. **Learning not blocked:** B pairs above chance with the diary at least 90% of those without it [choice]: a memory that keeps A by stopping new learning fails the goal; 10% allows a small, stated cost.
+ 330: 6. **Offset-cancelled:** conditions 1 to 4 also hold on the offset-cancelled pairs.
+ 331: 7. **Beats the practice controls:** more A pairs correct after B than no diary, no old replays, filler, moved timing, no pulse and event-shuffled, each with bootstrap lower limit above 0. If the filler arm ends B with fewer A pairs than the no-old-replays arm (lower limit above 0), filler damaged learning; that comparison is then reported as uninformative and the others decide. Because the replay controls start B in exactly the diary arm's state, those five comparisons measure keeping, not learning.
+ 332: 8. **Useful choices:** all-legal measure after B above learning off, with the worst-case scoring of unknown boards above, bootstrap lower limit above 0.
+ 333: 
+ 334: **Worked example of conditions 1 to 5.** After A the diary arm has 34 of 48 A pairs right (10 above chance). After B, 25 of those 34 are still right (74%, condition 2 passes) and 6 pairs that were wrong are now right, so A after B is 31: net `(31 − 24) / (34 − 24) = 0.70`, exactly the cutoff, which passes because the rule says at least. B ends at 33 with the diary and 34 without it: `(33 − 24) / (34 − 24) = 0.90`, also exactly at its cutoff, so condition 5 passes. Had only 23 of the 34 stayed right (68%), condition 2 would fail even with the same net score.
+ 335: 
+ 336: **Order is not counterbalanced.** Every run learns A first. A pass says the first-taught idea A survived B; it does not show that any first-taught idea survives.
+ 337: 
+ 338: **Reading the result:** all pass → replay keeps chess idea A while B is learned, beyond extra practice, timing, re-exposure and wrong verdicts: assisted retention, Volume 3. Large sawtooth with a low-point failure → refresh, not joint storage. Mixed order succeeds but the diary fails → a joint setting is reachable and this replay schedule does not find it. Mixed order fails → this schedule failed; a Volume 4 limit needs a separate bounded proof or exact search over the permitted connection strengths, as in the revision-4 capacity checks. Capacity curve: a benefit only when the diary keeps every lesson means the design does not work under pressure.
+ 339: 
+ 340: **Planning estimate:** 12 fly arms (the ten graph arms of section 7.2 plus the diary at capacities one sixteenth and every lesson) × 3 runs; with the all-legal measure only on the diary, no-diary and learning-off arms, that is about 229,000 forward passes (about 35 legal moves per all-legal board), or about 24 hours in one process at the v8 rate of 0.375 s per pass; about 6–7 hours with 4 workers, which fits the 2,048 MiB budget at the 245–299 MiB peaks measured in v8 and the cubic run. The dry run measures the real figure.
+ 341: 
+ 342: ### 7.5 Stage 3: transfer and combination, on the fly's own choices
+ 343: 
+ 344: Use [Phase B and Phase C of the transfer protocol](../research-goals/transfer-and-combination-protocol-2026-11-03.md) unchanged, on the fly's own choices. For each fly arm of the protocol (Phase-A, fresh, shuffled, single-idea and two-idea flies) add a version with a diary, and add the case-recall arms (diary and full history) and both learners with the diary. Each diary belongs to one fly and travels with its learner state across phases; its capacity is one quarter of that fly's total planned lessons across all its phases, fixed before data. The protocol's filler trials carry feedback the fly receives, so they are lessons and enter the diary like any other. The fly is always tested with the diary removed. Each locked set is opened once.
+ 345: 
+ 346: A **reasoning claim for the fly plus diary** at Phase C step 2 (three ideas) requires, in all three runs, with every audit passed:
+ 347: 
+ 348: 1. the protocol's own pass scores;
+ 349: 2. the same scores on the offset-cancelled pairs;
+ 350: 3. at least 6 more locked pairs than each added arm, bootstrap lower limit above 0 (the protocol's margin);
+ 351: 4. the all-legal measure on the locked boards, scored as in stage 2 (fixed denominator, worst case for the diary on unknown boards), above learning off, the case-recall arms and both learners, each with bootstrap lower limit above 0.
+ 352: 
+ 353: Its wording is then limited to: the fly with a disclosed replay diary combined three separately taught chess ideas on unfamiliar problems better than the listed case-recall and simple-learner controls. A case classifier not among those controls is not ruled out. Failing any of 1 to 4 leaves reasoning unsupported, whatever stages 1 and 2 showed.
+ 354: 
+ 355: ## 8. When the design fails
+ 356: 
+ 357: 1. **Leak:** a diary field cannot be rebuilt from receipts; invisible details change the replay tape; a validation or test input appears in the diary; a test process loads the diary. The run is invalid.
+ 358: 2. **Nothing to keep:** the fly does not acquire the first lessons. Uninterpretable.
+ 359: 3. **No forgetting to repair:** the no-diary arm already keeps A. The stage says nothing about the diary.
+ 360: 4. **Extra practice explains it:** the diary does not beat filler replay (unless filler is shown damaging) or the moved-timing arm.
+ 361: 5. **The verdict is not needed:** the diary does not beat the no-pulse arm.
+ 362: 6. **Refresh only:** the diary fails at the low-point snapshot.
+ 363: 7. **Stability blocks learning or correction:** stage 2 condition 5 fails, or stage 1's reversed item fails.
+ 364: 8. **Does not work under pressure:** no benefit at capacity one quarter.
+ 365: 9. **Case recall or a simple learner explains it:** a case-recall or learner arm matches the fly in stage 3.
+ 366: 
+ 367: ## 9. What a pass would and would not show
+ 368: 
+ 369: - **Would show:** with lessons re-lived during new learning, the fly's own connections held several chess lessons at once, with the diary absent whenever the fly was judged, beyond the listed controls.
+ 370: - **Would not show:** that the fly's rule resists overwriting by itself; that the fly formed combinable concepts rather than a case classifier not tested here; that flies replay memories; reasoning outside chess; Property 1 or Property 2.
+ 371: 
+ 372: ## 10. Working memory is a separate component
+ 373: 
+ 374: The researcher's Volume 3 note allows outsourcing working memory. That store would hold the fly's own activity within one decision, for example during a later look-ahead, and be cleared after each decision. It would never hold outcomes from other decisions. It needs its own design under the input and output rules, with its own decision-time lookup control.
+ 375: 
+ 376: ## 11. Decisions for the researcher
+ 377: 
+ 378: 1. Approve the replay diary as a Volume 3 memory, or choose another design from section 3.
+ 379: 2. Approve replay as an amendment to the restart plan's feedback rule: replay repeats lessons already received, uniformly, never because of errors, and never asks the teacher again.
+ 380: 3. Approve stage 2's teacher-chosen lesson tape as a disclosed development mechanism test.
+ 381: 4. Confirm placement: diary arms in Volume 3 as assisted retention; no-diary arms in Volume 2; any Volume 4 limit only with a separate proof.
+ 382: 5. Order: stage 1 can be built first. Stage 2 needs the twin-pair generators, which do not exist yet, a game manifest showing enough eligible boards for three disjoint practice sets (1,200 training-pool games exist; v8 used 750 positions from 198 games), and worked scoring examples for the boundary cases above. The three-board feedback test and the 2026-11-09 decision remain open and are unchanged.
+ 383: 
+
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$n=0; Get-Content -LiteralPath '"'documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md' -Encoding utf8 | ForEach-Object { "'$n++; if ($n -ge 384 -and $n -le 437) { '"'{0,4}: {1}' -f "'$n, $_ } }; Get-Content -LiteralPath '"'research/reports/replay-diary-design-review-2026-11-17/design-review-r2-skeptic.md' -Encoding utf8" in C:\Users\ethan\Documents\fly-chess-research
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "rg -n 'trials|acquisition|capacity|item|unknown|reversal|ITEM|CHOICE' .codebase/scripts/neural-learning/run-eye-graph-memory-cubic.mjs | Select-Object -First 85; "'$n=0; Get-Content -LiteralPath '"'documentation/design/research-goals/transfer-and-combination-protocol-2026-11-03.md' -Encoding utf8 | ForEach-Object { "'$n++; if (($n -ge 19 -and $n -le 29) -or ($n -ge 110 -and $n -le 162)) { '"'{0,4}: {1}' -f "'$n, $_ } }' in C:\Users\ethan\Documents\fly-chess-research
+ succeeded in 254ms:
+ 384: ## 12. Changes from revision 1 (review round 1)
+ 385: 
+ 386: Reviews: [folder](../../../research/reports/replay-diary-design-review-2026-11-17/README.md). Every required change was adopted; none was declined.
+ 387: 
+ 388: | Finding | Change in revision 2 |
+ 389: |---|---|
+ 390: | Peer 1: invisible FEN move counters changed supersession | Diary stores the delivered input, not board text; supersession by input hash; stage 0 check 3 |
+ 391: | Peer 2: existing teaching path selects moves by certificate, has no receipts, and delivers input and pulse in one pass | Section 4.1 lesson boundary; one-pass delivery; auditor recomputes every replay; teacher-chosen tape disclosed for stage 2 only |
+ 392: | Peer 3: stage 1 cannot be copied as written | Stage 1 contract: adapter, six seeds, injected codes, recomputed prediction-scaled teaching, complete state, per-seed rules, original medians reported; mixed-order arm removed from stage 1 |
+ 393: | Peer 4 and skeptic 2: moved-timing arm dropped new-block replays; own-choice arms see different lessons | Moved timing keeps every replay; stage 2 uses one fixed tape; dopamine factors and update sizes logged; feedback-cut descriptive arm |
+ 394: | Peer 4 and skeptic 5: lookup and simple learner unspecified | Exact case-recall and learner rules; nonlinear random-feature learner added |
+ 395: | Peer 5: scores and sampling not uniquely computable | All-legal measure with unknowns, ties, king moves and ineligible boards defined; Algorithm R and random streams; chi-square scheme; game manifest and worked examples required before launch |
+ 396: | Skeptic 1: margins hide losses; refresh rival; all-legal had no threshold | Kept-share rule; low-point snapshots and sawtooth log; all-legal threshold |
+ 397: | Skeptic 3: shuffle changed per-event pulse balance; filler may interfere | Event-level shuffle; no-pulse arm; filler damage check |
+ 398: | Skeptic 4, foundational 3, peer 3: a failed mixed order is not a limit | Mixed order is a feasibility witness only; a Volume 4 limit needs a separate proof |
+ 399: | Foundational 1: replay could train a case classifier into the weights | Full-history case recall and random-feature learner; attribution narrowed |
+ 400: | Foundational 2: twin rankings need not mean solving | Offset-cancelled pairs and all-legal measure required for any claim |
+ 401: | Foundational 4: "Property 2 with a disclosed aid" relabelled an old requirement | Renamed assisted retention; Properties 1 and 2 stay unmet |
+ 402: | Foundational 5 (optional): removal is not a necessary boundary | Adopted: removal is this design's restriction |
+ 403: 
+ 404: **Revision 3: the lead's own recheck** (the reviewers' round 2 hit the Codex usage limit before writing anything; this recheck is not independent):
+ 405: 
+ 406: 1. The event-shuffled arm permuted pulses across the whole run, which changes pulse counts per block although revision 2 said it did not. Now permuted within each block.
+ 407: 2. Unknown-verification trials: stated that they are not lessons, so they get no entry and no replay.
+ 408: 3. Sawtooth checkpoints: stated that they too are taken before the replay and scored without the diary.
+ 409: 4. The all-legal measure's boards are now named (the 192 development twin boards), and the learners' tuning block is named for every stage.
+ 410: 
+ 411: **Revision 5: the lead's second read, before the reviewers' round 2** (not independent):
+ 412: 
+ 413: 1. Section 7.2 said stage 1 arms get identical online lessons yet choose for themselves. Now every added stage 1 arm is yoked to the diary arm's choices; the original four arms only reproduce the original marks.
+ 414: 2. Supersession frees a slot, which slightly favours the next lesson in reservoir sampling. Now disclosed and logged (section 4.4).
+ 415: 3. Moved-timing replays are placed after the earlier block's test snapshot, so that snapshot is comparable across arms.
+ 416: 4. A replay's own update is published in its own atomic write before the next lesson (section 4.7).
+ 417: 5. Stage 3 now says each diary travels with its fly across phases, with capacity one quarter of that fly's planned lessons, and that the protocol's filler trials enter the diary as lessons.
+ 418: 6. Stage 2's arm count is corrected to 11, the mixed-order arm is scored only at the end, and case recall and the learners are descriptive in stage 2 and decisive in stage 3.
+ 419: 
+ 420: **Revision 6: the lead's solo deep-in-thought pass** (not independent; the researcher asked for it while the reviewers wait):
+ 421: 
+ 422: 1. **Controls confused learning with keeping.** In revision 5 the filler, no-pulse and event-shuffled arms changed replays during the A block too, so they would learn A less well, and the diary would beat them on learning, not on keeping. Now every replay control changes only replays of old lessons; through the first block it is in exactly the diary arm's state (checked bit for bit in the dry run).
+ 423: 2. **Stage 1 asked the diary to stop damage it cannot touch.** Raw records show three of six seeds lose margin over the delay (ratios 0.5941, 0.6832, 0.4203), when there are no lessons and so no replays. The delay condition is now "not worse than no diary"; the benefit conditions and the prerequisite count only damage after new learning.
+ 424: 3. **Stage 2 prerequisite** now also requires the no-diary arm to have acquired A.
+ 425: 4. **Runtime corrected:** about 216,000 forward passes, about 22 hours in one process (revision 5 said 15–20), about 6 with 4 workers; stage 1 about 6 hours.
+ 426: 5. **Entry size measured:** 1,644 active photoreceptors on average, at most 1,955 (83 moves), so 13–16 KiB per entry.
+ 427: 6. **Specified:** bootstrap seed and lower limit, tie tolerance, development boards disjoint from the tape, handling of runs that stop early, and a worked example of the stage 2 cutoffs.
+ 428: 7. **Stated limits:** stage 2's order is not counterbalanced; the diary's role in reasoning is spelled out (keep earlier ideas alive so they can be combined).
+ 429: 
+ 430: **Revision 7: the scientific skeptic's round 2** ([review](../../../research/reports/replay-diary-design-review-2026-11-17/design-review-r2-skeptic.md); four of five round 1 findings resolved). All three points adopted:
+ 431: 
+ 432: 1. **Filler damage was judged against the wrong arm** (required). No diary learns A without replays, so filler could damage a stronger starting state and still beat it. New arm **no old replays**: identical to the diary arm with every old-lesson replay skipped. It is now the reference for filler damage, for the forgetting prerequisite and for the benefit conditions, in both stages.
+ 433: 2. **Unknown boards could manufacture an all-legal advantage** (required). Every eligible board now stays in the denominator, and comparisons must survive the worst case for the diary (its unknowns score 0, the other arm's score 1).
+ 434: 3. **The learners' learning-rate sweep did nothing** (optional). With weights starting at zero, a rate only rescales scores. The rate is removed and the tuning claim dropped.
+ 435: 
+ 436: Arm counts and runtime updated: 12 arms in each stage; stage 2 about 229,000 forward passes.
+ 437: 
+**VERDICT: APPROVE WITH REQUIRED CHANGES. Revise before building.**
+
+Reviewed revision 6, blob `0b57e460`. No files changed or experiments run.
+
+1. **RESOLVED — Hidden losses and refresh.** Kept-pair retention, snapshots before replay, the sawtooth log and an all-legal threshold address the original finding. The new denominator problem is below.
+2. **RESOLVED — Replay matching.** Every replay is preserved, online lessons are matched, and effective update sizes are logged. Different connection states remain the intended timing intervention.
+3. **STILL OPEN — Filler damage.** The filler guard compares against no diary, whose initial learning lacks replay ([design:268](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:268), [design:330](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:330)). Filler could damage the stronger initial state while losing less than no diary. Stage 1 also requires beating filler without a damage exception. **Required-BUILD:** assess filler against a copy of the same initial state receiving identical later lessons and current-block replays, with old-lesson replays omitted.
+4. **RESOLVED — Interference and feasibility.** Acquisition and forgetting are prerequisites; mixed-order failure no longer establishes incompatible settings.
+5. **RESOLVED — Scope of baseline conclusions.** Equations and a nonlinear-feature learner are supplied, and conclusions exclude only the listed implementations.
+
+**New findings**
+
+1. **required-BUILD — Separate exclusions can manufacture an all-legal advantage.**  
+   **Evidence:** unknown top choices are removed separately from each arm’s denominator ([design:314](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:314)); any positive bootstrap advantage can pass. Identical totals of 90 verified successes could become **90/183 versus 90/192** merely because one arm excludes nine unknown boards—within the 5% allowance.  
+   **Consequence:** an apparent improvement need not mean better choices.  
+   **Smallest fix:** retain the fixed eligible-board denominator and require the paired advantage to survive conservative bounds on unknown outcomes. Specify this for both stages using the measure.
+
+2. **optional — The learning-rate sweep provides no meaningful tuning.**  
+   **Evidence:** the additive update starts at zero and multiplies every increment by the same positive learning rate ([design:282](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:282)). Changing that rate only scales weights; predicted signs and rankings remain unchanged, apart from numerical tolerance.  
+   **Consequence:** the stated tuning budget does not strengthen this control.  
+   **Smallest fix:** freeze the rate and remove the tuning claim, or introduce a consequential, predeclared tuning choice.
+
+The one-page interface adds no direct path from diary retrieval to move scoring.
+
+**Strongest supportable sentence, conditional on passing:** “On the registered tests, replay training retained earlier chess-pair rankings better than the listed replay controls, with the diary absent during scoring.”
+
+ succeeded in 1005ms:
+18:const { values: a } = parseArgs({ options: { out: { type: 'string' }, seeds: { type: 'string', default: '6' }, first: { type: 'string', default: '4101' }, items: { type: 'string', default: '4' }, 'delay-steps': { type: 'string', default: '400' }, 'cpu-duty': { type: 'string', default: '0.5' }, probe: { type: 'boolean' } } });
+22:const WINNERS = 20, ITEMS = Number(a.items), TEMPERATURE = 0.1, TONIC = 0.75, ETA = 2, V0 = 1.2, TRIALS = 24, DELAY_STEPS = Number(a['delay-steps']);
+68:  while (list.length < ITEMS) {
+110:function runArm(seed, items, arm, yoked, opts = {}) {
+112:  const images = items.flatMap(x => x.images);
+117:  log({ kind: 'start', seed, arm, config: memory.config, identity: memory.identity, mapping: memory.mapping, initial: memory.snapshot(), items, localHash: localHash(memory) });
+141:    tests[name] = items.map((x, j) => { const good = goodOf(j), m = value(x.images[good]) - value(x.images[1 - good]); return { mNorm: m / 1.6, greedy: m > 0 }; });
+151:      const unknown = (trial + 1) % 8 === 0; trial++;
+152:      context = { phase: name, trial, item: j, step: 'choice', chosen: null };
+154:      const scores = items[j].images.map(code => { const v = value(code); if (learns) observe(1); gap(4); return v; });
+155:      const choice = rng() < 1 / (1 + Math.exp((scores[1] - scores[0]) / TEMPERATURE)) ? 0 : 1, code = items[j].images[choice];
+157:      if (!unknown && learns && arm !== 'absent') valence = arm === 'shuffled' ? yoked[name][cursor[name]++] : choice === good ? 'reward' : 'punish';
+163:      log({ kind: 'trial', context, scores, choice, unknown, good, valence, now, scale: f, level: TONIC + (pulse - TONIC) * f,
+164:        certificate: { criterion: 'assigned-action-association-v1', scope: 'arbitrary association only; no chess consequence', fen: items[j].fen, moves: items[j].moves, chosenMove: items[j].moves[choice], known: !unknown, goodMove: items[j].moves[good] } });
+170:  for (let j = 0; j < ITEMS; j++) { block(`B${j}`, j, 0); test(`T${j}`, () => 0); }
+191:  return { seed, arm, tests, pulses, realized, initialGains, gainsBefore, frames: frame, finalLocalState: localHash(memory), finalState: stateHash(), readerZero: obs.zeroCount, readerCeiling: obs.ceilingCount, kcEdges: memory.edges.length, fixtures: items.map(x => ({ fen: x.fen, moves: x.moves })) };
+208:  const items = buildItems(seed), t0 = performance.now(), inf = runArm(seed, items, 'informative');
+211:    const rec = name === 'informative' ? inf : runArm(seed, items, name, yoked);
+214:    console.log(JSON.stringify({ seed, arm: name, completedRecords: rows.length, last: rec.tests[`T${ITEMS - 1}`].map(x => x.mNorm), delay: rec.tests.Delay.map(x => x.mNorm) }));
+216:  if (seed === seeds[0] && runArm(seed, items, 'informative', null, { restore: true }).finalState !== inf.finalState) throw Error('Saved and restored run differs from the uninterrupted run');
+218:  console.log(JSON.stringify({ seed, ms: Math.round(performance.now() - t0), T: inf.tests[`T${ITEMS - 1}`].map(e => +e.mNorm.toFixed(3)), Delay: inf.tests.Delay.map(e => +e.mNorm.toFixed(3)), Rev: inf.tests.Rev.map(e => +e.mNorm.toFixed(3)), pulses: inf.pulses.B0 }));
+222:const ALL = Array.from({ length: ITEMS }, (_, j) => j), OLD = ALL.slice(0, ITEMS / 2), LAST = `T${ITEMS - 1}`;
+228:  R3: { pass: med(I.map(r => r.tests.Rev[0].mNorm)) >= 0.15 && I.filter(r => r.tests.Rev[0].greedy).length / I.length >= 0.9 && med(I.map(r => med(ALL.slice(1).map(j => ratio(r.tests.Rev[j].mNorm, r.tests.Delay[j].mNorm))))) >= 0.8, observed: { item: med(I.map(r => r.tests.Rev[0].mNorm)), greedy: I.filter(r => r.tests.Rev[0].greedy).length / I.length, others: med(I.map(r => med(ALL.slice(1).map(j => ratio(r.tests.Rev[j].mNorm, r.tests.Delay[j].mNorm))))) } },
+233:const summary = { schema: 'eye-graph-memory-cubic-v1', seeds, items: ITEMS, marks, wall: (performance.now() - started) / 1000, maxRssMiB: process.resourceUsage().maxRSS / 1024, eyes: eyes.identity, spec: pins['research/reports/memory-retention-continuation-2026-11-01/cubic-exit-spec.md'], self: sha(readFileSync(new URL(import.meta.url))) };
+  19: ## Rules for every phase
+  20: 
+  21: 1. **Input:** Eyes v2 with zero input collisions ([revision](restart-plan-revision-2026-11-03.md), problem 1).
+  22: 2. **Scoring:** every proposed move is scored from unchanged stored memory with `frozenScores` (revision, problem 4). The same single move score scores every task. There is no idea selector, no task label, no context signal and no hand-written rule that combines ideas.
+  23: 3. **Memory (corrected later on 2026-11-03):** each phase declares, before data, either brain memory only or FlyChess with a disclosed engineered memory, as the researcher allowed on 2026-11-01. Results are reported for the declared system. The exact-recall store alone is always a comparison arm. An engineered-memory condition must also beat the same retrieval on raw eyes, on random or rewired features, with no memory and with mismatched memory (revision, problem 7 correction). Zero exact repeats between test and training inputs. The first version of this rule said "brain memory only"; that was a mistake.
+  24: 4. **Feedback:** only the fly's own chosen move gets feedback, through the modeled dopamine cells, from an independent checker certificate. Unknown gives nothing. No feedback on test sets.
+  25: 5. **Equal practice:** every arm gets the same number of feedback trials in the same order, with the same seeds. An arm that skips a training block gets the same number of **filler trials** instead: the non-chess arbitrary-pairing trials of the 2026-11-01 pilot, which carry feedback but no chess fact.
+  26: 6. **Each pass score must hold in all three runs.** Every run gets an independent replay audit.
+  27: 7. **Necessity:** each locked pair differs between its twins in the condition of exactly one idea. A system that lacks that idea gives both twins the same answer and gets that pair wrong. The generator certifies each pair's idea label, and the number of pairs per idea is fixed below. This is how each idea is shown to be needed.
+  28: 8. **Checker:** every Phase B and C answer is certified by [landing-square-certificate.mjs](../../../.codebase/src/search-and-feedback/landing-square-certificate.mjs) (built 2026-11-03, 9 tests). For any legal non-king move it lists every legal opponent capture of the moved piece on its landing square, the attackers that are pinned, and the exchange values; `combinedAnswer` applies the combined rule below. It must pass an independent audit and the feedback quality gate before a phase starts.
+  29: 9. **Generators** (programs that pick twin pairs from training-pool games) must exist and pass audit before each phase starts. No generator exists yet for any phase, including Phase A; the restart plan's rebuild list (section 11, item 6) still lists the new puzzle generator as to be built.
+ 110: ### C1: ideas 1 and 2
+ 111: 
+ 112: **Locked problems:** 60 twin pairs from 60 unrelated games. Every board is a capture that would lose material if recaptured, and a pinned enemy piece attacks the target square.
+ 113: 
+ 114: - 30 **pin pairs:** the only attacker of the target is pinned (good) or the pin line is blocked so it is not pinned (bad).
+ 115: - 30 **recapture pairs:** the pinned attacker is present on both twins; an extra unpinned attacker is absent (good) or present (bad).
+ 116: 
+ 117: **Practice:** 480 trials of idea 1 and 480 trials of idea 2 [choice]. Order is idea 1 then 2 in run 1, idea 2 then 1 in run 2, and alternating blocks of 96 in run 3.
+ 118: 
+ 119: **Arms:** Full fly (ideas 1 and 2); idea-1-only fly (480 filler trials in place of idea 2); idea-2-only fly (filler in place of idea 1); fresh fly (960 filler trials); shuffled-feedback fly; plasticity-off fly; simple learner; similar-board recall; exact-recall store; and the **fixed-sum combiner**, which adds the idea-1-only fly's and idea-2-only fly's move scores with a fixed rule. The fixed-sum combiner tests the review's warning that a hand-written rule could combine two answers without the fly learning to combine.
+ 120: 
+ 121: **Pass scores (all three runs):**
+ 122: 
+ 123: 1. **C1-a:** Full fly at least 44/60.
+ 124: 2. **C1-b:** at least 22/30 on pin pairs and at least 22/30 on recapture pairs.
+ 125: 3. **C1-c:** at least 6 more pairs than every other arm, including the best single-idea fly and the fixed-sum combiner, each with bootstrap lower limit above 0.
+ 126: 4. **C1-d:** retention: each single idea's development set falls by at most 10%.
+ 127: 5. **C1-e:** independent audit, as B6.
+ 128: 
+ 129: **Before C1 runs:** a software check on made-up data must show that the frozen move score can express all four required answer patterns (both idea conditions on and off) without a selector. If it cannot, stop and report it as a limit of the score, not a failure of the fly.
+ 130: 
+ 131: ### C2: ideas 1, 2 and 3
+ 132: 
+ 133: **Locked problems:** 60 twin pairs from 60 unrelated games. Every board is a capture where a pinned enemy piece attacks the target square and the exchange value matters.
+ 134: 
+ 135: - 20 **pin pairs:** captured value lower than the capturing piece; the only attacker is pinned (good) or not pinned (bad).
+ 136: - 20 **recapture pairs:** captured value lower; the pinned attacker is on both twins; an unpinned attacker is absent (good) or present (bad).
+ 137: - 20 **value pairs:** an unpinned attacker is on both twins; the captured piece is worth at least the capturing piece (good) or less (bad).
+ 138: 
+ 139: **Practice:** 480 trials of each idea [choice], with three counterbalanced orders across the three runs (1-2-3, 3-1-2, and alternating blocks of 96).
+ 140: 
+ 141: **Arms:** Full fly; each two-idea fly (filler in place of the missing idea); each single-idea fly; fresh fly; shuffled-feedback fly; plasticity-off fly; simple learner; similar-board recall; exact-recall store; fixed-sum combiner of the three single-idea flies.
+ 142: 
+ 143: **Pass scores (all three runs):**
+ 144: 
+ 145: 1. **C2-a:** Full fly at least 44/60.
+ 146: 2. **C2-b:** at least 15/20 on each of the three pair groups. (At random, the chance for one group is 2.1%.)
+ 147: 3. **C2-c:** at least 6 more pairs than every other arm, including the best two-idea fly and the fixed-sum combiner, each with bootstrap lower limit above 0.
+ 148: 4. **C2-d and C2-e:** retention and audit, as in C1.
+ 149: 
+ 150: ### Stopping rules for C1 and C2
+ 151: 
+ 152: 1. C1 does not start unless Phases A and B passed. C2 does not start unless C1 passed.
+ 153: 2. The checker audit, the generators and the score-expression check must pass first.
+ 154: 3. Training stops at the fixed trial counts. Snapshot choice and early stops follow the Phase B rules.
+ 155: 4. Each locked set is opened once. No pass score is lowered after data.
+ 156: 
+ 157: ### Results
+ 158: 
+ 159: - C1 passes: the fly combined two separately learned chess ideas on unfamiliar problems in this model. This is not yet a reasoning claim.
+ 160: - C2 passes, with Phases A, B, C1 and every audit passed: the first evidence for reasoning under the researcher's definition, inside chess and inside this model. Only then may "EUREKA EUREKA" be used.
+ 161: - Full fly no better than its best fewer-idea arm: no combination.
+ 162: - Full fly no better than the fixed-sum combiner: the combination can be explained by a fixed addition of separate scores.
+
+codex
+The five original findings are resolved at the design level. Three new gaps remain: moved-timing replays change the state entering the next block; section 8 still uses the old forgetting reference; and repeated-input removal can leave the quarter-capacity diary holding every distinct experience.
+
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$n=0; Get-Content -LiteralPath '"'.codebase/scripts/neural-learning/run-eye-graph-memory-cubic.mjs' -Encoding utf8 | ForEach-Object { "'$n++; if (($n -ge 60 -and $n -le 86) -or ($n -ge 110 -and $n -le 120) -or ($n -ge 145 -and $n -le 179)) { '"'{0,4}: {1}' -f "'$n, $_ } }; git hash-object -- documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md' in C:\Users\ethan\Documents\fly-chess-research
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'git diff --no-index --unified=1 -- research/reports/replay-diary-design-review-2026-11-17/design-revision-6.md documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md' in C:\Users\ethan\Documents\fly-chess-research
+ exited 1 in 231ms:
+warning: in the working copy of 'research/reports/replay-diary-design-review-2026-11-17/design-revision-6.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md', LF will be replaced by CRLF the next time Git touches it
+diff --git a/research/reports/replay-diary-design-review-2026-11-17/design-revision-6.md b/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md
+index 0b57e46..8d1fc4f 100644
+--- a/research/reports/replay-diary-design-review-2026-11-17/design-revision-6.md
++++ b/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md
+@@ -2,3 +2,3 @@
+ 
+-**Status: design revision 6, written before any implementation or data. Nothing is built or launched. It needs the researcher's approval before building.** Revision 1 (preserved as [design-revision-1.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-1.md), git blob `62c72ba4`) was reviewed by three independent reviewers; all three returned "approve with required changes", and section 12 maps every required change to revision 2 ([design-revision-2.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-2.md), blob `5e22be79`). Revision 3 adds four small fixes from the lead's own recheck (section 12; preserved as [design-revision-3.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-3.md), blob `72fcbec9`). Revision 4 adds "The design on one page" after the researcher said "i dont see a design yet": the picture, the module's interface, the data, the practice loop, a worked example and the files to build. It restates sections 4.1 to 4.8; it adds no new rule. Revision 5 (section 12) fixes six gaps found in the lead's second read before the reviewers' round 2; revision 4 is preserved as [design-revision-4.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-4.md) (blob `99df41e4`). Revision 6 (section 12) comes from the lead's solo deep-in-thought pass, which rebuilt the key numbers from raw records; revision 5 is preserved as [design-revision-5.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-5.md) (blob `0c71bb4d`). The reviewers' independent recheck of these revisions is pending: their round 2 stopped at the Codex usage limit. Serves Volume 3 (*Reasoning*), chapters 4 (*Process*) and 5 (*Evidence*). The no-diary arms serve Volume 2 chapter 3 (*To Learn*). A failure of the mixed-order arm feeds Volume 4 chapters 2 (*Amnesia*) and 5 (*Evidence*) only with a separate proof. Goal set by the researcher on 2026-11-17: "The memory may help the fly remember. It must not supply the intelligence we later attribute to the fly." Computational memory is allowed; biological realism is not required.
++**Status: design revision 7, written before any implementation or data. Nothing is built or launched. It needs the researcher's approval before building.** Revision 1 (preserved as [design-revision-1.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-1.md), git blob `62c72ba4`) was reviewed by three independent reviewers; all three returned "approve with required changes", and section 12 maps every required change to revision 2 ([design-revision-2.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-2.md), blob `5e22be79`). Revision 3 adds four small fixes from the lead's own recheck (section 12; preserved as [design-revision-3.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-3.md), blob `72fcbec9`). Revision 4 adds "The design on one page" after the researcher said "i dont see a design yet": the picture, the module's interface, the data, the practice loop, a worked example and the files to build. It restates sections 4.1 to 4.8; it adds no new rule. Revision 5 (section 12) fixes six gaps found in the lead's second read before the reviewers' round 2; revision 4 is preserved as [design-revision-4.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-4.md) (blob `99df41e4`). Revision 6 (section 12) comes from the lead's solo deep-in-thought pass, which rebuilt the key numbers from raw records; revision 5 is preserved as [design-revision-5.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-5.md) (blob `0c71bb4d`). Revision 7 answers the scientific skeptic's round 2 review (section 12); revision 6 is preserved as [design-revision-6.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-6.md) (blob `0b57e460`). The reviewers' independent recheck of these revisions is pending: their round 2 stopped at the Codex usage limit. Serves Volume 3 (*Reasoning*), chapters 4 (*Process*) and 5 (*Evidence*). The no-diary arms serve Volume 2 chapter 3 (*To Learn*). A failure of the mixed-order arm feeds Volume 4 chapters 2 (*Amnesia*) and 5 (*Evidence*) only with a separate proof. Goal set by the researcher on 2026-11-17: "The memory may help the fly remember. It must not supply the intelligence we later attribute to the fly." Computational memory is allowed; biological realism is not required.
+ 
+@@ -262,3 +262,3 @@ All stages use development sets until stage 3 opens the transfer protocol's lock
+ 
+-Every comparison arm receives **identical online lessons** to the diary arm (same inputs, same pulses, same order). The four replay controls (filler, moved timing, no pulse, event-shuffled) are copies of the diary arm's replay log that change **only the replays of old lessons**, meaning entries written in an earlier block. Replays of the current block's own lessons stay exactly as in the diary arm. So through the first block every replay control is in exactly the diary arm's state, and after that the only difference is what happened to the old-lesson replays, which is what the main hypothesis is about. The dry run checks that the first-block snapshot of each replay control equals the diary arm's, bit for bit. Stage 2 does this with a fixed tape. In stage 1 the diary arm makes its own choices, as in the original task, and each added arm is **yoked** to them: it receives the diary arm's chosen input and pulse at every trial instead of choosing. The task's four original arms keep their own choices and serve only to reproduce the original marks. The case-recall arms and the two learners are run in stage 2 as descriptive results and are decisive only in stage 3.
++Every comparison arm receives **identical online lessons** to the diary arm (same inputs, same pulses, same order). The five replay controls (no old replays, filler, moved timing, no pulse, event-shuffled) are copies of the diary arm's replay log that change **only the replays of old lessons**, meaning entries written in an earlier block. Replays of the current block's own lessons stay exactly as in the diary arm. So through the first block every replay control is in exactly the diary arm's state, and after that the only difference is what happened to the old-lesson replays, which is what the main hypothesis is about. The dry run checks that the first-block snapshot of each replay control equals the diary arm's, bit for bit. Stage 2 does this with a fixed tape. In stage 1 the diary arm makes its own choices, as in the original task, and each added arm is **yoked** to them: it receives the diary arm's chosen input and pulse at every trial instead of choosing. The task's four original arms keep their own choices and serve only to reproduce the original marks. The case-recall arms and the two learners are run in stage 2 as descriptive results and are decisive only in stage 3.
+ 
+@@ -268,2 +268,3 @@ Every comparison arm receives **identical online lessons** to the diary arm (sam
+ | **No diary** | Online lessons only. Its first-block learning also lacks the diary's replays, so diary versus no diary mixes better learning with better keeping; the replay controls separate the two | Baseline; the Volume 2 arm |
++| **No old replays** | Identical to the diary arm, except that every old-lesson replay is skipped: no step at all. It starts each later block in exactly the diary arm's state and gets the same lessons and the same current-block replays | The reference for forgetting and for filler damage: it differs from the diary only by the missing old-lesson replays |
+ | **Filler replay** | Each old-lesson replay is replaced by one step on a non-chess filler pairing (the transfer protocol's filler trials; in stage 1, a fixed set of arbitrary pairings never tested) | Rival 2a |
+@@ -281,3 +282,3 @@ Every comparison arm receives **identical online lessons** to the diary arm (sam
+ 
+-**Simple learners, exact rule.** Score = w · φ(x), with w starting at zero. On each lesson or replay with pulse sign s: w ← w + η s φ(x) / (‖φ(x)‖² + 10⁻⁹). φ is the raw input or the random features above. η is chosen from {0.01, 0.03, 0.1, 0.3, 1} by the learner's own online accuracy on the stage's first training block (the share of its lessons whose sign it predicted correctly before updating). This uses no held-out data and favours the control.
++**Simple learners, exact rule.** Score = w · φ(x), with w starting at zero. On each lesson or replay with pulse sign s: w ← w + s φ(x) / (‖φ(x)‖² + 10⁻⁹). φ is the raw input or the random features above. There is no learning rate to tune: because w starts at zero and every update would be multiplied by the same rate, a rate only rescales all scores and cannot change any ranking.
+ 
+@@ -287,3 +288,3 @@ Every comparison arm receives **identical online lessons** to the diary arm (sam
+ 
+-**Contract.** Reuse the cubic-exit task's harness (`run-eye-graph-memory-cubic.mjs`; [specification](../../../research/reports/memory-retention-continuation-2026-11-01/cubic-exit-spec.md)) through an adapter. Six seeds, as the original. Four items learned in sequence, each a choice between two injected, normalized Kenyon-cell codes; one unknown trial in eight; then the delay with noise; then reversal of item 0. Teaching level is the task's prediction-scaled function (`TONIC + (pulse − TONIC) × scale`), recomputed at replay from the stored valence and the present prediction. Replay is inserted after each feedback trial in every phase that has feedback; the delay has none. The task's own arms (informative, absent, shuffled, disabled) are kept; the arms of section 7.2 except mixed order, learning off (the task's disabled arm serves), case recall and the learners are added, making 11 arms. Complete state includes the task's slow store. Planning estimate: the original 24 arm runs took 6,157 s at 299 MiB peak; 11 arms × 6 seeds with replays is about 6 hours. A stage 1 protocol file freezes the adapter, the exact per-seed formulas below and the seed list before any run.
++**Contract.** Reuse the cubic-exit task's harness (`run-eye-graph-memory-cubic.mjs`; [specification](../../../research/reports/memory-retention-continuation-2026-11-01/cubic-exit-spec.md)) through an adapter. Six seeds, as the original. Four items learned in sequence, each a choice between two injected, normalized Kenyon-cell codes; one unknown trial in eight; then the delay with noise; then reversal of item 0. Teaching level is the task's prediction-scaled function (`TONIC + (pulse − TONIC) × scale`), recomputed at replay from the stored valence and the present prediction. Replay is inserted after each feedback trial in every phase that has feedback; the delay has none. The task's own arms (informative, absent, shuffled, disabled) are kept; the arms of section 7.2 except mixed order, learning off (the task's disabled arm serves), case recall and the learners are added, making 12 arms. Complete state includes the task's slow store. Planning estimate: the original 24 arm runs took 6,157 s at 299 MiB peak; 12 arms × 6 seeds with replays is about 6–7 hours. A stage 1 protocol file freezes the adapter, the exact per-seed formulas below and the seed list before any run.
+ 
+@@ -294,4 +295,4 @@ Every comparison arm receives **identical online lessons** to the diary arm (sam
+ 3. **No unrelated loss after reversal:** the reversed item chosen correctly with margin at least 0.15, every other item still chosen correctly, and their median margin ratio to the delay test at least 0.8 (third mark, per seed, with the added every-item condition).
+-4. **Not worse over the delay:** the diary has no lessons and so no replays during the delay, so it cannot prevent loss from the delay's noise; this is outside its mechanism. Raw records of the original run show that loss is real: per-seed delay ratios 0.7566, 0.5941, 0.6832, 0.8118, 0.8714 and 0.4203, three of six below 0.70. Required instead: in every seed, the diary keeps at least as many items correct after the delay as no diary. The fourth mark is reported per seed for every arm.
+-5. **Not extra practice:** in every seed, the diary keeps at least as many items correct at each test after new learning as the four replay controls. In every seed where the no-diary arm showed damage after new learning (at the end of learning or after the reversal), the diary also beats each of the four replay controls at that test: more items correct, or, with equal counts, a higher median margin ratio. A seed where no-diary showed no such damage cannot show a benefit and is not required to.
++4. **Not worse over the delay:** the diary has no lessons and so no replays during the delay, so it cannot prevent loss from the delay's noise; this is outside its mechanism. Raw records of the original run show that loss is real: per-seed delay ratios 0.7566, 0.5941, 0.6832, 0.8118, 0.8714 and 0.4203, three of six below 0.70. Required instead: in every seed, the diary keeps at least as many items correct after the delay as the no-old-replays arm. The fourth mark is reported per seed for every arm.
++5. **Not extra practice:** in every seed, the diary keeps at least as many items correct at each test after new learning as the five replay controls. In every seed where the no-old-replays arm showed damage after new learning (at the end of learning or after the reversal), the diary also beats each of the five replay controls at that test: more items correct, or, with equal counts, a higher median margin ratio. A seed where the no-old-replays arm showed no such damage cannot show a benefit and is not required to. If in a seed the filler arm keeps fewer items than the no-old-replays arm, filler damaged learning there, and the filler comparison is reported as uninformative for that seed.
+ 
+@@ -299,3 +300,3 @@ The original six-seed median marks are reported beside these for every arm. Per-
+ 
+-**Prerequisite:** the no-diary arm must show damage after new learning in at least one seed: an item lost, or a ratio below its mark, at the end of learning or after the reversal. The original run did: after the reversal, seeds 4102, 4105 and 4106 each lost one unrelated association (raw records rechecked 2026-11-17; seed 4102's item 3 margin went from 0.140130 to -0.020325). If this rerun does not, stage 1 cannot test the diary.
++**Prerequisite:** the no-old-replays arm must show damage after new learning in at least one seed: an item lost, or a ratio below its mark, at the end of learning or after the reversal. The original run's informative arm, which had no replays at all, did: after the reversal, seeds 4102, 4105 and 4106 each lost one unrelated association (raw records rechecked 2026-11-17; seed 4102's item 3 margin went from 0.140130 to -0.020325). If this rerun does not, stage 1 cannot test the diary.
+ 
+@@ -313,3 +314,3 @@ The original six-seed median marks are reported beside these for every arm. Per-
+ 
+-**All-legal measure.** On the 192 development twin boards of the stage (96 per idea) that have at least one verified-good legal move (boards with none are excluded before testing and counted), take the fly's top-scoring moves within the tie tolerance. The same all-move scores give the offset-cancelled pairs. Good means a capture that is good under the protocol's combined rule; a quiet move is not good. King moves and moves the checker cannot certify are unknown. The board scores the share of tied top moves that are good. A board whose tied top set contains an unknown move is counted as unknown and left out of the denominator. If more than 5% of eligible boards are unknown, the measure is inconclusive and so is the stage.
++**All-legal measure.** On the 192 development twin boards of the stage (96 per idea) that have at least one verified-good legal move (boards with none are excluded before testing and counted), take the fly's top-scoring moves within the tie tolerance. The same all-move scores give the offset-cancelled pairs. Good means a capture that is good under the protocol's combined rule; a quiet move is not good. King moves and moves the checker cannot certify are unknown. The board scores the share of tied top moves that are good. A board whose tied top set contains an unknown move is an unknown board. **Every eligible board stays in the denominator.** When the diary arm is compared with another arm, the comparison uses the worst case for the diary: the diary arm's unknown boards score 0 and the other arm's unknown boards score 1. The bootstrap lower limit of that worst-case paired difference must be above 0; the version with unknown boards left out is reported beside it. Reason: leaving unknowns out separately in each arm can change the denominators and make an advantage out of nothing (90 of 183 against 90 of 192). If more than 5% of eligible boards are unknown in any arm, the measure is inconclusive and so is the stage.
+ 
+@@ -317,3 +318,3 @@ The original six-seed median marks are reported beside these for every arm. Per-
+ 
+-**Prerequisite (forgetting exists):** the no-diary arm acquires A (at least 32 of 48 after A) and then forgets: its kept share (condition 2 below) or net retention (condition 3) is below 0.70. Otherwise there is no measured forgetting to repair, and the stage says nothing about the diary.
++**Prerequisite (forgetting exists):** the no-old-replays arm, which learned A exactly as the diary arm did, forgets during B: its kept share (condition 2 below) or net retention (condition 3) is below 0.70. Otherwise there is no measured forgetting to repair, and the stage says nothing about the diary. The no-diary arm's forgetting is reported beside it.
+ 
+@@ -329,4 +330,4 @@ The original six-seed median marks are reported beside these for every arm. Per-
+ 6. **Offset-cancelled:** conditions 1 to 4 also hold on the offset-cancelled pairs.
+-7. **Beats the practice controls:** more A pairs correct after B than no diary, filler, moved timing, no pulse and event-shuffled, each with bootstrap lower limit above 0. Because the replay controls start B in exactly the diary arm's state, those four comparisons measure keeping, not learning. If the filler arm itself lost more A than no diary (lower limit above 0), filler damaged learning; that comparison is then reported as uninformative and the others decide.
+-8. **Useful choices:** all-legal measure after B above learning off, bootstrap lower limit above 0.
++7. **Beats the practice controls:** more A pairs correct after B than no diary, no old replays, filler, moved timing, no pulse and event-shuffled, each with bootstrap lower limit above 0. If the filler arm ends B with fewer A pairs than the no-old-replays arm (lower limit above 0), filler damaged learning; that comparison is then reported as uninformative and the others decide. Because the replay controls start B in exactly the diary arm's state, those five comparisons measure keeping, not learning.
++8. **Useful choices:** all-legal measure after B above learning off, with the worst-case scoring of unknown boards above, bootstrap lower limit above 0.
+ 
+@@ -338,3 +339,3 @@ The original six-seed median marks are reported beside these for every arm. Per-
+ 
+-**Planning estimate:** 11 fly arms (the nine graph arms of section 7.2 plus the diary at capacities one sixteenth and every lesson) × 3 runs; with the all-legal measure only on the diary, no-diary and learning-off arms, that is about 216,000 forward passes (about 35 legal moves per all-legal board), or about 22 hours in one process at the v8 rate of 0.375 s per pass; about 6 hours with 4 workers, which fits the 2,048 MiB budget at the 245–299 MiB peaks measured in v8 and the cubic run. The dry run measures the real figure.
++**Planning estimate:** 12 fly arms (the ten graph arms of section 7.2 plus the diary at capacities one sixteenth and every lesson) × 3 runs; with the all-legal measure only on the diary, no-diary and learning-off arms, that is about 229,000 forward passes (about 35 legal moves per all-legal board), or about 24 hours in one process at the v8 rate of 0.375 s per pass; about 6–7 hours with 4 workers, which fits the 2,048 MiB budget at the 245–299 MiB peaks measured in v8 and the cubic run. The dry run measures the real figure.
+ 
+@@ -349,3 +350,3 @@ A **reasoning claim for the fly plus diary** at Phase C step 2 (three ideas) req
+ 3. at least 6 more locked pairs than each added arm, bootstrap lower limit above 0 (the protocol's margin);
+-4. the all-legal measure on the locked boards above learning off, the case-recall arms and both learners, each with bootstrap lower limit above 0.
++4. the all-legal measure on the locked boards, scored as in stage 2 (fixed denominator, worst case for the diary on unknown boards), above learning off, the case-recall arms and both learners, each with bootstrap lower limit above 0.
+ 
+@@ -428,2 +429,10 @@ Reviews: [folder](../../../research/reports/replay-diary-design-review-2026-11-1
+ 
++**Revision 7: the scientific skeptic's round 2** ([review](../../../research/reports/replay-diary-design-review-2026-11-17/design-review-r2-skeptic.md); four of five round 1 findings resolved). All three points adopted:
++
++1. **Filler damage was judged against the wrong arm** (required). No diary learns A without replays, so filler could damage a stronger starting state and still beat it. New arm **no old replays**: identical to the diary arm with every old-lesson replay skipped. It is now the reference for filler damage, for the forgetting prerequisite and for the benefit conditions, in both stages.
++2. **Unknown boards could manufacture an all-legal advantage** (required). Every eligible board now stays in the denominator, and comparisons must survive the worst case for the diary (its unknowns score 0, the other arm's score 1).
++3. **The learners' learning-rate sweep did nothing** (optional). With weights starting at zero, a rate only rescales scores. The rate is removed and the tuning claim dropped.
++
++Arm counts and runtime updated: 12 arms in each stage; stage 2 about 229,000 forward passes.
++
+ ## Sources
+
+ succeeded in 599ms:
+  60: const eyeModel = new SparseTrainer(graph, { steps: 32, inputDim: 1, outputs: 1, seed: 47 });
+  61: paceModel(eyeModel);
+  62: eyeModel.forward([0]);
+  63: const eyeRest = Float32Array.from(eyeModel.h[32]);
+  64: const rise = (fen, uci) => { eyeModel.forward([0], eyes.encode(fen, uci).stimulation); const h = eyeModel.h[32]; return Float64Array.from(kcs, i => Math.max(0, h[i] - eyeRest[i])); };
+  65: // Seeded legal play from the start position; two moves per board, baseline over up to 12 legal moves. No puzzle file is opened.
+  66: function buildItems(seed) {
+  67:   const rng = random(seed), list = [];
+  68:   while (list.length < ITEMS) {
+  69:     const b = new Chess();
+  70:     for (let p = 0, plies = 6 + Math.floor(rng() * 40); p < plies && !b.isGameOver(); p++) { const ms = b.moves({ verbose: true }); b.move(ms[Math.floor(rng() * ms.length)]); }
+  71:     const ms = b.moves({ verbose: true }).map(m => m.from + m.to + (m.promotion ?? ''));
+  72:     if (b.isGameOver() || ms.length < 2) continue;
+  73:     const pair = [ms.splice(Math.floor(rng() * ms.length), 1)[0], ms.splice(Math.floor(rng() * ms.length), 1)[0]];
+  74:     const vs = [...pair, ...ms.slice(0, 10)].map(m => rise(b.fen(), m)), base = new Float64Array(kcs.length);
+  75:     for (const v of vs) for (let i = 0; i < v.length; i++) base[i] += v[i] / vs.length;
+  76:     const sd = new Float64Array(kcs.length);
+  77:     for (const v of vs) for (let i = 0; i < v.length; i++) sd[i] += (v[i] - base[i]) ** 2 / vs.length;
+  78:     const code = v => {
+  79:       const floor = 0.01 * Math.max(...v), c = v.map((x, i) => (sd[i] > 0 && x >= floor ? Math.max(0, x - base[i]) / Math.sqrt(sd[i]) : 0)), order = Array.from(c.keys()).filter(i => c[i] > 0).sort((p, q) => c[q] - c[p]).slice(0, WINNERS);
+  80:       return order.map((i, r) => ({ index: kcs[i], current: 1.5 - 0.6 * r / Math.max(1, order.length - 1) }));
+  81:     };
+  82:     list.push({ fen: b.fen(), moves: pair, images: [code(vs[0]), code(vs[1])] });
+  83:   }
+  84:   return list;
+  85: }
+  86: function makeWorld(seed) {
+ 110: function runArm(seed, items, arm, yoked, opts = {}) {
+ 111:   let w = makeWorld(seed), { model, memory, tonic, rest } = w;
+ 112:   const images = items.flatMap(x => x.images);
+ 113:   let value = makeReadout(w, images);
+ 114:   const suffix = `${seed}-${arm}${opts.restore ? '-restored' : ''}`, frameFile = `${a.out}/frames-${suffix}.jsonl`;
+ 115:   let frame = 0, context = { phase: 'initial' };
+ 116:   const log = record => appendFileSync(frameFile, JSON.stringify(record) + '\n');
+ 117:   log({ kind: 'start', seed, arm, config: memory.config, identity: memory.identity, mapping: memory.mapping, initial: memory.snapshot(), items, localHash: localHash(memory) });
+ 118:   const localKcs = [...new Set(memory.mapping.groups.flatMap(g => g.kc))];
+ 119:   const observe = dt => {
+ 120:     const t = performance.now(), h = model.h[model.steps], c = memory.config, before = localHash(memory);
+ 145:   };
+ 146:   let trial = 0, cursor = {};
+ 147:   const block = (name, j, good) => {
+ 148:     pulses[name] = { reward: 0, punish: 0, none: 0 }; realized[name] = []; cursor[name] = 0;
+ 149:     for (let t = 0; t < TRIALS; t++) {
+ 150:       guard();
+ 151:       const unknown = (trial + 1) % 8 === 0; trial++;
+ 152:       context = { phase: name, trial, item: j, step: 'choice', chosen: null };
+ 153:       // value() has just run this image's graph pass at tonic level, so the rest frame can observe it directly.
+ 154:       const scores = items[j].images.map(code => { const v = value(code); if (learns) observe(1); gap(4); return v; });
+ 155:       const choice = rng() < 1 / (1 + Math.exp((scores[1] - scores[0]) / TEMPERATURE)) ? 0 : 1, code = items[j].images[choice];
+ 156:       let valence = null;
+ 157:       if (!unknown && learns && arm !== 'absent') valence = arm === 'shuffled' ? yoked[name][cursor[name]++] : choice === good ? 'reward' : 'punish';
+ 158:       if (valence) { pulses[name][valence]++; realized[name].push(valence); } else pulses[name].none++;
+ 159:       context = { ...context, step: 'chosen', chosen: choice };
+ 160:       const now = value(code); if (learns) observe(1);
+ 161:       const pulse = valence === 'reward' ? 1.5 : valence === 'punish' ? 0 : TONIC;
+ 162:       const f = valence ? predictionScale(now, valence === 'reward' ? 1 : -1, V0) : 0;
+ 163:       log({ kind: 'trial', context, scores, choice, unknown, good, valence, now, scale: f, level: TONIC + (pulse - TONIC) * f,
+ 164:         certificate: { criterion: 'assigned-action-association-v1', scope: 'arbitrary association only; no chess consequence', fen: items[j].fen, moves: items[j].moves, chosenMove: items[j].moves[choice], known: !unknown, goodMove: items[j].moves[good] } });
+ 165:       context = { ...context, step: 'feedback' };
+ 166:       look(code, TONIC + (pulse - TONIC) * f, 1);
+ 167:       gap(4);
+ 168:     }
+ 169:   };
+ 170:   for (let j = 0; j < ITEMS; j++) { block(`B${j}`, j, 0); test(`T${j}`, () => 0); }
+ 171:   const gainsBefore = gainsHash();
+ 172:   // Delay: ongoing noise. Random 10% of visual-pool cells (those any image uses, plus none beyond) with DAN jitter, all arms that learn.
+ 173:   const pool = [...new Set(images.flat().map(c => c.index))], noiseRng = delayRng;
+ 174:   for (let s = 0; s < DELAY_STEPS; s++) {
+ 175:     guard(); context = { phase: 'Delay', step: s };
+ 176:     const code = pool.filter(() => noiseRng() < 0.1).map(index => ({ index, current: 0.9 + 0.6 * noiseRng() }));
+ 177:     const dan = COMPARTMENTS.flatMap(([, d]) => { const e = 0.1 * (2 * noiseRng() - 1); return dans.get(d).map(index => ({ index, current: TONIC * (1 + e) })); });
+ 178:     model.forward([0], [...dan, ...code]); if (learns) observe(4);
+ 179:   }
+8d1fc4f2c5b8717d9ad325b06c9ba2a6a51bf991
+
+codex
+**VERDICT: APPROVE WITH REQUIRED CHANGES — building allowed after the required-BUILD corrections below.**
+
+Reviewed revision 7; blob `8d1fc4f2` matches.
+
+**Round-1 findings**
+
+1. **RESOLVED:** full-history recall and nonlinear-feature controls added; attribution explicitly excludes untested classifiers.
+2. **RESOLVED:** offset-cancelled rankings and an all-legal choice gate are required.
+3. **RESOLVED:** failed mixed-order training establishes schedule failure; a capacity limit needs separate proof.
+4. **RESOLVED:** assisted retention belongs to Volume 3; Properties 1 and 2 remain unmet.
+5. **RESOLVED:** removal is this candidate’s restriction. The one-page interface introduces no direct scoring operation.
+
+**New findings**
+
+1. **required-BUILD — The claimed matching of starting states is false for moved timing.**  
+   **Evidence:** moved-timing replays occur after the earlier snapshot but before the next block ([design:271](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:271)); nevertheless, all five replay controls supposedly start the next block in the diary’s state ([design:331](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:331)). The no-old-replays arm also cannot remain identical at the start of *every* later block after earlier interventions ([design:269](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:269)).  
+   **Consequence:** implementations could disagree about resets, or describe earlier strengthening as matched initial learning.  
+   **Smallest fix:** distinguish equal snapshots from equal block-entry states. Explicitly exempt moved timing; describe later differences as accumulated intervention effects. Do not reset them away.
+
+2. **required-BUILD — The stopping rules retain the superseded forgetting reference.**  
+   **Evidence:** stage 2 uses **no old replays** to establish forgetting ([design:319](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:319)); section 8 still stops when **no diary** retains the lesson ([design:359](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:359)).  
+   **Consequence:** one outcome can satisfy the stage prerequisite while triggering “nothing to repair.”  
+   **Smallest fix:** make section 8 use the same stage-specific no-old-replays prerequisite.
+
+3. **required-LAUNCH — Quarter capacity does not guarantee storage pressure after duplicate removal.**  
+   **Evidence:** capacity is based on lesson count, while identical inputs replace earlier entries ([design:186](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:186), [design:191](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:191)). Stage 1 has at most eight distinct inputs, repeatedly presented ([design:289](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:289)).  
+   **Consequence:** the diary can retain every distinct experience while being described as operating under pressure.  
+   **Smallest fix:** label stage 1 a retention assay without storage pressure. Before chess launch, require distinct-input counts exceeding capacity and report genuine evictions separately from supersessions.
+
+4. **optional — The one-page loop omits replay publication.**  
+   **Evidence:** its loop logs the replay and continues ([design:81](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:81)); the detailed contract requires an atomic replay publication ([design:202](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:202)).  
+   **Consequence:** following the summary alone gives different recovery behaviour.  
+   **Smallest fix:** add the required publication step to the loop.
+
+**Strongest supportable sentence, conditional on passing:** “Replay assisted retention and improved verified-good choices on locked three-idea chess tests beyond the specified case-recall and simple-learner controls, with the diary absent during scoring; an untested case classifier remains possible.”
+tokens used
+420,063
+**VERDICT: APPROVE WITH REQUIRED CHANGES — building allowed after the required-BUILD corrections below.**
+
+Reviewed revision 7; blob `8d1fc4f2` matches.
+
+**Round-1 findings**
+
+1. **RESOLVED:** full-history recall and nonlinear-feature controls added; attribution explicitly excludes untested classifiers.
+2. **RESOLVED:** offset-cancelled rankings and an all-legal choice gate are required.
+3. **RESOLVED:** failed mixed-order training establishes schedule failure; a capacity limit needs separate proof.
+4. **RESOLVED:** assisted retention belongs to Volume 3; Properties 1 and 2 remain unmet.
+5. **RESOLVED:** removal is this candidate’s restriction. The one-page interface introduces no direct scoring operation.
+
+**New findings**
+
+1. **required-BUILD — The claimed matching of starting states is false for moved timing.**  
+   **Evidence:** moved-timing replays occur after the earlier snapshot but before the next block ([design:271](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:271)); nevertheless, all five replay controls supposedly start the next block in the diary’s state ([design:331](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:331)). The no-old-replays arm also cannot remain identical at the start of *every* later block after earlier interventions ([design:269](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:269)).  
+   **Consequence:** implementations could disagree about resets, or describe earlier strengthening as matched initial learning.  
+   **Smallest fix:** distinguish equal snapshots from equal block-entry states. Explicitly exempt moved timing; describe later differences as accumulated intervention effects. Do not reset them away.
+
+2. **required-BUILD — The stopping rules retain the superseded forgetting reference.**  
+   **Evidence:** stage 2 uses **no old replays** to establish forgetting ([design:319](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:319)); section 8 still stops when **no diary** retains the lesson ([design:359](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:359)).  
+   **Consequence:** one outcome can satisfy the stage prerequisite while triggering “nothing to repair.”  
+   **Smallest fix:** make section 8 use the same stage-specific no-old-replays prerequisite.
+
+3. **required-LAUNCH — Quarter capacity does not guarantee storage pressure after duplicate removal.**  
+   **Evidence:** capacity is based on lesson count, while identical inputs replace earlier entries ([design:186](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:186), [design:191](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:191)). Stage 1 has at most eight distinct inputs, repeatedly presented ([design:289](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:289)).  
+   **Consequence:** the diary can retain every distinct experience while being described as operating under pressure.  
+   **Smallest fix:** label stage 1 a retention assay without storage pressure. Before chess launch, require distinct-input counts exceeding capacity and report genuine evictions separately from supersessions.
+
+4. **optional — The one-page loop omits replay publication.**  
+   **Evidence:** its loop logs the replay and continues ([design:81](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:81)); the detailed contract requires an atomic replay publication ([design:202](C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:202)).  
+   **Consequence:** following the summary alone gives different recovery behaviour.  
+   **Smallest fix:** add the required publication step to the loop.
+
+**Strongest supportable sentence, conditional on passing:** “Replay assisted retention and improved verified-good choices on locked three-idea chess tests beyond the specified case-recall and simple-learner controls, with the diary absent during scoring; an untested case classifier remains possible.”

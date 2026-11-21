@@ -5,10 +5,10 @@
 
 ## Planned content
 
-- The assumptions.
+- The assumptions each conclusion depends on.
 - Possible future research.
 - How the researcher could be wrong.
-- An invitation to prove him wrong.
+- What evidence could show that the researcher's conclusions are wrong, and an invitation to provide that evidence.
 
 ## Working notes
 

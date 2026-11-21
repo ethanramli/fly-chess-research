@@ -5,14 +5,14 @@
 
 ## Planned content
 
-- The playing style the fly is built around: José Raúl Capablanca.
-- The reasons: the most effective, the simplest, the least compute-heavy and the most reasoning-focused style.
-- The fly always asks the guiding question: "How do I improve my position slightly?"
+- Describe José Raúl Capablanca's playing style and why the researcher chose it as a design target for the model.
+- Explain the researcher's reasons for choosing it: a focus on effective, simple, lower-compute moves and gradual improvement.
+- Present the guiding question as a design aim: "How do I improve my position slightly?" Do not claim that the model follows this style until its play has been analyzed.
 
 ## Evidence boundary
 
-A style target is a design aim. Claim the fly plays this way only after the style analysis shows it.
+A style target describes the intended design, not the model's observed play. Claim that the fly follows this style only if analysis of its play supports that claim.
 
 ## Working notes
 
-Add interview answers, sources, figures, and evidence links here as the chapter develops.
+As the chapter develops, add interview answers, sources, figures, and links to supporting evidence.

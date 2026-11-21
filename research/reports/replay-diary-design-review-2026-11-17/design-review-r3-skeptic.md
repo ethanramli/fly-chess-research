@@ -1,0 +1,15 @@
+**VERDICT: APPROVE WITH REQUIRED CHANGES (building allowed after the changes).**
+
+Checked revision 7, blob `8d1fc4f2c5b8717d9ad325b06c9ba2a6a51bf991`, against revision 6. No files changed.
+
+- **RESOLVED — Filler reference:** both stages now compare filler against “no old replays,” with damage exceptions ([design:297](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:297), [design:331](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:331)). Its state contract needs the correction below.
+- **RESOLVED — Unknown boards:** fixed denominators and conservative paired bounds apply in both stages using this measure ([design:315](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:315), [design:351](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:351)).
+- **RESOLVED — Learning rate:** the redundant rate and tuning claim are removed ([design:283](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:283)).
+
+**New findings**
+
+1. **required-BUILD — The new control has conflicting state rules.** [Design:269](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:269) says it starts **each later block** in the diary’s state; [design:263](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:263) instead specifies continuous arms differing only in old replays. In stage 1, repeated copying would import diary-trained memory and erase accumulated control losses. **Smallest fix:** require equality only through the first block, then carry each arm’s own state forward without copying.
+
+2. **required-BUILD — The failure rule retains the superseded reference.** [Design:359](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:359) declares the stage uninformative when “no diary” retains the first idea, conflicting with the new prerequisite at [design:319](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:319). The arms can differ because initial learning differs. **Smallest fix:** make section 8 defer to each stage’s no-old-replays prerequisite.
+
+**Strongest supportable sentence, conditional on passing:** “On the registered chess tests, replay training retained earlier pair rankings better than the informative listed controls, with the diary absent during scoring.”

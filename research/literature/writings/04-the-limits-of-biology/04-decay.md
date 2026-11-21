@@ -5,8 +5,8 @@
 
 ## Planned content
 
-- The olfactory inputs are supplied artificially, and the computer makes them perfect.
-- Real-world inputs would not have the same consistency.
+- Describe how the study supplies sensory input to the model, and identify the noise or variation it omits.
+- State that artificial input consistency is a modeling choice; it does not show how reliably a living fly senses the same information.
 
 ## Working notes
 

@@ -4,9 +4,9 @@ The researcher reports that McCurdy requested a one-page project draft for Profe
 
 ## Evidence interpretation correction
 
-The researcher initially recalled8/8 repaired chess puzzles and2/8 unfamiliar-position successes. Targeted source inspection instead identifies the G0 synthetic task:8/8 trained signal–option associations versus2/8 in the no-external-feedback control on those same signals. The researcher asked whether he had misunderstood and then requested simpler explanations of “cues,” “network” and the prerequisite's purpose. Clarified that the simulated fly brain receives bounded neural stimulation for an artificial signal/candidate option, learns which choice gets favorable feedback, and is tested for retention/reversal before chess-principle advancement. This does not claim eight solved chess puzzles or unfamiliar transfer.
+The researcher initially recalled 8/8 repaired chess puzzles and 2/8 unfamiliar-position successes. Targeted source inspection instead identifies the G0 synthetic task: 8/8 trained signal–option associations versus 2/8 in the no-external-feedback control on those same signals. The researcher asked whether he had misunderstood and then requested simpler explanations of “cues,” “network” and the prerequisite's purpose. The assistant clarified that the simulated fly brain receives bounded neural stimulation for an artificial signal/candidate option, learns which choice gets favorable feedback, and is tested for retention/reversal before chess-principle advancement. This does not claim eight solved chess puzzles or unfamiliar transfer.
 
-The assertion that a system without reasoning would necessarily score0/8 on unfamiliar problems has no established baseline justification. Chance, a fixed preference or a simpler relationship can produce some successes; reasoning requires the predefined disjoint/counterfactual causal comparisons. Conversely, the failed tests do not establish universal inability. The draft distinguishes audited simple association, limited familiar-puzzle learning, and unmet reasoning evidence.
+The assertion that a system without reasoning would necessarily score 0/8 on unfamiliar problems has no established baseline justification. Chance, a fixed preference or a simpler relationship can produce some successes; reasoning requires the predefined disjoint/counterfactual causal comparisons. Conversely, the failed tests do not establish universal inability. The draft distinguishes audited simple association, limited familiar-puzzle learning, and unmet reasoning evidence.
 
 ## Preparation mistakes and limits
 
@@ -19,4 +19,4 @@ Raw G0 result and replay audit reproduce acquisition 8/8, interference retention
 - [One-page Clark draft](../../outreach/planning/damon-clark-one-page-brief-2026-10-14.md).
 - [Evidence notes](../../outreach/planning/damon-clark-brief-evidence-2026-10-14.md).
 
-Word count478; new/updated local links resolve. This is a text draft intended for a single page; PDF pagination was not generated or visually checked. Documentation only, no simulation tests needed. Next: researcher reviews the wording and provides the brief through the introduction route when ready.
+Word count: 478; new/updated local links resolve. This is a text draft intended for a single page; PDF pagination was not generated or visually checked. Documentation only, no simulation tests needed. Next: researcher reviews the wording and provides the brief through the introduction route when ready.

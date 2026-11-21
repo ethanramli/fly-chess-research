@@ -2,11 +2,11 @@
 
 2026-10-08. Research and saved-artifact analysis only. No graph inference, training, engine run, physiological replacement or final-family inspection occurred. Exa returned 40 result slots across eight searches in four areas: representation/local plasticity, model assumptions, MiMo, and Stockfish. These were 40 distinct URLs, not 40 independent studies; mirrors and irrelevant results were excluded from the synthesis. Primary-source extracts and access limits are preserved in [source evidence](source-evidence.jsonl).
 
-**Recommendation: combine the existing separated action-context cues with the existing adaptive current-error teacher, while explicitly measuring selective promotion and preservation.** The latest saved screen suggests separation already enables a selective positive response, but its fixed lessons target an obsolete mistake under the new encoder. This combination is an untested repair candidate, not a demonstrated solution. A receptor-level redesign is a conditional follow-up, not the first patch justified by the present evidence.
+**Recommendation: combine the existing separated action-context cues with the adaptive current-error teacher, and measure whether feedback promotes correct actions while preserving earlier learning.** The latest saved screen suggests a selective positive response, but its fixed lessons target a mistake the new encoder no longer makes. This combination is an untested repair candidate, not a demonstrated solution. A receptor-level redesign remains a possible follow-up; the present evidence does not justify it as the first change.
 
 ## What the actual artifacts change
 
-The historical adaptive run used overlapping public cues and eight lessons; its completed independent audit found no correct final choices. The newer conjunction screen uses two encoders at equal eight-cell/current-12 dose and four lessons. It has a saved terminal result, but no independent `audit.json` was present when inspected. Its protocol explicitly fixes Qe6/Qh7 lessons rather than adapting to the new encoder's choice. Those differences prevent attributing a cross-run result purely to representation or teaching policy.
+The historical adaptive run used overlapping public cues and eight lessons. Its completed independent audit found no correct final choices. The newer conjunction screen compares two encoders at the same eight-cell/current-12 dose and uses four lessons. It has a saved terminal result, but no independent `audit.json` was present when inspected. Its protocol fixes Qe6/Qh7 lessons instead of adapting to the new encoder's choice. Because the runs differ in both representation and teaching policy, their results cannot isolate either factor.
 
 The new conjoined encoder initially selects **Kf6**, not Qe6. Its teacher still presents **Qe6, Qh7, Qe6, Qh7**. After these lessons, Qh7 outranks Qe6, but Kf6 remains the top failure:
 
@@ -16,11 +16,11 @@ The new conjoined encoder initially selects **Kf6**, not Qe6. Its teacher still 
 | Qh7 score minus Kf6 score | -0.00490733 | -0.00421466 |
 | All-legal selected action | Kf6, failure | Kf6, failure |
 
-The two Qh7 reward events yield selective lifts of approximately **0.0004520** and **0.0002768** relative to the median score change of 24 other legal moves, beyond the no-channel trajectory. With the contemporary baseline encoder, the same metrics are about **0.0000000386** and **0.0000000374**. This is evidence in saved outputs of positive discrimination under the conjoined condition; the older claim that feedback only demotes errors does not describe every later condition. It is not proof of durable acquisition or transfer.
+The two Qh7 reward events each raised Qh7's score relative to the median score change of 24 other legal moves, beyond the no-channel trajectory. The selective lifts were approximately **0.0004520** and **0.0002768**. With the contemporary baseline encoder, those two lifts were about **0.0000000386** and **0.0000000374**. The saved outputs therefore show positive discrimination in the conjoined condition; the older claim that feedback only demotes errors does not describe every later condition. This does not prove durable learning or transfer.
 
-The first Qe6/Qh7 eligibility-vector cosine is about 0.84359 under baseline and 0.00001997 under conjunction. However, the number of shared positive eligible-edge entries increases from 26 to 38. Tiny recurrent tails and duplicate KC identities across different edges make support counts alone misleading. These are consecutive-event traces, not an independently controlled fixed-memory comparison.
+For the first Qe6/Qh7 pair, the eligibility-vector cosine is about 0.84359 under baseline and 0.00001997 under conjunction. Yet the number of shared positive eligible-edge entries rises from 26 to 38. Tiny recurrent tails and duplicate KC identities across edges make this support count hard to interpret by itself. These are traces from consecutive events, not an independently controlled comparison with memory held fixed.
 
-[Reproducible arithmetic](analyze-saved-receipts.mjs) and [hash-bound output](saved-receipt-analysis.json) verify receipt hashes, protocol/result identity, memory continuity and candidate ordering using existing JSON only. They do not independently replay neural dynamics or certificates. Later event contrasts compare diverged informative/control memories, so they are trajectory contrasts, not isolated causal pulse effects.
+[Reproducible arithmetic](analyze-saved-receipts.mjs) and [hash-bound output](saved-receipt-analysis.json) verify receipt hashes, protocol/result identity, memory continuity and candidate ordering using existing JSON only. They do not replay neural dynamics or recheck certificates. Later event contrasts compare informative and control runs whose memories have diverged. These contrasts describe whole trajectories; they do not isolate the causal effect of one pulse.
 
 ## The smallest repair worth specifying
 
@@ -35,7 +35,7 @@ For each bounded training block:
 
 Prepare a fresh equal-budget comparison of fixed versus adaptive lessons under the same conjoined encoder, initialization, dose and rule. Repeat the informative schedule exactly in each causal control, including the informative teacher's selection-assessment exposures. A predetermined cap must include target selection, full legal rankings, replay frames, preservation checks and independent audit. Do not quietly compare four fixed lessons to eight adaptive lessons. Archive old results and label the new comparison as a new version.
 
-This can repair the immediate mismatch between what the learner currently gets wrong and what the teacher reviews. It may still fail because the output bias is large, updates interfere, or the representation fails to generalize. No training was authorized or performed in this review.
+This could fix the immediate mismatch between the learner's current error and the teacher's lesson. It may still fail because output bias is large, updates interfere, or the representation does not generalize. This review did not authorize or perform training.
 
 ## What the biological literature adds
 
@@ -67,9 +67,9 @@ Predictive learning is itself mechanistically unsettled: Zhao et al. compare tar
 
 ## Correct the control, not just its name
 
-There is a factual correction to the historical summary: the saved adaptive permutation and all eight hash-checked shuffled receipts preserve **6/8 labels (75%)**, not 4/8. Qh7 still receives positive feedback 3/4 times, Qe6 negative feedback 2/3 times, and Kh6 negative feedback 1/1. This particular schedule plainly retains action/consequence contingency. The raw files remain unchanged; the [journal](../../journal/experiments/2026-10-08-feedback-specificity-research.md) records the correction.
+The historical summary needs one factual correction: the saved adaptive permutation and all eight hash-checked shuffled receipts preserve **6/8 labels (75%)**, not 4/8. Qh7 still receives positive feedback 3/4 times, Qe6 negative feedback 2/3 times, and Kh6 negative feedback 1/1. This schedule therefore retains action/consequence contingency. The raw files remain unchanged; the [journal](../../journal/experiments/2026-10-08-feedback-specificity-research.md) records the correction.
 
-A completely swapped balanced binary schedule is useful as an **anti-correlated control**. It tests reversed instruction, not absence of informative contingency. Roughly 50% label agreement can be expected under a balanced independent null; requiring zero agreement would reject a legitimate null. Therefore retain separate questions:
+Use a completely swapped balanced binary schedule as an **anti-correlated control**. It tests reversed instruction, not the absence of informative contingency. Under a balanced independent null, about 50% label agreement is expected; requiring zero agreement would reject a valid null result. Keep these questions separate:
 
 | Condition | What it tests |
 |---|---|
@@ -79,15 +79,15 @@ A completely swapped balanced binary schedule is useful as an **anti-correlated 
 | Contingency-balanced shuffled/yoked | Same cue/timing/pulse budget but no systematic cue-outcome association |
 | Fully swapped | Learning under deliberately reversed contingencies |
 
-Predeclare shuffle construction, cue/task strata, pulse counts/magnitudes and a contingency audit. With very small or odd per-cue counts, exact balance can be impossible. Use a predetermined matched schedule or multiple prespecified permutations and report the remaining imbalance. Never choose a shuffle because its measured performance is weak. This is an experimental-design recommendation, not a new biological claim.
+Predeclare how to build the shuffle, the cue/task groups, pulse counts and magnitudes, and the contingency check. Exact balance may be impossible when a cue has very few or an odd number of examples. Use a predetermined matched schedule or several prespecified permutations, and report any remaining imbalance. Do not choose a shuffle because it produced weak performance. This is an experimental-design recommendation, not a biological claim.
 
 ## What remains unproved and the stopping rules
 
-The next candidate must jointly pass useful all-legal correction, preservation across intervening lessons, causal reset/restoration and control separation before unfamiliar/counterfactual testing. Freeze numerical criteria, finite budgets, projection-seed replications and validation rules before any future run. Do not cherry-pick input seeds or keep repeating until one passes. Use only training evidence for adaptive selection, validation for bounded checkpoint selection, and untouched final families once.
+Before testing unfamiliar or counterfactual positions, the next candidate must show useful corrections across all legal actions, preserve learning across intervening lessons, pass the declared causal reset/restoration check, and differ from its controls. Before any future run, freeze the numerical criteria, finite budgets, projection-seed replications and validation rules. Do not cherry-pick input seeds or repeat runs until one passes. Use training evidence for adaptive selection, validation for bounded checkpoint selection, and final families only once, untouched.
 
-Completely decorrelating absolute move hashes can help memorization while harming reusable structure. The existing conjoined encoder is a mechanism probe, not an established transfer representation. Prior relational and bound-ray failures remain relevant. Later transfer must include changed consequences despite similar appearance and preserved consequences under changed coordinates; no arbitrary hash feature or teacher-derived safety flag can substitute for that test.
+Completely decorrelating absolute move hashes can help memorization while harming reusable structure. The existing conjoined encoder probes a mechanism; it is not an established transfer representation. Earlier relational and bound-ray failures still matter. A later transfer test must include positions that look similar but have different consequences, and positions with the same consequences under changed coordinates. An arbitrary hash feature or teacher-provided safety flag cannot replace these tests.
 
-The present recommendation is concrete and falsifiable: **separated cues plus current-error correction, with measured solution promotion and preservation**. If that fails under the frozen budget, the next decision depends on where selectivity is lost; research does not justify more repetitions by default or promise that a new receptor equation will solve chess.
+The recommendation is testable: **separated cues plus current-error correction, with measured solution promotion and preservation**. If it fails within the fixed budget, choose the next step based on where selectivity is lost. The evidence does not justify repeating the test by default or predict that a new receptor equation will solve chess.
 
 ## Source access and provenance
 

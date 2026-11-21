@@ -1,0 +1,9 @@
+**VERDICT: APPROVE.** Revision 9 matches the supplied blob and resolves both round 4 requirements.
+
+1. **RESOLVED.** The normal draw rule fixes input order, keeps the cosine result, discards the sine partner, and specifies matrix fill order and a known-answer check. [Section 4.8](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:207)
+2. **RESOLVED.** The audit compares the four-field input tape through the selected snapshot cutoff separately from each arm’s update records. [Section 7.5](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:349)
+3. **RESOLVED.** Final-diary recall reads the frozen diary, full-history recall stores each original lesson once, and simple learners apply replays as updates. [Section 7.2](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:282)
+
+**New finding**
+
+- **Optional — Define how the tape handles an absent pulse.** The new tape permits `none`, but the learner update requires a pulse sign. If a pulse-free event reaches the learner, implementations could handle it differently. If no such events belong on the stage 3 tape, reject them during validation. Otherwise specify that they leave the simple learner’s weights unchanged. [Tape rule](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:349) · [Update rule](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:284)

@@ -6,7 +6,7 @@
 ## Planned content
 
 - The two earlier failed attempts at this experiment.
-- What failed in each attempt, and what it taught.
+- What failed in each attempt and what each attempt showed.
 
 ## Evidence boundary
 
@@ -14,4 +14,4 @@ Use the preserved evidence in `archive/early-development/`. Do not rewrite a fai
 
 ## Working notes
 
-Add interview answers, sources, figures, and evidence links here as the chapter develops.
+As the chapter develops, add interview answers, sources, figures, and links to supporting evidence.

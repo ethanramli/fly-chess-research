@@ -31,11 +31,11 @@ Reading coverage: current institutional profiles, primary abstracts and selected
 
 ## Reasoned fit to FlyChess
 
-His work helps prevent our existing temporal response reversal from being confused with successful contingency reversal. It also treats the behavioral meaning of experimentally stimulated neurons as a question to test.
+His work helps us distinguish a response change caused by reversing cue and stimulation timing from a change learned after reversing which option earns reward. It also treats the behavioral meaning of experimentally stimulated neurons as a question to test.
 
 **Bounded question:** What behavioral control would distinguish a timing-induced valence change from adaptation to a newly reversed contingency?
 
-**Possible next diagnostic, proposed only:** Orthogonally vary cue/stimulation order and which cue's action earns reinforcement, keeping informative-feedback and pulse-count controls separate. Freeze this new test before running it.
+**Possible next diagnostic, proposed only:** Test cue/stimulation order and which cue's action earns reinforcement as separate factors, while keeping informative-feedback and pulse-count controls separate. Freeze this new test before running it.
 
 **Limits and reasons this may be the wrong contact:** The timing study's stimulation meaning is itself qualified; its identified cells and larval anatomy do not provide an adult gamma4 or chess mapping.
 

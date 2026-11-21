@@ -5,10 +5,10 @@
 
 ## Planned content
 
-- The reasoning behind each design choice.
-- The constraints on each choice.
-- What each decision leaves out.
+- Why the researcher made each design choice.
+- What limits shaped each choice.
+- What each choice leaves out.
 
 ## Working notes
 
-Add interview answers, sources, figures, and evidence links here as the chapter develops.
+As the chapter develops, add interview answers, sources, figures, and links to supporting evidence.

@@ -1,6 +1,6 @@
 # Ethan's outreach email template — 2026-10-03
 
-Based on Ethan's edited Hige voice and the simpler result wording in the latest Adam draft. Replace every bracketed field. Personalize the research paragraph and first question for each recipient using [the shortlist](../campaigns/shortlist-2026-10-03.md).
+Based on Ethan's edits to the Hige draft and the simpler result wording in the latest Adam draft. Replace every bracketed field. Personalize the research paragraph and first question for each recipient using [the shortlist](../campaigns/shortlist-2026-10-03.md).
 
 **Subject:** Student mentorship inquiry: [specific topic] in an adult fly model
 

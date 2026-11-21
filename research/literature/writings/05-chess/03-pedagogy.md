@@ -5,9 +5,9 @@
 
 ## Planned content
 
-- How the researcher taught chess.
-- The core chess concepts (number to be filled in) used as the fly's training curriculum.
+- Describe how the researcher taught chess.
+- List the main chess ideas taught to the model. Once the curriculum is defined, report how many ideas it includes.
 
 ## Working notes
 
-Add interview answers, sources, figures, and evidence links here as the chapter develops.
+As the chapter develops, add interview answers, sources, figures, and links to supporting evidence.

@@ -5,9 +5,9 @@
 
 ## Planned content
 
-- The warning chapter. It shows the magnitude of this volume's claims.
-- The mathematics can still be wrong. The methodology can be wrong.
-- Most importantly, this is still biology.
+- Explain the size of the claims made in this volume and why they need careful limits.
+- Show that the mathematics or methods could be wrong, and explain how those risks will be checked.
+- Keep the biological question in view while stating clearly when the evidence concerns only a computer model.
 
 ## Working notes
 

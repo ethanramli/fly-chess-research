@@ -50,3 +50,9 @@ Here, though, the shortcut stop applies in any case. The task shows the answer i
 
 
 [Fix report](../overnight-peer-review-2026-11-02/fixes-2026-11-03.md) · [Current status](../../../documentation/current-status.md)
+
+## Interpretation clarification, 2026-11-18
+
+For Volume 2, Chapter 6, Constraints: the tested decoder scored 26 of 48 pairs from Kenyon-cell activity. The positive control scored 41 of 48, below its required 44, so the registered rule makes this run inconclusive. Read the earlier phrase "did not carry the answer" as a description of this decoder's score, not proof that the activity contained no useful information or that another valid test would fail.
+
+The raw-input decoder scored 38 of 48, meeting the separate shortcut threshold of 36. That result supports the recorded concern that the fixture lets a decoder use visible input differences without the connectome. It does not repair the failed positive control or establish that the model perceived the board as a living fly would. The proposed token-pool explanation remains a hypothesis; the later token-count check alone does not identify which stage caused the control failure. No rerun or new measurement was made for this clarification.

@@ -1,15 +1,15 @@
 # Volume 5: Chess
 
-Status: writing workspace; no manuscript drafted yet.
+Status: Writing workspace; no manuscript has been drafted.
 
 Use the [series outline](../../../../documentation/design/research-goals/five-volume-series.md) for the proposed chapters and evidence boundaries.
 
-Draft chapters here as they are developed. Keep claims tied to preserved evidence; distinguish planned work from completed results.
+Draft chapters here. Tie claims to preserved evidence and distinguish plans from completed results.
 
 ## Volume note (2026-11-04)
 
 - The researcher's favourite volume.
-- The public part of the series: readers can test the fly models and play the fly.
+- This is the public-facing volume. Readers will be able to test the fly models and play against them.
 
 ## Chapter files
 

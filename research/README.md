@@ -12,6 +12,7 @@ This folder holds the evidence behind FlyChess and the history of how it was pro
 | [`literature/`](literature/README.md) | Notes on papers and prior implementations. The [source register](literature/source-solution-register.md) records which claims each source supports and how the project used it. The [five-volume workspace](literature/writings/README.md) maps out the chapters and the evidence each one needs. |
 | [`project/`](project/README.md) | The researcher’s aims, permissions, and [decision log](project/decision_log.md). Use the log to trace why the scope or method changed. |
 | [`outreach/`](outreach/README.md) | Background research on experts, outreach plans, and drafts. Use the [outreach journal](journal/outreach/README.md) for dated records of contact and meetings. |
+| Local `runs/` folder | Historical supervised comparison checkpoints and logs, including the Adam and paired-baseline runs. Git ignores this folder, so it is available only on machines holding those outputs. These records do not establish learning through a biological mechanism. |
 <!-- /directory-map -->
 
 ## Finding earlier versions and failures

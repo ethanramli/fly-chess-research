@@ -1,4 +1,4 @@
-# 2026-10-06: First reasoning breakthrough and subsequent learning efficiency
+# 2026-10-06: Learning-efficiency hypothesis and proposed measure
 
 The researcher asked to document a hypothesis and calculation for a future research diagram: the first verified reasoning ability may take hours to acquire, analogous to teaching a child to solve a Rubik's Cube for the first time; subsequent success could become faster and more reliable through training.
 

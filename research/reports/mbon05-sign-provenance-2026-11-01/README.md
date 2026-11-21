@@ -2,6 +2,12 @@
 
 **The hemispheric sign difference comes from transmitter-label precedence and fallback, not a measured left/right polarity difference.** The left Codex neuron label is empty, so the original builder resolves it from weighted connection-label predictions as ACH. The right label explicitly says GLUT. The stored graph uses ACH→+1 and GLUT→−1. Curated glutamate annotations are not consulted by that builder path.
 
+### Plain-language reading guide, 2026-11-18
+
+For Volume 1, Chapter 3, Choices: the two cells identified as MBON05 receive different signs in the saved model because the graph-building software follows different label sources. The left cell lacks a direct transmitter label, so the software chooses acetylcholine from predictions. The right cell has a direct glutamate label. Under the model's fixed sign rule, that makes the left cell's outgoing connections positive and the right cell's negative.
+
+This trace explains how the saved graph got those signs. It does not show that the two cells have opposite biological effects. The proposed overlay below would test a different labeling choice while retaining the model's glutamate-sign assumption; it has not been applied by this report. A label lookup, a software check and a measured effect on learning are separate pieces of evidence.
+
 ## Exact trace
 
 [Static receipt and every affected connection](result.json), reproduced by [trace.py](trace.py), reuse only the original pure aggregation/transmitter/sign functions from the licensed source archive. No upstream code or graph is changed.

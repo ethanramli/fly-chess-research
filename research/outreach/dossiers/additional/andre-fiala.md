@@ -31,11 +31,11 @@ Reading coverage: current institutional profiles, primary abstracts and selected
 
 ## Reasoned fit to FlyChess
 
-Our simulation's neuron-level activity and per-edge gain should be evaluated against more than one output contrast. These methods show why response, release and postsynaptic changes are not interchangeable measurements.
+Our simulation's neuron-level activity and per-edge gain should be evaluated against more than one output measure. These methods show why response, release and postsynaptic changes are not interchangeable measurements.
 
 **Bounded question:** Which independent synaptic observation would most clearly challenge a model that uses one scalar activity per neuron?
 
-**Possible next diagnostic, proposed only:** Specify predictions for local bouton responses and cue separability in an untouched cue family. The full graph must remain sparse, and subcellular state would require a bounded-memory justification.
+**Possible next diagnostic, proposed only:** Specify predictions for local bouton responses and test whether cues from an untouched cue family produce distinguishable responses. The full graph must remain sparse, and subcellular state would require a bounded-memory justification.
 
 **Limits and reasons this may be the wrong contact:** Calcium signals are not identical to neurotransmitter release or the model's scalar activation. Do not claim that our fixed neuron-level model reproduces these spatial observations.
 

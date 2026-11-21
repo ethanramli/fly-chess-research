@@ -6,6 +6,7 @@ Chronological implementation and experiment history. Pending statements are hist
 
 These dated notes are the latest journal additions; their findings and proposals remain historical records.
 
+- [2026-11-17: replay diary memory design and its review](2026-11-17-replay-diary-memory-design.md)
 - [2026-11-07: memory v8 continuation](2026-11-07-memory-v8.md)
 - [2026-11-07: fly-connections memory, authority and source-gate corrections](2026-11-07-fly-connections-memory.md)
 - [2026-11-05: memory v4 results and memory v5 build](2026-11-05-memory-v4-v5.md)

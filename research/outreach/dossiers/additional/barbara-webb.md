@@ -20,9 +20,9 @@ Coverage: current profile, author list and abstract/selected accessible introduc
 
 ## Fit to FlyChess
 
-Circuit-generated reinforcement and competing memory timescales. Which independent neural-response prediction would distinguish a missing feedback circuit from an incorrect local plasticity rule in a model that fails reversal? This fit is an inference from the cited work and the project's current requirements. The teacher must supply experience and feedback; the physiological memory mechanism and required graph identities remain to be justified.
+This work is relevant because it models how feedback circuits shape reinforcement and how memories change over time. If a model fails reversal, which independent neural-response prediction could distinguish a missing feedback circuit from an incorrect local plasticity rule? This fit is an inference from the cited work and the project's current requirements. The teacher must supply experience and feedback; the physiological memory mechanism and required graph identities remain to be justified.
 
-**Proposed bounded diagnostic:** Preregister competing circuit and local-rule explanations, preserve graph identity, and evaluate cue-specific dopamine/output responses and reversal under matched feedback controls. An anatomical mapping and primary physiological justification are prerequisites.
+**Proposed bounded diagnostic:** Before testing, register two explanations: a missing feedback circuit or an incorrect local plasticity rule. Keep graph identity fixed, then compare cue-specific dopamine and output responses and reversal choices under matched feedback controls. First establish the anatomical mapping and the primary physiological evidence for the test.
 
 **Limits and reasons to deprioritize:** The reduced incentive circuit is not a validated full FlyWire chess learner. Webb overlaps with already-contacted Nitabach and McCurdy on the same paper; this is additional modeling expertise, not an independent biological replication. No availability, endorsement or commitment is established. Publishing in eLife does not establish special access or predict acceptance for FlyChess.
 

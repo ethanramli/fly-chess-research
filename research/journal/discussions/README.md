@@ -1,13 +1,13 @@
 # Research discussions
 
-This index covers researcher intent, untested hypotheses, scope decisions, and documentation choices. Read the [journal guide](../README.md) for the folder map and the [current research status](../../../documentation/current-status.md) for audited conclusions; discussion notes record what was said or considered at the time.
+This index lists discussions of researcher intent, untested hypotheses, scope decisions, and documentation choices. For the folder map, read the [journal guide](../README.md). For audited conclusions, read the [current research status](../../../documentation/current-status.md). These notes record what people said or considered at the time.
 
 ## Recent discussions
 
 - [2026-11-07: Memory claim gap found by the researcher's questions](2026-11-07-memory-claim-gap.md): five questions, four mistakes, and new claim rules.
 - [2026-11-04: Confirmed chapter names for all five volumes](2026-11-04-confirmed-chapter-names.md)
 - [2026-11-02: eLife scope and prospective protocol](2026-11-02-elife-scope-and-protocol.md): researcher priority, exact-cue transfer gap, F04 correction, and inspection limits.
-- [2026-11-01: Five-volume writing workspace and intended destinations](2026-11-01-five-volume-writing-workspace.md)
+- [2026-11-01: Five-volume writing workspace](2026-11-01-five-volume-writing-workspace.md)
 - [2026-10-30: Memory interference research and recommendation](2026-10-30-memory-interference-research-scope.md): overlap, inactive recovery, saturation, and retrieval distinguished; staged test plan proposed, no experiment.
 
 ## Earlier discussions

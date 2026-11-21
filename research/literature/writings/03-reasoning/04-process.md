@@ -5,7 +5,7 @@
 
 ## Planned content
 
-- Describe the planned sequence: learn individual concepts first, then test whether the model can combine them on unfamiliar positions.
+- Describe the planned sequence: first teach each concept and check whether the model learned it on its own. Then test whether the model can use several concepts together on chess positions it has not seen.
 
 ## Working notes
 

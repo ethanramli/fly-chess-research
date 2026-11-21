@@ -31,11 +31,11 @@ Reading coverage: current institutional profiles, primary abstracts and selected
 
 ## Reasoned fit to FlyChess
 
-Before treating injected PAM activity as feedback, we need evidence that the targeted cells carry an appropriate teaching signal. His studies illustrate combining cell identity with separate functional necessity and sufficiency tests.
+Before treating injected PAM activity as feedback, we need evidence that the targeted cells carry an appropriate teaching signal. His studies combine cell identity with tests of whether the cells are needed for learning and whether activating them can produce the effect.
 
 **Bounded question:** What minimum combination of natural-stimulus and stimulation controls would justify calling an identified population a teaching pathway?
 
-**Possible next diagnostic, proposed only:** Mapped identity, cue/stimulus responsiveness, reinforcement-substitution sufficiency and selective training-stage necessity. These are requirements for a future mechanism, not tests already passed by FlyChess.
+**Possible next diagnostic, proposed only:** Identify the cells, test whether they respond to the cue, test whether activating them can replace natural reinforcement, and test whether silencing them during training prevents learning. These are requirements for a future mechanism, not tests already passed by FlyChess.
 
 **Limits and reasons this may be the wrong contact:** Larval DL1/pPAM cells are not interchangeable with adult FlyWire populations. Reviewed-preprint version/year differences must remain visible when citing the salt study.
 

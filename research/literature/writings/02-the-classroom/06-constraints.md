@@ -5,11 +5,11 @@
 
 ## Planned content
 
-- Where the research fails.
-- This is not biology.
-- Where assumptions may be wrong.
-- Where memory may be calibrated inaccurately.
-- Other limits, as found.
+- Which tests failed and what those failures show.
+- Why this computational model is not a living fly.
+- Which assumptions may be wrong.
+- How inaccurate memory calibration could affect the results.
+- Other limits found during the research.
 
 ## Working notes
 

@@ -5,11 +5,11 @@
 
 ## Planned content
 
-- Describe psychological accounts of human reasoning that inform the volume's research question.
+- Describe how psychologists explain human reasoning and how those explanations relate to this volume's research question.
 
 ## Evidence boundary
 
-Register each external source in the source-to-solution register.
+Before using an outside source, record it in the source-to-solution register.
 
 ## Working notes
 

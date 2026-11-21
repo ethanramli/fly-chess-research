@@ -5,7 +5,7 @@
 
 ## Planned content
 
-- A proof by contradiction for a bounded claim about the raw-connectome model, if its stated assumptions support that claim.
+- Before presenting a proof by contradiction, state the raw-connectome model and its assumptions. Limit the conclusion to what they support.
 - The claim is about the raw connectome model, not the living fly.
 - Which capacities the raw-connectome model lacks under the stated assumptions.
 

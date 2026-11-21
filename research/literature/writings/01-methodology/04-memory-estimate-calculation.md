@@ -5,7 +5,7 @@ Evidence checked: 2026-11-04. This is a calculation note, not a new experiment.
 
 **Result:** The original **64 GB Monte Carlo requirement is not reproducible from the evidence found**. One dense matrix for the actual graph would need **72.048 GB, or 67.100 GiB**, with four bytes per value. A smaller, approximate neuron count gives exactly 64 GiB. That is a possible calculation, not the recovered historical calculation.
 
-The basic sparse graph needs **23.691 MiB** of array data. Neuron state adds to this size. Whole-process RSS is larger. Several runs have recorded RSS values, but the run behind the chapter's **about 250 MB** claim is not identified.
+The sparse graph's core arrays use **24,841,457 bytes (23.691 MiB)**. This excludes neuron state and other process memory, so whole-process RSS is larger. Several runs have recorded RSS values, but the run behind the chapter's **about 250 MB** claim is not identified.
 
 ## What one simulated fly costs
 
@@ -15,7 +15,7 @@ A dense connection table is like a spreadsheet with one row per sending neuron a
 
 FlyChess stores only the **2,700,513 directed connections present in the model**. Its core sparse graph arrays occupy **24,841,457 bytes, or 24.84 MB (23.69 MiB)**. That is about **1/2,900 as much storage for the wiring** under these assumptions. See [the sparse calculation](#5-calculate-sparse-storage-and-neuron-state).
 
-In the **November 8 Fly Connections Memory dry run**, each of six concurrent workers ran a separate model and made **8,922 full-network passes**. Recorded peak resident memory was **274–281 MiB per worker**, including the wiring, model state, and process overhead. The range describes individual workers' peaks. If six workers each held a private dense table, those tables alone would total **432.29 GB**. This is a hypothetical allocation, while the reported worker peaks come from the actual sparse dry run. [Dry-run journal](../../../journal/experiments/2026-11-07-fly-connections-memory.md#16-2026-11-08-2341-dry-run-complete-does-not-pass-mechanism-level-failure-found)
+In the **November 8 Fly Connections Memory dry run**, each of six concurrent workers ran a separate model and made **8,922 full-network passes**. Recorded peak resident memory was **274–281 MiB per worker**, including the wiring, model state, and process overhead. If six workers each held a private dense table, those tables alone would total **432.29 GB**. This is a hypothetical allocation, while the reported worker peaks come from the actual sparse dry run. [Dry-run journal](../../../journal/experiments/2026-11-07-fly-connections-memory.md#16-2026-11-08-2341-dry-run-complete-does-not-pass-mechanism-level-failure-found)
 
 The researcher recalls estimating about **64 GB** during early Monte Carlo planning and considering a command-line tool for Google Colab because local hardware was limited. The original estimate's assumptions remain unknown. The 72.05 GB calculation gives a reproducible figure for a specified dense design. Sequential Monte Carlo rollouts can reuse one model's wiring, so the rollout count alone gives no RAM requirement. See [the Monte Carlo assumptions](#6-state-the-monte-carlo-copy-assumptions) and [the archived sparse-graph search profile](../../../../archive/early-development/research/reports/monte-carlo-neural-profile-v2-2026-10-07/README.md).
 
@@ -265,7 +265,7 @@ The researcher recalls estimating about **64 GB** during early Monte Carlo plann
 
 1. **Dated correction, 2026-11-04:** the chapter plan joins a memory estimate and an approximate process-memory claim. The checked evidence does not establish a measured compression from 64 GB to 250 MB. The calculation above replaces that unsupported inference with separate estimates and recorded measurements. The original planning sentence is preserved.
 2. Use this bounded statement in future drafting: "For 134,209 neurons, one dense float32 connection matrix would contain 72.048 GB of values. The graph loader instead uses about 23.691 MiB for its basic sparse graph arrays, before state and other process memory. Recorded whole-process memory depends on the workload. The original 64 GB estimate and the run behind the approximate 250 MB figure still need provenance."
-3. This is a storage comparison. It is not evidence of equal simulation results, faster Monte Carlo, biological validity, learned chess skill, or transfer. No brain simulation, training, or graph experiment ran for this calculation.
+3. These dense-matrix and sparse-array calculations compare storage size. They do not show equal simulation results, faster Monte Carlo, biological validity, learned chess skill, or transfer. No brain simulation, training, or graph experiment ran for this calculation.
 
 ## Still missing
 

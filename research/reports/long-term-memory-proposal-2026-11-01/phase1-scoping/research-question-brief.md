@@ -4,15 +4,15 @@ Date: 2026-11-01. Phase 1 scoping only. AI-generated candidate question and scop
 
 ## Primary research question
 
-In the fixed FlyChess connectome model, can a source-supported local synaptic memory mechanism learn a sequence of distinct visual associations, preserve earlier associations through explicitly modeled delay and intervening learning, and selectively revise an association when its verified consequence changes, while preserving unrelated associations and outperforming matched feedback/plasticity controls?
+In the fixed FlyChess connectome model, can a local synaptic memory mechanism supported by biological sources learn distinct visual associations, preserve earlier ones through a modeled delay and further learning, and revise one when its verified consequence changes while preserving unrelated ones and outperforming matched feedback and plasticity controls?
 
-The question requires distinguishing changes in stored synaptic state from changes in how the circuit's response is read. The specific mechanism, mapping, clock, numerical rates, reader, population size, and acceptance thresholds must be justified and fixed prospectively before a candidate experiment. This brief does not decide them.
+The study must tell apart a change in stored synaptic state from a change in how the circuit's response is interpreted. Before an experiment, the study must justify and set the mechanism, biological mapping, time scale, numerical rates, response measure, number of cases, and pass thresholds. This brief does not choose those details.
 
 ## Why this is the selected question
 
 The researcher's concern is useful long-term memory during continued learning. Protecting a single trace, reducing a decay term, obtaining a pooled gate pass, or saving/restoring a file cannot establish this joint capability. The candidate must retain older useful associations while acquiring new ones and remain selectively revisable.
 
-The current documents describe damage to an unrelated association after reversal in a development seed. They also explicitly identify multiple explanations: incompatible shared input contributions, loss of stored contrast, and a resting-response readout offset. Shared neurons alone do not identify the cause. The existing direct-input surrogate is neither a proof of full-graph feasibility nor a proof of full-graph incapacity. [Diagnostic specification](../../memory-retention-continuation-2026-11-01/readout-interference-diagnostic.md).
+The current documents report damage to an unrelated association after reversal in one development seed. They also identify several possible explanations: shared inputs may combine in a way the response measure cannot distinguish, the stored difference may have been lost, or a shift in the resting response may have changed the score. Shared neurons alone do not show which explanation is correct. The existing direct-input surrogate proves neither that the full graph can meet the task nor that it cannot. [Diagnostic specification](../../memory-retention-continuation-2026-11-01/readout-interference-diagnostic.md).
 
 The restart plan leaves the memory rule undecided and requires separate approval before chess training. This proposal supports that prerequisite; it does not replace the broader reasoning/transfer objective. [Approved restart plan](../../../../documentation/design/research-goals/restart-plan-2026-10-30.md).
 

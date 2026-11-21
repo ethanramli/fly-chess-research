@@ -20,9 +20,9 @@ Coverage: current profile, author list and abstract/selected accessible introduc
 
 ## Fit to FlyChess
 
-Verified sensory neuron identities and functional annotation. What minimal functional evidence should accompany an annotation-based assignment of synthetic cues to sensory neurons? This fit is an inference from the cited work and the project's current requirements. The teacher must supply experience and feedback; the physiological memory mechanism and required graph identities remain to be justified.
+His work can help us decide whether our synthetic cues are mapped to sensory neurons on enough evidence. What minimum functional evidence should support an assignment based only on annotations? This fit is an inference from the cited work and the project's current requirements. The teacher must supply experience and feedback; the physiological memory mechanism and required graph identities remain to be justified.
 
-**Proposed bounded diagnostic:** Document actual released-graph annotations, distinguish anatomical identity from receptor expression/function, and validate cue selectivity against independent evidence before assigning a sensory interface.
+**Proposed bounded diagnostic:** Document the released-graph annotations, distinguish an anatomical label from evidence that a receptor is expressed and works, and test cue selectivity against independent evidence before assigning sensory inputs.
 
 **Limits and reasons to deprioritize:** His current emphasis is mosquitoes and sensory entry rather than gamma4 reversal. Receptor identities do not justify arbitrary chess-feature-to-neuron mappings. No availability, endorsement or commitment is established. Publishing in eLife does not establish special access or predict acceptance for FlyChess.
 

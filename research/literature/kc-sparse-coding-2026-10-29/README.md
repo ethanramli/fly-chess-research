@@ -1,6 +1,6 @@
 # Kenyon cell coding level and sparseness (literature check, 2026-10-29)
 
-Question: what fraction of adult Drosophila mushroom-body Kenyon cells (KCs) respond to one odour, what keeps the code sparse, whether classes differ, and how many KCs co-activate for mixtures. Scope: web search and fetch only. Several primary PDFs and PMC pages returned binary or reCAPTCHA content; those items are marked UNVERIFIED.
+This review asks what fraction of adult Drosophila mushroom-body Kenyon cells (KCs) respond to one odour, what keeps their activity sparse, whether KC classes differ, and how many KCs respond to mixtures. It used web search and page retrieval only. Several primary PDFs and PMC pages returned binary data or reCAPTCHA pages; those sources are marked UNVERIFIED.
 
 ## Summary
 
@@ -52,3 +52,11 @@ INFERENCE (not a source claim): 128/5,177 = 2.5% and 192/5,177 = 3.7% both sit b
 | Ganguly I, Heckman EL, Litwin-Kumar A, Clowney EJ, Behnia R (2024). Diversity of visual inputs to Kenyon cells of the Drosophila mushroom body. Nat Commun 15:5698, doi 10.1038/s41467-024-49616-z | "8% of mushroom body Kenyon cells in Drosophila melanogaster receive predominantly visual input" | **Eye route:** the step-1 test averaged over all KCs. The visual signal may be concentrated in that visual subset, so the next eye check should measure the visually innervated KCs separately |
 
 Updated implication (inference): the verified evidence does not make the cue's KC count too large. If anything, real-fly learning is more robust above 10-20% activation, which raises a new question: is our 2.5% cue too sparse for robust learning? That is a hypothesis to test in the surrogate, not a finding.
+
+## Evidence-label clarification, 2026-11-18
+
+For Volume 2, Chapter 6, Constraints: the earlier reviewer downgraded the Honegger response fractions to unverified. That status still applies to the summary, source table and cue-budget comparison above. The approximately 5% fraction confirmed in the abstract counts cells imaged, not cells responding to an odour.
+
+The later heading "Verified additions" refers only to the abstract passages recorded in that section. It does not verify the accompanying design recommendations. The 2025 preprint's reported activation and learning ranges are separate from Honegger's unverified response fractions. The note did not verify which population supplies the preprint's percentage denominator; "presumably of imaged KCs" is an unverified assumption.
+
+The model's 128/5,177 and 192/5,177 fractions count selected input cells. Comparing those fractions with experimentally active cells requires evidence that the quantities are comparable. This note does not establish that comparison or justify a biological cue-size limit. A larger cue remains a design hypothesis. The next source check must establish the measured population, response definition and denominator before using these percentages to justify a protocol. No new source retrieval was performed for this clarification.

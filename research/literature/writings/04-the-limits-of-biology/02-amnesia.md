@@ -5,8 +5,8 @@
 
 ## Planned content
 
-- When memory is updated, some neurons overwrite each other, so nearby synapses are also overwritten.
-- Expands the Volume 2 "To Learn" account: exactly which parts and which neurons.
+- Describe whether updating one memory overwrites changes at nearby synapses, and identify any neurons involved.
+- Build on Volume 2's "To Learn" chapter by identifying exactly which parts and neurons are involved.
 - How the model's memory constraints affect multistep reasoning, and what they do or do not establish about living flies.
 
 ## Evidence boundary

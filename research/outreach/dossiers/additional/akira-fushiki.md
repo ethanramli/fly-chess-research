@@ -24,7 +24,7 @@ Dear Dr Fushiki,
 
 I’m an independent student researcher developing a from-scratch simulation constrained by the adult fly connectome. Your work on recurrent regulation of learning in the insect brain and on integrating learned and innate valence combines identified circuitry with computational questions that are central to my project. Your current work on functional heterogeneity in dopamine circuits also makes me cautious about collapsing reinforcement channels into one undifferentiated signal.
 
-Our engineered two-cue task strengthened rewarded preference in six of six seeds, but only three chose correctly after contingency reversal, so the full acceptance gate failed. The puzzle round still records feedback without applying learning. We have not established a natural adult reward interface, and I do not want to map a teacher’s correct/incorrect label onto an arbitrary neuron. What minimum evidence would you require before representing distinct dopamine-neuron identities as distinct functional teaching channels in a simplified model?
+Our engineered two-cue task strengthened rewarded preference in six of six seeds, but only three chose correctly after contingency reversal. The task therefore failed its full acceptance test. The puzzle round still records feedback without applying learning. We have not established a natural adult reward interface, and I do not want to map a teacher’s correct/incorrect label onto an arbitrary neuron. What minimum evidence would you require before representing distinct dopamine-neuron identities as distinct functional teaching channels in a simplified model?
 
 The project remains engineering-only; chess transfer is unresolved. A brief pointer would be helpful, and I understand if you cannot respond.
 

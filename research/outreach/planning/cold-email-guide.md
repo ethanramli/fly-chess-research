@@ -4,7 +4,7 @@ Research synthesis prepared 2026-09-30. This guide is for a student, including a
 
 ## What the evidence can and cannot say
 
-University research offices repeatedly recommend a clear subject, a brief and individualized note, a real connection to the recipient's work, a specific ask, and patience. Faculty-authored advice adds that fit and a concrete account of what the sender has actually done matter more than generic enthusiasm. These are strong, convergent professional conventions, not a validated formula that guarantees a response.
+University research offices repeatedly recommend a clear subject, a brief and individualized note, a real connection to the recipient's work, a specific ask, and patience. Faculty-authored advice adds that fit and a concrete account of what the sender has actually done matter more than generic enthusiasm. These are widely repeated professional recommendations, not a tested formula for getting a reply.
 
 There is limited direct empirical evidence for this exact situation. A field experiment sent 2,021 emails to professors at 24 US institutions and varied sender address and subject-line clarity while asking recipients to complete a survey. It found effects for professional-looking addresses and inbox cues, but it did not test research-mentorship requests, personalization, ideal message length, or send time. Its counterintuitive subject-line result is not a reason to use vague or clickbait subjects in a professional request. No robust evidence located here identifies one best weekday, hour, or follow-up schedule for a student's scientific-feedback email. Treat the practical recommendations below as informed norms, not causal laws. [DeAngelo & Feng, *Social Science Computer Review*](https://journals.sagepub.com/doi/10.1177/0894439319839924)
 
@@ -28,7 +28,7 @@ Write each message for that recipient. Do not send a mass email with names swapp
 
 ### Length and shape
 
-Aim for about 120–180 words in three short paragraphs; this is a practical target synthesized from university advice to keep first contact brief, not an experimentally established threshold. Keep the ask and the most important context visible without scrolling. A useful structure is:
+Aim for about 120–180 words across three short paragraphs. This is a practical guide based on university advice to keep first emails brief; research has not shown that this exact length works best. Keep the request and key context visible without scrolling. A useful structure is:
 
 1. Who you are, including that you are in high school or working independently, and why you chose this person.
 2. What you have done so far, what the evidence currently says, and the one uncertainty you want feedback on.
@@ -38,7 +38,7 @@ Do not attach a long project history or paste an abstract. Link a concise projec
 
 ### Make the ask bounded and easy to decline
 
-Ask for one thing the researcher can realistically answer: one or two pointers to relevant literature, a quick reaction to a stated design choice, or a short 10–15 minute conversation if convenient. The time estimate is a courtesy that makes the scope legible, not a standard guaranteed to be accepted. Offer an asynchronous option and make clear that a brief reply or a referral is already helpful. Do not begin by asking someone to become your supervisor, validate an entire project, find you a position, coauthor, or review a lengthy proposal.
+Ask for one thing the researcher can realistically answer: one or two pointers to relevant literature, a quick reaction to a design choice, or a short 10–15 minute conversation if convenient. The time estimate helps the researcher judge the request; it does not guarantee they will accept. Offer an email option and say that a brief reply or referral would help. Do not begin by asking someone to become your supervisor, validate an entire project, find you a position, coauthor, or review a lengthy proposal.
 
 For scientific feedback, phrase a question that can be answered without taking responsibility for the project. For example: “Does this reversal test distinguish a stored cue association from a fixed decoder that happened to prefer one option? If not, could you point me to one control or paper that would help?” This is more actionable than “What do you think of my research?”
 
@@ -58,7 +58,7 @@ If an attachment materially helps, use one short PDF (for example, a one-page re
 
 ### Timing and follow-up
 
-Send when the note is ready and the recipient's published contact instructions allow it. A weekday during ordinary working hours is a reasonable courtesy, but the available evidence does not show that optimizing the send hour materially improves this type of request. Avoid deadlines that force a quick answer. If the question concerns a formal program, use its application window and official contact route.
+Send when the note is ready and the recipient's published contact instructions allow it. Sending on a weekday during working hours is considerate, but available evidence does not show that choosing a particular hour improves the chance of a reply. Avoid deadlines that pressure someone to answer quickly. For a formal program, follow its application dates and official contact route.
 
 If there is no reply, wait about 10–14 days, then send one brief follow-up in the same thread. Restate the one ask and include the original context below it. University sources vary from about one week to two weeks, so this interval is a respectful synthesis, not a proven optimum. If there is still no reply, stop. Silence can reflect workload, filtering, leave, or lack of capacity; it is not a verdict on the student's ability. Do not move the same request across email, social media, personal addresses, and repeated reminders. [Stanford Academic Advising](https://advising.stanford.edu/current-students/advising-student-handbook/email-faculty), [Memphis Undergraduate Research](https://www.memphis.edu/ugresearch/students/email.php), and [Oregon State Career Development Center](https://undergradresearch.oregonstate.edu/sites/undergradresearch.oregonstate.edu/files/5_tips_for_contacting_a_faculty_advisor_for_gradschool.pdf) give differing follow-up intervals; all treat nonresponse as ordinary.
 

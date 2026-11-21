@@ -35,3 +35,11 @@ All 12 arms gave identical test results.
 ## Next step (researcher decision before leaving, 2026-11-03)
 
 On failure: design and build, but do not run, the disclosed engineered-memory condition: store memory-cell (Kenyon-cell) patterns with their verified outcomes and answer new boards by similarity, with the fair comparisons in the [revision](../../../documentation/design/research-goals/restart-plan-revision-2026-11-03.md) (problem 7 correction). The MBON05 move score stays switched off.
+
+## Wording clarification, 2026-11-18
+
+For Volume 2, Chapter 5, Evidence for Learning: the informative condition and all controls had identical test results in this run. That comparison does not establish that feedback has no effect under other conditions. The learner used its existing memory to score a choice, then could update memory after the choice. The values called gains change the strength of connections; they changed in both the no-feedback and shuffled-feedback conditions.
+
+Those changes are consistent with board input activating PAM08 and driving the memory rule without the intended reward signal. The equal number of changed connections alone does not prove that mechanism. The original wording above stated the explanation too strongly. The no-feedback condition still changed connection gains; the separate learning-off condition kept them fixed. Future descriptions must distinguish these controls and describe the board-input explanation as an interpretation unless a causal check establishes it.
+
+The planned engineered memory would store Kenyon-cell activity patterns with verified outcomes, then use similarity to stored patterns when choosing on a new board. This remains the recorded next step from that date, not evidence that it worked.

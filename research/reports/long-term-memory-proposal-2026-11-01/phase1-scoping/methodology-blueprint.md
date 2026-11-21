@@ -4,9 +4,9 @@
 
 ## Question and research paradigm
 
-Can a source-supported, compartment-specific plasticity and stabilization mechanism on the existing FlyChess graph acquire new associations, preserve useful earlier associations during further learning and modeled delays, and selectively reverse changed associations better than matched controls?
+Can a mechanism supported by biological sources change and stabilize connections within a specified compartment of the existing FlyChess graph, learn new associations, preserve earlier useful ones during further learning and modeled delays, and selectively revise an association after its verified consequence changes, outperforming matched controls?
 
-Use a quantitative causal computational study. The intervention is the declared physiological mechanism; the outcome is memory expressed as unaided behavior under fixed measurement conditions. Biological plausibility, software correctness and computational performance are separate claims. A source-supported mechanism can fail here; a computational pass can still be biologically unsupported.
+Use a quantitative computational study designed to test cause and effect. Change the declared physiological mechanism and measure memory through unaided behavior under fixed conditions. Treat biological plausibility, correct software behavior and computational performance as separate claims. A mechanism supported by sources may fail in this model, and a computational pass may still lack biological support.
 
 ## Evidence baseline and competing explanations
 
@@ -14,7 +14,7 @@ The [October 30 recommendation](../../../literature/memory-interference-2026-10-
 
 The [cubic reservoir rule](../../../../.codebase/src/neural-learning/local-cubic-reservoir-memory.mjs) changes the release of stabilized local state under weak versus strong drive. It tests a specific retention hypothesis. Calling it wholly redundant because it does not separate representations is unsupported. Conversely, its computational gates cannot establish a biological long-term-memory mechanism. The four reservoir masses are not identified with Orb2 molecular variables.
 
-The [current diagnostic design](../../memory-retention-continuation-2026-11-01/readout-interference-diagnostic.md) lists three live explanations: incompatible representation/readout, actual loss of a useful synaptic contrast, and a changing resting-response offset that alters the score. Shared KC activation is evidence of overlap, not a demonstrated causal explanation of loss. The static direct-input surrogate does not certify the recurrent graph's capacity.
+The [current diagnostic design](../../memory-retention-continuation-2026-11-01/readout-interference-diagnostic.md) lists three possible explanations: the response measure may not distinguish the representations, a useful difference in synaptic state may have been lost, or a shift in resting response may have changed the score. Shared KC activation shows overlap but does not explain what caused the loss. The static direct-input surrogate does not establish what the recurrent graph can do.
 
 The [capacity correction](../../overnight-memory-plasticity-2026-10-31/assay-correction-proposal.md) proves incompatibility only for particular bounded fixture/readout cells. Some lower-overlap cells have oracle existence witnesses. Those witnesses cannot enter learner memory, teacher updates or checkpoint selection, and do not demonstrate finite-exposure learnability.
 

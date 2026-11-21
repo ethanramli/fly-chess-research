@@ -1,12 +1,12 @@
 # Novelty search: whole-connectome plasticity learning with transfer tests (2026-10-29)
 
-A scoping search, not a systematic review. A Haiku sub-agent ran it with web search on 2026-10-29. Sources were checked against abstracts, model cards and search snippets; **full texts were not opened**, and items marked UNVERIFIED rest on snippets. Re-check the primary sources before any publication claim.
+A scoping search, not a systematic review. A Haiku sub-agent ran the search using web search on 2026-10-29. It checked abstracts, model cards and search snippets. **It did not open full texts**, and items marked UNVERIFIED are supported only by snippets. Check the primary sources before making a publication claim.
 
-Question: has published or released work combined (1) a whole-brain Drosophila connectome with fixed topology and signs, (2) learning only through a modelled biological plasticity rule (no backprop on connectome weights), (3) consequence (reward/punishment) feedback, (4) transfer tests to held-out families or counterfactuals against matched controls, and (5) chess?
+Question: Has any published or released work combined all of these: (1) a whole-brain Drosophila connectome with fixed topology and signs; (2) learning only through a modelled biological plasticity rule, with no backpropagation on connectome weights; (3) consequence feedback, such as reward or punishment; (4) transfer tests on held-out families or counterfactuals against matched controls; and (5) chess?
 
 | Work | What it did | Elements |
 |---|---|---|
-| cesp99/fly-chess (Esposito; https://github.com/cesp99/fly-chess, https://huggingface.co/cesp99/fly-chess) | FlyWire rate model (134,209 neurons, 2.70M connections), fixed signs. Trains synaptic magnitudes, gains and projections on Lichess moves and outcomes, then Stockfish targets, then self-play. Reports top-1/top-3 move accuracy and bot matches | 1, 5; 3 only as supervised targets; no 2 or 4. Optimizer not named: gradient training is inferred, UNVERIFIED |
+| cesp99/fly-chess (Esposito; https://github.com/cesp99/fly-chess, https://huggingface.co/cesp99/fly-chess) | FlyWire rate model (134,209 neurons, 2.70M connections) with fixed signs. It trains synaptic magnitudes, gains and projections on Lichess moves and outcomes, then Stockfish targets, then self-play. It reports top-1/top-3 move accuracy and bot matches | 1, 5; 3 only as supervised targets; no 2 or 4. The optimizer is not named; gradient training is inferred, UNVERIFIED |
 | Shiu et al. 2024, Nature 634 (doi 10.1038/s41586-024-07763-9) | Whole-brain LIF model on FlyWire; sensorimotor predictions checked with optogenetics | 1 only; no learning. Neuron count differs across sources, UNVERIFIED |
 | Lappalainen et al. 2024, Nature 634:1132-1140 (doi 10.1038/s41586-024-07939-3) | Connectome-constrained visual system; parameters fitted by deep learning | 1 (partial); fails 2 |
 | Bennett, Philippides & Nowotny 2021, Nat Commun 12:2569 (doi 10.1038/s41467-021-22592-4) | Mushroom-body model; dopamine as reinforcement prediction error | 2, 3; not whole brain, no chess |
@@ -23,3 +23,7 @@ Question: has published or released work combined (1) a whole-brain Drosophila c
 - The closest on the plasticity side is Bennett et al. 2021 (2 and 3, on a reduced MB model).
 
 **Use in this project:** this supports describing FlyChess as "apparently the first" only with these limits stated. It is not a novelty proof. A full-text review is needed before any publication.
+
+## Wording correction, 2026-11-18
+
+This note serves Volume 1, Chapter 3, Choices. The scoping search found no study that combined a whole-brain fruit-fly connectome, modeled biological plasticity, consequence feedback and transfer tests against matched controls; chess was an additional criterion. Because the search covered abstracts, model cards and snippets, it cannot establish that FlyChess is the first such project. The earlier suggestion to call it "apparently the first" was too strong for this search. This correction supersedes the wording recommendation above. Check the primary full texts before making a publication claim. No new literature search was performed for this correction.

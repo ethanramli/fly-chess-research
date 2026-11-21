@@ -5,14 +5,12 @@
 
 ## Planned content
 
-- The researcher works with professors from Yale School of Medicine.
-- Thanks to Prof. Damon Clark and Prof. Li Yan McCurdy of Yale School of Medicine for their help and support.
-- Thanks to other people who helped.
+- Acknowledge Prof. Damon Clark and Prof. Li Yan McCurdy of Yale School of Medicine, along with others who helped.
 
 ## Evidence boundary
 
-Confirm each person's name, title and affiliation with them before publication.
+Before publication, confirm each person's name, title, and affiliation with them.
 
 ## Working notes
 
-Add interview answers, sources, figures, and evidence links here as the chapter develops.
+As the chapter develops, add interview answers, sources, figures, and links to supporting evidence.

@@ -1,0 +1,26 @@
+**VERDICT: REJECT — approval withheld pending inspection of revision 1.** Local reads were blocked, and GitHub returned “not found” for the specified blob and proposal path. I inspected the available context, but **could not verify section 7**. The findings below challenge the stated assumption; proposal-specific omissions remain hypotheses.
+
+**Assigned assumption and disposition: changed.** Replay may improve retention, but removal before testing establishes only that retrieval was unavailable during testing. It does not establish that the learned behavior requires reasoning. Retention benefit and support for combining concepts remain open.
+
+1. **required-BUILD — “Absent at test” cannot establish where the apparent intelligence came from.**  
+   **Evidence:** the assigned assumption; [v8 report, line 58](https://github.com/ethanramli/fly-chess-research/blob/c240b0585d0bf8fa7677ba6c0193511f543886bb/research/reports/engineered-memory-test-v8-2026-11-07/README.md#L58) attributes its gain to stored outcomes rather than the fly’s representation.  
+   **Concrete counterexample, hypothesis:** each experienced board–move activates a distinguishable pattern. Replaying its recorded verdict repeatedly writes an association into the output connections. The diary can then disappear while the connections implement case recall. Retention, correction, persistence, feedback dependence and removal tests could all pass without combining concepts. **I cannot certify that this passes every section 7 test.**  
+   **Consequence:** moving lookup into weights could be mistaken for eliminating lookup.  
+   **Smallest revision/check:** compare with a simple learner receiving the identical experience stream, replay schedule and update budget, then frozen for testing. Require unfamiliar combinations that case similarity cannot explain. A diary-only control denied its diary would be uninformative.
+
+2. **required-BUILD — Remembering lessons does not establish the capacity to combine them.**  
+   **Evidence:** the [current learner protocol, lines 13–21](https://github.com/ethanramli/fly-chess-research/blob/c240b0585d0bf8fa7677ba6c0193511f543886bb/documentation/design/neural-learning/three-board-feedback-test-2026-11-14.md#L13) changes 6,046 connections feeding six output types. The [combination protocol, line 88](https://github.com/ethanramli/fly-chess-research/blob/c240b0585d0bf8fa7677ba6c0193511f543886bb/documentation/design/research-goals/transfer-and-combination-protocol-2026-11-03.md#L88) requires separately learned ideas to be combined.  
+   **Consequence:** replay cannot recover distinctions the representation loses. Conversely, a restricted readout is not automatically incapable of combination if its inputs already contain useful interactions. Neither conclusion is established here.  
+   **Smallest revision/check:** distinguish a retention claim from a reasoning claim, identify the proposed route to combination, and make failure of the later combination test leave reasoning unsupported. This belongs to Volume 3, *Process* and *Evidence*.
+
+3. **required-BUILD — Removal is a useful ablation, not a necessary definition of acceptable memory.**  
+   **Evidence:** [memory handoff, line 18](https://github.com/ethanramli/fly-chess-research/blob/c240b0585d0bf8fa7677ba6c0193511f543886bb/documentation/design/research-goals/memory-handoff-2026-11-07.md#L18) permits disclosed engineered memory for Volume 3 and separates it from Properties 1 and 2.  
+   **Consequence:** requiring removal could exclude an authorized memory-assisted system while still admitting compiled case recall. External replay also cannot silently become evidence that unaided biological retention was repaired.  
+   **Smallest revision:** name the tested system and property explicitly. Retain removal as one causal comparison; require matched simpler-system controls for attribution.
+
+4. **required-LAUNCH — Establish acquisition before interpreting retention; audit the selection rules before trusting replay.**  
+   **Evidence:** the [three-board protocol, line 108](https://github.com/ethanramli/fly-chess-research/blob/c240b0585d0bf8fa7677ba6c0193511f543886bb/documentation/design/neural-learning/three-board-feedback-test-2026-11-14.md#L108) does not require the taught move to become first; the [handoff, line 79](https://github.com/ethanramli/fly-chess-research/blob/c240b0585d0bf8fa7677ba6c0193511f543886bb/documentation/design/research-goals/memory-handoff-2026-11-07.md#L79) records repeated optimization against one gate.  
+   **Hypothesis:** supersession, sampling or replay frequency could favor particular outcomes. A recorded pulse is permitted feedback if the fly actually experienced it; it is not automatically privileged information.  
+   **Smallest check:** require demonstrated acquisition, then continued learning and correction. Audit whether changing verdicts alone changes admission or replay frequency. Freeze those rules before fresh evaluation. Designing now is reasonable; claiming a retention repair before acquisition is not.
+
+**Strongest conditional sentence:** “Under matched practice and replay budgets, replaying the model’s own recorded experiences improved retention of the tested associations after intervening learning, with the diary unavailable during evaluation.” That would still leave reasoning unestablished.

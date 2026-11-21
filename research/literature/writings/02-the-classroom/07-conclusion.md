@@ -5,7 +5,7 @@
 
 ## Planned content
 
-- Conclusion of the volume.
+- Summarize what this volume's evidence supports and what remains uncertain.
 
 ## Working notes
 

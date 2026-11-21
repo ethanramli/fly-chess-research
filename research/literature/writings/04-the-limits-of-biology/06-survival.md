@@ -6,7 +6,7 @@
 ## Planned content
 
 - The question mark in the chapter name is deliberate.
-- Even if the proofs show reasoning is impossible for the raw connectome, they do not explain how flies have survived for so long.
+- Even if a proof rules out reasoning in the raw-connectome model under stated assumptions, it does not explain how living flies have survived for so long. The chapter must keep that question about the animal separate from the model's limits.
 
 ## Working notes
 

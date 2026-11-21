@@ -5,10 +5,9 @@
 
 ## Planned content
 
-- An invitation to test the fly models.
-- Each fly version has its own checkpoint so others can test it themselves.
-- A link to the GitHub repository so anybody can test it.
-- To-do: make a checkpoint for each version of the fly.
+- Invite readers to test the fly models.
+- Provide a separate checkpoint for each fly version so readers can test that version. This remains to be done.
+- Link to the GitHub repository so readers can access the models.
 
 ## Evidence boundary
 
@@ -16,4 +15,4 @@ Release only pinned, versioned snapshots under the Fly version contract.
 
 ## Working notes
 
-Add interview answers, sources, figures, and evidence links here as the chapter develops.
+As the chapter develops, add interview answers, sources, figures, and links to supporting evidence.

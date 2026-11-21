@@ -5,9 +5,9 @@
 
 ## Planned content
 
-- All the input components.
-- Olfactory input, instead of changing weights directly (which other fly-chess projects do).
-- Solving puzzles and getting feedback, instead of backpropagation.
+- The components that carry chess information into the model.
+- How the model represents chess information as smell-like input, instead of directly changing connection weights.
+- How the model learns from solving puzzles and receiving feedback, rather than from backpropagation.
 
 ## Working notes
 

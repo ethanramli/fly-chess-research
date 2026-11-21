@@ -6,8 +6,8 @@
 ## Planned content
 
 - The memory component: content-addressed episodic memory.
-- Why the normal memory did not work: some neurons overwrite each other.
-- Where the engineered memory worked, how it compared with earlier approaches, and what those comparisons can establish. The researcher considers it the most direct and simplest solution.
+- Why the first memory design failed: some neurons overwrote information stored by others.
+- Where the engineered memory passed its tests, how it compared with earlier approaches, and what the comparisons show. The researcher considers it the simplest and most direct solution.
 
 ## Evidence boundary
 

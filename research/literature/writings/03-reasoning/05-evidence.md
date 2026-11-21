@@ -5,12 +5,12 @@
 
 ## Planned content
 
-- Evidence from this constrained model that the assisted system can or cannot reason; either outcome answers the research question.
-- State the volume's contribution and distinguish it from prior work.
+- Report whether the system, with its declared computing limits and aids, meets the tests for reasoning. A result that it does or does not reason answers the research question.
+- Explain what this volume contributes and how its tests and findings differ from earlier work.
 
 ## Evidence boundary
 
-Use the predeclared disjoint and counterfactual gates.
+Use the tests chosen before the study: test combinations the model did not encounter during training, and paired cases where changing the verified consequence should change the best choice.
 
 ## Working notes
 

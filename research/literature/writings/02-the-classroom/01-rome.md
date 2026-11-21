@@ -7,7 +7,7 @@
 
 - The chapter name is poetic on purpose.
 - Rome was famous for its pillars and architecture.
-- Reasoning, using a neurobiological concept: when we master a concept, we can combine it with other concepts. We reason by linking concepts to each other.
+- The chapter will explain a neuroscience idea: once we learn a concept, we can connect it to other concepts. Those connections can help us reason.
 - Written so that readers with no neuroscience or computer science background can follow.
 
 ## Working notes

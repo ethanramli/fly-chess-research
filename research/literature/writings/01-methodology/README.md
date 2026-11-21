@@ -1,10 +1,10 @@
 # Volume 1: Methodology
 
-Status: writing workspace; no manuscript drafted yet.
+Status: writing workspace; the manuscript has not been drafted.
 
 Use the [series outline](../../../../documentation/design/research-goals/five-volume-series.md) for the proposed chapters and evidence boundaries.
 
-Draft chapters here as they are developed. Keep claims tied to preserved evidence; distinguish planned work from completed results.
+Draft chapters here as they take shape. Tie claims to preserved evidence, and label plans separately from completed results.
 
 ## Chapter files
 

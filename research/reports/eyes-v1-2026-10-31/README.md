@@ -26,3 +26,7 @@ Files: [check.json](check.json), [compare-sampling.py](compare-sampling.py), [co
 ```powershell
 node --max-old-space-size=256 .codebase/scripts/chess-input/check-eyes-v1.mjs --out research/reports/eyes-v1-2026-10-31
 ```
+
+## 2026-11-18 clarification
+
+This report supports **Volume 1, Chapter 3: Choices** by recording the input-interface design and its limits. The 960 piece-separation cases are 64 squares times the 15 pairs of six piece types. For each case, “mean ink difference” is the average absolute difference between the two pictures’ values across that square’s photoreceptors; zero means the pictures give the same values there. “Input overlap” compares two move inputs: shared current is the sum of the smaller current at each photoreceptor, divided by the sum of the larger current. One means identical inputs and zero means no shared current. The seven passing unit checks cover synthetic retinas, the pinned retina arrays and a four-neuron plumbing case; they check software behavior, not whether the full graph recognizes pieces or chooses moves. Neither measure tests those abilities either.

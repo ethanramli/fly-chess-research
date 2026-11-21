@@ -63,3 +63,7 @@ So v8 meets all five conditions of the written memory goal in one registered, in
 ## Next step
 
 The written memory goal is met by v8, with the limits above. Stronger claims are separate later work: a confirmatory, untouched replication; a fly key that beats random features; all-legal choice without the capture filter. The v6-r4 and v5 audits continue in the same detached chain.
+
+### Clarification (2026-11-18)
+
+This report contributes to **Volume 2, chapters 3 (To Learn) and 5 (Evidence for Learning)**. The “expected safe-capture score” is a summed score across positions: for each position, count the tied top-scoring candidate captures with a verified safe outcome, divide by the number of tied top candidates, then add those fractions. Thus a tie between one safe and one unsafe top candidate adds 0.5. The margins compare that summed score for the full store with the named comparator; the number in parentheses is the lower bound from resampling whole games. The retention row’s “0 / 627” means zero lost recalls among 627 quarter-store recall probes; the gate’s loss fraction uses only probes that the quarter store recalled, and that recalled count is not printed in this table. “s / c” means safe tied candidates divided by all tied candidates. These are scoring and recall checks in a filtered capture-choice task; they do not measure neural feedback or all-legal choice.

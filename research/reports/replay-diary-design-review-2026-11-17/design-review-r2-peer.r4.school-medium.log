@@ -1,0 +1,297 @@
+OpenAI Codex v0.170.0
+--------
+workdir: C:\Users\ethan\Documents\fly-chess-research\research\reports\replay-diary-design-review-2026-11-17
+model: gpt-6.2-sol
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a1ef45-fa5e-7a70-8c76-16b2be28d197
+--------
+user
+Round 4 (same role as before, same assigned assumption). Review only: do not edit, create, delete or commit files; do not start subagents or other reviewers; read-only commands are allowed.
+
+Revision 8 is at documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md, git blob 47e58441824ef4754f63a99ea5632ab46386d019. Revision 7 (blob 8d1fc4f2) is preserved at research/reports/replay-diary-design-review-2026-11-17/design-revision-7.md.
+
+Your round 2 review of revision 7 returned approve with required changes. Revision 8 adopts them as section 12 "Revision 8" lists:
+1. Peer, required to build: random-feature control fully specified (section 7.2).
+2. Peer, required to launch: stream derivation, generators and run seeds fixed (section 4.8); launch gates G1 to G3 named (section 11).
+3. Peer, required to launch, and skeptic, required to build: section 8 defers to each stage's prerequisite.
+4. Peer, optional: replay publication added to the one-page loop.
+5. Foundational, required to build: stage 3 control experience specified (section 7.5).
+6. Skeptic, required to build, and foundational, optional: exact equality only through the first block; no state copied between arms afterwards (section 7.2).
+7. Scoring boundary worked example added (section 7.4).
+
+Check only:
+(a) each item above that was raised in your review: RESOLVED or STILL OPEN, with reason and line evidence;
+(b) new problems introduced by revision 8. Do not re-review unchanged text unless a change makes it wrong.
+
+Return markdown:
+1. VERDICT: APPROVE, APPROVE WITH REQUIRED CHANGES (building allowed after the changes), or REJECT.
+2. One line per item: RESOLVED or STILL OPEN, reason.
+3. New findings only, most severe first: severity (required-BUILD, required-LAUNCH, optional), claim, evidence (file:line), consequence, smallest fix.
+Be brief.
+
+warning: This session was recorded with model `gpt-6.1-sol` but is resuming with `gpt-6.2-sol`. Consider switching back to `gpt-6.1-sol` as it may affect Codex performance.
+codex
+I’ll use the same review and writing skills to check the four findings from my previous review and any new issues introduced by revision 8.
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'git hash-object documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md; git hash-object research/reports/replay-diary-design-review-2026-11-17/design-revision-7.md; git diff --no-index --unified=2 -- research/reports/replay-diary-design-review-2026-11-17/design-revision-7.md documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md' in C:\Users\ethan\Documents\fly-chess-research
+ exited 1 in 176ms:
+47e58441824ef4754f63a99ea5632ab46386d019
+8d1fc4f2c5b8717d9ad325b06c9ba2a6a51bf991
+warning: in the working copy of 'research/reports/replay-diary-design-review-2026-11-17/design-revision-7.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md', LF will be replaced by CRLF the next time Git touches it
+diff --git a/research/reports/replay-diary-design-review-2026-11-17/design-revision-7.md b/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md
+index 8d1fc4f..47e5844 100644
+--- a/research/reports/replay-diary-design-review-2026-11-17/design-revision-7.md
++++ b/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md
+@@ -1,5 +1,5 @@
+ # A memory that helps the fly remember without doing its thinking: the replay diary (design, 2026-11-17)
+ 
+-**Status: design revision 7, written before any implementation or data. Nothing is built or launched. It needs the researcher's approval before building.** Revision 1 (preserved as [design-revision-1.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-1.md), git blob `62c72ba4`) was reviewed by three independent reviewers; all three returned "approve with required changes", and section 12 maps every required change to revision 2 ([design-revision-2.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-2.md), blob `5e22be79`). Revision 3 adds four small fixes from the lead's own recheck (section 12; preserved as [design-revision-3.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-3.md), blob `72fcbec9`). Revision 4 adds "The design on one page" after the researcher said "i dont see a design yet": the picture, the module's interface, the data, the practice loop, a worked example and the files to build. It restates sections 4.1 to 4.8; it adds no new rule. Revision 5 (section 12) fixes six gaps found in the lead's second read before the reviewers' round 2; revision 4 is preserved as [design-revision-4.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-4.md) (blob `99df41e4`). Revision 6 (section 12) comes from the lead's solo deep-in-thought pass, which rebuilt the key numbers from raw records; revision 5 is preserved as [design-revision-5.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-5.md) (blob `0c71bb4d`). Revision 7 answers the scientific skeptic's round 2 review (section 12); revision 6 is preserved as [design-revision-6.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-6.md) (blob `0b57e460`). The reviewers' independent recheck of these revisions is pending: their round 2 stopped at the Codex usage limit. Serves Volume 3 (*Reasoning*), chapters 4 (*Process*) and 5 (*Evidence*). The no-diary arms serve Volume 2 chapter 3 (*To Learn*). A failure of the mixed-order arm feeds Volume 4 chapters 2 (*Amnesia*) and 5 (*Evidence*) only with a separate proof. Goal set by the researcher on 2026-11-17: "The memory may help the fly remember. It must not supply the intelligence we later attribute to the fly." Computational memory is allowed; biological realism is not required.
++**Status: design revision 8, written before any implementation or data. Nothing is built or launched. It needs the researcher's approval before building.** Revision 1 (preserved as [design-revision-1.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-1.md), git blob `62c72ba4`) was reviewed by three independent reviewers; all three returned "approve with required changes", and section 12 maps every required change to revision 2 ([design-revision-2.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-2.md), blob `5e22be79`). Revision 3 adds four small fixes from the lead's own recheck (section 12; preserved as [design-revision-3.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-3.md), blob `72fcbec9`). Revision 4 adds "The design on one page" after the researcher said "i dont see a design yet": the picture, the module's interface, the data, the practice loop, a worked example and the files to build. It restates sections 4.1 to 4.8; it adds no new rule. Revision 5 (section 12) fixes six gaps found in the lead's second read before the reviewers' round 2; revision 4 is preserved as [design-revision-4.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-4.md) (blob `99df41e4`). Revision 6 (section 12) comes from the lead's solo deep-in-thought pass, which rebuilt the key numbers from raw records; revision 5 is preserved as [design-revision-5.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-5.md) (blob `0c71bb4d`). Revision 7 answers the scientific skeptic's round 2 review (section 12); revision 6 is preserved as [design-revision-6.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-6.md) (blob `0b57e460`). The round 2 reviews of revision 7 (peer, foundational, scientific skeptic round 3) all returned approve with required changes; revision 8 (section 12) adopts every required change. Revision 7 is preserved as [design-revision-7.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-7.md) (blob `8d1fc4f2`). Serves Volume 3 (*Reasoning*), chapters 4 (*Process*) and 5 (*Evidence*). The no-diary arms serve Volume 2 chapter 3 (*To Learn*). A failure of the mixed-order arm feeds Volume 4 chapters 2 (*Amnesia*) and 5 (*Evidence*) only with a separate proof. Goal set by the researcher on 2026-11-17: "The memory may help the fly remember. It must not supply the intelligence we later attribute to the fly." Computational memory is allowed; biological realism is not required.
+ 
+ ## Read first: clues, limits and what this design cannot show
+@@ -80,4 +80,5 @@ for each lesson n:
+     old = diary.nextReplay(n)
+     if old: teach(old.stimulus, old.teaching); log dopamine and update sizes
++    publish replay update, log and random states (one atomic write)
+ ```
+ 
+@@ -204,5 +205,5 @@ The complete learner state is saved at every checkpoint: connection strengths, e
+ ### 4.8 Random streams
+ 
+-Each run seed derives separate streams by SHA-256 of the seed and a label: `tape`, `choice`, `reservoir`, `replay`, `shuffle`, `filler`, `features`. One stream never feeds another's decisions, so, for example, admitting a lesson cannot change which entry is replayed next except through the diary's contents.
++Each run seed derives separate streams. The stream seed is the first 8 bytes of the SHA-256 of the UTF-8 text `<run seed>|<label>`, read as a big-endian unsigned 64-bit integer. Labels: `tape`, `choice`, `reservoir`, `replay`, `shuffle`, `filler`, `features`. Each stream is `xoshiro256**` with its 256-bit state filled by four SplitMix64 outputs from the stream seed (the standard constructions). Uniform integer in 0 to m−1: draw 64-bit outputs, accept one only if it is below 2^64 − (2^64 mod m), and return it mod m. Uniform real in [0, 1): the top 53 bits divided by 2^53. Normal (random projection only): Box–Muller from two uniform reals, with the first replaced by 2^−53 if it is 0. Permutations: Fisher–Yates driven by the uniform-integer rule. Run seeds are fixed before any run: stage 1 uses the original six seeds 4101–4106 (development data, as the original spec states); stage 2 uses 20261201, 20261202 and 20261203. One stream never feeds another's decisions, so, for example, admitting a lesson cannot change which entry is replayed next except through the diary's contents.
+ 
+ ### 4.9 Shortcut audit: could the diary quietly do the thinking?
+@@ -261,5 +262,5 @@ All stages use development sets until stage 3 opens the transfer protocol's lock
+ ### 7.2 Arms
+ 
+-Every comparison arm receives **identical online lessons** to the diary arm (same inputs, same pulses, same order). The five replay controls (no old replays, filler, moved timing, no pulse, event-shuffled) are copies of the diary arm's replay log that change **only the replays of old lessons**, meaning entries written in an earlier block. Replays of the current block's own lessons stay exactly as in the diary arm. So through the first block every replay control is in exactly the diary arm's state, and after that the only difference is what happened to the old-lesson replays, which is what the main hypothesis is about. The dry run checks that the first-block snapshot of each replay control equals the diary arm's, bit for bit. Stage 2 does this with a fixed tape. In stage 1 the diary arm makes its own choices, as in the original task, and each added arm is **yoked** to them: it receives the diary arm's chosen input and pulse at every trial instead of choosing. The task's four original arms keep their own choices and serve only to reproduce the original marks. The case-recall arms and the two learners are run in stage 2 as descriptive results and are decisive only in stage 3.
++Every comparison arm receives **identical online lessons** to the diary arm (same inputs, same pulses, same order). The five replay controls (no old replays, filler, moved timing, no pulse, event-shuffled) are copies of the diary arm's replay log that change **only the replays of old lessons**, meaning entries written in an earlier block. Replays of the current block's own lessons stay exactly as in the diary arm. So through the first block every replay control is in exactly the diary arm's state, and after that the only difference is what happened to the old-lesson replays, which is what the main hypothesis is about. No state is copied between arms after the first block, so later differences are the accumulated effect of each arm's own replay changes, not an isolated intervention from identical starts. The dry run checks that the first-block snapshot of each replay control equals the diary arm's, bit for bit. Stage 2 does this with a fixed tape. In stage 1 the diary arm makes its own choices, as in the original task, and each added arm is **yoked** to them: it receives the diary arm's chosen input and pulse at every trial instead of choosing. The task's four original arms keep their own choices and serve only to reproduce the original marks. The case-recall arms and the two learners are run in stage 2 as descriptive results and are decisive only in stage 3.
+ 
+ | Arm | What it is | What it rules out |
+@@ -267,5 +268,5 @@ Every comparison arm receives **identical online lessons** to the diary arm (sam
+ | **Diary** | Online lessons plus one replay per lesson (section 4) | (the system under test) |
+ | **No diary** | Online lessons only. Its first-block learning also lacks the diary's replays, so diary versus no diary mixes better learning with better keeping; the replay controls separate the two | Baseline; the Volume 2 arm |
+-| **No old replays** | Identical to the diary arm, except that every old-lesson replay is skipped: no step at all. It starts each later block in exactly the diary arm's state and gets the same lessons and the same current-block replays | The reference for forgetting and for filler damage: it differs from the diary only by the missing old-lesson replays |
++| **No old replays** | Identical to the diary arm, except that every old-lesson replay is skipped: no step at all. It matches the diary arm bit for bit through the first block, gets the same lessons and the same current-block replays, and after the first block carries its own state forward (nothing is copied from the diary arm) | The reference for forgetting and for filler damage: it differs from the diary only by the missing old-lesson replays |
+ | **Filler replay** | Each old-lesson replay is replaced by one step on a non-chess filler pairing (the transfer protocol's filler trials; in stage 1, a fixed set of arbitrary pairings never tested) | Rival 2a |
+ | **Moved timing** | Copies the diary arm's replay log from the same run. Every replay is kept. For each block (stage 1: each item block and the reversal; stage 2: A and B), the replays made during that block of entries from earlier blocks are moved, in the same order, to the end of the block before it, after that block's test snapshot and before the next block starts; replays of the current block's own entries stay where they were | Rival 2b |
+@@ -279,7 +280,7 @@ Every comparison arm receives **identical online lessons** to the diary arm (sam
+ | **Random-feature learner with diary** | Same learner on fixed random nonlinear features | Rivals 5 and 6 |
+ 
+-**Case recall, exact rule.** Keys, all fixed before data with the `features` stream: (a) raw input vector; (b) Kenyon-cell activity from the fly's untrained state; (c) random features: a fixed random projection of the raw input to as many units as there are Kenyon cells, keeping the k largest, where k is the fly's mean number of active Kenyon cells on development inputs at the untrained state. Each key is scaled to unit length; distance is Euclidean. A candidate's score is the inverse-distance-weighted mean of the pulse signs (+1 reward, −1 punishment) of its 3 nearest stored lessons, weight 1 / (d + 10⁻⁹); if any stored lesson is at distance below 10⁻¹², the score is the mean sign over those exact matches only. Ties and tie tolerance follow the fly's scoring. The bar is the best of the three keys in each version, chosen per stage on the final result: this favours the control.
++**Case recall, exact rule.** Keys, all fixed before data with the `features` stream: (a) raw input vector; (b) Kenyon-cell rates: the rates of the untrained learner in one forward pass on the input, with no learning and no dopamine; (c) random features: a projection z = Wx, where W has one row per Kenyon cell with independent standard normal entries drawn from the `features` stream, row by row. Keep the k units with the largest z (ties go to the lower unit index); the kept units carry max(z, 0) and all others are zero. k is the mean number of active Kenyon cells per development input at the untrained state, rounded half up, computed once from the development inputs before any data. Each key is scaled to unit length; distance is Euclidean. A candidate's score is the inverse-distance-weighted mean of the pulse signs (+1 reward, −1 punishment) of its 3 nearest stored lessons, weight 1 / (d + 10⁻⁹); if any stored lesson is at distance below 10⁻¹², the score is the mean sign over those exact matches only. Ties and tie tolerance follow the fly's scoring. The bar is the best of the three keys in each version, chosen per stage on the final result: this favours the control.
+ 
+-**Simple learners, exact rule.** Score = w · φ(x), with w starting at zero. On each lesson or replay with pulse sign s: w ← w + s φ(x) / (‖φ(x)‖² + 10⁻⁹). φ is the raw input or the random features above. There is no learning rate to tune: because w starts at zero and every update would be multiplied by the same rate, a rate only rescales all scores and cannot change any ranking.
++**Simple learners, exact rule.** Score = w · φ(x), with w starting at zero. On each lesson or replay with pulse sign s: w ← w + s φ(x) / (‖φ(x)‖² + 10⁻⁹). φ is the raw input (the dense vector of Eyes v2 current on each photoreceptor, zero where the stimulus is absent) or the random features above. There is no learning rate to tune: because w starts at zero and every update would be multiplied by the same rate, a rate only rescales all scores and cannot change any ranking.
+ 
+ ### 7.3 Stage 1: the known forgetting failure, outside chess
+@@ -287,5 +288,5 @@ Every comparison arm receives **identical online lessons** to the diary arm (sam
+ **Question:** does the diary stop the measured damage to old associations, where this learner is known both to learn and to forget?
+ 
+-**Contract.** Reuse the cubic-exit task's harness (`run-eye-graph-memory-cubic.mjs`; [specification](../../../research/reports/memory-retention-continuation-2026-11-01/cubic-exit-spec.md)) through an adapter. Six seeds, as the original. Four items learned in sequence, each a choice between two injected, normalized Kenyon-cell codes; one unknown trial in eight; then the delay with noise; then reversal of item 0. Teaching level is the task's prediction-scaled function (`TONIC + (pulse − TONIC) × scale`), recomputed at replay from the stored valence and the present prediction. Replay is inserted after each feedback trial in every phase that has feedback; the delay has none. The task's own arms (informative, absent, shuffled, disabled) are kept; the arms of section 7.2 except mixed order, learning off (the task's disabled arm serves), case recall and the learners are added, making 12 arms. Complete state includes the task's slow store. Planning estimate: the original 24 arm runs took 6,157 s at 299 MiB peak; 12 arms × 6 seeds with replays is about 6–7 hours. A stage 1 protocol file freezes the adapter, the exact per-seed formulas below and the seed list before any run.
++**Contract.** Reuse the cubic-exit task's harness (`run-eye-graph-memory-cubic.mjs`; [specification](../../../research/reports/memory-retention-continuation-2026-11-01/cubic-exit-spec.md)) through an adapter. Six seeds, 4101–4106, as the original. Four items learned in sequence, each a choice between two injected, normalized Kenyon-cell codes; one unknown trial in eight; then the delay with noise; then reversal of item 0. Teaching level is the task's prediction-scaled function (`TONIC + (pulse − TONIC) × scale`), recomputed at replay from the stored valence and the present prediction. Replay is inserted after each feedback trial in every phase that has feedback; the delay has none. The task's own arms (informative, absent, shuffled, disabled) are kept; the arms of section 7.2 except mixed order, learning off (the task's disabled arm serves), case recall and the learners are added, making 12 arms. Complete state includes the task's slow store. Planning estimate: the original 24 arm runs took 6,157 s at 299 MiB peak; 12 arms × 6 seeds with replays is about 6–7 hours. A stage 1 protocol file freezes the adapter, the exact per-seed formulas below and the seed list before any run.
+ 
+ **Per-seed pass (every seed, diary arm):**
+@@ -334,4 +335,6 @@ The original six-seed median marks are reported beside these for every arm. Per-
+ **Worked example of conditions 1 to 5.** After A the diary arm has 34 of 48 A pairs right (10 above chance). After B, 25 of those 34 are still right (74%, condition 2 passes) and 6 pairs that were wrong are now right, so A after B is 31: net `(31 − 24) / (34 − 24) = 0.70`, exactly the cutoff, which passes because the rule says at least. B ends at 33 with the diary and 34 without it: `(33 − 24) / (34 − 24) = 0.90`, also exactly at its cutoff, so condition 5 passes. Had only 23 of the 34 stayed right (68%), condition 2 would fail even with the same net score.
+ 
++**Worked example of the unknown-board rule.** Diary arm: 192 eligible development boards, 183 scored (90 good) and 9 unknown. Other arm: 192 scored, 90 good. Worst case for the diary: its 9 unknowns score 0, so 90 of 192 against 90 of 192: difference 0, and no advantage can pass. Left out instead, 90 of 183 (0.49) against 90 of 192 (0.47) would look like an advantage out of nothing; that version is reported beside the main result and cannot pass alone.
++
+ **Order is not counterbalanced.** Every run learns A first. A pass says the first-taught idea A survived B; it does not show that any first-taught idea survives.
+ 
+@@ -344,4 +347,6 @@ The original six-seed median marks are reported beside these for every arm. Per-
+ Use [Phase B and Phase C of the transfer protocol](../research-goals/transfer-and-combination-protocol-2026-11-03.md) unchanged, on the fly's own choices. For each fly arm of the protocol (Phase-A, fresh, shuffled, single-idea and two-idea flies) add a version with a diary, and add the case-recall arms (diary and full history) and both learners with the diary. Each diary belongs to one fly and travels with its learner state across phases; its capacity is one quarter of that fly's total planned lessons across all its phases, fixed before data. The protocol's filler trials carry feedback the fly receives, so they are lessons and enter the diary like any other. The fly is always tested with the diary removed. Each locked set is opened once.
+ 
++**Who is trained on what.** Each fly arm chooses for itself, as its protocol specifies, so fly arms see different lessons. Each case-recall arm and each learner with the diary is fed the complete receipt stream of the fly it is compared with, in the same order: the same lessons and pulses, plus that fly's replays, taken from its receipts. The protocol's missing-idea and filler conditions are kept as the protocol defines them, so a control that lacks an idea is never given the omitted lessons. For the central attribution test (the full fly against the case-recall and learner arms), the learner arms are matched to the evaluated full fly's actual lessons and replay tape, so the learner is the only difference. The auditor checks that each matched arm's receipt stream equals its fly's, byte for byte.
++
+ A **reasoning claim for the fly plus diary** at Phase C step 2 (three ideas) requires, in all three runs, with every audit passed:
+ 
+@@ -357,5 +362,5 @@ Its wording is then limited to: the fly with a disclosed replay diary combined t
+ 1. **Leak:** a diary field cannot be rebuilt from receipts; invisible details change the replay tape; a validation or test input appears in the diary; a test process loads the diary. The run is invalid.
+ 2. **Nothing to keep:** the fly does not acquire the first lessons. Uninterpretable.
+-3. **No forgetting to repair:** the no-diary arm already keeps A. The stage says nothing about the diary.
++3. **Prerequisite not met:** the stage's forgetting prerequisite fails: section 7.3 for stage 1, and for stage 2 the no-old-replays arm (which learned A exactly as the diary arm did) must forget during B, or the stage says nothing about the diary. The no-diary arm's result is reported beside it, but it does not decide the prerequisite.
+ 4. **Extra practice explains it:** the diary does not beat filler replay (unless filler is shown damaging) or the moved-timing arm.
+ 5. **The verdict is not needed:** the diary does not beat the no-pulse arm.
+@@ -380,5 +385,5 @@ The researcher's Volume 3 note allows outsourcing working memory. That store wou
+ 3. Approve stage 2's teacher-chosen lesson tape as a disclosed development mechanism test.
+ 4. Confirm placement: diary arms in Volume 3 as assisted retention; no-diary arms in Volume 2; any Volume 4 limit only with a separate proof.
+-5. Order: stage 1 can be built first. Stage 2 needs the twin-pair generators, which do not exist yet, a game manifest showing enough eligible boards for three disjoint practice sets (1,200 training-pool games exist; v8 used 750 positions from 198 games), and worked scoring examples for the boundary cases above. The three-board feedback test and the 2026-11-09 decision remain open and are unchanged.
++5. Order: stage 1 can be built first. Stage 2 needs the twin-pair generators, which do not exist yet, a game manifest showing enough eligible boards for three disjoint practice sets (1,200 training-pool games exist; v8 used 750 positions from 198 games), and worked scoring examples for the boundary cases above. Launch gates for stage 2, checked before its run: G1, the game manifest with eligible-board counts for the three disjoint sets; G2, the twin-pair generators with unit tests; G3, the worked scoring examples committed and checked against the scorer. These gates are not design defects; the stage does not start until each is met. The three-board feedback test and the 2026-11-09 decision remain open and are unchanged.
+ 
+ ## 12. Changes from revision 1 (review round 1)
+@@ -436,4 +441,16 @@ Reviews: [folder](../../../research/reports/replay-diary-design-review-2026-11-1
+ Arm counts and runtime updated: 12 arms in each stage; stage 2 about 229,000 forward passes.
+ 
++**Revision 8: the three round 2 reviews** (on revision 7, school account at medium effort; [peer](../../../research/reports/replay-diary-design-review-2026-11-17/design-review-r2-peer.md), [foundational](../../../research/reports/replay-diary-design-review-2026-11-17/design-review-r2-foundational.md), [scientific skeptic, round 3](../../../research/reports/replay-diary-design-review-2026-11-17/design-review-r3-skeptic.md)). Each returned approve with required changes. Every required change is adopted:
++
++1. **Peer, required to build: random-feature control unspecified.** The projection, rectified kept values, tie rule, rounding of k and the untrained Kenyon-cell key are now fixed (section 7.2).
++2. **Peer, required to launch: reproducibility.** Stream derivation, generators and run seeds are fixed (section 4.8). Launch gates G1 to G3 are named (section 11).
++3. **Peer, required to launch, and skeptic, required to build: the failure summary.** Section 8 now defers to each stage's own prerequisite.
++4. **Peer, optional: replay publication** is now in the one-page loop.
++5. **Foundational, required to build: stage 3 control experience.** Section 7.5 states who is trained on what; the learner arms are matched to the evaluated fly's receipts.
++6. **Skeptic, required to build, and foundational, optional: the reference arm's state.** Exact equality holds only through the first block, and no state is copied between arms afterwards. The "each later block" wording is removed (section 7.2).
++7. **Scoring boundary example** added (section 7.4), as the peer asked.
++
++G1 to G3 are launch gates for stage 2, not design changes. Revision 8 has not been reviewed yet; the reviewers must check it.
++
+ ## Sources
+ 
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "rg -n 'publish replay update|Each run seed|Case recall, exact|Simple learners, exact|Who is trained on what|A \\*\\*reasoning claim|Prerequisite not met|Launch gates|Worked example of the unknown|Every comparison arm|No old replays|Moved timing|A lesson has four|Receipt.\\*\\*|Log the dopamine|All stages use' documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md; rg -n 'seed|Development set|controls|Full fly|early stops' documentation/design/research-goals/transfer-and-combination-protocol-2026-11-03.md; Get-Content research/reports/replay-diary-design-review-2026-11-17/design-review-r2-foundational.md -TotalCount 75" in C:\Users\ethan\Documents\fly-chess-research
+ succeeded in 350ms:
+82:    publish replay update, log and random states (one atomic write)
+151:A lesson has four steps with separate records. The diary is written only from step 4.
+156:4. **Receipt.** Written atomically after the update is saved.
+177:4. Log the dopamine factor per output type, the number of connections changed and the summed absolute change.
+207:Each run seed derives separate streams. The stream seed is the first 8 bytes of the SHA-256 of the UTF-8 text `<run seed>|<label>`, read as a big-endian unsigned 64-bit integer. Labels: `tape`, `choice`, `reservoir`, `replay`, `shuffle`, `filler`, `features`. Each stream is `xoshiro256**` with its 256-bit state filled by four SplitMix64 outputs from the stream seed (the standard constructions). Uniform integer in 0 to m−1: draw 64-bit outputs, accept one only if it is below 2^64 − (2^64 mod m), and return it mod m. Uniform real in [0, 1): the top 53 bits divided by 2^53. Normal (random projection only): Box–Muller from two uniform reals, with the first replaced by 2^−53 if it is 0. Permutations: Fisher–Yates driven by the uniform-integer rule. Run seeds are fixed before any run: stage 1 uses the original six seeds 4101–4106 (development data, as the original spec states); stage 2 uses 20261201, 20261202 and 20261203. One stream never feeds another's decisions, so, for example, admitting a lesson cannot change which entry is replayed next except through the diary's contents.
+248:All stages use development sets until stage 3 opens the transfer protocol's locked sets, once. Bootstrap: resample whole games with replacement 10,000 times, seed 20261117, and take the 2.5% point of the paired difference as the lower limit, as in the [transfer protocol](../research-goals/transfer-and-combination-protocol-2026-11-03.md) (which uses seed 20261103 for its own gates). Every pass rule must hold in every run or seed.
+264:Every comparison arm receives **identical online lessons** to the diary arm (same inputs, same pulses, same order). The five replay controls (no old replays, filler, moved timing, no pulse, event-shuffled) are copies of the diary arm's replay log that change **only the replays of old lessons**, meaning entries written in an earlier block. Replays of the current block's own lessons stay exactly as in the diary arm. So through the first block every replay control is in exactly the diary arm's state, and after that the only difference is what happened to the old-lesson replays, which is what the main hypothesis is about. No state is copied between arms after the first block, so later differences are the accumulated effect of each arm's own replay changes, not an isolated intervention from identical starts. The dry run checks that the first-block snapshot of each replay control equals the diary arm's, bit for bit. Stage 2 does this with a fixed tape. In stage 1 the diary arm makes its own choices, as in the original task, and each added arm is **yoked** to them: it receives the diary arm's chosen input and pulse at every trial instead of choosing. The task's four original arms keep their own choices and serve only to reproduce the original marks. The case-recall arms and the two learners are run in stage 2 as descriptive results and are decisive only in stage 3.
+270:| **No old replays** | Identical to the diary arm, except that every old-lesson replay is skipped: no step at all. It matches the diary arm bit for bit through the first block, gets the same lessons and the same current-block replays, and after the first block carries its own state forward (nothing is copied from the diary arm) | The reference for forgetting and for filler damage: it differs from the diary only by the missing old-lesson replays |
+272:| **Moved timing** | Copies the diary arm's replay log from the same run. Every replay is kept. For each block (stage 1: each item block and the reversal; stage 2: A and B), the replays made during that block of entries from earlier blocks are moved, in the same order, to the end of the block before it, after that block's test snapshot and before the next block starts; replays of the current block's own entries stay where they were | Rival 2b |
+282:**Case recall, exact rule.** Keys, all fixed before data with the `features` stream: (a) raw input vector; (b) Kenyon-cell rates: the rates of the untrained learner in one forward pass on the input, with no learning and no dopamine; (c) random features: a projection z = Wx, where W has one row per Kenyon cell with independent standard normal entries drawn from the `features` stream, row by row. Keep the k units with the largest z (ties go to the lower unit index); the kept units carry max(z, 0) and all others are zero. k is the mean number of active Kenyon cells per development input at the untrained state, rounded half up, computed once from the development inputs before any data. Each key is scaled to unit length; distance is Euclidean. A candidate's score is the inverse-distance-weighted mean of the pulse signs (+1 reward, −1 punishment) of its 3 nearest stored lessons, weight 1 / (d + 10⁻⁹); if any stored lesson is at distance below 10⁻¹², the score is the mean sign over those exact matches only. Ties and tie tolerance follow the fly's scoring. The bar is the best of the three keys in each version, chosen per stage on the final result: this favours the control.
+284:**Simple learners, exact rule.** Score = w · φ(x), with w starting at zero. On each lesson or replay with pulse sign s: w ← w + s φ(x) / (‖φ(x)‖² + 10⁻⁹). φ is the raw input (the dense vector of Eyes v2 current on each photoreceptor, zero where the stimulus is absent) or the random features above. There is no learning rate to tune: because w starts at zero and every update would be multiplied by the same rate, a rate only rescales all scores and cannot change any ranking.
+337:**Worked example of the unknown-board rule.** Diary arm: 192 eligible development boards, 183 scored (90 good) and 9 unknown. Other arm: 192 scored, 90 good. Worst case for the diary: its 9 unknowns score 0, so 90 of 192 against 90 of 192: difference 0, and no advantage can pass. Left out instead, 90 of 183 (0.49) against 90 of 192 (0.47) would look like an advantage out of nothing; that version is reported beside the main result and cannot pass alone.
+349:**Who is trained on what.** Each fly arm chooses for itself, as its protocol specifies, so fly arms see different lessons. Each case-recall arm and each learner with the diary is fed the complete receipt stream of the fly it is compared with, in the same order: the same lessons and pulses, plus that fly's replays, taken from its receipts. The protocol's missing-idea and filler conditions are kept as the protocol defines them, so a control that lacks an idea is never given the omitted lessons. For the central attribution test (the full fly against the case-recall and learner arms), the learner arms are matched to the evaluated full fly's actual lessons and replay tape, so the learner is the only difference. The auditor checks that each matched arm's receipt stream equals its fly's, byte for byte.
+351:A **reasoning claim for the fly plus diary** at Phase C step 2 (three ideas) requires, in all three runs, with every audit passed:
+364:3. **Prerequisite not met:** the stage's forgetting prerequisite fails: section 7.3 for stage 1, and for stage 2 the no-old-replays arm (which learned A exactly as the diary arm did) must forget during B, or the stage says nothing about the diary. The no-diary arm's result is reported beside it, but it does not decide the prerequisite.
+387:5. Order: stage 1 can be built first. Stage 2 needs the twin-pair generators, which do not exist yet, a game manifest showing enough eligible boards for three disjoint practice sets (1,200 training-pool games exist; v8 used 750 positions from 198 games), and worked scoring examples for the boundary cases above. Launch gates for stage 2, checked before its run: G1, the game manifest with eligible-board counts for the three disjoint sets; G2, the twin-pair generators with unit tests; G3, the worked scoring examples committed and checked against the scorer. These gates are not design defects; the stage does not start until each is met. The three-board feedback test and the 2026-11-09 decision remain open and are unchanged.
+398:| Peer 4 and skeptic 2: moved-timing arm dropped new-block replays; own-choice arms see different lessons | Moved timing keeps every replay; stage 2 uses one fixed tape; dopamine factors and update sizes logged; feedback-cut descriptive arm |
+446:2. **Peer, required to launch: reproducibility.** Stream derivation, generators and run seeds are fixed (section 4.8). Launch gates G1 to G3 are named (section 11).
+14:- **Development set:** a separate set used only to choose the saved memory snapshot.
+16:- **Bootstrap lower limit:** resample whole games with replacement 10,000 times (seed 20261103) and take the 2.5% point of the difference in correct pairs. Implemented as `pairGate` in [transfer-evaluation-v1.mjs](../../../.codebase/src/neural-learning/transfer-evaluation-v1.mjs).
+17:- **Run:** one complete training and test with one puzzle order and one choice seed. Three runs are not three flies.
+25:5. **Equal practice:** every arm gets the same number of feedback trials in the same order, with the same seeds. An arm that skips a training block gets the same number of **filler trials** instead: the non-chess arbitrary-pairing trials of the 2026-11-01 pilot, which carry feedback but no chess fact.
+119:**Arms:** Full fly (ideas 1 and 2); idea-1-only fly (480 filler trials in place of idea 2); idea-2-only fly (filler in place of idea 1); fresh fly (960 filler trials); shuffled-feedback fly; plasticity-off fly; simple learner; similar-board recall; exact-recall store; and the **fixed-sum combiner**, which adds the idea-1-only fly's and idea-2-only fly's move scores with a fixed rule. The fixed-sum combiner tests the review's warning that a hand-written rule could combine two answers without the fly learning to combine.
+123:1. **C1-a:** Full fly at least 44/60.
+141:**Arms:** Full fly; each two-idea fly (filler in place of the missing idea); each single-idea fly; fresh fly; shuffled-feedback fly; plasticity-off fly; simple learner; similar-board recall; exact-recall store; fixed-sum combiner of the three single-idea flies.
+145:1. **C2-a:** Full fly at least 44/60.
+154:3. Training stops at the fixed trial counts. Snapshot choice and early stops follow the Phase B rules.
+161:- Full fly no better than its best fewer-idea arm: no combination.
+162:- Full fly no better than the fixed-sum combiner: the combination can be explained by a fixed addition of separate scores.
+163:- Full fly no better than similar-board recall or the simple learner: input similarity or a simpler learner explains the result.
+**VERDICT: APPROVE WITH REQUIRED CHANGES �?" building allowed after the required-BUILD clarification below.**
+
+Reviewed revision 7; its blob matches `8d1fc4f2c5b8717d9ad325b06c9ba2a6a51bf991`. Scope: Volume 3, *Process* and *Evidence*.
+
+1. **RESOLVED:** Full-history recall and nonlinear-feature controls are added; attribution explicitly leaves untested case classifiers unresolved.
+2. **RESOLVED:** Offset-cancelled comparisons and an all-legal choice requirement now accompany the combination gate.
+3. **RESOLVED:** Failed mixed-order learning establishes a failed schedule, not a capacity ceiling.
+4. **RESOLVED:** Assisted retention belongs to Volume 3; Properties 1 and 2 remain unmet.
+5. **RESOLVED:** Removal is explicitly this candidate�?Ts restriction, rather than a requirement for every permitted memory.
+
+**New findings**
+
+1. **required-BUILD �?" Stage 3 leaves the decisive controls�?T experience ambiguous.**  
+   **Evidence:** [Design:263](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:263) requires every comparison arm to receive identical online inputs and pulses. [Design:344](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:344) instead invokes the unchanged protocol on each fly�?Ts own choices, including arms deliberately missing ideas. The explicit matching arrangements cover stages 1 and 2 only.  
+   **Consequence:** Different implementations could give the simple learners different experiences, or accidentally give missing-idea controls the omitted lessons. Either would undermine the attribution comparison.  
+   **Smallest fix:** Specify stage 3 separately: identify whose complete receipts train each case-recall and simple-learner control; preserve the protocol�?Ts missing-idea and filler conditions; state which fly arms choose independently. For the central attribution test, match the simple learners to the evaluated full fly�?Ts actual lessons and replay tape.
+
+2. **optional �?" The new reference does not start every later block in the diary arm�?Ts state.**  
+   **Evidence:** [Design:269](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:269) claims that equality. Stage 1 has four successive item blocks; skipping old replays during the second block can already change the reference�?Ts state before the third. Moved-timing practice also deliberately changes the state after the preceding snapshot.  
+   **Consequence:** Later differences measure accumulated replay effects, rather than an isolated intervention from identical starting states. The comparison remains useful, but its explanation overstates the matching.  
+   **Smallest fix:** Limit exact equality to the first-block snapshot and describe subsequent comparisons as continuous training with accumulated differences.
+
+The one-page interface adds no direct diary-to-scoring operation; its replay output returns through the learner�?Ts teaching step.
+
+**Strongest supportable sentence, after clarification:** �?oReplaying previously received lessons improved assisted retention and performance on unfamiliar three-idea chess problems over the specified controls, with the diary absent during evaluation; an untested case classifier in the learned connections remains a possible explanation.�??
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "rg -n -m 2 'Kenyon.cells|photoreceptors|chunk|projection' .codebase/src/chess-input/eyes-v2.mjs research/reports/engineered-memory-test-v8-2026-11-07/README.md; rg -n 'stage 3|protocol|seed' research/reports/replay-diary-design-review-2026-11-17/design-review-r2-peer.md; rg -n '"'^'"\\*\\*|"'^3'"\\.' documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md | Select-String 'Persistence|prerequisite|reasoning claim'" in C:\Users\ethan\Documents\fly-chess-research
+ succeeded in 412ms:
+7:3. **RESOLVED — Stage 1 adaptation.** The injected codes, prediction-scaled teaching, complete state, six seeds and revised per-seed gates are explicit. The adapter protocol remains a launch prerequisite (lines 289–301).
+9:5. **STILL OPEN — Reproducibility; required-LAUNCH.** Unknown handling and denominators are materially improved. Game manifests, eligibility counts and worked boundary examples remain pending (line 382). Also freeze the run seeds, random-number generator and hash-to-stream conversion: naming SHA-256 and stream labels alone does not determine the draws (line 206).
+
+302:**Prerequisite:** the no-old-replays arm must show damage after new learning in at least one seed: an item lost, 
+or a ratio below its mark, at the end of learning or after the reversal. The original run's informative arm, which had 
+no replays at all, did: after the reversal, seeds 4102, 4105 and 4106 each lost one unrelated association (raw records 
+rechecked 2026-11-17; seed 4102's item 3 margin went from 0.140130 to -0.020325). If this rerun does not, stage 1 
+cannot test the diary.
+320:**Prerequisite (forgetting exists):** the no-old-replays arm, which learned A exactly as the diary arm did, 
+forgets during B: its kept share (condition 2 below) or net retention (condition 3) is below 0.70. Otherwise there is 
+no measured forgetting to repair, and the stage says nothing about the diary. The no-diary arm's forgetting is 
+reported beside it.
+364:3. **Prerequisite not met:** the stage's forgetting prerequisite fails: section 7.3 for stage 1, and for stage 2 
+the no-old-replays arm (which learned A exactly as the diary arm did) must forget during B, or the stage says nothing 
+about the diary. The no-diary arm's result is reported beside it, but it does not decide the prerequisite.
+429:3. **Stage 2 prerequisite** now also requires the no-diary arm to have acquired A.
+447:3. **Peer, required to launch, and skeptic, required to build: the failure summary.** Section 8 now defers to each 
+stage's own prerequisite.
+
+
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$p='"'documentation/design/research-goals/transfer-and-combination-protocol-2026-11-03.md'; "'$t=Get-Content $p; 72..82 + 145..158 | ForEach-Object { "${_}: $($t[$_-1])" }; rg -n '"'lesson|test|validation|state\\(' documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md | Select-String '"'^203:|''^277:|''^278:|''^348:|''^356:'"'" in C:\Users\ethan\Documents\fly-chess-research
+ succeeded in 296ms:
+72: **Stopping rules:**
+73: 
+74: 1. Do not start unless Phase A passed all six section 9 rules, the checker and generator passed audit, and the input check found zero collisions.
+75: 2. Training stops at exactly 480 trials. The snapshot is the checkpoint with the most correct development pairs; a tie goes to the earliest. If any single development count is lower than at the previous checkpoint by more than 10%, that checkpoint cannot be chosen.
+76: 3. A run stops early only for a failed safety check before training starts, a failed audit or a software fault. It is reported and repeated in a new run folder with the same numbers. A fault after the locked set is opened spends that set.
+77: 4. The locked set is opened once. No limit is lowered and no new try uses the same set.
+78: 
+79: **Results:**
+80: 
+81: - All pass: earlier learning transfers to an unfamiliar problem in this model and task.
+82: - B3 fails: no transfer benefit; the thesis failed in this test.
+145: 1. **C2-a:** Full fly at least 44/60.
+146: 2. **C2-b:** at least 15/20 on each of the three pair groups. (At random, the chance for one group is 2.1%.)
+147: 3. **C2-c:** at least 6 more pairs than every other arm, including the best two-idea fly and the fixed-sum combiner, each with bootstrap lower limit above 0.
+148: 4. **C2-d and C2-e:** retention and audit, as in C1.
+149: 
+150: ### Stopping rules for C1 and C2
+151: 
+152: 1. C1 does not start unless Phases A and B passed. C2 does not start unless C1 passed.
+153: 2. The checker audit, the generators and the score-expression check must pass first.
+154: 3. Training stops at the fixed trial counts. Snapshot choice and early stops follow the Phase B rules.
+155: 4. Each locked set is opened once. No pass score is lowered after data.
+156: 
+157: ### Results
+158: 
+
+203:The complete learner state is saved at every checkpoint: connection strengths, eligibility traces and any slow 
+stores the learner keeps (stage 1's learner has a reservoir state), the diary, the reservoir counter and every 
+random-stream state. One lesson's update, receipt and diary admission are published together in one atomic write 
+(temporary file, flush, rename), with SHA-256 hashes in the checkpoint manifest, so a resume never has one without the 
+others. The replay that follows is published in its own atomic write (its update, its log entry and the random-stream 
+states) before the next lesson starts, so a resume restarts at a lesson boundary. Resume goes into a new directory 
+after checking input hashes. Test and validation processes receive only the learner state, never the diary.
+278:| **Case recall** | At test, scores each candidate from stored lessons (exact specification below), in two 
+versions: the final diary, and the **full history** of every lesson | Rival 5 |
+
+
+
+codex
+**VERDICT: APPROVE WITH REQUIRED CHANGES.** Building is allowed after the stage 3 control input contract is fixed. This review covers revision 8, blob `47e58441824ef4754f63a99ea5632ab46386d019`.
+
+1. **RESOLVED — Random-feature control.** The projection distribution, retained values, feature ties and rounding are now specified. [Section 7.2](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:282)
+2. **STILL OPEN — Reproducibility before launch.** Stream derivation and stage 1 and 2 seeds are pinned. Box–Muller still leaves the choice and order of outputs unspecified, so two implementations can produce different feature matrices. Pin the output convention with a known-answer check. The stage 2 launch gates are explicit and their artifacts remain pending. [Random streams](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:207), [launch gates](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:387)
+3. **RESOLVED — Failure summary.** It now uses each stage’s forgetting prerequisite and identifies *no old replays* as the stage 2 reference. [Section 8](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:364)
+4. **RESOLVED — Replay publication.** The one-page loop now includes atomic publication of the replay update, log and random states. [Practice loop](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:82)
+7. **RESOLVED — Unknown-board example.** The example keeps all 192 eligible boards in both denominators and shows how dropping unknown boards creates an apparent advantage. [Worked example](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:337)
+
+**New findings**
+
+1. **required-BUILD — Stage 3 matches full receipts where it should match delivered inputs.** The new rule feeds controls the complete receipt stream and requires byte equality. Replay records include fly-specific dopamine and update measurements. This leaves an implementation free to expose the fly’s internal measurements to a control, and leaves open whether repeated replays count as extra neighbors in full-history recall. Define a matched tape containing only the delivered stimulus, external teaching input, event kind and order. Check byte equality on that tape, keep outcome logs separate, and specify which events enter each recall store. [Stage 3 matching](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:349), [replay logging](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:177), [case-recall arms](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:278)
+2. **required-LAUNCH — Stage 3 can compare unequal training horizons.** The new rule gives controls the complete stream, while the inherited protocol may select an earlier fly checkpoint. A control could therefore see lessons the scored fly state never received. For each locked comparison, freeze the matched controls at the exact receipt cutoff of the selected fly snapshot, including whether its last replay was applied. [Stage 3 matching](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:349), [checkpoint selection](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/research-goals/transfer-and-combination-protocol-2026-11-03.md:75)
+tokens used
+182,822
+**VERDICT: APPROVE WITH REQUIRED CHANGES.** Building is allowed after the stage 3 control input contract is fixed. This review covers revision 8, blob `47e58441824ef4754f63a99ea5632ab46386d019`.
+
+1. **RESOLVED — Random-feature control.** The projection distribution, retained values, feature ties and rounding are now specified. [Section 7.2](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:282)
+2. **STILL OPEN — Reproducibility before launch.** Stream derivation and stage 1 and 2 seeds are pinned. Box–Muller still leaves the choice and order of outputs unspecified, so two implementations can produce different feature matrices. Pin the output convention with a known-answer check. The stage 2 launch gates are explicit and their artifacts remain pending. [Random streams](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:207), [launch gates](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:387)
+3. **RESOLVED — Failure summary.** It now uses each stage’s forgetting prerequisite and identifies *no old replays* as the stage 2 reference. [Section 8](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:364)
+4. **RESOLVED — Replay publication.** The one-page loop now includes atomic publication of the replay update, log and random states. [Practice loop](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:82)
+7. **RESOLVED — Unknown-board example.** The example keeps all 192 eligible boards in both denominators and shows how dropping unknown boards creates an apparent advantage. [Worked example](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:337)
+
+**New findings**
+
+1. **required-BUILD — Stage 3 matches full receipts where it should match delivered inputs.** The new rule feeds controls the complete receipt stream and requires byte equality. Replay records include fly-specific dopamine and update measurements. This leaves an implementation free to expose the fly’s internal measurements to a control, and leaves open whether repeated replays count as extra neighbors in full-history recall. Define a matched tape containing only the delivered stimulus, external teaching input, event kind and order. Check byte equality on that tape, keep outcome logs separate, and specify which events enter each recall store. [Stage 3 matching](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:349), [replay logging](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:177), [case-recall arms](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:278)
+2. **required-LAUNCH — Stage 3 can compare unequal training horizons.** The new rule gives controls the complete stream, while the inherited protocol may select an earlier fly checkpoint. A control could therefore see lessons the scored fly state never received. For each locked comparison, freeze the matched controls at the exact receipt cutoff of the selected fly snapshot, including whether its last replay was applied. [Stage 3 matching](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:349), [checkpoint selection](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/research-goals/transfer-and-combination-protocol-2026-11-03.md:75)

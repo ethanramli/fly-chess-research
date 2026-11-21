@@ -1,6 +1,6 @@
 # Literature and source notes
 
-This folder holds source reviews, biology notes, implementation comparisons and evidence registers. Start with the source-to-solution register for how published work maps to candidate mechanisms; dated review folders preserve their own access limits and conclusions. Register externally sourced solutions before experimental use, and preserve source access/coverage, supported claims, approximations and failed implementations.
+Use this folder to find what the project read, what each source supports, and how the project adapted it. Start with the [source-to-solution register](source-solution-register.md) to trace a proposed mechanism to its sources and assumptions. Dated review folders record which parts of each source were actually read and what remains unverified. Before using an outside solution in an experiment, record its source, supported claim, adaptations, assumptions and test status in the register. Preserve failed implementations too.
 
 ## Folder map
 

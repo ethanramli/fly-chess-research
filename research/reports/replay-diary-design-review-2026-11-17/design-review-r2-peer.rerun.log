@@ -1,0 +1,1019 @@
+OpenAI Codex v0.170.0
+--------
+workdir: C:\Users\ethan\Documents\fly-chess-research\research\reports\replay-diary-design-review-2026-11-17
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 01a1e9db-6f73-73f2-8009-9802698d85cc
+--------
+user
+Lead's ledger for your round-1 findings (peer reviewer):
+1. Invisible FEN counters changed supersession: fixed. The diary now stores the delivered input (Eyes v2 stimulation, or stage 1's injected code), not board text; supersession and all identity use the input hash; stage 0 check 3 tests that invisible details cannot change the replay tape (sections 4.1, 4.5, 7.1).
+2. Teaching path and receipts: fixed. Section 4.1 defines a four-step lesson boundary (choice, teacher, delivery, receipt) with certificates only in an audit log the diary cannot open; delivery is one forward pass with input and pulse together, as probe-wide-learning-v3.mjs lines 89-91; the auditor recomputes the delivered input and update for every replay in development runs (stage 0 check 2). The certificate-selected path is used only for stage 2's declared teacher-chosen tape.
+3. Stage 1 copy: fixed. Section 7.3 contract: adapter around run-eye-graph-memory-cubic.mjs, six seeds, injected normalized codes stored as the stimulus, prediction-scaled teaching recomputed at replay from the stored valence, complete state including the task's slow store, per-seed versions of marks R1-R4 (stricter than the medians, reported beside them), a stage 1 protocol file to freeze formulas and seeds before any run; the mixed-order arm is removed from stage 1.
+4. Controls: fixed. Moved timing keeps every replay and moves only earlier-block entries' replays; event-level shuffle; stage 2 uses one fixed tape for all arms; exact case-recall and learner rules in 7.2.
+5. Computability (LAUNCH): mostly fixed in 7.4 (unknowns, ties, king moves, ineligible boards, quiet moves), 4.4 (Algorithm R), 4.8 (seed streams), 7.1 check 5 (chi-square scheme). Game manifest with eligibility counts and worked boundary examples are listed as required before launch (section 11 item 5).
+
+Round 2. Same rules as round 1: review only; do not edit, create, delete or commit files; do not start subagents or other reviewers; read-only commands are allowed.
+
+The proposal is now revision 2, git blob 5e22be792b2f49cb69628c702863fdaacef25c84, at the same path:
+  documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md
+Revision 1 (the text you reviewed) is preserved at research/reports/replay-diary-design-review-2026-11-17/design-revision-1.md (blob 62c72ba4). Section 12 of revision 2 maps every round-1 finding from all three reviewers to its change. All required findings were adopted; none was declined. The lead's ledger for YOUR findings is below.
+
+Check only:
+(a) each of your round-1 findings: mark it RESOLVED, or STILL OPEN with the reason and evidence;
+(b) new problems introduced by the changed text (sections 2, 4.1-4.9, 6, 7.2-7.5, 8, 11). Do not re-review unchanged text unless a change makes it wrong.
+
+Return markdown:
+1. VERDICT: APPROVE, APPROVE WITH REQUIRED CHANGES (building allowed after the changes), or REJECT.
+2. One line per round-1 finding: number, RESOLVED or STILL OPEN, reason.
+3. New findings only, most severe first: severity (required-BUILD, required-LAUNCH, optional), claim, evidence (file:line), consequence, smallest fix.
+4. The strongest sentence the current revision, executed as written, could support.
+Be brief.
+
+Update before this round ran: earlier attempts stopped at usage limits on two accounts. Since then the lead has made further edits, all recorded in section 12 of the design and in research/reports/replay-diary-design-review-2026-11-17/lead-recheck-round2.md. Review revision 7, git blob 8d1fc4f2c5b8717d9ad325b06c9ba2a6a51bf991, at the same path. Earlier revisions are preserved in the review folder as design-revision-2.md to design-revision-6.md.
+- Revision 3: four small fixes from the lead's own recheck (event-level shuffle within each block, unknown trials, sawtooth snapshots, named boards and tuning block).
+- Revision 4: adds the section "The design on one page" (picture, module interface, data, practice loop, worked example, files to build). It should restate sections 4.1-4.8 without adding rules: check that it does, and that its interface really has no path from the diary to move scoring.
+- Revision 5: six fixes from the lead's second read (stage 1 arms yoked to the diary arm's choices; supersession disclosure; moved-timing placement after the earlier block's snapshot; replay persistence; stage 3 diary across phases and filler trials; stage 2 arm count).
+- Revision 6: the lead's solo deep-in-thought pass. The replay controls change only replays of old lessons (entries from earlier blocks), so through the first block each is in exactly the diary arm's state; stage 1's delay condition is "not worse", because raw records show delay losses happen with no lessons and so no replays; plus runtime, entry size, bootstrap seed, tie tolerance, disjoint development boards, early-stopped runs, a worked example, order limit.
+- Revision 7: the scientific skeptic's round 2 (design-review-r2-skeptic.md in the review folder): a new "no old replays" arm (the diary arm with old-lesson replays skipped) is the reference for filler damage, the forgetting prerequisite and the benefit conditions; the all-legal measure keeps every eligible board in the denominator and comparisons must survive the worst case for the diary on unknown boards; the simple learners' learning-rate sweep is removed because a rate only rescales scores.
+Check all of these edits too. Your verdict should be on revision 7 as a whole.
+
+warning: Combined user instructions use 50429 bytes, above the 32768-byte `project_doc_max_bytes` setting. The total includes global and thread instructions. The limit applies only to project files.
+hook: UserPromptSubmit
+hook: UserPromptSubmit Completed
+codex
+Revision 7’s hash is verified. The remaining checks focus on control timing, stage 1’s replay adapter, and whether the one-page interface agrees with the detailed rules.
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'C:/Users/ethan/.agents/skills/README.md' -Encoding UTF8 | Select-Object -First 70" in C:\Users\ethan\Documents\fly-chess-research\research\reports\replay-diary-design-review-2026-11-17
+ succeeded in 396ms:
+# Skill router
+
+Read this entry point at the start of each work request, before opening task skills. Plain conversation needs no routing. Reuse an unchanged copy already in context; re-route when the task changes.
+
+## Select, load, work
+
+1. Identify the requested result, task scope, and any named skill, service, or framework. For a known or named project, consult its row in [project and agent routing](project-routing.md) to select relevant skills and a suitable agent brief. Follow explicit skill requests and mandatory prerequisites.
+2. Choose the matching route below. Consult only its linked catalog when the choice needs more detail; compare neighboring alternatives by their selection criteria.
+3. Load the selected skill's `SKILL.md` and required companions before doing the work. Add a companion when it covers a distinct required part of the task. Similar descriptions alone are not a reason to load several skills.
+4. Follow only the selected skill's relevant branches and references. Stop discovery once the task is covered. State the chosen skills briefly, then complete the work.
+
+Choose by task fit, not familiarity. A recommendation is a scope-based starting point, not a quality benchmark. Reconsider the route when new evidence changes the task.
+
+## Mandatory companions
+
+- Code changes: load `ponytail` before other task skills, after reading this router. Documentation-only changes do not require it.
+- Research requests: load `deep-research` after routing; if the request also changes code, load `ponytail` first. Select the research mode proportional to the request.
+- Academic writing, review, or screening: also select the appropriate academic skill in the research catalog. Send manuscript text to outside AI providers only with consent for that run.
+- Named products and tool prerequisites: use their required skills, such as Supabase, Google Drive, or the appropriate Figma operation. Skill selection does not authorize publishing, messaging, delegation, or other side effects beyond the request.
+
+## Routes
+
+| Requested result | Start here | Choose another route or companion when |
+| --- | --- | --- |
+| Implement or fix code | `ponytail` plus the relevant specialist in [engineering](catalog/engineering.md) | `diagnosing-bugs` for reported failures or regressions; `tdd` for requested test-first development; `write-swift` for Swift. |
+| Review changes or audit a repository | [Engineering review choices](catalog/engineering.md#choose-between-overlapping-skills) | `ponytail-review` for correctness and simplicity of a change; `code-review` for Standards + Spec from a fixed base; `ponytail-audit` for the whole repository. |
+| Design or improve a frontend | [Design choices](catalog/design.md#choose-between-overlapping-skills) | `frontend-design` for new visual direction; `design-taste-frontend` for researched art direction; `impeccable` for an existing interface audit or refinement; `mobile-native` for mobile browser behavior. |
+| Add, investigate, or remove animation | [Motion choices](catalog/design.md#choose-between-overlapping-skills) | Select implementation, performance diagnosis, read-only recommendations, or removal according to the requested result. |
+| Research, verify claims, or find literature | `deep-research` plus [research choices](catalog/research.md) as needed | `research-loop` for the full workflow: diagnose, research fixes, propose, review, delegate, run, audit, report; `research` for a primary-source Markdown deliverable; paper index for literature discovery; choose one search/extraction provider matching the requested source and available tools. |
+| Write, review, or screen academic work | [Academic choices](catalog/research.md#choose-between-overlapping-skills) | `academic-paper` to write/revise; `academic-paper-reviewer` to review; `academic-pipeline` for the full research-to-finalization cycle; `sr-screener` for protocol-driven screening. |
+| Analyze data, experiments, graphs, or mathematics | [Quantitative analysis choices](catalog/research.md#quantitative-analysis-additions) | Statistics and power for experiments; EDA for data quality; NetworkX for bounded graph analysis; SymPy for symbolic checks; Matplotlib or scientific-visualization for figures; `jupyter-notebook` when the deliverable is an `.ipynb`. |
+| Read, create, or review a local document | [Document choices](catalog/documents.md) | The installed PDF skill covers local PDFs; use existing connected Docs/Sheets/Slides skills for those services. Local Word/Excel/PowerPoint candidates remain held for further review. |
+| Edit prose to remove AI writing patterns | `unslop` in [research and writing](catalog/research.md) | Use academic guidance too when the artifact is a paper; ordinary prose edits need no academic pipeline. |
+| Generate images, diagrams, or video | [Media choices](catalog/media.md) | `imagegen` for raster assets; `excalidraw-diagram-generator` for editable Excalidraw; Remotion router for videos; Figma/FigJam output uses integrations. |
+| Work on databases, backend, AI apps, or Vercel | [Platform choices](catalog/platforms.md) | Choose the named database or product specialist; use the Vercel router skills for architecture and their operation-specific companions when needed. |
+| Work in Figma, Google Workspace, Sites, or ChatGPT Pets | [Connected service choices](catalog/integrations.md) | Choose the actual service and operation. Use a connected tool when available and suitable; verify availability before relying on it. |
+| Operate a browser | [Browser choices](catalog/integrations.md#choose-between-overlapping-skills) | Follow the current host's mandated browser first. Use `agent-browser` or `browser-use` when that execution environment is appropriate. |
+| Change agent instructions, skills, or Codex setup | [Agent configuration choices](catalog/engineering.md#choose-between-overlapping-skills) | `writing-for-agents` for instruction documents; `skill-creator` for skill design; `skill-installer` for installation; `openai-docs` for Codex/OpenAI behavior and settings. |
+| Use an explicitly invoked workflow | [Explicit-only catalog](catalog/explicit.md) | Includes planning, tickets, teaching, handoffs, UI prototypes, and session retrospectives. Preserve each skill's explicit-invocation boundary. |
+
+## Availability and fallback
+
+The catalogs inventory 180 local skill manifests on 2026-11-08, including 20 explicit-only skills and 17 project-aligned additions. The [GitHub review catalog](catalog/reviewed-library.md) records the 46 candidates, provenance, NVIDIA scan results, and held alternatives. Held candidates are not approved for automatic installation or invocation. Installed files do not guarantee tools, credentials, dependencies, or exposure in every session. Current session skill metadata and the selected `SKILL.md` are authoritative.
+
+Resolve a selected skill from the session's current path first. Catalog links are installation snapshots; plugin cache versions can change. If a link is stale, locate that skill's current manifest instead of installing a second copy.
+
+For a skill absent from the catalogs, search the current session's skill names/descriptions by task keywords. Read only plausible candidates. If a specialized task still has no match, search `C:/Users/ethan/.agents/skill-library/antigravity-awesome-skills/skills_index.json` and `C:/Users/ethan/.agents/skill-library/gws-cli/skills/`, then read the best-fitting manifest. If none fits, say so briefly and proceed using the available tools.
+
+## Maintenance
+
+When installing, removing, renaming, or changing a skill's routing description or invocation policy, update its catalog entry and any affected route here. Keep this entry point compact; put domain details in the matching catalog. Read frontmatter for inventory maintenance, rather than loading every skill body.
+
+This router controls selection; it does not hide skill metadata that the host already supplies. Follow higher-priority host instructions when they impose additional prerequisites.
+
+Design basis: [OpenAI guidance on skill descriptions and progressive disclosure](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra).
+
+
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'C:/Users/ethan/Documents/fly-chess-research/.agents/skills/deep-research/SKILL.md' -Encoding UTF8 | Select-Object -First 70" in C:\Users\ethan\Documents\fly-chess-research\research\reports\replay-diary-design-review-2026-11-17
+ succeeded in 369ms:
+---
+name: deep-research
+description: >-
+  Verify a claim or answer a research question from evidence the reader can
+  check. Use for deep dives, literature reviews, source-backed fact checks,
+  comparisons, and synthesis across references, including supplied records
+  only. Skip copyedits, exact transformations, and questions answerable from
+  supplied text without checking its claims unless the user asks for research.
+metadata:
+  origin: ECC
+---
+
+# Deep Research
+
+Lead with the answer the evidence supports. Make the path from a decisive claim to its source short enough for the reader to check.
+
+## Scope the work
+
+Identify the question, the decision or deliverable, and the dates, versions, population, or other conditions that could change the answer. For a follow-up, carry forward verified facts whose sources and conditions still match. Check what changed and any dependency it affects.
+
+Use the supplied index to select the first decisive records. Read the entries that establish the answer, then open other entries only to resolve a named gap, exception, or dispute. For a supplied-only task, stay within those sources. For external research, search only for gaps that could change the answer. Open a section of the [research playbook](research-playbook.md) or a companion only for a named check the main workflow leaves unresolved. If optional guidance is missing, continue here and report any check it actually prevents.
+
+## Trace the evidence
+
+1. **Find the relevant record.** Prefer original measurements, official dated records, or the version that applies. For each consequential claim, read the precise passage, table row, or method. Record its locator, scope, and access limits. Use summaries to find originals or state what the summary alone supports.
+2. **Check which evidence is independent.** Group reports that reuse the same run, data, or event. Match corrections to the result they replace. Keep useful corroboration separate from evidence that tests the claim again. For an empirical comparison, check whether the proposed cause is the only planned difference, and whether the test outcome and population match the claim.
+3. **Resolve differences that change the decision.** Compare dates, versions, definitions, units, denominators, and controls. Check the closest exception, such as a preview release, different plan, or different analysis group. Recompute the deciding amount or test boundary and retain the exact comparison operator. For uncertain effects, state which of meaningful benefit, no effect, and harm the reported range still allows. An estimate that falls short of a threshold can leave meaningful benefit unresolved. If the evidence still fits materially different conclusions, say so and identify the smallest check that distinguishes them.
+4. **Stop when the scope is covered.** One authoritative record can establish its own dated rule or release. More sources matter when they could change the conclusion or the user requests broader coverage. For a systematic or exhaustive search, record eligibility, where and when you searched, and what you screened. Describe only the coverage you achieved.
+
+## Use the tools that fit
+
+Use available search tools to discover sources, and a reader or the publisher's records to verify important claims. Reuse text already retrieved. Respect access, source, and budget limits. If a primary source or provider is unavailable, try a permitted source that answers the same question. Otherwise narrow the claim to what you could inspect and name the missing record. Poll a pending research job by its existing identifier. Use independent reviewers only when authorized and useful.
+
+## Write an answer the reader can check
+
+- Start with the result, the reason that changes the decision, and what remains open if it matters. Use plain words. Explain what a test actually did before drawing a conclusion from it.
+- Place a direct source locator beside each material claim. Use an exact URL or local file with its section, table, row, or lines. When one sentence draws on different records, attach each to the part it supports or split the sentence. Cite the rule and every material input to a calculation, then show the arithmetic. For a correction or duplicate, cite the source for the updated figure and the record that establishes the shared origin whenever both matter.
+- Before sending, trace each decisive claim back to its cited passage. Check that it supports the same number, scope, and strength of claim. Replace a broad citation with the precise locator, or narrow or qualify a claim if you cannot verify it. Label any proposed follow-up as future work and state what result would change the decision.
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'C:/Users/ethan/Documents/fly-chess-research/.agents/skills/science-review/SKILL.md' -Encoding UTF8 | Select-Object -First 70" in C:\Users\ethan\Documents\fly-chess-research\research\reports\replay-diary-design-review-2026-11-17
+ succeeded in 510ms:
+---
+name: science-review
+description: Judge science or engineering research against the Regeneron ISEF Grand Award rubric. Use for research quality scores, award or submission readiness, and focused review of a decisive study or prototype test, evidence, proof, or research claim. Skip wording-only edits and routine reruns that do not change evidence or a research decision.
+---
+
+# Science review
+
+Find the strongest claim the evidence supports and the smallest check that could change it. Use this on its own for a scoped review. In [Problem Solving](../problem-solving/SKILL.md), use it to sharpen the existing reviewers' briefs. The lead owns iteration and adjudicates objections against evidence. Open [Deep Research](../deep-research/SKILL.md) only when outside evidence could change the review and outside research is in scope.
+
+## Decide when to review
+
+Choose scope before analyzing the evidence. A request to review the **first evidence for the main claim** is a full project review, even when the question is phrased as “can we say this yet?” A major change to the main question or design, a submission review, or a requested overall score also triggers a full review. Respect an explicit instruction to review only a named part or give only a qualitative judgment.
+
+Use the [ISEF Grand Award rubric and scoring worksheet](references/isef-grand-award-rubric.md). Choose the science or engineering track by what the main contribution is meant to establish. If the worksheet is unavailable within the permitted sources, assess the evidence qualitatively and mark the numerical score unavailable.
+
+| When | Review |
+| --- | --- |
+| Before committing to a decisive protocol, measure, control, or prototype test | Focus on the design and the criteria the decision could affect. Give the points at risk and the check that would settle the issue. |
+| After a result or revision could change a substantive conclusion | Recheck the affected rows and their dependencies. In Heavy or deep-in-thought, use the existing reviewer passes and update the affected findings each round. |
+| When the first evidence for the main claim is ready, after a major change to the main question or design, before submission, or on explicit request for an overall score | Run the full review. Score the whole project and explain every point lost. Reopen any material flaw through the [review loop](../problem-solving/SKILL.md#run-the-review-loop). |
+| Routine implementation, copy edits, or reruns that leave the evidence and decision unchanged | Keep working without a rubric review. |
+
+After a full review, carry forward unchanged evidence and rescore affected criteria on each material revision. Keep a fixed time schedule only if the researcher asks for one.
+
+## Frame the decision
+
+Identify the proposal revision, the decision it informs, the exact claim, the system and conditions it covers, and the evidence needed to support it. For FlyChess, name the volume and chapter and follow the [project's research rules](../../../AGENTS.md). Start from the pinned protocol and relevant run records, analysis, audit or proof. State which records you inspected and which decisive records are missing. Open [the review guide](review-guide.md) for a claim-specific check when the basic trace leaves a material question.
+
+## Try to break the claim
+
+1. **Trace the claim.** Locate the decisive observation or proof. Check the exact comparison, outcome, denominator or unit, uncertainty, deviations from the plan, and what the audit actually covered. Assess how much the finding matters and how strongly the evidence supports it as separate questions.
+2. **Name the strongest rival or counterexample.** Write what the proposed explanation and the rival predict. For a model, check which component supplied the behavior. For a proof, ask which assumption lets the result hold and whether a case outside it could overturn a broader claim.
+3. **Choose a check that changes the decision.** Specify the smallest check, what each plausible outcome would imply, and which stage to reopen. Use already authorized evidence or checks. For a protocol, check whether the design could yield interpretable positive and negative results. For results, distinguish support, evidence against a stated effect within the test's sensitivity, and an inconclusive test. A failed prerequisite, uncontrolled rival, missing artifact, or interval that still allows a meaningful effect can leave the downstream claim open.
+4. **Return a review the lead can act on.** Give the strongest supported sentence, the decision it permits, and the material objections in priority order. For each objection give the revision and challenged claim, evidence locator or missing artifact, consequence if true, smallest check and how to interpret it, and the step to reopen. Keep missing evidence and reviewer dissent visible. Say what you checked when no material objection survives.
+
+For a revised proposal, recheck materially changed claims and the earlier objections they affect. Keep prior reviews only where the claim, method, and evidence dependencies still match. Preserve frozen criteria and label outcome-informed analyses as exploratory. Follow project rules for recording mistakes and pivots. A review informs a research decision and carries its own evidence scope. Execution and independent run audits follow their existing rules.
+
+## Report the score and next decision
+
+Lead with what the evidence lets the reader say and which finding drives the next decision. Name the reviewed revision, track, and evidence available.
+
+- **Focused review.** Name each affected worksheet row and its point exposure or scored deduction, with the exact evidence, why it matters, and the check that would change the finding. Label the row maximum as a ceiling when the rest of the row was outside scope.
+- **Full review.** Score each worksheet row once using a single ledger. Score the engineering Success criteria row on the clarity and justification of the stated thresholds, load, and conditions. If you deduct there, name what is missing from the definition or rationale. Charge missing measurements, untested conditions, or a result below threshold to execution only. Mark evidence that was never supplied as unavailable, and use zero for interview rows when there are no actual answers. An outline can support only the part of display organization it actually shows. Give display graphics zero and mark it unavailable unless you inspected the actual figures. Give display evidence zero and mark it unavailable unless you inspected the supporting records as displayed.
+- **Publish from the ledger.** Follow the [full scorecard instructions](references/isef-grand-award-rubric.md#generate-a-full-scorecard). Include the generated row table verbatim, including what would earn the rest, and its totals in the requested scorecard. Use those tables as the only source for numerical totals. Fix validation errors before publishing. If you cannot verify a score in the available environment, give the qualitative review and say what blocks the score.
+- **Ask what would change the answer.** Keep a failed requirement or unsupported central claim open regardless of the score. Give the smallest in-scope check and say how its possible results would change the decision. For a paper, evaluate any venue-specific requirements separately when relevant.
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'C:/Users/ethan/Documents/fly-chess-research/.agents/skills/please-no-more-slop/SKILL.md' -Encoding UTF8 | Select-Object -First 70" in C:\Users\ethan\Documents\fly-chess-research\research\reports\replay-diary-design-review-2026-11-17
+ succeeded in 420ms:
+---
+name: please-no-more-slop
+description: >-
+  Write and review clear technical and research replies, emails, handoffs,
+  documents, reports, and captions. Use when drafting, editing, explaining,
+  simplifying, scoring, comparing drafts, or choosing names for code, files,
+  APIs, or labels. Skip requests that only quote or return exact text.
+---
+
+# Please no more slop
+
+Use the five-year-old test for both replies and documents. A child with no project background should be able to read the main explanation and tell you what happened, why it matters, and what happens next when a decision is open.
+
+## Choose the deliverable before writing
+
+| Request | What to deliver |
+| --- | --- |
+| Return, show, suggest, review, or score | Give the requested text or findings in the reply. Read referenced files as inputs. |
+| Draft a new file or document | Write to the requested destination, or choose a separate new destination if unspecified. |
+| Edit or update a named file in place | Change the authorized part of that file. Preserve surrounding text, identifiers, and links. |
+
+**Before any file write, identify the user's instruction to persist the result and the destination it authorizes.** Merely naming a file after “rewrite” or “improve” identifies the source. For “Rewrite draft.md. Return only the update,” read draft.md and produce the update in the reply. “Update draft.md in place” authorizes editing it. “Write the update to review.md” authorizes writing review.md. Use the reply when the destination is ambiguous. For a return-only or no-edit request, finish in the reply without patching or creating files.
+
+Use [README Maestro](../readme-maestro/SKILL.md) for navigation and reader routes. Apply the wording checks here to the resulting text.
+
+## Write so a five-year-old can follow the main idea
+
+- If the reader has to act, make the first sentence say what to do. Otherwise start with the answer or result. Use familiar words, name who or what did the action, and keep one main thought per sentence. Put causes and events in the order they happened. Repeat a name where “it” or “they” could point to two things.
+- Use a concrete action in place of an abstract phrase in the main explanation. “Two people tried to get the last seat, and the site gave both a ticket” is easier to picture than “the simultaneous booking check failed.” Explain technical terms through what they do or what someone can see. For example, “the job wrote a second copy after midnight” says what happened. Replace words that make the main idea depend on specialist knowledge. If an exact term matters, put the plain meaning first. For example, “the scanner stopped talking to the library computer” explains a lost network connection.
+- Put the reason before the details if the details would make the reader ask why. For a proposed test, explain the problem, what changes, what we look for, and how the result changes the next action. Use a short example when the reader would otherwise have to work out how a value affects the result. Explain each step of a calculation the reader needs to follow.
+- Apply this to the main explanation in a reply and to the opening explanation of each important section of a document. Give the full technical detail the intended reader needs nearby. Use the requested format. For a one-paragraph reply or a caption, put the plain explanation directly in that text.
+
+## Explain why a number or rule matters
+
+- **Setting or cutoff:** Say what it changes, why it has that value, and what would happen if it were higher or lower when that matters. Distinguish a value measured or calculated from data from a threshold chosen for a practical decision. If the source gives no reason for the exact value, say so.
+- **Check or measurement:** Say what two things were compared, what the result lets us conclude, and which condition it covers. “At least 99% survived” needs to say what survived and why preserving it matters. If the next check is in different conditions, name what changes and why it calls for another check.
+- **Decision rule:** Explain the action in ordinary words before listing cutoffs. For each material comparison, say what it helps rule out and why that matters to the decision. Give one worked example if several cutoffs interact. Explain “drop” by naming the change we would stop pursuing. Explain “inconclusive” by saying what prevented a decision, such as a failed check, too few comparable cases, or a result between the cutoffs. Give the next check if it is known. If the written rules overlap, flag the overlap and label any proposed priority as a recommendation.
+- **Implementation detail:** Mention it when it affects what the reader can do. Give the cause and effect in one plain sentence. “After the checker moved folders, it kept looking in the old place for the code it needs, so it can’t start.” Keep that explanation with the build step it affects.
+
+Apply only the checks the reader needs. When a reader says they are lost, rewrite from the first idea they need to understand. Answer their “why?” and “what does that tell me?” before restating names or values.
+
+## Keep the measurement and claim intact
+
+Before simplifying a material result, identify what was tested, what counted as success, the threshold if given, the result and denominator, and any comparison or condition that changes the conclusion. Keep exact operators and units. For a rank outcome, say what had to rank where. If a short name or caption cannot carry the full definition, put the rest in its adjacent definition or sentence.
+
+Keep a planned result separate from a later exploratory check. Keep a completed process, a software check, and an outcome for a trained model distinct. Preserve the population, comparator, and strength of the claim. Report missing evidence where it affects the decision, and make the next check specific when one is known.
+
+## Name things by what they do
+
+Use a verb for an action and a concrete noun for a value. Name a measure for its recorded outcome, such as `safe_capture_first_rate` when a safe capture must rank first. Use established terminology when its meaning is precise. Preserve public names verbatim unless a rename is authorized. For a proposal, distinguish internal names from public identifiers and explain which one stores what.
+
+## Check the result
+
+Read the draft once as someone who knows none of the project terms. Try to answer, in everyday words, the questions that apply:
+
+1. What happened or what is the answer?
+2. How do we know? If a number matters, what was counted or chosen, and why that value?
+3. What does the result let us conclude? What remains open that affects how we use it?
+4. What happens next? If there is a decision rule, can the reader explain why each outcome leads to its action?
+
+Scan the opening and the next-step sentence for words such as “passes,” “rehearsal,” or “connection” used without explaining the action or result. If a reader needs to know what that word means to act, say what someone should do or see. Rewrite any sentence that still makes the reader guess. Recheck the meaning against the source. When an independent reader is available, give them only the finished text and ask them to explain it back. Treat your own check as an estimate of clarity. For an edit, confirm the diff stays within scope. For a reply, return the requested text.
+
+## Score and rank writing
+
+When asked how clear the writing is, count how many applicable read-back questions a reader could answer correctly from the draft alone. Give replies and documents equal weight when both are being graded. Keep file handling and activation out of this clarity score.
+
+When asked for the repository writing rubric, score from 1 to 10, where **1 is clear and 10 is the most slop**. Judge what the writing does to the reader. Style alone gives no basis for identifying who or what wrote it.
+
+Pick the audience, the purpose, and the text being scored. Use the same audience and purpose for competing drafts. When judging unrelated passages, state the audience and purpose for each. For a long document, judge the whole piece and quote representative passages. Score individual passages only when asked or when identifying where to revise first.
+
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'C:/Users/ethan/.agents/skills/academic-paper-reviewer/SKILL.md' -Encoding UTF8 | Select-Object -First 28" in C:\Users\ethan\Documents\fly-chess-research\research\reports\replay-diary-design-review-2026-11-17
+ succeeded in 244ms:
+---
+name: academic-paper-reviewer
+description: "Multi-perspective academic paper review with dynamic reviewer personas. Runs a 5-seat, role-separated review panel (Journal-Fit Reviewer + 3 peer-review roles + Devil's Advocate) with field-specific expertise; role separation is not a claim of independent error processes. Supports full review, re-review (verification), quick assessment, methodology focus, Socratic guided, and calibration modes. Triggers on: review paper, peer review, manuscript review, referee report, review my paper, critique paper, simulate review, editorial review, calibrate reviewer, reviewer calibration, measure reviewer accuracy, 審查論文, 論文審查, 模擬審查, 同儕審查, 幫我審這篇, 以審查人角度評估, 審查者校準, 논문 심사, 동료 심사, 모의 심사, 심사자 관점에서 평가, 심사자 보정, revisar artículo, revisión entre pares, revisión de manuscrito, informe de árbitro, revisa mi artículo, criticar artículo, simular revisión, revisión editorial, calibrar revisor."
+metadata:
+  version: "1.11.1"
+  last_updated: "2026-08-15"
+  status: active
+  data_access_level: raw
+  task_type: open-ended
+  related_skills:
+    - academic-paper
+    - academic-pipeline
+---
+
+# Academic Paper Reviewer v1.11.1 — Multi-Perspective Academic Paper Review Agent Team
+
+Simulates a complete international journal peer review process: automatically identifies the paper's field, dynamically configures 4 card-backed identities (Journal-Fit Reviewer + 3 peer reviewers), and adds the fixed Devil's Advocate as the fifth execution seat. The five role-separated perspectives cover journal fit, methodology, domain expertise, cross-disciplinary viewpoints, and core argument challenges; a separate editorial synthesizer produces the structured Editorial Decision and Revision Roadmap.
+
+**v1.1 Improvements**:
+1. Added Devil's Advocate Reviewer — specifically challenges core arguments, detects logical fallacies, and identifies the strongest counter-arguments
+2. Added `re-review` mode — verification review, focused on checking whether revisions address the review comments
+3. Expanded review team from 4 to 5 members
+
+> **Routing discipline (v3.9.2):** plugin and skills-copy installs do not load this repository's `.claude/CLAUDE.md`, so its routing core is repeated below, identical to `shared/references/routing_core.md` (#892). If routing has not settled when this skill loads, apply the core before dispatching any agent.
+
+<!-- routing-core:begin -->
+**Step 0 — Escape hatch check (before any classification):** If the user's first message begins with `[direct-mode]` (case-insensitive byte-0 token, optionally preceded by whitespace/newlines that are stripped on parse), record this fact, strip the prefix and surrounding whitespace from the message, and skip directly to **Step 1 explicit-intent handling** on the stripped content. The literal `[direct-mode]` is NOT passed through to the dispatched agent. If the stripped message itself has no clear skill named, Step 1 falls through to Step 3 clarification (the escape hatch bypasses cross-phase clarification (Step 2), not all routing). When the token is honored and the named agent or skill needs inputs the message does not supply, read that agent's or skill's file and ask for what it requires, in its terms. A `[direct-mode]` token after any other non-whitespace character is not the escape hatch, even when the message asks to skip questions: classify the message through Steps 1-3 as if the token were absent, and do not forward the token. Without the byte-0 token, naming an agent is not explicit intent: such a message goes through Steps 1-3 like any other, so cross-phase materials still get Step 2 clarification.
+
+
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$p='"'lead-recheck-round2.md'; "'$i=0; Get-Content -LiteralPath $p -Encoding UTF8 | ForEach-Object { $i++; '"'{0,4} {1}' -f "'$i, $_ }' in C:\Users\ethan\Documents\fly-chess-research\research\reports\replay-diary-design-review-2026-11-17
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$p='"'documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md'; "'$i=0; Get-Content -LiteralPath $p -Encoding UTF8 | ForEach-Object { $i++; if ($i -ge 335) { '"'{0,4} {1}' -f "'$i, $_ } }' in C:\Users\ethan\Documents\fly-chess-research
+ succeeded in 320ms:
+   1 # Lead's recheck of the round 1 findings (2026-11-17, not independent)
+   2 
+   3 The three reviewers' round 2 stopped at the Codex usage limit ("try again at 11:16 PM") before writing anything; their logs are in [round2-usage-limit/](round2-usage-limit/). Problem Solving allows the lead to run the checks when the group is unavailable, with the loss of independence disclosed. This is that check. It is not a substitute for the reviewers' own round 2, which is queued to run after the limit resets.
+   4 
+   5 ## Disposition of each round 1 finding against revision 3
+   6 
+   7 | Finding | Disposition | Reason |
+   8 |---|---|---|
+   9 | Peer 1: invisible move counters | Resolved for the design | The diary stores the delivered input; identity is the input hash; stage 0 check 3 tests it |
+  10 | Peer 2: receipts and teaching path | Resolved for the design | Four-step lesson boundary; one-pass delivery matching the current learner; auditor replays every update. Building must still show the receipts exist |
+  11 | Peer 3: stage 1 copy | Resolved for the design; exact formulas open | Contract fixed in 7.3; the stage 1 protocol file must freeze the per-seed formulas and seed list before any run |
+  12 | Peer 4: controls | Resolved | Moved timing keeps every replay; fixed tape; exact case-recall and learner rules |
+  13 | Peer 5: computability (launch) | Open until launch | Game manifest with eligibility counts and worked boundary examples are required before launch (section 11 item 5) |
+  14 | Skeptic 1: margins, refresh, all-legal | Resolved, with one limit | Kept-share rule, low-point snapshots, sawtooth log, all-legal threshold. Limit: a pass at the low point shows A survives one new lesson after the last replay, not that it survives long without replay |
+  15 | Skeptic 2: moved timing and own choice | Resolved | Fixed tape; logged dopamine factors and update sizes; descriptive feedback-cut arm |
+  16 | Skeptic 3: shuffle and filler | Resolved in revision 3 | Revision 2's shuffle still changed per-block counts; revision 3 permutes within each block |
+  17 | Skeptic 4: mixed order is not proof | Resolved | Feasibility witness only; Volume 4 needs a separate proof |
+  18 | Skeptic 5: control specification | Resolved | Exact rules; nonlinear-feature learner; tuning on the learner's own first block |
+  19 | Foundational 1: case classifier in the weights | Narrowed, open by nature | Full-history case recall and a random-feature learner added; a case classifier outside these controls cannot be excluded, and the claim wording says so |
+  20 | Foundational 2: rankings need not mean solving | Resolved | Offset-cancelled pairs and all-legal measure required |
+  21 | Foundational 3: failure is not a ceiling | Resolved | As skeptic 4 |
+  22 | Foundational 4: relabelling Property 2 | Resolved | Assisted retention, Volume 3; Properties 1 and 2 unmet |
+  23 | Foundational 5 (optional) | Adopted | Removal is this design's restriction |
+  24 
+  25 ## New problems found in revision 2 (fixed in revision 3)
+  26 
+  27 1. The event-shuffled arm permuted pulses across the whole run, so per-block pulse counts could change, contrary to its own description.
+  28 2. Unknown-verification trials were not said to skip the diary and replay.
+  29 3. Sawtooth checkpoints were not said to be taken before the replay and scored without the diary.
+  30 4. The all-legal measure's boards and the learners' tuning block were not named for every stage.
+  31 
+  32 ## Strongest remaining hypothesis and its rival
+  33 
+  34 - **Strongest hypothesis:** if the fly can acquire a chess idea at all, interleaved replay of its own lessons will keep that idea while a second idea is learned, beyond extra practice, timing and re-exposure.
+  35 - **Credible rival:** replay keeps old ideas by refreshing a case classifier in the connections, and the fly's apparent combinations are case recall not covered by the listed controls.
+  36 - **What separates them:** on stage 3's new kinds of problem and unseen combinations, the twin-pair design makes similar-board recall give both twins the same answer. The rival predicts the fly scores near the full-history case-recall and random-feature controls there; the hypothesis predicts it beats them by the protocol's margin.
+  37 
+  38 ## Counterexample check
+  39 
+  40 A run could pass stages 1 and 2 while the fly holds only a refreshed case table: both stages test retention on development twins of the practised kinds, which case recall in the weights can serve. That is why stages 1 and 2 support only **assisted retention**, and any reasoning wording waits for stage 3 against the case-recall and learner arms.
+  41 
+  42 ## Second read, before the reviewers' round 2 (revision 5)
+  43 
+  44 While the reviewers waited for the usage limit to reset, the lead read revision 4 again as a hostile reviewer and fixed six gaps, listed in section 12 of the design. The most important: section 7.2 claimed identical online lessons for all arms while letting stage 1 arms choose for themselves, so the stage 1 controls would have seen different lessons. Every added stage 1 arm is now yoked to the diary arm's choices. Revision 4 is preserved as [design-revision-4.md](design-revision-4.md) (blob `99df41e4`); revision 5 is blob `0c71bb4d`. The reviewers' round 2 prompts now point at revision 5 and list every edit since revision 2.
+  45 
+  46 ## Solo deep-in-thought pass (revision 6)
+  47 
+  48 The researcher asked for Problem Solving at deep-in-thought, solo, while the reviewers wait. This is that pass. It is not independent.
+  49 
+  50 **Numbers rebuilt from raw records.**
+  51 
+  52 1. Cubic-exit run (`runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1/records.jsonl`): all five original marks pass on six-seed medians (delay ratio 0.7199). Per seed, the delay ratios are 0.7566, 0.5941, 0.6832, 0.8118, 0.8714 and 0.4203. After the reversal, seeds 4102, 4105 and 4106 each lose one unrelated association; no seed loses an old item at the end of learning. Seed 4102's item 3 margin goes from 0.140130 to -0.020325, matching the design's quote. The run took 6,157 s at 299 MiB peak.
+  53 2. v8 (`summary.json`): full store 349.33, piece-value rule 294.67, all-legal 30.60 against 21.92.
+  54 3. Eyes v2 input size, graph-free, 83 moves on three boards: 1,644 active photoreceptors on average, at most 1,955, so 13-16 KiB per diary entry.
+  55 4. Stage 2 work: about 72,000 forward passes per run, 216,000 for three runs, about 22.5 hours at 0.375 s per pass. Revision 5 understated this as 15-20 hours.
+  56 5. Chance of 32 or more of 48 pairs by guessing: 1.47%.
+  57 
+  58 **Three critique briefs, run by the lead.**
+  59 
+  60 - *Peer (could two teams compute the same verdict?):* bootstrap seed, lower-limit definition and tie tolerance were missing; development boards were not said to be disjoint from the tape; runs that stop early had no rule. All specified in revision 6, with a worked example at the exact cutoffs.
+  61 - *Scientific skeptic (could another mechanism give the same result?):* the filler, no-pulse and event-shuffled controls changed replays during the A block, so they would learn A less well, and the diary could beat them on learning rather than keeping. Revision 6 makes every replay control change only old-lesson replays, so each starts B in exactly the diary arm's state.
+  62 - *Foundational (does a pass answer the question?):* stage 1 asked the diary to stop delay losses that occur with no lessons and so no replays, which is outside its mechanism; a working diary would have failed. Revision 6 scopes the delay as "not worse", and counts benefits only after new learning. The diary's link to reasoning is now stated: it keeps earlier ideas alive so the fly can combine them; the combining is the fly's.
+  63 
+  64 **Counterexample tried.** A diary that only made A stronger before B (overlearning) would pass a comparison against no diary. It cannot pass against the moved-timing arm, which gets the same old-lesson replays before B; that is why the moved-timing comparison is required.
+  65 
+  66 **Remaining open points (for the reviewers).** Stage 2's order is not counterbalanced (stated as a limit). Whether ideas A and B interfere at all in this fly is unknown (the prerequisite handles it). A case classifier outside the listed controls cannot be excluded (stated in the claim wording).
+  67 
+
+ succeeded in 355ms:
+ 335 
+ 336 **Order is not counterbalanced.** Every run learns A first. A pass says the first-taught idea A survived B; it does not show that any first-taught idea survives.
+ 337 
+ 338 **Reading the result:** all pass → replay keeps chess idea A while B is learned, beyond extra practice, timing, re-exposure and wrong verdicts: assisted retention, Volume 3. Large sawtooth with a low-point failure → refresh, not joint storage. Mixed order succeeds but the diary fails → a joint setting is reachable and this replay schedule does not find it. Mixed order fails → this schedule failed; a Volume 4 limit needs a separate bounded proof or exact search over the permitted connection strengths, as in the revision-4 capacity checks. Capacity curve: a benefit only when the diary keeps every lesson means the design does not work under pressure.
+ 339 
+ 340 **Planning estimate:** 12 fly arms (the ten graph arms of section 7.2 plus the diary at capacities one sixteenth and every lesson) × 3 runs; with the all-legal measure only on the diary, no-diary and learning-off arms, that is about 229,000 forward passes (about 35 legal moves per all-legal board), or about 24 hours in one process at the v8 rate of 0.375 s per pass; about 6–7 hours with 4 workers, which fits the 2,048 MiB budget at the 245–299 MiB peaks measured in v8 and the cubic run. The dry run measures the real figure.
+ 341 
+ 342 ### 7.5 Stage 3: transfer and combination, on the fly's own choices
+ 343 
+ 344 Use [Phase B and Phase C of the transfer protocol](../research-goals/transfer-and-combination-protocol-2026-11-03.md) unchanged, on the fly's own choices. For each fly arm of the protocol (Phase-A, fresh, shuffled, single-idea and two-idea flies) add a version with a diary, and add the case-recall arms (diary and full history) and both learners with the diary. Each diary belongs to one fly and travels with its learner state across phases; its capacity is one quarter of that fly's total planned lessons across all its phases, fixed before data. The protocol's filler trials carry feedback the fly receives, so they are lessons and enter the diary like any other. The fly is always tested with the diary removed. Each locked set is opened once.
+ 345 
+ 346 A **reasoning claim for the fly plus diary** at Phase C step 2 (three ideas) requires, in all three runs, with every audit passed:
+ 347 
+ 348 1. the protocol's own pass scores;
+ 349 2. the same scores on the offset-cancelled pairs;
+ 350 3. at least 6 more locked pairs than each added arm, bootstrap lower limit above 0 (the protocol's margin);
+ 351 4. the all-legal measure on the locked boards, scored as in stage 2 (fixed denominator, worst case for the diary on unknown boards), above learning off, the case-recall arms and both learners, each with bootstrap lower limit above 0.
+ 352 
+ 353 Its wording is then limited to: the fly with a disclosed replay diary combined three separately taught chess ideas on unfamiliar problems better than the listed case-recall and simple-learner controls. A case classifier not among those controls is not ruled out. Failing any of 1 to 4 leaves reasoning unsupported, whatever stages 1 and 2 showed.
+ 354 
+ 355 ## 8. When the design fails
+ 356 
+ 357 1. **Leak:** a diary field cannot be rebuilt from receipts; invisible details change the replay tape; a validation or test input appears in the diary; a test process loads the diary. The run is invalid.
+ 358 2. **Nothing to keep:** the fly does not acquire the first lessons. Uninterpretable.
+ 359 3. **No forgetting to repair:** the no-diary arm already keeps A. The stage says nothing about the diary.
+ 360 4. **Extra practice explains it:** the diary does not beat filler replay (unless filler is shown damaging) or the moved-timing arm.
+ 361 5. **The verdict is not needed:** the diary does not beat the no-pulse arm.
+ 362 6. **Refresh only:** the diary fails at the low-point snapshot.
+ 363 7. **Stability blocks learning or correction:** stage 2 condition 5 fails, or stage 1's reversed item fails.
+ 364 8. **Does not work under pressure:** no benefit at capacity one quarter.
+ 365 9. **Case recall or a simple learner explains it:** a case-recall or learner arm matches the fly in stage 3.
+ 366 
+ 367 ## 9. What a pass would and would not show
+ 368 
+ 369 - **Would show:** with lessons re-lived during new learning, the fly's own connections held several chess lessons at once, with the diary absent whenever the fly was judged, beyond the listed controls.
+ 370 - **Would not show:** that the fly's rule resists overwriting by itself; that the fly formed combinable concepts rather than a case classifier not tested here; that flies replay memories; reasoning outside chess; Property 1 or Property 2.
+ 371 
+ 372 ## 10. Working memory is a separate component
+ 373 
+ 374 The researcher's Volume 3 note allows outsourcing working memory. That store would hold the fly's own activity within one decision, for example during a later look-ahead, and be cleared after each decision. It would never hold outcomes from other decisions. It needs its own design under the input and output rules, with its own decision-time lookup control.
+ 375 
+ 376 ## 11. Decisions for the researcher
+ 377 
+ 378 1. Approve the replay diary as a Volume 3 memory, or choose another design from section 3.
+ 379 2. Approve replay as an amendment to the restart plan's feedback rule: replay repeats lessons already received, uniformly, never because of errors, and never asks the teacher again.
+ 380 3. Approve stage 2's teacher-chosen lesson tape as a disclosed development mechanism test.
+ 381 4. Confirm placement: diary arms in Volume 3 as assisted retention; no-diary arms in Volume 2; any Volume 4 limit only with a separate proof.
+ 382 5. Order: stage 1 can be built first. Stage 2 needs the twin-pair generators, which do not exist yet, a game manifest showing enough eligible boards for three disjoint practice sets (1,200 training-pool games exist; v8 used 750 positions from 198 games), and worked scoring examples for the boundary cases above. The three-board feedback test and the 2026-11-09 decision remain open and are unchanged.
+ 383 
+ 384 ## 12. Changes from revision 1 (review round 1)
+ 385 
+ 386 Reviews: [folder](../../../research/reports/replay-diary-design-review-2026-11-17/README.md). Every required change was adopted; none was declined.
+ 387 
+ 388 | Finding | Change in revision 2 |
+ 389 |---|---|
+ 390 | Peer 1: invisible FEN move counters changed supersession | Diary stores the delivered input, not board text; supersession by input hash; stage 0 check 3 |
+ 391 | Peer 2: existing teaching path selects moves by certificate, has no receipts, and delivers input and pulse in one pass | Section 4.1 lesson boundary; one-pass delivery; auditor recomputes every replay; teacher-chosen tape disclosed for stage 2 only |
+ 392 | Peer 3: stage 1 cannot be copied as written | Stage 1 contract: adapter, six seeds, injected codes, recomputed prediction-scaled teaching, complete state, per-seed rules, original medians reported; mixed-order arm removed from stage 1 |
+ 393 | Peer 4 and skeptic 2: moved-timing arm dropped new-block replays; own-choice arms see different lessons | Moved timing keeps every replay; stage 2 uses one fixed tape; dopamine factors and update sizes logged; feedback-cut descriptive arm |
+ 394 | Peer 4 and skeptic 5: lookup and simple learner unspecified | Exact case-recall and learner rules; nonlinear random-feature learner added |
+ 395 | Peer 5: scores and sampling not uniquely computable | All-legal measure with unknowns, ties, king moves and ineligible boards defined; Algorithm R and random streams; chi-square scheme; game manifest and worked examples required before launch |
+ 396 | Skeptic 1: margins hide losses; refresh rival; all-legal had no threshold | Kept-share rule; low-point snapshots and sawtooth log; all-legal threshold |
+ 397 | Skeptic 3: shuffle changed per-event pulse balance; filler may interfere | Event-level shuffle; no-pulse arm; filler damage check |
+ 398 | Skeptic 4, foundational 3, peer 3: a failed mixed order is not a limit | Mixed order is a feasibility witness only; a Volume 4 limit needs a separate proof |
+ 399 | Foundational 1: replay could train a case classifier into the weights | Full-history case recall and random-feature learner; attribution narrowed |
+ 400 | Foundational 2: twin rankings need not mean solving | Offset-cancelled pairs and all-legal measure required for any claim |
+ 401 | Foundational 4: "Property 2 with a disclosed aid" relabelled an old requirement | Renamed assisted retention; Properties 1 and 2 stay unmet |
+ 402 | Foundational 5 (optional): removal is not a necessary boundary | Adopted: removal is this design's restriction |
+ 403 
+ 404 **Revision 3: the lead's own recheck** (the reviewers' round 2 hit the Codex usage limit before writing anything; this recheck is not independent):
+ 405 
+ 406 1. The event-shuffled arm permuted pulses across the whole run, which changes pulse counts per block although revision 2 said it did not. Now permuted within each block.
+ 407 2. Unknown-verification trials: stated that they are not lessons, so they get no entry and no replay.
+ 408 3. Sawtooth checkpoints: stated that they too are taken before the replay and scored without the diary.
+ 409 4. The all-legal measure's boards are now named (the 192 development twin boards), and the learners' tuning block is named for every stage.
+ 410 
+ 411 **Revision 5: the lead's second read, before the reviewers' round 2** (not independent):
+ 412 
+ 413 1. Section 7.2 said stage 1 arms get identical online lessons yet choose for themselves. Now every added stage 1 arm is yoked to the diary arm's choices; the original four arms only reproduce the original marks.
+ 414 2. Supersession frees a slot, which slightly favours the next lesson in reservoir sampling. Now disclosed and logged (section 4.4).
+ 415 3. Moved-timing replays are placed after the earlier block's test snapshot, so that snapshot is comparable across arms.
+ 416 4. A replay's own update is published in its own atomic write before the next lesson (section 4.7).
+ 417 5. Stage 3 now says each diary travels with its fly across phases, with capacity one quarter of that fly's planned lessons, and that the protocol's filler trials enter the diary as lessons.
+ 418 6. Stage 2's arm count is corrected to 11, the mixed-order arm is scored only at the end, and case recall and the learners are descriptive in stage 2 and decisive in stage 3.
+ 419 
+ 420 **Revision 6: the lead's solo deep-in-thought pass** (not independent; the researcher asked for it while the reviewers wait):
+ 421 
+ 422 1. **Controls confused learning with keeping.** In revision 5 the filler, no-pulse and event-shuffled arms changed replays during the A block too, so they would learn A less well, and the diary would beat them on learning, not on keeping. Now every replay control changes only replays of old lessons; through the first block it is in exactly the diary arm's state (checked bit for bit in the dry run).
+ 423 2. **Stage 1 asked the diary to stop damage it cannot touch.** Raw records show three of six seeds lose margin over the delay (ratios 0.5941, 0.6832, 0.4203), when there are no lessons and so no replays. The delay condition is now "not worse than no diary"; the benefit conditions and the prerequisite count only damage after new learning.
+ 424 3. **Stage 2 prerequisite** now also requires the no-diary arm to have acquired A.
+ 425 4. **Runtime corrected:** about 216,000 forward passes, about 22 hours in one process (revision 5 said 15–20), about 6 with 4 workers; stage 1 about 6 hours.
+ 426 5. **Entry size measured:** 1,644 active photoreceptors on average, at most 1,955 (83 moves), so 13–16 KiB per entry.
+ 427 6. **Specified:** bootstrap seed and lower limit, tie tolerance, development boards disjoint from the tape, handling of runs that stop early, and a worked example of the stage 2 cutoffs.
+ 428 7. **Stated limits:** stage 2's order is not counterbalanced; the diary's role in reasoning is spelled out (keep earlier ideas alive so they can be combined).
+ 429 
+ 430 **Revision 7: the scientific skeptic's round 2** ([review](../../../research/reports/replay-diary-design-review-2026-11-17/design-review-r2-skeptic.md); four of five round 1 findings resolved). All three points adopted:
+ 431 
+ 432 1. **Filler damage was judged against the wrong arm** (required). No diary learns A without replays, so filler could damage a stronger starting state and still beat it. New arm **no old replays**: identical to the diary arm with every old-lesson replay skipped. It is now the reference for filler damage, for the forgetting prerequisite and for the benefit conditions, in both stages.
+ 433 2. **Unknown boards could manufacture an all-legal advantage** (required). Every eligible board now stays in the denominator, and comparisons must survive the worst case for the diary (its unknowns score 0, the other arm's score 1).
+ 434 3. **The learners' learning-rate sweep did nothing** (optional). With weights starting at zero, a rate only rescales scores. The rate is removed and the tuning claim dropped.
+ 435 
+ 436 Arm counts and runtime updated: 12 arms in each stage; stage 2 about 229,000 forward passes.
+ 437 
+ 438 ## Sources
+ 439 
+ 440 Accessed 2026-11-17; bibliographic records checked against Crossref or the venue; abstracts read, full texts not read.
+ 441 
+ 442 - Benna, M. K., and Fusi, S. (2016). Computational principles of synaptic memory consolidation. *Nature Neuroscience*, 19, 1697–1706. https://doi.org/10.1038/nn.4401
+ 443 - Blundell, C., et al. (2016). Model-free episodic control. arXiv:1606.04460. https://arxiv.org/abs/1606.04460
+ 444 - Chaudhry, A., et al. (2019). On tiny episodic memories in continual learning. arXiv:1902.10486. https://arxiv.org/abs/1902.10486
+ 445 - Cover, T. M., and Hart, P. E. (1967). Nearest neighbor pattern classification. *IEEE Transactions on Information Theory*, 13(1), 21–27. https://doi.org/10.1109/TIT.1967.1053964
+ 446 - Donlea, J. M., Thimgan, M. S., Suzuki, Y., Gottschalk, L., and Shaw, P. J. (2011). Inducing sleep by remote control facilitates memory consolidation in *Drosophila*. *Science*, 332(6037), 1571–1576. https://doi.org/10.1126/science.1202249
+ 447 - Kirkpatrick, J., et al. (2017). Overcoming catastrophic forgetting in neural networks. *PNAS*, 114(13), 3521–3526. https://doi.org/10.1073/pnas.1611835114
+ 448 - Kumaran, D., Hassabis, D., and McClelland, J. L. (2016). What learning systems do intelligent agents need? Complementary learning systems theory updated. *Trends in Cognitive Sciences*, 20(7), 512–534. https://doi.org/10.1016/j.tics.2016.05.004
+ 449 - Lin, L.-J. (1992). Self-improving reactive agents based on reinforcement learning, planning and teaching. *Machine Learning*, 8, 293–321. https://doi.org/10.1007/BF00992699
+ 450 - Masse, N. Y., Grant, G. D., and Freedman, D. J. (2018). Alleviating catastrophic forgetting using context-dependent gating and synaptic stabilization. *PNAS*, 115(44), E10467–E10475. https://doi.org/10.1073/pnas.1803839115
+ 451 - McClelland, J. L., McNaughton, B. L., and O'Reilly, R. C. (1995). Why there are complementary learning systems in the hippocampus and neocortex. *Psychological Review*, 102(3), 419–457. https://doi.org/10.1037/0033-295X.102.3.419
+ 452 - McCloskey, M., and Cohen, N. J. (1989). Catastrophic interference in connectionist networks: The sequential learning problem. *Psychology of Learning and Motivation*, 24, 109–165. https://doi.org/10.1016/S0079-7421(08)60536-8
+ 453 - Plaçais, P.-Y., et al. (2012). Slow oscillations in two pairs of dopaminergic neurons gate long-term memory formation in *Drosophila*. *Nature Neuroscience*, 15(4), 592–599. https://doi.org/10.1038/nn.3055
+ 454 - Robins, A. (1995). Catastrophic forgetting, rehearsal and pseudorehearsal. *Connection Science*, 7(2), 123–146. https://doi.org/10.1080/09540099550039318
+ 455 - Rolnick, D., Ahuja, A., Schwarz, J., Lillicrap, T., and Wayne, G. (2019). Experience replay for continual learning. *NeurIPS 32*, 350–360. https://arxiv.org/abs/1811.11682
+ 456 - Shin, H., Lee, J. K., Kim, J., and Kim, J. (2017). Continual learning with deep generative replay. *NeurIPS 30*, 2990–2999. https://arxiv.org/abs/1705.08690
+ 457 - Vitter, J. S. (1985). Random sampling with a reservoir. *ACM Transactions on Mathematical Software*, 11(1), 37–57. https://doi.org/10.1145/3147.3165
+ 458 - Zenke, F., Poole, B., and Ganguli, S. (2017). Continual learning through synaptic intelligence. *Proceedings of ICML*, PMLR 70, 3987–3995. https://proceedings.mlr.press/v70/zenke17a.html
+
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$p='"'.codebase/scripts/neural-learning/run-eye-graph-memory-cubic.mjs'; "'$i=0; Get-Content -LiteralPath $p -Encoding UTF8 | ForEach-Object { $i++; if (($i -ge 130 -and $i -le 191) -or ($i -ge 220 -and $i -le 233)) { '"'{0,4} {1}' -f "'$i, $_ } }; $p='"'.codebase/src/neural-learning/transfer-evaluation-v1.mjs'; "'$i=0; Get-Content -LiteralPath $p -Encoding UTF8 | ForEach-Object { $i++; if ($i -ge 48) { '"'{0,4} {1}' -f "'$i, $_ } }' in C:\Users\ethan\Documents\fly-chess-research
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$p='"'documentation/design/research-goals/transfer-and-combination-protocol-2026-11-03.md'; "'$i=0; Get-Content -LiteralPath $p -Encoding UTF8 | ForEach-Object { $i++; if (($i -ge 19 -and $i -le 78) -or ($i -ge 90 -and $i -le 105) -or ($i -ge 131 -and $i -le 155)) { '"'{0,4} {1}' -f "'$i, $_ } }; $p='"'.codebase/src/search-and-feedback/landing-square-certificate.mjs'; "'$i=0; Get-Content -LiteralPath $p -Encoding UTF8 | ForEach-Object { $i++; if ($i -ge 7 -and $i -le 24 -or $i -ge 49) { '"'{0,4} {1}' -f "'$i, $_ } }' in C:\Users\ethan\Documents\fly-chess-research
+ succeeded in 285ms:
+ 130     Atomics.wait(sleepWord, 0, 0, performance.now() - t);
+ 131   };
+ 132   const rng = mulberry32((seed ^ { informative: 0x11, absent: 0x22, shuffled: 0x33, disabled: 0x44 }[arm]) >>> 0), delayRng = mulberry32((seed ^ 0x6a09e667) >>> 0);
+ 133   const learns = arm !== 'disabled', tests = {}, realized = {}, pulses = {};
+ 134   const gainsHash = () => sha(Buffer.from(memory.gains.buffer));
+ 135   const stateHash = () => sha(JSON.stringify(memory.snapshot()));
+ 136   const initialGains = gainsHash();
+ 137   const look = (code, level, dt) => { model.forward([0], [...tonic(level), ...code]); if (learns) observe(dt); };
+ 138   const gap = dt => { model.h[8].set(rest); if (learns) observe(dt); }; // nothing active, so the settled rest pattern needs no graph pass
+ 139   const test = (name, goodOf) => {
+ 140     const before = stateHash();
+ 141     tests[name] = items.map((x, j) => { const good = goodOf(j), m = value(x.images[good]) - value(x.images[1 - good]); return { mNorm: m / 1.6, greedy: m > 0 }; });
+ 142     if (stateHash() !== before) throw Error('Test changed persistent state');
+ 143     atomic(`${a.out}/snapshot-${suffix}-${name}.json`, { seed, arm, phase: name, snapshot: memory.snapshot(), localHash: localHash(memory), tests: tests[name] });
+ 144     log({ kind: 'test', name, results: tests[name], localHash: localHash(memory) });
+ 145   };
+ 146   let trial = 0, cursor = {};
+ 147   const block = (name, j, good) => {
+ 148     pulses[name] = { reward: 0, punish: 0, none: 0 }; realized[name] = []; cursor[name] = 0;
+ 149     for (let t = 0; t < TRIALS; t++) {
+ 150       guard();
+ 151       const unknown = (trial + 1) % 8 === 0; trial++;
+ 152       context = { phase: name, trial, item: j, step: 'choice', chosen: null };
+ 153       // value() has just run this image's graph pass at tonic level, so the rest frame can observe it directly.
+ 154       const scores = items[j].images.map(code => { const v = value(code); if (learns) observe(1); gap(4); return v; });
+ 155       const choice = rng() < 1 / (1 + Math.exp((scores[1] - scores[0]) / TEMPERATURE)) ? 0 : 1, code = items[j].images[choice];
+ 156       let valence = null;
+ 157       if (!unknown && learns && arm !== 'absent') valence = arm === 'shuffled' ? yoked[name][cursor[name]++] : choice === good ? 'reward' : 'punish';
+ 158       if (valence) { pulses[name][valence]++; realized[name].push(valence); } else pulses[name].none++;
+ 159       context = { ...context, step: 'chosen', chosen: choice };
+ 160       const now = value(code); if (learns) observe(1);
+ 161       const pulse = valence === 'reward' ? 1.5 : valence === 'punish' ? 0 : TONIC;
+ 162       const f = valence ? predictionScale(now, valence === 'reward' ? 1 : -1, V0) : 0;
+ 163       log({ kind: 'trial', context, scores, choice, unknown, good, valence, now, scale: f, level: TONIC + (pulse - TONIC) * f,
+ 164         certificate: { criterion: 'assigned-action-association-v1', scope: 'arbitrary association only; no chess consequence', fen: items[j].fen, moves: items[j].moves, chosenMove: items[j].moves[choice], known: !unknown, goodMove: items[j].moves[good] } });
+ 165       context = { ...context, step: 'feedback' };
+ 166       look(code, TONIC + (pulse - TONIC) * f, 1);
+ 167       gap(4);
+ 168     }
+ 169   };
+ 170   for (let j = 0; j < ITEMS; j++) { block(`B${j}`, j, 0); test(`T${j}`, () => 0); }
+ 171   const gainsBefore = gainsHash();
+ 172   // Delay: ongoing noise. Random 10% of visual-pool cells (those any image uses, plus none beyond) with DAN jitter, all arms that learn.
+ 173   const pool = [...new Set(images.flat().map(c => c.index))], noiseRng = delayRng;
+ 174   for (let s = 0; s < DELAY_STEPS; s++) {
+ 175     guard(); context = { phase: 'Delay', step: s };
+ 176     const code = pool.filter(() => noiseRng() < 0.1).map(index => ({ index, current: 0.9 + 0.6 * noiseRng() }));
+ 177     const dan = COMPARTMENTS.flatMap(([, d]) => { const e = 0.1 * (2 * noiseRng() - 1); return dans.get(d).map(index => ({ index, current: TONIC * (1 + e) })); });
+ 178     model.forward([0], [...dan, ...code]); if (learns) observe(4);
+ 179   }
+ 180   test('Delay', () => 0);
+ 181   if (opts.restore) {
+ 182     const saved = JSON.parse(JSON.stringify(memory.snapshot())), before = localHash(memory);
+ 183     w = makeWorld(seed); const freshValue = makeReadout(w, images); w.memory.restore(saved);
+ 184     ({ model, memory, tonic, rest } = w); value = freshValue;
+ 185     if (localHash(memory) !== before) throw Error('Fresh-model restore changed local state');
+ 186     log({ kind: 'fresh-restore', before, after: localHash(memory) });
+ 187   }
+ 188   block('REV', 0, 1); test('Rev', j => (j === 0 ? 1 : 0));
+ 189   const obs = readNeurons(model.h[8], { roster: neuronReaderCells, config: { ...model.config }, memoryIdentity: memory.identity });
+ 190   log({ kind: 'end', frames: frame, finalState: localHash(memory) });
+ 191   return { seed, arm, tests, pulses, realized, initialGains, gainsBefore, frames: frame, finalLocalState: localHash(memory), finalState: stateHash(), readerZero: obs.zeroCount, readerCeiling: obs.ceilingCount, kcEdges: memory.edges.length, fixtures: items.map(x => ({ fen: x.fen, moves: x.moves })) };
+ 220 const med = xs => { const s = xs.filter(Number.isFinite).sort((p, q) => p - q); return s.length % 2 ? s[s.length >> 1] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2; };
+ 221 const arm = n => rows.filter(r => r.arm === n), I = arm('informative'), share = (r, t, js) => js.filter(j => r.tests[t][j].greedy).length / js.length;
+ 222 const ALL = Array.from({ length: ITEMS }, (_, j) => j), OLD = ALL.slice(0, ITEMS / 2), LAST = `T${ITEMS - 1}`;
+ 223 const ratio = (n, d) => (d > 0 ? n / d : 0);
+ 224 const own = ALL.map(j => ({ m: med(I.map(r => r.tests[`T${j}`][j].mNorm)), g: I.filter(r => r.tests[`T${j}`][j].greedy).length / I.length }));
+ 225 const marks = {
+ 226   R1: { pass: own.every(x => x.m >= 0.20 && x.g >= 0.9), observed: own },
+ 227   R2: { pass: med(I.map(r => share(r, LAST, OLD))) >= 0.9 && med(I.map(r => med(OLD.map(j => ratio(r.tests[LAST][j].mNorm, r.tests[`T${j}`][j].mNorm))))) >= 0.5, observed: { share: med(I.map(r => share(r, LAST, OLD))), ratio: med(I.map(r => med(OLD.map(j => ratio(r.tests[LAST][j].mNorm, r.tests[`T${j}`][j].mNorm))))) } },
+ 228   R3: { pass: med(I.map(r => r.tests.Rev[0].mNorm)) >= 0.15 && I.filter(r => r.tests.Rev[0].greedy).length / I.length >= 0.9 && med(I.map(r => med(ALL.slice(1).map(j => ratio(r.tests.Rev[j].mNorm, r.tests.Delay[j].mNorm))))) >= 0.8, observed: { item: med(I.map(r => r.tests.Rev[0].mNorm)), greedy: I.filter(r => r.tests.Rev[0].greedy).length / I.length, others: med(I.map(r => med(ALL.slice(1).map(j => ratio(r.tests.Rev[j].mNorm, r.tests.Delay[j].mNorm))))) } },
+ 229   R4: { pass: med(I.map(r => share(r, 'Delay', ALL))) >= 0.9 && med(I.map(r => med(ALL.map(j => ratio(r.tests.Delay[j].mNorm, r.tests[LAST][j].mNorm))))) >= 0.7, observed: { share: med(I.map(r => share(r, 'Delay', ALL))), ratio: med(I.map(r => med(ALL.map(j => ratio(r.tests.Delay[j].mNorm, r.tests[LAST][j].mNorm))))) } },
+ 230   R5: { pass: arm('disabled').every(r => r.gainsBefore === r.initialGains) && med(arm('shuffled').map(r => share(r, LAST, ALL))) < 0.75 && med(I.map(r => share(r, LAST, ALL))) >= med(arm('shuffled').map(r => share(r, LAST, ALL))) + 0.25,
+ 231     observed: { disabledUnchanged: arm('disabled').every(r => r.gainsBefore === r.initialGains), absentUnchanged: arm('absent').every(r => r.gainsBefore === r.initialGains), shuffled: med(arm('shuffled').map(r => share(r, LAST, ALL))), informative: med(I.map(r => share(r, LAST, ALL))), absentShare: med(arm('absent').map(r => share(r, LAST, ALL))) } },
+ 232 };
+ 233 const summary = { schema: 'eye-graph-memory-cubic-v1', seeds, items: ITEMS, marks, wall: (performance.now() - started) / 1000, maxRssMiB: process.resourceUsage().maxRSS / 1024, eyes: eyes.identity, spec: pins['research/reports/memory-retention-continuation-2026-11-01/cubic-exit-spec.md'], self: sha(readFileSync(new URL(import.meta.url))) };
+  48 // Locked pass rule for twin pairs. Game-level bootstrap of primary-minus-comparator pair wins.
+  49 export function pairGate({ arms, games, primary, comparators, minCorrect, minMargin, resamples = 10000, seed = 20261103 }) {
+  50   if (games.length === 0) throw Error('No games');
+  51   if (comparators.length === 0) throw Error('No comparators');
+  52   for (const name of [primary, ...comparators]) if (!Array.isArray(arms[name])) throw Error(`Missing arm ${name}`);
+  53   for (const [name, values] of Object.entries(arms)) if (values.length !== games.length) throw Error(`Arm ${name} length differs from games`);
+  54   const count = xs => xs.filter(Boolean).length;
+  55   const P = arms[primary], correct = count(P);
+  56   const groups = new Map();
+  57   games.forEach((game, i) => { if (!groups.has(game)) groups.set(game, []); groups.get(game).push(i); });
+  58   const G = [...groups.values()];
+  59   const result = {};
+  60   comparators.forEach((c, k) => {
+  61     const C = arms[c], rand = mulberry32(seed ^ k);
+  62     const sums = Array.from({ length: resamples }, () => {
+  63       let sum = 0;
+  64       for (let d = 0; d < G.length; d++) {
+  65         for (const i of G[Math.floor(rand() * G.length)]) sum += (P[i] ? 1 : 0) - (C[i] ? 1 : 0);
+  66       }
+  67       return sum;
+  68     });
+  69     sums.sort((a, b) => a - b);
+  70     result[c] = { margin: correct - count(C), lower: sums[Math.floor(0.025 * resamples)] };
+  71   });
+  72   const pass = correct >= minCorrect && Object.values(result).every(r => r.margin >= minMargin && r.lower > 0);
+  73   return { pass, correct, total: games.length, comparators: result };
+  74 }
+
+ succeeded in 283ms:
+  19 ## Rules for every phase
+  20 
+  21 1. **Input:** Eyes v2 with zero input collisions ([revision](restart-plan-revision-2026-11-03.md), problem 1).
+  22 2. **Scoring:** every proposed move is scored from unchanged stored memory with `frozenScores` (revision, problem 4). The same single move score scores every task. There is no idea selector, no task label, no context signal and no hand-written rule that combines ideas.
+  23 3. **Memory (corrected later on 2026-11-03):** each phase declares, before data, either brain memory only or FlyChess with a disclosed engineered memory, as the researcher allowed on 2026-11-01. Results are reported for the declared system. The exact-recall store alone is always a comparison arm. An engineered-memory condition must also beat the same retrieval on raw eyes, on random or rewired features, with no memory and with mismatched memory (revision, problem 7 correction). Zero exact repeats between test and training inputs. The first version of this rule said "brain memory only"; that was a mistake.
+  24 4. **Feedback:** only the fly's own chosen move gets feedback, through the modeled dopamine cells, from an independent checker certificate. Unknown gives nothing. No feedback on test sets.
+  25 5. **Equal practice:** every arm gets the same number of feedback trials in the same order, with the same seeds. An arm that skips a training block gets the same number of **filler trials** instead: the non-chess arbitrary-pairing trials of the 2026-11-01 pilot, which carry feedback but no chess fact.
+  26 6. **Each pass score must hold in all three runs.** Every run gets an independent replay audit.
+  27 7. **Necessity:** each locked pair differs between its twins in the condition of exactly one idea. A system that lacks that idea gives both twins the same answer and gets that pair wrong. The generator certifies each pair's idea label, and the number of pairs per idea is fixed below. This is how each idea is shown to be needed.
+  28 8. **Checker:** every Phase B and C answer is certified by [landing-square-certificate.mjs](../../../.codebase/src/search-and-feedback/landing-square-certificate.mjs) (built 2026-11-03, 9 tests). For any legal non-king move it lists every legal opponent capture of the moved piece on its landing square, the attackers that are pinned, and the exchange values; `combinedAnswer` applies the combined rule below. It must pass an independent audit and the feedback quality gate before a phase starts.
+  29 9. **Generators** (programs that pick twin pairs from training-pool games) must exist and pass audit before each phase starts. No generator exists yet for any phase, including Phase A; the restart plan's rebuild list (section 11, item 6) still lists the new puzzle generator as to be built.
+  30 
+  31 ## Phase B: transfer of one learned idea to an unfamiliar problem
+  32 
+  33 **Idea learned in Phase A (idea 1, legal recapture):** after the fly's capture, can the opponent legally capture the capturing piece on its landing square?
+  34 
+  35 **New problem: quiet-move safety.** The fly makes a move that does not capture, with any piece except the king. The move is good if the opponent has no legal capture of the moved piece on its landing square. The same fact decides the answer, but Phase A never rewarded a quiet move, so the problem is unfamiliar.
+  36 
+  37 **Checker:** `certifyLandingSquare` in [landing-square-certificate.mjs](../../../.codebase/src/search-and-feedback/landing-square-certificate.mjs). A move is good when its `recaptures` list is empty.
+  38 
+  39 **Sets.** Training: training-pool puzzles only. Development: 48 twin pairs from 48 separate games. Locked: 60 twin pairs from 60 unrelated games, split by game code from every other set. 30 pairs use ordinary kinds; 30 use five new kinds, 6 each:
+  40 
+  41 1. the only attacker is a pawn;
+  42 2. the only attacker is a knight;
+  43 3. the only attacker is a long-range piece on an open line;
+  44 4. the moved piece itself was blocking the attacker's line (the line opens when it moves);
+  45 5. the only possible capturer is the king, and the moved piece is protected (unsafe twin: unprotected).
+  46 
+  47 No pinned-piece cases are allowed in Phase B; they belong to Phase C.
+  48 
+  49 **Practice.** 480 feedback trials on the new task [choice], with checkpoints every 96 trials. The scores before any Phase B feedback (zero practice) are also recorded for every arm and reported; they are not a pass rule.
+  50 
+  51 **Arms (all with the same Phase B practice):**
+  52 
+  53 | Arm | What it is |
+  54 |---|---|
+  55 | Phase-A fly | Phase A memory snapshot, then Phase B training |
+  56 | Fresh fly | Starting memory, then Phase B training |
+  57 | Shuffled fly | Phase A exposure with matched shuffled feedback, then Phase B training |
+  58 | Plasticity-off fly | Same exposure, memory updates switched off |
+  59 | Simple learner | Learner on raw photoreceptors, same exposure and feedback |
+  60 | Similar-board recall | Answers each test board with the answer of its most similar trained eye input |
+  61 | Exact-recall store | The separate answer file; no answer for new boards |
+  62 
+  63 **Pass scores (all must hold in all three runs):**
+  64 
+  65 1. **B1 overall:** Phase-A fly at least 44/60 locked pairs. (Chance of passing at random: 0.02%.)
+  66 2. **B2 new kinds:** at least 22/30. (At random: 0.8%.)
+  67 3. **B3 transfer benefit:** at least 6 more pairs than the fresh fly and than the shuffled fly, each with bootstrap lower limit above 0.
+  68 4. **B4 fair alternatives:** the same margin and lower-limit rule against every other arm.
+  69 5. **B5 retention:** the Phase A development set, scored again after Phase B, falls by at most 10% of its Phase A score.
+  70 6. **B6 audit:** independent replay confirms every feedback event, certificate, file hash, unchanged-memory check, zero input collisions and zero exact repeats.
+  71 
+  72 **Stopping rules:**
+  73 
+  74 1. Do not start unless Phase A passed all six section 9 rules, the checker and generator passed audit, and the input check found zero collisions.
+  75 2. Training stops at exactly 480 trials. The snapshot is the checkpoint with the most correct development pairs; a tie goes to the earliest. If any single development count is lower than at the previous checkpoint by more than 10%, that checkpoint cannot be chosen.
+  76 3. A run stops early only for a failed safety check before training starts, a failed audit or a software fault. It is reported and repeated in a new run folder with the same numbers. A fault after the locked set is opened spends that set.
+  77 4. The locked set is opened once. No limit is lowered and no new try uses the same set.
+  78 
+  90 ### The three ideas
+  91 
+  92 | Idea | Fact the fly must learn | Training task (alone) | Checker field used |
+  93 |---|---|---|---|
+  94 | 1. Legal recapture | Can the opponent legally capture the capturing piece? | Phase A safe capture, using only captures that would lose material if recaptured | `recaptures` (the existing capture certificate gives the same list) |
+  95 | 2. Pin | A piece cannot legally leave the line between an attacker and its own king | Quiet-move safety where the only attacker is pinned (safe) or not pinned (unsafe twin); no captures | `recaptures` for the answer; `pinnedAttackers` for the pair label |
+  96 | 3. Exchange value | Is what is captured worth at least the capturing piece? Values: pawn 1, knight 3, bishop 3, rook 5, queen 9 [choice] | Captures that can always be legally recaptured, with no pins; good if the captured value is at least the capturing piece's value | `combinedAnswer`, from `moverValue` and `capturedValue` |
+  97 
+  98 **Combined rule for test problems:** a capture is good if the opponent has no legal recapture, or if the captured value is at least the capturing piece's value. On each training set alone this rule gives the same answer as that set's own rule, so training never conflicts with the test. Idea 3 comes from a different part of chess (counting material) from ideas 1 and 2 (legal moves).
+  99 
+ 100 **Training-set rejection rules (the generator must count and report rejections):**
+ 101 
+ 102 1. Idea 1 training: reject any board where a pin changes the answer, or where the captured value is at least the capturing piece's value.
+ 103 2. Idea 2 training: reject any capture.
+ 104 3. Idea 3 training: reject any board with a pin on the target square's attackers, or with no legal recapture.
+ 105 
+ 131 ### C2: ideas 1, 2 and 3
+ 132 
+ 133 **Locked problems:** 60 twin pairs from 60 unrelated games. Every board is a capture where a pinned enemy piece attacks the target square and the exchange value matters.
+ 134 
+ 135 - 20 **pin pairs:** captured value lower than the capturing piece; the only attacker is pinned (good) or not pinned (bad).
+ 136 - 20 **recapture pairs:** captured value lower; the pinned attacker is on both twins; an unpinned attacker is absent (good) or present (bad).
+ 137 - 20 **value pairs:** an unpinned attacker is on both twins; the captured piece is worth at least the capturing piece (good) or less (bad).
+ 138 
+ 139 **Practice:** 480 trials of each idea [choice], with three counterbalanced orders across the three runs (1-2-3, 3-1-2, and alternating blocks of 96).
+ 140 
+ 141 **Arms:** Full fly; each two-idea fly (filler in place of the missing idea); each single-idea fly; fresh fly; shuffled-feedback fly; plasticity-off fly; simple learner; similar-board recall; exact-recall store; fixed-sum combiner of the three single-idea flies.
+ 142 
+ 143 **Pass scores (all three runs):**
+ 144 
+ 145 1. **C2-a:** Full fly at least 44/60.
+ 146 2. **C2-b:** at least 15/20 on each of the three pair groups. (At random, the chance for one group is 2.1%.)
+ 147 3. **C2-c:** at least 6 more pairs than every other arm, including the best two-idea fly and the fixed-sum combiner, each with bootstrap lower limit above 0.
+ 148 4. **C2-d and C2-e:** retention and audit, as in C1.
+ 149 
+ 150 ### Stopping rules for C1 and C2
+ 151 
+ 152 1. C1 does not start unless Phases A and B passed. C2 does not start unless C1 passed.
+ 153 2. The checker audit, the generators and the score-expression check must pass first.
+ 154 3. Training stops at the fixed trial counts. Snapshot choice and early stops follow the Phase B rules.
+ 155 4. Each locked set is opened once. No pass score is lowered after data.
+   7 export const PIECE_VALUES = Object.freeze({ p: 1, n: 3, b: 3, r: 5, q: 9 });
+   8 
+   9 export function certifyLandingSquare(board, move, { maxReplies = 256 } = {}) {
+  10   if (!Number.isSafeInteger(maxReplies) || maxReplies < 1 || maxReplies > 256)
+  11     throw Error('Invalid reply bound');
+  12   const beforeFen = board.fen(), beforePgn = board.pgn();
+  13   const action = board.moves({ verbose: true }).find(candidate => uci(candidate) === move);
+  14   if (!action) throw Error('Task requires a legal move');
+  15   if (action.piece === 'k') throw Error('King moves are outside these tasks');
+  16   const actor = board.turn(), opponent = actor === 'w' ? 'b' : 'w', target = action.to;
+  17   board.move(action);
+  18   try {
+  19     const legal = board.moves({ verbose: true });
+  20     const replies = legal.map(uci).sort();
+  21     if (replies.length > maxReplies) return { status: 'unknown', certificate: null };
+  22     const captures = legal.filter(reply => reply.to === target && Boolean(reply.captured));
+  23     const recaptures = captures.map(uci).sort();
+  24     const attackers = board.attackers(target, opponent).sort();
+  49 export function combinedAnswer(certificate) {
+  50   if (!certificate) throw Error('Certificate is required');
+  51   return certificate.recaptures.length === 0 ||
+  52     (certificate.capture && certificate.capturedValue >= certificate.moverValue) ? 'good' : 'bad';
+  53 }
+
+codex
+The input-hash change closes the FEN-counter path. Two issues remain in the changed text: admission can leave no older entry despite the “exactly one replay” rule, and stage 1 stores a teacher valence rather than the current actually delivered to the fly.
+
+hook: PreToolUse
+hook: PreToolUse
+hook: PreToolUse Completed
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'git hash-object -- documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md; $p='"'documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md'; rg -n 'three runs|seeds|PRNG|uniform|projection|flo|round|amplitude|valence|pulse|only in reversal|first-block|each later|no-diary arm already|not worse|exactly one' "'$p' in C:\Users\ethan\Documents\fly-chess-research
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$p='"'.codebase/src/neural-learning/memory-assay-rule-prediction-scaled.mjs'; "'$i=0; Get-Content -LiteralPath $p -Encoding UTF8 | ForEach-Object { $i++; '"'{0,4} {1}' -f "'$i, $_ }; $p='"'.codebase/scripts/neural-learning/run-eye-graph-memory-cubic.mjs'; "'$i=0; Get-Content -LiteralPath $p -Encoding UTF8 | ForEach-Object { $i++; if ($i -ge 100 -and $i -le 110) { '"'{0,4} {1}' -f "'$i, $_ } }' in C:\Users\ethan\Documents\fly-chess-research
+ succeeded in 288ms:
+8d1fc4f2c5b8717d9ad325b06c9ba2a6a51bf991
+3:**Status: design revision 7, written before any implementation or data. Nothing is built or launched. It needs the researcher's approval before building.** Revision 1 (preserved as [design-revision-1.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-1.md), git blob `62c72ba4`) was reviewed by three independent reviewers; all three returned "approve with required changes", and section 12 maps every required change to revision 2 ([design-revision-2.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-2.md), blob `5e22be79`). Revision 3 adds four small fixes from the lead's own recheck (section 12; preserved as [design-revision-3.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-3.md), blob `72fcbec9`). Revision 4 adds "The design on one page" after the researcher said "i dont see a design yet": the picture, the module's interface, the data, the practice loop, a worked example and the files to build. It restates sections 4.1 to 4.8; it adds no new rule. Revision 5 (section 12) fixes six gaps found in the lead's second read before the reviewers' round 2; revision 4 is preserved as [design-revision-4.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-4.md) (blob `99df41e4`). Revision 6 (section 12) comes from the lead's solo deep-in-thought pass, which rebuilt the key numbers from raw records; revision 5 is preserved as [design-revision-5.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-5.md) (blob `0c71bb4d`). Revision 7 answers the scientific skeptic's round 2 review (section 12); revision 6 is preserved as [design-revision-6.md](../../../research/reports/replay-diary-design-review-2026-11-17/design-revision-6.md) (blob `0b57e460`). The reviewers' independent recheck of these revisions is pending: their round 2 stopped at the Codex usage limit. Serves Volume 3 (*Reasoning*), chapters 4 (*Process*) and 5 (*Evidence*). The no-diary arms serve Volume 2 chapter 3 (*To Learn*). A failure of the mixed-order arm feeds Volume 4 chapters 2 (*Amnesia*) and 5 (*Evidence*) only with a separate proof. Goal set by the researcher on 2026-11-17: "The memory may help the fly remember. It must not supply the intelligence we later attribute to the fly." Computational memory is allowed; biological realism is not required.
+28:                                                                  pulse: reward / punish / none
+32:   teach(stimulus,pulse)◄────────────── the ONE lesson step, shared by real lessons and replays:
+33:             │                          one forward pass with input + pulse together, dopamine
+36:   diary.admit(stimulus, pulse) ──► receipt, state and diary saved together
+39:   diary.nextReplay() ──► old (stimulus, pulse) ──► teach(old stimulus, old pulse)   (one per lesson)
+51:| `admit(lesson)` | The receipt of a lesson that delivered a pulse: `stimulus` (the input: photoreceptor indices and currents), `teaching` (dopamine group and current), `lesson_index`, `receipt_hash` | Nothing | Unknown events are refused. Any entry with the same `stimulus_hash` is removed first (correction). Then Algorithm R decides whether the lesson is kept and which entry it replaces. No field value other than `stimulus_hash` affects any decision |
+52:| `nextReplay(lesson_index)` | The index of the lesson just taught | One stored `(stimulus, teaching)`, chosen uniformly at random among entries from earlier lessons, or nothing if there are none | Never looks at the stimulus to choose. Never returns more than one entry. Never returns a score, count or average |
+74:    pulse    = checker(board, move)                # certificate goes to the audit log only
+75:    if pulse is unknown: continue                  # no lesson, no entry, no replay
+76:    teach(stimulus, pulse)                         # fly's rule changes its own connections
+84:`teach` is the existing lesson step of `three-board-feedback-v1.mjs` (lines 85–103), taken out into one function so that real lessons and replays cannot differ: `h = forward(stimulus + pulse)`, dopamine signal `D` from the dopamine cells' rates, then each learnable gain `g ← clip(g + ETA · D · (k + g − 1), 0.2, 1.8)`. Stage 1 uses the cubic-exit task's own lesson step in the same place.
+122:1. **Input rule: nothing enters that the fly did not experience.** Every stored field can be rebuilt, byte for byte, from the receipts of the fly's lessons: the input it actually received and the pulse it actually received. No certificate, best move, other move's outcome, engine score, test or validation board, chess rule or invisible board detail enters.
+123:2. **Output rule: nothing leaves towards a choice.** The diary has no path into move scoring. Its only output is a replayed lesson, delivered as the same input and pulse into the fly's own unchanged learning rule.
+142:**One sentence:** the diary records the exact input and pulse of each lesson the fly received, and after each new lesson it makes the fly re-live one randomly chosen older lesson, so the fly's own connections practise the old lesson alongside the new one. It is never consulted when the fly chooses, and it is removed before any test.
+154:3. **Delivery.** One forward pass with the move's input and the teaching pulse applied together, as the current learner does (`probe-wide-learning-v3.mjs`, lines 89–91, where eye stimulation and dopamine stimulation enter the same pass), then the learning rule's update.
+161:| `teaching` | The external teaching input delivered: which dopamine group (reward: PAM07 and PAM02; punishment: PPL101 and PPL103) and current, or in stage 1 the valence the task's teaching function received | The fly received it |
+165:**Not stored in the diary:** board text (FEN), move counters and any other detail the eyes do not show; the certificate or its reasons; whether the move was good; the best move; other moves and their outcomes; the ranking and scores; engine values; validation or test inputs; lessons whose verification was unknown (no pulse was delivered). Board text and certificates stay in the audit log for analysis and auditing only.
+173:1. Pick one entry uniformly at random among entries written before the current lesson and not superseded, using the replay random stream (section 4.8).
+174:2. Run one forward pass with `stimulus` and the stored teaching input applied together, exactly as in step 3 of the lesson boundary. Where a task computes part of the delivered current from the fly's present state (stage 1's prediction-scaled teaching level), that part is recomputed at replay, as it would be online; the stored external valence is not changed.
+182:After every online lesson, exactly one replay [choice]. Reason: it interleaves old lessons at the finest grain and fixes the extra practice at one step per lesson, so controls can match it exactly. A trial whose verification was unknown delivered no pulse, so it is not a lesson: it gets no entry and no replay. The first lesson has no earlier entry and gets no replay; every replay arm skips the same step. All fly test snapshots, including the sawtooth checkpoints, are taken **after an online lesson and before its replay**, so the test sees the fly at the low point of any refresh cycle, not just after an old lesson was re-practised. Snapshots are scored by the test function, which receives a copy of the learner state and no diary.
+186:- Capacity: one quarter of the stage's online lessons, rounded up [choice]. Reason: by the end, three of every four lessons have been evicted, so the test measures a memory under pressure, not a store that keeps everything (v8's store was never full: 2,509 of 4,096). Capacities of one sixteenth and of every lesson are run for the diary arm only, as a descriptive curve.
+187:- Eviction: reservoir sampling, Algorithm R ([Vitter 1985](https://doi.org/10.1145/3147.3165)). For the n-th admitted lesson: if the diary is not full, append; otherwise draw j uniformly from 0 to n − 1 with the reservoir stream and, if j is below capacity, replace slot j. Without supersession, every past lesson then has the same chance of being kept, whatever its input or pulse. A supersession (section 4.5) frees a slot that the next lesson fills directly, which gives that lesson a slightly higher chance of being kept; this happens only when the same input repeats, so in chess only in reversal tests, and every occurrence is logged. Class-balanced variants use outcome labels ([Chaudhry et al. 2019](https://arxiv.org/abs/1902.10486)) and are not allowed.
+191:Before admitting a lesson, any entry with the same `stimulus_hash` is removed, whatever its pulse. Supersession depends only on whether the fly received exactly the same input before, never on the verdict. In chess this matters only in reversal tests, because a verified certificate gives the same verdict every time.
+213:| Encoding | Storing the pulse stores the teacher's verdict | The fly received exactly this pulse. Whether the verdict, rather than re-exposure, matters is tested by the no-pulse and event-shuffled arms |
+217:| Dose | Replay adds learning steps | Filler, moved-timing and no-pulse arms; logged update sizes |
+227:3. **Re-living a lesson has the same kind of effect as the original lesson, given the current state** (engineering). The input and external pulse are identical; the dopamine response and update are recomputed and can differ, which is the fly's own dynamics and is logged.
+240:| **Rival 3: re-exposure without the verdict** | The no-pulse arm matches the diary |
+249:**Runs that stop early.** A run that stops is resumed only under section 4.7 (new directory, hash-checked inputs, resume at a lesson boundary). If it cannot be resumed, it is reported and repeated in a new directory with the same seeds. Verdicts use complete runs only; a stage with any incomplete run is inconclusive, not failed.
+256:4. **Verdict blindness:** two lesson streams identical except for their pulses produce the same admitted entries, the same evictions and the same replay order, under the same seeds.
+257:5. **Reservoir:** 1,000 independent seeds, each a stream of 100,000 synthetic lessons into capacity 100. The share of seeds keeping each stream position, pooled into 100 equal bins, passes a chi-square test of uniformity at the 1% level.
+263:Every comparison arm receives **identical online lessons** to the diary arm (same inputs, same pulses, same order). The five replay controls (no old replays, filler, moved timing, no pulse, event-shuffled) are copies of the diary arm's replay log that change **only the replays of old lessons**, meaning entries written in an earlier block. Replays of the current block's own lessons stay exactly as in the diary arm. So through the first block every replay control is in exactly the diary arm's state, and after that the only difference is what happened to the old-lesson replays, which is what the main hypothesis is about. The dry run checks that the first-block snapshot of each replay control equals the diary arm's, bit for bit. Stage 2 does this with a fixed tape. In stage 1 the diary arm makes its own choices, as in the original task, and each added arm is **yoked** to them: it receives the diary arm's chosen input and pulse at every trial instead of choosing. The task's four original arms keep their own choices and serve only to reproduce the original marks. The case-recall arms and the two learners are run in stage 2 as descriptive results and are decisive only in stage 3.
+268:| **No diary** | Online lessons only. Its first-block learning also lacks the diary's replays, so diary versus no diary mixes better learning with better keeping; the replay controls separate the two | Baseline; the Volume 2 arm |
+269:| **No old replays** | Identical to the diary arm, except that every old-lesson replay is skipped: no step at all. It starts each later block in exactly the diary arm's state and gets the same lessons and the same current-block replays | The reference for forgetting and for filler damage: it differs from the diary only by the missing old-lesson replays |
+272:| **No pulse** | Each old-lesson replay keeps its input and time but delivers no external teaching pulse | Rival 3 |
+273:| **Event-shuffled** | Within each block, the pulses of that block's old-lesson replays are randomly permuted across those replays, so each keeps its input and time but gets another old-lesson replay's pulse. Pulse counts, amplitudes and timing per block are unchanged | Re-exposure with wrong verdicts |
+281:**Case recall, exact rule.** Keys, all fixed before data with the `features` stream: (a) raw input vector; (b) Kenyon-cell activity from the fly's untrained state; (c) random features: a fixed random projection of the raw input to as many units as there are Kenyon cells, keeping the k largest, where k is the fly's mean number of active Kenyon cells on development inputs at the untrained state. Each key is scaled to unit length; distance is Euclidean. A candidate's score is the inverse-distance-weighted mean of the pulse signs (+1 reward, −1 punishment) of its 3 nearest stored lessons, weight 1 / (d + 10⁻⁹); if any stored lesson is at distance below 10⁻¹², the score is the mean sign over those exact matches only. Ties and tie tolerance follow the fly's scoring. The bar is the best of the three keys in each version, chosen per stage on the final result: this favours the control.
+283:**Simple learners, exact rule.** Score = w · φ(x), with w starting at zero. On each lesson or replay with pulse sign s: w ← w + s φ(x) / (‖φ(x)‖² + 10⁻⁹). φ is the raw input or the random features above. There is no learning rate to tune: because w starts at zero and every update would be multiplied by the same rate, a rate only rescales all scores and cannot change any ranking.
+289:**Contract.** Reuse the cubic-exit task's harness (`run-eye-graph-memory-cubic.mjs`; [specification](../../../research/reports/memory-retention-continuation-2026-11-01/cubic-exit-spec.md)) through an adapter. Six seeds, as the original. Four items learned in sequence, each a choice between two injected, normalized Kenyon-cell codes; one unknown trial in eight; then the delay with noise; then reversal of item 0. Teaching level is the task's prediction-scaled function (`TONIC + (pulse − TONIC) × scale`), recomputed at replay from the stored valence and the present prediction. Replay is inserted after each feedback trial in every phase that has feedback; the delay has none. The task's own arms (informative, absent, shuffled, disabled) are kept; the arms of section 7.2 except mixed order, learning off (the task's disabled arm serves), case recall and the learners are added, making 12 arms. Complete state includes the task's slow store. Planning estimate: the original 24 arm runs took 6,157 s at 299 MiB peak; 12 arms × 6 seeds with replays is about 6–7 hours. A stage 1 protocol file freezes the adapter, the exact per-seed formulas below and the seed list before any run.
+301:**Prerequisite:** the no-old-replays arm must show damage after new learning in at least one seed: an item lost, or a ratio below its mark, at the end of learning or after the reversal. The original run's informative arm, which had no replays at all, did: after the reversal, seeds 4102, 4105 and 4106 each lost one unrelated association (raw records rechecked 2026-11-17; seed 4102's item 3 margin went from 0.140130 to -0.020325). If this rerun does not, stage 1 cannot test the diary.
+311:**Tape:** before any data, the `tape` stream draws 480 A lessons, then 480 B lessons, from the protocol's training pools under its rejection rules, each a (board, move) whose verdict is verified, with the certificate's pulse. Every arm practises this tape. Teacher-chosen practice is a disclosed clue (Read first, item 5).
+331:7. **Beats the practice controls:** more A pairs correct after B than no diary, no old replays, filler, moved timing, no pulse and event-shuffled, each with bootstrap lower limit above 0. If the filler arm ends B with fewer A pairs than the no-old-replays arm (lower limit above 0), filler damaged learning; that comparison is then reported as uninformative and the others decide. Because the replay controls start B in exactly the diary arm's state, those five comparisons measure keeping, not learning.
+346:A **reasoning claim for the fly plus diary** at Phase C step 2 (three ideas) requires, in all three runs, with every audit passed:
+359:3. **No forgetting to repair:** the no-diary arm already keeps A. The stage says nothing about the diary.
+361:5. **The verdict is not needed:** the diary does not beat the no-pulse arm.
+379:2. Approve replay as an amendment to the restart plan's feedback rule: replay repeats lessons already received, uniformly, never because of errors, and never asks the teacher again.
+384:## 12. Changes from revision 1 (review round 1)
+391:| Peer 2: existing teaching path selects moves by certificate, has no receipts, and delivers input and pulse in one pass | Section 4.1 lesson boundary; one-pass delivery; auditor recomputes every replay; teacher-chosen tape disclosed for stage 2 only |
+392:| Peer 3: stage 1 cannot be copied as written | Stage 1 contract: adapter, six seeds, injected codes, recomputed prediction-scaled teaching, complete state, per-seed rules, original medians reported; mixed-order arm removed from stage 1 |
+397:| Skeptic 3: shuffle changed per-event pulse balance; filler may interfere | Event-level shuffle; no-pulse arm; filler damage check |
+404:**Revision 3: the lead's own recheck** (the reviewers' round 2 hit the Codex usage limit before writing anything; this recheck is not independent):
+406:1. The event-shuffled arm permuted pulses across the whole run, which changes pulse counts per block although revision 2 said it did not. Now permuted within each block.
+411:**Revision 5: the lead's second read, before the reviewers' round 2** (not independent):
+422:1. **Controls confused learning with keeping.** In revision 5 the filler, no-pulse and event-shuffled arms changed replays during the A block too, so they would learn A less well, and the diary would beat them on learning, not on keeping. Now every replay control changes only replays of old lessons; through the first block it is in exactly the diary arm's state (checked bit for bit in the dry run).
+423:2. **Stage 1 asked the diary to stop damage it cannot touch.** Raw records show three of six seeds lose margin over the delay (ratios 0.5941, 0.6832, 0.4203), when there are no lessons and so no replays. The delay condition is now "not worse than no diary"; the benefit conditions and the prerequisite count only damage after new learning.
+430:**Revision 7: the scientific skeptic's round 2** ([review](../../../research/reports/replay-diary-design-review-2026-11-17/design-review-r2-skeptic.md); four of five round 1 findings resolved). All three points adopted:
+
+ succeeded in 348ms:
+   1 // Prediction-scaled teaching on existing stores (prediction-reservoir-proposal.md). Fixture microcircuit stand-in, not validated biology.
+   2 import { makeRule as reservoirRule } from './memory-assay-rule-local-reservoir.mjs';
+   3 import { makeRule as gatedRule } from './memory-assay-rule-local-gated.mjs';
+   4 import { DAN_REST } from './memory-assay-adapters.mjs';
+   5 
+   6 // Fraction of the DAN range used by this pulse: large for a confident error, small for an expected outcome.
+   7 export function predictionScale(v, sigma, V0) {
+   8   return Math.min(1, Math.max(0, (V0 - sigma * v) / (2 * V0)));
+   9 }
+  10 
+  11 export function makePredictionRule(name, fixture, { store, eta, V0 }) {
+  12   const inner = (store === 'reservoir' ? reservoirRule : gatedRule)(name, fixture, { eta });
+  13   return {
+  14     ...inner,
+  15     frame({ kcH, danP, danR, dt }) {
+  16       if (danP === DAN_REST && danR === DAN_REST) return inner.frame({ kcH, danP, danR, dt });
+  17       const f = predictionScale(inner.value(null, kcH), danR > DAN_REST ? 1 : -1, V0);
+  18       inner.frame({ kcH, danP: DAN_REST + (danP - DAN_REST) * f, danR: DAN_REST + (danR - DAN_REST) * f, dt });
+  19     },
+  20   };
+  21 }
+ 100 // Value: relative MBON response, mapped so naive is -.32 and a fully depressed response (gain .2) is +.32.
+ 101 function makeReadout(world, images) {
+ 102   const { model, tonic, rest } = world, naive = new Map();
+ 103   const raw = code => {
+ 104     model.forward([0], [...tonic(), ...code]);
+ 105     return COMPARTMENTS.map(([m]) => reader[m].reduce((s, i) => s + model.h[8][i] - rest[i], 0) / reader[m].length);
+ 106   };
+ 107   for (const c of images) naive.set(c, raw(c));
+ 108   return code => { const r = raw(code), n = naive.get(code); return 0.8 * (1 - (r[0] + r[1]) / (n[0] + n[1])) - 0.32; };
+ 109 }
+ 110 function runArm(seed, items, arm, yoked, opts = {}) {
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "rg -n 'maxGain|minGain|CONFIG|scope' .codebase/src/neural-learning/local-gated-memory.mjs .codebase/src/neural-learning/memory-assay-adapters.mjs; "'$p='"'.codebase/src/neural-learning/local-gated-memory.mjs'; Get-Content -LiteralPath "'$p -Encoding UTF8 -TotalCount 30; $p='"'runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1/frames-4102-informative.jsonl'; "'$matches=Select-String -LiteralPath $p -Pattern '"'\"kind\":\"trial\"' | Select-Object -First 2; foreach ("'$m in $matches) { $r=$m.Line | ConvertFrom-Json; [pscustomobject]@{line=$m.LineNumber;valence=$r.valence;now=$r.now;scale=$r.scale;level=$r.level;unknown=$r.unknown} | ConvertTo-Json -Compress }' in C:\Users\ethan\Documents\fly-chess-research
+ succeeded in 599ms:
+.codebase/src/neural-learning/local-gated-memory.mjs:7:export const LOCAL_GATED_DEFAULTS = Object.freeze({ eta: 0.5, minGain: 0.2, maxGain: 1, activityScale: 1.5, theta: 0.2, tauE: 0.5 });
+.codebase/src/neural-learning/local-gated-memory.mjs:11:export function stepLocalGated({ gain, trace, k, excess, deficit, dt }, { eta, theta, tauE, minGain, maxGain }) {
+.codebase/src/neural-learning/local-gated-memory.mjs:16:  const gStar = (a * minGain + b * maxGain) / (a + b);
+.codebase/src/neural-learning/local-gated-memory.mjs:23:    if (![c.eta, c.minGain, c.maxGain, c.activityScale, c.theta, c.tauE].every(Number.isFinite) || c.eta <= 0 || c.minGain <= 0
+.codebase/src/neural-learning/local-gated-memory.mjs:24:      || c.minGain >= 1 || c.maxGain < 1 || c.activityScale <= 0 || c.theta < 0 || c.theta >= 1 || c.tauE <= 0) throw Error('Invalid candidate configuration');
+.codebase/src/neural-learning/local-gated-memory.mjs:63:    return { changedEdges: changed, time: this.time, pulses: this.pulses, scope: 'Fixture candidate; DAN deviation from rest; not reconstructed dopamine release' };
+.codebase/src/neural-learning/local-gated-memory.mjs:68:    const { minGain, maxGain } = this.config, n = this.edges.length;
+.codebase/src/neural-learning/local-gated-memory.mjs:70:      || !Array.isArray(s.gains) || s.gains.length !== n || !s.gains.every(v => Number.isFinite(v) && v >= minGain && v <= maxGain)
+// Family 1 candidate (local-gated-v1), not validated biology. Fixture use only; no graph or training approval.
+// Direction: active KC with DAN above rest weakens, with DAN suppressed strengthens: the fitted model rule of
+// Huang et al., Nature 2024, not a measured synaptic rule. Threshold, trace and numbers are engineering choices.
+// Spec: research/reports/overnight-memory-plasticity-2026-10-31/candidate-spec.md
+import { digest } from './mushroom-body.mjs';
+
+export const LOCAL_GATED_DEFAULTS = Object.freeze({ eta: 0.5, minGain: 0.2, maxGain: 1, activityScale: 1.5, theta: 0.2, tauE: 0.5 });
+const SCHEMA = 'local-gated-memory-v1';
+
+// Exact for k, excess and deficit held over dt; g is integrated with the end-of-interval trace.
+export function stepLocalGated({ gain, trace, k, excess, deficit, dt }, { eta, theta, tauE, minGain, maxGain }) {
+  const target = Math.min(1, Math.max(0, (k - theta) / (1 - theta)));
+  const nextTrace = target + (trace - target) * Math.exp(-dt / tauE);
+  const a = eta * excess, b = eta * deficit, rate = nextTrace * (a + b);
+  if (rate === 0) return { gain, trace: nextTrace, target: null };
+  const gStar = (a * minGain + b * maxGain) / (a + b);
+  return { gain: gStar + (gain - gStar) * Math.exp(-rate * dt), trace: nextTrace, target: gStar };
+}
+
+export class LocalGatedMemory {
+  constructor(model, mapping, config = {}) {
+    const c = { ...LOCAL_GATED_DEFAULTS, ...config };
+    if (![c.eta, c.minGain, c.maxGain, c.activityScale, c.theta, c.tauE].every(Number.isFinite) || c.eta <= 0 || c.minGain <= 0
+      || c.minGain >= 1 || c.maxGain < 1 || c.activityScale <= 0 || c.theta < 0 || c.theta >= 1 || c.tauE <= 0) throw Error('Invalid candidate configuration');
+    this.model = model; this.mapping = mapping; this.config = Object.freeze(c);
+    this.edges = mapping.groups.flatMap(g => g.edges);
+    if (!this.edges.length || new Set(this.edges).size !== this.edges.length) throw Error('Invalid candidate edge mask');
+    for (const g of mapping.groups) {
+      if (!g.dan.length || g.edges.length !== g.kc.length) throw Error('Invalid local group');
+      for (let i = 0; i < g.edges.length; i++) {
+{"line":7,"valence":"reward","now":-0.3198256531613731,"scale":0.6332606888172387,"level":1.224945516612929,"unknown":false}
+{"line":15,"valence":"reward","now":-0.07613867470056898,"scale":0.5317244477919038,"level":1.1487933358439277,"unknown":false}
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+import { createReadStream } from 'node:fs';
+import { createInterface } from 'node:readline';
+const run='runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1';
+for(let seed=4101;seed<=4106;seed++){
+ let known=0,zero=0,minScale=Infinity,maxScale=-Infinity;
+ for await(const line of createInterface({input:createReadStream("'`${run}/frames-${seed}-informative.jsonl`),crlfDelay:Infinity})) {
+  if(!line.startsWith('"'{\"kind\":\"trial\"'))continue;
+  const r=JSON.parse(line);if("'!r.valence)continue;
+  known++; zero+=r.scale===0; minScale=Math.min(minScale,r.scale);maxScale=Math.max(maxScale,r.scale);
+ }
+ console.log(JSON.stringify({seed,known,zero,minScale,maxScale}));
+}
+'"'@ | node --input-type=module" in C:\Users\ethan\Documents\fly-chess-research
+ succeeded in 414ms:
+{"seed":4101,"known":105,"zero":0,"minScale":0.33687712853599694,"maxScale":0.6332565056861793}
+{"seed":4102,"known":105,"zero":0,"minScale":0.32968747393252656,"maxScale":0.6512795508205537}
+{"seed":4103,"known":105,"zero":0,"minScale":0.35054642905434485,"maxScale":0.6331097071061598}
+{"seed":4104,"known":105,"zero":0,"minScale":0.3348999391016276,"maxScale":0.6332412991692702}
+{"seed":4105,"known":105,"zero":0,"minScale":0.3441261468767173,"maxScale":0.6328433924722915}
+{"seed":4106,"known":105,"zero":0,"minScale":0.3263003174444888,"maxScale":0.6332921197861935}
+
+hook: PreToolUse
+hook: PreToolUse Completed
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$p='"'runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1/summary.json'; "'$i=0; Get-Content -LiteralPath $p -Encoding UTF8 | ForEach-Object { $i++; if (($i -ge 65 -and $i -le 74) -or ($i -ge 134)) { '"'{0,4} {1}' -f "'$i, $_ } }; $p='"'documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md'; git hash-object -- "'$p' in C:\Users\ethan\Documents\fly-chess-research
+ succeeded in 421ms:
+  65   }
+  66  },
+  67  "wall": 6157.2260954,
+  68  "maxRssMiB": 299.04296875,
+  69  "eyes": "5ec27466a30d29208afb431f48ebc7ab4bcbfe29cb31296a4b556abb75290cff",
+  70  "spec": "2e0bbec44703773b5a40b44c2b6c8ed200708a12032fadea0a2d42b51ee0fd8a",
+  71  "self": "85cc0bdf3f70fb8334282e7a34414e684d9620dac72f5ccc7c96d803d90084a2",
+  72  "recovery": {
+  73   "schema": "eye-memory-phase-recovery-v1",
+  74   "parent": "runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1",
+ 134    "completed.json"
+ 135   ],
+ 136   "sourceMetrics": "original invocation incomplete; resumed timing/RSS is not a whole-run measurement"
+ 137  },
+ 138  "metricsScope": "This resumed invocation only; copied records are original evidence, not repeated trials"
+ 139 }
+8d1fc4f2c5b8717d9ad325b06c9ba2a6a51bf991
+
+codex
+**VERDICT: APPROVE WITH REQUIRED CHANGES.** Reviewed revision 7, blob `8d1fc4f2…`. Building requires the required-BUILD correction below.
+
+**Round-1 findings**
+
+1. **RESOLVED:** delivered-input identity removes the FEN-counter path; the interface exposes no move-scoring query.
+2. **RESOLVED for the design:** the lesson boundary separates teacher evidence, simultaneous neural delivery and audited receipts.
+3. **RESOLVED for the design:** stage 1 now declares its older learner, injected codes, complete state and revised per-seed gates.
+4. **RESOLVED:** explicit tapes and old-lesson replay controls replace the previously mismatched comparisons.
+5. **STILL OPEN before launch:** game eligibility manifests and frozen executable specifications remain prospective; the revised cross-board tie rule also remains ambiguous.
+
+**New findings**
+
+1. **required-BUILD — Supersession contradicts the promised replay dose.**  
+   [Admission removes matching entries before replay selection](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:51), while [section 4.3 requires exactly one replay except after the first lesson](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:182). If the first two lessons have identical input, admission removes the first entry; only the current entry remains, so replay returns nothing. This changes dose and control matching.  
+   **Smallest fix:** specify “at most one, when an older entry remains,” and match controls to actual replay events. Also qualify capacity pressure: stage 1 has at most eight distinct codes but 105 teaching events, giving capacity 27; supersession therefore prevents eviction pressure at one quarter.
+
+2. **required-LAUNCH — The updated control rules still yield contradictory interpretations.**  
+   [Stage 2 requires forgetting in “no old replays”](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:319), but [section 8 stops the claim when “no diary” keeps the earlier idea](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:359). Those outcomes can coexist, producing opposite verdicts. Further, the [moved-timing arm](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:271) deliberately receives extra replays before the next block, contradicting the claim that all five controls start it in the diary’s exact state.  
+   **Smallest fix:** propagate the new forgetting reference into section 8. Restrict the identical-state claim to the applicable controls and first common snapshot; later stage-1 blocks already have different learning histories.
+
+3. **required-LAUNCH — Twin-pair tie handling has two possible tolerances.**  
+   [Section 7.4 defines tolerance from the largest score “on that board”](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:313), but a pair compares two boards. With board maxima 1 and 0.1, their tolerances are `1.01e−7` and `1.1e−8`. A score difference of `5e−8` is a tie under one and correct under the other. This can change acquisition, retention and transfer verdicts.  
+   **Smallest fix:** define one pair tolerance—such as the maximum of both board tolerances—and explicitly define its application to offset-cancelled margins. Add this boundary example to the frozen evaluator.
+
+4. **optional — The revised runtime estimate uses a partial measurement as a whole-run measurement.**  
+   [Stage 1 calls 6,157 seconds the duration of 24 arm runs](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:289), whereas the [source explicitly labels timing and RSS as recovery-invocation measurements](/C:/Users/ethan/Documents/fly-chess-research/runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1/summary.json:136).  
+   **Smallest fix:** correct the measurement’s scope and leave the extrapolated duration unverified until the dry run.
+
+**Strongest supportable sentence, conditional on a valid pass:** “The fly trained with a disclosed replay diary retained earlier learning and outperformed the listed controls on unfamiliar combinations of three separately taught chess ideas; untested case classifiers remain possible.”
+tokens used
+494,226
+**VERDICT: APPROVE WITH REQUIRED CHANGES.** Reviewed revision 7, blob `8d1fc4f2…`. Building requires the required-BUILD correction below.
+
+**Round-1 findings**
+
+1. **RESOLVED:** delivered-input identity removes the FEN-counter path; the interface exposes no move-scoring query.
+2. **RESOLVED for the design:** the lesson boundary separates teacher evidence, simultaneous neural delivery and audited receipts.
+3. **RESOLVED for the design:** stage 1 now declares its older learner, injected codes, complete state and revised per-seed gates.
+4. **RESOLVED:** explicit tapes and old-lesson replay controls replace the previously mismatched comparisons.
+5. **STILL OPEN before launch:** game eligibility manifests and frozen executable specifications remain prospective; the revised cross-board tie rule also remains ambiguous.
+
+**New findings**
+
+1. **required-BUILD — Supersession contradicts the promised replay dose.**  
+   [Admission removes matching entries before replay selection](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:51), while [section 4.3 requires exactly one replay except after the first lesson](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:182). If the first two lessons have identical input, admission removes the first entry; only the current entry remains, so replay returns nothing. This changes dose and control matching.  
+   **Smallest fix:** specify “at most one, when an older entry remains,” and match controls to actual replay events. Also qualify capacity pressure: stage 1 has at most eight distinct codes but 105 teaching events, giving capacity 27; supersession therefore prevents eviction pressure at one quarter.
+
+2. **required-LAUNCH — The updated control rules still yield contradictory interpretations.**  
+   [Stage 2 requires forgetting in “no old replays”](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:319), but [section 8 stops the claim when “no diary” keeps the earlier idea](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:359). Those outcomes can coexist, producing opposite verdicts. Further, the [moved-timing arm](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:271) deliberately receives extra replays before the next block, contradicting the claim that all five controls start it in the diary’s exact state.  
+   **Smallest fix:** propagate the new forgetting reference into section 8. Restrict the identical-state claim to the applicable controls and first common snapshot; later stage-1 blocks already have different learning histories.
+
+3. **required-LAUNCH — Twin-pair tie handling has two possible tolerances.**  
+   [Section 7.4 defines tolerance from the largest score “on that board”](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:313), but a pair compares two boards. With board maxima 1 and 0.1, their tolerances are `1.01e−7` and `1.1e−8`. A score difference of `5e−8` is a tie under one and correct under the other. This can change acquisition, retention and transfer verdicts.  
+   **Smallest fix:** define one pair tolerance—such as the maximum of both board tolerances—and explicitly define its application to offset-cancelled margins. Add this boundary example to the frozen evaluator.
+
+4. **optional — The revised runtime estimate uses a partial measurement as a whole-run measurement.**  
+   [Stage 1 calls 6,157 seconds the duration of 24 arm runs](/C:/Users/ethan/Documents/fly-chess-research/documentation/design/neural-learning/replay-diary-memory-design-2026-11-17.md:289), whereas the [source explicitly labels timing and RSS as recovery-invocation measurements](/C:/Users/ethan/Documents/fly-chess-research/runs/memory-retention-2026-11-01/eye-graph-memory-cubic-v1-recovery1/summary.json:136).  
+   **Smallest fix:** correct the measurement’s scope and leave the extrapolated duration unverified until the dry run.
+
+**Strongest supportable sentence, conditional on a valid pass:** “The fly trained with a disclosed replay diary retained earlier learning and outperformed the listed controls on unfamiliar combinations of three separately taught chess ideas; untested case classifiers remain possible.”

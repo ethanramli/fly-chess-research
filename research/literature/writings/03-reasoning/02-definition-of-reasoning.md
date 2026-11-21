@@ -5,7 +5,7 @@
 
 ## Planned content
 
-- Apply many unrelated concepts to solve an unfamiliar problem (project wording).
+- Define reasoning, using the project's wording, as applying many unrelated concepts to solve a problem the model has not seen before.
 
 ## Working notes
 

@@ -5,8 +5,8 @@
 
 ## Planned content
 
-- A full account of the researcher's use of AI throughout the project.
+- Give a full account of how the researcher used AI throughout the project.
 
 ## Working notes
 
-Add interview answers, sources, figures, and evidence links here as the chapter develops.
+As the chapter develops, add interview answers, sources, figures, and links to supporting evidence.

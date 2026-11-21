@@ -1,12 +1,16 @@
 # Research reports
 
-This folder holds dated reports, experiment evidence, reviews, and supporting records from FlyChess research. Start with [current research status](../../documentation/current-status.md) for the active decision, then use the topic map below to find the report and its underlying evidence. This index covers every tracked immediate child directory and every immediate Markdown file other than this README; add, move, rename, remove, or repurpose any covered child only with a matching update here and to affected links in the same change. The parent [research index](../README.md) explains how reports fit with the journal, literature, and project records.
+Use this index to find dated results, failed tests, and proposals that have not run. Start with [current research status](../../documentation/current-status.md) for the active decision, then use the topic map below to find its report and evidence. The parent [research index](../README.md) explains how reports fit with the journal, literature, and project records.
+
+This index covers every tracked immediate child directory and every immediate Markdown file other than this README. When a covered item is added, moved, renamed, removed or repurposed, update this index and affected links in the same change.
 
 ## Current decision and claims about learning or transfer
 
 <!-- directory-map -->
 
 ### Active direction and claimed outcomes
+
+- [Replay diary design review, 2026-11-17](replay-diary-design-review-2026-11-17/README.md): three independent reviews of a Volume 3 memory design that re-plays the fly's own lessons and is removed before testing. Design only; no result.
 
 - [Fly connections memory, 2026-11-07](fly-connections-memory-v1-2026-11-07/README.md): stop report records the failed predeclared revision-4 capacity gate (one exact win of three); a later sequential search found settings on all three boards but remains unreviewed. Reward-only and valence probes still failed to rank the safe capture first. No full run occurred, Properties 1–3 remain unmet, and there is no transferable-reasoning result. A 2026-11-14 [scale check](fly-connections-memory-v1-2026-11-07/calibration-replay-2026-11-14/README.md) supports a proposed three-board feedback test, not yet approved.
 - [Engineered memory v8, 2026-11-07](engineered-memory-test-v8-2026-11-07/README.md): independently audited pass for its written, engineered-memory goal. It is lookup among known-certificate captures; it does not establish fly-driven learning, all-legal choice, reasoning, or transfer.
@@ -17,7 +21,7 @@ This folder holds dated reports, experiment evidence, reviews, and supporting re
 ### Associative memory: tests and proposals
 
 - [Engineered episodic memory component](engineered-episodic-memory-2026-11-01/README.md): bounded external lookup component and its protocol, arithmetic reconstruction, and controls; lookup evidence only.
-- [Memory test v1](memory-test-2026-11-03/README.md): γ4 memory rule did not pass; feedback had no measurable effect.
+- [Memory test v1](memory-test-2026-11-03/README.md): the γ4 memory rule did not pass; the informative condition and controls had identical choice-test results in this run.
 - [Engineered memory test v2](engineered-memory-test-v2-2026-11-03/README.md): store worked, but the graph was near chance on new boards and twin-pair brightness was a shortcut.
 - [Engineered memory test v3](engineered-memory-test-v3-2026-11-04/README.md): failed; ties and unequal practice exposure decided most scores.
 - [Engineered memory test v4](engineered-memory-test-v4-2026-11-05/README.md): failed its frozen gate; raw/random keys learned while fly Kenyon-cell keys barely did.
@@ -34,8 +38,8 @@ This folder holds dated reports, experiment evidence, reviews, and supporting re
 
 ### Seeing and visual input
 
-- [Seeing test v1](seeing-test-2026-11-03/README.md): memory cells distinguished a knight from a bishop on e4 in 48/48 real positions under the prewritten rule.
-- [Eye test v2](eye-test-v2-2026-11-03/README.md): pipeline check failed; the brain was near chance and raw eye input showed a shortcut, so the frozen test does not count as evidence either way.
+- [Seeing test v1](seeing-test-2026-11-03/README.md): a fitted external decoder distinguished a knight from a bishop on e4 in all 48 held-out board pairs using simulated Kenyon-cell activity; the model's memory did not change.
+- [Eye test v2](eye-test-v2-2026-11-03/README.md): the positive control failed, making the run inconclusive under its frozen rules. The graph-activity decoder scored near chance, while the raw-input decoder met the shortcut threshold.
 - [Eyes v1 static check](eyes-v1-2026-10-31/README.md): frozen renderer and piece separation checks; no graph simulation or learning run.
 - [Eyes retina identity trace](eyes-retina-identity-2026-11-01/README.md): checks selected roots, types, sides, and geometry against source data while retaining conflicting annotations.
 - [Overnight Eyes/reader repair](overnight-eyes-reader-repair-2026-11-01/REPORT.md): execution record for paired MBON05 conditioning and audits, with the eye test blocked by F04.

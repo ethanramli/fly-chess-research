@@ -1,6 +1,6 @@
 # Research outreach
 
-This folder records how FlyChess prepares requests for scientific guidance. Start with planning to draft a request, or browse the dated campaign index to see how earlier outreach was organized.
+This folder records requests for scientific guidance and the research used to prepare them. Start with the [planning guide](planning/README.md) to draft a request, or the [campaign index](campaigns/README.md) to find earlier outreach records.
 
 ## Directory tree
 
@@ -12,6 +12,6 @@ This folder records how FlyChess prepares requests for scientific guidance. Star
 - [`verification/`](verification/README.md) — Where the source checks for each campaign were recorded.
 <!-- /directory-map -->
 
-A draft records proposed wording. A campaign summary can record a send attempt or routing outcome. Use the [outreach journal](../journal/outreach/README.md) for later notes and [current research status](../../documentation/current-status.md) for what the project has established.
+A draft records proposed wording. A campaign summary records what was attempted and which send checks were performed. A message in Sent does not establish that its recipient read it; a forwarding request does not establish that the intended expert received it. Use the [outreach journal](../journal/outreach/README.md) for later contact and meeting notes, and [current research status](../../documentation/current-status.md) for scientific conclusions.
 
 [Research records](../README.md)

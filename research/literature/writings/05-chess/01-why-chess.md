@@ -5,9 +5,8 @@
 
 ## Planned content
 
-- Why chess is the best measurement for this research.
-- The weaknesses of chess as a measurement.
+- Explain why the project uses chess to test the model, what results in chess can establish, and what they cannot establish.
 
 ## Working notes
 
-Add interview answers, sources, figures, and evidence links here as the chapter develops.
+As the chapter develops, add interview answers, sources, figures, and links to supporting evidence.

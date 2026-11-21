@@ -5,8 +5,8 @@
 
 ## Planned content
 
-- Empirical evidence that the model can learn, under stated constraints and distinctions.
-- Limited evidence is still evidence.
+- Evidence for what the model has learned under the stated constraints, with each result kept within the condition it tested.
+- What narrow results show, and what they do not establish about broader learning.
 
 ## Working notes
 

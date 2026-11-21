@@ -33,3 +33,11 @@ It does not show that the fly's code cannot carry the deciding information. The 
 ## Next
 
 [Memory v4](../../../documentation/design/neural-learning/memory-v4-proposal-2026-11-04.md) removes both confounds (s / c scoring, one identical ledger for every arm). Its settings were fixed before this result was read (cutoff hash in the journal).
+
+## Clarification (2026-11-18)
+
+The test asked whether the fly's Kenyon-cell activity, stored in the disclosed similarity memory, helped it choose safe captures on new chess positions. On each of 184 positions in each seed, the frozen store scored every legal move. A position counted as correct only when the highest-scoring move was a safe capture; a tie for highest score counted wrong. To pass, the graph arm had to be correct on at least 96 positions in **each** seed and beat each comparison arm by at least 9 positions, with the game-clustered bootstrap 95% lower bound above zero.
+
+The graph arm was correct on 1/184, 2/184, and 8/184 positions for seeds 6101, 6102, and 6103. It therefore missed the 96-position bar in all three seeds. It also did not meet the comparison rule: graph minus raw scores were −23, −16, and −3; graph minus random-feature scores were −14, −20, and −8; graph minus shuffled-outcome scores were −1, +1, and +4; and graph minus no-memory scores were +1, +2, and +8. The other arms were controls: raw stored photoreceptor input, random stored features of that input, Kenyon-cell activity paired with shuffled graph outcomes, and no memory reads or writes. The no-memory arm ties on all 184 positions by construction, so its score is not a useful choice-quality comparison; the journal notes this was a known defect.
+
+This was a test of the fly plus an engineered similarity store, with feedback only about the move the fly chose during practice. Unequal safe-capture experience and frequent top-score ties affected the comparison. The result does not isolate the brain, establish that its code cannot carry useful information, or test reasoning. The 184 test positions were used and are not an untouched future test.

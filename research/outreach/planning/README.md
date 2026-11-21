@@ -1,6 +1,6 @@
 # Outreach planning and templates
 
-Use these files to prepare a short, evidence-based request for scientific guidance. Start with the writing guide and check the project summary against current research status before adapting it.
+Use these files to ask a researcher for focused scientific feedback. Start with the writing guide, then compare the project summary with the latest research status before reusing its claims.
 
 - [Guide to writing a request](cold-email-guide.md) — How to choose a question and check the sources.
 - [Dossier template](dossier-template.md) — A reusable structure for background research.

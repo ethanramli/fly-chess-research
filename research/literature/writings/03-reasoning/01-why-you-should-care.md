@@ -5,13 +5,13 @@
 
 ## Planned content
 
-- About 130,000 neurons and 54 million parameters make a tiny model.
-- If a connectome-constrained model this small can reason with support from memory, working memory and specialized reinforcement learning, this would open new directions for science and connectomics.
-- It could also show that a small connectome-constrained model can reason without a very large data centre or brain.
+- Explain that the model has about 130,000 neurons and 54 million parameters, making it small by the standards of computing models.
+- Explain how evidence that this model can reason using memory, working memory and specialized reinforcement learning could help researchers test what connectome-based models can learn and guide future connectome studies.
+- Explain how such a result could show that a small model based on a connectome can reason without relying on a large computing cluster or modeling an entire brain.
 
 ## Evidence boundary
 
-Check the neuron and parameter counts against the pinned graph identity before publication.
+Before publication, check the neuron and parameter counts against the fixed, identified graph used in the study.
 
 ## Working notes
 
